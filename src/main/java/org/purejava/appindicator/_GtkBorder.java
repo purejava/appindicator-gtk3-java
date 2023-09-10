@@ -2,148 +2,140 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkBorder {
- *     gint16 left;
- *     gint16 right;
- *     gint16 top;
- *     gint16 bottom;
+ *     short left;
+ *     short right;
+ *     short top;
+ *     short bottom;
  * };
  * }
  */
 public class _GtkBorder {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_SHORT$LAYOUT.withName("left"),
-        Constants$root.C_SHORT$LAYOUT.withName("right"),
-        Constants$root.C_SHORT$LAYOUT.withName("top"),
-        Constants$root.C_SHORT$LAYOUT.withName("bottom")
-    ).withName("_GtkBorder");
     public static MemoryLayout $LAYOUT() {
-        return _GtkBorder.$struct$LAYOUT;
+        return constants$1958.const$4;
     }
-    static final VarHandle left$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("left"));
     public static VarHandle left$VH() {
-        return _GtkBorder.left$VH;
+        return constants$1958.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint16 left;
+     * short left;
      * }
      */
     public static short left$get(MemorySegment seg) {
-        return (short)_GtkBorder.left$VH.get(seg);
+        return (short)constants$1958.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint16 left;
+     * short left;
      * }
      */
     public static void left$set(MemorySegment seg, short x) {
-        _GtkBorder.left$VH.set(seg, x);
+        constants$1958.const$5.set(seg, x);
     }
     public static short left$get(MemorySegment seg, long index) {
-        return (short)_GtkBorder.left$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$1958.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void left$set(MemorySegment seg, long index, short x) {
-        _GtkBorder.left$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1958.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle right$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("right"));
     public static VarHandle right$VH() {
-        return _GtkBorder.right$VH;
+        return constants$1959.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint16 right;
+     * short right;
      * }
      */
     public static short right$get(MemorySegment seg) {
-        return (short)_GtkBorder.right$VH.get(seg);
+        return (short)constants$1959.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint16 right;
+     * short right;
      * }
      */
     public static void right$set(MemorySegment seg, short x) {
-        _GtkBorder.right$VH.set(seg, x);
+        constants$1959.const$0.set(seg, x);
     }
     public static short right$get(MemorySegment seg, long index) {
-        return (short)_GtkBorder.right$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$1959.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void right$set(MemorySegment seg, long index, short x) {
-        _GtkBorder.right$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1959.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle top$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("top"));
     public static VarHandle top$VH() {
-        return _GtkBorder.top$VH;
+        return constants$1959.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint16 top;
+     * short top;
      * }
      */
     public static short top$get(MemorySegment seg) {
-        return (short)_GtkBorder.top$VH.get(seg);
+        return (short)constants$1959.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint16 top;
+     * short top;
      * }
      */
     public static void top$set(MemorySegment seg, short x) {
-        _GtkBorder.top$VH.set(seg, x);
+        constants$1959.const$1.set(seg, x);
     }
     public static short top$get(MemorySegment seg, long index) {
-        return (short)_GtkBorder.top$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$1959.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void top$set(MemorySegment seg, long index, short x) {
-        _GtkBorder.top$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1959.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle bottom$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("bottom"));
     public static VarHandle bottom$VH() {
-        return _GtkBorder.bottom$VH;
+        return constants$1959.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint16 bottom;
+     * short bottom;
      * }
      */
     public static short bottom$get(MemorySegment seg) {
-        return (short)_GtkBorder.bottom$VH.get(seg);
+        return (short)constants$1959.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint16 bottom;
+     * short bottom;
      * }
      */
     public static void bottom$set(MemorySegment seg, short x) {
-        _GtkBorder.bottom$VH.set(seg, x);
+        constants$1959.const$2.set(seg, x);
     }
     public static short bottom$get(MemorySegment seg, long index) {
-        return (short)_GtkBorder.bottom$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$1959.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void bottom$set(MemorySegment seg, long index, short x) {
-        _GtkBorder.bottom$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1959.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

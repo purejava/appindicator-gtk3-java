@@ -3,58 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$365 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$365() {}
-    static final FunctionDescriptor pthread_mutexattr_getprioceiling$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$364.const$5.varHandle(MemoryLayout.PathElement.groupElement("partial_magic"));
+    static final VarHandle const$1 = constants$364.const$5.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_variant_parser_get_error_quark",
+        constants$83.const$1
     );
-    static final MethodHandle pthread_mutexattr_getprioceiling$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutexattr_getprioceiling",
-        constants$365.pthread_mutexattr_getprioceiling$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_variant_parse_error_quark",
+        constants$83.const$1
     );
-    static final FunctionDescriptor pthread_mutexattr_setprioceiling$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_variant_builder_new",
+        constants$5.const$2
     );
-    static final MethodHandle pthread_mutexattr_setprioceiling$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutexattr_setprioceiling",
-        constants$365.pthread_mutexattr_setprioceiling$FUNC
-    );
-    static final FunctionDescriptor pthread_mutexattr_getrobust$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_mutexattr_getrobust$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutexattr_getrobust",
-        constants$365.pthread_mutexattr_getrobust$FUNC
-    );
-    static final FunctionDescriptor pthread_mutexattr_setrobust$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pthread_mutexattr_setrobust$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutexattr_setrobust",
-        constants$365.pthread_mutexattr_setrobust$FUNC
-    );
-    static final FunctionDescriptor pthread_rwlock_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_rwlock_init$MH = RuntimeHelper.downcallHandle(
-        "pthread_rwlock_init",
-        constants$365.pthread_rwlock_init$FUNC
-    );
-    static final FunctionDescriptor pthread_rwlock_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_rwlock_destroy$MH = RuntimeHelper.downcallHandle(
-        "pthread_rwlock_destroy",
-        constants$365.pthread_rwlock_destroy$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_variant_builder_unref",
+        constants$13.const$1
     );
 }
 

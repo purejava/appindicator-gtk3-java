@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1120 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1120() {}
-    static final FunctionDescriptor gdk_screen_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_socket_listener_event_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_screen_get_height$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_height",
-        constants$1120.gdk_screen_get_height$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_test_dbus_flags_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_screen_get_width_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_subprocess_flags_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_screen_get_width_mm$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_width_mm",
-        constants$1120.gdk_screen_get_width_mm$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_notification_priority_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_screen_get_height_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_network_connectivity_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_screen_get_height_mm$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_height_mm",
-        constants$1120.gdk_screen_get_height_mm$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_list_visuals$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_list_visuals$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_list_visuals",
-        constants$1120.gdk_screen_list_visuals$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_toplevel_windows$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_toplevel_windows$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_toplevel_windows",
-        constants$1120.gdk_screen_get_toplevel_windows$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_make_display_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_make_display_name$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_make_display_name",
-        constants$1120.gdk_screen_make_display_name$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_pollable_return_get_type",
+        constants$3.const$5
     );
 }
 

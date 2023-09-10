@@ -3,56 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1513 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1513() {}
-    static final FunctionDescriptor gtk_button_set_image$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_buffer_reverse_clusters",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_button_set_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_set_image",
-        constants$1513.gtk_button_set_image$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_buffer_add",
+        constants$467.const$3
     );
-    static final FunctionDescriptor gtk_button_get_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final MethodHandle gtk_button_get_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_get_image",
-        constants$1513.gtk_button_get_image$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_buffer_add_utf8",
+        constants$1513.const$2
     );
-    static final FunctionDescriptor gtk_button_set_image_position$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_buffer_add_utf16",
+        constants$1513.const$2
     );
-    static final MethodHandle gtk_button_set_image_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_set_image_position",
-        constants$1513.gtk_button_set_image_position$FUNC
-    );
-    static final FunctionDescriptor gtk_button_get_image_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_button_get_image_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_get_image_position",
-        constants$1513.gtk_button_get_image_position$FUNC
-    );
-    static final FunctionDescriptor gtk_button_set_always_show_image$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_button_set_always_show_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_set_always_show_image",
-        constants$1513.gtk_button_set_always_show_image$FUNC
-    );
-    static final FunctionDescriptor gtk_button_get_always_show_image$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_button_get_always_show_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_get_always_show_image",
-        constants$1513.gtk_button_get_always_show_image$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_buffer_add_utf32",
+        constants$1513.const$2
     );
 }
 

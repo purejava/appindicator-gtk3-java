@@ -3,64 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1537 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1537() {}
-    static final FunctionDescriptor gtk_check_menu_item_get_inconsistent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_get_mirror_char",
+        constants$9.const$2
     );
-    static final MethodHandle gtk_check_menu_item_get_inconsistent$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_get_inconsistent",
-        constants$1537.gtk_check_menu_item_get_inconsistent$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_font_description_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_check_menu_item_set_draw_as_radio$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_font_description_new",
+        constants$35.const$2
     );
-    static final MethodHandle gtk_check_menu_item_set_draw_as_radio$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_set_draw_as_radio",
-        constants$1537.gtk_check_menu_item_set_draw_as_radio$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_font_description_copy",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_check_menu_item_get_draw_as_radio$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_font_description_copy_static",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_check_menu_item_get_draw_as_radio$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_get_draw_as_radio",
-        constants$1537.gtk_check_menu_item_get_draw_as_radio$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_font_description_hash",
+        constants$10.const$5
     );
-    static final FunctionDescriptor GtkClipboardReceivedFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkClipboardReceivedFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkClipboardReceivedFunc_UP$MH = RuntimeHelper.upcallHandle(GtkClipboardReceivedFunc.class, "apply", constants$1537.GtkClipboardReceivedFunc_UP$FUNC);
-    static final FunctionDescriptor GtkClipboardReceivedFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkClipboardReceivedFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1537.GtkClipboardReceivedFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor GtkClipboardTextReceivedFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkClipboardTextReceivedFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkClipboardTextReceivedFunc_UP$MH = RuntimeHelper.upcallHandle(GtkClipboardTextReceivedFunc.class, "apply", constants$1537.GtkClipboardTextReceivedFunc_UP$FUNC);
 }
 
 

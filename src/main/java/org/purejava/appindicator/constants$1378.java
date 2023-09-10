@@ -3,64 +3,54 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1378 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1378() {}
-    static final FunctionDescriptor GtkTreeIterCompareFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkTreeIterCompareFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkTreeIterCompareFunc_UP$MH = RuntimeHelper.upcallHandle(GtkTreeIterCompareFunc.class, "apply", constants$1378.GtkTreeIterCompareFunc_UP$FUNC);
-    static final FunctionDescriptor GtkTreeIterCompareFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkTreeIterCompareFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1378.GtkTreeIterCompareFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_sortable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_sortable_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_sortable_get_type",
-        constants$1378.gtk_tree_sortable_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_sortable_sort_column_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_sortable_sort_column_changed$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_sortable_sort_column_changed",
-        constants$1378.gtk_tree_sortable_sort_column_changed$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_sortable_get_sort_column_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_sortable_get_sort_column_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_sortable_get_sort_column_id",
-        constants$1378.gtk_tree_sortable_get_sort_column_id$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_sortable_set_sort_column_id$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_sortable_set_sort_column_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_sortable_set_sort_column_id",
-        constants$1378.gtk_tree_sortable_set_sort_column_id$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GTlsPassword");
+    static final VarHandle const$1 = constants$1378.const$0.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("get_value"),
+        RuntimeHelper.POINTER.withName("set_value"),
+        RuntimeHelper.POINTER.withName("get_default_warning"),
+        MemoryLayout.sequenceLayout(4, RuntimeHelper.POINTER).withName("padding")
+    ).withName("_GTlsPasswordClass");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GTlsPasswordClass.get_value.class, "apply", constants$5.const$5);
+    static final VarHandle const$4 = constants$1378.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_value"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GTlsPasswordClass.set_value.class, "apply", constants$1139.const$5);
 }
 
 

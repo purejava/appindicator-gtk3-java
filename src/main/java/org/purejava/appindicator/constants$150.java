@@ -3,55 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$150 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$150() {}
-    static final FunctionDescriptor g_hash_table_iter_remove$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_hash_table_iter_remove$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_iter_remove",
-        constants$150.g_hash_table_iter_remove$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_time_zone_adjust_time",
+        constants$150.const$0
     );
-    static final FunctionDescriptor g_hash_table_iter_replace$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_time_zone_get_abbreviation",
+        constants$21.const$3
     );
-    static final MethodHandle g_hash_table_iter_replace$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_iter_replace",
-        constants$150.g_hash_table_iter_replace$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_time_zone_get_offset",
+        constants$11.const$4
     );
-    static final FunctionDescriptor g_hash_table_iter_steal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_time_zone_is_dst",
+        constants$11.const$4
     );
-    static final MethodHandle g_hash_table_iter_steal$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_iter_steal",
-        constants$150.g_hash_table_iter_steal$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_ref$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_ref",
-        constants$150.g_hash_table_ref$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_unref$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_unref",
-        constants$150.g_hash_table_unref$FUNC
-    );
-    static final FunctionDescriptor g_str_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_str_equal$MH = RuntimeHelper.downcallHandle(
-        "g_str_equal",
-        constants$150.g_str_equal$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_time_zone_get_identifier",
+        constants$5.const$2
     );
 }
 

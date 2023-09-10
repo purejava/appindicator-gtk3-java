@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$284 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$284() {}
-    static final FunctionDescriptor g_rc_box_acquire$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_unichar_isdigit",
+        constants$8.const$4
     );
-    static final MethodHandle g_rc_box_acquire$MH = RuntimeHelper.downcallHandle(
-        "g_rc_box_acquire",
-        constants$284.g_rc_box_acquire$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_unichar_isgraph",
+        constants$8.const$4
     );
-    static final FunctionDescriptor g_rc_box_release$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_unichar_islower",
+        constants$8.const$4
     );
-    static final MethodHandle g_rc_box_release$MH = RuntimeHelper.downcallHandle(
-        "g_rc_box_release",
-        constants$284.g_rc_box_release$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_unichar_isprint",
+        constants$8.const$4
     );
-    static final FunctionDescriptor g_rc_box_release_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_unichar_ispunct",
+        constants$8.const$4
     );
-    static final MethodHandle g_rc_box_release_full$MH = RuntimeHelper.downcallHandle(
-        "g_rc_box_release_full",
-        constants$284.g_rc_box_release_full$FUNC
-    );
-    static final FunctionDescriptor g_rc_box_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_rc_box_get_size$MH = RuntimeHelper.downcallHandle(
-        "g_rc_box_get_size",
-        constants$284.g_rc_box_get_size$FUNC
-    );
-    static final FunctionDescriptor g_atomic_rc_box_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_atomic_rc_box_alloc$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_rc_box_alloc",
-        constants$284.g_atomic_rc_box_alloc$FUNC
-    );
-    static final FunctionDescriptor g_atomic_rc_box_alloc0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_atomic_rc_box_alloc0$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_rc_box_alloc0",
-        constants$284.g_atomic_rc_box_alloc0$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_unichar_isspace",
+        constants$8.const$4
     );
 }
 

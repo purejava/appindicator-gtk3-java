@@ -3,55 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$382 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$382() {}
-    static final FunctionDescriptor g_type_class_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$34.const$5
     );
-    static final MethodHandle g_type_class_unref$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_unref",
-        constants$382.g_type_class_unref$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GOptionParseFunc.class, "apply", constants$34.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GOptionErrorFunc.class, "apply", constants$42.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_option_error_quark",
+        constants$83.const$1
     );
-    static final FunctionDescriptor g_type_class_peek_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_class_peek_parent$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_peek_parent",
-        constants$382.g_type_class_peek_parent$FUNC
-    );
-    static final FunctionDescriptor g_type_interface_peek$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_interface_peek$MH = RuntimeHelper.downcallHandle(
-        "g_type_interface_peek",
-        constants$382.g_type_interface_peek$FUNC
-    );
-    static final FunctionDescriptor g_type_interface_peek_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_interface_peek_parent$MH = RuntimeHelper.downcallHandle(
-        "g_type_interface_peek_parent",
-        constants$382.g_type_interface_peek_parent$FUNC
-    );
-    static final FunctionDescriptor g_type_default_interface_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_default_interface_ref$MH = RuntimeHelper.downcallHandle(
-        "g_type_default_interface_ref",
-        constants$382.g_type_default_interface_ref$FUNC
-    );
-    static final FunctionDescriptor g_type_default_interface_peek$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_default_interface_peek$MH = RuntimeHelper.downcallHandle(
-        "g_type_default_interface_peek",
-        constants$382.g_type_default_interface_peek$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("long_name"),
+        JAVA_BYTE.withName("short_name"),
+        MemoryLayout.paddingLayout(3),
+        JAVA_INT.withName("flags"),
+        JAVA_INT.withName("arg"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("arg_data"),
+        RuntimeHelper.POINTER.withName("description"),
+        RuntimeHelper.POINTER.withName("arg_description")
+    ).withName("_GOptionEntry");
+    static final VarHandle const$5 = constants$382.const$4.varHandle(MemoryLayout.PathElement.groupElement("long_name"));
 }
 
 

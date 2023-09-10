@@ -3,56 +3,43 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1580 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1580() {}
-    static final FunctionDescriptor gtk_file_chooser_set_choice$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_attr_iterator_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_file_chooser_set_choice$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_choice",
-        constants$1580.gtk_file_chooser_set_choice$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_attr_iterator_get",
+        constants$21.const$3
     );
-    static final FunctionDescriptor gtk_file_chooser_get_choice$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_attr_iterator_get_font",
+        constants$42.const$1
     );
-    static final MethodHandle gtk_file_chooser_get_choice$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_choice",
-        constants$1580.gtk_file_chooser_get_choice$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_attr_iterator_get_attrs",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_file_chooser_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_file_chooser_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_get_type",
-        constants$1580.gtk_file_chooser_button_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_new",
-        constants$1580.gtk_file_chooser_button_new$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_button_new_with_dialog$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_button_new_with_dialog$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_new_with_dialog",
-        constants$1580.gtk_file_chooser_button_new_with_dialog$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_button_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_button_get_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_get_title",
-        constants$1580.gtk_file_chooser_button_get_title$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("shape_engine"),
+        RuntimeHelper.POINTER.withName("lang_engine"),
+        RuntimeHelper.POINTER.withName("font"),
+        JAVA_BYTE.withName("level"),
+        JAVA_BYTE.withName("gravity"),
+        JAVA_BYTE.withName("flags"),
+        JAVA_BYTE.withName("script"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("language"),
+        RuntimeHelper.POINTER.withName("extra_attrs")
+    ).withName("_PangoAnalysis");
+    static final VarHandle const$5 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("shape_engine"));
 }
 
 

@@ -3,50 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1707 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1707() {}
-    static final FunctionDescriptor gtk_model_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_model_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_model_button_new",
-        constants$1707.gtk_model_button_new$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_scaled_font_create",
+        constants$39.const$1
     );
-    static final FunctionDescriptor GtkModuleInitFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_scaled_font_reference",
+        constants$5.const$2
     );
-    static final FunctionDescriptor GtkModuleInitFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_scaled_font_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle GtkModuleInitFunc_UP$MH = RuntimeHelper.upcallHandle(GtkModuleInitFunc.class, "apply", constants$1707.GtkModuleInitFunc_UP$FUNC);
-    static final FunctionDescriptor GtkModuleInitFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_scaled_font_get_reference_count",
+        constants$10.const$5
     );
-    static final MethodHandle GtkModuleInitFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1707.GtkModuleInitFunc_DOWN$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_scaled_font_status",
+        constants$10.const$5
     );
-    static final FunctionDescriptor GtkModuleDisplayInitFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkModuleDisplayInitFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkModuleDisplayInitFunc_UP$MH = RuntimeHelper.upcallHandle(GtkModuleDisplayInitFunc.class, "apply", constants$1707.GtkModuleDisplayInitFunc_UP$FUNC);
-    static final FunctionDescriptor GtkModuleDisplayInitFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkModuleDisplayInitFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1707.GtkModuleDisplayInitFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor gtk_mount_operation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_mount_operation_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_mount_operation_get_type",
-        constants$1707.gtk_mount_operation_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_scaled_font_get_type",
+        constants$10.const$5
     );
 }
 

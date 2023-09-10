@@ -3,62 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$954 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$954() {}
-    static final FunctionDescriptor pango_tab_array_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_drive_stop",
+        constants$380.const$0
     );
-    static final MethodHandle pango_tab_array_free$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_free",
-        constants$954.pango_tab_array_free$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_drive_stop_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor pango_tab_array_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_drive_eject_with_operation$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_drive_eject_with_operation",
+        constants$380.const$0
     );
-    static final MethodHandle pango_tab_array_get_size$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_get_size",
-        constants$954.pango_tab_array_get_size$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_drive_eject_with_operation_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor pango_tab_array_resize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_tab_array_resize$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_resize",
-        constants$954.pango_tab_array_resize$FUNC
-    );
-    static final FunctionDescriptor pango_tab_array_set_tab$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_tab_array_set_tab$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_set_tab",
-        constants$954.pango_tab_array_set_tab$FUNC
-    );
-    static final FunctionDescriptor pango_tab_array_get_tab$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_tab_array_get_tab$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_get_tab",
-        constants$954.pango_tab_array_get_tab$FUNC
-    );
-    static final FunctionDescriptor pango_tab_array_get_tabs$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_tab_array_get_tabs$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_get_tabs",
-        constants$954.pango_tab_array_get_tabs$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_drive_get_sort_key",
+        constants$5.const$2
     );
 }
 

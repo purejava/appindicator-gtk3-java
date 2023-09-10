@@ -3,58 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1402 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1402() {}
-    static final FunctionDescriptor gtk_text_iter_get_visible_line_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_visible_line_index$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_visible_line_index",
-        constants$1402.gtk_text_iter_get_visible_line_index$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_char$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_char",
-        constants$1402.gtk_text_iter_get_char$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_slice$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_slice$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_slice",
-        constants$1402.gtk_text_iter_get_slice$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_text",
-        constants$1402.gtk_text_iter_get_text$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_visible_slice$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_visible_slice$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_visible_slice",
-        constants$1402.gtk_text_iter_get_visible_slice$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_visible_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_visible_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_visible_text",
-        constants$1402.gtk_text_iter_get_visible_text$FUNC
-    );
+    static final VarHandle const$0 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_name"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GVolumeIface.get_icon.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_icon"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GVolumeIface.get_uuid.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_uuid"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GVolumeIface.get_drive.class, "apply", constants$5.const$2);
 }
 
 

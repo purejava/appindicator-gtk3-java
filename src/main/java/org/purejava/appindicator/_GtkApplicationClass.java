@@ -4,100 +4,43 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkApplicationClass {
- *     GApplicationClass parent_class;
- *     void (*window_added)(GtkApplication*,GtkWindow*);
- *     void (*window_removed)(GtkApplication*,GtkWindow*);
- *     gpointer padding[12];
+ *     struct _GApplicationClass parent_class;
+ *     void (*window_added)(struct _GtkApplication*,struct _GtkWindow*);
+ *     void (*window_removed)(struct _GtkApplication*,struct _GtkWindow*);
+ *     void* padding[12];
  * };
  * }
  */
 public class _GtkApplicationClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-                ).withName("g_type_class"),
-                Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-                Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-                Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-                MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-            ).withName("parent_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("startup"),
-            Constants$root.C_POINTER$LAYOUT.withName("activate"),
-            Constants$root.C_POINTER$LAYOUT.withName("open"),
-            Constants$root.C_POINTER$LAYOUT.withName("command_line"),
-            Constants$root.C_POINTER$LAYOUT.withName("local_command_line"),
-            Constants$root.C_POINTER$LAYOUT.withName("before_emit"),
-            Constants$root.C_POINTER$LAYOUT.withName("after_emit"),
-            Constants$root.C_POINTER$LAYOUT.withName("add_platform_data"),
-            Constants$root.C_POINTER$LAYOUT.withName("quit_mainloop"),
-            Constants$root.C_POINTER$LAYOUT.withName("run_mainloop"),
-            Constants$root.C_POINTER$LAYOUT.withName("shutdown"),
-            Constants$root.C_POINTER$LAYOUT.withName("dbus_register"),
-            Constants$root.C_POINTER$LAYOUT.withName("dbus_unregister"),
-            Constants$root.C_POINTER$LAYOUT.withName("handle_local_options"),
-            Constants$root.C_POINTER$LAYOUT.withName("name_lost"),
-            MemoryLayout.sequenceLayout(7, Constants$root.C_POINTER$LAYOUT).withName("padding")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("window_added"),
-        Constants$root.C_POINTER$LAYOUT.withName("window_removed"),
-        MemoryLayout.sequenceLayout(12, Constants$root.C_POINTER$LAYOUT).withName("padding")
-    ).withName("_GtkApplicationClass");
     public static MemoryLayout $LAYOUT() {
-        return _GtkApplicationClass.$struct$LAYOUT;
+        return constants$2166.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 312);
     }
-    static final FunctionDescriptor window_added$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor window_added_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle window_added_UP$MH = RuntimeHelper.upcallHandle(window_added.class, "apply", _GtkApplicationClass.window_added_UP$FUNC);
-    static final FunctionDescriptor window_added_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle window_added_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkApplicationClass.window_added_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*window_added)(GtkApplication*,GtkWindow*);
+ * void (*window_added)(struct _GtkApplication*,struct _GtkWindow*);
      * }
      */
     public interface window_added {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(window_added fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkApplicationClass.window_added_UP$MH, fi, _GtkApplicationClass.window_added$FUNC, scope);
+        static MemorySegment allocate(window_added fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2167.const$0, fi, constants$13.const$4, scope);
         }
-        static window_added ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static window_added ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkApplicationClass.window_added_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -105,69 +48,52 @@ public class _GtkApplicationClass {
         }
     }
 
-    static final VarHandle window_added$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("window_added"));
     public static VarHandle window_added$VH() {
-        return _GtkApplicationClass.window_added$VH;
+        return constants$2167.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*window_added)(GtkApplication*,GtkWindow*);
+     * void (*window_added)(struct _GtkApplication*,struct _GtkWindow*);
      * }
      */
     public static MemorySegment window_added$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkApplicationClass.window_added$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2167.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*window_added)(GtkApplication*,GtkWindow*);
+     * void (*window_added)(struct _GtkApplication*,struct _GtkWindow*);
      * }
      */
     public static void window_added$set(MemorySegment seg, MemorySegment x) {
-        _GtkApplicationClass.window_added$VH.set(seg, x);
+        constants$2167.const$1.set(seg, x);
     }
     public static MemorySegment window_added$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkApplicationClass.window_added$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2167.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void window_added$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkApplicationClass.window_added$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2167.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static window_added window_added(MemorySegment segment, SegmentScope scope) {
+    public static window_added window_added(MemorySegment segment, Arena scope) {
         return window_added.ofAddress(window_added$get(segment), scope);
     }
-    static final FunctionDescriptor window_removed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor window_removed_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle window_removed_UP$MH = RuntimeHelper.upcallHandle(window_removed.class, "apply", _GtkApplicationClass.window_removed_UP$FUNC);
-    static final FunctionDescriptor window_removed_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle window_removed_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkApplicationClass.window_removed_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*window_removed)(GtkApplication*,GtkWindow*);
+ * void (*window_removed)(struct _GtkApplication*,struct _GtkWindow*);
      * }
      */
     public interface window_removed {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(window_removed fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkApplicationClass.window_removed_UP$MH, fi, _GtkApplicationClass.window_removed$FUNC, scope);
+        static MemorySegment allocate(window_removed fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2167.const$2, fi, constants$13.const$4, scope);
         }
-        static window_removed ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static window_removed ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkApplicationClass.window_removed_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -175,35 +101,34 @@ public class _GtkApplicationClass {
         }
     }
 
-    static final VarHandle window_removed$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("window_removed"));
     public static VarHandle window_removed$VH() {
-        return _GtkApplicationClass.window_removed$VH;
+        return constants$2167.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*window_removed)(GtkApplication*,GtkWindow*);
+     * void (*window_removed)(struct _GtkApplication*,struct _GtkWindow*);
      * }
      */
     public static MemorySegment window_removed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkApplicationClass.window_removed$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2167.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*window_removed)(GtkApplication*,GtkWindow*);
+     * void (*window_removed)(struct _GtkApplication*,struct _GtkWindow*);
      * }
      */
     public static void window_removed$set(MemorySegment seg, MemorySegment x) {
-        _GtkApplicationClass.window_removed$VH.set(seg, x);
+        constants$2167.const$3.set(seg, x);
     }
     public static MemorySegment window_removed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkApplicationClass.window_removed$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2167.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void window_removed$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkApplicationClass.window_removed$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2167.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static window_removed window_removed(MemorySegment segment, SegmentScope scope) {
+    public static window_removed window_removed(MemorySegment segment, Arena scope) {
         return window_removed.ofAddress(window_removed$get(segment), scope);
     }
     public static MemorySegment padding$slice(MemorySegment seg) {
@@ -214,7 +139,7 @@ public class _GtkApplicationClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

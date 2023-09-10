@@ -3,89 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$767 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$767() {}
-    static final FunctionDescriptor g_socket_send$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_input_stream_read_async",
+        constants$761.const$1
     );
-    static final MethodHandle g_socket_send$MH = RuntimeHelper.downcallHandle(
-        "g_socket_send",
-        constants$767.g_socket_send$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_input_stream_read_finish",
+        constants$166.const$0
     );
-    static final FunctionDescriptor g_socket_send_to$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_input_stream_read_all_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_input_stream_read_all_async",
+        constants$761.const$1
     );
-    static final MethodHandle g_socket_send_to$MH = RuntimeHelper.downcallHandle(
-        "g_socket_send_to",
-        constants$767.g_socket_send_to$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_input_stream_read_all_finish",
+        constants$34.const$5
     );
-    static final FunctionDescriptor g_socket_receive_message$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_receive_message$MH = RuntimeHelper.downcallHandle(
-        "g_socket_receive_message",
-        constants$767.g_socket_receive_message$FUNC
-    );
-    static final FunctionDescriptor g_socket_send_message$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_send_message$MH = RuntimeHelper.downcallHandle(
-        "g_socket_send_message",
-        constants$767.g_socket_send_message$FUNC
-    );
-    static final FunctionDescriptor g_socket_receive_messages$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_receive_messages$MH = RuntimeHelper.downcallHandle(
-        "g_socket_receive_messages",
-        constants$767.g_socket_receive_messages$FUNC
-    );
-    static final FunctionDescriptor g_socket_send_messages$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_send_messages$MH = RuntimeHelper.downcallHandle(
-        "g_socket_send_messages",
-        constants$767.g_socket_send_messages$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_input_stream_read_bytes_async$callback.class, "apply", constants$14.const$3);
 }
 
 

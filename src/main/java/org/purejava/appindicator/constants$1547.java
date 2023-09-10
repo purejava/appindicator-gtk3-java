@@ -3,56 +3,55 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1547 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1547() {}
-    static final FunctionDescriptor gtk_color_button_set_use_alpha$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_color_button_set_use_alpha$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_set_use_alpha",
-        constants$1547.gtk_color_button_set_use_alpha$FUNC
-    );
-    static final FunctionDescriptor gtk_color_button_get_use_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_color_button_get_use_alpha$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_get_use_alpha",
-        constants$1547.gtk_color_button_get_use_alpha$FUNC
-    );
-    static final FunctionDescriptor gtk_color_button_set_rgba$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_color_button_set_rgba$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_set_rgba",
-        constants$1547.gtk_color_button_set_rgba$FUNC
-    );
-    static final FunctionDescriptor gtk_color_button_get_rgba$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_color_button_get_rgba$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_get_rgba",
-        constants$1547.gtk_color_button_get_rgba$FUNC
-    );
-    static final FunctionDescriptor gtk_color_chooser_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_color_chooser_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_chooser_get_type",
-        constants$1547.gtk_color_chooser_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_color_chooser_get_rgba$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_color_chooser_get_rgba$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_chooser_get_rgba",
-        constants$1547.gtk_color_chooser_get_rgba$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance")
+    ).withName("_PangoFontFamily");
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("list_faces"),
+        RuntimeHelper.POINTER.withName("get_name"),
+        RuntimeHelper.POINTER.withName("is_monospace"),
+        RuntimeHelper.POINTER.withName("is_variable"),
+        RuntimeHelper.POINTER.withName("get_face"),
+        RuntimeHelper.POINTER.withName("_pango_reserved2")
+    ).withName("_PangoFontFamilyClass");
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_PangoFontFamilyClass.list_faces.class, "apply", constants$14.const$3);
+    static final VarHandle const$3 = constants$1547.const$1.varHandle(MemoryLayout.PathElement.groupElement("list_faces"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_PangoFontFamilyClass.get_name.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$1547.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_name"));
 }
 
 

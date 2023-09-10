@@ -3,54 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$228 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$228() {}
-    static final FunctionDescriptor g_mapped_file_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_hash_table_new_full$value_destroy_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_hash_table_new_full",
+        constants$39.const$1
     );
-    static final MethodHandle g_mapped_file_ref$MH = RuntimeHelper.downcallHandle(
-        "g_mapped_file_ref",
-        constants$228.g_mapped_file_ref$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_hash_table_new_similar",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_mapped_file_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_hash_table_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle g_mapped_file_unref$MH = RuntimeHelper.downcallHandle(
-        "g_mapped_file_unref",
-        constants$228.g_mapped_file_unref$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_hash_table_insert",
+        constants$12.const$2
     );
-    static final FunctionDescriptor g_mapped_file_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mapped_file_free$MH = RuntimeHelper.downcallHandle(
-        "g_mapped_file_free",
-        constants$228.g_mapped_file_free$FUNC
-    );
-    static final FunctionDescriptor g_markup_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_markup_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_markup_error_quark",
-        constants$228.g_markup_error_quark$FUNC
-    );
-    static final FunctionDescriptor g_markup_parse_context_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_markup_parse_context_new$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_new",
-        constants$228.g_markup_parse_context_new$FUNC
-    );
-    static final FunctionDescriptor g_markup_parse_context_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_markup_parse_context_ref$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_ref",
-        constants$228.g_markup_parse_context_ref$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_hash_table_replace",
+        constants$12.const$2
     );
 }
 

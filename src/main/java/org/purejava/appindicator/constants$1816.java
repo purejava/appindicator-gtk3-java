@@ -3,60 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1816 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1816() {}
-    static final FunctionDescriptor gtk_spin_button_set_adjustment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_get_current_timings",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_spin_button_set_adjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_set_adjustment",
-        constants$1816.gtk_spin_button_set_adjustment$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_frame_clock_get_refresh_info",
+        constants$679.const$5
     );
-    static final FunctionDescriptor gtk_spin_button_get_adjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_get_adjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_get_adjustment",
-        constants$1816.gtk_spin_button_get_adjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_set_digits$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_set_digits$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_set_digits",
-        constants$1816.gtk_spin_button_set_digits$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_get_digits$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_get_digits$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_get_digits",
-        constants$1816.gtk_spin_button_get_digits$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_set_increments$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_set_increments$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_set_increments",
-        constants$1816.gtk_spin_button_set_increments$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_get_increments$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_get_increments$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_get_increments",
-        constants$1816.gtk_spin_button_get_increments$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("title"),
+        JAVA_INT.withName("event_mask"),
+        JAVA_INT.withName("x"),
+        JAVA_INT.withName("y"),
+        JAVA_INT.withName("width"),
+        JAVA_INT.withName("height"),
+        JAVA_INT.withName("wclass"),
+        RuntimeHelper.POINTER.withName("visual"),
+        JAVA_INT.withName("window_type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("cursor"),
+        RuntimeHelper.POINTER.withName("wmclass_name"),
+        RuntimeHelper.POINTER.withName("wmclass_class"),
+        JAVA_INT.withName("override_redirect"),
+        JAVA_INT.withName("type_hint")
+    ).withName("_GdkWindowAttr");
+    static final VarHandle const$3 = constants$1816.const$2.varHandle(MemoryLayout.PathElement.groupElement("title"));
+    static final VarHandle const$4 = constants$1816.const$2.varHandle(MemoryLayout.PathElement.groupElement("event_mask"));
+    static final VarHandle const$5 = constants$1816.const$2.varHandle(MemoryLayout.PathElement.groupElement("x"));
 }
 
 

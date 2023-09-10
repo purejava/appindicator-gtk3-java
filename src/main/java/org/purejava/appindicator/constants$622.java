@@ -3,76 +3,45 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$622 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$622() {}
-    static final FunctionDescriptor g_file_replace_readwrite_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_replace_readwrite_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_replace_readwrite_async",
-        constants$622.g_file_replace_readwrite_async$FUNC
-    );
-    static final FunctionDescriptor g_file_replace_readwrite_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_replace_readwrite_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_replace_readwrite_finish",
-        constants$622.g_file_replace_readwrite_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_query_exists$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_exists$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_exists",
-        constants$622.g_file_query_exists$FUNC
-    );
-    static final FunctionDescriptor g_file_query_file_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_file_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_file_type",
-        constants$622.g_file_query_file_type$FUNC
-    );
-    static final FunctionDescriptor g_file_query_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_info$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_info",
-        constants$622.g_file_query_info$FUNC
-    );
-    static final FunctionDescriptor g_file_query_info_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_info_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_info_async",
-        constants$622.g_file_query_info_async$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GObjectFinalizeFunc.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GWeakNotify.class, "apply", constants$13.const$4);
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("g_class")
+        ).withName("g_type_instance"),
+        JAVA_INT.withName("ref_count"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("qdata")
+    ).withName("_GObject");
+    static final VarHandle const$3 = constants$622.const$2.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
+    static final VarHandle const$4 = constants$622.const$2.varHandle(MemoryLayout.PathElement.groupElement("qdata"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type")
+        ).withName("g_type_class"),
+        RuntimeHelper.POINTER.withName("construct_properties"),
+        RuntimeHelper.POINTER.withName("constructor"),
+        RuntimeHelper.POINTER.withName("set_property"),
+        RuntimeHelper.POINTER.withName("get_property"),
+        RuntimeHelper.POINTER.withName("dispose"),
+        RuntimeHelper.POINTER.withName("finalize"),
+        RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+        RuntimeHelper.POINTER.withName("notify"),
+        RuntimeHelper.POINTER.withName("constructed"),
+        JAVA_LONG.withName("flags"),
+        JAVA_LONG.withName("n_construct_properties"),
+        RuntimeHelper.POINTER.withName("pspecs"),
+        JAVA_LONG.withName("n_pspecs"),
+        MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+    ).withName("_GObjectClass");
 }
 
 

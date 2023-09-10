@@ -3,56 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$737 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$737() {}
-    static final FunctionDescriptor g_static_resource_fini$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("startup"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GApplicationClass.activate.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("activate"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GApplicationClass.open.class, "apply", constants$464.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$464.const$4
     );
-    static final MethodHandle g_static_resource_fini$MH = RuntimeHelper.downcallHandle(
-        "g_static_resource_fini",
-        constants$737.g_static_resource_fini$FUNC
-    );
-    static final FunctionDescriptor g_static_resource_get_resource$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_resource_get_resource$MH = RuntimeHelper.downcallHandle(
-        "g_static_resource_get_resource",
-        constants$737.g_static_resource_get_resource$FUNC
-    );
-    static final FunctionDescriptor g_seekable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_seekable_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_seekable_get_type",
-        constants$737.g_seekable_get_type$FUNC
-    );
-    static final FunctionDescriptor g_seekable_tell$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_seekable_tell$MH = RuntimeHelper.downcallHandle(
-        "g_seekable_tell",
-        constants$737.g_seekable_tell$FUNC
-    );
-    static final FunctionDescriptor g_seekable_can_seek$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_seekable_can_seek$MH = RuntimeHelper.downcallHandle(
-        "g_seekable_can_seek",
-        constants$737.g_seekable_can_seek$FUNC
-    );
-    static final FunctionDescriptor g_seekable_seek$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_seekable_seek$MH = RuntimeHelper.downcallHandle(
-        "g_seekable_seek",
-        constants$737.g_seekable_seek$FUNC
-    );
+    static final VarHandle const$5 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("open"));
 }
 
 

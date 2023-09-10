@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$687 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$687() {}
-    static final FunctionDescriptor g_io_extension_ref_class$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_value_get_boolean",
+        constants$10.const$5
     );
-    static final MethodHandle g_io_extension_ref_class$MH = RuntimeHelper.downcallHandle(
-        "g_io_extension_ref_class",
-        constants$687.g_io_extension_ref_class$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_value_set_int",
+        constants$40.const$2
     );
-    static final FunctionDescriptor g_io_module_load$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_value_get_int",
+        constants$10.const$5
     );
-    static final MethodHandle g_io_module_load$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_load",
-        constants$687.g_io_module_load$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_value_set_uint",
+        constants$40.const$2
     );
-    static final FunctionDescriptor g_io_module_unload$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_value_get_uint",
+        constants$10.const$5
     );
-    static final MethodHandle g_io_module_unload$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_unload",
-        constants$687.g_io_module_unload$FUNC
-    );
-    static final FunctionDescriptor g_io_module_query$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_io_module_query$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_query",
-        constants$687.g_io_module_query$FUNC
-    );
-    static final FunctionDescriptor g_io_scheduler_push_job$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_scheduler_push_job$MH = RuntimeHelper.downcallHandle(
-        "g_io_scheduler_push_job",
-        constants$687.g_io_scheduler_push_job$FUNC
-    );
-    static final FunctionDescriptor g_io_scheduler_cancel_all_jobs$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_io_scheduler_cancel_all_jobs$MH = RuntimeHelper.downcallHandle(
-        "g_io_scheduler_cancel_all_jobs",
-        constants$687.g_io_scheduler_cancel_all_jobs$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_value_set_long",
+        constants$25.const$3
     );
 }
 

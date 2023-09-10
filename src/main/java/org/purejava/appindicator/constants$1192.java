@@ -3,61 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1192 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1192() {}
-    static final FunctionDescriptor gtk_accel_groups_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_accel_groups_activate$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_groups_activate",
-        constants$1192.gtk_accel_groups_activate$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_groups_from_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_groups_from_object$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_groups_from_object",
-        constants$1192.gtk_accel_groups_from_object$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_group_find$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_group_find$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_find",
-        constants$1192.gtk_accel_group_find$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_group_from_accel_closure$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_group_from_accel_closure$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_from_accel_closure",
-        constants$1192.gtk_accel_group_from_accel_closure$FUNC
-    );
-    static final FunctionDescriptor gtk_accelerator_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_accelerator_valid$MH = RuntimeHelper.downcallHandle(
-        "gtk_accelerator_valid",
-        constants$1192.gtk_accelerator_valid$FUNC
-    );
-    static final FunctionDescriptor gtk_accelerator_parse$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accelerator_parse$MH = RuntimeHelper.downcallHandle(
-        "gtk_accelerator_parse",
-        constants$1192.gtk_accelerator_parse$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
 }
 
 

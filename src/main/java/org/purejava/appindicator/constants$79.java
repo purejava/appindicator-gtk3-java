@@ -3,61 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$79 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$79() {}
-    static final FunctionDescriptor __libc_current_sigrtmax$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle __libc_current_sigrtmax$MH = RuntimeHelper.downcallHandle(
-        "__libc_current_sigrtmax",
-        constants$79.__libc_current_sigrtmax$FUNC
-    );
-    static final FunctionDescriptor g_on_error_query$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_on_error_query$MH = RuntimeHelper.downcallHandle(
-        "g_on_error_query",
-        constants$79.g_on_error_query$FUNC
-    );
-    static final FunctionDescriptor g_on_error_stack_trace$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_on_error_stack_trace$MH = RuntimeHelper.downcallHandle(
-        "g_on_error_stack_trace",
-        constants$79.g_on_error_stack_trace$FUNC
-    );
-    static final FunctionDescriptor g_base64_encode_step$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_base64_encode_step$MH = RuntimeHelper.downcallHandle(
-        "g_base64_encode_step",
-        constants$79.g_base64_encode_step$FUNC
-    );
-    static final FunctionDescriptor g_base64_encode_close$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_base64_encode_close$MH = RuntimeHelper.downcallHandle(
-        "g_base64_encode_close",
-        constants$79.g_base64_encode_close$FUNC
-    );
-    static final FunctionDescriptor g_base64_encode$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_base64_encode$MH = RuntimeHelper.downcallHandle(
-        "g_base64_encode",
-        constants$79.g_base64_encode$FUNC
-    );
+    static final UnionLayout const$0 = MemoryLayout.unionLayout(
+        MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("__size"),
+        JAVA_LONG.withName("__align")
+    ).withName("pthread_rwlockattr_t");
+    static final VarHandle const$1 = constants$79.const$0.varHandle(MemoryLayout.PathElement.groupElement("__align"));
+    static final UnionLayout const$2 = MemoryLayout.unionLayout(
+        MemoryLayout.sequenceLayout(32, JAVA_BYTE).withName("__size"),
+        JAVA_LONG.withName("__align")
+    ).withName("pthread_barrier_t");
+    static final VarHandle const$3 = constants$79.const$2.varHandle(MemoryLayout.PathElement.groupElement("__align"));
+    static final UnionLayout const$4 = MemoryLayout.unionLayout(
+        MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("__size"),
+        JAVA_INT.withName("__align")
+    ).withName("pthread_barrierattr_t");
+    static final VarHandle const$5 = constants$79.const$4.varHandle(MemoryLayout.PathElement.groupElement("__align"));
 }
 
 

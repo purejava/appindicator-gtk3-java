@@ -3,57 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1792 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1792() {}
-    static final FunctionDescriptor gtk_scale_get_digits$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_get_digits$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_get_digits",
-        constants$1792.gtk_scale_get_digits$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_set_draw_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scale_set_draw_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_set_draw_value",
-        constants$1792.gtk_scale_set_draw_value$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_get_draw_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_get_draw_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_get_draw_value",
-        constants$1792.gtk_scale_get_draw_value$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_set_has_origin$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scale_set_has_origin$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_set_has_origin",
-        constants$1792.gtk_scale_set_has_origin$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_get_has_origin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_get_has_origin$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_get_has_origin",
-        constants$1792.gtk_scale_get_has_origin$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_set_value_pos$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scale_set_value_pos$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_set_value_pos",
-        constants$1792.gtk_scale_set_value_pos$FUNC
-    );
+    static final VarHandle const$0 = constants$1791.const$1.varHandle(MemoryLayout.PathElement.groupElement("new_window_state"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        MemoryLayout.paddingLayout(3),
+        JAVA_INT.withName("keyboard"),
+        JAVA_INT.withName("implicit"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("grab_window")
+    ).withName("_GdkEventGrabBroken");
+    static final VarHandle const$2 = constants$1792.const$1.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$3 = constants$1792.const$1.varHandle(MemoryLayout.PathElement.groupElement("window"));
+    static final VarHandle const$4 = constants$1792.const$1.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
+    static final VarHandle const$5 = constants$1792.const$1.varHandle(MemoryLayout.PathElement.groupElement("keyboard"));
 }
 
 

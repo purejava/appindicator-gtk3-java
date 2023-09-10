@@ -2,87 +2,60 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GStaticRecMutex {
- *     GStaticMutex mutex;
- *     guint depth;
+ *     struct GStaticMutex mutex;
+ *     unsigned int depth;
  *     union  unused;
  * };
  * }
  */
 public class _GStaticRecMutex {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_POINTER$LAYOUT.withName("mutex"),
-            MemoryLayout.unionLayout(
-                MemoryLayout.structLayout(
-                    Constants$root.C_INT$LAYOUT.withName("__lock"),
-                    Constants$root.C_INT$LAYOUT.withName("__count"),
-                    Constants$root.C_INT$LAYOUT.withName("__owner"),
-                    Constants$root.C_INT$LAYOUT.withName("__nusers"),
-                    Constants$root.C_INT$LAYOUT.withName("__kind"),
-                    Constants$root.C_SHORT$LAYOUT.withName("__spins"),
-                    Constants$root.C_SHORT$LAYOUT.withName("__elision"),
-                    MemoryLayout.structLayout(
-                        Constants$root.C_POINTER$LAYOUT.withName("__prev"),
-                        Constants$root.C_POINTER$LAYOUT.withName("__next")
-                    ).withName("__list")
-                ).withName("__data"),
-                MemoryLayout.sequenceLayout(40, Constants$root.C_CHAR$LAYOUT).withName("__size"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("__align")
-            ).withName("unused")
-        ).withName("mutex"),
-        Constants$root.C_INT$LAYOUT.withName("depth"),
-        MemoryLayout.paddingLayout(32),
-        MemoryLayout.unionLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("owner"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("dummy")
-        ).withName("unused")
-    ).withName("_GStaticRecMutex");
     public static MemoryLayout $LAYOUT() {
-        return _GStaticRecMutex.$struct$LAYOUT;
+        return constants$537.const$4;
     }
     public static MemorySegment mutex$slice(MemorySegment seg) {
-        return seg.asSlice(0, 48);
+        return seg.asSlice(0, 56);
     }
-    static final VarHandle depth$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("depth"));
     public static VarHandle depth$VH() {
-        return _GStaticRecMutex.depth$VH;
+        return constants$537.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint depth;
+     * unsigned int depth;
      * }
      */
     public static int depth$get(MemorySegment seg) {
-        return (int)_GStaticRecMutex.depth$VH.get(seg);
+        return (int)constants$537.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint depth;
+     * unsigned int depth;
      * }
      */
     public static void depth$set(MemorySegment seg, int x) {
-        _GStaticRecMutex.depth$VH.set(seg, x);
+        constants$537.const$5.set(seg, x);
     }
     public static int depth$get(MemorySegment seg, long index) {
-        return (int)_GStaticRecMutex.depth$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$537.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void depth$set(MemorySegment seg, long index, int x) {
-        _GStaticRecMutex.depth$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$537.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
      * union {
-     *     pthread_t owner;
-     *     gdouble dummy;
+     *     unsigned long owner;
+     *     double dummy;
      * };
      * }
      */
@@ -90,86 +63,80 @@ public class _GStaticRecMutex {
 
         // Suppresses default constructor, ensuring non-instantiability.
         private unused() {}
-        static final UnionLayout unused$union$LAYOUT = MemoryLayout.unionLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("owner"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("dummy")
-        );
         public static MemoryLayout $LAYOUT() {
-            return unused.unused$union$LAYOUT;
+            return constants$538.const$0;
         }
-        static final VarHandle owner$VH = unused$union$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("owner"));
         public static VarHandle owner$VH() {
-            return unused.owner$VH;
+            return constants$538.const$1;
         }
         /**
          * Getter for field:
          * {@snippet :
-         * pthread_t owner;
+         * unsigned long owner;
          * }
          */
         public static long owner$get(MemorySegment seg) {
-            return (long)unused.owner$VH.get(seg);
+            return (long)constants$538.const$1.get(seg);
         }
         /**
          * Setter for field:
          * {@snippet :
-         * pthread_t owner;
+         * unsigned long owner;
          * }
          */
         public static void owner$set(MemorySegment seg, long x) {
-            unused.owner$VH.set(seg, x);
+            constants$538.const$1.set(seg, x);
         }
         public static long owner$get(MemorySegment seg, long index) {
-            return (long)unused.owner$VH.get(seg.asSlice(index*sizeof()));
+            return (long)constants$538.const$1.get(seg.asSlice(index*sizeof()));
         }
         public static void owner$set(MemorySegment seg, long index, long x) {
-            unused.owner$VH.set(seg.asSlice(index*sizeof()), x);
+            constants$538.const$1.set(seg.asSlice(index*sizeof()), x);
         }
-        static final VarHandle dummy$VH = unused$union$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("dummy"));
         public static VarHandle dummy$VH() {
-            return unused.dummy$VH;
+            return constants$538.const$2;
         }
         /**
          * Getter for field:
          * {@snippet :
-         * gdouble dummy;
+         * double dummy;
          * }
          */
         public static double dummy$get(MemorySegment seg) {
-            return (double)unused.dummy$VH.get(seg);
+            return (double)constants$538.const$2.get(seg);
         }
         /**
          * Setter for field:
          * {@snippet :
-         * gdouble dummy;
+         * double dummy;
          * }
          */
         public static void dummy$set(MemorySegment seg, double x) {
-            unused.dummy$VH.set(seg, x);
+            constants$538.const$2.set(seg, x);
         }
         public static double dummy$get(MemorySegment seg, long index) {
-            return (double)unused.dummy$VH.get(seg.asSlice(index*sizeof()));
+            return (double)constants$538.const$2.get(seg.asSlice(index*sizeof()));
         }
         public static void dummy$set(MemorySegment seg, long index, double x) {
-            unused.dummy$VH.set(seg.asSlice(index*sizeof()), x);
+            constants$538.const$2.set(seg.asSlice(index*sizeof()), x);
         }
         public static long sizeof() { return $LAYOUT().byteSize(); }
         public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
         public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
             return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
         }
-        public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+        public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
     }
 
     public static MemorySegment unused$slice(MemorySegment seg) {
-        return seg.asSlice(56, 8);
+        return seg.asSlice(64, 8);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

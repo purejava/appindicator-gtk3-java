@@ -3,60 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$755 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$755() {}
-    static final FunctionDescriptor g_simple_async_result_new_take_error$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_async_initable_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_simple_async_result_new_take_error$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_new_take_error",
-        constants$755.g_simple_async_result_new_take_error$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_async_initable_init_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_async_initable_init_async",
+        constants$281.const$5
     );
-    static final FunctionDescriptor g_simple_async_result_set_op_res_gpointer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_async_initable_init_finish",
+        constants$12.const$2
     );
-    static final MethodHandle g_simple_async_result_set_op_res_gpointer$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_set_op_res_gpointer",
-        constants$755.g_simple_async_result_set_op_res_gpointer$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_async_initable_new_async$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_simple_async_result_get_op_res_gpointer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_get_op_res_gpointer$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_get_op_res_gpointer",
-        constants$755.g_simple_async_result_get_op_res_gpointer$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_set_op_res_gssize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_set_op_res_gssize$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_set_op_res_gssize",
-        constants$755.g_simple_async_result_set_op_res_gssize$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_get_op_res_gssize$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_get_op_res_gssize$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_get_op_res_gssize",
-        constants$755.g_simple_async_result_get_op_res_gssize$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_set_op_res_gboolean$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_set_op_res_gboolean$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_set_op_res_gboolean",
-        constants$755.g_simple_async_result_set_op_res_gboolean$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandleVariadic(
+        "g_async_initable_new_async",
+        constants$755.const$5
     );
 }
 

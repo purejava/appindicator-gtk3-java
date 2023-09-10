@@ -3,41 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1894 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1894() {}
-    static final FunctionDescriptor gtk_policy_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_policy_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_policy_type_get_type",
-        constants$1894.gtk_policy_type_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_new_from_stream_finish",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_target_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_target_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_flags_get_type",
-        constants$1894.gtk_target_flags_get_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_new_from_resource",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_shortcut_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_shortcut_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_shortcut_type_get_type",
-        constants$1894.gtk_shortcut_type_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_ref",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_spin_button_update_policy_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_spin_button_update_policy_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_update_policy_get_type",
-        constants$1894.gtk_spin_button_update_policy_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_unref",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_spin_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_spin_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_type_get_type",
-        constants$1894.gtk_spin_type_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_get_width",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_stack_transition_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_stack_transition_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_transition_type_get_type",
-        constants$1894.gtk_stack_transition_type_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_get_height",
+        constants$10.const$5
     );
 }
 

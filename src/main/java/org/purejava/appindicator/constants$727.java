@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$727 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$727() {}
-    static final FunctionDescriptor g_proxy_address_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_app_info_set_as_default_for_type",
+        constants$12.const$2
     );
-    static final MethodHandle g_proxy_address_new$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_address_new",
-        constants$727.g_proxy_address_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_app_info_set_as_default_for_extension",
+        constants$12.const$2
     );
-    static final FunctionDescriptor g_proxy_address_get_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_app_info_add_supports_type",
+        constants$12.const$2
     );
-    static final MethodHandle g_proxy_address_get_protocol$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_address_get_protocol",
-        constants$727.g_proxy_address_get_protocol$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_app_info_can_remove_supports_type",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_proxy_address_get_destination_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_app_info_remove_supports_type",
+        constants$12.const$2
     );
-    static final MethodHandle g_proxy_address_get_destination_protocol$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_address_get_destination_protocol",
-        constants$727.g_proxy_address_get_destination_protocol$FUNC
-    );
-    static final FunctionDescriptor g_proxy_address_get_destination_hostname$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_proxy_address_get_destination_hostname$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_address_get_destination_hostname",
-        constants$727.g_proxy_address_get_destination_hostname$FUNC
-    );
-    static final FunctionDescriptor g_proxy_address_get_destination_port$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_proxy_address_get_destination_port$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_address_get_destination_port",
-        constants$727.g_proxy_address_get_destination_port$FUNC
-    );
-    static final FunctionDescriptor g_proxy_address_get_username$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_proxy_address_get_username$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_address_get_username",
-        constants$727.g_proxy_address_get_username$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_app_info_get_supported_types",
+        constants$5.const$2
     );
 }
 

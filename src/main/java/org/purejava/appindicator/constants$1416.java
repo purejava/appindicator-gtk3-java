@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1416 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1416() {}
-    static final FunctionDescriptor gtk_text_iter_order$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_language_matches",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_text_iter_order$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_order",
-        constants$1416.gtk_text_iter_order$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_script_from_iso15924_tag",
+        constants$8.const$4
     );
-    static final FunctionDescriptor gtk_target_list_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_target_list_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_get_type",
-        constants$1416.gtk_target_list_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_script_from_string",
+        constants$11.const$4
     );
-    static final FunctionDescriptor gtk_target_list_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_script_to_iso15924_tag",
+        constants$8.const$4
     );
-    static final MethodHandle gtk_target_list_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_new",
-        constants$1416.gtk_target_list_new$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_script_get_horizontal_direction",
+        constants$8.const$4
     );
-    static final FunctionDescriptor gtk_target_list_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_target_list_ref$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_ref",
-        constants$1416.gtk_target_list_ref$FUNC
-    );
-    static final FunctionDescriptor gtk_target_list_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_target_list_unref$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_unref",
-        constants$1416.gtk_target_list_unref$FUNC
-    );
-    static final FunctionDescriptor gtk_target_list_add$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_target_list_add$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_add",
-        constants$1416.gtk_target_list_add$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_BYTE.withName("unused")
+    ).withName("hb_user_data_key_t");
 }
 
 

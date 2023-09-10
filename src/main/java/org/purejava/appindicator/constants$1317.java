@@ -3,56 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1317 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1317() {}
-    static final FunctionDescriptor gtk_window_get_has_resize_grip$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_has_resize_grip$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_has_resize_grip",
-        constants$1317.gtk_window_get_has_resize_grip$FUNC
-    );
-    static final FunctionDescriptor gtk_window_resize_grip_is_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_resize_grip_is_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_resize_grip_is_visible",
-        constants$1317.gtk_window_resize_grip_is_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_resize_grip_area$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_resize_grip_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_resize_grip_area",
-        constants$1317.gtk_window_get_resize_grip_area$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_titlebar$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_titlebar$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_titlebar",
-        constants$1317.gtk_window_set_titlebar$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_titlebar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_titlebar$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_titlebar",
-        constants$1317.gtk_window_get_titlebar$FUNC
-    );
-    static final FunctionDescriptor gtk_window_is_maximized$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_is_maximized$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_is_maximized",
-        constants$1317.gtk_window_is_maximized$FUNC
-    );
+    static final VarHandle const$0 = constants$1316.const$4.varHandle(MemoryLayout.PathElement.groupElement("incoming"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSocketServiceClass._g_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1316.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GSocketServiceClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1316.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GSocketServiceClass._g_reserved3.class, "apply", constants$7.const$5);
 }
 
 

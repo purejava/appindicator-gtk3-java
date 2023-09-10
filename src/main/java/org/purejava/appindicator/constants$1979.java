@@ -3,47 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1979 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1979() {}
-    static final FunctionDescriptor gtk_vscrollbar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_vscrollbar_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_vscrollbar_get_type",
-        constants$1979.gtk_vscrollbar_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_object_set_name",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_vscrollbar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_object_set_description",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_vscrollbar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_vscrollbar_new",
-        constants$1979.gtk_vscrollbar_new$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_object_set_parent",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_vseparator_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_vseparator_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_vseparator_get_type",
-        constants$1979.gtk_vseparator_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_object_set_role",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_vseparator_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_vseparator_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_vseparator_new",
-        constants$1979.gtk_vseparator_new$FUNC
-    );
-    static final FunctionDescriptor app_indicator_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle app_indicator_get_type$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_type",
-        constants$1979.app_indicator_get_type$FUNC
-    );
-    static final FunctionDescriptor app_indicator_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle app_indicator_new$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_new",
-        constants$1979.app_indicator_new$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(atk_object_connect_property_change_handler$handler.class, "apply", constants$13.const$4);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_object_connect_property_change_handler",
+        constants$9.const$0
     );
 }
 

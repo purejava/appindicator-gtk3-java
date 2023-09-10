@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$304 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$304() {}
-    static final FunctionDescriptor g_sequence_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_stpcpy",
+        constants$5.const$5
     );
-    static final MethodHandle g_sequence_get$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_get",
-        constants$304.g_sequence_get$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_str_to_ascii",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_sequence_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_str_tokenize_and_fold",
+        constants$23.const$0
     );
-    static final MethodHandle g_sequence_set$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_set",
-        constants$304.g_sequence_set$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_str_match_string",
+        constants$62.const$0
     );
-    static final FunctionDescriptor g_sequence_iter_is_begin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_strv_contains",
+        constants$9.const$0
     );
-    static final MethodHandle g_sequence_iter_is_begin$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_is_begin",
-        constants$304.g_sequence_iter_is_begin$FUNC
-    );
-    static final FunctionDescriptor g_sequence_iter_is_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_iter_is_end$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_is_end",
-        constants$304.g_sequence_iter_is_end$FUNC
-    );
-    static final FunctionDescriptor g_sequence_iter_next$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_iter_next$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_next",
-        constants$304.g_sequence_iter_next$FUNC
-    );
-    static final FunctionDescriptor g_sequence_iter_prev$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_iter_prev$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_iter_prev",
-        constants$304.g_sequence_iter_prev$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_strv_equal",
+        constants$9.const$0
     );
 }
 

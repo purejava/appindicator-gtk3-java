@@ -3,59 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1648 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1648() {}
-    static final FunctionDescriptor gtk_icon_info_load_symbolic_for_style$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_PangoRendererClass._pango_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("_pango_reserved4"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_renderer_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_icon_info_load_symbolic_for_style$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_load_symbolic_for_style",
-        constants$1648.gtk_icon_info_load_symbolic_for_style$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_renderer_draw_layout",
+        constants$1043.const$2
     );
-    static final FunctionDescriptor gtk_icon_info_set_raw_coordinates$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_renderer_draw_layout_line",
+        constants$1043.const$2
     );
-    static final MethodHandle gtk_icon_info_set_raw_coordinates$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_set_raw_coordinates",
-        constants$1648.gtk_icon_info_set_raw_coordinates$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_get_embedded_rect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_get_embedded_rect$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_get_embedded_rect",
-        constants$1648.gtk_icon_info_get_embedded_rect$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_get_attach_points$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_get_attach_points$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_get_attach_points",
-        constants$1648.gtk_icon_info_get_attach_points$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_get_display_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_get_display_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_get_display_name",
-        constants$1648.gtk_icon_info_get_display_name$FUNC
-    );
-    static final FunctionDescriptor gtk_tooltip_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tooltip_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_get_type",
-        constants$1648.gtk_tooltip_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_renderer_draw_glyphs",
+        constants$1641.const$5
     );
 }
 

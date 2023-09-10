@@ -3,53 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1560 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1560() {}
-    static final FunctionDescriptor gtk_event_box_get_above_child$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1559.const$3.varHandle(MemoryLayout.PathElement.groupElement("blue"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_color_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_event_box_get_above_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_box_get_above_child",
-        constants$1560.gtk_event_box_get_above_child$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_color_copy",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_event_box_set_above_child$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_color_free",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_event_box_set_above_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_box_set_above_child",
-        constants$1560.gtk_event_box_set_above_child$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_color_parse",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gtk_event_controller_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_event_controller_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_get_type",
-        constants$1560.gtk_event_controller_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_get_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_get_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_get_widget",
-        constants$1560.gtk_event_controller_get_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_handle_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_handle_event$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_handle_event",
-        constants$1560.gtk_event_controller_handle_event$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_reset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_reset$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_reset",
-        constants$1560.gtk_event_controller_reset$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_color_parse_with_alpha",
+        constants$12.const$2
     );
 }
 

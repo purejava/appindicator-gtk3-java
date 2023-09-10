@@ -4,60 +4,41 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _AtkHyperlinkImplIface {
- *     GTypeInterface parent;
- *     AtkHyperlink* (*get_hyperlink)(AtkHyperlinkImpl*);
+ *     struct _GTypeInterface parent;
+ *     struct _AtkHyperlink* (*get_hyperlink)(struct _AtkHyperlinkImpl*);
  * };
  * }
  */
 public class _AtkHyperlinkImplIface {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
-        ).withName("parent"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_hyperlink")
-    ).withName("_AtkHyperlinkImplIface");
     public static MemoryLayout $LAYOUT() {
-        return _AtkHyperlinkImplIface.$struct$LAYOUT;
+        return constants$2035.const$1;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
-    static final FunctionDescriptor get_hyperlink$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_hyperlink_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_hyperlink_UP$MH = RuntimeHelper.upcallHandle(get_hyperlink.class, "apply", _AtkHyperlinkImplIface.get_hyperlink_UP$FUNC);
-    static final FunctionDescriptor get_hyperlink_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_hyperlink_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkHyperlinkImplIface.get_hyperlink_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * AtkHyperlink* (*get_hyperlink)(AtkHyperlinkImpl*);
+ * struct _AtkHyperlink* (*get_hyperlink)(struct _AtkHyperlinkImpl*);
      * }
      */
     public interface get_hyperlink {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_hyperlink fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkHyperlinkImplIface.get_hyperlink_UP$MH, fi, _AtkHyperlinkImplIface.get_hyperlink$FUNC, scope);
+        static MemorySegment allocate(get_hyperlink fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2035.const$2, fi, constants$5.const$2, scope);
         }
-        static get_hyperlink ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_hyperlink ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_AtkHyperlinkImplIface.get_hyperlink_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -65,35 +46,34 @@ public class _AtkHyperlinkImplIface {
         }
     }
 
-    static final VarHandle get_hyperlink$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_hyperlink"));
     public static VarHandle get_hyperlink$VH() {
-        return _AtkHyperlinkImplIface.get_hyperlink$VH;
+        return constants$2035.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * AtkHyperlink* (*get_hyperlink)(AtkHyperlinkImpl*);
+     * struct _AtkHyperlink* (*get_hyperlink)(struct _AtkHyperlinkImpl*);
      * }
      */
     public static MemorySegment get_hyperlink$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkHyperlinkImplIface.get_hyperlink$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2035.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * AtkHyperlink* (*get_hyperlink)(AtkHyperlinkImpl*);
+     * struct _AtkHyperlink* (*get_hyperlink)(struct _AtkHyperlinkImpl*);
      * }
      */
     public static void get_hyperlink$set(MemorySegment seg, MemorySegment x) {
-        _AtkHyperlinkImplIface.get_hyperlink$VH.set(seg, x);
+        constants$2035.const$3.set(seg, x);
     }
     public static MemorySegment get_hyperlink$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkHyperlinkImplIface.get_hyperlink$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2035.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_hyperlink$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkHyperlinkImplIface.get_hyperlink$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2035.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_hyperlink get_hyperlink(MemorySegment segment, SegmentScope scope) {
+    public static get_hyperlink get_hyperlink(MemorySegment segment, Arena scope) {
         return get_hyperlink.ofAddress(get_hyperlink$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -101,7 +81,7 @@ public class _AtkHyperlinkImplIface {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

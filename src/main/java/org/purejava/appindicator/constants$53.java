@@ -3,48 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$53 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$53() {}
-    static final FunctionDescriptor valloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_intern_static_string",
+        constants$5.const$2
     );
-    static final MethodHandle valloc$MH = RuntimeHelper.downcallHandle(
-        "valloc",
-        constants$53.valloc$FUNC
-    );
-    static final FunctionDescriptor posix_memalign$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle posix_memalign$MH = RuntimeHelper.downcallHandle(
-        "posix_memalign",
-        constants$53.posix_memalign$FUNC
-    );
-    static final FunctionDescriptor aligned_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle aligned_alloc$MH = RuntimeHelper.downcallHandle(
-        "aligned_alloc",
-        constants$53.aligned_alloc$FUNC
-    );
-    static final FunctionDescriptor abort$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle abort$MH = RuntimeHelper.downcallHandle(
-        "abort",
-        constants$53.abort$FUNC
-    );
-    static final FunctionDescriptor atexit$__func$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor atexit$__func_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle atexit$__func_UP$MH = RuntimeHelper.upcallHandle(atexit$__func.class, "apply", constants$53.atexit$__func_UP$FUNC);
-    static final FunctionDescriptor atexit$__func_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle atexit$__func_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$53.atexit$__func_DOWN$FUNC
-    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_INT.withName("domain"),
+        JAVA_INT.withName("code"),
+        RuntimeHelper.POINTER.withName("message")
+    ).withName("_GError");
+    static final VarHandle const$2 = constants$53.const$1.varHandle(MemoryLayout.PathElement.groupElement("domain"));
+    static final VarHandle const$3 = constants$53.const$1.varHandle(MemoryLayout.PathElement.groupElement("code"));
+    static final VarHandle const$4 = constants$53.const$1.varHandle(MemoryLayout.PathElement.groupElement("message"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GErrorInitFunc.class, "apply", constants$13.const$1);
 }
 
 

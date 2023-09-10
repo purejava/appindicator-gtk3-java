@@ -3,49 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$84 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$84() {}
-    static final FunctionDescriptor g_date_time_new_now$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "erand48",
+        constants$67.const$0
     );
-    static final MethodHandle g_date_time_new_now$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_new_now",
-        constants$84.g_date_time_new_now$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "lrand48",
+        constants$3.const$5
     );
-    static final FunctionDescriptor g_date_time_new_now_local$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_date_time_new_now_local$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_new_now_local",
-        constants$84.g_date_time_new_now_local$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "nrand48",
+        constants$4.const$0
     );
-    static final FunctionDescriptor g_date_time_new_now_utc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_date_time_new_now_utc$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_new_now_utc",
-        constants$84.g_date_time_new_now_utc$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "mrand48",
+        constants$3.const$5
     );
-    static final FunctionDescriptor g_date_time_new_from_unix_local$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "jrand48",
+        constants$4.const$0
     );
-    static final MethodHandle g_date_time_new_from_unix_local$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_new_from_unix_local",
-        constants$84.g_date_time_new_from_unix_local$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        JAVA_LONG
     );
-    static final FunctionDescriptor g_date_time_new_from_unix_utc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_date_time_new_from_unix_utc$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_new_from_unix_utc",
-        constants$84.g_date_time_new_from_unix_utc$FUNC
-    );
-    static final FunctionDescriptor g_date_time_new_from_timeval_local$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_new_from_timeval_local$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_new_from_timeval_local",
-        constants$84.g_date_time_new_from_timeval_local$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "srand48",
+        constants$84.const$5
     );
 }
 

@@ -3,53 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$250 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$250() {}
-    static final FunctionDescriptor g_variant_iter_n_children$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_slist_insert",
+        constants$32.const$3
     );
-    static final MethodHandle g_variant_iter_n_children$MH = RuntimeHelper.downcallHandle(
-        "g_variant_iter_n_children",
-        constants$250.g_variant_iter_n_children$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_slist_insert_sorted$func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_slist_insert_sorted",
+        constants$23.const$0
     );
-    static final FunctionDescriptor g_variant_iter_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_slist_insert_sorted_with_data$func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_slist_insert_sorted_with_data",
+        constants$39.const$1
     );
-    static final MethodHandle g_variant_iter_free$MH = RuntimeHelper.downcallHandle(
-        "g_variant_iter_free",
-        constants$250.g_variant_iter_free$FUNC
-    );
-    static final FunctionDescriptor g_variant_iter_next_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_iter_next_value$MH = RuntimeHelper.downcallHandle(
-        "g_variant_iter_next_value",
-        constants$250.g_variant_iter_next_value$FUNC
-    );
-    static final FunctionDescriptor g_variant_iter_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_iter_next$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_variant_iter_next",
-        constants$250.g_variant_iter_next$FUNC
-    );
-    static final FunctionDescriptor g_variant_iter_loop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_iter_loop$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_variant_iter_loop",
-        constants$250.g_variant_iter_loop$FUNC
-    );
-    static final FunctionDescriptor g_variant_parser_get_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_variant_parser_get_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_variant_parser_get_error_quark",
-        constants$250.g_variant_parser_get_error_quark$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_slist_insert_before",
+        constants$23.const$0
     );
 }
 

@@ -3,72 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$732 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$732() {}
-    static final FunctionDescriptor g_resolver_lookup_by_name_with_flags$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$23.const$0
     );
-    static final MethodHandle g_resolver_lookup_by_name_with_flags$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_by_name_with_flags",
-        constants$732.g_resolver_lookup_by_name_with_flags$FUNC
-    );
-    static final FunctionDescriptor g_resolver_free_addresses$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resolver_free_addresses$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_free_addresses",
-        constants$732.g_resolver_free_addresses$FUNC
-    );
-    static final FunctionDescriptor g_resolver_lookup_by_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resolver_lookup_by_address$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_by_address",
-        constants$732.g_resolver_lookup_by_address$FUNC
-    );
-    static final FunctionDescriptor g_resolver_lookup_by_address_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resolver_lookup_by_address_async$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_by_address_async",
-        constants$732.g_resolver_lookup_by_address_async$FUNC
-    );
-    static final FunctionDescriptor g_resolver_lookup_by_address_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resolver_lookup_by_address_finish$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_by_address_finish",
-        constants$732.g_resolver_lookup_by_address_finish$FUNC
-    );
-    static final FunctionDescriptor g_resolver_lookup_service$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resolver_lookup_service$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_service",
-        constants$732.g_resolver_lookup_service$FUNC
-    );
+    static final VarHandle const$1 = constants$731.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_display"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GAppLaunchContextClass.get_startup_notify_id.class, "apply", constants$23.const$0);
+    static final VarHandle const$3 = constants$731.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_startup_notify_id"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GAppLaunchContextClass.launch_failed.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$731.const$4.varHandle(MemoryLayout.PathElement.groupElement("launch_failed"));
 }
 
 

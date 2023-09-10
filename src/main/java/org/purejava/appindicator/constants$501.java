@@ -3,52 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$501 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$501() {}
-    static final FunctionDescriptor g_input_stream_is_closed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_relation_select",
+        constants$32.const$3
     );
-    static final MethodHandle g_input_stream_is_closed$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_is_closed",
-        constants$501.g_input_stream_is_closed$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_relation_count",
+        constants$62.const$0
     );
-    static final FunctionDescriptor g_input_stream_has_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "g_relation_exists",
+        constants$10.const$5
     );
-    static final MethodHandle g_input_stream_has_pending$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_has_pending",
-        constants$501.g_input_stream_has_pending$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_relation_print",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_input_stream_set_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tuples_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle g_input_stream_set_pending$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_set_pending",
-        constants$501.g_input_stream_set_pending$FUNC
-    );
-    static final FunctionDescriptor g_input_stream_clear_pending$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_clear_pending$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_clear_pending",
-        constants$501.g_input_stream_clear_pending$FUNC
-    );
-    static final FunctionDescriptor g_filter_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_filter_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_filter_input_stream_get_type",
-        constants$501.g_filter_input_stream_get_type$FUNC
-    );
-    static final FunctionDescriptor g_filter_input_stream_get_base_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_filter_input_stream_get_base_stream$MH = RuntimeHelper.downcallHandle(
-        "g_filter_input_stream_get_base_stream",
-        constants$501.g_filter_input_stream_get_base_stream$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tuples_index",
+        constants$33.const$5
     );
 }
 

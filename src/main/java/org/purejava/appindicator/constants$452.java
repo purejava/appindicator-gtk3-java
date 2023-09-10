@@ -3,83 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$452 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$452() {}
-    static final FunctionDescriptor g_param_spec_enum$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_test_incomplete",
+        constants$13.const$1
     );
-    static final MethodHandle g_param_spec_enum$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_enum",
-        constants$452.g_param_spec_enum$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_test_incomplete_printf",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_param_spec_flags$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_test_skip",
+        constants$13.const$1
     );
-    static final MethodHandle g_param_spec_flags$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_flags",
-        constants$452.g_param_spec_flags$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_test_skip_printf",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_param_spec_float$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_test_failed",
+        constants$83.const$1
     );
-    static final MethodHandle g_param_spec_float$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_float",
-        constants$452.g_param_spec_float$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_double$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_spec_double$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_double",
-        constants$452.g_param_spec_double$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_spec_string$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_string",
-        constants$452.g_param_spec_string$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_param$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_spec_param$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_param",
-        constants$452.g_param_spec_param$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_test_set_nonfatal_assertions",
+        constants$7.const$5
     );
 }
 

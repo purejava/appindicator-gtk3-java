@@ -3,63 +3,41 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$199 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$199() {}
-    static final FunctionDescriptor g_ascii_strtod$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_error_from_errno",
+        constants$8.const$4
     );
-    static final MethodHandle g_ascii_strtod$MH = RuntimeHelper.downcallHandle(
-        "g_ascii_strtod",
-        constants$199.g_ascii_strtod$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_test",
+        constants$11.const$4
     );
-    static final FunctionDescriptor g_ascii_strtoull$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_get_contents",
+        constants$34.const$5
     );
-    static final MethodHandle g_ascii_strtoull$MH = RuntimeHelper.downcallHandle(
-        "g_ascii_strtoull",
-        constants$199.g_ascii_strtoull$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_set_contents",
+        constants$27.const$2
     );
-    static final FunctionDescriptor g_ascii_strtoll$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_ascii_strtoll$MH = RuntimeHelper.downcallHandle(
-        "g_ascii_strtoll",
-        constants$199.g_ascii_strtoll$FUNC
-    );
-    static final FunctionDescriptor g_ascii_dtostr$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle g_ascii_dtostr$MH = RuntimeHelper.downcallHandle(
-        "g_ascii_dtostr",
-        constants$199.g_ascii_dtostr$FUNC
-    );
-    static final FunctionDescriptor g_ascii_formatd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle g_ascii_formatd$MH = RuntimeHelper.downcallHandle(
-        "g_ascii_formatd",
-        constants$199.g_ascii_formatd$FUNC
-    );
-    static final FunctionDescriptor g_strchug$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_strchug$MH = RuntimeHelper.downcallHandle(
-        "g_strchug",
-        constants$199.g_strchug$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_set_contents_full",
+        constants$199.const$4
     );
 }
 

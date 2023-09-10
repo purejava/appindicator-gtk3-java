@@ -3,73 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$733 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$733() {}
-    static final FunctionDescriptor g_resolver_lookup_service_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resolver_lookup_service_async$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_service_async",
-        constants$733.g_resolver_lookup_service_async$FUNC
-    );
-    static final FunctionDescriptor g_resolver_lookup_service_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resolver_lookup_service_finish$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_service_finish",
-        constants$733.g_resolver_lookup_service_finish$FUNC
-    );
-    static final FunctionDescriptor g_resolver_lookup_records$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resolver_lookup_records$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_records",
-        constants$733.g_resolver_lookup_records$FUNC
-    );
-    static final FunctionDescriptor g_resolver_lookup_records_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resolver_lookup_records_async$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_records_async",
-        constants$733.g_resolver_lookup_records_async$FUNC
-    );
-    static final FunctionDescriptor g_resolver_lookup_records_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resolver_lookup_records_finish$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_lookup_records_finish",
-        constants$733.g_resolver_lookup_records_finish$FUNC
-    );
-    static final FunctionDescriptor g_resolver_free_targets$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resolver_free_targets$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_free_targets",
-        constants$733.g_resolver_free_targets$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GAppLaunchContextClass.launched.class, "apply", constants$14.const$3);
+    static final VarHandle const$1 = constants$731.const$4.varHandle(MemoryLayout.PathElement.groupElement("launched"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GAppLaunchContextClass.launch_started.class, "apply", constants$14.const$3);
+    static final VarHandle const$3 = constants$731.const$4.varHandle(MemoryLayout.PathElement.groupElement("launch_started"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GAppLaunchContextClass._g_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$731.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
 }
 
 

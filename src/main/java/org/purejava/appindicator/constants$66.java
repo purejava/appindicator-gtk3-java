@@ -3,54 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$66 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$66() {}
-    static final FunctionDescriptor g_rec_mutex_unlock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_rec_mutex_unlock$MH = RuntimeHelper.downcallHandle(
-        "g_rec_mutex_unlock",
-        constants$66.g_rec_mutex_unlock$FUNC
-    );
-    static final FunctionDescriptor g_cond_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cond_init$MH = RuntimeHelper.downcallHandle(
-        "g_cond_init",
-        constants$66.g_cond_init$FUNC
-    );
-    static final FunctionDescriptor g_cond_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cond_clear$MH = RuntimeHelper.downcallHandle(
-        "g_cond_clear",
-        constants$66.g_cond_clear$FUNC
-    );
-    static final FunctionDescriptor g_cond_wait$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cond_wait$MH = RuntimeHelper.downcallHandle(
-        "g_cond_wait",
-        constants$66.g_cond_wait$FUNC
-    );
-    static final FunctionDescriptor g_cond_signal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cond_signal$MH = RuntimeHelper.downcallHandle(
-        "g_cond_signal",
-        constants$66.g_cond_signal$FUNC
-    );
-    static final FunctionDescriptor g_cond_broadcast$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cond_broadcast$MH = RuntimeHelper.downcallHandle(
-        "g_cond_broadcast",
-        constants$66.g_cond_broadcast$FUNC
+    static final VarHandle const$0 = constants$65.const$5.varHandle(MemoryLayout.PathElement.groupElement("quot"));
+    static final VarHandle const$1 = constants$65.const$5.varHandle(MemoryLayout.PathElement.groupElement("rem"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("quot"),
+        JAVA_LONG.withName("rem")
+    ).withName("lldiv_t");
+    static final VarHandle const$3 = constants$66.const$2.varHandle(MemoryLayout.PathElement.groupElement("quot"));
+    static final VarHandle const$4 = constants$66.const$2.varHandle(MemoryLayout.PathElement.groupElement("rem"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "__ctype_get_mb_cur_max",
+        constants$3.const$5
     );
 }
 

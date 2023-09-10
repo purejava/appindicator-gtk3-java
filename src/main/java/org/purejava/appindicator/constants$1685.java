@@ -3,45 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1685 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1685() {}
-    static final FunctionDescriptor gtk_main_iteration$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_main_iteration$MH = RuntimeHelper.downcallHandle(
-        "gtk_main_iteration",
-        constants$1685.gtk_main_iteration$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_translate",
+        constants$1531.const$0
     );
-    static final FunctionDescriptor gtk_main_iteration_do$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_scale",
+        constants$1531.const$0
     );
-    static final MethodHandle gtk_main_iteration_do$MH = RuntimeHelper.downcallHandle(
-        "gtk_main_iteration_do",
-        constants$1685.gtk_main_iteration_do$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_rotate",
+        constants$689.const$5
     );
-    static final FunctionDescriptor gtk_true$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_true$MH = RuntimeHelper.downcallHandle(
-        "gtk_true",
-        constants$1685.gtk_true$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_transform",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_false$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_false$MH = RuntimeHelper.downcallHandle(
-        "gtk_false",
-        constants$1685.gtk_false$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_set_matrix",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_grab_add$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_grab_add$MH = RuntimeHelper.downcallHandle(
-        "gtk_grab_add",
-        constants$1685.gtk_grab_add$FUNC
-    );
-    static final FunctionDescriptor gtk_grab_get_current$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_grab_get_current$MH = RuntimeHelper.downcallHandle(
-        "gtk_grab_get_current",
-        constants$1685.gtk_grab_get_current$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_identity_matrix",
+        constants$13.const$1
     );
 }
 

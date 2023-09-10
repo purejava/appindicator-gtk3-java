@@ -3,44 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1179 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1179() {}
-    static final FunctionDescriptor gdk_screen_width_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_screen_width_mm$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_width_mm",
-        constants$1179.gdk_screen_width_mm$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_height_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_screen_height_mm$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_height_mm",
-        constants$1179.gdk_screen_height_mm$FUNC
-    );
-    static final FunctionDescriptor gdk_set_double_click_time$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_set_double_click_time$MH = RuntimeHelper.downcallHandle(
-        "gdk_set_double_click_time",
-        constants$1179.gdk_set_double_click_time$FUNC
-    );
-    static final FunctionDescriptor gdk_beep$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_beep$MH = RuntimeHelper.downcallHandle(
-        "gdk_beep",
-        constants$1179.gdk_beep$FUNC
-    );
-    static final FunctionDescriptor gdk_flush$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_flush$MH = RuntimeHelper.downcallHandle(
-        "gdk_flush",
-        constants$1179.gdk_flush$FUNC
-    );
-    static final FunctionDescriptor gdk_disable_multidevice$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_disable_multidevice$MH = RuntimeHelper.downcallHandle(
-        "gdk_disable_multidevice",
-        constants$1179.gdk_disable_multidevice$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GMountOperationClass._g_reserved7.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1174.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved7"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GMountOperationClass._g_reserved8.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1174.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved8"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GMountOperationClass._g_reserved9.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1174.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved9"));
 }
 
 

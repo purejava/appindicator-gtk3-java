@@ -2,14 +2,16 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _PangoGlyphString {
  *     int num_glyphs;
- *     PangoGlyphInfo* glyphs;
+ *     struct _PangoGlyphInfo* glyphs;
  *     int* log_clusters;
  *     int space;
  * };
@@ -17,20 +19,11 @@ import java.lang.foreign.*;
  */
 public class _PangoGlyphString {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("num_glyphs"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("glyphs"),
-        Constants$root.C_POINTER$LAYOUT.withName("log_clusters"),
-        Constants$root.C_INT$LAYOUT.withName("space"),
-        MemoryLayout.paddingLayout(32)
-    ).withName("_PangoGlyphString");
     public static MemoryLayout $LAYOUT() {
-        return _PangoGlyphString.$struct$LAYOUT;
+        return constants$1599.const$2;
     }
-    static final VarHandle num_glyphs$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("num_glyphs"));
     public static VarHandle num_glyphs$VH() {
-        return _PangoGlyphString.num_glyphs$VH;
+        return constants$1599.const$3;
     }
     /**
      * Getter for field:
@@ -39,7 +32,7 @@ public class _PangoGlyphString {
      * }
      */
     public static int num_glyphs$get(MemorySegment seg) {
-        return (int)_PangoGlyphString.num_glyphs$VH.get(seg);
+        return (int)constants$1599.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -48,45 +41,43 @@ public class _PangoGlyphString {
      * }
      */
     public static void num_glyphs$set(MemorySegment seg, int x) {
-        _PangoGlyphString.num_glyphs$VH.set(seg, x);
+        constants$1599.const$3.set(seg, x);
     }
     public static int num_glyphs$get(MemorySegment seg, long index) {
-        return (int)_PangoGlyphString.num_glyphs$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1599.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void num_glyphs$set(MemorySegment seg, long index, int x) {
-        _PangoGlyphString.num_glyphs$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1599.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle glyphs$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("glyphs"));
     public static VarHandle glyphs$VH() {
-        return _PangoGlyphString.glyphs$VH;
+        return constants$1599.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * PangoGlyphInfo* glyphs;
+     * struct _PangoGlyphInfo* glyphs;
      * }
      */
     public static MemorySegment glyphs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_PangoGlyphString.glyphs$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1599.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * PangoGlyphInfo* glyphs;
+     * struct _PangoGlyphInfo* glyphs;
      * }
      */
     public static void glyphs$set(MemorySegment seg, MemorySegment x) {
-        _PangoGlyphString.glyphs$VH.set(seg, x);
+        constants$1599.const$4.set(seg, x);
     }
     public static MemorySegment glyphs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_PangoGlyphString.glyphs$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1599.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void glyphs$set(MemorySegment seg, long index, MemorySegment x) {
-        _PangoGlyphString.glyphs$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1599.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle log_clusters$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("log_clusters"));
     public static VarHandle log_clusters$VH() {
-        return _PangoGlyphString.log_clusters$VH;
+        return constants$1599.const$5;
     }
     /**
      * Getter for field:
@@ -95,7 +86,7 @@ public class _PangoGlyphString {
      * }
      */
     public static MemorySegment log_clusters$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_PangoGlyphString.log_clusters$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1599.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -104,17 +95,16 @@ public class _PangoGlyphString {
      * }
      */
     public static void log_clusters$set(MemorySegment seg, MemorySegment x) {
-        _PangoGlyphString.log_clusters$VH.set(seg, x);
+        constants$1599.const$5.set(seg, x);
     }
     public static MemorySegment log_clusters$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_PangoGlyphString.log_clusters$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1599.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void log_clusters$set(MemorySegment seg, long index, MemorySegment x) {
-        _PangoGlyphString.log_clusters$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1599.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle space$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("space"));
     public static VarHandle space$VH() {
-        return _PangoGlyphString.space$VH;
+        return constants$1600.const$0;
     }
     /**
      * Getter for field:
@@ -123,7 +113,7 @@ public class _PangoGlyphString {
      * }
      */
     public static int space$get(MemorySegment seg) {
-        return (int)_PangoGlyphString.space$VH.get(seg);
+        return (int)constants$1600.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -132,20 +122,20 @@ public class _PangoGlyphString {
      * }
      */
     public static void space$set(MemorySegment seg, int x) {
-        _PangoGlyphString.space$VH.set(seg, x);
+        constants$1600.const$0.set(seg, x);
     }
     public static int space$get(MemorySegment seg, long index) {
-        return (int)_PangoGlyphString.space$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1600.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void space$set(MemorySegment seg, long index, int x) {
-        _PangoGlyphString.space$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1600.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

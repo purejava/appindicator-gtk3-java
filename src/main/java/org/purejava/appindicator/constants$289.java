@@ -3,53 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$289 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$289() {}
-    static final FunctionDescriptor g_regex_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_unicode_canonical_ordering",
+        constants$25.const$3
     );
-    static final MethodHandle g_regex_unref$MH = RuntimeHelper.downcallHandle(
-        "g_regex_unref",
-        constants$289.g_regex_unref$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_unicode_canonical_decomposition",
+        constants$24.const$4
     );
-    static final FunctionDescriptor g_regex_get_pattern$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MemorySegment const$2 = RuntimeHelper.lookupGlobalVariable("g_utf8_skip", RuntimeHelper.POINTER);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_utf8_get_char",
+        constants$10.const$5
     );
-    static final MethodHandle g_regex_get_pattern$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_pattern",
-        constants$289.g_regex_get_pattern$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_utf8_get_char_validated",
+        constants$97.const$1
     );
-    static final FunctionDescriptor g_regex_get_max_backref$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_get_max_backref$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_max_backref",
-        constants$289.g_regex_get_max_backref$FUNC
-    );
-    static final FunctionDescriptor g_regex_get_capture_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_get_capture_count$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_capture_count",
-        constants$289.g_regex_get_capture_count$FUNC
-    );
-    static final FunctionDescriptor g_regex_get_has_cr_or_lf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_get_has_cr_or_lf$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_has_cr_or_lf",
-        constants$289.g_regex_get_has_cr_or_lf$FUNC
-    );
-    static final FunctionDescriptor g_regex_get_max_lookbehind$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_get_max_lookbehind$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_max_lookbehind",
-        constants$289.g_regex_get_max_lookbehind$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_utf8_offset_to_pointer",
+        constants$21.const$1
     );
 }
 

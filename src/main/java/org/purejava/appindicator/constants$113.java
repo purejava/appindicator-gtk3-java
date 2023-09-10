@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$113 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$113() {}
-    static final FunctionDescriptor g_date_valid_day$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_async_queue_sort_unlocked",
+        constants$14.const$3
     );
-    static final MethodHandle g_date_valid_day$MH = RuntimeHelper.downcallHandle(
-        "g_date_valid_day",
-        constants$113.g_date_valid_day$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_async_queue_remove",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_date_valid_month$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_async_queue_remove_unlocked",
+        constants$9.const$0
     );
-    static final MethodHandle g_date_valid_month$MH = RuntimeHelper.downcallHandle(
-        "g_date_valid_month",
-        constants$113.g_date_valid_month$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_async_queue_push_front",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_date_valid_year$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_async_queue_push_front_unlocked",
+        constants$13.const$4
     );
-    static final MethodHandle g_date_valid_year$MH = RuntimeHelper.downcallHandle(
-        "g_date_valid_year",
-        constants$113.g_date_valid_year$FUNC
-    );
-    static final FunctionDescriptor g_date_valid_weekday$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_date_valid_weekday$MH = RuntimeHelper.downcallHandle(
-        "g_date_valid_weekday",
-        constants$113.g_date_valid_weekday$FUNC
-    );
-    static final FunctionDescriptor g_date_valid_julian$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_date_valid_julian$MH = RuntimeHelper.downcallHandle(
-        "g_date_valid_julian",
-        constants$113.g_date_valid_julian$FUNC
-    );
-    static final FunctionDescriptor g_date_valid_dmy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle g_date_valid_dmy$MH = RuntimeHelper.downcallHandle(
-        "g_date_valid_dmy",
-        constants$113.g_date_valid_dmy$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_async_queue_timed_pop",
+        constants$5.const$5
     );
 }
 

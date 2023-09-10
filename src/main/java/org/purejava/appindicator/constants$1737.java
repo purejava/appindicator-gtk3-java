@@ -3,61 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1737 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1737() {}
-    static final FunctionDescriptor gtk_print_context_get_pango_fontmap$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(cairo_raster_source_release_func_t.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(cairo_raster_source_snapshot_func_t.class, "apply", constants$9.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(cairo_raster_source_copy_func_t.class, "apply", constants$12.const$2);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(cairo_raster_source_finish_func_t.class, "apply", constants$13.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_pattern_create_raster_source",
+        constants$1723.const$2
     );
-    static final MethodHandle gtk_print_context_get_pango_fontmap$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_pango_fontmap",
-        constants$1737.gtk_print_context_get_pango_fontmap$FUNC
-    );
-    static final FunctionDescriptor gtk_print_context_create_pango_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_context_create_pango_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_create_pango_context",
-        constants$1737.gtk_print_context_create_pango_context$FUNC
-    );
-    static final FunctionDescriptor gtk_print_context_create_pango_layout$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_context_create_pango_layout$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_create_pango_layout",
-        constants$1737.gtk_print_context_create_pango_layout$FUNC
-    );
-    static final FunctionDescriptor gtk_print_context_set_cairo_context$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_print_context_set_cairo_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_set_cairo_context",
-        constants$1737.gtk_print_context_set_cairo_context$FUNC
-    );
-    static final FunctionDescriptor GtkPrintSettingsFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkPrintSettingsFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkPrintSettingsFunc_UP$MH = RuntimeHelper.upcallHandle(GtkPrintSettingsFunc.class, "apply", constants$1737.GtkPrintSettingsFunc_UP$FUNC);
-    static final FunctionDescriptor GtkPrintSettingsFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkPrintSettingsFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1737.GtkPrintSettingsFunc_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_raster_source_pattern_set_callback_data",
+        constants$13.const$4
     );
 }
 

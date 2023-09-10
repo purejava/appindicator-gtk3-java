@@ -4,26 +4,27 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkTextViewClass {
- *     GtkContainerClass parent_class;
- *     void (*populate_popup)(GtkTextView*,GtkWidget*);
- *     void (*move_cursor)(GtkTextView*,GtkMovementStep,gint,gboolean);
- *     void (*set_anchor)(GtkTextView*);
- *     void (*insert_at_cursor)(GtkTextView*,const gchar*);
- *     void (*delete_from_cursor)(GtkTextView*,GtkDeleteType,gint);
- *     void (*backspace)(GtkTextView*);
- *     void (*cut_clipboard)(GtkTextView*);
- *     void (*copy_clipboard)(GtkTextView*);
- *     void (*paste_clipboard)(GtkTextView*);
- *     void (*toggle_overwrite)(GtkTextView*);
- *     GtkTextBuffer* (*create_buffer)(GtkTextView*);
- *     void (*draw_layer)(GtkTextView*,GtkTextViewLayer,cairo_t*);
- *     gboolean (*extend_selection)(GtkTextView*,GtkTextExtendSelection,const GtkTextIter*,GtkTextIter*,GtkTextIter*);
- *     void (*insert_emoji)(GtkTextView*);
+ *     struct _GtkContainerClass parent_class;
+ *     void (*populate_popup)(struct _GtkTextView*,struct _GtkWidget*);
+ *     void (*move_cursor)(struct _GtkTextView*,enum GtkMovementStep,int,int);
+ *     void (*set_anchor)(struct _GtkTextView*);
+ *     void (*insert_at_cursor)(struct _GtkTextView*,char*);
+ *     void (*delete_from_cursor)(struct _GtkTextView*,enum GtkDeleteType,int);
+ *     void (*backspace)(struct _GtkTextView*);
+ *     void (*cut_clipboard)(struct _GtkTextView*);
+ *     void (*copy_clipboard)(struct _GtkTextView*);
+ *     void (*paste_clipboard)(struct _GtkTextView*);
+ *     void (*toggle_overwrite)(struct _GtkTextView*);
+ *     struct _GtkTextBuffer* (*create_buffer)(struct _GtkTextView*);
+ *     void (*draw_layer)(struct _GtkTextView*,enum GtkTextViewLayer,struct _cairo*);
+ *     int (*extend_selection)(struct _GtkTextView*,enum GtkTextExtendSelection,struct _GtkTextIter*,struct _GtkTextIter*,struct _GtkTextIter*);
+ *     void (*insert_emoji)(struct _GtkTextView*);
  *     void (*_gtk_reserved1)();
  *     void (*_gtk_reserved2)();
  *     void (*_gtk_reserved3)();
@@ -33,193 +34,28 @@ import java.lang.foreign.*;
  */
 public class _GtkTextViewClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    MemoryLayout.structLayout(
-                        Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-                    ).withName("g_type_class"),
-                    Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-                    Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-                    Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-                    Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-                    Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-                    Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-                    Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-                    Constants$root.C_POINTER$LAYOUT.withName("notify"),
-                    Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-                    Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-                    MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-                ).withName("parent_class"),
-                Constants$root.C_INT$LAYOUT.withName("activate_signal"),
-                MemoryLayout.paddingLayout(32),
-                Constants$root.C_POINTER$LAYOUT.withName("dispatch_child_properties_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("destroy"),
-                Constants$root.C_POINTER$LAYOUT.withName("show"),
-                Constants$root.C_POINTER$LAYOUT.withName("show_all"),
-                Constants$root.C_POINTER$LAYOUT.withName("hide"),
-                Constants$root.C_POINTER$LAYOUT.withName("map"),
-                Constants$root.C_POINTER$LAYOUT.withName("unmap"),
-                Constants$root.C_POINTER$LAYOUT.withName("realize"),
-                Constants$root.C_POINTER$LAYOUT.withName("unrealize"),
-                Constants$root.C_POINTER$LAYOUT.withName("size_allocate"),
-                Constants$root.C_POINTER$LAYOUT.withName("state_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("state_flags_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("parent_set"),
-                Constants$root.C_POINTER$LAYOUT.withName("hierarchy_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("style_set"),
-                Constants$root.C_POINTER$LAYOUT.withName("direction_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("grab_notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("child_notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("draw"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_request_mode"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_width_for_height"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_width"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height_for_width"),
-                Constants$root.C_POINTER$LAYOUT.withName("mnemonic_activate"),
-                Constants$root.C_POINTER$LAYOUT.withName("grab_focus"),
-                Constants$root.C_POINTER$LAYOUT.withName("focus"),
-                Constants$root.C_POINTER$LAYOUT.withName("move_focus"),
-                Constants$root.C_POINTER$LAYOUT.withName("keynav_failed"),
-                Constants$root.C_POINTER$LAYOUT.withName("event"),
-                Constants$root.C_POINTER$LAYOUT.withName("button_press_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("button_release_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("scroll_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("motion_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("delete_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("destroy_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("key_press_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("key_release_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("enter_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("leave_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("configure_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("focus_in_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("focus_out_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("map_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("unmap_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("property_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_clear_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_request_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("proximity_in_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("proximity_out_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("visibility_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("window_state_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("damage_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("grab_broken_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_get"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_received"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_begin"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_end"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_data_get"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_data_delete"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_leave"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_motion"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_drop"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_data_received"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_failed"),
-                Constants$root.C_POINTER$LAYOUT.withName("popup_menu"),
-                Constants$root.C_POINTER$LAYOUT.withName("show_help"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_accessible"),
-                Constants$root.C_POINTER$LAYOUT.withName("screen_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("can_activate_accel"),
-                Constants$root.C_POINTER$LAYOUT.withName("composited_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("query_tooltip"),
-                Constants$root.C_POINTER$LAYOUT.withName("compute_expand"),
-                Constants$root.C_POINTER$LAYOUT.withName("adjust_size_request"),
-                Constants$root.C_POINTER$LAYOUT.withName("adjust_size_allocation"),
-                Constants$root.C_POINTER$LAYOUT.withName("style_updated"),
-                Constants$root.C_POINTER$LAYOUT.withName("touch_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height_and_baseline_for_width"),
-                Constants$root.C_POINTER$LAYOUT.withName("adjust_baseline_request"),
-                Constants$root.C_POINTER$LAYOUT.withName("adjust_baseline_allocation"),
-                Constants$root.C_POINTER$LAYOUT.withName("queue_draw_region"),
-                Constants$root.C_POINTER$LAYOUT.withName("priv"),
-                Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved6"),
-                Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved7")
-            ).withName("parent_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("add"),
-            Constants$root.C_POINTER$LAYOUT.withName("remove"),
-            Constants$root.C_POINTER$LAYOUT.withName("check_resize"),
-            Constants$root.C_POINTER$LAYOUT.withName("forall"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_focus_child"),
-            Constants$root.C_POINTER$LAYOUT.withName("child_type"),
-            Constants$root.C_POINTER$LAYOUT.withName("composite_name"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_child_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_child_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_path_for_child"),
-            MemoryLayout.paddingLayout(64),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved4"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved5"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved6"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved7"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved8")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("populate_popup"),
-        Constants$root.C_POINTER$LAYOUT.withName("move_cursor"),
-        Constants$root.C_POINTER$LAYOUT.withName("set_anchor"),
-        Constants$root.C_POINTER$LAYOUT.withName("insert_at_cursor"),
-        Constants$root.C_POINTER$LAYOUT.withName("delete_from_cursor"),
-        Constants$root.C_POINTER$LAYOUT.withName("backspace"),
-        Constants$root.C_POINTER$LAYOUT.withName("cut_clipboard"),
-        Constants$root.C_POINTER$LAYOUT.withName("copy_clipboard"),
-        Constants$root.C_POINTER$LAYOUT.withName("paste_clipboard"),
-        Constants$root.C_POINTER$LAYOUT.withName("toggle_overwrite"),
-        Constants$root.C_POINTER$LAYOUT.withName("create_buffer"),
-        Constants$root.C_POINTER$LAYOUT.withName("draw_layer"),
-        Constants$root.C_POINTER$LAYOUT.withName("extend_selection"),
-        Constants$root.C_POINTER$LAYOUT.withName("insert_emoji"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved4")
-    ).withName("_GtkTextViewClass");
     public static MemoryLayout $LAYOUT() {
-        return _GtkTextViewClass.$struct$LAYOUT;
+        return constants$3144.const$2;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 976);
     }
-    static final FunctionDescriptor populate_popup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor populate_popup_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle populate_popup_UP$MH = RuntimeHelper.upcallHandle(populate_popup.class, "apply", _GtkTextViewClass.populate_popup_UP$FUNC);
-    static final FunctionDescriptor populate_popup_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle populate_popup_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass.populate_popup_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*populate_popup)(GtkTextView*,GtkWidget*);
+ * void (*populate_popup)(struct _GtkTextView*,struct _GtkWidget*);
      * }
      */
     public interface populate_popup {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(populate_popup fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass.populate_popup_UP$MH, fi, _GtkTextViewClass.populate_popup$FUNC, scope);
+        static MemorySegment allocate(populate_popup fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3144.const$3, fi, constants$13.const$4, scope);
         }
-        static populate_popup ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static populate_popup ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkTextViewClass.populate_popup_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -227,75 +63,52 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle populate_popup$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("populate_popup"));
     public static VarHandle populate_popup$VH() {
-        return _GtkTextViewClass.populate_popup$VH;
+        return constants$3144.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*populate_popup)(GtkTextView*,GtkWidget*);
+     * void (*populate_popup)(struct _GtkTextView*,struct _GtkWidget*);
      * }
      */
     public static MemorySegment populate_popup$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.populate_popup$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3144.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*populate_popup)(GtkTextView*,GtkWidget*);
+     * void (*populate_popup)(struct _GtkTextView*,struct _GtkWidget*);
      * }
      */
     public static void populate_popup$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass.populate_popup$VH.set(seg, x);
+        constants$3144.const$4.set(seg, x);
     }
     public static MemorySegment populate_popup$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.populate_popup$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3144.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void populate_popup$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass.populate_popup$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3144.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static populate_popup populate_popup(MemorySegment segment, SegmentScope scope) {
+    public static populate_popup populate_popup(MemorySegment segment, Arena scope) {
         return populate_popup.ofAddress(populate_popup$get(segment), scope);
     }
-    static final FunctionDescriptor move_cursor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor move_cursor_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle move_cursor_UP$MH = RuntimeHelper.upcallHandle(move_cursor.class, "apply", _GtkTextViewClass.move_cursor_UP$FUNC);
-    static final FunctionDescriptor move_cursor_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle move_cursor_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass.move_cursor_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*move_cursor)(GtkTextView*,GtkMovementStep,gint,gboolean);
+ * void (*move_cursor)(struct _GtkTextView*,enum GtkMovementStep,int,int);
      * }
      */
     public interface move_cursor {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, int _x3);
-        static MemorySegment allocate(move_cursor fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass.move_cursor_UP$MH, fi, _GtkTextViewClass.move_cursor$FUNC, scope);
+        static MemorySegment allocate(move_cursor fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3144.const$5, fi, constants$1131.const$1, scope);
         }
-        static move_cursor ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static move_cursor ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, int __x3) -> {
                 try {
-                    _GtkTextViewClass.move_cursor_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$2243.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -303,66 +116,52 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle move_cursor$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("move_cursor"));
     public static VarHandle move_cursor$VH() {
-        return _GtkTextViewClass.move_cursor$VH;
+        return constants$3145.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*move_cursor)(GtkTextView*,GtkMovementStep,gint,gboolean);
+     * void (*move_cursor)(struct _GtkTextView*,enum GtkMovementStep,int,int);
      * }
      */
     public static MemorySegment move_cursor$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.move_cursor$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3145.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*move_cursor)(GtkTextView*,GtkMovementStep,gint,gboolean);
+     * void (*move_cursor)(struct _GtkTextView*,enum GtkMovementStep,int,int);
      * }
      */
     public static void move_cursor$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass.move_cursor$VH.set(seg, x);
+        constants$3145.const$0.set(seg, x);
     }
     public static MemorySegment move_cursor$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.move_cursor$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3145.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void move_cursor$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass.move_cursor$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3145.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static move_cursor move_cursor(MemorySegment segment, SegmentScope scope) {
+    public static move_cursor move_cursor(MemorySegment segment, Arena scope) {
         return move_cursor.ofAddress(move_cursor$get(segment), scope);
     }
-    static final FunctionDescriptor set_anchor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor set_anchor_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle set_anchor_UP$MH = RuntimeHelper.upcallHandle(set_anchor.class, "apply", _GtkTextViewClass.set_anchor_UP$FUNC);
-    static final FunctionDescriptor set_anchor_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle set_anchor_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass.set_anchor_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*set_anchor)(GtkTextView*);
+ * void (*set_anchor)(struct _GtkTextView*);
      * }
      */
     public interface set_anchor {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(set_anchor fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass.set_anchor_UP$MH, fi, _GtkTextViewClass.set_anchor$FUNC, scope);
+        static MemorySegment allocate(set_anchor fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3145.const$1, fi, constants$13.const$1, scope);
         }
-        static set_anchor ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static set_anchor ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkTextViewClass.set_anchor_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -370,69 +169,52 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle set_anchor$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("set_anchor"));
     public static VarHandle set_anchor$VH() {
-        return _GtkTextViewClass.set_anchor$VH;
+        return constants$3145.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*set_anchor)(GtkTextView*);
+     * void (*set_anchor)(struct _GtkTextView*);
      * }
      */
     public static MemorySegment set_anchor$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.set_anchor$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3145.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*set_anchor)(GtkTextView*);
+     * void (*set_anchor)(struct _GtkTextView*);
      * }
      */
     public static void set_anchor$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass.set_anchor$VH.set(seg, x);
+        constants$3145.const$2.set(seg, x);
     }
     public static MemorySegment set_anchor$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.set_anchor$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3145.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void set_anchor$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass.set_anchor$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3145.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_anchor set_anchor(MemorySegment segment, SegmentScope scope) {
+    public static set_anchor set_anchor(MemorySegment segment, Arena scope) {
         return set_anchor.ofAddress(set_anchor$get(segment), scope);
     }
-    static final FunctionDescriptor insert_at_cursor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor insert_at_cursor_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle insert_at_cursor_UP$MH = RuntimeHelper.upcallHandle(insert_at_cursor.class, "apply", _GtkTextViewClass.insert_at_cursor_UP$FUNC);
-    static final FunctionDescriptor insert_at_cursor_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle insert_at_cursor_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass.insert_at_cursor_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*insert_at_cursor)(GtkTextView*,const gchar*);
+ * void (*insert_at_cursor)(struct _GtkTextView*,char*);
      * }
      */
     public interface insert_at_cursor {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(insert_at_cursor fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass.insert_at_cursor_UP$MH, fi, _GtkTextViewClass.insert_at_cursor$FUNC, scope);
+        static MemorySegment allocate(insert_at_cursor fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3145.const$3, fi, constants$13.const$4, scope);
         }
-        static insert_at_cursor ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static insert_at_cursor ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkTextViewClass.insert_at_cursor_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -440,72 +222,52 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle insert_at_cursor$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("insert_at_cursor"));
     public static VarHandle insert_at_cursor$VH() {
-        return _GtkTextViewClass.insert_at_cursor$VH;
+        return constants$3145.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*insert_at_cursor)(GtkTextView*,const gchar*);
+     * void (*insert_at_cursor)(struct _GtkTextView*,char*);
      * }
      */
     public static MemorySegment insert_at_cursor$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.insert_at_cursor$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3145.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*insert_at_cursor)(GtkTextView*,const gchar*);
+     * void (*insert_at_cursor)(struct _GtkTextView*,char*);
      * }
      */
     public static void insert_at_cursor$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass.insert_at_cursor$VH.set(seg, x);
+        constants$3145.const$4.set(seg, x);
     }
     public static MemorySegment insert_at_cursor$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.insert_at_cursor$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3145.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void insert_at_cursor$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass.insert_at_cursor$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3145.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static insert_at_cursor insert_at_cursor(MemorySegment segment, SegmentScope scope) {
+    public static insert_at_cursor insert_at_cursor(MemorySegment segment, Arena scope) {
         return insert_at_cursor.ofAddress(insert_at_cursor$get(segment), scope);
     }
-    static final FunctionDescriptor delete_from_cursor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor delete_from_cursor_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle delete_from_cursor_UP$MH = RuntimeHelper.upcallHandle(delete_from_cursor.class, "apply", _GtkTextViewClass.delete_from_cursor_UP$FUNC);
-    static final FunctionDescriptor delete_from_cursor_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle delete_from_cursor_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass.delete_from_cursor_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*delete_from_cursor)(GtkTextView*,GtkDeleteType,gint);
+ * void (*delete_from_cursor)(struct _GtkTextView*,enum GtkDeleteType,int);
      * }
      */
     public interface delete_from_cursor {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
-        static MemorySegment allocate(delete_from_cursor fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass.delete_from_cursor_UP$MH, fi, _GtkTextViewClass.delete_from_cursor$FUNC, scope);
+        static MemorySegment allocate(delete_from_cursor fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3145.const$5, fi, constants$467.const$3, scope);
         }
-        static delete_from_cursor ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static delete_from_cursor ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    _GtkTextViewClass.delete_from_cursor_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$1901.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -513,66 +275,52 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle delete_from_cursor$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("delete_from_cursor"));
     public static VarHandle delete_from_cursor$VH() {
-        return _GtkTextViewClass.delete_from_cursor$VH;
+        return constants$3146.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*delete_from_cursor)(GtkTextView*,GtkDeleteType,gint);
+     * void (*delete_from_cursor)(struct _GtkTextView*,enum GtkDeleteType,int);
      * }
      */
     public static MemorySegment delete_from_cursor$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.delete_from_cursor$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3146.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*delete_from_cursor)(GtkTextView*,GtkDeleteType,gint);
+     * void (*delete_from_cursor)(struct _GtkTextView*,enum GtkDeleteType,int);
      * }
      */
     public static void delete_from_cursor$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass.delete_from_cursor$VH.set(seg, x);
+        constants$3146.const$0.set(seg, x);
     }
     public static MemorySegment delete_from_cursor$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.delete_from_cursor$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3146.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void delete_from_cursor$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass.delete_from_cursor$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3146.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static delete_from_cursor delete_from_cursor(MemorySegment segment, SegmentScope scope) {
+    public static delete_from_cursor delete_from_cursor(MemorySegment segment, Arena scope) {
         return delete_from_cursor.ofAddress(delete_from_cursor$get(segment), scope);
     }
-    static final FunctionDescriptor backspace$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor backspace_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle backspace_UP$MH = RuntimeHelper.upcallHandle(backspace.class, "apply", _GtkTextViewClass.backspace_UP$FUNC);
-    static final FunctionDescriptor backspace_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle backspace_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass.backspace_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*backspace)(GtkTextView*);
+ * void (*backspace)(struct _GtkTextView*);
      * }
      */
     public interface backspace {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(backspace fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass.backspace_UP$MH, fi, _GtkTextViewClass.backspace$FUNC, scope);
+        static MemorySegment allocate(backspace fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3146.const$1, fi, constants$13.const$1, scope);
         }
-        static backspace ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static backspace ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkTextViewClass.backspace_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -580,66 +328,52 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle backspace$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("backspace"));
     public static VarHandle backspace$VH() {
-        return _GtkTextViewClass.backspace$VH;
+        return constants$3146.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*backspace)(GtkTextView*);
+     * void (*backspace)(struct _GtkTextView*);
      * }
      */
     public static MemorySegment backspace$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.backspace$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3146.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*backspace)(GtkTextView*);
+     * void (*backspace)(struct _GtkTextView*);
      * }
      */
     public static void backspace$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass.backspace$VH.set(seg, x);
+        constants$3146.const$2.set(seg, x);
     }
     public static MemorySegment backspace$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.backspace$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3146.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void backspace$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass.backspace$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3146.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static backspace backspace(MemorySegment segment, SegmentScope scope) {
+    public static backspace backspace(MemorySegment segment, Arena scope) {
         return backspace.ofAddress(backspace$get(segment), scope);
     }
-    static final FunctionDescriptor cut_clipboard$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor cut_clipboard_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cut_clipboard_UP$MH = RuntimeHelper.upcallHandle(cut_clipboard.class, "apply", _GtkTextViewClass.cut_clipboard_UP$FUNC);
-    static final FunctionDescriptor cut_clipboard_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cut_clipboard_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass.cut_clipboard_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*cut_clipboard)(GtkTextView*);
+ * void (*cut_clipboard)(struct _GtkTextView*);
      * }
      */
     public interface cut_clipboard {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(cut_clipboard fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass.cut_clipboard_UP$MH, fi, _GtkTextViewClass.cut_clipboard$FUNC, scope);
+        static MemorySegment allocate(cut_clipboard fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3146.const$3, fi, constants$13.const$1, scope);
         }
-        static cut_clipboard ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static cut_clipboard ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkTextViewClass.cut_clipboard_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -647,66 +381,52 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle cut_clipboard$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("cut_clipboard"));
     public static VarHandle cut_clipboard$VH() {
-        return _GtkTextViewClass.cut_clipboard$VH;
+        return constants$3146.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*cut_clipboard)(GtkTextView*);
+     * void (*cut_clipboard)(struct _GtkTextView*);
      * }
      */
     public static MemorySegment cut_clipboard$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.cut_clipboard$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3146.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*cut_clipboard)(GtkTextView*);
+     * void (*cut_clipboard)(struct _GtkTextView*);
      * }
      */
     public static void cut_clipboard$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass.cut_clipboard$VH.set(seg, x);
+        constants$3146.const$4.set(seg, x);
     }
     public static MemorySegment cut_clipboard$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.cut_clipboard$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3146.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void cut_clipboard$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass.cut_clipboard$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3146.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static cut_clipboard cut_clipboard(MemorySegment segment, SegmentScope scope) {
+    public static cut_clipboard cut_clipboard(MemorySegment segment, Arena scope) {
         return cut_clipboard.ofAddress(cut_clipboard$get(segment), scope);
     }
-    static final FunctionDescriptor copy_clipboard$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor copy_clipboard_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle copy_clipboard_UP$MH = RuntimeHelper.upcallHandle(copy_clipboard.class, "apply", _GtkTextViewClass.copy_clipboard_UP$FUNC);
-    static final FunctionDescriptor copy_clipboard_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle copy_clipboard_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass.copy_clipboard_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*copy_clipboard)(GtkTextView*);
+ * void (*copy_clipboard)(struct _GtkTextView*);
      * }
      */
     public interface copy_clipboard {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(copy_clipboard fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass.copy_clipboard_UP$MH, fi, _GtkTextViewClass.copy_clipboard$FUNC, scope);
+        static MemorySegment allocate(copy_clipboard fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3146.const$5, fi, constants$13.const$1, scope);
         }
-        static copy_clipboard ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static copy_clipboard ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkTextViewClass.copy_clipboard_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -714,66 +434,52 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle copy_clipboard$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("copy_clipboard"));
     public static VarHandle copy_clipboard$VH() {
-        return _GtkTextViewClass.copy_clipboard$VH;
+        return constants$3147.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*copy_clipboard)(GtkTextView*);
+     * void (*copy_clipboard)(struct _GtkTextView*);
      * }
      */
     public static MemorySegment copy_clipboard$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.copy_clipboard$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3147.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*copy_clipboard)(GtkTextView*);
+     * void (*copy_clipboard)(struct _GtkTextView*);
      * }
      */
     public static void copy_clipboard$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass.copy_clipboard$VH.set(seg, x);
+        constants$3147.const$0.set(seg, x);
     }
     public static MemorySegment copy_clipboard$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.copy_clipboard$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3147.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void copy_clipboard$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass.copy_clipboard$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3147.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static copy_clipboard copy_clipboard(MemorySegment segment, SegmentScope scope) {
+    public static copy_clipboard copy_clipboard(MemorySegment segment, Arena scope) {
         return copy_clipboard.ofAddress(copy_clipboard$get(segment), scope);
     }
-    static final FunctionDescriptor paste_clipboard$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor paste_clipboard_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle paste_clipboard_UP$MH = RuntimeHelper.upcallHandle(paste_clipboard.class, "apply", _GtkTextViewClass.paste_clipboard_UP$FUNC);
-    static final FunctionDescriptor paste_clipboard_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle paste_clipboard_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass.paste_clipboard_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*paste_clipboard)(GtkTextView*);
+ * void (*paste_clipboard)(struct _GtkTextView*);
      * }
      */
     public interface paste_clipboard {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(paste_clipboard fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass.paste_clipboard_UP$MH, fi, _GtkTextViewClass.paste_clipboard$FUNC, scope);
+        static MemorySegment allocate(paste_clipboard fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3147.const$1, fi, constants$13.const$1, scope);
         }
-        static paste_clipboard ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static paste_clipboard ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkTextViewClass.paste_clipboard_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -781,66 +487,52 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle paste_clipboard$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("paste_clipboard"));
     public static VarHandle paste_clipboard$VH() {
-        return _GtkTextViewClass.paste_clipboard$VH;
+        return constants$3147.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*paste_clipboard)(GtkTextView*);
+     * void (*paste_clipboard)(struct _GtkTextView*);
      * }
      */
     public static MemorySegment paste_clipboard$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.paste_clipboard$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3147.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*paste_clipboard)(GtkTextView*);
+     * void (*paste_clipboard)(struct _GtkTextView*);
      * }
      */
     public static void paste_clipboard$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass.paste_clipboard$VH.set(seg, x);
+        constants$3147.const$2.set(seg, x);
     }
     public static MemorySegment paste_clipboard$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.paste_clipboard$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3147.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void paste_clipboard$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass.paste_clipboard$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3147.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static paste_clipboard paste_clipboard(MemorySegment segment, SegmentScope scope) {
+    public static paste_clipboard paste_clipboard(MemorySegment segment, Arena scope) {
         return paste_clipboard.ofAddress(paste_clipboard$get(segment), scope);
     }
-    static final FunctionDescriptor toggle_overwrite$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor toggle_overwrite_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle toggle_overwrite_UP$MH = RuntimeHelper.upcallHandle(toggle_overwrite.class, "apply", _GtkTextViewClass.toggle_overwrite_UP$FUNC);
-    static final FunctionDescriptor toggle_overwrite_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle toggle_overwrite_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass.toggle_overwrite_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*toggle_overwrite)(GtkTextView*);
+ * void (*toggle_overwrite)(struct _GtkTextView*);
      * }
      */
     public interface toggle_overwrite {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(toggle_overwrite fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass.toggle_overwrite_UP$MH, fi, _GtkTextViewClass.toggle_overwrite$FUNC, scope);
+        static MemorySegment allocate(toggle_overwrite fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3147.const$3, fi, constants$13.const$1, scope);
         }
-        static toggle_overwrite ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static toggle_overwrite ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkTextViewClass.toggle_overwrite_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -848,66 +540,52 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle toggle_overwrite$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("toggle_overwrite"));
     public static VarHandle toggle_overwrite$VH() {
-        return _GtkTextViewClass.toggle_overwrite$VH;
+        return constants$3147.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*toggle_overwrite)(GtkTextView*);
+     * void (*toggle_overwrite)(struct _GtkTextView*);
      * }
      */
     public static MemorySegment toggle_overwrite$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.toggle_overwrite$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3147.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*toggle_overwrite)(GtkTextView*);
+     * void (*toggle_overwrite)(struct _GtkTextView*);
      * }
      */
     public static void toggle_overwrite$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass.toggle_overwrite$VH.set(seg, x);
+        constants$3147.const$4.set(seg, x);
     }
     public static MemorySegment toggle_overwrite$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.toggle_overwrite$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3147.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void toggle_overwrite$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass.toggle_overwrite$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3147.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static toggle_overwrite toggle_overwrite(MemorySegment segment, SegmentScope scope) {
+    public static toggle_overwrite toggle_overwrite(MemorySegment segment, Arena scope) {
         return toggle_overwrite.ofAddress(toggle_overwrite$get(segment), scope);
     }
-    static final FunctionDescriptor create_buffer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor create_buffer_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle create_buffer_UP$MH = RuntimeHelper.upcallHandle(create_buffer.class, "apply", _GtkTextViewClass.create_buffer_UP$FUNC);
-    static final FunctionDescriptor create_buffer_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle create_buffer_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass.create_buffer_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GtkTextBuffer* (*create_buffer)(GtkTextView*);
+ * struct _GtkTextBuffer* (*create_buffer)(struct _GtkTextView*);
      * }
      */
     public interface create_buffer {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(create_buffer fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass.create_buffer_UP$MH, fi, _GtkTextViewClass.create_buffer$FUNC, scope);
+        static MemorySegment allocate(create_buffer fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3147.const$5, fi, constants$5.const$2, scope);
         }
-        static create_buffer ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static create_buffer ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GtkTextViewClass.create_buffer_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -915,72 +593,52 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle create_buffer$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("create_buffer"));
     public static VarHandle create_buffer$VH() {
-        return _GtkTextViewClass.create_buffer$VH;
+        return constants$3148.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GtkTextBuffer* (*create_buffer)(GtkTextView*);
+     * struct _GtkTextBuffer* (*create_buffer)(struct _GtkTextView*);
      * }
      */
     public static MemorySegment create_buffer$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.create_buffer$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3148.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GtkTextBuffer* (*create_buffer)(GtkTextView*);
+     * struct _GtkTextBuffer* (*create_buffer)(struct _GtkTextView*);
      * }
      */
     public static void create_buffer$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass.create_buffer$VH.set(seg, x);
+        constants$3148.const$0.set(seg, x);
     }
     public static MemorySegment create_buffer$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.create_buffer$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3148.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void create_buffer$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass.create_buffer$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3148.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static create_buffer create_buffer(MemorySegment segment, SegmentScope scope) {
+    public static create_buffer create_buffer(MemorySegment segment, Arena scope) {
         return create_buffer.ofAddress(create_buffer$get(segment), scope);
     }
-    static final FunctionDescriptor draw_layer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor draw_layer_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle draw_layer_UP$MH = RuntimeHelper.upcallHandle(draw_layer.class, "apply", _GtkTextViewClass.draw_layer_UP$FUNC);
-    static final FunctionDescriptor draw_layer_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle draw_layer_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass.draw_layer_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*draw_layer)(GtkTextView*,GtkTextViewLayer,cairo_t*);
+ * void (*draw_layer)(struct _GtkTextView*,enum GtkTextViewLayer,struct _cairo*);
      * }
      */
     public interface draw_layer {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(draw_layer fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass.draw_layer_UP$MH, fi, _GtkTextViewClass.draw_layer$FUNC, scope);
+        static MemorySegment allocate(draw_layer fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3148.const$1, fi, constants$42.const$4, scope);
         }
-        static draw_layer ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static draw_layer ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    _GtkTextViewClass.draw_layer_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$625.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -988,78 +646,52 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle draw_layer$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("draw_layer"));
     public static VarHandle draw_layer$VH() {
-        return _GtkTextViewClass.draw_layer$VH;
+        return constants$3148.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*draw_layer)(GtkTextView*,GtkTextViewLayer,cairo_t*);
+     * void (*draw_layer)(struct _GtkTextView*,enum GtkTextViewLayer,struct _cairo*);
      * }
      */
     public static MemorySegment draw_layer$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.draw_layer$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3148.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*draw_layer)(GtkTextView*,GtkTextViewLayer,cairo_t*);
+     * void (*draw_layer)(struct _GtkTextView*,enum GtkTextViewLayer,struct _cairo*);
      * }
      */
     public static void draw_layer$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass.draw_layer$VH.set(seg, x);
+        constants$3148.const$2.set(seg, x);
     }
     public static MemorySegment draw_layer$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.draw_layer$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3148.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void draw_layer$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass.draw_layer$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3148.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw_layer draw_layer(MemorySegment segment, SegmentScope scope) {
+    public static draw_layer draw_layer(MemorySegment segment, Arena scope) {
         return draw_layer.ofAddress(draw_layer$get(segment), scope);
     }
-    static final FunctionDescriptor extend_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor extend_selection_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle extend_selection_UP$MH = RuntimeHelper.upcallHandle(extend_selection.class, "apply", _GtkTextViewClass.extend_selection_UP$FUNC);
-    static final FunctionDescriptor extend_selection_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle extend_selection_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass.extend_selection_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*extend_selection)(GtkTextView*,GtkTextExtendSelection,const GtkTextIter*,GtkTextIter*,GtkTextIter*);
+ * int (*extend_selection)(struct _GtkTextView*,enum GtkTextExtendSelection,struct _GtkTextIter*,struct _GtkTextIter*,struct _GtkTextIter*);
      * }
      */
     public interface extend_selection {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(extend_selection fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass.extend_selection_UP$MH, fi, _GtkTextViewClass.extend_selection$FUNC, scope);
+        static MemorySegment allocate(extend_selection fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3148.const$3, fi, constants$373.const$2, scope);
         }
-        static extend_selection ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static extend_selection ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (int)_GtkTextViewClass.extend_selection_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    return (int)constants$1427.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1067,66 +699,52 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle extend_selection$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("extend_selection"));
     public static VarHandle extend_selection$VH() {
-        return _GtkTextViewClass.extend_selection$VH;
+        return constants$3148.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*extend_selection)(GtkTextView*,GtkTextExtendSelection,const GtkTextIter*,GtkTextIter*,GtkTextIter*);
+     * int (*extend_selection)(struct _GtkTextView*,enum GtkTextExtendSelection,struct _GtkTextIter*,struct _GtkTextIter*,struct _GtkTextIter*);
      * }
      */
     public static MemorySegment extend_selection$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.extend_selection$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3148.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*extend_selection)(GtkTextView*,GtkTextExtendSelection,const GtkTextIter*,GtkTextIter*,GtkTextIter*);
+     * int (*extend_selection)(struct _GtkTextView*,enum GtkTextExtendSelection,struct _GtkTextIter*,struct _GtkTextIter*,struct _GtkTextIter*);
      * }
      */
     public static void extend_selection$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass.extend_selection$VH.set(seg, x);
+        constants$3148.const$4.set(seg, x);
     }
     public static MemorySegment extend_selection$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.extend_selection$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3148.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void extend_selection$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass.extend_selection$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3148.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static extend_selection extend_selection(MemorySegment segment, SegmentScope scope) {
+    public static extend_selection extend_selection(MemorySegment segment, Arena scope) {
         return extend_selection.ofAddress(extend_selection$get(segment), scope);
     }
-    static final FunctionDescriptor insert_emoji$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor insert_emoji_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle insert_emoji_UP$MH = RuntimeHelper.upcallHandle(insert_emoji.class, "apply", _GtkTextViewClass.insert_emoji_UP$FUNC);
-    static final FunctionDescriptor insert_emoji_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle insert_emoji_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass.insert_emoji_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*insert_emoji)(GtkTextView*);
+ * void (*insert_emoji)(struct _GtkTextView*);
      * }
      */
     public interface insert_emoji {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(insert_emoji fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass.insert_emoji_UP$MH, fi, _GtkTextViewClass.insert_emoji$FUNC, scope);
+        static MemorySegment allocate(insert_emoji fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3148.const$5, fi, constants$13.const$1, scope);
         }
-        static insert_emoji ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static insert_emoji ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkTextViewClass.insert_emoji_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1134,44 +752,36 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle insert_emoji$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("insert_emoji"));
     public static VarHandle insert_emoji$VH() {
-        return _GtkTextViewClass.insert_emoji$VH;
+        return constants$3149.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*insert_emoji)(GtkTextView*);
+     * void (*insert_emoji)(struct _GtkTextView*);
      * }
      */
     public static MemorySegment insert_emoji$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.insert_emoji$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3149.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*insert_emoji)(GtkTextView*);
+     * void (*insert_emoji)(struct _GtkTextView*);
      * }
      */
     public static void insert_emoji$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass.insert_emoji$VH.set(seg, x);
+        constants$3149.const$0.set(seg, x);
     }
     public static MemorySegment insert_emoji$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass.insert_emoji$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3149.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void insert_emoji$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass.insert_emoji$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3149.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static insert_emoji insert_emoji(MemorySegment segment, SegmentScope scope) {
+    public static insert_emoji insert_emoji(MemorySegment segment, Arena scope) {
         return insert_emoji.ofAddress(insert_emoji$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkTextViewClass._gtk_reserved1_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass._gtk_reserved1_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved1)();
@@ -1180,14 +790,14 @@ public class _GtkTextViewClass {
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass._gtk_reserved1_UP$MH, fi, _GtkTextViewClass._gtk_reserved1$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved1 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3149.const$1, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkTextViewClass._gtk_reserved1_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1195,9 +805,8 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle _gtk_reserved1$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
     public static VarHandle _gtk_reserved1$VH() {
-        return _GtkTextViewClass._gtk_reserved1$VH;
+        return constants$3149.const$2;
     }
     /**
      * Getter for field:
@@ -1206,7 +815,7 @@ public class _GtkTextViewClass {
      * }
      */
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass._gtk_reserved1$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3149.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -1215,24 +824,17 @@ public class _GtkTextViewClass {
      * }
      */
     public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass._gtk_reserved1$VH.set(seg, x);
+        constants$3149.const$2.set(seg, x);
     }
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3149.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3149.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, Arena scope) {
         return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkTextViewClass._gtk_reserved2_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass._gtk_reserved2_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved2)();
@@ -1241,14 +843,14 @@ public class _GtkTextViewClass {
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass._gtk_reserved2_UP$MH, fi, _GtkTextViewClass._gtk_reserved2$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved2 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3149.const$3, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkTextViewClass._gtk_reserved2_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1256,9 +858,8 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle _gtk_reserved2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
     public static VarHandle _gtk_reserved2$VH() {
-        return _GtkTextViewClass._gtk_reserved2$VH;
+        return constants$3149.const$4;
     }
     /**
      * Getter for field:
@@ -1267,7 +868,7 @@ public class _GtkTextViewClass {
      * }
      */
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass._gtk_reserved2$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3149.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -1276,24 +877,17 @@ public class _GtkTextViewClass {
      * }
      */
     public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass._gtk_reserved2$VH.set(seg, x);
+        constants$3149.const$4.set(seg, x);
     }
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3149.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3149.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, Arena scope) {
         return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkTextViewClass._gtk_reserved3_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass._gtk_reserved3_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved3)();
@@ -1302,14 +896,14 @@ public class _GtkTextViewClass {
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass._gtk_reserved3_UP$MH, fi, _GtkTextViewClass._gtk_reserved3$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved3 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3149.const$5, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkTextViewClass._gtk_reserved3_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1317,9 +911,8 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle _gtk_reserved3$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
     public static VarHandle _gtk_reserved3$VH() {
-        return _GtkTextViewClass._gtk_reserved3$VH;
+        return constants$3150.const$0;
     }
     /**
      * Getter for field:
@@ -1328,7 +921,7 @@ public class _GtkTextViewClass {
      * }
      */
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass._gtk_reserved3$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3150.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -1337,24 +930,17 @@ public class _GtkTextViewClass {
      * }
      */
     public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass._gtk_reserved3$VH.set(seg, x);
+        constants$3150.const$0.set(seg, x);
     }
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3150.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3150.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, Arena scope) {
         return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved4.class, "apply", _GtkTextViewClass._gtk_reserved4_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTextViewClass._gtk_reserved4_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved4)();
@@ -1363,14 +949,14 @@ public class _GtkTextViewClass {
     public interface _gtk_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved4 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTextViewClass._gtk_reserved4_UP$MH, fi, _GtkTextViewClass._gtk_reserved4$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved4 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3150.const$1, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkTextViewClass._gtk_reserved4_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1378,9 +964,8 @@ public class _GtkTextViewClass {
         }
     }
 
-    static final VarHandle _gtk_reserved4$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
     public static VarHandle _gtk_reserved4$VH() {
-        return _GtkTextViewClass._gtk_reserved4$VH;
+        return constants$3150.const$2;
     }
     /**
      * Getter for field:
@@ -1389,7 +974,7 @@ public class _GtkTextViewClass {
      * }
      */
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass._gtk_reserved4$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3150.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -1398,15 +983,15 @@ public class _GtkTextViewClass {
      * }
      */
     public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        _GtkTextViewClass._gtk_reserved4$VH.set(seg, x);
+        constants$3150.const$2.set(seg, x);
     }
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTextViewClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3150.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTextViewClass._gtk_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3150.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, Arena scope) {
         return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -1414,7 +999,7 @@ public class _GtkTextViewClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

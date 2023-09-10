@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1576 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1576() {}
-    static final FunctionDescriptor gtk_file_chooser_set_preview_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_font_desc",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_file_chooser_set_preview_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_preview_widget",
-        constants$1576.gtk_file_chooser_set_preview_widget$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_shape",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_file_chooser_get_preview_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_attribute_as_font_features",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_file_chooser_get_preview_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_preview_widget",
-        constants$1576.gtk_file_chooser_get_preview_widget$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_file_chooser_set_preview_widget_active$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_new",
+        constants$35.const$2
     );
-    static final MethodHandle gtk_file_chooser_set_preview_widget_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_preview_widget_active",
-        constants$1576.gtk_file_chooser_set_preview_widget_active$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_get_preview_widget_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_get_preview_widget_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_preview_widget_active",
-        constants$1576.gtk_file_chooser_get_preview_widget_active$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_set_use_preview_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_set_use_preview_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_use_preview_label",
-        constants$1576.gtk_file_chooser_set_use_preview_label$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_get_use_preview_label$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_get_use_preview_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_use_preview_label",
-        constants$1576.gtk_file_chooser_get_use_preview_label$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_ref",
+        constants$5.const$2
     );
 }
 

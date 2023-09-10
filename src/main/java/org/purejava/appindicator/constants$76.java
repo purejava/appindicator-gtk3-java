@@ -3,61 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$76 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$76() {}
-    static final FunctionDescriptor sigaddset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle sigaddset$MH = RuntimeHelper.downcallHandle(
-        "sigaddset",
-        constants$76.sigaddset$FUNC
-    );
-    static final FunctionDescriptor sigdelset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle sigdelset$MH = RuntimeHelper.downcallHandle(
-        "sigdelset",
-        constants$76.sigdelset$FUNC
-    );
-    static final FunctionDescriptor sigismember$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle sigismember$MH = RuntimeHelper.downcallHandle(
-        "sigismember",
-        constants$76.sigismember$FUNC
-    );
-    static final FunctionDescriptor sigprocmask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle sigprocmask$MH = RuntimeHelper.downcallHandle(
-        "sigprocmask",
-        constants$76.sigprocmask$FUNC
-    );
-    static final FunctionDescriptor sigsuspend$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle sigsuspend$MH = RuntimeHelper.downcallHandle(
-        "sigsuspend",
-        constants$76.sigsuspend$FUNC
-    );
-    static final FunctionDescriptor sigaction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle sigaction$MH = RuntimeHelper.downcallHandle(
-        "sigaction",
-        constants$76.sigaction$FUNC
-    );
+    static final VarHandle const$0 = constants$74.const$1.varHandle(MemoryLayout.PathElement.groupElement("__flags"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.unionLayout(
+            JAVA_LONG.withName("__value64"),
+            MemoryLayout.structLayout(
+                JAVA_INT.withName("__low"),
+                JAVA_INT.withName("__high")
+            ).withName("__value32")
+        ).withName("__wseq"),
+        MemoryLayout.unionLayout(
+            JAVA_LONG.withName("__value64"),
+            MemoryLayout.structLayout(
+                JAVA_INT.withName("__low"),
+                JAVA_INT.withName("__high")
+            ).withName("__value32")
+        ).withName("__g1_start"),
+        MemoryLayout.sequenceLayout(2, JAVA_INT).withName("__g_refs"),
+        MemoryLayout.sequenceLayout(2, JAVA_INT).withName("__g_size"),
+        JAVA_INT.withName("__g1_orig_size"),
+        JAVA_INT.withName("__wrefs"),
+        MemoryLayout.sequenceLayout(2, JAVA_INT).withName("__g_signals")
+    ).withName("__pthread_cond_s");
+    static final VarHandle const$2 = constants$76.const$1.varHandle(MemoryLayout.PathElement.groupElement("__g1_orig_size"));
+    static final VarHandle const$3 = constants$76.const$1.varHandle(MemoryLayout.PathElement.groupElement("__wrefs"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("__data")
+    ).withName("__once_flag");
+    static final VarHandle const$5 = constants$76.const$4.varHandle(MemoryLayout.PathElement.groupElement("__data"));
 }
 
 

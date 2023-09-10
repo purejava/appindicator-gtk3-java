@@ -3,47 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1168 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1168() {}
-    static final FunctionDescriptor gdk_fullscreen_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_fullscreen_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_fullscreen_mode_get_type",
-        constants$1168.gdk_fullscreen_mode_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GMountIface.get_symbolic_icon.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_symbolic_icon"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_mount_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_gl_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_gl_error_quark$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_error_quark",
-        constants$1168.gdk_gl_error_quark$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_mount_get_root",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gdk_gl_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_gl_context_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_type",
-        constants$1168.gdk_gl_context_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_mount_get_default_location",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gdk_gl_context_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_gl_context_get_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_display",
-        constants$1168.gdk_gl_context_get_display$FUNC
-    );
-    static final FunctionDescriptor gdk_gl_context_get_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_gl_context_get_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_window",
-        constants$1168.gdk_gl_context_get_window$FUNC
-    );
-    static final FunctionDescriptor gdk_gl_context_get_shared_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_gl_context_get_shared_context$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_shared_context",
-        constants$1168.gdk_gl_context_get_shared_context$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_mount_get_name",
+        constants$5.const$2
     );
 }
 

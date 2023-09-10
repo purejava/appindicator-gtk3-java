@@ -2,90 +2,85 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkAccelKey {
- *     guint accel_key;
- *     GdkModifierType accel_mods;
- *      *     guint accel_flags;
+ *     unsigned int accel_key;
+ *     enum GdkModifierType accel_mods;
+ *      *     unsigned int accel_flags;
  * };
  * }
  */
 public class _GtkAccelKey {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("accel_key"),
-        Constants$root.C_INT$LAYOUT.withName("accel_mods"),
-        MemoryLayout.paddingLayout(32)
-    ).withName("_GtkAccelKey");
     public static MemoryLayout $LAYOUT() {
-        return _GtkAccelKey.$struct$LAYOUT;
+        return constants$1952.const$4;
     }
-    static final VarHandle accel_key$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("accel_key"));
     public static VarHandle accel_key$VH() {
-        return _GtkAccelKey.accel_key$VH;
+        return constants$1952.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint accel_key;
+     * unsigned int accel_key;
      * }
      */
     public static int accel_key$get(MemorySegment seg) {
-        return (int)_GtkAccelKey.accel_key$VH.get(seg);
+        return (int)constants$1952.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint accel_key;
+     * unsigned int accel_key;
      * }
      */
     public static void accel_key$set(MemorySegment seg, int x) {
-        _GtkAccelKey.accel_key$VH.set(seg, x);
+        constants$1952.const$5.set(seg, x);
     }
     public static int accel_key$get(MemorySegment seg, long index) {
-        return (int)_GtkAccelKey.accel_key$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1952.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void accel_key$set(MemorySegment seg, long index, int x) {
-        _GtkAccelKey.accel_key$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1952.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle accel_mods$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("accel_mods"));
     public static VarHandle accel_mods$VH() {
-        return _GtkAccelKey.accel_mods$VH;
+        return constants$1953.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GdkModifierType accel_mods;
+     * enum GdkModifierType accel_mods;
      * }
      */
     public static int accel_mods$get(MemorySegment seg) {
-        return (int)_GtkAccelKey.accel_mods$VH.get(seg);
+        return (int)constants$1953.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GdkModifierType accel_mods;
+     * enum GdkModifierType accel_mods;
      * }
      */
     public static void accel_mods$set(MemorySegment seg, int x) {
-        _GtkAccelKey.accel_mods$VH.set(seg, x);
+        constants$1953.const$0.set(seg, x);
     }
     public static int accel_mods$get(MemorySegment seg, long index) {
-        return (int)_GtkAccelKey.accel_mods$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1953.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void accel_mods$set(MemorySegment seg, long index, int x) {
-        _GtkAccelKey.accel_mods$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1953.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

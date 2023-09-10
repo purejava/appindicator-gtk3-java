@@ -3,44 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$422 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$422() {}
-    static final FunctionDescriptor _g_signals_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle _g_signals_destroy$MH = RuntimeHelper.downcallHandle(
-        "_g_signals_destroy",
-        constants$422._g_signals_destroy$FUNC
-    );
-    static final FunctionDescriptor g_date_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_date_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_date_get_type",
-        constants$422.g_date_get_type$FUNC
-    );
-    static final FunctionDescriptor g_strv_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_strv_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_strv_get_type",
-        constants$422.g_strv_get_type$FUNC
-    );
-    static final FunctionDescriptor g_gstring_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_gstring_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_gstring_get_type",
-        constants$422.g_gstring_get_type$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_hash_table_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_get_type",
-        constants$422.g_hash_table_get_type$FUNC
-    );
-    static final FunctionDescriptor g_array_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_array_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_array_get_type",
-        constants$422.g_array_get_type$FUNC
-    );
+    static final VarHandle const$0 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_string"));
+    static final VarHandle const$1 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_comment"));
+    static final VarHandle const$2 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_char"));
+    static final VarHandle const$3 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_error"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("cset_skip_characters"),
+        RuntimeHelper.POINTER.withName("cset_identifier_first"),
+        RuntimeHelper.POINTER.withName("cset_identifier_nth"),
+        RuntimeHelper.POINTER.withName("cpair_comment_single"),
+        MemoryLayout.paddingLayout(4),
+        JAVA_INT.withName("padding_dummy")
+    ).withName("_GScannerConfig");
+    static final VarHandle const$5 = constants$422.const$4.varHandle(MemoryLayout.PathElement.groupElement("cset_skip_characters"));
 }
 
 

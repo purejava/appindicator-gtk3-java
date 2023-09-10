@@ -3,62 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$876 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$876() {}
-    static final FunctionDescriptor hb_font_get_scale$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_scale$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_scale",
-        constants$876.hb_font_get_scale$FUNC
-    );
-    static final FunctionDescriptor hb_font_set_ppem$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_font_set_ppem$MH = RuntimeHelper.downcallHandle(
-        "hb_font_set_ppem",
-        constants$876.hb_font_set_ppem$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_ppem$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_ppem$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_ppem",
-        constants$876.hb_font_get_ppem$FUNC
-    );
-    static final FunctionDescriptor hb_font_set_ptem$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle hb_font_set_ptem$MH = RuntimeHelper.downcallHandle(
-        "hb_font_set_ptem",
-        constants$876.hb_font_set_ptem$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_ptem$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_ptem$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_ptem",
-        constants$876.hb_font_get_ptem$FUNC
-    );
-    static final FunctionDescriptor hb_font_set_synthetic_slant$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle hb_font_set_synthetic_slant$MH = RuntimeHelper.downcallHandle(
-        "hb_font_set_synthetic_slant",
-        constants$876.hb_font_set_synthetic_slant$FUNC
-    );
+    static final VarHandle const$0 = constants$875.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_info"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDBusInterfaceSkeletonClass.get_vtable.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$875.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_vtable"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDBusInterfaceSkeletonClass.get_properties.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$875.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_properties"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GDBusInterfaceSkeletonClass.flush.class, "apply", constants$13.const$1);
 }
 
 

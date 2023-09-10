@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GFileProgressCallback)(long current_num_bytes,long total_num_bytes,void* data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GFileProgressCallback {
 
     void apply(long current_num_bytes, long total_num_bytes, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(GFileProgressCallback fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$469.GFileProgressCallback_UP$MH, fi, constants$469.GFileProgressCallback$FUNC, scope);
+    static MemorySegment allocate(GFileProgressCallback fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$693.const$2, fi, constants$561.const$3, scope);
     }
-    static GFileProgressCallback ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GFileProgressCallback ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (long _current_num_bytes, long _total_num_bytes, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$469.GFileProgressCallback_DOWN$MH.invokeExact(symbol, _current_num_bytes, _total_num_bytes, _data);
+                constants$693.const$3.invokeExact(symbol, _current_num_bytes, _total_num_bytes, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

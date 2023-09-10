@@ -3,70 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$446 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$446() {}
-    static final FunctionDescriptor g_binding_group_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_binding_group_new$MH = RuntimeHelper.downcallHandle(
-        "g_binding_group_new",
-        constants$446.g_binding_group_new$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_spawn_check_exit_status",
+        constants$9.const$2
     );
-    static final FunctionDescriptor g_binding_group_dup_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_spawn_close_pid",
+        constants$80.const$1
     );
-    static final MethodHandle g_binding_group_dup_source$MH = RuntimeHelper.downcallHandle(
-        "g_binding_group_dup_source",
-        constants$446.g_binding_group_dup_source$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_string_chunk_new",
+        constants$63.const$3
     );
-    static final FunctionDescriptor g_binding_group_set_source$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_string_chunk_free",
+        constants$13.const$1
     );
-    static final MethodHandle g_binding_group_set_source$MH = RuntimeHelper.downcallHandle(
-        "g_binding_group_set_source",
-        constants$446.g_binding_group_set_source$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_string_chunk_clear",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_binding_group_bind$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_binding_group_bind$MH = RuntimeHelper.downcallHandle(
-        "g_binding_group_bind",
-        constants$446.g_binding_group_bind$FUNC
-    );
-    static final FunctionDescriptor g_binding_group_bind_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_binding_group_bind_full$MH = RuntimeHelper.downcallHandle(
-        "g_binding_group_bind_full",
-        constants$446.g_binding_group_bind_full$FUNC
-    );
-    static final FunctionDescriptor g_binding_group_bind_with_closures$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_binding_group_bind_with_closures$MH = RuntimeHelper.downcallHandle(
-        "g_binding_group_bind_with_closures",
-        constants$446.g_binding_group_bind_with_closures$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_string_chunk_insert",
+        constants$5.const$5
     );
 }
 

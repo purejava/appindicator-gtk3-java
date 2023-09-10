@@ -2,18 +2,23 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2013 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2013() {}
-    static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("thumbnail::path-xxlarge");
-    static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("thumbnail::failed-xxlarge");
-    static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("thumbnail::is-valid-xxlarge");
-    static final MemorySegment G_FILE_ATTRIBUTE_PREVIEW_ICON$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("preview::icon");
-    static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_SIZE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("filesystem::size");
-    static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_FREE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("filesystem::free");
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkTextIface.get_default_attributes.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_default_attributes"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkTextIface.get_character_extents.class, "apply", constants$430.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$430.const$3
+    );
+    static final VarHandle const$4 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_character_extents"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkTextIface.get_character_count.class, "apply", constants$10.const$5);
 }
 
 

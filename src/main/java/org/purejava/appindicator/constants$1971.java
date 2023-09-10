@@ -3,60 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1971 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1971() {}
-    static final FunctionDescriptor gtk_theming_engine_get_style_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_get_style_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_style_property",
-        constants$1971.gtk_theming_engine_get_style_property$FUNC
-    );
-    static final FunctionDescriptor gtk_theming_engine_get_style_valist$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_get_style_valist$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_style_valist",
-        constants$1971.gtk_theming_engine_get_style_valist$FUNC
-    );
-    static final FunctionDescriptor gtk_theming_engine_get_style$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_get_style$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_theming_engine_get_style",
-        constants$1971.gtk_theming_engine_get_style$FUNC
-    );
-    static final FunctionDescriptor gtk_theming_engine_lookup_color$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_lookup_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_lookup_color",
-        constants$1971.gtk_theming_engine_lookup_color$FUNC
-    );
-    static final FunctionDescriptor gtk_theming_engine_get_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_get_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_path",
-        constants$1971.gtk_theming_engine_get_path$FUNC
-    );
-    static final FunctionDescriptor gtk_theming_engine_has_class$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_has_class$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_has_class",
-        constants$1971.gtk_theming_engine_has_class$FUNC
-    );
+    static final VarHandle const$0 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("set_description"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkObjectClass.set_parent.class, "apply", constants$13.const$4);
+    static final VarHandle const$2 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("set_parent"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkObjectClass.set_role.class, "apply", constants$40.const$2);
+    static final VarHandle const$4 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("set_role"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkObjectClass.connect_property_change_handler.class, "apply", constants$9.const$0);
 }
 
 

@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GValueTransform)(struct _GValue* src_value,struct _GValue* dest_value);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GValueTransform {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(GValueTransform fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$394.GValueTransform_UP$MH, fi, constants$394.GValueTransform$FUNC, scope);
+    static MemorySegment allocate(GValueTransform fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$568.const$5, fi, constants$13.const$4, scope);
     }
-    static GValueTransform ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GValueTransform ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$394.GValueTransform_DOWN$MH.invokeExact(symbol, _tag, _data);
+                constants$14.const$0.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

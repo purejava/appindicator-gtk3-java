@@ -3,51 +3,92 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1194 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1194() {}
-    static final FunctionDescriptor gtk_accelerator_get_default_mod_mask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_accelerator_get_default_mod_mask$MH = RuntimeHelper.downcallHandle(
-        "gtk_accelerator_get_default_mod_mask",
-        constants$1194.gtk_accelerator_get_default_mod_mask$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_volume_monitor_get_mounts",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_accel_group_query$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_volume_monitor_get_volume_for_uuid",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_accel_group_query$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_query",
-        constants$1194.gtk_accel_group_query$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_volume_monitor_get_mount_for_uuid",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_border_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_border_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_border_get_type",
-        constants$1194.gtk_border_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_volume_monitor_adopt_orphan_mount",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_border_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_border_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_border_new",
-        constants$1194.gtk_border_new$FUNC
-    );
-    static final FunctionDescriptor gtk_border_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_border_copy$MH = RuntimeHelper.downcallHandle(
-        "gtk_border_copy",
-        constants$1194.gtk_border_copy$FUNC
-    );
-    static final FunctionDescriptor gtk_border_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_border_free$MH = RuntimeHelper.downcallHandle(
-        "gtk_border_free",
-        constants$1194.gtk_border_free$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    RuntimeHelper.POINTER.withName("g_class")
+                ).withName("g_type_instance"),
+                JAVA_INT.withName("ref_count"),
+                MemoryLayout.paddingLayout(4),
+                RuntimeHelper.POINTER.withName("qdata")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance")
+    ).withName("_GNativeVolumeMonitor");
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    JAVA_LONG.withName("g_type")
+                ).withName("g_type_class"),
+                RuntimeHelper.POINTER.withName("construct_properties"),
+                RuntimeHelper.POINTER.withName("constructor"),
+                RuntimeHelper.POINTER.withName("set_property"),
+                RuntimeHelper.POINTER.withName("get_property"),
+                RuntimeHelper.POINTER.withName("dispose"),
+                RuntimeHelper.POINTER.withName("finalize"),
+                RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+                RuntimeHelper.POINTER.withName("notify"),
+                RuntimeHelper.POINTER.withName("constructed"),
+                JAVA_LONG.withName("flags"),
+                JAVA_LONG.withName("n_construct_properties"),
+                RuntimeHelper.POINTER.withName("pspecs"),
+                JAVA_LONG.withName("n_pspecs"),
+                MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+            ).withName("parent_class"),
+            RuntimeHelper.POINTER.withName("volume_added"),
+            RuntimeHelper.POINTER.withName("volume_removed"),
+            RuntimeHelper.POINTER.withName("volume_changed"),
+            RuntimeHelper.POINTER.withName("mount_added"),
+            RuntimeHelper.POINTER.withName("mount_removed"),
+            RuntimeHelper.POINTER.withName("mount_pre_unmount"),
+            RuntimeHelper.POINTER.withName("mount_changed"),
+            RuntimeHelper.POINTER.withName("drive_connected"),
+            RuntimeHelper.POINTER.withName("drive_disconnected"),
+            RuntimeHelper.POINTER.withName("drive_changed"),
+            RuntimeHelper.POINTER.withName("is_supported"),
+            RuntimeHelper.POINTER.withName("get_connected_drives"),
+            RuntimeHelper.POINTER.withName("get_volumes"),
+            RuntimeHelper.POINTER.withName("get_mounts"),
+            RuntimeHelper.POINTER.withName("get_volume_for_uuid"),
+            RuntimeHelper.POINTER.withName("get_mount_for_uuid"),
+            RuntimeHelper.POINTER.withName("adopt_orphan_mount"),
+            RuntimeHelper.POINTER.withName("drive_eject_button"),
+            RuntimeHelper.POINTER.withName("drive_stop_button"),
+            RuntimeHelper.POINTER.withName("_g_reserved1"),
+            RuntimeHelper.POINTER.withName("_g_reserved2"),
+            RuntimeHelper.POINTER.withName("_g_reserved3"),
+            RuntimeHelper.POINTER.withName("_g_reserved4"),
+            RuntimeHelper.POINTER.withName("_g_reserved5"),
+            RuntimeHelper.POINTER.withName("_g_reserved6")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("get_mount_for_mount_path")
+    ).withName("_GNativeVolumeMonitorClass");
 }
 
 

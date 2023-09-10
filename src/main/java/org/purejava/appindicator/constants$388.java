@@ -3,59 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$388 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$388() {}
-    static final FunctionDescriptor g_type_add_interface_dynamic$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_option_group_new",
+        constants$330.const$5
     );
-    static final MethodHandle g_type_add_interface_dynamic$MH = RuntimeHelper.downcallHandle(
-        "g_type_add_interface_dynamic",
-        constants$388.g_type_add_interface_dynamic$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_option_group_set_parse_hooks$pre_parse_func.class, "apply", constants$34.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_option_group_set_parse_hooks$post_parse_func.class, "apply", constants$34.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_option_group_set_parse_hooks",
+        constants$14.const$3
     );
-    static final FunctionDescriptor g_type_interface_add_prerequisite$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_interface_add_prerequisite$MH = RuntimeHelper.downcallHandle(
-        "g_type_interface_add_prerequisite",
-        constants$388.g_type_interface_add_prerequisite$FUNC
-    );
-    static final FunctionDescriptor g_type_interface_prerequisites$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_interface_prerequisites$MH = RuntimeHelper.downcallHandle(
-        "g_type_interface_prerequisites",
-        constants$388.g_type_interface_prerequisites$FUNC
-    );
-    static final FunctionDescriptor g_type_interface_instantiatable_prerequisite$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_interface_instantiatable_prerequisite$MH = RuntimeHelper.downcallHandle(
-        "g_type_interface_instantiatable_prerequisite",
-        constants$388.g_type_interface_instantiatable_prerequisite$FUNC
-    );
-    static final FunctionDescriptor g_type_class_add_private$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_class_add_private$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_add_private",
-        constants$388.g_type_class_add_private$FUNC
-    );
-    static final FunctionDescriptor g_type_add_instance_private$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_add_instance_private$MH = RuntimeHelper.downcallHandle(
-        "g_type_add_instance_private",
-        constants$388.g_type_add_instance_private$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_option_group_set_error_hook$error_func.class, "apply", constants$42.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_option_group_set_error_hook",
+        constants$13.const$4
     );
 }
 

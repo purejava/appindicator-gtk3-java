@@ -3,55 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1406 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1406() {}
-    static final FunctionDescriptor gtk_text_iter_starts_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_starts_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_starts_line",
-        constants$1406.gtk_text_iter_starts_line$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_ends_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_ends_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_ends_line",
-        constants$1406.gtk_text_iter_ends_line$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_is_cursor_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_is_cursor_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_is_cursor_position",
-        constants$1406.gtk_text_iter_is_cursor_position$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_chars_in_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_chars_in_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_chars_in_line",
-        constants$1406.gtk_text_iter_get_chars_in_line$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_bytes_in_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_bytes_in_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_bytes_in_line",
-        constants$1406.gtk_text_iter_get_bytes_in_line$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_attributes$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_attributes",
-        constants$1406.gtk_text_iter_get_attributes$FUNC
-    );
+    static final VarHandle const$0 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("enumerate_identifiers"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GVolumeIface.should_automount.class, "apply", constants$10.const$5);
+    static final VarHandle const$2 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("should_automount"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GVolumeIface.get_activation_root.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_activation_root"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GVolumeIface.eject_with_operation.class, "apply", constants$380.const$0);
 }
 
 

@@ -3,59 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$752 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$752() {}
-    static final FunctionDescriptor g_settings_create_action$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_platform_data",
+        constants$5.const$2
     );
-    static final MethodHandle g_settings_create_action$MH = RuntimeHelper.downcallHandle(
-        "g_settings_create_action",
-        constants$752.g_settings_create_action$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_application_command_line_create_file_for_arg",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_settings_get_mapped$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_get_mapped$MH = RuntimeHelper.downcallHandle(
-        "g_settings_get_mapped",
-        constants$752.g_settings_get_mapped$FUNC
-    );
-    static final FunctionDescriptor g_simple_action_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_simple_action_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_get_type",
-        constants$752.g_simple_action_get_type$FUNC
-    );
-    static final FunctionDescriptor g_simple_action_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_action_new$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_new",
-        constants$752.g_simple_action_new$FUNC
-    );
-    static final FunctionDescriptor g_simple_action_new_stateful$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_action_new_stateful$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_new_stateful",
-        constants$752.g_simple_action_new_stateful$FUNC
-    );
-    static final FunctionDescriptor g_simple_action_set_enabled$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_simple_action_set_enabled$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_set_enabled",
-        constants$752.g_simple_action_set_enabled$FUNC
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("init")
+    ).withName("_GInitableIface");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GInitableIface.init.class, "apply", constants$12.const$2);
+    static final VarHandle const$4 = constants$752.const$2.varHandle(MemoryLayout.PathElement.groupElement("init"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_initable_get_type",
+        constants$3.const$5
     );
 }
 

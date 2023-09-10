@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$235 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$235() {}
-    static final FunctionDescriptor g_variant_type_n_items$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_int_hash",
+        constants$10.const$5
     );
-    static final MethodHandle g_variant_type_n_items$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_n_items",
-        constants$235.g_variant_type_n_items$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_int64_equal",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_variant_type_key$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_int64_hash",
+        constants$10.const$5
     );
-    static final MethodHandle g_variant_type_key$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_key",
-        constants$235.g_variant_type_key$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_double_equal",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_variant_type_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_double_hash",
+        constants$10.const$5
     );
-    static final MethodHandle g_variant_type_value$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_value",
-        constants$235.g_variant_type_value$FUNC
-    );
-    static final FunctionDescriptor g_variant_type_new_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_type_new_array$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_new_array",
-        constants$235.g_variant_type_new_array$FUNC
-    );
-    static final FunctionDescriptor g_variant_type_new_maybe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_type_new_maybe$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_new_maybe",
-        constants$235.g_variant_type_new_maybe$FUNC
-    );
-    static final FunctionDescriptor g_variant_type_new_tuple$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_variant_type_new_tuple$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_new_tuple",
-        constants$235.g_variant_type_new_tuple$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_direct_hash",
+        constants$10.const$5
     );
 }
 

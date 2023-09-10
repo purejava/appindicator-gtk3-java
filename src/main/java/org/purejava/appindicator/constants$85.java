@@ -3,72 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$85 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$85() {}
-    static final FunctionDescriptor g_date_time_new_from_timeval_utc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "seed48",
+        constants$5.const$2
     );
-    static final MethodHandle g_date_time_new_from_timeval_utc$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_new_from_timeval_utc",
-        constants$85.g_date_time_new_from_timeval_utc$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "lcong48",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_date_time_new_from_iso8601$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_new_from_iso8601$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_new_from_iso8601",
-        constants$85.g_date_time_new_from_iso8601$FUNC
-    );
-    static final FunctionDescriptor g_date_time_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle g_date_time_new$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_new",
-        constants$85.g_date_time_new$FUNC
-    );
-    static final FunctionDescriptor g_date_time_new_local$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle g_date_time_new_local$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_new_local",
-        constants$85.g_date_time_new_local$FUNC
-    );
-    static final FunctionDescriptor g_date_time_new_utc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle g_date_time_new_utc$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_new_utc",
-        constants$85.g_date_time_new_utc$FUNC
-    );
-    static final FunctionDescriptor g_date_time_add$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_date_time_add$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_add",
-        constants$85.g_date_time_add$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(3, JAVA_SHORT).withName("__x"),
+        MemoryLayout.sequenceLayout(3, JAVA_SHORT).withName("__old_x"),
+        JAVA_SHORT.withName("__c"),
+        JAVA_SHORT.withName("__init"),
+        JAVA_LONG.withName("__a")
+    ).withName("drand48_data");
+    static final VarHandle const$3 = constants$85.const$2.varHandle(MemoryLayout.PathElement.groupElement("__c"));
+    static final VarHandle const$4 = constants$85.const$2.varHandle(MemoryLayout.PathElement.groupElement("__init"));
+    static final VarHandle const$5 = constants$85.const$2.varHandle(MemoryLayout.PathElement.groupElement("__a"));
 }
 
 

@@ -2,18 +2,39 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2022 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2022() {}
-    static final MemorySegment CAIRO_MIME_TYPE_URI$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("text/x-uri");
-    static final MemorySegment CAIRO_MIME_TYPE_UNIQUE_ID$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("application/x-cairo.uuid");
-    static final MemorySegment CAIRO_MIME_TYPE_JBIG2$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("application/x-cairo.jbig2");
-    static final MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("application/x-cairo.jbig2-global");
-    static final MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("application/x-cairo.jbig2-global-id");
-    static final MemorySegment CAIRO_MIME_TYPE_CCITT_FAX$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("image/g3fax");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_text_get_offset_at_point",
+        constants$608.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_text_get_n_selections",
+        constants$10.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_text_get_selection",
+        constants$180.const$0
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_text_add_selection",
+        constants$49.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_text_remove_selection",
+        constants$11.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_text_set_selection",
+        constants$608.const$5
+    );
 }
 
 

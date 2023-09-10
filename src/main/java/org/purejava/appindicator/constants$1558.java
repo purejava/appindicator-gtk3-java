@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1558 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1558() {}
-    static final FunctionDescriptor gtk_drag_source_add_image_targets$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_font_get_glyph_extents",
+        constants$179.const$1
     );
-    static final MethodHandle gtk_drag_source_add_image_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_add_image_targets",
-        constants$1558.gtk_drag_source_add_image_targets$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_font_get_font_map",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_drag_source_add_uri_targets$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_font_get_face",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_drag_source_add_uri_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_add_uri_targets",
-        constants$1558.gtk_drag_source_add_uri_targets$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_font_has_char",
+        constants$11.const$4
     );
-    static final FunctionDescriptor gtk_drag_source_set_icon_pixbuf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_font_get_features",
+        constants$464.const$4
     );
-    static final MethodHandle gtk_drag_source_set_icon_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_set_icon_pixbuf",
-        constants$1558.gtk_drag_source_set_icon_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_source_set_icon_stock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_drag_source_set_icon_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_set_icon_stock",
-        constants$1558.gtk_drag_source_set_icon_stock$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_source_set_icon_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_drag_source_set_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_set_icon_name",
-        constants$1558.gtk_drag_source_set_icon_name$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_source_set_icon_gicon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_drag_source_set_icon_gicon$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_set_icon_gicon",
-        constants$1558.gtk_drag_source_set_icon_gicon$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_font_get_hb_font",
+        constants$5.const$2
     );
 }
 

@@ -3,65 +3,48 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$794 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$794() {}
-    static final FunctionDescriptor g_task_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_filter_output_stream_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_task_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_task_get_name",
-        constants$794.g_task_get_name$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_filter_output_stream_get_base_stream",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_task_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_filter_output_stream_get_close_base_stream",
+        constants$10.const$5
     );
-    static final MethodHandle g_task_is_valid$MH = RuntimeHelper.downcallHandle(
-        "g_task_is_valid",
-        constants$794.g_task_is_valid$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_filter_output_stream_set_close_base_stream",
+        constants$40.const$2
     );
-    static final FunctionDescriptor GTaskThreadFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GTaskThreadFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GTaskThreadFunc_UP$MH = RuntimeHelper.upcallHandle(GTaskThreadFunc.class, "apply", constants$794.GTaskThreadFunc_UP$FUNC);
-    static final FunctionDescriptor GTaskThreadFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GTaskThreadFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$794.GTaskThreadFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_task_run_in_thread$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_task_run_in_thread$MH = RuntimeHelper.downcallHandle(
-        "g_task_run_in_thread",
-        constants$794.g_task_run_in_thread$FUNC
-    );
-    static final FunctionDescriptor g_task_run_in_thread_sync$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_task_run_in_thread_sync$MH = RuntimeHelper.downcallHandle(
-        "g_task_run_in_thread_sync",
-        constants$794.g_task_run_in_thread_sync$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        RuntimeHelper.POINTER.withName("g_class")
+                    ).withName("g_type_instance"),
+                    JAVA_INT.withName("ref_count"),
+                    MemoryLayout.paddingLayout(4),
+                    RuntimeHelper.POINTER.withName("qdata")
+                ).withName("parent_instance"),
+                RuntimeHelper.POINTER.withName("priv")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("base_stream")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GBufferedOutputStream");
+    static final VarHandle const$5 = constants$794.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

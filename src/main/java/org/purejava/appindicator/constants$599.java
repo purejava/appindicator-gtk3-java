@@ -3,53 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$599 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$599() {}
-    static final FunctionDescriptor g_debug_controller_get_debug_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_STRING__OBJECT_POINTER",
+        constants$584.const$3
     );
-    static final MethodHandle g_debug_controller_get_debug_enabled$MH = RuntimeHelper.downcallHandle(
-        "g_debug_controller_get_debug_enabled",
-        constants$599.g_debug_controller_get_debug_enabled$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_STRING__OBJECT_POINTERv",
+        constants$585.const$0
     );
-    static final FunctionDescriptor g_debug_controller_set_debug_enabled$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_BOOLEAN__BOXED_BOXED",
+        constants$584.const$3
     );
-    static final MethodHandle g_debug_controller_set_debug_enabled$MH = RuntimeHelper.downcallHandle(
-        "g_debug_controller_set_debug_enabled",
-        constants$599.g_debug_controller_set_debug_enabled$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv",
+        constants$585.const$0
     );
-    static final FunctionDescriptor g_debug_controller_dbus_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_debug_controller_dbus_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_debug_controller_dbus_get_type",
-        constants$599.g_debug_controller_dbus_get_type$FUNC
-    );
-    static final FunctionDescriptor g_debug_controller_dbus_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_debug_controller_dbus_new$MH = RuntimeHelper.downcallHandle(
-        "g_debug_controller_dbus_new",
-        constants$599.g_debug_controller_dbus_new$FUNC
-    );
-    static final FunctionDescriptor g_debug_controller_dbus_stop$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_debug_controller_dbus_stop$MH = RuntimeHelper.downcallHandle(
-        "g_debug_controller_dbus_stop",
-        constants$599.g_debug_controller_dbus_stop$FUNC
-    );
-    static final FunctionDescriptor g_drive_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_drive_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_drive_get_type",
-        constants$599.g_drive_get_type$FUNC
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GSignalCMarshaller.class, "apply", constants$584.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GSignalCVaMarshaller.class, "apply", constants$585.const$0);
 }
 
 

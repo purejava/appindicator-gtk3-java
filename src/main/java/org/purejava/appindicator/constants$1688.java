@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1688 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1688() {}
-    static final FunctionDescriptor gtk_menu_bar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_menu_bar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_new",
-        constants$1688.gtk_menu_bar_new$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_arc_negative",
+        constants$1687.const$4
     );
-    static final FunctionDescriptor gtk_menu_bar_new_from_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_rel_move_to",
+        constants$1531.const$0
     );
-    static final MethodHandle gtk_menu_bar_new_from_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_new_from_model",
-        constants$1688.gtk_menu_bar_new_from_model$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_rel_line_to",
+        constants$1531.const$0
     );
-    static final FunctionDescriptor gtk_menu_bar_get_pack_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_rel_curve_to",
+        constants$1687.const$2
     );
-    static final MethodHandle gtk_menu_bar_get_pack_direction$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_get_pack_direction",
-        constants$1688.gtk_menu_bar_get_pack_direction$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_rectangle",
+        constants$1682.const$5
     );
-    static final FunctionDescriptor gtk_menu_bar_set_pack_direction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_menu_bar_set_pack_direction$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_set_pack_direction",
-        constants$1688.gtk_menu_bar_set_pack_direction$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_bar_get_child_pack_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_bar_get_child_pack_direction$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_get_child_pack_direction",
-        constants$1688.gtk_menu_bar_get_child_pack_direction$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_bar_set_child_pack_direction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_menu_bar_set_child_pack_direction$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_bar_set_child_pack_direction",
-        constants$1688.gtk_menu_bar_set_child_pack_direction$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_close_path",
+        constants$13.const$1
     );
 }
 

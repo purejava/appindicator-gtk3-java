@@ -3,70 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1100 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1100() {}
-    static final FunctionDescriptor gdk_window_set_opacity$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_family",
+        constants$10.const$5
     );
-    static final MethodHandle gdk_window_set_opacity$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_opacity",
-        constants$1100.gdk_window_set_opacity$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_is_any",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gdk_window_register_dnd$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_is_loopback",
+        constants$10.const$5
     );
-    static final MethodHandle gdk_window_register_dnd$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_register_dnd",
-        constants$1100.gdk_window_register_dnd$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_is_link_local",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gdk_window_get_drag_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_is_site_local",
+        constants$10.const$5
     );
-    static final MethodHandle gdk_window_get_drag_protocol$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_drag_protocol",
-        constants$1100.gdk_window_get_drag_protocol$FUNC
-    );
-    static final FunctionDescriptor gdk_window_begin_resize_drag$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_begin_resize_drag$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_begin_resize_drag",
-        constants$1100.gdk_window_begin_resize_drag$FUNC
-    );
-    static final FunctionDescriptor gdk_window_begin_resize_drag_for_device$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_begin_resize_drag_for_device$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_begin_resize_drag_for_device",
-        constants$1100.gdk_window_begin_resize_drag_for_device$FUNC
-    );
-    static final FunctionDescriptor gdk_window_begin_move_drag$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_begin_move_drag$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_begin_move_drag",
-        constants$1100.gdk_window_begin_move_drag$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_is_multicast",
+        constants$10.const$5
     );
 }
 

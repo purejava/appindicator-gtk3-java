@@ -3,61 +3,59 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1641 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1641() {}
-    static final FunctionDescriptor gtk_icon_theme_set_screen$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_set_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_set_screen",
-        constants$1641.gtk_icon_theme_set_screen$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_set_search_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_set_search_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_set_search_path",
-        constants$1641.gtk_icon_theme_set_search_path$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_get_search_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_get_search_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_get_search_path",
-        constants$1641.gtk_icon_theme_get_search_path$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_append_search_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_append_search_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_append_search_path",
-        constants$1641.gtk_icon_theme_append_search_path$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_prepend_search_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_prepend_search_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_prepend_search_path",
-        constants$1641.gtk_icon_theme_prepend_search_path$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_add_resource_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_add_resource_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_add_resource_path",
-        constants$1641.gtk_icon_theme_add_resource_path$FUNC
+    static final VarHandle const$0 = constants$1640.const$4.varHandle(MemoryLayout.PathElement.groupElement("strikethrough"));
+    static final VarHandle const$1 = constants$1640.const$4.varHandle(MemoryLayout.PathElement.groupElement("active_count"));
+    static final VarHandle const$2 = constants$1640.const$4.varHandle(MemoryLayout.PathElement.groupElement("matrix"));
+    static final VarHandle const$3 = constants$1640.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("draw_glyphs"),
+        RuntimeHelper.POINTER.withName("draw_rectangle"),
+        RuntimeHelper.POINTER.withName("draw_error_underline"),
+        RuntimeHelper.POINTER.withName("draw_shape"),
+        RuntimeHelper.POINTER.withName("draw_trapezoid"),
+        RuntimeHelper.POINTER.withName("draw_glyph"),
+        RuntimeHelper.POINTER.withName("part_changed"),
+        RuntimeHelper.POINTER.withName("begin"),
+        RuntimeHelper.POINTER.withName("end"),
+        RuntimeHelper.POINTER.withName("prepare_run"),
+        RuntimeHelper.POINTER.withName("draw_glyph_item"),
+        RuntimeHelper.POINTER.withName("_pango_reserved2"),
+        RuntimeHelper.POINTER.withName("_pango_reserved3"),
+        RuntimeHelper.POINTER.withName("_pango_reserved4")
+    ).withName("_PangoRendererClass");
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
 }
 

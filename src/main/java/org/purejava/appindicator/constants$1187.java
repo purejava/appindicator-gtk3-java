@@ -3,55 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1187 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1187() {}
-    static final FunctionDescriptor gdk_visual_get_best_with_both$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_visual_get_best_with_both$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_best_with_both",
-        constants$1187.gdk_visual_get_best_with_both$FUNC
-    );
-    static final FunctionDescriptor gdk_query_depths$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_query_depths$MH = RuntimeHelper.downcallHandle(
-        "gdk_query_depths",
-        constants$1187.gdk_query_depths$FUNC
-    );
-    static final FunctionDescriptor gdk_query_visual_types$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_query_visual_types$MH = RuntimeHelper.downcallHandle(
-        "gdk_query_visual_types",
-        constants$1187.gdk_query_visual_types$FUNC
-    );
-    static final FunctionDescriptor gdk_list_visuals$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_list_visuals$MH = RuntimeHelper.downcallHandle(
-        "gdk_list_visuals",
-        constants$1187.gdk_list_visuals$FUNC
-    );
-    static final FunctionDescriptor gdk_visual_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_visual_get_screen$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_screen",
-        constants$1187.gdk_visual_get_screen$FUNC
-    );
-    static final FunctionDescriptor gdk_visual_get_visual_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_visual_get_visual_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_visual_type",
-        constants$1187.gdk_visual_get_visual_type$FUNC
-    );
+    static final VarHandle const$0 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("mount_changed"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.drive_connected.class, "apply", constants$13.const$4);
+    static final VarHandle const$2 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("drive_connected"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.drive_disconnected.class, "apply", constants$13.const$4);
+    static final VarHandle const$4 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("drive_disconnected"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.drive_changed.class, "apply", constants$13.const$4);
 }
 
 

@@ -3,81 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$888 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$888() {}
-    static final FunctionDescriptor hb_buffer_serialize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_node_info_generate_xml",
+        constants$42.const$4
     );
-    static final MethodHandle hb_buffer_serialize$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_serialize",
-        constants$888.hb_buffer_serialize$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_node_info_ref",
+        constants$5.const$2
     );
-    static final FunctionDescriptor hb_buffer_deserialize_glyphs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_info_ref",
+        constants$5.const$2
     );
-    static final MethodHandle hb_buffer_deserialize_glyphs$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_deserialize_glyphs",
-        constants$888.hb_buffer_deserialize_glyphs$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_info_ref",
+        constants$5.const$2
     );
-    static final FunctionDescriptor hb_buffer_deserialize_unicode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_signal_info_ref",
+        constants$5.const$2
     );
-    static final MethodHandle hb_buffer_deserialize_unicode$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_deserialize_unicode",
-        constants$888.hb_buffer_deserialize_unicode$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_diff$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_diff$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_diff",
-        constants$888.hb_buffer_diff$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_message_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor hb_buffer_message_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_message_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_buffer_message_func_t.class, "apply", constants$888.hb_buffer_message_func_t_UP$FUNC);
-    static final FunctionDescriptor hb_buffer_message_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_message_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$888.hb_buffer_message_func_t_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_property_info_ref",
+        constants$5.const$2
     );
 }
 

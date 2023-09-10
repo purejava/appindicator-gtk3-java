@@ -3,61 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$256 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$256() {}
-    static final FunctionDescriptor g_variant_dict_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$255.const$4
     );
-    static final MethodHandle g_variant_dict_clear$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_clear",
-        constants$256.g_variant_dict_clear$FUNC
-    );
-    static final FunctionDescriptor g_variant_dict_end$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_dict_end$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_end",
-        constants$256.g_variant_dict_end$FUNC
-    );
-    static final FunctionDescriptor g_variant_dict_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_dict_ref$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_ref",
-        constants$256.g_variant_dict_ref$FUNC
-    );
-    static final FunctionDescriptor g_variant_dict_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_dict_unref$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_unref",
-        constants$256.g_variant_dict_unref$FUNC
-    );
-    static final FunctionDescriptor g_printf_string_upper_bound$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_printf_string_upper_bound$MH = RuntimeHelper.downcallHandle(
-        "g_printf_string_upper_bound",
-        constants$256.g_printf_string_upper_bound$FUNC
-    );
-    static final FunctionDescriptor GLogFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GLogFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GLogFunc_UP$MH = RuntimeHelper.upcallHandle(GLogFunc.class, "apply", constants$256.GLogFunc_UP$FUNC);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GSourceDisposeFunc.class, "apply", constants$13.const$1);
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("callback_data"),
+        RuntimeHelper.POINTER.withName("callback_funcs"),
+        RuntimeHelper.POINTER.withName("source_funcs"),
+        JAVA_INT.withName("ref_count"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("context"),
+        JAVA_INT.withName("priority"),
+        JAVA_INT.withName("flags"),
+        JAVA_INT.withName("source_id"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("poll_fds"),
+        RuntimeHelper.POINTER.withName("prev"),
+        RuntimeHelper.POINTER.withName("next"),
+        RuntimeHelper.POINTER.withName("name"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GSource");
+    static final VarHandle const$3 = constants$256.const$2.varHandle(MemoryLayout.PathElement.groupElement("callback_data"));
+    static final VarHandle const$4 = constants$256.const$2.varHandle(MemoryLayout.PathElement.groupElement("callback_funcs"));
+    static final VarHandle const$5 = constants$256.const$2.varHandle(MemoryLayout.PathElement.groupElement("source_funcs"));
 }
 
 

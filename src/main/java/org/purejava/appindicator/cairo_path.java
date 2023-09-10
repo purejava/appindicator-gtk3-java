@@ -2,89 +2,81 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct cairo_path {
- *     cairo_status_t status;
- *     cairo_path_data_t* data;
+ *     enum _cairo_status status;
+ *     union _cairo_path_data_t* data;
  *     int num_data;
  * };
  * }
  */
 public class cairo_path {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("status"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("data"),
-        Constants$root.C_INT$LAYOUT.withName("num_data"),
-        MemoryLayout.paddingLayout(32)
-    ).withName("cairo_path");
     public static MemoryLayout $LAYOUT() {
-        return cairo_path.$struct$LAYOUT;
+        return constants$1719.const$4;
     }
-    static final VarHandle status$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("status"));
     public static VarHandle status$VH() {
-        return cairo_path.status$VH;
+        return constants$1719.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * cairo_status_t status;
+     * enum _cairo_status status;
      * }
      */
     public static int status$get(MemorySegment seg) {
-        return (int)cairo_path.status$VH.get(seg);
+        return (int)constants$1719.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * cairo_status_t status;
+     * enum _cairo_status status;
      * }
      */
     public static void status$set(MemorySegment seg, int x) {
-        cairo_path.status$VH.set(seg, x);
+        constants$1719.const$5.set(seg, x);
     }
     public static int status$get(MemorySegment seg, long index) {
-        return (int)cairo_path.status$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1719.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void status$set(MemorySegment seg, long index, int x) {
-        cairo_path.status$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1719.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle data$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("data"));
     public static VarHandle data$VH() {
-        return cairo_path.data$VH;
+        return constants$1720.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * cairo_path_data_t* data;
+     * union _cairo_path_data_t* data;
      * }
      */
     public static MemorySegment data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)cairo_path.data$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1720.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * cairo_path_data_t* data;
+     * union _cairo_path_data_t* data;
      * }
      */
     public static void data$set(MemorySegment seg, MemorySegment x) {
-        cairo_path.data$VH.set(seg, x);
+        constants$1720.const$0.set(seg, x);
     }
     public static MemorySegment data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)cairo_path.data$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1720.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void data$set(MemorySegment seg, long index, MemorySegment x) {
-        cairo_path.data$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1720.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle num_data$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("num_data"));
     public static VarHandle num_data$VH() {
-        return cairo_path.num_data$VH;
+        return constants$1720.const$1;
     }
     /**
      * Getter for field:
@@ -93,7 +85,7 @@ public class cairo_path {
      * }
      */
     public static int num_data$get(MemorySegment seg) {
-        return (int)cairo_path.num_data$VH.get(seg);
+        return (int)constants$1720.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -102,20 +94,20 @@ public class cairo_path {
      * }
      */
     public static void num_data$set(MemorySegment seg, int x) {
-        cairo_path.num_data$VH.set(seg, x);
+        constants$1720.const$1.set(seg, x);
     }
     public static int num_data$get(MemorySegment seg, long index) {
-        return (int)cairo_path.num_data$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1720.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void num_data$set(MemorySegment seg, long index, int x) {
-        cairo_path.num_data$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1720.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

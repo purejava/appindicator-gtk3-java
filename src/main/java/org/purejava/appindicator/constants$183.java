@@ -3,64 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$183 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$183() {}
-    static final FunctionDescriptor g_idle_add$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_dataset_foreach$func.class, "apply", constants$127.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dataset_foreach",
+        constants$14.const$3
     );
-    static final MethodHandle g_idle_add$MH = RuntimeHelper.downcallHandle(
-        "g_idle_add",
-        constants$183.g_idle_add$FUNC
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.paddingLayout(8)
+    ).withName("_GDate");
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_date_new",
+        constants$35.const$2
     );
-    static final FunctionDescriptor g_idle_add_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_BYTE,
+        JAVA_INT,
+        JAVA_SHORT
     );
-    static final MethodHandle g_idle_add_full$MH = RuntimeHelper.downcallHandle(
-        "g_idle_add_full",
-        constants$183.g_idle_add_full$FUNC
-    );
-    static final FunctionDescriptor g_idle_add_once$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_idle_add_once$MH = RuntimeHelper.downcallHandle(
-        "g_idle_add_once",
-        constants$183.g_idle_add_once$FUNC
-    );
-    static final FunctionDescriptor g_idle_remove_by_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_idle_remove_by_data$MH = RuntimeHelper.downcallHandle(
-        "g_idle_remove_by_data",
-        constants$183.g_idle_remove_by_data$FUNC
-    );
-    static final FunctionDescriptor g_main_context_invoke_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_context_invoke_full$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_invoke_full",
-        constants$183.g_main_context_invoke_full$FUNC
-    );
-    static final FunctionDescriptor g_main_context_invoke$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_context_invoke$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_invoke",
-        constants$183.g_main_context_invoke$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_date_new_dmy",
+        constants$183.const$4
     );
 }
 

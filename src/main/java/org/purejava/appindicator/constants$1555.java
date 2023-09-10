@@ -3,61 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1555 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1555() {}
-    static final FunctionDescriptor gtk_get_debug_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_get_debug_flags$MH = RuntimeHelper.downcallHandle(
-        "gtk_get_debug_flags",
-        constants$1555.gtk_get_debug_flags$FUNC
-    );
-    static final FunctionDescriptor gtk_set_debug_flags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_set_debug_flags$MH = RuntimeHelper.downcallHandle(
-        "gtk_set_debug_flags",
-        constants$1555.gtk_set_debug_flags$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_dest_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_drag_dest_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_dest_set",
-        constants$1555.gtk_drag_dest_set$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_dest_set_proxy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_drag_dest_set_proxy$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_dest_set_proxy",
-        constants$1555.gtk_drag_dest_set_proxy$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_dest_unset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_drag_dest_unset$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_dest_unset",
-        constants$1555.gtk_drag_dest_unset$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_dest_find_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_drag_dest_find_target$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_dest_find_target",
-        constants$1555.gtk_drag_dest_find_target$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_PangoFontClass.get_glyph_extents.class, "apply", constants$179.const$1);
+    static final VarHandle const$1 = constants$1554.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_glyph_extents"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_PangoFontClass.get_metrics.class, "apply", constants$5.const$5);
+    static final VarHandle const$3 = constants$1554.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_metrics"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_PangoFontClass.get_font_map.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$1554.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_font_map"));
 }
 
 

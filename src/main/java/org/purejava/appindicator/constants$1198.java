@@ -3,46 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1198 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1198() {}
-    static final FunctionDescriptor atk_text_clip_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_text_clip_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_text_clip_type_get_type",
-        constants$1198.atk_text_clip_type_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_key_event_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_key_event_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_key_event_type_get_type",
-        constants$1198.atk_key_event_type_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_coord_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_coord_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_coord_type_get_type",
-        constants$1198.atk_coord_type_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_value_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_value_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_value_type_get_type",
-        constants$1198.atk_value_type_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_state_type_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_state_type_register$MH = RuntimeHelper.downcallHandle(
-        "atk_state_type_register",
-        constants$1198.atk_state_type_register$FUNC
-    );
-    static final FunctionDescriptor atk_state_type_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_state_type_get_name$MH = RuntimeHelper.downcallHandle(
-        "atk_state_type_get_name",
-        constants$1198.atk_state_type_get_name$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GNetworkMonitorInterface.can_reach.class, "apply", constants$34.const$5);
+    static final VarHandle const$1 = constants$1197.const$3.varHandle(MemoryLayout.PathElement.groupElement("can_reach"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GNetworkMonitorInterface.can_reach_async.class, "apply", constants$331.const$1);
+    static final VarHandle const$3 = constants$1197.const$3.varHandle(MemoryLayout.PathElement.groupElement("can_reach_async"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GNetworkMonitorInterface.can_reach_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$5 = constants$1197.const$3.varHandle(MemoryLayout.PathElement.groupElement("can_reach_finish"));
 }
 
 

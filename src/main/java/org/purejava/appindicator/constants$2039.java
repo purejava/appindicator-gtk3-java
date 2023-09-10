@@ -2,18 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2039 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2039() {}
-    static final MemorySegment GTK_STYLE_CLASS_LEVEL_BAR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("level-bar");
-    static final MemorySegment GTK_STYLE_CLASS_CURSOR_HANDLE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("cursor-handle");
-    static final MemorySegment GTK_STYLE_CLASS_INSERTION_CURSOR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("insertion-cursor");
-    static final MemorySegment GTK_STYLE_CLASS_TITLEBAR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("titlebar");
-    static final MemorySegment GTK_STYLE_CLASS_TITLE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("title");
-    static final MemorySegment GTK_STYLE_CLASS_SUBTITLE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("subtitle");
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkImageIface.get_image_size.class, "apply", constants$14.const$3);
+    static final VarHandle const$1 = constants$2038.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_image_size"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkImageIface.set_image_description.class, "apply", constants$9.const$0);
+    static final VarHandle const$3 = constants$2038.const$1.varHandle(MemoryLayout.PathElement.groupElement("set_image_description"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkImageIface.get_image_locale.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$2038.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_image_locale"));
 }
 
 

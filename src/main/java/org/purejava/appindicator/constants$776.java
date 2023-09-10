@@ -3,60 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$776 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$776() {}
-    static final FunctionDescriptor g_socket_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_connection_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_get_type",
-        constants$776.g_socket_connection_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_set_buffer_size",
+        constants$25.const$3
     );
-    static final FunctionDescriptor g_socket_connection_is_connected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_get_available",
+        constants$4.const$0
     );
-    static final MethodHandle g_socket_connection_is_connected$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_is_connected",
-        constants$776.g_socket_connection_is_connected$FUNC
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final FunctionDescriptor g_socket_connection_connect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_peek",
+        constants$776.const$2
     );
-    static final MethodHandle g_socket_connection_connect$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_connect",
-        constants$776.g_socket_connection_connect$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_peek_buffer",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_socket_connection_connect_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_connection_connect_async$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_connect_async",
-        constants$776.g_socket_connection_connect_async$FUNC
-    );
-    static final FunctionDescriptor g_socket_connection_connect_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_connection_connect_finish$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_connect_finish",
-        constants$776.g_socket_connection_connect_finish$FUNC
-    );
-    static final FunctionDescriptor g_socket_connection_get_socket$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_connection_get_socket$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_get_socket",
-        constants$776.g_socket_connection_get_socket$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_fill",
+        constants$4.const$5
     );
 }
 

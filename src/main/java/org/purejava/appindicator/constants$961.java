@@ -3,56 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$961 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$961() {}
-    static final FunctionDescriptor pango_layout_get_justify_last_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_get_require_close_notify",
+        constants$10.const$5
     );
-    static final MethodHandle pango_layout_get_justify_last_line$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_justify_last_line",
-        constants$961.pango_layout_get_justify_last_line$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_set_rehandshake_mode",
+        constants$40.const$2
     );
-    static final FunctionDescriptor pango_layout_set_auto_dir$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_get_rehandshake_mode",
+        constants$10.const$5
     );
-    static final MethodHandle pango_layout_set_auto_dir$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_auto_dir",
-        constants$961.pango_layout_set_auto_dir$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_handshake",
+        constants$12.const$2
     );
-    static final FunctionDescriptor pango_layout_get_auto_dir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_auto_dir$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_auto_dir",
-        constants$961.pango_layout_get_auto_dir$FUNC
-    );
-    static final FunctionDescriptor pango_layout_set_alignment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_alignment$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_alignment",
-        constants$961.pango_layout_set_alignment$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_alignment$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_alignment$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_alignment",
-        constants$961.pango_layout_get_alignment$FUNC
-    );
-    static final FunctionDescriptor pango_layout_set_tabs$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_tabs$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_tabs",
-        constants$961.pango_layout_set_tabs$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_dtls_connection_handshake_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_handshake_async",
+        constants$281.const$5
     );
 }
 

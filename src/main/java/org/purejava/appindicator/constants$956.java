@@ -3,53 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$956 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$956() {}
-    static final FunctionDescriptor pango_tab_array_sort$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDtlsConnectionInterface.handshake_async.class, "apply", constants$281.const$5);
+    static final VarHandle const$1 = constants$955.const$0.varHandle(MemoryLayout.PathElement.groupElement("handshake_async"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDtlsConnectionInterface.handshake_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$3 = constants$955.const$0.varHandle(MemoryLayout.PathElement.groupElement("handshake_finish"));
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle pango_tab_array_sort$MH = RuntimeHelper.downcallHandle(
-        "pango_tab_array_sort",
-        constants$956.pango_tab_array_sort$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_layout_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_type",
-        constants$956.pango_layout_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_layout_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_new$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_new",
-        constants$956.pango_layout_new$FUNC
-    );
-    static final FunctionDescriptor pango_layout_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_copy$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_copy",
-        constants$956.pango_layout_copy$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_context$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_context",
-        constants$956.pango_layout_get_context$FUNC
-    );
-    static final FunctionDescriptor pango_layout_set_attributes$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_attributes$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_attributes",
-        constants$956.pango_layout_set_attributes$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GDtlsConnectionInterface.shutdown.class, "apply", constants$956.const$4);
 }
 
 

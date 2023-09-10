@@ -3,54 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1529 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1529() {}
-    static final FunctionDescriptor gtk_cell_view_set_fit_model$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final VarHandle const$0 = constants$1528.const$2.varHandle(MemoryLayout.PathElement.groupElement("height"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_extents_to_pixels",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_cell_view_set_fit_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_view_set_fit_model",
-        constants$1529.gtk_cell_view_set_fit_model$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_view_get_size_of_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_view_get_size_of_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_view_get_size_of_row",
-        constants$1529.gtk_cell_view_get_size_of_row$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_view_set_background_color$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_view_set_background_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_view_set_background_color",
-        constants$1529.gtk_cell_view_set_background_color$FUNC
-    );
-    static final FunctionDescriptor gtk_toggle_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_toggle_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_toggle_button_get_type",
-        constants$1529.gtk_toggle_button_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_toggle_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_toggle_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_toggle_button_new",
-        constants$1529.gtk_toggle_button_new$FUNC
-    );
-    static final FunctionDescriptor gtk_toggle_button_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_toggle_button_new_with_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_toggle_button_new_with_label",
-        constants$1529.gtk_toggle_button_new_with_label$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_DOUBLE.withName("xx"),
+        JAVA_DOUBLE.withName("xy"),
+        JAVA_DOUBLE.withName("yx"),
+        JAVA_DOUBLE.withName("yy"),
+        JAVA_DOUBLE.withName("x0"),
+        JAVA_DOUBLE.withName("y0")
+    ).withName("_PangoMatrix");
+    static final VarHandle const$3 = constants$1529.const$2.varHandle(MemoryLayout.PathElement.groupElement("xx"));
+    static final VarHandle const$4 = constants$1529.const$2.varHandle(MemoryLayout.PathElement.groupElement("xy"));
+    static final VarHandle const$5 = constants$1529.const$2.varHandle(MemoryLayout.PathElement.groupElement("yx"));
 }
 
 

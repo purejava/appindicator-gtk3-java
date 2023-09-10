@@ -3,59 +3,45 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1244 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1244() {}
-    static final FunctionDescriptor atk_table_cell_get_row_column_span$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_resources_enumerate_children",
+        constants$196.const$3
     );
-    static final MethodHandle atk_table_cell_get_row_column_span$MH = RuntimeHelper.downcallHandle(
-        "atk_table_cell_get_row_column_span",
-        constants$1244.atk_table_cell_get_row_column_span$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_resources_get_info",
+        constants$373.const$2
     );
-    static final FunctionDescriptor atk_table_cell_get_table$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_static_resource_init",
+        constants$13.const$1
     );
-    static final MethodHandle atk_table_cell_get_table$MH = RuntimeHelper.downcallHandle(
-        "atk_table_cell_get_table",
-        constants$1244.atk_table_cell_get_table$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_static_resource_fini",
+        constants$13.const$1
     );
-    static final FunctionDescriptor atk_value_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_value_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_value_get_type",
-        constants$1244.atk_value_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_static_resource_get_resource",
+        constants$5.const$2
     );
-    static final FunctionDescriptor atk_value_get_current_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_value_get_current_value$MH = RuntimeHelper.downcallHandle(
-        "atk_value_get_current_value",
-        constants$1244.atk_value_get_current_value$FUNC
-    );
-    static final FunctionDescriptor atk_value_get_maximum_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_value_get_maximum_value$MH = RuntimeHelper.downcallHandle(
-        "atk_value_get_maximum_value",
-        constants$1244.atk_value_get_maximum_value$FUNC
-    );
-    static final FunctionDescriptor atk_value_get_minimum_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_value_get_minimum_value$MH = RuntimeHelper.downcallHandle(
-        "atk_value_get_minimum_value",
-        constants$1244.atk_value_get_minimum_value$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("tell"),
+        RuntimeHelper.POINTER.withName("can_seek"),
+        RuntimeHelper.POINTER.withName("seek"),
+        RuntimeHelper.POINTER.withName("can_truncate"),
+        RuntimeHelper.POINTER.withName("truncate_fn")
+    ).withName("_GSeekableIface");
 }
 
 

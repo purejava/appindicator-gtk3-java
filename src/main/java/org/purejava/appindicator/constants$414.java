@@ -3,92 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$414 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$414() {}
-    static final FunctionDescriptor GSignalCMarshaller$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_regex_escape_string",
+        constants$21.const$3
     );
-    static final FunctionDescriptor GSignalCMarshaller_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_regex_escape_nul",
+        constants$21.const$3
     );
-    static final MethodHandle GSignalCMarshaller_UP$MH = RuntimeHelper.upcallHandle(GSignalCMarshaller.class, "apply", constants$414.GSignalCMarshaller_UP$FUNC);
-    static final FunctionDescriptor GSignalCMarshaller_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_regex_get_compile_flags",
+        constants$10.const$5
     );
-    static final MethodHandle GSignalCMarshaller_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$414.GSignalCMarshaller_DOWN$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_regex_get_match_flags",
+        constants$10.const$5
     );
-    static final FunctionDescriptor GSignalCVaMarshaller$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final FunctionDescriptor GSignalCVaMarshaller_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GSignalCVaMarshaller_UP$MH = RuntimeHelper.upcallHandle(GSignalCVaMarshaller.class, "apply", constants$414.GSignalCVaMarshaller_UP$FUNC);
-    static final FunctionDescriptor GSignalCVaMarshaller_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GSignalCVaMarshaller_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$414.GSignalCVaMarshaller_DOWN$FUNC
-    );
-    static final FunctionDescriptor GSignalEmissionHook$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GSignalEmissionHook_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GSignalEmissionHook_UP$MH = RuntimeHelper.upcallHandle(GSignalEmissionHook.class, "apply", constants$414.GSignalEmissionHook_UP$FUNC);
-    static final FunctionDescriptor GSignalEmissionHook_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GSignalEmissionHook_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$414.GSignalEmissionHook_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_regex_match_simple",
+        constants$414.const$4
     );
 }
 

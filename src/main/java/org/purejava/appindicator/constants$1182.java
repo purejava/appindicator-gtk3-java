@@ -3,66 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1182 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1182() {}
-    static final FunctionDescriptor gdk_text_property_to_utf8_list_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_get_choice",
+        constants$10.const$5
     );
-    static final MethodHandle gdk_text_property_to_utf8_list_for_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_text_property_to_utf8_list_for_display",
-        constants$1182.gdk_text_property_to_utf8_list_for_display$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_set_choice",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gdk_utf8_to_string_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_reply",
+        constants$40.const$2
     );
-    static final MethodHandle gdk_utf8_to_string_target$MH = RuntimeHelper.downcallHandle(
-        "gdk_utf8_to_string_target",
-        constants$1182.gdk_utf8_to_string_target$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_get_is_tcrypt_hidden_volume",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gdk_selection_owner_set$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_set_is_tcrypt_hidden_volume",
+        constants$40.const$2
     );
-    static final MethodHandle gdk_selection_owner_set$MH = RuntimeHelper.downcallHandle(
-        "gdk_selection_owner_set",
-        constants$1182.gdk_selection_owner_set$FUNC
-    );
-    static final FunctionDescriptor gdk_selection_owner_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_selection_owner_get$MH = RuntimeHelper.downcallHandle(
-        "gdk_selection_owner_get",
-        constants$1182.gdk_selection_owner_get$FUNC
-    );
-    static final FunctionDescriptor gdk_selection_owner_set_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_selection_owner_set_for_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_selection_owner_set_for_display",
-        constants$1182.gdk_selection_owner_set_for_display$FUNC
-    );
-    static final FunctionDescriptor gdk_selection_owner_get_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_selection_owner_get_for_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_selection_owner_get_for_display",
-        constants$1182.gdk_selection_owner_get_for_display$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_get_is_tcrypt_system_volume",
+        constants$10.const$5
     );
 }
 

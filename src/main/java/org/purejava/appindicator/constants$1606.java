@@ -3,56 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1606 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1606() {}
-    static final FunctionDescriptor gtk_gesture_multi_press_set_area$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1605.const$2.varHandle(MemoryLayout.PathElement.groupElement("script_shape"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_PangoEngineShapeClass.covers.class, "apply", constants$311.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$311.const$0
     );
-    static final MethodHandle gtk_gesture_multi_press_set_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_multi_press_set_area",
-        constants$1606.gtk_gesture_multi_press_set_area$FUNC
+    static final VarHandle const$3 = constants$1605.const$2.varHandle(MemoryLayout.PathElement.groupElement("covers"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_engine_shape_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_gesture_multi_press_get_area$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_multi_press_get_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_multi_press_get_area",
-        constants$1606.gtk_gesture_multi_press_get_area$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_pan_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_gesture_pan_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_pan_get_type",
-        constants$1606.gtk_gesture_pan_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_pan_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_pan_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_pan_new",
-        constants$1606.gtk_gesture_pan_new$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_pan_get_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_pan_get_orientation$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_pan_get_orientation",
-        constants$1606.gtk_gesture_pan_get_orientation$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_pan_set_orientation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_pan_set_orientation$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_pan_set_orientation",
-        constants$1606.gtk_gesture_pan_set_orientation$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_INT.withName("script"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("langs")
+    ).withName("_PangoEngineScriptInfo");
 }
 
 

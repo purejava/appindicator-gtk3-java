@@ -3,58 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$988 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$988() {}
-    static final FunctionDescriptor rewind$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$987.const$4
     );
-    static final MethodHandle rewind$MH = RuntimeHelper.downcallHandle(
-        "rewind",
-        constants$988.rewind$FUNC
-    );
-    static final FunctionDescriptor fseeko$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle fseeko$MH = RuntimeHelper.downcallHandle(
-        "fseeko",
-        constants$988.fseeko$FUNC
-    );
-    static final FunctionDescriptor ftello$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle ftello$MH = RuntimeHelper.downcallHandle(
-        "ftello",
-        constants$988.ftello$FUNC
-    );
-    static final FunctionDescriptor fgetpos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle fgetpos$MH = RuntimeHelper.downcallHandle(
-        "fgetpos",
-        constants$988.fgetpos$FUNC
-    );
-    static final FunctionDescriptor fsetpos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle fsetpos$MH = RuntimeHelper.downcallHandle(
-        "fsetpos",
-        constants$988.fsetpos$FUNC
-    );
-    static final FunctionDescriptor clearerr$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle clearerr$MH = RuntimeHelper.downcallHandle(
-        "clearerr",
-        constants$988.clearerr$FUNC
-    );
+    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("append_to_async"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.append_to_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("append_to_finish"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.create.class, "apply", constants$180.const$0);
+    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("create"));
 }
 
 

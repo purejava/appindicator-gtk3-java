@@ -3,42 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1197 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1197() {}
-    static final FunctionDescriptor atk_layer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_layer_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_layer_get_type",
-        constants$1197.atk_layer_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_network_address_get_hostname",
+        constants$5.const$2
     );
-    static final FunctionDescriptor atk_relation_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_relation_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_type_get_type",
-        constants$1197.atk_relation_type_get_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_network_address_get_port",
+        constants$186.const$2
     );
-    static final FunctionDescriptor atk_state_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_state_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_state_type_get_type",
-        constants$1197.atk_state_type_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_network_address_get_scheme",
+        constants$5.const$2
     );
-    static final FunctionDescriptor atk_text_attribute_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_text_attribute_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_text_attribute_get_type",
-        constants$1197.atk_text_attribute_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_text_boundary_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_text_boundary_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_text_boundary_get_type",
-        constants$1197.atk_text_boundary_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_text_granularity_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_text_granularity_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_text_granularity_get_type",
-        constants$1197.atk_text_granularity_get_type$FUNC
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("network_changed"),
+        RuntimeHelper.POINTER.withName("can_reach"),
+        RuntimeHelper.POINTER.withName("can_reach_async"),
+        RuntimeHelper.POINTER.withName("can_reach_finish")
+    ).withName("_GNetworkMonitorInterface");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GNetworkMonitorInterface.network_changed.class, "apply", constants$40.const$2);
+    static final VarHandle const$5 = constants$1197.const$3.varHandle(MemoryLayout.PathElement.groupElement("network_changed"));
 }
 
 

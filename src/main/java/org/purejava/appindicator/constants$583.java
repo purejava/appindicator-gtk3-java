@@ -3,70 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$583 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$583() {}
-    static final FunctionDescriptor g_bus_own_name_on_connection_with_closures$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_param_spec_pool_new",
+        constants$24.const$0
     );
-    static final MethodHandle g_bus_own_name_on_connection_with_closures$MH = RuntimeHelper.downcallHandle(
-        "g_bus_own_name_on_connection_with_closures",
-        constants$583.g_bus_own_name_on_connection_with_closures$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_param_spec_pool_insert",
+        constants$25.const$1
     );
-    static final FunctionDescriptor g_bus_unown_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_param_spec_pool_remove",
+        constants$13.const$4
     );
-    static final MethodHandle g_bus_unown_name$MH = RuntimeHelper.downcallHandle(
-        "g_bus_unown_name",
-        constants$583.g_bus_unown_name$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT
     );
-    static final FunctionDescriptor GBusNameAppearedCallback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_param_spec_pool_lookup",
+        constants$583.const$3
     );
-    static final FunctionDescriptor GBusNameAppearedCallback_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GBusNameAppearedCallback_UP$MH = RuntimeHelper.upcallHandle(GBusNameAppearedCallback.class, "apply", constants$583.GBusNameAppearedCallback_UP$FUNC);
-    static final FunctionDescriptor GBusNameAppearedCallback_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GBusNameAppearedCallback_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$583.GBusNameAppearedCallback_DOWN$FUNC
-    );
-    static final FunctionDescriptor GBusNameVanishedCallback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GBusNameVanishedCallback_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GBusNameVanishedCallback_UP$MH = RuntimeHelper.upcallHandle(GBusNameVanishedCallback.class, "apply", constants$583.GBusNameVanishedCallback_UP$FUNC);
-    static final FunctionDescriptor GBusNameVanishedCallback_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GBusNameVanishedCallback_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$583.GBusNameVanishedCallback_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_param_spec_pool_list_owned",
+        constants$21.const$1
     );
 }
 

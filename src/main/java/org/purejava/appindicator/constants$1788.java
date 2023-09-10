@@ -3,88 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1788 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1788() {}
-    static final FunctionDescriptor gtk_render_focus$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_focus",
-        constants$1788.gtk_render_focus$FUNC
-    );
-    static final FunctionDescriptor gtk_render_layout$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_render_layout$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_layout",
-        constants$1788.gtk_render_layout$FUNC
-    );
-    static final FunctionDescriptor gtk_render_line$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_line",
-        constants$1788.gtk_render_line$FUNC
-    );
-    static final FunctionDescriptor gtk_render_slider$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_render_slider$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_slider",
-        constants$1788.gtk_render_slider$FUNC
-    );
-    static final FunctionDescriptor gtk_render_frame_gap$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_frame_gap$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_frame_gap",
-        constants$1788.gtk_render_frame_gap$FUNC
-    );
-    static final FunctionDescriptor gtk_render_extension$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_render_extension$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_extension",
-        constants$1788.gtk_render_extension$FUNC
-    );
+    static final VarHandle const$0 = constants$1787.const$4.varHandle(MemoryLayout.PathElement.groupElement("window"));
+    static final VarHandle const$1 = constants$1787.const$4.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
+    static final VarHandle const$2 = constants$1787.const$4.varHandle(MemoryLayout.PathElement.groupElement("owner"));
+    static final VarHandle const$3 = constants$1787.const$4.varHandle(MemoryLayout.PathElement.groupElement("reason"));
+    static final VarHandle const$4 = constants$1787.const$4.varHandle(MemoryLayout.PathElement.groupElement("selection"));
+    static final VarHandle const$5 = constants$1787.const$4.varHandle(MemoryLayout.PathElement.groupElement("time"));
 }
 
 

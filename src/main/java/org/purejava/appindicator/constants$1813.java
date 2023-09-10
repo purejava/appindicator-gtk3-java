@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1813 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1813() {}
-    static final FunctionDescriptor gtk_stack_set_vhomogeneous$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_drawing_context_get_cairo_context",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_stack_set_vhomogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_vhomogeneous",
-        constants$1813.gtk_stack_set_vhomogeneous$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_frame_timings_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_stack_get_vhomogeneous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_frame_timings_ref",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_stack_get_vhomogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_vhomogeneous",
-        constants$1813.gtk_stack_get_vhomogeneous$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_frame_timings_unref",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_stack_set_transition_duration$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_frame_timings_get_frame_counter",
+        constants$4.const$0
     );
-    static final MethodHandle gtk_stack_set_transition_duration$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_transition_duration",
-        constants$1813.gtk_stack_set_transition_duration$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_get_transition_duration$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_stack_get_transition_duration$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_transition_duration",
-        constants$1813.gtk_stack_get_transition_duration$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_set_transition_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_stack_set_transition_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_set_transition_type",
-        constants$1813.gtk_stack_set_transition_type$FUNC
-    );
-    static final FunctionDescriptor gtk_stack_get_transition_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_stack_get_transition_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_stack_get_transition_type",
-        constants$1813.gtk_stack_get_transition_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_frame_timings_get_complete",
+        constants$10.const$5
     );
 }
 

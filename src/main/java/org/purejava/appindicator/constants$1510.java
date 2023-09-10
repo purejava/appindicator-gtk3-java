@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1510 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1510() {}
-    static final FunctionDescriptor gtk_button_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_segment_properties",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_button_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_new_with_mnemonic",
-        constants$1510.gtk_button_new_with_mnemonic$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_segment_properties",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_button_clicked$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_buffer_guess_segment_properties",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_button_clicked$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_clicked",
-        constants$1510.gtk_button_clicked$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_flags",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_button_pressed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_flags",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_button_pressed$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_pressed",
-        constants$1510.gtk_button_pressed$FUNC
-    );
-    static final FunctionDescriptor gtk_button_released$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_button_released$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_released",
-        constants$1510.gtk_button_released$FUNC
-    );
-    static final FunctionDescriptor gtk_button_enter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_button_enter$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_enter",
-        constants$1510.gtk_button_enter$FUNC
-    );
-    static final FunctionDescriptor gtk_button_leave$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_button_leave$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_leave",
-        constants$1510.gtk_button_leave$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_cluster_level",
+        constants$40.const$2
     );
 }
 

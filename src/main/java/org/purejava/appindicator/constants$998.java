@@ -3,66 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$998 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$998() {}
-    static final FunctionDescriptor cairo_pop_group_to_source$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pop_group_to_source$MH = RuntimeHelper.downcallHandle(
-        "cairo_pop_group_to_source",
-        constants$998.cairo_pop_group_to_source$FUNC
-    );
-    static final FunctionDescriptor cairo_set_operator$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_set_operator$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_operator",
-        constants$998.cairo_set_operator$FUNC
-    );
-    static final FunctionDescriptor cairo_set_source$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_set_source$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_source",
-        constants$998.cairo_set_source$FUNC
-    );
-    static final FunctionDescriptor cairo_set_source_rgb$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_set_source_rgb$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_source_rgb",
-        constants$998.cairo_set_source_rgb$FUNC
-    );
-    static final FunctionDescriptor cairo_set_source_rgba$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_set_source_rgba$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_source_rgba",
-        constants$998.cairo_set_source_rgba$FUNC
-    );
-    static final FunctionDescriptor cairo_set_source_surface$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_set_source_surface$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_source_surface",
-        constants$998.cairo_set_source_surface$FUNC
-    );
+    static final VarHandle const$0 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("mount_mountable"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.mount_mountable_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$2 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("mount_mountable_finish"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.unmount_mountable.class, "apply", constants$281.const$5);
+    static final VarHandle const$4 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("unmount_mountable"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.unmount_mountable_finish.class, "apply", constants$12.const$2);
 }
 
 

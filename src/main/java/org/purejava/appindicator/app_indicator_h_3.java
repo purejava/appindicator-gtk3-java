@@ -4,12 +4,253 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 public class app_indicator_h_3 extends app_indicator_h_2 {
 
+    public static MethodHandle memcmp$MH() {
+        return RuntimeHelper.requireNonNull(constants$18.const$3,"memcmp");
+    }
+    /**
+     * {@snippet :
+     * int memcmp(void* __s1, void* __s2, unsigned long __n);
+     * }
+     */
+    public static int memcmp(MemorySegment __s1, MemorySegment __s2, long __n) {
+        var mh$ = memcmp$MH();
+        try {
+            return (int)mh$.invokeExact(__s1, __s2, __n);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle __memcmpeq$MH() {
+        return RuntimeHelper.requireNonNull(constants$18.const$4,"__memcmpeq");
+    }
+    /**
+     * {@snippet :
+     * int __memcmpeq(void* __s1, void* __s2, unsigned long __n);
+     * }
+     */
+    public static int __memcmpeq(MemorySegment __s1, MemorySegment __s2, long __n) {
+        var mh$ = __memcmpeq$MH();
+        try {
+            return (int)mh$.invokeExact(__s1, __s2, __n);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle memchr$MH() {
+        return RuntimeHelper.requireNonNull(constants$18.const$5,"memchr");
+    }
+    /**
+     * {@snippet :
+     * void* memchr(void* __s, int __c, unsigned long __n);
+     * }
+     */
+    public static MemorySegment memchr(MemorySegment __s, int __c, long __n) {
+        var mh$ = memchr$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__s, __c, __n);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle strcpy$MH() {
+        return RuntimeHelper.requireNonNull(constants$19.const$0,"strcpy");
+    }
+    /**
+     * {@snippet :
+     * char* strcpy(char* __dest, char* __src);
+     * }
+     */
+    public static MemorySegment strcpy(MemorySegment __dest, MemorySegment __src) {
+        var mh$ = strcpy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dest, __src);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle strncpy$MH() {
+        return RuntimeHelper.requireNonNull(constants$19.const$1,"strncpy");
+    }
+    /**
+     * {@snippet :
+     * char* strncpy(char* __dest, char* __src, unsigned long __n);
+     * }
+     */
+    public static MemorySegment strncpy(MemorySegment __dest, MemorySegment __src, long __n) {
+        var mh$ = strncpy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dest, __src, __n);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle strcat$MH() {
+        return RuntimeHelper.requireNonNull(constants$19.const$2,"strcat");
+    }
+    /**
+     * {@snippet :
+     * char* strcat(char* __dest, char* __src);
+     * }
+     */
+    public static MemorySegment strcat(MemorySegment __dest, MemorySegment __src) {
+        var mh$ = strcat$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dest, __src);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle strncat$MH() {
+        return RuntimeHelper.requireNonNull(constants$19.const$3,"strncat");
+    }
+    /**
+     * {@snippet :
+     * char* strncat(char* __dest, char* __src, unsigned long __n);
+     * }
+     */
+    public static MemorySegment strncat(MemorySegment __dest, MemorySegment __src, long __n) {
+        var mh$ = strncat$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dest, __src, __n);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle strcmp$MH() {
+        return RuntimeHelper.requireNonNull(constants$19.const$4,"strcmp");
+    }
+    /**
+     * {@snippet :
+     * int strcmp(char* __s1, char* __s2);
+     * }
+     */
+    public static int strcmp(MemorySegment __s1, MemorySegment __s2) {
+        var mh$ = strcmp$MH();
+        try {
+            return (int)mh$.invokeExact(__s1, __s2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle strncmp$MH() {
+        return RuntimeHelper.requireNonNull(constants$19.const$5,"strncmp");
+    }
+    /**
+     * {@snippet :
+     * int strncmp(char* __s1, char* __s2, unsigned long __n);
+     * }
+     */
+    public static int strncmp(MemorySegment __s1, MemorySegment __s2, long __n) {
+        var mh$ = strncmp$MH();
+        try {
+            return (int)mh$.invokeExact(__s1, __s2, __n);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle strcoll$MH() {
+        return RuntimeHelper.requireNonNull(constants$20.const$0,"strcoll");
+    }
+    /**
+     * {@snippet :
+     * int strcoll(char* __s1, char* __s2);
+     * }
+     */
+    public static int strcoll(MemorySegment __s1, MemorySegment __s2) {
+        var mh$ = strcoll$MH();
+        try {
+            return (int)mh$.invokeExact(__s1, __s2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle strxfrm$MH() {
+        return RuntimeHelper.requireNonNull(constants$20.const$2,"strxfrm");
+    }
+    /**
+     * {@snippet :
+     * unsigned long strxfrm(char* __dest, char* __src, unsigned long __n);
+     * }
+     */
+    public static long strxfrm(MemorySegment __dest, MemorySegment __src, long __n) {
+        var mh$ = strxfrm$MH();
+        try {
+            return (long)mh$.invokeExact(__dest, __src, __n);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle strcoll_l$MH() {
+        return RuntimeHelper.requireNonNull(constants$20.const$3,"strcoll_l");
+    }
+    /**
+     * {@snippet :
+     * int strcoll_l(char* __s1, char* __s2, struct __locale_struct* __l);
+     * }
+     */
+    public static int strcoll_l(MemorySegment __s1, MemorySegment __s2, MemorySegment __l) {
+        var mh$ = strcoll_l$MH();
+        try {
+            return (int)mh$.invokeExact(__s1, __s2, __l);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle strxfrm_l$MH() {
+        return RuntimeHelper.requireNonNull(constants$20.const$5,"strxfrm_l");
+    }
+    /**
+     * {@snippet :
+     * unsigned long strxfrm_l(char* __dest, char* __src, unsigned long __n, struct __locale_struct* __l);
+     * }
+     */
+    public static long strxfrm_l(MemorySegment __dest, MemorySegment __src, long __n, MemorySegment __l) {
+        var mh$ = strxfrm_l$MH();
+        try {
+            return (long)mh$.invokeExact(__dest, __src, __n, __l);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle strdup$MH() {
+        return RuntimeHelper.requireNonNull(constants$21.const$0,"strdup");
+    }
+    /**
+     * {@snippet :
+     * char* strdup(char* __s);
+     * }
+     */
+    public static MemorySegment strdup(MemorySegment __s) {
+        var mh$ = strdup$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__s);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle strndup$MH() {
+        return RuntimeHelper.requireNonNull(constants$21.const$2,"strndup");
+    }
+    /**
+     * {@snippet :
+     * char* strndup(char* __string, unsigned long __n);
+     * }
+     */
+    public static MemorySegment strndup(MemorySegment __string, long __n) {
+        var mh$ = strndup$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__string, __n);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
     public static MethodHandle strchr$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.strchr$MH,"strchr");
+        return RuntimeHelper.requireNonNull(constants$21.const$4,"strchr");
     }
     /**
      * {@snippet :
@@ -25,7 +266,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strrchr$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.strrchr$MH,"strrchr");
+        return RuntimeHelper.requireNonNull(constants$21.const$5,"strrchr");
     }
     /**
      * {@snippet :
@@ -41,7 +282,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strcspn$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.strcspn$MH,"strcspn");
+        return RuntimeHelper.requireNonNull(constants$22.const$1,"strcspn");
     }
     /**
      * {@snippet :
@@ -57,7 +298,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strspn$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.strspn$MH,"strspn");
+        return RuntimeHelper.requireNonNull(constants$22.const$2,"strspn");
     }
     /**
      * {@snippet :
@@ -73,7 +314,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strpbrk$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.strpbrk$MH,"strpbrk");
+        return RuntimeHelper.requireNonNull(constants$22.const$3,"strpbrk");
     }
     /**
      * {@snippet :
@@ -89,7 +330,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strstr$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.strstr$MH,"strstr");
+        return RuntimeHelper.requireNonNull(constants$22.const$4,"strstr");
     }
     /**
      * {@snippet :
@@ -105,7 +346,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strtok$MH() {
-        return RuntimeHelper.requireNonNull(constants$13.strtok$MH,"strtok");
+        return RuntimeHelper.requireNonNull(constants$22.const$5,"strtok");
     }
     /**
      * {@snippet :
@@ -121,7 +362,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle __strtok_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.__strtok_r$MH,"__strtok_r");
+        return RuntimeHelper.requireNonNull(constants$23.const$1,"__strtok_r");
     }
     /**
      * {@snippet :
@@ -137,7 +378,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strtok_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.strtok_r$MH,"strtok_r");
+        return RuntimeHelper.requireNonNull(constants$23.const$2,"strtok_r");
     }
     /**
      * {@snippet :
@@ -153,7 +394,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strlen$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.strlen$MH,"strlen");
+        return RuntimeHelper.requireNonNull(constants$23.const$3,"strlen");
     }
     /**
      * {@snippet :
@@ -169,11 +410,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strnlen$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.strnlen$MH,"strnlen");
+        return RuntimeHelper.requireNonNull(constants$23.const$5,"strnlen");
     }
     /**
      * {@snippet :
-     * size_t strnlen(char* __string, size_t __maxlen);
+     * unsigned long strnlen(char* __string, unsigned long __maxlen);
      * }
      */
     public static long strnlen(MemorySegment __string, long __maxlen) {
@@ -185,7 +426,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strerror$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.strerror$MH,"strerror");
+        return RuntimeHelper.requireNonNull(constants$24.const$1,"strerror");
     }
     /**
      * {@snippet :
@@ -201,11 +442,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strerror_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$14.strerror_r$MH,"strerror_r");
+        return RuntimeHelper.requireNonNull(constants$24.const$3,"strerror_r");
     }
     /**
      * {@snippet :
-     * int strerror_r(int __errnum, char* __buf, size_t __buflen);
+     * int strerror_r(int __errnum, char* __buf, unsigned long __buflen);
      * }
      */
     public static int strerror_r(int __errnum, MemorySegment __buf, long __buflen) {
@@ -217,11 +458,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strerror_l$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.strerror_l$MH,"strerror_l");
+        return RuntimeHelper.requireNonNull(constants$24.const$5,"strerror_l");
     }
     /**
      * {@snippet :
-     * char* strerror_l(int __errnum, locale_t __l);
+     * char* strerror_l(int __errnum, struct __locale_struct* __l);
      * }
      */
     public static MemorySegment strerror_l(int __errnum, MemorySegment __l) {
@@ -233,11 +474,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle bcmp$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.bcmp$MH,"bcmp");
+        return RuntimeHelper.requireNonNull(constants$25.const$0,"bcmp");
     }
     /**
      * {@snippet :
-     * int bcmp(void* __s1, void* __s2, size_t __n);
+     * int bcmp(void* __s1, void* __s2, unsigned long __n);
      * }
      */
     public static int bcmp(MemorySegment __s1, MemorySegment __s2, long __n) {
@@ -249,11 +490,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle bcopy$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.bcopy$MH,"bcopy");
+        return RuntimeHelper.requireNonNull(constants$25.const$2,"bcopy");
     }
     /**
      * {@snippet :
-     * void bcopy(void* __src, void* __dest, size_t __n);
+     * void bcopy(void* __src, void* __dest, unsigned long __n);
      * }
      */
     public static void bcopy(MemorySegment __src, MemorySegment __dest, long __n) {
@@ -265,11 +506,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle bzero$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.bzero$MH,"bzero");
+        return RuntimeHelper.requireNonNull(constants$25.const$4,"bzero");
     }
     /**
      * {@snippet :
-     * void bzero(void* __s, size_t __n);
+     * void bzero(void* __s, unsigned long __n);
      * }
      */
     public static void bzero(MemorySegment __s, long __n) {
@@ -281,7 +522,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle index$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.index$MH,"index");
+        return RuntimeHelper.requireNonNull(constants$25.const$5,"index");
     }
     /**
      * {@snippet :
@@ -297,7 +538,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle rindex$MH() {
-        return RuntimeHelper.requireNonNull(constants$15.rindex$MH,"rindex");
+        return RuntimeHelper.requireNonNull(constants$26.const$0,"rindex");
     }
     /**
      * {@snippet :
@@ -313,7 +554,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle ffs$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.ffs$MH,"ffs");
+        return RuntimeHelper.requireNonNull(constants$26.const$1,"ffs");
     }
     /**
      * {@snippet :
@@ -329,7 +570,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle ffsl$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.ffsl$MH,"ffsl");
+        return RuntimeHelper.requireNonNull(constants$26.const$3,"ffsl");
     }
     /**
      * {@snippet :
@@ -345,7 +586,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle ffsll$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.ffsll$MH,"ffsll");
+        return RuntimeHelper.requireNonNull(constants$26.const$4,"ffsll");
     }
     /**
      * {@snippet :
@@ -361,7 +602,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strcasecmp$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.strcasecmp$MH,"strcasecmp");
+        return RuntimeHelper.requireNonNull(constants$26.const$5,"strcasecmp");
     }
     /**
      * {@snippet :
@@ -377,11 +618,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strncasecmp$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.strncasecmp$MH,"strncasecmp");
+        return RuntimeHelper.requireNonNull(constants$27.const$0,"strncasecmp");
     }
     /**
      * {@snippet :
-     * int strncasecmp(char* __s1, char* __s2, size_t __n);
+     * int strncasecmp(char* __s1, char* __s2, unsigned long __n);
      * }
      */
     public static int strncasecmp(MemorySegment __s1, MemorySegment __s2, long __n) {
@@ -393,11 +634,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strcasecmp_l$MH() {
-        return RuntimeHelper.requireNonNull(constants$16.strcasecmp_l$MH,"strcasecmp_l");
+        return RuntimeHelper.requireNonNull(constants$27.const$1,"strcasecmp_l");
     }
     /**
      * {@snippet :
-     * int strcasecmp_l(char* __s1, char* __s2, locale_t __loc);
+     * int strcasecmp_l(char* __s1, char* __s2, struct __locale_struct* __loc);
      * }
      */
     public static int strcasecmp_l(MemorySegment __s1, MemorySegment __s2, MemorySegment __loc) {
@@ -409,11 +650,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strncasecmp_l$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.strncasecmp_l$MH,"strncasecmp_l");
+        return RuntimeHelper.requireNonNull(constants$27.const$3,"strncasecmp_l");
     }
     /**
      * {@snippet :
-     * int strncasecmp_l(char* __s1, char* __s2, size_t __n, locale_t __loc);
+     * int strncasecmp_l(char* __s1, char* __s2, unsigned long __n, struct __locale_struct* __loc);
      * }
      */
     public static int strncasecmp_l(MemorySegment __s1, MemorySegment __s2, long __n, MemorySegment __loc) {
@@ -425,11 +666,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle explicit_bzero$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.explicit_bzero$MH,"explicit_bzero");
+        return RuntimeHelper.requireNonNull(constants$27.const$4,"explicit_bzero");
     }
     /**
      * {@snippet :
-     * void explicit_bzero(void* __s, size_t __n);
+     * void explicit_bzero(void* __s, unsigned long __n);
      * }
      */
     public static void explicit_bzero(MemorySegment __s, long __n) {
@@ -441,7 +682,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strsep$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.strsep$MH,"strsep");
+        return RuntimeHelper.requireNonNull(constants$27.const$5,"strsep");
     }
     /**
      * {@snippet :
@@ -457,7 +698,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strsignal$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.strsignal$MH,"strsignal");
+        return RuntimeHelper.requireNonNull(constants$28.const$0,"strsignal");
     }
     /**
      * {@snippet :
@@ -473,7 +714,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle __stpcpy$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.__stpcpy$MH,"__stpcpy");
+        return RuntimeHelper.requireNonNull(constants$28.const$1,"__stpcpy");
     }
     /**
      * {@snippet :
@@ -489,7 +730,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle stpcpy$MH() {
-        return RuntimeHelper.requireNonNull(constants$17.stpcpy$MH,"stpcpy");
+        return RuntimeHelper.requireNonNull(constants$28.const$2,"stpcpy");
     }
     /**
      * {@snippet :
@@ -505,11 +746,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle __stpncpy$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.__stpncpy$MH,"__stpncpy");
+        return RuntimeHelper.requireNonNull(constants$28.const$3,"__stpncpy");
     }
     /**
      * {@snippet :
-     * char* __stpncpy(char* __dest, char* __src, size_t __n);
+     * char* __stpncpy(char* __dest, char* __src, unsigned long __n);
      * }
      */
     public static MemorySegment __stpncpy(MemorySegment __dest, MemorySegment __src, long __n) {
@@ -521,11 +762,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle stpncpy$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.stpncpy$MH,"stpncpy");
+        return RuntimeHelper.requireNonNull(constants$28.const$4,"stpncpy");
     }
     /**
      * {@snippet :
-     * char* stpncpy(char* __dest, char* __src, size_t __n);
+     * char* stpncpy(char* __dest, char* __src, unsigned long __n);
      * }
      */
     public static MemorySegment stpncpy(MemorySegment __dest, MemorySegment __src, long __n) {
@@ -537,11 +778,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.g_array_new$MH,"g_array_new");
+        return RuntimeHelper.requireNonNull(constants$30.const$3,"g_array_new");
     }
     /**
      * {@snippet :
-     * GArray* g_array_new(gboolean zero_terminated, gboolean clear_, guint element_size);
+     * struct _GArray* g_array_new(int zero_terminated, int clear_, unsigned int element_size);
      * }
      */
     public static MemorySegment g_array_new(int zero_terminated, int clear_, int element_size) {
@@ -553,11 +794,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_new_take$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.g_array_new_take$MH,"g_array_new_take");
+        return RuntimeHelper.requireNonNull(constants$30.const$5,"g_array_new_take");
     }
     /**
      * {@snippet :
-     * GArray* g_array_new_take(gpointer data, gsize len, gboolean clear, gsize element_size);
+     * struct _GArray* g_array_new_take(void* data, unsigned long len, int clear, unsigned long element_size);
      * }
      */
     public static MemorySegment g_array_new_take(MemorySegment data, long len, int clear, long element_size) {
@@ -569,11 +810,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_new_take_zero_terminated$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.g_array_new_take_zero_terminated$MH,"g_array_new_take_zero_terminated");
+        return RuntimeHelper.requireNonNull(constants$31.const$0,"g_array_new_take_zero_terminated");
     }
     /**
      * {@snippet :
-     * GArray* g_array_new_take_zero_terminated(gpointer data, gboolean clear, gsize element_size);
+     * struct _GArray* g_array_new_take_zero_terminated(void* data, int clear, unsigned long element_size);
      * }
      */
     public static MemorySegment g_array_new_take_zero_terminated(MemorySegment data, int clear, long element_size) {
@@ -585,11 +826,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_steal$MH() {
-        return RuntimeHelper.requireNonNull(constants$18.g_array_steal$MH,"g_array_steal");
+        return RuntimeHelper.requireNonNull(constants$31.const$1,"g_array_steal");
     }
     /**
      * {@snippet :
-     * gpointer g_array_steal(GArray* array, gsize* len);
+     * void* g_array_steal(struct _GArray* array, unsigned long* len);
      * }
      */
     public static MemorySegment g_array_steal(MemorySegment array, MemorySegment len) {
@@ -601,11 +842,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_sized_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.g_array_sized_new$MH,"g_array_sized_new");
+        return RuntimeHelper.requireNonNull(constants$31.const$3,"g_array_sized_new");
     }
     /**
      * {@snippet :
-     * GArray* g_array_sized_new(gboolean zero_terminated, gboolean clear_, guint element_size, guint reserved_size);
+     * struct _GArray* g_array_sized_new(int zero_terminated, int clear_, unsigned int element_size, unsigned int reserved_size);
      * }
      */
     public static MemorySegment g_array_sized_new(int zero_terminated, int clear_, int element_size, int reserved_size) {
@@ -617,11 +858,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.g_array_copy$MH,"g_array_copy");
+        return RuntimeHelper.requireNonNull(constants$31.const$4,"g_array_copy");
     }
     /**
      * {@snippet :
-     * GArray* g_array_copy(GArray* array);
+     * struct _GArray* g_array_copy(struct _GArray* array);
      * }
      */
     public static MemorySegment g_array_copy(MemorySegment array) {
@@ -633,11 +874,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.g_array_free$MH,"g_array_free");
+        return RuntimeHelper.requireNonNull(constants$31.const$5,"g_array_free");
     }
     /**
      * {@snippet :
-     * gchar* g_array_free(GArray* array, gboolean free_segment);
+     * char* g_array_free(struct _GArray* array, int free_segment);
      * }
      */
     public static MemorySegment g_array_free(MemorySegment array, int free_segment) {
@@ -649,11 +890,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.g_array_ref$MH,"g_array_ref");
+        return RuntimeHelper.requireNonNull(constants$32.const$0,"g_array_ref");
     }
     /**
      * {@snippet :
-     * GArray* g_array_ref(GArray* array);
+     * struct _GArray* g_array_ref(struct _GArray* array);
      * }
      */
     public static MemorySegment g_array_ref(MemorySegment array) {
@@ -665,11 +906,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.g_array_unref$MH,"g_array_unref");
+        return RuntimeHelper.requireNonNull(constants$32.const$1,"g_array_unref");
     }
     /**
      * {@snippet :
-     * void g_array_unref(GArray* array);
+     * void g_array_unref(struct _GArray* array);
      * }
      */
     public static void g_array_unref(MemorySegment array) {
@@ -681,11 +922,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_get_element_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$19.g_array_get_element_size$MH,"g_array_get_element_size");
+        return RuntimeHelper.requireNonNull(constants$32.const$2,"g_array_get_element_size");
     }
     /**
      * {@snippet :
-     * guint g_array_get_element_size(GArray* array);
+     * unsigned int g_array_get_element_size(struct _GArray* array);
      * }
      */
     public static int g_array_get_element_size(MemorySegment array) {
@@ -697,11 +938,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_append_vals$MH() {
-        return RuntimeHelper.requireNonNull(constants$20.g_array_append_vals$MH,"g_array_append_vals");
+        return RuntimeHelper.requireNonNull(constants$32.const$4,"g_array_append_vals");
     }
     /**
      * {@snippet :
-     * GArray* g_array_append_vals(GArray* array, gconstpointer data, guint len);
+     * struct _GArray* g_array_append_vals(struct _GArray* array, void* data, unsigned int len);
      * }
      */
     public static MemorySegment g_array_append_vals(MemorySegment array, MemorySegment data, int len) {
@@ -713,11 +954,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_prepend_vals$MH() {
-        return RuntimeHelper.requireNonNull(constants$20.g_array_prepend_vals$MH,"g_array_prepend_vals");
+        return RuntimeHelper.requireNonNull(constants$32.const$5,"g_array_prepend_vals");
     }
     /**
      * {@snippet :
-     * GArray* g_array_prepend_vals(GArray* array, gconstpointer data, guint len);
+     * struct _GArray* g_array_prepend_vals(struct _GArray* array, void* data, unsigned int len);
      * }
      */
     public static MemorySegment g_array_prepend_vals(MemorySegment array, MemorySegment data, int len) {
@@ -729,11 +970,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_insert_vals$MH() {
-        return RuntimeHelper.requireNonNull(constants$20.g_array_insert_vals$MH,"g_array_insert_vals");
+        return RuntimeHelper.requireNonNull(constants$33.const$1,"g_array_insert_vals");
     }
     /**
      * {@snippet :
-     * GArray* g_array_insert_vals(GArray* array, guint index_, gconstpointer data, guint len);
+     * struct _GArray* g_array_insert_vals(struct _GArray* array, unsigned int index_, void* data, unsigned int len);
      * }
      */
     public static MemorySegment g_array_insert_vals(MemorySegment array, int index_, MemorySegment data, int len) {
@@ -745,11 +986,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_set_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$20.g_array_set_size$MH,"g_array_set_size");
+        return RuntimeHelper.requireNonNull(constants$33.const$2,"g_array_set_size");
     }
     /**
      * {@snippet :
-     * GArray* g_array_set_size(GArray* array, guint length);
+     * struct _GArray* g_array_set_size(struct _GArray* array, unsigned int length);
      * }
      */
     public static MemorySegment g_array_set_size(MemorySegment array, int length) {
@@ -761,11 +1002,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_remove_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$20.g_array_remove_index$MH,"g_array_remove_index");
+        return RuntimeHelper.requireNonNull(constants$33.const$3,"g_array_remove_index");
     }
     /**
      * {@snippet :
-     * GArray* g_array_remove_index(GArray* array, guint index_);
+     * struct _GArray* g_array_remove_index(struct _GArray* array, unsigned int index_);
      * }
      */
     public static MemorySegment g_array_remove_index(MemorySegment array, int index_) {
@@ -777,11 +1018,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_remove_index_fast$MH() {
-        return RuntimeHelper.requireNonNull(constants$20.g_array_remove_index_fast$MH,"g_array_remove_index_fast");
+        return RuntimeHelper.requireNonNull(constants$33.const$4,"g_array_remove_index_fast");
     }
     /**
      * {@snippet :
-     * GArray* g_array_remove_index_fast(GArray* array, guint index_);
+     * struct _GArray* g_array_remove_index_fast(struct _GArray* array, unsigned int index_);
      * }
      */
     public static MemorySegment g_array_remove_index_fast(MemorySegment array, int index_) {
@@ -793,11 +1034,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_remove_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$21.g_array_remove_range$MH,"g_array_remove_range");
+        return RuntimeHelper.requireNonNull(constants$33.const$6,"g_array_remove_range");
     }
     /**
      * {@snippet :
-     * GArray* g_array_remove_range(GArray* array, guint index_, guint length);
+     * struct _GArray* g_array_remove_range(struct _GArray* array, unsigned int index_, unsigned int length);
      * }
      */
     public static MemorySegment g_array_remove_range(MemorySegment array, int index_, int length) {
@@ -809,11 +1050,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_sort$MH() {
-        return RuntimeHelper.requireNonNull(constants$21.g_array_sort$MH,"g_array_sort");
+        return RuntimeHelper.requireNonNull(constants$34.const$1,"g_array_sort");
     }
     /**
      * {@snippet :
-     * void g_array_sort(GArray* array, GCompareFunc compare_func);
+     * void g_array_sort(struct _GArray* array, int (*compare_func)(void*,void*));
      * }
      */
     public static void g_array_sort(MemorySegment array, MemorySegment compare_func) {
@@ -825,11 +1066,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_sort_with_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$21.g_array_sort_with_data$MH,"g_array_sort_with_data");
+        return RuntimeHelper.requireNonNull(constants$34.const$3,"g_array_sort_with_data");
     }
     /**
      * {@snippet :
-     * void g_array_sort_with_data(GArray* array, GCompareDataFunc compare_func, gpointer user_data);
+     * void g_array_sort_with_data(struct _GArray* array, int (*compare_func)(void*,void*,void*), void* user_data);
      * }
      */
     public static void g_array_sort_with_data(MemorySegment array, MemorySegment compare_func, MemorySegment user_data) {
@@ -841,11 +1082,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_binary_search$MH() {
-        return RuntimeHelper.requireNonNull(constants$21.g_array_binary_search$MH,"g_array_binary_search");
+        return RuntimeHelper.requireNonNull(constants$34.const$6,"g_array_binary_search");
     }
     /**
      * {@snippet :
-     * gboolean g_array_binary_search(GArray* array, gconstpointer target, GCompareFunc compare_func, guint* out_match_index);
+     * int g_array_binary_search(struct _GArray* array, void* target, int (*compare_func)(void*,void*), unsigned int* out_match_index);
      * }
      */
     public static int g_array_binary_search(MemorySegment array, MemorySegment target, MemorySegment compare_func, MemorySegment out_match_index) {
@@ -857,11 +1098,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_array_set_clear_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$21.g_array_set_clear_func$MH,"g_array_set_clear_func");
+        return RuntimeHelper.requireNonNull(constants$35.const$1,"g_array_set_clear_func");
     }
     /**
      * {@snippet :
-     * void g_array_set_clear_func(GArray* array, GDestroyNotify clear_func);
+     * void g_array_set_clear_func(struct _GArray* array, void (*clear_func)(void*));
      * }
      */
     public static void g_array_set_clear_func(MemorySegment array, MemorySegment clear_func) {
@@ -873,11 +1114,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$21.g_ptr_array_new$MH,"g_ptr_array_new");
+        return RuntimeHelper.requireNonNull(constants$35.const$3,"g_ptr_array_new");
     }
     /**
      * {@snippet :
-     * GPtrArray* g_ptr_array_new();
+     * struct _GPtrArray* g_ptr_array_new();
      * }
      */
     public static MemorySegment g_ptr_array_new() {
@@ -889,11 +1130,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_new_with_free_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$22.g_ptr_array_new_with_free_func$MH,"g_ptr_array_new_with_free_func");
+        return RuntimeHelper.requireNonNull(constants$35.const$5,"g_ptr_array_new_with_free_func");
     }
     /**
      * {@snippet :
-     * GPtrArray* g_ptr_array_new_with_free_func(GDestroyNotify element_free_func);
+     * struct _GPtrArray* g_ptr_array_new_with_free_func(void (*element_free_func)(void*));
      * }
      */
     public static MemorySegment g_ptr_array_new_with_free_func(MemorySegment element_free_func) {
@@ -905,11 +1146,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_new_take$MH() {
-        return RuntimeHelper.requireNonNull(constants$22.g_ptr_array_new_take$MH,"g_ptr_array_new_take");
+        return RuntimeHelper.requireNonNull(constants$36.const$2,"g_ptr_array_new_take");
     }
     /**
      * {@snippet :
-     * GPtrArray* g_ptr_array_new_take(gpointer* data, gsize len, GDestroyNotify element_free_func);
+     * struct _GPtrArray* g_ptr_array_new_take(void** data, unsigned long len, void (*element_free_func)(void*));
      * }
      */
     public static MemorySegment g_ptr_array_new_take(MemorySegment data, long len, MemorySegment element_free_func) {
@@ -921,11 +1162,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_new_from_array$MH() {
-        return RuntimeHelper.requireNonNull(constants$22.g_ptr_array_new_from_array$MH,"g_ptr_array_new_from_array");
+        return RuntimeHelper.requireNonNull(constants$36.const$6,"g_ptr_array_new_from_array");
     }
     /**
      * {@snippet :
-     * GPtrArray* g_ptr_array_new_from_array(gpointer* data, gsize len, GCopyFunc copy_func, gpointer copy_func_user_data, GDestroyNotify element_free_func);
+     * struct _GPtrArray* g_ptr_array_new_from_array(void** data, unsigned long len, void* (*copy_func)(void*,void*), void* copy_func_user_data, void (*element_free_func)(void*));
      * }
      */
     public static MemorySegment g_ptr_array_new_from_array(MemorySegment data, long len, MemorySegment copy_func, MemorySegment copy_func_user_data, MemorySegment element_free_func) {
@@ -937,11 +1178,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_steal$MH() {
-        return RuntimeHelper.requireNonNull(constants$22.g_ptr_array_steal$MH,"g_ptr_array_steal");
+        return RuntimeHelper.requireNonNull(constants$37.const$0,"g_ptr_array_steal");
     }
     /**
      * {@snippet :
-     * gpointer* g_ptr_array_steal(GPtrArray* array, gsize* len);
+     * void** g_ptr_array_steal(struct _GPtrArray* array, unsigned long* len);
      * }
      */
     public static MemorySegment g_ptr_array_steal(MemorySegment array, MemorySegment len) {
@@ -953,11 +1194,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$22.g_ptr_array_copy$MH,"g_ptr_array_copy");
+        return RuntimeHelper.requireNonNull(constants$37.const$2,"g_ptr_array_copy");
     }
     /**
      * {@snippet :
-     * GPtrArray* g_ptr_array_copy(GPtrArray* array, GCopyFunc func, gpointer user_data);
+     * struct _GPtrArray* g_ptr_array_copy(struct _GPtrArray* array, void* (*func)(void*,void*), void* user_data);
      * }
      */
     public static MemorySegment g_ptr_array_copy(MemorySegment array, MemorySegment func, MemorySegment user_data) {
@@ -969,11 +1210,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_sized_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$22.g_ptr_array_sized_new$MH,"g_ptr_array_sized_new");
+        return RuntimeHelper.requireNonNull(constants$37.const$3,"g_ptr_array_sized_new");
     }
     /**
      * {@snippet :
-     * GPtrArray* g_ptr_array_sized_new(guint reserved_size);
+     * struct _GPtrArray* g_ptr_array_sized_new(unsigned int reserved_size);
      * }
      */
     public static MemorySegment g_ptr_array_sized_new(int reserved_size) {
@@ -985,11 +1226,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_new_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$23.g_ptr_array_new_full$MH,"g_ptr_array_new_full");
+        return RuntimeHelper.requireNonNull(constants$37.const$5,"g_ptr_array_new_full");
     }
     /**
      * {@snippet :
-     * GPtrArray* g_ptr_array_new_full(guint reserved_size, GDestroyNotify element_free_func);
+     * struct _GPtrArray* g_ptr_array_new_full(unsigned int reserved_size, void (*element_free_func)(void*));
      * }
      */
     public static MemorySegment g_ptr_array_new_full(int reserved_size, MemorySegment element_free_func) {
@@ -1001,11 +1242,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_new_null_terminated$MH() {
-        return RuntimeHelper.requireNonNull(constants$23.g_ptr_array_new_null_terminated$MH,"g_ptr_array_new_null_terminated");
+        return RuntimeHelper.requireNonNull(constants$38.const$2,"g_ptr_array_new_null_terminated");
     }
     /**
      * {@snippet :
-     * GPtrArray* g_ptr_array_new_null_terminated(guint reserved_size, GDestroyNotify element_free_func, gboolean null_terminated);
+     * struct _GPtrArray* g_ptr_array_new_null_terminated(unsigned int reserved_size, void (*element_free_func)(void*), int null_terminated);
      * }
      */
     public static MemorySegment g_ptr_array_new_null_terminated(int reserved_size, MemorySegment element_free_func, int null_terminated) {
@@ -1017,11 +1258,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_new_take_null_terminated$MH() {
-        return RuntimeHelper.requireNonNull(constants$23.g_ptr_array_new_take_null_terminated$MH,"g_ptr_array_new_take_null_terminated");
+        return RuntimeHelper.requireNonNull(constants$38.const$4,"g_ptr_array_new_take_null_terminated");
     }
     /**
      * {@snippet :
-     * GPtrArray* g_ptr_array_new_take_null_terminated(gpointer* data, GDestroyNotify element_free_func);
+     * struct _GPtrArray* g_ptr_array_new_take_null_terminated(void** data, void (*element_free_func)(void*));
      * }
      */
     public static MemorySegment g_ptr_array_new_take_null_terminated(MemorySegment data, MemorySegment element_free_func) {
@@ -1033,11 +1274,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_new_from_null_terminated_array$MH() {
-        return RuntimeHelper.requireNonNull(constants$23.g_ptr_array_new_from_null_terminated_array$MH,"g_ptr_array_new_from_null_terminated_array");
+        return RuntimeHelper.requireNonNull(constants$39.const$2,"g_ptr_array_new_from_null_terminated_array");
     }
     /**
      * {@snippet :
-     * GPtrArray* g_ptr_array_new_from_null_terminated_array(gpointer* data, GCopyFunc copy_func, gpointer copy_func_user_data, GDestroyNotify element_free_func);
+     * struct _GPtrArray* g_ptr_array_new_from_null_terminated_array(void** data, void* (*copy_func)(void*,void*), void* copy_func_user_data, void (*element_free_func)(void*));
      * }
      */
     public static MemorySegment g_ptr_array_new_from_null_terminated_array(MemorySegment data, MemorySegment copy_func, MemorySegment copy_func_user_data, MemorySegment element_free_func) {
@@ -1049,11 +1290,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$23.g_ptr_array_free$MH,"g_ptr_array_free");
+        return RuntimeHelper.requireNonNull(constants$39.const$3,"g_ptr_array_free");
     }
     /**
      * {@snippet :
-     * gpointer* g_ptr_array_free(GPtrArray* array, gboolean free_seg);
+     * void** g_ptr_array_free(struct _GPtrArray* array, int free_seg);
      * }
      */
     public static MemorySegment g_ptr_array_free(MemorySegment array, int free_seg) {
@@ -1065,11 +1306,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$23.g_ptr_array_ref$MH,"g_ptr_array_ref");
+        return RuntimeHelper.requireNonNull(constants$39.const$4,"g_ptr_array_ref");
     }
     /**
      * {@snippet :
-     * GPtrArray* g_ptr_array_ref(GPtrArray* array);
+     * struct _GPtrArray* g_ptr_array_ref(struct _GPtrArray* array);
      * }
      */
     public static MemorySegment g_ptr_array_ref(MemorySegment array) {
@@ -1081,11 +1322,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$24.g_ptr_array_unref$MH,"g_ptr_array_unref");
+        return RuntimeHelper.requireNonNull(constants$39.const$5,"g_ptr_array_unref");
     }
     /**
      * {@snippet :
-     * void g_ptr_array_unref(GPtrArray* array);
+     * void g_ptr_array_unref(struct _GPtrArray* array);
      * }
      */
     public static void g_ptr_array_unref(MemorySegment array) {
@@ -1097,11 +1338,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_set_free_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$24.g_ptr_array_set_free_func$MH,"g_ptr_array_set_free_func");
+        return RuntimeHelper.requireNonNull(constants$40.const$1,"g_ptr_array_set_free_func");
     }
     /**
      * {@snippet :
-     * void g_ptr_array_set_free_func(GPtrArray* array, GDestroyNotify element_free_func);
+     * void g_ptr_array_set_free_func(struct _GPtrArray* array, void (*element_free_func)(void*));
      * }
      */
     public static void g_ptr_array_set_free_func(MemorySegment array, MemorySegment element_free_func) {
@@ -1113,11 +1354,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_set_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$24.g_ptr_array_set_size$MH,"g_ptr_array_set_size");
+        return RuntimeHelper.requireNonNull(constants$40.const$3,"g_ptr_array_set_size");
     }
     /**
      * {@snippet :
-     * void g_ptr_array_set_size(GPtrArray* array, gint length);
+     * void g_ptr_array_set_size(struct _GPtrArray* array, int length);
      * }
      */
     public static void g_ptr_array_set_size(MemorySegment array, int length) {
@@ -1129,11 +1370,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_remove_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$24.g_ptr_array_remove_index$MH,"g_ptr_array_remove_index");
+        return RuntimeHelper.requireNonNull(constants$40.const$4,"g_ptr_array_remove_index");
     }
     /**
      * {@snippet :
-     * gpointer g_ptr_array_remove_index(GPtrArray* array, guint index_);
+     * void* g_ptr_array_remove_index(struct _GPtrArray* array, unsigned int index_);
      * }
      */
     public static MemorySegment g_ptr_array_remove_index(MemorySegment array, int index_) {
@@ -1145,11 +1386,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_remove_index_fast$MH() {
-        return RuntimeHelper.requireNonNull(constants$24.g_ptr_array_remove_index_fast$MH,"g_ptr_array_remove_index_fast");
+        return RuntimeHelper.requireNonNull(constants$40.const$5,"g_ptr_array_remove_index_fast");
     }
     /**
      * {@snippet :
-     * gpointer g_ptr_array_remove_index_fast(GPtrArray* array, guint index_);
+     * void* g_ptr_array_remove_index_fast(struct _GPtrArray* array, unsigned int index_);
      * }
      */
     public static MemorySegment g_ptr_array_remove_index_fast(MemorySegment array, int index_) {
@@ -1161,11 +1402,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_steal_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$24.g_ptr_array_steal_index$MH,"g_ptr_array_steal_index");
+        return RuntimeHelper.requireNonNull(constants$41.const$0,"g_ptr_array_steal_index");
     }
     /**
      * {@snippet :
-     * gpointer g_ptr_array_steal_index(GPtrArray* array, guint index_);
+     * void* g_ptr_array_steal_index(struct _GPtrArray* array, unsigned int index_);
      * }
      */
     public static MemorySegment g_ptr_array_steal_index(MemorySegment array, int index_) {
@@ -1177,11 +1418,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_steal_index_fast$MH() {
-        return RuntimeHelper.requireNonNull(constants$25.g_ptr_array_steal_index_fast$MH,"g_ptr_array_steal_index_fast");
+        return RuntimeHelper.requireNonNull(constants$41.const$1,"g_ptr_array_steal_index_fast");
     }
     /**
      * {@snippet :
-     * gpointer g_ptr_array_steal_index_fast(GPtrArray* array, guint index_);
+     * void* g_ptr_array_steal_index_fast(struct _GPtrArray* array, unsigned int index_);
      * }
      */
     public static MemorySegment g_ptr_array_steal_index_fast(MemorySegment array, int index_) {
@@ -1193,11 +1434,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_remove$MH() {
-        return RuntimeHelper.requireNonNull(constants$25.g_ptr_array_remove$MH,"g_ptr_array_remove");
+        return RuntimeHelper.requireNonNull(constants$41.const$2,"g_ptr_array_remove");
     }
     /**
      * {@snippet :
-     * gboolean g_ptr_array_remove(GPtrArray* array, gpointer data);
+     * int g_ptr_array_remove(struct _GPtrArray* array, void* data);
      * }
      */
     public static int g_ptr_array_remove(MemorySegment array, MemorySegment data) {
@@ -1209,11 +1450,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_remove_fast$MH() {
-        return RuntimeHelper.requireNonNull(constants$25.g_ptr_array_remove_fast$MH,"g_ptr_array_remove_fast");
+        return RuntimeHelper.requireNonNull(constants$41.const$3,"g_ptr_array_remove_fast");
     }
     /**
      * {@snippet :
-     * gboolean g_ptr_array_remove_fast(GPtrArray* array, gpointer data);
+     * int g_ptr_array_remove_fast(struct _GPtrArray* array, void* data);
      * }
      */
     public static int g_ptr_array_remove_fast(MemorySegment array, MemorySegment data) {
@@ -1225,11 +1466,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_remove_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$25.g_ptr_array_remove_range$MH,"g_ptr_array_remove_range");
+        return RuntimeHelper.requireNonNull(constants$41.const$4,"g_ptr_array_remove_range");
     }
     /**
      * {@snippet :
-     * GPtrArray* g_ptr_array_remove_range(GPtrArray* array, guint index_, guint length);
+     * struct _GPtrArray* g_ptr_array_remove_range(struct _GPtrArray* array, unsigned int index_, unsigned int length);
      * }
      */
     public static MemorySegment g_ptr_array_remove_range(MemorySegment array, int index_, int length) {
@@ -1241,11 +1482,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_add$MH() {
-        return RuntimeHelper.requireNonNull(constants$25.g_ptr_array_add$MH,"g_ptr_array_add");
+        return RuntimeHelper.requireNonNull(constants$41.const$5,"g_ptr_array_add");
     }
     /**
      * {@snippet :
-     * void g_ptr_array_add(GPtrArray* array, gpointer data);
+     * void g_ptr_array_add(struct _GPtrArray* array, void* data);
      * }
      */
     public static void g_ptr_array_add(MemorySegment array, MemorySegment data) {
@@ -1257,11 +1498,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_extend$MH() {
-        return RuntimeHelper.requireNonNull(constants$25.g_ptr_array_extend$MH,"g_ptr_array_extend");
+        return RuntimeHelper.requireNonNull(constants$42.const$2,"g_ptr_array_extend");
     }
     /**
      * {@snippet :
-     * void g_ptr_array_extend(GPtrArray* array_to_extend, GPtrArray* array, GCopyFunc func, gpointer user_data);
+     * void g_ptr_array_extend(struct _GPtrArray* array_to_extend, struct _GPtrArray* array, void* (*func)(void*,void*), void* user_data);
      * }
      */
     public static void g_ptr_array_extend(MemorySegment array_to_extend, MemorySegment array, MemorySegment func, MemorySegment user_data) {
@@ -1273,11 +1514,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_extend_and_steal$MH() {
-        return RuntimeHelper.requireNonNull(constants$26.g_ptr_array_extend_and_steal$MH,"g_ptr_array_extend_and_steal");
+        return RuntimeHelper.requireNonNull(constants$42.const$3,"g_ptr_array_extend_and_steal");
     }
     /**
      * {@snippet :
-     * void g_ptr_array_extend_and_steal(GPtrArray* array_to_extend, GPtrArray* array);
+     * void g_ptr_array_extend_and_steal(struct _GPtrArray* array_to_extend, struct _GPtrArray* array);
      * }
      */
     public static void g_ptr_array_extend_and_steal(MemorySegment array_to_extend, MemorySegment array) {
@@ -1289,11 +1530,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_insert$MH() {
-        return RuntimeHelper.requireNonNull(constants$26.g_ptr_array_insert$MH,"g_ptr_array_insert");
+        return RuntimeHelper.requireNonNull(constants$42.const$5,"g_ptr_array_insert");
     }
     /**
      * {@snippet :
-     * void g_ptr_array_insert(GPtrArray* array, gint index_, gpointer data);
+     * void g_ptr_array_insert(struct _GPtrArray* array, int index_, void* data);
      * }
      */
     public static void g_ptr_array_insert(MemorySegment array, int index_, MemorySegment data) {
@@ -1305,11 +1546,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_sort$MH() {
-        return RuntimeHelper.requireNonNull(constants$26.g_ptr_array_sort$MH,"g_ptr_array_sort");
+        return RuntimeHelper.requireNonNull(constants$43.const$1,"g_ptr_array_sort");
     }
     /**
      * {@snippet :
-     * void g_ptr_array_sort(GPtrArray* array, GCompareFunc compare_func);
+     * void g_ptr_array_sort(struct _GPtrArray* array, int (*compare_func)(void*,void*));
      * }
      */
     public static void g_ptr_array_sort(MemorySegment array, MemorySegment compare_func) {
@@ -1321,11 +1562,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_sort_with_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$26.g_ptr_array_sort_with_data$MH,"g_ptr_array_sort_with_data");
+        return RuntimeHelper.requireNonNull(constants$43.const$3,"g_ptr_array_sort_with_data");
     }
     /**
      * {@snippet :
-     * void g_ptr_array_sort_with_data(GPtrArray* array, GCompareDataFunc compare_func, gpointer user_data);
+     * void g_ptr_array_sort_with_data(struct _GPtrArray* array, int (*compare_func)(void*,void*,void*), void* user_data);
      * }
      */
     public static void g_ptr_array_sort_with_data(MemorySegment array, MemorySegment compare_func, MemorySegment user_data) {
@@ -1337,11 +1578,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_sort_values$MH() {
-        return RuntimeHelper.requireNonNull(constants$26.g_ptr_array_sort_values$MH,"g_ptr_array_sort_values");
+        return RuntimeHelper.requireNonNull(constants$43.const$5,"g_ptr_array_sort_values");
     }
     /**
      * {@snippet :
-     * void g_ptr_array_sort_values(GPtrArray* array, GCompareFunc compare_func);
+     * void g_ptr_array_sort_values(struct _GPtrArray* array, int (*compare_func)(void*,void*));
      * }
      */
     public static void g_ptr_array_sort_values(MemorySegment array, MemorySegment compare_func) {
@@ -1353,11 +1594,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_sort_values_with_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$26.g_ptr_array_sort_values_with_data$MH,"g_ptr_array_sort_values_with_data");
+        return RuntimeHelper.requireNonNull(constants$44.const$1,"g_ptr_array_sort_values_with_data");
     }
     /**
      * {@snippet :
-     * void g_ptr_array_sort_values_with_data(GPtrArray* array, GCompareDataFunc compare_func, gpointer user_data);
+     * void g_ptr_array_sort_values_with_data(struct _GPtrArray* array, int (*compare_func)(void*,void*,void*), void* user_data);
      * }
      */
     public static void g_ptr_array_sort_values_with_data(MemorySegment array, MemorySegment compare_func, MemorySegment user_data) {
@@ -1369,11 +1610,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_foreach$MH() {
-        return RuntimeHelper.requireNonNull(constants$27.g_ptr_array_foreach$MH,"g_ptr_array_foreach");
+        return RuntimeHelper.requireNonNull(constants$44.const$3,"g_ptr_array_foreach");
     }
     /**
      * {@snippet :
-     * void g_ptr_array_foreach(GPtrArray* array, GFunc func, gpointer user_data);
+     * void g_ptr_array_foreach(struct _GPtrArray* array, void (*func)(void*,void*), void* user_data);
      * }
      */
     public static void g_ptr_array_foreach(MemorySegment array, MemorySegment func, MemorySegment user_data) {
@@ -1385,11 +1626,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_find$MH() {
-        return RuntimeHelper.requireNonNull(constants$27.g_ptr_array_find$MH,"g_ptr_array_find");
+        return RuntimeHelper.requireNonNull(constants$44.const$4,"g_ptr_array_find");
     }
     /**
      * {@snippet :
-     * gboolean g_ptr_array_find(GPtrArray* haystack, gconstpointer needle, guint* index_);
+     * int g_ptr_array_find(struct _GPtrArray* haystack, void* needle, unsigned int* index_);
      * }
      */
     public static int g_ptr_array_find(MemorySegment haystack, MemorySegment needle, MemorySegment index_) {
@@ -1401,11 +1642,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_find_with_equal_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$27.g_ptr_array_find_with_equal_func$MH,"g_ptr_array_find_with_equal_func");
+        return RuntimeHelper.requireNonNull(constants$45.const$0,"g_ptr_array_find_with_equal_func");
     }
     /**
      * {@snippet :
-     * gboolean g_ptr_array_find_with_equal_func(GPtrArray* haystack, gconstpointer needle, GEqualFunc equal_func, guint* index_);
+     * int g_ptr_array_find_with_equal_func(struct _GPtrArray* haystack, void* needle, int (*equal_func)(void*,void*), unsigned int* index_);
      * }
      */
     public static int g_ptr_array_find_with_equal_func(MemorySegment haystack, MemorySegment needle, MemorySegment equal_func, MemorySegment index_) {
@@ -1417,11 +1658,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_ptr_array_is_null_terminated$MH() {
-        return RuntimeHelper.requireNonNull(constants$27.g_ptr_array_is_null_terminated$MH,"g_ptr_array_is_null_terminated");
+        return RuntimeHelper.requireNonNull(constants$45.const$1,"g_ptr_array_is_null_terminated");
     }
     /**
      * {@snippet :
-     * gboolean g_ptr_array_is_null_terminated(GPtrArray* array);
+     * int g_ptr_array_is_null_terminated(struct _GPtrArray* array);
      * }
      */
     public static int g_ptr_array_is_null_terminated(MemorySegment array) {
@@ -1433,11 +1674,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_byte_array_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$27.g_byte_array_new$MH,"g_byte_array_new");
+        return RuntimeHelper.requireNonNull(constants$45.const$2,"g_byte_array_new");
     }
     /**
      * {@snippet :
-     * GByteArray* g_byte_array_new();
+     * struct _GByteArray* g_byte_array_new();
      * }
      */
     public static MemorySegment g_byte_array_new() {
@@ -1449,11 +1690,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_byte_array_new_take$MH() {
-        return RuntimeHelper.requireNonNull(constants$27.g_byte_array_new_take$MH,"g_byte_array_new_take");
+        return RuntimeHelper.requireNonNull(constants$45.const$3,"g_byte_array_new_take");
     }
     /**
      * {@snippet :
-     * GByteArray* g_byte_array_new_take(guint8* data, gsize len);
+     * struct _GByteArray* g_byte_array_new_take(unsigned char* data, unsigned long len);
      * }
      */
     public static MemorySegment g_byte_array_new_take(MemorySegment data, long len) {
@@ -1465,11 +1706,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_byte_array_steal$MH() {
-        return RuntimeHelper.requireNonNull(constants$28.g_byte_array_steal$MH,"g_byte_array_steal");
+        return RuntimeHelper.requireNonNull(constants$45.const$4,"g_byte_array_steal");
     }
     /**
      * {@snippet :
-     * guint8* g_byte_array_steal(GByteArray* array, gsize* len);
+     * unsigned char* g_byte_array_steal(struct _GByteArray* array, unsigned long* len);
      * }
      */
     public static MemorySegment g_byte_array_steal(MemorySegment array, MemorySegment len) {
@@ -1481,11 +1722,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_byte_array_sized_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$28.g_byte_array_sized_new$MH,"g_byte_array_sized_new");
+        return RuntimeHelper.requireNonNull(constants$45.const$5,"g_byte_array_sized_new");
     }
     /**
      * {@snippet :
-     * GByteArray* g_byte_array_sized_new(guint reserved_size);
+     * struct _GByteArray* g_byte_array_sized_new(unsigned int reserved_size);
      * }
      */
     public static MemorySegment g_byte_array_sized_new(int reserved_size) {
@@ -1497,11 +1738,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_byte_array_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$28.g_byte_array_free$MH,"g_byte_array_free");
+        return RuntimeHelper.requireNonNull(constants$46.const$0,"g_byte_array_free");
     }
     /**
      * {@snippet :
-     * guint8* g_byte_array_free(GByteArray* array, gboolean free_segment);
+     * unsigned char* g_byte_array_free(struct _GByteArray* array, int free_segment);
      * }
      */
     public static MemorySegment g_byte_array_free(MemorySegment array, int free_segment) {
@@ -1513,11 +1754,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_byte_array_free_to_bytes$MH() {
-        return RuntimeHelper.requireNonNull(constants$28.g_byte_array_free_to_bytes$MH,"g_byte_array_free_to_bytes");
+        return RuntimeHelper.requireNonNull(constants$46.const$1,"g_byte_array_free_to_bytes");
     }
     /**
      * {@snippet :
-     * GBytes* g_byte_array_free_to_bytes(GByteArray* array);
+     * struct _GBytes* g_byte_array_free_to_bytes(struct _GByteArray* array);
      * }
      */
     public static MemorySegment g_byte_array_free_to_bytes(MemorySegment array) {
@@ -1529,11 +1770,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_byte_array_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$28.g_byte_array_ref$MH,"g_byte_array_ref");
+        return RuntimeHelper.requireNonNull(constants$46.const$2,"g_byte_array_ref");
     }
     /**
      * {@snippet :
-     * GByteArray* g_byte_array_ref(GByteArray* array);
+     * struct _GByteArray* g_byte_array_ref(struct _GByteArray* array);
      * }
      */
     public static MemorySegment g_byte_array_ref(MemorySegment array) {
@@ -1545,11 +1786,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_byte_array_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$28.g_byte_array_unref$MH,"g_byte_array_unref");
+        return RuntimeHelper.requireNonNull(constants$46.const$3,"g_byte_array_unref");
     }
     /**
      * {@snippet :
-     * void g_byte_array_unref(GByteArray* array);
+     * void g_byte_array_unref(struct _GByteArray* array);
      * }
      */
     public static void g_byte_array_unref(MemorySegment array) {
@@ -1561,11 +1802,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_byte_array_append$MH() {
-        return RuntimeHelper.requireNonNull(constants$29.g_byte_array_append$MH,"g_byte_array_append");
+        return RuntimeHelper.requireNonNull(constants$46.const$4,"g_byte_array_append");
     }
     /**
      * {@snippet :
-     * GByteArray* g_byte_array_append(GByteArray* array, const guint8* data, guint len);
+     * struct _GByteArray* g_byte_array_append(struct _GByteArray* array, unsigned char* data, unsigned int len);
      * }
      */
     public static MemorySegment g_byte_array_append(MemorySegment array, MemorySegment data, int len) {
@@ -1577,11 +1818,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_byte_array_prepend$MH() {
-        return RuntimeHelper.requireNonNull(constants$29.g_byte_array_prepend$MH,"g_byte_array_prepend");
+        return RuntimeHelper.requireNonNull(constants$46.const$5,"g_byte_array_prepend");
     }
     /**
      * {@snippet :
-     * GByteArray* g_byte_array_prepend(GByteArray* array, const guint8* data, guint len);
+     * struct _GByteArray* g_byte_array_prepend(struct _GByteArray* array, unsigned char* data, unsigned int len);
      * }
      */
     public static MemorySegment g_byte_array_prepend(MemorySegment array, MemorySegment data, int len) {
@@ -1593,11 +1834,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_byte_array_set_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$29.g_byte_array_set_size$MH,"g_byte_array_set_size");
+        return RuntimeHelper.requireNonNull(constants$47.const$0,"g_byte_array_set_size");
     }
     /**
      * {@snippet :
-     * GByteArray* g_byte_array_set_size(GByteArray* array, guint length);
+     * struct _GByteArray* g_byte_array_set_size(struct _GByteArray* array, unsigned int length);
      * }
      */
     public static MemorySegment g_byte_array_set_size(MemorySegment array, int length) {
@@ -1609,11 +1850,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_byte_array_remove_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$29.g_byte_array_remove_index$MH,"g_byte_array_remove_index");
+        return RuntimeHelper.requireNonNull(constants$47.const$1,"g_byte_array_remove_index");
     }
     /**
      * {@snippet :
-     * GByteArray* g_byte_array_remove_index(GByteArray* array, guint index_);
+     * struct _GByteArray* g_byte_array_remove_index(struct _GByteArray* array, unsigned int index_);
      * }
      */
     public static MemorySegment g_byte_array_remove_index(MemorySegment array, int index_) {
@@ -1625,11 +1866,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_byte_array_remove_index_fast$MH() {
-        return RuntimeHelper.requireNonNull(constants$29.g_byte_array_remove_index_fast$MH,"g_byte_array_remove_index_fast");
+        return RuntimeHelper.requireNonNull(constants$47.const$2,"g_byte_array_remove_index_fast");
     }
     /**
      * {@snippet :
-     * GByteArray* g_byte_array_remove_index_fast(GByteArray* array, guint index_);
+     * struct _GByteArray* g_byte_array_remove_index_fast(struct _GByteArray* array, unsigned int index_);
      * }
      */
     public static MemorySegment g_byte_array_remove_index_fast(MemorySegment array, int index_) {
@@ -1641,11 +1882,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_byte_array_remove_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$29.g_byte_array_remove_range$MH,"g_byte_array_remove_range");
+        return RuntimeHelper.requireNonNull(constants$47.const$3,"g_byte_array_remove_range");
     }
     /**
      * {@snippet :
-     * GByteArray* g_byte_array_remove_range(GByteArray* array, guint index_, guint length);
+     * struct _GByteArray* g_byte_array_remove_range(struct _GByteArray* array, unsigned int index_, unsigned int length);
      * }
      */
     public static MemorySegment g_byte_array_remove_range(MemorySegment array, int index_, int length) {
@@ -1657,11 +1898,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_byte_array_sort$MH() {
-        return RuntimeHelper.requireNonNull(constants$30.g_byte_array_sort$MH,"g_byte_array_sort");
+        return RuntimeHelper.requireNonNull(constants$47.const$5,"g_byte_array_sort");
     }
     /**
      * {@snippet :
-     * void g_byte_array_sort(GByteArray* array, GCompareFunc compare_func);
+     * void g_byte_array_sort(struct _GByteArray* array, int (*compare_func)(void*,void*));
      * }
      */
     public static void g_byte_array_sort(MemorySegment array, MemorySegment compare_func) {
@@ -1673,11 +1914,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_byte_array_sort_with_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$30.g_byte_array_sort_with_data$MH,"g_byte_array_sort_with_data");
+        return RuntimeHelper.requireNonNull(constants$48.const$1,"g_byte_array_sort_with_data");
     }
     /**
      * {@snippet :
-     * void g_byte_array_sort_with_data(GByteArray* array, GCompareDataFunc compare_func, gpointer user_data);
+     * void g_byte_array_sort_with_data(struct _GByteArray* array, int (*compare_func)(void*,void*,void*), void* user_data);
      * }
      */
     public static void g_byte_array_sort_with_data(MemorySegment array, MemorySegment compare_func, MemorySegment user_data) {
@@ -1689,11 +1930,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_int_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$30.g_atomic_int_get$MH,"g_atomic_int_get");
+        return RuntimeHelper.requireNonNull(constants$48.const$2,"g_atomic_int_get");
     }
     /**
      * {@snippet :
-     * gint g_atomic_int_get(const volatile gint* atomic);
+     * int g_atomic_int_get(int* atomic);
      * }
      */
     public static int g_atomic_int_get(MemorySegment atomic) {
@@ -1705,11 +1946,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_int_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$30.g_atomic_int_set$MH,"g_atomic_int_set");
+        return RuntimeHelper.requireNonNull(constants$48.const$3,"g_atomic_int_set");
     }
     /**
      * {@snippet :
-     * void g_atomic_int_set(volatile gint* atomic, gint newval);
+     * void g_atomic_int_set(int* atomic, int newval);
      * }
      */
     public static void g_atomic_int_set(MemorySegment atomic, int newval) {
@@ -1721,11 +1962,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_int_inc$MH() {
-        return RuntimeHelper.requireNonNull(constants$30.g_atomic_int_inc$MH,"g_atomic_int_inc");
+        return RuntimeHelper.requireNonNull(constants$48.const$4,"g_atomic_int_inc");
     }
     /**
      * {@snippet :
-     * void g_atomic_int_inc(volatile gint* atomic);
+     * void g_atomic_int_inc(int* atomic);
      * }
      */
     public static void g_atomic_int_inc(MemorySegment atomic) {
@@ -1737,11 +1978,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_int_dec_and_test$MH() {
-        return RuntimeHelper.requireNonNull(constants$30.g_atomic_int_dec_and_test$MH,"g_atomic_int_dec_and_test");
+        return RuntimeHelper.requireNonNull(constants$48.const$5,"g_atomic_int_dec_and_test");
     }
     /**
      * {@snippet :
-     * gboolean g_atomic_int_dec_and_test(volatile gint* atomic);
+     * int g_atomic_int_dec_and_test(int* atomic);
      * }
      */
     public static int g_atomic_int_dec_and_test(MemorySegment atomic) {
@@ -1753,11 +1994,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_int_compare_and_exchange$MH() {
-        return RuntimeHelper.requireNonNull(constants$31.g_atomic_int_compare_and_exchange$MH,"g_atomic_int_compare_and_exchange");
+        return RuntimeHelper.requireNonNull(constants$49.const$1,"g_atomic_int_compare_and_exchange");
     }
     /**
      * {@snippet :
-     * gboolean g_atomic_int_compare_and_exchange(volatile gint* atomic, gint oldval, gint newval);
+     * int g_atomic_int_compare_and_exchange(int* atomic, int oldval, int newval);
      * }
      */
     public static int g_atomic_int_compare_and_exchange(MemorySegment atomic, int oldval, int newval) {
@@ -1769,11 +2010,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_int_compare_and_exchange_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$31.g_atomic_int_compare_and_exchange_full$MH,"g_atomic_int_compare_and_exchange_full");
+        return RuntimeHelper.requireNonNull(constants$49.const$3,"g_atomic_int_compare_and_exchange_full");
     }
     /**
      * {@snippet :
-     * gboolean g_atomic_int_compare_and_exchange_full(gint* atomic, gint oldval, gint newval, gint* preval);
+     * int g_atomic_int_compare_and_exchange_full(int* atomic, int oldval, int newval, int* preval);
      * }
      */
     public static int g_atomic_int_compare_and_exchange_full(MemorySegment atomic, int oldval, int newval, MemorySegment preval) {
@@ -1785,11 +2026,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_int_exchange$MH() {
-        return RuntimeHelper.requireNonNull(constants$31.g_atomic_int_exchange$MH,"g_atomic_int_exchange");
+        return RuntimeHelper.requireNonNull(constants$49.const$4,"g_atomic_int_exchange");
     }
     /**
      * {@snippet :
-     * gint g_atomic_int_exchange(gint* atomic, gint newval);
+     * int g_atomic_int_exchange(int* atomic, int newval);
      * }
      */
     public static int g_atomic_int_exchange(MemorySegment atomic, int newval) {
@@ -1801,11 +2042,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_int_add$MH() {
-        return RuntimeHelper.requireNonNull(constants$31.g_atomic_int_add$MH,"g_atomic_int_add");
+        return RuntimeHelper.requireNonNull(constants$49.const$5,"g_atomic_int_add");
     }
     /**
      * {@snippet :
-     * gint g_atomic_int_add(volatile gint* atomic, gint val);
+     * int g_atomic_int_add(int* atomic, int val);
      * }
      */
     public static int g_atomic_int_add(MemorySegment atomic, int val) {
@@ -1817,11 +2058,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_int_and$MH() {
-        return RuntimeHelper.requireNonNull(constants$31.g_atomic_int_and$MH,"g_atomic_int_and");
+        return RuntimeHelper.requireNonNull(constants$50.const$0,"g_atomic_int_and");
     }
     /**
      * {@snippet :
-     * guint g_atomic_int_and(volatile guint* atomic, guint val);
+     * unsigned int g_atomic_int_and(unsigned int* atomic, unsigned int val);
      * }
      */
     public static int g_atomic_int_and(MemorySegment atomic, int val) {
@@ -1833,11 +2074,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_int_or$MH() {
-        return RuntimeHelper.requireNonNull(constants$31.g_atomic_int_or$MH,"g_atomic_int_or");
+        return RuntimeHelper.requireNonNull(constants$50.const$1,"g_atomic_int_or");
     }
     /**
      * {@snippet :
-     * guint g_atomic_int_or(volatile guint* atomic, guint val);
+     * unsigned int g_atomic_int_or(unsigned int* atomic, unsigned int val);
      * }
      */
     public static int g_atomic_int_or(MemorySegment atomic, int val) {
@@ -1849,11 +2090,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_int_xor$MH() {
-        return RuntimeHelper.requireNonNull(constants$32.g_atomic_int_xor$MH,"g_atomic_int_xor");
+        return RuntimeHelper.requireNonNull(constants$50.const$2,"g_atomic_int_xor");
     }
     /**
      * {@snippet :
-     * guint g_atomic_int_xor(volatile guint* atomic, guint val);
+     * unsigned int g_atomic_int_xor(unsigned int* atomic, unsigned int val);
      * }
      */
     public static int g_atomic_int_xor(MemorySegment atomic, int val) {
@@ -1865,11 +2106,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_pointer_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$32.g_atomic_pointer_get$MH,"g_atomic_pointer_get");
+        return RuntimeHelper.requireNonNull(constants$50.const$3,"g_atomic_pointer_get");
     }
     /**
      * {@snippet :
-     * gpointer g_atomic_pointer_get(void* atomic);
+     * void* g_atomic_pointer_get(void* atomic);
      * }
      */
     public static MemorySegment g_atomic_pointer_get(MemorySegment atomic) {
@@ -1881,11 +2122,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_pointer_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$32.g_atomic_pointer_set$MH,"g_atomic_pointer_set");
+        return RuntimeHelper.requireNonNull(constants$50.const$4,"g_atomic_pointer_set");
     }
     /**
      * {@snippet :
-     * void g_atomic_pointer_set(void* atomic, gpointer newval);
+     * void g_atomic_pointer_set(void* atomic, void* newval);
      * }
      */
     public static void g_atomic_pointer_set(MemorySegment atomic, MemorySegment newval) {
@@ -1897,11 +2138,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_pointer_compare_and_exchange$MH() {
-        return RuntimeHelper.requireNonNull(constants$32.g_atomic_pointer_compare_and_exchange$MH,"g_atomic_pointer_compare_and_exchange");
+        return RuntimeHelper.requireNonNull(constants$50.const$5,"g_atomic_pointer_compare_and_exchange");
     }
     /**
      * {@snippet :
-     * gboolean g_atomic_pointer_compare_and_exchange(void* atomic, gpointer oldval, gpointer newval);
+     * int g_atomic_pointer_compare_and_exchange(void* atomic, void* oldval, void* newval);
      * }
      */
     public static int g_atomic_pointer_compare_and_exchange(MemorySegment atomic, MemorySegment oldval, MemorySegment newval) {
@@ -1913,11 +2154,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_pointer_compare_and_exchange_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$32.g_atomic_pointer_compare_and_exchange_full$MH,"g_atomic_pointer_compare_and_exchange_full");
+        return RuntimeHelper.requireNonNull(constants$51.const$0,"g_atomic_pointer_compare_and_exchange_full");
     }
     /**
      * {@snippet :
-     * gboolean g_atomic_pointer_compare_and_exchange_full(void* atomic, gpointer oldval, gpointer newval, void* preval);
+     * int g_atomic_pointer_compare_and_exchange_full(void* atomic, void* oldval, void* newval, void* preval);
      * }
      */
     public static int g_atomic_pointer_compare_and_exchange_full(MemorySegment atomic, MemorySegment oldval, MemorySegment newval, MemorySegment preval) {
@@ -1929,11 +2170,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_pointer_exchange$MH() {
-        return RuntimeHelper.requireNonNull(constants$32.g_atomic_pointer_exchange$MH,"g_atomic_pointer_exchange");
+        return RuntimeHelper.requireNonNull(constants$51.const$1,"g_atomic_pointer_exchange");
     }
     /**
      * {@snippet :
-     * gpointer g_atomic_pointer_exchange(void* atomic, gpointer newval);
+     * void* g_atomic_pointer_exchange(void* atomic, void* newval);
      * }
      */
     public static MemorySegment g_atomic_pointer_exchange(MemorySegment atomic, MemorySegment newval) {
@@ -1945,11 +2186,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_pointer_add$MH() {
-        return RuntimeHelper.requireNonNull(constants$33.g_atomic_pointer_add$MH,"g_atomic_pointer_add");
+        return RuntimeHelper.requireNonNull(constants$51.const$2,"g_atomic_pointer_add");
     }
     /**
      * {@snippet :
-     * gssize g_atomic_pointer_add(void* atomic, gssize val);
+     * long g_atomic_pointer_add(void* atomic, long val);
      * }
      */
     public static long g_atomic_pointer_add(MemorySegment atomic, long val) {
@@ -1961,11 +2202,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_pointer_and$MH() {
-        return RuntimeHelper.requireNonNull(constants$33.g_atomic_pointer_and$MH,"g_atomic_pointer_and");
+        return RuntimeHelper.requireNonNull(constants$51.const$3,"g_atomic_pointer_and");
     }
     /**
      * {@snippet :
-     * gsize g_atomic_pointer_and(void* atomic, gsize val);
+     * unsigned long g_atomic_pointer_and(void* atomic, unsigned long val);
      * }
      */
     public static long g_atomic_pointer_and(MemorySegment atomic, long val) {
@@ -1977,11 +2218,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_pointer_or$MH() {
-        return RuntimeHelper.requireNonNull(constants$33.g_atomic_pointer_or$MH,"g_atomic_pointer_or");
+        return RuntimeHelper.requireNonNull(constants$51.const$4,"g_atomic_pointer_or");
     }
     /**
      * {@snippet :
-     * gsize g_atomic_pointer_or(void* atomic, gsize val);
+     * unsigned long g_atomic_pointer_or(void* atomic, unsigned long val);
      * }
      */
     public static long g_atomic_pointer_or(MemorySegment atomic, long val) {
@@ -1993,11 +2234,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_pointer_xor$MH() {
-        return RuntimeHelper.requireNonNull(constants$33.g_atomic_pointer_xor$MH,"g_atomic_pointer_xor");
+        return RuntimeHelper.requireNonNull(constants$51.const$5,"g_atomic_pointer_xor");
     }
     /**
      * {@snippet :
-     * gsize g_atomic_pointer_xor(void* atomic, gsize val);
+     * unsigned long g_atomic_pointer_xor(void* atomic, unsigned long val);
      * }
      */
     public static long g_atomic_pointer_xor(MemorySegment atomic, long val) {
@@ -2009,11 +2250,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atomic_int_exchange_and_add$MH() {
-        return RuntimeHelper.requireNonNull(constants$33.g_atomic_int_exchange_and_add$MH,"g_atomic_int_exchange_and_add");
+        return RuntimeHelper.requireNonNull(constants$52.const$0,"g_atomic_int_exchange_and_add");
     }
     /**
      * {@snippet :
-     * gint g_atomic_int_exchange_and_add(volatile gint* atomic, gint val);
+     * int g_atomic_int_exchange_and_add(int* atomic, int val);
      * }
      */
     public static int g_atomic_int_exchange_and_add(MemorySegment atomic, int val) {
@@ -2029,13 +2270,13 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
      * typedef unsigned int GQuark;
      * }
      */
-    public static final OfInt GQuark = Constants$root.C_INT$LAYOUT;
+    public static final OfInt GQuark = JAVA_INT;
     public static MethodHandle g_quark_try_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$33.g_quark_try_string$MH,"g_quark_try_string");
+        return RuntimeHelper.requireNonNull(constants$52.const$1,"g_quark_try_string");
     }
     /**
      * {@snippet :
-     * GQuark g_quark_try_string(const gchar* string);
+     * unsigned int g_quark_try_string(char* string);
      * }
      */
     public static int g_quark_try_string(MemorySegment string) {
@@ -2047,11 +2288,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_quark_from_static_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$34.g_quark_from_static_string$MH,"g_quark_from_static_string");
+        return RuntimeHelper.requireNonNull(constants$52.const$2,"g_quark_from_static_string");
     }
     /**
      * {@snippet :
-     * GQuark g_quark_from_static_string(const gchar* string);
+     * unsigned int g_quark_from_static_string(char* string);
      * }
      */
     public static int g_quark_from_static_string(MemorySegment string) {
@@ -2063,11 +2304,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_quark_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$34.g_quark_from_string$MH,"g_quark_from_string");
+        return RuntimeHelper.requireNonNull(constants$52.const$3,"g_quark_from_string");
     }
     /**
      * {@snippet :
-     * GQuark g_quark_from_string(const gchar* string);
+     * unsigned int g_quark_from_string(char* string);
      * }
      */
     public static int g_quark_from_string(MemorySegment string) {
@@ -2079,11 +2320,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_quark_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$34.g_quark_to_string$MH,"g_quark_to_string");
+        return RuntimeHelper.requireNonNull(constants$52.const$4,"g_quark_to_string");
     }
     /**
      * {@snippet :
-     * const gchar* g_quark_to_string(GQuark quark);
+     * char* g_quark_to_string(unsigned int quark);
      * }
      */
     public static MemorySegment g_quark_to_string(int quark) {
@@ -2095,11 +2336,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_intern_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$34.g_intern_string$MH,"g_intern_string");
+        return RuntimeHelper.requireNonNull(constants$52.const$5,"g_intern_string");
     }
     /**
      * {@snippet :
-     * const gchar* g_intern_string(const gchar* string);
+     * char* g_intern_string(char* string);
      * }
      */
     public static MemorySegment g_intern_string(MemorySegment string) {
@@ -2111,11 +2352,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_intern_static_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$34.g_intern_static_string$MH,"g_intern_static_string");
+        return RuntimeHelper.requireNonNull(constants$53.const$0,"g_intern_static_string");
     }
     /**
      * {@snippet :
-     * const gchar* g_intern_static_string(const gchar* string);
+     * char* g_intern_static_string(char* string);
      * }
      */
     public static MemorySegment g_intern_static_string(MemorySegment string) {
@@ -2127,11 +2368,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_error_domain_register_static$MH() {
-        return RuntimeHelper.requireNonNull(constants$35.g_error_domain_register_static$MH,"g_error_domain_register_static");
+        return RuntimeHelper.requireNonNull(constants$54.const$6,"g_error_domain_register_static");
     }
     /**
      * {@snippet :
-     * GQuark g_error_domain_register_static(char* error_type_name, gsize error_type_private_size, GErrorInitFunc error_type_init, GErrorCopyFunc error_type_copy, GErrorClearFunc error_type_clear);
+     * unsigned int g_error_domain_register_static(char* error_type_name, unsigned long error_type_private_size, void (*error_type_init)(struct _GError*), void (*error_type_copy)(struct _GError*,struct _GError*), void (*error_type_clear)(struct _GError*));
      * }
      */
     public static int g_error_domain_register_static(MemorySegment error_type_name, long error_type_private_size, MemorySegment error_type_init, MemorySegment error_type_copy, MemorySegment error_type_clear) {
@@ -2143,11 +2384,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_error_domain_register$MH() {
-        return RuntimeHelper.requireNonNull(constants$36.g_error_domain_register$MH,"g_error_domain_register");
+        return RuntimeHelper.requireNonNull(constants$55.const$3,"g_error_domain_register");
     }
     /**
      * {@snippet :
-     * GQuark g_error_domain_register(char* error_type_name, gsize error_type_private_size, GErrorInitFunc error_type_init, GErrorCopyFunc error_type_copy, GErrorClearFunc error_type_clear);
+     * unsigned int g_error_domain_register(char* error_type_name, unsigned long error_type_private_size, void (*error_type_init)(struct _GError*), void (*error_type_copy)(struct _GError*,struct _GError*), void (*error_type_clear)(struct _GError*));
      * }
      */
     public static int g_error_domain_register(MemorySegment error_type_name, long error_type_private_size, MemorySegment error_type_init, MemorySegment error_type_copy, MemorySegment error_type_clear) {
@@ -2159,11 +2400,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_error_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$36.g_error_new$MH,"g_error_new");
+        return RuntimeHelper.requireNonNull(constants$55.const$5,"g_error_new");
     }
     /**
      * {@snippet :
-     * GError* g_error_new(GQuark domain, gint code, const gchar* format,...);
+     * struct _GError* g_error_new(unsigned int domain, int code, char* format,...);
      * }
      */
     public static MemorySegment g_error_new(int domain, int code, MemorySegment format, Object... x3) {
@@ -2175,11 +2416,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_error_new_literal$MH() {
-        return RuntimeHelper.requireNonNull(constants$36.g_error_new_literal$MH,"g_error_new_literal");
+        return RuntimeHelper.requireNonNull(constants$56.const$0,"g_error_new_literal");
     }
     /**
      * {@snippet :
-     * GError* g_error_new_literal(GQuark domain, gint code, const gchar* message);
+     * struct _GError* g_error_new_literal(unsigned int domain, int code, char* message);
      * }
      */
     public static MemorySegment g_error_new_literal(int domain, int code, MemorySegment message) {
@@ -2191,11 +2432,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_error_new_valist$MH() {
-        return RuntimeHelper.requireNonNull(constants$36.g_error_new_valist$MH,"g_error_new_valist");
+        return RuntimeHelper.requireNonNull(constants$56.const$2,"g_error_new_valist");
     }
     /**
      * {@snippet :
-     * GError* g_error_new_valist(GQuark domain, gint code, const gchar* format, va_list args);
+     * struct _GError* g_error_new_valist(unsigned int domain, int code, char* format, struct __va_list args);
      * }
      */
     public static MemorySegment g_error_new_valist(int domain, int code, MemorySegment format, MemorySegment args) {
@@ -2207,11 +2448,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_error_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$36.g_error_free$MH,"g_error_free");
+        return RuntimeHelper.requireNonNull(constants$56.const$3,"g_error_free");
     }
     /**
      * {@snippet :
-     * void g_error_free(GError* error);
+     * void g_error_free(struct _GError* error);
      * }
      */
     public static void g_error_free(MemorySegment error) {
@@ -2223,11 +2464,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_error_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$36.g_error_copy$MH,"g_error_copy");
+        return RuntimeHelper.requireNonNull(constants$56.const$4,"g_error_copy");
     }
     /**
      * {@snippet :
-     * GError* g_error_copy(const GError* error);
+     * struct _GError* g_error_copy(struct _GError* error);
      * }
      */
     public static MemorySegment g_error_copy(MemorySegment error) {
@@ -2239,11 +2480,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_error_matches$MH() {
-        return RuntimeHelper.requireNonNull(constants$37.g_error_matches$MH,"g_error_matches");
+        return RuntimeHelper.requireNonNull(constants$56.const$5,"g_error_matches");
     }
     /**
      * {@snippet :
-     * gboolean g_error_matches(const GError* error, GQuark domain, gint code);
+     * int g_error_matches(struct _GError* error, unsigned int domain, int code);
      * }
      */
     public static int g_error_matches(MemorySegment error, int domain, int code) {
@@ -2255,11 +2496,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_set_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$37.g_set_error$MH,"g_set_error");
+        return RuntimeHelper.requireNonNull(constants$57.const$1,"g_set_error");
     }
     /**
      * {@snippet :
-     * void g_set_error(GError** err, GQuark domain, gint code, const gchar* format,...);
+     * void g_set_error(struct _GError** err, unsigned int domain, int code, char* format,...);
      * }
      */
     public static void g_set_error(MemorySegment err, int domain, int code, MemorySegment format, Object... x4) {
@@ -2271,11 +2512,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_set_error_literal$MH() {
-        return RuntimeHelper.requireNonNull(constants$37.g_set_error_literal$MH,"g_set_error_literal");
+        return RuntimeHelper.requireNonNull(constants$57.const$2,"g_set_error_literal");
     }
     /**
      * {@snippet :
-     * void g_set_error_literal(GError** err, GQuark domain, gint code, const gchar* message);
+     * void g_set_error_literal(struct _GError** err, unsigned int domain, int code, char* message);
      * }
      */
     public static void g_set_error_literal(MemorySegment err, int domain, int code, MemorySegment message) {
@@ -2287,11 +2528,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_propagate_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$37.g_propagate_error$MH,"g_propagate_error");
+        return RuntimeHelper.requireNonNull(constants$57.const$3,"g_propagate_error");
     }
     /**
      * {@snippet :
-     * void g_propagate_error(GError** dest, GError* src);
+     * void g_propagate_error(struct _GError** dest, struct _GError* src);
      * }
      */
     public static void g_propagate_error(MemorySegment dest, MemorySegment src) {
@@ -2303,11 +2544,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_clear_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$37.g_clear_error$MH,"g_clear_error");
+        return RuntimeHelper.requireNonNull(constants$57.const$4,"g_clear_error");
     }
     /**
      * {@snippet :
-     * void g_clear_error(GError** err);
+     * void g_clear_error(struct _GError** err);
      * }
      */
     public static void g_clear_error(MemorySegment err) {
@@ -2319,11 +2560,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_prefix_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$37.g_prefix_error$MH,"g_prefix_error");
+        return RuntimeHelper.requireNonNull(constants$57.const$5,"g_prefix_error");
     }
     /**
      * {@snippet :
-     * void g_prefix_error(GError** err, const gchar* format,...);
+     * void g_prefix_error(struct _GError** err, char* format,...);
      * }
      */
     public static void g_prefix_error(MemorySegment err, MemorySegment format, Object... x2) {
@@ -2335,11 +2576,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_prefix_error_literal$MH() {
-        return RuntimeHelper.requireNonNull(constants$38.g_prefix_error_literal$MH,"g_prefix_error_literal");
+        return RuntimeHelper.requireNonNull(constants$58.const$0,"g_prefix_error_literal");
     }
     /**
      * {@snippet :
-     * void g_prefix_error_literal(GError** err, const gchar* prefix);
+     * void g_prefix_error_literal(struct _GError** err, char* prefix);
      * }
      */
     public static void g_prefix_error_literal(MemorySegment err, MemorySegment prefix) {
@@ -2351,11 +2592,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_propagate_prefixed_error$MH() {
-        return RuntimeHelper.requireNonNull(constants$38.g_propagate_prefixed_error$MH,"g_propagate_prefixed_error");
+        return RuntimeHelper.requireNonNull(constants$58.const$1,"g_propagate_prefixed_error");
     }
     /**
      * {@snippet :
-     * void g_propagate_prefixed_error(GError** dest, GError* src, const gchar* format,...);
+     * void g_propagate_prefixed_error(struct _GError** dest, struct _GError* src, char* format,...);
      * }
      */
     public static void g_propagate_prefixed_error(MemorySegment dest, MemorySegment src, MemorySegment format, Object... x3) {
@@ -2367,11 +2608,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_user_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$38.g_get_user_name$MH,"g_get_user_name");
+        return RuntimeHelper.requireNonNull(constants$58.const$2,"g_get_user_name");
     }
     /**
      * {@snippet :
-     * const gchar* g_get_user_name();
+     * char* g_get_user_name();
      * }
      */
     public static MemorySegment g_get_user_name() {
@@ -2383,11 +2624,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_real_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$38.g_get_real_name$MH,"g_get_real_name");
+        return RuntimeHelper.requireNonNull(constants$58.const$3,"g_get_real_name");
     }
     /**
      * {@snippet :
-     * const gchar* g_get_real_name();
+     * char* g_get_real_name();
      * }
      */
     public static MemorySegment g_get_real_name() {
@@ -2399,11 +2640,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_home_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$38.g_get_home_dir$MH,"g_get_home_dir");
+        return RuntimeHelper.requireNonNull(constants$58.const$4,"g_get_home_dir");
     }
     /**
      * {@snippet :
-     * const gchar* g_get_home_dir();
+     * char* g_get_home_dir();
      * }
      */
     public static MemorySegment g_get_home_dir() {
@@ -2415,11 +2656,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_tmp_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$38.g_get_tmp_dir$MH,"g_get_tmp_dir");
+        return RuntimeHelper.requireNonNull(constants$58.const$5,"g_get_tmp_dir");
     }
     /**
      * {@snippet :
-     * const gchar* g_get_tmp_dir();
+     * char* g_get_tmp_dir();
      * }
      */
     public static MemorySegment g_get_tmp_dir() {
@@ -2431,11 +2672,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_host_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$39.g_get_host_name$MH,"g_get_host_name");
+        return RuntimeHelper.requireNonNull(constants$59.const$0,"g_get_host_name");
     }
     /**
      * {@snippet :
-     * const gchar* g_get_host_name();
+     * char* g_get_host_name();
      * }
      */
     public static MemorySegment g_get_host_name() {
@@ -2447,11 +2688,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_prgname$MH() {
-        return RuntimeHelper.requireNonNull(constants$39.g_get_prgname$MH,"g_get_prgname");
+        return RuntimeHelper.requireNonNull(constants$59.const$1,"g_get_prgname");
     }
     /**
      * {@snippet :
-     * const gchar* g_get_prgname();
+     * char* g_get_prgname();
      * }
      */
     public static MemorySegment g_get_prgname() {
@@ -2463,11 +2704,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_set_prgname$MH() {
-        return RuntimeHelper.requireNonNull(constants$39.g_set_prgname$MH,"g_set_prgname");
+        return RuntimeHelper.requireNonNull(constants$59.const$2,"g_set_prgname");
     }
     /**
      * {@snippet :
-     * void g_set_prgname(const gchar* prgname);
+     * void g_set_prgname(char* prgname);
      * }
      */
     public static void g_set_prgname(MemorySegment prgname) {
@@ -2479,11 +2720,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_application_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$39.g_get_application_name$MH,"g_get_application_name");
+        return RuntimeHelper.requireNonNull(constants$59.const$3,"g_get_application_name");
     }
     /**
      * {@snippet :
-     * const gchar* g_get_application_name();
+     * char* g_get_application_name();
      * }
      */
     public static MemorySegment g_get_application_name() {
@@ -2495,11 +2736,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_set_application_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$39.g_set_application_name$MH,"g_set_application_name");
+        return RuntimeHelper.requireNonNull(constants$59.const$4,"g_set_application_name");
     }
     /**
      * {@snippet :
-     * void g_set_application_name(const gchar* application_name);
+     * void g_set_application_name(char* application_name);
      * }
      */
     public static void g_set_application_name(MemorySegment application_name) {
@@ -2511,11 +2752,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_os_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$39.g_get_os_info$MH,"g_get_os_info");
+        return RuntimeHelper.requireNonNull(constants$59.const$5,"g_get_os_info");
     }
     /**
      * {@snippet :
-     * gchar* g_get_os_info(const gchar* key_name);
+     * char* g_get_os_info(char* key_name);
      * }
      */
     public static MemorySegment g_get_os_info(MemorySegment key_name) {
@@ -2527,7 +2768,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_reload_user_special_dirs_cache$MH() {
-        return RuntimeHelper.requireNonNull(constants$40.g_reload_user_special_dirs_cache$MH,"g_reload_user_special_dirs_cache");
+        return RuntimeHelper.requireNonNull(constants$60.const$0,"g_reload_user_special_dirs_cache");
     }
     /**
      * {@snippet :
@@ -2543,11 +2784,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_user_data_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$40.g_get_user_data_dir$MH,"g_get_user_data_dir");
+        return RuntimeHelper.requireNonNull(constants$60.const$1,"g_get_user_data_dir");
     }
     /**
      * {@snippet :
-     * const gchar* g_get_user_data_dir();
+     * char* g_get_user_data_dir();
      * }
      */
     public static MemorySegment g_get_user_data_dir() {
@@ -2559,11 +2800,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_user_config_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$40.g_get_user_config_dir$MH,"g_get_user_config_dir");
+        return RuntimeHelper.requireNonNull(constants$60.const$2,"g_get_user_config_dir");
     }
     /**
      * {@snippet :
-     * const gchar* g_get_user_config_dir();
+     * char* g_get_user_config_dir();
      * }
      */
     public static MemorySegment g_get_user_config_dir() {
@@ -2575,11 +2816,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_user_cache_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$40.g_get_user_cache_dir$MH,"g_get_user_cache_dir");
+        return RuntimeHelper.requireNonNull(constants$60.const$3,"g_get_user_cache_dir");
     }
     /**
      * {@snippet :
-     * const gchar* g_get_user_cache_dir();
+     * char* g_get_user_cache_dir();
      * }
      */
     public static MemorySegment g_get_user_cache_dir() {
@@ -2591,11 +2832,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_user_state_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$40.g_get_user_state_dir$MH,"g_get_user_state_dir");
+        return RuntimeHelper.requireNonNull(constants$60.const$4,"g_get_user_state_dir");
     }
     /**
      * {@snippet :
-     * const gchar* g_get_user_state_dir();
+     * char* g_get_user_state_dir();
      * }
      */
     public static MemorySegment g_get_user_state_dir() {
@@ -2607,11 +2848,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_system_data_dirs$MH() {
-        return RuntimeHelper.requireNonNull(constants$40.g_get_system_data_dirs$MH,"g_get_system_data_dirs");
+        return RuntimeHelper.requireNonNull(constants$60.const$5,"g_get_system_data_dirs");
     }
     /**
      * {@snippet :
-     * const gchar** g_get_system_data_dirs();
+     * char** g_get_system_data_dirs();
      * }
      */
     public static MemorySegment g_get_system_data_dirs() {
@@ -2623,11 +2864,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_system_config_dirs$MH() {
-        return RuntimeHelper.requireNonNull(constants$41.g_get_system_config_dirs$MH,"g_get_system_config_dirs");
+        return RuntimeHelper.requireNonNull(constants$61.const$0,"g_get_system_config_dirs");
     }
     /**
      * {@snippet :
-     * const gchar** g_get_system_config_dirs();
+     * char** g_get_system_config_dirs();
      * }
      */
     public static MemorySegment g_get_system_config_dirs() {
@@ -2639,11 +2880,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_user_runtime_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$41.g_get_user_runtime_dir$MH,"g_get_user_runtime_dir");
+        return RuntimeHelper.requireNonNull(constants$61.const$1,"g_get_user_runtime_dir");
     }
     /**
      * {@snippet :
-     * const gchar* g_get_user_runtime_dir();
+     * char* g_get_user_runtime_dir();
      * }
      */
     public static MemorySegment g_get_user_runtime_dir() {
@@ -2656,7 +2897,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_USER_DIRECTORY_DESKTOP = 0;
+     * enum GUserDirectory.G_USER_DIRECTORY_DESKTOP = 0;
      * }
      */
     public static int G_USER_DIRECTORY_DESKTOP() {
@@ -2664,7 +2905,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_USER_DIRECTORY_DOCUMENTS = 1;
+     * enum GUserDirectory.G_USER_DIRECTORY_DOCUMENTS = 1;
      * }
      */
     public static int G_USER_DIRECTORY_DOCUMENTS() {
@@ -2672,7 +2913,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_USER_DIRECTORY_DOWNLOAD = 2;
+     * enum GUserDirectory.G_USER_DIRECTORY_DOWNLOAD = 2;
      * }
      */
     public static int G_USER_DIRECTORY_DOWNLOAD() {
@@ -2680,7 +2921,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_USER_DIRECTORY_MUSIC = 3;
+     * enum GUserDirectory.G_USER_DIRECTORY_MUSIC = 3;
      * }
      */
     public static int G_USER_DIRECTORY_MUSIC() {
@@ -2688,7 +2929,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_USER_DIRECTORY_PICTURES = 4;
+     * enum GUserDirectory.G_USER_DIRECTORY_PICTURES = 4;
      * }
      */
     public static int G_USER_DIRECTORY_PICTURES() {
@@ -2696,7 +2937,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_USER_DIRECTORY_PUBLIC_SHARE = 5;
+     * enum GUserDirectory.G_USER_DIRECTORY_PUBLIC_SHARE = 5;
      * }
      */
     public static int G_USER_DIRECTORY_PUBLIC_SHARE() {
@@ -2704,7 +2945,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_USER_DIRECTORY_TEMPLATES = 6;
+     * enum GUserDirectory.G_USER_DIRECTORY_TEMPLATES = 6;
      * }
      */
     public static int G_USER_DIRECTORY_TEMPLATES() {
@@ -2712,7 +2953,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_USER_DIRECTORY_VIDEOS = 7;
+     * enum GUserDirectory.G_USER_DIRECTORY_VIDEOS = 7;
      * }
      */
     public static int G_USER_DIRECTORY_VIDEOS() {
@@ -2720,18 +2961,18 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_USER_N_DIRECTORIES = 8;
+     * enum GUserDirectory.G_USER_N_DIRECTORIES = 8;
      * }
      */
     public static int G_USER_N_DIRECTORIES() {
         return (int)8L;
     }
     public static MethodHandle g_get_user_special_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$41.g_get_user_special_dir$MH,"g_get_user_special_dir");
+        return RuntimeHelper.requireNonNull(constants$61.const$2,"g_get_user_special_dir");
     }
     /**
      * {@snippet :
-     * const gchar* g_get_user_special_dir(GUserDirectory directory);
+     * char* g_get_user_special_dir(enum GUserDirectory directory);
      * }
      */
     public static MemorySegment g_get_user_special_dir(int directory) {
@@ -2743,11 +2984,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_parse_debug_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$41.g_parse_debug_string$MH,"g_parse_debug_string");
+        return RuntimeHelper.requireNonNull(constants$62.const$1,"g_parse_debug_string");
     }
     /**
      * {@snippet :
-     * guint g_parse_debug_string(const gchar* string, const GDebugKey* keys, guint nkeys);
+     * unsigned int g_parse_debug_string(char* string, struct _GDebugKey* keys, unsigned int nkeys);
      * }
      */
     public static int g_parse_debug_string(MemorySegment string, MemorySegment keys, int nkeys) {
@@ -2759,11 +3000,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_snprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$41.g_snprintf$MH,"g_snprintf");
+        return RuntimeHelper.requireNonNull(constants$62.const$3,"g_snprintf");
     }
     /**
      * {@snippet :
-     * gint g_snprintf(gchar* string, gulong n, const gchar* format,...);
+     * int g_snprintf(char* string, unsigned long n, char* format,...);
      * }
      */
     public static int g_snprintf(MemorySegment string, long n, MemorySegment format, Object... x3) {
@@ -2775,11 +3016,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_vsnprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$41.g_vsnprintf$MH,"g_vsnprintf");
+        return RuntimeHelper.requireNonNull(constants$62.const$5,"g_vsnprintf");
     }
     /**
      * {@snippet :
-     * gint g_vsnprintf(gchar* string, gulong n, const gchar* format, va_list args);
+     * int g_vsnprintf(char* string, unsigned long n, char* format, struct __va_list args);
      * }
      */
     public static int g_vsnprintf(MemorySegment string, long n, MemorySegment format, MemorySegment args) {
@@ -2791,11 +3032,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_nullify_pointer$MH() {
-        return RuntimeHelper.requireNonNull(constants$42.g_nullify_pointer$MH,"g_nullify_pointer");
+        return RuntimeHelper.requireNonNull(constants$63.const$0,"g_nullify_pointer");
     }
     /**
      * {@snippet :
-     * void g_nullify_pointer(gpointer* nullify_location);
+     * void g_nullify_pointer(void** nullify_location);
      * }
      */
     public static void g_nullify_pointer(MemorySegment nullify_location) {
@@ -2808,7 +3049,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FORMAT_SIZE_DEFAULT = 0;
+     * enum GFormatSizeFlags.G_FORMAT_SIZE_DEFAULT = 0;
      * }
      */
     public static int G_FORMAT_SIZE_DEFAULT() {
@@ -2816,7 +3057,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FORMAT_SIZE_LONG_FORMAT = 1;
+     * enum GFormatSizeFlags.G_FORMAT_SIZE_LONG_FORMAT = 1;
      * }
      */
     public static int G_FORMAT_SIZE_LONG_FORMAT() {
@@ -2824,7 +3065,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FORMAT_SIZE_IEC_UNITS = 2;
+     * enum GFormatSizeFlags.G_FORMAT_SIZE_IEC_UNITS = 2;
      * }
      */
     public static int G_FORMAT_SIZE_IEC_UNITS() {
@@ -2832,7 +3073,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FORMAT_SIZE_BITS = 4;
+     * enum GFormatSizeFlags.G_FORMAT_SIZE_BITS = 4;
      * }
      */
     public static int G_FORMAT_SIZE_BITS() {
@@ -2840,7 +3081,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FORMAT_SIZE_ONLY_VALUE = 8;
+     * enum GFormatSizeFlags.G_FORMAT_SIZE_ONLY_VALUE = 8;
      * }
      */
     public static int G_FORMAT_SIZE_ONLY_VALUE() {
@@ -2848,18 +3089,18 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FORMAT_SIZE_ONLY_UNIT = 16;
+     * enum GFormatSizeFlags.G_FORMAT_SIZE_ONLY_UNIT = 16;
      * }
      */
     public static int G_FORMAT_SIZE_ONLY_UNIT() {
         return (int)16L;
     }
     public static MethodHandle g_format_size_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$42.g_format_size_full$MH,"g_format_size_full");
+        return RuntimeHelper.requireNonNull(constants$63.const$2,"g_format_size_full");
     }
     /**
      * {@snippet :
-     * gchar* g_format_size_full(guint64 size, GFormatSizeFlags flags);
+     * char* g_format_size_full(unsigned long size, enum GFormatSizeFlags flags);
      * }
      */
     public static MemorySegment g_format_size_full(long size, int flags) {
@@ -2871,11 +3112,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_format_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$42.g_format_size$MH,"g_format_size");
+        return RuntimeHelper.requireNonNull(constants$63.const$4,"g_format_size");
     }
     /**
      * {@snippet :
-     * gchar* g_format_size(guint64 size);
+     * char* g_format_size(unsigned long size);
      * }
      */
     public static MemorySegment g_format_size(long size) {
@@ -2887,11 +3128,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_format_size_for_display$MH() {
-        return RuntimeHelper.requireNonNull(constants$42.g_format_size_for_display$MH,"g_format_size_for_display");
+        return RuntimeHelper.requireNonNull(constants$63.const$5,"g_format_size_for_display");
     }
     /**
      * {@snippet :
-     * gchar* g_format_size_for_display(goffset size);
+     * char* g_format_size_for_display(long size);
      * }
      */
     public static MemorySegment g_format_size_for_display(long size) {
@@ -2903,11 +3144,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_atexit$MH() {
-        return RuntimeHelper.requireNonNull(constants$43.g_atexit$MH,"g_atexit");
+        return RuntimeHelper.requireNonNull(constants$64.const$3,"g_atexit");
     }
     /**
      * {@snippet :
-     * void g_atexit(GVoidFunc func);
+     * void g_atexit(void (*func)());
      * }
      */
     public static void g_atexit(MemorySegment func) {
@@ -2919,11 +3160,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_find_program_in_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$43.g_find_program_in_path$MH,"g_find_program_in_path");
+        return RuntimeHelper.requireNonNull(constants$64.const$4,"g_find_program_in_path");
     }
     /**
      * {@snippet :
-     * gchar* g_find_program_in_path(const gchar* program);
+     * char* g_find_program_in_path(char* program);
      * }
      */
     public static MemorySegment g_find_program_in_path(MemorySegment program) {
@@ -2935,11 +3176,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bit_nth_lsf$MH() {
-        return RuntimeHelper.requireNonNull(constants$43.g_bit_nth_lsf$MH,"g_bit_nth_lsf");
+        return RuntimeHelper.requireNonNull(constants$64.const$6,"g_bit_nth_lsf");
     }
     /**
      * {@snippet :
-     * gint g_bit_nth_lsf(gulong mask, gint nth_bit);
+     * int g_bit_nth_lsf(unsigned long mask, int nth_bit);
      * }
      */
     public static int g_bit_nth_lsf(long mask, int nth_bit) {
@@ -2951,11 +3192,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bit_nth_msf$MH() {
-        return RuntimeHelper.requireNonNull(constants$43.g_bit_nth_msf$MH,"g_bit_nth_msf");
+        return RuntimeHelper.requireNonNull(constants$65.const$0,"g_bit_nth_msf");
     }
     /**
      * {@snippet :
-     * gint g_bit_nth_msf(gulong mask, gint nth_bit);
+     * int g_bit_nth_msf(unsigned long mask, int nth_bit);
      * }
      */
     public static int g_bit_nth_msf(long mask, int nth_bit) {
@@ -2967,11 +3208,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bit_storage$MH() {
-        return RuntimeHelper.requireNonNull(constants$43.g_bit_storage$MH,"g_bit_storage");
+        return RuntimeHelper.requireNonNull(constants$65.const$1,"g_bit_storage");
     }
     /**
      * {@snippet :
-     * guint g_bit_storage(gulong number);
+     * unsigned int g_bit_storage(unsigned long number);
      * }
      */
     public static int g_bit_storage(long number) {
@@ -2987,25 +3228,25 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
      * typedef float _Float32;
      * }
      */
-    public static final OfFloat _Float32 = Constants$root.C_FLOAT$LAYOUT;
+    public static final OfFloat _Float32 = JAVA_FLOAT;
     /**
      * {@snippet :
      * typedef double _Float64;
      * }
      */
-    public static final OfDouble _Float64 = Constants$root.C_DOUBLE$LAYOUT;
+    public static final OfDouble _Float64 = JAVA_DOUBLE;
     /**
      * {@snippet :
      * typedef double _Float32x;
      * }
      */
-    public static final OfDouble _Float32x = Constants$root.C_DOUBLE$LAYOUT;
+    public static final OfDouble _Float32x = JAVA_DOUBLE;
     public static MethodHandle __ctype_get_mb_cur_max$MH() {
-        return RuntimeHelper.requireNonNull(constants$43.__ctype_get_mb_cur_max$MH,"__ctype_get_mb_cur_max");
+        return RuntimeHelper.requireNonNull(constants$66.const$5,"__ctype_get_mb_cur_max");
     }
     /**
      * {@snippet :
-     * size_t __ctype_get_mb_cur_max();
+     * unsigned long __ctype_get_mb_cur_max();
      * }
      */
     public static long __ctype_get_mb_cur_max() {
@@ -3017,7 +3258,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle atof$MH() {
-        return RuntimeHelper.requireNonNull(constants$44.atof$MH,"atof");
+        return RuntimeHelper.requireNonNull(constants$67.const$1,"atof");
     }
     /**
      * {@snippet :
@@ -3033,7 +3274,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle atoi$MH() {
-        return RuntimeHelper.requireNonNull(constants$44.atoi$MH,"atoi");
+        return RuntimeHelper.requireNonNull(constants$67.const$2,"atoi");
     }
     /**
      * {@snippet :
@@ -3049,7 +3290,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle atol$MH() {
-        return RuntimeHelper.requireNonNull(constants$44.atol$MH,"atol");
+        return RuntimeHelper.requireNonNull(constants$67.const$3,"atol");
     }
     /**
      * {@snippet :
@@ -3065,7 +3306,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle atoll$MH() {
-        return RuntimeHelper.requireNonNull(constants$44.atoll$MH,"atoll");
+        return RuntimeHelper.requireNonNull(constants$67.const$4,"atoll");
     }
     /**
      * {@snippet :
@@ -3081,7 +3322,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strtod$MH() {
-        return RuntimeHelper.requireNonNull(constants$44.strtod$MH,"strtod");
+        return RuntimeHelper.requireNonNull(constants$67.const$6,"strtod");
     }
     /**
      * {@snippet :
@@ -3097,7 +3338,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strtof$MH() {
-        return RuntimeHelper.requireNonNull(constants$44.strtof$MH,"strtof");
+        return RuntimeHelper.requireNonNull(constants$68.const$1,"strtof");
     }
     /**
      * {@snippet :
@@ -3113,7 +3354,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strtol$MH() {
-        return RuntimeHelper.requireNonNull(constants$45.strtol$MH,"strtol");
+        return RuntimeHelper.requireNonNull(constants$68.const$3,"strtol");
     }
     /**
      * {@snippet :
@@ -3129,7 +3370,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strtoul$MH() {
-        return RuntimeHelper.requireNonNull(constants$45.strtoul$MH,"strtoul");
+        return RuntimeHelper.requireNonNull(constants$68.const$4,"strtoul");
     }
     /**
      * {@snippet :
@@ -3145,7 +3386,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strtoq$MH() {
-        return RuntimeHelper.requireNonNull(constants$45.strtoq$MH,"strtoq");
+        return RuntimeHelper.requireNonNull(constants$68.const$5,"strtoq");
     }
     /**
      * {@snippet :
@@ -3161,7 +3402,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strtouq$MH() {
-        return RuntimeHelper.requireNonNull(constants$45.strtouq$MH,"strtouq");
+        return RuntimeHelper.requireNonNull(constants$69.const$0,"strtouq");
     }
     /**
      * {@snippet :
@@ -3177,7 +3418,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strtoll$MH() {
-        return RuntimeHelper.requireNonNull(constants$45.strtoll$MH,"strtoll");
+        return RuntimeHelper.requireNonNull(constants$69.const$1,"strtoll");
     }
     /**
      * {@snippet :
@@ -3193,7 +3434,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle strtoull$MH() {
-        return RuntimeHelper.requireNonNull(constants$45.strtoull$MH,"strtoull");
+        return RuntimeHelper.requireNonNull(constants$69.const$2,"strtoull");
     }
     /**
      * {@snippet :
@@ -3209,7 +3450,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle l64a$MH() {
-        return RuntimeHelper.requireNonNull(constants$46.l64a$MH,"l64a");
+        return RuntimeHelper.requireNonNull(constants$69.const$3,"l64a");
     }
     /**
      * {@snippet :
@@ -3225,7 +3466,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle a64l$MH() {
-        return RuntimeHelper.requireNonNull(constants$46.a64l$MH,"a64l");
+        return RuntimeHelper.requireNonNull(constants$69.const$4,"a64l");
     }
     /**
      * {@snippet :
@@ -3245,211 +3486,211 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
      * typedef unsigned char u_char;
      * }
      */
-    public static final OfByte u_char = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte u_char = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned short u_short;
      * }
      */
-    public static final OfShort u_short = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort u_short = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned int u_int;
      * }
      */
-    public static final OfInt u_int = Constants$root.C_INT$LAYOUT;
+    public static final OfInt u_int = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned long u_long;
      * }
      */
-    public static final OfLong u_long = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong u_long = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long quad_t;
      * }
      */
-    public static final OfLong quad_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong quad_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long u_quad_t;
      * }
      */
-    public static final OfLong u_quad_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong u_quad_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long loff_t;
      * }
      */
-    public static final OfLong loff_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong loff_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long ino_t;
      * }
      */
-    public static final OfLong ino_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong ino_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long dev_t;
      * }
      */
-    public static final OfLong dev_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong dev_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int gid_t;
      * }
      */
-    public static final OfInt gid_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt gid_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned int mode_t;
      * }
      */
-    public static final OfInt mode_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt mode_t = JAVA_INT;
     /**
      * {@snippet :
-     * typedef unsigned long nlink_t;
+     * typedef unsigned int nlink_t;
      * }
      */
-    public static final OfLong nlink_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfInt nlink_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned int uid_t;
      * }
      */
-    public static final OfInt uid_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt uid_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long off_t;
      * }
      */
-    public static final OfLong off_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong off_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int id_t;
      * }
      */
-    public static final OfInt id_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt id_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long ssize_t;
      * }
      */
-    public static final OfLong ssize_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong ssize_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef int daddr_t;
      * }
      */
-    public static final OfInt daddr_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt daddr_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef char* caddr_t;
      * }
      */
-    public static final OfAddress caddr_t = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout caddr_t = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef int key_t;
      * }
      */
-    public static final OfInt key_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt key_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned long ulong;
      * }
      */
-    public static final OfLong ulong = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong ulong = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned short ushort;
      * }
      */
-    public static final OfShort ushort = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort ushort = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned int uint;
      * }
      */
-    public static final OfInt uint = Constants$root.C_INT$LAYOUT;
+    public static final OfInt uint = JAVA_INT;
     /**
      * {@snippet :
      * typedef signed char int8_t;
      * }
      */
-    public static final OfByte int8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte int8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef short int16_t;
      * }
      */
-    public static final OfShort int16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort int16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef int int32_t;
      * }
      */
-    public static final OfInt int32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt int32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long int64_t;
      * }
      */
-    public static final OfLong int64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong int64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned char u_int8_t;
      * }
      */
-    public static final OfByte u_int8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte u_int8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned short u_int16_t;
      * }
      */
-    public static final OfShort u_int16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort u_int16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned int u_int32_t;
      * }
      */
-    public static final OfInt u_int32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt u_int32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned long u_int64_t;
      * }
      */
-    public static final OfLong u_int64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong u_int64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long register_t;
      * }
      */
-    public static final OfLong register_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong register_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long suseconds_t;
      * }
      */
-    public static final OfLong suseconds_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong suseconds_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __fd_mask;
      * }
      */
-    public static final OfLong __fd_mask = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __fd_mask = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long fd_mask;
      * }
      */
-    public static final OfLong fd_mask = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong fd_mask = JAVA_LONG;
     public static MethodHandle select$MH() {
-        return RuntimeHelper.requireNonNull(constants$46.select$MH,"select");
+        return RuntimeHelper.requireNonNull(constants$70.const$5,"select");
     }
     /**
      * {@snippet :
-     * int select(int __nfds, fd_set* __readfds, fd_set* __writefds, fd_set* __exceptfds, struct timeval* __timeout);
+     * int select(int __nfds, struct fd_set* __readfds, struct fd_set* __writefds, struct fd_set* __exceptfds, struct timeval* __timeout);
      * }
      */
     public static int select(int __nfds, MemorySegment __readfds, MemorySegment __writefds, MemorySegment __exceptfds, MemorySegment __timeout) {
@@ -3461,11 +3702,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle pselect$MH() {
-        return RuntimeHelper.requireNonNull(constants$46.pselect$MH,"pselect");
+        return RuntimeHelper.requireNonNull(constants$71.const$1,"pselect");
     }
     /**
      * {@snippet :
-     * int pselect(int __nfds, fd_set* __readfds, fd_set* __writefds, fd_set* __exceptfds, struct timespec* __timeout, const __sigset_t* __sigmask);
+     * int pselect(int __nfds, struct fd_set* __readfds, struct fd_set* __writefds, struct fd_set* __exceptfds, struct timespec* __timeout, struct __sigset_t* __sigmask);
      * }
      */
     public static int pselect(int __nfds, MemorySegment __readfds, MemorySegment __writefds, MemorySegment __exceptfds, MemorySegment __timeout, MemorySegment __sigmask) {
@@ -3478,66 +3719,66 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * typedef long blksize_t;
+     * typedef int blksize_t;
      * }
      */
-    public static final OfLong blksize_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfInt blksize_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long blkcnt_t;
      * }
      */
-    public static final OfLong blkcnt_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong blkcnt_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long fsblkcnt_t;
      * }
      */
-    public static final OfLong fsblkcnt_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong fsblkcnt_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long fsfilcnt_t;
      * }
      */
-    public static final OfLong fsfilcnt_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong fsfilcnt_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int __tss_t;
      * }
      */
-    public static final OfInt __tss_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __tss_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned long __thrd_t;
      * }
      */
-    public static final OfLong __thrd_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __thrd_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long pthread_t;
      * }
      */
-    public static final OfLong pthread_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong pthread_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int pthread_key_t;
      * }
      */
-    public static final OfInt pthread_key_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt pthread_key_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef int pthread_once_t;
      * }
      */
-    public static final OfInt pthread_once_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt pthread_once_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef int pthread_spinlock_t;
      * }
      */
-    public static final OfInt pthread_spinlock_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt pthread_spinlock_t = JAVA_INT;
     public static MethodHandle random$MH() {
-        return RuntimeHelper.requireNonNull(constants$46.random$MH,"random");
+        return RuntimeHelper.requireNonNull(constants$80.const$0,"random");
     }
     /**
      * {@snippet :
@@ -3553,7 +3794,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle srandom$MH() {
-        return RuntimeHelper.requireNonNull(constants$46.srandom$MH,"srandom");
+        return RuntimeHelper.requireNonNull(constants$80.const$2,"srandom");
     }
     /**
      * {@snippet :
@@ -3569,11 +3810,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle initstate$MH() {
-        return RuntimeHelper.requireNonNull(constants$47.initstate$MH,"initstate");
+        return RuntimeHelper.requireNonNull(constants$80.const$4,"initstate");
     }
     /**
      * {@snippet :
-     * char* initstate(unsigned int __seed, char* __statebuf, size_t __statelen);
+     * char* initstate(unsigned int __seed, char* __statebuf, unsigned long __statelen);
      * }
      */
     public static MemorySegment initstate(int __seed, MemorySegment __statebuf, long __statelen) {
@@ -3585,7 +3826,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle setstate$MH() {
-        return RuntimeHelper.requireNonNull(constants$47.setstate$MH,"setstate");
+        return RuntimeHelper.requireNonNull(constants$80.const$5,"setstate");
     }
     /**
      * {@snippet :
@@ -3601,11 +3842,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle random_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$47.random_r$MH,"random_r");
+        return RuntimeHelper.requireNonNull(constants$82.const$2,"random_r");
     }
     /**
      * {@snippet :
-     * int random_r(struct random_data* __buf, int32_t* __result);
+     * int random_r(struct random_data* __buf, int* __result);
      * }
      */
     public static int random_r(MemorySegment __buf, MemorySegment __result) {
@@ -3617,7 +3858,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle srandom_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$47.srandom_r$MH,"srandom_r");
+        return RuntimeHelper.requireNonNull(constants$82.const$3,"srandom_r");
     }
     /**
      * {@snippet :
@@ -3633,11 +3874,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle initstate_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$47.initstate_r$MH,"initstate_r");
+        return RuntimeHelper.requireNonNull(constants$82.const$5,"initstate_r");
     }
     /**
      * {@snippet :
-     * int initstate_r(unsigned int __seed, char* __statebuf, size_t __statelen, struct random_data* __buf);
+     * int initstate_r(unsigned int __seed, char* __statebuf, unsigned long __statelen, struct random_data* __buf);
      * }
      */
     public static int initstate_r(int __seed, MemorySegment __statebuf, long __statelen, MemorySegment __buf) {
@@ -3649,7 +3890,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle setstate_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$47.setstate_r$MH,"setstate_r");
+        return RuntimeHelper.requireNonNull(constants$83.const$0,"setstate_r");
     }
     /**
      * {@snippet :
@@ -3665,7 +3906,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle rand$MH() {
-        return RuntimeHelper.requireNonNull(constants$48.rand$MH,"rand");
+        return RuntimeHelper.requireNonNull(constants$83.const$2,"rand");
     }
     /**
      * {@snippet :
@@ -3681,7 +3922,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle srand$MH() {
-        return RuntimeHelper.requireNonNull(constants$48.srand$MH,"srand");
+        return RuntimeHelper.requireNonNull(constants$83.const$3,"srand");
     }
     /**
      * {@snippet :
@@ -3697,7 +3938,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle rand_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$48.rand_r$MH,"rand_r");
+        return RuntimeHelper.requireNonNull(constants$83.const$4,"rand_r");
     }
     /**
      * {@snippet :
@@ -3713,7 +3954,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle drand48$MH() {
-        return RuntimeHelper.requireNonNull(constants$48.drand48$MH,"drand48");
+        return RuntimeHelper.requireNonNull(constants$83.const$6,"drand48");
     }
     /**
      * {@snippet :
@@ -3729,7 +3970,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle erand48$MH() {
-        return RuntimeHelper.requireNonNull(constants$48.erand48$MH,"erand48");
+        return RuntimeHelper.requireNonNull(constants$84.const$0,"erand48");
     }
     /**
      * {@snippet :
@@ -3745,7 +3986,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle lrand48$MH() {
-        return RuntimeHelper.requireNonNull(constants$48.lrand48$MH,"lrand48");
+        return RuntimeHelper.requireNonNull(constants$84.const$1,"lrand48");
     }
     /**
      * {@snippet :
@@ -3761,7 +4002,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle nrand48$MH() {
-        return RuntimeHelper.requireNonNull(constants$49.nrand48$MH,"nrand48");
+        return RuntimeHelper.requireNonNull(constants$84.const$2,"nrand48");
     }
     /**
      * {@snippet :
@@ -3777,7 +4018,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle mrand48$MH() {
-        return RuntimeHelper.requireNonNull(constants$49.mrand48$MH,"mrand48");
+        return RuntimeHelper.requireNonNull(constants$84.const$3,"mrand48");
     }
     /**
      * {@snippet :
@@ -3793,7 +4034,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle jrand48$MH() {
-        return RuntimeHelper.requireNonNull(constants$49.jrand48$MH,"jrand48");
+        return RuntimeHelper.requireNonNull(constants$84.const$4,"jrand48");
     }
     /**
      * {@snippet :
@@ -3809,7 +4050,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle srand48$MH() {
-        return RuntimeHelper.requireNonNull(constants$49.srand48$MH,"srand48");
+        return RuntimeHelper.requireNonNull(constants$84.const$6,"srand48");
     }
     /**
      * {@snippet :
@@ -3825,7 +4066,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle seed48$MH() {
-        return RuntimeHelper.requireNonNull(constants$49.seed48$MH,"seed48");
+        return RuntimeHelper.requireNonNull(constants$85.const$0,"seed48");
     }
     /**
      * {@snippet :
@@ -3841,7 +4082,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle lcong48$MH() {
-        return RuntimeHelper.requireNonNull(constants$49.lcong48$MH,"lcong48");
+        return RuntimeHelper.requireNonNull(constants$85.const$1,"lcong48");
     }
     /**
      * {@snippet :
@@ -3857,7 +4098,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle drand48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$50.drand48_r$MH,"drand48_r");
+        return RuntimeHelper.requireNonNull(constants$86.const$0,"drand48_r");
     }
     /**
      * {@snippet :
@@ -3873,7 +4114,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle erand48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$50.erand48_r$MH,"erand48_r");
+        return RuntimeHelper.requireNonNull(constants$86.const$1,"erand48_r");
     }
     /**
      * {@snippet :
@@ -3889,7 +4130,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle lrand48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$50.lrand48_r$MH,"lrand48_r");
+        return RuntimeHelper.requireNonNull(constants$86.const$2,"lrand48_r");
     }
     /**
      * {@snippet :
@@ -3905,7 +4146,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle nrand48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$50.nrand48_r$MH,"nrand48_r");
+        return RuntimeHelper.requireNonNull(constants$86.const$3,"nrand48_r");
     }
     /**
      * {@snippet :
@@ -3921,7 +4162,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle mrand48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$50.mrand48_r$MH,"mrand48_r");
+        return RuntimeHelper.requireNonNull(constants$86.const$4,"mrand48_r");
     }
     /**
      * {@snippet :
@@ -3937,7 +4178,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle jrand48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$50.jrand48_r$MH,"jrand48_r");
+        return RuntimeHelper.requireNonNull(constants$86.const$5,"jrand48_r");
     }
     /**
      * {@snippet :
@@ -3953,7 +4194,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle srand48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$51.srand48_r$MH,"srand48_r");
+        return RuntimeHelper.requireNonNull(constants$87.const$1,"srand48_r");
     }
     /**
      * {@snippet :
@@ -3969,7 +4210,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle seed48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$51.seed48_r$MH,"seed48_r");
+        return RuntimeHelper.requireNonNull(constants$87.const$2,"seed48_r");
     }
     /**
      * {@snippet :
@@ -3985,7 +4226,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle lcong48_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$51.lcong48_r$MH,"lcong48_r");
+        return RuntimeHelper.requireNonNull(constants$87.const$3,"lcong48_r");
     }
     /**
      * {@snippet :
@@ -4000,60 +4241,12 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle arc4random$MH() {
-        return RuntimeHelper.requireNonNull(constants$51.arc4random$MH,"arc4random");
-    }
-    /**
-     * {@snippet :
-     * __uint32_t arc4random();
-     * }
-     */
-    public static int arc4random() {
-        var mh$ = arc4random$MH();
-        try {
-            return (int)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle arc4random_buf$MH() {
-        return RuntimeHelper.requireNonNull(constants$51.arc4random_buf$MH,"arc4random_buf");
-    }
-    /**
-     * {@snippet :
-     * void arc4random_buf(void* __buf, size_t __size);
-     * }
-     */
-    public static void arc4random_buf(MemorySegment __buf, long __size) {
-        var mh$ = arc4random_buf$MH();
-        try {
-            mh$.invokeExact(__buf, __size);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle arc4random_uniform$MH() {
-        return RuntimeHelper.requireNonNull(constants$51.arc4random_uniform$MH,"arc4random_uniform");
-    }
-    /**
-     * {@snippet :
-     * __uint32_t arc4random_uniform(__uint32_t __upper_bound);
-     * }
-     */
-    public static int arc4random_uniform(int __upper_bound) {
-        var mh$ = arc4random_uniform$MH();
-        try {
-            return (int)mh$.invokeExact(__upper_bound);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
     public static MethodHandle malloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$52.malloc$MH,"malloc");
+        return RuntimeHelper.requireNonNull(constants$87.const$4,"malloc");
     }
     /**
      * {@snippet :
-     * void* malloc(size_t __size);
+     * void* malloc(unsigned long __size);
      * }
      */
     public static MemorySegment malloc(long __size) {
@@ -4065,11 +4258,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle calloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$52.calloc$MH,"calloc");
+        return RuntimeHelper.requireNonNull(constants$87.const$6,"calloc");
     }
     /**
      * {@snippet :
-     * void* calloc(size_t __nmemb, size_t __size);
+     * void* calloc(unsigned long __nmemb, unsigned long __size);
      * }
      */
     public static MemorySegment calloc(long __nmemb, long __size) {
@@ -4081,11 +4274,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle realloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$52.realloc$MH,"realloc");
+        return RuntimeHelper.requireNonNull(constants$88.const$0,"realloc");
     }
     /**
      * {@snippet :
-     * void* realloc(void* __ptr, size_t __size);
+     * void* realloc(void* __ptr, unsigned long __size);
      * }
      */
     public static MemorySegment realloc(MemorySegment __ptr, long __size) {
@@ -4097,7 +4290,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle free$MH() {
-        return RuntimeHelper.requireNonNull(constants$52.free$MH,"free");
+        return RuntimeHelper.requireNonNull(constants$88.const$1,"free");
     }
     /**
      * {@snippet :
@@ -4113,11 +4306,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle reallocarray$MH() {
-        return RuntimeHelper.requireNonNull(constants$52.reallocarray$MH,"reallocarray");
+        return RuntimeHelper.requireNonNull(constants$88.const$3,"reallocarray");
     }
     /**
      * {@snippet :
-     * void* reallocarray(void* __ptr, size_t __nmemb, size_t __size);
+     * void* reallocarray(void* __ptr, unsigned long __nmemb, unsigned long __size);
      * }
      */
     public static MemorySegment reallocarray(MemorySegment __ptr, long __nmemb, long __size) {
@@ -4129,11 +4322,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle alloca$MH() {
-        return RuntimeHelper.requireNonNull(constants$52.alloca$MH,"alloca");
+        return RuntimeHelper.requireNonNull(constants$88.const$4,"alloca");
     }
     /**
      * {@snippet :
-     * void* alloca(size_t __size);
+     * void* alloca(unsigned long __size);
      * }
      */
     public static MemorySegment alloca(long __size) {
@@ -4145,11 +4338,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle valloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$53.valloc$MH,"valloc");
+        return RuntimeHelper.requireNonNull(constants$88.const$5,"valloc");
     }
     /**
      * {@snippet :
-     * void* valloc(size_t __size);
+     * void* valloc(unsigned long __size);
      * }
      */
     public static MemorySegment valloc(long __size) {
@@ -4161,11 +4354,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle posix_memalign$MH() {
-        return RuntimeHelper.requireNonNull(constants$53.posix_memalign$MH,"posix_memalign");
+        return RuntimeHelper.requireNonNull(constants$89.const$1,"posix_memalign");
     }
     /**
      * {@snippet :
-     * int posix_memalign(void** __memptr, size_t __alignment, size_t __size);
+     * int posix_memalign(void** __memptr, unsigned long __alignment, unsigned long __size);
      * }
      */
     public static int posix_memalign(MemorySegment __memptr, long __alignment, long __size) {
@@ -4177,11 +4370,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle aligned_alloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$53.aligned_alloc$MH,"aligned_alloc");
+        return RuntimeHelper.requireNonNull(constants$89.const$2,"aligned_alloc");
     }
     /**
      * {@snippet :
-     * void* aligned_alloc(size_t __alignment, size_t __size);
+     * void* aligned_alloc(unsigned long __alignment, unsigned long __size);
      * }
      */
     public static MemorySegment aligned_alloc(long __alignment, long __size) {
@@ -4193,7 +4386,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle abort$MH() {
-        return RuntimeHelper.requireNonNull(constants$53.abort$MH,"abort");
+        return RuntimeHelper.requireNonNull(constants$89.const$3,"abort");
     }
     /**
      * {@snippet :
@@ -4209,7 +4402,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle atexit$MH() {
-        return RuntimeHelper.requireNonNull(constants$54.atexit$MH,"atexit");
+        return RuntimeHelper.requireNonNull(constants$89.const$5,"atexit");
     }
     /**
      * {@snippet :
@@ -4225,7 +4418,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle at_quick_exit$MH() {
-        return RuntimeHelper.requireNonNull(constants$54.at_quick_exit$MH,"at_quick_exit");
+        return RuntimeHelper.requireNonNull(constants$90.const$1,"at_quick_exit");
     }
     /**
      * {@snippet :
@@ -4241,7 +4434,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle on_exit$MH() {
-        return RuntimeHelper.requireNonNull(constants$55.on_exit$MH,"on_exit");
+        return RuntimeHelper.requireNonNull(constants$90.const$5,"on_exit");
     }
     /**
      * {@snippet :
@@ -4257,7 +4450,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle exit$MH() {
-        return RuntimeHelper.requireNonNull(constants$55.exit$MH,"exit");
+        return RuntimeHelper.requireNonNull(constants$91.const$0,"exit");
     }
     /**
      * {@snippet :
@@ -4273,7 +4466,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle quick_exit$MH() {
-        return RuntimeHelper.requireNonNull(constants$55.quick_exit$MH,"quick_exit");
+        return RuntimeHelper.requireNonNull(constants$91.const$1,"quick_exit");
     }
     /**
      * {@snippet :
@@ -4289,7 +4482,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle _Exit$MH() {
-        return RuntimeHelper.requireNonNull(constants$55._Exit$MH,"_Exit");
+        return RuntimeHelper.requireNonNull(constants$91.const$2,"_Exit");
     }
     /**
      * {@snippet :
@@ -4305,7 +4498,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle getenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$55.getenv$MH,"getenv");
+        return RuntimeHelper.requireNonNull(constants$91.const$3,"getenv");
     }
     /**
      * {@snippet :
@@ -4321,7 +4514,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle putenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$55.putenv$MH,"putenv");
+        return RuntimeHelper.requireNonNull(constants$91.const$4,"putenv");
     }
     /**
      * {@snippet :
@@ -4337,7 +4530,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle setenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$56.setenv$MH,"setenv");
+        return RuntimeHelper.requireNonNull(constants$91.const$5,"setenv");
     }
     /**
      * {@snippet :
@@ -4353,7 +4546,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle unsetenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$56.unsetenv$MH,"unsetenv");
+        return RuntimeHelper.requireNonNull(constants$92.const$0,"unsetenv");
     }
     /**
      * {@snippet :
@@ -4369,7 +4562,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle clearenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$56.clearenv$MH,"clearenv");
+        return RuntimeHelper.requireNonNull(constants$92.const$1,"clearenv");
     }
     /**
      * {@snippet :
@@ -4385,7 +4578,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle mktemp$MH() {
-        return RuntimeHelper.requireNonNull(constants$56.mktemp$MH,"mktemp");
+        return RuntimeHelper.requireNonNull(constants$92.const$2,"mktemp");
     }
     /**
      * {@snippet :
@@ -4401,7 +4594,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle mkstemp$MH() {
-        return RuntimeHelper.requireNonNull(constants$56.mkstemp$MH,"mkstemp");
+        return RuntimeHelper.requireNonNull(constants$92.const$3,"mkstemp");
     }
     /**
      * {@snippet :
@@ -4417,7 +4610,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle mkstemps$MH() {
-        return RuntimeHelper.requireNonNull(constants$56.mkstemps$MH,"mkstemps");
+        return RuntimeHelper.requireNonNull(constants$92.const$4,"mkstemps");
     }
     /**
      * {@snippet :
@@ -4433,7 +4626,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle mkdtemp$MH() {
-        return RuntimeHelper.requireNonNull(constants$57.mkdtemp$MH,"mkdtemp");
+        return RuntimeHelper.requireNonNull(constants$92.const$5,"mkdtemp");
     }
     /**
      * {@snippet :
@@ -4449,7 +4642,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle system$MH() {
-        return RuntimeHelper.requireNonNull(constants$57.system$MH,"system");
+        return RuntimeHelper.requireNonNull(constants$93.const$0,"system");
     }
     /**
      * {@snippet :
@@ -4465,7 +4658,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle realpath$MH() {
-        return RuntimeHelper.requireNonNull(constants$57.realpath$MH,"realpath");
+        return RuntimeHelper.requireNonNull(constants$93.const$1,"realpath");
     }
     /**
      * {@snippet :
@@ -4481,11 +4674,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle bsearch$MH() {
-        return RuntimeHelper.requireNonNull(constants$57.bsearch$MH,"bsearch");
+        return RuntimeHelper.requireNonNull(constants$93.const$5,"bsearch");
     }
     /**
      * {@snippet :
-     * void* bsearch(void* __key, void* __base, size_t __nmemb, size_t __size, __compar_fn_t __compar);
+     * void* bsearch(void* __key, void* __base, unsigned long __nmemb, unsigned long __size, int (*__compar)(void*,void*));
      * }
      */
     public static MemorySegment bsearch(MemorySegment __key, MemorySegment __base, long __nmemb, long __size, MemorySegment __compar) {
@@ -4497,11 +4690,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle qsort$MH() {
-        return RuntimeHelper.requireNonNull(constants$58.qsort$MH,"qsort");
+        return RuntimeHelper.requireNonNull(constants$94.const$2,"qsort");
     }
     /**
      * {@snippet :
-     * void qsort(void* __base, size_t __nmemb, size_t __size, __compar_fn_t __compar);
+     * void qsort(void* __base, unsigned long __nmemb, unsigned long __size, int (*__compar)(void*,void*));
      * }
      */
     public static void qsort(MemorySegment __base, long __nmemb, long __size, MemorySegment __compar) {
@@ -4513,7 +4706,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle abs$MH() {
-        return RuntimeHelper.requireNonNull(constants$58.abs$MH,"abs");
+        return RuntimeHelper.requireNonNull(constants$94.const$3,"abs");
     }
     /**
      * {@snippet :
@@ -4529,7 +4722,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle labs$MH() {
-        return RuntimeHelper.requireNonNull(constants$58.labs$MH,"labs");
+        return RuntimeHelper.requireNonNull(constants$94.const$5,"labs");
     }
     /**
      * {@snippet :
@@ -4545,7 +4738,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle llabs$MH() {
-        return RuntimeHelper.requireNonNull(constants$58.llabs$MH,"llabs");
+        return RuntimeHelper.requireNonNull(constants$95.const$0,"llabs");
     }
     /**
      * {@snippet :
@@ -4561,11 +4754,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle div$MH() {
-        return RuntimeHelper.requireNonNull(constants$58.div$MH,"div");
+        return RuntimeHelper.requireNonNull(constants$95.const$2,"div");
     }
     /**
      * {@snippet :
-     * div_t div(int __numer, int __denom);
+     * struct div_t div(int __numer, int __denom);
      * }
      */
     public static MemorySegment div(SegmentAllocator allocator, int __numer, int __denom) {
@@ -4577,11 +4770,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle ldiv$MH() {
-        return RuntimeHelper.requireNonNull(constants$58.ldiv$MH,"ldiv");
+        return RuntimeHelper.requireNonNull(constants$95.const$4,"ldiv");
     }
     /**
      * {@snippet :
-     * ldiv_t ldiv(long __numer, long __denom);
+     * struct ldiv_t ldiv(long __numer, long __denom);
      * }
      */
     public static MemorySegment ldiv(SegmentAllocator allocator, long __numer, long __denom) {
@@ -4593,11 +4786,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle lldiv$MH() {
-        return RuntimeHelper.requireNonNull(constants$59.lldiv$MH,"lldiv");
+        return RuntimeHelper.requireNonNull(constants$95.const$6,"lldiv");
     }
     /**
      * {@snippet :
-     * lldiv_t lldiv(long long __numer, long long __denom);
+     * struct lldiv_t lldiv(long long __numer, long long __denom);
      * }
      */
     public static MemorySegment lldiv(SegmentAllocator allocator, long __numer, long __denom) {
@@ -4609,7 +4802,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle ecvt$MH() {
-        return RuntimeHelper.requireNonNull(constants$59.ecvt$MH,"ecvt");
+        return RuntimeHelper.requireNonNull(constants$96.const$1,"ecvt");
     }
     /**
      * {@snippet :
@@ -4625,7 +4818,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle fcvt$MH() {
-        return RuntimeHelper.requireNonNull(constants$59.fcvt$MH,"fcvt");
+        return RuntimeHelper.requireNonNull(constants$96.const$2,"fcvt");
     }
     /**
      * {@snippet :
@@ -4641,7 +4834,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle gcvt$MH() {
-        return RuntimeHelper.requireNonNull(constants$59.gcvt$MH,"gcvt");
+        return RuntimeHelper.requireNonNull(constants$96.const$4,"gcvt");
     }
     /**
      * {@snippet :
@@ -4657,11 +4850,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle ecvt_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$59.ecvt_r$MH,"ecvt_r");
+        return RuntimeHelper.requireNonNull(constants$96.const$6,"ecvt_r");
     }
     /**
      * {@snippet :
-     * int ecvt_r(double __value, int __ndigit, int* __decpt, int* __sign, char* __buf, size_t __len);
+     * int ecvt_r(double __value, int __ndigit, int* __decpt, int* __sign, char* __buf, unsigned long __len);
      * }
      */
     public static int ecvt_r(double __value, int __ndigit, MemorySegment __decpt, MemorySegment __sign, MemorySegment __buf, long __len) {
@@ -4673,11 +4866,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle fcvt_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$59.fcvt_r$MH,"fcvt_r");
+        return RuntimeHelper.requireNonNull(constants$97.const$0,"fcvt_r");
     }
     /**
      * {@snippet :
-     * int fcvt_r(double __value, int __ndigit, int* __decpt, int* __sign, char* __buf, size_t __len);
+     * int fcvt_r(double __value, int __ndigit, int* __decpt, int* __sign, char* __buf, unsigned long __len);
      * }
      */
     public static int fcvt_r(double __value, int __ndigit, MemorySegment __decpt, MemorySegment __sign, MemorySegment __buf, long __len) {
@@ -4689,11 +4882,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle mblen$MH() {
-        return RuntimeHelper.requireNonNull(constants$60.mblen$MH,"mblen");
+        return RuntimeHelper.requireNonNull(constants$97.const$2,"mblen");
     }
     /**
      * {@snippet :
-     * int mblen(char* __s, size_t __n);
+     * int mblen(char* __s, unsigned long __n);
      * }
      */
     public static int mblen(MemorySegment __s, long __n) {
@@ -4705,11 +4898,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle mbtowc$MH() {
-        return RuntimeHelper.requireNonNull(constants$60.mbtowc$MH,"mbtowc");
+        return RuntimeHelper.requireNonNull(constants$97.const$3,"mbtowc");
     }
     /**
      * {@snippet :
-     * int mbtowc(wchar_t* __pwc, char* __s, size_t __n);
+     * int mbtowc(unsigned int* __pwc, char* __s, unsigned long __n);
      * }
      */
     public static int mbtowc(MemorySegment __pwc, MemorySegment __s, long __n) {
@@ -4721,11 +4914,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle wctomb$MH() {
-        return RuntimeHelper.requireNonNull(constants$60.wctomb$MH,"wctomb");
+        return RuntimeHelper.requireNonNull(constants$97.const$4,"wctomb");
     }
     /**
      * {@snippet :
-     * int wctomb(char* __s, wchar_t __wchar);
+     * int wctomb(char* __s, unsigned int __wchar);
      * }
      */
     public static int wctomb(MemorySegment __s, int __wchar) {
@@ -4737,11 +4930,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle mbstowcs$MH() {
-        return RuntimeHelper.requireNonNull(constants$60.mbstowcs$MH,"mbstowcs");
+        return RuntimeHelper.requireNonNull(constants$97.const$5,"mbstowcs");
     }
     /**
      * {@snippet :
-     * size_t mbstowcs(wchar_t* __pwcs, char* __s, size_t __n);
+     * unsigned long mbstowcs(unsigned int* __pwcs, char* __s, unsigned long __n);
      * }
      */
     public static long mbstowcs(MemorySegment __pwcs, MemorySegment __s, long __n) {
@@ -4753,11 +4946,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle wcstombs$MH() {
-        return RuntimeHelper.requireNonNull(constants$60.wcstombs$MH,"wcstombs");
+        return RuntimeHelper.requireNonNull(constants$98.const$0,"wcstombs");
     }
     /**
      * {@snippet :
-     * size_t wcstombs(char* __s, const wchar_t* __pwcs, size_t __n);
+     * unsigned long wcstombs(char* __s, unsigned int* __pwcs, unsigned long __n);
      * }
      */
     public static long wcstombs(MemorySegment __s, MemorySegment __pwcs, long __n) {
@@ -4769,7 +4962,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle rpmatch$MH() {
-        return RuntimeHelper.requireNonNull(constants$60.rpmatch$MH,"rpmatch");
+        return RuntimeHelper.requireNonNull(constants$98.const$1,"rpmatch");
     }
     /**
      * {@snippet :
@@ -4785,7 +4978,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle getsubopt$MH() {
-        return RuntimeHelper.requireNonNull(constants$61.getsubopt$MH,"getsubopt");
+        return RuntimeHelper.requireNonNull(constants$98.const$2,"getsubopt");
     }
     /**
      * {@snippet :
@@ -4801,7 +4994,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle getloadavg$MH() {
-        return RuntimeHelper.requireNonNull(constants$61.getloadavg$MH,"getloadavg");
+        return RuntimeHelper.requireNonNull(constants$98.const$3,"getloadavg");
     }
     /**
      * {@snippet :
@@ -4817,11 +5010,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_thread_error_quark$MH() {
-        return RuntimeHelper.requireNonNull(constants$61.g_thread_error_quark$MH,"g_thread_error_quark");
+        return RuntimeHelper.requireNonNull(constants$98.const$4,"g_thread_error_quark");
     }
     /**
      * {@snippet :
-     * GQuark g_thread_error_quark();
+     * unsigned int g_thread_error_quark();
      * }
      */
     public static int g_thread_error_quark() {
@@ -4834,7 +5027,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_THREAD_ERROR_AGAIN = 0;
+     * enum GThreadError.G_THREAD_ERROR_AGAIN = 0;
      * }
      */
     public static int G_THREAD_ERROR_AGAIN() {
@@ -4842,7 +5035,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_ONCE_STATUS_NOTCALLED = 0;
+     * enum GOnceStatus.G_ONCE_STATUS_NOTCALLED = 0;
      * }
      */
     public static int G_ONCE_STATUS_NOTCALLED() {
@@ -4850,7 +5043,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_ONCE_STATUS_PROGRESS = 1;
+     * enum GOnceStatus.G_ONCE_STATUS_PROGRESS = 1;
      * }
      */
     public static int G_ONCE_STATUS_PROGRESS() {
@@ -4858,18 +5051,18 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_ONCE_STATUS_READY = 2;
+     * enum GOnceStatus.G_ONCE_STATUS_READY = 2;
      * }
      */
     public static int G_ONCE_STATUS_READY() {
         return (int)2L;
     }
     public static MethodHandle g_thread_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$61.g_thread_ref$MH,"g_thread_ref");
+        return RuntimeHelper.requireNonNull(constants$101.const$4,"g_thread_ref");
     }
     /**
      * {@snippet :
-     * GThread* g_thread_ref(GThread* thread);
+     * struct _GThread* g_thread_ref(struct _GThread* thread);
      * }
      */
     public static MemorySegment g_thread_ref(MemorySegment thread) {
@@ -4881,11 +5074,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_thread_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$62.g_thread_unref$MH,"g_thread_unref");
+        return RuntimeHelper.requireNonNull(constants$101.const$5,"g_thread_unref");
     }
     /**
      * {@snippet :
-     * void g_thread_unref(GThread* thread);
+     * void g_thread_unref(struct _GThread* thread);
      * }
      */
     public static void g_thread_unref(MemorySegment thread) {
@@ -4897,11 +5090,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_thread_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$62.g_thread_new$MH,"g_thread_new");
+        return RuntimeHelper.requireNonNull(constants$102.const$1,"g_thread_new");
     }
     /**
      * {@snippet :
-     * GThread* g_thread_new(const gchar* name, GThreadFunc func, gpointer data);
+     * struct _GThread* g_thread_new(char* name, void* (*func)(void*), void* data);
      * }
      */
     public static MemorySegment g_thread_new(MemorySegment name, MemorySegment func, MemorySegment data) {
@@ -4913,11 +5106,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_thread_try_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$62.g_thread_try_new$MH,"g_thread_try_new");
+        return RuntimeHelper.requireNonNull(constants$102.const$3,"g_thread_try_new");
     }
     /**
      * {@snippet :
-     * GThread* g_thread_try_new(const gchar* name, GThreadFunc func, gpointer data, GError** error);
+     * struct _GThread* g_thread_try_new(char* name, void* (*func)(void*), void* data, struct _GError** error);
      * }
      */
     public static MemorySegment g_thread_try_new(MemorySegment name, MemorySegment func, MemorySegment data, MemorySegment error) {
@@ -4929,11 +5122,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_thread_self$MH() {
-        return RuntimeHelper.requireNonNull(constants$62.g_thread_self$MH,"g_thread_self");
+        return RuntimeHelper.requireNonNull(constants$102.const$4,"g_thread_self");
     }
     /**
      * {@snippet :
-     * GThread* g_thread_self();
+     * struct _GThread* g_thread_self();
      * }
      */
     public static MemorySegment g_thread_self() {
@@ -4945,11 +5138,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_thread_exit$MH() {
-        return RuntimeHelper.requireNonNull(constants$62.g_thread_exit$MH,"g_thread_exit");
+        return RuntimeHelper.requireNonNull(constants$102.const$5,"g_thread_exit");
     }
     /**
      * {@snippet :
-     * void g_thread_exit(gpointer retval);
+     * void g_thread_exit(void* retval);
      * }
      */
     public static void g_thread_exit(MemorySegment retval) {
@@ -4961,11 +5154,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_thread_join$MH() {
-        return RuntimeHelper.requireNonNull(constants$62.g_thread_join$MH,"g_thread_join");
+        return RuntimeHelper.requireNonNull(constants$103.const$0,"g_thread_join");
     }
     /**
      * {@snippet :
-     * gpointer g_thread_join(GThread* thread);
+     * void* g_thread_join(struct _GThread* thread);
      * }
      */
     public static MemorySegment g_thread_join(MemorySegment thread) {
@@ -4977,7 +5170,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_thread_yield$MH() {
-        return RuntimeHelper.requireNonNull(constants$63.g_thread_yield$MH,"g_thread_yield");
+        return RuntimeHelper.requireNonNull(constants$103.const$1,"g_thread_yield");
     }
     /**
      * {@snippet :
@@ -4993,11 +5186,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_mutex_init$MH() {
-        return RuntimeHelper.requireNonNull(constants$63.g_mutex_init$MH,"g_mutex_init");
+        return RuntimeHelper.requireNonNull(constants$103.const$2,"g_mutex_init");
     }
     /**
      * {@snippet :
-     * void g_mutex_init(GMutex* mutex);
+     * void g_mutex_init(union _GMutex* mutex);
      * }
      */
     public static void g_mutex_init(MemorySegment mutex) {
@@ -5009,11 +5202,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_mutex_clear$MH() {
-        return RuntimeHelper.requireNonNull(constants$63.g_mutex_clear$MH,"g_mutex_clear");
+        return RuntimeHelper.requireNonNull(constants$103.const$3,"g_mutex_clear");
     }
     /**
      * {@snippet :
-     * void g_mutex_clear(GMutex* mutex);
+     * void g_mutex_clear(union _GMutex* mutex);
      * }
      */
     public static void g_mutex_clear(MemorySegment mutex) {
@@ -5025,11 +5218,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_mutex_lock$MH() {
-        return RuntimeHelper.requireNonNull(constants$63.g_mutex_lock$MH,"g_mutex_lock");
+        return RuntimeHelper.requireNonNull(constants$103.const$4,"g_mutex_lock");
     }
     /**
      * {@snippet :
-     * void g_mutex_lock(GMutex* mutex);
+     * void g_mutex_lock(union _GMutex* mutex);
      * }
      */
     public static void g_mutex_lock(MemorySegment mutex) {
@@ -5041,11 +5234,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_mutex_trylock$MH() {
-        return RuntimeHelper.requireNonNull(constants$63.g_mutex_trylock$MH,"g_mutex_trylock");
+        return RuntimeHelper.requireNonNull(constants$103.const$5,"g_mutex_trylock");
     }
     /**
      * {@snippet :
-     * gboolean g_mutex_trylock(GMutex* mutex);
+     * int g_mutex_trylock(union _GMutex* mutex);
      * }
      */
     public static int g_mutex_trylock(MemorySegment mutex) {
@@ -5057,11 +5250,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_mutex_unlock$MH() {
-        return RuntimeHelper.requireNonNull(constants$63.g_mutex_unlock$MH,"g_mutex_unlock");
+        return RuntimeHelper.requireNonNull(constants$104.const$0,"g_mutex_unlock");
     }
     /**
      * {@snippet :
-     * void g_mutex_unlock(GMutex* mutex);
+     * void g_mutex_unlock(union _GMutex* mutex);
      * }
      */
     public static void g_mutex_unlock(MemorySegment mutex) {
@@ -5073,11 +5266,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_rw_lock_init$MH() {
-        return RuntimeHelper.requireNonNull(constants$64.g_rw_lock_init$MH,"g_rw_lock_init");
+        return RuntimeHelper.requireNonNull(constants$104.const$1,"g_rw_lock_init");
     }
     /**
      * {@snippet :
-     * void g_rw_lock_init(GRWLock* rw_lock);
+     * void g_rw_lock_init(struct _GRWLock* rw_lock);
      * }
      */
     public static void g_rw_lock_init(MemorySegment rw_lock) {
@@ -5089,11 +5282,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_rw_lock_clear$MH() {
-        return RuntimeHelper.requireNonNull(constants$64.g_rw_lock_clear$MH,"g_rw_lock_clear");
+        return RuntimeHelper.requireNonNull(constants$104.const$2,"g_rw_lock_clear");
     }
     /**
      * {@snippet :
-     * void g_rw_lock_clear(GRWLock* rw_lock);
+     * void g_rw_lock_clear(struct _GRWLock* rw_lock);
      * }
      */
     public static void g_rw_lock_clear(MemorySegment rw_lock) {
@@ -5105,11 +5298,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_rw_lock_writer_lock$MH() {
-        return RuntimeHelper.requireNonNull(constants$64.g_rw_lock_writer_lock$MH,"g_rw_lock_writer_lock");
+        return RuntimeHelper.requireNonNull(constants$104.const$3,"g_rw_lock_writer_lock");
     }
     /**
      * {@snippet :
-     * void g_rw_lock_writer_lock(GRWLock* rw_lock);
+     * void g_rw_lock_writer_lock(struct _GRWLock* rw_lock);
      * }
      */
     public static void g_rw_lock_writer_lock(MemorySegment rw_lock) {
@@ -5121,11 +5314,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_rw_lock_writer_trylock$MH() {
-        return RuntimeHelper.requireNonNull(constants$64.g_rw_lock_writer_trylock$MH,"g_rw_lock_writer_trylock");
+        return RuntimeHelper.requireNonNull(constants$104.const$4,"g_rw_lock_writer_trylock");
     }
     /**
      * {@snippet :
-     * gboolean g_rw_lock_writer_trylock(GRWLock* rw_lock);
+     * int g_rw_lock_writer_trylock(struct _GRWLock* rw_lock);
      * }
      */
     public static int g_rw_lock_writer_trylock(MemorySegment rw_lock) {
@@ -5137,11 +5330,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_rw_lock_writer_unlock$MH() {
-        return RuntimeHelper.requireNonNull(constants$64.g_rw_lock_writer_unlock$MH,"g_rw_lock_writer_unlock");
+        return RuntimeHelper.requireNonNull(constants$104.const$5,"g_rw_lock_writer_unlock");
     }
     /**
      * {@snippet :
-     * void g_rw_lock_writer_unlock(GRWLock* rw_lock);
+     * void g_rw_lock_writer_unlock(struct _GRWLock* rw_lock);
      * }
      */
     public static void g_rw_lock_writer_unlock(MemorySegment rw_lock) {
@@ -5153,11 +5346,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_rw_lock_reader_lock$MH() {
-        return RuntimeHelper.requireNonNull(constants$64.g_rw_lock_reader_lock$MH,"g_rw_lock_reader_lock");
+        return RuntimeHelper.requireNonNull(constants$105.const$0,"g_rw_lock_reader_lock");
     }
     /**
      * {@snippet :
-     * void g_rw_lock_reader_lock(GRWLock* rw_lock);
+     * void g_rw_lock_reader_lock(struct _GRWLock* rw_lock);
      * }
      */
     public static void g_rw_lock_reader_lock(MemorySegment rw_lock) {
@@ -5169,11 +5362,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_rw_lock_reader_trylock$MH() {
-        return RuntimeHelper.requireNonNull(constants$65.g_rw_lock_reader_trylock$MH,"g_rw_lock_reader_trylock");
+        return RuntimeHelper.requireNonNull(constants$105.const$1,"g_rw_lock_reader_trylock");
     }
     /**
      * {@snippet :
-     * gboolean g_rw_lock_reader_trylock(GRWLock* rw_lock);
+     * int g_rw_lock_reader_trylock(struct _GRWLock* rw_lock);
      * }
      */
     public static int g_rw_lock_reader_trylock(MemorySegment rw_lock) {
@@ -5185,11 +5378,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_rw_lock_reader_unlock$MH() {
-        return RuntimeHelper.requireNonNull(constants$65.g_rw_lock_reader_unlock$MH,"g_rw_lock_reader_unlock");
+        return RuntimeHelper.requireNonNull(constants$105.const$2,"g_rw_lock_reader_unlock");
     }
     /**
      * {@snippet :
-     * void g_rw_lock_reader_unlock(GRWLock* rw_lock);
+     * void g_rw_lock_reader_unlock(struct _GRWLock* rw_lock);
      * }
      */
     public static void g_rw_lock_reader_unlock(MemorySegment rw_lock) {
@@ -5201,11 +5394,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_rec_mutex_init$MH() {
-        return RuntimeHelper.requireNonNull(constants$65.g_rec_mutex_init$MH,"g_rec_mutex_init");
+        return RuntimeHelper.requireNonNull(constants$105.const$3,"g_rec_mutex_init");
     }
     /**
      * {@snippet :
-     * void g_rec_mutex_init(GRecMutex* rec_mutex);
+     * void g_rec_mutex_init(struct _GRecMutex* rec_mutex);
      * }
      */
     public static void g_rec_mutex_init(MemorySegment rec_mutex) {
@@ -5217,11 +5410,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_rec_mutex_clear$MH() {
-        return RuntimeHelper.requireNonNull(constants$65.g_rec_mutex_clear$MH,"g_rec_mutex_clear");
+        return RuntimeHelper.requireNonNull(constants$105.const$4,"g_rec_mutex_clear");
     }
     /**
      * {@snippet :
-     * void g_rec_mutex_clear(GRecMutex* rec_mutex);
+     * void g_rec_mutex_clear(struct _GRecMutex* rec_mutex);
      * }
      */
     public static void g_rec_mutex_clear(MemorySegment rec_mutex) {
@@ -5233,11 +5426,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_rec_mutex_lock$MH() {
-        return RuntimeHelper.requireNonNull(constants$65.g_rec_mutex_lock$MH,"g_rec_mutex_lock");
+        return RuntimeHelper.requireNonNull(constants$105.const$5,"g_rec_mutex_lock");
     }
     /**
      * {@snippet :
-     * void g_rec_mutex_lock(GRecMutex* rec_mutex);
+     * void g_rec_mutex_lock(struct _GRecMutex* rec_mutex);
      * }
      */
     public static void g_rec_mutex_lock(MemorySegment rec_mutex) {
@@ -5249,11 +5442,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_rec_mutex_trylock$MH() {
-        return RuntimeHelper.requireNonNull(constants$65.g_rec_mutex_trylock$MH,"g_rec_mutex_trylock");
+        return RuntimeHelper.requireNonNull(constants$106.const$0,"g_rec_mutex_trylock");
     }
     /**
      * {@snippet :
-     * gboolean g_rec_mutex_trylock(GRecMutex* rec_mutex);
+     * int g_rec_mutex_trylock(struct _GRecMutex* rec_mutex);
      * }
      */
     public static int g_rec_mutex_trylock(MemorySegment rec_mutex) {
@@ -5265,11 +5458,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_rec_mutex_unlock$MH() {
-        return RuntimeHelper.requireNonNull(constants$66.g_rec_mutex_unlock$MH,"g_rec_mutex_unlock");
+        return RuntimeHelper.requireNonNull(constants$106.const$1,"g_rec_mutex_unlock");
     }
     /**
      * {@snippet :
-     * void g_rec_mutex_unlock(GRecMutex* rec_mutex);
+     * void g_rec_mutex_unlock(struct _GRecMutex* rec_mutex);
      * }
      */
     public static void g_rec_mutex_unlock(MemorySegment rec_mutex) {
@@ -5281,11 +5474,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_cond_init$MH() {
-        return RuntimeHelper.requireNonNull(constants$66.g_cond_init$MH,"g_cond_init");
+        return RuntimeHelper.requireNonNull(constants$106.const$2,"g_cond_init");
     }
     /**
      * {@snippet :
-     * void g_cond_init(GCond* cond);
+     * void g_cond_init(struct _GCond* cond);
      * }
      */
     public static void g_cond_init(MemorySegment cond) {
@@ -5297,11 +5490,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_cond_clear$MH() {
-        return RuntimeHelper.requireNonNull(constants$66.g_cond_clear$MH,"g_cond_clear");
+        return RuntimeHelper.requireNonNull(constants$106.const$3,"g_cond_clear");
     }
     /**
      * {@snippet :
-     * void g_cond_clear(GCond* cond);
+     * void g_cond_clear(struct _GCond* cond);
      * }
      */
     public static void g_cond_clear(MemorySegment cond) {
@@ -5313,11 +5506,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_cond_wait$MH() {
-        return RuntimeHelper.requireNonNull(constants$66.g_cond_wait$MH,"g_cond_wait");
+        return RuntimeHelper.requireNonNull(constants$106.const$4,"g_cond_wait");
     }
     /**
      * {@snippet :
-     * void g_cond_wait(GCond* cond, GMutex* mutex);
+     * void g_cond_wait(struct _GCond* cond, union _GMutex* mutex);
      * }
      */
     public static void g_cond_wait(MemorySegment cond, MemorySegment mutex) {
@@ -5329,11 +5522,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_cond_signal$MH() {
-        return RuntimeHelper.requireNonNull(constants$66.g_cond_signal$MH,"g_cond_signal");
+        return RuntimeHelper.requireNonNull(constants$106.const$5,"g_cond_signal");
     }
     /**
      * {@snippet :
-     * void g_cond_signal(GCond* cond);
+     * void g_cond_signal(struct _GCond* cond);
      * }
      */
     public static void g_cond_signal(MemorySegment cond) {
@@ -5345,11 +5538,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_cond_broadcast$MH() {
-        return RuntimeHelper.requireNonNull(constants$66.g_cond_broadcast$MH,"g_cond_broadcast");
+        return RuntimeHelper.requireNonNull(constants$107.const$0,"g_cond_broadcast");
     }
     /**
      * {@snippet :
-     * void g_cond_broadcast(GCond* cond);
+     * void g_cond_broadcast(struct _GCond* cond);
      * }
      */
     public static void g_cond_broadcast(MemorySegment cond) {
@@ -5361,11 +5554,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_cond_wait_until$MH() {
-        return RuntimeHelper.requireNonNull(constants$67.g_cond_wait_until$MH,"g_cond_wait_until");
+        return RuntimeHelper.requireNonNull(constants$107.const$1,"g_cond_wait_until");
     }
     /**
      * {@snippet :
-     * gboolean g_cond_wait_until(GCond* cond, GMutex* mutex, gint64 end_time);
+     * int g_cond_wait_until(struct _GCond* cond, union _GMutex* mutex, long end_time);
      * }
      */
     public static int g_cond_wait_until(MemorySegment cond, MemorySegment mutex, long end_time) {
@@ -5377,11 +5570,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_private_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$67.g_private_get$MH,"g_private_get");
+        return RuntimeHelper.requireNonNull(constants$107.const$2,"g_private_get");
     }
     /**
      * {@snippet :
-     * gpointer g_private_get(GPrivate* key);
+     * void* g_private_get(struct _GPrivate* key);
      * }
      */
     public static MemorySegment g_private_get(MemorySegment key) {
@@ -5393,11 +5586,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_private_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$67.g_private_set$MH,"g_private_set");
+        return RuntimeHelper.requireNonNull(constants$107.const$3,"g_private_set");
     }
     /**
      * {@snippet :
-     * void g_private_set(GPrivate* key, gpointer value);
+     * void g_private_set(struct _GPrivate* key, void* value);
      * }
      */
     public static void g_private_set(MemorySegment key, MemorySegment value) {
@@ -5409,11 +5602,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_private_replace$MH() {
-        return RuntimeHelper.requireNonNull(constants$67.g_private_replace$MH,"g_private_replace");
+        return RuntimeHelper.requireNonNull(constants$107.const$4,"g_private_replace");
     }
     /**
      * {@snippet :
-     * void g_private_replace(GPrivate* key, gpointer value);
+     * void g_private_replace(struct _GPrivate* key, void* value);
      * }
      */
     public static void g_private_replace(MemorySegment key, MemorySegment value) {
@@ -5425,11 +5618,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_once_impl$MH() {
-        return RuntimeHelper.requireNonNull(constants$67.g_once_impl$MH,"g_once_impl");
+        return RuntimeHelper.requireNonNull(constants$108.const$0,"g_once_impl");
     }
     /**
      * {@snippet :
-     * gpointer g_once_impl(GOnce* once, GThreadFunc func, gpointer arg);
+     * void* g_once_impl(struct _GOnce* once, void* (*func)(void*), void* arg);
      * }
      */
     public static MemorySegment g_once_impl(MemorySegment once, MemorySegment func, MemorySegment arg) {
@@ -5441,11 +5634,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_once_init_enter$MH() {
-        return RuntimeHelper.requireNonNull(constants$67.g_once_init_enter$MH,"g_once_init_enter");
+        return RuntimeHelper.requireNonNull(constants$108.const$1,"g_once_init_enter");
     }
     /**
      * {@snippet :
-     * gboolean g_once_init_enter(void* location);
+     * int g_once_init_enter(void* location);
      * }
      */
     public static int g_once_init_enter(MemorySegment location) {
@@ -5457,11 +5650,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_once_init_leave$MH() {
-        return RuntimeHelper.requireNonNull(constants$68.g_once_init_leave$MH,"g_once_init_leave");
+        return RuntimeHelper.requireNonNull(constants$108.const$2,"g_once_init_leave");
     }
     /**
      * {@snippet :
-     * void g_once_init_leave(void* location, gsize result);
+     * void g_once_init_leave(void* location, unsigned long result);
      * }
      */
     public static void g_once_init_leave(MemorySegment location, long result) {
@@ -5473,11 +5666,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_num_processors$MH() {
-        return RuntimeHelper.requireNonNull(constants$68.g_get_num_processors$MH,"g_get_num_processors");
+        return RuntimeHelper.requireNonNull(constants$108.const$3,"g_get_num_processors");
     }
     /**
      * {@snippet :
-     * guint g_get_num_processors();
+     * unsigned int g_get_num_processors();
      * }
      */
     public static int g_get_num_processors() {
@@ -5489,11 +5682,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$68.g_async_queue_new$MH,"g_async_queue_new");
+        return RuntimeHelper.requireNonNull(constants$108.const$4,"g_async_queue_new");
     }
     /**
      * {@snippet :
-     * GAsyncQueue* g_async_queue_new();
+     * struct _GAsyncQueue* g_async_queue_new();
      * }
      */
     public static MemorySegment g_async_queue_new() {
@@ -5505,11 +5698,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_new_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$68.g_async_queue_new_full$MH,"g_async_queue_new_full");
+        return RuntimeHelper.requireNonNull(constants$109.const$0,"g_async_queue_new_full");
     }
     /**
      * {@snippet :
-     * GAsyncQueue* g_async_queue_new_full(GDestroyNotify item_free_func);
+     * struct _GAsyncQueue* g_async_queue_new_full(void (*item_free_func)(void*));
      * }
      */
     public static MemorySegment g_async_queue_new_full(MemorySegment item_free_func) {
@@ -5521,11 +5714,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_lock$MH() {
-        return RuntimeHelper.requireNonNull(constants$68.g_async_queue_lock$MH,"g_async_queue_lock");
+        return RuntimeHelper.requireNonNull(constants$109.const$1,"g_async_queue_lock");
     }
     /**
      * {@snippet :
-     * void g_async_queue_lock(GAsyncQueue* queue);
+     * void g_async_queue_lock(struct _GAsyncQueue* queue);
      * }
      */
     public static void g_async_queue_lock(MemorySegment queue) {
@@ -5537,11 +5730,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_unlock$MH() {
-        return RuntimeHelper.requireNonNull(constants$68.g_async_queue_unlock$MH,"g_async_queue_unlock");
+        return RuntimeHelper.requireNonNull(constants$109.const$2,"g_async_queue_unlock");
     }
     /**
      * {@snippet :
-     * void g_async_queue_unlock(GAsyncQueue* queue);
+     * void g_async_queue_unlock(struct _GAsyncQueue* queue);
      * }
      */
     public static void g_async_queue_unlock(MemorySegment queue) {
@@ -5553,11 +5746,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$69.g_async_queue_ref$MH,"g_async_queue_ref");
+        return RuntimeHelper.requireNonNull(constants$109.const$3,"g_async_queue_ref");
     }
     /**
      * {@snippet :
-     * GAsyncQueue* g_async_queue_ref(GAsyncQueue* queue);
+     * struct _GAsyncQueue* g_async_queue_ref(struct _GAsyncQueue* queue);
      * }
      */
     public static MemorySegment g_async_queue_ref(MemorySegment queue) {
@@ -5569,11 +5762,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$69.g_async_queue_unref$MH,"g_async_queue_unref");
+        return RuntimeHelper.requireNonNull(constants$109.const$4,"g_async_queue_unref");
     }
     /**
      * {@snippet :
-     * void g_async_queue_unref(GAsyncQueue* queue);
+     * void g_async_queue_unref(struct _GAsyncQueue* queue);
      * }
      */
     public static void g_async_queue_unref(MemorySegment queue) {
@@ -5585,11 +5778,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_ref_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$69.g_async_queue_ref_unlocked$MH,"g_async_queue_ref_unlocked");
+        return RuntimeHelper.requireNonNull(constants$109.const$5,"g_async_queue_ref_unlocked");
     }
     /**
      * {@snippet :
-     * void g_async_queue_ref_unlocked(GAsyncQueue* queue);
+     * void g_async_queue_ref_unlocked(struct _GAsyncQueue* queue);
      * }
      */
     public static void g_async_queue_ref_unlocked(MemorySegment queue) {
@@ -5601,11 +5794,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_unref_and_unlock$MH() {
-        return RuntimeHelper.requireNonNull(constants$69.g_async_queue_unref_and_unlock$MH,"g_async_queue_unref_and_unlock");
+        return RuntimeHelper.requireNonNull(constants$110.const$0,"g_async_queue_unref_and_unlock");
     }
     /**
      * {@snippet :
-     * void g_async_queue_unref_and_unlock(GAsyncQueue* queue);
+     * void g_async_queue_unref_and_unlock(struct _GAsyncQueue* queue);
      * }
      */
     public static void g_async_queue_unref_and_unlock(MemorySegment queue) {
@@ -5617,11 +5810,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_push$MH() {
-        return RuntimeHelper.requireNonNull(constants$69.g_async_queue_push$MH,"g_async_queue_push");
+        return RuntimeHelper.requireNonNull(constants$110.const$1,"g_async_queue_push");
     }
     /**
      * {@snippet :
-     * void g_async_queue_push(GAsyncQueue* queue, gpointer data);
+     * void g_async_queue_push(struct _GAsyncQueue* queue, void* data);
      * }
      */
     public static void g_async_queue_push(MemorySegment queue, MemorySegment data) {
@@ -5633,11 +5826,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_push_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$69.g_async_queue_push_unlocked$MH,"g_async_queue_push_unlocked");
+        return RuntimeHelper.requireNonNull(constants$110.const$2,"g_async_queue_push_unlocked");
     }
     /**
      * {@snippet :
-     * void g_async_queue_push_unlocked(GAsyncQueue* queue, gpointer data);
+     * void g_async_queue_push_unlocked(struct _GAsyncQueue* queue, void* data);
      * }
      */
     public static void g_async_queue_push_unlocked(MemorySegment queue, MemorySegment data) {
@@ -5649,11 +5842,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_push_sorted$MH() {
-        return RuntimeHelper.requireNonNull(constants$70.g_async_queue_push_sorted$MH,"g_async_queue_push_sorted");
+        return RuntimeHelper.requireNonNull(constants$110.const$4,"g_async_queue_push_sorted");
     }
     /**
      * {@snippet :
-     * void g_async_queue_push_sorted(GAsyncQueue* queue, gpointer data, GCompareDataFunc func, gpointer user_data);
+     * void g_async_queue_push_sorted(struct _GAsyncQueue* queue, void* data, int (*func)(void*,void*,void*), void* user_data);
      * }
      */
     public static void g_async_queue_push_sorted(MemorySegment queue, MemorySegment data, MemorySegment func, MemorySegment user_data) {
@@ -5665,11 +5858,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_push_sorted_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$70.g_async_queue_push_sorted_unlocked$MH,"g_async_queue_push_sorted_unlocked");
+        return RuntimeHelper.requireNonNull(constants$111.const$0,"g_async_queue_push_sorted_unlocked");
     }
     /**
      * {@snippet :
-     * void g_async_queue_push_sorted_unlocked(GAsyncQueue* queue, gpointer data, GCompareDataFunc func, gpointer user_data);
+     * void g_async_queue_push_sorted_unlocked(struct _GAsyncQueue* queue, void* data, int (*func)(void*,void*,void*), void* user_data);
      * }
      */
     public static void g_async_queue_push_sorted_unlocked(MemorySegment queue, MemorySegment data, MemorySegment func, MemorySegment user_data) {
@@ -5681,11 +5874,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_pop$MH() {
-        return RuntimeHelper.requireNonNull(constants$70.g_async_queue_pop$MH,"g_async_queue_pop");
+        return RuntimeHelper.requireNonNull(constants$111.const$1,"g_async_queue_pop");
     }
     /**
      * {@snippet :
-     * gpointer g_async_queue_pop(GAsyncQueue* queue);
+     * void* g_async_queue_pop(struct _GAsyncQueue* queue);
      * }
      */
     public static MemorySegment g_async_queue_pop(MemorySegment queue) {
@@ -5697,11 +5890,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_pop_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$70.g_async_queue_pop_unlocked$MH,"g_async_queue_pop_unlocked");
+        return RuntimeHelper.requireNonNull(constants$111.const$2,"g_async_queue_pop_unlocked");
     }
     /**
      * {@snippet :
-     * gpointer g_async_queue_pop_unlocked(GAsyncQueue* queue);
+     * void* g_async_queue_pop_unlocked(struct _GAsyncQueue* queue);
      * }
      */
     public static MemorySegment g_async_queue_pop_unlocked(MemorySegment queue) {
@@ -5713,11 +5906,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_try_pop$MH() {
-        return RuntimeHelper.requireNonNull(constants$70.g_async_queue_try_pop$MH,"g_async_queue_try_pop");
+        return RuntimeHelper.requireNonNull(constants$111.const$3,"g_async_queue_try_pop");
     }
     /**
      * {@snippet :
-     * gpointer g_async_queue_try_pop(GAsyncQueue* queue);
+     * void* g_async_queue_try_pop(struct _GAsyncQueue* queue);
      * }
      */
     public static MemorySegment g_async_queue_try_pop(MemorySegment queue) {
@@ -5729,11 +5922,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_try_pop_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$70.g_async_queue_try_pop_unlocked$MH,"g_async_queue_try_pop_unlocked");
+        return RuntimeHelper.requireNonNull(constants$111.const$4,"g_async_queue_try_pop_unlocked");
     }
     /**
      * {@snippet :
-     * gpointer g_async_queue_try_pop_unlocked(GAsyncQueue* queue);
+     * void* g_async_queue_try_pop_unlocked(struct _GAsyncQueue* queue);
      * }
      */
     public static MemorySegment g_async_queue_try_pop_unlocked(MemorySegment queue) {
@@ -5745,11 +5938,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_timeout_pop$MH() {
-        return RuntimeHelper.requireNonNull(constants$71.g_async_queue_timeout_pop$MH,"g_async_queue_timeout_pop");
+        return RuntimeHelper.requireNonNull(constants$111.const$5,"g_async_queue_timeout_pop");
     }
     /**
      * {@snippet :
-     * gpointer g_async_queue_timeout_pop(GAsyncQueue* queue, guint64 timeout);
+     * void* g_async_queue_timeout_pop(struct _GAsyncQueue* queue, unsigned long timeout);
      * }
      */
     public static MemorySegment g_async_queue_timeout_pop(MemorySegment queue, long timeout) {
@@ -5761,11 +5954,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_timeout_pop_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$71.g_async_queue_timeout_pop_unlocked$MH,"g_async_queue_timeout_pop_unlocked");
+        return RuntimeHelper.requireNonNull(constants$112.const$0,"g_async_queue_timeout_pop_unlocked");
     }
     /**
      * {@snippet :
-     * gpointer g_async_queue_timeout_pop_unlocked(GAsyncQueue* queue, guint64 timeout);
+     * void* g_async_queue_timeout_pop_unlocked(struct _GAsyncQueue* queue, unsigned long timeout);
      * }
      */
     public static MemorySegment g_async_queue_timeout_pop_unlocked(MemorySegment queue, long timeout) {
@@ -5777,11 +5970,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$71.g_async_queue_length$MH,"g_async_queue_length");
+        return RuntimeHelper.requireNonNull(constants$112.const$1,"g_async_queue_length");
     }
     /**
      * {@snippet :
-     * gint g_async_queue_length(GAsyncQueue* queue);
+     * int g_async_queue_length(struct _GAsyncQueue* queue);
      * }
      */
     public static int g_async_queue_length(MemorySegment queue) {
@@ -5793,11 +5986,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_length_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$71.g_async_queue_length_unlocked$MH,"g_async_queue_length_unlocked");
+        return RuntimeHelper.requireNonNull(constants$112.const$2,"g_async_queue_length_unlocked");
     }
     /**
      * {@snippet :
-     * gint g_async_queue_length_unlocked(GAsyncQueue* queue);
+     * int g_async_queue_length_unlocked(struct _GAsyncQueue* queue);
      * }
      */
     public static int g_async_queue_length_unlocked(MemorySegment queue) {
@@ -5809,11 +6002,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_sort$MH() {
-        return RuntimeHelper.requireNonNull(constants$71.g_async_queue_sort$MH,"g_async_queue_sort");
+        return RuntimeHelper.requireNonNull(constants$112.const$4,"g_async_queue_sort");
     }
     /**
      * {@snippet :
-     * void g_async_queue_sort(GAsyncQueue* queue, GCompareDataFunc func, gpointer user_data);
+     * void g_async_queue_sort(struct _GAsyncQueue* queue, int (*func)(void*,void*,void*), void* user_data);
      * }
      */
     public static void g_async_queue_sort(MemorySegment queue, MemorySegment func, MemorySegment user_data) {
@@ -5825,11 +6018,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_sort_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$71.g_async_queue_sort_unlocked$MH,"g_async_queue_sort_unlocked");
+        return RuntimeHelper.requireNonNull(constants$113.const$0,"g_async_queue_sort_unlocked");
     }
     /**
      * {@snippet :
-     * void g_async_queue_sort_unlocked(GAsyncQueue* queue, GCompareDataFunc func, gpointer user_data);
+     * void g_async_queue_sort_unlocked(struct _GAsyncQueue* queue, int (*func)(void*,void*,void*), void* user_data);
      * }
      */
     public static void g_async_queue_sort_unlocked(MemorySegment queue, MemorySegment func, MemorySegment user_data) {
@@ -5841,11 +6034,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_remove$MH() {
-        return RuntimeHelper.requireNonNull(constants$72.g_async_queue_remove$MH,"g_async_queue_remove");
+        return RuntimeHelper.requireNonNull(constants$113.const$1,"g_async_queue_remove");
     }
     /**
      * {@snippet :
-     * gboolean g_async_queue_remove(GAsyncQueue* queue, gpointer item);
+     * int g_async_queue_remove(struct _GAsyncQueue* queue, void* item);
      * }
      */
     public static int g_async_queue_remove(MemorySegment queue, MemorySegment item) {
@@ -5857,11 +6050,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_remove_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$72.g_async_queue_remove_unlocked$MH,"g_async_queue_remove_unlocked");
+        return RuntimeHelper.requireNonNull(constants$113.const$2,"g_async_queue_remove_unlocked");
     }
     /**
      * {@snippet :
-     * gboolean g_async_queue_remove_unlocked(GAsyncQueue* queue, gpointer item);
+     * int g_async_queue_remove_unlocked(struct _GAsyncQueue* queue, void* item);
      * }
      */
     public static int g_async_queue_remove_unlocked(MemorySegment queue, MemorySegment item) {
@@ -5873,11 +6066,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_push_front$MH() {
-        return RuntimeHelper.requireNonNull(constants$72.g_async_queue_push_front$MH,"g_async_queue_push_front");
+        return RuntimeHelper.requireNonNull(constants$113.const$3,"g_async_queue_push_front");
     }
     /**
      * {@snippet :
-     * void g_async_queue_push_front(GAsyncQueue* queue, gpointer item);
+     * void g_async_queue_push_front(struct _GAsyncQueue* queue, void* item);
      * }
      */
     public static void g_async_queue_push_front(MemorySegment queue, MemorySegment item) {
@@ -5889,11 +6082,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_push_front_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$72.g_async_queue_push_front_unlocked$MH,"g_async_queue_push_front_unlocked");
+        return RuntimeHelper.requireNonNull(constants$113.const$4,"g_async_queue_push_front_unlocked");
     }
     /**
      * {@snippet :
-     * void g_async_queue_push_front_unlocked(GAsyncQueue* queue, gpointer item);
+     * void g_async_queue_push_front_unlocked(struct _GAsyncQueue* queue, void* item);
      * }
      */
     public static void g_async_queue_push_front_unlocked(MemorySegment queue, MemorySegment item) {
@@ -5905,11 +6098,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_timed_pop$MH() {
-        return RuntimeHelper.requireNonNull(constants$72.g_async_queue_timed_pop$MH,"g_async_queue_timed_pop");
+        return RuntimeHelper.requireNonNull(constants$113.const$5,"g_async_queue_timed_pop");
     }
     /**
      * {@snippet :
-     * gpointer g_async_queue_timed_pop(GAsyncQueue* queue, GTimeVal* end_time);
+     * void* g_async_queue_timed_pop(struct _GAsyncQueue* queue, struct _GTimeVal* end_time);
      * }
      */
     public static MemorySegment g_async_queue_timed_pop(MemorySegment queue, MemorySegment end_time) {
@@ -5921,11 +6114,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_async_queue_timed_pop_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$72.g_async_queue_timed_pop_unlocked$MH,"g_async_queue_timed_pop_unlocked");
+        return RuntimeHelper.requireNonNull(constants$114.const$0,"g_async_queue_timed_pop_unlocked");
     }
     /**
      * {@snippet :
-     * gpointer g_async_queue_timed_pop_unlocked(GAsyncQueue* queue, GTimeVal* end_time);
+     * void* g_async_queue_timed_pop_unlocked(struct _GAsyncQueue* queue, struct _GTimeVal* end_time);
      * }
      */
     public static MemorySegment g_async_queue_timed_pop_unlocked(MemorySegment queue, MemorySegment end_time) {
@@ -5941,10 +6134,10 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
      * typedef int sig_atomic_t;
      * }
      */
-    public static final OfInt sig_atomic_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt sig_atomic_t = JAVA_INT;
     /**
      * {@snippet :
-     * enum .SI_ASYNCNL = -60;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:35:1).SI_ASYNCNL = -60;
      * }
      */
     public static int SI_ASYNCNL() {
@@ -5952,7 +6145,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SI_DETHREAD = -7;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:35:1).SI_DETHREAD = -7;
      * }
      */
     public static int SI_DETHREAD() {
@@ -5960,7 +6153,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SI_TKILL = -6;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:35:1).SI_TKILL = -6;
      * }
      */
     public static int SI_TKILL() {
@@ -5968,7 +6161,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SI_SIGIO = -5;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:35:1).SI_SIGIO = -5;
      * }
      */
     public static int SI_SIGIO() {
@@ -5976,7 +6169,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SI_ASYNCIO = -4;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:35:1).SI_ASYNCIO = -4;
      * }
      */
     public static int SI_ASYNCIO() {
@@ -5984,7 +6177,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SI_MESGQ = -3;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:35:1).SI_MESGQ = -3;
      * }
      */
     public static int SI_MESGQ() {
@@ -5992,7 +6185,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SI_TIMER = -2;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:35:1).SI_TIMER = -2;
      * }
      */
     public static int SI_TIMER() {
@@ -6000,7 +6193,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SI_QUEUE = -1;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:35:1).SI_QUEUE = -1;
      * }
      */
     public static int SI_QUEUE() {
@@ -6008,7 +6201,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SI_USER = 0;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:35:1).SI_USER = 0;
      * }
      */
     public static int SI_USER() {
@@ -6016,7 +6209,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SI_KERNEL = 128;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:35:1).SI_KERNEL = 128;
      * }
      */
     public static int SI_KERNEL() {
@@ -6024,7 +6217,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .ILL_ILLOPC = 1;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:71:1).ILL_ILLOPC = 1;
      * }
      */
     public static int ILL_ILLOPC() {
@@ -6032,7 +6225,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .ILL_ILLOPN = 2;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:71:1).ILL_ILLOPN = 2;
      * }
      */
     public static int ILL_ILLOPN() {
@@ -6040,7 +6233,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .ILL_ILLADR = 3;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:71:1).ILL_ILLADR = 3;
      * }
      */
     public static int ILL_ILLADR() {
@@ -6048,7 +6241,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .ILL_ILLTRP = 4;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:71:1).ILL_ILLTRP = 4;
      * }
      */
     public static int ILL_ILLTRP() {
@@ -6056,7 +6249,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .ILL_PRVOPC = 5;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:71:1).ILL_PRVOPC = 5;
      * }
      */
     public static int ILL_PRVOPC() {
@@ -6064,7 +6257,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .ILL_PRVREG = 6;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:71:1).ILL_PRVREG = 6;
      * }
      */
     public static int ILL_PRVREG() {
@@ -6072,7 +6265,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .ILL_COPROC = 7;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:71:1).ILL_COPROC = 7;
      * }
      */
     public static int ILL_COPROC() {
@@ -6080,7 +6273,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .ILL_BADSTK = 8;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:71:1).ILL_BADSTK = 8;
      * }
      */
     public static int ILL_BADSTK() {
@@ -6088,7 +6281,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .ILL_BADIADDR = 9;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:71:1).ILL_BADIADDR = 9;
      * }
      */
     public static int ILL_BADIADDR() {
@@ -6096,7 +6289,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .FPE_INTDIV = 1;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:94:1).FPE_INTDIV = 1;
      * }
      */
     public static int FPE_INTDIV() {
@@ -6104,7 +6297,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .FPE_INTOVF = 2;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:94:1).FPE_INTOVF = 2;
      * }
      */
     public static int FPE_INTOVF() {
@@ -6112,7 +6305,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .FPE_FLTDIV = 3;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:94:1).FPE_FLTDIV = 3;
      * }
      */
     public static int FPE_FLTDIV() {
@@ -6120,7 +6313,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .FPE_FLTOVF = 4;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:94:1).FPE_FLTOVF = 4;
      * }
      */
     public static int FPE_FLTOVF() {
@@ -6128,7 +6321,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .FPE_FLTUND = 5;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:94:1).FPE_FLTUND = 5;
      * }
      */
     public static int FPE_FLTUND() {
@@ -6136,7 +6329,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .FPE_FLTRES = 6;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:94:1).FPE_FLTRES = 6;
      * }
      */
     public static int FPE_FLTRES() {
@@ -6144,7 +6337,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .FPE_FLTINV = 7;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:94:1).FPE_FLTINV = 7;
      * }
      */
     public static int FPE_FLTINV() {
@@ -6152,7 +6345,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .FPE_FLTSUB = 8;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:94:1).FPE_FLTSUB = 8;
      * }
      */
     public static int FPE_FLTSUB() {
@@ -6160,7 +6353,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .FPE_FLTUNK = 14;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:94:1).FPE_FLTUNK = 14;
      * }
      */
     public static int FPE_FLTUNK() {
@@ -6168,7 +6361,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .FPE_CONDTRAP = 15;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:94:1).FPE_CONDTRAP = 15;
      * }
      */
     public static int FPE_CONDTRAP() {
@@ -6176,7 +6369,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SEGV_MAPERR = 1;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:119:1).SEGV_MAPERR = 1;
      * }
      */
     public static int SEGV_MAPERR() {
@@ -6184,7 +6377,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SEGV_ACCERR = 2;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:119:1).SEGV_ACCERR = 2;
      * }
      */
     public static int SEGV_ACCERR() {
@@ -6192,7 +6385,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SEGV_BNDERR = 3;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:119:1).SEGV_BNDERR = 3;
      * }
      */
     public static int SEGV_BNDERR() {
@@ -6200,7 +6393,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SEGV_PKUERR = 4;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:119:1).SEGV_PKUERR = 4;
      * }
      */
     public static int SEGV_PKUERR() {
@@ -6208,7 +6401,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SEGV_ACCADI = 5;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:119:1).SEGV_ACCADI = 5;
      * }
      */
     public static int SEGV_ACCADI() {
@@ -6216,7 +6409,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SEGV_ADIDERR = 6;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:119:1).SEGV_ADIDERR = 6;
      * }
      */
     public static int SEGV_ADIDERR() {
@@ -6224,7 +6417,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SEGV_ADIPERR = 7;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:119:1).SEGV_ADIPERR = 7;
      * }
      */
     public static int SEGV_ADIPERR() {
@@ -6232,7 +6425,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SEGV_MTEAERR = 8;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:119:1).SEGV_MTEAERR = 8;
      * }
      */
     public static int SEGV_MTEAERR() {
@@ -6240,7 +6433,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SEGV_MTESERR = 9;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:119:1).SEGV_MTESERR = 9;
      * }
      */
     public static int SEGV_MTESERR() {
@@ -6248,7 +6441,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .BUS_ADRALN = 1;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:142:1).BUS_ADRALN = 1;
      * }
      */
     public static int BUS_ADRALN() {
@@ -6256,7 +6449,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .BUS_ADRERR = 2;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:142:1).BUS_ADRERR = 2;
      * }
      */
     public static int BUS_ADRERR() {
@@ -6264,7 +6457,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .BUS_OBJERR = 3;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:142:1).BUS_OBJERR = 3;
      * }
      */
     public static int BUS_OBJERR() {
@@ -6272,7 +6465,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .BUS_MCEERR_AR = 4;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:142:1).BUS_MCEERR_AR = 4;
      * }
      */
     public static int BUS_MCEERR_AR() {
@@ -6280,7 +6473,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .BUS_MCEERR_AO = 5;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:142:1).BUS_MCEERR_AO = 5;
      * }
      */
     public static int BUS_MCEERR_AO() {
@@ -6288,7 +6481,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .CLD_EXITED = 1;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:176:1).CLD_EXITED = 1;
      * }
      */
     public static int CLD_EXITED() {
@@ -6296,7 +6489,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .CLD_KILLED = 2;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:176:1).CLD_KILLED = 2;
      * }
      */
     public static int CLD_KILLED() {
@@ -6304,7 +6497,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .CLD_DUMPED = 3;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:176:1).CLD_DUMPED = 3;
      * }
      */
     public static int CLD_DUMPED() {
@@ -6312,7 +6505,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .CLD_TRAPPED = 4;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:176:1).CLD_TRAPPED = 4;
      * }
      */
     public static int CLD_TRAPPED() {
@@ -6320,7 +6513,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .CLD_STOPPED = 5;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:176:1).CLD_STOPPED = 5;
      * }
      */
     public static int CLD_STOPPED() {
@@ -6328,7 +6521,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .CLD_CONTINUED = 6;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:176:1).CLD_CONTINUED = 6;
      * }
      */
     public static int CLD_CONTINUED() {
@@ -6336,7 +6529,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .POLL_IN = 1;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:193:1).POLL_IN = 1;
      * }
      */
     public static int POLL_IN() {
@@ -6344,7 +6537,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .POLL_OUT = 2;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:193:1).POLL_OUT = 2;
      * }
      */
     public static int POLL_OUT() {
@@ -6352,7 +6545,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .POLL_MSG = 3;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:193:1).POLL_MSG = 3;
      * }
      */
     public static int POLL_MSG() {
@@ -6360,7 +6553,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .POLL_ERR = 4;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:193:1).POLL_ERR = 4;
      * }
      */
     public static int POLL_ERR() {
@@ -6368,7 +6561,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .POLL_PRI = 5;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:193:1).POLL_PRI = 5;
      * }
      */
     public static int POLL_PRI() {
@@ -6376,7 +6569,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .POLL_HUP = 6;
+     * enum enum (unnamed at /usr/include/bits/siginfo-consts.h:193:1).POLL_HUP = 6;
      * }
      */
     public static int POLL_HUP() {
@@ -6384,7 +6577,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SIGEV_SIGNAL = 0;
+     * enum enum (unnamed at /usr/include/bits/sigevent-consts.h:27:1).SIGEV_SIGNAL = 0;
      * }
      */
     public static int SIGEV_SIGNAL() {
@@ -6392,7 +6585,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SIGEV_NONE = 1;
+     * enum enum (unnamed at /usr/include/bits/sigevent-consts.h:27:1).SIGEV_NONE = 1;
      * }
      */
     public static int SIGEV_NONE() {
@@ -6400,7 +6593,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SIGEV_THREAD = 2;
+     * enum enum (unnamed at /usr/include/bits/sigevent-consts.h:27:1).SIGEV_THREAD = 2;
      * }
      */
     public static int SIGEV_THREAD() {
@@ -6408,18 +6601,18 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SIGEV_THREAD_ID = 4;
+     * enum enum (unnamed at /usr/include/bits/sigevent-consts.h:27:1).SIGEV_THREAD_ID = 4;
      * }
      */
     public static int SIGEV_THREAD_ID() {
         return (int)4L;
     }
     public static MethodHandle __sysv_signal$MH() {
-        return RuntimeHelper.requireNonNull(constants$73.__sysv_signal$MH,"__sysv_signal");
+        return RuntimeHelper.requireNonNull(constants$123.const$1,"__sysv_signal");
     }
     /**
      * {@snippet :
-     * __sighandler_t __sysv_signal(int __sig, __sighandler_t __handler);
+     * void (*__sysv_signal(int __sig, void (*__handler)(int)))(int);
      * }
      */
     public static MemorySegment __sysv_signal(int __sig, MemorySegment __handler) {
@@ -6431,11 +6624,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle signal$MH() {
-        return RuntimeHelper.requireNonNull(constants$73.signal$MH,"signal");
+        return RuntimeHelper.requireNonNull(constants$123.const$4,"signal");
     }
     /**
      * {@snippet :
-     * __sighandler_t signal(int __sig, __sighandler_t __handler);
+     * void (*signal(int __sig, void (*__handler)(int)))(int);
      * }
      */
     public static MemorySegment signal(int __sig, MemorySegment __handler) {
@@ -6447,11 +6640,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle kill$MH() {
-        return RuntimeHelper.requireNonNull(constants$73.kill$MH,"kill");
+        return RuntimeHelper.requireNonNull(constants$123.const$6,"kill");
     }
     /**
      * {@snippet :
-     * int kill(__pid_t __pid, int __sig);
+     * int kill(int __pid, int __sig);
      * }
      */
     public static int kill(int __pid, int __sig) {
@@ -6463,11 +6656,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle killpg$MH() {
-        return RuntimeHelper.requireNonNull(constants$73.killpg$MH,"killpg");
+        return RuntimeHelper.requireNonNull(constants$124.const$0,"killpg");
     }
     /**
      * {@snippet :
-     * int killpg(__pid_t __pgrp, int __sig);
+     * int killpg(int __pgrp, int __sig);
      * }
      */
     public static int killpg(int __pgrp, int __sig) {
@@ -6479,7 +6672,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle raise$MH() {
-        return RuntimeHelper.requireNonNull(constants$74.raise$MH,"raise");
+        return RuntimeHelper.requireNonNull(constants$124.const$1,"raise");
     }
     /**
      * {@snippet :
@@ -6495,11 +6688,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle ssignal$MH() {
-        return RuntimeHelper.requireNonNull(constants$74.ssignal$MH,"ssignal");
+        return RuntimeHelper.requireNonNull(constants$124.const$4,"ssignal");
     }
     /**
      * {@snippet :
-     * __sighandler_t ssignal(int __sig, __sighandler_t __handler);
+     * void (*ssignal(int __sig, void (*__handler)(int)))(int);
      * }
      */
     public static MemorySegment ssignal(int __sig, MemorySegment __handler) {
@@ -6511,7 +6704,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle gsignal$MH() {
-        return RuntimeHelper.requireNonNull(constants$74.gsignal$MH,"gsignal");
+        return RuntimeHelper.requireNonNull(constants$124.const$5,"gsignal");
     }
     /**
      * {@snippet :
@@ -6527,7 +6720,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle psignal$MH() {
-        return RuntimeHelper.requireNonNull(constants$74.psignal$MH,"psignal");
+        return RuntimeHelper.requireNonNull(constants$125.const$0,"psignal");
     }
     /**
      * {@snippet :
@@ -6543,11 +6736,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle psiginfo$MH() {
-        return RuntimeHelper.requireNonNull(constants$74.psiginfo$MH,"psiginfo");
+        return RuntimeHelper.requireNonNull(constants$125.const$1,"psiginfo");
     }
     /**
      * {@snippet :
-     * void psiginfo(const siginfo_t* __pinfo, char* __s);
+     * void psiginfo(struct siginfo_t* __pinfo, char* __s);
      * }
      */
     public static void psiginfo(MemorySegment __pinfo, MemorySegment __s) {
@@ -6559,7 +6752,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle sigblock$MH() {
-        return RuntimeHelper.requireNonNull(constants$74.sigblock$MH,"sigblock");
+        return RuntimeHelper.requireNonNull(constants$125.const$2,"sigblock");
     }
     /**
      * {@snippet :
@@ -6575,7 +6768,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle sigsetmask$MH() {
-        return RuntimeHelper.requireNonNull(constants$75.sigsetmask$MH,"sigsetmask");
+        return RuntimeHelper.requireNonNull(constants$125.const$3,"sigsetmask");
     }
     /**
      * {@snippet :
@@ -6591,7 +6784,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle siggetmask$MH() {
-        return RuntimeHelper.requireNonNull(constants$75.siggetmask$MH,"siggetmask");
+        return RuntimeHelper.requireNonNull(constants$125.const$4,"siggetmask");
     }
     /**
      * {@snippet :
@@ -6607,11 +6800,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle sigemptyset$MH() {
-        return RuntimeHelper.requireNonNull(constants$75.sigemptyset$MH,"sigemptyset");
+        return RuntimeHelper.requireNonNull(constants$126.const$0,"sigemptyset");
     }
     /**
      * {@snippet :
-     * int sigemptyset(sigset_t* __set);
+     * int sigemptyset(struct __sigset_t* __set);
      * }
      */
     public static int sigemptyset(MemorySegment __set) {
@@ -6623,11 +6816,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle sigfillset$MH() {
-        return RuntimeHelper.requireNonNull(constants$75.sigfillset$MH,"sigfillset");
+        return RuntimeHelper.requireNonNull(constants$126.const$1,"sigfillset");
     }
     /**
      * {@snippet :
-     * int sigfillset(sigset_t* __set);
+     * int sigfillset(struct __sigset_t* __set);
      * }
      */
     public static int sigfillset(MemorySegment __set) {
@@ -6639,11 +6832,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle sigaddset$MH() {
-        return RuntimeHelper.requireNonNull(constants$76.sigaddset$MH,"sigaddset");
+        return RuntimeHelper.requireNonNull(constants$126.const$2,"sigaddset");
     }
     /**
      * {@snippet :
-     * int sigaddset(sigset_t* __set, int __signo);
+     * int sigaddset(struct __sigset_t* __set, int __signo);
      * }
      */
     public static int sigaddset(MemorySegment __set, int __signo) {
@@ -6655,11 +6848,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle sigdelset$MH() {
-        return RuntimeHelper.requireNonNull(constants$76.sigdelset$MH,"sigdelset");
+        return RuntimeHelper.requireNonNull(constants$126.const$3,"sigdelset");
     }
     /**
      * {@snippet :
-     * int sigdelset(sigset_t* __set, int __signo);
+     * int sigdelset(struct __sigset_t* __set, int __signo);
      * }
      */
     public static int sigdelset(MemorySegment __set, int __signo) {
@@ -6671,11 +6864,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle sigismember$MH() {
-        return RuntimeHelper.requireNonNull(constants$76.sigismember$MH,"sigismember");
+        return RuntimeHelper.requireNonNull(constants$126.const$4,"sigismember");
     }
     /**
      * {@snippet :
-     * int sigismember(const sigset_t* __set, int __signo);
+     * int sigismember(struct __sigset_t* __set, int __signo);
      * }
      */
     public static int sigismember(MemorySegment __set, int __signo) {
@@ -6687,11 +6880,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle sigprocmask$MH() {
-        return RuntimeHelper.requireNonNull(constants$76.sigprocmask$MH,"sigprocmask");
+        return RuntimeHelper.requireNonNull(constants$128.const$4,"sigprocmask");
     }
     /**
      * {@snippet :
-     * int sigprocmask(int __how, const sigset_t* __set, sigset_t* __oset);
+     * int sigprocmask(int __how, struct __sigset_t* __set, struct __sigset_t* __oset);
      * }
      */
     public static int sigprocmask(int __how, MemorySegment __set, MemorySegment __oset) {
@@ -6703,11 +6896,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle sigsuspend$MH() {
-        return RuntimeHelper.requireNonNull(constants$76.sigsuspend$MH,"sigsuspend");
+        return RuntimeHelper.requireNonNull(constants$128.const$5,"sigsuspend");
     }
     /**
      * {@snippet :
-     * int sigsuspend(const sigset_t* __set);
+     * int sigsuspend(struct __sigset_t* __set);
      * }
      */
     public static int sigsuspend(MemorySegment __set) {
@@ -6719,7 +6912,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle sigaction$MH() {
-        return RuntimeHelper.requireNonNull(constants$76.sigaction$MH,"sigaction");
+        return RuntimeHelper.requireNonNull(constants$129.const$0,"sigaction");
     }
     /**
      * {@snippet :
@@ -6735,11 +6928,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle sigpending$MH() {
-        return RuntimeHelper.requireNonNull(constants$77.sigpending$MH,"sigpending");
+        return RuntimeHelper.requireNonNull(constants$129.const$1,"sigpending");
     }
     /**
      * {@snippet :
-     * int sigpending(sigset_t* __set);
+     * int sigpending(struct __sigset_t* __set);
      * }
      */
     public static int sigpending(MemorySegment __set) {
@@ -6751,11 +6944,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle sigwait$MH() {
-        return RuntimeHelper.requireNonNull(constants$77.sigwait$MH,"sigwait");
+        return RuntimeHelper.requireNonNull(constants$129.const$2,"sigwait");
     }
     /**
      * {@snippet :
-     * int sigwait(const sigset_t* __set, int* __sig);
+     * int sigwait(struct __sigset_t* __set, int* __sig);
      * }
      */
     public static int sigwait(MemorySegment __set, MemorySegment __sig) {
@@ -6767,11 +6960,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle sigwaitinfo$MH() {
-        return RuntimeHelper.requireNonNull(constants$77.sigwaitinfo$MH,"sigwaitinfo");
+        return RuntimeHelper.requireNonNull(constants$129.const$3,"sigwaitinfo");
     }
     /**
      * {@snippet :
-     * int sigwaitinfo(const sigset_t* __set, siginfo_t* __info);
+     * int sigwaitinfo(struct __sigset_t* __set, struct siginfo_t* __info);
      * }
      */
     public static int sigwaitinfo(MemorySegment __set, MemorySegment __info) {
@@ -6783,11 +6976,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle sigtimedwait$MH() {
-        return RuntimeHelper.requireNonNull(constants$77.sigtimedwait$MH,"sigtimedwait");
+        return RuntimeHelper.requireNonNull(constants$129.const$4,"sigtimedwait");
     }
     /**
      * {@snippet :
-     * int sigtimedwait(const sigset_t* __set, siginfo_t* __info, struct timespec* __timeout);
+     * int sigtimedwait(struct __sigset_t* __set, struct siginfo_t* __info, struct timespec* __timeout);
      * }
      */
     public static int sigtimedwait(MemorySegment __set, MemorySegment __info, MemorySegment __timeout) {
@@ -6799,11 +6992,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle sigqueue$MH() {
-        return RuntimeHelper.requireNonNull(constants$77.sigqueue$MH,"sigqueue");
+        return RuntimeHelper.requireNonNull(constants$129.const$6,"sigqueue");
     }
     /**
      * {@snippet :
-     * int sigqueue(__pid_t __pid, int __sig, union sigval __val);
+     * int sigqueue(int __pid, int __sig, union sigval __val);
      * }
      */
     public static int sigqueue(int __pid, int __sig, MemorySegment __val) {
@@ -6814,8 +7007,296 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
+    /**
+     * {@snippet :
+     * typedef signed char __s8;
+     * }
+     */
+    public static final OfByte __s8 = JAVA_BYTE;
+    /**
+     * {@snippet :
+     * typedef unsigned char __u8;
+     * }
+     */
+    public static final OfByte __u8 = JAVA_BYTE;
+    /**
+     * {@snippet :
+     * typedef short __s16;
+     * }
+     */
+    public static final OfShort __s16 = JAVA_SHORT;
+    /**
+     * {@snippet :
+     * typedef unsigned short __u16;
+     * }
+     */
+    public static final OfShort __u16 = JAVA_SHORT;
+    /**
+     * {@snippet :
+     * typedef int __s32;
+     * }
+     */
+    public static final OfInt __s32 = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __u32;
+     * }
+     */
+    public static final OfInt __u32 = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef long long __s64;
+     * }
+     */
+    public static final OfLong __s64 = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef unsigned long long __u64;
+     * }
+     */
+    public static final OfLong __u64 = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef int __kernel_key_t;
+     * }
+     */
+    public static final OfInt __kernel_key_t = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef int __kernel_mqd_t;
+     * }
+     */
+    public static final OfInt __kernel_mqd_t = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef unsigned short __kernel_old_uid_t;
+     * }
+     */
+    public static final OfShort __kernel_old_uid_t = JAVA_SHORT;
+    /**
+     * {@snippet :
+     * typedef unsigned short __kernel_old_gid_t;
+     * }
+     */
+    public static final OfShort __kernel_old_gid_t = JAVA_SHORT;
+    /**
+     * {@snippet :
+     * typedef long __kernel_long_t;
+     * }
+     */
+    public static final OfLong __kernel_long_t = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef unsigned long __kernel_ulong_t;
+     * }
+     */
+    public static final OfLong __kernel_ulong_t = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef unsigned long __kernel_ino_t;
+     * }
+     */
+    public static final OfLong __kernel_ino_t = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef unsigned int __kernel_mode_t;
+     * }
+     */
+    public static final OfInt __kernel_mode_t = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef int __kernel_pid_t;
+     * }
+     */
+    public static final OfInt __kernel_pid_t = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef int __kernel_ipc_pid_t;
+     * }
+     */
+    public static final OfInt __kernel_ipc_pid_t = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __kernel_uid_t;
+     * }
+     */
+    public static final OfInt __kernel_uid_t = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __kernel_gid_t;
+     * }
+     */
+    public static final OfInt __kernel_gid_t = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef long __kernel_suseconds_t;
+     * }
+     */
+    public static final OfLong __kernel_suseconds_t = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef int __kernel_daddr_t;
+     * }
+     */
+    public static final OfInt __kernel_daddr_t = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __kernel_uid32_t;
+     * }
+     */
+    public static final OfInt __kernel_uid32_t = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __kernel_gid32_t;
+     * }
+     */
+    public static final OfInt __kernel_gid32_t = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __kernel_old_dev_t;
+     * }
+     */
+    public static final OfInt __kernel_old_dev_t = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef unsigned long __kernel_size_t;
+     * }
+     */
+    public static final OfLong __kernel_size_t = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef long __kernel_ssize_t;
+     * }
+     */
+    public static final OfLong __kernel_ssize_t = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef long __kernel_ptrdiff_t;
+     * }
+     */
+    public static final OfLong __kernel_ptrdiff_t = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef long __kernel_off_t;
+     * }
+     */
+    public static final OfLong __kernel_off_t = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef long long __kernel_loff_t;
+     * }
+     */
+    public static final OfLong __kernel_loff_t = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef long __kernel_old_time_t;
+     * }
+     */
+    public static final OfLong __kernel_old_time_t = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef long __kernel_time_t;
+     * }
+     */
+    public static final OfLong __kernel_time_t = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef long long __kernel_time64_t;
+     * }
+     */
+    public static final OfLong __kernel_time64_t = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef long __kernel_clock_t;
+     * }
+     */
+    public static final OfLong __kernel_clock_t = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef int __kernel_timer_t;
+     * }
+     */
+    public static final OfInt __kernel_timer_t = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef int __kernel_clockid_t;
+     * }
+     */
+    public static final OfInt __kernel_clockid_t = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef char* __kernel_caddr_t;
+     * }
+     */
+    public static final AddressLayout __kernel_caddr_t = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef unsigned short __kernel_uid16_t;
+     * }
+     */
+    public static final OfShort __kernel_uid16_t = JAVA_SHORT;
+    /**
+     * {@snippet :
+     * typedef unsigned short __kernel_gid16_t;
+     * }
+     */
+    public static final OfShort __kernel_gid16_t = JAVA_SHORT;
+    /**
+     * {@snippet :
+     * typedef unsigned short __le16;
+     * }
+     */
+    public static final OfShort __le16 = JAVA_SHORT;
+    /**
+     * {@snippet :
+     * typedef unsigned short __be16;
+     * }
+     */
+    public static final OfShort __be16 = JAVA_SHORT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __le32;
+     * }
+     */
+    public static final OfInt __le32 = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __be32;
+     * }
+     */
+    public static final OfInt __be32 = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef unsigned long long __le64;
+     * }
+     */
+    public static final OfLong __le64 = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef unsigned long long __be64;
+     * }
+     */
+    public static final OfLong __be64 = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef unsigned short __sum16;
+     * }
+     */
+    public static final OfShort __sum16 = JAVA_SHORT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __wsum;
+     * }
+     */
+    public static final OfInt __wsum = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __poll_t;
+     * }
+     */
+    public static final OfInt __poll_t = JAVA_INT;
     public static MethodHandle sigreturn$MH() {
-        return RuntimeHelper.requireNonNull(constants$77.sigreturn$MH,"sigreturn");
+        return RuntimeHelper.requireNonNull(constants$134.const$4,"sigreturn");
     }
     /**
      * {@snippet :
@@ -6830,20 +7311,202 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
+    public static MethodHandle gettimeofday$MH() {
+        return RuntimeHelper.requireNonNull(constants$136.const$0,"gettimeofday");
+    }
     /**
      * {@snippet :
-     * typedef long long greg_t;
+     * int gettimeofday(struct timeval* __tv, void* __tz);
      * }
      */
-    public static final OfLong greg_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static int gettimeofday(MemorySegment __tv, MemorySegment __tz) {
+        var mh$ = gettimeofday$MH();
+        try {
+            return (int)mh$.invokeExact(__tv, __tz);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle settimeofday$MH() {
+        return RuntimeHelper.requireNonNull(constants$136.const$1,"settimeofday");
+    }
     /**
      * {@snippet :
-     * typedef struct _libc_fpstate* fpregset_t;
+     * int settimeofday(struct timeval* __tv, struct timezone* __tz);
      * }
      */
-    public static final OfAddress fpregset_t = Constants$root.C_POINTER$LAYOUT;
+    public static int settimeofday(MemorySegment __tv, MemorySegment __tz) {
+        var mh$ = settimeofday$MH();
+        try {
+            return (int)mh$.invokeExact(__tv, __tz);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle adjtime$MH() {
+        return RuntimeHelper.requireNonNull(constants$136.const$2,"adjtime");
+    }
+    /**
+     * {@snippet :
+     * int adjtime(struct timeval* __delta, struct timeval* __olddelta);
+     * }
+     */
+    public static int adjtime(MemorySegment __delta, MemorySegment __olddelta) {
+        var mh$ = adjtime$MH();
+        try {
+            return (int)mh$.invokeExact(__delta, __olddelta);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum __itimer_which.ITIMER_REAL = 0;
+     * }
+     */
+    public static int ITIMER_REAL() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum __itimer_which.ITIMER_VIRTUAL = 1;
+     * }
+     */
+    public static int ITIMER_VIRTUAL() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum __itimer_which.ITIMER_PROF = 2;
+     * }
+     */
+    public static int ITIMER_PROF() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * typedef int __itimer_which_t;
+     * }
+     */
+    public static final OfInt __itimer_which_t = JAVA_INT;
+    public static MethodHandle getitimer$MH() {
+        return RuntimeHelper.requireNonNull(constants$136.const$4,"getitimer");
+    }
+    /**
+     * {@snippet :
+     * int getitimer(int __which, struct itimerval* __value);
+     * }
+     */
+    public static int getitimer(int __which, MemorySegment __value) {
+        var mh$ = getitimer$MH();
+        try {
+            return (int)mh$.invokeExact(__which, __value);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle setitimer$MH() {
+        return RuntimeHelper.requireNonNull(constants$136.const$5,"setitimer");
+    }
+    /**
+     * {@snippet :
+     * int setitimer(int __which, struct itimerval* __new, struct itimerval* __old);
+     * }
+     */
+    public static int setitimer(int __which, MemorySegment __new, MemorySegment __old) {
+        var mh$ = setitimer$MH();
+        try {
+            return (int)mh$.invokeExact(__which, __new, __old);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle utimes$MH() {
+        return RuntimeHelper.requireNonNull(constants$137.const$0,"utimes");
+    }
+    /**
+     * {@snippet :
+     * int utimes(char* __file, struct timeval __tvp[2]);
+     * }
+     */
+    public static int utimes(MemorySegment __file, MemorySegment __tvp) {
+        var mh$ = utimes$MH();
+        try {
+            return (int)mh$.invokeExact(__file, __tvp);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle lutimes$MH() {
+        return RuntimeHelper.requireNonNull(constants$137.const$1,"lutimes");
+    }
+    /**
+     * {@snippet :
+     * int lutimes(char* __file, struct timeval __tvp[2]);
+     * }
+     */
+    public static int lutimes(MemorySegment __file, MemorySegment __tvp) {
+        var mh$ = lutimes$MH();
+        try {
+            return (int)mh$.invokeExact(__file, __tvp);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle futimes$MH() {
+        return RuntimeHelper.requireNonNull(constants$137.const$2,"futimes");
+    }
+    /**
+     * {@snippet :
+     * int futimes(int __fd, struct timeval __tvp[2]);
+     * }
+     */
+    public static int futimes(int __fd, MemorySegment __tvp) {
+        var mh$ = futimes$MH();
+        try {
+            return (int)mh$.invokeExact(__fd, __tvp);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * typedef unsigned long elf_greg_t;
+     * }
+     */
+    public static final OfLong elf_greg_t = JAVA_LONG;
+    /**
+     * {@snippet :
+     * typedef unsigned int __pr_uid_t;
+     * }
+     */
+    public static final OfInt __pr_uid_t = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef unsigned int __pr_gid_t;
+     * }
+     */
+    public static final OfInt __pr_gid_t = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef void* psaddr_t;
+     * }
+     */
+    public static final AddressLayout psaddr_t = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef int lwpid_t;
+     * }
+     */
+    public static final OfInt lwpid_t = JAVA_INT;
+    /**
+     * {@snippet :
+     * typedef unsigned long greg_t;
+     * }
+     */
+    public static final OfLong greg_t = JAVA_LONG;
     public static MethodHandle siginterrupt$MH() {
-        return RuntimeHelper.requireNonNull(constants$78.siginterrupt$MH,"siginterrupt");
+        return RuntimeHelper.requireNonNull(constants$144.const$1,"siginterrupt");
     }
     /**
      * {@snippet :
@@ -6860,7 +7523,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SS_ONSTACK = 1;
+     * enum enum (unnamed at /usr/include/bits/ss_flags.h:27:1).SS_ONSTACK = 1;
      * }
      */
     public static int SS_ONSTACK() {
@@ -6868,18 +7531,18 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .SS_DISABLE = 2;
+     * enum enum (unnamed at /usr/include/bits/ss_flags.h:27:1).SS_DISABLE = 2;
      * }
      */
     public static int SS_DISABLE() {
         return (int)2L;
     }
     public static MethodHandle sigaltstack$MH() {
-        return RuntimeHelper.requireNonNull(constants$78.sigaltstack$MH,"sigaltstack");
+        return RuntimeHelper.requireNonNull(constants$144.const$2,"sigaltstack");
     }
     /**
      * {@snippet :
-     * int sigaltstack(const stack_t* __ss, stack_t* __oss);
+     * int sigaltstack(struct stack_t* __ss, struct stack_t* __oss);
      * }
      */
     public static int sigaltstack(MemorySegment __ss, MemorySegment __oss) {
@@ -6891,7 +7554,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle sigstack$MH() {
-        return RuntimeHelper.requireNonNull(constants$78.sigstack$MH,"sigstack");
+        return RuntimeHelper.requireNonNull(constants$145.const$0,"sigstack");
     }
     /**
      * {@snippet :
@@ -6907,11 +7570,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle pthread_sigmask$MH() {
-        return RuntimeHelper.requireNonNull(constants$78.pthread_sigmask$MH,"pthread_sigmask");
+        return RuntimeHelper.requireNonNull(constants$145.const$1,"pthread_sigmask");
     }
     /**
      * {@snippet :
-     * int pthread_sigmask(int __how, const __sigset_t* __newmask, __sigset_t* __oldmask);
+     * int pthread_sigmask(int __how, struct __sigset_t* __newmask, struct __sigset_t* __oldmask);
      * }
      */
     public static int pthread_sigmask(int __how, MemorySegment __newmask, MemorySegment __oldmask) {
@@ -6923,11 +7586,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle pthread_kill$MH() {
-        return RuntimeHelper.requireNonNull(constants$78.pthread_kill$MH,"pthread_kill");
+        return RuntimeHelper.requireNonNull(constants$145.const$2,"pthread_kill");
     }
     /**
      * {@snippet :
-     * int pthread_kill(pthread_t __threadid, int __signo);
+     * int pthread_kill(unsigned long __threadid, int __signo);
      * }
      */
     public static int pthread_kill(long __threadid, int __signo) {
@@ -6939,7 +7602,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle __libc_current_sigrtmin$MH() {
-        return RuntimeHelper.requireNonNull(constants$78.__libc_current_sigrtmin$MH,"__libc_current_sigrtmin");
+        return RuntimeHelper.requireNonNull(constants$145.const$3,"__libc_current_sigrtmin");
     }
     /**
      * {@snippet :
@@ -6955,7 +7618,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle __libc_current_sigrtmax$MH() {
-        return RuntimeHelper.requireNonNull(constants$79.__libc_current_sigrtmax$MH,"__libc_current_sigrtmax");
+        return RuntimeHelper.requireNonNull(constants$145.const$4,"__libc_current_sigrtmax");
     }
     /**
      * {@snippet :
@@ -6971,11 +7634,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_on_error_query$MH() {
-        return RuntimeHelper.requireNonNull(constants$79.g_on_error_query$MH,"g_on_error_query");
+        return RuntimeHelper.requireNonNull(constants$145.const$5,"g_on_error_query");
     }
     /**
      * {@snippet :
-     * void g_on_error_query(const gchar* prg_name);
+     * void g_on_error_query(char* prg_name);
      * }
      */
     public static void g_on_error_query(MemorySegment prg_name) {
@@ -6987,11 +7650,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_on_error_stack_trace$MH() {
-        return RuntimeHelper.requireNonNull(constants$79.g_on_error_stack_trace$MH,"g_on_error_stack_trace");
+        return RuntimeHelper.requireNonNull(constants$146.const$0,"g_on_error_stack_trace");
     }
     /**
      * {@snippet :
-     * void g_on_error_stack_trace(const gchar* prg_name);
+     * void g_on_error_stack_trace(char* prg_name);
      * }
      */
     public static void g_on_error_stack_trace(MemorySegment prg_name) {
@@ -7003,11 +7666,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_base64_encode_step$MH() {
-        return RuntimeHelper.requireNonNull(constants$79.g_base64_encode_step$MH,"g_base64_encode_step");
+        return RuntimeHelper.requireNonNull(constants$146.const$2,"g_base64_encode_step");
     }
     /**
      * {@snippet :
-     * gsize g_base64_encode_step(const guchar* in, gsize len, gboolean break_lines, gchar* out, gint* state, gint* save);
+     * unsigned long g_base64_encode_step(unsigned char* in, unsigned long len, int break_lines, char* out, int* state, int* save);
      * }
      */
     public static long g_base64_encode_step(MemorySegment in, long len, int break_lines, MemorySegment out, MemorySegment state, MemorySegment save) {
@@ -7019,11 +7682,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_base64_encode_close$MH() {
-        return RuntimeHelper.requireNonNull(constants$79.g_base64_encode_close$MH,"g_base64_encode_close");
+        return RuntimeHelper.requireNonNull(constants$146.const$4,"g_base64_encode_close");
     }
     /**
      * {@snippet :
-     * gsize g_base64_encode_close(gboolean break_lines, gchar* out, gint* state, gint* save);
+     * unsigned long g_base64_encode_close(int break_lines, char* out, int* state, int* save);
      * }
      */
     public static long g_base64_encode_close(int break_lines, MemorySegment out, MemorySegment state, MemorySegment save) {
@@ -7035,11 +7698,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_base64_encode$MH() {
-        return RuntimeHelper.requireNonNull(constants$79.g_base64_encode$MH,"g_base64_encode");
+        return RuntimeHelper.requireNonNull(constants$146.const$5,"g_base64_encode");
     }
     /**
      * {@snippet :
-     * gchar* g_base64_encode(const guchar* data, gsize len);
+     * char* g_base64_encode(unsigned char* data, unsigned long len);
      * }
      */
     public static MemorySegment g_base64_encode(MemorySegment data, long len) {
@@ -7051,11 +7714,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_base64_decode_step$MH() {
-        return RuntimeHelper.requireNonNull(constants$80.g_base64_decode_step$MH,"g_base64_decode_step");
+        return RuntimeHelper.requireNonNull(constants$147.const$0,"g_base64_decode_step");
     }
     /**
      * {@snippet :
-     * gsize g_base64_decode_step(const gchar* in, gsize len, guchar* out, gint* state, guint* save);
+     * unsigned long g_base64_decode_step(char* in, unsigned long len, unsigned char* out, int* state, unsigned int* save);
      * }
      */
     public static long g_base64_decode_step(MemorySegment in, long len, MemorySegment out, MemorySegment state, MemorySegment save) {
@@ -7067,11 +7730,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_base64_decode$MH() {
-        return RuntimeHelper.requireNonNull(constants$80.g_base64_decode$MH,"g_base64_decode");
+        return RuntimeHelper.requireNonNull(constants$147.const$1,"g_base64_decode");
     }
     /**
      * {@snippet :
-     * guchar* g_base64_decode(const gchar* text, gsize* out_len);
+     * unsigned char* g_base64_decode(char* text, unsigned long* out_len);
      * }
      */
     public static MemorySegment g_base64_decode(MemorySegment text, MemorySegment out_len) {
@@ -7083,11 +7746,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_base64_decode_inplace$MH() {
-        return RuntimeHelper.requireNonNull(constants$80.g_base64_decode_inplace$MH,"g_base64_decode_inplace");
+        return RuntimeHelper.requireNonNull(constants$147.const$2,"g_base64_decode_inplace");
     }
     /**
      * {@snippet :
-     * guchar* g_base64_decode_inplace(gchar* text, gsize* out_len);
+     * unsigned char* g_base64_decode_inplace(char* text, unsigned long* out_len);
      * }
      */
     public static MemorySegment g_base64_decode_inplace(MemorySegment text, MemorySegment out_len) {
@@ -7099,11 +7762,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bit_lock$MH() {
-        return RuntimeHelper.requireNonNull(constants$80.g_bit_lock$MH,"g_bit_lock");
+        return RuntimeHelper.requireNonNull(constants$147.const$3,"g_bit_lock");
     }
     /**
      * {@snippet :
-     * void g_bit_lock(volatile gint* address, gint lock_bit);
+     * void g_bit_lock(int* address, int lock_bit);
      * }
      */
     public static void g_bit_lock(MemorySegment address, int lock_bit) {
@@ -7115,11 +7778,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bit_trylock$MH() {
-        return RuntimeHelper.requireNonNull(constants$80.g_bit_trylock$MH,"g_bit_trylock");
+        return RuntimeHelper.requireNonNull(constants$147.const$4,"g_bit_trylock");
     }
     /**
      * {@snippet :
-     * gboolean g_bit_trylock(volatile gint* address, gint lock_bit);
+     * int g_bit_trylock(int* address, int lock_bit);
      * }
      */
     public static int g_bit_trylock(MemorySegment address, int lock_bit) {
@@ -7131,11 +7794,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bit_unlock$MH() {
-        return RuntimeHelper.requireNonNull(constants$80.g_bit_unlock$MH,"g_bit_unlock");
+        return RuntimeHelper.requireNonNull(constants$147.const$5,"g_bit_unlock");
     }
     /**
      * {@snippet :
-     * void g_bit_unlock(volatile gint* address, gint lock_bit);
+     * void g_bit_unlock(int* address, int lock_bit);
      * }
      */
     public static void g_bit_unlock(MemorySegment address, int lock_bit) {
@@ -7147,11 +7810,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_pointer_bit_lock$MH() {
-        return RuntimeHelper.requireNonNull(constants$81.g_pointer_bit_lock$MH,"g_pointer_bit_lock");
+        return RuntimeHelper.requireNonNull(constants$148.const$0,"g_pointer_bit_lock");
     }
     /**
      * {@snippet :
-     * void g_pointer_bit_lock(void* address, gint lock_bit);
+     * void g_pointer_bit_lock(void* address, int lock_bit);
      * }
      */
     public static void g_pointer_bit_lock(MemorySegment address, int lock_bit) {
@@ -7163,11 +7826,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_pointer_bit_trylock$MH() {
-        return RuntimeHelper.requireNonNull(constants$81.g_pointer_bit_trylock$MH,"g_pointer_bit_trylock");
+        return RuntimeHelper.requireNonNull(constants$148.const$1,"g_pointer_bit_trylock");
     }
     /**
      * {@snippet :
-     * gboolean g_pointer_bit_trylock(void* address, gint lock_bit);
+     * int g_pointer_bit_trylock(void* address, int lock_bit);
      * }
      */
     public static int g_pointer_bit_trylock(MemorySegment address, int lock_bit) {
@@ -7179,11 +7842,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_pointer_bit_unlock$MH() {
-        return RuntimeHelper.requireNonNull(constants$81.g_pointer_bit_unlock$MH,"g_pointer_bit_unlock");
+        return RuntimeHelper.requireNonNull(constants$148.const$2,"g_pointer_bit_unlock");
     }
     /**
      * {@snippet :
-     * void g_pointer_bit_unlock(void* address, gint lock_bit);
+     * void g_pointer_bit_unlock(void* address, int lock_bit);
      * }
      */
     public static void g_pointer_bit_unlock(MemorySegment address, int lock_bit) {
@@ -7196,7 +7859,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_TIME_TYPE_STANDARD = 0;
+     * enum GTimeType.G_TIME_TYPE_STANDARD = 0;
      * }
      */
     public static int G_TIME_TYPE_STANDARD() {
@@ -7204,7 +7867,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_TIME_TYPE_DAYLIGHT = 1;
+     * enum GTimeType.G_TIME_TYPE_DAYLIGHT = 1;
      * }
      */
     public static int G_TIME_TYPE_DAYLIGHT() {
@@ -7212,18 +7875,18 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_TIME_TYPE_UNIVERSAL = 2;
+     * enum GTimeType.G_TIME_TYPE_UNIVERSAL = 2;
      * }
      */
     public static int G_TIME_TYPE_UNIVERSAL() {
         return (int)2L;
     }
     public static MethodHandle g_time_zone_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$81.g_time_zone_new$MH,"g_time_zone_new");
+        return RuntimeHelper.requireNonNull(constants$148.const$3,"g_time_zone_new");
     }
     /**
      * {@snippet :
-     * GTimeZone* g_time_zone_new(const gchar* identifier);
+     * struct _GTimeZone* g_time_zone_new(char* identifier);
      * }
      */
     public static MemorySegment g_time_zone_new(MemorySegment identifier) {
@@ -7235,11 +7898,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_time_zone_new_identifier$MH() {
-        return RuntimeHelper.requireNonNull(constants$81.g_time_zone_new_identifier$MH,"g_time_zone_new_identifier");
+        return RuntimeHelper.requireNonNull(constants$148.const$4,"g_time_zone_new_identifier");
     }
     /**
      * {@snippet :
-     * GTimeZone* g_time_zone_new_identifier(const gchar* identifier);
+     * struct _GTimeZone* g_time_zone_new_identifier(char* identifier);
      * }
      */
     public static MemorySegment g_time_zone_new_identifier(MemorySegment identifier) {
@@ -7251,11 +7914,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_time_zone_new_utc$MH() {
-        return RuntimeHelper.requireNonNull(constants$81.g_time_zone_new_utc$MH,"g_time_zone_new_utc");
+        return RuntimeHelper.requireNonNull(constants$148.const$5,"g_time_zone_new_utc");
     }
     /**
      * {@snippet :
-     * GTimeZone* g_time_zone_new_utc();
+     * struct _GTimeZone* g_time_zone_new_utc();
      * }
      */
     public static MemorySegment g_time_zone_new_utc() {
@@ -7267,11 +7930,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_time_zone_new_local$MH() {
-        return RuntimeHelper.requireNonNull(constants$82.g_time_zone_new_local$MH,"g_time_zone_new_local");
+        return RuntimeHelper.requireNonNull(constants$149.const$0,"g_time_zone_new_local");
     }
     /**
      * {@snippet :
-     * GTimeZone* g_time_zone_new_local();
+     * struct _GTimeZone* g_time_zone_new_local();
      * }
      */
     public static MemorySegment g_time_zone_new_local() {
@@ -7283,11 +7946,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_time_zone_new_offset$MH() {
-        return RuntimeHelper.requireNonNull(constants$82.g_time_zone_new_offset$MH,"g_time_zone_new_offset");
+        return RuntimeHelper.requireNonNull(constants$149.const$1,"g_time_zone_new_offset");
     }
     /**
      * {@snippet :
-     * GTimeZone* g_time_zone_new_offset(gint32 seconds);
+     * struct _GTimeZone* g_time_zone_new_offset(int seconds);
      * }
      */
     public static MemorySegment g_time_zone_new_offset(int seconds) {
@@ -7299,11 +7962,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_time_zone_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$82.g_time_zone_ref$MH,"g_time_zone_ref");
+        return RuntimeHelper.requireNonNull(constants$149.const$2,"g_time_zone_ref");
     }
     /**
      * {@snippet :
-     * GTimeZone* g_time_zone_ref(GTimeZone* tz);
+     * struct _GTimeZone* g_time_zone_ref(struct _GTimeZone* tz);
      * }
      */
     public static MemorySegment g_time_zone_ref(MemorySegment tz) {
@@ -7315,11 +7978,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_time_zone_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$82.g_time_zone_unref$MH,"g_time_zone_unref");
+        return RuntimeHelper.requireNonNull(constants$149.const$3,"g_time_zone_unref");
     }
     /**
      * {@snippet :
-     * void g_time_zone_unref(GTimeZone* tz);
+     * void g_time_zone_unref(struct _GTimeZone* tz);
      * }
      */
     public static void g_time_zone_unref(MemorySegment tz) {
@@ -7331,11 +7994,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_time_zone_find_interval$MH() {
-        return RuntimeHelper.requireNonNull(constants$82.g_time_zone_find_interval$MH,"g_time_zone_find_interval");
+        return RuntimeHelper.requireNonNull(constants$149.const$5,"g_time_zone_find_interval");
     }
     /**
      * {@snippet :
-     * gint g_time_zone_find_interval(GTimeZone* tz, GTimeType type, gint64 time_);
+     * int g_time_zone_find_interval(struct _GTimeZone* tz, enum GTimeType type, long time_);
      * }
      */
     public static int g_time_zone_find_interval(MemorySegment tz, int type, long time_) {
@@ -7347,11 +8010,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_time_zone_adjust_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$82.g_time_zone_adjust_time$MH,"g_time_zone_adjust_time");
+        return RuntimeHelper.requireNonNull(constants$150.const$1,"g_time_zone_adjust_time");
     }
     /**
      * {@snippet :
-     * gint g_time_zone_adjust_time(GTimeZone* tz, GTimeType type, gint64* time_);
+     * int g_time_zone_adjust_time(struct _GTimeZone* tz, enum GTimeType type, long* time_);
      * }
      */
     public static int g_time_zone_adjust_time(MemorySegment tz, int type, MemorySegment time_) {
@@ -7363,11 +8026,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_time_zone_get_abbreviation$MH() {
-        return RuntimeHelper.requireNonNull(constants$83.g_time_zone_get_abbreviation$MH,"g_time_zone_get_abbreviation");
+        return RuntimeHelper.requireNonNull(constants$150.const$2,"g_time_zone_get_abbreviation");
     }
     /**
      * {@snippet :
-     * const gchar* g_time_zone_get_abbreviation(GTimeZone* tz, gint interval);
+     * char* g_time_zone_get_abbreviation(struct _GTimeZone* tz, int interval);
      * }
      */
     public static MemorySegment g_time_zone_get_abbreviation(MemorySegment tz, int interval) {
@@ -7379,11 +8042,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_time_zone_get_offset$MH() {
-        return RuntimeHelper.requireNonNull(constants$83.g_time_zone_get_offset$MH,"g_time_zone_get_offset");
+        return RuntimeHelper.requireNonNull(constants$150.const$3,"g_time_zone_get_offset");
     }
     /**
      * {@snippet :
-     * gint32 g_time_zone_get_offset(GTimeZone* tz, gint interval);
+     * int g_time_zone_get_offset(struct _GTimeZone* tz, int interval);
      * }
      */
     public static int g_time_zone_get_offset(MemorySegment tz, int interval) {
@@ -7395,11 +8058,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_time_zone_is_dst$MH() {
-        return RuntimeHelper.requireNonNull(constants$83.g_time_zone_is_dst$MH,"g_time_zone_is_dst");
+        return RuntimeHelper.requireNonNull(constants$150.const$4,"g_time_zone_is_dst");
     }
     /**
      * {@snippet :
-     * gboolean g_time_zone_is_dst(GTimeZone* tz, gint interval);
+     * int g_time_zone_is_dst(struct _GTimeZone* tz, int interval);
      * }
      */
     public static int g_time_zone_is_dst(MemorySegment tz, int interval) {
@@ -7411,11 +8074,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_time_zone_get_identifier$MH() {
-        return RuntimeHelper.requireNonNull(constants$83.g_time_zone_get_identifier$MH,"g_time_zone_get_identifier");
+        return RuntimeHelper.requireNonNull(constants$150.const$5,"g_time_zone_get_identifier");
     }
     /**
      * {@snippet :
-     * const gchar* g_time_zone_get_identifier(GTimeZone* tz);
+     * char* g_time_zone_get_identifier(struct _GTimeZone* tz);
      * }
      */
     public static MemorySegment g_time_zone_get_identifier(MemorySegment tz) {
@@ -7431,13 +8094,13 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
      * typedef long GTimeSpan;
      * }
      */
-    public static final OfLong GTimeSpan = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong GTimeSpan = JAVA_LONG;
     public static MethodHandle g_date_time_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$83.g_date_time_unref$MH,"g_date_time_unref");
+        return RuntimeHelper.requireNonNull(constants$151.const$0,"g_date_time_unref");
     }
     /**
      * {@snippet :
-     * void g_date_time_unref(GDateTime* datetime);
+     * void g_date_time_unref(struct _GDateTime* datetime);
      * }
      */
     public static void g_date_time_unref(MemorySegment datetime) {
@@ -7449,11 +8112,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$83.g_date_time_ref$MH,"g_date_time_ref");
+        return RuntimeHelper.requireNonNull(constants$151.const$1,"g_date_time_ref");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_ref(GDateTime* datetime);
+     * struct _GDateTime* g_date_time_ref(struct _GDateTime* datetime);
      * }
      */
     public static MemorySegment g_date_time_ref(MemorySegment datetime) {
@@ -7465,11 +8128,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_new_now$MH() {
-        return RuntimeHelper.requireNonNull(constants$84.g_date_time_new_now$MH,"g_date_time_new_now");
+        return RuntimeHelper.requireNonNull(constants$151.const$2,"g_date_time_new_now");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_new_now(GTimeZone* tz);
+     * struct _GDateTime* g_date_time_new_now(struct _GTimeZone* tz);
      * }
      */
     public static MemorySegment g_date_time_new_now(MemorySegment tz) {
@@ -7481,11 +8144,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_new_now_local$MH() {
-        return RuntimeHelper.requireNonNull(constants$84.g_date_time_new_now_local$MH,"g_date_time_new_now_local");
+        return RuntimeHelper.requireNonNull(constants$151.const$3,"g_date_time_new_now_local");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_new_now_local();
+     * struct _GDateTime* g_date_time_new_now_local();
      * }
      */
     public static MemorySegment g_date_time_new_now_local() {
@@ -7497,11 +8160,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_new_now_utc$MH() {
-        return RuntimeHelper.requireNonNull(constants$84.g_date_time_new_now_utc$MH,"g_date_time_new_now_utc");
+        return RuntimeHelper.requireNonNull(constants$151.const$4,"g_date_time_new_now_utc");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_new_now_utc();
+     * struct _GDateTime* g_date_time_new_now_utc();
      * }
      */
     public static MemorySegment g_date_time_new_now_utc() {
@@ -7513,11 +8176,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_new_from_unix_local$MH() {
-        return RuntimeHelper.requireNonNull(constants$84.g_date_time_new_from_unix_local$MH,"g_date_time_new_from_unix_local");
+        return RuntimeHelper.requireNonNull(constants$151.const$5,"g_date_time_new_from_unix_local");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_new_from_unix_local(gint64 t);
+     * struct _GDateTime* g_date_time_new_from_unix_local(long t);
      * }
      */
     public static MemorySegment g_date_time_new_from_unix_local(long t) {
@@ -7529,11 +8192,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_new_from_unix_utc$MH() {
-        return RuntimeHelper.requireNonNull(constants$84.g_date_time_new_from_unix_utc$MH,"g_date_time_new_from_unix_utc");
+        return RuntimeHelper.requireNonNull(constants$152.const$0,"g_date_time_new_from_unix_utc");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_new_from_unix_utc(gint64 t);
+     * struct _GDateTime* g_date_time_new_from_unix_utc(long t);
      * }
      */
     public static MemorySegment g_date_time_new_from_unix_utc(long t) {
@@ -7545,11 +8208,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_new_from_timeval_local$MH() {
-        return RuntimeHelper.requireNonNull(constants$84.g_date_time_new_from_timeval_local$MH,"g_date_time_new_from_timeval_local");
+        return RuntimeHelper.requireNonNull(constants$152.const$1,"g_date_time_new_from_timeval_local");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_new_from_timeval_local(const GTimeVal* tv);
+     * struct _GDateTime* g_date_time_new_from_timeval_local(struct _GTimeVal* tv);
      * }
      */
     public static MemorySegment g_date_time_new_from_timeval_local(MemorySegment tv) {
@@ -7561,11 +8224,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_new_from_timeval_utc$MH() {
-        return RuntimeHelper.requireNonNull(constants$85.g_date_time_new_from_timeval_utc$MH,"g_date_time_new_from_timeval_utc");
+        return RuntimeHelper.requireNonNull(constants$152.const$2,"g_date_time_new_from_timeval_utc");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_new_from_timeval_utc(const GTimeVal* tv);
+     * struct _GDateTime* g_date_time_new_from_timeval_utc(struct _GTimeVal* tv);
      * }
      */
     public static MemorySegment g_date_time_new_from_timeval_utc(MemorySegment tv) {
@@ -7577,11 +8240,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_new_from_iso8601$MH() {
-        return RuntimeHelper.requireNonNull(constants$85.g_date_time_new_from_iso8601$MH,"g_date_time_new_from_iso8601");
+        return RuntimeHelper.requireNonNull(constants$152.const$3,"g_date_time_new_from_iso8601");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_new_from_iso8601(const gchar* text, GTimeZone* default_tz);
+     * struct _GDateTime* g_date_time_new_from_iso8601(char* text, struct _GTimeZone* default_tz);
      * }
      */
     public static MemorySegment g_date_time_new_from_iso8601(MemorySegment text, MemorySegment default_tz) {
@@ -7593,11 +8256,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$85.g_date_time_new$MH,"g_date_time_new");
+        return RuntimeHelper.requireNonNull(constants$152.const$5,"g_date_time_new");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_new(GTimeZone* tz, gint year, gint month, gint day, gint hour, gint minute, gdouble seconds);
+     * struct _GDateTime* g_date_time_new(struct _GTimeZone* tz, int year, int month, int day, int hour, int minute, double seconds);
      * }
      */
     public static MemorySegment g_date_time_new(MemorySegment tz, int year, int month, int day, int hour, int minute, double seconds) {
@@ -7609,11 +8272,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_new_local$MH() {
-        return RuntimeHelper.requireNonNull(constants$85.g_date_time_new_local$MH,"g_date_time_new_local");
+        return RuntimeHelper.requireNonNull(constants$153.const$1,"g_date_time_new_local");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_new_local(gint year, gint month, gint day, gint hour, gint minute, gdouble seconds);
+     * struct _GDateTime* g_date_time_new_local(int year, int month, int day, int hour, int minute, double seconds);
      * }
      */
     public static MemorySegment g_date_time_new_local(int year, int month, int day, int hour, int minute, double seconds) {
@@ -7625,11 +8288,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_new_utc$MH() {
-        return RuntimeHelper.requireNonNull(constants$85.g_date_time_new_utc$MH,"g_date_time_new_utc");
+        return RuntimeHelper.requireNonNull(constants$153.const$2,"g_date_time_new_utc");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_new_utc(gint year, gint month, gint day, gint hour, gint minute, gdouble seconds);
+     * struct _GDateTime* g_date_time_new_utc(int year, int month, int day, int hour, int minute, double seconds);
      * }
      */
     public static MemorySegment g_date_time_new_utc(int year, int month, int day, int hour, int minute, double seconds) {
@@ -7641,11 +8304,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_add$MH() {
-        return RuntimeHelper.requireNonNull(constants$85.g_date_time_add$MH,"g_date_time_add");
+        return RuntimeHelper.requireNonNull(constants$153.const$3,"g_date_time_add");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_add(GDateTime* datetime, GTimeSpan timespan);
+     * struct _GDateTime* g_date_time_add(struct _GDateTime* datetime, long timespan);
      * }
      */
     public static MemorySegment g_date_time_add(MemorySegment datetime, long timespan) {
@@ -7657,11 +8320,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_add_years$MH() {
-        return RuntimeHelper.requireNonNull(constants$86.g_date_time_add_years$MH,"g_date_time_add_years");
+        return RuntimeHelper.requireNonNull(constants$153.const$4,"g_date_time_add_years");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_add_years(GDateTime* datetime, gint years);
+     * struct _GDateTime* g_date_time_add_years(struct _GDateTime* datetime, int years);
      * }
      */
     public static MemorySegment g_date_time_add_years(MemorySegment datetime, int years) {
@@ -7673,11 +8336,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_add_months$MH() {
-        return RuntimeHelper.requireNonNull(constants$86.g_date_time_add_months$MH,"g_date_time_add_months");
+        return RuntimeHelper.requireNonNull(constants$153.const$5,"g_date_time_add_months");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_add_months(GDateTime* datetime, gint months);
+     * struct _GDateTime* g_date_time_add_months(struct _GDateTime* datetime, int months);
      * }
      */
     public static MemorySegment g_date_time_add_months(MemorySegment datetime, int months) {
@@ -7689,11 +8352,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_add_weeks$MH() {
-        return RuntimeHelper.requireNonNull(constants$86.g_date_time_add_weeks$MH,"g_date_time_add_weeks");
+        return RuntimeHelper.requireNonNull(constants$154.const$0,"g_date_time_add_weeks");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_add_weeks(GDateTime* datetime, gint weeks);
+     * struct _GDateTime* g_date_time_add_weeks(struct _GDateTime* datetime, int weeks);
      * }
      */
     public static MemorySegment g_date_time_add_weeks(MemorySegment datetime, int weeks) {
@@ -7705,11 +8368,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_add_days$MH() {
-        return RuntimeHelper.requireNonNull(constants$86.g_date_time_add_days$MH,"g_date_time_add_days");
+        return RuntimeHelper.requireNonNull(constants$154.const$1,"g_date_time_add_days");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_add_days(GDateTime* datetime, gint days);
+     * struct _GDateTime* g_date_time_add_days(struct _GDateTime* datetime, int days);
      * }
      */
     public static MemorySegment g_date_time_add_days(MemorySegment datetime, int days) {
@@ -7721,11 +8384,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_add_hours$MH() {
-        return RuntimeHelper.requireNonNull(constants$86.g_date_time_add_hours$MH,"g_date_time_add_hours");
+        return RuntimeHelper.requireNonNull(constants$154.const$2,"g_date_time_add_hours");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_add_hours(GDateTime* datetime, gint hours);
+     * struct _GDateTime* g_date_time_add_hours(struct _GDateTime* datetime, int hours);
      * }
      */
     public static MemorySegment g_date_time_add_hours(MemorySegment datetime, int hours) {
@@ -7737,11 +8400,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_add_minutes$MH() {
-        return RuntimeHelper.requireNonNull(constants$86.g_date_time_add_minutes$MH,"g_date_time_add_minutes");
+        return RuntimeHelper.requireNonNull(constants$154.const$3,"g_date_time_add_minutes");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_add_minutes(GDateTime* datetime, gint minutes);
+     * struct _GDateTime* g_date_time_add_minutes(struct _GDateTime* datetime, int minutes);
      * }
      */
     public static MemorySegment g_date_time_add_minutes(MemorySegment datetime, int minutes) {
@@ -7753,11 +8416,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_add_seconds$MH() {
-        return RuntimeHelper.requireNonNull(constants$87.g_date_time_add_seconds$MH,"g_date_time_add_seconds");
+        return RuntimeHelper.requireNonNull(constants$154.const$5,"g_date_time_add_seconds");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_add_seconds(GDateTime* datetime, gdouble seconds);
+     * struct _GDateTime* g_date_time_add_seconds(struct _GDateTime* datetime, double seconds);
      * }
      */
     public static MemorySegment g_date_time_add_seconds(MemorySegment datetime, double seconds) {
@@ -7769,11 +8432,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_add_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$87.g_date_time_add_full$MH,"g_date_time_add_full");
+        return RuntimeHelper.requireNonNull(constants$155.const$0,"g_date_time_add_full");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_add_full(GDateTime* datetime, gint years, gint months, gint days, gint hours, gint minutes, gdouble seconds);
+     * struct _GDateTime* g_date_time_add_full(struct _GDateTime* datetime, int years, int months, int days, int hours, int minutes, double seconds);
      * }
      */
     public static MemorySegment g_date_time_add_full(MemorySegment datetime, int years, int months, int days, int hours, int minutes, double seconds) {
@@ -7785,11 +8448,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_compare$MH() {
-        return RuntimeHelper.requireNonNull(constants$87.g_date_time_compare$MH,"g_date_time_compare");
+        return RuntimeHelper.requireNonNull(constants$155.const$1,"g_date_time_compare");
     }
     /**
      * {@snippet :
-     * gint g_date_time_compare(gconstpointer dt1, gconstpointer dt2);
+     * int g_date_time_compare(void* dt1, void* dt2);
      * }
      */
     public static int g_date_time_compare(MemorySegment dt1, MemorySegment dt2) {
@@ -7801,11 +8464,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_difference$MH() {
-        return RuntimeHelper.requireNonNull(constants$87.g_date_time_difference$MH,"g_date_time_difference");
+        return RuntimeHelper.requireNonNull(constants$155.const$2,"g_date_time_difference");
     }
     /**
      * {@snippet :
-     * GTimeSpan g_date_time_difference(GDateTime* end, GDateTime* begin);
+     * long g_date_time_difference(struct _GDateTime* end, struct _GDateTime* begin);
      * }
      */
     public static long g_date_time_difference(MemorySegment end, MemorySegment begin) {
@@ -7817,11 +8480,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_hash$MH() {
-        return RuntimeHelper.requireNonNull(constants$87.g_date_time_hash$MH,"g_date_time_hash");
+        return RuntimeHelper.requireNonNull(constants$155.const$3,"g_date_time_hash");
     }
     /**
      * {@snippet :
-     * guint g_date_time_hash(gconstpointer datetime);
+     * unsigned int g_date_time_hash(void* datetime);
      * }
      */
     public static int g_date_time_hash(MemorySegment datetime) {
@@ -7833,11 +8496,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$87.g_date_time_equal$MH,"g_date_time_equal");
+        return RuntimeHelper.requireNonNull(constants$155.const$4,"g_date_time_equal");
     }
     /**
      * {@snippet :
-     * gboolean g_date_time_equal(gconstpointer dt1, gconstpointer dt2);
+     * int g_date_time_equal(void* dt1, void* dt2);
      * }
      */
     public static int g_date_time_equal(MemorySegment dt1, MemorySegment dt2) {
@@ -7849,11 +8512,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_get_ymd$MH() {
-        return RuntimeHelper.requireNonNull(constants$88.g_date_time_get_ymd$MH,"g_date_time_get_ymd");
+        return RuntimeHelper.requireNonNull(constants$155.const$5,"g_date_time_get_ymd");
     }
     /**
      * {@snippet :
-     * void g_date_time_get_ymd(GDateTime* datetime, gint* year, gint* month, gint* day);
+     * void g_date_time_get_ymd(struct _GDateTime* datetime, int* year, int* month, int* day);
      * }
      */
     public static void g_date_time_get_ymd(MemorySegment datetime, MemorySegment year, MemorySegment month, MemorySegment day) {
@@ -7865,11 +8528,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_get_year$MH() {
-        return RuntimeHelper.requireNonNull(constants$88.g_date_time_get_year$MH,"g_date_time_get_year");
+        return RuntimeHelper.requireNonNull(constants$156.const$0,"g_date_time_get_year");
     }
     /**
      * {@snippet :
-     * gint g_date_time_get_year(GDateTime* datetime);
+     * int g_date_time_get_year(struct _GDateTime* datetime);
      * }
      */
     public static int g_date_time_get_year(MemorySegment datetime) {
@@ -7881,11 +8544,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_get_month$MH() {
-        return RuntimeHelper.requireNonNull(constants$88.g_date_time_get_month$MH,"g_date_time_get_month");
+        return RuntimeHelper.requireNonNull(constants$156.const$1,"g_date_time_get_month");
     }
     /**
      * {@snippet :
-     * gint g_date_time_get_month(GDateTime* datetime);
+     * int g_date_time_get_month(struct _GDateTime* datetime);
      * }
      */
     public static int g_date_time_get_month(MemorySegment datetime) {
@@ -7897,11 +8560,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_get_day_of_month$MH() {
-        return RuntimeHelper.requireNonNull(constants$88.g_date_time_get_day_of_month$MH,"g_date_time_get_day_of_month");
+        return RuntimeHelper.requireNonNull(constants$156.const$2,"g_date_time_get_day_of_month");
     }
     /**
      * {@snippet :
-     * gint g_date_time_get_day_of_month(GDateTime* datetime);
+     * int g_date_time_get_day_of_month(struct _GDateTime* datetime);
      * }
      */
     public static int g_date_time_get_day_of_month(MemorySegment datetime) {
@@ -7913,11 +8576,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_get_week_numbering_year$MH() {
-        return RuntimeHelper.requireNonNull(constants$88.g_date_time_get_week_numbering_year$MH,"g_date_time_get_week_numbering_year");
+        return RuntimeHelper.requireNonNull(constants$156.const$3,"g_date_time_get_week_numbering_year");
     }
     /**
      * {@snippet :
-     * gint g_date_time_get_week_numbering_year(GDateTime* datetime);
+     * int g_date_time_get_week_numbering_year(struct _GDateTime* datetime);
      * }
      */
     public static int g_date_time_get_week_numbering_year(MemorySegment datetime) {
@@ -7929,11 +8592,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_get_week_of_year$MH() {
-        return RuntimeHelper.requireNonNull(constants$88.g_date_time_get_week_of_year$MH,"g_date_time_get_week_of_year");
+        return RuntimeHelper.requireNonNull(constants$156.const$4,"g_date_time_get_week_of_year");
     }
     /**
      * {@snippet :
-     * gint g_date_time_get_week_of_year(GDateTime* datetime);
+     * int g_date_time_get_week_of_year(struct _GDateTime* datetime);
      * }
      */
     public static int g_date_time_get_week_of_year(MemorySegment datetime) {
@@ -7945,11 +8608,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_get_day_of_week$MH() {
-        return RuntimeHelper.requireNonNull(constants$89.g_date_time_get_day_of_week$MH,"g_date_time_get_day_of_week");
+        return RuntimeHelper.requireNonNull(constants$156.const$5,"g_date_time_get_day_of_week");
     }
     /**
      * {@snippet :
-     * gint g_date_time_get_day_of_week(GDateTime* datetime);
+     * int g_date_time_get_day_of_week(struct _GDateTime* datetime);
      * }
      */
     public static int g_date_time_get_day_of_week(MemorySegment datetime) {
@@ -7961,11 +8624,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_get_day_of_year$MH() {
-        return RuntimeHelper.requireNonNull(constants$89.g_date_time_get_day_of_year$MH,"g_date_time_get_day_of_year");
+        return RuntimeHelper.requireNonNull(constants$157.const$0,"g_date_time_get_day_of_year");
     }
     /**
      * {@snippet :
-     * gint g_date_time_get_day_of_year(GDateTime* datetime);
+     * int g_date_time_get_day_of_year(struct _GDateTime* datetime);
      * }
      */
     public static int g_date_time_get_day_of_year(MemorySegment datetime) {
@@ -7977,11 +8640,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_get_hour$MH() {
-        return RuntimeHelper.requireNonNull(constants$89.g_date_time_get_hour$MH,"g_date_time_get_hour");
+        return RuntimeHelper.requireNonNull(constants$157.const$1,"g_date_time_get_hour");
     }
     /**
      * {@snippet :
-     * gint g_date_time_get_hour(GDateTime* datetime);
+     * int g_date_time_get_hour(struct _GDateTime* datetime);
      * }
      */
     public static int g_date_time_get_hour(MemorySegment datetime) {
@@ -7993,11 +8656,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_get_minute$MH() {
-        return RuntimeHelper.requireNonNull(constants$89.g_date_time_get_minute$MH,"g_date_time_get_minute");
+        return RuntimeHelper.requireNonNull(constants$157.const$2,"g_date_time_get_minute");
     }
     /**
      * {@snippet :
-     * gint g_date_time_get_minute(GDateTime* datetime);
+     * int g_date_time_get_minute(struct _GDateTime* datetime);
      * }
      */
     public static int g_date_time_get_minute(MemorySegment datetime) {
@@ -8009,11 +8672,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_get_second$MH() {
-        return RuntimeHelper.requireNonNull(constants$89.g_date_time_get_second$MH,"g_date_time_get_second");
+        return RuntimeHelper.requireNonNull(constants$157.const$3,"g_date_time_get_second");
     }
     /**
      * {@snippet :
-     * gint g_date_time_get_second(GDateTime* datetime);
+     * int g_date_time_get_second(struct _GDateTime* datetime);
      * }
      */
     public static int g_date_time_get_second(MemorySegment datetime) {
@@ -8025,11 +8688,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_get_microsecond$MH() {
-        return RuntimeHelper.requireNonNull(constants$89.g_date_time_get_microsecond$MH,"g_date_time_get_microsecond");
+        return RuntimeHelper.requireNonNull(constants$157.const$4,"g_date_time_get_microsecond");
     }
     /**
      * {@snippet :
-     * gint g_date_time_get_microsecond(GDateTime* datetime);
+     * int g_date_time_get_microsecond(struct _GDateTime* datetime);
      * }
      */
     public static int g_date_time_get_microsecond(MemorySegment datetime) {
@@ -8041,11 +8704,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_get_seconds$MH() {
-        return RuntimeHelper.requireNonNull(constants$90.g_date_time_get_seconds$MH,"g_date_time_get_seconds");
+        return RuntimeHelper.requireNonNull(constants$157.const$5,"g_date_time_get_seconds");
     }
     /**
      * {@snippet :
-     * gdouble g_date_time_get_seconds(GDateTime* datetime);
+     * double g_date_time_get_seconds(struct _GDateTime* datetime);
      * }
      */
     public static double g_date_time_get_seconds(MemorySegment datetime) {
@@ -8057,11 +8720,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_to_unix$MH() {
-        return RuntimeHelper.requireNonNull(constants$90.g_date_time_to_unix$MH,"g_date_time_to_unix");
+        return RuntimeHelper.requireNonNull(constants$158.const$0,"g_date_time_to_unix");
     }
     /**
      * {@snippet :
-     * gint64 g_date_time_to_unix(GDateTime* datetime);
+     * long g_date_time_to_unix(struct _GDateTime* datetime);
      * }
      */
     public static long g_date_time_to_unix(MemorySegment datetime) {
@@ -8073,11 +8736,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_to_timeval$MH() {
-        return RuntimeHelper.requireNonNull(constants$90.g_date_time_to_timeval$MH,"g_date_time_to_timeval");
+        return RuntimeHelper.requireNonNull(constants$158.const$1,"g_date_time_to_timeval");
     }
     /**
      * {@snippet :
-     * gboolean g_date_time_to_timeval(GDateTime* datetime, GTimeVal* tv);
+     * int g_date_time_to_timeval(struct _GDateTime* datetime, struct _GTimeVal* tv);
      * }
      */
     public static int g_date_time_to_timeval(MemorySegment datetime, MemorySegment tv) {
@@ -8089,11 +8752,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_get_utc_offset$MH() {
-        return RuntimeHelper.requireNonNull(constants$90.g_date_time_get_utc_offset$MH,"g_date_time_get_utc_offset");
+        return RuntimeHelper.requireNonNull(constants$158.const$2,"g_date_time_get_utc_offset");
     }
     /**
      * {@snippet :
-     * GTimeSpan g_date_time_get_utc_offset(GDateTime* datetime);
+     * long g_date_time_get_utc_offset(struct _GDateTime* datetime);
      * }
      */
     public static long g_date_time_get_utc_offset(MemorySegment datetime) {
@@ -8105,11 +8768,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_get_timezone$MH() {
-        return RuntimeHelper.requireNonNull(constants$90.g_date_time_get_timezone$MH,"g_date_time_get_timezone");
+        return RuntimeHelper.requireNonNull(constants$158.const$3,"g_date_time_get_timezone");
     }
     /**
      * {@snippet :
-     * GTimeZone* g_date_time_get_timezone(GDateTime* datetime);
+     * struct _GTimeZone* g_date_time_get_timezone(struct _GDateTime* datetime);
      * }
      */
     public static MemorySegment g_date_time_get_timezone(MemorySegment datetime) {
@@ -8121,11 +8784,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_get_timezone_abbreviation$MH() {
-        return RuntimeHelper.requireNonNull(constants$90.g_date_time_get_timezone_abbreviation$MH,"g_date_time_get_timezone_abbreviation");
+        return RuntimeHelper.requireNonNull(constants$158.const$4,"g_date_time_get_timezone_abbreviation");
     }
     /**
      * {@snippet :
-     * const gchar* g_date_time_get_timezone_abbreviation(GDateTime* datetime);
+     * char* g_date_time_get_timezone_abbreviation(struct _GDateTime* datetime);
      * }
      */
     public static MemorySegment g_date_time_get_timezone_abbreviation(MemorySegment datetime) {
@@ -8137,11 +8800,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_is_daylight_savings$MH() {
-        return RuntimeHelper.requireNonNull(constants$91.g_date_time_is_daylight_savings$MH,"g_date_time_is_daylight_savings");
+        return RuntimeHelper.requireNonNull(constants$158.const$5,"g_date_time_is_daylight_savings");
     }
     /**
      * {@snippet :
-     * gboolean g_date_time_is_daylight_savings(GDateTime* datetime);
+     * int g_date_time_is_daylight_savings(struct _GDateTime* datetime);
      * }
      */
     public static int g_date_time_is_daylight_savings(MemorySegment datetime) {
@@ -8153,11 +8816,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_to_timezone$MH() {
-        return RuntimeHelper.requireNonNull(constants$91.g_date_time_to_timezone$MH,"g_date_time_to_timezone");
+        return RuntimeHelper.requireNonNull(constants$159.const$0,"g_date_time_to_timezone");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_to_timezone(GDateTime* datetime, GTimeZone* tz);
+     * struct _GDateTime* g_date_time_to_timezone(struct _GDateTime* datetime, struct _GTimeZone* tz);
      * }
      */
     public static MemorySegment g_date_time_to_timezone(MemorySegment datetime, MemorySegment tz) {
@@ -8169,11 +8832,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_to_local$MH() {
-        return RuntimeHelper.requireNonNull(constants$91.g_date_time_to_local$MH,"g_date_time_to_local");
+        return RuntimeHelper.requireNonNull(constants$159.const$1,"g_date_time_to_local");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_to_local(GDateTime* datetime);
+     * struct _GDateTime* g_date_time_to_local(struct _GDateTime* datetime);
      * }
      */
     public static MemorySegment g_date_time_to_local(MemorySegment datetime) {
@@ -8185,11 +8848,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_to_utc$MH() {
-        return RuntimeHelper.requireNonNull(constants$91.g_date_time_to_utc$MH,"g_date_time_to_utc");
+        return RuntimeHelper.requireNonNull(constants$159.const$2,"g_date_time_to_utc");
     }
     /**
      * {@snippet :
-     * GDateTime* g_date_time_to_utc(GDateTime* datetime);
+     * struct _GDateTime* g_date_time_to_utc(struct _GDateTime* datetime);
      * }
      */
     public static MemorySegment g_date_time_to_utc(MemorySegment datetime) {
@@ -8201,11 +8864,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_format$MH() {
-        return RuntimeHelper.requireNonNull(constants$91.g_date_time_format$MH,"g_date_time_format");
+        return RuntimeHelper.requireNonNull(constants$159.const$3,"g_date_time_format");
     }
     /**
      * {@snippet :
-     * gchar* g_date_time_format(GDateTime* datetime, const gchar* format);
+     * char* g_date_time_format(struct _GDateTime* datetime, char* format);
      * }
      */
     public static MemorySegment g_date_time_format(MemorySegment datetime, MemorySegment format) {
@@ -8217,11 +8880,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_time_format_iso8601$MH() {
-        return RuntimeHelper.requireNonNull(constants$91.g_date_time_format_iso8601$MH,"g_date_time_format_iso8601");
+        return RuntimeHelper.requireNonNull(constants$159.const$4,"g_date_time_format_iso8601");
     }
     /**
      * {@snippet :
-     * gchar* g_date_time_format_iso8601(GDateTime* datetime);
+     * char* g_date_time_format_iso8601(struct _GDateTime* datetime);
      * }
      */
     public static MemorySegment g_date_time_format_iso8601(MemorySegment datetime) {
@@ -8234,7 +8897,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_BOOKMARK_FILE_ERROR_INVALID_URI = 0;
+     * enum GBookmarkFileError.G_BOOKMARK_FILE_ERROR_INVALID_URI = 0;
      * }
      */
     public static int G_BOOKMARK_FILE_ERROR_INVALID_URI() {
@@ -8242,7 +8905,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_BOOKMARK_FILE_ERROR_INVALID_VALUE = 1;
+     * enum GBookmarkFileError.G_BOOKMARK_FILE_ERROR_INVALID_VALUE = 1;
      * }
      */
     public static int G_BOOKMARK_FILE_ERROR_INVALID_VALUE() {
@@ -8250,7 +8913,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED = 2;
+     * enum GBookmarkFileError.G_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED = 2;
      * }
      */
     public static int G_BOOKMARK_FILE_ERROR_APP_NOT_REGISTERED() {
@@ -8258,7 +8921,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND = 3;
+     * enum GBookmarkFileError.G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND = 3;
      * }
      */
     public static int G_BOOKMARK_FILE_ERROR_URI_NOT_FOUND() {
@@ -8266,7 +8929,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_BOOKMARK_FILE_ERROR_READ = 4;
+     * enum GBookmarkFileError.G_BOOKMARK_FILE_ERROR_READ = 4;
      * }
      */
     public static int G_BOOKMARK_FILE_ERROR_READ() {
@@ -8274,7 +8937,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_BOOKMARK_FILE_ERROR_UNKNOWN_ENCODING = 5;
+     * enum GBookmarkFileError.G_BOOKMARK_FILE_ERROR_UNKNOWN_ENCODING = 5;
      * }
      */
     public static int G_BOOKMARK_FILE_ERROR_UNKNOWN_ENCODING() {
@@ -8282,7 +8945,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_BOOKMARK_FILE_ERROR_WRITE = 6;
+     * enum GBookmarkFileError.G_BOOKMARK_FILE_ERROR_WRITE = 6;
      * }
      */
     public static int G_BOOKMARK_FILE_ERROR_WRITE() {
@@ -8290,18 +8953,18 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_BOOKMARK_FILE_ERROR_FILE_NOT_FOUND = 7;
+     * enum GBookmarkFileError.G_BOOKMARK_FILE_ERROR_FILE_NOT_FOUND = 7;
      * }
      */
     public static int G_BOOKMARK_FILE_ERROR_FILE_NOT_FOUND() {
         return (int)7L;
     }
     public static MethodHandle g_bookmark_file_error_quark$MH() {
-        return RuntimeHelper.requireNonNull(constants$92.g_bookmark_file_error_quark$MH,"g_bookmark_file_error_quark");
+        return RuntimeHelper.requireNonNull(constants$159.const$5,"g_bookmark_file_error_quark");
     }
     /**
      * {@snippet :
-     * GQuark g_bookmark_file_error_quark();
+     * unsigned int g_bookmark_file_error_quark();
      * }
      */
     public static int g_bookmark_file_error_quark() {
@@ -8313,11 +8976,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$92.g_bookmark_file_new$MH,"g_bookmark_file_new");
+        return RuntimeHelper.requireNonNull(constants$160.const$0,"g_bookmark_file_new");
     }
     /**
      * {@snippet :
-     * GBookmarkFile* g_bookmark_file_new();
+     * struct _GBookmarkFile* g_bookmark_file_new();
      * }
      */
     public static MemorySegment g_bookmark_file_new() {
@@ -8329,11 +8992,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$92.g_bookmark_file_free$MH,"g_bookmark_file_free");
+        return RuntimeHelper.requireNonNull(constants$160.const$1,"g_bookmark_file_free");
     }
     /**
      * {@snippet :
-     * void g_bookmark_file_free(GBookmarkFile* bookmark);
+     * void g_bookmark_file_free(struct _GBookmarkFile* bookmark);
      * }
      */
     public static void g_bookmark_file_free(MemorySegment bookmark) {
@@ -8345,11 +9008,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$92.g_bookmark_file_copy$MH,"g_bookmark_file_copy");
+        return RuntimeHelper.requireNonNull(constants$160.const$2,"g_bookmark_file_copy");
     }
     /**
      * {@snippet :
-     * GBookmarkFile* g_bookmark_file_copy(GBookmarkFile* bookmark);
+     * struct _GBookmarkFile* g_bookmark_file_copy(struct _GBookmarkFile* bookmark);
      * }
      */
     public static MemorySegment g_bookmark_file_copy(MemorySegment bookmark) {
@@ -8361,11 +9024,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_load_from_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$92.g_bookmark_file_load_from_file$MH,"g_bookmark_file_load_from_file");
+        return RuntimeHelper.requireNonNull(constants$160.const$3,"g_bookmark_file_load_from_file");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_load_from_file(GBookmarkFile* bookmark, const gchar* filename, GError** error);
+     * int g_bookmark_file_load_from_file(struct _GBookmarkFile* bookmark, char* filename, struct _GError** error);
      * }
      */
     public static int g_bookmark_file_load_from_file(MemorySegment bookmark, MemorySegment filename, MemorySegment error) {
@@ -8377,11 +9040,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_load_from_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$92.g_bookmark_file_load_from_data$MH,"g_bookmark_file_load_from_data");
+        return RuntimeHelper.requireNonNull(constants$160.const$4,"g_bookmark_file_load_from_data");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_load_from_data(GBookmarkFile* bookmark, const gchar* data, gsize length, GError** error);
+     * int g_bookmark_file_load_from_data(struct _GBookmarkFile* bookmark, char* data, unsigned long length, struct _GError** error);
      * }
      */
     public static int g_bookmark_file_load_from_data(MemorySegment bookmark, MemorySegment data, long length, MemorySegment error) {
@@ -8393,11 +9056,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_load_from_data_dirs$MH() {
-        return RuntimeHelper.requireNonNull(constants$93.g_bookmark_file_load_from_data_dirs$MH,"g_bookmark_file_load_from_data_dirs");
+        return RuntimeHelper.requireNonNull(constants$160.const$5,"g_bookmark_file_load_from_data_dirs");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_load_from_data_dirs(GBookmarkFile* bookmark, const gchar* file, gchar** full_path, GError** error);
+     * int g_bookmark_file_load_from_data_dirs(struct _GBookmarkFile* bookmark, char* file, char** full_path, struct _GError** error);
      * }
      */
     public static int g_bookmark_file_load_from_data_dirs(MemorySegment bookmark, MemorySegment file, MemorySegment full_path, MemorySegment error) {
@@ -8409,11 +9072,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_to_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$93.g_bookmark_file_to_data$MH,"g_bookmark_file_to_data");
+        return RuntimeHelper.requireNonNull(constants$161.const$0,"g_bookmark_file_to_data");
     }
     /**
      * {@snippet :
-     * gchar* g_bookmark_file_to_data(GBookmarkFile* bookmark, gsize* length, GError** error);
+     * char* g_bookmark_file_to_data(struct _GBookmarkFile* bookmark, unsigned long* length, struct _GError** error);
      * }
      */
     public static MemorySegment g_bookmark_file_to_data(MemorySegment bookmark, MemorySegment length, MemorySegment error) {
@@ -8425,11 +9088,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_to_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$93.g_bookmark_file_to_file$MH,"g_bookmark_file_to_file");
+        return RuntimeHelper.requireNonNull(constants$161.const$1,"g_bookmark_file_to_file");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_to_file(GBookmarkFile* bookmark, const gchar* filename, GError** error);
+     * int g_bookmark_file_to_file(struct _GBookmarkFile* bookmark, char* filename, struct _GError** error);
      * }
      */
     public static int g_bookmark_file_to_file(MemorySegment bookmark, MemorySegment filename, MemorySegment error) {
@@ -8441,11 +9104,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_set_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$93.g_bookmark_file_set_title$MH,"g_bookmark_file_set_title");
+        return RuntimeHelper.requireNonNull(constants$161.const$2,"g_bookmark_file_set_title");
     }
     /**
      * {@snippet :
-     * void g_bookmark_file_set_title(GBookmarkFile* bookmark, const gchar* uri, const gchar* title);
+     * void g_bookmark_file_set_title(struct _GBookmarkFile* bookmark, char* uri, char* title);
      * }
      */
     public static void g_bookmark_file_set_title(MemorySegment bookmark, MemorySegment uri, MemorySegment title) {
@@ -8457,11 +9120,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$93.g_bookmark_file_get_title$MH,"g_bookmark_file_get_title");
+        return RuntimeHelper.requireNonNull(constants$161.const$3,"g_bookmark_file_get_title");
     }
     /**
      * {@snippet :
-     * gchar* g_bookmark_file_get_title(GBookmarkFile* bookmark, const gchar* uri, GError** error);
+     * char* g_bookmark_file_get_title(struct _GBookmarkFile* bookmark, char* uri, struct _GError** error);
      * }
      */
     public static MemorySegment g_bookmark_file_get_title(MemorySegment bookmark, MemorySegment uri, MemorySegment error) {
@@ -8473,11 +9136,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_set_description$MH() {
-        return RuntimeHelper.requireNonNull(constants$93.g_bookmark_file_set_description$MH,"g_bookmark_file_set_description");
+        return RuntimeHelper.requireNonNull(constants$161.const$4,"g_bookmark_file_set_description");
     }
     /**
      * {@snippet :
-     * void g_bookmark_file_set_description(GBookmarkFile* bookmark, const gchar* uri, const gchar* description);
+     * void g_bookmark_file_set_description(struct _GBookmarkFile* bookmark, char* uri, char* description);
      * }
      */
     public static void g_bookmark_file_set_description(MemorySegment bookmark, MemorySegment uri, MemorySegment description) {
@@ -8489,11 +9152,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_description$MH() {
-        return RuntimeHelper.requireNonNull(constants$94.g_bookmark_file_get_description$MH,"g_bookmark_file_get_description");
+        return RuntimeHelper.requireNonNull(constants$161.const$5,"g_bookmark_file_get_description");
     }
     /**
      * {@snippet :
-     * gchar* g_bookmark_file_get_description(GBookmarkFile* bookmark, const gchar* uri, GError** error);
+     * char* g_bookmark_file_get_description(struct _GBookmarkFile* bookmark, char* uri, struct _GError** error);
      * }
      */
     public static MemorySegment g_bookmark_file_get_description(MemorySegment bookmark, MemorySegment uri, MemorySegment error) {
@@ -8505,11 +9168,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_set_mime_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$94.g_bookmark_file_set_mime_type$MH,"g_bookmark_file_set_mime_type");
+        return RuntimeHelper.requireNonNull(constants$162.const$0,"g_bookmark_file_set_mime_type");
     }
     /**
      * {@snippet :
-     * void g_bookmark_file_set_mime_type(GBookmarkFile* bookmark, const gchar* uri, const gchar* mime_type);
+     * void g_bookmark_file_set_mime_type(struct _GBookmarkFile* bookmark, char* uri, char* mime_type);
      * }
      */
     public static void g_bookmark_file_set_mime_type(MemorySegment bookmark, MemorySegment uri, MemorySegment mime_type) {
@@ -8521,11 +9184,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_mime_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$94.g_bookmark_file_get_mime_type$MH,"g_bookmark_file_get_mime_type");
+        return RuntimeHelper.requireNonNull(constants$162.const$1,"g_bookmark_file_get_mime_type");
     }
     /**
      * {@snippet :
-     * gchar* g_bookmark_file_get_mime_type(GBookmarkFile* bookmark, const gchar* uri, GError** error);
+     * char* g_bookmark_file_get_mime_type(struct _GBookmarkFile* bookmark, char* uri, struct _GError** error);
      * }
      */
     public static MemorySegment g_bookmark_file_get_mime_type(MemorySegment bookmark, MemorySegment uri, MemorySegment error) {
@@ -8537,11 +9200,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_set_groups$MH() {
-        return RuntimeHelper.requireNonNull(constants$94.g_bookmark_file_set_groups$MH,"g_bookmark_file_set_groups");
+        return RuntimeHelper.requireNonNull(constants$162.const$3,"g_bookmark_file_set_groups");
     }
     /**
      * {@snippet :
-     * void g_bookmark_file_set_groups(GBookmarkFile* bookmark, const gchar* uri, const gchar** groups, gsize length);
+     * void g_bookmark_file_set_groups(struct _GBookmarkFile* bookmark, char* uri, char** groups, unsigned long length);
      * }
      */
     public static void g_bookmark_file_set_groups(MemorySegment bookmark, MemorySegment uri, MemorySegment groups, long length) {
@@ -8553,11 +9216,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_add_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$94.g_bookmark_file_add_group$MH,"g_bookmark_file_add_group");
+        return RuntimeHelper.requireNonNull(constants$162.const$4,"g_bookmark_file_add_group");
     }
     /**
      * {@snippet :
-     * void g_bookmark_file_add_group(GBookmarkFile* bookmark, const gchar* uri, const gchar* group);
+     * void g_bookmark_file_add_group(struct _GBookmarkFile* bookmark, char* uri, char* group);
      * }
      */
     public static void g_bookmark_file_add_group(MemorySegment bookmark, MemorySegment uri, MemorySegment group) {
@@ -8569,11 +9232,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_has_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$94.g_bookmark_file_has_group$MH,"g_bookmark_file_has_group");
+        return RuntimeHelper.requireNonNull(constants$162.const$5,"g_bookmark_file_has_group");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_has_group(GBookmarkFile* bookmark, const gchar* uri, const gchar* group, GError** error);
+     * int g_bookmark_file_has_group(struct _GBookmarkFile* bookmark, char* uri, char* group, struct _GError** error);
      * }
      */
     public static int g_bookmark_file_has_group(MemorySegment bookmark, MemorySegment uri, MemorySegment group, MemorySegment error) {
@@ -8585,11 +9248,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_groups$MH() {
-        return RuntimeHelper.requireNonNull(constants$95.g_bookmark_file_get_groups$MH,"g_bookmark_file_get_groups");
+        return RuntimeHelper.requireNonNull(constants$163.const$0,"g_bookmark_file_get_groups");
     }
     /**
      * {@snippet :
-     * gchar** g_bookmark_file_get_groups(GBookmarkFile* bookmark, const gchar* uri, gsize* length, GError** error);
+     * char** g_bookmark_file_get_groups(struct _GBookmarkFile* bookmark, char* uri, unsigned long* length, struct _GError** error);
      * }
      */
     public static MemorySegment g_bookmark_file_get_groups(MemorySegment bookmark, MemorySegment uri, MemorySegment length, MemorySegment error) {
@@ -8601,11 +9264,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_add_application$MH() {
-        return RuntimeHelper.requireNonNull(constants$95.g_bookmark_file_add_application$MH,"g_bookmark_file_add_application");
+        return RuntimeHelper.requireNonNull(constants$163.const$1,"g_bookmark_file_add_application");
     }
     /**
      * {@snippet :
-     * void g_bookmark_file_add_application(GBookmarkFile* bookmark, const gchar* uri, const gchar* name, const gchar* exec);
+     * void g_bookmark_file_add_application(struct _GBookmarkFile* bookmark, char* uri, char* name, char* exec);
      * }
      */
     public static void g_bookmark_file_add_application(MemorySegment bookmark, MemorySegment uri, MemorySegment name, MemorySegment exec) {
@@ -8617,11 +9280,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_has_application$MH() {
-        return RuntimeHelper.requireNonNull(constants$95.g_bookmark_file_has_application$MH,"g_bookmark_file_has_application");
+        return RuntimeHelper.requireNonNull(constants$163.const$2,"g_bookmark_file_has_application");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_has_application(GBookmarkFile* bookmark, const gchar* uri, const gchar* name, GError** error);
+     * int g_bookmark_file_has_application(struct _GBookmarkFile* bookmark, char* uri, char* name, struct _GError** error);
      * }
      */
     public static int g_bookmark_file_has_application(MemorySegment bookmark, MemorySegment uri, MemorySegment name, MemorySegment error) {
@@ -8633,11 +9296,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_applications$MH() {
-        return RuntimeHelper.requireNonNull(constants$95.g_bookmark_file_get_applications$MH,"g_bookmark_file_get_applications");
+        return RuntimeHelper.requireNonNull(constants$163.const$3,"g_bookmark_file_get_applications");
     }
     /**
      * {@snippet :
-     * gchar** g_bookmark_file_get_applications(GBookmarkFile* bookmark, const gchar* uri, gsize* length, GError** error);
+     * char** g_bookmark_file_get_applications(struct _GBookmarkFile* bookmark, char* uri, unsigned long* length, struct _GError** error);
      * }
      */
     public static MemorySegment g_bookmark_file_get_applications(MemorySegment bookmark, MemorySegment uri, MemorySegment length, MemorySegment error) {
@@ -8649,11 +9312,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_set_app_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$95.g_bookmark_file_set_app_info$MH,"g_bookmark_file_set_app_info");
+        return RuntimeHelper.requireNonNull(constants$163.const$5,"g_bookmark_file_set_app_info");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_set_app_info(GBookmarkFile* bookmark, const gchar* uri, const gchar* name, const gchar* exec, gint count, time_t stamp, GError** error);
+     * int g_bookmark_file_set_app_info(struct _GBookmarkFile* bookmark, char* uri, char* name, char* exec, int count, long stamp, struct _GError** error);
      * }
      */
     public static int g_bookmark_file_set_app_info(MemorySegment bookmark, MemorySegment uri, MemorySegment name, MemorySegment exec, int count, long stamp, MemorySegment error) {
@@ -8665,11 +9328,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_set_application_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$95.g_bookmark_file_set_application_info$MH,"g_bookmark_file_set_application_info");
+        return RuntimeHelper.requireNonNull(constants$164.const$1,"g_bookmark_file_set_application_info");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_set_application_info(GBookmarkFile* bookmark, char* uri, char* name, char* exec, int count, GDateTime* stamp, GError** error);
+     * int g_bookmark_file_set_application_info(struct _GBookmarkFile* bookmark, char* uri, char* name, char* exec, int count, struct _GDateTime* stamp, struct _GError** error);
      * }
      */
     public static int g_bookmark_file_set_application_info(MemorySegment bookmark, MemorySegment uri, MemorySegment name, MemorySegment exec, int count, MemorySegment stamp, MemorySegment error) {
@@ -8681,11 +9344,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_app_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$96.g_bookmark_file_get_app_info$MH,"g_bookmark_file_get_app_info");
+        return RuntimeHelper.requireNonNull(constants$164.const$3,"g_bookmark_file_get_app_info");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_get_app_info(GBookmarkFile* bookmark, const gchar* uri, const gchar* name, gchar** exec, guint* count, time_t* stamp, GError** error);
+     * int g_bookmark_file_get_app_info(struct _GBookmarkFile* bookmark, char* uri, char* name, char** exec, unsigned int* count, long* stamp, struct _GError** error);
      * }
      */
     public static int g_bookmark_file_get_app_info(MemorySegment bookmark, MemorySegment uri, MemorySegment name, MemorySegment exec, MemorySegment count, MemorySegment stamp, MemorySegment error) {
@@ -8697,11 +9360,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_application_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$96.g_bookmark_file_get_application_info$MH,"g_bookmark_file_get_application_info");
+        return RuntimeHelper.requireNonNull(constants$164.const$4,"g_bookmark_file_get_application_info");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_get_application_info(GBookmarkFile* bookmark, char* uri, char* name, char** exec, unsigned int* count, GDateTime** stamp, GError** error);
+     * int g_bookmark_file_get_application_info(struct _GBookmarkFile* bookmark, char* uri, char* name, char** exec, unsigned int* count, struct _GDateTime** stamp, struct _GError** error);
      * }
      */
     public static int g_bookmark_file_get_application_info(MemorySegment bookmark, MemorySegment uri, MemorySegment name, MemorySegment exec, MemorySegment count, MemorySegment stamp, MemorySegment error) {
@@ -8713,11 +9376,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_set_is_private$MH() {
-        return RuntimeHelper.requireNonNull(constants$96.g_bookmark_file_set_is_private$MH,"g_bookmark_file_set_is_private");
+        return RuntimeHelper.requireNonNull(constants$164.const$6,"g_bookmark_file_set_is_private");
     }
     /**
      * {@snippet :
-     * void g_bookmark_file_set_is_private(GBookmarkFile* bookmark, const gchar* uri, gboolean is_private);
+     * void g_bookmark_file_set_is_private(struct _GBookmarkFile* bookmark, char* uri, int is_private);
      * }
      */
     public static void g_bookmark_file_set_is_private(MemorySegment bookmark, MemorySegment uri, int is_private) {
@@ -8729,11 +9392,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_is_private$MH() {
-        return RuntimeHelper.requireNonNull(constants$96.g_bookmark_file_get_is_private$MH,"g_bookmark_file_get_is_private");
+        return RuntimeHelper.requireNonNull(constants$165.const$0,"g_bookmark_file_get_is_private");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_get_is_private(GBookmarkFile* bookmark, const gchar* uri, GError** error);
+     * int g_bookmark_file_get_is_private(struct _GBookmarkFile* bookmark, char* uri, struct _GError** error);
      * }
      */
     public static int g_bookmark_file_get_is_private(MemorySegment bookmark, MemorySegment uri, MemorySegment error) {
@@ -8745,11 +9408,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_set_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$96.g_bookmark_file_set_icon$MH,"g_bookmark_file_set_icon");
+        return RuntimeHelper.requireNonNull(constants$165.const$1,"g_bookmark_file_set_icon");
     }
     /**
      * {@snippet :
-     * void g_bookmark_file_set_icon(GBookmarkFile* bookmark, const gchar* uri, const gchar* href, const gchar* mime_type);
+     * void g_bookmark_file_set_icon(struct _GBookmarkFile* bookmark, char* uri, char* href, char* mime_type);
      * }
      */
     public static void g_bookmark_file_set_icon(MemorySegment bookmark, MemorySegment uri, MemorySegment href, MemorySegment mime_type) {
@@ -8761,11 +9424,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$96.g_bookmark_file_get_icon$MH,"g_bookmark_file_get_icon");
+        return RuntimeHelper.requireNonNull(constants$165.const$3,"g_bookmark_file_get_icon");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_get_icon(GBookmarkFile* bookmark, const gchar* uri, gchar** href, gchar** mime_type, GError** error);
+     * int g_bookmark_file_get_icon(struct _GBookmarkFile* bookmark, char* uri, char** href, char** mime_type, struct _GError** error);
      * }
      */
     public static int g_bookmark_file_get_icon(MemorySegment bookmark, MemorySegment uri, MemorySegment href, MemorySegment mime_type, MemorySegment error) {
@@ -8777,11 +9440,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_set_added$MH() {
-        return RuntimeHelper.requireNonNull(constants$97.g_bookmark_file_set_added$MH,"g_bookmark_file_set_added");
+        return RuntimeHelper.requireNonNull(constants$165.const$4,"g_bookmark_file_set_added");
     }
     /**
      * {@snippet :
-     * void g_bookmark_file_set_added(GBookmarkFile* bookmark, const gchar* uri, time_t added);
+     * void g_bookmark_file_set_added(struct _GBookmarkFile* bookmark, char* uri, long added);
      * }
      */
     public static void g_bookmark_file_set_added(MemorySegment bookmark, MemorySegment uri, long added) {
@@ -8793,11 +9456,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_set_added_date_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$97.g_bookmark_file_set_added_date_time$MH,"g_bookmark_file_set_added_date_time");
+        return RuntimeHelper.requireNonNull(constants$165.const$5,"g_bookmark_file_set_added_date_time");
     }
     /**
      * {@snippet :
-     * void g_bookmark_file_set_added_date_time(GBookmarkFile* bookmark, char* uri, GDateTime* added);
+     * void g_bookmark_file_set_added_date_time(struct _GBookmarkFile* bookmark, char* uri, struct _GDateTime* added);
      * }
      */
     public static void g_bookmark_file_set_added_date_time(MemorySegment bookmark, MemorySegment uri, MemorySegment added) {
@@ -8809,11 +9472,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_added$MH() {
-        return RuntimeHelper.requireNonNull(constants$97.g_bookmark_file_get_added$MH,"g_bookmark_file_get_added");
+        return RuntimeHelper.requireNonNull(constants$166.const$1,"g_bookmark_file_get_added");
     }
     /**
      * {@snippet :
-     * time_t g_bookmark_file_get_added(GBookmarkFile* bookmark, const gchar* uri, GError** error);
+     * long g_bookmark_file_get_added(struct _GBookmarkFile* bookmark, char* uri, struct _GError** error);
      * }
      */
     public static long g_bookmark_file_get_added(MemorySegment bookmark, MemorySegment uri, MemorySegment error) {
@@ -8825,11 +9488,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_added_date_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$97.g_bookmark_file_get_added_date_time$MH,"g_bookmark_file_get_added_date_time");
+        return RuntimeHelper.requireNonNull(constants$166.const$2,"g_bookmark_file_get_added_date_time");
     }
     /**
      * {@snippet :
-     * GDateTime* g_bookmark_file_get_added_date_time(GBookmarkFile* bookmark, char* uri, GError** error);
+     * struct _GDateTime* g_bookmark_file_get_added_date_time(struct _GBookmarkFile* bookmark, char* uri, struct _GError** error);
      * }
      */
     public static MemorySegment g_bookmark_file_get_added_date_time(MemorySegment bookmark, MemorySegment uri, MemorySegment error) {
@@ -8841,11 +9504,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_set_modified$MH() {
-        return RuntimeHelper.requireNonNull(constants$97.g_bookmark_file_set_modified$MH,"g_bookmark_file_set_modified");
+        return RuntimeHelper.requireNonNull(constants$166.const$3,"g_bookmark_file_set_modified");
     }
     /**
      * {@snippet :
-     * void g_bookmark_file_set_modified(GBookmarkFile* bookmark, const gchar* uri, time_t modified);
+     * void g_bookmark_file_set_modified(struct _GBookmarkFile* bookmark, char* uri, long modified);
      * }
      */
     public static void g_bookmark_file_set_modified(MemorySegment bookmark, MemorySegment uri, long modified) {
@@ -8857,11 +9520,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_set_modified_date_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$97.g_bookmark_file_set_modified_date_time$MH,"g_bookmark_file_set_modified_date_time");
+        return RuntimeHelper.requireNonNull(constants$166.const$4,"g_bookmark_file_set_modified_date_time");
     }
     /**
      * {@snippet :
-     * void g_bookmark_file_set_modified_date_time(GBookmarkFile* bookmark, char* uri, GDateTime* modified);
+     * void g_bookmark_file_set_modified_date_time(struct _GBookmarkFile* bookmark, char* uri, struct _GDateTime* modified);
      * }
      */
     public static void g_bookmark_file_set_modified_date_time(MemorySegment bookmark, MemorySegment uri, MemorySegment modified) {
@@ -8873,11 +9536,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_modified$MH() {
-        return RuntimeHelper.requireNonNull(constants$98.g_bookmark_file_get_modified$MH,"g_bookmark_file_get_modified");
+        return RuntimeHelper.requireNonNull(constants$166.const$5,"g_bookmark_file_get_modified");
     }
     /**
      * {@snippet :
-     * time_t g_bookmark_file_get_modified(GBookmarkFile* bookmark, const gchar* uri, GError** error);
+     * long g_bookmark_file_get_modified(struct _GBookmarkFile* bookmark, char* uri, struct _GError** error);
      * }
      */
     public static long g_bookmark_file_get_modified(MemorySegment bookmark, MemorySegment uri, MemorySegment error) {
@@ -8889,11 +9552,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_modified_date_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$98.g_bookmark_file_get_modified_date_time$MH,"g_bookmark_file_get_modified_date_time");
+        return RuntimeHelper.requireNonNull(constants$167.const$0,"g_bookmark_file_get_modified_date_time");
     }
     /**
      * {@snippet :
-     * GDateTime* g_bookmark_file_get_modified_date_time(GBookmarkFile* bookmark, char* uri, GError** error);
+     * struct _GDateTime* g_bookmark_file_get_modified_date_time(struct _GBookmarkFile* bookmark, char* uri, struct _GError** error);
      * }
      */
     public static MemorySegment g_bookmark_file_get_modified_date_time(MemorySegment bookmark, MemorySegment uri, MemorySegment error) {
@@ -8905,11 +9568,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_set_visited$MH() {
-        return RuntimeHelper.requireNonNull(constants$98.g_bookmark_file_set_visited$MH,"g_bookmark_file_set_visited");
+        return RuntimeHelper.requireNonNull(constants$167.const$1,"g_bookmark_file_set_visited");
     }
     /**
      * {@snippet :
-     * void g_bookmark_file_set_visited(GBookmarkFile* bookmark, const gchar* uri, time_t visited);
+     * void g_bookmark_file_set_visited(struct _GBookmarkFile* bookmark, char* uri, long visited);
      * }
      */
     public static void g_bookmark_file_set_visited(MemorySegment bookmark, MemorySegment uri, long visited) {
@@ -8921,11 +9584,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_set_visited_date_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$98.g_bookmark_file_set_visited_date_time$MH,"g_bookmark_file_set_visited_date_time");
+        return RuntimeHelper.requireNonNull(constants$167.const$2,"g_bookmark_file_set_visited_date_time");
     }
     /**
      * {@snippet :
-     * void g_bookmark_file_set_visited_date_time(GBookmarkFile* bookmark, char* uri, GDateTime* visited);
+     * void g_bookmark_file_set_visited_date_time(struct _GBookmarkFile* bookmark, char* uri, struct _GDateTime* visited);
      * }
      */
     public static void g_bookmark_file_set_visited_date_time(MemorySegment bookmark, MemorySegment uri, MemorySegment visited) {
@@ -8937,11 +9600,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_visited$MH() {
-        return RuntimeHelper.requireNonNull(constants$98.g_bookmark_file_get_visited$MH,"g_bookmark_file_get_visited");
+        return RuntimeHelper.requireNonNull(constants$167.const$3,"g_bookmark_file_get_visited");
     }
     /**
      * {@snippet :
-     * time_t g_bookmark_file_get_visited(GBookmarkFile* bookmark, const gchar* uri, GError** error);
+     * long g_bookmark_file_get_visited(struct _GBookmarkFile* bookmark, char* uri, struct _GError** error);
      * }
      */
     public static long g_bookmark_file_get_visited(MemorySegment bookmark, MemorySegment uri, MemorySegment error) {
@@ -8953,11 +9616,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_visited_date_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$98.g_bookmark_file_get_visited_date_time$MH,"g_bookmark_file_get_visited_date_time");
+        return RuntimeHelper.requireNonNull(constants$167.const$4,"g_bookmark_file_get_visited_date_time");
     }
     /**
      * {@snippet :
-     * GDateTime* g_bookmark_file_get_visited_date_time(GBookmarkFile* bookmark, char* uri, GError** error);
+     * struct _GDateTime* g_bookmark_file_get_visited_date_time(struct _GBookmarkFile* bookmark, char* uri, struct _GError** error);
      * }
      */
     public static MemorySegment g_bookmark_file_get_visited_date_time(MemorySegment bookmark, MemorySegment uri, MemorySegment error) {
@@ -8969,11 +9632,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_has_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$99.g_bookmark_file_has_item$MH,"g_bookmark_file_has_item");
+        return RuntimeHelper.requireNonNull(constants$167.const$5,"g_bookmark_file_has_item");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_has_item(GBookmarkFile* bookmark, const gchar* uri);
+     * int g_bookmark_file_has_item(struct _GBookmarkFile* bookmark, char* uri);
      * }
      */
     public static int g_bookmark_file_has_item(MemorySegment bookmark, MemorySegment uri) {
@@ -8985,11 +9648,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$99.g_bookmark_file_get_size$MH,"g_bookmark_file_get_size");
+        return RuntimeHelper.requireNonNull(constants$168.const$0,"g_bookmark_file_get_size");
     }
     /**
      * {@snippet :
-     * gint g_bookmark_file_get_size(GBookmarkFile* bookmark);
+     * int g_bookmark_file_get_size(struct _GBookmarkFile* bookmark);
      * }
      */
     public static int g_bookmark_file_get_size(MemorySegment bookmark) {
@@ -9001,11 +9664,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_get_uris$MH() {
-        return RuntimeHelper.requireNonNull(constants$99.g_bookmark_file_get_uris$MH,"g_bookmark_file_get_uris");
+        return RuntimeHelper.requireNonNull(constants$168.const$1,"g_bookmark_file_get_uris");
     }
     /**
      * {@snippet :
-     * gchar** g_bookmark_file_get_uris(GBookmarkFile* bookmark, gsize* length);
+     * char** g_bookmark_file_get_uris(struct _GBookmarkFile* bookmark, unsigned long* length);
      * }
      */
     public static MemorySegment g_bookmark_file_get_uris(MemorySegment bookmark, MemorySegment length) {
@@ -9017,11 +9680,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_remove_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$99.g_bookmark_file_remove_group$MH,"g_bookmark_file_remove_group");
+        return RuntimeHelper.requireNonNull(constants$168.const$2,"g_bookmark_file_remove_group");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_remove_group(GBookmarkFile* bookmark, const gchar* uri, const gchar* group, GError** error);
+     * int g_bookmark_file_remove_group(struct _GBookmarkFile* bookmark, char* uri, char* group, struct _GError** error);
      * }
      */
     public static int g_bookmark_file_remove_group(MemorySegment bookmark, MemorySegment uri, MemorySegment group, MemorySegment error) {
@@ -9033,11 +9696,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_remove_application$MH() {
-        return RuntimeHelper.requireNonNull(constants$99.g_bookmark_file_remove_application$MH,"g_bookmark_file_remove_application");
+        return RuntimeHelper.requireNonNull(constants$168.const$3,"g_bookmark_file_remove_application");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_remove_application(GBookmarkFile* bookmark, const gchar* uri, const gchar* name, GError** error);
+     * int g_bookmark_file_remove_application(struct _GBookmarkFile* bookmark, char* uri, char* name, struct _GError** error);
      * }
      */
     public static int g_bookmark_file_remove_application(MemorySegment bookmark, MemorySegment uri, MemorySegment name, MemorySegment error) {
@@ -9049,11 +9712,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_remove_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$99.g_bookmark_file_remove_item$MH,"g_bookmark_file_remove_item");
+        return RuntimeHelper.requireNonNull(constants$168.const$4,"g_bookmark_file_remove_item");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_remove_item(GBookmarkFile* bookmark, const gchar* uri, GError** error);
+     * int g_bookmark_file_remove_item(struct _GBookmarkFile* bookmark, char* uri, struct _GError** error);
      * }
      */
     public static int g_bookmark_file_remove_item(MemorySegment bookmark, MemorySegment uri, MemorySegment error) {
@@ -9065,11 +9728,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bookmark_file_move_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$100.g_bookmark_file_move_item$MH,"g_bookmark_file_move_item");
+        return RuntimeHelper.requireNonNull(constants$168.const$5,"g_bookmark_file_move_item");
     }
     /**
      * {@snippet :
-     * gboolean g_bookmark_file_move_item(GBookmarkFile* bookmark, const gchar* old_uri, const gchar* new_uri, GError** error);
+     * int g_bookmark_file_move_item(struct _GBookmarkFile* bookmark, char* old_uri, char* new_uri, struct _GError** error);
      * }
      */
     public static int g_bookmark_file_move_item(MemorySegment bookmark, MemorySegment old_uri, MemorySegment new_uri, MemorySegment error) {
@@ -9081,11 +9744,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bytes_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$100.g_bytes_new$MH,"g_bytes_new");
+        return RuntimeHelper.requireNonNull(constants$169.const$0,"g_bytes_new");
     }
     /**
      * {@snippet :
-     * GBytes* g_bytes_new(gconstpointer data, gsize size);
+     * struct _GBytes* g_bytes_new(void* data, unsigned long size);
      * }
      */
     public static MemorySegment g_bytes_new(MemorySegment data, long size) {
@@ -9097,11 +9760,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bytes_new_take$MH() {
-        return RuntimeHelper.requireNonNull(constants$100.g_bytes_new_take$MH,"g_bytes_new_take");
+        return RuntimeHelper.requireNonNull(constants$169.const$1,"g_bytes_new_take");
     }
     /**
      * {@snippet :
-     * GBytes* g_bytes_new_take(gpointer data, gsize size);
+     * struct _GBytes* g_bytes_new_take(void* data, unsigned long size);
      * }
      */
     public static MemorySegment g_bytes_new_take(MemorySegment data, long size) {
@@ -9113,11 +9776,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bytes_new_static$MH() {
-        return RuntimeHelper.requireNonNull(constants$100.g_bytes_new_static$MH,"g_bytes_new_static");
+        return RuntimeHelper.requireNonNull(constants$169.const$2,"g_bytes_new_static");
     }
     /**
      * {@snippet :
-     * GBytes* g_bytes_new_static(gconstpointer data, gsize size);
+     * struct _GBytes* g_bytes_new_static(void* data, unsigned long size);
      * }
      */
     public static MemorySegment g_bytes_new_static(MemorySegment data, long size) {
@@ -9129,11 +9792,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bytes_new_with_free_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$100.g_bytes_new_with_free_func$MH,"g_bytes_new_with_free_func");
+        return RuntimeHelper.requireNonNull(constants$169.const$5,"g_bytes_new_with_free_func");
     }
     /**
      * {@snippet :
-     * GBytes* g_bytes_new_with_free_func(gconstpointer data, gsize size, GDestroyNotify free_func, gpointer user_data);
+     * struct _GBytes* g_bytes_new_with_free_func(void* data, unsigned long size, void (*free_func)(void*), void* user_data);
      * }
      */
     public static MemorySegment g_bytes_new_with_free_func(MemorySegment data, long size, MemorySegment free_func, MemorySegment user_data) {
@@ -9145,11 +9808,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bytes_new_from_bytes$MH() {
-        return RuntimeHelper.requireNonNull(constants$100.g_bytes_new_from_bytes$MH,"g_bytes_new_from_bytes");
+        return RuntimeHelper.requireNonNull(constants$170.const$0,"g_bytes_new_from_bytes");
     }
     /**
      * {@snippet :
-     * GBytes* g_bytes_new_from_bytes(GBytes* bytes, gsize offset, gsize length);
+     * struct _GBytes* g_bytes_new_from_bytes(struct _GBytes* bytes, unsigned long offset, unsigned long length);
      * }
      */
     public static MemorySegment g_bytes_new_from_bytes(MemorySegment bytes, long offset, long length) {
@@ -9161,11 +9824,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bytes_get_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$101.g_bytes_get_data$MH,"g_bytes_get_data");
+        return RuntimeHelper.requireNonNull(constants$170.const$1,"g_bytes_get_data");
     }
     /**
      * {@snippet :
-     * gconstpointer g_bytes_get_data(GBytes* bytes, gsize* size);
+     * void* g_bytes_get_data(struct _GBytes* bytes, unsigned long* size);
      * }
      */
     public static MemorySegment g_bytes_get_data(MemorySegment bytes, MemorySegment size) {
@@ -9177,11 +9840,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bytes_get_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$101.g_bytes_get_size$MH,"g_bytes_get_size");
+        return RuntimeHelper.requireNonNull(constants$170.const$2,"g_bytes_get_size");
     }
     /**
      * {@snippet :
-     * gsize g_bytes_get_size(GBytes* bytes);
+     * unsigned long g_bytes_get_size(struct _GBytes* bytes);
      * }
      */
     public static long g_bytes_get_size(MemorySegment bytes) {
@@ -9193,11 +9856,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bytes_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$101.g_bytes_ref$MH,"g_bytes_ref");
+        return RuntimeHelper.requireNonNull(constants$170.const$3,"g_bytes_ref");
     }
     /**
      * {@snippet :
-     * GBytes* g_bytes_ref(GBytes* bytes);
+     * struct _GBytes* g_bytes_ref(struct _GBytes* bytes);
      * }
      */
     public static MemorySegment g_bytes_ref(MemorySegment bytes) {
@@ -9209,11 +9872,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bytes_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$101.g_bytes_unref$MH,"g_bytes_unref");
+        return RuntimeHelper.requireNonNull(constants$170.const$4,"g_bytes_unref");
     }
     /**
      * {@snippet :
-     * void g_bytes_unref(GBytes* bytes);
+     * void g_bytes_unref(struct _GBytes* bytes);
      * }
      */
     public static void g_bytes_unref(MemorySegment bytes) {
@@ -9225,11 +9888,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bytes_unref_to_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$101.g_bytes_unref_to_data$MH,"g_bytes_unref_to_data");
+        return RuntimeHelper.requireNonNull(constants$170.const$5,"g_bytes_unref_to_data");
     }
     /**
      * {@snippet :
-     * gpointer g_bytes_unref_to_data(GBytes* bytes, gsize* size);
+     * void* g_bytes_unref_to_data(struct _GBytes* bytes, unsigned long* size);
      * }
      */
     public static MemorySegment g_bytes_unref_to_data(MemorySegment bytes, MemorySegment size) {
@@ -9241,11 +9904,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bytes_unref_to_array$MH() {
-        return RuntimeHelper.requireNonNull(constants$101.g_bytes_unref_to_array$MH,"g_bytes_unref_to_array");
+        return RuntimeHelper.requireNonNull(constants$171.const$0,"g_bytes_unref_to_array");
     }
     /**
      * {@snippet :
-     * GByteArray* g_bytes_unref_to_array(GBytes* bytes);
+     * struct _GByteArray* g_bytes_unref_to_array(struct _GBytes* bytes);
      * }
      */
     public static MemorySegment g_bytes_unref_to_array(MemorySegment bytes) {
@@ -9257,11 +9920,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bytes_hash$MH() {
-        return RuntimeHelper.requireNonNull(constants$102.g_bytes_hash$MH,"g_bytes_hash");
+        return RuntimeHelper.requireNonNull(constants$171.const$1,"g_bytes_hash");
     }
     /**
      * {@snippet :
-     * guint g_bytes_hash(gconstpointer bytes);
+     * unsigned int g_bytes_hash(void* bytes);
      * }
      */
     public static int g_bytes_hash(MemorySegment bytes) {
@@ -9273,11 +9936,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bytes_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$102.g_bytes_equal$MH,"g_bytes_equal");
+        return RuntimeHelper.requireNonNull(constants$171.const$2,"g_bytes_equal");
     }
     /**
      * {@snippet :
-     * gboolean g_bytes_equal(gconstpointer bytes1, gconstpointer bytes2);
+     * int g_bytes_equal(void* bytes1, void* bytes2);
      * }
      */
     public static int g_bytes_equal(MemorySegment bytes1, MemorySegment bytes2) {
@@ -9289,11 +9952,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bytes_compare$MH() {
-        return RuntimeHelper.requireNonNull(constants$102.g_bytes_compare$MH,"g_bytes_compare");
+        return RuntimeHelper.requireNonNull(constants$171.const$3,"g_bytes_compare");
     }
     /**
      * {@snippet :
-     * gint g_bytes_compare(gconstpointer bytes1, gconstpointer bytes2);
+     * int g_bytes_compare(void* bytes1, void* bytes2);
      * }
      */
     public static int g_bytes_compare(MemorySegment bytes1, MemorySegment bytes2) {
@@ -9305,11 +9968,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_bytes_get_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$102.g_bytes_get_region$MH,"g_bytes_get_region");
+        return RuntimeHelper.requireNonNull(constants$171.const$5,"g_bytes_get_region");
     }
     /**
      * {@snippet :
-     * gconstpointer g_bytes_get_region(GBytes* bytes, gsize element_size, gsize offset, gsize n_elements);
+     * void* g_bytes_get_region(struct _GBytes* bytes, unsigned long element_size, unsigned long offset, unsigned long n_elements);
      * }
      */
     public static MemorySegment g_bytes_get_region(MemorySegment bytes, long element_size, long offset, long n_elements) {
@@ -9321,11 +9984,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_charset$MH() {
-        return RuntimeHelper.requireNonNull(constants$102.g_get_charset$MH,"g_get_charset");
+        return RuntimeHelper.requireNonNull(constants$172.const$0,"g_get_charset");
     }
     /**
      * {@snippet :
-     * gboolean g_get_charset(char** charset);
+     * int g_get_charset(char** charset);
      * }
      */
     public static int g_get_charset(MemorySegment charset) {
@@ -9337,11 +10000,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_codeset$MH() {
-        return RuntimeHelper.requireNonNull(constants$102.g_get_codeset$MH,"g_get_codeset");
+        return RuntimeHelper.requireNonNull(constants$172.const$1,"g_get_codeset");
     }
     /**
      * {@snippet :
-     * gchar* g_get_codeset();
+     * char* g_get_codeset();
      * }
      */
     public static MemorySegment g_get_codeset() {
@@ -9353,11 +10016,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_console_charset$MH() {
-        return RuntimeHelper.requireNonNull(constants$103.g_get_console_charset$MH,"g_get_console_charset");
+        return RuntimeHelper.requireNonNull(constants$172.const$2,"g_get_console_charset");
     }
     /**
      * {@snippet :
-     * gboolean g_get_console_charset(char** charset);
+     * int g_get_console_charset(char** charset);
      * }
      */
     public static int g_get_console_charset(MemorySegment charset) {
@@ -9369,11 +10032,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_language_names$MH() {
-        return RuntimeHelper.requireNonNull(constants$103.g_get_language_names$MH,"g_get_language_names");
+        return RuntimeHelper.requireNonNull(constants$172.const$3,"g_get_language_names");
     }
     /**
      * {@snippet :
-     * const gchar** g_get_language_names();
+     * char** g_get_language_names();
      * }
      */
     public static MemorySegment g_get_language_names() {
@@ -9385,11 +10048,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_language_names_with_category$MH() {
-        return RuntimeHelper.requireNonNull(constants$103.g_get_language_names_with_category$MH,"g_get_language_names_with_category");
+        return RuntimeHelper.requireNonNull(constants$172.const$4,"g_get_language_names_with_category");
     }
     /**
      * {@snippet :
-     * const gchar** g_get_language_names_with_category(const gchar* category_name);
+     * char** g_get_language_names_with_category(char* category_name);
      * }
      */
     public static MemorySegment g_get_language_names_with_category(MemorySegment category_name) {
@@ -9401,11 +10064,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_locale_variants$MH() {
-        return RuntimeHelper.requireNonNull(constants$103.g_get_locale_variants$MH,"g_get_locale_variants");
+        return RuntimeHelper.requireNonNull(constants$172.const$5,"g_get_locale_variants");
     }
     /**
      * {@snippet :
-     * gchar** g_get_locale_variants(const gchar* locale);
+     * char** g_get_locale_variants(char* locale);
      * }
      */
     public static MemorySegment g_get_locale_variants(MemorySegment locale) {
@@ -9418,7 +10081,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_CHECKSUM_MD5 = 0;
+     * enum GChecksumType.G_CHECKSUM_MD5 = 0;
      * }
      */
     public static int G_CHECKSUM_MD5() {
@@ -9426,7 +10089,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_CHECKSUM_SHA1 = 1;
+     * enum GChecksumType.G_CHECKSUM_SHA1 = 1;
      * }
      */
     public static int G_CHECKSUM_SHA1() {
@@ -9434,7 +10097,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_CHECKSUM_SHA256 = 2;
+     * enum GChecksumType.G_CHECKSUM_SHA256 = 2;
      * }
      */
     public static int G_CHECKSUM_SHA256() {
@@ -9442,7 +10105,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_CHECKSUM_SHA512 = 3;
+     * enum GChecksumType.G_CHECKSUM_SHA512 = 3;
      * }
      */
     public static int G_CHECKSUM_SHA512() {
@@ -9450,18 +10113,18 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_CHECKSUM_SHA384 = 4;
+     * enum GChecksumType.G_CHECKSUM_SHA384 = 4;
      * }
      */
     public static int G_CHECKSUM_SHA384() {
         return (int)4L;
     }
     public static MethodHandle g_checksum_type_get_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$103.g_checksum_type_get_length$MH,"g_checksum_type_get_length");
+        return RuntimeHelper.requireNonNull(constants$173.const$1,"g_checksum_type_get_length");
     }
     /**
      * {@snippet :
-     * gssize g_checksum_type_get_length(GChecksumType checksum_type);
+     * long g_checksum_type_get_length(enum GChecksumType checksum_type);
      * }
      */
     public static long g_checksum_type_get_length(int checksum_type) {
@@ -9473,11 +10136,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_checksum_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$103.g_checksum_new$MH,"g_checksum_new");
+        return RuntimeHelper.requireNonNull(constants$173.const$2,"g_checksum_new");
     }
     /**
      * {@snippet :
-     * GChecksum* g_checksum_new(GChecksumType checksum_type);
+     * struct _GChecksum* g_checksum_new(enum GChecksumType checksum_type);
      * }
      */
     public static MemorySegment g_checksum_new(int checksum_type) {
@@ -9489,11 +10152,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_checksum_reset$MH() {
-        return RuntimeHelper.requireNonNull(constants$104.g_checksum_reset$MH,"g_checksum_reset");
+        return RuntimeHelper.requireNonNull(constants$173.const$3,"g_checksum_reset");
     }
     /**
      * {@snippet :
-     * void g_checksum_reset(GChecksum* checksum);
+     * void g_checksum_reset(struct _GChecksum* checksum);
      * }
      */
     public static void g_checksum_reset(MemorySegment checksum) {
@@ -9505,11 +10168,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_checksum_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$104.g_checksum_copy$MH,"g_checksum_copy");
+        return RuntimeHelper.requireNonNull(constants$173.const$4,"g_checksum_copy");
     }
     /**
      * {@snippet :
-     * GChecksum* g_checksum_copy(const GChecksum* checksum);
+     * struct _GChecksum* g_checksum_copy(struct _GChecksum* checksum);
      * }
      */
     public static MemorySegment g_checksum_copy(MemorySegment checksum) {
@@ -9521,11 +10184,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_checksum_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$104.g_checksum_free$MH,"g_checksum_free");
+        return RuntimeHelper.requireNonNull(constants$173.const$5,"g_checksum_free");
     }
     /**
      * {@snippet :
-     * void g_checksum_free(GChecksum* checksum);
+     * void g_checksum_free(struct _GChecksum* checksum);
      * }
      */
     public static void g_checksum_free(MemorySegment checksum) {
@@ -9537,11 +10200,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_checksum_update$MH() {
-        return RuntimeHelper.requireNonNull(constants$104.g_checksum_update$MH,"g_checksum_update");
+        return RuntimeHelper.requireNonNull(constants$174.const$0,"g_checksum_update");
     }
     /**
      * {@snippet :
-     * void g_checksum_update(GChecksum* checksum, const guchar* data, gssize length);
+     * void g_checksum_update(struct _GChecksum* checksum, unsigned char* data, long length);
      * }
      */
     public static void g_checksum_update(MemorySegment checksum, MemorySegment data, long length) {
@@ -9553,11 +10216,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_checksum_get_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$104.g_checksum_get_string$MH,"g_checksum_get_string");
+        return RuntimeHelper.requireNonNull(constants$174.const$1,"g_checksum_get_string");
     }
     /**
      * {@snippet :
-     * const gchar* g_checksum_get_string(GChecksum* checksum);
+     * char* g_checksum_get_string(struct _GChecksum* checksum);
      * }
      */
     public static MemorySegment g_checksum_get_string(MemorySegment checksum) {
@@ -9569,11 +10232,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_checksum_get_digest$MH() {
-        return RuntimeHelper.requireNonNull(constants$104.g_checksum_get_digest$MH,"g_checksum_get_digest");
+        return RuntimeHelper.requireNonNull(constants$174.const$2,"g_checksum_get_digest");
     }
     /**
      * {@snippet :
-     * void g_checksum_get_digest(GChecksum* checksum, guint8* buffer, gsize* digest_len);
+     * void g_checksum_get_digest(struct _GChecksum* checksum, unsigned char* buffer, unsigned long* digest_len);
      * }
      */
     public static void g_checksum_get_digest(MemorySegment checksum, MemorySegment buffer, MemorySegment digest_len) {
@@ -9585,11 +10248,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_compute_checksum_for_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$105.g_compute_checksum_for_data$MH,"g_compute_checksum_for_data");
+        return RuntimeHelper.requireNonNull(constants$174.const$3,"g_compute_checksum_for_data");
     }
     /**
      * {@snippet :
-     * gchar* g_compute_checksum_for_data(GChecksumType checksum_type, const guchar* data, gsize length);
+     * char* g_compute_checksum_for_data(enum GChecksumType checksum_type, unsigned char* data, unsigned long length);
      * }
      */
     public static MemorySegment g_compute_checksum_for_data(int checksum_type, MemorySegment data, long length) {
@@ -9601,11 +10264,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_compute_checksum_for_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$105.g_compute_checksum_for_string$MH,"g_compute_checksum_for_string");
+        return RuntimeHelper.requireNonNull(constants$174.const$4,"g_compute_checksum_for_string");
     }
     /**
      * {@snippet :
-     * gchar* g_compute_checksum_for_string(GChecksumType checksum_type, const gchar* str, gssize length);
+     * char* g_compute_checksum_for_string(enum GChecksumType checksum_type, char* str, long length);
      * }
      */
     public static MemorySegment g_compute_checksum_for_string(int checksum_type, MemorySegment str, long length) {
@@ -9617,11 +10280,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_compute_checksum_for_bytes$MH() {
-        return RuntimeHelper.requireNonNull(constants$105.g_compute_checksum_for_bytes$MH,"g_compute_checksum_for_bytes");
+        return RuntimeHelper.requireNonNull(constants$174.const$5,"g_compute_checksum_for_bytes");
     }
     /**
      * {@snippet :
-     * gchar* g_compute_checksum_for_bytes(GChecksumType checksum_type, GBytes* data);
+     * char* g_compute_checksum_for_bytes(enum GChecksumType checksum_type, struct _GBytes* data);
      * }
      */
     public static MemorySegment g_compute_checksum_for_bytes(int checksum_type, MemorySegment data) {
@@ -9634,7 +10297,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_CONVERT_ERROR_NO_CONVERSION = 0;
+     * enum GConvertError.G_CONVERT_ERROR_NO_CONVERSION = 0;
      * }
      */
     public static int G_CONVERT_ERROR_NO_CONVERSION() {
@@ -9642,7 +10305,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_CONVERT_ERROR_ILLEGAL_SEQUENCE = 1;
+     * enum GConvertError.G_CONVERT_ERROR_ILLEGAL_SEQUENCE = 1;
      * }
      */
     public static int G_CONVERT_ERROR_ILLEGAL_SEQUENCE() {
@@ -9650,7 +10313,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_CONVERT_ERROR_FAILED = 2;
+     * enum GConvertError.G_CONVERT_ERROR_FAILED = 2;
      * }
      */
     public static int G_CONVERT_ERROR_FAILED() {
@@ -9658,7 +10321,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_CONVERT_ERROR_PARTIAL_INPUT = 3;
+     * enum GConvertError.G_CONVERT_ERROR_PARTIAL_INPUT = 3;
      * }
      */
     public static int G_CONVERT_ERROR_PARTIAL_INPUT() {
@@ -9666,7 +10329,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_CONVERT_ERROR_BAD_URI = 4;
+     * enum GConvertError.G_CONVERT_ERROR_BAD_URI = 4;
      * }
      */
     public static int G_CONVERT_ERROR_BAD_URI() {
@@ -9674,7 +10337,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_CONVERT_ERROR_NOT_ABSOLUTE_PATH = 5;
+     * enum GConvertError.G_CONVERT_ERROR_NOT_ABSOLUTE_PATH = 5;
      * }
      */
     public static int G_CONVERT_ERROR_NOT_ABSOLUTE_PATH() {
@@ -9682,7 +10345,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_CONVERT_ERROR_NO_MEMORY = 6;
+     * enum GConvertError.G_CONVERT_ERROR_NO_MEMORY = 6;
      * }
      */
     public static int G_CONVERT_ERROR_NO_MEMORY() {
@@ -9690,18 +10353,18 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_CONVERT_ERROR_EMBEDDED_NUL = 7;
+     * enum GConvertError.G_CONVERT_ERROR_EMBEDDED_NUL = 7;
      * }
      */
     public static int G_CONVERT_ERROR_EMBEDDED_NUL() {
         return (int)7L;
     }
     public static MethodHandle g_convert_error_quark$MH() {
-        return RuntimeHelper.requireNonNull(constants$105.g_convert_error_quark$MH,"g_convert_error_quark");
+        return RuntimeHelper.requireNonNull(constants$175.const$0,"g_convert_error_quark");
     }
     /**
      * {@snippet :
-     * GQuark g_convert_error_quark();
+     * unsigned int g_convert_error_quark();
      * }
      */
     public static int g_convert_error_quark() {
@@ -9717,13 +10380,13 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
      * typedef struct _GIConv* GIConv;
      * }
      */
-    public static final OfAddress GIConv = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GIConv = RuntimeHelper.POINTER;
     public static MethodHandle g_iconv_open$MH() {
-        return RuntimeHelper.requireNonNull(constants$105.g_iconv_open$MH,"g_iconv_open");
+        return RuntimeHelper.requireNonNull(constants$175.const$1,"g_iconv_open");
     }
     /**
      * {@snippet :
-     * GIConv g_iconv_open(const gchar* to_codeset, const gchar* from_codeset);
+     * struct _GIConv* g_iconv_open(char* to_codeset, char* from_codeset);
      * }
      */
     public static MemorySegment g_iconv_open(MemorySegment to_codeset, MemorySegment from_codeset) {
@@ -9735,11 +10398,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_iconv$MH() {
-        return RuntimeHelper.requireNonNull(constants$105.g_iconv$MH,"g_iconv");
+        return RuntimeHelper.requireNonNull(constants$175.const$3,"g_iconv");
     }
     /**
      * {@snippet :
-     * gsize g_iconv(GIConv converter, gchar** inbuf, gsize* inbytes_left, gchar** outbuf, gsize* outbytes_left);
+     * unsigned long g_iconv(struct _GIConv* converter, char** inbuf, unsigned long* inbytes_left, char** outbuf, unsigned long* outbytes_left);
      * }
      */
     public static long g_iconv(MemorySegment converter, MemorySegment inbuf, MemorySegment inbytes_left, MemorySegment outbuf, MemorySegment outbytes_left) {
@@ -9751,11 +10414,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_iconv_close$MH() {
-        return RuntimeHelper.requireNonNull(constants$106.g_iconv_close$MH,"g_iconv_close");
+        return RuntimeHelper.requireNonNull(constants$175.const$4,"g_iconv_close");
     }
     /**
      * {@snippet :
-     * gint g_iconv_close(GIConv converter);
+     * int g_iconv_close(struct _GIConv* converter);
      * }
      */
     public static int g_iconv_close(MemorySegment converter) {
@@ -9767,11 +10430,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_convert$MH() {
-        return RuntimeHelper.requireNonNull(constants$106.g_convert$MH,"g_convert");
+        return RuntimeHelper.requireNonNull(constants$175.const$6,"g_convert");
     }
     /**
      * {@snippet :
-     * gchar* g_convert(const gchar* str, gssize len, const gchar* to_codeset, const gchar* from_codeset, gsize* bytes_read, gsize* bytes_written, GError** error);
+     * char* g_convert(char* str, long len, char* to_codeset, char* from_codeset, unsigned long* bytes_read, unsigned long* bytes_written, struct _GError** error);
      * }
      */
     public static MemorySegment g_convert(MemorySegment str, long len, MemorySegment to_codeset, MemorySegment from_codeset, MemorySegment bytes_read, MemorySegment bytes_written, MemorySegment error) {
@@ -9783,11 +10446,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_convert_with_iconv$MH() {
-        return RuntimeHelper.requireNonNull(constants$106.g_convert_with_iconv$MH,"g_convert_with_iconv");
+        return RuntimeHelper.requireNonNull(constants$176.const$1,"g_convert_with_iconv");
     }
     /**
      * {@snippet :
-     * gchar* g_convert_with_iconv(const gchar* str, gssize len, GIConv converter, gsize* bytes_read, gsize* bytes_written, GError** error);
+     * char* g_convert_with_iconv(char* str, long len, struct _GIConv* converter, unsigned long* bytes_read, unsigned long* bytes_written, struct _GError** error);
      * }
      */
     public static MemorySegment g_convert_with_iconv(MemorySegment str, long len, MemorySegment converter, MemorySegment bytes_read, MemorySegment bytes_written, MemorySegment error) {
@@ -9799,11 +10462,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_convert_with_fallback$MH() {
-        return RuntimeHelper.requireNonNull(constants$106.g_convert_with_fallback$MH,"g_convert_with_fallback");
+        return RuntimeHelper.requireNonNull(constants$176.const$3,"g_convert_with_fallback");
     }
     /**
      * {@snippet :
-     * gchar* g_convert_with_fallback(const gchar* str, gssize len, const gchar* to_codeset, const gchar* from_codeset, const gchar* fallback, gsize* bytes_read, gsize* bytes_written, GError** error);
+     * char* g_convert_with_fallback(char* str, long len, char* to_codeset, char* from_codeset, char* fallback, unsigned long* bytes_read, unsigned long* bytes_written, struct _GError** error);
      * }
      */
     public static MemorySegment g_convert_with_fallback(MemorySegment str, long len, MemorySegment to_codeset, MemorySegment from_codeset, MemorySegment fallback, MemorySegment bytes_read, MemorySegment bytes_written, MemorySegment error) {
@@ -9815,11 +10478,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_locale_to_utf8$MH() {
-        return RuntimeHelper.requireNonNull(constants$106.g_locale_to_utf8$MH,"g_locale_to_utf8");
+        return RuntimeHelper.requireNonNull(constants$176.const$4,"g_locale_to_utf8");
     }
     /**
      * {@snippet :
-     * gchar* g_locale_to_utf8(const gchar* opsysstring, gssize len, gsize* bytes_read, gsize* bytes_written, GError** error);
+     * char* g_locale_to_utf8(char* opsysstring, long len, unsigned long* bytes_read, unsigned long* bytes_written, struct _GError** error);
      * }
      */
     public static MemorySegment g_locale_to_utf8(MemorySegment opsysstring, long len, MemorySegment bytes_read, MemorySegment bytes_written, MemorySegment error) {
@@ -9831,11 +10494,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_locale_from_utf8$MH() {
-        return RuntimeHelper.requireNonNull(constants$106.g_locale_from_utf8$MH,"g_locale_from_utf8");
+        return RuntimeHelper.requireNonNull(constants$176.const$5,"g_locale_from_utf8");
     }
     /**
      * {@snippet :
-     * gchar* g_locale_from_utf8(const gchar* utf8string, gssize len, gsize* bytes_read, gsize* bytes_written, GError** error);
+     * char* g_locale_from_utf8(char* utf8string, long len, unsigned long* bytes_read, unsigned long* bytes_written, struct _GError** error);
      * }
      */
     public static MemorySegment g_locale_from_utf8(MemorySegment utf8string, long len, MemorySegment bytes_read, MemorySegment bytes_written, MemorySegment error) {
@@ -9847,11 +10510,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_filename_to_utf8$MH() {
-        return RuntimeHelper.requireNonNull(constants$107.g_filename_to_utf8$MH,"g_filename_to_utf8");
+        return RuntimeHelper.requireNonNull(constants$177.const$0,"g_filename_to_utf8");
     }
     /**
      * {@snippet :
-     * gchar* g_filename_to_utf8(const gchar* opsysstring, gssize len, gsize* bytes_read, gsize* bytes_written, GError** error);
+     * char* g_filename_to_utf8(char* opsysstring, long len, unsigned long* bytes_read, unsigned long* bytes_written, struct _GError** error);
      * }
      */
     public static MemorySegment g_filename_to_utf8(MemorySegment opsysstring, long len, MemorySegment bytes_read, MemorySegment bytes_written, MemorySegment error) {
@@ -9863,11 +10526,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_filename_from_utf8$MH() {
-        return RuntimeHelper.requireNonNull(constants$107.g_filename_from_utf8$MH,"g_filename_from_utf8");
+        return RuntimeHelper.requireNonNull(constants$177.const$1,"g_filename_from_utf8");
     }
     /**
      * {@snippet :
-     * gchar* g_filename_from_utf8(const gchar* utf8string, gssize len, gsize* bytes_read, gsize* bytes_written, GError** error);
+     * char* g_filename_from_utf8(char* utf8string, long len, unsigned long* bytes_read, unsigned long* bytes_written, struct _GError** error);
      * }
      */
     public static MemorySegment g_filename_from_utf8(MemorySegment utf8string, long len, MemorySegment bytes_read, MemorySegment bytes_written, MemorySegment error) {
@@ -9879,11 +10542,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_filename_from_uri$MH() {
-        return RuntimeHelper.requireNonNull(constants$107.g_filename_from_uri$MH,"g_filename_from_uri");
+        return RuntimeHelper.requireNonNull(constants$177.const$2,"g_filename_from_uri");
     }
     /**
      * {@snippet :
-     * gchar* g_filename_from_uri(const gchar* uri, gchar** hostname, GError** error);
+     * char* g_filename_from_uri(char* uri, char** hostname, struct _GError** error);
      * }
      */
     public static MemorySegment g_filename_from_uri(MemorySegment uri, MemorySegment hostname, MemorySegment error) {
@@ -9895,11 +10558,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_filename_to_uri$MH() {
-        return RuntimeHelper.requireNonNull(constants$107.g_filename_to_uri$MH,"g_filename_to_uri");
+        return RuntimeHelper.requireNonNull(constants$177.const$3,"g_filename_to_uri");
     }
     /**
      * {@snippet :
-     * gchar* g_filename_to_uri(const gchar* filename, const gchar* hostname, GError** error);
+     * char* g_filename_to_uri(char* filename, char* hostname, struct _GError** error);
      * }
      */
     public static MemorySegment g_filename_to_uri(MemorySegment filename, MemorySegment hostname, MemorySegment error) {
@@ -9911,11 +10574,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_filename_display_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$107.g_filename_display_name$MH,"g_filename_display_name");
+        return RuntimeHelper.requireNonNull(constants$177.const$4,"g_filename_display_name");
     }
     /**
      * {@snippet :
-     * gchar* g_filename_display_name(const gchar* filename);
+     * char* g_filename_display_name(char* filename);
      * }
      */
     public static MemorySegment g_filename_display_name(MemorySegment filename) {
@@ -9927,11 +10590,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_filename_charsets$MH() {
-        return RuntimeHelper.requireNonNull(constants$107.g_get_filename_charsets$MH,"g_get_filename_charsets");
+        return RuntimeHelper.requireNonNull(constants$177.const$5,"g_get_filename_charsets");
     }
     /**
      * {@snippet :
-     * gboolean g_get_filename_charsets(const gchar*** filename_charsets);
+     * int g_get_filename_charsets(char*** filename_charsets);
      * }
      */
     public static int g_get_filename_charsets(MemorySegment filename_charsets) {
@@ -9943,11 +10606,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_filename_display_basename$MH() {
-        return RuntimeHelper.requireNonNull(constants$108.g_filename_display_basename$MH,"g_filename_display_basename");
+        return RuntimeHelper.requireNonNull(constants$178.const$0,"g_filename_display_basename");
     }
     /**
      * {@snippet :
-     * gchar* g_filename_display_basename(const gchar* filename);
+     * char* g_filename_display_basename(char* filename);
      * }
      */
     public static MemorySegment g_filename_display_basename(MemorySegment filename) {
@@ -9959,11 +10622,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_uri_list_extract_uris$MH() {
-        return RuntimeHelper.requireNonNull(constants$108.g_uri_list_extract_uris$MH,"g_uri_list_extract_uris");
+        return RuntimeHelper.requireNonNull(constants$178.const$1,"g_uri_list_extract_uris");
     }
     /**
      * {@snippet :
-     * gchar** g_uri_list_extract_uris(const gchar* uri_list);
+     * char** g_uri_list_extract_uris(char* uri_list);
      * }
      */
     public static MemorySegment g_uri_list_extract_uris(MemorySegment uri_list) {
@@ -9975,11 +10638,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_datalist_init$MH() {
-        return RuntimeHelper.requireNonNull(constants$108.g_datalist_init$MH,"g_datalist_init");
+        return RuntimeHelper.requireNonNull(constants$178.const$3,"g_datalist_init");
     }
     /**
      * {@snippet :
-     * void g_datalist_init(GData** datalist);
+     * void g_datalist_init(struct _GData** datalist);
      * }
      */
     public static void g_datalist_init(MemorySegment datalist) {
@@ -9991,11 +10654,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_datalist_clear$MH() {
-        return RuntimeHelper.requireNonNull(constants$108.g_datalist_clear$MH,"g_datalist_clear");
+        return RuntimeHelper.requireNonNull(constants$178.const$4,"g_datalist_clear");
     }
     /**
      * {@snippet :
-     * void g_datalist_clear(GData** datalist);
+     * void g_datalist_clear(struct _GData** datalist);
      * }
      */
     public static void g_datalist_clear(MemorySegment datalist) {
@@ -10007,11 +10670,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_datalist_id_get_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$109.g_datalist_id_get_data$MH,"g_datalist_id_get_data");
+        return RuntimeHelper.requireNonNull(constants$178.const$5,"g_datalist_id_get_data");
     }
     /**
      * {@snippet :
-     * gpointer g_datalist_id_get_data(GData** datalist, GQuark key_id);
+     * void* g_datalist_id_get_data(struct _GData** datalist, unsigned int key_id);
      * }
      */
     public static MemorySegment g_datalist_id_get_data(MemorySegment datalist, int key_id) {
@@ -10023,11 +10686,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_datalist_id_set_data_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$109.g_datalist_id_set_data_full$MH,"g_datalist_id_set_data_full");
+        return RuntimeHelper.requireNonNull(constants$179.const$2,"g_datalist_id_set_data_full");
     }
     /**
      * {@snippet :
-     * void g_datalist_id_set_data_full(GData** datalist, GQuark key_id, gpointer data, GDestroyNotify destroy_func);
+     * void g_datalist_id_set_data_full(struct _GData** datalist, unsigned int key_id, void* data, void (*destroy_func)(void*));
      * }
      */
     public static void g_datalist_id_set_data_full(MemorySegment datalist, int key_id, MemorySegment data, MemorySegment destroy_func) {
@@ -10039,11 +10702,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_datalist_id_remove_multiple$MH() {
-        return RuntimeHelper.requireNonNull(constants$109.g_datalist_id_remove_multiple$MH,"g_datalist_id_remove_multiple");
+        return RuntimeHelper.requireNonNull(constants$179.const$3,"g_datalist_id_remove_multiple");
     }
     /**
      * {@snippet :
-     * void g_datalist_id_remove_multiple(GData** datalist, GQuark* keys, gsize n_keys);
+     * void g_datalist_id_remove_multiple(struct _GData** datalist, unsigned int* keys, unsigned long n_keys);
      * }
      */
     public static void g_datalist_id_remove_multiple(MemorySegment datalist, MemorySegment keys, long n_keys) {
@@ -10055,11 +10718,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_datalist_id_dup_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$109.g_datalist_id_dup_data$MH,"g_datalist_id_dup_data");
+        return RuntimeHelper.requireNonNull(constants$180.const$1,"g_datalist_id_dup_data");
     }
     /**
      * {@snippet :
-     * gpointer g_datalist_id_dup_data(GData** datalist, GQuark key_id, GDuplicateFunc dup_func, gpointer user_data);
+     * void* g_datalist_id_dup_data(struct _GData** datalist, unsigned int key_id, void* (*dup_func)(void*,void*), void* user_data);
      * }
      */
     public static MemorySegment g_datalist_id_dup_data(MemorySegment datalist, int key_id, MemorySegment dup_func, MemorySegment user_data) {
@@ -10071,11 +10734,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_datalist_id_replace_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$110.g_datalist_id_replace_data$MH,"g_datalist_id_replace_data");
+        return RuntimeHelper.requireNonNull(constants$180.const$5,"g_datalist_id_replace_data");
     }
     /**
      * {@snippet :
-     * gboolean g_datalist_id_replace_data(GData** datalist, GQuark key_id, gpointer oldval, gpointer newval, GDestroyNotify destroy, GDestroyNotify* old_destroy);
+     * int g_datalist_id_replace_data(struct _GData** datalist, unsigned int key_id, void* oldval, void* newval, void (*destroy)(void*), void (**old_destroy)(void*));
      * }
      */
     public static int g_datalist_id_replace_data(MemorySegment datalist, int key_id, MemorySegment oldval, MemorySegment newval, MemorySegment destroy, MemorySegment old_destroy) {
@@ -10087,11 +10750,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_datalist_id_remove_no_notify$MH() {
-        return RuntimeHelper.requireNonNull(constants$110.g_datalist_id_remove_no_notify$MH,"g_datalist_id_remove_no_notify");
+        return RuntimeHelper.requireNonNull(constants$181.const$0,"g_datalist_id_remove_no_notify");
     }
     /**
      * {@snippet :
-     * gpointer g_datalist_id_remove_no_notify(GData** datalist, GQuark key_id);
+     * void* g_datalist_id_remove_no_notify(struct _GData** datalist, unsigned int key_id);
      * }
      */
     public static MemorySegment g_datalist_id_remove_no_notify(MemorySegment datalist, int key_id) {
@@ -10103,11 +10766,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_datalist_foreach$MH() {
-        return RuntimeHelper.requireNonNull(constants$110.g_datalist_foreach$MH,"g_datalist_foreach");
+        return RuntimeHelper.requireNonNull(constants$181.const$2,"g_datalist_foreach");
     }
     /**
      * {@snippet :
-     * void g_datalist_foreach(GData** datalist, GDataForeachFunc func, gpointer user_data);
+     * void g_datalist_foreach(struct _GData** datalist, void (*func)(unsigned int,void*,void*), void* user_data);
      * }
      */
     public static void g_datalist_foreach(MemorySegment datalist, MemorySegment func, MemorySegment user_data) {
@@ -10119,11 +10782,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_datalist_set_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$110.g_datalist_set_flags$MH,"g_datalist_set_flags");
+        return RuntimeHelper.requireNonNull(constants$181.const$3,"g_datalist_set_flags");
     }
     /**
      * {@snippet :
-     * void g_datalist_set_flags(GData** datalist, guint flags);
+     * void g_datalist_set_flags(struct _GData** datalist, unsigned int flags);
      * }
      */
     public static void g_datalist_set_flags(MemorySegment datalist, int flags) {
@@ -10135,11 +10798,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_datalist_unset_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$110.g_datalist_unset_flags$MH,"g_datalist_unset_flags");
+        return RuntimeHelper.requireNonNull(constants$181.const$4,"g_datalist_unset_flags");
     }
     /**
      * {@snippet :
-     * void g_datalist_unset_flags(GData** datalist, guint flags);
+     * void g_datalist_unset_flags(struct _GData** datalist, unsigned int flags);
      * }
      */
     public static void g_datalist_unset_flags(MemorySegment datalist, int flags) {
@@ -10151,11 +10814,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_datalist_get_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$110.g_datalist_get_flags$MH,"g_datalist_get_flags");
+        return RuntimeHelper.requireNonNull(constants$181.const$5,"g_datalist_get_flags");
     }
     /**
      * {@snippet :
-     * guint g_datalist_get_flags(GData** datalist);
+     * unsigned int g_datalist_get_flags(struct _GData** datalist);
      * }
      */
     public static int g_datalist_get_flags(MemorySegment datalist) {
@@ -10167,11 +10830,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_dataset_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$111.g_dataset_destroy$MH,"g_dataset_destroy");
+        return RuntimeHelper.requireNonNull(constants$182.const$0,"g_dataset_destroy");
     }
     /**
      * {@snippet :
-     * void g_dataset_destroy(gconstpointer dataset_location);
+     * void g_dataset_destroy(void* dataset_location);
      * }
      */
     public static void g_dataset_destroy(MemorySegment dataset_location) {
@@ -10183,11 +10846,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_dataset_id_get_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$111.g_dataset_id_get_data$MH,"g_dataset_id_get_data");
+        return RuntimeHelper.requireNonNull(constants$182.const$1,"g_dataset_id_get_data");
     }
     /**
      * {@snippet :
-     * gpointer g_dataset_id_get_data(gconstpointer dataset_location, GQuark key_id);
+     * void* g_dataset_id_get_data(void* dataset_location, unsigned int key_id);
      * }
      */
     public static MemorySegment g_dataset_id_get_data(MemorySegment dataset_location, int key_id) {
@@ -10199,11 +10862,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_datalist_get_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$111.g_datalist_get_data$MH,"g_datalist_get_data");
+        return RuntimeHelper.requireNonNull(constants$182.const$2,"g_datalist_get_data");
     }
     /**
      * {@snippet :
-     * gpointer g_datalist_get_data(GData** datalist, const gchar* key);
+     * void* g_datalist_get_data(struct _GData** datalist, char* key);
      * }
      */
     public static MemorySegment g_datalist_get_data(MemorySegment datalist, MemorySegment key) {
@@ -10215,11 +10878,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_dataset_id_set_data_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$111.g_dataset_id_set_data_full$MH,"g_dataset_id_set_data_full");
+        return RuntimeHelper.requireNonNull(constants$182.const$4,"g_dataset_id_set_data_full");
     }
     /**
      * {@snippet :
-     * void g_dataset_id_set_data_full(gconstpointer dataset_location, GQuark key_id, gpointer data, GDestroyNotify destroy_func);
+     * void g_dataset_id_set_data_full(void* dataset_location, unsigned int key_id, void* data, void (*destroy_func)(void*));
      * }
      */
     public static void g_dataset_id_set_data_full(MemorySegment dataset_location, int key_id, MemorySegment data, MemorySegment destroy_func) {
@@ -10231,11 +10894,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_dataset_id_remove_no_notify$MH() {
-        return RuntimeHelper.requireNonNull(constants$111.g_dataset_id_remove_no_notify$MH,"g_dataset_id_remove_no_notify");
+        return RuntimeHelper.requireNonNull(constants$182.const$5,"g_dataset_id_remove_no_notify");
     }
     /**
      * {@snippet :
-     * gpointer g_dataset_id_remove_no_notify(gconstpointer dataset_location, GQuark key_id);
+     * void* g_dataset_id_remove_no_notify(void* dataset_location, unsigned int key_id);
      * }
      */
     public static MemorySegment g_dataset_id_remove_no_notify(MemorySegment dataset_location, int key_id) {
@@ -10247,11 +10910,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_dataset_foreach$MH() {
-        return RuntimeHelper.requireNonNull(constants$111.g_dataset_foreach$MH,"g_dataset_foreach");
+        return RuntimeHelper.requireNonNull(constants$183.const$1,"g_dataset_foreach");
     }
     /**
      * {@snippet :
-     * void g_dataset_foreach(gconstpointer dataset_location, GDataForeachFunc func, gpointer user_data);
+     * void g_dataset_foreach(void* dataset_location, void (*func)(unsigned int,void*,void*), void* user_data);
      * }
      */
     public static void g_dataset_foreach(MemorySegment dataset_location, MemorySegment func, MemorySegment user_data) {
@@ -10267,22 +10930,22 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
      * typedef int GTime;
      * }
      */
-    public static final OfInt GTime = Constants$root.C_INT$LAYOUT;
+    public static final OfInt GTime = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned short GDateYear;
      * }
      */
-    public static final OfShort GDateYear = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort GDateYear = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned char GDateDay;
      * }
      */
-    public static final OfByte GDateDay = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte GDateDay = JAVA_BYTE;
     /**
      * {@snippet :
-     * enum .G_DATE_DAY = 0;
+     * enum GDateDMY.G_DATE_DAY = 0;
      * }
      */
     public static int G_DATE_DAY() {
@@ -10290,7 +10953,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_MONTH = 1;
+     * enum GDateDMY.G_DATE_MONTH = 1;
      * }
      */
     public static int G_DATE_MONTH() {
@@ -10298,7 +10961,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_YEAR = 2;
+     * enum GDateDMY.G_DATE_YEAR = 2;
      * }
      */
     public static int G_DATE_YEAR() {
@@ -10306,7 +10969,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_BAD_WEEKDAY = 0;
+     * enum GDateWeekday.G_DATE_BAD_WEEKDAY = 0;
      * }
      */
     public static int G_DATE_BAD_WEEKDAY() {
@@ -10314,7 +10977,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_MONDAY = 1;
+     * enum GDateWeekday.G_DATE_MONDAY = 1;
      * }
      */
     public static int G_DATE_MONDAY() {
@@ -10322,7 +10985,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_TUESDAY = 2;
+     * enum GDateWeekday.G_DATE_TUESDAY = 2;
      * }
      */
     public static int G_DATE_TUESDAY() {
@@ -10330,7 +10993,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_WEDNESDAY = 3;
+     * enum GDateWeekday.G_DATE_WEDNESDAY = 3;
      * }
      */
     public static int G_DATE_WEDNESDAY() {
@@ -10338,7 +11001,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_THURSDAY = 4;
+     * enum GDateWeekday.G_DATE_THURSDAY = 4;
      * }
      */
     public static int G_DATE_THURSDAY() {
@@ -10346,7 +11009,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_FRIDAY = 5;
+     * enum GDateWeekday.G_DATE_FRIDAY = 5;
      * }
      */
     public static int G_DATE_FRIDAY() {
@@ -10354,7 +11017,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_SATURDAY = 6;
+     * enum GDateWeekday.G_DATE_SATURDAY = 6;
      * }
      */
     public static int G_DATE_SATURDAY() {
@@ -10362,7 +11025,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_SUNDAY = 7;
+     * enum GDateWeekday.G_DATE_SUNDAY = 7;
      * }
      */
     public static int G_DATE_SUNDAY() {
@@ -10370,7 +11033,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_BAD_MONTH = 0;
+     * enum GDateMonth.G_DATE_BAD_MONTH = 0;
      * }
      */
     public static int G_DATE_BAD_MONTH() {
@@ -10378,7 +11041,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_JANUARY = 1;
+     * enum GDateMonth.G_DATE_JANUARY = 1;
      * }
      */
     public static int G_DATE_JANUARY() {
@@ -10386,7 +11049,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_FEBRUARY = 2;
+     * enum GDateMonth.G_DATE_FEBRUARY = 2;
      * }
      */
     public static int G_DATE_FEBRUARY() {
@@ -10394,7 +11057,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_MARCH = 3;
+     * enum GDateMonth.G_DATE_MARCH = 3;
      * }
      */
     public static int G_DATE_MARCH() {
@@ -10402,7 +11065,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_APRIL = 4;
+     * enum GDateMonth.G_DATE_APRIL = 4;
      * }
      */
     public static int G_DATE_APRIL() {
@@ -10410,7 +11073,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_MAY = 5;
+     * enum GDateMonth.G_DATE_MAY = 5;
      * }
      */
     public static int G_DATE_MAY() {
@@ -10418,7 +11081,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_JUNE = 6;
+     * enum GDateMonth.G_DATE_JUNE = 6;
      * }
      */
     public static int G_DATE_JUNE() {
@@ -10426,7 +11089,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_JULY = 7;
+     * enum GDateMonth.G_DATE_JULY = 7;
      * }
      */
     public static int G_DATE_JULY() {
@@ -10434,7 +11097,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_AUGUST = 8;
+     * enum GDateMonth.G_DATE_AUGUST = 8;
      * }
      */
     public static int G_DATE_AUGUST() {
@@ -10442,7 +11105,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_SEPTEMBER = 9;
+     * enum GDateMonth.G_DATE_SEPTEMBER = 9;
      * }
      */
     public static int G_DATE_SEPTEMBER() {
@@ -10450,7 +11113,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_OCTOBER = 10;
+     * enum GDateMonth.G_DATE_OCTOBER = 10;
      * }
      */
     public static int G_DATE_OCTOBER() {
@@ -10458,7 +11121,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_NOVEMBER = 11;
+     * enum GDateMonth.G_DATE_NOVEMBER = 11;
      * }
      */
     public static int G_DATE_NOVEMBER() {
@@ -10466,18 +11129,18 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_DATE_DECEMBER = 12;
+     * enum GDateMonth.G_DATE_DECEMBER = 12;
      * }
      */
     public static int G_DATE_DECEMBER() {
         return (int)12L;
     }
     public static MethodHandle g_date_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$112.g_date_new$MH,"g_date_new");
+        return RuntimeHelper.requireNonNull(constants$183.const$3,"g_date_new");
     }
     /**
      * {@snippet :
-     * GDate* g_date_new();
+     * struct _GDate* g_date_new();
      * }
      */
     public static MemorySegment g_date_new() {
@@ -10489,11 +11152,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_new_dmy$MH() {
-        return RuntimeHelper.requireNonNull(constants$112.g_date_new_dmy$MH,"g_date_new_dmy");
+        return RuntimeHelper.requireNonNull(constants$183.const$5,"g_date_new_dmy");
     }
     /**
      * {@snippet :
-     * GDate* g_date_new_dmy(GDateDay day, GDateMonth month, GDateYear year);
+     * struct _GDate* g_date_new_dmy(unsigned char day, enum GDateMonth month, unsigned short year);
      * }
      */
     public static MemorySegment g_date_new_dmy(byte day, int month, short year) {
@@ -10505,11 +11168,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_new_julian$MH() {
-        return RuntimeHelper.requireNonNull(constants$112.g_date_new_julian$MH,"g_date_new_julian");
+        return RuntimeHelper.requireNonNull(constants$184.const$0,"g_date_new_julian");
     }
     /**
      * {@snippet :
-     * GDate* g_date_new_julian(guint32 julian_day);
+     * struct _GDate* g_date_new_julian(unsigned int julian_day);
      * }
      */
     public static MemorySegment g_date_new_julian(int julian_day) {
@@ -10521,11 +11184,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$112.g_date_free$MH,"g_date_free");
+        return RuntimeHelper.requireNonNull(constants$184.const$1,"g_date_free");
     }
     /**
      * {@snippet :
-     * void g_date_free(GDate* date);
+     * void g_date_free(struct _GDate* date);
      * }
      */
     public static void g_date_free(MemorySegment date) {
@@ -10537,11 +11200,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$112.g_date_copy$MH,"g_date_copy");
+        return RuntimeHelper.requireNonNull(constants$184.const$2,"g_date_copy");
     }
     /**
      * {@snippet :
-     * GDate* g_date_copy(const GDate* date);
+     * struct _GDate* g_date_copy(struct _GDate* date);
      * }
      */
     public static MemorySegment g_date_copy(MemorySegment date) {
@@ -10553,11 +11216,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_valid$MH() {
-        return RuntimeHelper.requireNonNull(constants$112.g_date_valid$MH,"g_date_valid");
+        return RuntimeHelper.requireNonNull(constants$184.const$3,"g_date_valid");
     }
     /**
      * {@snippet :
-     * gboolean g_date_valid(const GDate* date);
+     * int g_date_valid(struct _GDate* date);
      * }
      */
     public static int g_date_valid(MemorySegment date) {
@@ -10569,11 +11232,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_valid_day$MH() {
-        return RuntimeHelper.requireNonNull(constants$113.g_date_valid_day$MH,"g_date_valid_day");
+        return RuntimeHelper.requireNonNull(constants$184.const$5,"g_date_valid_day");
     }
     /**
      * {@snippet :
-     * gboolean g_date_valid_day(GDateDay day);
+     * int g_date_valid_day(unsigned char day);
      * }
      */
     public static int g_date_valid_day(byte day) {
@@ -10585,11 +11248,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_valid_month$MH() {
-        return RuntimeHelper.requireNonNull(constants$113.g_date_valid_month$MH,"g_date_valid_month");
+        return RuntimeHelper.requireNonNull(constants$185.const$0,"g_date_valid_month");
     }
     /**
      * {@snippet :
-     * gboolean g_date_valid_month(GDateMonth month);
+     * int g_date_valid_month(enum GDateMonth month);
      * }
      */
     public static int g_date_valid_month(int month) {
@@ -10601,11 +11264,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_valid_year$MH() {
-        return RuntimeHelper.requireNonNull(constants$113.g_date_valid_year$MH,"g_date_valid_year");
+        return RuntimeHelper.requireNonNull(constants$185.const$2,"g_date_valid_year");
     }
     /**
      * {@snippet :
-     * gboolean g_date_valid_year(GDateYear year);
+     * int g_date_valid_year(unsigned short year);
      * }
      */
     public static int g_date_valid_year(short year) {
@@ -10617,11 +11280,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_valid_weekday$MH() {
-        return RuntimeHelper.requireNonNull(constants$113.g_date_valid_weekday$MH,"g_date_valid_weekday");
+        return RuntimeHelper.requireNonNull(constants$185.const$3,"g_date_valid_weekday");
     }
     /**
      * {@snippet :
-     * gboolean g_date_valid_weekday(GDateWeekday weekday);
+     * int g_date_valid_weekday(enum GDateWeekday weekday);
      * }
      */
     public static int g_date_valid_weekday(int weekday) {
@@ -10633,11 +11296,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_valid_julian$MH() {
-        return RuntimeHelper.requireNonNull(constants$113.g_date_valid_julian$MH,"g_date_valid_julian");
+        return RuntimeHelper.requireNonNull(constants$185.const$4,"g_date_valid_julian");
     }
     /**
      * {@snippet :
-     * gboolean g_date_valid_julian(guint32 julian_date);
+     * int g_date_valid_julian(unsigned int julian_date);
      * }
      */
     public static int g_date_valid_julian(int julian_date) {
@@ -10649,11 +11312,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_valid_dmy$MH() {
-        return RuntimeHelper.requireNonNull(constants$113.g_date_valid_dmy$MH,"g_date_valid_dmy");
+        return RuntimeHelper.requireNonNull(constants$185.const$6,"g_date_valid_dmy");
     }
     /**
      * {@snippet :
-     * gboolean g_date_valid_dmy(GDateDay day, GDateMonth month, GDateYear year);
+     * int g_date_valid_dmy(unsigned char day, enum GDateMonth month, unsigned short year);
      * }
      */
     public static int g_date_valid_dmy(byte day, int month, short year) {
@@ -10665,11 +11328,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_get_weekday$MH() {
-        return RuntimeHelper.requireNonNull(constants$114.g_date_get_weekday$MH,"g_date_get_weekday");
+        return RuntimeHelper.requireNonNull(constants$186.const$0,"g_date_get_weekday");
     }
     /**
      * {@snippet :
-     * GDateWeekday g_date_get_weekday(const GDate* date);
+     * enum GDateWeekday g_date_get_weekday(struct _GDate* date);
      * }
      */
     public static int g_date_get_weekday(MemorySegment date) {
@@ -10681,11 +11344,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_get_month$MH() {
-        return RuntimeHelper.requireNonNull(constants$114.g_date_get_month$MH,"g_date_get_month");
+        return RuntimeHelper.requireNonNull(constants$186.const$1,"g_date_get_month");
     }
     /**
      * {@snippet :
-     * GDateMonth g_date_get_month(const GDate* date);
+     * enum GDateMonth g_date_get_month(struct _GDate* date);
      * }
      */
     public static int g_date_get_month(MemorySegment date) {
@@ -10697,11 +11360,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_get_year$MH() {
-        return RuntimeHelper.requireNonNull(constants$114.g_date_get_year$MH,"g_date_get_year");
+        return RuntimeHelper.requireNonNull(constants$186.const$3,"g_date_get_year");
     }
     /**
      * {@snippet :
-     * GDateYear g_date_get_year(const GDate* date);
+     * unsigned short g_date_get_year(struct _GDate* date);
      * }
      */
     public static short g_date_get_year(MemorySegment date) {
@@ -10713,11 +11376,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_get_day$MH() {
-        return RuntimeHelper.requireNonNull(constants$114.g_date_get_day$MH,"g_date_get_day");
+        return RuntimeHelper.requireNonNull(constants$186.const$5,"g_date_get_day");
     }
     /**
      * {@snippet :
-     * GDateDay g_date_get_day(const GDate* date);
+     * unsigned char g_date_get_day(struct _GDate* date);
      * }
      */
     public static byte g_date_get_day(MemorySegment date) {
@@ -10729,11 +11392,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_get_julian$MH() {
-        return RuntimeHelper.requireNonNull(constants$114.g_date_get_julian$MH,"g_date_get_julian");
+        return RuntimeHelper.requireNonNull(constants$187.const$0,"g_date_get_julian");
     }
     /**
      * {@snippet :
-     * guint32 g_date_get_julian(const GDate* date);
+     * unsigned int g_date_get_julian(struct _GDate* date);
      * }
      */
     public static int g_date_get_julian(MemorySegment date) {
@@ -10745,11 +11408,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_get_day_of_year$MH() {
-        return RuntimeHelper.requireNonNull(constants$114.g_date_get_day_of_year$MH,"g_date_get_day_of_year");
+        return RuntimeHelper.requireNonNull(constants$187.const$1,"g_date_get_day_of_year");
     }
     /**
      * {@snippet :
-     * guint g_date_get_day_of_year(const GDate* date);
+     * unsigned int g_date_get_day_of_year(struct _GDate* date);
      * }
      */
     public static int g_date_get_day_of_year(MemorySegment date) {
@@ -10761,11 +11424,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_get_monday_week_of_year$MH() {
-        return RuntimeHelper.requireNonNull(constants$115.g_date_get_monday_week_of_year$MH,"g_date_get_monday_week_of_year");
+        return RuntimeHelper.requireNonNull(constants$187.const$2,"g_date_get_monday_week_of_year");
     }
     /**
      * {@snippet :
-     * guint g_date_get_monday_week_of_year(const GDate* date);
+     * unsigned int g_date_get_monday_week_of_year(struct _GDate* date);
      * }
      */
     public static int g_date_get_monday_week_of_year(MemorySegment date) {
@@ -10777,11 +11440,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_get_sunday_week_of_year$MH() {
-        return RuntimeHelper.requireNonNull(constants$115.g_date_get_sunday_week_of_year$MH,"g_date_get_sunday_week_of_year");
+        return RuntimeHelper.requireNonNull(constants$187.const$3,"g_date_get_sunday_week_of_year");
     }
     /**
      * {@snippet :
-     * guint g_date_get_sunday_week_of_year(const GDate* date);
+     * unsigned int g_date_get_sunday_week_of_year(struct _GDate* date);
      * }
      */
     public static int g_date_get_sunday_week_of_year(MemorySegment date) {
@@ -10793,11 +11456,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_get_iso8601_week_of_year$MH() {
-        return RuntimeHelper.requireNonNull(constants$115.g_date_get_iso8601_week_of_year$MH,"g_date_get_iso8601_week_of_year");
+        return RuntimeHelper.requireNonNull(constants$187.const$4,"g_date_get_iso8601_week_of_year");
     }
     /**
      * {@snippet :
-     * guint g_date_get_iso8601_week_of_year(const GDate* date);
+     * unsigned int g_date_get_iso8601_week_of_year(struct _GDate* date);
      * }
      */
     public static int g_date_get_iso8601_week_of_year(MemorySegment date) {
@@ -10809,11 +11472,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_clear$MH() {
-        return RuntimeHelper.requireNonNull(constants$115.g_date_clear$MH,"g_date_clear");
+        return RuntimeHelper.requireNonNull(constants$187.const$5,"g_date_clear");
     }
     /**
      * {@snippet :
-     * void g_date_clear(GDate* date, guint n_dates);
+     * void g_date_clear(struct _GDate* date, unsigned int n_dates);
      * }
      */
     public static void g_date_clear(MemorySegment date, int n_dates) {
@@ -10825,11 +11488,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_set_parse$MH() {
-        return RuntimeHelper.requireNonNull(constants$115.g_date_set_parse$MH,"g_date_set_parse");
+        return RuntimeHelper.requireNonNull(constants$188.const$0,"g_date_set_parse");
     }
     /**
      * {@snippet :
-     * void g_date_set_parse(GDate* date, const gchar* str);
+     * void g_date_set_parse(struct _GDate* date, char* str);
      * }
      */
     public static void g_date_set_parse(MemorySegment date, MemorySegment str) {
@@ -10841,11 +11504,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_set_time_t$MH() {
-        return RuntimeHelper.requireNonNull(constants$115.g_date_set_time_t$MH,"g_date_set_time_t");
+        return RuntimeHelper.requireNonNull(constants$188.const$1,"g_date_set_time_t");
     }
     /**
      * {@snippet :
-     * void g_date_set_time_t(GDate* date, time_t timet);
+     * void g_date_set_time_t(struct _GDate* date, long timet);
      * }
      */
     public static void g_date_set_time_t(MemorySegment date, long timet) {
@@ -10857,11 +11520,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_set_time_val$MH() {
-        return RuntimeHelper.requireNonNull(constants$116.g_date_set_time_val$MH,"g_date_set_time_val");
+        return RuntimeHelper.requireNonNull(constants$188.const$2,"g_date_set_time_val");
     }
     /**
      * {@snippet :
-     * void g_date_set_time_val(GDate* date, GTimeVal* timeval);
+     * void g_date_set_time_val(struct _GDate* date, struct _GTimeVal* timeval);
      * }
      */
     public static void g_date_set_time_val(MemorySegment date, MemorySegment timeval) {
@@ -10873,11 +11536,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_set_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$116.g_date_set_time$MH,"g_date_set_time");
+        return RuntimeHelper.requireNonNull(constants$188.const$3,"g_date_set_time");
     }
     /**
      * {@snippet :
-     * void g_date_set_time(GDate* date, GTime time_);
+     * void g_date_set_time(struct _GDate* date, int time_);
      * }
      */
     public static void g_date_set_time(MemorySegment date, int time_) {
@@ -10889,11 +11552,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_set_month$MH() {
-        return RuntimeHelper.requireNonNull(constants$116.g_date_set_month$MH,"g_date_set_month");
+        return RuntimeHelper.requireNonNull(constants$188.const$4,"g_date_set_month");
     }
     /**
      * {@snippet :
-     * void g_date_set_month(GDate* date, GDateMonth month);
+     * void g_date_set_month(struct _GDate* date, enum GDateMonth month);
      * }
      */
     public static void g_date_set_month(MemorySegment date, int month) {
@@ -10905,11 +11568,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_set_day$MH() {
-        return RuntimeHelper.requireNonNull(constants$116.g_date_set_day$MH,"g_date_set_day");
+        return RuntimeHelper.requireNonNull(constants$188.const$6,"g_date_set_day");
     }
     /**
      * {@snippet :
-     * void g_date_set_day(GDate* date, GDateDay day);
+     * void g_date_set_day(struct _GDate* date, unsigned char day);
      * }
      */
     public static void g_date_set_day(MemorySegment date, byte day) {
@@ -10921,11 +11584,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_set_year$MH() {
-        return RuntimeHelper.requireNonNull(constants$116.g_date_set_year$MH,"g_date_set_year");
+        return RuntimeHelper.requireNonNull(constants$189.const$1,"g_date_set_year");
     }
     /**
      * {@snippet :
-     * void g_date_set_year(GDate* date, GDateYear year);
+     * void g_date_set_year(struct _GDate* date, unsigned short year);
      * }
      */
     public static void g_date_set_year(MemorySegment date, short year) {
@@ -10937,11 +11600,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_set_dmy$MH() {
-        return RuntimeHelper.requireNonNull(constants$116.g_date_set_dmy$MH,"g_date_set_dmy");
+        return RuntimeHelper.requireNonNull(constants$189.const$3,"g_date_set_dmy");
     }
     /**
      * {@snippet :
-     * void g_date_set_dmy(GDate* date, GDateDay day, GDateMonth month, GDateYear y);
+     * void g_date_set_dmy(struct _GDate* date, unsigned char day, enum GDateMonth month, unsigned short y);
      * }
      */
     public static void g_date_set_dmy(MemorySegment date, byte day, int month, short y) {
@@ -10953,11 +11616,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_set_julian$MH() {
-        return RuntimeHelper.requireNonNull(constants$117.g_date_set_julian$MH,"g_date_set_julian");
+        return RuntimeHelper.requireNonNull(constants$189.const$4,"g_date_set_julian");
     }
     /**
      * {@snippet :
-     * void g_date_set_julian(GDate* date, guint32 julian_date);
+     * void g_date_set_julian(struct _GDate* date, unsigned int julian_date);
      * }
      */
     public static void g_date_set_julian(MemorySegment date, int julian_date) {
@@ -10969,11 +11632,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_is_first_of_month$MH() {
-        return RuntimeHelper.requireNonNull(constants$117.g_date_is_first_of_month$MH,"g_date_is_first_of_month");
+        return RuntimeHelper.requireNonNull(constants$189.const$5,"g_date_is_first_of_month");
     }
     /**
      * {@snippet :
-     * gboolean g_date_is_first_of_month(const GDate* date);
+     * int g_date_is_first_of_month(struct _GDate* date);
      * }
      */
     public static int g_date_is_first_of_month(MemorySegment date) {
@@ -10985,11 +11648,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_is_last_of_month$MH() {
-        return RuntimeHelper.requireNonNull(constants$117.g_date_is_last_of_month$MH,"g_date_is_last_of_month");
+        return RuntimeHelper.requireNonNull(constants$190.const$0,"g_date_is_last_of_month");
     }
     /**
      * {@snippet :
-     * gboolean g_date_is_last_of_month(const GDate* date);
+     * int g_date_is_last_of_month(struct _GDate* date);
      * }
      */
     public static int g_date_is_last_of_month(MemorySegment date) {
@@ -11001,11 +11664,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_add_days$MH() {
-        return RuntimeHelper.requireNonNull(constants$117.g_date_add_days$MH,"g_date_add_days");
+        return RuntimeHelper.requireNonNull(constants$190.const$1,"g_date_add_days");
     }
     /**
      * {@snippet :
-     * void g_date_add_days(GDate* date, guint n_days);
+     * void g_date_add_days(struct _GDate* date, unsigned int n_days);
      * }
      */
     public static void g_date_add_days(MemorySegment date, int n_days) {
@@ -11017,11 +11680,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_subtract_days$MH() {
-        return RuntimeHelper.requireNonNull(constants$117.g_date_subtract_days$MH,"g_date_subtract_days");
+        return RuntimeHelper.requireNonNull(constants$190.const$2,"g_date_subtract_days");
     }
     /**
      * {@snippet :
-     * void g_date_subtract_days(GDate* date, guint n_days);
+     * void g_date_subtract_days(struct _GDate* date, unsigned int n_days);
      * }
      */
     public static void g_date_subtract_days(MemorySegment date, int n_days) {
@@ -11033,11 +11696,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_add_months$MH() {
-        return RuntimeHelper.requireNonNull(constants$117.g_date_add_months$MH,"g_date_add_months");
+        return RuntimeHelper.requireNonNull(constants$190.const$3,"g_date_add_months");
     }
     /**
      * {@snippet :
-     * void g_date_add_months(GDate* date, guint n_months);
+     * void g_date_add_months(struct _GDate* date, unsigned int n_months);
      * }
      */
     public static void g_date_add_months(MemorySegment date, int n_months) {
@@ -11049,11 +11712,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_subtract_months$MH() {
-        return RuntimeHelper.requireNonNull(constants$118.g_date_subtract_months$MH,"g_date_subtract_months");
+        return RuntimeHelper.requireNonNull(constants$190.const$4,"g_date_subtract_months");
     }
     /**
      * {@snippet :
-     * void g_date_subtract_months(GDate* date, guint n_months);
+     * void g_date_subtract_months(struct _GDate* date, unsigned int n_months);
      * }
      */
     public static void g_date_subtract_months(MemorySegment date, int n_months) {
@@ -11065,11 +11728,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_add_years$MH() {
-        return RuntimeHelper.requireNonNull(constants$118.g_date_add_years$MH,"g_date_add_years");
+        return RuntimeHelper.requireNonNull(constants$190.const$5,"g_date_add_years");
     }
     /**
      * {@snippet :
-     * void g_date_add_years(GDate* date, guint n_years);
+     * void g_date_add_years(struct _GDate* date, unsigned int n_years);
      * }
      */
     public static void g_date_add_years(MemorySegment date, int n_years) {
@@ -11081,11 +11744,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_subtract_years$MH() {
-        return RuntimeHelper.requireNonNull(constants$118.g_date_subtract_years$MH,"g_date_subtract_years");
+        return RuntimeHelper.requireNonNull(constants$191.const$0,"g_date_subtract_years");
     }
     /**
      * {@snippet :
-     * void g_date_subtract_years(GDate* date, guint n_years);
+     * void g_date_subtract_years(struct _GDate* date, unsigned int n_years);
      * }
      */
     public static void g_date_subtract_years(MemorySegment date, int n_years) {
@@ -11097,11 +11760,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_is_leap_year$MH() {
-        return RuntimeHelper.requireNonNull(constants$118.g_date_is_leap_year$MH,"g_date_is_leap_year");
+        return RuntimeHelper.requireNonNull(constants$191.const$1,"g_date_is_leap_year");
     }
     /**
      * {@snippet :
-     * gboolean g_date_is_leap_year(GDateYear year);
+     * int g_date_is_leap_year(unsigned short year);
      * }
      */
     public static int g_date_is_leap_year(short year) {
@@ -11113,11 +11776,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_get_days_in_month$MH() {
-        return RuntimeHelper.requireNonNull(constants$118.g_date_get_days_in_month$MH,"g_date_get_days_in_month");
+        return RuntimeHelper.requireNonNull(constants$191.const$3,"g_date_get_days_in_month");
     }
     /**
      * {@snippet :
-     * guint8 g_date_get_days_in_month(GDateMonth month, GDateYear year);
+     * unsigned char g_date_get_days_in_month(enum GDateMonth month, unsigned short year);
      * }
      */
     public static byte g_date_get_days_in_month(int month, short year) {
@@ -11129,11 +11792,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_get_monday_weeks_in_year$MH() {
-        return RuntimeHelper.requireNonNull(constants$118.g_date_get_monday_weeks_in_year$MH,"g_date_get_monday_weeks_in_year");
+        return RuntimeHelper.requireNonNull(constants$191.const$5,"g_date_get_monday_weeks_in_year");
     }
     /**
      * {@snippet :
-     * guint8 g_date_get_monday_weeks_in_year(GDateYear year);
+     * unsigned char g_date_get_monday_weeks_in_year(unsigned short year);
      * }
      */
     public static byte g_date_get_monday_weeks_in_year(short year) {
@@ -11145,11 +11808,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_get_sunday_weeks_in_year$MH() {
-        return RuntimeHelper.requireNonNull(constants$119.g_date_get_sunday_weeks_in_year$MH,"g_date_get_sunday_weeks_in_year");
+        return RuntimeHelper.requireNonNull(constants$192.const$0,"g_date_get_sunday_weeks_in_year");
     }
     /**
      * {@snippet :
-     * guint8 g_date_get_sunday_weeks_in_year(GDateYear year);
+     * unsigned char g_date_get_sunday_weeks_in_year(unsigned short year);
      * }
      */
     public static byte g_date_get_sunday_weeks_in_year(short year) {
@@ -11161,11 +11824,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_days_between$MH() {
-        return RuntimeHelper.requireNonNull(constants$119.g_date_days_between$MH,"g_date_days_between");
+        return RuntimeHelper.requireNonNull(constants$192.const$1,"g_date_days_between");
     }
     /**
      * {@snippet :
-     * gint g_date_days_between(const GDate* date1, const GDate* date2);
+     * int g_date_days_between(struct _GDate* date1, struct _GDate* date2);
      * }
      */
     public static int g_date_days_between(MemorySegment date1, MemorySegment date2) {
@@ -11177,11 +11840,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_compare$MH() {
-        return RuntimeHelper.requireNonNull(constants$119.g_date_compare$MH,"g_date_compare");
+        return RuntimeHelper.requireNonNull(constants$192.const$2,"g_date_compare");
     }
     /**
      * {@snippet :
-     * gint g_date_compare(const GDate* lhs, const GDate* rhs);
+     * int g_date_compare(struct _GDate* lhs, struct _GDate* rhs);
      * }
      */
     public static int g_date_compare(MemorySegment lhs, MemorySegment rhs) {
@@ -11193,11 +11856,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_to_struct_tm$MH() {
-        return RuntimeHelper.requireNonNull(constants$119.g_date_to_struct_tm$MH,"g_date_to_struct_tm");
+        return RuntimeHelper.requireNonNull(constants$192.const$3,"g_date_to_struct_tm");
     }
     /**
      * {@snippet :
-     * void g_date_to_struct_tm(const GDate* date, struct tm* tm);
+     * void g_date_to_struct_tm(struct _GDate* date, struct tm* tm);
      * }
      */
     public static void g_date_to_struct_tm(MemorySegment date, MemorySegment tm) {
@@ -11209,11 +11872,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_clamp$MH() {
-        return RuntimeHelper.requireNonNull(constants$119.g_date_clamp$MH,"g_date_clamp");
+        return RuntimeHelper.requireNonNull(constants$192.const$4,"g_date_clamp");
     }
     /**
      * {@snippet :
-     * void g_date_clamp(GDate* date, const GDate* min_date, const GDate* max_date);
+     * void g_date_clamp(struct _GDate* date, struct _GDate* min_date, struct _GDate* max_date);
      * }
      */
     public static void g_date_clamp(MemorySegment date, MemorySegment min_date, MemorySegment max_date) {
@@ -11225,11 +11888,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$119.g_date_order$MH,"g_date_order");
+        return RuntimeHelper.requireNonNull(constants$192.const$5,"g_date_order");
     }
     /**
      * {@snippet :
-     * void g_date_order(GDate* date1, GDate* date2);
+     * void g_date_order(struct _GDate* date1, struct _GDate* date2);
      * }
      */
     public static void g_date_order(MemorySegment date1, MemorySegment date2) {
@@ -11241,11 +11904,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_date_strftime$MH() {
-        return RuntimeHelper.requireNonNull(constants$120.g_date_strftime$MH,"g_date_strftime");
+        return RuntimeHelper.requireNonNull(constants$193.const$0,"g_date_strftime");
     }
     /**
      * {@snippet :
-     * gsize g_date_strftime(gchar* s, gsize slen, const gchar* format, const GDate* date);
+     * unsigned long g_date_strftime(char* s, unsigned long slen, char* format, struct _GDate* date);
      * }
      */
     public static long g_date_strftime(MemorySegment s, long slen, MemorySegment format, MemorySegment date) {
@@ -11258,7 +11921,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .DT_UNKNOWN = 0;
+     * enum enum (unnamed at /usr/include/dirent.h:97:1).DT_UNKNOWN = 0;
      * }
      */
     public static int DT_UNKNOWN() {
@@ -11266,7 +11929,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .DT_FIFO = 1;
+     * enum enum (unnamed at /usr/include/dirent.h:97:1).DT_FIFO = 1;
      * }
      */
     public static int DT_FIFO() {
@@ -11274,7 +11937,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .DT_CHR = 2;
+     * enum enum (unnamed at /usr/include/dirent.h:97:1).DT_CHR = 2;
      * }
      */
     public static int DT_CHR() {
@@ -11282,7 +11945,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .DT_DIR = 4;
+     * enum enum (unnamed at /usr/include/dirent.h:97:1).DT_DIR = 4;
      * }
      */
     public static int DT_DIR() {
@@ -11290,7 +11953,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .DT_BLK = 6;
+     * enum enum (unnamed at /usr/include/dirent.h:97:1).DT_BLK = 6;
      * }
      */
     public static int DT_BLK() {
@@ -11298,7 +11961,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .DT_REG = 8;
+     * enum enum (unnamed at /usr/include/dirent.h:97:1).DT_REG = 8;
      * }
      */
     public static int DT_REG() {
@@ -11306,7 +11969,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .DT_LNK = 10;
+     * enum enum (unnamed at /usr/include/dirent.h:97:1).DT_LNK = 10;
      * }
      */
     public static int DT_LNK() {
@@ -11314,7 +11977,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .DT_SOCK = 12;
+     * enum enum (unnamed at /usr/include/dirent.h:97:1).DT_SOCK = 12;
      * }
      */
     public static int DT_SOCK() {
@@ -11322,34 +11985,18 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .DT_WHT = 14;
+     * enum enum (unnamed at /usr/include/dirent.h:97:1).DT_WHT = 14;
      * }
      */
     public static int DT_WHT() {
         return (int)14L;
     }
-    public static MethodHandle closedir$MH() {
-        return RuntimeHelper.requireNonNull(constants$120.closedir$MH,"closedir");
-    }
-    /**
-     * {@snippet :
-     * int closedir(DIR* __dirp);
-     * }
-     */
-    public static int closedir(MemorySegment __dirp) {
-        var mh$ = closedir$MH();
-        try {
-            return (int)mh$.invokeExact(__dirp);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
     public static MethodHandle opendir$MH() {
-        return RuntimeHelper.requireNonNull(constants$120.opendir$MH,"opendir");
+        return RuntimeHelper.requireNonNull(constants$194.const$0,"opendir");
     }
     /**
      * {@snippet :
-     * DIR* opendir(char* __name);
+     * struct __dirstream* opendir(char* __name);
      * }
      */
     public static MemorySegment opendir(MemorySegment __name) {
@@ -11361,11 +12008,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle fdopendir$MH() {
-        return RuntimeHelper.requireNonNull(constants$120.fdopendir$MH,"fdopendir");
+        return RuntimeHelper.requireNonNull(constants$194.const$1,"fdopendir");
     }
     /**
      * {@snippet :
-     * DIR* fdopendir(int __fd);
+     * struct __dirstream* fdopendir(int __fd);
      * }
      */
     public static MemorySegment fdopendir(int __fd) {
@@ -11376,12 +12023,28 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle readdir$MH() {
-        return RuntimeHelper.requireNonNull(constants$120.readdir$MH,"readdir");
+    public static MethodHandle closedir$MH() {
+        return RuntimeHelper.requireNonNull(constants$194.const$2,"closedir");
     }
     /**
      * {@snippet :
-     * struct dirent* readdir(DIR* __dirp);
+     * int closedir(struct __dirstream* __dirp);
+     * }
+     */
+    public static int closedir(MemorySegment __dirp) {
+        var mh$ = closedir$MH();
+        try {
+            return (int)mh$.invokeExact(__dirp);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle readdir$MH() {
+        return RuntimeHelper.requireNonNull(constants$194.const$3,"readdir");
+    }
+    /**
+     * {@snippet :
+     * struct dirent* readdir(struct __dirstream* __dirp);
      * }
      */
     public static MemorySegment readdir(MemorySegment __dirp) {
@@ -11393,11 +12056,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle readdir_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$120.readdir_r$MH,"readdir_r");
+        return RuntimeHelper.requireNonNull(constants$194.const$4,"readdir_r");
     }
     /**
      * {@snippet :
-     * int readdir_r(DIR* __dirp, struct dirent* __entry, struct dirent** __result);
+     * int readdir_r(struct __dirstream* __dirp, struct dirent* __entry, struct dirent** __result);
      * }
      */
     public static int readdir_r(MemorySegment __dirp, MemorySegment __entry, MemorySegment __result) {
@@ -11409,11 +12072,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle rewinddir$MH() {
-        return RuntimeHelper.requireNonNull(constants$121.rewinddir$MH,"rewinddir");
+        return RuntimeHelper.requireNonNull(constants$194.const$5,"rewinddir");
     }
     /**
      * {@snippet :
-     * void rewinddir(DIR* __dirp);
+     * void rewinddir(struct __dirstream* __dirp);
      * }
      */
     public static void rewinddir(MemorySegment __dirp) {
@@ -11425,11 +12088,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle seekdir$MH() {
-        return RuntimeHelper.requireNonNull(constants$121.seekdir$MH,"seekdir");
+        return RuntimeHelper.requireNonNull(constants$195.const$0,"seekdir");
     }
     /**
      * {@snippet :
-     * void seekdir(DIR* __dirp, long __pos);
+     * void seekdir(struct __dirstream* __dirp, long __pos);
      * }
      */
     public static void seekdir(MemorySegment __dirp, long __pos) {
@@ -11441,11 +12104,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle telldir$MH() {
-        return RuntimeHelper.requireNonNull(constants$121.telldir$MH,"telldir");
+        return RuntimeHelper.requireNonNull(constants$195.const$1,"telldir");
     }
     /**
      * {@snippet :
-     * long telldir(DIR* __dirp);
+     * long telldir(struct __dirstream* __dirp);
      * }
      */
     public static long telldir(MemorySegment __dirp) {
@@ -11457,11 +12120,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle dirfd$MH() {
-        return RuntimeHelper.requireNonNull(constants$121.dirfd$MH,"dirfd");
+        return RuntimeHelper.requireNonNull(constants$195.const$2,"dirfd");
     }
     /**
      * {@snippet :
-     * int dirfd(DIR* __dirp);
+     * int dirfd(struct __dirstream* __dirp);
      * }
      */
     public static int dirfd(MemorySegment __dirp) {
@@ -11473,7 +12136,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle scandir$MH() {
-        return RuntimeHelper.requireNonNull(constants$122.scandir$MH,"scandir");
+        return RuntimeHelper.requireNonNull(constants$195.const$5,"scandir");
     }
     /**
      * {@snippet :
@@ -11489,7 +12152,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle alphasort$MH() {
-        return RuntimeHelper.requireNonNull(constants$122.alphasort$MH,"alphasort");
+        return RuntimeHelper.requireNonNull(constants$196.const$0,"alphasort");
     }
     /**
      * {@snippet :
@@ -11505,11 +12168,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle getdirentries$MH() {
-        return RuntimeHelper.requireNonNull(constants$122.getdirentries$MH,"getdirentries");
+        return RuntimeHelper.requireNonNull(constants$196.const$2,"getdirentries");
     }
     /**
      * {@snippet :
-     * __ssize_t getdirentries(int __fd, char* __buf, size_t __nbytes, __off_t* __basep);
+     * long getdirentries(int __fd, char* __buf, unsigned long __nbytes, long* __basep);
      * }
      */
     public static long getdirentries(int __fd, MemorySegment __buf, long __nbytes, MemorySegment __basep) {
@@ -11521,11 +12184,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_dir_open$MH() {
-        return RuntimeHelper.requireNonNull(constants$122.g_dir_open$MH,"g_dir_open");
+        return RuntimeHelper.requireNonNull(constants$196.const$4,"g_dir_open");
     }
     /**
      * {@snippet :
-     * GDir* g_dir_open(const gchar* path, guint flags, GError** error);
+     * struct _GDir* g_dir_open(char* path, unsigned int flags, struct _GError** error);
      * }
      */
     public static MemorySegment g_dir_open(MemorySegment path, int flags, MemorySegment error) {
@@ -11537,11 +12200,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_dir_read_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$123.g_dir_read_name$MH,"g_dir_read_name");
+        return RuntimeHelper.requireNonNull(constants$196.const$5,"g_dir_read_name");
     }
     /**
      * {@snippet :
-     * const gchar* g_dir_read_name(GDir* dir);
+     * char* g_dir_read_name(struct _GDir* dir);
      * }
      */
     public static MemorySegment g_dir_read_name(MemorySegment dir) {
@@ -11553,11 +12216,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_dir_rewind$MH() {
-        return RuntimeHelper.requireNonNull(constants$123.g_dir_rewind$MH,"g_dir_rewind");
+        return RuntimeHelper.requireNonNull(constants$197.const$0,"g_dir_rewind");
     }
     /**
      * {@snippet :
-     * void g_dir_rewind(GDir* dir);
+     * void g_dir_rewind(struct _GDir* dir);
      * }
      */
     public static void g_dir_rewind(MemorySegment dir) {
@@ -11569,11 +12232,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_dir_close$MH() {
-        return RuntimeHelper.requireNonNull(constants$123.g_dir_close$MH,"g_dir_close");
+        return RuntimeHelper.requireNonNull(constants$197.const$1,"g_dir_close");
     }
     /**
      * {@snippet :
-     * void g_dir_close(GDir* dir);
+     * void g_dir_close(struct _GDir* dir);
      * }
      */
     public static void g_dir_close(MemorySegment dir) {
@@ -11585,11 +12248,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_getenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$123.g_getenv$MH,"g_getenv");
+        return RuntimeHelper.requireNonNull(constants$197.const$2,"g_getenv");
     }
     /**
      * {@snippet :
-     * const gchar* g_getenv(const gchar* variable);
+     * char* g_getenv(char* variable);
      * }
      */
     public static MemorySegment g_getenv(MemorySegment variable) {
@@ -11601,11 +12264,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_setenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$123.g_setenv$MH,"g_setenv");
+        return RuntimeHelper.requireNonNull(constants$197.const$3,"g_setenv");
     }
     /**
      * {@snippet :
-     * gboolean g_setenv(const gchar* variable, const gchar* value, gboolean overwrite);
+     * int g_setenv(char* variable, char* value, int overwrite);
      * }
      */
     public static int g_setenv(MemorySegment variable, MemorySegment value, int overwrite) {
@@ -11617,11 +12280,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_unsetenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$123.g_unsetenv$MH,"g_unsetenv");
+        return RuntimeHelper.requireNonNull(constants$197.const$4,"g_unsetenv");
     }
     /**
      * {@snippet :
-     * void g_unsetenv(const gchar* variable);
+     * void g_unsetenv(char* variable);
      * }
      */
     public static void g_unsetenv(MemorySegment variable) {
@@ -11633,11 +12296,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_listenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$124.g_listenv$MH,"g_listenv");
+        return RuntimeHelper.requireNonNull(constants$197.const$5,"g_listenv");
     }
     /**
      * {@snippet :
-     * gchar** g_listenv();
+     * char** g_listenv();
      * }
      */
     public static MemorySegment g_listenv() {
@@ -11649,11 +12312,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_environ$MH() {
-        return RuntimeHelper.requireNonNull(constants$124.g_get_environ$MH,"g_get_environ");
+        return RuntimeHelper.requireNonNull(constants$198.const$0,"g_get_environ");
     }
     /**
      * {@snippet :
-     * gchar** g_get_environ();
+     * char** g_get_environ();
      * }
      */
     public static MemorySegment g_get_environ() {
@@ -11665,11 +12328,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_environ_getenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$124.g_environ_getenv$MH,"g_environ_getenv");
+        return RuntimeHelper.requireNonNull(constants$198.const$1,"g_environ_getenv");
     }
     /**
      * {@snippet :
-     * const gchar* g_environ_getenv(gchar** envp, const gchar* variable);
+     * char* g_environ_getenv(char** envp, char* variable);
      * }
      */
     public static MemorySegment g_environ_getenv(MemorySegment envp, MemorySegment variable) {
@@ -11681,11 +12344,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_environ_setenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$124.g_environ_setenv$MH,"g_environ_setenv");
+        return RuntimeHelper.requireNonNull(constants$198.const$3,"g_environ_setenv");
     }
     /**
      * {@snippet :
-     * gchar** g_environ_setenv(gchar** envp, const gchar* variable, const gchar* value, gboolean overwrite);
+     * char** g_environ_setenv(char** envp, char* variable, char* value, int overwrite);
      * }
      */
     public static MemorySegment g_environ_setenv(MemorySegment envp, MemorySegment variable, MemorySegment value, int overwrite) {
@@ -11697,11 +12360,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_environ_unsetenv$MH() {
-        return RuntimeHelper.requireNonNull(constants$124.g_environ_unsetenv$MH,"g_environ_unsetenv");
+        return RuntimeHelper.requireNonNull(constants$198.const$4,"g_environ_unsetenv");
     }
     /**
      * {@snippet :
-     * gchar** g_environ_unsetenv(gchar** envp, const gchar* variable);
+     * char** g_environ_unsetenv(char** envp, char* variable);
      * }
      */
     public static MemorySegment g_environ_unsetenv(MemorySegment envp, MemorySegment variable) {
@@ -11714,7 +12377,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_EXIST = 0;
+     * enum GFileError.G_FILE_ERROR_EXIST = 0;
      * }
      */
     public static int G_FILE_ERROR_EXIST() {
@@ -11722,7 +12385,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_ISDIR = 1;
+     * enum GFileError.G_FILE_ERROR_ISDIR = 1;
      * }
      */
     public static int G_FILE_ERROR_ISDIR() {
@@ -11730,7 +12393,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_ACCES = 2;
+     * enum GFileError.G_FILE_ERROR_ACCES = 2;
      * }
      */
     public static int G_FILE_ERROR_ACCES() {
@@ -11738,7 +12401,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_NAMETOOLONG = 3;
+     * enum GFileError.G_FILE_ERROR_NAMETOOLONG = 3;
      * }
      */
     public static int G_FILE_ERROR_NAMETOOLONG() {
@@ -11746,7 +12409,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_NOENT = 4;
+     * enum GFileError.G_FILE_ERROR_NOENT = 4;
      * }
      */
     public static int G_FILE_ERROR_NOENT() {
@@ -11754,7 +12417,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_NOTDIR = 5;
+     * enum GFileError.G_FILE_ERROR_NOTDIR = 5;
      * }
      */
     public static int G_FILE_ERROR_NOTDIR() {
@@ -11762,7 +12425,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_NXIO = 6;
+     * enum GFileError.G_FILE_ERROR_NXIO = 6;
      * }
      */
     public static int G_FILE_ERROR_NXIO() {
@@ -11770,7 +12433,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_NODEV = 7;
+     * enum GFileError.G_FILE_ERROR_NODEV = 7;
      * }
      */
     public static int G_FILE_ERROR_NODEV() {
@@ -11778,7 +12441,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_ROFS = 8;
+     * enum GFileError.G_FILE_ERROR_ROFS = 8;
      * }
      */
     public static int G_FILE_ERROR_ROFS() {
@@ -11786,7 +12449,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_TXTBSY = 9;
+     * enum GFileError.G_FILE_ERROR_TXTBSY = 9;
      * }
      */
     public static int G_FILE_ERROR_TXTBSY() {
@@ -11794,7 +12457,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_FAULT = 10;
+     * enum GFileError.G_FILE_ERROR_FAULT = 10;
      * }
      */
     public static int G_FILE_ERROR_FAULT() {
@@ -11802,7 +12465,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_LOOP = 11;
+     * enum GFileError.G_FILE_ERROR_LOOP = 11;
      * }
      */
     public static int G_FILE_ERROR_LOOP() {
@@ -11810,7 +12473,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_NOSPC = 12;
+     * enum GFileError.G_FILE_ERROR_NOSPC = 12;
      * }
      */
     public static int G_FILE_ERROR_NOSPC() {
@@ -11818,7 +12481,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_NOMEM = 13;
+     * enum GFileError.G_FILE_ERROR_NOMEM = 13;
      * }
      */
     public static int G_FILE_ERROR_NOMEM() {
@@ -11826,7 +12489,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_MFILE = 14;
+     * enum GFileError.G_FILE_ERROR_MFILE = 14;
      * }
      */
     public static int G_FILE_ERROR_MFILE() {
@@ -11834,7 +12497,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_NFILE = 15;
+     * enum GFileError.G_FILE_ERROR_NFILE = 15;
      * }
      */
     public static int G_FILE_ERROR_NFILE() {
@@ -11842,7 +12505,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_BADF = 16;
+     * enum GFileError.G_FILE_ERROR_BADF = 16;
      * }
      */
     public static int G_FILE_ERROR_BADF() {
@@ -11850,7 +12513,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_INVAL = 17;
+     * enum GFileError.G_FILE_ERROR_INVAL = 17;
      * }
      */
     public static int G_FILE_ERROR_INVAL() {
@@ -11858,7 +12521,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_PIPE = 18;
+     * enum GFileError.G_FILE_ERROR_PIPE = 18;
      * }
      */
     public static int G_FILE_ERROR_PIPE() {
@@ -11866,7 +12529,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_AGAIN = 19;
+     * enum GFileError.G_FILE_ERROR_AGAIN = 19;
      * }
      */
     public static int G_FILE_ERROR_AGAIN() {
@@ -11874,7 +12537,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_INTR = 20;
+     * enum GFileError.G_FILE_ERROR_INTR = 20;
      * }
      */
     public static int G_FILE_ERROR_INTR() {
@@ -11882,7 +12545,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_IO = 21;
+     * enum GFileError.G_FILE_ERROR_IO = 21;
      * }
      */
     public static int G_FILE_ERROR_IO() {
@@ -11890,7 +12553,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_PERM = 22;
+     * enum GFileError.G_FILE_ERROR_PERM = 22;
      * }
      */
     public static int G_FILE_ERROR_PERM() {
@@ -11898,7 +12561,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_NOSYS = 23;
+     * enum GFileError.G_FILE_ERROR_NOSYS = 23;
      * }
      */
     public static int G_FILE_ERROR_NOSYS() {
@@ -11906,7 +12569,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_ERROR_FAILED = 24;
+     * enum GFileError.G_FILE_ERROR_FAILED = 24;
      * }
      */
     public static int G_FILE_ERROR_FAILED() {
@@ -11914,7 +12577,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_TEST_IS_REGULAR = 1;
+     * enum GFileTest.G_FILE_TEST_IS_REGULAR = 1;
      * }
      */
     public static int G_FILE_TEST_IS_REGULAR() {
@@ -11922,7 +12585,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_TEST_IS_SYMLINK = 2;
+     * enum GFileTest.G_FILE_TEST_IS_SYMLINK = 2;
      * }
      */
     public static int G_FILE_TEST_IS_SYMLINK() {
@@ -11930,7 +12593,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_TEST_IS_DIR = 4;
+     * enum GFileTest.G_FILE_TEST_IS_DIR = 4;
      * }
      */
     public static int G_FILE_TEST_IS_DIR() {
@@ -11938,7 +12601,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_TEST_IS_EXECUTABLE = 8;
+     * enum GFileTest.G_FILE_TEST_IS_EXECUTABLE = 8;
      * }
      */
     public static int G_FILE_TEST_IS_EXECUTABLE() {
@@ -11946,7 +12609,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_TEST_EXISTS = 16;
+     * enum GFileTest.G_FILE_TEST_EXISTS = 16;
      * }
      */
     public static int G_FILE_TEST_EXISTS() {
@@ -11954,7 +12617,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_SET_CONTENTS_NONE = 0;
+     * enum GFileSetContentsFlags.G_FILE_SET_CONTENTS_NONE = 0;
      * }
      */
     public static int G_FILE_SET_CONTENTS_NONE() {
@@ -11962,7 +12625,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_SET_CONTENTS_CONSISTENT = 1;
+     * enum GFileSetContentsFlags.G_FILE_SET_CONTENTS_CONSISTENT = 1;
      * }
      */
     public static int G_FILE_SET_CONTENTS_CONSISTENT() {
@@ -11970,7 +12633,7 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_SET_CONTENTS_DURABLE = 2;
+     * enum GFileSetContentsFlags.G_FILE_SET_CONTENTS_DURABLE = 2;
      * }
      */
     public static int G_FILE_SET_CONTENTS_DURABLE() {
@@ -11978,18 +12641,18 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
     }
     /**
      * {@snippet :
-     * enum .G_FILE_SET_CONTENTS_ONLY_EXISTING = 4;
+     * enum GFileSetContentsFlags.G_FILE_SET_CONTENTS_ONLY_EXISTING = 4;
      * }
      */
     public static int G_FILE_SET_CONTENTS_ONLY_EXISTING() {
         return (int)4L;
     }
     public static MethodHandle g_file_error_quark$MH() {
-        return RuntimeHelper.requireNonNull(constants$124.g_file_error_quark$MH,"g_file_error_quark");
+        return RuntimeHelper.requireNonNull(constants$198.const$5,"g_file_error_quark");
     }
     /**
      * {@snippet :
-     * GQuark g_file_error_quark();
+     * unsigned int g_file_error_quark();
      * }
      */
     public static int g_file_error_quark() {
@@ -12001,11 +12664,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_file_error_from_errno$MH() {
-        return RuntimeHelper.requireNonNull(constants$125.g_file_error_from_errno$MH,"g_file_error_from_errno");
+        return RuntimeHelper.requireNonNull(constants$199.const$0,"g_file_error_from_errno");
     }
     /**
      * {@snippet :
-     * GFileError g_file_error_from_errno(gint err_no);
+     * enum GFileError g_file_error_from_errno(int err_no);
      * }
      */
     public static int g_file_error_from_errno(int err_no) {
@@ -12017,11 +12680,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_file_test$MH() {
-        return RuntimeHelper.requireNonNull(constants$125.g_file_test$MH,"g_file_test");
+        return RuntimeHelper.requireNonNull(constants$199.const$1,"g_file_test");
     }
     /**
      * {@snippet :
-     * gboolean g_file_test(const gchar* filename, GFileTest test);
+     * int g_file_test(char* filename, enum GFileTest test);
      * }
      */
     public static int g_file_test(MemorySegment filename, int test) {
@@ -12033,11 +12696,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_file_get_contents$MH() {
-        return RuntimeHelper.requireNonNull(constants$125.g_file_get_contents$MH,"g_file_get_contents");
+        return RuntimeHelper.requireNonNull(constants$199.const$2,"g_file_get_contents");
     }
     /**
      * {@snippet :
-     * gboolean g_file_get_contents(const gchar* filename, gchar** contents, gsize* length, GError** error);
+     * int g_file_get_contents(char* filename, char** contents, unsigned long* length, struct _GError** error);
      * }
      */
     public static int g_file_get_contents(MemorySegment filename, MemorySegment contents, MemorySegment length, MemorySegment error) {
@@ -12049,11 +12712,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_file_set_contents$MH() {
-        return RuntimeHelper.requireNonNull(constants$125.g_file_set_contents$MH,"g_file_set_contents");
+        return RuntimeHelper.requireNonNull(constants$199.const$3,"g_file_set_contents");
     }
     /**
      * {@snippet :
-     * gboolean g_file_set_contents(const gchar* filename, const gchar* contents, gssize length, GError** error);
+     * int g_file_set_contents(char* filename, char* contents, long length, struct _GError** error);
      * }
      */
     public static int g_file_set_contents(MemorySegment filename, MemorySegment contents, long length, MemorySegment error) {
@@ -12065,11 +12728,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_file_set_contents_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$125.g_file_set_contents_full$MH,"g_file_set_contents_full");
+        return RuntimeHelper.requireNonNull(constants$199.const$5,"g_file_set_contents_full");
     }
     /**
      * {@snippet :
-     * gboolean g_file_set_contents_full(const gchar* filename, const gchar* contents, gssize length, GFileSetContentsFlags flags, int mode, GError** error);
+     * int g_file_set_contents_full(char* filename, char* contents, long length, enum GFileSetContentsFlags flags, int mode, struct _GError** error);
      * }
      */
     public static int g_file_set_contents_full(MemorySegment filename, MemorySegment contents, long length, int flags, int mode, MemorySegment error) {
@@ -12081,11 +12744,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_file_read_link$MH() {
-        return RuntimeHelper.requireNonNull(constants$125.g_file_read_link$MH,"g_file_read_link");
+        return RuntimeHelper.requireNonNull(constants$200.const$0,"g_file_read_link");
     }
     /**
      * {@snippet :
-     * gchar* g_file_read_link(const gchar* filename, GError** error);
+     * char* g_file_read_link(char* filename, struct _GError** error);
      * }
      */
     public static MemorySegment g_file_read_link(MemorySegment filename, MemorySegment error) {
@@ -12097,11 +12760,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_mkdtemp$MH() {
-        return RuntimeHelper.requireNonNull(constants$126.g_mkdtemp$MH,"g_mkdtemp");
+        return RuntimeHelper.requireNonNull(constants$200.const$1,"g_mkdtemp");
     }
     /**
      * {@snippet :
-     * gchar* g_mkdtemp(gchar* tmpl);
+     * char* g_mkdtemp(char* tmpl);
      * }
      */
     public static MemorySegment g_mkdtemp(MemorySegment tmpl) {
@@ -12113,11 +12776,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_mkdtemp_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$126.g_mkdtemp_full$MH,"g_mkdtemp_full");
+        return RuntimeHelper.requireNonNull(constants$200.const$2,"g_mkdtemp_full");
     }
     /**
      * {@snippet :
-     * gchar* g_mkdtemp_full(gchar* tmpl, gint mode);
+     * char* g_mkdtemp_full(char* tmpl, int mode);
      * }
      */
     public static MemorySegment g_mkdtemp_full(MemorySegment tmpl, int mode) {
@@ -12129,11 +12792,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_mkstemp$MH() {
-        return RuntimeHelper.requireNonNull(constants$126.g_mkstemp$MH,"g_mkstemp");
+        return RuntimeHelper.requireNonNull(constants$200.const$3,"g_mkstemp");
     }
     /**
      * {@snippet :
-     * gint g_mkstemp(gchar* tmpl);
+     * int g_mkstemp(char* tmpl);
      * }
      */
     public static int g_mkstemp(MemorySegment tmpl) {
@@ -12145,11 +12808,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_mkstemp_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$126.g_mkstemp_full$MH,"g_mkstemp_full");
+        return RuntimeHelper.requireNonNull(constants$200.const$4,"g_mkstemp_full");
     }
     /**
      * {@snippet :
-     * gint g_mkstemp_full(gchar* tmpl, gint flags, gint mode);
+     * int g_mkstemp_full(char* tmpl, int flags, int mode);
      * }
      */
     public static int g_mkstemp_full(MemorySegment tmpl, int flags, int mode) {
@@ -12161,11 +12824,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_file_open_tmp$MH() {
-        return RuntimeHelper.requireNonNull(constants$126.g_file_open_tmp$MH,"g_file_open_tmp");
+        return RuntimeHelper.requireNonNull(constants$200.const$5,"g_file_open_tmp");
     }
     /**
      * {@snippet :
-     * gint g_file_open_tmp(const gchar* tmpl, gchar** name_used, GError** error);
+     * int g_file_open_tmp(char* tmpl, char** name_used, struct _GError** error);
      * }
      */
     public static int g_file_open_tmp(MemorySegment tmpl, MemorySegment name_used, MemorySegment error) {
@@ -12177,11 +12840,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_dir_make_tmp$MH() {
-        return RuntimeHelper.requireNonNull(constants$126.g_dir_make_tmp$MH,"g_dir_make_tmp");
+        return RuntimeHelper.requireNonNull(constants$201.const$0,"g_dir_make_tmp");
     }
     /**
      * {@snippet :
-     * gchar* g_dir_make_tmp(const gchar* tmpl, GError** error);
+     * char* g_dir_make_tmp(char* tmpl, struct _GError** error);
      * }
      */
     public static MemorySegment g_dir_make_tmp(MemorySegment tmpl, MemorySegment error) {
@@ -12193,11 +12856,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_build_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$127.g_build_path$MH,"g_build_path");
+        return RuntimeHelper.requireNonNull(constants$201.const$1,"g_build_path");
     }
     /**
      * {@snippet :
-     * gchar* g_build_path(const gchar* separator, const gchar* first_element,...);
+     * char* g_build_path(char* separator, char* first_element,...);
      * }
      */
     public static MemorySegment g_build_path(MemorySegment separator, MemorySegment first_element, Object... x2) {
@@ -12209,11 +12872,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_build_pathv$MH() {
-        return RuntimeHelper.requireNonNull(constants$127.g_build_pathv$MH,"g_build_pathv");
+        return RuntimeHelper.requireNonNull(constants$201.const$2,"g_build_pathv");
     }
     /**
      * {@snippet :
-     * gchar* g_build_pathv(const gchar* separator, gchar** args);
+     * char* g_build_pathv(char* separator, char** args);
      * }
      */
     public static MemorySegment g_build_pathv(MemorySegment separator, MemorySegment args) {
@@ -12225,11 +12888,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_build_filename$MH() {
-        return RuntimeHelper.requireNonNull(constants$127.g_build_filename$MH,"g_build_filename");
+        return RuntimeHelper.requireNonNull(constants$201.const$3,"g_build_filename");
     }
     /**
      * {@snippet :
-     * gchar* g_build_filename(const gchar* first_element,...);
+     * char* g_build_filename(char* first_element,...);
      * }
      */
     public static MemorySegment g_build_filename(MemorySegment first_element, Object... x1) {
@@ -12241,11 +12904,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_build_filenamev$MH() {
-        return RuntimeHelper.requireNonNull(constants$127.g_build_filenamev$MH,"g_build_filenamev");
+        return RuntimeHelper.requireNonNull(constants$201.const$4,"g_build_filenamev");
     }
     /**
      * {@snippet :
-     * gchar* g_build_filenamev(gchar** args);
+     * char* g_build_filenamev(char** args);
      * }
      */
     public static MemorySegment g_build_filenamev(MemorySegment args) {
@@ -12257,11 +12920,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_build_filename_valist$MH() {
-        return RuntimeHelper.requireNonNull(constants$127.g_build_filename_valist$MH,"g_build_filename_valist");
+        return RuntimeHelper.requireNonNull(constants$201.const$5,"g_build_filename_valist");
     }
     /**
      * {@snippet :
-     * gchar* g_build_filename_valist(const gchar* first_element, va_list* args);
+     * char* g_build_filename_valist(char* first_element, struct __va_list* args);
      * }
      */
     public static MemorySegment g_build_filename_valist(MemorySegment first_element, MemorySegment args) {
@@ -12273,11 +12936,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_mkdir_with_parents$MH() {
-        return RuntimeHelper.requireNonNull(constants$127.g_mkdir_with_parents$MH,"g_mkdir_with_parents");
+        return RuntimeHelper.requireNonNull(constants$202.const$0,"g_mkdir_with_parents");
     }
     /**
      * {@snippet :
-     * gint g_mkdir_with_parents(const gchar* pathname, gint mode);
+     * int g_mkdir_with_parents(char* pathname, int mode);
      * }
      */
     public static int g_mkdir_with_parents(MemorySegment pathname, int mode) {
@@ -12289,11 +12952,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_path_is_absolute$MH() {
-        return RuntimeHelper.requireNonNull(constants$128.g_path_is_absolute$MH,"g_path_is_absolute");
+        return RuntimeHelper.requireNonNull(constants$202.const$1,"g_path_is_absolute");
     }
     /**
      * {@snippet :
-     * gboolean g_path_is_absolute(const gchar* file_name);
+     * int g_path_is_absolute(char* file_name);
      * }
      */
     public static int g_path_is_absolute(MemorySegment file_name) {
@@ -12305,11 +12968,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_path_skip_root$MH() {
-        return RuntimeHelper.requireNonNull(constants$128.g_path_skip_root$MH,"g_path_skip_root");
+        return RuntimeHelper.requireNonNull(constants$202.const$2,"g_path_skip_root");
     }
     /**
      * {@snippet :
-     * const gchar* g_path_skip_root(const gchar* file_name);
+     * char* g_path_skip_root(char* file_name);
      * }
      */
     public static MemorySegment g_path_skip_root(MemorySegment file_name) {
@@ -12321,11 +12984,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_basename$MH() {
-        return RuntimeHelper.requireNonNull(constants$128.g_basename$MH,"g_basename");
+        return RuntimeHelper.requireNonNull(constants$202.const$3,"g_basename");
     }
     /**
      * {@snippet :
-     * const gchar* g_basename(const gchar* file_name);
+     * char* g_basename(char* file_name);
      * }
      */
     public static MemorySegment g_basename(MemorySegment file_name) {
@@ -12337,11 +13000,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_get_current_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$128.g_get_current_dir$MH,"g_get_current_dir");
+        return RuntimeHelper.requireNonNull(constants$202.const$4,"g_get_current_dir");
     }
     /**
      * {@snippet :
-     * gchar* g_get_current_dir();
+     * char* g_get_current_dir();
      * }
      */
     public static MemorySegment g_get_current_dir() {
@@ -12353,11 +13016,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_path_get_basename$MH() {
-        return RuntimeHelper.requireNonNull(constants$128.g_path_get_basename$MH,"g_path_get_basename");
+        return RuntimeHelper.requireNonNull(constants$202.const$5,"g_path_get_basename");
     }
     /**
      * {@snippet :
-     * gchar* g_path_get_basename(const gchar* file_name);
+     * char* g_path_get_basename(char* file_name);
      * }
      */
     public static MemorySegment g_path_get_basename(MemorySegment file_name) {
@@ -12369,11 +13032,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_path_get_dirname$MH() {
-        return RuntimeHelper.requireNonNull(constants$128.g_path_get_dirname$MH,"g_path_get_dirname");
+        return RuntimeHelper.requireNonNull(constants$203.const$0,"g_path_get_dirname");
     }
     /**
      * {@snippet :
-     * gchar* g_path_get_dirname(const gchar* file_name);
+     * char* g_path_get_dirname(char* file_name);
      * }
      */
     public static MemorySegment g_path_get_dirname(MemorySegment file_name) {
@@ -12385,11 +13048,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_canonicalize_filename$MH() {
-        return RuntimeHelper.requireNonNull(constants$129.g_canonicalize_filename$MH,"g_canonicalize_filename");
+        return RuntimeHelper.requireNonNull(constants$203.const$1,"g_canonicalize_filename");
     }
     /**
      * {@snippet :
-     * gchar* g_canonicalize_filename(const gchar* filename, const gchar* relative_to);
+     * char* g_canonicalize_filename(char* filename, char* relative_to);
      * }
      */
     public static MemorySegment g_canonicalize_filename(MemorySegment filename, MemorySegment relative_to) {
@@ -12401,11 +13064,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_strip_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$129.g_strip_context$MH,"g_strip_context");
+        return RuntimeHelper.requireNonNull(constants$203.const$2,"g_strip_context");
     }
     /**
      * {@snippet :
-     * const gchar* g_strip_context(const gchar* msgid, const gchar* msgval);
+     * char* g_strip_context(char* msgid, char* msgval);
      * }
      */
     public static MemorySegment g_strip_context(MemorySegment msgid, MemorySegment msgval) {
@@ -12417,11 +13080,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_dgettext$MH() {
-        return RuntimeHelper.requireNonNull(constants$129.g_dgettext$MH,"g_dgettext");
+        return RuntimeHelper.requireNonNull(constants$203.const$3,"g_dgettext");
     }
     /**
      * {@snippet :
-     * const gchar* g_dgettext(const gchar* domain, const gchar* msgid);
+     * char* g_dgettext(char* domain, char* msgid);
      * }
      */
     public static MemorySegment g_dgettext(MemorySegment domain, MemorySegment msgid) {
@@ -12433,11 +13096,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_dcgettext$MH() {
-        return RuntimeHelper.requireNonNull(constants$129.g_dcgettext$MH,"g_dcgettext");
+        return RuntimeHelper.requireNonNull(constants$203.const$4,"g_dcgettext");
     }
     /**
      * {@snippet :
-     * const gchar* g_dcgettext(const gchar* domain, const gchar* msgid, gint category);
+     * char* g_dcgettext(char* domain, char* msgid, int category);
      * }
      */
     public static MemorySegment g_dcgettext(MemorySegment domain, MemorySegment msgid, int category) {
@@ -12449,11 +13112,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_dngettext$MH() {
-        return RuntimeHelper.requireNonNull(constants$129.g_dngettext$MH,"g_dngettext");
+        return RuntimeHelper.requireNonNull(constants$203.const$6,"g_dngettext");
     }
     /**
      * {@snippet :
-     * const gchar* g_dngettext(const gchar* domain, const gchar* msgid, const gchar* msgid_plural, gulong n);
+     * char* g_dngettext(char* domain, char* msgid, char* msgid_plural, unsigned long n);
      * }
      */
     public static MemorySegment g_dngettext(MemorySegment domain, MemorySegment msgid, MemorySegment msgid_plural, long n) {
@@ -12465,11 +13128,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_dpgettext$MH() {
-        return RuntimeHelper.requireNonNull(constants$129.g_dpgettext$MH,"g_dpgettext");
+        return RuntimeHelper.requireNonNull(constants$204.const$0,"g_dpgettext");
     }
     /**
      * {@snippet :
-     * const gchar* g_dpgettext(const gchar* domain, const gchar* msgctxtid, gsize msgidoffset);
+     * char* g_dpgettext(char* domain, char* msgctxtid, unsigned long msgidoffset);
      * }
      */
     public static MemorySegment g_dpgettext(MemorySegment domain, MemorySegment msgctxtid, long msgidoffset) {
@@ -12481,11 +13144,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_dpgettext2$MH() {
-        return RuntimeHelper.requireNonNull(constants$130.g_dpgettext2$MH,"g_dpgettext2");
+        return RuntimeHelper.requireNonNull(constants$204.const$1,"g_dpgettext2");
     }
     /**
      * {@snippet :
-     * const gchar* g_dpgettext2(const gchar* domain, const gchar* context, const gchar* msgid);
+     * char* g_dpgettext2(char* domain, char* context, char* msgid);
      * }
      */
     public static MemorySegment g_dpgettext2(MemorySegment domain, MemorySegment context, MemorySegment msgid) {
@@ -12497,11 +13160,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$130.g_free$MH,"g_free");
+        return RuntimeHelper.requireNonNull(constants$204.const$2,"g_free");
     }
     /**
      * {@snippet :
-     * void g_free(gpointer mem);
+     * void g_free(void* mem);
      * }
      */
     public static void g_free(MemorySegment mem) {
@@ -12513,11 +13176,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_free_sized$MH() {
-        return RuntimeHelper.requireNonNull(constants$130.g_free_sized$MH,"g_free_sized");
+        return RuntimeHelper.requireNonNull(constants$204.const$3,"g_free_sized");
     }
     /**
      * {@snippet :
-     * void g_free_sized(gpointer mem, size_t size);
+     * void g_free_sized(void* mem, unsigned long size);
      * }
      */
     public static void g_free_sized(MemorySegment mem, long size) {
@@ -12529,11 +13192,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_clear_pointer$MH() {
-        return RuntimeHelper.requireNonNull(constants$130.g_clear_pointer$MH,"g_clear_pointer");
+        return RuntimeHelper.requireNonNull(constants$204.const$5,"g_clear_pointer");
     }
     /**
      * {@snippet :
-     * void g_clear_pointer(gpointer* pp, GDestroyNotify destroy);
+     * void g_clear_pointer(void** pp, void (*destroy)(void*));
      * }
      */
     public static void g_clear_pointer(MemorySegment pp, MemorySegment destroy) {
@@ -12545,11 +13208,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_malloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$130.g_malloc$MH,"g_malloc");
+        return RuntimeHelper.requireNonNull(constants$205.const$0,"g_malloc");
     }
     /**
      * {@snippet :
-     * gpointer g_malloc(gsize n_bytes);
+     * void* g_malloc(unsigned long n_bytes);
      * }
      */
     public static MemorySegment g_malloc(long n_bytes) {
@@ -12561,11 +13224,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_malloc0$MH() {
-        return RuntimeHelper.requireNonNull(constants$130.g_malloc0$MH,"g_malloc0");
+        return RuntimeHelper.requireNonNull(constants$205.const$1,"g_malloc0");
     }
     /**
      * {@snippet :
-     * gpointer g_malloc0(gsize n_bytes);
+     * void* g_malloc0(unsigned long n_bytes);
      * }
      */
     public static MemorySegment g_malloc0(long n_bytes) {
@@ -12577,11 +13240,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_realloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$131.g_realloc$MH,"g_realloc");
+        return RuntimeHelper.requireNonNull(constants$205.const$2,"g_realloc");
     }
     /**
      * {@snippet :
-     * gpointer g_realloc(gpointer mem, gsize n_bytes);
+     * void* g_realloc(void* mem, unsigned long n_bytes);
      * }
      */
     public static MemorySegment g_realloc(MemorySegment mem, long n_bytes) {
@@ -12593,11 +13256,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_try_malloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$131.g_try_malloc$MH,"g_try_malloc");
+        return RuntimeHelper.requireNonNull(constants$205.const$3,"g_try_malloc");
     }
     /**
      * {@snippet :
-     * gpointer g_try_malloc(gsize n_bytes);
+     * void* g_try_malloc(unsigned long n_bytes);
      * }
      */
     public static MemorySegment g_try_malloc(long n_bytes) {
@@ -12609,11 +13272,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_try_malloc0$MH() {
-        return RuntimeHelper.requireNonNull(constants$131.g_try_malloc0$MH,"g_try_malloc0");
+        return RuntimeHelper.requireNonNull(constants$205.const$4,"g_try_malloc0");
     }
     /**
      * {@snippet :
-     * gpointer g_try_malloc0(gsize n_bytes);
+     * void* g_try_malloc0(unsigned long n_bytes);
      * }
      */
     public static MemorySegment g_try_malloc0(long n_bytes) {
@@ -12625,11 +13288,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_try_realloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$131.g_try_realloc$MH,"g_try_realloc");
+        return RuntimeHelper.requireNonNull(constants$205.const$5,"g_try_realloc");
     }
     /**
      * {@snippet :
-     * gpointer g_try_realloc(gpointer mem, gsize n_bytes);
+     * void* g_try_realloc(void* mem, unsigned long n_bytes);
      * }
      */
     public static MemorySegment g_try_realloc(MemorySegment mem, long n_bytes) {
@@ -12641,11 +13304,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_malloc_n$MH() {
-        return RuntimeHelper.requireNonNull(constants$131.g_malloc_n$MH,"g_malloc_n");
+        return RuntimeHelper.requireNonNull(constants$206.const$0,"g_malloc_n");
     }
     /**
      * {@snippet :
-     * gpointer g_malloc_n(gsize n_blocks, gsize n_block_bytes);
+     * void* g_malloc_n(unsigned long n_blocks, unsigned long n_block_bytes);
      * }
      */
     public static MemorySegment g_malloc_n(long n_blocks, long n_block_bytes) {
@@ -12657,11 +13320,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_malloc0_n$MH() {
-        return RuntimeHelper.requireNonNull(constants$131.g_malloc0_n$MH,"g_malloc0_n");
+        return RuntimeHelper.requireNonNull(constants$206.const$1,"g_malloc0_n");
     }
     /**
      * {@snippet :
-     * gpointer g_malloc0_n(gsize n_blocks, gsize n_block_bytes);
+     * void* g_malloc0_n(unsigned long n_blocks, unsigned long n_block_bytes);
      * }
      */
     public static MemorySegment g_malloc0_n(long n_blocks, long n_block_bytes) {
@@ -12673,11 +13336,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_realloc_n$MH() {
-        return RuntimeHelper.requireNonNull(constants$132.g_realloc_n$MH,"g_realloc_n");
+        return RuntimeHelper.requireNonNull(constants$206.const$2,"g_realloc_n");
     }
     /**
      * {@snippet :
-     * gpointer g_realloc_n(gpointer mem, gsize n_blocks, gsize n_block_bytes);
+     * void* g_realloc_n(void* mem, unsigned long n_blocks, unsigned long n_block_bytes);
      * }
      */
     public static MemorySegment g_realloc_n(MemorySegment mem, long n_blocks, long n_block_bytes) {
@@ -12689,11 +13352,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_try_malloc_n$MH() {
-        return RuntimeHelper.requireNonNull(constants$132.g_try_malloc_n$MH,"g_try_malloc_n");
+        return RuntimeHelper.requireNonNull(constants$206.const$3,"g_try_malloc_n");
     }
     /**
      * {@snippet :
-     * gpointer g_try_malloc_n(gsize n_blocks, gsize n_block_bytes);
+     * void* g_try_malloc_n(unsigned long n_blocks, unsigned long n_block_bytes);
      * }
      */
     public static MemorySegment g_try_malloc_n(long n_blocks, long n_block_bytes) {
@@ -12705,11 +13368,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_try_malloc0_n$MH() {
-        return RuntimeHelper.requireNonNull(constants$132.g_try_malloc0_n$MH,"g_try_malloc0_n");
+        return RuntimeHelper.requireNonNull(constants$206.const$4,"g_try_malloc0_n");
     }
     /**
      * {@snippet :
-     * gpointer g_try_malloc0_n(gsize n_blocks, gsize n_block_bytes);
+     * void* g_try_malloc0_n(unsigned long n_blocks, unsigned long n_block_bytes);
      * }
      */
     public static MemorySegment g_try_malloc0_n(long n_blocks, long n_block_bytes) {
@@ -12721,11 +13384,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_try_realloc_n$MH() {
-        return RuntimeHelper.requireNonNull(constants$132.g_try_realloc_n$MH,"g_try_realloc_n");
+        return RuntimeHelper.requireNonNull(constants$206.const$5,"g_try_realloc_n");
     }
     /**
      * {@snippet :
-     * gpointer g_try_realloc_n(gpointer mem, gsize n_blocks, gsize n_block_bytes);
+     * void* g_try_realloc_n(void* mem, unsigned long n_blocks, unsigned long n_block_bytes);
      * }
      */
     public static MemorySegment g_try_realloc_n(MemorySegment mem, long n_blocks, long n_block_bytes) {
@@ -12737,11 +13400,11 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_aligned_alloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$132.g_aligned_alloc$MH,"g_aligned_alloc");
+        return RuntimeHelper.requireNonNull(constants$207.const$1,"g_aligned_alloc");
     }
     /**
      * {@snippet :
-     * gpointer g_aligned_alloc(gsize n_blocks, gsize n_block_bytes, gsize alignment);
+     * void* g_aligned_alloc(unsigned long n_blocks, unsigned long n_block_bytes, unsigned long alignment);
      * }
      */
     public static MemorySegment g_aligned_alloc(long n_blocks, long n_block_bytes, long alignment) {
@@ -12753,1191 +13416,17 @@ public class app_indicator_h_3 extends app_indicator_h_2 {
         }
     }
     public static MethodHandle g_aligned_alloc0$MH() {
-        return RuntimeHelper.requireNonNull(constants$132.g_aligned_alloc0$MH,"g_aligned_alloc0");
+        return RuntimeHelper.requireNonNull(constants$207.const$2,"g_aligned_alloc0");
     }
     /**
      * {@snippet :
-     * gpointer g_aligned_alloc0(gsize n_blocks, gsize n_block_bytes, gsize alignment);
+     * void* g_aligned_alloc0(unsigned long n_blocks, unsigned long n_block_bytes, unsigned long alignment);
      * }
      */
     public static MemorySegment g_aligned_alloc0(long n_blocks, long n_block_bytes, long alignment) {
         var mh$ = g_aligned_alloc0$MH();
         try {
             return (java.lang.foreign.MemorySegment)mh$.invokeExact(n_blocks, n_block_bytes, alignment);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_aligned_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$133.g_aligned_free$MH,"g_aligned_free");
-    }
-    /**
-     * {@snippet :
-     * void g_aligned_free(gpointer mem);
-     * }
-     */
-    public static void g_aligned_free(MemorySegment mem) {
-        var mh$ = g_aligned_free$MH();
-        try {
-            mh$.invokeExact(mem);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_aligned_free_sized$MH() {
-        return RuntimeHelper.requireNonNull(constants$133.g_aligned_free_sized$MH,"g_aligned_free_sized");
-    }
-    /**
-     * {@snippet :
-     * void g_aligned_free_sized(gpointer mem, size_t alignment, size_t size);
-     * }
-     */
-    public static void g_aligned_free_sized(MemorySegment mem, long alignment, long size) {
-        var mh$ = g_aligned_free_sized$MH();
-        try {
-            mh$.invokeExact(mem, alignment, size);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_mem_set_vtable$MH() {
-        return RuntimeHelper.requireNonNull(constants$133.g_mem_set_vtable$MH,"g_mem_set_vtable");
-    }
-    /**
-     * {@snippet :
-     * void g_mem_set_vtable(GMemVTable* vtable);
-     * }
-     */
-    public static void g_mem_set_vtable(MemorySegment vtable) {
-        var mh$ = g_mem_set_vtable$MH();
-        try {
-            mh$.invokeExact(vtable);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_mem_is_system_malloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$133.g_mem_is_system_malloc$MH,"g_mem_is_system_malloc");
-    }
-    /**
-     * {@snippet :
-     * gboolean g_mem_is_system_malloc();
-     * }
-     */
-    public static int g_mem_is_system_malloc() {
-        var mh$ = g_mem_is_system_malloc$MH();
-        try {
-            return (int)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MemoryLayout g_mem_gc_friendly$LAYOUT() {
-        return constants$133.g_mem_gc_friendly$LAYOUT;
-    }
-    public static VarHandle g_mem_gc_friendly$VH() {
-        return constants$133.g_mem_gc_friendly$VH;
-    }
-    public static MemorySegment g_mem_gc_friendly$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$133.g_mem_gc_friendly$SEGMENT,"g_mem_gc_friendly");
-    }
-    /**
-     * Getter for variable:
-     * {@snippet :
-     * gboolean g_mem_gc_friendly;
-     * }
-     */
-    public static int g_mem_gc_friendly$get() {
-        return (int) constants$133.g_mem_gc_friendly$VH.get(RuntimeHelper.requireNonNull(constants$133.g_mem_gc_friendly$SEGMENT, "g_mem_gc_friendly"));
-    }
-    /**
-     * Setter for variable:
-     * {@snippet :
-     * gboolean g_mem_gc_friendly;
-     * }
-     */
-    public static void g_mem_gc_friendly$set(int x) {
-        constants$133.g_mem_gc_friendly$VH.set(RuntimeHelper.requireNonNull(constants$133.g_mem_gc_friendly$SEGMENT, "g_mem_gc_friendly"), x);
-    }
-    public static MemoryLayout glib_mem_profiler_table$LAYOUT() {
-        return constants$133.glib_mem_profiler_table$LAYOUT;
-    }
-    public static VarHandle glib_mem_profiler_table$VH() {
-        return constants$133.glib_mem_profiler_table$VH;
-    }
-    public static MemorySegment glib_mem_profiler_table$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$133.glib_mem_profiler_table$SEGMENT,"glib_mem_profiler_table");
-    }
-    /**
-     * Getter for variable:
-     * {@snippet :
-     * GMemVTable* glib_mem_profiler_table;
-     * }
-     */
-    public static MemorySegment glib_mem_profiler_table$get() {
-        return (java.lang.foreign.MemorySegment) constants$133.glib_mem_profiler_table$VH.get(RuntimeHelper.requireNonNull(constants$133.glib_mem_profiler_table$SEGMENT, "glib_mem_profiler_table"));
-    }
-    /**
-     * Setter for variable:
-     * {@snippet :
-     * GMemVTable* glib_mem_profiler_table;
-     * }
-     */
-    public static void glib_mem_profiler_table$set(MemorySegment x) {
-        constants$133.glib_mem_profiler_table$VH.set(RuntimeHelper.requireNonNull(constants$133.glib_mem_profiler_table$SEGMENT, "glib_mem_profiler_table"), x);
-    }
-    public static MethodHandle g_mem_profile$MH() {
-        return RuntimeHelper.requireNonNull(constants$134.g_mem_profile$MH,"g_mem_profile");
-    }
-    /**
-     * {@snippet :
-     * void g_mem_profile();
-     * }
-     */
-    public static void g_mem_profile() {
-        var mh$ = g_mem_profile$MH();
-        try {
-            mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    /**
-     * {@snippet :
-     * enum .G_TRAVERSE_LEAVES = 1;
-     * }
-     */
-    public static int G_TRAVERSE_LEAVES() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum .G_TRAVERSE_NON_LEAVES = 2;
-     * }
-     */
-    public static int G_TRAVERSE_NON_LEAVES() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * enum .G_TRAVERSE_ALL = 3;
-     * }
-     */
-    public static int G_TRAVERSE_ALL() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * enum .G_TRAVERSE_MASK = 3;
-     * }
-     */
-    public static int G_TRAVERSE_MASK() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * enum .G_TRAVERSE_LEAFS = 1;
-     * }
-     */
-    public static int G_TRAVERSE_LEAFS() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum .G_TRAVERSE_NON_LEAFS = 2;
-     * }
-     */
-    public static int G_TRAVERSE_NON_LEAFS() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * enum .G_IN_ORDER = 0;
-     * }
-     */
-    public static int G_IN_ORDER() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum .G_PRE_ORDER = 1;
-     * }
-     */
-    public static int G_PRE_ORDER() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum .G_POST_ORDER = 2;
-     * }
-     */
-    public static int G_POST_ORDER() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * enum .G_LEVEL_ORDER = 3;
-     * }
-     */
-    public static int G_LEVEL_ORDER() {
-        return (int)3L;
-    }
-    public static MethodHandle g_node_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$134.g_node_new$MH,"g_node_new");
-    }
-    /**
-     * {@snippet :
-     * GNode* g_node_new(gpointer data);
-     * }
-     */
-    public static MemorySegment g_node_new(MemorySegment data) {
-        var mh$ = g_node_new$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$135.g_node_destroy$MH,"g_node_destroy");
-    }
-    /**
-     * {@snippet :
-     * void g_node_destroy(GNode* root);
-     * }
-     */
-    public static void g_node_destroy(MemorySegment root) {
-        var mh$ = g_node_destroy$MH();
-        try {
-            mh$.invokeExact(root);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_unlink$MH() {
-        return RuntimeHelper.requireNonNull(constants$135.g_node_unlink$MH,"g_node_unlink");
-    }
-    /**
-     * {@snippet :
-     * void g_node_unlink(GNode* node);
-     * }
-     */
-    public static void g_node_unlink(MemorySegment node) {
-        var mh$ = g_node_unlink$MH();
-        try {
-            mh$.invokeExact(node);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_copy_deep$MH() {
-        return RuntimeHelper.requireNonNull(constants$135.g_node_copy_deep$MH,"g_node_copy_deep");
-    }
-    /**
-     * {@snippet :
-     * GNode* g_node_copy_deep(GNode* node, GCopyFunc copy_func, gpointer data);
-     * }
-     */
-    public static MemorySegment g_node_copy_deep(MemorySegment node, MemorySegment copy_func, MemorySegment data) {
-        var mh$ = g_node_copy_deep$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(node, copy_func, data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$135.g_node_copy$MH,"g_node_copy");
-    }
-    /**
-     * {@snippet :
-     * GNode* g_node_copy(GNode* node);
-     * }
-     */
-    public static MemorySegment g_node_copy(MemorySegment node) {
-        var mh$ = g_node_copy$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(node);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_insert$MH() {
-        return RuntimeHelper.requireNonNull(constants$135.g_node_insert$MH,"g_node_insert");
-    }
-    /**
-     * {@snippet :
-     * GNode* g_node_insert(GNode* parent, gint position, GNode* node);
-     * }
-     */
-    public static MemorySegment g_node_insert(MemorySegment parent, int position, MemorySegment node) {
-        var mh$ = g_node_insert$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(parent, position, node);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_insert_before$MH() {
-        return RuntimeHelper.requireNonNull(constants$135.g_node_insert_before$MH,"g_node_insert_before");
-    }
-    /**
-     * {@snippet :
-     * GNode* g_node_insert_before(GNode* parent, GNode* sibling, GNode* node);
-     * }
-     */
-    public static MemorySegment g_node_insert_before(MemorySegment parent, MemorySegment sibling, MemorySegment node) {
-        var mh$ = g_node_insert_before$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(parent, sibling, node);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_insert_after$MH() {
-        return RuntimeHelper.requireNonNull(constants$136.g_node_insert_after$MH,"g_node_insert_after");
-    }
-    /**
-     * {@snippet :
-     * GNode* g_node_insert_after(GNode* parent, GNode* sibling, GNode* node);
-     * }
-     */
-    public static MemorySegment g_node_insert_after(MemorySegment parent, MemorySegment sibling, MemorySegment node) {
-        var mh$ = g_node_insert_after$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(parent, sibling, node);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_prepend$MH() {
-        return RuntimeHelper.requireNonNull(constants$136.g_node_prepend$MH,"g_node_prepend");
-    }
-    /**
-     * {@snippet :
-     * GNode* g_node_prepend(GNode* parent, GNode* node);
-     * }
-     */
-    public static MemorySegment g_node_prepend(MemorySegment parent, MemorySegment node) {
-        var mh$ = g_node_prepend$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(parent, node);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_n_nodes$MH() {
-        return RuntimeHelper.requireNonNull(constants$136.g_node_n_nodes$MH,"g_node_n_nodes");
-    }
-    /**
-     * {@snippet :
-     * guint g_node_n_nodes(GNode* root, GTraverseFlags flags);
-     * }
-     */
-    public static int g_node_n_nodes(MemorySegment root, int flags) {
-        var mh$ = g_node_n_nodes$MH();
-        try {
-            return (int)mh$.invokeExact(root, flags);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_get_root$MH() {
-        return RuntimeHelper.requireNonNull(constants$136.g_node_get_root$MH,"g_node_get_root");
-    }
-    /**
-     * {@snippet :
-     * GNode* g_node_get_root(GNode* node);
-     * }
-     */
-    public static MemorySegment g_node_get_root(MemorySegment node) {
-        var mh$ = g_node_get_root$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(node);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_is_ancestor$MH() {
-        return RuntimeHelper.requireNonNull(constants$136.g_node_is_ancestor$MH,"g_node_is_ancestor");
-    }
-    /**
-     * {@snippet :
-     * gboolean g_node_is_ancestor(GNode* node, GNode* descendant);
-     * }
-     */
-    public static int g_node_is_ancestor(MemorySegment node, MemorySegment descendant) {
-        var mh$ = g_node_is_ancestor$MH();
-        try {
-            return (int)mh$.invokeExact(node, descendant);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_depth$MH() {
-        return RuntimeHelper.requireNonNull(constants$136.g_node_depth$MH,"g_node_depth");
-    }
-    /**
-     * {@snippet :
-     * guint g_node_depth(GNode* node);
-     * }
-     */
-    public static int g_node_depth(MemorySegment node) {
-        var mh$ = g_node_depth$MH();
-        try {
-            return (int)mh$.invokeExact(node);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_find$MH() {
-        return RuntimeHelper.requireNonNull(constants$137.g_node_find$MH,"g_node_find");
-    }
-    /**
-     * {@snippet :
-     * GNode* g_node_find(GNode* root, GTraverseType order, GTraverseFlags flags, gpointer data);
-     * }
-     */
-    public static MemorySegment g_node_find(MemorySegment root, int order, int flags, MemorySegment data) {
-        var mh$ = g_node_find$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(root, order, flags, data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_traverse$MH() {
-        return RuntimeHelper.requireNonNull(constants$137.g_node_traverse$MH,"g_node_traverse");
-    }
-    /**
-     * {@snippet :
-     * void g_node_traverse(GNode* root, GTraverseType order, GTraverseFlags flags, gint max_depth, GNodeTraverseFunc func, gpointer data);
-     * }
-     */
-    public static void g_node_traverse(MemorySegment root, int order, int flags, int max_depth, MemorySegment func, MemorySegment data) {
-        var mh$ = g_node_traverse$MH();
-        try {
-            mh$.invokeExact(root, order, flags, max_depth, func, data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_max_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$137.g_node_max_height$MH,"g_node_max_height");
-    }
-    /**
-     * {@snippet :
-     * guint g_node_max_height(GNode* root);
-     * }
-     */
-    public static int g_node_max_height(MemorySegment root) {
-        var mh$ = g_node_max_height$MH();
-        try {
-            return (int)mh$.invokeExact(root);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_children_foreach$MH() {
-        return RuntimeHelper.requireNonNull(constants$137.g_node_children_foreach$MH,"g_node_children_foreach");
-    }
-    /**
-     * {@snippet :
-     * void g_node_children_foreach(GNode* node, GTraverseFlags flags, GNodeForeachFunc func, gpointer data);
-     * }
-     */
-    public static void g_node_children_foreach(MemorySegment node, int flags, MemorySegment func, MemorySegment data) {
-        var mh$ = g_node_children_foreach$MH();
-        try {
-            mh$.invokeExact(node, flags, func, data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_reverse_children$MH() {
-        return RuntimeHelper.requireNonNull(constants$137.g_node_reverse_children$MH,"g_node_reverse_children");
-    }
-    /**
-     * {@snippet :
-     * void g_node_reverse_children(GNode* node);
-     * }
-     */
-    public static void g_node_reverse_children(MemorySegment node) {
-        var mh$ = g_node_reverse_children$MH();
-        try {
-            mh$.invokeExact(node);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_n_children$MH() {
-        return RuntimeHelper.requireNonNull(constants$137.g_node_n_children$MH,"g_node_n_children");
-    }
-    /**
-     * {@snippet :
-     * guint g_node_n_children(GNode* node);
-     * }
-     */
-    public static int g_node_n_children(MemorySegment node) {
-        var mh$ = g_node_n_children$MH();
-        try {
-            return (int)mh$.invokeExact(node);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_nth_child$MH() {
-        return RuntimeHelper.requireNonNull(constants$138.g_node_nth_child$MH,"g_node_nth_child");
-    }
-    /**
-     * {@snippet :
-     * GNode* g_node_nth_child(GNode* node, guint n);
-     * }
-     */
-    public static MemorySegment g_node_nth_child(MemorySegment node, int n) {
-        var mh$ = g_node_nth_child$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(node, n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_last_child$MH() {
-        return RuntimeHelper.requireNonNull(constants$138.g_node_last_child$MH,"g_node_last_child");
-    }
-    /**
-     * {@snippet :
-     * GNode* g_node_last_child(GNode* node);
-     * }
-     */
-    public static MemorySegment g_node_last_child(MemorySegment node) {
-        var mh$ = g_node_last_child$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(node);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_find_child$MH() {
-        return RuntimeHelper.requireNonNull(constants$138.g_node_find_child$MH,"g_node_find_child");
-    }
-    /**
-     * {@snippet :
-     * GNode* g_node_find_child(GNode* node, GTraverseFlags flags, gpointer data);
-     * }
-     */
-    public static MemorySegment g_node_find_child(MemorySegment node, int flags, MemorySegment data) {
-        var mh$ = g_node_find_child$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(node, flags, data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_child_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$138.g_node_child_position$MH,"g_node_child_position");
-    }
-    /**
-     * {@snippet :
-     * gint g_node_child_position(GNode* node, GNode* child);
-     * }
-     */
-    public static int g_node_child_position(MemorySegment node, MemorySegment child) {
-        var mh$ = g_node_child_position$MH();
-        try {
-            return (int)mh$.invokeExact(node, child);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_child_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$138.g_node_child_index$MH,"g_node_child_index");
-    }
-    /**
-     * {@snippet :
-     * gint g_node_child_index(GNode* node, gpointer data);
-     * }
-     */
-    public static int g_node_child_index(MemorySegment node, MemorySegment data) {
-        var mh$ = g_node_child_index$MH();
-        try {
-            return (int)mh$.invokeExact(node, data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_first_sibling$MH() {
-        return RuntimeHelper.requireNonNull(constants$138.g_node_first_sibling$MH,"g_node_first_sibling");
-    }
-    /**
-     * {@snippet :
-     * GNode* g_node_first_sibling(GNode* node);
-     * }
-     */
-    public static MemorySegment g_node_first_sibling(MemorySegment node) {
-        var mh$ = g_node_first_sibling$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(node);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_node_last_sibling$MH() {
-        return RuntimeHelper.requireNonNull(constants$139.g_node_last_sibling$MH,"g_node_last_sibling");
-    }
-    /**
-     * {@snippet :
-     * GNode* g_node_last_sibling(GNode* node);
-     * }
-     */
-    public static MemorySegment g_node_last_sibling(MemorySegment node) {
-        var mh$ = g_node_last_sibling$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(node);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_alloc$MH() {
-        return RuntimeHelper.requireNonNull(constants$139.g_list_alloc$MH,"g_list_alloc");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_alloc();
-     * }
-     */
-    public static MemorySegment g_list_alloc() {
-        var mh$ = g_list_alloc$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$139.g_list_free$MH,"g_list_free");
-    }
-    /**
-     * {@snippet :
-     * void g_list_free(GList* list);
-     * }
-     */
-    public static void g_list_free(MemorySegment list) {
-        var mh$ = g_list_free$MH();
-        try {
-            mh$.invokeExact(list);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_free_1$MH() {
-        return RuntimeHelper.requireNonNull(constants$139.g_list_free_1$MH,"g_list_free_1");
-    }
-    /**
-     * {@snippet :
-     * void g_list_free_1(GList* list);
-     * }
-     */
-    public static void g_list_free_1(MemorySegment list) {
-        var mh$ = g_list_free_1$MH();
-        try {
-            mh$.invokeExact(list);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_free_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$139.g_list_free_full$MH,"g_list_free_full");
-    }
-    /**
-     * {@snippet :
-     * void g_list_free_full(GList* list, GDestroyNotify free_func);
-     * }
-     */
-    public static void g_list_free_full(MemorySegment list, MemorySegment free_func) {
-        var mh$ = g_list_free_full$MH();
-        try {
-            mh$.invokeExact(list, free_func);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_append$MH() {
-        return RuntimeHelper.requireNonNull(constants$139.g_list_append$MH,"g_list_append");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_append(GList* list, gpointer data);
-     * }
-     */
-    public static MemorySegment g_list_append(MemorySegment list, MemorySegment data) {
-        var mh$ = g_list_append$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_prepend$MH() {
-        return RuntimeHelper.requireNonNull(constants$140.g_list_prepend$MH,"g_list_prepend");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_prepend(GList* list, gpointer data);
-     * }
-     */
-    public static MemorySegment g_list_prepend(MemorySegment list, MemorySegment data) {
-        var mh$ = g_list_prepend$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_insert$MH() {
-        return RuntimeHelper.requireNonNull(constants$140.g_list_insert$MH,"g_list_insert");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_insert(GList* list, gpointer data, gint position);
-     * }
-     */
-    public static MemorySegment g_list_insert(MemorySegment list, MemorySegment data, int position) {
-        var mh$ = g_list_insert$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, data, position);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_insert_sorted$MH() {
-        return RuntimeHelper.requireNonNull(constants$140.g_list_insert_sorted$MH,"g_list_insert_sorted");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_insert_sorted(GList* list, gpointer data, GCompareFunc func);
-     * }
-     */
-    public static MemorySegment g_list_insert_sorted(MemorySegment list, MemorySegment data, MemorySegment func) {
-        var mh$ = g_list_insert_sorted$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, data, func);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_insert_sorted_with_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$140.g_list_insert_sorted_with_data$MH,"g_list_insert_sorted_with_data");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_insert_sorted_with_data(GList* list, gpointer data, GCompareDataFunc func, gpointer user_data);
-     * }
-     */
-    public static MemorySegment g_list_insert_sorted_with_data(MemorySegment list, MemorySegment data, MemorySegment func, MemorySegment user_data) {
-        var mh$ = g_list_insert_sorted_with_data$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, data, func, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_insert_before$MH() {
-        return RuntimeHelper.requireNonNull(constants$140.g_list_insert_before$MH,"g_list_insert_before");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_insert_before(GList* list, GList* sibling, gpointer data);
-     * }
-     */
-    public static MemorySegment g_list_insert_before(MemorySegment list, MemorySegment sibling, MemorySegment data) {
-        var mh$ = g_list_insert_before$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, sibling, data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_insert_before_link$MH() {
-        return RuntimeHelper.requireNonNull(constants$140.g_list_insert_before_link$MH,"g_list_insert_before_link");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_insert_before_link(GList* list, GList* sibling, GList* link_);
-     * }
-     */
-    public static MemorySegment g_list_insert_before_link(MemorySegment list, MemorySegment sibling, MemorySegment link_) {
-        var mh$ = g_list_insert_before_link$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, sibling, link_);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_concat$MH() {
-        return RuntimeHelper.requireNonNull(constants$141.g_list_concat$MH,"g_list_concat");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_concat(GList* list1, GList* list2);
-     * }
-     */
-    public static MemorySegment g_list_concat(MemorySegment list1, MemorySegment list2) {
-        var mh$ = g_list_concat$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list1, list2);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_remove$MH() {
-        return RuntimeHelper.requireNonNull(constants$141.g_list_remove$MH,"g_list_remove");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_remove(GList* list, gconstpointer data);
-     * }
-     */
-    public static MemorySegment g_list_remove(MemorySegment list, MemorySegment data) {
-        var mh$ = g_list_remove$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_remove_all$MH() {
-        return RuntimeHelper.requireNonNull(constants$141.g_list_remove_all$MH,"g_list_remove_all");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_remove_all(GList* list, gconstpointer data);
-     * }
-     */
-    public static MemorySegment g_list_remove_all(MemorySegment list, MemorySegment data) {
-        var mh$ = g_list_remove_all$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_remove_link$MH() {
-        return RuntimeHelper.requireNonNull(constants$141.g_list_remove_link$MH,"g_list_remove_link");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_remove_link(GList* list, GList* llink);
-     * }
-     */
-    public static MemorySegment g_list_remove_link(MemorySegment list, MemorySegment llink) {
-        var mh$ = g_list_remove_link$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, llink);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_delete_link$MH() {
-        return RuntimeHelper.requireNonNull(constants$141.g_list_delete_link$MH,"g_list_delete_link");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_delete_link(GList* list, GList* link_);
-     * }
-     */
-    public static MemorySegment g_list_delete_link(MemorySegment list, MemorySegment link_) {
-        var mh$ = g_list_delete_link$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, link_);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_reverse$MH() {
-        return RuntimeHelper.requireNonNull(constants$141.g_list_reverse$MH,"g_list_reverse");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_reverse(GList* list);
-     * }
-     */
-    public static MemorySegment g_list_reverse(MemorySegment list) {
-        var mh$ = g_list_reverse$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$142.g_list_copy$MH,"g_list_copy");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_copy(GList* list);
-     * }
-     */
-    public static MemorySegment g_list_copy(MemorySegment list) {
-        var mh$ = g_list_copy$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_copy_deep$MH() {
-        return RuntimeHelper.requireNonNull(constants$142.g_list_copy_deep$MH,"g_list_copy_deep");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_copy_deep(GList* list, GCopyFunc func, gpointer user_data);
-     * }
-     */
-    public static MemorySegment g_list_copy_deep(MemorySegment list, MemorySegment func, MemorySegment user_data) {
-        var mh$ = g_list_copy_deep$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, func, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_nth$MH() {
-        return RuntimeHelper.requireNonNull(constants$142.g_list_nth$MH,"g_list_nth");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_nth(GList* list, guint n);
-     * }
-     */
-    public static MemorySegment g_list_nth(MemorySegment list, int n) {
-        var mh$ = g_list_nth$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_nth_prev$MH() {
-        return RuntimeHelper.requireNonNull(constants$142.g_list_nth_prev$MH,"g_list_nth_prev");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_nth_prev(GList* list, guint n);
-     * }
-     */
-    public static MemorySegment g_list_nth_prev(MemorySegment list, int n) {
-        var mh$ = g_list_nth_prev$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_find$MH() {
-        return RuntimeHelper.requireNonNull(constants$142.g_list_find$MH,"g_list_find");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_find(GList* list, gconstpointer data);
-     * }
-     */
-    public static MemorySegment g_list_find(MemorySegment list, MemorySegment data) {
-        var mh$ = g_list_find$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_find_custom$MH() {
-        return RuntimeHelper.requireNonNull(constants$142.g_list_find_custom$MH,"g_list_find_custom");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_find_custom(GList* list, gconstpointer data, GCompareFunc func);
-     * }
-     */
-    public static MemorySegment g_list_find_custom(MemorySegment list, MemorySegment data, MemorySegment func) {
-        var mh$ = g_list_find_custom$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, data, func);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$143.g_list_position$MH,"g_list_position");
-    }
-    /**
-     * {@snippet :
-     * gint g_list_position(GList* list, GList* llink);
-     * }
-     */
-    public static int g_list_position(MemorySegment list, MemorySegment llink) {
-        var mh$ = g_list_position$MH();
-        try {
-            return (int)mh$.invokeExact(list, llink);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$143.g_list_index$MH,"g_list_index");
-    }
-    /**
-     * {@snippet :
-     * gint g_list_index(GList* list, gconstpointer data);
-     * }
-     */
-    public static int g_list_index(MemorySegment list, MemorySegment data) {
-        var mh$ = g_list_index$MH();
-        try {
-            return (int)mh$.invokeExact(list, data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_last$MH() {
-        return RuntimeHelper.requireNonNull(constants$143.g_list_last$MH,"g_list_last");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_last(GList* list);
-     * }
-     */
-    public static MemorySegment g_list_last(MemorySegment list) {
-        var mh$ = g_list_last$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_first$MH() {
-        return RuntimeHelper.requireNonNull(constants$143.g_list_first$MH,"g_list_first");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_first(GList* list);
-     * }
-     */
-    public static MemorySegment g_list_first(MemorySegment list) {
-        var mh$ = g_list_first$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$143.g_list_length$MH,"g_list_length");
-    }
-    /**
-     * {@snippet :
-     * guint g_list_length(GList* list);
-     * }
-     */
-    public static int g_list_length(MemorySegment list) {
-        var mh$ = g_list_length$MH();
-        try {
-            return (int)mh$.invokeExact(list);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_foreach$MH() {
-        return RuntimeHelper.requireNonNull(constants$143.g_list_foreach$MH,"g_list_foreach");
-    }
-    /**
-     * {@snippet :
-     * void g_list_foreach(GList* list, GFunc func, gpointer user_data);
-     * }
-     */
-    public static void g_list_foreach(MemorySegment list, MemorySegment func, MemorySegment user_data) {
-        var mh$ = g_list_foreach$MH();
-        try {
-            mh$.invokeExact(list, func, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_sort$MH() {
-        return RuntimeHelper.requireNonNull(constants$144.g_list_sort$MH,"g_list_sort");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_sort(GList* list, GCompareFunc compare_func);
-     * }
-     */
-    public static MemorySegment g_list_sort(MemorySegment list, MemorySegment compare_func) {
-        var mh$ = g_list_sort$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, compare_func);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_sort_with_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$144.g_list_sort_with_data$MH,"g_list_sort_with_data");
-    }
-    /**
-     * {@snippet :
-     * GList* g_list_sort_with_data(GList* list, GCompareDataFunc compare_func, gpointer user_data);
-     * }
-     */
-    public static MemorySegment g_list_sort_with_data(MemorySegment list, MemorySegment compare_func, MemorySegment user_data) {
-        var mh$ = g_list_sort_with_data$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, compare_func, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_list_nth_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$144.g_list_nth_data$MH,"g_list_nth_data");
-    }
-    /**
-     * {@snippet :
-     * gpointer g_list_nth_data(GList* list, guint n);
-     * }
-     */
-    public static MemorySegment g_list_nth_data(MemorySegment list, int n) {
-        var mh$ = g_list_nth_data$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(list, n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_clear_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$144.g_clear_list$MH,"g_clear_list");
-    }
-    /**
-     * {@snippet :
-     * void g_clear_list(GList** list_ptr, GDestroyNotify destroy);
-     * }
-     */
-    public static void g_clear_list(MemorySegment list_ptr, MemorySegment destroy) {
-        var mh$ = g_clear_list$MH();
-        try {
-            mh$.invokeExact(list_ptr, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle g_hash_table_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$145.g_hash_table_new$MH,"g_hash_table_new");
-    }
-    /**
-     * {@snippet :
-     * GHashTable* g_hash_table_new(GHashFunc hash_func, GEqualFunc key_equal_func);
-     * }
-     */
-    public static MemorySegment g_hash_table_new(MemorySegment hash_func, MemorySegment key_equal_func) {
-        var mh$ = g_hash_table_new$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(hash_func, key_equal_func);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

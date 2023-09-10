@@ -2,146 +2,140 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _AtkGObjectAccessibleClass {
- *     AtkObjectClass parent_class;
- *     AtkFunction pad1;
- *     AtkFunction pad2;
+ *     struct _AtkObjectClass parent_class;
+ *     int (*pad1)(void*);
+ *     int (*pad2)(void*);
  * };
  * }
  */
 public class _AtkGObjectAccessibleClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-                ).withName("g_type_class"),
-                Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-                Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-                Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-                MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-            ).withName("parent"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_name"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_description"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_parent"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_n_children"),
-            Constants$root.C_POINTER$LAYOUT.withName("ref_child"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_index_in_parent"),
-            Constants$root.C_POINTER$LAYOUT.withName("ref_relation_set"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_role"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_layer"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_mdi_zorder"),
-            Constants$root.C_POINTER$LAYOUT.withName("ref_state_set"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_name"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_description"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_parent"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_role"),
-            Constants$root.C_POINTER$LAYOUT.withName("connect_property_change_handler"),
-            Constants$root.C_POINTER$LAYOUT.withName("remove_property_change_handler"),
-            Constants$root.C_POINTER$LAYOUT.withName("initialize"),
-            Constants$root.C_POINTER$LAYOUT.withName("children_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("focus_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("property_change"),
-            Constants$root.C_POINTER$LAYOUT.withName("state_change"),
-            Constants$root.C_POINTER$LAYOUT.withName("visible_data_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("active_descendant_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_attributes"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_object_locale"),
-            Constants$root.C_POINTER$LAYOUT.withName("pad1")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("pad1"),
-        Constants$root.C_POINTER$LAYOUT.withName("pad2")
-    ).withName("_AtkGObjectAccessibleClass");
     public static MemoryLayout $LAYOUT() {
-        return _AtkGObjectAccessibleClass.$struct$LAYOUT;
+        return constants$2028.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 352);
     }
-    static final VarHandle pad1$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("pad1"));
+    /**
+     * {@snippet :
+ * int (*pad1)(void*);
+     * }
+     */
+    public interface pad1 {
+
+        int apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(pad1 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2029.const$0, fi, constants$10.const$5, scope);
+        }
+        static pad1 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
+                try {
+                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
+                } catch (Throwable ex$) {
+                    throw new AssertionError("should not reach here", ex$);
+                }
+            };
+        }
+    }
+
     public static VarHandle pad1$VH() {
-        return _AtkGObjectAccessibleClass.pad1$VH;
+        return constants$2029.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * AtkFunction pad1;
+     * int (*pad1)(void*);
      * }
      */
     public static MemorySegment pad1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkGObjectAccessibleClass.pad1$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2029.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * AtkFunction pad1;
+     * int (*pad1)(void*);
      * }
      */
     public static void pad1$set(MemorySegment seg, MemorySegment x) {
-        _AtkGObjectAccessibleClass.pad1$VH.set(seg, x);
+        constants$2029.const$1.set(seg, x);
     }
     public static MemorySegment pad1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkGObjectAccessibleClass.pad1$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2029.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void pad1$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkGObjectAccessibleClass.pad1$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2029.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static AtkFunction pad1(MemorySegment segment, SegmentScope scope) {
-        return AtkFunction.ofAddress(pad1$get(segment), scope);
+    public static pad1 pad1(MemorySegment segment, Arena scope) {
+        return pad1.ofAddress(pad1$get(segment), scope);
     }
-    static final VarHandle pad2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("pad2"));
+    /**
+     * {@snippet :
+ * int (*pad2)(void*);
+     * }
+     */
+    public interface pad2 {
+
+        int apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(pad2 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2029.const$2, fi, constants$10.const$5, scope);
+        }
+        static pad2 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
+                try {
+                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
+                } catch (Throwable ex$) {
+                    throw new AssertionError("should not reach here", ex$);
+                }
+            };
+        }
+    }
+
     public static VarHandle pad2$VH() {
-        return _AtkGObjectAccessibleClass.pad2$VH;
+        return constants$2029.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * AtkFunction pad2;
+     * int (*pad2)(void*);
      * }
      */
     public static MemorySegment pad2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkGObjectAccessibleClass.pad2$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2029.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * AtkFunction pad2;
+     * int (*pad2)(void*);
      * }
      */
     public static void pad2$set(MemorySegment seg, MemorySegment x) {
-        _AtkGObjectAccessibleClass.pad2$VH.set(seg, x);
+        constants$2029.const$3.set(seg, x);
     }
     public static MemorySegment pad2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkGObjectAccessibleClass.pad2$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2029.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void pad2$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkGObjectAccessibleClass.pad2$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2029.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static AtkFunction pad2(MemorySegment segment, SegmentScope scope) {
-        return AtkFunction.ofAddress(pad2$get(segment), scope);
+    public static pad2 pad2(MemorySegment segment, Arena scope) {
+        return pad2.ofAddress(pad2$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

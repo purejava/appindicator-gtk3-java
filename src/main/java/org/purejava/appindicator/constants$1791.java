@@ -3,58 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1791 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1791() {}
-    static final FunctionDescriptor gtk_revealer_set_transition_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_revealer_set_transition_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_revealer_set_transition_type",
-        constants$1791.gtk_revealer_set_transition_type$FUNC
-    );
-    static final FunctionDescriptor gtk_revealer_get_transition_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_revealer_get_transition_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_revealer_get_transition_type",
-        constants$1791.gtk_revealer_get_transition_type$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_scale_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_get_type",
-        constants$1791.gtk_scale_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_new",
-        constants$1791.gtk_scale_new$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_new_with_range$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_scale_new_with_range$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_new_with_range",
-        constants$1791.gtk_scale_new_with_range$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_set_digits$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scale_set_digits$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_set_digits",
-        constants$1791.gtk_scale_set_digits$FUNC
-    );
+    static final VarHandle const$0 = constants$1790.const$1.varHandle(MemoryLayout.PathElement.groupElement("name"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        MemoryLayout.paddingLayout(3),
+        JAVA_INT.withName("changed_mask"),
+        JAVA_INT.withName("new_window_state"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GdkEventWindowState");
+    static final VarHandle const$2 = constants$1791.const$1.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$3 = constants$1791.const$1.varHandle(MemoryLayout.PathElement.groupElement("window"));
+    static final VarHandle const$4 = constants$1791.const$1.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
+    static final VarHandle const$5 = constants$1791.const$1.varHandle(MemoryLayout.PathElement.groupElement("changed_mask"));
 }
 
 

@@ -3,54 +3,36 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$551 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$551() {}
-    static final FunctionDescriptor g_dbus_connection_get_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_dbus_connection_get_stream$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_get_stream",
-        constants$551.g_dbus_connection_get_stream$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_type_set_qdata",
+        constants$551.const$0
     );
-    static final FunctionDescriptor g_dbus_connection_get_guid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_type_get_qdata",
+        constants$63.const$1
     );
-    static final MethodHandle g_dbus_connection_get_guid$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_get_guid",
-        constants$551.g_dbus_connection_get_guid$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_type_query",
+        constants$441.const$0
     );
-    static final FunctionDescriptor g_dbus_connection_get_unique_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_type_get_instance_count",
+        constants$26.const$2
     );
-    static final MethodHandle g_dbus_connection_get_unique_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_get_unique_name",
-        constants$551.g_dbus_connection_get_unique_name$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_get_peer_credentials$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_get_peer_credentials$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_get_peer_credentials",
-        constants$551.g_dbus_connection_get_peer_credentials$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_get_last_serial$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_get_last_serial$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_get_last_serial",
-        constants$551.g_dbus_connection_get_last_serial$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_get_exit_on_close$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_get_exit_on_close$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_get_exit_on_close",
-        constants$551.g_dbus_connection_get_exit_on_close$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GBaseInitFunc.class, "apply", constants$13.const$1);
 }
 
 

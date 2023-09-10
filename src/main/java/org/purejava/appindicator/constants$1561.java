@@ -3,54 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1561 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1561() {}
-    static final FunctionDescriptor gtk_event_controller_get_propagation_phase$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_color_to_string",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_event_controller_get_propagation_phase$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_get_propagation_phase",
-        constants$1561.gtk_event_controller_get_propagation_phase$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_set_propagation_phase$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_set_propagation_phase$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_set_propagation_phase",
-        constants$1561.gtk_event_controller_set_propagation_phase$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_key_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_event_controller_key_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_key_get_type",
-        constants$1561.gtk_event_controller_key_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_key_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_key_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_key_new",
-        constants$1561.gtk_event_controller_key_new$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_key_set_im_context$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_key_set_im_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_key_set_im_context",
-        constants$1561.gtk_event_controller_key_set_im_context$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_key_get_im_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_key_get_im_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_key_get_im_context",
-        constants$1561.gtk_event_controller_key_get_im_context$FUNC
-    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("klass"),
+        JAVA_INT.withName("start_index"),
+        JAVA_INT.withName("end_index")
+    ).withName("_PangoAttribute");
+    static final VarHandle const$2 = constants$1561.const$1.varHandle(MemoryLayout.PathElement.groupElement("klass"));
+    static final VarHandle const$3 = constants$1561.const$1.varHandle(MemoryLayout.PathElement.groupElement("start_index"));
+    static final VarHandle const$4 = constants$1561.const$1.varHandle(MemoryLayout.PathElement.groupElement("end_index"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(PangoAttrFilterFunc.class, "apply", constants$9.const$0);
 }
 
 

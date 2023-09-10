@@ -3,55 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1908 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1908() {}
-    static final FunctionDescriptor gtk_action_is_sensitive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_cairo_context_get_font_options",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_action_is_sensitive$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_is_sensitive",
-        constants$1908.gtk_action_is_sensitive$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_cairo_context_set_resolution",
+        constants$689.const$5
     );
-    static final FunctionDescriptor gtk_action_get_sensitive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_cairo_context_get_resolution",
+        constants$67.const$0
     );
-    static final MethodHandle gtk_action_get_sensitive$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_get_sensitive",
-        constants$1908.gtk_action_get_sensitive$FUNC
-    );
-    static final FunctionDescriptor gtk_action_set_sensitive$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_action_set_sensitive$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_set_sensitive",
-        constants$1908.gtk_action_set_sensitive$FUNC
-    );
-    static final FunctionDescriptor gtk_action_is_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_is_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_is_visible",
-        constants$1908.gtk_action_is_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_action_get_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_get_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_get_visible",
-        constants$1908.gtk_action_get_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_action_set_visible$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_action_set_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_set_visible",
-        constants$1908.gtk_action_set_visible$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(pango_cairo_context_set_shape_renderer$func.class, "apply", constants$464.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(pango_cairo_context_set_shape_renderer$dnotify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_cairo_context_set_shape_renderer",
+        constants$42.const$1
     );
 }
 

@@ -4,12 +4,13 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct sigevent {
- *     __sigval_t sigev_value;
+ *     union sigval sigev_value;
  *     int sigev_signo;
  *     int sigev_notify;
  *     union  _sigev_un;
@@ -18,31 +19,14 @@ import java.lang.foreign.*;
  */
 public class sigevent {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.unionLayout(
-            Constants$root.C_INT$LAYOUT.withName("sival_int"),
-            Constants$root.C_POINTER$LAYOUT.withName("sival_ptr")
-        ).withName("sigev_value"),
-        Constants$root.C_INT$LAYOUT.withName("sigev_signo"),
-        Constants$root.C_INT$LAYOUT.withName("sigev_notify"),
-        MemoryLayout.unionLayout(
-            MemoryLayout.sequenceLayout(12, Constants$root.C_INT$LAYOUT).withName("_pad"),
-            Constants$root.C_INT$LAYOUT.withName("_tid"),
-            MemoryLayout.structLayout(
-                Constants$root.C_POINTER$LAYOUT.withName("_function"),
-                Constants$root.C_POINTER$LAYOUT.withName("_attribute")
-            ).withName("_sigev_thread")
-        ).withName("_sigev_un")
-    ).withName("sigevent");
     public static MemoryLayout $LAYOUT() {
-        return sigevent.$struct$LAYOUT;
+        return constants$120.const$4;
     }
     public static MemorySegment sigev_value$slice(MemorySegment seg) {
         return seg.asSlice(0, 8);
     }
-    static final VarHandle sigev_signo$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("sigev_signo"));
     public static VarHandle sigev_signo$VH() {
-        return sigevent.sigev_signo$VH;
+        return constants$120.const$5;
     }
     /**
      * Getter for field:
@@ -51,7 +35,7 @@ public class sigevent {
      * }
      */
     public static int sigev_signo$get(MemorySegment seg) {
-        return (int)sigevent.sigev_signo$VH.get(seg);
+        return (int)constants$120.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -60,17 +44,16 @@ public class sigevent {
      * }
      */
     public static void sigev_signo$set(MemorySegment seg, int x) {
-        sigevent.sigev_signo$VH.set(seg, x);
+        constants$120.const$5.set(seg, x);
     }
     public static int sigev_signo$get(MemorySegment seg, long index) {
-        return (int)sigevent.sigev_signo$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$120.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void sigev_signo$set(MemorySegment seg, long index, int x) {
-        sigevent.sigev_signo$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$120.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle sigev_notify$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("sigev_notify"));
     public static VarHandle sigev_notify$VH() {
-        return sigevent.sigev_notify$VH;
+        return constants$121.const$0;
     }
     /**
      * Getter for field:
@@ -79,7 +62,7 @@ public class sigevent {
      * }
      */
     public static int sigev_notify$get(MemorySegment seg) {
-        return (int)sigevent.sigev_notify$VH.get(seg);
+        return (int)constants$121.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -88,19 +71,19 @@ public class sigevent {
      * }
      */
     public static void sigev_notify$set(MemorySegment seg, int x) {
-        sigevent.sigev_notify$VH.set(seg, x);
+        constants$121.const$0.set(seg, x);
     }
     public static int sigev_notify$get(MemorySegment seg, long index) {
-        return (int)sigevent.sigev_notify$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$121.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void sigev_notify$set(MemorySegment seg, long index, int x) {
-        sigevent.sigev_notify$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$121.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
      * union {
      *     int _pad[12];
-     *     __pid_t _tid;
+     *     int _tid;
      *     struct  _sigev_thread;
      * };
      * }
@@ -109,53 +92,44 @@ public class sigevent {
 
         // Suppresses default constructor, ensuring non-instantiability.
         private _sigev_un() {}
-        static final UnionLayout _sigev_un$union$LAYOUT = MemoryLayout.unionLayout(
-            MemoryLayout.sequenceLayout(12, Constants$root.C_INT$LAYOUT).withName("_pad"),
-            Constants$root.C_INT$LAYOUT.withName("_tid"),
-            MemoryLayout.structLayout(
-                Constants$root.C_POINTER$LAYOUT.withName("_function"),
-                Constants$root.C_POINTER$LAYOUT.withName("_attribute")
-            ).withName("_sigev_thread")
-        );
         public static MemoryLayout $LAYOUT() {
-            return _sigev_un._sigev_un$union$LAYOUT;
+            return constants$121.const$1;
         }
         public static MemorySegment _pad$slice(MemorySegment seg) {
             return seg.asSlice(0, 48);
         }
-        static final VarHandle _tid$VH = _sigev_un$union$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_tid"));
         public static VarHandle _tid$VH() {
-            return _sigev_un._tid$VH;
+            return constants$121.const$2;
         }
         /**
          * Getter for field:
          * {@snippet :
-         * __pid_t _tid;
+         * int _tid;
          * }
          */
         public static int _tid$get(MemorySegment seg) {
-            return (int)_sigev_un._tid$VH.get(seg);
+            return (int)constants$121.const$2.get(seg);
         }
         /**
          * Setter for field:
          * {@snippet :
-         * __pid_t _tid;
+         * int _tid;
          * }
          */
         public static void _tid$set(MemorySegment seg, int x) {
-            _sigev_un._tid$VH.set(seg, x);
+            constants$121.const$2.set(seg, x);
         }
         public static int _tid$get(MemorySegment seg, long index) {
-            return (int)_sigev_un._tid$VH.get(seg.asSlice(index*sizeof()));
+            return (int)constants$121.const$2.get(seg.asSlice(index*sizeof()));
         }
         public static void _tid$set(MemorySegment seg, long index, int x) {
-            _sigev_un._tid$VH.set(seg.asSlice(index*sizeof()), x);
+            constants$121.const$2.set(seg.asSlice(index*sizeof()), x);
         }
         /**
          * {@snippet :
          * struct {
-         *     void (*_function)(__sigval_t);
-         *     pthread_attr_t* _attribute;
+         *     void (*_function)(union sigval);
+         *     union pthread_attr_t* _attribute;
          * };
          * }
          */
@@ -163,51 +137,25 @@ public class sigevent {
 
             // Suppresses default constructor, ensuring non-instantiability.
             private _sigev_thread() {}
-            static final StructLayout _sigev_un$_sigev_thread$struct$LAYOUT = MemoryLayout.structLayout(
-                Constants$root.C_POINTER$LAYOUT.withName("_function"),
-                Constants$root.C_POINTER$LAYOUT.withName("_attribute")
-            );
             public static MemoryLayout $LAYOUT() {
-                return _sigev_thread._sigev_un$_sigev_thread$struct$LAYOUT;
+                return constants$121.const$3;
             }
-            static final FunctionDescriptor _function$FUNC = FunctionDescriptor.ofVoid(
-                MemoryLayout.unionLayout(
-                    Constants$root.C_INT$LAYOUT.withName("sival_int"),
-                    Constants$root.C_POINTER$LAYOUT.withName("sival_ptr")
-                ).withName("sigval")
-            );
-            static final FunctionDescriptor _function_UP$FUNC = FunctionDescriptor.ofVoid(
-                MemoryLayout.unionLayout(
-                    Constants$root.C_INT$LAYOUT.withName("sival_int"),
-                    Constants$root.C_POINTER$LAYOUT.withName("sival_ptr")
-                ).withName("sigval")
-            );
-            static final MethodHandle _function_UP$MH = RuntimeHelper.upcallHandle(_function.class, "apply", _sigev_thread._function_UP$FUNC);
-            static final FunctionDescriptor _function_DOWN$FUNC = FunctionDescriptor.ofVoid(
-                MemoryLayout.unionLayout(
-                    Constants$root.C_INT$LAYOUT.withName("sival_int"),
-                    Constants$root.C_POINTER$LAYOUT.withName("sival_ptr")
-                ).withName("sigval")
-            );
-            static final MethodHandle _function_DOWN$MH = RuntimeHelper.downcallHandle(
-                _sigev_thread._function_DOWN$FUNC
-            );
             /**
              * {@snippet :
- * void (*_function)(__sigval_t);
+ * void (*_function)(union sigval);
              * }
              */
             public interface _function {
 
                 void apply(java.lang.foreign.MemorySegment _x0);
-                static MemorySegment allocate(_function fi, SegmentScope scope) {
-                    return RuntimeHelper.upcallStub(_sigev_thread._function_UP$MH, fi, _sigev_thread._function$FUNC, scope);
+                static MemorySegment allocate(_function fi, Arena scope) {
+                    return RuntimeHelper.upcallStub(constants$121.const$5, fi, constants$121.const$4, scope);
                 }
-                static _function ofAddress(MemorySegment addr, SegmentScope scope) {
-                    MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+                static _function ofAddress(MemorySegment addr, Arena arena) {
+                    MemorySegment symbol = addr.reinterpret(arena, null);
                     return (java.lang.foreign.MemorySegment __x0) -> {
                         try {
-                            _sigev_thread._function_DOWN$MH.invokeExact(symbol, __x0);
+                            constants$122.const$0.invokeExact(symbol, __x0);
                         } catch (Throwable ex$) {
                             throw new AssertionError("should not reach here", ex$);
                         }
@@ -215,71 +163,69 @@ public class sigevent {
                 }
             }
 
-            static final VarHandle _function$VH = _sigev_un$_sigev_thread$struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_function"));
             public static VarHandle _function$VH() {
-                return _sigev_thread._function$VH;
+                return constants$122.const$1;
             }
             /**
              * Getter for field:
              * {@snippet :
-             * void (*_function)(__sigval_t);
+             * void (*_function)(union sigval);
              * }
              */
             public static MemorySegment _function$get(MemorySegment seg) {
-                return (java.lang.foreign.MemorySegment)_sigev_thread._function$VH.get(seg);
+                return (java.lang.foreign.MemorySegment)constants$122.const$1.get(seg);
             }
             /**
              * Setter for field:
              * {@snippet :
-             * void (*_function)(__sigval_t);
+             * void (*_function)(union sigval);
              * }
              */
             public static void _function$set(MemorySegment seg, MemorySegment x) {
-                _sigev_thread._function$VH.set(seg, x);
+                constants$122.const$1.set(seg, x);
             }
             public static MemorySegment _function$get(MemorySegment seg, long index) {
-                return (java.lang.foreign.MemorySegment)_sigev_thread._function$VH.get(seg.asSlice(index*sizeof()));
+                return (java.lang.foreign.MemorySegment)constants$122.const$1.get(seg.asSlice(index*sizeof()));
             }
             public static void _function$set(MemorySegment seg, long index, MemorySegment x) {
-                _sigev_thread._function$VH.set(seg.asSlice(index*sizeof()), x);
+                constants$122.const$1.set(seg.asSlice(index*sizeof()), x);
             }
-            public static _function _function(MemorySegment segment, SegmentScope scope) {
+            public static _function _function(MemorySegment segment, Arena scope) {
                 return _function.ofAddress(_function$get(segment), scope);
             }
-            static final VarHandle _attribute$VH = _sigev_un$_sigev_thread$struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_attribute"));
             public static VarHandle _attribute$VH() {
-                return _sigev_thread._attribute$VH;
+                return constants$122.const$2;
             }
             /**
              * Getter for field:
              * {@snippet :
-             * pthread_attr_t* _attribute;
+             * union pthread_attr_t* _attribute;
              * }
              */
             public static MemorySegment _attribute$get(MemorySegment seg) {
-                return (java.lang.foreign.MemorySegment)_sigev_thread._attribute$VH.get(seg);
+                return (java.lang.foreign.MemorySegment)constants$122.const$2.get(seg);
             }
             /**
              * Setter for field:
              * {@snippet :
-             * pthread_attr_t* _attribute;
+             * union pthread_attr_t* _attribute;
              * }
              */
             public static void _attribute$set(MemorySegment seg, MemorySegment x) {
-                _sigev_thread._attribute$VH.set(seg, x);
+                constants$122.const$2.set(seg, x);
             }
             public static MemorySegment _attribute$get(MemorySegment seg, long index) {
-                return (java.lang.foreign.MemorySegment)_sigev_thread._attribute$VH.get(seg.asSlice(index*sizeof()));
+                return (java.lang.foreign.MemorySegment)constants$122.const$2.get(seg.asSlice(index*sizeof()));
             }
             public static void _attribute$set(MemorySegment seg, long index, MemorySegment x) {
-                _sigev_thread._attribute$VH.set(seg.asSlice(index*sizeof()), x);
+                constants$122.const$2.set(seg.asSlice(index*sizeof()), x);
             }
             public static long sizeof() { return $LAYOUT().byteSize(); }
             public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
             public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
                 return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
             }
-            public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+            public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
         }
 
         public static MemorySegment _sigev_thread$slice(MemorySegment seg) {
@@ -290,7 +236,7 @@ public class sigevent {
         public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
             return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
         }
-        public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+        public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
     }
 
     public static MemorySegment _sigev_un$slice(MemorySegment seg) {
@@ -301,7 +247,7 @@ public class sigevent {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

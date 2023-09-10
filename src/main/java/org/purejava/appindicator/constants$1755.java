@@ -3,54 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1755 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1755() {}
-    static final FunctionDescriptor gtk_print_operation_is_finished$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1754.const$5.varHandle(MemoryLayout.PathElement.groupElement("x"));
+    static final VarHandle const$1 = constants$1754.const$5.varHandle(MemoryLayout.PathElement.groupElement("y"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("time"),
+        MemoryLayout.paddingLayout(4),
+        MemoryLayout.sequenceLayout(128, JAVA_DOUBLE).withName("axes")
+    ).withName("_GdkTimeCoord");
+    static final VarHandle const$3 = constants$1755.const$2.varHandle(MemoryLayout.PathElement.groupElement("time"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_device_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_print_operation_is_finished$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_is_finished",
-        constants$1755.gtk_print_operation_is_finished$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_cancel$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_operation_cancel$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_cancel",
-        constants$1755.gtk_print_operation_cancel$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_draw_page_finish$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_operation_draw_page_finish$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_draw_page_finish",
-        constants$1755.gtk_print_operation_draw_page_finish$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_set_defer_drawing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_operation_set_defer_drawing$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_defer_drawing",
-        constants$1755.gtk_print_operation_set_defer_drawing$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_set_support_selection$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_print_operation_set_support_selection$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_support_selection",
-        constants$1755.gtk_print_operation_set_support_selection$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_get_support_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_operation_get_support_selection$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_get_support_selection",
-        constants$1755.gtk_print_operation_get_support_selection$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_device_get_name",
+        constants$5.const$2
     );
 }
 

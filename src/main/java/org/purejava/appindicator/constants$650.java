@@ -3,58 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$650 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$650() {}
-    static final FunctionDescriptor g_file_info_unset_attribute_mask$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_unset_attribute_mask$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_unset_attribute_mask",
-        constants$650.g_file_info_unset_attribute_mask$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_file_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_file_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_file_type",
-        constants$650.g_file_info_set_file_type$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_is_hidden$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_is_hidden$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_is_hidden",
-        constants$650.g_file_info_set_is_hidden$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_is_symlink$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_is_symlink$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_is_symlink",
-        constants$650.g_file_info_set_is_symlink$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_name$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_name",
-        constants$650.g_file_info_set_name$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_display_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_display_name$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_display_name",
-        constants$650.g_file_info_set_display_name$FUNC
+    static final VarHandle const$0 = constants$649.const$3.varHandle(MemoryLayout.PathElement.groupElement("value_nick"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_INT.withName("value"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("value_name"),
+        RuntimeHelper.POINTER.withName("value_nick")
+    ).withName("_GFlagsValue");
+    static final VarHandle const$2 = constants$650.const$1.varHandle(MemoryLayout.PathElement.groupElement("value"));
+    static final VarHandle const$3 = constants$650.const$1.varHandle(MemoryLayout.PathElement.groupElement("value_name"));
+    static final VarHandle const$4 = constants$650.const$1.varHandle(MemoryLayout.PathElement.groupElement("value_nick"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_enum_get_value",
+        constants$21.const$3
     );
 }
 

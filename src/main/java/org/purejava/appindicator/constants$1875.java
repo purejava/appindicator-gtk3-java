@@ -3,71 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1875 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1875() {}
-    static final FunctionDescriptor gtk_tree_store_insert_after$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1874.const$4.varHandle(MemoryLayout.PathElement.groupElement("red"));
+    static final VarHandle const$1 = constants$1874.const$4.varHandle(MemoryLayout.PathElement.groupElement("green"));
+    static final VarHandle const$2 = constants$1874.const$4.varHandle(MemoryLayout.PathElement.groupElement("blue"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_color_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_tree_store_insert_after$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_insert_after",
-        constants$1875.gtk_tree_store_insert_after$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_color_copy",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_tree_store_insert_with_values$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_store_insert_with_values$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_store_insert_with_values",
-        constants$1875.gtk_tree_store_insert_with_values$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_store_insert_with_valuesv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_store_insert_with_valuesv$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_insert_with_valuesv",
-        constants$1875.gtk_tree_store_insert_with_valuesv$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_store_prepend$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_store_prepend$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_prepend",
-        constants$1875.gtk_tree_store_prepend$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_store_append$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_store_append$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_append",
-        constants$1875.gtk_tree_store_append$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_store_is_ancestor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_store_is_ancestor$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_is_ancestor",
-        constants$1875.gtk_tree_store_is_ancestor$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_color_free",
+        constants$13.const$1
     );
 }
 

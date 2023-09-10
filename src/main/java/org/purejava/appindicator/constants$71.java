@@ -3,60 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$71 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$71() {}
-    static final FunctionDescriptor g_async_queue_timeout_pop$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_async_queue_timeout_pop$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_timeout_pop",
-        constants$71.g_async_queue_timeout_pop$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pselect",
+        constants$71.const$0
     );
-    static final FunctionDescriptor g_async_queue_timeout_pop_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_async_queue_timeout_pop_unlocked$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_timeout_pop_unlocked",
-        constants$71.g_async_queue_timeout_pop_unlocked$FUNC
-    );
-    static final FunctionDescriptor g_async_queue_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_queue_length$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_length",
-        constants$71.g_async_queue_length$FUNC
-    );
-    static final FunctionDescriptor g_async_queue_length_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_queue_length_unlocked$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_length_unlocked",
-        constants$71.g_async_queue_length_unlocked$FUNC
-    );
-    static final FunctionDescriptor g_async_queue_sort$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_queue_sort$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_sort",
-        constants$71.g_async_queue_sort$FUNC
-    );
-    static final FunctionDescriptor g_async_queue_sort_unlocked$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_queue_sort_unlocked$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_sort_unlocked",
-        constants$71.g_async_queue_sort_unlocked$FUNC
-    );
+    static final UnionLayout const$2 = MemoryLayout.unionLayout(
+        JAVA_LONG.withName("__value64"),
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("__low"),
+            JAVA_INT.withName("__high")
+        ).withName("__value32")
+    ).withName("__atomic_wide_counter");
+    static final VarHandle const$3 = constants$71.const$2.varHandle(MemoryLayout.PathElement.groupElement("__value64"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("__low"),
+        JAVA_INT.withName("__high")
+    ).withName("");
+    static final VarHandle const$5 = constants$71.const$4.varHandle(MemoryLayout.PathElement.groupElement("__low"));
 }
 
 

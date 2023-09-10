@@ -3,89 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$336 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$336() {}
-    static final FunctionDescriptor g_uri_split_with_user$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_key_file_set_comment",
+        constants$165.const$2
     );
-    static final MethodHandle g_uri_split_with_user$MH = RuntimeHelper.downcallHandle(
-        "g_uri_split_with_user",
-        constants$336.g_uri_split_with_user$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_key_file_get_comment",
+        constants$39.const$1
     );
-    static final FunctionDescriptor g_uri_split_network$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_key_file_remove_comment",
+        constants$34.const$5
     );
-    static final MethodHandle g_uri_split_network$MH = RuntimeHelper.downcallHandle(
-        "g_uri_split_network",
-        constants$336.g_uri_split_network$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_key_file_remove_key",
+        constants$34.const$5
     );
-    static final FunctionDescriptor g_uri_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_key_file_remove_group",
+        constants$12.const$2
     );
-    static final MethodHandle g_uri_is_valid$MH = RuntimeHelper.downcallHandle(
-        "g_uri_is_valid",
-        constants$336.g_uri_is_valid$FUNC
-    );
-    static final FunctionDescriptor g_uri_join$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uri_join$MH = RuntimeHelper.downcallHandle(
-        "g_uri_join",
-        constants$336.g_uri_join$FUNC
-    );
-    static final FunctionDescriptor g_uri_join_with_user$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uri_join_with_user$MH = RuntimeHelper.downcallHandle(
-        "g_uri_join_with_user",
-        constants$336.g_uri_join_with_user$FUNC
-    );
-    static final FunctionDescriptor g_uri_parse$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uri_parse$MH = RuntimeHelper.downcallHandle(
-        "g_uri_parse",
-        constants$336.g_uri_parse$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_mapped_file_new",
+        constants$196.const$3
     );
 }
 

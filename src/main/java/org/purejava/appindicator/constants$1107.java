@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1107 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1107() {}
-    static final FunctionDescriptor gdk_seat_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_inet_socket_address_new_from_string",
+        constants$21.const$3
     );
-    static final MethodHandle gdk_seat_get_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_seat_get_display",
-        constants$1107.gdk_seat_get_display$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_inet_socket_address_get_address",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gdk_seat_get_capabilities$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_inet_socket_address_get_port",
+        constants$186.const$2
     );
-    static final MethodHandle gdk_seat_get_capabilities$MH = RuntimeHelper.downcallHandle(
-        "gdk_seat_get_capabilities",
-        constants$1107.gdk_seat_get_capabilities$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_inet_socket_address_get_flowinfo",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gdk_seat_get_slaves$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_inet_socket_address_get_scope_id",
+        constants$10.const$5
     );
-    static final MethodHandle gdk_seat_get_slaves$MH = RuntimeHelper.downcallHandle(
-        "gdk_seat_get_slaves",
-        constants$1107.gdk_seat_get_slaves$FUNC
-    );
-    static final FunctionDescriptor gdk_seat_get_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_seat_get_pointer$MH = RuntimeHelper.downcallHandle(
-        "gdk_seat_get_pointer",
-        constants$1107.gdk_seat_get_pointer$FUNC
-    );
-    static final FunctionDescriptor gdk_seat_get_keyboard$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_seat_get_keyboard$MH = RuntimeHelper.downcallHandle(
-        "gdk_seat_get_keyboard",
-        constants$1107.gdk_seat_get_keyboard$FUNC
-    );
-    static final FunctionDescriptor gdk_rectangle_intersect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_rectangle_intersect$MH = RuntimeHelper.downcallHandle(
-        "gdk_rectangle_intersect",
-        constants$1107.gdk_rectangle_intersect$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_app_info_create_flags_get_type",
+        constants$3.const$5
     );
 }
 

@@ -3,41 +3,46 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1884 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1884() {}
-    static final FunctionDescriptor gtk_relief_style_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_relief_style_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_relief_style_get_type",
-        constants$1884.gtk_relief_style_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_resource_at_scale",
+        constants$1883.const$3
     );
-    static final FunctionDescriptor gtk_scroll_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_scroll_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_scroll_type_get_type",
-        constants$1884.gtk_scroll_type_get_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gdk_pixbuf_new_from_data$destroy_fn.class, "apply", constants$13.const$4);
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gtk_selection_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_selection_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_mode_get_type",
-        constants$1884.gtk_selection_mode_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_data",
+        constants$1884.const$2
     );
-    static final FunctionDescriptor gtk_shadow_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_shadow_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_shadow_type_get_type",
-        constants$1884.gtk_shadow_type_get_type$FUNC
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final FunctionDescriptor gtk_state_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_state_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_state_type_get_type",
-        constants$1884.gtk_state_type_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_style_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_toolbar_style_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_style_get_type",
-        constants$1884.gtk_toolbar_style_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_bytes",
+        constants$1884.const$4
     );
 }
 

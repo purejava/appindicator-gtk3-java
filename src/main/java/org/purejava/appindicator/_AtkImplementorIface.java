@@ -4,60 +4,41 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _AtkImplementorIface {
- *     GTypeInterface parent;
- *     AtkObject* (*ref_accessible)(AtkImplementor*);
+ *     struct _GTypeInterface parent;
+ *     struct _AtkObject* (*ref_accessible)(struct _AtkImplementor*);
  * };
  * }
  */
 public class _AtkImplementorIface {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
-        ).withName("parent"),
-        Constants$root.C_POINTER$LAYOUT.withName("ref_accessible")
-    ).withName("_AtkImplementorIface");
     public static MemoryLayout $LAYOUT() {
-        return _AtkImplementorIface.$struct$LAYOUT;
+        return constants$1976.const$0;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
-    static final FunctionDescriptor ref_accessible$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor ref_accessible_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle ref_accessible_UP$MH = RuntimeHelper.upcallHandle(ref_accessible.class, "apply", _AtkImplementorIface.ref_accessible_UP$FUNC);
-    static final FunctionDescriptor ref_accessible_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle ref_accessible_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkImplementorIface.ref_accessible_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * AtkObject* (*ref_accessible)(AtkImplementor*);
+ * struct _AtkObject* (*ref_accessible)(struct _AtkImplementor*);
      * }
      */
     public interface ref_accessible {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(ref_accessible fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkImplementorIface.ref_accessible_UP$MH, fi, _AtkImplementorIface.ref_accessible$FUNC, scope);
+        static MemorySegment allocate(ref_accessible fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1976.const$1, fi, constants$5.const$2, scope);
         }
-        static ref_accessible ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static ref_accessible ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_AtkImplementorIface.ref_accessible_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -65,35 +46,34 @@ public class _AtkImplementorIface {
         }
     }
 
-    static final VarHandle ref_accessible$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("ref_accessible"));
     public static VarHandle ref_accessible$VH() {
-        return _AtkImplementorIface.ref_accessible$VH;
+        return constants$1976.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * AtkObject* (*ref_accessible)(AtkImplementor*);
+     * struct _AtkObject* (*ref_accessible)(struct _AtkImplementor*);
      * }
      */
     public static MemorySegment ref_accessible$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkImplementorIface.ref_accessible$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1976.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * AtkObject* (*ref_accessible)(AtkImplementor*);
+     * struct _AtkObject* (*ref_accessible)(struct _AtkImplementor*);
      * }
      */
     public static void ref_accessible$set(MemorySegment seg, MemorySegment x) {
-        _AtkImplementorIface.ref_accessible$VH.set(seg, x);
+        constants$1976.const$2.set(seg, x);
     }
     public static MemorySegment ref_accessible$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkImplementorIface.ref_accessible$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1976.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void ref_accessible$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkImplementorIface.ref_accessible$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1976.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static ref_accessible ref_accessible(MemorySegment segment, SegmentScope scope) {
+    public static ref_accessible ref_accessible(MemorySegment segment, Arena scope) {
         return ref_accessible.ofAddress(ref_accessible$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -101,7 +81,7 @@ public class _AtkImplementorIface {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

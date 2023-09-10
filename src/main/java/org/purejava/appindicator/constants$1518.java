@@ -3,56 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1518 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1518() {}
-    static final FunctionDescriptor gtk_cell_area_box_set_spacing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_message_func",
+        constants$42.const$1
     );
-    static final MethodHandle gtk_cell_area_box_set_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_box_set_spacing",
-        constants$1518.gtk_cell_area_box_set_spacing$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_get_glyph_func_t.class, "apply", constants$1029.const$4);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_func$func.class, "apply", constants$1029.const$4);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_set_glyph_func",
+        constants$42.const$1
     );
-    static final FunctionDescriptor _gtk_cell_area_box_group_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle _gtk_cell_area_box_group_visible$MH = RuntimeHelper.downcallHandle(
-        "_gtk_cell_area_box_group_visible",
-        constants$1518._gtk_cell_area_box_group_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_cell_area_context_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_context_get_type",
-        constants$1518.gtk_cell_area_context_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_context_get_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_context_get_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_context_get_area",
-        constants$1518.gtk_cell_area_context_get_area$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_context_allocate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_context_allocate$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_context_allocate",
-        constants$1518.gtk_cell_area_context_allocate$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_context_reset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_context_reset$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_context_reset",
-        constants$1518.gtk_cell_area_context_reset$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_unicode_eastasian_width_func_t.class, "apply", constants$150.const$0);
 }
 
 

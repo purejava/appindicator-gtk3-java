@@ -3,54 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$661 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$661() {}
-    static final FunctionDescriptor g_inet_address_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_inet_address_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_type",
-        constants$661.g_inet_address_get_type$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_new_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_new_from_string$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_new_from_string",
-        constants$661.g_inet_address_new_from_string$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_new_from_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_inet_address_new_from_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_new_from_bytes",
-        constants$661.g_inet_address_new_from_bytes$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_new_loopback$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_inet_address_new_loopback$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_new_loopback",
-        constants$661.g_inet_address_new_loopback$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_new_any$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_inet_address_new_any$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_new_any",
-        constants$661.g_inet_address_new_any$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_equal$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_equal",
-        constants$661.g_inet_address_equal$FUNC
-    );
+    static final VarHandle const$0 = constants$660.const$5.varHandle(MemoryLayout.PathElement.groupElement("flags_class"));
+    static final VarHandle const$1 = constants$660.const$5.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            RuntimeHelper.POINTER.withName("name"),
+            JAVA_INT.withName("flags"),
+            MemoryLayout.paddingLayout(4),
+            JAVA_LONG.withName("value_type"),
+            JAVA_LONG.withName("owner_type"),
+            RuntimeHelper.POINTER.withName("_nick"),
+            RuntimeHelper.POINTER.withName("_blurb"),
+            RuntimeHelper.POINTER.withName("qdata"),
+            JAVA_INT.withName("ref_count"),
+            JAVA_INT.withName("param_id")
+        ).withName("parent_instance"),
+        JAVA_FLOAT.withName("minimum"),
+        JAVA_FLOAT.withName("maximum"),
+        JAVA_FLOAT.withName("default_value"),
+        JAVA_FLOAT.withName("epsilon")
+    ).withName("_GParamSpecFloat");
+    static final VarHandle const$3 = constants$661.const$2.varHandle(MemoryLayout.PathElement.groupElement("minimum"));
+    static final VarHandle const$4 = constants$661.const$2.varHandle(MemoryLayout.PathElement.groupElement("maximum"));
+    static final VarHandle const$5 = constants$661.const$2.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
 }
 
 

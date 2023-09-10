@@ -3,44 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$168 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$168() {}
-    static final FunctionDescriptor GSourceDummyMarshal$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor GSourceDummyMarshal_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle GSourceDummyMarshal_UP$MH = RuntimeHelper.upcallHandle(GSourceDummyMarshal.class, "apply", constants$168.GSourceDummyMarshal_UP$FUNC);
-    static final FunctionDescriptor GSourceDummyMarshal_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle GSourceDummyMarshal_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$168.GSourceDummyMarshal_DOWN$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_get_size",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_main_context_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_main_context_new$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_new",
-        constants$168.g_main_context_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_get_uris",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_main_context_new_with_flags$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_remove_group",
+        constants$34.const$5
     );
-    static final MethodHandle g_main_context_new_with_flags$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_new_with_flags",
-        constants$168.g_main_context_new_with_flags$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_remove_application",
+        constants$34.const$5
     );
-    static final FunctionDescriptor g_main_context_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_remove_item",
+        constants$12.const$2
     );
-    static final MethodHandle g_main_context_ref$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_ref",
-        constants$168.g_main_context_ref$FUNC
-    );
-    static final FunctionDescriptor g_main_context_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_context_unref$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_unref",
-        constants$168.g_main_context_unref$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_move_item",
+        constants$34.const$5
     );
 }
 

@@ -3,69 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$445 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$445() {}
-    static final FunctionDescriptor g_binding_get_target_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_spawn_sync$child_setup.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_binding_get_target_property$MH = RuntimeHelper.downcallHandle(
-        "g_binding_get_target_property",
-        constants$445.g_binding_get_target_property$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_spawn_sync",
+        constants$445.const$1
     );
-    static final FunctionDescriptor g_binding_unbind$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_spawn_command_line_sync",
+        constants$165.const$2
     );
-    static final MethodHandle g_binding_unbind$MH = RuntimeHelper.downcallHandle(
-        "g_binding_unbind",
-        constants$445.g_binding_unbind$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_spawn_command_line_async",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_object_bind_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_object_bind_property$MH = RuntimeHelper.downcallHandle(
-        "g_object_bind_property",
-        constants$445.g_object_bind_property$FUNC
-    );
-    static final FunctionDescriptor g_object_bind_property_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_bind_property_full$MH = RuntimeHelper.downcallHandle(
-        "g_object_bind_property_full",
-        constants$445.g_object_bind_property_full$FUNC
-    );
-    static final FunctionDescriptor g_object_bind_property_with_closures$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_bind_property_with_closures$MH = RuntimeHelper.downcallHandle(
-        "g_object_bind_property_with_closures",
-        constants$445.g_object_bind_property_with_closures$FUNC
-    );
-    static final FunctionDescriptor g_binding_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_binding_group_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_binding_group_get_type",
-        constants$445.g_binding_group_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_spawn_check_wait_status",
+        constants$9.const$2
     );
 }
 

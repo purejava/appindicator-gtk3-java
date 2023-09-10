@@ -3,62 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1458 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1458() {}
-    static final FunctionDescriptor gtk_entry_set_icon_from_icon_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$1457.const$4
     );
-    static final MethodHandle gtk_entry_set_icon_from_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_icon_from_icon_name",
-        constants$1458.gtk_entry_set_icon_from_icon_name$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_icon_from_gicon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_icon_from_gicon$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_icon_from_gicon",
-        constants$1458.gtk_entry_set_icon_from_gicon$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_icon_storage_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_icon_storage_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_storage_type",
-        constants$1458.gtk_entry_get_icon_storage_type$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_icon_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_icon_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_pixbuf",
-        constants$1458.gtk_entry_get_icon_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_icon_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_icon_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_stock",
-        constants$1458.gtk_entry_get_icon_stock$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_name",
-        constants$1458.gtk_entry_get_icon_name$FUNC
-    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_FLOAT.withName("offset"),
+        JAVA_INT.withName("is_foreground"),
+        JAVA_INT.withName("color")
+    ).withName("hb_color_stop_t");
+    static final VarHandle const$2 = constants$1458.const$1.varHandle(MemoryLayout.PathElement.groupElement("offset"));
+    static final VarHandle const$3 = constants$1458.const$1.varHandle(MemoryLayout.PathElement.groupElement("is_foreground"));
+    static final VarHandle const$4 = constants$1458.const$1.varHandle(MemoryLayout.PathElement.groupElement("color"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_color_line_get_color_stops_func_t.class, "apply", constants$1243.const$0);
 }
 
 

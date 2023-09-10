@@ -3,59 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1767 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1767() {}
-    static final FunctionDescriptor gtk_range_get_min_slider_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_range_get_min_slider_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_min_slider_size",
-        constants$1767.gtk_range_get_min_slider_size$FUNC
-    );
-    static final FunctionDescriptor gtk_range_get_range_rect$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_range_get_range_rect$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_range_rect",
-        constants$1767.gtk_range_get_range_rect$FUNC
-    );
-    static final FunctionDescriptor gtk_range_get_slider_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_range_get_slider_range$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_slider_range",
-        constants$1767.gtk_range_get_slider_range$FUNC
-    );
-    static final FunctionDescriptor gtk_range_set_lower_stepper_sensitivity$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_range_set_lower_stepper_sensitivity$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_set_lower_stepper_sensitivity",
-        constants$1767.gtk_range_set_lower_stepper_sensitivity$FUNC
-    );
-    static final FunctionDescriptor gtk_range_get_lower_stepper_sensitivity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_range_get_lower_stepper_sensitivity$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_lower_stepper_sensitivity",
-        constants$1767.gtk_range_get_lower_stepper_sensitivity$FUNC
-    );
-    static final FunctionDescriptor gtk_range_set_upper_stepper_sensitivity$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_range_set_upper_stepper_sensitivity$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_set_upper_stepper_sensitivity",
-        constants$1767.gtk_range_set_upper_stepper_sensitivity$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GdkFilterFunc.class, "apply", constants$12.const$2);
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        MemoryLayout.paddingLayout(7)
+    ).withName("_GdkEventAny");
+    static final VarHandle const$2 = constants$1767.const$1.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$3 = constants$1767.const$1.varHandle(MemoryLayout.PathElement.groupElement("window"));
+    static final VarHandle const$4 = constants$1767.const$1.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        MemoryLayout.paddingLayout(3),
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("x"),
+            JAVA_INT.withName("y"),
+            JAVA_INT.withName("width"),
+            JAVA_INT.withName("height")
+        ).withName("area"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("region"),
+        JAVA_INT.withName("count"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GdkEventExpose");
 }
 
 

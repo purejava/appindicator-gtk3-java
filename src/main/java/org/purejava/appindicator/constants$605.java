@@ -3,55 +3,43 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$605 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$605() {}
-    static final FunctionDescriptor g_dtls_connection_get_database$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_signal_set_va_marshaller$va_marshaller.class, "apply", constants$585.const$0);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        JAVA_INT,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_dtls_connection_get_database$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_database",
-        constants$605.g_dtls_connection_get_database$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_signal_set_va_marshaller",
+        constants$605.const$1
     );
-    static final FunctionDescriptor g_dtls_connection_set_certificate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_signal_emitv",
+        constants$57.const$0
     );
-    static final MethodHandle g_dtls_connection_set_certificate$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_set_certificate",
-        constants$605.g_dtls_connection_set_certificate$FUNC
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final FunctionDescriptor g_dtls_connection_get_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_get_certificate$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_certificate",
-        constants$605.g_dtls_connection_get_certificate$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_set_interaction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_set_interaction$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_set_interaction",
-        constants$605.g_dtls_connection_set_interaction$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_get_interaction$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_get_interaction$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_interaction",
-        constants$605.g_dtls_connection_get_interaction$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_get_peer_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_get_peer_certificate$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_peer_certificate",
-        constants$605.g_dtls_connection_get_peer_certificate$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_signal_emit_valist",
+        constants$605.const$4
     );
 }
 

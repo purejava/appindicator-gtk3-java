@@ -3,60 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1431 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1431() {}
-    static final FunctionDescriptor gtk_im_context_set_cursor_location$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_unicode_script",
+        constants$11.const$4
     );
-    static final MethodHandle gtk_im_context_set_cursor_location$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_set_cursor_location",
-        constants$1431.gtk_im_context_set_cursor_location$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_unicode_compose",
+        constants$49.const$2
     );
-    static final FunctionDescriptor gtk_im_context_set_use_preedit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_unicode_decompose",
+        constants$11.const$0
     );
-    static final MethodHandle gtk_im_context_set_use_preedit$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_set_use_preedit",
-        constants$1431.gtk_im_context_set_use_preedit$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_set_create",
+        constants$35.const$2
     );
-    static final FunctionDescriptor gtk_im_context_set_surrounding$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_set_get_empty",
+        constants$35.const$2
     );
-    static final MethodHandle gtk_im_context_set_surrounding$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_set_surrounding",
-        constants$1431.gtk_im_context_set_surrounding$FUNC
-    );
-    static final FunctionDescriptor gtk_im_context_get_surrounding$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_im_context_get_surrounding$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_get_surrounding",
-        constants$1431.gtk_im_context_get_surrounding$FUNC
-    );
-    static final FunctionDescriptor gtk_im_context_delete_surrounding$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_im_context_delete_surrounding$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_delete_surrounding",
-        constants$1431.gtk_im_context_delete_surrounding$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_buffer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_entry_buffer_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_get_type",
-        constants$1431.gtk_entry_buffer_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_set_reference",
+        constants$5.const$2
     );
 }
 

@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GDestroyNotify)(void* data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GDestroyNotify {
 
     void apply(java.lang.foreign.MemorySegment display);
-    static MemorySegment allocate(GDestroyNotify fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$7.GDestroyNotify_UP$MH, fi, constants$7.GDestroyNotify$FUNC, scope);
+    static MemorySegment allocate(GDestroyNotify fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$13.const$2, fi, constants$13.const$1, scope);
     }
-    static GDestroyNotify ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GDestroyNotify ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$7.GDestroyNotify_DOWN$MH.invokeExact(symbol, _display);
+                constants$13.const$3.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

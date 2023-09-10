@@ -3,59 +3,48 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1494 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1494() {}
-    static final FunctionDescriptor gtk_aspect_frame_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_font_draw_glyph",
+        constants$179.const$1
     );
-    static final MethodHandle gtk_aspect_frame_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_aspect_frame_new",
-        constants$1494.gtk_aspect_frame_new$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final FunctionDescriptor gtk_aspect_frame_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_font_paint_glyph",
+        constants$1494.const$1
     );
-    static final MethodHandle gtk_aspect_frame_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_aspect_frame_set",
-        constants$1494.gtk_aspect_frame_set$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph",
+        constants$49.const$2
     );
-    static final FunctionDescriptor GtkAssistantPageFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_font_get_extents_for_direction",
+        constants$42.const$4
     );
-    static final FunctionDescriptor GtkAssistantPageFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle GtkAssistantPageFunc_UP$MH = RuntimeHelper.upcallHandle(GtkAssistantPageFunc.class, "apply", constants$1494.GtkAssistantPageFunc_UP$FUNC);
-    static final FunctionDescriptor GtkAssistantPageFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkAssistantPageFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1494.GtkAssistantPageFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_assistant_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_get_type",
-        constants$1494.gtk_assistant_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_assistant_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_new",
-        constants$1494.gtk_assistant_new$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_advance_for_direction",
+        constants$1494.const$5
     );
 }
 

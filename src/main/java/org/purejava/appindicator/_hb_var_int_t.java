@@ -2,89 +2,81 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * union _hb_var_int_t {
- *     uint32_t u32;
- *     int32_t i32;
- *     uint16_t u16[2];
- *     int16_t i16[2];
- *     uint8_t u8[4];
- *     int8_t i8[4];
+ *     unsigned int u32;
+ *     int i32;
+ *     unsigned short u16[2];
+ *     short i16[2];
+ *     unsigned char u8[4];
+ *     signed char i8[4];
  * };
  * }
  */
 public class _hb_var_int_t {
 
-    static final UnionLayout $union$LAYOUT = MemoryLayout.unionLayout(
-        Constants$root.C_INT$LAYOUT.withName("u32"),
-        Constants$root.C_INT$LAYOUT.withName("i32"),
-        MemoryLayout.sequenceLayout(2, Constants$root.C_SHORT$LAYOUT).withName("u16"),
-        MemoryLayout.sequenceLayout(2, Constants$root.C_SHORT$LAYOUT).withName("i16"),
-        MemoryLayout.sequenceLayout(4, Constants$root.C_CHAR$LAYOUT).withName("u8"),
-        MemoryLayout.sequenceLayout(4, Constants$root.C_CHAR$LAYOUT).withName("i8")
-    ).withName("_hb_var_int_t");
     public static MemoryLayout $LAYOUT() {
-        return _hb_var_int_t.$union$LAYOUT;
+        return constants$1413.const$4;
     }
-    static final VarHandle u32$VH = $union$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("u32"));
     public static VarHandle u32$VH() {
-        return _hb_var_int_t.u32$VH;
+        return constants$1413.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * uint32_t u32;
+     * unsigned int u32;
      * }
      */
     public static int u32$get(MemorySegment seg) {
-        return (int)_hb_var_int_t.u32$VH.get(seg);
+        return (int)constants$1413.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * uint32_t u32;
+     * unsigned int u32;
      * }
      */
     public static void u32$set(MemorySegment seg, int x) {
-        _hb_var_int_t.u32$VH.set(seg, x);
+        constants$1413.const$5.set(seg, x);
     }
     public static int u32$get(MemorySegment seg, long index) {
-        return (int)_hb_var_int_t.u32$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1413.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void u32$set(MemorySegment seg, long index, int x) {
-        _hb_var_int_t.u32$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1413.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle i32$VH = $union$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("i32"));
     public static VarHandle i32$VH() {
-        return _hb_var_int_t.i32$VH;
+        return constants$1414.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * int32_t i32;
+     * int i32;
      * }
      */
     public static int i32$get(MemorySegment seg) {
-        return (int)_hb_var_int_t.i32$VH.get(seg);
+        return (int)constants$1414.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * int32_t i32;
+     * int i32;
      * }
      */
     public static void i32$set(MemorySegment seg, int x) {
-        _hb_var_int_t.i32$VH.set(seg, x);
+        constants$1414.const$0.set(seg, x);
     }
     public static int i32$get(MemorySegment seg, long index) {
-        return (int)_hb_var_int_t.i32$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1414.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void i32$set(MemorySegment seg, long index, int x) {
-        _hb_var_int_t.i32$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1414.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment u16$slice(MemorySegment seg) {
         return seg.asSlice(0, 4);
@@ -103,7 +95,7 @@ public class _hb_var_int_t {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

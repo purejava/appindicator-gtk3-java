@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1256 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1256() {}
-    static final FunctionDescriptor gtk_widget_has_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_settings_get_value",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_widget_has_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_has_focus",
-        constants$1256.gtk_widget_has_focus$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_settings_get_user_value",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_widget_is_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_settings_get_default_value",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_widget_is_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_is_focus",
-        constants$1256.gtk_widget_is_focus$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_settings_set",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gtk_widget_has_visible_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "g_settings_get",
+        constants$14.const$3
     );
-    static final MethodHandle gtk_widget_has_visible_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_has_visible_focus",
-        constants$1256.gtk_widget_has_visible_focus$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_grab_focus$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_grab_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_grab_focus",
-        constants$1256.gtk_widget_grab_focus$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_focus_on_click$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_focus_on_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_focus_on_click",
-        constants$1256.gtk_widget_set_focus_on_click$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_focus_on_click$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_focus_on_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_focus_on_click",
-        constants$1256.gtk_widget_get_focus_on_click$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_settings_reset",
+        constants$13.const$4
     );
 }
 

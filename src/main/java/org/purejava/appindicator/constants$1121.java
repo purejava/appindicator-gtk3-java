@@ -3,60 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1121 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1121() {}
-    static final FunctionDescriptor gdk_screen_get_n_monitors$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_memory_monitor_warning_level_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_screen_get_n_monitors$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_n_monitors",
-        constants$1121.gdk_screen_get_n_monitors$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_resolver_name_lookup_flags_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_screen_get_primary_monitor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_settings_bind_flags_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_screen_get_primary_monitor$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_primary_monitor",
-        constants$1121.gdk_screen_get_primary_monitor$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_monitor_geometry$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_monitor_geometry$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_monitor_geometry",
-        constants$1121.gdk_screen_get_monitor_geometry$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_monitor_workarea$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_monitor_workarea$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_monitor_workarea",
-        constants$1121.gdk_screen_get_monitor_workarea$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_monitor_at_point$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_monitor_at_point$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_monitor_at_point",
-        constants$1121.gdk_screen_get_monitor_at_point$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_monitor_at_window$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_monitor_at_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_monitor_at_window",
-        constants$1121.gdk_screen_get_monitor_at_window$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GModuleCheckInit.class, "apply", constants$5.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GModuleUnload.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_module_error_quark",
+        constants$83.const$1
     );
 }
 

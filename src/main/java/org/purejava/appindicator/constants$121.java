@@ -3,54 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$121 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$121() {}
-    static final FunctionDescriptor rewinddir$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$120.const$4.varHandle(MemoryLayout.PathElement.groupElement("sigev_notify"));
+    static final UnionLayout const$1 = MemoryLayout.unionLayout(
+        MemoryLayout.sequenceLayout(12, JAVA_INT).withName("_pad"),
+        JAVA_INT.withName("_tid"),
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("_function"),
+            RuntimeHelper.POINTER.withName("_attribute")
+        ).withName("_sigev_thread")
+    ).withName("");
+    static final VarHandle const$2 = constants$121.const$1.varHandle(MemoryLayout.PathElement.groupElement("_tid"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("_function"),
+        RuntimeHelper.POINTER.withName("_attribute")
+    ).withName("");
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        MemoryLayout.unionLayout(
+            JAVA_INT.withName("sival_int"),
+            RuntimeHelper.POINTER.withName("sival_ptr")
+        ).withName("sigval")
     );
-    static final MethodHandle rewinddir$MH = RuntimeHelper.downcallHandle(
-        "rewinddir",
-        constants$121.rewinddir$FUNC
-    );
-    static final FunctionDescriptor seekdir$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle seekdir$MH = RuntimeHelper.downcallHandle(
-        "seekdir",
-        constants$121.seekdir$FUNC
-    );
-    static final FunctionDescriptor telldir$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle telldir$MH = RuntimeHelper.downcallHandle(
-        "telldir",
-        constants$121.telldir$FUNC
-    );
-    static final FunctionDescriptor dirfd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle dirfd$MH = RuntimeHelper.downcallHandle(
-        "dirfd",
-        constants$121.dirfd$FUNC
-    );
-    static final FunctionDescriptor scandir$__selector$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor scandir$__selector_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle scandir$__selector_UP$MH = RuntimeHelper.upcallHandle(scandir$__selector.class, "apply", constants$121.scandir$__selector_UP$FUNC);
-    static final FunctionDescriptor scandir$__selector_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle scandir$__selector_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$121.scandir$__selector_DOWN$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_sigev_thread._function.class, "apply", constants$121.const$4);
 }
 
 

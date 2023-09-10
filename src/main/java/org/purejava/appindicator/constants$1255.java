@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1255 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1255() {}
-    static final FunctionDescriptor gtk_widget_region_intersect$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_settings_new_full",
+        constants$23.const$0
     );
-    static final MethodHandle gtk_widget_region_intersect$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_region_intersect",
-        constants$1255.gtk_widget_region_intersect$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_settings_list_children",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_widget_freeze_child_notify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_settings_list_keys",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_widget_freeze_child_notify$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_freeze_child_notify",
-        constants$1255.gtk_widget_freeze_child_notify$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_settings_get_range",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_widget_child_notify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_settings_range_check",
+        constants$12.const$2
     );
-    static final MethodHandle gtk_widget_child_notify$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_child_notify",
-        constants$1255.gtk_widget_child_notify$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_thaw_child_notify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_thaw_child_notify$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_thaw_child_notify",
-        constants$1255.gtk_widget_thaw_child_notify$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_can_focus$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_can_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_can_focus",
-        constants$1255.gtk_widget_set_can_focus$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_can_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_can_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_can_focus",
-        constants$1255.gtk_widget_get_can_focus$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_settings_set_value",
+        constants$12.const$2
     );
 }
 

@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1282 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1282() {}
-    static final FunctionDescriptor gtk_widget_trigger_tooltip_query$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_socket_get_keepalive",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_widget_trigger_tooltip_query$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_trigger_tooltip_query",
-        constants$1282.gtk_widget_trigger_tooltip_query$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_socket_get_listen_backlog",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_widget_set_tooltip_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_socket_set_listen_backlog",
+        constants$40.const$2
     );
-    static final MethodHandle gtk_widget_set_tooltip_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_tooltip_text",
-        constants$1282.gtk_widget_set_tooltip_text$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_get_timeout",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_widget_get_tooltip_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_set_timeout",
+        constants$40.const$2
     );
-    static final MethodHandle gtk_widget_get_tooltip_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_tooltip_text",
-        constants$1282.gtk_widget_get_tooltip_text$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_tooltip_markup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_tooltip_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_tooltip_markup",
-        constants$1282.gtk_widget_set_tooltip_markup$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_tooltip_markup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_tooltip_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_tooltip_markup",
-        constants$1282.gtk_widget_get_tooltip_markup$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_has_tooltip$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_has_tooltip$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_has_tooltip",
-        constants$1282.gtk_widget_set_has_tooltip$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_get_ttl",
+        constants$10.const$5
     );
 }
 

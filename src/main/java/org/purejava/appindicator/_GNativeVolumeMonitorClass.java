@@ -4,105 +4,41 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GNativeVolumeMonitorClass {
- *     GVolumeMonitorClass parent_class;
- *     GMount* (*get_mount_for_mount_path)(char*,GCancellable*);
+ *     struct _GVolumeMonitorClass parent_class;
+ *     struct _GMount* (*get_mount_for_mount_path)(char*,struct _GCancellable*);
  * };
  * }
  */
 public class _GNativeVolumeMonitorClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-                ).withName("g_type_class"),
-                Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-                Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-                Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-                MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-            ).withName("parent_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("volume_added"),
-            Constants$root.C_POINTER$LAYOUT.withName("volume_removed"),
-            Constants$root.C_POINTER$LAYOUT.withName("volume_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("mount_added"),
-            Constants$root.C_POINTER$LAYOUT.withName("mount_removed"),
-            Constants$root.C_POINTER$LAYOUT.withName("mount_pre_unmount"),
-            Constants$root.C_POINTER$LAYOUT.withName("mount_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("drive_connected"),
-            Constants$root.C_POINTER$LAYOUT.withName("drive_disconnected"),
-            Constants$root.C_POINTER$LAYOUT.withName("drive_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("is_supported"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_connected_drives"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_volumes"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_mounts"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_volume_for_uuid"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_mount_for_uuid"),
-            Constants$root.C_POINTER$LAYOUT.withName("adopt_orphan_mount"),
-            Constants$root.C_POINTER$LAYOUT.withName("drive_eject_button"),
-            Constants$root.C_POINTER$LAYOUT.withName("drive_stop_button"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved1"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved2"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved3"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved4"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved5"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved6")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_mount_for_mount_path")
-    ).withName("_GNativeVolumeMonitorClass");
     public static MemoryLayout $LAYOUT() {
-        return _GNativeVolumeMonitorClass.$struct$LAYOUT;
+        return constants$1194.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 336);
     }
-    static final FunctionDescriptor get_mount_for_mount_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_mount_for_mount_path_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_mount_for_mount_path_UP$MH = RuntimeHelper.upcallHandle(get_mount_for_mount_path.class, "apply", _GNativeVolumeMonitorClass.get_mount_for_mount_path_UP$FUNC);
-    static final FunctionDescriptor get_mount_for_mount_path_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_mount_for_mount_path_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GNativeVolumeMonitorClass.get_mount_for_mount_path_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GMount* (*get_mount_for_mount_path)(char*,GCancellable*);
+ * struct _GMount* (*get_mount_for_mount_path)(char*,struct _GCancellable*);
      * }
      */
     public interface get_mount_for_mount_path {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
-        static MemorySegment allocate(get_mount_for_mount_path fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GNativeVolumeMonitorClass.get_mount_for_mount_path_UP$MH, fi, _GNativeVolumeMonitorClass.get_mount_for_mount_path$FUNC, scope);
+        static MemorySegment allocate(get_mount_for_mount_path fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1195.const$0, fi, constants$5.const$5, scope);
         }
-        static get_mount_for_mount_path ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_mount_for_mount_path ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GNativeVolumeMonitorClass.get_mount_for_mount_path_DOWN$MH.invokeExact(symbol, _path, _func_data);
+                    return (java.lang.foreign.MemorySegment)constants$15.const$1.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -110,35 +46,34 @@ public class _GNativeVolumeMonitorClass {
         }
     }
 
-    static final VarHandle get_mount_for_mount_path$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_mount_for_mount_path"));
     public static VarHandle get_mount_for_mount_path$VH() {
-        return _GNativeVolumeMonitorClass.get_mount_for_mount_path$VH;
+        return constants$1195.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GMount* (*get_mount_for_mount_path)(char*,GCancellable*);
+     * struct _GMount* (*get_mount_for_mount_path)(char*,struct _GCancellable*);
      * }
      */
     public static MemorySegment get_mount_for_mount_path$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GNativeVolumeMonitorClass.get_mount_for_mount_path$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1195.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GMount* (*get_mount_for_mount_path)(char*,GCancellable*);
+     * struct _GMount* (*get_mount_for_mount_path)(char*,struct _GCancellable*);
      * }
      */
     public static void get_mount_for_mount_path$set(MemorySegment seg, MemorySegment x) {
-        _GNativeVolumeMonitorClass.get_mount_for_mount_path$VH.set(seg, x);
+        constants$1195.const$1.set(seg, x);
     }
     public static MemorySegment get_mount_for_mount_path$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GNativeVolumeMonitorClass.get_mount_for_mount_path$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1195.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_mount_for_mount_path$set(MemorySegment seg, long index, MemorySegment x) {
-        _GNativeVolumeMonitorClass.get_mount_for_mount_path$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1195.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_mount_for_mount_path get_mount_for_mount_path(MemorySegment segment, SegmentScope scope) {
+    public static get_mount_for_mount_path get_mount_for_mount_path(MemorySegment segment, Arena scope) {
         return get_mount_for_mount_path.ofAddress(get_mount_for_mount_path$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -146,7 +81,7 @@ public class _GNativeVolumeMonitorClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

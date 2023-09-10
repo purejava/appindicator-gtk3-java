@@ -3,56 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$722 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$722() {}
-    static final FunctionDescriptor g_permission_get_can_release$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_permission_get_can_release$MH = RuntimeHelper.downcallHandle(
-        "g_permission_get_can_release",
-        constants$722.g_permission_get_can_release$FUNC
-    );
-    static final FunctionDescriptor g_permission_impl_update$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_permission_impl_update$MH = RuntimeHelper.downcallHandle(
-        "g_permission_impl_update",
-        constants$722.g_permission_impl_update$FUNC
-    );
-    static final FunctionDescriptor g_pollable_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_pollable_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_input_stream_get_type",
-        constants$722.g_pollable_input_stream_get_type$FUNC
-    );
-    static final FunctionDescriptor g_pollable_input_stream_can_poll$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pollable_input_stream_can_poll$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_input_stream_can_poll",
-        constants$722.g_pollable_input_stream_can_poll$FUNC
-    );
-    static final FunctionDescriptor g_pollable_input_stream_is_readable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pollable_input_stream_is_readable$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_input_stream_is_readable",
-        constants$722.g_pollable_input_stream_is_readable$FUNC
-    );
-    static final FunctionDescriptor g_pollable_input_stream_create_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pollable_input_stream_create_source$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_input_stream_create_source",
-        constants$722.g_pollable_input_stream_create_source$FUNC
-    );
+    static final VarHandle const$0 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_commandline"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GAppInfoIface.get_display_name.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_display_name"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GAppInfoIface.set_as_last_used_for_type.class, "apply", constants$12.const$2);
+    static final VarHandle const$4 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("set_as_last_used_for_type"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GAppInfoIface.get_supported_types.class, "apply", constants$5.const$2);
 }
 
 

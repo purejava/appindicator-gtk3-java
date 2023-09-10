@@ -3,56 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1900 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1900() {}
-    static final FunctionDescriptor gtk_widget_path_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_file_info_async",
+        constants$42.const$1
     );
-    static final MethodHandle gtk_widget_path_unref$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_unref",
-        constants$1900.gtk_widget_path_unref$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_file_info_finish",
+        constants$39.const$1
     );
-    static final FunctionDescriptor gtk_widget_path_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_copy",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_widget_path_free$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_free",
-        constants$1900.gtk_widget_path_free$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_free",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_widget_path_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_to_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_to_string",
-        constants$1900.gtk_widget_path_to_string$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_length$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_length",
-        constants$1900.gtk_widget_path_length$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_append_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_append_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_append_type",
-        constants$1900.gtk_widget_path_append_type$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_prepend_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_prepend_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_prepend_type",
-        constants$1900.gtk_widget_path_prepend_type$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GdkPixbufLoader");
+    static final VarHandle const$5 = constants$1900.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

@@ -3,68 +3,36 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1331 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1331() {}
-    static final FunctionDescriptor gtk_menu_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_menu_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_get_type",
-        constants$1331.gtk_menu_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_task_new",
+        constants$39.const$1
     );
-    static final FunctionDescriptor gtk_menu_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_menu_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_new",
-        constants$1331.gtk_menu_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_task_report_error$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_task_report_error",
+        constants$331.const$1
     );
-    static final FunctionDescriptor gtk_menu_new_from_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_task_report_new_error$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle gtk_menu_new_from_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_new_from_model",
-        constants$1331.gtk_menu_new_from_model$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_popup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_menu_popup$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_popup",
-        constants$1331.gtk_menu_popup$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_popup_for_device$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_menu_popup_for_device$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_popup_for_device",
-        constants$1331.gtk_menu_popup_for_device$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_popup_at_rect$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_popup_at_rect$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_popup_at_rect",
-        constants$1331.gtk_menu_popup_at_rect$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "g_task_report_new_error",
+        constants$1331.const$4
     );
 }
 

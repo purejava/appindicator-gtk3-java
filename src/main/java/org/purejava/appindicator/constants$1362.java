@@ -3,54 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1362 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1362() {}
-    static final FunctionDescriptor GtkTreeModelForeachFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GTlsClientConnectionInterface.copy_session_state.class, "apply", constants$13.const$4);
+    static final VarHandle const$1 = constants$1361.const$5.varHandle(MemoryLayout.PathElement.groupElement("copy_session_state"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tls_client_connection_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle GtkTreeModelForeachFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1362.GtkTreeModelForeachFunc_DOWN$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tls_client_connection_new",
+        constants$23.const$0
     );
-    static final FunctionDescriptor gtk_tree_path_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_tree_path_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_new",
-        constants$1362.gtk_tree_path_new$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tls_client_connection_get_validation_flags",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_tree_path_new_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_path_new_from_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_new_from_string",
-        constants$1362.gtk_tree_path_new_from_string$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_new_from_indices$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_path_new_from_indices$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_path_new_from_indices",
-        constants$1362.gtk_tree_path_new_from_indices$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_new_from_indicesv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle gtk_tree_path_new_from_indicesv$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_new_from_indicesv",
-        constants$1362.gtk_tree_path_new_from_indicesv$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_path_to_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_to_string",
-        constants$1362.gtk_tree_path_to_string$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tls_client_connection_set_validation_flags",
+        constants$40.const$2
     );
 }
 

@@ -3,56 +3,36 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$169 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$169() {}
-    static final FunctionDescriptor g_main_context_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_main_context_default$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_default",
-        constants$169.g_main_context_default$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_bytes_new",
+        constants$21.const$1
     );
-    static final FunctionDescriptor g_main_context_iteration$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_bytes_new_take",
+        constants$21.const$1
     );
-    static final MethodHandle g_main_context_iteration$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_iteration",
-        constants$169.g_main_context_iteration$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_bytes_new_static",
+        constants$21.const$1
     );
-    static final FunctionDescriptor g_main_context_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_bytes_new_with_free_func$free_func.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_main_context_pending$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_pending",
-        constants$169.g_main_context_pending$FUNC
-    );
-    static final FunctionDescriptor g_main_context_find_source_by_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_main_context_find_source_by_id$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_find_source_by_id",
-        constants$169.g_main_context_find_source_by_id$FUNC
-    );
-    static final FunctionDescriptor g_main_context_find_source_by_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_context_find_source_by_user_data$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_find_source_by_user_data",
-        constants$169.g_main_context_find_source_by_user_data$FUNC
-    );
-    static final FunctionDescriptor g_main_context_find_source_by_funcs_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_context_find_source_by_funcs_user_data$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_find_source_by_funcs_user_data",
-        constants$169.g_main_context_find_source_by_funcs_user_data$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_bytes_new_with_free_func",
+        constants$169.const$4
     );
 }
 

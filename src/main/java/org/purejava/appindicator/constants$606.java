@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$606 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$606() {}
-    static final FunctionDescriptor g_dtls_connection_get_peer_certificate_errors$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
+        "g_signal_emit",
+        constants$467.const$3
     );
-    static final MethodHandle g_dtls_connection_get_peer_certificate_errors$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_peer_certificate_errors",
-        constants$606.g_dtls_connection_get_peer_certificate_errors$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_signal_emit_by_name",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_dtls_connection_set_require_close_notify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_signal_lookup",
+        constants$97.const$1
     );
-    static final MethodHandle g_dtls_connection_set_require_close_notify$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_set_require_close_notify",
-        constants$606.g_dtls_connection_set_require_close_notify$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_signal_name",
+        constants$24.const$0
     );
-    static final FunctionDescriptor g_dtls_connection_get_require_close_notify$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_signal_query",
+        constants$90.const$2
     );
-    static final MethodHandle g_dtls_connection_get_require_close_notify$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_require_close_notify",
-        constants$606.g_dtls_connection_get_require_close_notify$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_set_rehandshake_mode$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_set_rehandshake_mode$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_set_rehandshake_mode",
-        constants$606.g_dtls_connection_set_rehandshake_mode$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_get_rehandshake_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_get_rehandshake_mode$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_get_rehandshake_mode",
-        constants$606.g_dtls_connection_get_rehandshake_mode$FUNC
-    );
-    static final FunctionDescriptor g_dtls_connection_handshake$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dtls_connection_handshake$MH = RuntimeHelper.downcallHandle(
-        "g_dtls_connection_handshake",
-        constants$606.g_dtls_connection_handshake$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_signal_list_ids",
+        constants$407.const$2
     );
 }
 

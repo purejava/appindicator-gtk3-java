@@ -3,46 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1207 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1207() {}
-    static final FunctionDescriptor AtkEventListenerInit$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor AtkEventListenerInit_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle AtkEventListenerInit_UP$MH = RuntimeHelper.upcallHandle(AtkEventListenerInit.class, "apply", constants$1207.AtkEventListenerInit_UP$FUNC);
-    static final FunctionDescriptor AtkEventListenerInit_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle AtkEventListenerInit_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1207.AtkEventListenerInit_DOWN$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_permission_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor AtkKeySnoopFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_permission_acquire",
+        constants$12.const$2
     );
-    static final FunctionDescriptor AtkKeySnoopFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_permission_acquire_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_permission_acquire_async",
+        constants$42.const$1
     );
-    static final MethodHandle AtkKeySnoopFunc_UP$MH = RuntimeHelper.upcallHandle(AtkKeySnoopFunc.class, "apply", constants$1207.AtkKeySnoopFunc_UP$FUNC);
-    static final FunctionDescriptor AtkKeySnoopFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_permission_acquire_finish",
+        constants$12.const$2
     );
-    static final MethodHandle AtkKeySnoopFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1207.AtkKeySnoopFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor atk_util_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_util_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_util_get_type",
-        constants$1207.atk_util_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_add_focus_tracker$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_add_focus_tracker$MH = RuntimeHelper.downcallHandle(
-        "atk_add_focus_tracker",
-        constants$1207.atk_add_focus_tracker$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_permission_release",
+        constants$12.const$2
     );
 }
 

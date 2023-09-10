@@ -3,71 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$496 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$496() {}
-    static final FunctionDescriptor g_initable_newv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GCompletionFunc.class, "apply", constants$5.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GCompletionStrncmpFunc.class, "apply", constants$18.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$18.const$2
     );
-    static final MethodHandle g_initable_newv$MH = RuntimeHelper.downcallHandle(
-        "g_initable_newv",
-        constants$496.g_initable_newv$FUNC
-    );
-    static final FunctionDescriptor g_initable_new_valist$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_initable_new_valist$MH = RuntimeHelper.downcallHandle(
-        "g_initable_new_valist",
-        constants$496.g_initable_new_valist$FUNC
-    );
-    static final FunctionDescriptor g_async_initable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_async_initable_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_async_initable_get_type",
-        constants$496.g_async_initable_get_type$FUNC
-    );
-    static final FunctionDescriptor g_async_initable_init_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_initable_init_async$MH = RuntimeHelper.downcallHandle(
-        "g_async_initable_init_async",
-        constants$496.g_async_initable_init_async$FUNC
-    );
-    static final FunctionDescriptor g_async_initable_init_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_initable_init_finish$MH = RuntimeHelper.downcallHandle(
-        "g_async_initable_init_finish",
-        constants$496.g_async_initable_init_finish$FUNC
-    );
-    static final FunctionDescriptor g_async_initable_new_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_initable_new_async$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_async_initable_new_async",
-        constants$496.g_async_initable_new_async$FUNC
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("items"),
+        RuntimeHelper.POINTER.withName("func"),
+        RuntimeHelper.POINTER.withName("prefix"),
+        RuntimeHelper.POINTER.withName("cache"),
+        RuntimeHelper.POINTER.withName("strncmp_func")
+    ).withName("_GCompletion");
+    static final VarHandle const$4 = constants$496.const$3.varHandle(MemoryLayout.PathElement.groupElement("items"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GCompletion.func.class, "apply", constants$5.const$2);
 }
 
 

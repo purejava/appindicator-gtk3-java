@@ -2,118 +2,112 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _PangoAttribute {
- *     const PangoAttrClass* klass;
- *     guint start_index;
- *     guint end_index;
+ *     struct _PangoAttrClass* klass;
+ *     unsigned int start_index;
+ *     unsigned int end_index;
  * };
  * }
  */
 public class _PangoAttribute {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("klass"),
-        Constants$root.C_INT$LAYOUT.withName("start_index"),
-        Constants$root.C_INT$LAYOUT.withName("end_index")
-    ).withName("_PangoAttribute");
     public static MemoryLayout $LAYOUT() {
-        return _PangoAttribute.$struct$LAYOUT;
+        return constants$1561.const$1;
     }
-    static final VarHandle klass$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("klass"));
     public static VarHandle klass$VH() {
-        return _PangoAttribute.klass$VH;
+        return constants$1561.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const PangoAttrClass* klass;
+     * struct _PangoAttrClass* klass;
      * }
      */
     public static MemorySegment klass$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_PangoAttribute.klass$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1561.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const PangoAttrClass* klass;
+     * struct _PangoAttrClass* klass;
      * }
      */
     public static void klass$set(MemorySegment seg, MemorySegment x) {
-        _PangoAttribute.klass$VH.set(seg, x);
+        constants$1561.const$2.set(seg, x);
     }
     public static MemorySegment klass$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_PangoAttribute.klass$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1561.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void klass$set(MemorySegment seg, long index, MemorySegment x) {
-        _PangoAttribute.klass$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1561.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle start_index$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("start_index"));
     public static VarHandle start_index$VH() {
-        return _PangoAttribute.start_index$VH;
+        return constants$1561.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint start_index;
+     * unsigned int start_index;
      * }
      */
     public static int start_index$get(MemorySegment seg) {
-        return (int)_PangoAttribute.start_index$VH.get(seg);
+        return (int)constants$1561.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint start_index;
+     * unsigned int start_index;
      * }
      */
     public static void start_index$set(MemorySegment seg, int x) {
-        _PangoAttribute.start_index$VH.set(seg, x);
+        constants$1561.const$3.set(seg, x);
     }
     public static int start_index$get(MemorySegment seg, long index) {
-        return (int)_PangoAttribute.start_index$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1561.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void start_index$set(MemorySegment seg, long index, int x) {
-        _PangoAttribute.start_index$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1561.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle end_index$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("end_index"));
     public static VarHandle end_index$VH() {
-        return _PangoAttribute.end_index$VH;
+        return constants$1561.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint end_index;
+     * unsigned int end_index;
      * }
      */
     public static int end_index$get(MemorySegment seg) {
-        return (int)_PangoAttribute.end_index$VH.get(seg);
+        return (int)constants$1561.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint end_index;
+     * unsigned int end_index;
      * }
      */
     public static void end_index$set(MemorySegment seg, int x) {
-        _PangoAttribute.end_index$VH.set(seg, x);
+        constants$1561.const$4.set(seg, x);
     }
     public static int end_index$get(MemorySegment seg, long index) {
-        return (int)_PangoAttribute.end_index$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1561.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void end_index$set(MemorySegment seg, long index, int x) {
-        _PangoAttribute.end_index$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1561.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

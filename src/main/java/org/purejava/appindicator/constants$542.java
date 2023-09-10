@@ -3,65 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$542 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$542() {}
-    static final FunctionDescriptor g_data_input_stream_read_int16$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_static_rw_lock_free",
+        constants$13.const$1
     );
-    static final MethodHandle g_data_input_stream_read_int16$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_int16",
-        constants$542.g_data_input_stream_read_int16$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_private_new$notify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_private_new",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_data_input_stream_read_uint16$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_input_stream_read_uint16$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_uint16",
-        constants$542.g_data_input_stream_read_uint16$FUNC
-    );
-    static final FunctionDescriptor g_data_input_stream_read_int32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_input_stream_read_int32$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_int32",
-        constants$542.g_data_input_stream_read_int32$FUNC
-    );
-    static final FunctionDescriptor g_data_input_stream_read_uint32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_input_stream_read_uint32$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_uint32",
-        constants$542.g_data_input_stream_read_uint32$FUNC
-    );
-    static final FunctionDescriptor g_data_input_stream_read_int64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_input_stream_read_int64$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_int64",
-        constants$542.g_data_input_stream_read_int64$FUNC
-    );
-    static final FunctionDescriptor g_data_input_stream_read_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_input_stream_read_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_uint64",
-        constants$542.g_data_input_stream_read_uint64$FUNC
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("index")
+    ).withName("_GStaticPrivate");
+    static final VarHandle const$4 = constants$542.const$3.varHandle(MemoryLayout.PathElement.groupElement("index"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_static_private_init",
+        constants$13.const$1
     );
 }
 

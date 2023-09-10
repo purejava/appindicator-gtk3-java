@@ -3,63 +3,76 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$660 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$660() {}
-    static final FunctionDescriptor g_filename_completer_set_dirs_only$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_filename_completer_set_dirs_only$MH = RuntimeHelper.downcallHandle(
-        "g_filename_completer_set_dirs_only",
-        constants$660.g_filename_completer_set_dirs_only$FUNC
-    );
-    static final FunctionDescriptor g_file_output_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_output_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_output_stream_get_type",
-        constants$660.g_file_output_stream_get_type$FUNC
-    );
-    static final FunctionDescriptor g_file_output_stream_query_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_output_stream_query_info$MH = RuntimeHelper.downcallHandle(
-        "g_file_output_stream_query_info",
-        constants$660.g_file_output_stream_query_info$FUNC
-    );
-    static final FunctionDescriptor g_file_output_stream_query_info_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_output_stream_query_info_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_output_stream_query_info_async",
-        constants$660.g_file_output_stream_query_info_async$FUNC
-    );
-    static final FunctionDescriptor g_file_output_stream_query_info_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_output_stream_query_info_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_output_stream_query_info_finish",
-        constants$660.g_file_output_stream_query_info_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_output_stream_get_etag$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_output_stream_get_etag$MH = RuntimeHelper.downcallHandle(
-        "g_file_output_stream_get_etag",
-        constants$660.g_file_output_stream_get_etag$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            RuntimeHelper.POINTER.withName("name"),
+            JAVA_INT.withName("flags"),
+            MemoryLayout.paddingLayout(4),
+            JAVA_LONG.withName("value_type"),
+            JAVA_LONG.withName("owner_type"),
+            RuntimeHelper.POINTER.withName("_nick"),
+            RuntimeHelper.POINTER.withName("_blurb"),
+            RuntimeHelper.POINTER.withName("qdata"),
+            JAVA_INT.withName("ref_count"),
+            JAVA_INT.withName("param_id")
+        ).withName("parent_instance"),
+        JAVA_INT.withName("default_value"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GParamSpecUnichar");
+    static final VarHandle const$1 = constants$660.const$0.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            RuntimeHelper.POINTER.withName("name"),
+            JAVA_INT.withName("flags"),
+            MemoryLayout.paddingLayout(4),
+            JAVA_LONG.withName("value_type"),
+            JAVA_LONG.withName("owner_type"),
+            RuntimeHelper.POINTER.withName("_nick"),
+            RuntimeHelper.POINTER.withName("_blurb"),
+            RuntimeHelper.POINTER.withName("qdata"),
+            JAVA_INT.withName("ref_count"),
+            JAVA_INT.withName("param_id")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("enum_class"),
+        JAVA_INT.withName("default_value"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GParamSpecEnum");
+    static final VarHandle const$3 = constants$660.const$2.varHandle(MemoryLayout.PathElement.groupElement("enum_class"));
+    static final VarHandle const$4 = constants$660.const$2.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            RuntimeHelper.POINTER.withName("name"),
+            JAVA_INT.withName("flags"),
+            MemoryLayout.paddingLayout(4),
+            JAVA_LONG.withName("value_type"),
+            JAVA_LONG.withName("owner_type"),
+            RuntimeHelper.POINTER.withName("_nick"),
+            RuntimeHelper.POINTER.withName("_blurb"),
+            RuntimeHelper.POINTER.withName("qdata"),
+            JAVA_INT.withName("ref_count"),
+            JAVA_INT.withName("param_id")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("flags_class"),
+        JAVA_INT.withName("default_value"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GParamSpecFlags");
 }
 
 

@@ -2,18 +2,39 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2007 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2007() {}
-    static final MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::access-nsec");
-    static final MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::changed");
-    static final MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_USEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::changed-usec");
-    static final MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_NSEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::changed-nsec");
-    static final MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::created");
-    static final MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_USEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::created-usec");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_document_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_document_get_document_type",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_document_get_document",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_document_get_locale",
+        constants$5.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_document_get_attributes",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_document_get_attribute_value",
+        constants$5.const$5
+    );
 }
 
 

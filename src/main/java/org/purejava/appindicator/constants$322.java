@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$322 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$322() {}
-    static final FunctionDescriptor g_test_log_type_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_io_channel_set_buffer_size",
+        constants$25.const$3
     );
-    static final MethodHandle g_test_log_type_name$MH = RuntimeHelper.downcallHandle(
-        "g_test_log_type_name",
-        constants$322.g_test_log_type_name$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_io_channel_get_buffer_size",
+        constants$4.const$0
     );
-    static final FunctionDescriptor g_test_log_buffer_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_test_log_buffer_new$MH = RuntimeHelper.downcallHandle(
-        "g_test_log_buffer_new",
-        constants$322.g_test_log_buffer_new$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_io_channel_get_buffer_condition",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_test_log_buffer_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_io_channel_set_flags",
+        constants$150.const$0
     );
-    static final MethodHandle g_test_log_buffer_free$MH = RuntimeHelper.downcallHandle(
-        "g_test_log_buffer_free",
-        constants$322.g_test_log_buffer_free$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_io_channel_get_flags",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_test_log_buffer_push$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_log_buffer_push$MH = RuntimeHelper.downcallHandle(
-        "g_test_log_buffer_push",
-        constants$322.g_test_log_buffer_push$FUNC
-    );
-    static final FunctionDescriptor g_test_log_buffer_pop$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_log_buffer_pop$MH = RuntimeHelper.downcallHandle(
-        "g_test_log_buffer_pop",
-        constants$322.g_test_log_buffer_pop$FUNC
-    );
-    static final FunctionDescriptor g_test_log_msg_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_log_msg_free$MH = RuntimeHelper.downcallHandle(
-        "g_test_log_msg_free",
-        constants$322.g_test_log_msg_free$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_io_channel_set_line_term",
+        constants$164.const$5
     );
 }
 

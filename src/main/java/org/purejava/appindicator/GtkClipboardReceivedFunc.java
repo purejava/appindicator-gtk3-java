@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GtkClipboardReceivedFunc)(struct _GtkClipboard* clipboard,struct _GtkSelectionData* selection_data,void* data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GtkClipboardReceivedFunc {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GtkClipboardReceivedFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$1537.GtkClipboardReceivedFunc_UP$MH, fi, constants$1537.GtkClipboardReceivedFunc$FUNC, scope);
+    static MemorySegment allocate(GtkClipboardReceivedFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$2624.const$0, fi, constants$14.const$3, scope);
     }
-    static GtkClipboardReceivedFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GtkClipboardReceivedFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1537.GtkClipboardReceivedFunc_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
+                constants$14.const$5.invokeExact(symbol, _key, _value, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

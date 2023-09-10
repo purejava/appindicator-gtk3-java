@@ -3,55 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$784 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$784() {}
-    static final FunctionDescriptor g_subprocess_get_stdin_pipe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_get_stdin_pipe$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_stdin_pipe",
-        constants$784.g_subprocess_get_stdin_pipe$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_get_stdout_pipe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_get_stdout_pipe$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_stdout_pipe",
-        constants$784.g_subprocess_get_stdout_pipe$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_get_stderr_pipe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_get_stderr_pipe$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_stderr_pipe",
-        constants$784.g_subprocess_get_stderr_pipe$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_get_identifier$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_get_identifier$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_identifier",
-        constants$784.g_subprocess_get_identifier$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_send_signal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_subprocess_send_signal$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_send_signal",
-        constants$784.g_subprocess_send_signal$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_force_exit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_force_exit$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_force_exit",
-        constants$784.g_subprocess_force_exit$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GOutputStreamClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GOutputStreamClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GOutputStreamClass._g_reserved6.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved6"));
 }
 
 

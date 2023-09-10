@@ -3,55 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$874 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$874() {}
-    static final FunctionDescriptor hb_font_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$873.const$0.varHandle(MemoryLayout.PathElement.groupElement("set_object"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDBusInterfaceIface.dup_object.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$873.const$0.varHandle(MemoryLayout.PathElement.groupElement("dup_object"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle hb_font_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_user_data",
-        constants$874.hb_font_get_user_data$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_get_info",
+        constants$5.const$2
     );
-    static final FunctionDescriptor hb_font_make_immutable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_make_immutable$MH = RuntimeHelper.downcallHandle(
-        "hb_font_make_immutable",
-        constants$874.hb_font_make_immutable$FUNC
-    );
-    static final FunctionDescriptor hb_font_is_immutable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_is_immutable$MH = RuntimeHelper.downcallHandle(
-        "hb_font_is_immutable",
-        constants$874.hb_font_is_immutable$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_serial$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_serial$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_serial",
-        constants$874.hb_font_get_serial$FUNC
-    );
-    static final FunctionDescriptor hb_font_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_changed$MH = RuntimeHelper.downcallHandle(
-        "hb_font_changed",
-        constants$874.hb_font_changed$FUNC
-    );
-    static final FunctionDescriptor hb_font_set_parent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_set_parent$MH = RuntimeHelper.downcallHandle(
-        "hb_font_set_parent",
-        constants$874.hb_font_set_parent$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_get_object",
+        constants$5.const$2
     );
 }
 

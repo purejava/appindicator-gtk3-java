@@ -3,61 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$432 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$432() {}
-    static final FunctionDescriptor g_object_class_list_properties$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_sequence_foreach$func.class, "apply", constants$13.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_sequence_foreach",
+        constants$14.const$3
     );
-    static final MethodHandle g_object_class_list_properties$MH = RuntimeHelper.downcallHandle(
-        "g_object_class_list_properties",
-        constants$432.g_object_class_list_properties$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_sequence_foreach_range$func.class, "apply", constants$13.const$4);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_sequence_foreach_range",
+        constants$42.const$1
     );
-    static final FunctionDescriptor g_object_class_override_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_class_override_property$MH = RuntimeHelper.downcallHandle(
-        "g_object_class_override_property",
-        constants$432.g_object_class_override_property$FUNC
-    );
-    static final FunctionDescriptor g_object_class_install_properties$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_class_install_properties$MH = RuntimeHelper.downcallHandle(
-        "g_object_class_install_properties",
-        constants$432.g_object_class_install_properties$FUNC
-    );
-    static final FunctionDescriptor g_object_interface_install_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_interface_install_property$MH = RuntimeHelper.downcallHandle(
-        "g_object_interface_install_property",
-        constants$432.g_object_interface_install_property$FUNC
-    );
-    static final FunctionDescriptor g_object_interface_find_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_interface_find_property$MH = RuntimeHelper.downcallHandle(
-        "g_object_interface_find_property",
-        constants$432.g_object_interface_find_property$FUNC
-    );
-    static final FunctionDescriptor g_object_interface_list_properties$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_interface_list_properties$MH = RuntimeHelper.downcallHandle(
-        "g_object_interface_list_properties",
-        constants$432.g_object_interface_list_properties$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_sequence_sort$cmp_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_sequence_sort",
+        constants$14.const$3
     );
 }
 

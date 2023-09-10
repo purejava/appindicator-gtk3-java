@@ -3,54 +3,45 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$237 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$237() {}
-    static final FunctionDescriptor g_variant_is_floating$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_hmac_get_string",
+        constants$5.const$2
     );
-    static final MethodHandle g_variant_is_floating$MH = RuntimeHelper.downcallHandle(
-        "g_variant_is_floating",
-        constants$237.g_variant_is_floating$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_hmac_get_digest",
+        constants$14.const$3
     );
-    static final FunctionDescriptor g_variant_take_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final MethodHandle g_variant_take_ref$MH = RuntimeHelper.downcallHandle(
-        "g_variant_take_ref",
-        constants$237.g_variant_take_ref$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_compute_hmac_for_data",
+        constants$237.const$2
     );
-    static final FunctionDescriptor g_variant_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_compute_hmac_for_string",
+        constants$237.const$2
     );
-    static final MethodHandle g_variant_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_type",
-        constants$237.g_variant_get_type$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_variant_get_type_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_get_type_string$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_type_string",
-        constants$237.g_variant_get_type_string$FUNC
-    );
-    static final FunctionDescriptor g_variant_is_of_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_is_of_type$MH = RuntimeHelper.downcallHandle(
-        "g_variant_is_of_type",
-        constants$237.g_variant_is_of_type$FUNC
-    );
-    static final FunctionDescriptor g_variant_is_container$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_is_container$MH = RuntimeHelper.downcallHandle(
-        "g_variant_is_container",
-        constants$237.g_variant_is_container$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_compute_hmac_for_bytes",
+        constants$237.const$5
     );
 }
 

@@ -3,70 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$217 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$217() {}
-    static final FunctionDescriptor g_io_channel_read_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_node_last_child",
+        constants$5.const$2
     );
-    static final MethodHandle g_io_channel_read_chars$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_read_chars",
-        constants$217.g_io_channel_read_chars$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_node_find_child",
+        constants$196.const$3
     );
-    static final FunctionDescriptor g_io_channel_read_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_node_child_position",
+        constants$9.const$0
     );
-    static final MethodHandle g_io_channel_read_unichar$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_read_unichar",
-        constants$217.g_io_channel_read_unichar$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_node_child_index",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_io_channel_write_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_node_first_sibling",
+        constants$5.const$2
     );
-    static final MethodHandle g_io_channel_write_chars$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_write_chars",
-        constants$217.g_io_channel_write_chars$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_write_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_write_unichar$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_write_unichar",
-        constants$217.g_io_channel_write_unichar$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_seek_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_seek_position$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_seek_position",
-        constants$217.g_io_channel_seek_position$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_new_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_new_file$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_new_file",
-        constants$217.g_io_channel_new_file$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_node_last_sibling",
+        constants$5.const$2
     );
 }
 

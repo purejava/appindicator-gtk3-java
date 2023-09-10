@@ -3,65 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$972 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$972() {}
-    static final FunctionDescriptor pango_layout_iter_get_char_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_iter_get_char_extents$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_char_extents",
-        constants$972.pango_layout_iter_get_char_extents$FUNC
-    );
-    static final FunctionDescriptor pango_layout_iter_get_cluster_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_iter_get_cluster_extents$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_cluster_extents",
-        constants$972.pango_layout_iter_get_cluster_extents$FUNC
-    );
-    static final FunctionDescriptor pango_layout_iter_get_run_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_iter_get_run_extents$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_run_extents",
-        constants$972.pango_layout_iter_get_run_extents$FUNC
-    );
-    static final FunctionDescriptor pango_layout_iter_get_line_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_iter_get_line_extents$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_line_extents",
-        constants$972.pango_layout_iter_get_line_extents$FUNC
-    );
-    static final FunctionDescriptor pango_layout_iter_get_line_yrange$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_iter_get_line_yrange$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_line_yrange",
-        constants$972.pango_layout_iter_get_line_yrange$FUNC
-    );
-    static final FunctionDescriptor pango_layout_iter_get_layout_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_iter_get_layout_extents$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_layout_extents",
-        constants$972.pango_layout_iter_get_layout_extents$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.dup.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("dup"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.hash.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("hash"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.equal.class, "apply", constants$9.const$0);
+    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("equal"));
 }
 
 

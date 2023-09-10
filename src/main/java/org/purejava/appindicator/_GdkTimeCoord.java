@@ -2,54 +2,50 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GdkTimeCoord {
- *     guint32 time;
- *     gdouble axes[128];
+ *     unsigned int time;
+ *     double axes[128];
  * };
  * }
  */
 public class _GdkTimeCoord {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("time"),
-        MemoryLayout.paddingLayout(32),
-        MemoryLayout.sequenceLayout(128, Constants$root.C_DOUBLE$LAYOUT).withName("axes")
-    ).withName("_GdkTimeCoord");
     public static MemoryLayout $LAYOUT() {
-        return _GdkTimeCoord.$struct$LAYOUT;
+        return constants$1755.const$2;
     }
-    static final VarHandle time$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("time"));
     public static VarHandle time$VH() {
-        return _GdkTimeCoord.time$VH;
+        return constants$1755.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint32 time;
+     * unsigned int time;
      * }
      */
     public static int time$get(MemorySegment seg) {
-        return (int)_GdkTimeCoord.time$VH.get(seg);
+        return (int)constants$1755.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint32 time;
+     * unsigned int time;
      * }
      */
     public static void time$set(MemorySegment seg, int x) {
-        _GdkTimeCoord.time$VH.set(seg, x);
+        constants$1755.const$3.set(seg, x);
     }
     public static int time$get(MemorySegment seg, long index) {
-        return (int)_GdkTimeCoord.time$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1755.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void time$set(MemorySegment seg, long index, int x) {
-        _GdkTimeCoord.time$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1755.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment axes$slice(MemorySegment seg) {
         return seg.asSlice(8, 1024);
@@ -59,7 +55,7 @@ public class _GdkTimeCoord {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

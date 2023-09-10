@@ -3,58 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1475 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1475() {}
-    static final FunctionDescriptor gtk_tree_view_get_enable_search$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_enable_search$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_enable_search",
-        constants$1475.gtk_tree_view_get_enable_search$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_search_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_search_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_search_column",
-        constants$1475.gtk_tree_view_get_search_column$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_search_column$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_search_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_search_column",
-        constants$1475.gtk_tree_view_set_search_column$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_search_equal_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_search_equal_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_search_equal_func",
-        constants$1475.gtk_tree_view_get_search_equal_func$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_search_equal_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_search_equal_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_search_equal_func",
-        constants$1475.gtk_tree_view_set_search_equal_func$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_search_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_search_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_search_entry",
-        constants$1475.gtk_tree_view_get_search_entry$FUNC
-    );
+    static final VarHandle const$0 = constants$1473.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved6"));
+    static final VarHandle const$1 = constants$1473.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved5"));
+    static final VarHandle const$2 = constants$1473.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved4"));
+    static final VarHandle const$3 = constants$1473.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved3"));
+    static final VarHandle const$4 = constants$1473.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved2"));
+    static final VarHandle const$5 = constants$1473.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved1"));
 }
 
 

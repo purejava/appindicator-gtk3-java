@@ -4,47 +4,39 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 final class constants$379 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$379() {}
-    static final OfInt g_threads_got_initialized$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle g_threads_got_initialized$VH = constants$379.g_threads_got_initialized$LAYOUT.varHandle();
-    static final MemorySegment g_threads_got_initialized$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_threads_got_initialized", constants$379.g_threads_got_initialized$LAYOUT);
-    static final FunctionDescriptor g_mutex_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_mutex_new$MH = RuntimeHelper.downcallHandle(
-        "g_mutex_new",
-        constants$379.g_mutex_new$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_log_set_debug_enabled",
+        constants$80.const$1
     );
-    static final FunctionDescriptor g_mutex_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "_g_log_fallback_handler",
+        constants$179.const$1
     );
-    static final MethodHandle g_mutex_free$MH = RuntimeHelper.downcallHandle(
-        "g_mutex_free",
-        constants$379.g_mutex_free$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_return_if_fail_warning",
+        constants$14.const$3
     );
-    static final FunctionDescriptor g_cond_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_cond_new$MH = RuntimeHelper.downcallHandle(
-        "g_cond_new",
-        constants$379.g_cond_new$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_cond_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_warn_message",
+        constants$379.const$3
     );
-    static final MethodHandle g_cond_free$MH = RuntimeHelper.downcallHandle(
-        "g_cond_free",
-        constants$379.g_cond_free$FUNC
-    );
-    static final FunctionDescriptor g_cond_timed_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cond_timed_wait$MH = RuntimeHelper.downcallHandle(
-        "g_cond_timed_wait",
-        constants$379.g_cond_timed_wait$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_assert_warning",
+        constants$379.const$3
     );
 }
 

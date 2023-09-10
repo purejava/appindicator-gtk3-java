@@ -4,62 +4,42 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GMemVTable {
- *     gpointer (*malloc)(gsize);
- *     gpointer (*realloc)(gpointer,gsize);
- *     void (*free)(gpointer);
- *     gpointer (*calloc)(gsize,gsize);
- *     gpointer (*try_malloc)(gsize);
- *     gpointer (*try_realloc)(gpointer,gsize);
+ *     void* (*malloc)(unsigned long);
+ *     void* (*realloc)(void*,unsigned long);
+ *     void (*free)(void*);
+ *     void* (*calloc)(unsigned long,unsigned long);
+ *     void* (*try_malloc)(unsigned long);
+ *     void* (*try_realloc)(void*,unsigned long);
  * };
  * }
  */
 public class _GMemVTable {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("malloc"),
-        Constants$root.C_POINTER$LAYOUT.withName("realloc"),
-        Constants$root.C_POINTER$LAYOUT.withName("free"),
-        Constants$root.C_POINTER$LAYOUT.withName("calloc"),
-        Constants$root.C_POINTER$LAYOUT.withName("try_malloc"),
-        Constants$root.C_POINTER$LAYOUT.withName("try_realloc")
-    ).withName("_GMemVTable");
     public static MemoryLayout $LAYOUT() {
-        return _GMemVTable.$struct$LAYOUT;
+        return constants$208.const$0;
     }
-    static final FunctionDescriptor malloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final FunctionDescriptor malloc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle malloc_UP$MH = RuntimeHelper.upcallHandle(malloc.class, "apply", _GMemVTable.malloc_UP$FUNC);
-    static final FunctionDescriptor malloc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle malloc_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GMemVTable.malloc_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gpointer (*malloc)(gsize);
+ * void* (*malloc)(unsigned long);
      * }
      */
     public interface malloc {
 
         java.lang.foreign.MemorySegment apply(long _x0);
-        static MemorySegment allocate(malloc fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GMemVTable.malloc_UP$MH, fi, _GMemVTable.malloc$FUNC, scope);
+        static MemorySegment allocate(malloc fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$208.const$1, fi, constants$63.const$3, scope);
         }
-        static malloc ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static malloc ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (long __x0) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GMemVTable.malloc_DOWN$MH.invokeExact(symbol, __x0);
+                    return (java.lang.foreign.MemorySegment)constants$208.const$2.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -67,69 +47,52 @@ public class _GMemVTable {
         }
     }
 
-    static final VarHandle malloc$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("malloc"));
     public static VarHandle malloc$VH() {
-        return _GMemVTable.malloc$VH;
+        return constants$208.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gpointer (*malloc)(gsize);
+     * void* (*malloc)(unsigned long);
      * }
      */
     public static MemorySegment malloc$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GMemVTable.malloc$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$208.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gpointer (*malloc)(gsize);
+     * void* (*malloc)(unsigned long);
      * }
      */
     public static void malloc$set(MemorySegment seg, MemorySegment x) {
-        _GMemVTable.malloc$VH.set(seg, x);
+        constants$208.const$3.set(seg, x);
     }
     public static MemorySegment malloc$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GMemVTable.malloc$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$208.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void malloc$set(MemorySegment seg, long index, MemorySegment x) {
-        _GMemVTable.malloc$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$208.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static malloc malloc(MemorySegment segment, SegmentScope scope) {
+    public static malloc malloc(MemorySegment segment, Arena scope) {
         return malloc.ofAddress(malloc$get(segment), scope);
     }
-    static final FunctionDescriptor realloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final FunctionDescriptor realloc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle realloc_UP$MH = RuntimeHelper.upcallHandle(realloc.class, "apply", _GMemVTable.realloc_UP$FUNC);
-    static final FunctionDescriptor realloc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle realloc_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GMemVTable.realloc_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gpointer (*realloc)(gpointer,gsize);
+ * void* (*realloc)(void*,unsigned long);
      * }
      */
     public interface realloc {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, long _x1);
-        static MemorySegment allocate(realloc fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GMemVTable.realloc_UP$MH, fi, _GMemVTable.realloc$FUNC, scope);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment data, long size);
+        static MemorySegment allocate(realloc fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$208.const$4, fi, constants$21.const$1, scope);
         }
-        static realloc ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, long __x1) -> {
+        static realloc ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _data, long _size) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GMemVTable.realloc_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (java.lang.foreign.MemorySegment)constants$208.const$5.invokeExact(symbol, _data, _size);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -137,66 +100,52 @@ public class _GMemVTable {
         }
     }
 
-    static final VarHandle realloc$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("realloc"));
     public static VarHandle realloc$VH() {
-        return _GMemVTable.realloc$VH;
+        return constants$209.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gpointer (*realloc)(gpointer,gsize);
+     * void* (*realloc)(void*,unsigned long);
      * }
      */
     public static MemorySegment realloc$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GMemVTable.realloc$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$209.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gpointer (*realloc)(gpointer,gsize);
+     * void* (*realloc)(void*,unsigned long);
      * }
      */
     public static void realloc$set(MemorySegment seg, MemorySegment x) {
-        _GMemVTable.realloc$VH.set(seg, x);
+        constants$209.const$0.set(seg, x);
     }
     public static MemorySegment realloc$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GMemVTable.realloc$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$209.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void realloc$set(MemorySegment seg, long index, MemorySegment x) {
-        _GMemVTable.realloc$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$209.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static realloc realloc(MemorySegment segment, SegmentScope scope) {
+    public static realloc realloc(MemorySegment segment, Arena scope) {
         return realloc.ofAddress(realloc$get(segment), scope);
     }
-    static final FunctionDescriptor free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor free_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle free_UP$MH = RuntimeHelper.upcallHandle(free.class, "apply", _GMemVTable.free_UP$FUNC);
-    static final FunctionDescriptor free_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle free_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GMemVTable.free_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*free)(gpointer);
+ * void (*free)(void*);
      * }
      */
     public interface free {
 
-        void apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(free fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GMemVTable.free_UP$MH, fi, _GMemVTable.free$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(free fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$209.const$1, fi, constants$13.const$1, scope);
         }
-        static free ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0) -> {
+        static free ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GMemVTable.free_DOWN$MH.invokeExact(symbol, __x0);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -204,69 +153,52 @@ public class _GMemVTable {
         }
     }
 
-    static final VarHandle free$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("free"));
     public static VarHandle free$VH() {
-        return _GMemVTable.free$VH;
+        return constants$209.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*free)(gpointer);
+     * void (*free)(void*);
      * }
      */
     public static MemorySegment free$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GMemVTable.free$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$209.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*free)(gpointer);
+     * void (*free)(void*);
      * }
      */
     public static void free$set(MemorySegment seg, MemorySegment x) {
-        _GMemVTable.free$VH.set(seg, x);
+        constants$209.const$2.set(seg, x);
     }
     public static MemorySegment free$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GMemVTable.free$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$209.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void free$set(MemorySegment seg, long index, MemorySegment x) {
-        _GMemVTable.free$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$209.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static free free(MemorySegment segment, SegmentScope scope) {
+    public static free free(MemorySegment segment, Arena scope) {
         return free.ofAddress(free$get(segment), scope);
     }
-    static final FunctionDescriptor calloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final FunctionDescriptor calloc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle calloc_UP$MH = RuntimeHelper.upcallHandle(calloc.class, "apply", _GMemVTable.calloc_UP$FUNC);
-    static final FunctionDescriptor calloc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle calloc_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GMemVTable.calloc_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gpointer (*calloc)(gsize,gsize);
+ * void* (*calloc)(unsigned long,unsigned long);
      * }
      */
     public interface calloc {
 
         java.lang.foreign.MemorySegment apply(long _x0, long _x1);
-        static MemorySegment allocate(calloc fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GMemVTable.calloc_UP$MH, fi, _GMemVTable.calloc$FUNC, scope);
+        static MemorySegment allocate(calloc fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$209.const$3, fi, constants$87.const$5, scope);
         }
-        static calloc ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static calloc ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (long __x0, long __x1) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GMemVTable.calloc_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (java.lang.foreign.MemorySegment)constants$209.const$4.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -274,66 +206,52 @@ public class _GMemVTable {
         }
     }
 
-    static final VarHandle calloc$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("calloc"));
     public static VarHandle calloc$VH() {
-        return _GMemVTable.calloc$VH;
+        return constants$209.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gpointer (*calloc)(gsize,gsize);
+     * void* (*calloc)(unsigned long,unsigned long);
      * }
      */
     public static MemorySegment calloc$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GMemVTable.calloc$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$209.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gpointer (*calloc)(gsize,gsize);
+     * void* (*calloc)(unsigned long,unsigned long);
      * }
      */
     public static void calloc$set(MemorySegment seg, MemorySegment x) {
-        _GMemVTable.calloc$VH.set(seg, x);
+        constants$209.const$5.set(seg, x);
     }
     public static MemorySegment calloc$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GMemVTable.calloc$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$209.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void calloc$set(MemorySegment seg, long index, MemorySegment x) {
-        _GMemVTable.calloc$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$209.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static calloc calloc(MemorySegment segment, SegmentScope scope) {
+    public static calloc calloc(MemorySegment segment, Arena scope) {
         return calloc.ofAddress(calloc$get(segment), scope);
     }
-    static final FunctionDescriptor try_malloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final FunctionDescriptor try_malloc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle try_malloc_UP$MH = RuntimeHelper.upcallHandle(try_malloc.class, "apply", _GMemVTable.try_malloc_UP$FUNC);
-    static final FunctionDescriptor try_malloc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle try_malloc_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GMemVTable.try_malloc_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gpointer (*try_malloc)(gsize);
+ * void* (*try_malloc)(unsigned long);
      * }
      */
     public interface try_malloc {
 
         java.lang.foreign.MemorySegment apply(long _x0);
-        static MemorySegment allocate(try_malloc fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GMemVTable.try_malloc_UP$MH, fi, _GMemVTable.try_malloc$FUNC, scope);
+        static MemorySegment allocate(try_malloc fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$210.const$0, fi, constants$63.const$3, scope);
         }
-        static try_malloc ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static try_malloc ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (long __x0) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GMemVTable.try_malloc_DOWN$MH.invokeExact(symbol, __x0);
+                    return (java.lang.foreign.MemorySegment)constants$208.const$2.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -341,69 +259,52 @@ public class _GMemVTable {
         }
     }
 
-    static final VarHandle try_malloc$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("try_malloc"));
     public static VarHandle try_malloc$VH() {
-        return _GMemVTable.try_malloc$VH;
+        return constants$210.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gpointer (*try_malloc)(gsize);
+     * void* (*try_malloc)(unsigned long);
      * }
      */
     public static MemorySegment try_malloc$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GMemVTable.try_malloc$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$210.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gpointer (*try_malloc)(gsize);
+     * void* (*try_malloc)(unsigned long);
      * }
      */
     public static void try_malloc$set(MemorySegment seg, MemorySegment x) {
-        _GMemVTable.try_malloc$VH.set(seg, x);
+        constants$210.const$1.set(seg, x);
     }
     public static MemorySegment try_malloc$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GMemVTable.try_malloc$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$210.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void try_malloc$set(MemorySegment seg, long index, MemorySegment x) {
-        _GMemVTable.try_malloc$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$210.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static try_malloc try_malloc(MemorySegment segment, SegmentScope scope) {
+    public static try_malloc try_malloc(MemorySegment segment, Arena scope) {
         return try_malloc.ofAddress(try_malloc$get(segment), scope);
     }
-    static final FunctionDescriptor try_realloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final FunctionDescriptor try_realloc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle try_realloc_UP$MH = RuntimeHelper.upcallHandle(try_realloc.class, "apply", _GMemVTable.try_realloc_UP$FUNC);
-    static final FunctionDescriptor try_realloc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle try_realloc_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GMemVTable.try_realloc_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gpointer (*try_realloc)(gpointer,gsize);
+ * void* (*try_realloc)(void*,unsigned long);
      * }
      */
     public interface try_realloc {
 
-        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, long _x1);
-        static MemorySegment allocate(try_realloc fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GMemVTable.try_realloc_UP$MH, fi, _GMemVTable.try_realloc$FUNC, scope);
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment data, long size);
+        static MemorySegment allocate(try_realloc fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$210.const$2, fi, constants$21.const$1, scope);
         }
-        static try_realloc ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, long __x1) -> {
+        static try_realloc ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _data, long _size) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GMemVTable.try_realloc_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (java.lang.foreign.MemorySegment)constants$208.const$5.invokeExact(symbol, _data, _size);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -411,35 +312,34 @@ public class _GMemVTable {
         }
     }
 
-    static final VarHandle try_realloc$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("try_realloc"));
     public static VarHandle try_realloc$VH() {
-        return _GMemVTable.try_realloc$VH;
+        return constants$210.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gpointer (*try_realloc)(gpointer,gsize);
+     * void* (*try_realloc)(void*,unsigned long);
      * }
      */
     public static MemorySegment try_realloc$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GMemVTable.try_realloc$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$210.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gpointer (*try_realloc)(gpointer,gsize);
+     * void* (*try_realloc)(void*,unsigned long);
      * }
      */
     public static void try_realloc$set(MemorySegment seg, MemorySegment x) {
-        _GMemVTable.try_realloc$VH.set(seg, x);
+        constants$210.const$3.set(seg, x);
     }
     public static MemorySegment try_realloc$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GMemVTable.try_realloc$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$210.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void try_realloc$set(MemorySegment seg, long index, MemorySegment x) {
-        _GMemVTable.try_realloc$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$210.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static try_realloc try_realloc(MemorySegment segment, SegmentScope scope) {
+    public static try_realloc try_realloc(MemorySegment segment, Arena scope) {
         return try_realloc.ofAddress(try_realloc$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -447,7 +347,7 @@ public class _GMemVTable {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

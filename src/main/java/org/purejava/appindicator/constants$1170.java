@@ -3,56 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1170 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1170() {}
-    static final FunctionDescriptor gdk_gl_context_set_forward_compatible$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_mount_can_eject",
+        constants$10.const$5
     );
-    static final MethodHandle gdk_gl_context_set_forward_compatible$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_set_forward_compatible",
-        constants$1170.gdk_gl_context_set_forward_compatible$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_mount_unmount$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_mount_unmount",
+        constants$281.const$5
     );
-    static final FunctionDescriptor gdk_gl_context_get_forward_compatible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_mount_unmount_finish",
+        constants$12.const$2
     );
-    static final MethodHandle gdk_gl_context_get_forward_compatible$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_forward_compatible",
-        constants$1170.gdk_gl_context_get_forward_compatible$FUNC
-    );
-    static final FunctionDescriptor gdk_gl_context_set_use_es$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_gl_context_set_use_es$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_set_use_es",
-        constants$1170.gdk_gl_context_set_use_es$FUNC
-    );
-    static final FunctionDescriptor gdk_gl_context_get_use_es$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_gl_context_get_use_es$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_use_es",
-        constants$1170.gdk_gl_context_get_use_es$FUNC
-    );
-    static final FunctionDescriptor gdk_gl_context_realize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_gl_context_realize$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_realize",
-        constants$1170.gdk_gl_context_realize$FUNC
-    );
-    static final FunctionDescriptor gdk_gl_context_make_current$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_gl_context_make_current$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_make_current",
-        constants$1170.gdk_gl_context_make_current$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_mount_eject$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_mount_eject",
+        constants$281.const$5
     );
 }
 

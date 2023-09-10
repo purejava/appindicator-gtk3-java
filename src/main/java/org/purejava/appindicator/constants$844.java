@@ -3,59 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$844 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$844() {}
-    static final FunctionDescriptor hb_set_is_empty$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_uint64",
+        constants$166.const$0
     );
-    static final MethodHandle hb_set_is_empty$MH = RuntimeHelper.downcallHandle(
-        "hb_set_is_empty",
-        constants$844.hb_set_is_empty$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_line",
+        constants$39.const$1
     );
-    static final FunctionDescriptor hb_set_invert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_line_utf8",
+        constants$39.const$1
     );
-    static final MethodHandle hb_set_invert$MH = RuntimeHelper.downcallHandle(
-        "hb_set_invert",
-        constants$844.hb_set_invert$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_data_input_stream_read_line_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_line_async",
+        constants$281.const$5
     );
-    static final FunctionDescriptor hb_set_has$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_set_has$MH = RuntimeHelper.downcallHandle(
-        "hb_set_has",
-        constants$844.hb_set_has$FUNC
-    );
-    static final FunctionDescriptor hb_set_add$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_set_add$MH = RuntimeHelper.downcallHandle(
-        "hb_set_add",
-        constants$844.hb_set_add$FUNC
-    );
-    static final FunctionDescriptor hb_set_add_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_set_add_range$MH = RuntimeHelper.downcallHandle(
-        "hb_set_add_range",
-        constants$844.hb_set_add_range$FUNC
-    );
-    static final FunctionDescriptor hb_set_add_sorted_array$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_set_add_sorted_array$MH = RuntimeHelper.downcallHandle(
-        "hb_set_add_sorted_array",
-        constants$844.hb_set_add_sorted_array$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_line_finish",
+        constants$39.const$1
     );
 }
 

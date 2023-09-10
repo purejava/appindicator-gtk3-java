@@ -3,52 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$641 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$641() {}
-    static final FunctionDescriptor g_file_icon_get_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_value_set_object_take_ownership",
+        constants$13.const$4
     );
-    static final MethodHandle g_file_icon_get_file$MH = RuntimeHelper.downcallHandle(
-        "g_file_icon_get_file",
-        constants$641.g_file_icon_get_file$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_file_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_info_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_type",
-        constants$641.g_file_info_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_object_compat_control",
+        constants$641.const$1
     );
-    static final FunctionDescriptor g_file_info_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_file_info_new$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_new",
-        constants$641.g_file_info_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_clear_object",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_file_info_dup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_dup$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_dup",
-        constants$641.g_file_info_dup$FUNC
-    );
-    static final FunctionDescriptor g_file_info_copy_into$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_copy_into$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_copy_into",
-        constants$641.g_file_info_copy_into$FUNC
-    );
-    static final FunctionDescriptor g_file_info_has_attribute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_has_attribute$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_has_attribute",
-        constants$641.g_file_info_has_attribute$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.unionLayout(
+            RuntimeHelper.POINTER.withName("p")
+        ).withName("priv")
+    ).withName("GWeakRef");
+    static final UnionLayout const$5 = MemoryLayout.unionLayout(
+        RuntimeHelper.POINTER.withName("p")
+    ).withName("");
 }
 
 

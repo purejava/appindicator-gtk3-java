@@ -4,8 +4,9 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct __pthread_cleanup_frame {
@@ -18,28 +19,9 @@ import java.lang.foreign.*;
  */
 public class __pthread_cleanup_frame {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("__cancel_routine"),
-        Constants$root.C_POINTER$LAYOUT.withName("__cancel_arg"),
-        Constants$root.C_INT$LAYOUT.withName("__do_it"),
-        Constants$root.C_INT$LAYOUT.withName("__cancel_type")
-    ).withName("__pthread_cleanup_frame");
     public static MemoryLayout $LAYOUT() {
-        return __pthread_cleanup_frame.$struct$LAYOUT;
+        return constants$523.const$3;
     }
-    static final FunctionDescriptor __cancel_routine$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor __cancel_routine_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle __cancel_routine_UP$MH = RuntimeHelper.upcallHandle(__cancel_routine.class, "apply", __pthread_cleanup_frame.__cancel_routine_UP$FUNC);
-    static final FunctionDescriptor __cancel_routine_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle __cancel_routine_DOWN$MH = RuntimeHelper.downcallHandle(
-        __pthread_cleanup_frame.__cancel_routine_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*__cancel_routine)(void*);
@@ -48,14 +30,14 @@ public class __pthread_cleanup_frame {
     public interface __cancel_routine {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(__cancel_routine fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(__pthread_cleanup_frame.__cancel_routine_UP$MH, fi, __pthread_cleanup_frame.__cancel_routine$FUNC, scope);
+        static MemorySegment allocate(__cancel_routine fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$523.const$4, fi, constants$13.const$1, scope);
         }
-        static __cancel_routine ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static __cancel_routine ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    __pthread_cleanup_frame.__cancel_routine_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -63,9 +45,8 @@ public class __pthread_cleanup_frame {
         }
     }
 
-    static final VarHandle __cancel_routine$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("__cancel_routine"));
     public static VarHandle __cancel_routine$VH() {
-        return __pthread_cleanup_frame.__cancel_routine$VH;
+        return constants$523.const$5;
     }
     /**
      * Getter for field:
@@ -74,7 +55,7 @@ public class __pthread_cleanup_frame {
      * }
      */
     public static MemorySegment __cancel_routine$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)__pthread_cleanup_frame.__cancel_routine$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$523.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -83,20 +64,19 @@ public class __pthread_cleanup_frame {
      * }
      */
     public static void __cancel_routine$set(MemorySegment seg, MemorySegment x) {
-        __pthread_cleanup_frame.__cancel_routine$VH.set(seg, x);
+        constants$523.const$5.set(seg, x);
     }
     public static MemorySegment __cancel_routine$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)__pthread_cleanup_frame.__cancel_routine$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$523.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void __cancel_routine$set(MemorySegment seg, long index, MemorySegment x) {
-        __pthread_cleanup_frame.__cancel_routine$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$523.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static __cancel_routine __cancel_routine(MemorySegment segment, SegmentScope scope) {
+    public static __cancel_routine __cancel_routine(MemorySegment segment, Arena scope) {
         return __cancel_routine.ofAddress(__cancel_routine$get(segment), scope);
     }
-    static final VarHandle __cancel_arg$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("__cancel_arg"));
     public static VarHandle __cancel_arg$VH() {
-        return __pthread_cleanup_frame.__cancel_arg$VH;
+        return constants$524.const$0;
     }
     /**
      * Getter for field:
@@ -105,7 +85,7 @@ public class __pthread_cleanup_frame {
      * }
      */
     public static MemorySegment __cancel_arg$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)__pthread_cleanup_frame.__cancel_arg$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$524.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -114,17 +94,16 @@ public class __pthread_cleanup_frame {
      * }
      */
     public static void __cancel_arg$set(MemorySegment seg, MemorySegment x) {
-        __pthread_cleanup_frame.__cancel_arg$VH.set(seg, x);
+        constants$524.const$0.set(seg, x);
     }
     public static MemorySegment __cancel_arg$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)__pthread_cleanup_frame.__cancel_arg$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$524.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void __cancel_arg$set(MemorySegment seg, long index, MemorySegment x) {
-        __pthread_cleanup_frame.__cancel_arg$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$524.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle __do_it$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("__do_it"));
     public static VarHandle __do_it$VH() {
-        return __pthread_cleanup_frame.__do_it$VH;
+        return constants$524.const$1;
     }
     /**
      * Getter for field:
@@ -133,7 +112,7 @@ public class __pthread_cleanup_frame {
      * }
      */
     public static int __do_it$get(MemorySegment seg) {
-        return (int)__pthread_cleanup_frame.__do_it$VH.get(seg);
+        return (int)constants$524.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -142,17 +121,16 @@ public class __pthread_cleanup_frame {
      * }
      */
     public static void __do_it$set(MemorySegment seg, int x) {
-        __pthread_cleanup_frame.__do_it$VH.set(seg, x);
+        constants$524.const$1.set(seg, x);
     }
     public static int __do_it$get(MemorySegment seg, long index) {
-        return (int)__pthread_cleanup_frame.__do_it$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$524.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void __do_it$set(MemorySegment seg, long index, int x) {
-        __pthread_cleanup_frame.__do_it$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$524.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle __cancel_type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("__cancel_type"));
     public static VarHandle __cancel_type$VH() {
-        return __pthread_cleanup_frame.__cancel_type$VH;
+        return constants$524.const$2;
     }
     /**
      * Getter for field:
@@ -161,7 +139,7 @@ public class __pthread_cleanup_frame {
      * }
      */
     public static int __cancel_type$get(MemorySegment seg) {
-        return (int)__pthread_cleanup_frame.__cancel_type$VH.get(seg);
+        return (int)constants$524.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -170,20 +148,20 @@ public class __pthread_cleanup_frame {
      * }
      */
     public static void __cancel_type$set(MemorySegment seg, int x) {
-        __pthread_cleanup_frame.__cancel_type$VH.set(seg, x);
+        constants$524.const$2.set(seg, x);
     }
     public static int __cancel_type$get(MemorySegment seg, long index) {
-        return (int)__pthread_cleanup_frame.__cancel_type$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$524.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void __cancel_type$set(MemorySegment seg, long index, int x) {
-        __pthread_cleanup_frame.__cancel_type$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$524.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

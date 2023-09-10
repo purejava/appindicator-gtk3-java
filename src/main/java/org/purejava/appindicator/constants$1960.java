@@ -3,107 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1960 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1960() {}
-    static final FunctionDescriptor gtk_paint_vline$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_border_free",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_paint_vline$MH = RuntimeHelper.downcallHandle(
-        "gtk_paint_vline",
-        constants$1960.gtk_paint_vline$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GtkRcPropertyParser.class, "apply", constants$12.const$2);
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gtk_paint_shadow$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GtkBuilderConnectFunc.class, "apply", constants$1960.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$1960.const$2
     );
-    static final MethodHandle gtk_paint_shadow$MH = RuntimeHelper.downcallHandle(
-        "gtk_paint_shadow",
-        constants$1960.gtk_paint_shadow$FUNC
-    );
-    static final FunctionDescriptor gtk_paint_arrow$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_paint_arrow$MH = RuntimeHelper.downcallHandle(
-        "gtk_paint_arrow",
-        constants$1960.gtk_paint_arrow$FUNC
-    );
-    static final FunctionDescriptor gtk_paint_diamond$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_paint_diamond$MH = RuntimeHelper.downcallHandle(
-        "gtk_paint_diamond",
-        constants$1960.gtk_paint_diamond$FUNC
-    );
-    static final FunctionDescriptor gtk_paint_box$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_paint_box$MH = RuntimeHelper.downcallHandle(
-        "gtk_paint_box",
-        constants$1960.gtk_paint_box$FUNC
-    );
-    static final FunctionDescriptor gtk_paint_flat_box$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_paint_flat_box$MH = RuntimeHelper.downcallHandle(
-        "gtk_paint_flat_box",
-        constants$1960.gtk_paint_flat_box$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_get_major_version",
+        constants$83.const$1
     );
 }
 

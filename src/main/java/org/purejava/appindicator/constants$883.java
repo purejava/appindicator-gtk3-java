@@ -3,57 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$883 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$883() {}
-    static final FunctionDescriptor hb_buffer_set_replacement_codepoint$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_set_replacement_codepoint$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_replacement_codepoint",
-        constants$883.hb_buffer_set_replacement_codepoint$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_get_replacement_codepoint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_get_replacement_codepoint$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_replacement_codepoint",
-        constants$883.hb_buffer_get_replacement_codepoint$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_set_invisible_glyph$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_set_invisible_glyph$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_invisible_glyph",
-        constants$883.hb_buffer_set_invisible_glyph$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_get_invisible_glyph$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_get_invisible_glyph$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_invisible_glyph",
-        constants$883.hb_buffer_get_invisible_glyph$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_set_not_found_glyph$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_set_not_found_glyph$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_not_found_glyph",
-        constants$883.hb_buffer_set_not_found_glyph$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_get_not_found_glyph$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_get_not_found_glyph$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_not_found_glyph",
-        constants$883.hb_buffer_get_not_found_glyph$FUNC
-    );
+    static final VarHandle const$0 = constants$882.const$3.varHandle(MemoryLayout.PathElement.groupElement("args"));
+    static final VarHandle const$1 = constants$882.const$3.varHandle(MemoryLayout.PathElement.groupElement("annotations"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("ref_count"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("name"),
+        RuntimeHelper.POINTER.withName("signature"),
+        JAVA_INT.withName("flags"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("annotations")
+    ).withName("_GDBusPropertyInfo");
+    static final VarHandle const$3 = constants$883.const$2.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
+    static final VarHandle const$4 = constants$883.const$2.varHandle(MemoryLayout.PathElement.groupElement("name"));
+    static final VarHandle const$5 = constants$883.const$2.varHandle(MemoryLayout.PathElement.groupElement("signature"));
 }
 
 

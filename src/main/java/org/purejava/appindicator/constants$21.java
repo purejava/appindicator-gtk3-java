@@ -3,60 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$21 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$21() {}
-    static final FunctionDescriptor g_array_remove_range$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "strdup",
+        constants$5.const$2
     );
-    static final MethodHandle g_array_remove_range$MH = RuntimeHelper.downcallHandle(
-        "g_array_remove_range",
-        constants$21.g_array_remove_range$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final FunctionDescriptor g_array_sort$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "strndup",
+        constants$21.const$1
     );
-    static final MethodHandle g_array_sort$MH = RuntimeHelper.downcallHandle(
-        "g_array_sort",
-        constants$21.g_array_sort$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor g_array_sort_with_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "strchr",
+        constants$21.const$3
     );
-    static final MethodHandle g_array_sort_with_data$MH = RuntimeHelper.downcallHandle(
-        "g_array_sort_with_data",
-        constants$21.g_array_sort_with_data$FUNC
-    );
-    static final FunctionDescriptor g_array_binary_search$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_array_binary_search$MH = RuntimeHelper.downcallHandle(
-        "g_array_binary_search",
-        constants$21.g_array_binary_search$FUNC
-    );
-    static final FunctionDescriptor g_array_set_clear_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_array_set_clear_func$MH = RuntimeHelper.downcallHandle(
-        "g_array_set_clear_func",
-        constants$21.g_array_set_clear_func$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_ptr_array_new$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_new",
-        constants$21.g_ptr_array_new$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "strrchr",
+        constants$21.const$3
     );
 }
 

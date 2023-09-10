@@ -3,54 +3,45 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$56 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$56() {}
-    static final FunctionDescriptor setenv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_error_new_literal",
+        constants$55.const$4
     );
-    static final MethodHandle setenv$MH = RuntimeHelper.downcallHandle(
-        "setenv",
-        constants$56.setenv$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final FunctionDescriptor unsetenv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_error_new_valist",
+        constants$56.const$1
     );
-    static final MethodHandle unsetenv$MH = RuntimeHelper.downcallHandle(
-        "unsetenv",
-        constants$56.unsetenv$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_error_free",
+        constants$13.const$1
     );
-    static final FunctionDescriptor clearenv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle clearenv$MH = RuntimeHelper.downcallHandle(
-        "clearenv",
-        constants$56.clearenv$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_error_copy",
+        constants$5.const$2
     );
-    static final FunctionDescriptor mktemp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle mktemp$MH = RuntimeHelper.downcallHandle(
-        "mktemp",
-        constants$56.mktemp$FUNC
-    );
-    static final FunctionDescriptor mkstemp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle mkstemp$MH = RuntimeHelper.downcallHandle(
-        "mkstemp",
-        constants$56.mkstemp$FUNC
-    );
-    static final FunctionDescriptor mkstemps$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle mkstemps$MH = RuntimeHelper.downcallHandle(
-        "mkstemps",
-        constants$56.mkstemps$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_error_matches",
+        constants$49.const$0
     );
 }
 

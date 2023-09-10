@@ -3,57 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1238 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1238() {}
-    static final FunctionDescriptor atk_table_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_table_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_type",
-        constants$1238.atk_table_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_resolver_free_addresses",
+        constants$13.const$1
     );
-    static final FunctionDescriptor atk_table_ref_at$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_by_address",
+        constants$39.const$1
     );
-    static final MethodHandle atk_table_ref_at$MH = RuntimeHelper.downcallHandle(
-        "atk_table_ref_at",
-        constants$1238.atk_table_ref_at$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_resolver_lookup_by_address_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_by_address_async",
+        constants$331.const$1
     );
-    static final FunctionDescriptor atk_table_get_index_at$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_by_address_finish",
+        constants$23.const$0
     );
-    static final MethodHandle atk_table_get_index_at$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_index_at",
-        constants$1238.atk_table_get_index_at$FUNC
-    );
-    static final FunctionDescriptor atk_table_get_column_at_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_table_get_column_at_index$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_column_at_index",
-        constants$1238.atk_table_get_column_at_index$FUNC
-    );
-    static final FunctionDescriptor atk_table_get_row_at_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_table_get_row_at_index$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_row_at_index",
-        constants$1238.atk_table_get_row_at_index$FUNC
-    );
-    static final FunctionDescriptor atk_table_get_n_columns$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_table_get_n_columns$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_n_columns",
-        constants$1238.atk_table_get_n_columns$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_service",
+        constants$334.const$2
     );
 }
 

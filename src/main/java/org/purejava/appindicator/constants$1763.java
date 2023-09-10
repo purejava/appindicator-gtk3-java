@@ -3,52 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1763 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1763() {}
-    static final FunctionDescriptor gtk_radio_menu_item_set_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_get_dest_window",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_radio_menu_item_set_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_radio_menu_item_set_group",
-        constants$1763.gtk_radio_menu_item_set_group$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_get_protocol",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_radio_menu_item_join_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_drag_status",
+        constants$467.const$3
     );
-    static final MethodHandle gtk_radio_menu_item_join_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_radio_menu_item_join_group",
-        constants$1763.gtk_radio_menu_item_join_group$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_drop_reply",
+        constants$467.const$3
     );
-    static final FunctionDescriptor gtk_toggle_tool_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_toggle_tool_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_toggle_tool_button_get_type",
-        constants$1763.gtk_toggle_tool_button_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_drop_finish",
+        constants$467.const$3
     );
-    static final FunctionDescriptor gtk_toggle_tool_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_toggle_tool_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_toggle_tool_button_new",
-        constants$1763.gtk_toggle_tool_button_new$FUNC
-    );
-    static final FunctionDescriptor gtk_toggle_tool_button_new_from_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_toggle_tool_button_new_from_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_toggle_tool_button_new_from_stock",
-        constants$1763.gtk_toggle_tool_button_new_from_stock$FUNC
-    );
-    static final FunctionDescriptor gtk_toggle_tool_button_set_active$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_toggle_tool_button_set_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_toggle_tool_button_set_active",
-        constants$1763.gtk_toggle_tool_button_set_active$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_drag_get_selection",
+        constants$5.const$2
     );
 }
 

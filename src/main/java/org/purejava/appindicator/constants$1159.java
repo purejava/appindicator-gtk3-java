@@ -3,54 +3,55 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1159 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1159() {}
-    static final FunctionDescriptor gdk_device_pad_get_group_n_modes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_unexport_menu_model",
+        constants$40.const$2
     );
-    static final MethodHandle gdk_device_pad_get_group_n_modes$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_pad_get_group_n_modes",
-        constants$1159.gdk_device_pad_get_group_n_modes$FUNC
-    );
-    static final FunctionDescriptor gdk_device_pad_get_n_features$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_device_pad_get_n_features$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_pad_get_n_features",
-        constants$1159.gdk_device_pad_get_n_features$FUNC
-    );
-    static final FunctionDescriptor gdk_device_pad_get_feature_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_device_pad_get_feature_group$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_pad_get_feature_group",
-        constants$1159.gdk_device_pad_get_feature_group$FUNC
-    );
-    static final FunctionDescriptor gdk_display_manager_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_display_manager_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_manager_get_type",
-        constants$1159.gdk_display_manager_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_display_manager_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_display_manager_get$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_manager_get",
-        constants$1159.gdk_display_manager_get$FUNC
-    );
-    static final FunctionDescriptor gdk_display_manager_get_default_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_manager_get_default_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_manager_get_default_display",
-        constants$1159.gdk_display_manager_get_default_display$FUNC
-    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("changed"),
+        RuntimeHelper.POINTER.withName("unmounted"),
+        RuntimeHelper.POINTER.withName("get_root"),
+        RuntimeHelper.POINTER.withName("get_name"),
+        RuntimeHelper.POINTER.withName("get_icon"),
+        RuntimeHelper.POINTER.withName("get_uuid"),
+        RuntimeHelper.POINTER.withName("get_volume"),
+        RuntimeHelper.POINTER.withName("get_drive"),
+        RuntimeHelper.POINTER.withName("can_unmount"),
+        RuntimeHelper.POINTER.withName("can_eject"),
+        RuntimeHelper.POINTER.withName("unmount"),
+        RuntimeHelper.POINTER.withName("unmount_finish"),
+        RuntimeHelper.POINTER.withName("eject"),
+        RuntimeHelper.POINTER.withName("eject_finish"),
+        RuntimeHelper.POINTER.withName("remount"),
+        RuntimeHelper.POINTER.withName("remount_finish"),
+        RuntimeHelper.POINTER.withName("guess_content_type"),
+        RuntimeHelper.POINTER.withName("guess_content_type_finish"),
+        RuntimeHelper.POINTER.withName("guess_content_type_sync"),
+        RuntimeHelper.POINTER.withName("pre_unmount"),
+        RuntimeHelper.POINTER.withName("unmount_with_operation"),
+        RuntimeHelper.POINTER.withName("unmount_with_operation_finish"),
+        RuntimeHelper.POINTER.withName("eject_with_operation"),
+        RuntimeHelper.POINTER.withName("eject_with_operation_finish"),
+        RuntimeHelper.POINTER.withName("get_default_location"),
+        RuntimeHelper.POINTER.withName("get_sort_key"),
+        RuntimeHelper.POINTER.withName("get_symbolic_icon")
+    ).withName("_GMountIface");
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GMountIface.changed.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("changed"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GMountIface.unmounted.class, "apply", constants$13.const$1);
+    static final VarHandle const$5 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("unmounted"));
 }
 
 

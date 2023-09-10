@@ -3,50 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$344 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$344() {}
-    static final FunctionDescriptor g_mem_chunk_reset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_type_free",
+        constants$13.const$1
     );
-    static final MethodHandle g_mem_chunk_reset$MH = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_reset",
-        constants$344.g_mem_chunk_reset$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_variant_type_copy",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_mem_chunk_print$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_variant_type_new",
+        constants$5.const$2
     );
-    static final MethodHandle g_mem_chunk_print$MH = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_print",
-        constants$344.g_mem_chunk_print$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_variant_type_get_string_length",
+        constants$4.const$0
     );
-    static final FunctionDescriptor g_mem_chunk_info$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_mem_chunk_info$MH = RuntimeHelper.downcallHandle(
-        "g_mem_chunk_info",
-        constants$344.g_mem_chunk_info$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_variant_type_peek_string",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_blow_chunks$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_blow_chunks$MH = RuntimeHelper.downcallHandle(
-        "g_blow_chunks",
-        constants$344.g_blow_chunks$FUNC
-    );
-    static final FunctionDescriptor g_allocator_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_allocator_new$MH = RuntimeHelper.downcallHandle(
-        "g_allocator_new",
-        constants$344.g_allocator_new$FUNC
-    );
-    static final FunctionDescriptor g_allocator_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_allocator_free$MH = RuntimeHelper.downcallHandle(
-        "g_allocator_free",
-        constants$344.g_allocator_free$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_variant_type_dup_string",
+        constants$5.const$2
     );
 }
 

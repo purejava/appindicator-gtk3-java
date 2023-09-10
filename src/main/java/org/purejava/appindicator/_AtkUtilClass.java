@@ -4,90 +4,47 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _AtkUtilClass {
- *     GObjectClass parent;
- *     guint (*add_global_event_listener)(GSignalEmissionHook,const gchar*);
- *     void (*remove_global_event_listener)(guint);
- *     guint (*add_key_event_listener)(AtkKeySnoopFunc,gpointer);
- *     void (*remove_key_event_listener)(guint);
- *     AtkObject* (*get_root)();
- *     const gchar* (*get_toolkit_name)();
- *     const gchar* (*get_toolkit_version)();
+ *     struct _GObjectClass parent;
+ *     unsigned int (*add_global_event_listener)(int (*)(struct _GSignalInvocationHint*,unsigned int,struct _GValue*,void*),char*);
+ *     void (*remove_global_event_listener)(unsigned int);
+ *     unsigned int (*add_key_event_listener)(int (*)(struct _AtkKeyEventStruct*,void*),void*);
+ *     void (*remove_key_event_listener)(unsigned int);
+ *     struct _AtkObject* (*get_root)();
+ *     char* (*get_toolkit_name)();
+ *     char* (*get_toolkit_version)();
  * };
  * }
  */
 public class _AtkUtilClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-            ).withName("g_type_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-            Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("notify"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-        ).withName("parent"),
-        Constants$root.C_POINTER$LAYOUT.withName("add_global_event_listener"),
-        Constants$root.C_POINTER$LAYOUT.withName("remove_global_event_listener"),
-        Constants$root.C_POINTER$LAYOUT.withName("add_key_event_listener"),
-        Constants$root.C_POINTER$LAYOUT.withName("remove_key_event_listener"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_root"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_toolkit_name"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_toolkit_version")
-    ).withName("_AtkUtilClass");
     public static MemoryLayout $LAYOUT() {
-        return _AtkUtilClass.$struct$LAYOUT;
+        return constants$1987.const$5;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
     }
-    static final FunctionDescriptor add_global_event_listener$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor add_global_event_listener_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle add_global_event_listener_UP$MH = RuntimeHelper.upcallHandle(add_global_event_listener.class, "apply", _AtkUtilClass.add_global_event_listener_UP$FUNC);
-    static final FunctionDescriptor add_global_event_listener_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle add_global_event_listener_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkUtilClass.add_global_event_listener_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * guint (*add_global_event_listener)(GSignalEmissionHook,const gchar*);
+ * unsigned int (*add_global_event_listener)(int (*)(struct _GSignalInvocationHint*,unsigned int,struct _GValue*,void*),char*);
      * }
      */
     public interface add_global_event_listener {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(add_global_event_listener fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkUtilClass.add_global_event_listener_UP$MH, fi, _AtkUtilClass.add_global_event_listener$FUNC, scope);
+        static MemorySegment allocate(add_global_event_listener fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1988.const$0, fi, constants$9.const$0, scope);
         }
-        static add_global_event_listener ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static add_global_event_listener ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_AtkUtilClass.add_global_event_listener_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -95,66 +52,52 @@ public class _AtkUtilClass {
         }
     }
 
-    static final VarHandle add_global_event_listener$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("add_global_event_listener"));
     public static VarHandle add_global_event_listener$VH() {
-        return _AtkUtilClass.add_global_event_listener$VH;
+        return constants$1988.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint (*add_global_event_listener)(GSignalEmissionHook,const gchar*);
+     * unsigned int (*add_global_event_listener)(int (*)(struct _GSignalInvocationHint*,unsigned int,struct _GValue*,void*),char*);
      * }
      */
     public static MemorySegment add_global_event_listener$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkUtilClass.add_global_event_listener$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1988.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint (*add_global_event_listener)(GSignalEmissionHook,const gchar*);
+     * unsigned int (*add_global_event_listener)(int (*)(struct _GSignalInvocationHint*,unsigned int,struct _GValue*,void*),char*);
      * }
      */
     public static void add_global_event_listener$set(MemorySegment seg, MemorySegment x) {
-        _AtkUtilClass.add_global_event_listener$VH.set(seg, x);
+        constants$1988.const$1.set(seg, x);
     }
     public static MemorySegment add_global_event_listener$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkUtilClass.add_global_event_listener$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1988.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void add_global_event_listener$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkUtilClass.add_global_event_listener$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1988.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static add_global_event_listener add_global_event_listener(MemorySegment segment, SegmentScope scope) {
+    public static add_global_event_listener add_global_event_listener(MemorySegment segment, Arena scope) {
         return add_global_event_listener.ofAddress(add_global_event_listener$get(segment), scope);
     }
-    static final FunctionDescriptor remove_global_event_listener$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor remove_global_event_listener_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle remove_global_event_listener_UP$MH = RuntimeHelper.upcallHandle(remove_global_event_listener.class, "apply", _AtkUtilClass.remove_global_event_listener_UP$FUNC);
-    static final FunctionDescriptor remove_global_event_listener_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle remove_global_event_listener_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkUtilClass.remove_global_event_listener_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*remove_global_event_listener)(guint);
+ * void (*remove_global_event_listener)(unsigned int);
      * }
      */
     public interface remove_global_event_listener {
 
-        void apply(int _x0);
-        static MemorySegment allocate(remove_global_event_listener fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkUtilClass.remove_global_event_listener_UP$MH, fi, _AtkUtilClass.remove_global_event_listener$FUNC, scope);
+        void apply(int handle_id);
+        static MemorySegment allocate(remove_global_event_listener fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1988.const$2, fi, constants$80.const$1, scope);
         }
-        static remove_global_event_listener ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (int __x0) -> {
+        static remove_global_event_listener ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (int _handle_id) -> {
                 try {
-                    _AtkUtilClass.remove_global_event_listener_DOWN$MH.invokeExact(symbol, __x0);
+                    constants$122.const$4.invokeExact(symbol, _handle_id);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -162,69 +105,52 @@ public class _AtkUtilClass {
         }
     }
 
-    static final VarHandle remove_global_event_listener$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("remove_global_event_listener"));
     public static VarHandle remove_global_event_listener$VH() {
-        return _AtkUtilClass.remove_global_event_listener$VH;
+        return constants$1988.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*remove_global_event_listener)(guint);
+     * void (*remove_global_event_listener)(unsigned int);
      * }
      */
     public static MemorySegment remove_global_event_listener$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkUtilClass.remove_global_event_listener$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1988.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*remove_global_event_listener)(guint);
+     * void (*remove_global_event_listener)(unsigned int);
      * }
      */
     public static void remove_global_event_listener$set(MemorySegment seg, MemorySegment x) {
-        _AtkUtilClass.remove_global_event_listener$VH.set(seg, x);
+        constants$1988.const$3.set(seg, x);
     }
     public static MemorySegment remove_global_event_listener$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkUtilClass.remove_global_event_listener$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1988.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void remove_global_event_listener$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkUtilClass.remove_global_event_listener$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1988.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static remove_global_event_listener remove_global_event_listener(MemorySegment segment, SegmentScope scope) {
+    public static remove_global_event_listener remove_global_event_listener(MemorySegment segment, Arena scope) {
         return remove_global_event_listener.ofAddress(remove_global_event_listener$get(segment), scope);
     }
-    static final FunctionDescriptor add_key_event_listener$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor add_key_event_listener_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle add_key_event_listener_UP$MH = RuntimeHelper.upcallHandle(add_key_event_listener.class, "apply", _AtkUtilClass.add_key_event_listener_UP$FUNC);
-    static final FunctionDescriptor add_key_event_listener_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle add_key_event_listener_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkUtilClass.add_key_event_listener_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * guint (*add_key_event_listener)(AtkKeySnoopFunc,gpointer);
+ * unsigned int (*add_key_event_listener)(int (*)(struct _AtkKeyEventStruct*,void*),void*);
      * }
      */
     public interface add_key_event_listener {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(add_key_event_listener fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkUtilClass.add_key_event_listener_UP$MH, fi, _AtkUtilClass.add_key_event_listener$FUNC, scope);
+        static MemorySegment allocate(add_key_event_listener fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1988.const$4, fi, constants$9.const$0, scope);
         }
-        static add_key_event_listener ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static add_key_event_listener ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
                 try {
-                    return (int)_AtkUtilClass.add_key_event_listener_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -232,66 +158,52 @@ public class _AtkUtilClass {
         }
     }
 
-    static final VarHandle add_key_event_listener$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("add_key_event_listener"));
     public static VarHandle add_key_event_listener$VH() {
-        return _AtkUtilClass.add_key_event_listener$VH;
+        return constants$1988.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint (*add_key_event_listener)(AtkKeySnoopFunc,gpointer);
+     * unsigned int (*add_key_event_listener)(int (*)(struct _AtkKeyEventStruct*,void*),void*);
      * }
      */
     public static MemorySegment add_key_event_listener$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkUtilClass.add_key_event_listener$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1988.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint (*add_key_event_listener)(AtkKeySnoopFunc,gpointer);
+     * unsigned int (*add_key_event_listener)(int (*)(struct _AtkKeyEventStruct*,void*),void*);
      * }
      */
     public static void add_key_event_listener$set(MemorySegment seg, MemorySegment x) {
-        _AtkUtilClass.add_key_event_listener$VH.set(seg, x);
+        constants$1988.const$5.set(seg, x);
     }
     public static MemorySegment add_key_event_listener$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkUtilClass.add_key_event_listener$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1988.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void add_key_event_listener$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkUtilClass.add_key_event_listener$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1988.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static add_key_event_listener add_key_event_listener(MemorySegment segment, SegmentScope scope) {
+    public static add_key_event_listener add_key_event_listener(MemorySegment segment, Arena scope) {
         return add_key_event_listener.ofAddress(add_key_event_listener$get(segment), scope);
     }
-    static final FunctionDescriptor remove_key_event_listener$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor remove_key_event_listener_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle remove_key_event_listener_UP$MH = RuntimeHelper.upcallHandle(remove_key_event_listener.class, "apply", _AtkUtilClass.remove_key_event_listener_UP$FUNC);
-    static final FunctionDescriptor remove_key_event_listener_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle remove_key_event_listener_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkUtilClass.remove_key_event_listener_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*remove_key_event_listener)(guint);
+ * void (*remove_key_event_listener)(unsigned int);
      * }
      */
     public interface remove_key_event_listener {
 
-        void apply(int _x0);
-        static MemorySegment allocate(remove_key_event_listener fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkUtilClass.remove_key_event_listener_UP$MH, fi, _AtkUtilClass.remove_key_event_listener$FUNC, scope);
+        void apply(int handle_id);
+        static MemorySegment allocate(remove_key_event_listener fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1989.const$0, fi, constants$80.const$1, scope);
         }
-        static remove_key_event_listener ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (int __x0) -> {
+        static remove_key_event_listener ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (int _handle_id) -> {
                 try {
-                    _AtkUtilClass.remove_key_event_listener_DOWN$MH.invokeExact(symbol, __x0);
+                    constants$122.const$4.invokeExact(symbol, _handle_id);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -299,60 +211,52 @@ public class _AtkUtilClass {
         }
     }
 
-    static final VarHandle remove_key_event_listener$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("remove_key_event_listener"));
     public static VarHandle remove_key_event_listener$VH() {
-        return _AtkUtilClass.remove_key_event_listener$VH;
+        return constants$1989.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*remove_key_event_listener)(guint);
+     * void (*remove_key_event_listener)(unsigned int);
      * }
      */
     public static MemorySegment remove_key_event_listener$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkUtilClass.remove_key_event_listener$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1989.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*remove_key_event_listener)(guint);
+     * void (*remove_key_event_listener)(unsigned int);
      * }
      */
     public static void remove_key_event_listener$set(MemorySegment seg, MemorySegment x) {
-        _AtkUtilClass.remove_key_event_listener$VH.set(seg, x);
+        constants$1989.const$1.set(seg, x);
     }
     public static MemorySegment remove_key_event_listener$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkUtilClass.remove_key_event_listener$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1989.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void remove_key_event_listener$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkUtilClass.remove_key_event_listener$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1989.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static remove_key_event_listener remove_key_event_listener(MemorySegment segment, SegmentScope scope) {
+    public static remove_key_event_listener remove_key_event_listener(MemorySegment segment, Arena scope) {
         return remove_key_event_listener.ofAddress(remove_key_event_listener$get(segment), scope);
     }
-    static final FunctionDescriptor get_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final FunctionDescriptor get_root_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle get_root_UP$MH = RuntimeHelper.upcallHandle(get_root.class, "apply", _AtkUtilClass.get_root_UP$FUNC);
-    static final FunctionDescriptor get_root_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle get_root_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkUtilClass.get_root_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * AtkObject* (*get_root)();
+ * struct _AtkObject* (*get_root)();
      * }
      */
     public interface get_root {
 
         java.lang.foreign.MemorySegment apply();
-        static MemorySegment allocate(get_root fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkUtilClass.get_root_UP$MH, fi, _AtkUtilClass.get_root$FUNC, scope);
+        static MemorySegment allocate(get_root fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1989.const$2, fi, constants$35.const$2, scope);
         }
-        static get_root ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_root ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_root_DOWN$MH.invokeExact(symbol);
+                    return (java.lang.foreign.MemorySegment)constants$503.const$2.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -360,60 +264,52 @@ public class _AtkUtilClass {
         }
     }
 
-    static final VarHandle get_root$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_root"));
     public static VarHandle get_root$VH() {
-        return _AtkUtilClass.get_root$VH;
+        return constants$1989.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * AtkObject* (*get_root)();
+     * struct _AtkObject* (*get_root)();
      * }
      */
     public static MemorySegment get_root$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_root$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1989.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * AtkObject* (*get_root)();
+     * struct _AtkObject* (*get_root)();
      * }
      */
     public static void get_root$set(MemorySegment seg, MemorySegment x) {
-        _AtkUtilClass.get_root$VH.set(seg, x);
+        constants$1989.const$3.set(seg, x);
     }
     public static MemorySegment get_root$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_root$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1989.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_root$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkUtilClass.get_root$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1989.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_root get_root(MemorySegment segment, SegmentScope scope) {
+    public static get_root get_root(MemorySegment segment, Arena scope) {
         return get_root.ofAddress(get_root$get(segment), scope);
     }
-    static final FunctionDescriptor get_toolkit_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final FunctionDescriptor get_toolkit_name_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle get_toolkit_name_UP$MH = RuntimeHelper.upcallHandle(get_toolkit_name.class, "apply", _AtkUtilClass.get_toolkit_name_UP$FUNC);
-    static final FunctionDescriptor get_toolkit_name_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle get_toolkit_name_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkUtilClass.get_toolkit_name_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * const gchar* (*get_toolkit_name)();
+ * char* (*get_toolkit_name)();
      * }
      */
     public interface get_toolkit_name {
 
         java.lang.foreign.MemorySegment apply();
-        static MemorySegment allocate(get_toolkit_name fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkUtilClass.get_toolkit_name_UP$MH, fi, _AtkUtilClass.get_toolkit_name$FUNC, scope);
+        static MemorySegment allocate(get_toolkit_name fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1989.const$4, fi, constants$35.const$2, scope);
         }
-        static get_toolkit_name ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_toolkit_name ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_toolkit_name_DOWN$MH.invokeExact(symbol);
+                    return (java.lang.foreign.MemorySegment)constants$503.const$2.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -421,60 +317,52 @@ public class _AtkUtilClass {
         }
     }
 
-    static final VarHandle get_toolkit_name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_toolkit_name"));
     public static VarHandle get_toolkit_name$VH() {
-        return _AtkUtilClass.get_toolkit_name$VH;
+        return constants$1989.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const gchar* (*get_toolkit_name)();
+     * char* (*get_toolkit_name)();
      * }
      */
     public static MemorySegment get_toolkit_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_toolkit_name$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1989.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const gchar* (*get_toolkit_name)();
+     * char* (*get_toolkit_name)();
      * }
      */
     public static void get_toolkit_name$set(MemorySegment seg, MemorySegment x) {
-        _AtkUtilClass.get_toolkit_name$VH.set(seg, x);
+        constants$1989.const$5.set(seg, x);
     }
     public static MemorySegment get_toolkit_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_toolkit_name$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1989.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_toolkit_name$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkUtilClass.get_toolkit_name$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1989.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_toolkit_name get_toolkit_name(MemorySegment segment, SegmentScope scope) {
+    public static get_toolkit_name get_toolkit_name(MemorySegment segment, Arena scope) {
         return get_toolkit_name.ofAddress(get_toolkit_name$get(segment), scope);
     }
-    static final FunctionDescriptor get_toolkit_version$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final FunctionDescriptor get_toolkit_version_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle get_toolkit_version_UP$MH = RuntimeHelper.upcallHandle(get_toolkit_version.class, "apply", _AtkUtilClass.get_toolkit_version_UP$FUNC);
-    static final FunctionDescriptor get_toolkit_version_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle get_toolkit_version_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkUtilClass.get_toolkit_version_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * const gchar* (*get_toolkit_version)();
+ * char* (*get_toolkit_version)();
      * }
      */
     public interface get_toolkit_version {
 
         java.lang.foreign.MemorySegment apply();
-        static MemorySegment allocate(get_toolkit_version fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkUtilClass.get_toolkit_version_UP$MH, fi, _AtkUtilClass.get_toolkit_version$FUNC, scope);
+        static MemorySegment allocate(get_toolkit_version fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1990.const$0, fi, constants$35.const$2, scope);
         }
-        static get_toolkit_version ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_toolkit_version ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_toolkit_version_DOWN$MH.invokeExact(symbol);
+                    return (java.lang.foreign.MemorySegment)constants$503.const$2.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -482,35 +370,34 @@ public class _AtkUtilClass {
         }
     }
 
-    static final VarHandle get_toolkit_version$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_toolkit_version"));
     public static VarHandle get_toolkit_version$VH() {
-        return _AtkUtilClass.get_toolkit_version$VH;
+        return constants$1990.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const gchar* (*get_toolkit_version)();
+     * char* (*get_toolkit_version)();
      * }
      */
     public static MemorySegment get_toolkit_version$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_toolkit_version$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1990.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const gchar* (*get_toolkit_version)();
+     * char* (*get_toolkit_version)();
      * }
      */
     public static void get_toolkit_version$set(MemorySegment seg, MemorySegment x) {
-        _AtkUtilClass.get_toolkit_version$VH.set(seg, x);
+        constants$1990.const$1.set(seg, x);
     }
     public static MemorySegment get_toolkit_version$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkUtilClass.get_toolkit_version$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1990.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_toolkit_version$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkUtilClass.get_toolkit_version$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1990.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_toolkit_version get_toolkit_version(MemorySegment segment, SegmentScope scope) {
+    public static get_toolkit_version get_toolkit_version(MemorySegment segment, Arena scope) {
         return get_toolkit_version.ofAddress(get_toolkit_version$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -518,7 +405,7 @@ public class _AtkUtilClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * int (*GSignalEmissionHook)(struct _GSignalInvocationHint* ihint,unsigned int n_param_values,struct _GValue* param_values,void* data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GSignalEmissionHook {
 
     int apply(java.lang.foreign.MemorySegment ihint, int n_param_values, java.lang.foreign.MemorySegment param_values, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(GSignalEmissionHook fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$414.GSignalEmissionHook_UP$MH, fi, constants$414.GSignalEmissionHook$FUNC, scope);
+    static MemorySegment allocate(GSignalEmissionHook fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$600.const$0, fi, constants$11.const$0, scope);
     }
-    static GSignalEmissionHook ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GSignalEmissionHook ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _ihint, int _n_param_values, java.lang.foreign.MemorySegment _param_values, java.lang.foreign.MemorySegment _data) -> {
             try {
-                return (int)constants$414.GSignalEmissionHook_DOWN$MH.invokeExact(symbol, _ihint, _n_param_values, _param_values, _data);
+                return (int)constants$464.const$0.invokeExact(symbol, _ihint, _n_param_values, _param_values, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

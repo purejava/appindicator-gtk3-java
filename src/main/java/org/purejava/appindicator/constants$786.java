@@ -3,53 +3,47 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$786 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$786() {}
-    static final FunctionDescriptor g_subprocess_get_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_output_stream_write_all",
+        constants$766.const$0
     );
-    static final MethodHandle g_subprocess_get_status$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_status",
-        constants$786.g_subprocess_get_status$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_output_stream_writev",
+        constants$766.const$0
     );
-    static final FunctionDescriptor g_subprocess_get_successful$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_output_stream_writev_all",
+        constants$766.const$0
     );
-    static final MethodHandle g_subprocess_get_successful$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_successful",
-        constants$786.g_subprocess_get_successful$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_output_stream_printf",
+        constants$165.const$2
     );
-    static final FunctionDescriptor g_subprocess_get_if_exited$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final MethodHandle g_subprocess_get_if_exited$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_if_exited",
-        constants$786.g_subprocess_get_if_exited$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_get_exit_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_get_exit_status$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_exit_status",
-        constants$786.g_subprocess_get_exit_status$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_get_if_signaled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_get_if_signaled$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_if_signaled",
-        constants$786.g_subprocess_get_if_signaled$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_get_term_sig$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_get_term_sig$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_term_sig",
-        constants$786.g_subprocess_get_term_sig$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_output_stream_vprintf",
+        constants$786.const$4
     );
 }
 

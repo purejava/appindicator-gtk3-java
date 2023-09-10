@@ -3,44 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$427 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$427() {}
-    static final FunctionDescriptor g_tree_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tree_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tree_get_type",
-        constants$427.g_tree_get_type$FUNC
+    static final VarHandle const$0 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("msg_handler"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_scanner_new",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_pattern_spec_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_pattern_spec_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_get_type",
-        constants$427.g_pattern_spec_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_scanner_destroy",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_bookmark_file_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_bookmark_file_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_get_type",
-        constants$427.g_bookmark_file_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_scanner_input_file",
+        constants$40.const$2
     );
-    static final FunctionDescriptor g_variant_get_gtype$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_variant_get_gtype$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_gtype",
-        constants$427.g_variant_get_gtype$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_scanner_sync_file_offset",
+        constants$13.const$1
     );
-    static final FunctionDescriptor GBoxedCopyFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GBoxedCopyFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GBoxedCopyFunc_UP$MH = RuntimeHelper.upcallHandle(GBoxedCopyFunc.class, "apply", constants$427.GBoxedCopyFunc_UP$FUNC);
-    static final FunctionDescriptor GBoxedCopyFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GBoxedCopyFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$427.GBoxedCopyFunc_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_scanner_input_text",
+        constants$164.const$5
     );
 }
 

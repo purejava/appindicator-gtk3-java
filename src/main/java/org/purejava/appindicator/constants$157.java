@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$157 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$157() {}
-    static final FunctionDescriptor g_hook_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_date_time_get_day_of_year",
+        constants$10.const$5
     );
-    static final MethodHandle g_hook_free$MH = RuntimeHelper.downcallHandle(
-        "g_hook_free",
-        constants$157.g_hook_free$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_date_time_get_hour",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_hook_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_date_time_get_minute",
+        constants$10.const$5
     );
-    static final MethodHandle g_hook_ref$MH = RuntimeHelper.downcallHandle(
-        "g_hook_ref",
-        constants$157.g_hook_ref$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_date_time_get_second",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_hook_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_date_time_get_microsecond",
+        constants$10.const$5
     );
-    static final MethodHandle g_hook_unref$MH = RuntimeHelper.downcallHandle(
-        "g_hook_unref",
-        constants$157.g_hook_unref$FUNC
-    );
-    static final FunctionDescriptor g_hook_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_hook_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_hook_destroy",
-        constants$157.g_hook_destroy$FUNC
-    );
-    static final FunctionDescriptor g_hook_destroy_link$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hook_destroy_link$MH = RuntimeHelper.downcallHandle(
-        "g_hook_destroy_link",
-        constants$157.g_hook_destroy_link$FUNC
-    );
-    static final FunctionDescriptor g_hook_prepend$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hook_prepend$MH = RuntimeHelper.downcallHandle(
-        "g_hook_prepend",
-        constants$157.g_hook_prepend$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_date_time_get_seconds",
+        constants$67.const$0
     );
 }
 

@@ -3,53 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1819 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1819() {}
-    static final FunctionDescriptor gtk_spin_button_set_snap_to_ticks$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_set_snap_to_ticks$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_set_snap_to_ticks",
-        constants$1819.gtk_spin_button_set_snap_to_ticks$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_get_snap_to_ticks$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_get_snap_to_ticks$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_get_snap_to_ticks",
-        constants$1819.gtk_spin_button_get_snap_to_ticks$FUNC
-    );
-    static final FunctionDescriptor gtk_spin_button_update$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_spin_button_update$MH = RuntimeHelper.downcallHandle(
-        "gtk_spin_button_update",
-        constants$1819.gtk_spin_button_update$FUNC
-    );
-    static final FunctionDescriptor _gtk_spin_button_get_panels$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle _gtk_spin_button_get_panels$MH = RuntimeHelper.downcallHandle(
-        "_gtk_spin_button_get_panels",
-        constants$1819._gtk_spin_button_get_panels$FUNC
-    );
-    static final FunctionDescriptor gtk_spinner_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_spinner_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_spinner_get_type",
-        constants$1819.gtk_spinner_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_spinner_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_spinner_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_spinner_new",
-        constants$1819.gtk_spinner_new$FUNC
-    );
+    static final VarHandle const$0 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("min_width"));
+    static final VarHandle const$1 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("min_height"));
+    static final VarHandle const$2 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("max_width"));
+    static final VarHandle const$3 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("max_height"));
+    static final VarHandle const$4 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("base_width"));
+    static final VarHandle const$5 = constants$1818.const$5.varHandle(MemoryLayout.PathElement.groupElement("base_height"));
 }
 
 

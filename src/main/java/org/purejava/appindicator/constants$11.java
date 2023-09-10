@@ -3,62 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$11 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$11() {}
-    static final FunctionDescriptor strncpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle strncpy$MH = RuntimeHelper.downcallHandle(
-        "strncpy",
-        constants$11.strncpy$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "timer_settime",
+        constants$11.const$0
     );
-    static final FunctionDescriptor strcat$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "timer_gettime",
+        constants$9.const$0
     );
-    static final MethodHandle strcat$MH = RuntimeHelper.downcallHandle(
-        "strcat",
-        constants$11.strcat$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "timer_getoverrun",
+        constants$10.const$5
     );
-    static final FunctionDescriptor strncat$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final MethodHandle strncat$MH = RuntimeHelper.downcallHandle(
-        "strncat",
-        constants$11.strncat$FUNC
-    );
-    static final FunctionDescriptor strcmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strcmp$MH = RuntimeHelper.downcallHandle(
-        "strcmp",
-        constants$11.strcmp$FUNC
-    );
-    static final FunctionDescriptor strncmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle strncmp$MH = RuntimeHelper.downcallHandle(
-        "strncmp",
-        constants$11.strncmp$FUNC
-    );
-    static final FunctionDescriptor strcoll$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strcoll$MH = RuntimeHelper.downcallHandle(
-        "strcoll",
-        constants$11.strcoll$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "timespec_get",
+        constants$11.const$4
     );
 }
 

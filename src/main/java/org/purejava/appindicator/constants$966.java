@@ -3,60 +3,36 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$966 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$966() {}
-    static final FunctionDescriptor pango_layout_get_line$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dtls_server_connection_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle pango_layout_get_line$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_line",
-        constants$966.pango_layout_get_line$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dtls_server_connection_new",
+        constants$23.const$0
     );
-    static final FunctionDescriptor pango_layout_get_line_readonly$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_line_readonly$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_line_readonly",
-        constants$966.pango_layout_get_line_readonly$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_lines$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_lines$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_lines",
-        constants$966.pango_layout_get_lines$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_lines_readonly$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_lines_readonly$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_lines_readonly",
-        constants$966.pango_layout_get_lines_readonly$FUNC
-    );
-    static final FunctionDescriptor pango_layout_serialize$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_layout_serialize$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_serialize",
-        constants$966.pango_layout_serialize$FUNC
-    );
-    static final FunctionDescriptor pango_layout_write_to_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_write_to_file$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_write_to_file",
-        constants$966.pango_layout_write_to_file$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("hash"),
+        RuntimeHelper.POINTER.withName("equal"),
+        RuntimeHelper.POINTER.withName("to_tokens"),
+        RuntimeHelper.POINTER.withName("from_tokens"),
+        RuntimeHelper.POINTER.withName("serialize")
+    ).withName("_GIconIface");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GIconIface.hash.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$966.const$2.varHandle(MemoryLayout.PathElement.groupElement("hash"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GIconIface.equal.class, "apply", constants$9.const$0);
 }
 
 

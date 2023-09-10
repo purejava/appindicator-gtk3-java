@@ -3,55 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$123 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$123() {}
-    static final FunctionDescriptor g_dir_read_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(__sysv_signal$return.class, "apply", constants$80.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "__sysv_signal",
+        constants$24.const$4
     );
-    static final MethodHandle g_dir_read_name$MH = RuntimeHelper.downcallHandle(
-        "g_dir_read_name",
-        constants$123.g_dir_read_name$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(signal$__handler.class, "apply", constants$80.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(signal$return.class, "apply", constants$80.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "signal",
+        constants$24.const$4
     );
-    static final FunctionDescriptor g_dir_rewind$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final MethodHandle g_dir_rewind$MH = RuntimeHelper.downcallHandle(
-        "g_dir_rewind",
-        constants$123.g_dir_rewind$FUNC
-    );
-    static final FunctionDescriptor g_dir_close$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dir_close$MH = RuntimeHelper.downcallHandle(
-        "g_dir_close",
-        constants$123.g_dir_close$FUNC
-    );
-    static final FunctionDescriptor g_getenv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_getenv$MH = RuntimeHelper.downcallHandle(
-        "g_getenv",
-        constants$123.g_getenv$FUNC
-    );
-    static final FunctionDescriptor g_setenv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_setenv$MH = RuntimeHelper.downcallHandle(
-        "g_setenv",
-        constants$123.g_setenv$FUNC
-    );
-    static final FunctionDescriptor g_unsetenv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_unsetenv$MH = RuntimeHelper.downcallHandle(
-        "g_unsetenv",
-        constants$123.g_unsetenv$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "kill",
+        constants$123.const$5
     );
 }
 

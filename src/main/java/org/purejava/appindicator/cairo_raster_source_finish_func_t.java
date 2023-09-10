@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*cairo_raster_source_finish_func_t)(struct _cairo_pattern* pattern,void* callback_data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface cairo_raster_source_finish_func_t {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(cairo_raster_source_finish_func_t fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$1039.cairo_raster_source_finish_func_t_UP$MH, fi, constants$1039.cairo_raster_source_finish_func_t$FUNC, scope);
+    static MemorySegment allocate(cairo_raster_source_finish_func_t fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$1737.const$3, fi, constants$13.const$4, scope);
     }
-    static cairo_raster_source_finish_func_t ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static cairo_raster_source_finish_func_t ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$1039.cairo_raster_source_finish_func_t_DOWN$MH.invokeExact(symbol, _tag, _data);
+                constants$14.const$0.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

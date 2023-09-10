@@ -4,77 +4,42 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GInetAddressClass {
- *     GObjectClass parent_class;
- *     gchar* (*to_string)(GInetAddress*);
- *     const guint8* (*to_bytes)(GInetAddress*);
+ *     struct _GObjectClass parent_class;
+ *     char* (*to_string)(struct _GInetAddress*);
+ *     unsigned char* (*to_bytes)(struct _GInetAddress*);
  * };
  * }
  */
 public class _GInetAddressClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-            ).withName("g_type_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-            Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("notify"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("to_string"),
-        Constants$root.C_POINTER$LAYOUT.withName("to_bytes")
-    ).withName("_GInetAddressClass");
     public static MemoryLayout $LAYOUT() {
-        return _GInetAddressClass.$struct$LAYOUT;
+        return constants$1097.const$4;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
     }
-    static final FunctionDescriptor to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor to_string_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle to_string_UP$MH = RuntimeHelper.upcallHandle(to_string.class, "apply", _GInetAddressClass.to_string_UP$FUNC);
-    static final FunctionDescriptor to_string_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle to_string_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GInetAddressClass.to_string_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gchar* (*to_string)(GInetAddress*);
+ * char* (*to_string)(struct _GInetAddress*);
      * }
      */
     public interface to_string {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(to_string fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GInetAddressClass.to_string_UP$MH, fi, _GInetAddressClass.to_string$FUNC, scope);
+        static MemorySegment allocate(to_string fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1097.const$5, fi, constants$5.const$2, scope);
         }
-        static to_string ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static to_string ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GInetAddressClass.to_string_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -82,66 +47,52 @@ public class _GInetAddressClass {
         }
     }
 
-    static final VarHandle to_string$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("to_string"));
     public static VarHandle to_string$VH() {
-        return _GInetAddressClass.to_string$VH;
+        return constants$1098.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* (*to_string)(GInetAddress*);
+     * char* (*to_string)(struct _GInetAddress*);
      * }
      */
     public static MemorySegment to_string$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GInetAddressClass.to_string$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1098.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* (*to_string)(GInetAddress*);
+     * char* (*to_string)(struct _GInetAddress*);
      * }
      */
     public static void to_string$set(MemorySegment seg, MemorySegment x) {
-        _GInetAddressClass.to_string$VH.set(seg, x);
+        constants$1098.const$0.set(seg, x);
     }
     public static MemorySegment to_string$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GInetAddressClass.to_string$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1098.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void to_string$set(MemorySegment seg, long index, MemorySegment x) {
-        _GInetAddressClass.to_string$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1098.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static to_string to_string(MemorySegment segment, SegmentScope scope) {
+    public static to_string to_string(MemorySegment segment, Arena scope) {
         return to_string.ofAddress(to_string$get(segment), scope);
     }
-    static final FunctionDescriptor to_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor to_bytes_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle to_bytes_UP$MH = RuntimeHelper.upcallHandle(to_bytes.class, "apply", _GInetAddressClass.to_bytes_UP$FUNC);
-    static final FunctionDescriptor to_bytes_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle to_bytes_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GInetAddressClass.to_bytes_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * const guint8* (*to_bytes)(GInetAddress*);
+ * unsigned char* (*to_bytes)(struct _GInetAddress*);
      * }
      */
     public interface to_bytes {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(to_bytes fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GInetAddressClass.to_bytes_UP$MH, fi, _GInetAddressClass.to_bytes$FUNC, scope);
+        static MemorySegment allocate(to_bytes fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1098.const$1, fi, constants$5.const$2, scope);
         }
-        static to_bytes ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static to_bytes ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GInetAddressClass.to_bytes_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -149,35 +100,34 @@ public class _GInetAddressClass {
         }
     }
 
-    static final VarHandle to_bytes$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("to_bytes"));
     public static VarHandle to_bytes$VH() {
-        return _GInetAddressClass.to_bytes$VH;
+        return constants$1098.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const guint8* (*to_bytes)(GInetAddress*);
+     * unsigned char* (*to_bytes)(struct _GInetAddress*);
      * }
      */
     public static MemorySegment to_bytes$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GInetAddressClass.to_bytes$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1098.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const guint8* (*to_bytes)(GInetAddress*);
+     * unsigned char* (*to_bytes)(struct _GInetAddress*);
      * }
      */
     public static void to_bytes$set(MemorySegment seg, MemorySegment x) {
-        _GInetAddressClass.to_bytes$VH.set(seg, x);
+        constants$1098.const$2.set(seg, x);
     }
     public static MemorySegment to_bytes$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GInetAddressClass.to_bytes$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1098.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void to_bytes$set(MemorySegment seg, long index, MemorySegment x) {
-        _GInetAddressClass.to_bytes$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1098.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static to_bytes to_bytes(MemorySegment segment, SegmentScope scope) {
+    public static to_bytes to_bytes(MemorySegment segment, Arena scope) {
         return to_bytes.ofAddress(to_bytes$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -185,7 +135,7 @@ public class _GInetAddressClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

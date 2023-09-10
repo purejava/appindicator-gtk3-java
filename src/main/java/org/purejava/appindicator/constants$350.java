@@ -3,60 +3,36 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$350 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$350() {}
-    static final FunctionDescriptor g_relation_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_is_of_type",
+        constants$9.const$0
     );
-    static final MethodHandle g_relation_new$MH = RuntimeHelper.downcallHandle(
-        "g_relation_new",
-        constants$350.g_relation_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_variant_is_container",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_relation_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_variant_classify",
+        constants$10.const$5
     );
-    static final MethodHandle g_relation_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_relation_destroy",
-        constants$350.g_relation_destroy$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_variant_new_boolean",
+        constants$24.const$0
     );
-    static final FunctionDescriptor g_relation_index$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_BYTE
     );
-    static final MethodHandle g_relation_index$MH = RuntimeHelper.downcallHandle(
-        "g_relation_index",
-        constants$350.g_relation_index$FUNC
-    );
-    static final FunctionDescriptor g_relation_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_relation_insert$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_relation_insert",
-        constants$350.g_relation_insert$FUNC
-    );
-    static final FunctionDescriptor g_relation_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_relation_delete$MH = RuntimeHelper.downcallHandle(
-        "g_relation_delete",
-        constants$350.g_relation_delete$FUNC
-    );
-    static final FunctionDescriptor g_relation_select$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_relation_select$MH = RuntimeHelper.downcallHandle(
-        "g_relation_select",
-        constants$350.g_relation_select$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_variant_new_byte",
+        constants$350.const$4
     );
 }
 

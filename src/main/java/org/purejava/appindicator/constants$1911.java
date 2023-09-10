@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1911 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1911() {}
-    static final FunctionDescriptor _gtk_action_add_to_proxy_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_cairo_layout_path",
+        constants$13.const$4
     );
-    static final MethodHandle _gtk_action_add_to_proxy_list$MH = RuntimeHelper.downcallHandle(
-        "_gtk_action_add_to_proxy_list",
-        constants$1911._gtk_action_add_to_proxy_list$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_cairo_error_underline_path",
+        constants$1682.const$5
     );
-    static final FunctionDescriptor _gtk_action_remove_from_proxy_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_cairo_create",
+        constants$5.const$2
     );
-    static final MethodHandle _gtk_action_remove_from_proxy_list$MH = RuntimeHelper.downcallHandle(
-        "_gtk_action_remove_from_proxy_list",
-        constants$1911._gtk_action_remove_from_proxy_list$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_cairo_get_clip_rectangle",
+        constants$9.const$0
     );
-    static final FunctionDescriptor _gtk_action_emit_activate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_cairo_set_source_rgba",
+        constants$13.const$4
     );
-    static final MethodHandle _gtk_action_emit_activate$MH = RuntimeHelper.downcallHandle(
-        "_gtk_action_emit_activate",
-        constants$1911._gtk_action_emit_activate$FUNC
-    );
-    static final FunctionDescriptor gtk_action_set_accel_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_set_accel_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_set_accel_path",
-        constants$1911.gtk_action_set_accel_path$FUNC
-    );
-    static final FunctionDescriptor gtk_action_set_accel_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_set_accel_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_set_accel_group",
-        constants$1911.gtk_action_set_accel_group$FUNC
-    );
-    static final FunctionDescriptor _gtk_action_sync_menu_visible$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle _gtk_action_sync_menu_visible$MH = RuntimeHelper.downcallHandle(
-        "_gtk_action_sync_menu_visible",
-        constants$1911._gtk_action_sync_menu_visible$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_cairo_set_source_pixbuf",
+        constants$1683.const$0
     );
 }
 

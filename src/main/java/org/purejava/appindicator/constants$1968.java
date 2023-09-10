@@ -3,61 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1968 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1968() {}
-    static final FunctionDescriptor gtk_table_set_row_spacing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_table_set_row_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_table_set_row_spacing",
-        constants$1968.gtk_table_set_row_spacing$FUNC
-    );
-    static final FunctionDescriptor gtk_table_get_row_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_table_get_row_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_table_get_row_spacing",
-        constants$1968.gtk_table_get_row_spacing$FUNC
-    );
-    static final FunctionDescriptor gtk_table_set_col_spacing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_table_set_col_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_table_set_col_spacing",
-        constants$1968.gtk_table_set_col_spacing$FUNC
-    );
-    static final FunctionDescriptor gtk_table_get_col_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_table_get_col_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_table_get_col_spacing",
-        constants$1968.gtk_table_get_col_spacing$FUNC
-    );
-    static final FunctionDescriptor gtk_table_set_row_spacings$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_table_set_row_spacings$MH = RuntimeHelper.downcallHandle(
-        "gtk_table_set_row_spacings",
-        constants$1968.gtk_table_set_row_spacings$FUNC
-    );
-    static final FunctionDescriptor gtk_table_get_default_row_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_table_get_default_row_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_table_get_default_row_spacing",
-        constants$1968.gtk_table_get_default_row_spacing$FUNC
-    );
+    static final VarHandle const$0 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_n_children"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkObjectClass.ref_child.class, "apply", constants$21.const$3);
+    static final VarHandle const$2 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("ref_child"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkObjectClass.get_index_in_parent.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_index_in_parent"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkObjectClass.ref_relation_set.class, "apply", constants$5.const$2);
 }
 
 

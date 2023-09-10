@@ -2,68 +2,148 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
- * struct {
- *     gregset_t gregs;
- *     fpregset_t fpregs;
- *     unsigned long long __reserved1[8];
+ * struct mcontext_t {
+ *     unsigned long long fault_address;
+ *     unsigned long long regs[31];
+ *     unsigned long long sp;
+ *     unsigned long long pc;
+ *     unsigned long long pstate;
+ *     unsigned char __reserved[4096];
  * };
  * }
  */
 public class mcontext_t {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.sequenceLayout(23, Constants$root.C_LONG_LONG$LAYOUT).withName("gregs"),
-        Constants$root.C_POINTER$LAYOUT.withName("fpregs"),
-        MemoryLayout.sequenceLayout(8, Constants$root.C_LONG_LONG$LAYOUT).withName("__reserved1")
-    );
     public static MemoryLayout $LAYOUT() {
-        return mcontext_t.$struct$LAYOUT;
+        return constants$142.const$5;
     }
-    public static MemorySegment gregs$slice(MemorySegment seg) {
-        return seg.asSlice(0, 184);
-    }
-    static final VarHandle fpregs$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("fpregs"));
-    public static VarHandle fpregs$VH() {
-        return mcontext_t.fpregs$VH;
+    public static VarHandle fault_address$VH() {
+        return constants$143.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * fpregset_t fpregs;
+     * unsigned long long fault_address;
      * }
      */
-    public static MemorySegment fpregs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)mcontext_t.fpregs$VH.get(seg);
+    public static long fault_address$get(MemorySegment seg) {
+        return (long)constants$143.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * fpregset_t fpregs;
+     * unsigned long long fault_address;
      * }
      */
-    public static void fpregs$set(MemorySegment seg, MemorySegment x) {
-        mcontext_t.fpregs$VH.set(seg, x);
+    public static void fault_address$set(MemorySegment seg, long x) {
+        constants$143.const$0.set(seg, x);
     }
-    public static MemorySegment fpregs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)mcontext_t.fpregs$VH.get(seg.asSlice(index*sizeof()));
+    public static long fault_address$get(MemorySegment seg, long index) {
+        return (long)constants$143.const$0.get(seg.asSlice(index*sizeof()));
     }
-    public static void fpregs$set(MemorySegment seg, long index, MemorySegment x) {
-        mcontext_t.fpregs$VH.set(seg.asSlice(index*sizeof()), x);
+    public static void fault_address$set(MemorySegment seg, long index, long x) {
+        constants$143.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static MemorySegment __reserved1$slice(MemorySegment seg) {
-        return seg.asSlice(192, 64);
+    public static MemorySegment regs$slice(MemorySegment seg) {
+        return seg.asSlice(8, 248);
+    }
+    public static VarHandle sp$VH() {
+        return constants$143.const$1;
+    }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * unsigned long long sp;
+     * }
+     */
+    public static long sp$get(MemorySegment seg) {
+        return (long)constants$143.const$1.get(seg);
+    }
+    /**
+     * Setter for field:
+     * {@snippet :
+     * unsigned long long sp;
+     * }
+     */
+    public static void sp$set(MemorySegment seg, long x) {
+        constants$143.const$1.set(seg, x);
+    }
+    public static long sp$get(MemorySegment seg, long index) {
+        return (long)constants$143.const$1.get(seg.asSlice(index*sizeof()));
+    }
+    public static void sp$set(MemorySegment seg, long index, long x) {
+        constants$143.const$1.set(seg.asSlice(index*sizeof()), x);
+    }
+    public static VarHandle pc$VH() {
+        return constants$143.const$2;
+    }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * unsigned long long pc;
+     * }
+     */
+    public static long pc$get(MemorySegment seg) {
+        return (long)constants$143.const$2.get(seg);
+    }
+    /**
+     * Setter for field:
+     * {@snippet :
+     * unsigned long long pc;
+     * }
+     */
+    public static void pc$set(MemorySegment seg, long x) {
+        constants$143.const$2.set(seg, x);
+    }
+    public static long pc$get(MemorySegment seg, long index) {
+        return (long)constants$143.const$2.get(seg.asSlice(index*sizeof()));
+    }
+    public static void pc$set(MemorySegment seg, long index, long x) {
+        constants$143.const$2.set(seg.asSlice(index*sizeof()), x);
+    }
+    public static VarHandle pstate$VH() {
+        return constants$143.const$3;
+    }
+    /**
+     * Getter for field:
+     * {@snippet :
+     * unsigned long long pstate;
+     * }
+     */
+    public static long pstate$get(MemorySegment seg) {
+        return (long)constants$143.const$3.get(seg);
+    }
+    /**
+     * Setter for field:
+     * {@snippet :
+     * unsigned long long pstate;
+     * }
+     */
+    public static void pstate$set(MemorySegment seg, long x) {
+        constants$143.const$3.set(seg, x);
+    }
+    public static long pstate$get(MemorySegment seg, long index) {
+        return (long)constants$143.const$3.get(seg.asSlice(index*sizeof()));
+    }
+    public static void pstate$set(MemorySegment seg, long index, long x) {
+        constants$143.const$3.set(seg.asSlice(index*sizeof()), x);
+    }
+    public static MemorySegment __reserved$slice(MemorySegment seg) {
+        return seg.asSlice(288, 4096);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

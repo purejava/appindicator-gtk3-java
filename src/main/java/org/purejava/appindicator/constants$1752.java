@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1752 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1752() {}
-    static final FunctionDescriptor gtk_print_operation_set_default_page_setup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_region_status",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_print_operation_set_default_page_setup$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_default_page_setup",
-        constants$1752.gtk_print_operation_set_default_page_setup$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_region_get_extents",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_print_operation_get_default_page_setup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_region_num_rectangles",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_print_operation_get_default_page_setup$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_get_default_page_setup",
-        constants$1752.gtk_print_operation_get_default_page_setup$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_region_get_rectangle",
+        constants$42.const$4
     );
-    static final FunctionDescriptor gtk_print_operation_set_print_settings$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_region_is_empty",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_print_operation_set_print_settings$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_print_settings",
-        constants$1752.gtk_print_operation_set_print_settings$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_get_print_settings$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_operation_get_print_settings$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_get_print_settings",
-        constants$1752.gtk_print_operation_get_print_settings$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_set_job_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_operation_set_job_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_job_name",
-        constants$1752.gtk_print_operation_set_job_name$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_set_n_pages$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_print_operation_set_n_pages$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_n_pages",
-        constants$1752.gtk_print_operation_set_n_pages$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_region_contains_rectangle",
+        constants$9.const$0
     );
 }
 

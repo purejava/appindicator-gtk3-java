@@ -3,75 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$774 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$774() {}
-    static final FunctionDescriptor g_socket_client_connect_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_connect_finish$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_finish",
-        constants$774.g_socket_client_connect_finish$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_connect_to_host_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_connect_to_host_async$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_host_async",
-        constants$774.g_socket_client_connect_to_host_async$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_connect_to_host_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_connect_to_host_finish$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_host_finish",
-        constants$774.g_socket_client_connect_to_host_finish$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_connect_to_service_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_connect_to_service_async$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_service_async",
-        constants$774.g_socket_client_connect_to_service_async$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_connect_to_service_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_connect_to_service_finish$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_service_finish",
-        constants$774.g_socket_client_connect_to_service_finish$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_connect_to_uri_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_connect_to_uri_async$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_connect_to_uri_async",
-        constants$774.g_socket_client_connect_to_uri_async$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GBufferedInputStreamClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$772.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GBufferedInputStreamClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$772.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GBufferedInputStreamClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$772.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
 }
 
 

@@ -3,42 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$947 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$947() {}
-    static final FunctionDescriptor pango_bidi_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_bidi_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_bidi_type_get_type",
-        constants$947.pango_bidi_type_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_coverage_level_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_coverage_level_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_coverage_level_get_type",
-        constants$947.pango_coverage_level_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_direction_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_direction_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_direction_get_type",
-        constants$947.pango_direction_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_style_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_style_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_style_get_type",
-        constants$947.pango_style_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_variant_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_variant_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_variant_get_type",
-        constants$947.pango_variant_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_weight_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_weight_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_weight_get_type",
-        constants$947.pango_weight_get_type$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDriveIface.stop_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("stop_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDriveIface.stop_button.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("stop_button"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDriveIface.eject_with_operation.class, "apply", constants$380.const$0);
+    static final VarHandle const$5 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("eject_with_operation"));
 }
 
 

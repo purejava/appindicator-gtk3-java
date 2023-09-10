@@ -3,67 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$816 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$816() {}
-    static final FunctionDescriptor g_tls_interaction_invoke_request_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "sleep",
+        constants$8.const$4
     );
-    static final MethodHandle g_tls_interaction_invoke_request_certificate$MH = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_invoke_request_certificate",
-        constants$816.g_tls_interaction_invoke_request_certificate$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "ualarm",
+        constants$123.const$5
     );
-    static final FunctionDescriptor g_tls_interaction_request_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "usleep",
+        constants$8.const$4
     );
-    static final MethodHandle g_tls_interaction_request_certificate$MH = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_request_certificate",
-        constants$816.g_tls_interaction_request_certificate$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pause",
+        constants$83.const$1
     );
-    static final FunctionDescriptor g_tls_interaction_request_certificate_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "chown",
+        constants$49.const$0
     );
-    static final MethodHandle g_tls_interaction_request_certificate_async$MH = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_request_certificate_async",
-        constants$816.g_tls_interaction_request_certificate_async$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final FunctionDescriptor g_tls_interaction_request_certificate_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_interaction_request_certificate_finish$MH = RuntimeHelper.downcallHandle(
-        "g_tls_interaction_request_certificate_finish",
-        constants$816.g_tls_interaction_request_certificate_finish$FUNC
-    );
-    static final FunctionDescriptor g_tls_password_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_password_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_password_get_type",
-        constants$816.g_tls_password_get_type$FUNC
-    );
-    static final FunctionDescriptor g_tls_password_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_password_new$MH = RuntimeHelper.downcallHandle(
-        "g_tls_password_new",
-        constants$816.g_tls_password_new$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "fchown",
+        constants$816.const$5
     );
 }
 

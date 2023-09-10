@@ -3,62 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$851 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$851() {}
-    static final FunctionDescriptor hb_face_set_glyph_count$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_action_group_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle hb_face_set_glyph_count$MH = RuntimeHelper.downcallHandle(
-        "hb_face_set_glyph_count",
-        constants$851.hb_face_set_glyph_count$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_action_group_get",
+        constants$23.const$0
     );
-    static final FunctionDescriptor hb_face_get_glyph_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_address_escape_value",
+        constants$5.const$2
     );
-    static final MethodHandle hb_face_get_glyph_count$MH = RuntimeHelper.downcallHandle(
-        "hb_face_get_glyph_count",
-        constants$851.hb_face_get_glyph_count$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_is_address",
+        constants$10.const$5
     );
-    static final FunctionDescriptor hb_face_get_table_tags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_is_supported_address",
+        constants$9.const$0
     );
-    static final MethodHandle hb_face_get_table_tags$MH = RuntimeHelper.downcallHandle(
-        "hb_face_get_table_tags",
-        constants$851.hb_face_get_table_tags$FUNC
-    );
-    static final FunctionDescriptor hb_face_collect_unicodes$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_face_collect_unicodes$MH = RuntimeHelper.downcallHandle(
-        "hb_face_collect_unicodes",
-        constants$851.hb_face_collect_unicodes$FUNC
-    );
-    static final FunctionDescriptor hb_face_collect_variation_selectors$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_face_collect_variation_selectors$MH = RuntimeHelper.downcallHandle(
-        "hb_face_collect_variation_selectors",
-        constants$851.hb_face_collect_variation_selectors$FUNC
-    );
-    static final FunctionDescriptor hb_face_collect_variation_unicodes$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_face_collect_variation_unicodes$MH = RuntimeHelper.downcallHandle(
-        "hb_face_collect_variation_unicodes",
-        constants$851.hb_face_collect_variation_unicodes$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_dbus_address_get_stream$callback.class, "apply", constants$14.const$3);
 }
 
 

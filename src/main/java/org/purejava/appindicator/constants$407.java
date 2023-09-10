@@ -3,86 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$407 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$407() {}
-    static final FunctionDescriptor g_cclosure_marshal_VOID__BOOLEAN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_rc_box_alloc",
+        constants$63.const$3
     );
-    static final MethodHandle g_cclosure_marshal_VOID__BOOLEAN$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__BOOLEAN",
-        constants$407.g_cclosure_marshal_VOID__BOOLEAN$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_rc_box_alloc0",
+        constants$63.const$3
     );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__BOOLEANv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_cclosure_marshal_VOID__BOOLEANv$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__BOOLEANv",
-        constants$407.g_cclosure_marshal_VOID__BOOLEANv$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_rc_box_dup",
+        constants$407.const$2
     );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__CHAR$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_rc_box_acquire",
+        constants$5.const$2
     );
-    static final MethodHandle g_cclosure_marshal_VOID__CHAR$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__CHAR",
-        constants$407.g_cclosure_marshal_VOID__CHAR$FUNC
-    );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__CHARv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cclosure_marshal_VOID__CHARv$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__CHARv",
-        constants$407.g_cclosure_marshal_VOID__CHARv$FUNC
-    );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__UCHAR$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cclosure_marshal_VOID__UCHAR$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__UCHAR",
-        constants$407.g_cclosure_marshal_VOID__UCHAR$FUNC
-    );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__UCHARv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cclosure_marshal_VOID__UCHARv$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__UCHARv",
-        constants$407.g_cclosure_marshal_VOID__UCHARv$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_rc_box_release",
+        constants$13.const$1
     );
 }
 

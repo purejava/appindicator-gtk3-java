@@ -3,66 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1481 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1481() {}
-    static final FunctionDescriptor gtk_tree_view_get_level_indentation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$1480.const$4
     );
-    static final MethodHandle gtk_tree_view_get_level_indentation$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_level_indentation",
-        constants$1481.gtk_tree_view_get_level_indentation$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_get_glyph_from_name_func_t.class, "apply", constants$1029.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_font_draw_glyph_func_t.class, "apply", constants$584.const$3);
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gtk_tree_view_set_tooltip_row$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_tooltip_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_tooltip_row",
-        constants$1481.gtk_tree_view_set_tooltip_row$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_tooltip_cell$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_tooltip_cell$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_tooltip_cell",
-        constants$1481.gtk_tree_view_set_tooltip_cell$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_tooltip_context$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_tooltip_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_tooltip_context",
-        constants$1481.gtk_tree_view_get_tooltip_context$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_tooltip_column$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_tooltip_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_tooltip_column",
-        constants$1481.gtk_tree_view_set_tooltip_column$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_tooltip_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_tooltip_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_tooltip_column",
-        constants$1481.gtk_tree_view_get_tooltip_column$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_paint_glyph_func_t.class, "apply", constants$1481.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$1481.const$3
     );
 }
 

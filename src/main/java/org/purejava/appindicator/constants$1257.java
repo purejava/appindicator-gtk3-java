@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1257 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1257() {}
-    static final FunctionDescriptor gtk_widget_set_can_default$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_settings_get_int",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_widget_set_can_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_can_default",
-        constants$1257.gtk_widget_set_can_default$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_settings_set_int",
+        constants$62.const$0
     );
-    static final FunctionDescriptor gtk_widget_get_can_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_settings_get_int64",
+        constants$22.const$0
     );
-    static final MethodHandle gtk_widget_get_can_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_can_default",
-        constants$1257.gtk_widget_get_can_default$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_settings_set_int64",
+        constants$18.const$2
     );
-    static final FunctionDescriptor gtk_widget_has_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_settings_get_uint",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_widget_has_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_has_default",
-        constants$1257.gtk_widget_has_default$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_grab_default$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_grab_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_grab_default",
-        constants$1257.gtk_widget_grab_default$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_receives_default$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_receives_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_receives_default",
-        constants$1257.gtk_widget_set_receives_default$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_receives_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_receives_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_receives_default",
-        constants$1257.gtk_widget_get_receives_default$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_settings_set_uint",
+        constants$62.const$0
     );
 }
 

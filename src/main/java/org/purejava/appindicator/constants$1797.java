@@ -3,54 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1797 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1797() {}
-    static final FunctionDescriptor gtk_scrollable_get_border$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrollable_get_border$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_get_border",
-        constants$1797.gtk_scrollable_get_border$FUNC
-    );
-    static final FunctionDescriptor gtk_scrollbar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_scrollbar_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrollbar_get_type",
-        constants$1797.gtk_scrollbar_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_scrollbar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrollbar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrollbar_new",
-        constants$1797.gtk_scrollbar_new$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_scrolled_window_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_type",
-        constants$1797.gtk_scrolled_window_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_new",
-        constants$1797.gtk_scrolled_window_new$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_set_hadjustment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_hadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_hadjustment",
-        constants$1797.gtk_scrolled_window_set_hadjustment$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        JAVA_BYTE.withName("phase"),
+        JAVA_BYTE.withName("n_fingers"),
+        MemoryLayout.paddingLayout(1),
+        JAVA_INT.withName("time"),
+        JAVA_DOUBLE.withName("x"),
+        JAVA_DOUBLE.withName("y"),
+        JAVA_DOUBLE.withName("dx"),
+        JAVA_DOUBLE.withName("dy"),
+        JAVA_DOUBLE.withName("angle_delta"),
+        JAVA_DOUBLE.withName("scale"),
+        JAVA_DOUBLE.withName("x_root"),
+        JAVA_DOUBLE.withName("y_root"),
+        JAVA_INT.withName("state"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GdkEventTouchpadPinch");
+    static final VarHandle const$1 = constants$1797.const$0.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$2 = constants$1797.const$0.varHandle(MemoryLayout.PathElement.groupElement("window"));
+    static final VarHandle const$3 = constants$1797.const$0.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
+    static final VarHandle const$4 = constants$1797.const$0.varHandle(MemoryLayout.PathElement.groupElement("phase"));
+    static final VarHandle const$5 = constants$1797.const$0.varHandle(MemoryLayout.PathElement.groupElement("n_fingers"));
 }
 
 

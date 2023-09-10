@@ -3,50 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1545 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1545() {}
-    static final FunctionDescriptor gtk_clipboard_store$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_font_metrics_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_clipboard_store$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_store",
-        constants$1545.gtk_clipboard_store$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_font_metrics_ref",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_clipboard_get_selection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_font_metrics_unref",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_clipboard_get_selection$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_get_selection",
-        constants$1545.gtk_clipboard_get_selection$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_font_metrics_get_ascent",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_color_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_color_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_get_type",
-        constants$1545.gtk_color_button_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_font_metrics_get_descent",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_color_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_color_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_new",
-        constants$1545.gtk_color_button_new$FUNC
-    );
-    static final FunctionDescriptor gtk_color_button_new_with_rgba$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_color_button_new_with_rgba$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_new_with_rgba",
-        constants$1545.gtk_color_button_new_with_rgba$FUNC
-    );
-    static final FunctionDescriptor gtk_color_button_set_title$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_color_button_set_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_button_set_title",
-        constants$1545.gtk_color_button_set_title$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_font_metrics_get_height",
+        constants$10.const$5
     );
 }
 

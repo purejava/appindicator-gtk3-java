@@ -2,44 +2,22 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkCheckButton {
- *     GtkToggleButton toggle_button;
+ *     struct _GtkToggleButton toggle_button;
  * };
  * }
  */
 public class _GtkCheckButton {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    MemoryLayout.structLayout(
-                        MemoryLayout.structLayout(
-                            MemoryLayout.structLayout(
-                                MemoryLayout.structLayout(
-                                    Constants$root.C_POINTER$LAYOUT.withName("g_class")
-                                ).withName("g_type_instance"),
-                                Constants$root.C_INT$LAYOUT.withName("ref_count"),
-                                MemoryLayout.paddingLayout(32),
-                                Constants$root.C_POINTER$LAYOUT.withName("qdata")
-                            ).withName("parent_instance"),
-                            Constants$root.C_POINTER$LAYOUT.withName("priv")
-                        ).withName("widget"),
-                        Constants$root.C_POINTER$LAYOUT.withName("priv")
-                    ).withName("container"),
-                    Constants$root.C_POINTER$LAYOUT.withName("priv")
-                ).withName("bin"),
-                Constants$root.C_POINTER$LAYOUT.withName("priv")
-            ).withName("button"),
-            Constants$root.C_POINTER$LAYOUT.withName("priv")
-        ).withName("toggle_button")
-    ).withName("_GtkCheckButton");
     public static MemoryLayout $LAYOUT() {
-        return _GtkCheckButton.$struct$LAYOUT;
+        return constants$2608.const$5;
     }
     public static MemorySegment toggle_button$slice(MemorySegment seg) {
         return seg.asSlice(0, 64);
@@ -49,7 +27,7 @@ public class _GtkCheckButton {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

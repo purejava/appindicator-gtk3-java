@@ -3,59 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1442 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1442() {}
-    static final FunctionDescriptor gtk_entry_completion_compute_prefix$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_face_get_empty",
+        constants$35.const$2
     );
-    static final MethodHandle gtk_entry_completion_compute_prefix$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_compute_prefix",
-        constants$1442.gtk_entry_completion_compute_prefix$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_face_reference",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_entry_completion_complete$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_face_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_entry_completion_complete$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_complete",
-        constants$1442.gtk_entry_completion_complete$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_face_set_user_data$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_face_set_user_data",
+        constants$1423.const$1
     );
-    static final FunctionDescriptor gtk_entry_completion_insert_prefix$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_completion_insert_prefix$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_insert_prefix",
-        constants$1442.gtk_entry_completion_insert_prefix$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_completion_insert_action_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_completion_insert_action_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_insert_action_text",
-        constants$1442.gtk_entry_completion_insert_action_text$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_completion_insert_action_markup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_completion_insert_action_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_insert_action_markup",
-        constants$1442.gtk_entry_completion_insert_action_markup$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_completion_delete_action$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_completion_delete_action$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_delete_action",
-        constants$1442.gtk_entry_completion_delete_action$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_face_get_user_data",
+        constants$5.const$5
     );
 }
 

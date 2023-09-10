@@ -3,56 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$362 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$362() {}
-    static final FunctionDescriptor __sigsetjmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_is_normal_form",
+        constants$10.const$5
     );
-    static final MethodHandle __sigsetjmp$MH = RuntimeHelper.downcallHandle(
-        "__sigsetjmp",
-        constants$362.__sigsetjmp$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_variant_byteswap",
+        constants$5.const$2
     );
-    static final FunctionDescriptor pthread_mutex_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_variant_new_from_bytes",
+        constants$32.const$3
     );
-    static final MethodHandle pthread_mutex_init$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutex_init",
-        constants$362.pthread_mutex_init$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_variant_new_from_data$notify.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor pthread_mutex_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_mutex_destroy$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutex_destroy",
-        constants$362.pthread_mutex_destroy$FUNC
-    );
-    static final FunctionDescriptor pthread_mutex_trylock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_mutex_trylock$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutex_trylock",
-        constants$362.pthread_mutex_trylock$FUNC
-    );
-    static final FunctionDescriptor pthread_mutex_lock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_mutex_lock$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutex_lock",
-        constants$362.pthread_mutex_lock$FUNC
-    );
-    static final FunctionDescriptor pthread_mutex_timedlock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_mutex_timedlock$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutex_timedlock",
-        constants$362.pthread_mutex_timedlock$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_variant_new_from_data",
+        constants$362.const$4
     );
 }
 

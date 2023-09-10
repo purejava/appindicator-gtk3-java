@@ -3,59 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$246 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$246() {}
-    static final FunctionDescriptor g_variant_new_dict_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_hook_list_marshal_check$marshaller.class, "apply", constants$9.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_hook_list_marshal_check",
+        constants$179.const$1
     );
-    static final MethodHandle g_variant_new_dict_entry$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_dict_entry",
-        constants$246.g_variant_new_dict_entry$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_hostname_is_non_ascii",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_variant_get_maybe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_hostname_is_ascii_encoded",
+        constants$10.const$5
     );
-    static final MethodHandle g_variant_get_maybe$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_maybe",
-        constants$246.g_variant_get_maybe$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_hostname_is_ip_address",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_variant_n_children$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_n_children$MH = RuntimeHelper.downcallHandle(
-        "g_variant_n_children",
-        constants$246.g_variant_n_children$FUNC
-    );
-    static final FunctionDescriptor g_variant_get_child$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_get_child$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_variant_get_child",
-        constants$246.g_variant_get_child$FUNC
-    );
-    static final FunctionDescriptor g_variant_get_child_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_variant_get_child_value$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_child_value",
-        constants$246.g_variant_get_child_value$FUNC
-    );
-    static final FunctionDescriptor g_variant_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_lookup$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_variant_lookup",
-        constants$246.g_variant_lookup$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_hostname_to_ascii",
+        constants$5.const$2
     );
 }
 

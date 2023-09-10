@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1109 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1109() {}
-    static final FunctionDescriptor gdk_monitor_get_workarea$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_status_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_monitor_get_workarea$MH = RuntimeHelper.downcallHandle(
-        "gdk_monitor_get_workarea",
-        constants$1109.gdk_monitor_get_workarea$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_query_info_flags_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_monitor_get_width_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_create_flags_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_monitor_get_width_mm$MH = RuntimeHelper.downcallHandle(
-        "gdk_monitor_get_width_mm",
-        constants$1109.gdk_monitor_get_width_mm$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_measure_flags_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_monitor_get_height_mm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_mount_mount_flags_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_monitor_get_height_mm$MH = RuntimeHelper.downcallHandle(
-        "gdk_monitor_get_height_mm",
-        constants$1109.gdk_monitor_get_height_mm$FUNC
-    );
-    static final FunctionDescriptor gdk_monitor_get_manufacturer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_monitor_get_manufacturer$MH = RuntimeHelper.downcallHandle(
-        "gdk_monitor_get_manufacturer",
-        constants$1109.gdk_monitor_get_manufacturer$FUNC
-    );
-    static final FunctionDescriptor gdk_monitor_get_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_monitor_get_model$MH = RuntimeHelper.downcallHandle(
-        "gdk_monitor_get_model",
-        constants$1109.gdk_monitor_get_model$FUNC
-    );
-    static final FunctionDescriptor gdk_monitor_get_scale_factor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_monitor_get_scale_factor$MH = RuntimeHelper.downcallHandle(
-        "gdk_monitor_get_scale_factor",
-        constants$1109.gdk_monitor_get_scale_factor$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_mount_unmount_flags_get_type",
+        constants$3.const$5
     );
 }
 

@@ -3,55 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1738 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1738() {}
-    static final FunctionDescriptor gtk_print_settings_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_print_settings_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_type",
-        constants$1738.gtk_print_settings_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_raster_source_pattern_get_callback_data",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_print_settings_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_print_settings_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_new",
-        constants$1738.gtk_print_settings_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(cairo_raster_source_pattern_set_acquire$acquire.class, "apply", constants$39.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(cairo_raster_source_pattern_set_acquire$release.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_raster_source_pattern_set_acquire",
+        constants$14.const$3
     );
-    static final FunctionDescriptor gtk_print_settings_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_copy$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_copy",
-        constants$1738.gtk_print_settings_copy$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_new_from_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_new_from_file",
-        constants$1738.gtk_print_settings_new_from_file$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_load_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_load_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_load_file",
-        constants$1738.gtk_print_settings_load_file$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_to_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_to_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_to_file",
-        constants$1738.gtk_print_settings_to_file$FUNC
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(cairo_raster_source_pattern_get_acquire$acquire.class, "apply", constants$39.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(cairo_raster_source_pattern_get_acquire$release.class, "apply", constants$14.const$3);
 }
 
 

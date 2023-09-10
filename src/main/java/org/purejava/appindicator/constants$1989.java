@@ -2,18 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1989 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1989() {}
-    static final MemorySegment G_OS_INFO_KEY_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("NAME");
-    static final MemorySegment G_OS_INFO_KEY_PRETTY_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("PRETTY_NAME");
-    static final MemorySegment G_OS_INFO_KEY_VERSION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("VERSION");
-    static final MemorySegment G_OS_INFO_KEY_VERSION_CODENAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("VERSION_CODENAME");
-    static final MemorySegment G_OS_INFO_KEY_VERSION_ID$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("VERSION_ID");
-    static final MemorySegment G_OS_INFO_KEY_ID$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("ID");
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkUtilClass.remove_key_event_listener.class, "apply", constants$80.const$1);
+    static final VarHandle const$1 = constants$1987.const$5.varHandle(MemoryLayout.PathElement.groupElement("remove_key_event_listener"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkUtilClass.get_root.class, "apply", constants$35.const$2);
+    static final VarHandle const$3 = constants$1987.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_root"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkUtilClass.get_toolkit_name.class, "apply", constants$35.const$2);
+    static final VarHandle const$5 = constants$1987.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_toolkit_name"));
 }
 
 

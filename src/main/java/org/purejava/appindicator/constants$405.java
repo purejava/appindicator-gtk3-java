@@ -3,66 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$405 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$405() {}
-    static final FunctionDescriptor g_closure_remove_finalize_notifier$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_rand_set_seed",
+        constants$40.const$2
     );
-    static final MethodHandle g_closure_remove_finalize_notifier$MH = RuntimeHelper.downcallHandle(
-        "g_closure_remove_finalize_notifier",
-        constants$405.g_closure_remove_finalize_notifier$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_rand_set_seed_array",
+        constants$164.const$5
     );
-    static final FunctionDescriptor g_closure_add_invalidate_notifier$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_rand_int",
+        constants$10.const$5
     );
-    static final MethodHandle g_closure_add_invalidate_notifier$MH = RuntimeHelper.downcallHandle(
-        "g_closure_add_invalidate_notifier",
-        constants$405.g_closure_add_invalidate_notifier$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_rand_int_range",
+        constants$49.const$0
     );
-    static final FunctionDescriptor g_closure_remove_invalidate_notifier$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_rand_double",
+        constants$67.const$0
     );
-    static final MethodHandle g_closure_remove_invalidate_notifier$MH = RuntimeHelper.downcallHandle(
-        "g_closure_remove_invalidate_notifier",
-        constants$405.g_closure_remove_invalidate_notifier$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_DOUBLE,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor g_closure_add_marshal_guards$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_closure_add_marshal_guards$MH = RuntimeHelper.downcallHandle(
-        "g_closure_add_marshal_guards",
-        constants$405.g_closure_add_marshal_guards$FUNC
-    );
-    static final FunctionDescriptor g_closure_set_marshal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_closure_set_marshal$MH = RuntimeHelper.downcallHandle(
-        "g_closure_set_marshal",
-        constants$405.g_closure_set_marshal$FUNC
-    );
-    static final FunctionDescriptor g_closure_set_meta_marshal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_closure_set_meta_marshal$MH = RuntimeHelper.downcallHandle(
-        "g_closure_set_meta_marshal",
-        constants$405.g_closure_set_meta_marshal$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_rand_double_range",
+        constants$405.const$5
     );
 }
 

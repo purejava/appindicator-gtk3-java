@@ -3,62 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1903 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1903() {}
-    static final FunctionDescriptor gtk_widget_path_iter_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_new_with_type",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_widget_path_iter_get_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_get_state",
-        constants$1903.gtk_widget_path_iter_get_state$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_new_with_mime_type",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_widget_path_iter_set_state$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_set_size",
+        constants$467.const$3
     );
-    static final MethodHandle gtk_widget_path_iter_set_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_set_state",
-        constants$1903.gtk_widget_path_iter_set_state$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_write",
+        constants$27.const$2
     );
-    static final FunctionDescriptor gtk_widget_path_iter_add_class$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_write_bytes",
+        constants$12.const$2
     );
-    static final MethodHandle gtk_widget_path_iter_add_class$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_add_class",
-        constants$1903.gtk_widget_path_iter_add_class$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_iter_remove_class$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_iter_remove_class$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_remove_class",
-        constants$1903.gtk_widget_path_iter_remove_class$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_iter_clear_classes$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_iter_clear_classes$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_clear_classes",
-        constants$1903.gtk_widget_path_iter_clear_classes$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_iter_list_classes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_iter_list_classes$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_list_classes",
-        constants$1903.gtk_widget_path_iter_list_classes$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_get_pixbuf",
+        constants$5.const$2
     );
 }
 

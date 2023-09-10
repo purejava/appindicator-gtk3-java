@@ -3,52 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$124 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$124() {}
-    static final FunctionDescriptor g_listenv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_listenv$MH = RuntimeHelper.downcallHandle(
-        "g_listenv",
-        constants$124.g_listenv$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "killpg",
+        constants$123.const$5
     );
-    static final FunctionDescriptor g_get_environ$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_get_environ$MH = RuntimeHelper.downcallHandle(
-        "g_get_environ",
-        constants$124.g_get_environ$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "raise",
+        constants$8.const$4
     );
-    static final FunctionDescriptor g_environ_getenv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(ssignal$__handler.class, "apply", constants$80.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(ssignal$return.class, "apply", constants$80.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "ssignal",
+        constants$24.const$4
     );
-    static final MethodHandle g_environ_getenv$MH = RuntimeHelper.downcallHandle(
-        "g_environ_getenv",
-        constants$124.g_environ_getenv$FUNC
-    );
-    static final FunctionDescriptor g_environ_setenv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_environ_setenv$MH = RuntimeHelper.downcallHandle(
-        "g_environ_setenv",
-        constants$124.g_environ_setenv$FUNC
-    );
-    static final FunctionDescriptor g_environ_unsetenv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_environ_unsetenv$MH = RuntimeHelper.downcallHandle(
-        "g_environ_unsetenv",
-        constants$124.g_environ_unsetenv$FUNC
-    );
-    static final FunctionDescriptor g_file_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_file_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_file_error_quark",
-        constants$124.g_file_error_quark$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gsignal",
+        constants$8.const$4
     );
 }
 

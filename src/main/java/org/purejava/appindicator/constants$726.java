@@ -3,62 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$726 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$726() {}
-    static final FunctionDescriptor g_proxy_get_default_for_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_app_info_supports_files",
+        constants$10.const$5
     );
-    static final MethodHandle g_proxy_get_default_for_protocol$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_get_default_for_protocol",
-        constants$726.g_proxy_get_default_for_protocol$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_app_info_launch_uris",
+        constants$34.const$5
     );
-    static final FunctionDescriptor g_proxy_connect$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_app_info_launch_uris_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_app_info_launch_uris_async",
+        constants$338.const$3
     );
-    static final MethodHandle g_proxy_connect$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_connect",
-        constants$726.g_proxy_connect$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_app_info_launch_uris_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor g_proxy_connect_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_proxy_connect_async$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_connect_async",
-        constants$726.g_proxy_connect_async$FUNC
-    );
-    static final FunctionDescriptor g_proxy_connect_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_proxy_connect_finish$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_connect_finish",
-        constants$726.g_proxy_connect_finish$FUNC
-    );
-    static final FunctionDescriptor g_proxy_supports_hostname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_proxy_supports_hostname$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_supports_hostname",
-        constants$726.g_proxy_supports_hostname$FUNC
-    );
-    static final FunctionDescriptor g_proxy_address_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_proxy_address_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_address_get_type",
-        constants$726.g_proxy_address_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_app_info_should_show",
+        constants$10.const$5
     );
 }
 

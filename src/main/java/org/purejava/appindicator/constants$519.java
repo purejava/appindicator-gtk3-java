@@ -3,58 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$519 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$519() {}
-    static final FunctionDescriptor g_converter_output_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_converter_output_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_converter_output_stream_get_type",
-        constants$519.g_converter_output_stream_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pthread_attr_setschedparam",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_converter_output_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pthread_attr_getschedpolicy",
+        constants$9.const$0
     );
-    static final MethodHandle g_converter_output_stream_new$MH = RuntimeHelper.downcallHandle(
-        "g_converter_output_stream_new",
-        constants$519.g_converter_output_stream_new$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pthread_attr_setschedpolicy",
+        constants$11.const$4
     );
-    static final FunctionDescriptor g_converter_output_stream_get_converter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pthread_attr_getinheritsched",
+        constants$9.const$0
     );
-    static final MethodHandle g_converter_output_stream_get_converter$MH = RuntimeHelper.downcallHandle(
-        "g_converter_output_stream_get_converter",
-        constants$519.g_converter_output_stream_get_converter$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pthread_attr_setinheritsched",
+        constants$11.const$4
     );
-    static final FunctionDescriptor access$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle access$MH = RuntimeHelper.downcallHandle(
-        "access",
-        constants$519.access$FUNC
-    );
-    static final FunctionDescriptor faccessat$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle faccessat$MH = RuntimeHelper.downcallHandle(
-        "faccessat",
-        constants$519.faccessat$FUNC
-    );
-    static final FunctionDescriptor lseek$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle lseek$MH = RuntimeHelper.downcallHandle(
-        "lseek",
-        constants$519.lseek$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pthread_attr_getscope",
+        constants$9.const$0
     );
 }
 

@@ -3,75 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$59 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$59() {}
-    static final FunctionDescriptor lldiv$FUNC = FunctionDescriptor.of(MemoryLayout.structLayout(
-        Constants$root.C_LONG_LONG$LAYOUT.withName("quot"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("rem")
-    ),
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_get_host_name",
+        constants$35.const$2
     );
-    static final MethodHandle lldiv$MH = RuntimeHelper.downcallHandle(
-        "lldiv",
-        constants$59.lldiv$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_get_prgname",
+        constants$35.const$2
     );
-    static final FunctionDescriptor ecvt$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_set_prgname",
+        constants$13.const$1
     );
-    static final MethodHandle ecvt$MH = RuntimeHelper.downcallHandle(
-        "ecvt",
-        constants$59.ecvt$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_get_application_name",
+        constants$35.const$2
     );
-    static final FunctionDescriptor fcvt$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_set_application_name",
+        constants$13.const$1
     );
-    static final MethodHandle fcvt$MH = RuntimeHelper.downcallHandle(
-        "fcvt",
-        constants$59.fcvt$FUNC
-    );
-    static final FunctionDescriptor gcvt$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gcvt$MH = RuntimeHelper.downcallHandle(
-        "gcvt",
-        constants$59.gcvt$FUNC
-    );
-    static final FunctionDescriptor ecvt_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle ecvt_r$MH = RuntimeHelper.downcallHandle(
-        "ecvt_r",
-        constants$59.ecvt_r$FUNC
-    );
-    static final FunctionDescriptor fcvt_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle fcvt_r$MH = RuntimeHelper.downcallHandle(
-        "fcvt_r",
-        constants$59.fcvt_r$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_get_os_info",
+        constants$5.const$2
     );
 }
 

@@ -3,16 +3,2410 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 public class app_indicator_h_12 extends app_indicator_h_11 {
 
-    public static MethodHandle cairo_scaled_font_glyph_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1017.cairo_scaled_font_glyph_extents$MH,"cairo_scaled_font_glyph_extents");
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_DARKEN = 17;
+     * }
+     */
+    public static int CAIRO_OPERATOR_DARKEN() {
+        return (int)17L;
     }
     /**
      * {@snippet :
-     * void cairo_scaled_font_glyph_extents(cairo_scaled_font_t* scaled_font, const cairo_glyph_t* glyphs, int num_glyphs, cairo_text_extents_t* extents);
+     * enum _cairo_operator.CAIRO_OPERATOR_LIGHTEN = 18;
+     * }
+     */
+    public static int CAIRO_OPERATOR_LIGHTEN() {
+        return (int)18L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_COLOR_DODGE = 19;
+     * }
+     */
+    public static int CAIRO_OPERATOR_COLOR_DODGE() {
+        return (int)19L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_COLOR_BURN = 20;
+     * }
+     */
+    public static int CAIRO_OPERATOR_COLOR_BURN() {
+        return (int)20L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_HARD_LIGHT = 21;
+     * }
+     */
+    public static int CAIRO_OPERATOR_HARD_LIGHT() {
+        return (int)21L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_SOFT_LIGHT = 22;
+     * }
+     */
+    public static int CAIRO_OPERATOR_SOFT_LIGHT() {
+        return (int)22L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_DIFFERENCE = 23;
+     * }
+     */
+    public static int CAIRO_OPERATOR_DIFFERENCE() {
+        return (int)23L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_EXCLUSION = 24;
+     * }
+     */
+    public static int CAIRO_OPERATOR_EXCLUSION() {
+        return (int)24L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_HSL_HUE = 25;
+     * }
+     */
+    public static int CAIRO_OPERATOR_HSL_HUE() {
+        return (int)25L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_HSL_SATURATION = 26;
+     * }
+     */
+    public static int CAIRO_OPERATOR_HSL_SATURATION() {
+        return (int)26L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_HSL_COLOR = 27;
+     * }
+     */
+    public static int CAIRO_OPERATOR_HSL_COLOR() {
+        return (int)27L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator.CAIRO_OPERATOR_HSL_LUMINOSITY = 28;
+     * }
+     */
+    public static int CAIRO_OPERATOR_HSL_LUMINOSITY() {
+        return (int)28L;
+    }
+    public static MethodHandle cairo_set_operator$MH() {
+        return RuntimeHelper.requireNonNull(constants$1682.const$1,"cairo_set_operator");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_operator(struct _cairo* cr, enum _cairo_operator op);
+     * }
+     */
+    public static void cairo_set_operator(MemorySegment cr, int op) {
+        var mh$ = cairo_set_operator$MH();
+        try {
+            mh$.invokeExact(cr, op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_source$MH() {
+        return RuntimeHelper.requireNonNull(constants$1682.const$2,"cairo_set_source");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_source(struct _cairo* cr, struct _cairo_pattern* source);
+     * }
+     */
+    public static void cairo_set_source(MemorySegment cr, MemorySegment source) {
+        var mh$ = cairo_set_source$MH();
+        try {
+            mh$.invokeExact(cr, source);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_source_rgb$MH() {
+        return RuntimeHelper.requireNonNull(constants$1682.const$4,"cairo_set_source_rgb");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_source_rgb(struct _cairo* cr, double red, double green, double blue);
+     * }
+     */
+    public static void cairo_set_source_rgb(MemorySegment cr, double red, double green, double blue) {
+        var mh$ = cairo_set_source_rgb$MH();
+        try {
+            mh$.invokeExact(cr, red, green, blue);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_source_rgba$MH() {
+        return RuntimeHelper.requireNonNull(constants$1682.const$6,"cairo_set_source_rgba");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_source_rgba(struct _cairo* cr, double red, double green, double blue, double alpha);
+     * }
+     */
+    public static void cairo_set_source_rgba(MemorySegment cr, double red, double green, double blue, double alpha) {
+        var mh$ = cairo_set_source_rgba$MH();
+        try {
+            mh$.invokeExact(cr, red, green, blue, alpha);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_source_surface$MH() {
+        return RuntimeHelper.requireNonNull(constants$1683.const$1,"cairo_set_source_surface");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_source_surface(struct _cairo* cr, struct _cairo_surface* surface, double x, double y);
+     * }
+     */
+    public static void cairo_set_source_surface(MemorySegment cr, MemorySegment surface, double x, double y) {
+        var mh$ = cairo_set_source_surface$MH();
+        try {
+            mh$.invokeExact(cr, surface, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_tolerance$MH() {
+        return RuntimeHelper.requireNonNull(constants$1683.const$2,"cairo_set_tolerance");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_tolerance(struct _cairo* cr, double tolerance);
+     * }
+     */
+    public static void cairo_set_tolerance(MemorySegment cr, double tolerance) {
+        var mh$ = cairo_set_tolerance$MH();
+        try {
+            mh$.invokeExact(cr, tolerance);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_antialias.CAIRO_ANTIALIAS_DEFAULT = 0;
+     * }
+     */
+    public static int CAIRO_ANTIALIAS_DEFAULT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_antialias.CAIRO_ANTIALIAS_NONE = 1;
+     * }
+     */
+    public static int CAIRO_ANTIALIAS_NONE() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_antialias.CAIRO_ANTIALIAS_GRAY = 2;
+     * }
+     */
+    public static int CAIRO_ANTIALIAS_GRAY() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_antialias.CAIRO_ANTIALIAS_SUBPIXEL = 3;
+     * }
+     */
+    public static int CAIRO_ANTIALIAS_SUBPIXEL() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_antialias.CAIRO_ANTIALIAS_FAST = 4;
+     * }
+     */
+    public static int CAIRO_ANTIALIAS_FAST() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_antialias.CAIRO_ANTIALIAS_GOOD = 5;
+     * }
+     */
+    public static int CAIRO_ANTIALIAS_GOOD() {
+        return (int)5L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_antialias.CAIRO_ANTIALIAS_BEST = 6;
+     * }
+     */
+    public static int CAIRO_ANTIALIAS_BEST() {
+        return (int)6L;
+    }
+    public static MethodHandle cairo_set_antialias$MH() {
+        return RuntimeHelper.requireNonNull(constants$1683.const$3,"cairo_set_antialias");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_antialias(struct _cairo* cr, enum _cairo_antialias antialias);
+     * }
+     */
+    public static void cairo_set_antialias(MemorySegment cr, int antialias) {
+        var mh$ = cairo_set_antialias$MH();
+        try {
+            mh$.invokeExact(cr, antialias);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_fill_rule.CAIRO_FILL_RULE_WINDING = 0;
+     * }
+     */
+    public static int CAIRO_FILL_RULE_WINDING() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_fill_rule.CAIRO_FILL_RULE_EVEN_ODD = 1;
+     * }
+     */
+    public static int CAIRO_FILL_RULE_EVEN_ODD() {
+        return (int)1L;
+    }
+    public static MethodHandle cairo_set_fill_rule$MH() {
+        return RuntimeHelper.requireNonNull(constants$1683.const$4,"cairo_set_fill_rule");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_fill_rule(struct _cairo* cr, enum _cairo_fill_rule fill_rule);
+     * }
+     */
+    public static void cairo_set_fill_rule(MemorySegment cr, int fill_rule) {
+        var mh$ = cairo_set_fill_rule$MH();
+        try {
+            mh$.invokeExact(cr, fill_rule);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_line_width$MH() {
+        return RuntimeHelper.requireNonNull(constants$1683.const$5,"cairo_set_line_width");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_line_width(struct _cairo* cr, double width);
+     * }
+     */
+    public static void cairo_set_line_width(MemorySegment cr, double width) {
+        var mh$ = cairo_set_line_width$MH();
+        try {
+            mh$.invokeExact(cr, width);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_hairline$MH() {
+        return RuntimeHelper.requireNonNull(constants$1684.const$0,"cairo_set_hairline");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_hairline(struct _cairo* cr, int set_hairline);
+     * }
+     */
+    public static void cairo_set_hairline(MemorySegment cr, int set_hairline) {
+        var mh$ = cairo_set_hairline$MH();
+        try {
+            mh$.invokeExact(cr, set_hairline);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_line_cap.CAIRO_LINE_CAP_BUTT = 0;
+     * }
+     */
+    public static int CAIRO_LINE_CAP_BUTT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_line_cap.CAIRO_LINE_CAP_ROUND = 1;
+     * }
+     */
+    public static int CAIRO_LINE_CAP_ROUND() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_line_cap.CAIRO_LINE_CAP_SQUARE = 2;
+     * }
+     */
+    public static int CAIRO_LINE_CAP_SQUARE() {
+        return (int)2L;
+    }
+    public static MethodHandle cairo_set_line_cap$MH() {
+        return RuntimeHelper.requireNonNull(constants$1684.const$1,"cairo_set_line_cap");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_line_cap(struct _cairo* cr, enum _cairo_line_cap line_cap);
+     * }
+     */
+    public static void cairo_set_line_cap(MemorySegment cr, int line_cap) {
+        var mh$ = cairo_set_line_cap$MH();
+        try {
+            mh$.invokeExact(cr, line_cap);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_line_join.CAIRO_LINE_JOIN_MITER = 0;
+     * }
+     */
+    public static int CAIRO_LINE_JOIN_MITER() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_line_join.CAIRO_LINE_JOIN_ROUND = 1;
+     * }
+     */
+    public static int CAIRO_LINE_JOIN_ROUND() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_line_join.CAIRO_LINE_JOIN_BEVEL = 2;
+     * }
+     */
+    public static int CAIRO_LINE_JOIN_BEVEL() {
+        return (int)2L;
+    }
+    public static MethodHandle cairo_set_line_join$MH() {
+        return RuntimeHelper.requireNonNull(constants$1684.const$2,"cairo_set_line_join");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_line_join(struct _cairo* cr, enum _cairo_line_join line_join);
+     * }
+     */
+    public static void cairo_set_line_join(MemorySegment cr, int line_join) {
+        var mh$ = cairo_set_line_join$MH();
+        try {
+            mh$.invokeExact(cr, line_join);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_dash$MH() {
+        return RuntimeHelper.requireNonNull(constants$1684.const$4,"cairo_set_dash");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_dash(struct _cairo* cr, double* dashes, int num_dashes, double offset);
+     * }
+     */
+    public static void cairo_set_dash(MemorySegment cr, MemorySegment dashes, int num_dashes, double offset) {
+        var mh$ = cairo_set_dash$MH();
+        try {
+            mh$.invokeExact(cr, dashes, num_dashes, offset);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_miter_limit$MH() {
+        return RuntimeHelper.requireNonNull(constants$1684.const$5,"cairo_set_miter_limit");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_miter_limit(struct _cairo* cr, double limit);
+     * }
+     */
+    public static void cairo_set_miter_limit(MemorySegment cr, double limit) {
+        var mh$ = cairo_set_miter_limit$MH();
+        try {
+            mh$.invokeExact(cr, limit);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_translate$MH() {
+        return RuntimeHelper.requireNonNull(constants$1685.const$0,"cairo_translate");
+    }
+    /**
+     * {@snippet :
+     * void cairo_translate(struct _cairo* cr, double tx, double ty);
+     * }
+     */
+    public static void cairo_translate(MemorySegment cr, double tx, double ty) {
+        var mh$ = cairo_translate$MH();
+        try {
+            mh$.invokeExact(cr, tx, ty);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scale$MH() {
+        return RuntimeHelper.requireNonNull(constants$1685.const$1,"cairo_scale");
+    }
+    /**
+     * {@snippet :
+     * void cairo_scale(struct _cairo* cr, double sx, double sy);
+     * }
+     */
+    public static void cairo_scale(MemorySegment cr, double sx, double sy) {
+        var mh$ = cairo_scale$MH();
+        try {
+            mh$.invokeExact(cr, sx, sy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_rotate$MH() {
+        return RuntimeHelper.requireNonNull(constants$1685.const$2,"cairo_rotate");
+    }
+    /**
+     * {@snippet :
+     * void cairo_rotate(struct _cairo* cr, double angle);
+     * }
+     */
+    public static void cairo_rotate(MemorySegment cr, double angle) {
+        var mh$ = cairo_rotate$MH();
+        try {
+            mh$.invokeExact(cr, angle);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_transform$MH() {
+        return RuntimeHelper.requireNonNull(constants$1685.const$3,"cairo_transform");
+    }
+    /**
+     * {@snippet :
+     * void cairo_transform(struct _cairo* cr, struct _cairo_matrix* matrix);
+     * }
+     */
+    public static void cairo_transform(MemorySegment cr, MemorySegment matrix) {
+        var mh$ = cairo_transform$MH();
+        try {
+            mh$.invokeExact(cr, matrix);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_matrix$MH() {
+        return RuntimeHelper.requireNonNull(constants$1685.const$4,"cairo_set_matrix");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_matrix(struct _cairo* cr, struct _cairo_matrix* matrix);
+     * }
+     */
+    public static void cairo_set_matrix(MemorySegment cr, MemorySegment matrix) {
+        var mh$ = cairo_set_matrix$MH();
+        try {
+            mh$.invokeExact(cr, matrix);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_identity_matrix$MH() {
+        return RuntimeHelper.requireNonNull(constants$1685.const$5,"cairo_identity_matrix");
+    }
+    /**
+     * {@snippet :
+     * void cairo_identity_matrix(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_identity_matrix(MemorySegment cr) {
+        var mh$ = cairo_identity_matrix$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_user_to_device$MH() {
+        return RuntimeHelper.requireNonNull(constants$1686.const$0,"cairo_user_to_device");
+    }
+    /**
+     * {@snippet :
+     * void cairo_user_to_device(struct _cairo* cr, double* x, double* y);
+     * }
+     */
+    public static void cairo_user_to_device(MemorySegment cr, MemorySegment x, MemorySegment y) {
+        var mh$ = cairo_user_to_device$MH();
+        try {
+            mh$.invokeExact(cr, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_user_to_device_distance$MH() {
+        return RuntimeHelper.requireNonNull(constants$1686.const$1,"cairo_user_to_device_distance");
+    }
+    /**
+     * {@snippet :
+     * void cairo_user_to_device_distance(struct _cairo* cr, double* dx, double* dy);
+     * }
+     */
+    public static void cairo_user_to_device_distance(MemorySegment cr, MemorySegment dx, MemorySegment dy) {
+        var mh$ = cairo_user_to_device_distance$MH();
+        try {
+            mh$.invokeExact(cr, dx, dy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_device_to_user$MH() {
+        return RuntimeHelper.requireNonNull(constants$1686.const$2,"cairo_device_to_user");
+    }
+    /**
+     * {@snippet :
+     * void cairo_device_to_user(struct _cairo* cr, double* x, double* y);
+     * }
+     */
+    public static void cairo_device_to_user(MemorySegment cr, MemorySegment x, MemorySegment y) {
+        var mh$ = cairo_device_to_user$MH();
+        try {
+            mh$.invokeExact(cr, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_device_to_user_distance$MH() {
+        return RuntimeHelper.requireNonNull(constants$1686.const$3,"cairo_device_to_user_distance");
+    }
+    /**
+     * {@snippet :
+     * void cairo_device_to_user_distance(struct _cairo* cr, double* dx, double* dy);
+     * }
+     */
+    public static void cairo_device_to_user_distance(MemorySegment cr, MemorySegment dx, MemorySegment dy) {
+        var mh$ = cairo_device_to_user_distance$MH();
+        try {
+            mh$.invokeExact(cr, dx, dy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_new_path$MH() {
+        return RuntimeHelper.requireNonNull(constants$1686.const$4,"cairo_new_path");
+    }
+    /**
+     * {@snippet :
+     * void cairo_new_path(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_new_path(MemorySegment cr) {
+        var mh$ = cairo_new_path$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_move_to$MH() {
+        return RuntimeHelper.requireNonNull(constants$1686.const$5,"cairo_move_to");
+    }
+    /**
+     * {@snippet :
+     * void cairo_move_to(struct _cairo* cr, double x, double y);
+     * }
+     */
+    public static void cairo_move_to(MemorySegment cr, double x, double y) {
+        var mh$ = cairo_move_to$MH();
+        try {
+            mh$.invokeExact(cr, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_new_sub_path$MH() {
+        return RuntimeHelper.requireNonNull(constants$1687.const$0,"cairo_new_sub_path");
+    }
+    /**
+     * {@snippet :
+     * void cairo_new_sub_path(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_new_sub_path(MemorySegment cr) {
+        var mh$ = cairo_new_sub_path$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_line_to$MH() {
+        return RuntimeHelper.requireNonNull(constants$1687.const$1,"cairo_line_to");
+    }
+    /**
+     * {@snippet :
+     * void cairo_line_to(struct _cairo* cr, double x, double y);
+     * }
+     */
+    public static void cairo_line_to(MemorySegment cr, double x, double y) {
+        var mh$ = cairo_line_to$MH();
+        try {
+            mh$.invokeExact(cr, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_curve_to$MH() {
+        return RuntimeHelper.requireNonNull(constants$1687.const$3,"cairo_curve_to");
+    }
+    /**
+     * {@snippet :
+     * void cairo_curve_to(struct _cairo* cr, double x1, double y1, double x2, double y2, double x3, double y3);
+     * }
+     */
+    public static void cairo_curve_to(MemorySegment cr, double x1, double y1, double x2, double y2, double x3, double y3) {
+        var mh$ = cairo_curve_to$MH();
+        try {
+            mh$.invokeExact(cr, x1, y1, x2, y2, x3, y3);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_arc$MH() {
+        return RuntimeHelper.requireNonNull(constants$1687.const$5,"cairo_arc");
+    }
+    /**
+     * {@snippet :
+     * void cairo_arc(struct _cairo* cr, double xc, double yc, double radius, double angle1, double angle2);
+     * }
+     */
+    public static void cairo_arc(MemorySegment cr, double xc, double yc, double radius, double angle1, double angle2) {
+        var mh$ = cairo_arc$MH();
+        try {
+            mh$.invokeExact(cr, xc, yc, radius, angle1, angle2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_arc_negative$MH() {
+        return RuntimeHelper.requireNonNull(constants$1688.const$0,"cairo_arc_negative");
+    }
+    /**
+     * {@snippet :
+     * void cairo_arc_negative(struct _cairo* cr, double xc, double yc, double radius, double angle1, double angle2);
+     * }
+     */
+    public static void cairo_arc_negative(MemorySegment cr, double xc, double yc, double radius, double angle1, double angle2) {
+        var mh$ = cairo_arc_negative$MH();
+        try {
+            mh$.invokeExact(cr, xc, yc, radius, angle1, angle2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_rel_move_to$MH() {
+        return RuntimeHelper.requireNonNull(constants$1688.const$1,"cairo_rel_move_to");
+    }
+    /**
+     * {@snippet :
+     * void cairo_rel_move_to(struct _cairo* cr, double dx, double dy);
+     * }
+     */
+    public static void cairo_rel_move_to(MemorySegment cr, double dx, double dy) {
+        var mh$ = cairo_rel_move_to$MH();
+        try {
+            mh$.invokeExact(cr, dx, dy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_rel_line_to$MH() {
+        return RuntimeHelper.requireNonNull(constants$1688.const$2,"cairo_rel_line_to");
+    }
+    /**
+     * {@snippet :
+     * void cairo_rel_line_to(struct _cairo* cr, double dx, double dy);
+     * }
+     */
+    public static void cairo_rel_line_to(MemorySegment cr, double dx, double dy) {
+        var mh$ = cairo_rel_line_to$MH();
+        try {
+            mh$.invokeExact(cr, dx, dy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_rel_curve_to$MH() {
+        return RuntimeHelper.requireNonNull(constants$1688.const$3,"cairo_rel_curve_to");
+    }
+    /**
+     * {@snippet :
+     * void cairo_rel_curve_to(struct _cairo* cr, double dx1, double dy1, double dx2, double dy2, double dx3, double dy3);
+     * }
+     */
+    public static void cairo_rel_curve_to(MemorySegment cr, double dx1, double dy1, double dx2, double dy2, double dx3, double dy3) {
+        var mh$ = cairo_rel_curve_to$MH();
+        try {
+            mh$.invokeExact(cr, dx1, dy1, dx2, dy2, dx3, dy3);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_rectangle$MH() {
+        return RuntimeHelper.requireNonNull(constants$1688.const$4,"cairo_rectangle");
+    }
+    /**
+     * {@snippet :
+     * void cairo_rectangle(struct _cairo* cr, double x, double y, double width, double height);
+     * }
+     */
+    public static void cairo_rectangle(MemorySegment cr, double x, double y, double width, double height) {
+        var mh$ = cairo_rectangle$MH();
+        try {
+            mh$.invokeExact(cr, x, y, width, height);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_close_path$MH() {
+        return RuntimeHelper.requireNonNull(constants$1688.const$5,"cairo_close_path");
+    }
+    /**
+     * {@snippet :
+     * void cairo_close_path(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_close_path(MemorySegment cr) {
+        var mh$ = cairo_close_path$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_path_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1689.const$0,"cairo_path_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_path_extents(struct _cairo* cr, double* x1, double* y1, double* x2, double* y2);
+     * }
+     */
+    public static void cairo_path_extents(MemorySegment cr, MemorySegment x1, MemorySegment y1, MemorySegment x2, MemorySegment y2) {
+        var mh$ = cairo_path_extents$MH();
+        try {
+            mh$.invokeExact(cr, x1, y1, x2, y2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_paint$MH() {
+        return RuntimeHelper.requireNonNull(constants$1689.const$1,"cairo_paint");
+    }
+    /**
+     * {@snippet :
+     * void cairo_paint(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_paint(MemorySegment cr) {
+        var mh$ = cairo_paint$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_paint_with_alpha$MH() {
+        return RuntimeHelper.requireNonNull(constants$1689.const$2,"cairo_paint_with_alpha");
+    }
+    /**
+     * {@snippet :
+     * void cairo_paint_with_alpha(struct _cairo* cr, double alpha);
+     * }
+     */
+    public static void cairo_paint_with_alpha(MemorySegment cr, double alpha) {
+        var mh$ = cairo_paint_with_alpha$MH();
+        try {
+            mh$.invokeExact(cr, alpha);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_mask$MH() {
+        return RuntimeHelper.requireNonNull(constants$1689.const$3,"cairo_mask");
+    }
+    /**
+     * {@snippet :
+     * void cairo_mask(struct _cairo* cr, struct _cairo_pattern* pattern);
+     * }
+     */
+    public static void cairo_mask(MemorySegment cr, MemorySegment pattern) {
+        var mh$ = cairo_mask$MH();
+        try {
+            mh$.invokeExact(cr, pattern);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_mask_surface$MH() {
+        return RuntimeHelper.requireNonNull(constants$1689.const$4,"cairo_mask_surface");
+    }
+    /**
+     * {@snippet :
+     * void cairo_mask_surface(struct _cairo* cr, struct _cairo_surface* surface, double surface_x, double surface_y);
+     * }
+     */
+    public static void cairo_mask_surface(MemorySegment cr, MemorySegment surface, double surface_x, double surface_y) {
+        var mh$ = cairo_mask_surface$MH();
+        try {
+            mh$.invokeExact(cr, surface, surface_x, surface_y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_stroke$MH() {
+        return RuntimeHelper.requireNonNull(constants$1689.const$5,"cairo_stroke");
+    }
+    /**
+     * {@snippet :
+     * void cairo_stroke(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_stroke(MemorySegment cr) {
+        var mh$ = cairo_stroke$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_stroke_preserve$MH() {
+        return RuntimeHelper.requireNonNull(constants$1690.const$0,"cairo_stroke_preserve");
+    }
+    /**
+     * {@snippet :
+     * void cairo_stroke_preserve(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_stroke_preserve(MemorySegment cr) {
+        var mh$ = cairo_stroke_preserve$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_fill$MH() {
+        return RuntimeHelper.requireNonNull(constants$1690.const$1,"cairo_fill");
+    }
+    /**
+     * {@snippet :
+     * void cairo_fill(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_fill(MemorySegment cr) {
+        var mh$ = cairo_fill$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_fill_preserve$MH() {
+        return RuntimeHelper.requireNonNull(constants$1690.const$2,"cairo_fill_preserve");
+    }
+    /**
+     * {@snippet :
+     * void cairo_fill_preserve(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_fill_preserve(MemorySegment cr) {
+        var mh$ = cairo_fill_preserve$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_copy_page$MH() {
+        return RuntimeHelper.requireNonNull(constants$1690.const$3,"cairo_copy_page");
+    }
+    /**
+     * {@snippet :
+     * void cairo_copy_page(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_copy_page(MemorySegment cr) {
+        var mh$ = cairo_copy_page$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_show_page$MH() {
+        return RuntimeHelper.requireNonNull(constants$1690.const$4,"cairo_show_page");
+    }
+    /**
+     * {@snippet :
+     * void cairo_show_page(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_show_page(MemorySegment cr) {
+        var mh$ = cairo_show_page$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_in_stroke$MH() {
+        return RuntimeHelper.requireNonNull(constants$1690.const$6,"cairo_in_stroke");
+    }
+    /**
+     * {@snippet :
+     * int cairo_in_stroke(struct _cairo* cr, double x, double y);
+     * }
+     */
+    public static int cairo_in_stroke(MemorySegment cr, double x, double y) {
+        var mh$ = cairo_in_stroke$MH();
+        try {
+            return (int)mh$.invokeExact(cr, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_in_fill$MH() {
+        return RuntimeHelper.requireNonNull(constants$1691.const$0,"cairo_in_fill");
+    }
+    /**
+     * {@snippet :
+     * int cairo_in_fill(struct _cairo* cr, double x, double y);
+     * }
+     */
+    public static int cairo_in_fill(MemorySegment cr, double x, double y) {
+        var mh$ = cairo_in_fill$MH();
+        try {
+            return (int)mh$.invokeExact(cr, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_in_clip$MH() {
+        return RuntimeHelper.requireNonNull(constants$1691.const$1,"cairo_in_clip");
+    }
+    /**
+     * {@snippet :
+     * int cairo_in_clip(struct _cairo* cr, double x, double y);
+     * }
+     */
+    public static int cairo_in_clip(MemorySegment cr, double x, double y) {
+        var mh$ = cairo_in_clip$MH();
+        try {
+            return (int)mh$.invokeExact(cr, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_stroke_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1691.const$2,"cairo_stroke_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_stroke_extents(struct _cairo* cr, double* x1, double* y1, double* x2, double* y2);
+     * }
+     */
+    public static void cairo_stroke_extents(MemorySegment cr, MemorySegment x1, MemorySegment y1, MemorySegment x2, MemorySegment y2) {
+        var mh$ = cairo_stroke_extents$MH();
+        try {
+            mh$.invokeExact(cr, x1, y1, x2, y2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_fill_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1691.const$3,"cairo_fill_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_fill_extents(struct _cairo* cr, double* x1, double* y1, double* x2, double* y2);
+     * }
+     */
+    public static void cairo_fill_extents(MemorySegment cr, MemorySegment x1, MemorySegment y1, MemorySegment x2, MemorySegment y2) {
+        var mh$ = cairo_fill_extents$MH();
+        try {
+            mh$.invokeExact(cr, x1, y1, x2, y2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_reset_clip$MH() {
+        return RuntimeHelper.requireNonNull(constants$1691.const$4,"cairo_reset_clip");
+    }
+    /**
+     * {@snippet :
+     * void cairo_reset_clip(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_reset_clip(MemorySegment cr) {
+        var mh$ = cairo_reset_clip$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_clip$MH() {
+        return RuntimeHelper.requireNonNull(constants$1691.const$5,"cairo_clip");
+    }
+    /**
+     * {@snippet :
+     * void cairo_clip(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_clip(MemorySegment cr) {
+        var mh$ = cairo_clip$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_clip_preserve$MH() {
+        return RuntimeHelper.requireNonNull(constants$1692.const$0,"cairo_clip_preserve");
+    }
+    /**
+     * {@snippet :
+     * void cairo_clip_preserve(struct _cairo* cr);
+     * }
+     */
+    public static void cairo_clip_preserve(MemorySegment cr) {
+        var mh$ = cairo_clip_preserve$MH();
+        try {
+            mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_clip_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1692.const$1,"cairo_clip_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_clip_extents(struct _cairo* cr, double* x1, double* y1, double* x2, double* y2);
+     * }
+     */
+    public static void cairo_clip_extents(MemorySegment cr, MemorySegment x1, MemorySegment y1, MemorySegment x2, MemorySegment y2) {
+        var mh$ = cairo_clip_extents$MH();
+        try {
+            mh$.invokeExact(cr, x1, y1, x2, y2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_copy_clip_rectangle_list$MH() {
+        return RuntimeHelper.requireNonNull(constants$1693.const$5,"cairo_copy_clip_rectangle_list");
+    }
+    /**
+     * {@snippet :
+     * struct _cairo_rectangle_list* cairo_copy_clip_rectangle_list(struct _cairo* cr);
+     * }
+     */
+    public static MemorySegment cairo_copy_clip_rectangle_list(MemorySegment cr) {
+        var mh$ = cairo_copy_clip_rectangle_list$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_rectangle_list_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$1694.const$0,"cairo_rectangle_list_destroy");
+    }
+    /**
+     * {@snippet :
+     * void cairo_rectangle_list_destroy(struct _cairo_rectangle_list* rectangle_list);
+     * }
+     */
+    public static void cairo_rectangle_list_destroy(MemorySegment rectangle_list) {
+        var mh$ = cairo_rectangle_list_destroy$MH();
+        try {
+            mh$.invokeExact(rectangle_list);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_tag_begin$MH() {
+        return RuntimeHelper.requireNonNull(constants$1694.const$1,"cairo_tag_begin");
+    }
+    /**
+     * {@snippet :
+     * void cairo_tag_begin(struct _cairo* cr, char* tag_name, char* attributes);
+     * }
+     */
+    public static void cairo_tag_begin(MemorySegment cr, MemorySegment tag_name, MemorySegment attributes) {
+        var mh$ = cairo_tag_begin$MH();
+        try {
+            mh$.invokeExact(cr, tag_name, attributes);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_tag_end$MH() {
+        return RuntimeHelper.requireNonNull(constants$1694.const$2,"cairo_tag_end");
+    }
+    /**
+     * {@snippet :
+     * void cairo_tag_end(struct _cairo* cr, char* tag_name);
+     * }
+     */
+    public static void cairo_tag_end(MemorySegment cr, MemorySegment tag_name) {
+        var mh$ = cairo_tag_end$MH();
+        try {
+            mh$.invokeExact(cr, tag_name);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_glyph_allocate$MH() {
+        return RuntimeHelper.requireNonNull(constants$1695.const$1,"cairo_glyph_allocate");
+    }
+    /**
+     * {@snippet :
+     * struct cairo_glyph_t* cairo_glyph_allocate(int num_glyphs);
+     * }
+     */
+    public static MemorySegment cairo_glyph_allocate(int num_glyphs) {
+        var mh$ = cairo_glyph_allocate$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(num_glyphs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_glyph_free$MH() {
+        return RuntimeHelper.requireNonNull(constants$1695.const$2,"cairo_glyph_free");
+    }
+    /**
+     * {@snippet :
+     * void cairo_glyph_free(struct cairo_glyph_t* glyphs);
+     * }
+     */
+    public static void cairo_glyph_free(MemorySegment glyphs) {
+        var mh$ = cairo_glyph_free$MH();
+        try {
+            mh$.invokeExact(glyphs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_text_cluster_allocate$MH() {
+        return RuntimeHelper.requireNonNull(constants$1696.const$0,"cairo_text_cluster_allocate");
+    }
+    /**
+     * {@snippet :
+     * struct cairo_text_cluster_t* cairo_text_cluster_allocate(int num_clusters);
+     * }
+     */
+    public static MemorySegment cairo_text_cluster_allocate(int num_clusters) {
+        var mh$ = cairo_text_cluster_allocate$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(num_clusters);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_text_cluster_free$MH() {
+        return RuntimeHelper.requireNonNull(constants$1696.const$1,"cairo_text_cluster_free");
+    }
+    /**
+     * {@snippet :
+     * void cairo_text_cluster_free(struct cairo_text_cluster_t* clusters);
+     * }
+     */
+    public static void cairo_text_cluster_free(MemorySegment clusters) {
+        var mh$ = cairo_text_cluster_free$MH();
+        try {
+            mh$.invokeExact(clusters);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_text_cluster_flags.CAIRO_TEXT_CLUSTER_FLAG_BACKWARD = 1;
+     * }
+     */
+    public static int CAIRO_TEXT_CLUSTER_FLAG_BACKWARD() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_slant.CAIRO_FONT_SLANT_NORMAL = 0;
+     * }
+     */
+    public static int CAIRO_FONT_SLANT_NORMAL() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_slant.CAIRO_FONT_SLANT_ITALIC = 1;
+     * }
+     */
+    public static int CAIRO_FONT_SLANT_ITALIC() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_slant.CAIRO_FONT_SLANT_OBLIQUE = 2;
+     * }
+     */
+    public static int CAIRO_FONT_SLANT_OBLIQUE() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_weight.CAIRO_FONT_WEIGHT_NORMAL = 0;
+     * }
+     */
+    public static int CAIRO_FONT_WEIGHT_NORMAL() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_weight.CAIRO_FONT_WEIGHT_BOLD = 1;
+     * }
+     */
+    public static int CAIRO_FONT_WEIGHT_BOLD() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_subpixel_order.CAIRO_SUBPIXEL_ORDER_DEFAULT = 0;
+     * }
+     */
+    public static int CAIRO_SUBPIXEL_ORDER_DEFAULT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_subpixel_order.CAIRO_SUBPIXEL_ORDER_RGB = 1;
+     * }
+     */
+    public static int CAIRO_SUBPIXEL_ORDER_RGB() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_subpixel_order.CAIRO_SUBPIXEL_ORDER_BGR = 2;
+     * }
+     */
+    public static int CAIRO_SUBPIXEL_ORDER_BGR() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_subpixel_order.CAIRO_SUBPIXEL_ORDER_VRGB = 3;
+     * }
+     */
+    public static int CAIRO_SUBPIXEL_ORDER_VRGB() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_subpixel_order.CAIRO_SUBPIXEL_ORDER_VBGR = 4;
+     * }
+     */
+    public static int CAIRO_SUBPIXEL_ORDER_VBGR() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_style.CAIRO_HINT_STYLE_DEFAULT = 0;
+     * }
+     */
+    public static int CAIRO_HINT_STYLE_DEFAULT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_style.CAIRO_HINT_STYLE_NONE = 1;
+     * }
+     */
+    public static int CAIRO_HINT_STYLE_NONE() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_style.CAIRO_HINT_STYLE_SLIGHT = 2;
+     * }
+     */
+    public static int CAIRO_HINT_STYLE_SLIGHT() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_style.CAIRO_HINT_STYLE_MEDIUM = 3;
+     * }
+     */
+    public static int CAIRO_HINT_STYLE_MEDIUM() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_style.CAIRO_HINT_STYLE_FULL = 4;
+     * }
+     */
+    public static int CAIRO_HINT_STYLE_FULL() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_metrics.CAIRO_HINT_METRICS_DEFAULT = 0;
+     * }
+     */
+    public static int CAIRO_HINT_METRICS_DEFAULT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_metrics.CAIRO_HINT_METRICS_OFF = 1;
+     * }
+     */
+    public static int CAIRO_HINT_METRICS_OFF() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_metrics.CAIRO_HINT_METRICS_ON = 2;
+     * }
+     */
+    public static int CAIRO_HINT_METRICS_ON() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_color_mode.CAIRO_COLOR_MODE_DEFAULT = 0;
+     * }
+     */
+    public static int CAIRO_COLOR_MODE_DEFAULT() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_color_mode.CAIRO_COLOR_MODE_NO_COLOR = 1;
+     * }
+     */
+    public static int CAIRO_COLOR_MODE_NO_COLOR() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_color_mode.CAIRO_COLOR_MODE_COLOR = 2;
+     * }
+     */
+    public static int CAIRO_COLOR_MODE_COLOR() {
+        return (int)2L;
+    }
+    public static MethodHandle cairo_font_options_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$1698.const$3,"cairo_font_options_create");
+    }
+    /**
+     * {@snippet :
+     * struct _cairo_font_options* cairo_font_options_create();
+     * }
+     */
+    public static MemorySegment cairo_font_options_create() {
+        var mh$ = cairo_font_options_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$1698.const$4,"cairo_font_options_copy");
+    }
+    /**
+     * {@snippet :
+     * struct _cairo_font_options* cairo_font_options_copy(struct _cairo_font_options* original);
+     * }
+     */
+    public static MemorySegment cairo_font_options_copy(MemorySegment original) {
+        var mh$ = cairo_font_options_copy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(original);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$1698.const$5,"cairo_font_options_destroy");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_destroy(struct _cairo_font_options* options);
+     * }
+     */
+    public static void cairo_font_options_destroy(MemorySegment options) {
+        var mh$ = cairo_font_options_destroy$MH();
+        try {
+            mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_status$MH() {
+        return RuntimeHelper.requireNonNull(constants$1699.const$0,"cairo_font_options_status");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status cairo_font_options_status(struct _cairo_font_options* options);
+     * }
+     */
+    public static int cairo_font_options_status(MemorySegment options) {
+        var mh$ = cairo_font_options_status$MH();
+        try {
+            return (int)mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_merge$MH() {
+        return RuntimeHelper.requireNonNull(constants$1699.const$1,"cairo_font_options_merge");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_merge(struct _cairo_font_options* options, struct _cairo_font_options* other);
+     * }
+     */
+    public static void cairo_font_options_merge(MemorySegment options, MemorySegment other) {
+        var mh$ = cairo_font_options_merge$MH();
+        try {
+            mh$.invokeExact(options, other);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_equal$MH() {
+        return RuntimeHelper.requireNonNull(constants$1699.const$2,"cairo_font_options_equal");
+    }
+    /**
+     * {@snippet :
+     * int cairo_font_options_equal(struct _cairo_font_options* options, struct _cairo_font_options* other);
+     * }
+     */
+    public static int cairo_font_options_equal(MemorySegment options, MemorySegment other) {
+        var mh$ = cairo_font_options_equal$MH();
+        try {
+            return (int)mh$.invokeExact(options, other);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_hash$MH() {
+        return RuntimeHelper.requireNonNull(constants$1699.const$3,"cairo_font_options_hash");
+    }
+    /**
+     * {@snippet :
+     * unsigned long cairo_font_options_hash(struct _cairo_font_options* options);
+     * }
+     */
+    public static long cairo_font_options_hash(MemorySegment options) {
+        var mh$ = cairo_font_options_hash$MH();
+        try {
+            return (long)mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_set_antialias$MH() {
+        return RuntimeHelper.requireNonNull(constants$1699.const$4,"cairo_font_options_set_antialias");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_set_antialias(struct _cairo_font_options* options, enum _cairo_antialias antialias);
+     * }
+     */
+    public static void cairo_font_options_set_antialias(MemorySegment options, int antialias) {
+        var mh$ = cairo_font_options_set_antialias$MH();
+        try {
+            mh$.invokeExact(options, antialias);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_get_antialias$MH() {
+        return RuntimeHelper.requireNonNull(constants$1699.const$5,"cairo_font_options_get_antialias");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_antialias cairo_font_options_get_antialias(struct _cairo_font_options* options);
+     * }
+     */
+    public static int cairo_font_options_get_antialias(MemorySegment options) {
+        var mh$ = cairo_font_options_get_antialias$MH();
+        try {
+            return (int)mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_set_subpixel_order$MH() {
+        return RuntimeHelper.requireNonNull(constants$1700.const$0,"cairo_font_options_set_subpixel_order");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_set_subpixel_order(struct _cairo_font_options* options, enum _cairo_subpixel_order subpixel_order);
+     * }
+     */
+    public static void cairo_font_options_set_subpixel_order(MemorySegment options, int subpixel_order) {
+        var mh$ = cairo_font_options_set_subpixel_order$MH();
+        try {
+            mh$.invokeExact(options, subpixel_order);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_get_subpixel_order$MH() {
+        return RuntimeHelper.requireNonNull(constants$1700.const$1,"cairo_font_options_get_subpixel_order");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_subpixel_order cairo_font_options_get_subpixel_order(struct _cairo_font_options* options);
+     * }
+     */
+    public static int cairo_font_options_get_subpixel_order(MemorySegment options) {
+        var mh$ = cairo_font_options_get_subpixel_order$MH();
+        try {
+            return (int)mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_set_hint_style$MH() {
+        return RuntimeHelper.requireNonNull(constants$1700.const$2,"cairo_font_options_set_hint_style");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_set_hint_style(struct _cairo_font_options* options, enum _cairo_hint_style hint_style);
+     * }
+     */
+    public static void cairo_font_options_set_hint_style(MemorySegment options, int hint_style) {
+        var mh$ = cairo_font_options_set_hint_style$MH();
+        try {
+            mh$.invokeExact(options, hint_style);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_get_hint_style$MH() {
+        return RuntimeHelper.requireNonNull(constants$1700.const$3,"cairo_font_options_get_hint_style");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_style cairo_font_options_get_hint_style(struct _cairo_font_options* options);
+     * }
+     */
+    public static int cairo_font_options_get_hint_style(MemorySegment options) {
+        var mh$ = cairo_font_options_get_hint_style$MH();
+        try {
+            return (int)mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_set_hint_metrics$MH() {
+        return RuntimeHelper.requireNonNull(constants$1700.const$4,"cairo_font_options_set_hint_metrics");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_set_hint_metrics(struct _cairo_font_options* options, enum _cairo_hint_metrics hint_metrics);
+     * }
+     */
+    public static void cairo_font_options_set_hint_metrics(MemorySegment options, int hint_metrics) {
+        var mh$ = cairo_font_options_set_hint_metrics$MH();
+        try {
+            mh$.invokeExact(options, hint_metrics);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_get_hint_metrics$MH() {
+        return RuntimeHelper.requireNonNull(constants$1700.const$5,"cairo_font_options_get_hint_metrics");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_hint_metrics cairo_font_options_get_hint_metrics(struct _cairo_font_options* options);
+     * }
+     */
+    public static int cairo_font_options_get_hint_metrics(MemorySegment options) {
+        var mh$ = cairo_font_options_get_hint_metrics$MH();
+        try {
+            return (int)mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_get_variations$MH() {
+        return RuntimeHelper.requireNonNull(constants$1701.const$0,"cairo_font_options_get_variations");
+    }
+    /**
+     * {@snippet :
+     * char* cairo_font_options_get_variations(struct _cairo_font_options* options);
+     * }
+     */
+    public static MemorySegment cairo_font_options_get_variations(MemorySegment options) {
+        var mh$ = cairo_font_options_get_variations$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_set_variations$MH() {
+        return RuntimeHelper.requireNonNull(constants$1701.const$1,"cairo_font_options_set_variations");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_set_variations(struct _cairo_font_options* options, char* variations);
+     * }
+     */
+    public static void cairo_font_options_set_variations(MemorySegment options, MemorySegment variations) {
+        var mh$ = cairo_font_options_set_variations$MH();
+        try {
+            mh$.invokeExact(options, variations);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_set_color_mode$MH() {
+        return RuntimeHelper.requireNonNull(constants$1701.const$2,"cairo_font_options_set_color_mode");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_set_color_mode(struct _cairo_font_options* options, enum _cairo_color_mode color_mode);
+     * }
+     */
+    public static void cairo_font_options_set_color_mode(MemorySegment options, int color_mode) {
+        var mh$ = cairo_font_options_set_color_mode$MH();
+        try {
+            mh$.invokeExact(options, color_mode);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_get_color_mode$MH() {
+        return RuntimeHelper.requireNonNull(constants$1701.const$3,"cairo_font_options_get_color_mode");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_color_mode cairo_font_options_get_color_mode(struct _cairo_font_options* options);
+     * }
+     */
+    public static int cairo_font_options_get_color_mode(MemorySegment options) {
+        var mh$ = cairo_font_options_get_color_mode$MH();
+        try {
+            return (int)mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_get_color_palette$MH() {
+        return RuntimeHelper.requireNonNull(constants$1701.const$4,"cairo_font_options_get_color_palette");
+    }
+    /**
+     * {@snippet :
+     * unsigned int cairo_font_options_get_color_palette(struct _cairo_font_options* options);
+     * }
+     */
+    public static int cairo_font_options_get_color_palette(MemorySegment options) {
+        var mh$ = cairo_font_options_get_color_palette$MH();
+        try {
+            return (int)mh$.invokeExact(options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_set_color_palette$MH() {
+        return RuntimeHelper.requireNonNull(constants$1701.const$5,"cairo_font_options_set_color_palette");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_set_color_palette(struct _cairo_font_options* options, unsigned int palette_index);
+     * }
+     */
+    public static void cairo_font_options_set_color_palette(MemorySegment options, int palette_index) {
+        var mh$ = cairo_font_options_set_color_palette$MH();
+        try {
+            mh$.invokeExact(options, palette_index);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_set_custom_palette_color$MH() {
+        return RuntimeHelper.requireNonNull(constants$1702.const$1,"cairo_font_options_set_custom_palette_color");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_options_set_custom_palette_color(struct _cairo_font_options* options, unsigned int index, double red, double green, double blue, double alpha);
+     * }
+     */
+    public static void cairo_font_options_set_custom_palette_color(MemorySegment options, int index, double red, double green, double blue, double alpha) {
+        var mh$ = cairo_font_options_set_custom_palette_color$MH();
+        try {
+            mh$.invokeExact(options, index, red, green, blue, alpha);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_options_get_custom_palette_color$MH() {
+        return RuntimeHelper.requireNonNull(constants$1702.const$2,"cairo_font_options_get_custom_palette_color");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status cairo_font_options_get_custom_palette_color(struct _cairo_font_options* options, unsigned int index, double* red, double* green, double* blue, double* alpha);
+     * }
+     */
+    public static int cairo_font_options_get_custom_palette_color(MemorySegment options, int index, MemorySegment red, MemorySegment green, MemorySegment blue, MemorySegment alpha) {
+        var mh$ = cairo_font_options_get_custom_palette_color$MH();
+        try {
+            return (int)mh$.invokeExact(options, index, red, green, blue, alpha);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_select_font_face$MH() {
+        return RuntimeHelper.requireNonNull(constants$1702.const$3,"cairo_select_font_face");
+    }
+    /**
+     * {@snippet :
+     * void cairo_select_font_face(struct _cairo* cr, char* family, enum _cairo_font_slant slant, enum _cairo_font_weight weight);
+     * }
+     */
+    public static void cairo_select_font_face(MemorySegment cr, MemorySegment family, int slant, int weight) {
+        var mh$ = cairo_select_font_face$MH();
+        try {
+            mh$.invokeExact(cr, family, slant, weight);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_font_size$MH() {
+        return RuntimeHelper.requireNonNull(constants$1702.const$4,"cairo_set_font_size");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_font_size(struct _cairo* cr, double size);
+     * }
+     */
+    public static void cairo_set_font_size(MemorySegment cr, double size) {
+        var mh$ = cairo_set_font_size$MH();
+        try {
+            mh$.invokeExact(cr, size);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_font_matrix$MH() {
+        return RuntimeHelper.requireNonNull(constants$1702.const$5,"cairo_set_font_matrix");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_font_matrix(struct _cairo* cr, struct _cairo_matrix* matrix);
+     * }
+     */
+    public static void cairo_set_font_matrix(MemorySegment cr, MemorySegment matrix) {
+        var mh$ = cairo_set_font_matrix$MH();
+        try {
+            mh$.invokeExact(cr, matrix);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_get_font_matrix$MH() {
+        return RuntimeHelper.requireNonNull(constants$1703.const$0,"cairo_get_font_matrix");
+    }
+    /**
+     * {@snippet :
+     * void cairo_get_font_matrix(struct _cairo* cr, struct _cairo_matrix* matrix);
+     * }
+     */
+    public static void cairo_get_font_matrix(MemorySegment cr, MemorySegment matrix) {
+        var mh$ = cairo_get_font_matrix$MH();
+        try {
+            mh$.invokeExact(cr, matrix);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_font_options$MH() {
+        return RuntimeHelper.requireNonNull(constants$1703.const$1,"cairo_set_font_options");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_font_options(struct _cairo* cr, struct _cairo_font_options* options);
+     * }
+     */
+    public static void cairo_set_font_options(MemorySegment cr, MemorySegment options) {
+        var mh$ = cairo_set_font_options$MH();
+        try {
+            mh$.invokeExact(cr, options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_get_font_options$MH() {
+        return RuntimeHelper.requireNonNull(constants$1703.const$2,"cairo_get_font_options");
+    }
+    /**
+     * {@snippet :
+     * void cairo_get_font_options(struct _cairo* cr, struct _cairo_font_options* options);
+     * }
+     */
+    public static void cairo_get_font_options(MemorySegment cr, MemorySegment options) {
+        var mh$ = cairo_get_font_options$MH();
+        try {
+            mh$.invokeExact(cr, options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_font_face$MH() {
+        return RuntimeHelper.requireNonNull(constants$1703.const$3,"cairo_set_font_face");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_font_face(struct _cairo* cr, struct _cairo_font_face* font_face);
+     * }
+     */
+    public static void cairo_set_font_face(MemorySegment cr, MemorySegment font_face) {
+        var mh$ = cairo_set_font_face$MH();
+        try {
+            mh$.invokeExact(cr, font_face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_get_font_face$MH() {
+        return RuntimeHelper.requireNonNull(constants$1703.const$4,"cairo_get_font_face");
+    }
+    /**
+     * {@snippet :
+     * struct _cairo_font_face* cairo_get_font_face(struct _cairo* cr);
+     * }
+     */
+    public static MemorySegment cairo_get_font_face(MemorySegment cr) {
+        var mh$ = cairo_get_font_face$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_set_scaled_font$MH() {
+        return RuntimeHelper.requireNonNull(constants$1703.const$5,"cairo_set_scaled_font");
+    }
+    /**
+     * {@snippet :
+     * void cairo_set_scaled_font(struct _cairo* cr, struct _cairo_scaled_font* scaled_font);
+     * }
+     */
+    public static void cairo_set_scaled_font(MemorySegment cr, MemorySegment scaled_font) {
+        var mh$ = cairo_set_scaled_font$MH();
+        try {
+            mh$.invokeExact(cr, scaled_font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_get_scaled_font$MH() {
+        return RuntimeHelper.requireNonNull(constants$1704.const$0,"cairo_get_scaled_font");
+    }
+    /**
+     * {@snippet :
+     * struct _cairo_scaled_font* cairo_get_scaled_font(struct _cairo* cr);
+     * }
+     */
+    public static MemorySegment cairo_get_scaled_font(MemorySegment cr) {
+        var mh$ = cairo_get_scaled_font$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_show_text$MH() {
+        return RuntimeHelper.requireNonNull(constants$1704.const$1,"cairo_show_text");
+    }
+    /**
+     * {@snippet :
+     * void cairo_show_text(struct _cairo* cr, char* utf8);
+     * }
+     */
+    public static void cairo_show_text(MemorySegment cr, MemorySegment utf8) {
+        var mh$ = cairo_show_text$MH();
+        try {
+            mh$.invokeExact(cr, utf8);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_show_glyphs$MH() {
+        return RuntimeHelper.requireNonNull(constants$1704.const$2,"cairo_show_glyphs");
+    }
+    /**
+     * {@snippet :
+     * void cairo_show_glyphs(struct _cairo* cr, struct cairo_glyph_t* glyphs, int num_glyphs);
+     * }
+     */
+    public static void cairo_show_glyphs(MemorySegment cr, MemorySegment glyphs, int num_glyphs) {
+        var mh$ = cairo_show_glyphs$MH();
+        try {
+            mh$.invokeExact(cr, glyphs, num_glyphs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_show_text_glyphs$MH() {
+        return RuntimeHelper.requireNonNull(constants$1704.const$4,"cairo_show_text_glyphs");
+    }
+    /**
+     * {@snippet :
+     * void cairo_show_text_glyphs(struct _cairo* cr, char* utf8, int utf8_len, struct cairo_glyph_t* glyphs, int num_glyphs, struct cairo_text_cluster_t* clusters, int num_clusters, enum _cairo_text_cluster_flags cluster_flags);
+     * }
+     */
+    public static void cairo_show_text_glyphs(MemorySegment cr, MemorySegment utf8, int utf8_len, MemorySegment glyphs, int num_glyphs, MemorySegment clusters, int num_clusters, int cluster_flags) {
+        var mh$ = cairo_show_text_glyphs$MH();
+        try {
+            mh$.invokeExact(cr, utf8, utf8_len, glyphs, num_glyphs, clusters, num_clusters, cluster_flags);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_text_path$MH() {
+        return RuntimeHelper.requireNonNull(constants$1704.const$5,"cairo_text_path");
+    }
+    /**
+     * {@snippet :
+     * void cairo_text_path(struct _cairo* cr, char* utf8);
+     * }
+     */
+    public static void cairo_text_path(MemorySegment cr, MemorySegment utf8) {
+        var mh$ = cairo_text_path$MH();
+        try {
+            mh$.invokeExact(cr, utf8);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_glyph_path$MH() {
+        return RuntimeHelper.requireNonNull(constants$1705.const$0,"cairo_glyph_path");
+    }
+    /**
+     * {@snippet :
+     * void cairo_glyph_path(struct _cairo* cr, struct cairo_glyph_t* glyphs, int num_glyphs);
+     * }
+     */
+    public static void cairo_glyph_path(MemorySegment cr, MemorySegment glyphs, int num_glyphs) {
+        var mh$ = cairo_glyph_path$MH();
+        try {
+            mh$.invokeExact(cr, glyphs, num_glyphs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_text_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1705.const$1,"cairo_text_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_text_extents(struct _cairo* cr, char* utf8, struct cairo_text_extents_t* extents);
+     * }
+     */
+    public static void cairo_text_extents(MemorySegment cr, MemorySegment utf8, MemorySegment extents) {
+        var mh$ = cairo_text_extents$MH();
+        try {
+            mh$.invokeExact(cr, utf8, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_glyph_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1705.const$2,"cairo_glyph_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_glyph_extents(struct _cairo* cr, struct cairo_glyph_t* glyphs, int num_glyphs, struct cairo_text_extents_t* extents);
+     * }
+     */
+    public static void cairo_glyph_extents(MemorySegment cr, MemorySegment glyphs, int num_glyphs, MemorySegment extents) {
+        var mh$ = cairo_glyph_extents$MH();
+        try {
+            mh$.invokeExact(cr, glyphs, num_glyphs, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1705.const$3,"cairo_font_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_extents(struct _cairo* cr, struct cairo_font_extents_t* extents);
+     * }
+     */
+    public static void cairo_font_extents(MemorySegment cr, MemorySegment extents) {
+        var mh$ = cairo_font_extents$MH();
+        try {
+            mh$.invokeExact(cr, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_face_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$1705.const$4,"cairo_font_face_reference");
+    }
+    /**
+     * {@snippet :
+     * struct _cairo_font_face* cairo_font_face_reference(struct _cairo_font_face* font_face);
+     * }
+     */
+    public static MemorySegment cairo_font_face_reference(MemorySegment font_face) {
+        var mh$ = cairo_font_face_reference$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font_face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_face_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$1705.const$5,"cairo_font_face_destroy");
+    }
+    /**
+     * {@snippet :
+     * void cairo_font_face_destroy(struct _cairo_font_face* font_face);
+     * }
+     */
+    public static void cairo_font_face_destroy(MemorySegment font_face) {
+        var mh$ = cairo_font_face_destroy$MH();
+        try {
+            mh$.invokeExact(font_face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_face_get_reference_count$MH() {
+        return RuntimeHelper.requireNonNull(constants$1706.const$0,"cairo_font_face_get_reference_count");
+    }
+    /**
+     * {@snippet :
+     * unsigned int cairo_font_face_get_reference_count(struct _cairo_font_face* font_face);
+     * }
+     */
+    public static int cairo_font_face_get_reference_count(MemorySegment font_face) {
+        var mh$ = cairo_font_face_get_reference_count$MH();
+        try {
+            return (int)mh$.invokeExact(font_face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_face_status$MH() {
+        return RuntimeHelper.requireNonNull(constants$1706.const$1,"cairo_font_face_status");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status cairo_font_face_status(struct _cairo_font_face* font_face);
+     * }
+     */
+    public static int cairo_font_face_status(MemorySegment font_face) {
+        var mh$ = cairo_font_face_status$MH();
+        try {
+            return (int)mh$.invokeExact(font_face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_type.CAIRO_FONT_TYPE_TOY = 0;
+     * }
+     */
+    public static int CAIRO_FONT_TYPE_TOY() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_type.CAIRO_FONT_TYPE_FT = 1;
+     * }
+     */
+    public static int CAIRO_FONT_TYPE_FT() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_type.CAIRO_FONT_TYPE_WIN32 = 2;
+     * }
+     */
+    public static int CAIRO_FONT_TYPE_WIN32() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_type.CAIRO_FONT_TYPE_QUARTZ = 3;
+     * }
+     */
+    public static int CAIRO_FONT_TYPE_QUARTZ() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_type.CAIRO_FONT_TYPE_USER = 4;
+     * }
+     */
+    public static int CAIRO_FONT_TYPE_USER() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_type.CAIRO_FONT_TYPE_DWRITE = 5;
+     * }
+     */
+    public static int CAIRO_FONT_TYPE_DWRITE() {
+        return (int)5L;
+    }
+    public static MethodHandle cairo_font_face_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$1706.const$2,"cairo_font_face_get_type");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_type cairo_font_face_get_type(struct _cairo_font_face* font_face);
+     * }
+     */
+    public static int cairo_font_face_get_type(MemorySegment font_face) {
+        var mh$ = cairo_font_face_get_type$MH();
+        try {
+            return (int)mh$.invokeExact(font_face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_face_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$1706.const$3,"cairo_font_face_get_user_data");
+    }
+    /**
+     * {@snippet :
+     * void* cairo_font_face_get_user_data(struct _cairo_font_face* font_face, struct _cairo_user_data_key* key);
+     * }
+     */
+    public static MemorySegment cairo_font_face_get_user_data(MemorySegment font_face, MemorySegment key) {
+        var mh$ = cairo_font_face_get_user_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font_face, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_font_face_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$1706.const$5,"cairo_font_face_set_user_data");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status cairo_font_face_set_user_data(struct _cairo_font_face* font_face, struct _cairo_user_data_key* key, void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static int cairo_font_face_set_user_data(MemorySegment font_face, MemorySegment key, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = cairo_font_face_set_user_data$MH();
+        try {
+            return (int)mh$.invokeExact(font_face, key, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$1707.const$0,"cairo_scaled_font_create");
+    }
+    /**
+     * {@snippet :
+     * struct _cairo_scaled_font* cairo_scaled_font_create(struct _cairo_font_face* font_face, struct _cairo_matrix* font_matrix, struct _cairo_matrix* ctm, struct _cairo_font_options* options);
+     * }
+     */
+    public static MemorySegment cairo_scaled_font_create(MemorySegment font_face, MemorySegment font_matrix, MemorySegment ctm, MemorySegment options) {
+        var mh$ = cairo_scaled_font_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font_face, font_matrix, ctm, options);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$1707.const$1,"cairo_scaled_font_reference");
+    }
+    /**
+     * {@snippet :
+     * struct _cairo_scaled_font* cairo_scaled_font_reference(struct _cairo_scaled_font* scaled_font);
+     * }
+     */
+    public static MemorySegment cairo_scaled_font_reference(MemorySegment scaled_font) {
+        var mh$ = cairo_scaled_font_reference$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(scaled_font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$1707.const$2,"cairo_scaled_font_destroy");
+    }
+    /**
+     * {@snippet :
+     * void cairo_scaled_font_destroy(struct _cairo_scaled_font* scaled_font);
+     * }
+     */
+    public static void cairo_scaled_font_destroy(MemorySegment scaled_font) {
+        var mh$ = cairo_scaled_font_destroy$MH();
+        try {
+            mh$.invokeExact(scaled_font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_get_reference_count$MH() {
+        return RuntimeHelper.requireNonNull(constants$1707.const$3,"cairo_scaled_font_get_reference_count");
+    }
+    /**
+     * {@snippet :
+     * unsigned int cairo_scaled_font_get_reference_count(struct _cairo_scaled_font* scaled_font);
+     * }
+     */
+    public static int cairo_scaled_font_get_reference_count(MemorySegment scaled_font) {
+        var mh$ = cairo_scaled_font_get_reference_count$MH();
+        try {
+            return (int)mh$.invokeExact(scaled_font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_status$MH() {
+        return RuntimeHelper.requireNonNull(constants$1707.const$4,"cairo_scaled_font_status");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status cairo_scaled_font_status(struct _cairo_scaled_font* scaled_font);
+     * }
+     */
+    public static int cairo_scaled_font_status(MemorySegment scaled_font) {
+        var mh$ = cairo_scaled_font_status$MH();
+        try {
+            return (int)mh$.invokeExact(scaled_font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$1707.const$5,"cairo_scaled_font_get_type");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_font_type cairo_scaled_font_get_type(struct _cairo_scaled_font* scaled_font);
+     * }
+     */
+    public static int cairo_scaled_font_get_type(MemorySegment scaled_font) {
+        var mh$ = cairo_scaled_font_get_type$MH();
+        try {
+            return (int)mh$.invokeExact(scaled_font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$1708.const$0,"cairo_scaled_font_get_user_data");
+    }
+    /**
+     * {@snippet :
+     * void* cairo_scaled_font_get_user_data(struct _cairo_scaled_font* scaled_font, struct _cairo_user_data_key* key);
+     * }
+     */
+    public static MemorySegment cairo_scaled_font_get_user_data(MemorySegment scaled_font, MemorySegment key) {
+        var mh$ = cairo_scaled_font_get_user_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(scaled_font, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$1708.const$2,"cairo_scaled_font_set_user_data");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status cairo_scaled_font_set_user_data(struct _cairo_scaled_font* scaled_font, struct _cairo_user_data_key* key, void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static int cairo_scaled_font_set_user_data(MemorySegment scaled_font, MemorySegment key, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = cairo_scaled_font_set_user_data$MH();
+        try {
+            return (int)mh$.invokeExact(scaled_font, key, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1708.const$3,"cairo_scaled_font_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_scaled_font_extents(struct _cairo_scaled_font* scaled_font, struct cairo_font_extents_t* extents);
+     * }
+     */
+    public static void cairo_scaled_font_extents(MemorySegment scaled_font, MemorySegment extents) {
+        var mh$ = cairo_scaled_font_extents$MH();
+        try {
+            mh$.invokeExact(scaled_font, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_text_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1708.const$4,"cairo_scaled_font_text_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_scaled_font_text_extents(struct _cairo_scaled_font* scaled_font, char* utf8, struct cairo_text_extents_t* extents);
+     * }
+     */
+    public static void cairo_scaled_font_text_extents(MemorySegment scaled_font, MemorySegment utf8, MemorySegment extents) {
+        var mh$ = cairo_scaled_font_text_extents$MH();
+        try {
+            mh$.invokeExact(scaled_font, utf8, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_scaled_font_glyph_extents$MH() {
+        return RuntimeHelper.requireNonNull(constants$1708.const$5,"cairo_scaled_font_glyph_extents");
+    }
+    /**
+     * {@snippet :
+     * void cairo_scaled_font_glyph_extents(struct _cairo_scaled_font* scaled_font, struct cairo_glyph_t* glyphs, int num_glyphs, struct cairo_text_extents_t* extents);
      * }
      */
     public static void cairo_scaled_font_glyph_extents(MemorySegment scaled_font, MemorySegment glyphs, int num_glyphs, MemorySegment extents) {
@@ -24,11 +2418,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_text_to_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1017.cairo_scaled_font_text_to_glyphs$MH,"cairo_scaled_font_text_to_glyphs");
+        return RuntimeHelper.requireNonNull(constants$1709.const$1,"cairo_scaled_font_text_to_glyphs");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_scaled_font_text_to_glyphs(cairo_scaled_font_t* scaled_font, double x, double y, char* utf8, int utf8_len, cairo_glyph_t** glyphs, int* num_glyphs, cairo_text_cluster_t** clusters, int* num_clusters, cairo_text_cluster_flags_t* cluster_flags);
+     * enum _cairo_status cairo_scaled_font_text_to_glyphs(struct _cairo_scaled_font* scaled_font, double x, double y, char* utf8, int utf8_len, struct cairo_glyph_t** glyphs, int* num_glyphs, struct cairo_text_cluster_t** clusters, int* num_clusters, enum _cairo_text_cluster_flags* cluster_flags);
      * }
      */
     public static int cairo_scaled_font_text_to_glyphs(MemorySegment scaled_font, double x, double y, MemorySegment utf8, int utf8_len, MemorySegment glyphs, MemorySegment num_glyphs, MemorySegment clusters, MemorySegment num_clusters, MemorySegment cluster_flags) {
@@ -40,11 +2434,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_get_font_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1017.cairo_scaled_font_get_font_face$MH,"cairo_scaled_font_get_font_face");
+        return RuntimeHelper.requireNonNull(constants$1709.const$2,"cairo_scaled_font_get_font_face");
     }
     /**
      * {@snippet :
-     * cairo_font_face_t* cairo_scaled_font_get_font_face(cairo_scaled_font_t* scaled_font);
+     * struct _cairo_font_face* cairo_scaled_font_get_font_face(struct _cairo_scaled_font* scaled_font);
      * }
      */
     public static MemorySegment cairo_scaled_font_get_font_face(MemorySegment scaled_font) {
@@ -56,11 +2450,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_get_font_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1017.cairo_scaled_font_get_font_matrix$MH,"cairo_scaled_font_get_font_matrix");
+        return RuntimeHelper.requireNonNull(constants$1709.const$3,"cairo_scaled_font_get_font_matrix");
     }
     /**
      * {@snippet :
-     * void cairo_scaled_font_get_font_matrix(cairo_scaled_font_t* scaled_font, cairo_matrix_t* font_matrix);
+     * void cairo_scaled_font_get_font_matrix(struct _cairo_scaled_font* scaled_font, struct _cairo_matrix* font_matrix);
      * }
      */
     public static void cairo_scaled_font_get_font_matrix(MemorySegment scaled_font, MemorySegment font_matrix) {
@@ -72,11 +2466,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_get_ctm$MH() {
-        return RuntimeHelper.requireNonNull(constants$1018.cairo_scaled_font_get_ctm$MH,"cairo_scaled_font_get_ctm");
+        return RuntimeHelper.requireNonNull(constants$1709.const$4,"cairo_scaled_font_get_ctm");
     }
     /**
      * {@snippet :
-     * void cairo_scaled_font_get_ctm(cairo_scaled_font_t* scaled_font, cairo_matrix_t* ctm);
+     * void cairo_scaled_font_get_ctm(struct _cairo_scaled_font* scaled_font, struct _cairo_matrix* ctm);
      * }
      */
     public static void cairo_scaled_font_get_ctm(MemorySegment scaled_font, MemorySegment ctm) {
@@ -88,11 +2482,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_get_scale_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1018.cairo_scaled_font_get_scale_matrix$MH,"cairo_scaled_font_get_scale_matrix");
+        return RuntimeHelper.requireNonNull(constants$1709.const$5,"cairo_scaled_font_get_scale_matrix");
     }
     /**
      * {@snippet :
-     * void cairo_scaled_font_get_scale_matrix(cairo_scaled_font_t* scaled_font, cairo_matrix_t* scale_matrix);
+     * void cairo_scaled_font_get_scale_matrix(struct _cairo_scaled_font* scaled_font, struct _cairo_matrix* scale_matrix);
      * }
      */
     public static void cairo_scaled_font_get_scale_matrix(MemorySegment scaled_font, MemorySegment scale_matrix) {
@@ -104,11 +2498,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_scaled_font_get_font_options$MH() {
-        return RuntimeHelper.requireNonNull(constants$1018.cairo_scaled_font_get_font_options$MH,"cairo_scaled_font_get_font_options");
+        return RuntimeHelper.requireNonNull(constants$1710.const$0,"cairo_scaled_font_get_font_options");
     }
     /**
      * {@snippet :
-     * void cairo_scaled_font_get_font_options(cairo_scaled_font_t* scaled_font, cairo_font_options_t* options);
+     * void cairo_scaled_font_get_font_options(struct _cairo_scaled_font* scaled_font, struct _cairo_font_options* options);
      * }
      */
     public static void cairo_scaled_font_get_font_options(MemorySegment scaled_font, MemorySegment options) {
@@ -120,11 +2514,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_toy_font_face_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1018.cairo_toy_font_face_create$MH,"cairo_toy_font_face_create");
+        return RuntimeHelper.requireNonNull(constants$1710.const$1,"cairo_toy_font_face_create");
     }
     /**
      * {@snippet :
-     * cairo_font_face_t* cairo_toy_font_face_create(char* family, cairo_font_slant_t slant, cairo_font_weight_t weight);
+     * struct _cairo_font_face* cairo_toy_font_face_create(char* family, enum _cairo_font_slant slant, enum _cairo_font_weight weight);
      * }
      */
     public static MemorySegment cairo_toy_font_face_create(MemorySegment family, int slant, int weight) {
@@ -136,11 +2530,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_toy_font_face_get_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$1018.cairo_toy_font_face_get_family$MH,"cairo_toy_font_face_get_family");
+        return RuntimeHelper.requireNonNull(constants$1710.const$2,"cairo_toy_font_face_get_family");
     }
     /**
      * {@snippet :
-     * char* cairo_toy_font_face_get_family(cairo_font_face_t* font_face);
+     * char* cairo_toy_font_face_get_family(struct _cairo_font_face* font_face);
      * }
      */
     public static MemorySegment cairo_toy_font_face_get_family(MemorySegment font_face) {
@@ -152,11 +2546,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_toy_font_face_get_slant$MH() {
-        return RuntimeHelper.requireNonNull(constants$1018.cairo_toy_font_face_get_slant$MH,"cairo_toy_font_face_get_slant");
+        return RuntimeHelper.requireNonNull(constants$1710.const$3,"cairo_toy_font_face_get_slant");
     }
     /**
      * {@snippet :
-     * cairo_font_slant_t cairo_toy_font_face_get_slant(cairo_font_face_t* font_face);
+     * enum _cairo_font_slant cairo_toy_font_face_get_slant(struct _cairo_font_face* font_face);
      * }
      */
     public static int cairo_toy_font_face_get_slant(MemorySegment font_face) {
@@ -168,11 +2562,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_toy_font_face_get_weight$MH() {
-        return RuntimeHelper.requireNonNull(constants$1019.cairo_toy_font_face_get_weight$MH,"cairo_toy_font_face_get_weight");
+        return RuntimeHelper.requireNonNull(constants$1710.const$4,"cairo_toy_font_face_get_weight");
     }
     /**
      * {@snippet :
-     * cairo_font_weight_t cairo_toy_font_face_get_weight(cairo_font_face_t* font_face);
+     * enum _cairo_font_weight cairo_toy_font_face_get_weight(struct _cairo_font_face* font_face);
      * }
      */
     public static int cairo_toy_font_face_get_weight(MemorySegment font_face) {
@@ -184,11 +2578,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1019.cairo_user_font_face_create$MH,"cairo_user_font_face_create");
+        return RuntimeHelper.requireNonNull(constants$1710.const$5,"cairo_user_font_face_create");
     }
     /**
      * {@snippet :
-     * cairo_font_face_t* cairo_user_font_face_create();
+     * struct _cairo_font_face* cairo_user_font_face_create();
      * }
      */
     public static MemorySegment cairo_user_font_face_create() {
@@ -200,11 +2594,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_set_init_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1020.cairo_user_font_face_set_init_func$MH,"cairo_user_font_face_set_init_func");
+        return RuntimeHelper.requireNonNull(constants$1712.const$1,"cairo_user_font_face_set_init_func");
     }
     /**
      * {@snippet :
-     * void cairo_user_font_face_set_init_func(cairo_font_face_t* font_face, cairo_user_scaled_font_init_func_t init_func);
+     * void cairo_user_font_face_set_init_func(struct _cairo_font_face* font_face, enum _cairo_status (*init_func)(struct _cairo_scaled_font*,struct _cairo*,struct cairo_font_extents_t*));
      * }
      */
     public static void cairo_user_font_face_set_init_func(MemorySegment font_face, MemorySegment init_func) {
@@ -216,11 +2610,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_set_render_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1020.cairo_user_font_face_set_render_glyph_func$MH,"cairo_user_font_face_set_render_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1712.const$3,"cairo_user_font_face_set_render_glyph_func");
     }
     /**
      * {@snippet :
-     * void cairo_user_font_face_set_render_glyph_func(cairo_font_face_t* font_face, cairo_user_scaled_font_render_glyph_func_t render_glyph_func);
+     * void cairo_user_font_face_set_render_glyph_func(struct _cairo_font_face* font_face, enum _cairo_status (*render_glyph_func)(struct _cairo_scaled_font*,unsigned long,struct _cairo*,struct cairo_text_extents_t*));
      * }
      */
     public static void cairo_user_font_face_set_render_glyph_func(MemorySegment font_face, MemorySegment render_glyph_func) {
@@ -231,12 +2625,28 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle cairo_user_font_face_set_text_to_glyphs_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1021.cairo_user_font_face_set_text_to_glyphs_func$MH,"cairo_user_font_face_set_text_to_glyphs_func");
+    public static MethodHandle cairo_user_font_face_set_render_color_glyph_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1712.const$5,"cairo_user_font_face_set_render_color_glyph_func");
     }
     /**
      * {@snippet :
-     * void cairo_user_font_face_set_text_to_glyphs_func(cairo_font_face_t* font_face, cairo_user_scaled_font_text_to_glyphs_func_t text_to_glyphs_func);
+     * void cairo_user_font_face_set_render_color_glyph_func(struct _cairo_font_face* font_face, enum _cairo_status (*render_glyph_func)(struct _cairo_scaled_font*,unsigned long,struct _cairo*,struct cairo_text_extents_t*));
+     * }
+     */
+    public static void cairo_user_font_face_set_render_color_glyph_func(MemorySegment font_face, MemorySegment render_glyph_func) {
+        var mh$ = cairo_user_font_face_set_render_color_glyph_func$MH();
+        try {
+            mh$.invokeExact(font_face, render_glyph_func);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_user_font_face_set_text_to_glyphs_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1713.const$1,"cairo_user_font_face_set_text_to_glyphs_func");
+    }
+    /**
+     * {@snippet :
+     * void cairo_user_font_face_set_text_to_glyphs_func(struct _cairo_font_face* font_face, enum _cairo_status (*text_to_glyphs_func)(struct _cairo_scaled_font*,char*,int,struct cairo_glyph_t**,int*,struct cairo_text_cluster_t**,int*,enum _cairo_text_cluster_flags*));
      * }
      */
     public static void cairo_user_font_face_set_text_to_glyphs_func(MemorySegment font_face, MemorySegment text_to_glyphs_func) {
@@ -248,11 +2658,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_set_unicode_to_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1021.cairo_user_font_face_set_unicode_to_glyph_func$MH,"cairo_user_font_face_set_unicode_to_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1713.const$3,"cairo_user_font_face_set_unicode_to_glyph_func");
     }
     /**
      * {@snippet :
-     * void cairo_user_font_face_set_unicode_to_glyph_func(cairo_font_face_t* font_face, cairo_user_scaled_font_unicode_to_glyph_func_t unicode_to_glyph_func);
+     * void cairo_user_font_face_set_unicode_to_glyph_func(struct _cairo_font_face* font_face, enum _cairo_status (*unicode_to_glyph_func)(struct _cairo_scaled_font*,unsigned long,unsigned long*));
      * }
      */
     public static void cairo_user_font_face_set_unicode_to_glyph_func(MemorySegment font_face, MemorySegment unicode_to_glyph_func) {
@@ -264,11 +2674,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_get_init_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1021.cairo_user_font_face_get_init_func$MH,"cairo_user_font_face_get_init_func");
+        return RuntimeHelper.requireNonNull(constants$1713.const$5,"cairo_user_font_face_get_init_func");
     }
     /**
      * {@snippet :
-     * cairo_user_scaled_font_init_func_t cairo_user_font_face_get_init_func(cairo_font_face_t* font_face);
+     * enum _cairo_status (*cairo_user_font_face_get_init_func(struct _cairo_font_face* font_face))(struct _cairo_scaled_font*,struct _cairo*,struct cairo_font_extents_t*);
      * }
      */
     public static MemorySegment cairo_user_font_face_get_init_func(MemorySegment font_face) {
@@ -280,11 +2690,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_get_render_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1021.cairo_user_font_face_get_render_glyph_func$MH,"cairo_user_font_face_get_render_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1714.const$1,"cairo_user_font_face_get_render_glyph_func");
     }
     /**
      * {@snippet :
-     * cairo_user_scaled_font_render_glyph_func_t cairo_user_font_face_get_render_glyph_func(cairo_font_face_t* font_face);
+     * enum _cairo_status (*cairo_user_font_face_get_render_glyph_func(struct _cairo_font_face* font_face))(struct _cairo_scaled_font*,unsigned long,struct _cairo*,struct cairo_text_extents_t*);
      * }
      */
     public static MemorySegment cairo_user_font_face_get_render_glyph_func(MemorySegment font_face) {
@@ -295,12 +2705,28 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle cairo_user_font_face_get_text_to_glyphs_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1021.cairo_user_font_face_get_text_to_glyphs_func$MH,"cairo_user_font_face_get_text_to_glyphs_func");
+    public static MethodHandle cairo_user_font_face_get_render_color_glyph_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1714.const$3,"cairo_user_font_face_get_render_color_glyph_func");
     }
     /**
      * {@snippet :
-     * cairo_user_scaled_font_text_to_glyphs_func_t cairo_user_font_face_get_text_to_glyphs_func(cairo_font_face_t* font_face);
+     * enum _cairo_status (*cairo_user_font_face_get_render_color_glyph_func(struct _cairo_font_face* font_face))(struct _cairo_scaled_font*,unsigned long,struct _cairo*,struct cairo_text_extents_t*);
+     * }
+     */
+    public static MemorySegment cairo_user_font_face_get_render_color_glyph_func(MemorySegment font_face) {
+        var mh$ = cairo_user_font_face_get_render_color_glyph_func$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font_face);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_user_font_face_get_text_to_glyphs_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1714.const$5,"cairo_user_font_face_get_text_to_glyphs_func");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status (*cairo_user_font_face_get_text_to_glyphs_func(struct _cairo_font_face* font_face))(struct _cairo_scaled_font*,char*,int,struct cairo_glyph_t**,int*,struct cairo_text_cluster_t**,int*,enum _cairo_text_cluster_flags*);
      * }
      */
     public static MemorySegment cairo_user_font_face_get_text_to_glyphs_func(MemorySegment font_face) {
@@ -312,11 +2738,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_user_font_face_get_unicode_to_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1021.cairo_user_font_face_get_unicode_to_glyph_func$MH,"cairo_user_font_face_get_unicode_to_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1715.const$1,"cairo_user_font_face_get_unicode_to_glyph_func");
     }
     /**
      * {@snippet :
-     * cairo_user_scaled_font_unicode_to_glyph_func_t cairo_user_font_face_get_unicode_to_glyph_func(cairo_font_face_t* font_face);
+     * enum _cairo_status (*cairo_user_font_face_get_unicode_to_glyph_func(struct _cairo_font_face* font_face))(struct _cairo_scaled_font*,unsigned long,unsigned long*);
      * }
      */
     public static MemorySegment cairo_user_font_face_get_unicode_to_glyph_func(MemorySegment font_face) {
@@ -327,12 +2753,44 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle cairo_get_operator$MH() {
-        return RuntimeHelper.requireNonNull(constants$1022.cairo_get_operator$MH,"cairo_get_operator");
+    public static MethodHandle cairo_user_scaled_font_get_foreground_marker$MH() {
+        return RuntimeHelper.requireNonNull(constants$1715.const$2,"cairo_user_scaled_font_get_foreground_marker");
     }
     /**
      * {@snippet :
-     * cairo_operator_t cairo_get_operator(cairo_t* cr);
+     * struct _cairo_pattern* cairo_user_scaled_font_get_foreground_marker(struct _cairo_scaled_font* scaled_font);
+     * }
+     */
+    public static MemorySegment cairo_user_scaled_font_get_foreground_marker(MemorySegment scaled_font) {
+        var mh$ = cairo_user_scaled_font_get_foreground_marker$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(scaled_font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_user_scaled_font_get_foreground_source$MH() {
+        return RuntimeHelper.requireNonNull(constants$1715.const$3,"cairo_user_scaled_font_get_foreground_source");
+    }
+    /**
+     * {@snippet :
+     * struct _cairo_pattern* cairo_user_scaled_font_get_foreground_source(struct _cairo_scaled_font* scaled_font);
+     * }
+     */
+    public static MemorySegment cairo_user_scaled_font_get_foreground_source(MemorySegment scaled_font) {
+        var mh$ = cairo_user_scaled_font_get_foreground_source$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(scaled_font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_get_operator$MH() {
+        return RuntimeHelper.requireNonNull(constants$1715.const$4,"cairo_get_operator");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_operator cairo_get_operator(struct _cairo* cr);
      * }
      */
     public static int cairo_get_operator(MemorySegment cr) {
@@ -344,11 +2802,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_source$MH() {
-        return RuntimeHelper.requireNonNull(constants$1022.cairo_get_source$MH,"cairo_get_source");
+        return RuntimeHelper.requireNonNull(constants$1715.const$5,"cairo_get_source");
     }
     /**
      * {@snippet :
-     * cairo_pattern_t* cairo_get_source(cairo_t* cr);
+     * struct _cairo_pattern* cairo_get_source(struct _cairo* cr);
      * }
      */
     public static MemorySegment cairo_get_source(MemorySegment cr) {
@@ -360,11 +2818,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_tolerance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1022.cairo_get_tolerance$MH,"cairo_get_tolerance");
+        return RuntimeHelper.requireNonNull(constants$1716.const$0,"cairo_get_tolerance");
     }
     /**
      * {@snippet :
-     * double cairo_get_tolerance(cairo_t* cr);
+     * double cairo_get_tolerance(struct _cairo* cr);
      * }
      */
     public static double cairo_get_tolerance(MemorySegment cr) {
@@ -376,11 +2834,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_antialias$MH() {
-        return RuntimeHelper.requireNonNull(constants$1022.cairo_get_antialias$MH,"cairo_get_antialias");
+        return RuntimeHelper.requireNonNull(constants$1716.const$1,"cairo_get_antialias");
     }
     /**
      * {@snippet :
-     * cairo_antialias_t cairo_get_antialias(cairo_t* cr);
+     * enum _cairo_antialias cairo_get_antialias(struct _cairo* cr);
      * }
      */
     public static int cairo_get_antialias(MemorySegment cr) {
@@ -392,11 +2850,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_has_current_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1022.cairo_has_current_point$MH,"cairo_has_current_point");
+        return RuntimeHelper.requireNonNull(constants$1716.const$2,"cairo_has_current_point");
     }
     /**
      * {@snippet :
-     * cairo_bool_t cairo_has_current_point(cairo_t* cr);
+     * int cairo_has_current_point(struct _cairo* cr);
      * }
      */
     public static int cairo_has_current_point(MemorySegment cr) {
@@ -408,11 +2866,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_current_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1022.cairo_get_current_point$MH,"cairo_get_current_point");
+        return RuntimeHelper.requireNonNull(constants$1716.const$3,"cairo_get_current_point");
     }
     /**
      * {@snippet :
-     * void cairo_get_current_point(cairo_t* cr, double* x, double* y);
+     * void cairo_get_current_point(struct _cairo* cr, double* x, double* y);
      * }
      */
     public static void cairo_get_current_point(MemorySegment cr, MemorySegment x, MemorySegment y) {
@@ -424,11 +2882,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_fill_rule$MH() {
-        return RuntimeHelper.requireNonNull(constants$1023.cairo_get_fill_rule$MH,"cairo_get_fill_rule");
+        return RuntimeHelper.requireNonNull(constants$1716.const$4,"cairo_get_fill_rule");
     }
     /**
      * {@snippet :
-     * cairo_fill_rule_t cairo_get_fill_rule(cairo_t* cr);
+     * enum _cairo_fill_rule cairo_get_fill_rule(struct _cairo* cr);
      * }
      */
     public static int cairo_get_fill_rule(MemorySegment cr) {
@@ -440,11 +2898,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_line_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1023.cairo_get_line_width$MH,"cairo_get_line_width");
+        return RuntimeHelper.requireNonNull(constants$1716.const$5,"cairo_get_line_width");
     }
     /**
      * {@snippet :
-     * double cairo_get_line_width(cairo_t* cr);
+     * double cairo_get_line_width(struct _cairo* cr);
      * }
      */
     public static double cairo_get_line_width(MemorySegment cr) {
@@ -455,12 +2913,28 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle cairo_get_line_cap$MH() {
-        return RuntimeHelper.requireNonNull(constants$1023.cairo_get_line_cap$MH,"cairo_get_line_cap");
+    public static MethodHandle cairo_get_hairline$MH() {
+        return RuntimeHelper.requireNonNull(constants$1717.const$0,"cairo_get_hairline");
     }
     /**
      * {@snippet :
-     * cairo_line_cap_t cairo_get_line_cap(cairo_t* cr);
+     * int cairo_get_hairline(struct _cairo* cr);
+     * }
+     */
+    public static int cairo_get_hairline(MemorySegment cr) {
+        var mh$ = cairo_get_hairline$MH();
+        try {
+            return (int)mh$.invokeExact(cr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle cairo_get_line_cap$MH() {
+        return RuntimeHelper.requireNonNull(constants$1717.const$1,"cairo_get_line_cap");
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_line_cap cairo_get_line_cap(struct _cairo* cr);
      * }
      */
     public static int cairo_get_line_cap(MemorySegment cr) {
@@ -472,11 +2946,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_line_join$MH() {
-        return RuntimeHelper.requireNonNull(constants$1023.cairo_get_line_join$MH,"cairo_get_line_join");
+        return RuntimeHelper.requireNonNull(constants$1717.const$2,"cairo_get_line_join");
     }
     /**
      * {@snippet :
-     * cairo_line_join_t cairo_get_line_join(cairo_t* cr);
+     * enum _cairo_line_join cairo_get_line_join(struct _cairo* cr);
      * }
      */
     public static int cairo_get_line_join(MemorySegment cr) {
@@ -488,11 +2962,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_miter_limit$MH() {
-        return RuntimeHelper.requireNonNull(constants$1023.cairo_get_miter_limit$MH,"cairo_get_miter_limit");
+        return RuntimeHelper.requireNonNull(constants$1717.const$3,"cairo_get_miter_limit");
     }
     /**
      * {@snippet :
-     * double cairo_get_miter_limit(cairo_t* cr);
+     * double cairo_get_miter_limit(struct _cairo* cr);
      * }
      */
     public static double cairo_get_miter_limit(MemorySegment cr) {
@@ -504,11 +2978,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_dash_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1023.cairo_get_dash_count$MH,"cairo_get_dash_count");
+        return RuntimeHelper.requireNonNull(constants$1717.const$4,"cairo_get_dash_count");
     }
     /**
      * {@snippet :
-     * int cairo_get_dash_count(cairo_t* cr);
+     * int cairo_get_dash_count(struct _cairo* cr);
      * }
      */
     public static int cairo_get_dash_count(MemorySegment cr) {
@@ -520,11 +2994,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_dash$MH() {
-        return RuntimeHelper.requireNonNull(constants$1024.cairo_get_dash$MH,"cairo_get_dash");
+        return RuntimeHelper.requireNonNull(constants$1717.const$5,"cairo_get_dash");
     }
     /**
      * {@snippet :
-     * void cairo_get_dash(cairo_t* cr, double* dashes, double* offset);
+     * void cairo_get_dash(struct _cairo* cr, double* dashes, double* offset);
      * }
      */
     public static void cairo_get_dash(MemorySegment cr, MemorySegment dashes, MemorySegment offset) {
@@ -536,11 +3010,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1024.cairo_get_matrix$MH,"cairo_get_matrix");
+        return RuntimeHelper.requireNonNull(constants$1718.const$0,"cairo_get_matrix");
     }
     /**
      * {@snippet :
-     * void cairo_get_matrix(cairo_t* cr, cairo_matrix_t* matrix);
+     * void cairo_get_matrix(struct _cairo* cr, struct _cairo_matrix* matrix);
      * }
      */
     public static void cairo_get_matrix(MemorySegment cr, MemorySegment matrix) {
@@ -552,11 +3026,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_target$MH() {
-        return RuntimeHelper.requireNonNull(constants$1024.cairo_get_target$MH,"cairo_get_target");
+        return RuntimeHelper.requireNonNull(constants$1718.const$1,"cairo_get_target");
     }
     /**
      * {@snippet :
-     * cairo_surface_t* cairo_get_target(cairo_t* cr);
+     * struct _cairo_surface* cairo_get_target(struct _cairo* cr);
      * }
      */
     public static MemorySegment cairo_get_target(MemorySegment cr) {
@@ -568,11 +3042,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_get_group_target$MH() {
-        return RuntimeHelper.requireNonNull(constants$1024.cairo_get_group_target$MH,"cairo_get_group_target");
+        return RuntimeHelper.requireNonNull(constants$1718.const$2,"cairo_get_group_target");
     }
     /**
      * {@snippet :
-     * cairo_surface_t* cairo_get_group_target(cairo_t* cr);
+     * struct _cairo_surface* cairo_get_group_target(struct _cairo* cr);
      * }
      */
     public static MemorySegment cairo_get_group_target(MemorySegment cr) {
@@ -616,11 +3090,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)3L;
     }
     public static MethodHandle cairo_copy_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1024.cairo_copy_path$MH,"cairo_copy_path");
+        return RuntimeHelper.requireNonNull(constants$1720.const$2,"cairo_copy_path");
     }
     /**
      * {@snippet :
-     * cairo_path_t* cairo_copy_path(cairo_t* cr);
+     * struct cairo_path* cairo_copy_path(struct _cairo* cr);
      * }
      */
     public static MemorySegment cairo_copy_path(MemorySegment cr) {
@@ -632,11 +3106,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_copy_path_flat$MH() {
-        return RuntimeHelper.requireNonNull(constants$1024.cairo_copy_path_flat$MH,"cairo_copy_path_flat");
+        return RuntimeHelper.requireNonNull(constants$1720.const$3,"cairo_copy_path_flat");
     }
     /**
      * {@snippet :
-     * cairo_path_t* cairo_copy_path_flat(cairo_t* cr);
+     * struct cairo_path* cairo_copy_path_flat(struct _cairo* cr);
      * }
      */
     public static MemorySegment cairo_copy_path_flat(MemorySegment cr) {
@@ -648,11 +3122,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_append_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1025.cairo_append_path$MH,"cairo_append_path");
+        return RuntimeHelper.requireNonNull(constants$1720.const$4,"cairo_append_path");
     }
     /**
      * {@snippet :
-     * void cairo_append_path(cairo_t* cr, const cairo_path_t* path);
+     * void cairo_append_path(struct _cairo* cr, struct cairo_path* path);
      * }
      */
     public static void cairo_append_path(MemorySegment cr, MemorySegment path) {
@@ -664,11 +3138,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_path_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1025.cairo_path_destroy$MH,"cairo_path_destroy");
+        return RuntimeHelper.requireNonNull(constants$1720.const$5,"cairo_path_destroy");
     }
     /**
      * {@snippet :
-     * void cairo_path_destroy(cairo_path_t* path);
+     * void cairo_path_destroy(struct cairo_path* path);
      * }
      */
     public static void cairo_path_destroy(MemorySegment path) {
@@ -680,11 +3154,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1025.cairo_status$MH,"cairo_status");
+        return RuntimeHelper.requireNonNull(constants$1721.const$0,"cairo_status");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_status(cairo_t* cr);
+     * enum _cairo_status cairo_status(struct _cairo* cr);
      * }
      */
     public static int cairo_status(MemorySegment cr) {
@@ -696,11 +3170,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_status_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1025.cairo_status_to_string$MH,"cairo_status_to_string");
+        return RuntimeHelper.requireNonNull(constants$1721.const$1,"cairo_status_to_string");
     }
     /**
      * {@snippet :
-     * char* cairo_status_to_string(cairo_status_t status);
+     * char* cairo_status_to_string(enum _cairo_status status);
      * }
      */
     public static MemorySegment cairo_status_to_string(int status) {
@@ -712,11 +3186,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1025.cairo_device_reference$MH,"cairo_device_reference");
+        return RuntimeHelper.requireNonNull(constants$1721.const$2,"cairo_device_reference");
     }
     /**
      * {@snippet :
-     * cairo_device_t* cairo_device_reference(cairo_device_t* device);
+     * struct _cairo_device* cairo_device_reference(struct _cairo_device* device);
      * }
      */
     public static MemorySegment cairo_device_reference(MemorySegment device) {
@@ -800,11 +3274,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)-1L;
     }
     public static MethodHandle cairo_device_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1025.cairo_device_get_type$MH,"cairo_device_get_type");
+        return RuntimeHelper.requireNonNull(constants$1721.const$3,"cairo_device_get_type");
     }
     /**
      * {@snippet :
-     * cairo_device_type_t cairo_device_get_type(cairo_device_t* device);
+     * enum _cairo_device_type cairo_device_get_type(struct _cairo_device* device);
      * }
      */
     public static int cairo_device_get_type(MemorySegment device) {
@@ -816,11 +3290,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1026.cairo_device_status$MH,"cairo_device_status");
+        return RuntimeHelper.requireNonNull(constants$1721.const$4,"cairo_device_status");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_device_status(cairo_device_t* device);
+     * enum _cairo_status cairo_device_status(struct _cairo_device* device);
      * }
      */
     public static int cairo_device_status(MemorySegment device) {
@@ -832,11 +3306,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_acquire$MH() {
-        return RuntimeHelper.requireNonNull(constants$1026.cairo_device_acquire$MH,"cairo_device_acquire");
+        return RuntimeHelper.requireNonNull(constants$1721.const$5,"cairo_device_acquire");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_device_acquire(cairo_device_t* device);
+     * enum _cairo_status cairo_device_acquire(struct _cairo_device* device);
      * }
      */
     public static int cairo_device_acquire(MemorySegment device) {
@@ -848,11 +3322,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_release$MH() {
-        return RuntimeHelper.requireNonNull(constants$1026.cairo_device_release$MH,"cairo_device_release");
+        return RuntimeHelper.requireNonNull(constants$1722.const$0,"cairo_device_release");
     }
     /**
      * {@snippet :
-     * void cairo_device_release(cairo_device_t* device);
+     * void cairo_device_release(struct _cairo_device* device);
      * }
      */
     public static void cairo_device_release(MemorySegment device) {
@@ -864,11 +3338,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_flush$MH() {
-        return RuntimeHelper.requireNonNull(constants$1026.cairo_device_flush$MH,"cairo_device_flush");
+        return RuntimeHelper.requireNonNull(constants$1722.const$1,"cairo_device_flush");
     }
     /**
      * {@snippet :
-     * void cairo_device_flush(cairo_device_t* device);
+     * void cairo_device_flush(struct _cairo_device* device);
      * }
      */
     public static void cairo_device_flush(MemorySegment device) {
@@ -880,11 +3354,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$1026.cairo_device_finish$MH,"cairo_device_finish");
+        return RuntimeHelper.requireNonNull(constants$1722.const$2,"cairo_device_finish");
     }
     /**
      * {@snippet :
-     * void cairo_device_finish(cairo_device_t* device);
+     * void cairo_device_finish(struct _cairo_device* device);
      * }
      */
     public static void cairo_device_finish(MemorySegment device) {
@@ -896,11 +3370,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1026.cairo_device_destroy$MH,"cairo_device_destroy");
+        return RuntimeHelper.requireNonNull(constants$1722.const$3,"cairo_device_destroy");
     }
     /**
      * {@snippet :
-     * void cairo_device_destroy(cairo_device_t* device);
+     * void cairo_device_destroy(struct _cairo_device* device);
      * }
      */
     public static void cairo_device_destroy(MemorySegment device) {
@@ -912,11 +3386,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_get_reference_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1027.cairo_device_get_reference_count$MH,"cairo_device_get_reference_count");
+        return RuntimeHelper.requireNonNull(constants$1722.const$4,"cairo_device_get_reference_count");
     }
     /**
      * {@snippet :
-     * unsigned int cairo_device_get_reference_count(cairo_device_t* device);
+     * unsigned int cairo_device_get_reference_count(struct _cairo_device* device);
      * }
      */
     public static int cairo_device_get_reference_count(MemorySegment device) {
@@ -928,11 +3402,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1027.cairo_device_get_user_data$MH,"cairo_device_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1722.const$5,"cairo_device_get_user_data");
     }
     /**
      * {@snippet :
-     * void* cairo_device_get_user_data(cairo_device_t* device, const cairo_user_data_key_t* key);
+     * void* cairo_device_get_user_data(struct _cairo_device* device, struct _cairo_user_data_key* key);
      * }
      */
     public static MemorySegment cairo_device_get_user_data(MemorySegment device, MemorySegment key) {
@@ -944,11 +3418,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1027.cairo_device_set_user_data$MH,"cairo_device_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1723.const$1,"cairo_device_set_user_data");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_device_set_user_data(cairo_device_t* device, const cairo_user_data_key_t* key, void* user_data, cairo_destroy_func_t destroy);
+     * enum _cairo_status cairo_device_set_user_data(struct _cairo_device* device, struct _cairo_user_data_key* key, void* user_data, void (*destroy)(void*));
      * }
      */
     public static int cairo_device_set_user_data(MemorySegment device, MemorySegment key, MemorySegment user_data, MemorySegment destroy) {
@@ -960,11 +3434,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_create_similar$MH() {
-        return RuntimeHelper.requireNonNull(constants$1027.cairo_surface_create_similar$MH,"cairo_surface_create_similar");
+        return RuntimeHelper.requireNonNull(constants$1723.const$3,"cairo_surface_create_similar");
     }
     /**
      * {@snippet :
-     * cairo_surface_t* cairo_surface_create_similar(cairo_surface_t* other, cairo_content_t content, int width, int height);
+     * struct _cairo_surface* cairo_surface_create_similar(struct _cairo_surface* other, enum _cairo_content content, int width, int height);
      * }
      */
     public static MemorySegment cairo_surface_create_similar(MemorySegment other, int content, int width, int height) {
@@ -976,11 +3450,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_create_similar_image$MH() {
-        return RuntimeHelper.requireNonNull(constants$1027.cairo_surface_create_similar_image$MH,"cairo_surface_create_similar_image");
+        return RuntimeHelper.requireNonNull(constants$1723.const$4,"cairo_surface_create_similar_image");
     }
     /**
      * {@snippet :
-     * cairo_surface_t* cairo_surface_create_similar_image(cairo_surface_t* other, cairo_format_t format, int width, int height);
+     * struct _cairo_surface* cairo_surface_create_similar_image(struct _cairo_surface* other, enum _cairo_format format, int width, int height);
      * }
      */
     public static MemorySegment cairo_surface_create_similar_image(MemorySegment other, int format, int width, int height) {
@@ -992,11 +3466,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_map_to_image$MH() {
-        return RuntimeHelper.requireNonNull(constants$1027.cairo_surface_map_to_image$MH,"cairo_surface_map_to_image");
+        return RuntimeHelper.requireNonNull(constants$1723.const$5,"cairo_surface_map_to_image");
     }
     /**
      * {@snippet :
-     * cairo_surface_t* cairo_surface_map_to_image(cairo_surface_t* surface, const cairo_rectangle_int_t* extents);
+     * struct _cairo_surface* cairo_surface_map_to_image(struct _cairo_surface* surface, struct _cairo_rectangle_int* extents);
      * }
      */
     public static MemorySegment cairo_surface_map_to_image(MemorySegment surface, MemorySegment extents) {
@@ -1008,11 +3482,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_unmap_image$MH() {
-        return RuntimeHelper.requireNonNull(constants$1028.cairo_surface_unmap_image$MH,"cairo_surface_unmap_image");
+        return RuntimeHelper.requireNonNull(constants$1724.const$0,"cairo_surface_unmap_image");
     }
     /**
      * {@snippet :
-     * void cairo_surface_unmap_image(cairo_surface_t* surface, cairo_surface_t* image);
+     * void cairo_surface_unmap_image(struct _cairo_surface* surface, struct _cairo_surface* image);
      * }
      */
     public static void cairo_surface_unmap_image(MemorySegment surface, MemorySegment image) {
@@ -1024,11 +3498,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_create_for_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1028.cairo_surface_create_for_rectangle$MH,"cairo_surface_create_for_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1724.const$2,"cairo_surface_create_for_rectangle");
     }
     /**
      * {@snippet :
-     * cairo_surface_t* cairo_surface_create_for_rectangle(cairo_surface_t* target, double x, double y, double width, double height);
+     * struct _cairo_surface* cairo_surface_create_for_rectangle(struct _cairo_surface* target, double x, double y, double width, double height);
      * }
      */
     public static MemorySegment cairo_surface_create_for_rectangle(MemorySegment target, double x, double y, double width, double height) {
@@ -1041,7 +3515,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .CAIRO_SURFACE_OBSERVER_NORMAL = 0;
+     * enum cairo_surface_observer_mode_t.CAIRO_SURFACE_OBSERVER_NORMAL = 0;
      * }
      */
     public static int CAIRO_SURFACE_OBSERVER_NORMAL() {
@@ -1049,18 +3523,18 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .CAIRO_SURFACE_OBSERVER_RECORD_OPERATIONS = 1;
+     * enum cairo_surface_observer_mode_t.CAIRO_SURFACE_OBSERVER_RECORD_OPERATIONS = 1;
      * }
      */
     public static int CAIRO_SURFACE_OBSERVER_RECORD_OPERATIONS() {
         return (int)1L;
     }
     public static MethodHandle cairo_surface_create_observer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1028.cairo_surface_create_observer$MH,"cairo_surface_create_observer");
+        return RuntimeHelper.requireNonNull(constants$1724.const$3,"cairo_surface_create_observer");
     }
     /**
      * {@snippet :
-     * cairo_surface_t* cairo_surface_create_observer(cairo_surface_t* target, cairo_surface_observer_mode_t mode);
+     * struct _cairo_surface* cairo_surface_create_observer(struct _cairo_surface* target, enum cairo_surface_observer_mode_t mode);
      * }
      */
     public static MemorySegment cairo_surface_create_observer(MemorySegment target, int mode) {
@@ -1072,11 +3546,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_add_paint_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$1028.cairo_surface_observer_add_paint_callback$MH,"cairo_surface_observer_add_paint_callback");
+        return RuntimeHelper.requireNonNull(constants$1725.const$0,"cairo_surface_observer_add_paint_callback");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_surface_observer_add_paint_callback(cairo_surface_t* abstract_surface, cairo_surface_observer_callback_t func, void* data);
+     * enum _cairo_status cairo_surface_observer_add_paint_callback(struct _cairo_surface* abstract_surface, void (*func)(struct _cairo_surface*,struct _cairo_surface*,void*), void* data);
      * }
      */
     public static int cairo_surface_observer_add_paint_callback(MemorySegment abstract_surface, MemorySegment func, MemorySegment data) {
@@ -1088,11 +3562,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_add_mask_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$1029.cairo_surface_observer_add_mask_callback$MH,"cairo_surface_observer_add_mask_callback");
+        return RuntimeHelper.requireNonNull(constants$1725.const$2,"cairo_surface_observer_add_mask_callback");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_surface_observer_add_mask_callback(cairo_surface_t* abstract_surface, cairo_surface_observer_callback_t func, void* data);
+     * enum _cairo_status cairo_surface_observer_add_mask_callback(struct _cairo_surface* abstract_surface, void (*func)(struct _cairo_surface*,struct _cairo_surface*,void*), void* data);
      * }
      */
     public static int cairo_surface_observer_add_mask_callback(MemorySegment abstract_surface, MemorySegment func, MemorySegment data) {
@@ -1104,11 +3578,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_add_fill_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$1029.cairo_surface_observer_add_fill_callback$MH,"cairo_surface_observer_add_fill_callback");
+        return RuntimeHelper.requireNonNull(constants$1725.const$4,"cairo_surface_observer_add_fill_callback");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_surface_observer_add_fill_callback(cairo_surface_t* abstract_surface, cairo_surface_observer_callback_t func, void* data);
+     * enum _cairo_status cairo_surface_observer_add_fill_callback(struct _cairo_surface* abstract_surface, void (*func)(struct _cairo_surface*,struct _cairo_surface*,void*), void* data);
      * }
      */
     public static int cairo_surface_observer_add_fill_callback(MemorySegment abstract_surface, MemorySegment func, MemorySegment data) {
@@ -1120,11 +3594,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_add_stroke_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$1029.cairo_surface_observer_add_stroke_callback$MH,"cairo_surface_observer_add_stroke_callback");
+        return RuntimeHelper.requireNonNull(constants$1726.const$0,"cairo_surface_observer_add_stroke_callback");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_surface_observer_add_stroke_callback(cairo_surface_t* abstract_surface, cairo_surface_observer_callback_t func, void* data);
+     * enum _cairo_status cairo_surface_observer_add_stroke_callback(struct _cairo_surface* abstract_surface, void (*func)(struct _cairo_surface*,struct _cairo_surface*,void*), void* data);
      * }
      */
     public static int cairo_surface_observer_add_stroke_callback(MemorySegment abstract_surface, MemorySegment func, MemorySegment data) {
@@ -1136,11 +3610,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_add_glyphs_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$1029.cairo_surface_observer_add_glyphs_callback$MH,"cairo_surface_observer_add_glyphs_callback");
+        return RuntimeHelper.requireNonNull(constants$1726.const$2,"cairo_surface_observer_add_glyphs_callback");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_surface_observer_add_glyphs_callback(cairo_surface_t* abstract_surface, cairo_surface_observer_callback_t func, void* data);
+     * enum _cairo_status cairo_surface_observer_add_glyphs_callback(struct _cairo_surface* abstract_surface, void (*func)(struct _cairo_surface*,struct _cairo_surface*,void*), void* data);
      * }
      */
     public static int cairo_surface_observer_add_glyphs_callback(MemorySegment abstract_surface, MemorySegment func, MemorySegment data) {
@@ -1152,11 +3626,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_add_flush_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$1029.cairo_surface_observer_add_flush_callback$MH,"cairo_surface_observer_add_flush_callback");
+        return RuntimeHelper.requireNonNull(constants$1726.const$4,"cairo_surface_observer_add_flush_callback");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_surface_observer_add_flush_callback(cairo_surface_t* abstract_surface, cairo_surface_observer_callback_t func, void* data);
+     * enum _cairo_status cairo_surface_observer_add_flush_callback(struct _cairo_surface* abstract_surface, void (*func)(struct _cairo_surface*,struct _cairo_surface*,void*), void* data);
      * }
      */
     public static int cairo_surface_observer_add_flush_callback(MemorySegment abstract_surface, MemorySegment func, MemorySegment data) {
@@ -1168,11 +3642,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_add_finish_callback$MH() {
-        return RuntimeHelper.requireNonNull(constants$1029.cairo_surface_observer_add_finish_callback$MH,"cairo_surface_observer_add_finish_callback");
+        return RuntimeHelper.requireNonNull(constants$1727.const$0,"cairo_surface_observer_add_finish_callback");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_surface_observer_add_finish_callback(cairo_surface_t* abstract_surface, cairo_surface_observer_callback_t func, void* data);
+     * enum _cairo_status cairo_surface_observer_add_finish_callback(struct _cairo_surface* abstract_surface, void (*func)(struct _cairo_surface*,struct _cairo_surface*,void*), void* data);
      * }
      */
     public static int cairo_surface_observer_add_finish_callback(MemorySegment abstract_surface, MemorySegment func, MemorySegment data) {
@@ -1184,11 +3658,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_print$MH() {
-        return RuntimeHelper.requireNonNull(constants$1030.cairo_surface_observer_print$MH,"cairo_surface_observer_print");
+        return RuntimeHelper.requireNonNull(constants$1727.const$2,"cairo_surface_observer_print");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_surface_observer_print(cairo_surface_t* surface, cairo_write_func_t write_func, void* closure);
+     * enum _cairo_status cairo_surface_observer_print(struct _cairo_surface* surface, enum _cairo_status (*write_func)(void*,unsigned char*,unsigned int), void* closure);
      * }
      */
     public static int cairo_surface_observer_print(MemorySegment surface, MemorySegment write_func, MemorySegment closure) {
@@ -1200,11 +3674,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_observer_elapsed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1030.cairo_surface_observer_elapsed$MH,"cairo_surface_observer_elapsed");
+        return RuntimeHelper.requireNonNull(constants$1727.const$3,"cairo_surface_observer_elapsed");
     }
     /**
      * {@snippet :
-     * double cairo_surface_observer_elapsed(cairo_surface_t* surface);
+     * double cairo_surface_observer_elapsed(struct _cairo_surface* surface);
      * }
      */
     public static double cairo_surface_observer_elapsed(MemorySegment surface) {
@@ -1216,11 +3690,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_observer_print$MH() {
-        return RuntimeHelper.requireNonNull(constants$1030.cairo_device_observer_print$MH,"cairo_device_observer_print");
+        return RuntimeHelper.requireNonNull(constants$1727.const$5,"cairo_device_observer_print");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_device_observer_print(cairo_device_t* device, cairo_write_func_t write_func, void* closure);
+     * enum _cairo_status cairo_device_observer_print(struct _cairo_device* device, enum _cairo_status (*write_func)(void*,unsigned char*,unsigned int), void* closure);
      * }
      */
     public static int cairo_device_observer_print(MemorySegment device, MemorySegment write_func, MemorySegment closure) {
@@ -1232,11 +3706,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_observer_elapsed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1030.cairo_device_observer_elapsed$MH,"cairo_device_observer_elapsed");
+        return RuntimeHelper.requireNonNull(constants$1728.const$0,"cairo_device_observer_elapsed");
     }
     /**
      * {@snippet :
-     * double cairo_device_observer_elapsed(cairo_device_t* device);
+     * double cairo_device_observer_elapsed(struct _cairo_device* device);
      * }
      */
     public static double cairo_device_observer_elapsed(MemorySegment device) {
@@ -1248,11 +3722,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_observer_paint_elapsed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1030.cairo_device_observer_paint_elapsed$MH,"cairo_device_observer_paint_elapsed");
+        return RuntimeHelper.requireNonNull(constants$1728.const$1,"cairo_device_observer_paint_elapsed");
     }
     /**
      * {@snippet :
-     * double cairo_device_observer_paint_elapsed(cairo_device_t* device);
+     * double cairo_device_observer_paint_elapsed(struct _cairo_device* device);
      * }
      */
     public static double cairo_device_observer_paint_elapsed(MemorySegment device) {
@@ -1264,11 +3738,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_observer_mask_elapsed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1030.cairo_device_observer_mask_elapsed$MH,"cairo_device_observer_mask_elapsed");
+        return RuntimeHelper.requireNonNull(constants$1728.const$2,"cairo_device_observer_mask_elapsed");
     }
     /**
      * {@snippet :
-     * double cairo_device_observer_mask_elapsed(cairo_device_t* device);
+     * double cairo_device_observer_mask_elapsed(struct _cairo_device* device);
      * }
      */
     public static double cairo_device_observer_mask_elapsed(MemorySegment device) {
@@ -1280,11 +3754,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_observer_fill_elapsed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1031.cairo_device_observer_fill_elapsed$MH,"cairo_device_observer_fill_elapsed");
+        return RuntimeHelper.requireNonNull(constants$1728.const$3,"cairo_device_observer_fill_elapsed");
     }
     /**
      * {@snippet :
-     * double cairo_device_observer_fill_elapsed(cairo_device_t* device);
+     * double cairo_device_observer_fill_elapsed(struct _cairo_device* device);
      * }
      */
     public static double cairo_device_observer_fill_elapsed(MemorySegment device) {
@@ -1296,11 +3770,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_observer_stroke_elapsed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1031.cairo_device_observer_stroke_elapsed$MH,"cairo_device_observer_stroke_elapsed");
+        return RuntimeHelper.requireNonNull(constants$1728.const$4,"cairo_device_observer_stroke_elapsed");
     }
     /**
      * {@snippet :
-     * double cairo_device_observer_stroke_elapsed(cairo_device_t* device);
+     * double cairo_device_observer_stroke_elapsed(struct _cairo_device* device);
      * }
      */
     public static double cairo_device_observer_stroke_elapsed(MemorySegment device) {
@@ -1312,11 +3786,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_device_observer_glyphs_elapsed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1031.cairo_device_observer_glyphs_elapsed$MH,"cairo_device_observer_glyphs_elapsed");
+        return RuntimeHelper.requireNonNull(constants$1728.const$5,"cairo_device_observer_glyphs_elapsed");
     }
     /**
      * {@snippet :
-     * double cairo_device_observer_glyphs_elapsed(cairo_device_t* device);
+     * double cairo_device_observer_glyphs_elapsed(struct _cairo_device* device);
      * }
      */
     public static double cairo_device_observer_glyphs_elapsed(MemorySegment device) {
@@ -1328,11 +3802,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1031.cairo_surface_reference$MH,"cairo_surface_reference");
+        return RuntimeHelper.requireNonNull(constants$1729.const$0,"cairo_surface_reference");
     }
     /**
      * {@snippet :
-     * cairo_surface_t* cairo_surface_reference(cairo_surface_t* surface);
+     * struct _cairo_surface* cairo_surface_reference(struct _cairo_surface* surface);
      * }
      */
     public static MemorySegment cairo_surface_reference(MemorySegment surface) {
@@ -1344,11 +3818,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$1031.cairo_surface_finish$MH,"cairo_surface_finish");
+        return RuntimeHelper.requireNonNull(constants$1729.const$1,"cairo_surface_finish");
     }
     /**
      * {@snippet :
-     * void cairo_surface_finish(cairo_surface_t* surface);
+     * void cairo_surface_finish(struct _cairo_surface* surface);
      * }
      */
     public static void cairo_surface_finish(MemorySegment surface) {
@@ -1360,11 +3834,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1031.cairo_surface_destroy$MH,"cairo_surface_destroy");
+        return RuntimeHelper.requireNonNull(constants$1729.const$2,"cairo_surface_destroy");
     }
     /**
      * {@snippet :
-     * void cairo_surface_destroy(cairo_surface_t* surface);
+     * void cairo_surface_destroy(struct _cairo_surface* surface);
      * }
      */
     public static void cairo_surface_destroy(MemorySegment surface) {
@@ -1376,11 +3850,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1032.cairo_surface_get_device$MH,"cairo_surface_get_device");
+        return RuntimeHelper.requireNonNull(constants$1729.const$3,"cairo_surface_get_device");
     }
     /**
      * {@snippet :
-     * cairo_device_t* cairo_surface_get_device(cairo_surface_t* surface);
+     * struct _cairo_device* cairo_surface_get_device(struct _cairo_surface* surface);
      * }
      */
     public static MemorySegment cairo_surface_get_device(MemorySegment surface) {
@@ -1392,11 +3866,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_reference_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1032.cairo_surface_get_reference_count$MH,"cairo_surface_get_reference_count");
+        return RuntimeHelper.requireNonNull(constants$1729.const$4,"cairo_surface_get_reference_count");
     }
     /**
      * {@snippet :
-     * unsigned int cairo_surface_get_reference_count(cairo_surface_t* surface);
+     * unsigned int cairo_surface_get_reference_count(struct _cairo_surface* surface);
      * }
      */
     public static int cairo_surface_get_reference_count(MemorySegment surface) {
@@ -1408,11 +3882,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1032.cairo_surface_status$MH,"cairo_surface_status");
+        return RuntimeHelper.requireNonNull(constants$1729.const$5,"cairo_surface_status");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_surface_status(cairo_surface_t* surface);
+     * enum _cairo_status cairo_surface_status(struct _cairo_surface* surface);
      * }
      */
     public static int cairo_surface_status(MemorySegment surface) {
@@ -1624,11 +4098,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)24L;
     }
     public static MethodHandle cairo_surface_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1032.cairo_surface_get_type$MH,"cairo_surface_get_type");
+        return RuntimeHelper.requireNonNull(constants$1730.const$0,"cairo_surface_get_type");
     }
     /**
      * {@snippet :
-     * cairo_surface_type_t cairo_surface_get_type(cairo_surface_t* surface);
+     * enum _cairo_surface_type cairo_surface_get_type(struct _cairo_surface* surface);
      * }
      */
     public static int cairo_surface_get_type(MemorySegment surface) {
@@ -1640,11 +4114,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_content$MH() {
-        return RuntimeHelper.requireNonNull(constants$1032.cairo_surface_get_content$MH,"cairo_surface_get_content");
+        return RuntimeHelper.requireNonNull(constants$1730.const$1,"cairo_surface_get_content");
     }
     /**
      * {@snippet :
-     * cairo_content_t cairo_surface_get_content(cairo_surface_t* surface);
+     * enum _cairo_content cairo_surface_get_content(struct _cairo_surface* surface);
      * }
      */
     public static int cairo_surface_get_content(MemorySegment surface) {
@@ -1656,11 +4130,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_write_to_png$MH() {
-        return RuntimeHelper.requireNonNull(constants$1032.cairo_surface_write_to_png$MH,"cairo_surface_write_to_png");
+        return RuntimeHelper.requireNonNull(constants$1730.const$2,"cairo_surface_write_to_png");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_surface_write_to_png(cairo_surface_t* surface, char* filename);
+     * enum _cairo_status cairo_surface_write_to_png(struct _cairo_surface* surface, char* filename);
      * }
      */
     public static int cairo_surface_write_to_png(MemorySegment surface, MemorySegment filename) {
@@ -1672,11 +4146,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_write_to_png_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$1033.cairo_surface_write_to_png_stream$MH,"cairo_surface_write_to_png_stream");
+        return RuntimeHelper.requireNonNull(constants$1730.const$4,"cairo_surface_write_to_png_stream");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_surface_write_to_png_stream(cairo_surface_t* surface, cairo_write_func_t write_func, void* closure);
+     * enum _cairo_status cairo_surface_write_to_png_stream(struct _cairo_surface* surface, enum _cairo_status (*write_func)(void*,unsigned char*,unsigned int), void* closure);
      * }
      */
     public static int cairo_surface_write_to_png_stream(MemorySegment surface, MemorySegment write_func, MemorySegment closure) {
@@ -1688,11 +4162,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1033.cairo_surface_get_user_data$MH,"cairo_surface_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1730.const$5,"cairo_surface_get_user_data");
     }
     /**
      * {@snippet :
-     * void* cairo_surface_get_user_data(cairo_surface_t* surface, const cairo_user_data_key_t* key);
+     * void* cairo_surface_get_user_data(struct _cairo_surface* surface, struct _cairo_user_data_key* key);
      * }
      */
     public static MemorySegment cairo_surface_get_user_data(MemorySegment surface, MemorySegment key) {
@@ -1704,11 +4178,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1033.cairo_surface_set_user_data$MH,"cairo_surface_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1731.const$1,"cairo_surface_set_user_data");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_surface_set_user_data(cairo_surface_t* surface, const cairo_user_data_key_t* key, void* user_data, cairo_destroy_func_t destroy);
+     * enum _cairo_status cairo_surface_set_user_data(struct _cairo_surface* surface, struct _cairo_user_data_key* key, void* user_data, void (*destroy)(void*));
      * }
      */
     public static int cairo_surface_set_user_data(MemorySegment surface, MemorySegment key, MemorySegment user_data, MemorySegment destroy) {
@@ -1720,11 +4194,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_mime_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1033.cairo_surface_get_mime_data$MH,"cairo_surface_get_mime_data");
+        return RuntimeHelper.requireNonNull(constants$1731.const$2,"cairo_surface_get_mime_data");
     }
     /**
      * {@snippet :
-     * void cairo_surface_get_mime_data(cairo_surface_t* surface, char* mime_type, unsigned char** data, unsigned long* length);
+     * void cairo_surface_get_mime_data(struct _cairo_surface* surface, char* mime_type, unsigned char** data, unsigned long* length);
      * }
      */
     public static void cairo_surface_get_mime_data(MemorySegment surface, MemorySegment mime_type, MemorySegment data, MemorySegment length) {
@@ -1736,11 +4210,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_set_mime_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1033.cairo_surface_set_mime_data$MH,"cairo_surface_set_mime_data");
+        return RuntimeHelper.requireNonNull(constants$1731.const$5,"cairo_surface_set_mime_data");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_surface_set_mime_data(cairo_surface_t* surface, char* mime_type, unsigned char* data, unsigned long length, cairo_destroy_func_t destroy, void* closure);
+     * enum _cairo_status cairo_surface_set_mime_data(struct _cairo_surface* surface, char* mime_type, unsigned char* data, unsigned long length, void (*destroy)(void*), void* closure);
      * }
      */
     public static int cairo_surface_set_mime_data(MemorySegment surface, MemorySegment mime_type, MemorySegment data, long length, MemorySegment destroy, MemorySegment closure) {
@@ -1752,11 +4226,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_supports_mime_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1033.cairo_surface_supports_mime_type$MH,"cairo_surface_supports_mime_type");
+        return RuntimeHelper.requireNonNull(constants$1732.const$0,"cairo_surface_supports_mime_type");
     }
     /**
      * {@snippet :
-     * cairo_bool_t cairo_surface_supports_mime_type(cairo_surface_t* surface, char* mime_type);
+     * int cairo_surface_supports_mime_type(struct _cairo_surface* surface, char* mime_type);
      * }
      */
     public static int cairo_surface_supports_mime_type(MemorySegment surface, MemorySegment mime_type) {
@@ -1768,11 +4242,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_font_options$MH() {
-        return RuntimeHelper.requireNonNull(constants$1034.cairo_surface_get_font_options$MH,"cairo_surface_get_font_options");
+        return RuntimeHelper.requireNonNull(constants$1732.const$1,"cairo_surface_get_font_options");
     }
     /**
      * {@snippet :
-     * void cairo_surface_get_font_options(cairo_surface_t* surface, cairo_font_options_t* options);
+     * void cairo_surface_get_font_options(struct _cairo_surface* surface, struct _cairo_font_options* options);
      * }
      */
     public static void cairo_surface_get_font_options(MemorySegment surface, MemorySegment options) {
@@ -1784,11 +4258,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_flush$MH() {
-        return RuntimeHelper.requireNonNull(constants$1034.cairo_surface_flush$MH,"cairo_surface_flush");
+        return RuntimeHelper.requireNonNull(constants$1732.const$2,"cairo_surface_flush");
     }
     /**
      * {@snippet :
-     * void cairo_surface_flush(cairo_surface_t* surface);
+     * void cairo_surface_flush(struct _cairo_surface* surface);
      * }
      */
     public static void cairo_surface_flush(MemorySegment surface) {
@@ -1800,11 +4274,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_mark_dirty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1034.cairo_surface_mark_dirty$MH,"cairo_surface_mark_dirty");
+        return RuntimeHelper.requireNonNull(constants$1732.const$3,"cairo_surface_mark_dirty");
     }
     /**
      * {@snippet :
-     * void cairo_surface_mark_dirty(cairo_surface_t* surface);
+     * void cairo_surface_mark_dirty(struct _cairo_surface* surface);
      * }
      */
     public static void cairo_surface_mark_dirty(MemorySegment surface) {
@@ -1816,11 +4290,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_mark_dirty_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1034.cairo_surface_mark_dirty_rectangle$MH,"cairo_surface_mark_dirty_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1732.const$4,"cairo_surface_mark_dirty_rectangle");
     }
     /**
      * {@snippet :
-     * void cairo_surface_mark_dirty_rectangle(cairo_surface_t* surface, int x, int y, int width, int height);
+     * void cairo_surface_mark_dirty_rectangle(struct _cairo_surface* surface, int x, int y, int width, int height);
      * }
      */
     public static void cairo_surface_mark_dirty_rectangle(MemorySegment surface, int x, int y, int width, int height) {
@@ -1832,11 +4306,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_set_device_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$1034.cairo_surface_set_device_scale$MH,"cairo_surface_set_device_scale");
+        return RuntimeHelper.requireNonNull(constants$1732.const$5,"cairo_surface_set_device_scale");
     }
     /**
      * {@snippet :
-     * void cairo_surface_set_device_scale(cairo_surface_t* surface, double x_scale, double y_scale);
+     * void cairo_surface_set_device_scale(struct _cairo_surface* surface, double x_scale, double y_scale);
      * }
      */
     public static void cairo_surface_set_device_scale(MemorySegment surface, double x_scale, double y_scale) {
@@ -1848,11 +4322,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_device_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$1034.cairo_surface_get_device_scale$MH,"cairo_surface_get_device_scale");
+        return RuntimeHelper.requireNonNull(constants$1733.const$0,"cairo_surface_get_device_scale");
     }
     /**
      * {@snippet :
-     * void cairo_surface_get_device_scale(cairo_surface_t* surface, double* x_scale, double* y_scale);
+     * void cairo_surface_get_device_scale(struct _cairo_surface* surface, double* x_scale, double* y_scale);
      * }
      */
     public static void cairo_surface_get_device_scale(MemorySegment surface, MemorySegment x_scale, MemorySegment y_scale) {
@@ -1864,11 +4338,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_set_device_offset$MH() {
-        return RuntimeHelper.requireNonNull(constants$1035.cairo_surface_set_device_offset$MH,"cairo_surface_set_device_offset");
+        return RuntimeHelper.requireNonNull(constants$1733.const$1,"cairo_surface_set_device_offset");
     }
     /**
      * {@snippet :
-     * void cairo_surface_set_device_offset(cairo_surface_t* surface, double x_offset, double y_offset);
+     * void cairo_surface_set_device_offset(struct _cairo_surface* surface, double x_offset, double y_offset);
      * }
      */
     public static void cairo_surface_set_device_offset(MemorySegment surface, double x_offset, double y_offset) {
@@ -1880,11 +4354,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_device_offset$MH() {
-        return RuntimeHelper.requireNonNull(constants$1035.cairo_surface_get_device_offset$MH,"cairo_surface_get_device_offset");
+        return RuntimeHelper.requireNonNull(constants$1733.const$2,"cairo_surface_get_device_offset");
     }
     /**
      * {@snippet :
-     * void cairo_surface_get_device_offset(cairo_surface_t* surface, double* x_offset, double* y_offset);
+     * void cairo_surface_get_device_offset(struct _cairo_surface* surface, double* x_offset, double* y_offset);
      * }
      */
     public static void cairo_surface_get_device_offset(MemorySegment surface, MemorySegment x_offset, MemorySegment y_offset) {
@@ -1896,11 +4370,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_set_fallback_resolution$MH() {
-        return RuntimeHelper.requireNonNull(constants$1035.cairo_surface_set_fallback_resolution$MH,"cairo_surface_set_fallback_resolution");
+        return RuntimeHelper.requireNonNull(constants$1733.const$3,"cairo_surface_set_fallback_resolution");
     }
     /**
      * {@snippet :
-     * void cairo_surface_set_fallback_resolution(cairo_surface_t* surface, double x_pixels_per_inch, double y_pixels_per_inch);
+     * void cairo_surface_set_fallback_resolution(struct _cairo_surface* surface, double x_pixels_per_inch, double y_pixels_per_inch);
      * }
      */
     public static void cairo_surface_set_fallback_resolution(MemorySegment surface, double x_pixels_per_inch, double y_pixels_per_inch) {
@@ -1912,11 +4386,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_get_fallback_resolution$MH() {
-        return RuntimeHelper.requireNonNull(constants$1035.cairo_surface_get_fallback_resolution$MH,"cairo_surface_get_fallback_resolution");
+        return RuntimeHelper.requireNonNull(constants$1733.const$4,"cairo_surface_get_fallback_resolution");
     }
     /**
      * {@snippet :
-     * void cairo_surface_get_fallback_resolution(cairo_surface_t* surface, double* x_pixels_per_inch, double* y_pixels_per_inch);
+     * void cairo_surface_get_fallback_resolution(struct _cairo_surface* surface, double* x_pixels_per_inch, double* y_pixels_per_inch);
      * }
      */
     public static void cairo_surface_get_fallback_resolution(MemorySegment surface, MemorySegment x_pixels_per_inch, MemorySegment y_pixels_per_inch) {
@@ -1928,11 +4402,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_copy_page$MH() {
-        return RuntimeHelper.requireNonNull(constants$1035.cairo_surface_copy_page$MH,"cairo_surface_copy_page");
+        return RuntimeHelper.requireNonNull(constants$1733.const$5,"cairo_surface_copy_page");
     }
     /**
      * {@snippet :
-     * void cairo_surface_copy_page(cairo_surface_t* surface);
+     * void cairo_surface_copy_page(struct _cairo_surface* surface);
      * }
      */
     public static void cairo_surface_copy_page(MemorySegment surface) {
@@ -1944,11 +4418,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_show_page$MH() {
-        return RuntimeHelper.requireNonNull(constants$1035.cairo_surface_show_page$MH,"cairo_surface_show_page");
+        return RuntimeHelper.requireNonNull(constants$1734.const$0,"cairo_surface_show_page");
     }
     /**
      * {@snippet :
-     * void cairo_surface_show_page(cairo_surface_t* surface);
+     * void cairo_surface_show_page(struct _cairo_surface* surface);
      * }
      */
     public static void cairo_surface_show_page(MemorySegment surface) {
@@ -1960,11 +4434,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_surface_has_show_text_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1036.cairo_surface_has_show_text_glyphs$MH,"cairo_surface_has_show_text_glyphs");
+        return RuntimeHelper.requireNonNull(constants$1734.const$1,"cairo_surface_has_show_text_glyphs");
     }
     /**
      * {@snippet :
-     * cairo_bool_t cairo_surface_has_show_text_glyphs(cairo_surface_t* surface);
+     * int cairo_surface_has_show_text_glyphs(struct _cairo_surface* surface);
      * }
      */
     public static int cairo_surface_has_show_text_glyphs(MemorySegment surface) {
@@ -1976,11 +4450,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1036.cairo_image_surface_create$MH,"cairo_image_surface_create");
+        return RuntimeHelper.requireNonNull(constants$1734.const$2,"cairo_image_surface_create");
     }
     /**
      * {@snippet :
-     * cairo_surface_t* cairo_image_surface_create(cairo_format_t format, int width, int height);
+     * struct _cairo_surface* cairo_image_surface_create(enum _cairo_format format, int width, int height);
      * }
      */
     public static MemorySegment cairo_image_surface_create(int format, int width, int height) {
@@ -1992,11 +4466,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_format_stride_for_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1036.cairo_format_stride_for_width$MH,"cairo_format_stride_for_width");
+        return RuntimeHelper.requireNonNull(constants$1734.const$3,"cairo_format_stride_for_width");
     }
     /**
      * {@snippet :
-     * int cairo_format_stride_for_width(cairo_format_t format, int width);
+     * int cairo_format_stride_for_width(enum _cairo_format format, int width);
      * }
      */
     public static int cairo_format_stride_for_width(int format, int width) {
@@ -2008,11 +4482,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_create_for_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1036.cairo_image_surface_create_for_data$MH,"cairo_image_surface_create_for_data");
+        return RuntimeHelper.requireNonNull(constants$1734.const$5,"cairo_image_surface_create_for_data");
     }
     /**
      * {@snippet :
-     * cairo_surface_t* cairo_image_surface_create_for_data(unsigned char* data, cairo_format_t format, int width, int height, int stride);
+     * struct _cairo_surface* cairo_image_surface_create_for_data(unsigned char* data, enum _cairo_format format, int width, int height, int stride);
      * }
      */
     public static MemorySegment cairo_image_surface_create_for_data(MemorySegment data, int format, int width, int height, int stride) {
@@ -2024,11 +4498,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_get_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1036.cairo_image_surface_get_data$MH,"cairo_image_surface_get_data");
+        return RuntimeHelper.requireNonNull(constants$1735.const$0,"cairo_image_surface_get_data");
     }
     /**
      * {@snippet :
-     * unsigned char* cairo_image_surface_get_data(cairo_surface_t* surface);
+     * unsigned char* cairo_image_surface_get_data(struct _cairo_surface* surface);
      * }
      */
     public static MemorySegment cairo_image_surface_get_data(MemorySegment surface) {
@@ -2040,11 +4514,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_get_format$MH() {
-        return RuntimeHelper.requireNonNull(constants$1036.cairo_image_surface_get_format$MH,"cairo_image_surface_get_format");
+        return RuntimeHelper.requireNonNull(constants$1735.const$1,"cairo_image_surface_get_format");
     }
     /**
      * {@snippet :
-     * cairo_format_t cairo_image_surface_get_format(cairo_surface_t* surface);
+     * enum _cairo_format cairo_image_surface_get_format(struct _cairo_surface* surface);
      * }
      */
     public static int cairo_image_surface_get_format(MemorySegment surface) {
@@ -2056,11 +4530,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_get_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1037.cairo_image_surface_get_width$MH,"cairo_image_surface_get_width");
+        return RuntimeHelper.requireNonNull(constants$1735.const$2,"cairo_image_surface_get_width");
     }
     /**
      * {@snippet :
-     * int cairo_image_surface_get_width(cairo_surface_t* surface);
+     * int cairo_image_surface_get_width(struct _cairo_surface* surface);
      * }
      */
     public static int cairo_image_surface_get_width(MemorySegment surface) {
@@ -2072,11 +4546,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_get_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$1037.cairo_image_surface_get_height$MH,"cairo_image_surface_get_height");
+        return RuntimeHelper.requireNonNull(constants$1735.const$3,"cairo_image_surface_get_height");
     }
     /**
      * {@snippet :
-     * int cairo_image_surface_get_height(cairo_surface_t* surface);
+     * int cairo_image_surface_get_height(struct _cairo_surface* surface);
      * }
      */
     public static int cairo_image_surface_get_height(MemorySegment surface) {
@@ -2088,11 +4562,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_get_stride$MH() {
-        return RuntimeHelper.requireNonNull(constants$1037.cairo_image_surface_get_stride$MH,"cairo_image_surface_get_stride");
+        return RuntimeHelper.requireNonNull(constants$1735.const$4,"cairo_image_surface_get_stride");
     }
     /**
      * {@snippet :
-     * int cairo_image_surface_get_stride(cairo_surface_t* surface);
+     * int cairo_image_surface_get_stride(struct _cairo_surface* surface);
      * }
      */
     public static int cairo_image_surface_get_stride(MemorySegment surface) {
@@ -2104,11 +4578,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_create_from_png$MH() {
-        return RuntimeHelper.requireNonNull(constants$1037.cairo_image_surface_create_from_png$MH,"cairo_image_surface_create_from_png");
+        return RuntimeHelper.requireNonNull(constants$1735.const$5,"cairo_image_surface_create_from_png");
     }
     /**
      * {@snippet :
-     * cairo_surface_t* cairo_image_surface_create_from_png(char* filename);
+     * struct _cairo_surface* cairo_image_surface_create_from_png(char* filename);
      * }
      */
     public static MemorySegment cairo_image_surface_create_from_png(MemorySegment filename) {
@@ -2120,11 +4594,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_image_surface_create_from_png_stream$MH() {
-        return RuntimeHelper.requireNonNull(constants$1037.cairo_image_surface_create_from_png_stream$MH,"cairo_image_surface_create_from_png_stream");
+        return RuntimeHelper.requireNonNull(constants$1736.const$1,"cairo_image_surface_create_from_png_stream");
     }
     /**
      * {@snippet :
-     * cairo_surface_t* cairo_image_surface_create_from_png_stream(cairo_read_func_t read_func, void* closure);
+     * struct _cairo_surface* cairo_image_surface_create_from_png_stream(enum _cairo_status (*read_func)(void*,unsigned char*,unsigned int), void* closure);
      * }
      */
     public static MemorySegment cairo_image_surface_create_from_png_stream(MemorySegment read_func, MemorySegment closure) {
@@ -2136,11 +4610,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_recording_surface_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1037.cairo_recording_surface_create$MH,"cairo_recording_surface_create");
+        return RuntimeHelper.requireNonNull(constants$1736.const$2,"cairo_recording_surface_create");
     }
     /**
      * {@snippet :
-     * cairo_surface_t* cairo_recording_surface_create(cairo_content_t content, const cairo_rectangle_t* extents);
+     * struct _cairo_surface* cairo_recording_surface_create(enum _cairo_content content, struct _cairo_rectangle* extents);
      * }
      */
     public static MemorySegment cairo_recording_surface_create(int content, MemorySegment extents) {
@@ -2152,11 +4626,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_recording_surface_ink_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1038.cairo_recording_surface_ink_extents$MH,"cairo_recording_surface_ink_extents");
+        return RuntimeHelper.requireNonNull(constants$1736.const$3,"cairo_recording_surface_ink_extents");
     }
     /**
      * {@snippet :
-     * void cairo_recording_surface_ink_extents(cairo_surface_t* surface, double* x0, double* y0, double* width, double* height);
+     * void cairo_recording_surface_ink_extents(struct _cairo_surface* surface, double* x0, double* y0, double* width, double* height);
      * }
      */
     public static void cairo_recording_surface_ink_extents(MemorySegment surface, MemorySegment x0, MemorySegment y0, MemorySegment width, MemorySegment height) {
@@ -2168,11 +4642,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_recording_surface_get_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1038.cairo_recording_surface_get_extents$MH,"cairo_recording_surface_get_extents");
+        return RuntimeHelper.requireNonNull(constants$1736.const$4,"cairo_recording_surface_get_extents");
     }
     /**
      * {@snippet :
-     * cairo_bool_t cairo_recording_surface_get_extents(cairo_surface_t* surface, cairo_rectangle_t* extents);
+     * int cairo_recording_surface_get_extents(struct _cairo_surface* surface, struct _cairo_rectangle* extents);
      * }
      */
     public static int cairo_recording_surface_get_extents(MemorySegment surface, MemorySegment extents) {
@@ -2184,11 +4658,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_create_raster_source$MH() {
-        return RuntimeHelper.requireNonNull(constants$1040.cairo_pattern_create_raster_source$MH,"cairo_pattern_create_raster_source");
+        return RuntimeHelper.requireNonNull(constants$1737.const$4,"cairo_pattern_create_raster_source");
     }
     /**
      * {@snippet :
-     * cairo_pattern_t* cairo_pattern_create_raster_source(void* user_data, cairo_content_t content, int width, int height);
+     * struct _cairo_pattern* cairo_pattern_create_raster_source(void* user_data, enum _cairo_content content, int width, int height);
      * }
      */
     public static MemorySegment cairo_pattern_create_raster_source(MemorySegment user_data, int content, int width, int height) {
@@ -2200,11 +4674,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_set_callback_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1040.cairo_raster_source_pattern_set_callback_data$MH,"cairo_raster_source_pattern_set_callback_data");
+        return RuntimeHelper.requireNonNull(constants$1737.const$5,"cairo_raster_source_pattern_set_callback_data");
     }
     /**
      * {@snippet :
-     * void cairo_raster_source_pattern_set_callback_data(cairo_pattern_t* pattern, void* data);
+     * void cairo_raster_source_pattern_set_callback_data(struct _cairo_pattern* pattern, void* data);
      * }
      */
     public static void cairo_raster_source_pattern_set_callback_data(MemorySegment pattern, MemorySegment data) {
@@ -2216,11 +4690,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_get_callback_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1040.cairo_raster_source_pattern_get_callback_data$MH,"cairo_raster_source_pattern_get_callback_data");
+        return RuntimeHelper.requireNonNull(constants$1738.const$0,"cairo_raster_source_pattern_get_callback_data");
     }
     /**
      * {@snippet :
-     * void* cairo_raster_source_pattern_get_callback_data(cairo_pattern_t* pattern);
+     * void* cairo_raster_source_pattern_get_callback_data(struct _cairo_pattern* pattern);
      * }
      */
     public static MemorySegment cairo_raster_source_pattern_get_callback_data(MemorySegment pattern) {
@@ -2232,11 +4706,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_set_acquire$MH() {
-        return RuntimeHelper.requireNonNull(constants$1040.cairo_raster_source_pattern_set_acquire$MH,"cairo_raster_source_pattern_set_acquire");
+        return RuntimeHelper.requireNonNull(constants$1738.const$3,"cairo_raster_source_pattern_set_acquire");
     }
     /**
      * {@snippet :
-     * void cairo_raster_source_pattern_set_acquire(cairo_pattern_t* pattern, cairo_raster_source_acquire_func_t acquire, cairo_raster_source_release_func_t release);
+     * void cairo_raster_source_pattern_set_acquire(struct _cairo_pattern* pattern, struct _cairo_surface* (*acquire)(struct _cairo_pattern*,void*,struct _cairo_surface*,struct _cairo_rectangle_int*), void (*release)(struct _cairo_pattern*,void*,struct _cairo_surface*));
      * }
      */
     public static void cairo_raster_source_pattern_set_acquire(MemorySegment pattern, MemorySegment acquire, MemorySegment release) {
@@ -2248,11 +4722,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_get_acquire$MH() {
-        return RuntimeHelper.requireNonNull(constants$1040.cairo_raster_source_pattern_get_acquire$MH,"cairo_raster_source_pattern_get_acquire");
+        return RuntimeHelper.requireNonNull(constants$1739.const$0,"cairo_raster_source_pattern_get_acquire");
     }
     /**
      * {@snippet :
-     * void cairo_raster_source_pattern_get_acquire(cairo_pattern_t* pattern, cairo_raster_source_acquire_func_t* acquire, cairo_raster_source_release_func_t* release);
+     * void cairo_raster_source_pattern_get_acquire(struct _cairo_pattern* pattern, struct _cairo_surface* (**acquire)(struct _cairo_pattern*,void*,struct _cairo_surface*,struct _cairo_rectangle_int*), void (**release)(struct _cairo_pattern*,void*,struct _cairo_surface*));
      * }
      */
     public static void cairo_raster_source_pattern_get_acquire(MemorySegment pattern, MemorySegment acquire, MemorySegment release) {
@@ -2264,11 +4738,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_set_snapshot$MH() {
-        return RuntimeHelper.requireNonNull(constants$1040.cairo_raster_source_pattern_set_snapshot$MH,"cairo_raster_source_pattern_set_snapshot");
+        return RuntimeHelper.requireNonNull(constants$1739.const$2,"cairo_raster_source_pattern_set_snapshot");
     }
     /**
      * {@snippet :
-     * void cairo_raster_source_pattern_set_snapshot(cairo_pattern_t* pattern, cairo_raster_source_snapshot_func_t snapshot);
+     * void cairo_raster_source_pattern_set_snapshot(struct _cairo_pattern* pattern, enum _cairo_status (*snapshot)(struct _cairo_pattern*,void*));
      * }
      */
     public static void cairo_raster_source_pattern_set_snapshot(MemorySegment pattern, MemorySegment snapshot) {
@@ -2280,11 +4754,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_get_snapshot$MH() {
-        return RuntimeHelper.requireNonNull(constants$1041.cairo_raster_source_pattern_get_snapshot$MH,"cairo_raster_source_pattern_get_snapshot");
+        return RuntimeHelper.requireNonNull(constants$1739.const$4,"cairo_raster_source_pattern_get_snapshot");
     }
     /**
      * {@snippet :
-     * cairo_raster_source_snapshot_func_t cairo_raster_source_pattern_get_snapshot(cairo_pattern_t* pattern);
+     * enum _cairo_status (*cairo_raster_source_pattern_get_snapshot(struct _cairo_pattern* pattern))(struct _cairo_pattern*,void*);
      * }
      */
     public static MemorySegment cairo_raster_source_pattern_get_snapshot(MemorySegment pattern) {
@@ -2296,11 +4770,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_set_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1041.cairo_raster_source_pattern_set_copy$MH,"cairo_raster_source_pattern_set_copy");
+        return RuntimeHelper.requireNonNull(constants$1740.const$0,"cairo_raster_source_pattern_set_copy");
     }
     /**
      * {@snippet :
-     * void cairo_raster_source_pattern_set_copy(cairo_pattern_t* pattern, cairo_raster_source_copy_func_t copy);
+     * void cairo_raster_source_pattern_set_copy(struct _cairo_pattern* pattern, enum _cairo_status (*copy)(struct _cairo_pattern*,void*,struct _cairo_pattern*));
      * }
      */
     public static void cairo_raster_source_pattern_set_copy(MemorySegment pattern, MemorySegment copy) {
@@ -2312,11 +4786,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_get_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1041.cairo_raster_source_pattern_get_copy$MH,"cairo_raster_source_pattern_get_copy");
+        return RuntimeHelper.requireNonNull(constants$1740.const$2,"cairo_raster_source_pattern_get_copy");
     }
     /**
      * {@snippet :
-     * cairo_raster_source_copy_func_t cairo_raster_source_pattern_get_copy(cairo_pattern_t* pattern);
+     * enum _cairo_status (*cairo_raster_source_pattern_get_copy(struct _cairo_pattern* pattern))(struct _cairo_pattern*,void*,struct _cairo_pattern*);
      * }
      */
     public static MemorySegment cairo_raster_source_pattern_get_copy(MemorySegment pattern) {
@@ -2328,11 +4802,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_set_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$1041.cairo_raster_source_pattern_set_finish$MH,"cairo_raster_source_pattern_set_finish");
+        return RuntimeHelper.requireNonNull(constants$1740.const$4,"cairo_raster_source_pattern_set_finish");
     }
     /**
      * {@snippet :
-     * void cairo_raster_source_pattern_set_finish(cairo_pattern_t* pattern, cairo_raster_source_finish_func_t finish);
+     * void cairo_raster_source_pattern_set_finish(struct _cairo_pattern* pattern, void (*finish)(struct _cairo_pattern*,void*));
      * }
      */
     public static void cairo_raster_source_pattern_set_finish(MemorySegment pattern, MemorySegment finish) {
@@ -2344,11 +4818,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_raster_source_pattern_get_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$1041.cairo_raster_source_pattern_get_finish$MH,"cairo_raster_source_pattern_get_finish");
+        return RuntimeHelper.requireNonNull(constants$1741.const$0,"cairo_raster_source_pattern_get_finish");
     }
     /**
      * {@snippet :
-     * cairo_raster_source_finish_func_t cairo_raster_source_pattern_get_finish(cairo_pattern_t* pattern);
+     * void (*cairo_raster_source_pattern_get_finish(struct _cairo_pattern* pattern))(struct _cairo_pattern*,void*);
      * }
      */
     public static MemorySegment cairo_raster_source_pattern_get_finish(MemorySegment pattern) {
@@ -2360,11 +4834,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_create_rgb$MH() {
-        return RuntimeHelper.requireNonNull(constants$1041.cairo_pattern_create_rgb$MH,"cairo_pattern_create_rgb");
+        return RuntimeHelper.requireNonNull(constants$1741.const$2,"cairo_pattern_create_rgb");
     }
     /**
      * {@snippet :
-     * cairo_pattern_t* cairo_pattern_create_rgb(double red, double green, double blue);
+     * struct _cairo_pattern* cairo_pattern_create_rgb(double red, double green, double blue);
      * }
      */
     public static MemorySegment cairo_pattern_create_rgb(double red, double green, double blue) {
@@ -2376,11 +4850,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_create_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1042.cairo_pattern_create_rgba$MH,"cairo_pattern_create_rgba");
+        return RuntimeHelper.requireNonNull(constants$1741.const$4,"cairo_pattern_create_rgba");
     }
     /**
      * {@snippet :
-     * cairo_pattern_t* cairo_pattern_create_rgba(double red, double green, double blue, double alpha);
+     * struct _cairo_pattern* cairo_pattern_create_rgba(double red, double green, double blue, double alpha);
      * }
      */
     public static MemorySegment cairo_pattern_create_rgba(double red, double green, double blue, double alpha) {
@@ -2392,11 +4866,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_create_for_surface$MH() {
-        return RuntimeHelper.requireNonNull(constants$1042.cairo_pattern_create_for_surface$MH,"cairo_pattern_create_for_surface");
+        return RuntimeHelper.requireNonNull(constants$1741.const$5,"cairo_pattern_create_for_surface");
     }
     /**
      * {@snippet :
-     * cairo_pattern_t* cairo_pattern_create_for_surface(cairo_surface_t* surface);
+     * struct _cairo_pattern* cairo_pattern_create_for_surface(struct _cairo_surface* surface);
      * }
      */
     public static MemorySegment cairo_pattern_create_for_surface(MemorySegment surface) {
@@ -2408,11 +4882,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_create_linear$MH() {
-        return RuntimeHelper.requireNonNull(constants$1042.cairo_pattern_create_linear$MH,"cairo_pattern_create_linear");
+        return RuntimeHelper.requireNonNull(constants$1742.const$0,"cairo_pattern_create_linear");
     }
     /**
      * {@snippet :
-     * cairo_pattern_t* cairo_pattern_create_linear(double x0, double y0, double x1, double y1);
+     * struct _cairo_pattern* cairo_pattern_create_linear(double x0, double y0, double x1, double y1);
      * }
      */
     public static MemorySegment cairo_pattern_create_linear(double x0, double y0, double x1, double y1) {
@@ -2424,11 +4898,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_create_radial$MH() {
-        return RuntimeHelper.requireNonNull(constants$1042.cairo_pattern_create_radial$MH,"cairo_pattern_create_radial");
+        return RuntimeHelper.requireNonNull(constants$1742.const$2,"cairo_pattern_create_radial");
     }
     /**
      * {@snippet :
-     * cairo_pattern_t* cairo_pattern_create_radial(double cx0, double cy0, double radius0, double cx1, double cy1, double radius1);
+     * struct _cairo_pattern* cairo_pattern_create_radial(double cx0, double cy0, double radius0, double cx1, double cy1, double radius1);
      * }
      */
     public static MemorySegment cairo_pattern_create_radial(double cx0, double cy0, double radius0, double cx1, double cy1, double radius1) {
@@ -2440,11 +4914,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_create_mesh$MH() {
-        return RuntimeHelper.requireNonNull(constants$1042.cairo_pattern_create_mesh$MH,"cairo_pattern_create_mesh");
+        return RuntimeHelper.requireNonNull(constants$1742.const$3,"cairo_pattern_create_mesh");
     }
     /**
      * {@snippet :
-     * cairo_pattern_t* cairo_pattern_create_mesh();
+     * struct _cairo_pattern* cairo_pattern_create_mesh();
      * }
      */
     public static MemorySegment cairo_pattern_create_mesh() {
@@ -2456,11 +4930,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1042.cairo_pattern_reference$MH,"cairo_pattern_reference");
+        return RuntimeHelper.requireNonNull(constants$1742.const$4,"cairo_pattern_reference");
     }
     /**
      * {@snippet :
-     * cairo_pattern_t* cairo_pattern_reference(cairo_pattern_t* pattern);
+     * struct _cairo_pattern* cairo_pattern_reference(struct _cairo_pattern* pattern);
      * }
      */
     public static MemorySegment cairo_pattern_reference(MemorySegment pattern) {
@@ -2472,11 +4946,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1043.cairo_pattern_destroy$MH,"cairo_pattern_destroy");
+        return RuntimeHelper.requireNonNull(constants$1742.const$5,"cairo_pattern_destroy");
     }
     /**
      * {@snippet :
-     * void cairo_pattern_destroy(cairo_pattern_t* pattern);
+     * void cairo_pattern_destroy(struct _cairo_pattern* pattern);
      * }
      */
     public static void cairo_pattern_destroy(MemorySegment pattern) {
@@ -2488,11 +4962,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_reference_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1043.cairo_pattern_get_reference_count$MH,"cairo_pattern_get_reference_count");
+        return RuntimeHelper.requireNonNull(constants$1743.const$0,"cairo_pattern_get_reference_count");
     }
     /**
      * {@snippet :
-     * unsigned int cairo_pattern_get_reference_count(cairo_pattern_t* pattern);
+     * unsigned int cairo_pattern_get_reference_count(struct _cairo_pattern* pattern);
      * }
      */
     public static int cairo_pattern_get_reference_count(MemorySegment pattern) {
@@ -2504,11 +4978,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1043.cairo_pattern_status$MH,"cairo_pattern_status");
+        return RuntimeHelper.requireNonNull(constants$1743.const$1,"cairo_pattern_status");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_pattern_status(cairo_pattern_t* pattern);
+     * enum _cairo_status cairo_pattern_status(struct _cairo_pattern* pattern);
      * }
      */
     public static int cairo_pattern_status(MemorySegment pattern) {
@@ -2520,11 +4994,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1043.cairo_pattern_get_user_data$MH,"cairo_pattern_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1743.const$2,"cairo_pattern_get_user_data");
     }
     /**
      * {@snippet :
-     * void* cairo_pattern_get_user_data(cairo_pattern_t* pattern, const cairo_user_data_key_t* key);
+     * void* cairo_pattern_get_user_data(struct _cairo_pattern* pattern, struct _cairo_user_data_key* key);
      * }
      */
     public static MemorySegment cairo_pattern_get_user_data(MemorySegment pattern, MemorySegment key) {
@@ -2536,11 +5010,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1043.cairo_pattern_set_user_data$MH,"cairo_pattern_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1743.const$4,"cairo_pattern_set_user_data");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_pattern_set_user_data(cairo_pattern_t* pattern, const cairo_user_data_key_t* key, void* user_data, cairo_destroy_func_t destroy);
+     * enum _cairo_status cairo_pattern_set_user_data(struct _cairo_pattern* pattern, struct _cairo_user_data_key* key, void* user_data, void (*destroy)(void*));
      * }
      */
     public static int cairo_pattern_set_user_data(MemorySegment pattern, MemorySegment key, MemorySegment user_data, MemorySegment destroy) {
@@ -2600,11 +5074,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)5L;
     }
     public static MethodHandle cairo_pattern_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1043.cairo_pattern_get_type$MH,"cairo_pattern_get_type");
+        return RuntimeHelper.requireNonNull(constants$1743.const$5,"cairo_pattern_get_type");
     }
     /**
      * {@snippet :
-     * cairo_pattern_type_t cairo_pattern_get_type(cairo_pattern_t* pattern);
+     * enum _cairo_pattern_type cairo_pattern_get_type(struct _cairo_pattern* pattern);
      * }
      */
     public static int cairo_pattern_get_type(MemorySegment pattern) {
@@ -2616,11 +5090,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_add_color_stop_rgb$MH() {
-        return RuntimeHelper.requireNonNull(constants$1044.cairo_pattern_add_color_stop_rgb$MH,"cairo_pattern_add_color_stop_rgb");
+        return RuntimeHelper.requireNonNull(constants$1744.const$0,"cairo_pattern_add_color_stop_rgb");
     }
     /**
      * {@snippet :
-     * void cairo_pattern_add_color_stop_rgb(cairo_pattern_t* pattern, double offset, double red, double green, double blue);
+     * void cairo_pattern_add_color_stop_rgb(struct _cairo_pattern* pattern, double offset, double red, double green, double blue);
      * }
      */
     public static void cairo_pattern_add_color_stop_rgb(MemorySegment pattern, double offset, double red, double green, double blue) {
@@ -2632,11 +5106,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_add_color_stop_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1044.cairo_pattern_add_color_stop_rgba$MH,"cairo_pattern_add_color_stop_rgba");
+        return RuntimeHelper.requireNonNull(constants$1744.const$1,"cairo_pattern_add_color_stop_rgba");
     }
     /**
      * {@snippet :
-     * void cairo_pattern_add_color_stop_rgba(cairo_pattern_t* pattern, double offset, double red, double green, double blue, double alpha);
+     * void cairo_pattern_add_color_stop_rgba(struct _cairo_pattern* pattern, double offset, double red, double green, double blue, double alpha);
      * }
      */
     public static void cairo_pattern_add_color_stop_rgba(MemorySegment pattern, double offset, double red, double green, double blue, double alpha) {
@@ -2648,11 +5122,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_begin_patch$MH() {
-        return RuntimeHelper.requireNonNull(constants$1044.cairo_mesh_pattern_begin_patch$MH,"cairo_mesh_pattern_begin_patch");
+        return RuntimeHelper.requireNonNull(constants$1744.const$2,"cairo_mesh_pattern_begin_patch");
     }
     /**
      * {@snippet :
-     * void cairo_mesh_pattern_begin_patch(cairo_pattern_t* pattern);
+     * void cairo_mesh_pattern_begin_patch(struct _cairo_pattern* pattern);
      * }
      */
     public static void cairo_mesh_pattern_begin_patch(MemorySegment pattern) {
@@ -2664,11 +5138,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_end_patch$MH() {
-        return RuntimeHelper.requireNonNull(constants$1044.cairo_mesh_pattern_end_patch$MH,"cairo_mesh_pattern_end_patch");
+        return RuntimeHelper.requireNonNull(constants$1744.const$3,"cairo_mesh_pattern_end_patch");
     }
     /**
      * {@snippet :
-     * void cairo_mesh_pattern_end_patch(cairo_pattern_t* pattern);
+     * void cairo_mesh_pattern_end_patch(struct _cairo_pattern* pattern);
      * }
      */
     public static void cairo_mesh_pattern_end_patch(MemorySegment pattern) {
@@ -2680,11 +5154,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_curve_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1044.cairo_mesh_pattern_curve_to$MH,"cairo_mesh_pattern_curve_to");
+        return RuntimeHelper.requireNonNull(constants$1744.const$4,"cairo_mesh_pattern_curve_to");
     }
     /**
      * {@snippet :
-     * void cairo_mesh_pattern_curve_to(cairo_pattern_t* pattern, double x1, double y1, double x2, double y2, double x3, double y3);
+     * void cairo_mesh_pattern_curve_to(struct _cairo_pattern* pattern, double x1, double y1, double x2, double y2, double x3, double y3);
      * }
      */
     public static void cairo_mesh_pattern_curve_to(MemorySegment pattern, double x1, double y1, double x2, double y2, double x3, double y3) {
@@ -2696,11 +5170,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_line_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1044.cairo_mesh_pattern_line_to$MH,"cairo_mesh_pattern_line_to");
+        return RuntimeHelper.requireNonNull(constants$1744.const$5,"cairo_mesh_pattern_line_to");
     }
     /**
      * {@snippet :
-     * void cairo_mesh_pattern_line_to(cairo_pattern_t* pattern, double x, double y);
+     * void cairo_mesh_pattern_line_to(struct _cairo_pattern* pattern, double x, double y);
      * }
      */
     public static void cairo_mesh_pattern_line_to(MemorySegment pattern, double x, double y) {
@@ -2712,11 +5186,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_move_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1045.cairo_mesh_pattern_move_to$MH,"cairo_mesh_pattern_move_to");
+        return RuntimeHelper.requireNonNull(constants$1745.const$0,"cairo_mesh_pattern_move_to");
     }
     /**
      * {@snippet :
-     * void cairo_mesh_pattern_move_to(cairo_pattern_t* pattern, double x, double y);
+     * void cairo_mesh_pattern_move_to(struct _cairo_pattern* pattern, double x, double y);
      * }
      */
     public static void cairo_mesh_pattern_move_to(MemorySegment pattern, double x, double y) {
@@ -2728,11 +5202,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_set_control_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1045.cairo_mesh_pattern_set_control_point$MH,"cairo_mesh_pattern_set_control_point");
+        return RuntimeHelper.requireNonNull(constants$1745.const$2,"cairo_mesh_pattern_set_control_point");
     }
     /**
      * {@snippet :
-     * void cairo_mesh_pattern_set_control_point(cairo_pattern_t* pattern, unsigned int point_num, double x, double y);
+     * void cairo_mesh_pattern_set_control_point(struct _cairo_pattern* pattern, unsigned int point_num, double x, double y);
      * }
      */
     public static void cairo_mesh_pattern_set_control_point(MemorySegment pattern, int point_num, double x, double y) {
@@ -2744,11 +5218,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_set_corner_color_rgb$MH() {
-        return RuntimeHelper.requireNonNull(constants$1045.cairo_mesh_pattern_set_corner_color_rgb$MH,"cairo_mesh_pattern_set_corner_color_rgb");
+        return RuntimeHelper.requireNonNull(constants$1745.const$4,"cairo_mesh_pattern_set_corner_color_rgb");
     }
     /**
      * {@snippet :
-     * void cairo_mesh_pattern_set_corner_color_rgb(cairo_pattern_t* pattern, unsigned int corner_num, double red, double green, double blue);
+     * void cairo_mesh_pattern_set_corner_color_rgb(struct _cairo_pattern* pattern, unsigned int corner_num, double red, double green, double blue);
      * }
      */
     public static void cairo_mesh_pattern_set_corner_color_rgb(MemorySegment pattern, int corner_num, double red, double green, double blue) {
@@ -2760,11 +5234,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_set_corner_color_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1045.cairo_mesh_pattern_set_corner_color_rgba$MH,"cairo_mesh_pattern_set_corner_color_rgba");
+        return RuntimeHelper.requireNonNull(constants$1745.const$5,"cairo_mesh_pattern_set_corner_color_rgba");
     }
     /**
      * {@snippet :
-     * void cairo_mesh_pattern_set_corner_color_rgba(cairo_pattern_t* pattern, unsigned int corner_num, double red, double green, double blue, double alpha);
+     * void cairo_mesh_pattern_set_corner_color_rgba(struct _cairo_pattern* pattern, unsigned int corner_num, double red, double green, double blue, double alpha);
      * }
      */
     public static void cairo_mesh_pattern_set_corner_color_rgba(MemorySegment pattern, int corner_num, double red, double green, double blue, double alpha) {
@@ -2776,11 +5250,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_set_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1045.cairo_pattern_set_matrix$MH,"cairo_pattern_set_matrix");
+        return RuntimeHelper.requireNonNull(constants$1746.const$0,"cairo_pattern_set_matrix");
     }
     /**
      * {@snippet :
-     * void cairo_pattern_set_matrix(cairo_pattern_t* pattern, const cairo_matrix_t* matrix);
+     * void cairo_pattern_set_matrix(struct _cairo_pattern* pattern, struct _cairo_matrix* matrix);
      * }
      */
     public static void cairo_pattern_set_matrix(MemorySegment pattern, MemorySegment matrix) {
@@ -2792,11 +5266,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1045.cairo_pattern_get_matrix$MH,"cairo_pattern_get_matrix");
+        return RuntimeHelper.requireNonNull(constants$1746.const$1,"cairo_pattern_get_matrix");
     }
     /**
      * {@snippet :
-     * void cairo_pattern_get_matrix(cairo_pattern_t* pattern, cairo_matrix_t* matrix);
+     * void cairo_pattern_get_matrix(struct _cairo_pattern* pattern, struct _cairo_matrix* matrix);
      * }
      */
     public static void cairo_pattern_get_matrix(MemorySegment pattern, MemorySegment matrix) {
@@ -2840,11 +5314,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)3L;
     }
     public static MethodHandle cairo_pattern_set_extend$MH() {
-        return RuntimeHelper.requireNonNull(constants$1046.cairo_pattern_set_extend$MH,"cairo_pattern_set_extend");
+        return RuntimeHelper.requireNonNull(constants$1746.const$2,"cairo_pattern_set_extend");
     }
     /**
      * {@snippet :
-     * void cairo_pattern_set_extend(cairo_pattern_t* pattern, cairo_extend_t extend);
+     * void cairo_pattern_set_extend(struct _cairo_pattern* pattern, enum _cairo_extend extend);
      * }
      */
     public static void cairo_pattern_set_extend(MemorySegment pattern, int extend) {
@@ -2856,11 +5330,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_extend$MH() {
-        return RuntimeHelper.requireNonNull(constants$1046.cairo_pattern_get_extend$MH,"cairo_pattern_get_extend");
+        return RuntimeHelper.requireNonNull(constants$1746.const$3,"cairo_pattern_get_extend");
     }
     /**
      * {@snippet :
-     * cairo_extend_t cairo_pattern_get_extend(cairo_pattern_t* pattern);
+     * enum _cairo_extend cairo_pattern_get_extend(struct _cairo_pattern* pattern);
      * }
      */
     public static int cairo_pattern_get_extend(MemorySegment pattern) {
@@ -2920,11 +5394,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)5L;
     }
     public static MethodHandle cairo_pattern_set_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1046.cairo_pattern_set_filter$MH,"cairo_pattern_set_filter");
+        return RuntimeHelper.requireNonNull(constants$1746.const$4,"cairo_pattern_set_filter");
     }
     /**
      * {@snippet :
-     * void cairo_pattern_set_filter(cairo_pattern_t* pattern, cairo_filter_t filter);
+     * void cairo_pattern_set_filter(struct _cairo_pattern* pattern, enum _cairo_filter filter);
      * }
      */
     public static void cairo_pattern_set_filter(MemorySegment pattern, int filter) {
@@ -2936,11 +5410,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1046.cairo_pattern_get_filter$MH,"cairo_pattern_get_filter");
+        return RuntimeHelper.requireNonNull(constants$1746.const$5,"cairo_pattern_get_filter");
     }
     /**
      * {@snippet :
-     * cairo_filter_t cairo_pattern_get_filter(cairo_pattern_t* pattern);
+     * enum _cairo_filter cairo_pattern_get_filter(struct _cairo_pattern* pattern);
      * }
      */
     public static int cairo_pattern_get_filter(MemorySegment pattern) {
@@ -2952,11 +5426,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1046.cairo_pattern_get_rgba$MH,"cairo_pattern_get_rgba");
+        return RuntimeHelper.requireNonNull(constants$1747.const$0,"cairo_pattern_get_rgba");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_pattern_get_rgba(cairo_pattern_t* pattern, double* red, double* green, double* blue, double* alpha);
+     * enum _cairo_status cairo_pattern_get_rgba(struct _cairo_pattern* pattern, double* red, double* green, double* blue, double* alpha);
      * }
      */
     public static int cairo_pattern_get_rgba(MemorySegment pattern, MemorySegment red, MemorySegment green, MemorySegment blue, MemorySegment alpha) {
@@ -2968,11 +5442,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_surface$MH() {
-        return RuntimeHelper.requireNonNull(constants$1046.cairo_pattern_get_surface$MH,"cairo_pattern_get_surface");
+        return RuntimeHelper.requireNonNull(constants$1747.const$1,"cairo_pattern_get_surface");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_pattern_get_surface(cairo_pattern_t* pattern, cairo_surface_t** surface);
+     * enum _cairo_status cairo_pattern_get_surface(struct _cairo_pattern* pattern, struct _cairo_surface** surface);
      * }
      */
     public static int cairo_pattern_get_surface(MemorySegment pattern, MemorySegment surface) {
@@ -2984,11 +5458,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_color_stop_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1047.cairo_pattern_get_color_stop_rgba$MH,"cairo_pattern_get_color_stop_rgba");
+        return RuntimeHelper.requireNonNull(constants$1747.const$3,"cairo_pattern_get_color_stop_rgba");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_pattern_get_color_stop_rgba(cairo_pattern_t* pattern, int index, double* offset, double* red, double* green, double* blue, double* alpha);
+     * enum _cairo_status cairo_pattern_get_color_stop_rgba(struct _cairo_pattern* pattern, int index, double* offset, double* red, double* green, double* blue, double* alpha);
      * }
      */
     public static int cairo_pattern_get_color_stop_rgba(MemorySegment pattern, int index, MemorySegment offset, MemorySegment red, MemorySegment green, MemorySegment blue, MemorySegment alpha) {
@@ -3000,11 +5474,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_color_stop_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1047.cairo_pattern_get_color_stop_count$MH,"cairo_pattern_get_color_stop_count");
+        return RuntimeHelper.requireNonNull(constants$1747.const$4,"cairo_pattern_get_color_stop_count");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_pattern_get_color_stop_count(cairo_pattern_t* pattern, int* count);
+     * enum _cairo_status cairo_pattern_get_color_stop_count(struct _cairo_pattern* pattern, int* count);
      * }
      */
     public static int cairo_pattern_get_color_stop_count(MemorySegment pattern, MemorySegment count) {
@@ -3016,11 +5490,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_linear_points$MH() {
-        return RuntimeHelper.requireNonNull(constants$1047.cairo_pattern_get_linear_points$MH,"cairo_pattern_get_linear_points");
+        return RuntimeHelper.requireNonNull(constants$1747.const$5,"cairo_pattern_get_linear_points");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_pattern_get_linear_points(cairo_pattern_t* pattern, double* x0, double* y0, double* x1, double* y1);
+     * enum _cairo_status cairo_pattern_get_linear_points(struct _cairo_pattern* pattern, double* x0, double* y0, double* x1, double* y1);
      * }
      */
     public static int cairo_pattern_get_linear_points(MemorySegment pattern, MemorySegment x0, MemorySegment y0, MemorySegment x1, MemorySegment y1) {
@@ -3032,11 +5506,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_pattern_get_radial_circles$MH() {
-        return RuntimeHelper.requireNonNull(constants$1047.cairo_pattern_get_radial_circles$MH,"cairo_pattern_get_radial_circles");
+        return RuntimeHelper.requireNonNull(constants$1748.const$0,"cairo_pattern_get_radial_circles");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_pattern_get_radial_circles(cairo_pattern_t* pattern, double* x0, double* y0, double* r0, double* x1, double* y1, double* r1);
+     * enum _cairo_status cairo_pattern_get_radial_circles(struct _cairo_pattern* pattern, double* x0, double* y0, double* r0, double* x1, double* y1, double* r1);
      * }
      */
     public static int cairo_pattern_get_radial_circles(MemorySegment pattern, MemorySegment x0, MemorySegment y0, MemorySegment r0, MemorySegment x1, MemorySegment y1, MemorySegment r1) {
@@ -3048,11 +5522,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_get_patch_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1047.cairo_mesh_pattern_get_patch_count$MH,"cairo_mesh_pattern_get_patch_count");
+        return RuntimeHelper.requireNonNull(constants$1748.const$1,"cairo_mesh_pattern_get_patch_count");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_mesh_pattern_get_patch_count(cairo_pattern_t* pattern, unsigned int* count);
+     * enum _cairo_status cairo_mesh_pattern_get_patch_count(struct _cairo_pattern* pattern, unsigned int* count);
      * }
      */
     public static int cairo_mesh_pattern_get_patch_count(MemorySegment pattern, MemorySegment count) {
@@ -3064,11 +5538,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_get_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1047.cairo_mesh_pattern_get_path$MH,"cairo_mesh_pattern_get_path");
+        return RuntimeHelper.requireNonNull(constants$1748.const$2,"cairo_mesh_pattern_get_path");
     }
     /**
      * {@snippet :
-     * cairo_path_t* cairo_mesh_pattern_get_path(cairo_pattern_t* pattern, unsigned int patch_num);
+     * struct cairo_path* cairo_mesh_pattern_get_path(struct _cairo_pattern* pattern, unsigned int patch_num);
      * }
      */
     public static MemorySegment cairo_mesh_pattern_get_path(MemorySegment pattern, int patch_num) {
@@ -3080,11 +5554,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_get_corner_color_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1048.cairo_mesh_pattern_get_corner_color_rgba$MH,"cairo_mesh_pattern_get_corner_color_rgba");
+        return RuntimeHelper.requireNonNull(constants$1748.const$3,"cairo_mesh_pattern_get_corner_color_rgba");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_mesh_pattern_get_corner_color_rgba(cairo_pattern_t* pattern, unsigned int patch_num, unsigned int corner_num, double* red, double* green, double* blue, double* alpha);
+     * enum _cairo_status cairo_mesh_pattern_get_corner_color_rgba(struct _cairo_pattern* pattern, unsigned int patch_num, unsigned int corner_num, double* red, double* green, double* blue, double* alpha);
      * }
      */
     public static int cairo_mesh_pattern_get_corner_color_rgba(MemorySegment pattern, int patch_num, int corner_num, MemorySegment red, MemorySegment green, MemorySegment blue, MemorySegment alpha) {
@@ -3096,11 +5570,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_mesh_pattern_get_control_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1048.cairo_mesh_pattern_get_control_point$MH,"cairo_mesh_pattern_get_control_point");
+        return RuntimeHelper.requireNonNull(constants$1748.const$4,"cairo_mesh_pattern_get_control_point");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_mesh_pattern_get_control_point(cairo_pattern_t* pattern, unsigned int patch_num, unsigned int point_num, double* x, double* y);
+     * enum _cairo_status cairo_mesh_pattern_get_control_point(struct _cairo_pattern* pattern, unsigned int patch_num, unsigned int point_num, double* x, double* y);
      * }
      */
     public static int cairo_mesh_pattern_get_control_point(MemorySegment pattern, int patch_num, int point_num, MemorySegment x, MemorySegment y) {
@@ -3112,11 +5586,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_init$MH() {
-        return RuntimeHelper.requireNonNull(constants$1048.cairo_matrix_init$MH,"cairo_matrix_init");
+        return RuntimeHelper.requireNonNull(constants$1748.const$5,"cairo_matrix_init");
     }
     /**
      * {@snippet :
-     * void cairo_matrix_init(cairo_matrix_t* matrix, double xx, double yx, double xy, double yy, double x0, double y0);
+     * void cairo_matrix_init(struct _cairo_matrix* matrix, double xx, double yx, double xy, double yy, double x0, double y0);
      * }
      */
     public static void cairo_matrix_init(MemorySegment matrix, double xx, double yx, double xy, double yy, double x0, double y0) {
@@ -3128,11 +5602,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_init_identity$MH() {
-        return RuntimeHelper.requireNonNull(constants$1048.cairo_matrix_init_identity$MH,"cairo_matrix_init_identity");
+        return RuntimeHelper.requireNonNull(constants$1749.const$0,"cairo_matrix_init_identity");
     }
     /**
      * {@snippet :
-     * void cairo_matrix_init_identity(cairo_matrix_t* matrix);
+     * void cairo_matrix_init_identity(struct _cairo_matrix* matrix);
      * }
      */
     public static void cairo_matrix_init_identity(MemorySegment matrix) {
@@ -3144,11 +5618,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_init_translate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1048.cairo_matrix_init_translate$MH,"cairo_matrix_init_translate");
+        return RuntimeHelper.requireNonNull(constants$1749.const$1,"cairo_matrix_init_translate");
     }
     /**
      * {@snippet :
-     * void cairo_matrix_init_translate(cairo_matrix_t* matrix, double tx, double ty);
+     * void cairo_matrix_init_translate(struct _cairo_matrix* matrix, double tx, double ty);
      * }
      */
     public static void cairo_matrix_init_translate(MemorySegment matrix, double tx, double ty) {
@@ -3160,11 +5634,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_init_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$1048.cairo_matrix_init_scale$MH,"cairo_matrix_init_scale");
+        return RuntimeHelper.requireNonNull(constants$1749.const$2,"cairo_matrix_init_scale");
     }
     /**
      * {@snippet :
-     * void cairo_matrix_init_scale(cairo_matrix_t* matrix, double sx, double sy);
+     * void cairo_matrix_init_scale(struct _cairo_matrix* matrix, double sx, double sy);
      * }
      */
     public static void cairo_matrix_init_scale(MemorySegment matrix, double sx, double sy) {
@@ -3176,11 +5650,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_init_rotate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1049.cairo_matrix_init_rotate$MH,"cairo_matrix_init_rotate");
+        return RuntimeHelper.requireNonNull(constants$1749.const$3,"cairo_matrix_init_rotate");
     }
     /**
      * {@snippet :
-     * void cairo_matrix_init_rotate(cairo_matrix_t* matrix, double radians);
+     * void cairo_matrix_init_rotate(struct _cairo_matrix* matrix, double radians);
      * }
      */
     public static void cairo_matrix_init_rotate(MemorySegment matrix, double radians) {
@@ -3192,11 +5666,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_translate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1049.cairo_matrix_translate$MH,"cairo_matrix_translate");
+        return RuntimeHelper.requireNonNull(constants$1749.const$4,"cairo_matrix_translate");
     }
     /**
      * {@snippet :
-     * void cairo_matrix_translate(cairo_matrix_t* matrix, double tx, double ty);
+     * void cairo_matrix_translate(struct _cairo_matrix* matrix, double tx, double ty);
      * }
      */
     public static void cairo_matrix_translate(MemorySegment matrix, double tx, double ty) {
@@ -3208,11 +5682,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$1049.cairo_matrix_scale$MH,"cairo_matrix_scale");
+        return RuntimeHelper.requireNonNull(constants$1749.const$5,"cairo_matrix_scale");
     }
     /**
      * {@snippet :
-     * void cairo_matrix_scale(cairo_matrix_t* matrix, double sx, double sy);
+     * void cairo_matrix_scale(struct _cairo_matrix* matrix, double sx, double sy);
      * }
      */
     public static void cairo_matrix_scale(MemorySegment matrix, double sx, double sy) {
@@ -3224,11 +5698,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_rotate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1049.cairo_matrix_rotate$MH,"cairo_matrix_rotate");
+        return RuntimeHelper.requireNonNull(constants$1750.const$0,"cairo_matrix_rotate");
     }
     /**
      * {@snippet :
-     * void cairo_matrix_rotate(cairo_matrix_t* matrix, double radians);
+     * void cairo_matrix_rotate(struct _cairo_matrix* matrix, double radians);
      * }
      */
     public static void cairo_matrix_rotate(MemorySegment matrix, double radians) {
@@ -3240,11 +5714,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_invert$MH() {
-        return RuntimeHelper.requireNonNull(constants$1049.cairo_matrix_invert$MH,"cairo_matrix_invert");
+        return RuntimeHelper.requireNonNull(constants$1750.const$1,"cairo_matrix_invert");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_matrix_invert(cairo_matrix_t* matrix);
+     * enum _cairo_status cairo_matrix_invert(struct _cairo_matrix* matrix);
      * }
      */
     public static int cairo_matrix_invert(MemorySegment matrix) {
@@ -3256,11 +5730,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_multiply$MH() {
-        return RuntimeHelper.requireNonNull(constants$1049.cairo_matrix_multiply$MH,"cairo_matrix_multiply");
+        return RuntimeHelper.requireNonNull(constants$1750.const$2,"cairo_matrix_multiply");
     }
     /**
      * {@snippet :
-     * void cairo_matrix_multiply(cairo_matrix_t* result, const cairo_matrix_t* a, const cairo_matrix_t* b);
+     * void cairo_matrix_multiply(struct _cairo_matrix* result, struct _cairo_matrix* a, struct _cairo_matrix* b);
      * }
      */
     public static void cairo_matrix_multiply(MemorySegment result, MemorySegment a, MemorySegment b) {
@@ -3272,11 +5746,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_transform_distance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1050.cairo_matrix_transform_distance$MH,"cairo_matrix_transform_distance");
+        return RuntimeHelper.requireNonNull(constants$1750.const$3,"cairo_matrix_transform_distance");
     }
     /**
      * {@snippet :
-     * void cairo_matrix_transform_distance(const cairo_matrix_t* matrix, double* dx, double* dy);
+     * void cairo_matrix_transform_distance(struct _cairo_matrix* matrix, double* dx, double* dy);
      * }
      */
     public static void cairo_matrix_transform_distance(MemorySegment matrix, MemorySegment dx, MemorySegment dy) {
@@ -3288,11 +5762,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_matrix_transform_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1050.cairo_matrix_transform_point$MH,"cairo_matrix_transform_point");
+        return RuntimeHelper.requireNonNull(constants$1750.const$4,"cairo_matrix_transform_point");
     }
     /**
      * {@snippet :
-     * void cairo_matrix_transform_point(const cairo_matrix_t* matrix, double* x, double* y);
+     * void cairo_matrix_transform_point(struct _cairo_matrix* matrix, double* x, double* y);
      * }
      */
     public static void cairo_matrix_transform_point(MemorySegment matrix, MemorySegment x, MemorySegment y) {
@@ -3328,11 +5802,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         return (int)2L;
     }
     public static MethodHandle cairo_region_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1050.cairo_region_create$MH,"cairo_region_create");
+        return RuntimeHelper.requireNonNull(constants$1750.const$5,"cairo_region_create");
     }
     /**
      * {@snippet :
-     * cairo_region_t* cairo_region_create();
+     * struct _cairo_region* cairo_region_create();
      * }
      */
     public static MemorySegment cairo_region_create() {
@@ -3344,11 +5818,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_create_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1050.cairo_region_create_rectangle$MH,"cairo_region_create_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1751.const$0,"cairo_region_create_rectangle");
     }
     /**
      * {@snippet :
-     * cairo_region_t* cairo_region_create_rectangle(const cairo_rectangle_int_t* rectangle);
+     * struct _cairo_region* cairo_region_create_rectangle(struct _cairo_rectangle_int* rectangle);
      * }
      */
     public static MemorySegment cairo_region_create_rectangle(MemorySegment rectangle) {
@@ -3360,11 +5834,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_create_rectangles$MH() {
-        return RuntimeHelper.requireNonNull(constants$1050.cairo_region_create_rectangles$MH,"cairo_region_create_rectangles");
+        return RuntimeHelper.requireNonNull(constants$1751.const$1,"cairo_region_create_rectangles");
     }
     /**
      * {@snippet :
-     * cairo_region_t* cairo_region_create_rectangles(const cairo_rectangle_int_t* rects, int count);
+     * struct _cairo_region* cairo_region_create_rectangles(struct _cairo_rectangle_int* rects, int count);
      * }
      */
     public static MemorySegment cairo_region_create_rectangles(MemorySegment rects, int count) {
@@ -3376,11 +5850,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1050.cairo_region_copy$MH,"cairo_region_copy");
+        return RuntimeHelper.requireNonNull(constants$1751.const$2,"cairo_region_copy");
     }
     /**
      * {@snippet :
-     * cairo_region_t* cairo_region_copy(const cairo_region_t* original);
+     * struct _cairo_region* cairo_region_copy(struct _cairo_region* original);
      * }
      */
     public static MemorySegment cairo_region_copy(MemorySegment original) {
@@ -3392,11 +5866,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1051.cairo_region_reference$MH,"cairo_region_reference");
+        return RuntimeHelper.requireNonNull(constants$1751.const$3,"cairo_region_reference");
     }
     /**
      * {@snippet :
-     * cairo_region_t* cairo_region_reference(cairo_region_t* region);
+     * struct _cairo_region* cairo_region_reference(struct _cairo_region* region);
      * }
      */
     public static MemorySegment cairo_region_reference(MemorySegment region) {
@@ -3408,11 +5882,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1051.cairo_region_destroy$MH,"cairo_region_destroy");
+        return RuntimeHelper.requireNonNull(constants$1751.const$4,"cairo_region_destroy");
     }
     /**
      * {@snippet :
-     * void cairo_region_destroy(cairo_region_t* region);
+     * void cairo_region_destroy(struct _cairo_region* region);
      * }
      */
     public static void cairo_region_destroy(MemorySegment region) {
@@ -3424,11 +5898,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$1051.cairo_region_equal$MH,"cairo_region_equal");
+        return RuntimeHelper.requireNonNull(constants$1751.const$5,"cairo_region_equal");
     }
     /**
      * {@snippet :
-     * cairo_bool_t cairo_region_equal(const cairo_region_t* a, const cairo_region_t* b);
+     * int cairo_region_equal(struct _cairo_region* a, struct _cairo_region* b);
      * }
      */
     public static int cairo_region_equal(MemorySegment a, MemorySegment b) {
@@ -3440,11 +5914,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1051.cairo_region_status$MH,"cairo_region_status");
+        return RuntimeHelper.requireNonNull(constants$1752.const$0,"cairo_region_status");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_region_status(const cairo_region_t* region);
+     * enum _cairo_status cairo_region_status(struct _cairo_region* region);
      * }
      */
     public static int cairo_region_status(MemorySegment region) {
@@ -3456,11 +5930,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_get_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1051.cairo_region_get_extents$MH,"cairo_region_get_extents");
+        return RuntimeHelper.requireNonNull(constants$1752.const$1,"cairo_region_get_extents");
     }
     /**
      * {@snippet :
-     * void cairo_region_get_extents(const cairo_region_t* region, cairo_rectangle_int_t* extents);
+     * void cairo_region_get_extents(struct _cairo_region* region, struct _cairo_rectangle_int* extents);
      * }
      */
     public static void cairo_region_get_extents(MemorySegment region, MemorySegment extents) {
@@ -3472,11 +5946,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_num_rectangles$MH() {
-        return RuntimeHelper.requireNonNull(constants$1051.cairo_region_num_rectangles$MH,"cairo_region_num_rectangles");
+        return RuntimeHelper.requireNonNull(constants$1752.const$2,"cairo_region_num_rectangles");
     }
     /**
      * {@snippet :
-     * int cairo_region_num_rectangles(const cairo_region_t* region);
+     * int cairo_region_num_rectangles(struct _cairo_region* region);
      * }
      */
     public static int cairo_region_num_rectangles(MemorySegment region) {
@@ -3488,11 +5962,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_get_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1052.cairo_region_get_rectangle$MH,"cairo_region_get_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1752.const$3,"cairo_region_get_rectangle");
     }
     /**
      * {@snippet :
-     * void cairo_region_get_rectangle(const cairo_region_t* region, int nth, cairo_rectangle_int_t* rectangle);
+     * void cairo_region_get_rectangle(struct _cairo_region* region, int nth, struct _cairo_rectangle_int* rectangle);
      * }
      */
     public static void cairo_region_get_rectangle(MemorySegment region, int nth, MemorySegment rectangle) {
@@ -3504,11 +5978,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_is_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$1052.cairo_region_is_empty$MH,"cairo_region_is_empty");
+        return RuntimeHelper.requireNonNull(constants$1752.const$4,"cairo_region_is_empty");
     }
     /**
      * {@snippet :
-     * cairo_bool_t cairo_region_is_empty(const cairo_region_t* region);
+     * int cairo_region_is_empty(struct _cairo_region* region);
      * }
      */
     public static int cairo_region_is_empty(MemorySegment region) {
@@ -3520,11 +5994,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_contains_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1052.cairo_region_contains_rectangle$MH,"cairo_region_contains_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1752.const$5,"cairo_region_contains_rectangle");
     }
     /**
      * {@snippet :
-     * cairo_region_overlap_t cairo_region_contains_rectangle(const cairo_region_t* region, const cairo_rectangle_int_t* rectangle);
+     * enum _cairo_region_overlap cairo_region_contains_rectangle(struct _cairo_region* region, struct _cairo_rectangle_int* rectangle);
      * }
      */
     public static int cairo_region_contains_rectangle(MemorySegment region, MemorySegment rectangle) {
@@ -3536,11 +6010,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_contains_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1052.cairo_region_contains_point$MH,"cairo_region_contains_point");
+        return RuntimeHelper.requireNonNull(constants$1753.const$0,"cairo_region_contains_point");
     }
     /**
      * {@snippet :
-     * cairo_bool_t cairo_region_contains_point(const cairo_region_t* region, int x, int y);
+     * int cairo_region_contains_point(struct _cairo_region* region, int x, int y);
      * }
      */
     public static int cairo_region_contains_point(MemorySegment region, int x, int y) {
@@ -3552,11 +6026,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_translate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1052.cairo_region_translate$MH,"cairo_region_translate");
+        return RuntimeHelper.requireNonNull(constants$1753.const$1,"cairo_region_translate");
     }
     /**
      * {@snippet :
-     * void cairo_region_translate(cairo_region_t* region, int dx, int dy);
+     * void cairo_region_translate(struct _cairo_region* region, int dx, int dy);
      * }
      */
     public static void cairo_region_translate(MemorySegment region, int dx, int dy) {
@@ -3568,11 +6042,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_subtract$MH() {
-        return RuntimeHelper.requireNonNull(constants$1052.cairo_region_subtract$MH,"cairo_region_subtract");
+        return RuntimeHelper.requireNonNull(constants$1753.const$2,"cairo_region_subtract");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_region_subtract(cairo_region_t* dst, const cairo_region_t* other);
+     * enum _cairo_status cairo_region_subtract(struct _cairo_region* dst, struct _cairo_region* other);
      * }
      */
     public static int cairo_region_subtract(MemorySegment dst, MemorySegment other) {
@@ -3584,11 +6058,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_subtract_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1053.cairo_region_subtract_rectangle$MH,"cairo_region_subtract_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1753.const$3,"cairo_region_subtract_rectangle");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_region_subtract_rectangle(cairo_region_t* dst, const cairo_rectangle_int_t* rectangle);
+     * enum _cairo_status cairo_region_subtract_rectangle(struct _cairo_region* dst, struct _cairo_rectangle_int* rectangle);
      * }
      */
     public static int cairo_region_subtract_rectangle(MemorySegment dst, MemorySegment rectangle) {
@@ -3600,11 +6074,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_intersect$MH() {
-        return RuntimeHelper.requireNonNull(constants$1053.cairo_region_intersect$MH,"cairo_region_intersect");
+        return RuntimeHelper.requireNonNull(constants$1753.const$4,"cairo_region_intersect");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_region_intersect(cairo_region_t* dst, const cairo_region_t* other);
+     * enum _cairo_status cairo_region_intersect(struct _cairo_region* dst, struct _cairo_region* other);
      * }
      */
     public static int cairo_region_intersect(MemorySegment dst, MemorySegment other) {
@@ -3616,11 +6090,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_intersect_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1053.cairo_region_intersect_rectangle$MH,"cairo_region_intersect_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1753.const$5,"cairo_region_intersect_rectangle");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_region_intersect_rectangle(cairo_region_t* dst, const cairo_rectangle_int_t* rectangle);
+     * enum _cairo_status cairo_region_intersect_rectangle(struct _cairo_region* dst, struct _cairo_rectangle_int* rectangle);
      * }
      */
     public static int cairo_region_intersect_rectangle(MemorySegment dst, MemorySegment rectangle) {
@@ -3632,11 +6106,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_union$MH() {
-        return RuntimeHelper.requireNonNull(constants$1053.cairo_region_union$MH,"cairo_region_union");
+        return RuntimeHelper.requireNonNull(constants$1754.const$0,"cairo_region_union");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_region_union(cairo_region_t* dst, const cairo_region_t* other);
+     * enum _cairo_status cairo_region_union(struct _cairo_region* dst, struct _cairo_region* other);
      * }
      */
     public static int cairo_region_union(MemorySegment dst, MemorySegment other) {
@@ -3648,11 +6122,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_union_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1053.cairo_region_union_rectangle$MH,"cairo_region_union_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1754.const$1,"cairo_region_union_rectangle");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_region_union_rectangle(cairo_region_t* dst, const cairo_rectangle_int_t* rectangle);
+     * enum _cairo_status cairo_region_union_rectangle(struct _cairo_region* dst, struct _cairo_rectangle_int* rectangle);
      * }
      */
     public static int cairo_region_union_rectangle(MemorySegment dst, MemorySegment rectangle) {
@@ -3664,11 +6138,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_xor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1053.cairo_region_xor$MH,"cairo_region_xor");
+        return RuntimeHelper.requireNonNull(constants$1754.const$2,"cairo_region_xor");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_region_xor(cairo_region_t* dst, const cairo_region_t* other);
+     * enum _cairo_status cairo_region_xor(struct _cairo_region* dst, struct _cairo_region* other);
      * }
      */
     public static int cairo_region_xor(MemorySegment dst, MemorySegment other) {
@@ -3680,11 +6154,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_region_xor_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1054.cairo_region_xor_rectangle$MH,"cairo_region_xor_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1754.const$3,"cairo_region_xor_rectangle");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_region_xor_rectangle(cairo_region_t* dst, const cairo_rectangle_int_t* rectangle);
+     * enum _cairo_status cairo_region_xor_rectangle(struct _cairo_region* dst, struct _cairo_rectangle_int* rectangle);
      * }
      */
     public static int cairo_region_xor_rectangle(MemorySegment dst, MemorySegment rectangle) {
@@ -3696,7 +6170,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle cairo_debug_reset_static_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1054.cairo_debug_reset_static_data$MH,"cairo_debug_reset_static_data");
+        return RuntimeHelper.requireNonNull(constants$1754.const$4,"cairo_debug_reset_static_data");
     }
     /**
      * {@snippet :
@@ -3716,10 +6190,10 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
      * typedef struct _GdkAtom* GdkAtom;
      * }
      */
-    public static final OfAddress GdkAtom = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GdkAtom = RuntimeHelper.POINTER;
     /**
      * {@snippet :
-     * enum .GDK_LSB_FIRST = 0;
+     * enum GdkByteOrder.GDK_LSB_FIRST = 0;
      * }
      */
     public static int GDK_LSB_FIRST() {
@@ -3727,7 +6201,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MSB_FIRST = 1;
+     * enum GdkByteOrder.GDK_MSB_FIRST = 1;
      * }
      */
     public static int GDK_MSB_FIRST() {
@@ -3735,7 +6209,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SHIFT_MASK = 1;
+     * enum GdkModifierType.GDK_SHIFT_MASK = 1;
      * }
      */
     public static int GDK_SHIFT_MASK() {
@@ -3743,7 +6217,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_LOCK_MASK = 2;
+     * enum GdkModifierType.GDK_LOCK_MASK = 2;
      * }
      */
     public static int GDK_LOCK_MASK() {
@@ -3751,7 +6225,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_CONTROL_MASK = 4;
+     * enum GdkModifierType.GDK_CONTROL_MASK = 4;
      * }
      */
     public static int GDK_CONTROL_MASK() {
@@ -3759,7 +6233,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MOD1_MASK = 8;
+     * enum GdkModifierType.GDK_MOD1_MASK = 8;
      * }
      */
     public static int GDK_MOD1_MASK() {
@@ -3767,7 +6241,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MOD2_MASK = 16;
+     * enum GdkModifierType.GDK_MOD2_MASK = 16;
      * }
      */
     public static int GDK_MOD2_MASK() {
@@ -3775,7 +6249,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MOD3_MASK = 32;
+     * enum GdkModifierType.GDK_MOD3_MASK = 32;
      * }
      */
     public static int GDK_MOD3_MASK() {
@@ -3783,7 +6257,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MOD4_MASK = 64;
+     * enum GdkModifierType.GDK_MOD4_MASK = 64;
      * }
      */
     public static int GDK_MOD4_MASK() {
@@ -3791,7 +6265,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MOD5_MASK = 128;
+     * enum GdkModifierType.GDK_MOD5_MASK = 128;
      * }
      */
     public static int GDK_MOD5_MASK() {
@@ -3799,7 +6273,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_BUTTON1_MASK = 256;
+     * enum GdkModifierType.GDK_BUTTON1_MASK = 256;
      * }
      */
     public static int GDK_BUTTON1_MASK() {
@@ -3807,7 +6281,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_BUTTON2_MASK = 512;
+     * enum GdkModifierType.GDK_BUTTON2_MASK = 512;
      * }
      */
     public static int GDK_BUTTON2_MASK() {
@@ -3815,7 +6289,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_BUTTON3_MASK = 1024;
+     * enum GdkModifierType.GDK_BUTTON3_MASK = 1024;
      * }
      */
     public static int GDK_BUTTON3_MASK() {
@@ -3823,7 +6297,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_BUTTON4_MASK = 2048;
+     * enum GdkModifierType.GDK_BUTTON4_MASK = 2048;
      * }
      */
     public static int GDK_BUTTON4_MASK() {
@@ -3831,7 +6305,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_BUTTON5_MASK = 4096;
+     * enum GdkModifierType.GDK_BUTTON5_MASK = 4096;
      * }
      */
     public static int GDK_BUTTON5_MASK() {
@@ -3839,7 +6313,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_RESERVED_13_MASK = 8192;
+     * enum GdkModifierType.GDK_MODIFIER_RESERVED_13_MASK = 8192;
      * }
      */
     public static int GDK_MODIFIER_RESERVED_13_MASK() {
@@ -3847,7 +6321,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_RESERVED_14_MASK = 16384;
+     * enum GdkModifierType.GDK_MODIFIER_RESERVED_14_MASK = 16384;
      * }
      */
     public static int GDK_MODIFIER_RESERVED_14_MASK() {
@@ -3855,7 +6329,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_RESERVED_15_MASK = 32768;
+     * enum GdkModifierType.GDK_MODIFIER_RESERVED_15_MASK = 32768;
      * }
      */
     public static int GDK_MODIFIER_RESERVED_15_MASK() {
@@ -3863,7 +6337,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_RESERVED_16_MASK = 65536;
+     * enum GdkModifierType.GDK_MODIFIER_RESERVED_16_MASK = 65536;
      * }
      */
     public static int GDK_MODIFIER_RESERVED_16_MASK() {
@@ -3871,7 +6345,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_RESERVED_17_MASK = 131072;
+     * enum GdkModifierType.GDK_MODIFIER_RESERVED_17_MASK = 131072;
      * }
      */
     public static int GDK_MODIFIER_RESERVED_17_MASK() {
@@ -3879,7 +6353,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_RESERVED_18_MASK = 262144;
+     * enum GdkModifierType.GDK_MODIFIER_RESERVED_18_MASK = 262144;
      * }
      */
     public static int GDK_MODIFIER_RESERVED_18_MASK() {
@@ -3887,7 +6361,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_RESERVED_19_MASK = 524288;
+     * enum GdkModifierType.GDK_MODIFIER_RESERVED_19_MASK = 524288;
      * }
      */
     public static int GDK_MODIFIER_RESERVED_19_MASK() {
@@ -3895,7 +6369,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_RESERVED_20_MASK = 1048576;
+     * enum GdkModifierType.GDK_MODIFIER_RESERVED_20_MASK = 1048576;
      * }
      */
     public static int GDK_MODIFIER_RESERVED_20_MASK() {
@@ -3903,7 +6377,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_RESERVED_21_MASK = 2097152;
+     * enum GdkModifierType.GDK_MODIFIER_RESERVED_21_MASK = 2097152;
      * }
      */
     public static int GDK_MODIFIER_RESERVED_21_MASK() {
@@ -3911,7 +6385,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_RESERVED_22_MASK = 4194304;
+     * enum GdkModifierType.GDK_MODIFIER_RESERVED_22_MASK = 4194304;
      * }
      */
     public static int GDK_MODIFIER_RESERVED_22_MASK() {
@@ -3919,7 +6393,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_RESERVED_23_MASK = 8388608;
+     * enum GdkModifierType.GDK_MODIFIER_RESERVED_23_MASK = 8388608;
      * }
      */
     public static int GDK_MODIFIER_RESERVED_23_MASK() {
@@ -3927,7 +6401,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_RESERVED_24_MASK = 16777216;
+     * enum GdkModifierType.GDK_MODIFIER_RESERVED_24_MASK = 16777216;
      * }
      */
     public static int GDK_MODIFIER_RESERVED_24_MASK() {
@@ -3935,7 +6409,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_RESERVED_25_MASK = 33554432;
+     * enum GdkModifierType.GDK_MODIFIER_RESERVED_25_MASK = 33554432;
      * }
      */
     public static int GDK_MODIFIER_RESERVED_25_MASK() {
@@ -3943,7 +6417,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SUPER_MASK = 67108864;
+     * enum GdkModifierType.GDK_SUPER_MASK = 67108864;
      * }
      */
     public static int GDK_SUPER_MASK() {
@@ -3951,7 +6425,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_HYPER_MASK = 134217728;
+     * enum GdkModifierType.GDK_HYPER_MASK = 134217728;
      * }
      */
     public static int GDK_HYPER_MASK() {
@@ -3959,7 +6433,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_META_MASK = 268435456;
+     * enum GdkModifierType.GDK_META_MASK = 268435456;
      * }
      */
     public static int GDK_META_MASK() {
@@ -3967,7 +6441,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_RESERVED_29_MASK = 536870912;
+     * enum GdkModifierType.GDK_MODIFIER_RESERVED_29_MASK = 536870912;
      * }
      */
     public static int GDK_MODIFIER_RESERVED_29_MASK() {
@@ -3975,7 +6449,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_RELEASE_MASK = 1073741824;
+     * enum GdkModifierType.GDK_RELEASE_MASK = 1073741824;
      * }
      */
     public static int GDK_RELEASE_MASK() {
@@ -3983,7 +6457,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_MASK = 1543512063;
+     * enum GdkModifierType.GDK_MODIFIER_MASK = 1543512063;
      * }
      */
     public static int GDK_MODIFIER_MASK() {
@@ -3991,7 +6465,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_INTENT_PRIMARY_ACCELERATOR = 0;
+     * enum GdkModifierIntent.GDK_MODIFIER_INTENT_PRIMARY_ACCELERATOR = 0;
      * }
      */
     public static int GDK_MODIFIER_INTENT_PRIMARY_ACCELERATOR() {
@@ -3999,7 +6473,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_INTENT_CONTEXT_MENU = 1;
+     * enum GdkModifierIntent.GDK_MODIFIER_INTENT_CONTEXT_MENU = 1;
      * }
      */
     public static int GDK_MODIFIER_INTENT_CONTEXT_MENU() {
@@ -4007,7 +6481,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_INTENT_EXTEND_SELECTION = 2;
+     * enum GdkModifierIntent.GDK_MODIFIER_INTENT_EXTEND_SELECTION = 2;
      * }
      */
     public static int GDK_MODIFIER_INTENT_EXTEND_SELECTION() {
@@ -4015,7 +6489,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_INTENT_MODIFY_SELECTION = 3;
+     * enum GdkModifierIntent.GDK_MODIFIER_INTENT_MODIFY_SELECTION = 3;
      * }
      */
     public static int GDK_MODIFIER_INTENT_MODIFY_SELECTION() {
@@ -4023,7 +6497,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_INTENT_NO_TEXT_INPUT = 4;
+     * enum GdkModifierIntent.GDK_MODIFIER_INTENT_NO_TEXT_INPUT = 4;
      * }
      */
     public static int GDK_MODIFIER_INTENT_NO_TEXT_INPUT() {
@@ -4031,7 +6505,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_INTENT_SHIFT_GROUP = 5;
+     * enum GdkModifierIntent.GDK_MODIFIER_INTENT_SHIFT_GROUP = 5;
      * }
      */
     public static int GDK_MODIFIER_INTENT_SHIFT_GROUP() {
@@ -4039,7 +6513,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODIFIER_INTENT_DEFAULT_MOD_MASK = 6;
+     * enum GdkModifierIntent.GDK_MODIFIER_INTENT_DEFAULT_MOD_MASK = 6;
      * }
      */
     public static int GDK_MODIFIER_INTENT_DEFAULT_MOD_MASK() {
@@ -4047,7 +6521,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_OK = 0;
+     * enum GdkStatus.GDK_OK = 0;
      * }
      */
     public static int GDK_OK() {
@@ -4055,7 +6529,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ERROR = -1;
+     * enum GdkStatus.GDK_ERROR = -1;
      * }
      */
     public static int GDK_ERROR() {
@@ -4063,7 +6537,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ERROR_PARAM = -2;
+     * enum GdkStatus.GDK_ERROR_PARAM = -2;
      * }
      */
     public static int GDK_ERROR_PARAM() {
@@ -4071,7 +6545,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ERROR_FILE = -3;
+     * enum GdkStatus.GDK_ERROR_FILE = -3;
      * }
      */
     public static int GDK_ERROR_FILE() {
@@ -4079,7 +6553,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ERROR_MEM = -4;
+     * enum GdkStatus.GDK_ERROR_MEM = -4;
      * }
      */
     public static int GDK_ERROR_MEM() {
@@ -4087,7 +6561,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAB_SUCCESS = 0;
+     * enum GdkGrabStatus.GDK_GRAB_SUCCESS = 0;
      * }
      */
     public static int GDK_GRAB_SUCCESS() {
@@ -4095,7 +6569,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAB_ALREADY_GRABBED = 1;
+     * enum GdkGrabStatus.GDK_GRAB_ALREADY_GRABBED = 1;
      * }
      */
     public static int GDK_GRAB_ALREADY_GRABBED() {
@@ -4103,7 +6577,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAB_INVALID_TIME = 2;
+     * enum GdkGrabStatus.GDK_GRAB_INVALID_TIME = 2;
      * }
      */
     public static int GDK_GRAB_INVALID_TIME() {
@@ -4111,7 +6585,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAB_NOT_VIEWABLE = 3;
+     * enum GdkGrabStatus.GDK_GRAB_NOT_VIEWABLE = 3;
      * }
      */
     public static int GDK_GRAB_NOT_VIEWABLE() {
@@ -4119,7 +6593,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAB_FROZEN = 4;
+     * enum GdkGrabStatus.GDK_GRAB_FROZEN = 4;
      * }
      */
     public static int GDK_GRAB_FROZEN() {
@@ -4127,7 +6601,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAB_FAILED = 5;
+     * enum GdkGrabStatus.GDK_GRAB_FAILED = 5;
      * }
      */
     public static int GDK_GRAB_FAILED() {
@@ -4135,7 +6609,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_OWNERSHIP_NONE = 0;
+     * enum GdkGrabOwnership.GDK_OWNERSHIP_NONE = 0;
      * }
      */
     public static int GDK_OWNERSHIP_NONE() {
@@ -4143,7 +6617,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_OWNERSHIP_WINDOW = 1;
+     * enum GdkGrabOwnership.GDK_OWNERSHIP_WINDOW = 1;
      * }
      */
     public static int GDK_OWNERSHIP_WINDOW() {
@@ -4151,7 +6625,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_OWNERSHIP_APPLICATION = 2;
+     * enum GdkGrabOwnership.GDK_OWNERSHIP_APPLICATION = 2;
      * }
      */
     public static int GDK_OWNERSHIP_APPLICATION() {
@@ -4159,7 +6633,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_EXPOSURE_MASK = 2;
+     * enum GdkEventMask.GDK_EXPOSURE_MASK = 2;
      * }
      */
     public static int GDK_EXPOSURE_MASK() {
@@ -4167,7 +6641,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_POINTER_MOTION_MASK = 4;
+     * enum GdkEventMask.GDK_POINTER_MOTION_MASK = 4;
      * }
      */
     public static int GDK_POINTER_MOTION_MASK() {
@@ -4175,7 +6649,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_POINTER_MOTION_HINT_MASK = 8;
+     * enum GdkEventMask.GDK_POINTER_MOTION_HINT_MASK = 8;
      * }
      */
     public static int GDK_POINTER_MOTION_HINT_MASK() {
@@ -4183,7 +6657,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_BUTTON_MOTION_MASK = 16;
+     * enum GdkEventMask.GDK_BUTTON_MOTION_MASK = 16;
      * }
      */
     public static int GDK_BUTTON_MOTION_MASK() {
@@ -4191,7 +6665,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_BUTTON1_MOTION_MASK = 32;
+     * enum GdkEventMask.GDK_BUTTON1_MOTION_MASK = 32;
      * }
      */
     public static int GDK_BUTTON1_MOTION_MASK() {
@@ -4199,7 +6673,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_BUTTON2_MOTION_MASK = 64;
+     * enum GdkEventMask.GDK_BUTTON2_MOTION_MASK = 64;
      * }
      */
     public static int GDK_BUTTON2_MOTION_MASK() {
@@ -4207,7 +6681,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_BUTTON3_MOTION_MASK = 128;
+     * enum GdkEventMask.GDK_BUTTON3_MOTION_MASK = 128;
      * }
      */
     public static int GDK_BUTTON3_MOTION_MASK() {
@@ -4215,7 +6689,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_BUTTON_PRESS_MASK = 256;
+     * enum GdkEventMask.GDK_BUTTON_PRESS_MASK = 256;
      * }
      */
     public static int GDK_BUTTON_PRESS_MASK() {
@@ -4223,7 +6697,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_BUTTON_RELEASE_MASK = 512;
+     * enum GdkEventMask.GDK_BUTTON_RELEASE_MASK = 512;
      * }
      */
     public static int GDK_BUTTON_RELEASE_MASK() {
@@ -4231,7 +6705,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_KEY_PRESS_MASK = 1024;
+     * enum GdkEventMask.GDK_KEY_PRESS_MASK = 1024;
      * }
      */
     public static int GDK_KEY_PRESS_MASK() {
@@ -4239,7 +6713,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_KEY_RELEASE_MASK = 2048;
+     * enum GdkEventMask.GDK_KEY_RELEASE_MASK = 2048;
      * }
      */
     public static int GDK_KEY_RELEASE_MASK() {
@@ -4247,7 +6721,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ENTER_NOTIFY_MASK = 4096;
+     * enum GdkEventMask.GDK_ENTER_NOTIFY_MASK = 4096;
      * }
      */
     public static int GDK_ENTER_NOTIFY_MASK() {
@@ -4255,7 +6729,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_LEAVE_NOTIFY_MASK = 8192;
+     * enum GdkEventMask.GDK_LEAVE_NOTIFY_MASK = 8192;
      * }
      */
     public static int GDK_LEAVE_NOTIFY_MASK() {
@@ -4263,7 +6737,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FOCUS_CHANGE_MASK = 16384;
+     * enum GdkEventMask.GDK_FOCUS_CHANGE_MASK = 16384;
      * }
      */
     public static int GDK_FOCUS_CHANGE_MASK() {
@@ -4271,7 +6745,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_STRUCTURE_MASK = 32768;
+     * enum GdkEventMask.GDK_STRUCTURE_MASK = 32768;
      * }
      */
     public static int GDK_STRUCTURE_MASK() {
@@ -4279,7 +6753,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_PROPERTY_CHANGE_MASK = 65536;
+     * enum GdkEventMask.GDK_PROPERTY_CHANGE_MASK = 65536;
      * }
      */
     public static int GDK_PROPERTY_CHANGE_MASK() {
@@ -4287,7 +6761,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_VISIBILITY_NOTIFY_MASK = 131072;
+     * enum GdkEventMask.GDK_VISIBILITY_NOTIFY_MASK = 131072;
      * }
      */
     public static int GDK_VISIBILITY_NOTIFY_MASK() {
@@ -4295,7 +6769,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_PROXIMITY_IN_MASK = 262144;
+     * enum GdkEventMask.GDK_PROXIMITY_IN_MASK = 262144;
      * }
      */
     public static int GDK_PROXIMITY_IN_MASK() {
@@ -4303,7 +6777,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_PROXIMITY_OUT_MASK = 524288;
+     * enum GdkEventMask.GDK_PROXIMITY_OUT_MASK = 524288;
      * }
      */
     public static int GDK_PROXIMITY_OUT_MASK() {
@@ -4311,7 +6785,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SUBSTRUCTURE_MASK = 1048576;
+     * enum GdkEventMask.GDK_SUBSTRUCTURE_MASK = 1048576;
      * }
      */
     public static int GDK_SUBSTRUCTURE_MASK() {
@@ -4319,7 +6793,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SCROLL_MASK = 2097152;
+     * enum GdkEventMask.GDK_SCROLL_MASK = 2097152;
      * }
      */
     public static int GDK_SCROLL_MASK() {
@@ -4327,7 +6801,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_TOUCH_MASK = 4194304;
+     * enum GdkEventMask.GDK_TOUCH_MASK = 4194304;
      * }
      */
     public static int GDK_TOUCH_MASK() {
@@ -4335,7 +6809,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SMOOTH_SCROLL_MASK = 8388608;
+     * enum GdkEventMask.GDK_SMOOTH_SCROLL_MASK = 8388608;
      * }
      */
     public static int GDK_SMOOTH_SCROLL_MASK() {
@@ -4343,7 +6817,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_TOUCHPAD_GESTURE_MASK = 16777216;
+     * enum GdkEventMask.GDK_TOUCHPAD_GESTURE_MASK = 16777216;
      * }
      */
     public static int GDK_TOUCHPAD_GESTURE_MASK() {
@@ -4351,7 +6825,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_TABLET_PAD_MASK = 33554432;
+     * enum GdkEventMask.GDK_TABLET_PAD_MASK = 33554432;
      * }
      */
     public static int GDK_TABLET_PAD_MASK() {
@@ -4359,7 +6833,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ALL_EVENTS_MASK = 67108862;
+     * enum GdkEventMask.GDK_ALL_EVENTS_MASK = 67108862;
      * }
      */
     public static int GDK_ALL_EVENTS_MASK() {
@@ -4367,7 +6841,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GL_ERROR_NOT_AVAILABLE = 0;
+     * enum GdkGLError.GDK_GL_ERROR_NOT_AVAILABLE = 0;
      * }
      */
     public static int GDK_GL_ERROR_NOT_AVAILABLE() {
@@ -4375,7 +6849,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GL_ERROR_UNSUPPORTED_FORMAT = 1;
+     * enum GdkGLError.GDK_GL_ERROR_UNSUPPORTED_FORMAT = 1;
      * }
      */
     public static int GDK_GL_ERROR_UNSUPPORTED_FORMAT() {
@@ -4383,7 +6857,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GL_ERROR_UNSUPPORTED_PROFILE = 2;
+     * enum GdkGLError.GDK_GL_ERROR_UNSUPPORTED_PROFILE = 2;
      * }
      */
     public static int GDK_GL_ERROR_UNSUPPORTED_PROFILE() {
@@ -4391,7 +6865,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_TYPE_HINT_NORMAL = 0;
+     * enum GdkWindowTypeHint.GDK_WINDOW_TYPE_HINT_NORMAL = 0;
      * }
      */
     public static int GDK_WINDOW_TYPE_HINT_NORMAL() {
@@ -4399,7 +6873,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_TYPE_HINT_DIALOG = 1;
+     * enum GdkWindowTypeHint.GDK_WINDOW_TYPE_HINT_DIALOG = 1;
      * }
      */
     public static int GDK_WINDOW_TYPE_HINT_DIALOG() {
@@ -4407,7 +6881,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_TYPE_HINT_MENU = 2;
+     * enum GdkWindowTypeHint.GDK_WINDOW_TYPE_HINT_MENU = 2;
      * }
      */
     public static int GDK_WINDOW_TYPE_HINT_MENU() {
@@ -4415,7 +6889,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_TYPE_HINT_TOOLBAR = 3;
+     * enum GdkWindowTypeHint.GDK_WINDOW_TYPE_HINT_TOOLBAR = 3;
      * }
      */
     public static int GDK_WINDOW_TYPE_HINT_TOOLBAR() {
@@ -4423,7 +6897,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_TYPE_HINT_SPLASHSCREEN = 4;
+     * enum GdkWindowTypeHint.GDK_WINDOW_TYPE_HINT_SPLASHSCREEN = 4;
      * }
      */
     public static int GDK_WINDOW_TYPE_HINT_SPLASHSCREEN() {
@@ -4431,7 +6905,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_TYPE_HINT_UTILITY = 5;
+     * enum GdkWindowTypeHint.GDK_WINDOW_TYPE_HINT_UTILITY = 5;
      * }
      */
     public static int GDK_WINDOW_TYPE_HINT_UTILITY() {
@@ -4439,7 +6913,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_TYPE_HINT_DOCK = 6;
+     * enum GdkWindowTypeHint.GDK_WINDOW_TYPE_HINT_DOCK = 6;
      * }
      */
     public static int GDK_WINDOW_TYPE_HINT_DOCK() {
@@ -4447,7 +6921,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_TYPE_HINT_DESKTOP = 7;
+     * enum GdkWindowTypeHint.GDK_WINDOW_TYPE_HINT_DESKTOP = 7;
      * }
      */
     public static int GDK_WINDOW_TYPE_HINT_DESKTOP() {
@@ -4455,7 +6929,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_TYPE_HINT_DROPDOWN_MENU = 8;
+     * enum GdkWindowTypeHint.GDK_WINDOW_TYPE_HINT_DROPDOWN_MENU = 8;
      * }
      */
     public static int GDK_WINDOW_TYPE_HINT_DROPDOWN_MENU() {
@@ -4463,7 +6937,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_TYPE_HINT_POPUP_MENU = 9;
+     * enum GdkWindowTypeHint.GDK_WINDOW_TYPE_HINT_POPUP_MENU = 9;
      * }
      */
     public static int GDK_WINDOW_TYPE_HINT_POPUP_MENU() {
@@ -4471,7 +6945,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_TYPE_HINT_TOOLTIP = 10;
+     * enum GdkWindowTypeHint.GDK_WINDOW_TYPE_HINT_TOOLTIP = 10;
      * }
      */
     public static int GDK_WINDOW_TYPE_HINT_TOOLTIP() {
@@ -4479,7 +6953,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_TYPE_HINT_NOTIFICATION = 11;
+     * enum GdkWindowTypeHint.GDK_WINDOW_TYPE_HINT_NOTIFICATION = 11;
      * }
      */
     public static int GDK_WINDOW_TYPE_HINT_NOTIFICATION() {
@@ -4487,7 +6961,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_TYPE_HINT_COMBO = 12;
+     * enum GdkWindowTypeHint.GDK_WINDOW_TYPE_HINT_COMBO = 12;
      * }
      */
     public static int GDK_WINDOW_TYPE_HINT_COMBO() {
@@ -4495,7 +6969,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_TYPE_HINT_DND = 13;
+     * enum GdkWindowTypeHint.GDK_WINDOW_TYPE_HINT_DND = 13;
      * }
      */
     public static int GDK_WINDOW_TYPE_HINT_DND() {
@@ -4503,7 +6977,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_IGNORE = 0;
+     * enum GdkAxisUse.GDK_AXIS_IGNORE = 0;
      * }
      */
     public static int GDK_AXIS_IGNORE() {
@@ -4511,7 +6985,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_X = 1;
+     * enum GdkAxisUse.GDK_AXIS_X = 1;
      * }
      */
     public static int GDK_AXIS_X() {
@@ -4519,7 +6993,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_Y = 2;
+     * enum GdkAxisUse.GDK_AXIS_Y = 2;
      * }
      */
     public static int GDK_AXIS_Y() {
@@ -4527,7 +7001,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_PRESSURE = 3;
+     * enum GdkAxisUse.GDK_AXIS_PRESSURE = 3;
      * }
      */
     public static int GDK_AXIS_PRESSURE() {
@@ -4535,7 +7009,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_XTILT = 4;
+     * enum GdkAxisUse.GDK_AXIS_XTILT = 4;
      * }
      */
     public static int GDK_AXIS_XTILT() {
@@ -4543,7 +7017,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_YTILT = 5;
+     * enum GdkAxisUse.GDK_AXIS_YTILT = 5;
      * }
      */
     public static int GDK_AXIS_YTILT() {
@@ -4551,7 +7025,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_WHEEL = 6;
+     * enum GdkAxisUse.GDK_AXIS_WHEEL = 6;
      * }
      */
     public static int GDK_AXIS_WHEEL() {
@@ -4559,7 +7033,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_DISTANCE = 7;
+     * enum GdkAxisUse.GDK_AXIS_DISTANCE = 7;
      * }
      */
     public static int GDK_AXIS_DISTANCE() {
@@ -4567,7 +7041,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_ROTATION = 8;
+     * enum GdkAxisUse.GDK_AXIS_ROTATION = 8;
      * }
      */
     public static int GDK_AXIS_ROTATION() {
@@ -4575,7 +7049,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_SLIDER = 9;
+     * enum GdkAxisUse.GDK_AXIS_SLIDER = 9;
      * }
      */
     public static int GDK_AXIS_SLIDER() {
@@ -4583,7 +7057,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_LAST = 10;
+     * enum GdkAxisUse.GDK_AXIS_LAST = 10;
      * }
      */
     public static int GDK_AXIS_LAST() {
@@ -4591,7 +7065,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_FLAG_X = 2;
+     * enum GdkAxisFlags.GDK_AXIS_FLAG_X = 2;
      * }
      */
     public static int GDK_AXIS_FLAG_X() {
@@ -4599,7 +7073,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_FLAG_Y = 4;
+     * enum GdkAxisFlags.GDK_AXIS_FLAG_Y = 4;
      * }
      */
     public static int GDK_AXIS_FLAG_Y() {
@@ -4607,7 +7081,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_FLAG_PRESSURE = 8;
+     * enum GdkAxisFlags.GDK_AXIS_FLAG_PRESSURE = 8;
      * }
      */
     public static int GDK_AXIS_FLAG_PRESSURE() {
@@ -4615,7 +7089,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_FLAG_XTILT = 16;
+     * enum GdkAxisFlags.GDK_AXIS_FLAG_XTILT = 16;
      * }
      */
     public static int GDK_AXIS_FLAG_XTILT() {
@@ -4623,7 +7097,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_FLAG_YTILT = 32;
+     * enum GdkAxisFlags.GDK_AXIS_FLAG_YTILT = 32;
      * }
      */
     public static int GDK_AXIS_FLAG_YTILT() {
@@ -4631,7 +7105,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_FLAG_WHEEL = 64;
+     * enum GdkAxisFlags.GDK_AXIS_FLAG_WHEEL = 64;
      * }
      */
     public static int GDK_AXIS_FLAG_WHEEL() {
@@ -4639,7 +7113,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_FLAG_DISTANCE = 128;
+     * enum GdkAxisFlags.GDK_AXIS_FLAG_DISTANCE = 128;
      * }
      */
     public static int GDK_AXIS_FLAG_DISTANCE() {
@@ -4647,7 +7121,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_FLAG_ROTATION = 256;
+     * enum GdkAxisFlags.GDK_AXIS_FLAG_ROTATION = 256;
      * }
      */
     public static int GDK_AXIS_FLAG_ROTATION() {
@@ -4655,7 +7129,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_AXIS_FLAG_SLIDER = 512;
+     * enum GdkAxisFlags.GDK_AXIS_FLAG_SLIDER = 512;
      * }
      */
     public static int GDK_AXIS_FLAG_SLIDER() {
@@ -4663,7 +7137,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SOURCE_MOUSE = 0;
+     * enum GdkInputSource.GDK_SOURCE_MOUSE = 0;
      * }
      */
     public static int GDK_SOURCE_MOUSE() {
@@ -4671,7 +7145,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SOURCE_PEN = 1;
+     * enum GdkInputSource.GDK_SOURCE_PEN = 1;
      * }
      */
     public static int GDK_SOURCE_PEN() {
@@ -4679,7 +7153,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SOURCE_ERASER = 2;
+     * enum GdkInputSource.GDK_SOURCE_ERASER = 2;
      * }
      */
     public static int GDK_SOURCE_ERASER() {
@@ -4687,7 +7161,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SOURCE_CURSOR = 3;
+     * enum GdkInputSource.GDK_SOURCE_CURSOR = 3;
      * }
      */
     public static int GDK_SOURCE_CURSOR() {
@@ -4695,7 +7169,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SOURCE_KEYBOARD = 4;
+     * enum GdkInputSource.GDK_SOURCE_KEYBOARD = 4;
      * }
      */
     public static int GDK_SOURCE_KEYBOARD() {
@@ -4703,7 +7177,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SOURCE_TOUCHSCREEN = 5;
+     * enum GdkInputSource.GDK_SOURCE_TOUCHSCREEN = 5;
      * }
      */
     public static int GDK_SOURCE_TOUCHSCREEN() {
@@ -4711,7 +7185,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SOURCE_TOUCHPAD = 6;
+     * enum GdkInputSource.GDK_SOURCE_TOUCHPAD = 6;
      * }
      */
     public static int GDK_SOURCE_TOUCHPAD() {
@@ -4719,7 +7193,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SOURCE_TRACKPOINT = 7;
+     * enum GdkInputSource.GDK_SOURCE_TRACKPOINT = 7;
      * }
      */
     public static int GDK_SOURCE_TRACKPOINT() {
@@ -4727,7 +7201,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SOURCE_TABLET_PAD = 8;
+     * enum GdkInputSource.GDK_SOURCE_TABLET_PAD = 8;
      * }
      */
     public static int GDK_SOURCE_TABLET_PAD() {
@@ -4735,7 +7209,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODE_DISABLED = 0;
+     * enum GdkInputMode.GDK_MODE_DISABLED = 0;
      * }
      */
     public static int GDK_MODE_DISABLED() {
@@ -4743,7 +7217,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODE_SCREEN = 1;
+     * enum GdkInputMode.GDK_MODE_SCREEN = 1;
      * }
      */
     public static int GDK_MODE_SCREEN() {
@@ -4751,7 +7225,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MODE_WINDOW = 2;
+     * enum GdkInputMode.GDK_MODE_WINDOW = 2;
      * }
      */
     public static int GDK_MODE_WINDOW() {
@@ -4759,7 +7233,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DEVICE_TYPE_MASTER = 0;
+     * enum GdkDeviceType.GDK_DEVICE_TYPE_MASTER = 0;
      * }
      */
     public static int GDK_DEVICE_TYPE_MASTER() {
@@ -4767,7 +7241,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DEVICE_TYPE_SLAVE = 1;
+     * enum GdkDeviceType.GDK_DEVICE_TYPE_SLAVE = 1;
      * }
      */
     public static int GDK_DEVICE_TYPE_SLAVE() {
@@ -4775,18 +7249,18 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DEVICE_TYPE_FLOATING = 2;
+     * enum GdkDeviceType.GDK_DEVICE_TYPE_FLOATING = 2;
      * }
      */
     public static int GDK_DEVICE_TYPE_FLOATING() {
         return (int)2L;
     }
     public static MethodHandle gdk_device_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1054.gdk_device_get_type$MH,"gdk_device_get_type");
+        return RuntimeHelper.requireNonNull(constants$1755.const$4,"gdk_device_get_type");
     }
     /**
      * {@snippet :
-     * GType gdk_device_get_type();
+     * unsigned long gdk_device_get_type();
      * }
      */
     public static long gdk_device_get_type() {
@@ -4798,11 +7272,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1054.gdk_device_get_name$MH,"gdk_device_get_name");
+        return RuntimeHelper.requireNonNull(constants$1755.const$5,"gdk_device_get_name");
     }
     /**
      * {@snippet :
-     * const gchar* gdk_device_get_name(GdkDevice* device);
+     * char* gdk_device_get_name(struct _GdkDevice* device);
      * }
      */
     public static MemorySegment gdk_device_get_name(MemorySegment device) {
@@ -4814,11 +7288,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_has_cursor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1054.gdk_device_get_has_cursor$MH,"gdk_device_get_has_cursor");
+        return RuntimeHelper.requireNonNull(constants$1756.const$0,"gdk_device_get_has_cursor");
     }
     /**
      * {@snippet :
-     * gboolean gdk_device_get_has_cursor(GdkDevice* device);
+     * int gdk_device_get_has_cursor(struct _GdkDevice* device);
      * }
      */
     public static int gdk_device_get_has_cursor(MemorySegment device) {
@@ -4830,11 +7304,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_source$MH() {
-        return RuntimeHelper.requireNonNull(constants$1054.gdk_device_get_source$MH,"gdk_device_get_source");
+        return RuntimeHelper.requireNonNull(constants$1756.const$1,"gdk_device_get_source");
     }
     /**
      * {@snippet :
-     * GdkInputSource gdk_device_get_source(GdkDevice* device);
+     * enum GdkInputSource gdk_device_get_source(struct _GdkDevice* device);
      * }
      */
     public static int gdk_device_get_source(MemorySegment device) {
@@ -4846,11 +7320,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1055.gdk_device_get_mode$MH,"gdk_device_get_mode");
+        return RuntimeHelper.requireNonNull(constants$1756.const$2,"gdk_device_get_mode");
     }
     /**
      * {@snippet :
-     * GdkInputMode gdk_device_get_mode(GdkDevice* device);
+     * enum GdkInputMode gdk_device_get_mode(struct _GdkDevice* device);
      * }
      */
     public static int gdk_device_get_mode(MemorySegment device) {
@@ -4862,11 +7336,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_set_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1055.gdk_device_set_mode$MH,"gdk_device_set_mode");
+        return RuntimeHelper.requireNonNull(constants$1756.const$3,"gdk_device_set_mode");
     }
     /**
      * {@snippet :
-     * gboolean gdk_device_set_mode(GdkDevice* device, GdkInputMode mode);
+     * int gdk_device_set_mode(struct _GdkDevice* device, enum GdkInputMode mode);
      * }
      */
     public static int gdk_device_set_mode(MemorySegment device, int mode) {
@@ -4878,11 +7352,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_n_keys$MH() {
-        return RuntimeHelper.requireNonNull(constants$1055.gdk_device_get_n_keys$MH,"gdk_device_get_n_keys");
+        return RuntimeHelper.requireNonNull(constants$1756.const$4,"gdk_device_get_n_keys");
     }
     /**
      * {@snippet :
-     * gint gdk_device_get_n_keys(GdkDevice* device);
+     * int gdk_device_get_n_keys(struct _GdkDevice* device);
      * }
      */
     public static int gdk_device_get_n_keys(MemorySegment device) {
@@ -4894,11 +7368,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_key$MH() {
-        return RuntimeHelper.requireNonNull(constants$1055.gdk_device_get_key$MH,"gdk_device_get_key");
+        return RuntimeHelper.requireNonNull(constants$1756.const$5,"gdk_device_get_key");
     }
     /**
      * {@snippet :
-     * gboolean gdk_device_get_key(GdkDevice* device, guint index_, guint* keyval, GdkModifierType* modifiers);
+     * int gdk_device_get_key(struct _GdkDevice* device, unsigned int index_, unsigned int* keyval, enum GdkModifierType* modifiers);
      * }
      */
     public static int gdk_device_get_key(MemorySegment device, int index_, MemorySegment keyval, MemorySegment modifiers) {
@@ -4910,11 +7384,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_set_key$MH() {
-        return RuntimeHelper.requireNonNull(constants$1055.gdk_device_set_key$MH,"gdk_device_set_key");
+        return RuntimeHelper.requireNonNull(constants$1757.const$0,"gdk_device_set_key");
     }
     /**
      * {@snippet :
-     * void gdk_device_set_key(GdkDevice* device, guint index_, guint keyval, GdkModifierType modifiers);
+     * void gdk_device_set_key(struct _GdkDevice* device, unsigned int index_, unsigned int keyval, enum GdkModifierType modifiers);
      * }
      */
     public static void gdk_device_set_key(MemorySegment device, int index_, int keyval, int modifiers) {
@@ -4926,11 +7400,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_axis_use$MH() {
-        return RuntimeHelper.requireNonNull(constants$1055.gdk_device_get_axis_use$MH,"gdk_device_get_axis_use");
+        return RuntimeHelper.requireNonNull(constants$1757.const$1,"gdk_device_get_axis_use");
     }
     /**
      * {@snippet :
-     * GdkAxisUse gdk_device_get_axis_use(GdkDevice* device, guint index_);
+     * enum GdkAxisUse gdk_device_get_axis_use(struct _GdkDevice* device, unsigned int index_);
      * }
      */
     public static int gdk_device_get_axis_use(MemorySegment device, int index_) {
@@ -4942,11 +7416,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_set_axis_use$MH() {
-        return RuntimeHelper.requireNonNull(constants$1056.gdk_device_set_axis_use$MH,"gdk_device_set_axis_use");
+        return RuntimeHelper.requireNonNull(constants$1757.const$2,"gdk_device_set_axis_use");
     }
     /**
      * {@snippet :
-     * void gdk_device_set_axis_use(GdkDevice* device, guint index_, GdkAxisUse use);
+     * void gdk_device_set_axis_use(struct _GdkDevice* device, unsigned int index_, enum GdkAxisUse use);
      * }
      */
     public static void gdk_device_set_axis_use(MemorySegment device, int index_, int use) {
@@ -4958,11 +7432,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$1056.gdk_device_get_state$MH,"gdk_device_get_state");
+        return RuntimeHelper.requireNonNull(constants$1757.const$3,"gdk_device_get_state");
     }
     /**
      * {@snippet :
-     * void gdk_device_get_state(GdkDevice* device, GdkWindow* window, gdouble* axes, GdkModifierType* mask);
+     * void gdk_device_get_state(struct _GdkDevice* device, struct _GdkWindow* window, double* axes, enum GdkModifierType* mask);
      * }
      */
     public static void gdk_device_get_state(MemorySegment device, MemorySegment window, MemorySegment axes, MemorySegment mask) {
@@ -4974,11 +7448,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$1056.gdk_device_get_position$MH,"gdk_device_get_position");
+        return RuntimeHelper.requireNonNull(constants$1757.const$4,"gdk_device_get_position");
     }
     /**
      * {@snippet :
-     * void gdk_device_get_position(GdkDevice* device, GdkScreen** screen, gint* x, gint* y);
+     * void gdk_device_get_position(struct _GdkDevice* device, struct _GdkScreen** screen, int* x, int* y);
      * }
      */
     public static void gdk_device_get_position(MemorySegment device, MemorySegment screen, MemorySegment x, MemorySegment y) {
@@ -4990,11 +7464,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_window_at_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$1056.gdk_device_get_window_at_position$MH,"gdk_device_get_window_at_position");
+        return RuntimeHelper.requireNonNull(constants$1757.const$5,"gdk_device_get_window_at_position");
     }
     /**
      * {@snippet :
-     * GdkWindow* gdk_device_get_window_at_position(GdkDevice* device, gint* win_x, gint* win_y);
+     * struct _GdkWindow* gdk_device_get_window_at_position(struct _GdkDevice* device, int* win_x, int* win_y);
      * }
      */
     public static MemorySegment gdk_device_get_window_at_position(MemorySegment device, MemorySegment win_x, MemorySegment win_y) {
@@ -5006,11 +7480,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_position_double$MH() {
-        return RuntimeHelper.requireNonNull(constants$1056.gdk_device_get_position_double$MH,"gdk_device_get_position_double");
+        return RuntimeHelper.requireNonNull(constants$1758.const$0,"gdk_device_get_position_double");
     }
     /**
      * {@snippet :
-     * void gdk_device_get_position_double(GdkDevice* device, GdkScreen** screen, gdouble* x, gdouble* y);
+     * void gdk_device_get_position_double(struct _GdkDevice* device, struct _GdkScreen** screen, double* x, double* y);
      * }
      */
     public static void gdk_device_get_position_double(MemorySegment device, MemorySegment screen, MemorySegment x, MemorySegment y) {
@@ -5022,11 +7496,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_window_at_position_double$MH() {
-        return RuntimeHelper.requireNonNull(constants$1056.gdk_device_get_window_at_position_double$MH,"gdk_device_get_window_at_position_double");
+        return RuntimeHelper.requireNonNull(constants$1758.const$1,"gdk_device_get_window_at_position_double");
     }
     /**
      * {@snippet :
-     * GdkWindow* gdk_device_get_window_at_position_double(GdkDevice* device, gdouble* win_x, gdouble* win_y);
+     * struct _GdkWindow* gdk_device_get_window_at_position_double(struct _GdkDevice* device, double* win_x, double* win_y);
      * }
      */
     public static MemorySegment gdk_device_get_window_at_position_double(MemorySegment device, MemorySegment win_x, MemorySegment win_y) {
@@ -5038,11 +7512,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_history$MH() {
-        return RuntimeHelper.requireNonNull(constants$1057.gdk_device_get_history$MH,"gdk_device_get_history");
+        return RuntimeHelper.requireNonNull(constants$1758.const$2,"gdk_device_get_history");
     }
     /**
      * {@snippet :
-     * gboolean gdk_device_get_history(GdkDevice* device, GdkWindow* window, guint32 start, guint32 stop, GdkTimeCoord*** events, gint* n_events);
+     * int gdk_device_get_history(struct _GdkDevice* device, struct _GdkWindow* window, unsigned int start, unsigned int stop, struct _GdkTimeCoord*** events, int* n_events);
      * }
      */
     public static int gdk_device_get_history(MemorySegment device, MemorySegment window, int start, int stop, MemorySegment events, MemorySegment n_events) {
@@ -5054,11 +7528,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_free_history$MH() {
-        return RuntimeHelper.requireNonNull(constants$1057.gdk_device_free_history$MH,"gdk_device_free_history");
+        return RuntimeHelper.requireNonNull(constants$1758.const$3,"gdk_device_free_history");
     }
     /**
      * {@snippet :
-     * void gdk_device_free_history(GdkTimeCoord** events, gint n_events);
+     * void gdk_device_free_history(struct _GdkTimeCoord** events, int n_events);
      * }
      */
     public static void gdk_device_free_history(MemorySegment events, int n_events) {
@@ -5070,11 +7544,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_n_axes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1057.gdk_device_get_n_axes$MH,"gdk_device_get_n_axes");
+        return RuntimeHelper.requireNonNull(constants$1758.const$4,"gdk_device_get_n_axes");
     }
     /**
      * {@snippet :
-     * gint gdk_device_get_n_axes(GdkDevice* device);
+     * int gdk_device_get_n_axes(struct _GdkDevice* device);
      * }
      */
     public static int gdk_device_get_n_axes(MemorySegment device) {
@@ -5086,11 +7560,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_list_axes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1057.gdk_device_list_axes$MH,"gdk_device_list_axes");
+        return RuntimeHelper.requireNonNull(constants$1758.const$5,"gdk_device_list_axes");
     }
     /**
      * {@snippet :
-     * GList* gdk_device_list_axes(GdkDevice* device);
+     * struct _GList* gdk_device_list_axes(struct _GdkDevice* device);
      * }
      */
     public static MemorySegment gdk_device_list_axes(MemorySegment device) {
@@ -5102,11 +7576,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_axis_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$1057.gdk_device_get_axis_value$MH,"gdk_device_get_axis_value");
+        return RuntimeHelper.requireNonNull(constants$1759.const$0,"gdk_device_get_axis_value");
     }
     /**
      * {@snippet :
-     * gboolean gdk_device_get_axis_value(GdkDevice* device, gdouble* axes, GdkAtom axis_label, gdouble* value);
+     * int gdk_device_get_axis_value(struct _GdkDevice* device, double* axes, struct _GdkAtom* axis_label, double* value);
      * }
      */
     public static int gdk_device_get_axis_value(MemorySegment device, MemorySegment axes, MemorySegment axis_label, MemorySegment value) {
@@ -5118,11 +7592,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_axis$MH() {
-        return RuntimeHelper.requireNonNull(constants$1057.gdk_device_get_axis$MH,"gdk_device_get_axis");
+        return RuntimeHelper.requireNonNull(constants$1759.const$1,"gdk_device_get_axis");
     }
     /**
      * {@snippet :
-     * gboolean gdk_device_get_axis(GdkDevice* device, gdouble* axes, GdkAxisUse use, gdouble* value);
+     * int gdk_device_get_axis(struct _GdkDevice* device, double* axes, enum GdkAxisUse use, double* value);
      * }
      */
     public static int gdk_device_get_axis(MemorySegment device, MemorySegment axes, int use, MemorySegment value) {
@@ -5134,11 +7608,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_display$MH() {
-        return RuntimeHelper.requireNonNull(constants$1058.gdk_device_get_display$MH,"gdk_device_get_display");
+        return RuntimeHelper.requireNonNull(constants$1759.const$2,"gdk_device_get_display");
     }
     /**
      * {@snippet :
-     * GdkDisplay* gdk_device_get_display(GdkDevice* device);
+     * struct _GdkDisplay* gdk_device_get_display(struct _GdkDevice* device);
      * }
      */
     public static MemorySegment gdk_device_get_display(MemorySegment device) {
@@ -5150,11 +7624,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_associated_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1058.gdk_device_get_associated_device$MH,"gdk_device_get_associated_device");
+        return RuntimeHelper.requireNonNull(constants$1759.const$3,"gdk_device_get_associated_device");
     }
     /**
      * {@snippet :
-     * GdkDevice* gdk_device_get_associated_device(GdkDevice* device);
+     * struct _GdkDevice* gdk_device_get_associated_device(struct _GdkDevice* device);
      * }
      */
     public static MemorySegment gdk_device_get_associated_device(MemorySegment device) {
@@ -5166,11 +7640,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_list_slave_devices$MH() {
-        return RuntimeHelper.requireNonNull(constants$1058.gdk_device_list_slave_devices$MH,"gdk_device_list_slave_devices");
+        return RuntimeHelper.requireNonNull(constants$1759.const$4,"gdk_device_list_slave_devices");
     }
     /**
      * {@snippet :
-     * GList* gdk_device_list_slave_devices(GdkDevice* device);
+     * struct _GList* gdk_device_list_slave_devices(struct _GdkDevice* device);
      * }
      */
     public static MemorySegment gdk_device_list_slave_devices(MemorySegment device) {
@@ -5182,11 +7656,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_device_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1058.gdk_device_get_device_type$MH,"gdk_device_get_device_type");
+        return RuntimeHelper.requireNonNull(constants$1759.const$5,"gdk_device_get_device_type");
     }
     /**
      * {@snippet :
-     * GdkDeviceType gdk_device_get_device_type(GdkDevice* device);
+     * enum GdkDeviceType gdk_device_get_device_type(struct _GdkDevice* device);
      * }
      */
     public static int gdk_device_get_device_type(MemorySegment device) {
@@ -5198,11 +7672,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_grab$MH() {
-        return RuntimeHelper.requireNonNull(constants$1058.gdk_device_grab$MH,"gdk_device_grab");
+        return RuntimeHelper.requireNonNull(constants$1760.const$1,"gdk_device_grab");
     }
     /**
      * {@snippet :
-     * GdkGrabStatus gdk_device_grab(GdkDevice* device, GdkWindow* window, GdkGrabOwnership grab_ownership, gboolean owner_events, GdkEventMask event_mask, GdkCursor* cursor, guint32 time_);
+     * enum GdkGrabStatus gdk_device_grab(struct _GdkDevice* device, struct _GdkWindow* window, enum GdkGrabOwnership grab_ownership, int owner_events, enum GdkEventMask event_mask, struct _GdkCursor* cursor, unsigned int time_);
      * }
      */
     public static int gdk_device_grab(MemorySegment device, MemorySegment window, int grab_ownership, int owner_events, int event_mask, MemorySegment cursor, int time_) {
@@ -5214,11 +7688,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_ungrab$MH() {
-        return RuntimeHelper.requireNonNull(constants$1058.gdk_device_ungrab$MH,"gdk_device_ungrab");
+        return RuntimeHelper.requireNonNull(constants$1760.const$2,"gdk_device_ungrab");
     }
     /**
      * {@snippet :
-     * void gdk_device_ungrab(GdkDevice* device, guint32 time_);
+     * void gdk_device_ungrab(struct _GdkDevice* device, unsigned int time_);
      * }
      */
     public static void gdk_device_ungrab(MemorySegment device, int time_) {
@@ -5230,11 +7704,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_warp$MH() {
-        return RuntimeHelper.requireNonNull(constants$1059.gdk_device_warp$MH,"gdk_device_warp");
+        return RuntimeHelper.requireNonNull(constants$1760.const$3,"gdk_device_warp");
     }
     /**
      * {@snippet :
-     * void gdk_device_warp(GdkDevice* device, GdkScreen* screen, gint x, gint y);
+     * void gdk_device_warp(struct _GdkDevice* device, struct _GdkScreen* screen, int x, int y);
      * }
      */
     public static void gdk_device_warp(MemorySegment device, MemorySegment screen, int x, int y) {
@@ -5246,11 +7720,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_grab_info_libgtk_only$MH() {
-        return RuntimeHelper.requireNonNull(constants$1059.gdk_device_grab_info_libgtk_only$MH,"gdk_device_grab_info_libgtk_only");
+        return RuntimeHelper.requireNonNull(constants$1760.const$4,"gdk_device_grab_info_libgtk_only");
     }
     /**
      * {@snippet :
-     * gboolean gdk_device_grab_info_libgtk_only(GdkDisplay* display, GdkDevice* device, GdkWindow** grab_window, gboolean* owner_events);
+     * int gdk_device_grab_info_libgtk_only(struct _GdkDisplay* display, struct _GdkDevice* device, struct _GdkWindow** grab_window, int* owner_events);
      * }
      */
     public static int gdk_device_grab_info_libgtk_only(MemorySegment display, MemorySegment device, MemorySegment grab_window, MemorySegment owner_events) {
@@ -5262,11 +7736,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_last_event_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1059.gdk_device_get_last_event_window$MH,"gdk_device_get_last_event_window");
+        return RuntimeHelper.requireNonNull(constants$1760.const$5,"gdk_device_get_last_event_window");
     }
     /**
      * {@snippet :
-     * GdkWindow* gdk_device_get_last_event_window(GdkDevice* device);
+     * struct _GdkWindow* gdk_device_get_last_event_window(struct _GdkDevice* device);
      * }
      */
     public static MemorySegment gdk_device_get_last_event_window(MemorySegment device) {
@@ -5278,11 +7752,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_vendor_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$1059.gdk_device_get_vendor_id$MH,"gdk_device_get_vendor_id");
+        return RuntimeHelper.requireNonNull(constants$1761.const$0,"gdk_device_get_vendor_id");
     }
     /**
      * {@snippet :
-     * const gchar* gdk_device_get_vendor_id(GdkDevice* device);
+     * char* gdk_device_get_vendor_id(struct _GdkDevice* device);
      * }
      */
     public static MemorySegment gdk_device_get_vendor_id(MemorySegment device) {
@@ -5294,11 +7768,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_product_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$1059.gdk_device_get_product_id$MH,"gdk_device_get_product_id");
+        return RuntimeHelper.requireNonNull(constants$1761.const$1,"gdk_device_get_product_id");
     }
     /**
      * {@snippet :
-     * const gchar* gdk_device_get_product_id(GdkDevice* device);
+     * char* gdk_device_get_product_id(struct _GdkDevice* device);
      * }
      */
     public static MemorySegment gdk_device_get_product_id(MemorySegment device) {
@@ -5310,11 +7784,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_seat$MH() {
-        return RuntimeHelper.requireNonNull(constants$1059.gdk_device_get_seat$MH,"gdk_device_get_seat");
+        return RuntimeHelper.requireNonNull(constants$1761.const$2,"gdk_device_get_seat");
     }
     /**
      * {@snippet :
-     * GdkSeat* gdk_device_get_seat(GdkDevice* device);
+     * struct _GdkSeat* gdk_device_get_seat(struct _GdkDevice* device);
      * }
      */
     public static MemorySegment gdk_device_get_seat(MemorySegment device) {
@@ -5326,11 +7800,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_get_axes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1060.gdk_device_get_axes$MH,"gdk_device_get_axes");
+        return RuntimeHelper.requireNonNull(constants$1761.const$3,"gdk_device_get_axes");
     }
     /**
      * {@snippet :
-     * GdkAxisFlags gdk_device_get_axes(GdkDevice* device);
+     * enum GdkAxisFlags gdk_device_get_axes(struct _GdkDevice* device);
      * }
      */
     public static int gdk_device_get_axes(MemorySegment device) {
@@ -5343,7 +7817,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ACTION_DEFAULT = 1;
+     * enum GdkDragAction.GDK_ACTION_DEFAULT = 1;
      * }
      */
     public static int GDK_ACTION_DEFAULT() {
@@ -5351,7 +7825,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ACTION_COPY = 2;
+     * enum GdkDragAction.GDK_ACTION_COPY = 2;
      * }
      */
     public static int GDK_ACTION_COPY() {
@@ -5359,7 +7833,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ACTION_MOVE = 4;
+     * enum GdkDragAction.GDK_ACTION_MOVE = 4;
      * }
      */
     public static int GDK_ACTION_MOVE() {
@@ -5367,7 +7841,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ACTION_LINK = 8;
+     * enum GdkDragAction.GDK_ACTION_LINK = 8;
      * }
      */
     public static int GDK_ACTION_LINK() {
@@ -5375,7 +7849,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ACTION_PRIVATE = 16;
+     * enum GdkDragAction.GDK_ACTION_PRIVATE = 16;
      * }
      */
     public static int GDK_ACTION_PRIVATE() {
@@ -5383,7 +7857,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ACTION_ASK = 32;
+     * enum GdkDragAction.GDK_ACTION_ASK = 32;
      * }
      */
     public static int GDK_ACTION_ASK() {
@@ -5391,7 +7865,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DRAG_CANCEL_NO_TARGET = 0;
+     * enum GdkDragCancelReason.GDK_DRAG_CANCEL_NO_TARGET = 0;
      * }
      */
     public static int GDK_DRAG_CANCEL_NO_TARGET() {
@@ -5399,7 +7873,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DRAG_CANCEL_USER_CANCELLED = 1;
+     * enum GdkDragCancelReason.GDK_DRAG_CANCEL_USER_CANCELLED = 1;
      * }
      */
     public static int GDK_DRAG_CANCEL_USER_CANCELLED() {
@@ -5407,7 +7881,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DRAG_CANCEL_ERROR = 2;
+     * enum GdkDragCancelReason.GDK_DRAG_CANCEL_ERROR = 2;
      * }
      */
     public static int GDK_DRAG_CANCEL_ERROR() {
@@ -5415,7 +7889,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DRAG_PROTO_NONE = 0;
+     * enum GdkDragProtocol.GDK_DRAG_PROTO_NONE = 0;
      * }
      */
     public static int GDK_DRAG_PROTO_NONE() {
@@ -5423,7 +7897,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DRAG_PROTO_MOTIF = 1;
+     * enum GdkDragProtocol.GDK_DRAG_PROTO_MOTIF = 1;
      * }
      */
     public static int GDK_DRAG_PROTO_MOTIF() {
@@ -5431,7 +7905,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DRAG_PROTO_XDND = 2;
+     * enum GdkDragProtocol.GDK_DRAG_PROTO_XDND = 2;
      * }
      */
     public static int GDK_DRAG_PROTO_XDND() {
@@ -5439,7 +7913,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DRAG_PROTO_ROOTWIN = 3;
+     * enum GdkDragProtocol.GDK_DRAG_PROTO_ROOTWIN = 3;
      * }
      */
     public static int GDK_DRAG_PROTO_ROOTWIN() {
@@ -5447,7 +7921,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DRAG_PROTO_WIN32_DROPFILES = 4;
+     * enum GdkDragProtocol.GDK_DRAG_PROTO_WIN32_DROPFILES = 4;
      * }
      */
     public static int GDK_DRAG_PROTO_WIN32_DROPFILES() {
@@ -5455,7 +7929,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DRAG_PROTO_OLE2 = 5;
+     * enum GdkDragProtocol.GDK_DRAG_PROTO_OLE2 = 5;
      * }
      */
     public static int GDK_DRAG_PROTO_OLE2() {
@@ -5463,7 +7937,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DRAG_PROTO_LOCAL = 6;
+     * enum GdkDragProtocol.GDK_DRAG_PROTO_LOCAL = 6;
      * }
      */
     public static int GDK_DRAG_PROTO_LOCAL() {
@@ -5471,18 +7945,18 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DRAG_PROTO_WAYLAND = 7;
+     * enum GdkDragProtocol.GDK_DRAG_PROTO_WAYLAND = 7;
      * }
      */
     public static int GDK_DRAG_PROTO_WAYLAND() {
         return (int)7L;
     }
     public static MethodHandle gdk_drag_context_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1060.gdk_drag_context_get_type$MH,"gdk_drag_context_get_type");
+        return RuntimeHelper.requireNonNull(constants$1761.const$4,"gdk_drag_context_get_type");
     }
     /**
      * {@snippet :
-     * GType gdk_drag_context_get_type();
+     * unsigned long gdk_drag_context_get_type();
      * }
      */
     public static long gdk_drag_context_get_type() {
@@ -5494,11 +7968,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_set_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1060.gdk_drag_context_set_device$MH,"gdk_drag_context_set_device");
+        return RuntimeHelper.requireNonNull(constants$1761.const$5,"gdk_drag_context_set_device");
     }
     /**
      * {@snippet :
-     * void gdk_drag_context_set_device(GdkDragContext* context, GdkDevice* device);
+     * void gdk_drag_context_set_device(struct _GdkDragContext* context, struct _GdkDevice* device);
      * }
      */
     public static void gdk_drag_context_set_device(MemorySegment context, MemorySegment device) {
@@ -5510,11 +7984,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_get_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1060.gdk_drag_context_get_device$MH,"gdk_drag_context_get_device");
+        return RuntimeHelper.requireNonNull(constants$1762.const$0,"gdk_drag_context_get_device");
     }
     /**
      * {@snippet :
-     * GdkDevice* gdk_drag_context_get_device(GdkDragContext* context);
+     * struct _GdkDevice* gdk_drag_context_get_device(struct _GdkDragContext* context);
      * }
      */
     public static MemorySegment gdk_drag_context_get_device(MemorySegment context) {
@@ -5526,11 +8000,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_list_targets$MH() {
-        return RuntimeHelper.requireNonNull(constants$1060.gdk_drag_context_list_targets$MH,"gdk_drag_context_list_targets");
+        return RuntimeHelper.requireNonNull(constants$1762.const$1,"gdk_drag_context_list_targets");
     }
     /**
      * {@snippet :
-     * GList* gdk_drag_context_list_targets(GdkDragContext* context);
+     * struct _GList* gdk_drag_context_list_targets(struct _GdkDragContext* context);
      * }
      */
     public static MemorySegment gdk_drag_context_list_targets(MemorySegment context) {
@@ -5542,11 +8016,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_get_actions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1060.gdk_drag_context_get_actions$MH,"gdk_drag_context_get_actions");
+        return RuntimeHelper.requireNonNull(constants$1762.const$2,"gdk_drag_context_get_actions");
     }
     /**
      * {@snippet :
-     * GdkDragAction gdk_drag_context_get_actions(GdkDragContext* context);
+     * enum GdkDragAction gdk_drag_context_get_actions(struct _GdkDragContext* context);
      * }
      */
     public static int gdk_drag_context_get_actions(MemorySegment context) {
@@ -5558,11 +8032,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_get_suggested_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$1061.gdk_drag_context_get_suggested_action$MH,"gdk_drag_context_get_suggested_action");
+        return RuntimeHelper.requireNonNull(constants$1762.const$3,"gdk_drag_context_get_suggested_action");
     }
     /**
      * {@snippet :
-     * GdkDragAction gdk_drag_context_get_suggested_action(GdkDragContext* context);
+     * enum GdkDragAction gdk_drag_context_get_suggested_action(struct _GdkDragContext* context);
      * }
      */
     public static int gdk_drag_context_get_suggested_action(MemorySegment context) {
@@ -5574,11 +8048,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_get_selected_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$1061.gdk_drag_context_get_selected_action$MH,"gdk_drag_context_get_selected_action");
+        return RuntimeHelper.requireNonNull(constants$1762.const$4,"gdk_drag_context_get_selected_action");
     }
     /**
      * {@snippet :
-     * GdkDragAction gdk_drag_context_get_selected_action(GdkDragContext* context);
+     * enum GdkDragAction gdk_drag_context_get_selected_action(struct _GdkDragContext* context);
      * }
      */
     public static int gdk_drag_context_get_selected_action(MemorySegment context) {
@@ -5590,11 +8064,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_get_source_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1061.gdk_drag_context_get_source_window$MH,"gdk_drag_context_get_source_window");
+        return RuntimeHelper.requireNonNull(constants$1762.const$5,"gdk_drag_context_get_source_window");
     }
     /**
      * {@snippet :
-     * GdkWindow* gdk_drag_context_get_source_window(GdkDragContext* context);
+     * struct _GdkWindow* gdk_drag_context_get_source_window(struct _GdkDragContext* context);
      * }
      */
     public static MemorySegment gdk_drag_context_get_source_window(MemorySegment context) {
@@ -5606,11 +8080,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_get_dest_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1061.gdk_drag_context_get_dest_window$MH,"gdk_drag_context_get_dest_window");
+        return RuntimeHelper.requireNonNull(constants$1763.const$0,"gdk_drag_context_get_dest_window");
     }
     /**
      * {@snippet :
-     * GdkWindow* gdk_drag_context_get_dest_window(GdkDragContext* context);
+     * struct _GdkWindow* gdk_drag_context_get_dest_window(struct _GdkDragContext* context);
      * }
      */
     public static MemorySegment gdk_drag_context_get_dest_window(MemorySegment context) {
@@ -5622,11 +8096,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_get_protocol$MH() {
-        return RuntimeHelper.requireNonNull(constants$1061.gdk_drag_context_get_protocol$MH,"gdk_drag_context_get_protocol");
+        return RuntimeHelper.requireNonNull(constants$1763.const$1,"gdk_drag_context_get_protocol");
     }
     /**
      * {@snippet :
-     * GdkDragProtocol gdk_drag_context_get_protocol(GdkDragContext* context);
+     * enum GdkDragProtocol gdk_drag_context_get_protocol(struct _GdkDragContext* context);
      * }
      */
     public static int gdk_drag_context_get_protocol(MemorySegment context) {
@@ -5638,11 +8112,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1061.gdk_drag_status$MH,"gdk_drag_status");
+        return RuntimeHelper.requireNonNull(constants$1763.const$2,"gdk_drag_status");
     }
     /**
      * {@snippet :
-     * void gdk_drag_status(GdkDragContext* context, GdkDragAction action, guint32 time_);
+     * void gdk_drag_status(struct _GdkDragContext* context, enum GdkDragAction action, unsigned int time_);
      * }
      */
     public static void gdk_drag_status(MemorySegment context, int action, int time_) {
@@ -5654,11 +8128,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drop_reply$MH() {
-        return RuntimeHelper.requireNonNull(constants$1062.gdk_drop_reply$MH,"gdk_drop_reply");
+        return RuntimeHelper.requireNonNull(constants$1763.const$3,"gdk_drop_reply");
     }
     /**
      * {@snippet :
-     * void gdk_drop_reply(GdkDragContext* context, gboolean accepted, guint32 time_);
+     * void gdk_drop_reply(struct _GdkDragContext* context, int accepted, unsigned int time_);
      * }
      */
     public static void gdk_drop_reply(MemorySegment context, int accepted, int time_) {
@@ -5670,11 +8144,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drop_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$1062.gdk_drop_finish$MH,"gdk_drop_finish");
+        return RuntimeHelper.requireNonNull(constants$1763.const$4,"gdk_drop_finish");
     }
     /**
      * {@snippet :
-     * void gdk_drop_finish(GdkDragContext* context, gboolean success, guint32 time_);
+     * void gdk_drop_finish(struct _GdkDragContext* context, int success, unsigned int time_);
      * }
      */
     public static void gdk_drop_finish(MemorySegment context, int success, int time_) {
@@ -5686,11 +8160,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_get_selection$MH() {
-        return RuntimeHelper.requireNonNull(constants$1062.gdk_drag_get_selection$MH,"gdk_drag_get_selection");
+        return RuntimeHelper.requireNonNull(constants$1763.const$5,"gdk_drag_get_selection");
     }
     /**
      * {@snippet :
-     * GdkAtom gdk_drag_get_selection(GdkDragContext* context);
+     * struct _GdkAtom* gdk_drag_get_selection(struct _GdkDragContext* context);
      * }
      */
     public static MemorySegment gdk_drag_get_selection(MemorySegment context) {
@@ -5702,11 +8176,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_begin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1062.gdk_drag_begin$MH,"gdk_drag_begin");
+        return RuntimeHelper.requireNonNull(constants$1764.const$0,"gdk_drag_begin");
     }
     /**
      * {@snippet :
-     * GdkDragContext* gdk_drag_begin(GdkWindow* window, GList* targets);
+     * struct _GdkDragContext* gdk_drag_begin(struct _GdkWindow* window, struct _GList* targets);
      * }
      */
     public static MemorySegment gdk_drag_begin(MemorySegment window, MemorySegment targets) {
@@ -5718,11 +8192,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_begin_for_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1062.gdk_drag_begin_for_device$MH,"gdk_drag_begin_for_device");
+        return RuntimeHelper.requireNonNull(constants$1764.const$1,"gdk_drag_begin_for_device");
     }
     /**
      * {@snippet :
-     * GdkDragContext* gdk_drag_begin_for_device(GdkWindow* window, GdkDevice* device, GList* targets);
+     * struct _GdkDragContext* gdk_drag_begin_for_device(struct _GdkWindow* window, struct _GdkDevice* device, struct _GList* targets);
      * }
      */
     public static MemorySegment gdk_drag_begin_for_device(MemorySegment window, MemorySegment device, MemorySegment targets) {
@@ -5734,11 +8208,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_begin_from_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1062.gdk_drag_begin_from_point$MH,"gdk_drag_begin_from_point");
+        return RuntimeHelper.requireNonNull(constants$1764.const$2,"gdk_drag_begin_from_point");
     }
     /**
      * {@snippet :
-     * GdkDragContext* gdk_drag_begin_from_point(GdkWindow* window, GdkDevice* device, GList* targets, gint x_root, gint y_root);
+     * struct _GdkDragContext* gdk_drag_begin_from_point(struct _GdkWindow* window, struct _GdkDevice* device, struct _GList* targets, int x_root, int y_root);
      * }
      */
     public static MemorySegment gdk_drag_begin_from_point(MemorySegment window, MemorySegment device, MemorySegment targets, int x_root, int y_root) {
@@ -5750,11 +8224,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_find_window_for_screen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1063.gdk_drag_find_window_for_screen$MH,"gdk_drag_find_window_for_screen");
+        return RuntimeHelper.requireNonNull(constants$1764.const$4,"gdk_drag_find_window_for_screen");
     }
     /**
      * {@snippet :
-     * void gdk_drag_find_window_for_screen(GdkDragContext* context, GdkWindow* drag_window, GdkScreen* screen, gint x_root, gint y_root, GdkWindow** dest_window, GdkDragProtocol* protocol);
+     * void gdk_drag_find_window_for_screen(struct _GdkDragContext* context, struct _GdkWindow* drag_window, struct _GdkScreen* screen, int x_root, int y_root, struct _GdkWindow** dest_window, enum GdkDragProtocol* protocol);
      * }
      */
     public static void gdk_drag_find_window_for_screen(MemorySegment context, MemorySegment drag_window, MemorySegment screen, int x_root, int y_root, MemorySegment dest_window, MemorySegment protocol) {
@@ -5766,11 +8240,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_motion$MH() {
-        return RuntimeHelper.requireNonNull(constants$1063.gdk_drag_motion$MH,"gdk_drag_motion");
+        return RuntimeHelper.requireNonNull(constants$1764.const$6,"gdk_drag_motion");
     }
     /**
      * {@snippet :
-     * gboolean gdk_drag_motion(GdkDragContext* context, GdkWindow* dest_window, GdkDragProtocol protocol, gint x_root, gint y_root, GdkDragAction suggested_action, GdkDragAction possible_actions, guint32 time_);
+     * int gdk_drag_motion(struct _GdkDragContext* context, struct _GdkWindow* dest_window, enum GdkDragProtocol protocol, int x_root, int y_root, enum GdkDragAction suggested_action, enum GdkDragAction possible_actions, unsigned int time_);
      * }
      */
     public static int gdk_drag_motion(MemorySegment context, MemorySegment dest_window, int protocol, int x_root, int y_root, int suggested_action, int possible_actions, int time_) {
@@ -5782,11 +8256,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_drop$MH() {
-        return RuntimeHelper.requireNonNull(constants$1063.gdk_drag_drop$MH,"gdk_drag_drop");
+        return RuntimeHelper.requireNonNull(constants$1765.const$0,"gdk_drag_drop");
     }
     /**
      * {@snippet :
-     * void gdk_drag_drop(GdkDragContext* context, guint32 time_);
+     * void gdk_drag_drop(struct _GdkDragContext* context, unsigned int time_);
      * }
      */
     public static void gdk_drag_drop(MemorySegment context, int time_) {
@@ -5798,11 +8272,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_abort$MH() {
-        return RuntimeHelper.requireNonNull(constants$1063.gdk_drag_abort$MH,"gdk_drag_abort");
+        return RuntimeHelper.requireNonNull(constants$1765.const$1,"gdk_drag_abort");
     }
     /**
      * {@snippet :
-     * void gdk_drag_abort(GdkDragContext* context, guint32 time_);
+     * void gdk_drag_abort(struct _GdkDragContext* context, unsigned int time_);
      * }
      */
     public static void gdk_drag_abort(MemorySegment context, int time_) {
@@ -5814,11 +8288,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_drop_succeeded$MH() {
-        return RuntimeHelper.requireNonNull(constants$1063.gdk_drag_drop_succeeded$MH,"gdk_drag_drop_succeeded");
+        return RuntimeHelper.requireNonNull(constants$1765.const$2,"gdk_drag_drop_succeeded");
     }
     /**
      * {@snippet :
-     * gboolean gdk_drag_drop_succeeded(GdkDragContext* context);
+     * int gdk_drag_drop_succeeded(struct _GdkDragContext* context);
      * }
      */
     public static int gdk_drag_drop_succeeded(MemorySegment context) {
@@ -5830,11 +8304,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_drop_done$MH() {
-        return RuntimeHelper.requireNonNull(constants$1063.gdk_drag_drop_done$MH,"gdk_drag_drop_done");
+        return RuntimeHelper.requireNonNull(constants$1765.const$3,"gdk_drag_drop_done");
     }
     /**
      * {@snippet :
-     * void gdk_drag_drop_done(GdkDragContext* context, gboolean success);
+     * void gdk_drag_drop_done(struct _GdkDragContext* context, int success);
      * }
      */
     public static void gdk_drag_drop_done(MemorySegment context, int success) {
@@ -5846,11 +8320,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_get_drag_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1064.gdk_drag_context_get_drag_window$MH,"gdk_drag_context_get_drag_window");
+        return RuntimeHelper.requireNonNull(constants$1765.const$4,"gdk_drag_context_get_drag_window");
     }
     /**
      * {@snippet :
-     * GdkWindow* gdk_drag_context_get_drag_window(GdkDragContext* context);
+     * struct _GdkWindow* gdk_drag_context_get_drag_window(struct _GdkDragContext* context);
      * }
      */
     public static MemorySegment gdk_drag_context_get_drag_window(MemorySegment context) {
@@ -5862,11 +8336,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_set_hotspot$MH() {
-        return RuntimeHelper.requireNonNull(constants$1064.gdk_drag_context_set_hotspot$MH,"gdk_drag_context_set_hotspot");
+        return RuntimeHelper.requireNonNull(constants$1765.const$5,"gdk_drag_context_set_hotspot");
     }
     /**
      * {@snippet :
-     * void gdk_drag_context_set_hotspot(GdkDragContext* context, gint hot_x, gint hot_y);
+     * void gdk_drag_context_set_hotspot(struct _GdkDragContext* context, int hot_x, int hot_y);
      * }
      */
     public static void gdk_drag_context_set_hotspot(MemorySegment context, int hot_x, int hot_y) {
@@ -5878,11 +8352,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drag_context_manage_dnd$MH() {
-        return RuntimeHelper.requireNonNull(constants$1064.gdk_drag_context_manage_dnd$MH,"gdk_drag_context_manage_dnd");
+        return RuntimeHelper.requireNonNull(constants$1766.const$0,"gdk_drag_context_manage_dnd");
     }
     /**
      * {@snippet :
-     * gboolean gdk_drag_context_manage_dnd(GdkDragContext* context, GdkWindow* ipc_window, GdkDragAction actions);
+     * int gdk_drag_context_manage_dnd(struct _GdkDragContext* context, struct _GdkWindow* ipc_window, enum GdkDragAction actions);
      * }
      */
     public static int gdk_drag_context_manage_dnd(MemorySegment context, MemorySegment ipc_window, int actions) {
@@ -5895,7 +8369,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DEVICE_TOOL_TYPE_UNKNOWN = 0;
+     * enum GdkDeviceToolType.GDK_DEVICE_TOOL_TYPE_UNKNOWN = 0;
      * }
      */
     public static int GDK_DEVICE_TOOL_TYPE_UNKNOWN() {
@@ -5903,7 +8377,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DEVICE_TOOL_TYPE_PEN = 1;
+     * enum GdkDeviceToolType.GDK_DEVICE_TOOL_TYPE_PEN = 1;
      * }
      */
     public static int GDK_DEVICE_TOOL_TYPE_PEN() {
@@ -5911,7 +8385,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DEVICE_TOOL_TYPE_ERASER = 2;
+     * enum GdkDeviceToolType.GDK_DEVICE_TOOL_TYPE_ERASER = 2;
      * }
      */
     public static int GDK_DEVICE_TOOL_TYPE_ERASER() {
@@ -5919,7 +8393,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DEVICE_TOOL_TYPE_BRUSH = 3;
+     * enum GdkDeviceToolType.GDK_DEVICE_TOOL_TYPE_BRUSH = 3;
      * }
      */
     public static int GDK_DEVICE_TOOL_TYPE_BRUSH() {
@@ -5927,7 +8401,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DEVICE_TOOL_TYPE_PENCIL = 4;
+     * enum GdkDeviceToolType.GDK_DEVICE_TOOL_TYPE_PENCIL = 4;
      * }
      */
     public static int GDK_DEVICE_TOOL_TYPE_PENCIL() {
@@ -5935,7 +8409,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DEVICE_TOOL_TYPE_AIRBRUSH = 5;
+     * enum GdkDeviceToolType.GDK_DEVICE_TOOL_TYPE_AIRBRUSH = 5;
      * }
      */
     public static int GDK_DEVICE_TOOL_TYPE_AIRBRUSH() {
@@ -5943,7 +8417,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DEVICE_TOOL_TYPE_MOUSE = 6;
+     * enum GdkDeviceToolType.GDK_DEVICE_TOOL_TYPE_MOUSE = 6;
      * }
      */
     public static int GDK_DEVICE_TOOL_TYPE_MOUSE() {
@@ -5951,18 +8425,18 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DEVICE_TOOL_TYPE_LENS = 7;
+     * enum GdkDeviceToolType.GDK_DEVICE_TOOL_TYPE_LENS = 7;
      * }
      */
     public static int GDK_DEVICE_TOOL_TYPE_LENS() {
         return (int)7L;
     }
     public static MethodHandle gdk_device_tool_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1064.gdk_device_tool_get_type$MH,"gdk_device_tool_get_type");
+        return RuntimeHelper.requireNonNull(constants$1766.const$1,"gdk_device_tool_get_type");
     }
     /**
      * {@snippet :
-     * GType gdk_device_tool_get_type();
+     * unsigned long gdk_device_tool_get_type();
      * }
      */
     public static long gdk_device_tool_get_type() {
@@ -5974,11 +8448,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_tool_get_serial$MH() {
-        return RuntimeHelper.requireNonNull(constants$1064.gdk_device_tool_get_serial$MH,"gdk_device_tool_get_serial");
+        return RuntimeHelper.requireNonNull(constants$1766.const$2,"gdk_device_tool_get_serial");
     }
     /**
      * {@snippet :
-     * guint64 gdk_device_tool_get_serial(GdkDeviceTool* tool);
+     * unsigned long gdk_device_tool_get_serial(struct _GdkDeviceTool* tool);
      * }
      */
     public static long gdk_device_tool_get_serial(MemorySegment tool) {
@@ -5990,11 +8464,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_tool_get_hardware_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$1064.gdk_device_tool_get_hardware_id$MH,"gdk_device_tool_get_hardware_id");
+        return RuntimeHelper.requireNonNull(constants$1766.const$3,"gdk_device_tool_get_hardware_id");
     }
     /**
      * {@snippet :
-     * guint64 gdk_device_tool_get_hardware_id(GdkDeviceTool* tool);
+     * unsigned long gdk_device_tool_get_hardware_id(struct _GdkDeviceTool* tool);
      * }
      */
     public static long gdk_device_tool_get_hardware_id(MemorySegment tool) {
@@ -6006,11 +8480,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_tool_get_tool_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1065.gdk_device_tool_get_tool_type$MH,"gdk_device_tool_get_tool_type");
+        return RuntimeHelper.requireNonNull(constants$1766.const$4,"gdk_device_tool_get_tool_type");
     }
     /**
      * {@snippet :
-     * GdkDeviceToolType gdk_device_tool_get_tool_type(GdkDeviceTool* tool);
+     * enum GdkDeviceToolType gdk_device_tool_get_tool_type(struct _GdkDeviceTool* tool);
      * }
      */
     public static int gdk_device_tool_get_tool_type(MemorySegment tool) {
@@ -6023,7 +8497,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FILTER_CONTINUE = 0;
+     * enum GdkFilterReturn.GDK_FILTER_CONTINUE = 0;
      * }
      */
     public static int GDK_FILTER_CONTINUE() {
@@ -6031,7 +8505,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FILTER_TRANSLATE = 1;
+     * enum GdkFilterReturn.GDK_FILTER_TRANSLATE = 1;
      * }
      */
     public static int GDK_FILTER_TRANSLATE() {
@@ -6039,7 +8513,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FILTER_REMOVE = 2;
+     * enum GdkFilterReturn.GDK_FILTER_REMOVE = 2;
      * }
      */
     public static int GDK_FILTER_REMOVE() {
@@ -6047,7 +8521,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_NOTHING = -1;
+     * enum GdkEventType.GDK_NOTHING = -1;
      * }
      */
     public static int GDK_NOTHING() {
@@ -6055,7 +8529,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DELETE = 0;
+     * enum GdkEventType.GDK_DELETE = 0;
      * }
      */
     public static int GDK_DELETE() {
@@ -6063,7 +8537,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DESTROY = 1;
+     * enum GdkEventType.GDK_DESTROY = 1;
      * }
      */
     public static int GDK_DESTROY() {
@@ -6071,7 +8545,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_EXPOSE = 2;
+     * enum GdkEventType.GDK_EXPOSE = 2;
      * }
      */
     public static int GDK_EXPOSE() {
@@ -6079,7 +8553,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MOTION_NOTIFY = 3;
+     * enum GdkEventType.GDK_MOTION_NOTIFY = 3;
      * }
      */
     public static int GDK_MOTION_NOTIFY() {
@@ -6087,7 +8561,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_BUTTON_PRESS = 4;
+     * enum GdkEventType.GDK_BUTTON_PRESS = 4;
      * }
      */
     public static int GDK_BUTTON_PRESS() {
@@ -6095,7 +8569,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_2BUTTON_PRESS = 5;
+     * enum GdkEventType.GDK_2BUTTON_PRESS = 5;
      * }
      */
     public static int GDK_2BUTTON_PRESS() {
@@ -6103,7 +8577,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DOUBLE_BUTTON_PRESS = 5;
+     * enum GdkEventType.GDK_DOUBLE_BUTTON_PRESS = 5;
      * }
      */
     public static int GDK_DOUBLE_BUTTON_PRESS() {
@@ -6111,7 +8585,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_3BUTTON_PRESS = 6;
+     * enum GdkEventType.GDK_3BUTTON_PRESS = 6;
      * }
      */
     public static int GDK_3BUTTON_PRESS() {
@@ -6119,7 +8593,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_TRIPLE_BUTTON_PRESS = 6;
+     * enum GdkEventType.GDK_TRIPLE_BUTTON_PRESS = 6;
      * }
      */
     public static int GDK_TRIPLE_BUTTON_PRESS() {
@@ -6127,7 +8601,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_BUTTON_RELEASE = 7;
+     * enum GdkEventType.GDK_BUTTON_RELEASE = 7;
      * }
      */
     public static int GDK_BUTTON_RELEASE() {
@@ -6135,7 +8609,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_KEY_PRESS = 8;
+     * enum GdkEventType.GDK_KEY_PRESS = 8;
      * }
      */
     public static int GDK_KEY_PRESS() {
@@ -6143,7 +8617,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_KEY_RELEASE = 9;
+     * enum GdkEventType.GDK_KEY_RELEASE = 9;
      * }
      */
     public static int GDK_KEY_RELEASE() {
@@ -6151,7 +8625,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ENTER_NOTIFY = 10;
+     * enum GdkEventType.GDK_ENTER_NOTIFY = 10;
      * }
      */
     public static int GDK_ENTER_NOTIFY() {
@@ -6159,7 +8633,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_LEAVE_NOTIFY = 11;
+     * enum GdkEventType.GDK_LEAVE_NOTIFY = 11;
      * }
      */
     public static int GDK_LEAVE_NOTIFY() {
@@ -6167,7 +8641,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FOCUS_CHANGE = 12;
+     * enum GdkEventType.GDK_FOCUS_CHANGE = 12;
      * }
      */
     public static int GDK_FOCUS_CHANGE() {
@@ -6175,7 +8649,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_CONFIGURE = 13;
+     * enum GdkEventType.GDK_CONFIGURE = 13;
      * }
      */
     public static int GDK_CONFIGURE() {
@@ -6183,7 +8657,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_MAP = 14;
+     * enum GdkEventType.GDK_MAP = 14;
      * }
      */
     public static int GDK_MAP() {
@@ -6191,7 +8665,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_UNMAP = 15;
+     * enum GdkEventType.GDK_UNMAP = 15;
      * }
      */
     public static int GDK_UNMAP() {
@@ -6199,7 +8673,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_PROPERTY_NOTIFY = 16;
+     * enum GdkEventType.GDK_PROPERTY_NOTIFY = 16;
      * }
      */
     public static int GDK_PROPERTY_NOTIFY() {
@@ -6207,7 +8681,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SELECTION_CLEAR = 17;
+     * enum GdkEventType.GDK_SELECTION_CLEAR = 17;
      * }
      */
     public static int GDK_SELECTION_CLEAR() {
@@ -6215,7 +8689,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SELECTION_REQUEST = 18;
+     * enum GdkEventType.GDK_SELECTION_REQUEST = 18;
      * }
      */
     public static int GDK_SELECTION_REQUEST() {
@@ -6223,7 +8697,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SELECTION_NOTIFY = 19;
+     * enum GdkEventType.GDK_SELECTION_NOTIFY = 19;
      * }
      */
     public static int GDK_SELECTION_NOTIFY() {
@@ -6231,7 +8705,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_PROXIMITY_IN = 20;
+     * enum GdkEventType.GDK_PROXIMITY_IN = 20;
      * }
      */
     public static int GDK_PROXIMITY_IN() {
@@ -6239,7 +8713,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_PROXIMITY_OUT = 21;
+     * enum GdkEventType.GDK_PROXIMITY_OUT = 21;
      * }
      */
     public static int GDK_PROXIMITY_OUT() {
@@ -6247,7 +8721,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DRAG_ENTER = 22;
+     * enum GdkEventType.GDK_DRAG_ENTER = 22;
      * }
      */
     public static int GDK_DRAG_ENTER() {
@@ -6255,7 +8729,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DRAG_LEAVE = 23;
+     * enum GdkEventType.GDK_DRAG_LEAVE = 23;
      * }
      */
     public static int GDK_DRAG_LEAVE() {
@@ -6263,7 +8737,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DRAG_MOTION = 24;
+     * enum GdkEventType.GDK_DRAG_MOTION = 24;
      * }
      */
     public static int GDK_DRAG_MOTION() {
@@ -6271,7 +8745,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DRAG_STATUS = 25;
+     * enum GdkEventType.GDK_DRAG_STATUS = 25;
      * }
      */
     public static int GDK_DRAG_STATUS() {
@@ -6279,7 +8753,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DROP_START = 26;
+     * enum GdkEventType.GDK_DROP_START = 26;
      * }
      */
     public static int GDK_DROP_START() {
@@ -6287,7 +8761,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DROP_FINISHED = 27;
+     * enum GdkEventType.GDK_DROP_FINISHED = 27;
      * }
      */
     public static int GDK_DROP_FINISHED() {
@@ -6295,7 +8769,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_CLIENT_EVENT = 28;
+     * enum GdkEventType.GDK_CLIENT_EVENT = 28;
      * }
      */
     public static int GDK_CLIENT_EVENT() {
@@ -6303,7 +8777,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_VISIBILITY_NOTIFY = 29;
+     * enum GdkEventType.GDK_VISIBILITY_NOTIFY = 29;
      * }
      */
     public static int GDK_VISIBILITY_NOTIFY() {
@@ -6311,7 +8785,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SCROLL = 31;
+     * enum GdkEventType.GDK_SCROLL = 31;
      * }
      */
     public static int GDK_SCROLL() {
@@ -6319,7 +8793,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE = 32;
+     * enum GdkEventType.GDK_WINDOW_STATE = 32;
      * }
      */
     public static int GDK_WINDOW_STATE() {
@@ -6327,7 +8801,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SETTING = 33;
+     * enum GdkEventType.GDK_SETTING = 33;
      * }
      */
     public static int GDK_SETTING() {
@@ -6335,7 +8809,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_OWNER_CHANGE = 34;
+     * enum GdkEventType.GDK_OWNER_CHANGE = 34;
      * }
      */
     public static int GDK_OWNER_CHANGE() {
@@ -6343,7 +8817,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAB_BROKEN = 35;
+     * enum GdkEventType.GDK_GRAB_BROKEN = 35;
      * }
      */
     public static int GDK_GRAB_BROKEN() {
@@ -6351,7 +8825,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DAMAGE = 36;
+     * enum GdkEventType.GDK_DAMAGE = 36;
      * }
      */
     public static int GDK_DAMAGE() {
@@ -6359,7 +8833,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_TOUCH_BEGIN = 37;
+     * enum GdkEventType.GDK_TOUCH_BEGIN = 37;
      * }
      */
     public static int GDK_TOUCH_BEGIN() {
@@ -6367,7 +8841,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_TOUCH_UPDATE = 38;
+     * enum GdkEventType.GDK_TOUCH_UPDATE = 38;
      * }
      */
     public static int GDK_TOUCH_UPDATE() {
@@ -6375,7 +8849,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_TOUCH_END = 39;
+     * enum GdkEventType.GDK_TOUCH_END = 39;
      * }
      */
     public static int GDK_TOUCH_END() {
@@ -6383,7 +8857,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_TOUCH_CANCEL = 40;
+     * enum GdkEventType.GDK_TOUCH_CANCEL = 40;
      * }
      */
     public static int GDK_TOUCH_CANCEL() {
@@ -6391,7 +8865,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_TOUCHPAD_SWIPE = 41;
+     * enum GdkEventType.GDK_TOUCHPAD_SWIPE = 41;
      * }
      */
     public static int GDK_TOUCHPAD_SWIPE() {
@@ -6399,7 +8873,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_TOUCHPAD_PINCH = 42;
+     * enum GdkEventType.GDK_TOUCHPAD_PINCH = 42;
      * }
      */
     public static int GDK_TOUCHPAD_PINCH() {
@@ -6407,7 +8881,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_PAD_BUTTON_PRESS = 43;
+     * enum GdkEventType.GDK_PAD_BUTTON_PRESS = 43;
      * }
      */
     public static int GDK_PAD_BUTTON_PRESS() {
@@ -6415,7 +8889,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_PAD_BUTTON_RELEASE = 44;
+     * enum GdkEventType.GDK_PAD_BUTTON_RELEASE = 44;
      * }
      */
     public static int GDK_PAD_BUTTON_RELEASE() {
@@ -6423,7 +8897,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_PAD_RING = 45;
+     * enum GdkEventType.GDK_PAD_RING = 45;
      * }
      */
     public static int GDK_PAD_RING() {
@@ -6431,7 +8905,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_PAD_STRIP = 46;
+     * enum GdkEventType.GDK_PAD_STRIP = 46;
      * }
      */
     public static int GDK_PAD_STRIP() {
@@ -6439,7 +8913,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_PAD_GROUP_MODE = 47;
+     * enum GdkEventType.GDK_PAD_GROUP_MODE = 47;
      * }
      */
     public static int GDK_PAD_GROUP_MODE() {
@@ -6447,7 +8921,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_EVENT_LAST = 48;
+     * enum GdkEventType.GDK_EVENT_LAST = 48;
      * }
      */
     public static int GDK_EVENT_LAST() {
@@ -6455,7 +8929,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_VISIBILITY_UNOBSCURED = 0;
+     * enum GdkVisibilityState.GDK_VISIBILITY_UNOBSCURED = 0;
      * }
      */
     public static int GDK_VISIBILITY_UNOBSCURED() {
@@ -6463,7 +8937,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_VISIBILITY_PARTIAL = 1;
+     * enum GdkVisibilityState.GDK_VISIBILITY_PARTIAL = 1;
      * }
      */
     public static int GDK_VISIBILITY_PARTIAL() {
@@ -6471,7 +8945,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_VISIBILITY_FULLY_OBSCURED = 2;
+     * enum GdkVisibilityState.GDK_VISIBILITY_FULLY_OBSCURED = 2;
      * }
      */
     public static int GDK_VISIBILITY_FULLY_OBSCURED() {
@@ -6479,7 +8953,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_TOUCHPAD_GESTURE_PHASE_BEGIN = 0;
+     * enum GdkTouchpadGesturePhase.GDK_TOUCHPAD_GESTURE_PHASE_BEGIN = 0;
      * }
      */
     public static int GDK_TOUCHPAD_GESTURE_PHASE_BEGIN() {
@@ -6487,7 +8961,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_TOUCHPAD_GESTURE_PHASE_UPDATE = 1;
+     * enum GdkTouchpadGesturePhase.GDK_TOUCHPAD_GESTURE_PHASE_UPDATE = 1;
      * }
      */
     public static int GDK_TOUCHPAD_GESTURE_PHASE_UPDATE() {
@@ -6495,7 +8969,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_TOUCHPAD_GESTURE_PHASE_END = 2;
+     * enum GdkTouchpadGesturePhase.GDK_TOUCHPAD_GESTURE_PHASE_END = 2;
      * }
      */
     public static int GDK_TOUCHPAD_GESTURE_PHASE_END() {
@@ -6503,7 +8977,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_TOUCHPAD_GESTURE_PHASE_CANCEL = 3;
+     * enum GdkTouchpadGesturePhase.GDK_TOUCHPAD_GESTURE_PHASE_CANCEL = 3;
      * }
      */
     public static int GDK_TOUCHPAD_GESTURE_PHASE_CANCEL() {
@@ -6511,7 +8985,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SCROLL_UP = 0;
+     * enum GdkScrollDirection.GDK_SCROLL_UP = 0;
      * }
      */
     public static int GDK_SCROLL_UP() {
@@ -6519,7 +8993,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SCROLL_DOWN = 1;
+     * enum GdkScrollDirection.GDK_SCROLL_DOWN = 1;
      * }
      */
     public static int GDK_SCROLL_DOWN() {
@@ -6527,7 +9001,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SCROLL_LEFT = 2;
+     * enum GdkScrollDirection.GDK_SCROLL_LEFT = 2;
      * }
      */
     public static int GDK_SCROLL_LEFT() {
@@ -6535,7 +9009,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SCROLL_RIGHT = 3;
+     * enum GdkScrollDirection.GDK_SCROLL_RIGHT = 3;
      * }
      */
     public static int GDK_SCROLL_RIGHT() {
@@ -6543,7 +9017,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SCROLL_SMOOTH = 4;
+     * enum GdkScrollDirection.GDK_SCROLL_SMOOTH = 4;
      * }
      */
     public static int GDK_SCROLL_SMOOTH() {
@@ -6551,7 +9025,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_NOTIFY_ANCESTOR = 0;
+     * enum GdkNotifyType.GDK_NOTIFY_ANCESTOR = 0;
      * }
      */
     public static int GDK_NOTIFY_ANCESTOR() {
@@ -6559,7 +9033,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_NOTIFY_VIRTUAL = 1;
+     * enum GdkNotifyType.GDK_NOTIFY_VIRTUAL = 1;
      * }
      */
     public static int GDK_NOTIFY_VIRTUAL() {
@@ -6567,7 +9041,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_NOTIFY_INFERIOR = 2;
+     * enum GdkNotifyType.GDK_NOTIFY_INFERIOR = 2;
      * }
      */
     public static int GDK_NOTIFY_INFERIOR() {
@@ -6575,7 +9049,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_NOTIFY_NONLINEAR = 3;
+     * enum GdkNotifyType.GDK_NOTIFY_NONLINEAR = 3;
      * }
      */
     public static int GDK_NOTIFY_NONLINEAR() {
@@ -6583,7 +9057,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_NOTIFY_NONLINEAR_VIRTUAL = 4;
+     * enum GdkNotifyType.GDK_NOTIFY_NONLINEAR_VIRTUAL = 4;
      * }
      */
     public static int GDK_NOTIFY_NONLINEAR_VIRTUAL() {
@@ -6591,7 +9065,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_NOTIFY_UNKNOWN = 5;
+     * enum GdkNotifyType.GDK_NOTIFY_UNKNOWN = 5;
      * }
      */
     public static int GDK_NOTIFY_UNKNOWN() {
@@ -6599,7 +9073,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_CROSSING_NORMAL = 0;
+     * enum GdkCrossingMode.GDK_CROSSING_NORMAL = 0;
      * }
      */
     public static int GDK_CROSSING_NORMAL() {
@@ -6607,7 +9081,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_CROSSING_GRAB = 1;
+     * enum GdkCrossingMode.GDK_CROSSING_GRAB = 1;
      * }
      */
     public static int GDK_CROSSING_GRAB() {
@@ -6615,7 +9089,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_CROSSING_UNGRAB = 2;
+     * enum GdkCrossingMode.GDK_CROSSING_UNGRAB = 2;
      * }
      */
     public static int GDK_CROSSING_UNGRAB() {
@@ -6623,7 +9097,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_CROSSING_GTK_GRAB = 3;
+     * enum GdkCrossingMode.GDK_CROSSING_GTK_GRAB = 3;
      * }
      */
     public static int GDK_CROSSING_GTK_GRAB() {
@@ -6631,7 +9105,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_CROSSING_GTK_UNGRAB = 4;
+     * enum GdkCrossingMode.GDK_CROSSING_GTK_UNGRAB = 4;
      * }
      */
     public static int GDK_CROSSING_GTK_UNGRAB() {
@@ -6639,7 +9113,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_CROSSING_STATE_CHANGED = 5;
+     * enum GdkCrossingMode.GDK_CROSSING_STATE_CHANGED = 5;
      * }
      */
     public static int GDK_CROSSING_STATE_CHANGED() {
@@ -6647,7 +9121,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_CROSSING_TOUCH_BEGIN = 6;
+     * enum GdkCrossingMode.GDK_CROSSING_TOUCH_BEGIN = 6;
      * }
      */
     public static int GDK_CROSSING_TOUCH_BEGIN() {
@@ -6655,7 +9129,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_CROSSING_TOUCH_END = 7;
+     * enum GdkCrossingMode.GDK_CROSSING_TOUCH_END = 7;
      * }
      */
     public static int GDK_CROSSING_TOUCH_END() {
@@ -6663,7 +9137,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_CROSSING_DEVICE_SWITCH = 8;
+     * enum GdkCrossingMode.GDK_CROSSING_DEVICE_SWITCH = 8;
      * }
      */
     public static int GDK_CROSSING_DEVICE_SWITCH() {
@@ -6671,7 +9145,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_PROPERTY_NEW_VALUE = 0;
+     * enum GdkPropertyState.GDK_PROPERTY_NEW_VALUE = 0;
      * }
      */
     public static int GDK_PROPERTY_NEW_VALUE() {
@@ -6679,7 +9153,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_PROPERTY_DELETE = 1;
+     * enum GdkPropertyState.GDK_PROPERTY_DELETE = 1;
      * }
      */
     public static int GDK_PROPERTY_DELETE() {
@@ -6687,7 +9161,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_WITHDRAWN = 1;
+     * enum GdkWindowState.GDK_WINDOW_STATE_WITHDRAWN = 1;
      * }
      */
     public static int GDK_WINDOW_STATE_WITHDRAWN() {
@@ -6695,7 +9169,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_ICONIFIED = 2;
+     * enum GdkWindowState.GDK_WINDOW_STATE_ICONIFIED = 2;
      * }
      */
     public static int GDK_WINDOW_STATE_ICONIFIED() {
@@ -6703,7 +9177,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_MAXIMIZED = 4;
+     * enum GdkWindowState.GDK_WINDOW_STATE_MAXIMIZED = 4;
      * }
      */
     public static int GDK_WINDOW_STATE_MAXIMIZED() {
@@ -6711,7 +9185,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_STICKY = 8;
+     * enum GdkWindowState.GDK_WINDOW_STATE_STICKY = 8;
      * }
      */
     public static int GDK_WINDOW_STATE_STICKY() {
@@ -6719,7 +9193,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_FULLSCREEN = 16;
+     * enum GdkWindowState.GDK_WINDOW_STATE_FULLSCREEN = 16;
      * }
      */
     public static int GDK_WINDOW_STATE_FULLSCREEN() {
@@ -6727,7 +9201,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_ABOVE = 32;
+     * enum GdkWindowState.GDK_WINDOW_STATE_ABOVE = 32;
      * }
      */
     public static int GDK_WINDOW_STATE_ABOVE() {
@@ -6735,7 +9209,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_BELOW = 64;
+     * enum GdkWindowState.GDK_WINDOW_STATE_BELOW = 64;
      * }
      */
     public static int GDK_WINDOW_STATE_BELOW() {
@@ -6743,7 +9217,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_FOCUSED = 128;
+     * enum GdkWindowState.GDK_WINDOW_STATE_FOCUSED = 128;
      * }
      */
     public static int GDK_WINDOW_STATE_FOCUSED() {
@@ -6751,7 +9225,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_TILED = 256;
+     * enum GdkWindowState.GDK_WINDOW_STATE_TILED = 256;
      * }
      */
     public static int GDK_WINDOW_STATE_TILED() {
@@ -6759,7 +9233,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_TOP_TILED = 512;
+     * enum GdkWindowState.GDK_WINDOW_STATE_TOP_TILED = 512;
      * }
      */
     public static int GDK_WINDOW_STATE_TOP_TILED() {
@@ -6767,7 +9241,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_TOP_RESIZABLE = 1024;
+     * enum GdkWindowState.GDK_WINDOW_STATE_TOP_RESIZABLE = 1024;
      * }
      */
     public static int GDK_WINDOW_STATE_TOP_RESIZABLE() {
@@ -6775,7 +9249,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_RIGHT_TILED = 2048;
+     * enum GdkWindowState.GDK_WINDOW_STATE_RIGHT_TILED = 2048;
      * }
      */
     public static int GDK_WINDOW_STATE_RIGHT_TILED() {
@@ -6783,7 +9257,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_RIGHT_RESIZABLE = 4096;
+     * enum GdkWindowState.GDK_WINDOW_STATE_RIGHT_RESIZABLE = 4096;
      * }
      */
     public static int GDK_WINDOW_STATE_RIGHT_RESIZABLE() {
@@ -6791,7 +9265,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_BOTTOM_TILED = 8192;
+     * enum GdkWindowState.GDK_WINDOW_STATE_BOTTOM_TILED = 8192;
      * }
      */
     public static int GDK_WINDOW_STATE_BOTTOM_TILED() {
@@ -6799,7 +9273,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_BOTTOM_RESIZABLE = 16384;
+     * enum GdkWindowState.GDK_WINDOW_STATE_BOTTOM_RESIZABLE = 16384;
      * }
      */
     public static int GDK_WINDOW_STATE_BOTTOM_RESIZABLE() {
@@ -6807,7 +9281,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_LEFT_TILED = 32768;
+     * enum GdkWindowState.GDK_WINDOW_STATE_LEFT_TILED = 32768;
      * }
      */
     public static int GDK_WINDOW_STATE_LEFT_TILED() {
@@ -6815,7 +9289,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_STATE_LEFT_RESIZABLE = 65536;
+     * enum GdkWindowState.GDK_WINDOW_STATE_LEFT_RESIZABLE = 65536;
      * }
      */
     public static int GDK_WINDOW_STATE_LEFT_RESIZABLE() {
@@ -6823,7 +9297,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SETTING_ACTION_NEW = 0;
+     * enum GdkSettingAction.GDK_SETTING_ACTION_NEW = 0;
      * }
      */
     public static int GDK_SETTING_ACTION_NEW() {
@@ -6831,7 +9305,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SETTING_ACTION_CHANGED = 1;
+     * enum GdkSettingAction.GDK_SETTING_ACTION_CHANGED = 1;
      * }
      */
     public static int GDK_SETTING_ACTION_CHANGED() {
@@ -6839,7 +9313,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_SETTING_ACTION_DELETED = 2;
+     * enum GdkSettingAction.GDK_SETTING_ACTION_DELETED = 2;
      * }
      */
     public static int GDK_SETTING_ACTION_DELETED() {
@@ -6847,7 +9321,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_OWNER_CHANGE_NEW_OWNER = 0;
+     * enum GdkOwnerChange.GDK_OWNER_CHANGE_NEW_OWNER = 0;
      * }
      */
     public static int GDK_OWNER_CHANGE_NEW_OWNER() {
@@ -6855,7 +9329,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_OWNER_CHANGE_DESTROY = 1;
+     * enum GdkOwnerChange.GDK_OWNER_CHANGE_DESTROY = 1;
      * }
      */
     public static int GDK_OWNER_CHANGE_DESTROY() {
@@ -6863,18 +9337,18 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_OWNER_CHANGE_CLOSE = 2;
+     * enum GdkOwnerChange.GDK_OWNER_CHANGE_CLOSE = 2;
      * }
      */
     public static int GDK_OWNER_CHANGE_CLOSE() {
         return (int)2L;
     }
     public static MethodHandle gdk_event_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1065.gdk_event_get_type$MH,"gdk_event_get_type");
+        return RuntimeHelper.requireNonNull(constants$1804.const$0,"gdk_event_get_type");
     }
     /**
      * {@snippet :
-     * GType gdk_event_get_type();
+     * unsigned long gdk_event_get_type();
      * }
      */
     public static long gdk_event_get_type() {
@@ -6886,11 +9360,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_sequence_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1066.gdk_event_sequence_get_type$MH,"gdk_event_sequence_get_type");
+        return RuntimeHelper.requireNonNull(constants$1804.const$1,"gdk_event_sequence_get_type");
     }
     /**
      * {@snippet :
-     * GType gdk_event_sequence_get_type();
+     * unsigned long gdk_event_sequence_get_type();
      * }
      */
     public static long gdk_event_sequence_get_type() {
@@ -6902,11 +9376,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_events_pending$MH() {
-        return RuntimeHelper.requireNonNull(constants$1066.gdk_events_pending$MH,"gdk_events_pending");
+        return RuntimeHelper.requireNonNull(constants$1804.const$2,"gdk_events_pending");
     }
     /**
      * {@snippet :
-     * gboolean gdk_events_pending();
+     * int gdk_events_pending();
      * }
      */
     public static int gdk_events_pending() {
@@ -6918,11 +9392,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$1066.gdk_event_get$MH,"gdk_event_get");
+        return RuntimeHelper.requireNonNull(constants$1804.const$3,"gdk_event_get");
     }
     /**
      * {@snippet :
-     * GdkEvent* gdk_event_get();
+     * union _GdkEvent* gdk_event_get();
      * }
      */
     public static MemorySegment gdk_event_get() {
@@ -6934,11 +9408,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_peek$MH() {
-        return RuntimeHelper.requireNonNull(constants$1066.gdk_event_peek$MH,"gdk_event_peek");
+        return RuntimeHelper.requireNonNull(constants$1804.const$4,"gdk_event_peek");
     }
     /**
      * {@snippet :
-     * GdkEvent* gdk_event_peek();
+     * union _GdkEvent* gdk_event_peek();
      * }
      */
     public static MemorySegment gdk_event_peek() {
@@ -6950,11 +9424,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_put$MH() {
-        return RuntimeHelper.requireNonNull(constants$1066.gdk_event_put$MH,"gdk_event_put");
+        return RuntimeHelper.requireNonNull(constants$1804.const$5,"gdk_event_put");
     }
     /**
      * {@snippet :
-     * void gdk_event_put(const GdkEvent* event);
+     * void gdk_event_put(union _GdkEvent* event);
      * }
      */
     public static void gdk_event_put(MemorySegment event) {
@@ -6966,11 +9440,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1066.gdk_event_new$MH,"gdk_event_new");
+        return RuntimeHelper.requireNonNull(constants$1805.const$0,"gdk_event_new");
     }
     /**
      * {@snippet :
-     * GdkEvent* gdk_event_new(GdkEventType type);
+     * union _GdkEvent* gdk_event_new(enum GdkEventType type);
      * }
      */
     public static MemorySegment gdk_event_new(int type) {
@@ -6982,11 +9456,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1067.gdk_event_copy$MH,"gdk_event_copy");
+        return RuntimeHelper.requireNonNull(constants$1805.const$1,"gdk_event_copy");
     }
     /**
      * {@snippet :
-     * GdkEvent* gdk_event_copy(const GdkEvent* event);
+     * union _GdkEvent* gdk_event_copy(union _GdkEvent* event);
      * }
      */
     public static MemorySegment gdk_event_copy(MemorySegment event) {
@@ -6998,11 +9472,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1067.gdk_event_free$MH,"gdk_event_free");
+        return RuntimeHelper.requireNonNull(constants$1805.const$2,"gdk_event_free");
     }
     /**
      * {@snippet :
-     * void gdk_event_free(GdkEvent* event);
+     * void gdk_event_free(union _GdkEvent* event);
      * }
      */
     public static void gdk_event_free(MemorySegment event) {
@@ -7014,11 +9488,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1067.gdk_event_get_window$MH,"gdk_event_get_window");
+        return RuntimeHelper.requireNonNull(constants$1805.const$3,"gdk_event_get_window");
     }
     /**
      * {@snippet :
-     * GdkWindow* gdk_event_get_window(const GdkEvent* event);
+     * struct _GdkWindow* gdk_event_get_window(union _GdkEvent* event);
      * }
      */
     public static MemorySegment gdk_event_get_window(MemorySegment event) {
@@ -7030,11 +9504,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$1067.gdk_event_get_time$MH,"gdk_event_get_time");
+        return RuntimeHelper.requireNonNull(constants$1805.const$4,"gdk_event_get_time");
     }
     /**
      * {@snippet :
-     * guint32 gdk_event_get_time(const GdkEvent* event);
+     * unsigned int gdk_event_get_time(union _GdkEvent* event);
      * }
      */
     public static int gdk_event_get_time(MemorySegment event) {
@@ -7046,11 +9520,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$1067.gdk_event_get_state$MH,"gdk_event_get_state");
+        return RuntimeHelper.requireNonNull(constants$1805.const$5,"gdk_event_get_state");
     }
     /**
      * {@snippet :
-     * gboolean gdk_event_get_state(const GdkEvent* event, GdkModifierType* state);
+     * int gdk_event_get_state(union _GdkEvent* event, enum GdkModifierType* state);
      * }
      */
     public static int gdk_event_get_state(MemorySegment event, MemorySegment state) {
@@ -7062,11 +9536,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_coords$MH() {
-        return RuntimeHelper.requireNonNull(constants$1067.gdk_event_get_coords$MH,"gdk_event_get_coords");
+        return RuntimeHelper.requireNonNull(constants$1806.const$0,"gdk_event_get_coords");
     }
     /**
      * {@snippet :
-     * gboolean gdk_event_get_coords(const GdkEvent* event, gdouble* x_win, gdouble* y_win);
+     * int gdk_event_get_coords(union _GdkEvent* event, double* x_win, double* y_win);
      * }
      */
     public static int gdk_event_get_coords(MemorySegment event, MemorySegment x_win, MemorySegment y_win) {
@@ -7078,11 +9552,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_root_coords$MH() {
-        return RuntimeHelper.requireNonNull(constants$1068.gdk_event_get_root_coords$MH,"gdk_event_get_root_coords");
+        return RuntimeHelper.requireNonNull(constants$1806.const$1,"gdk_event_get_root_coords");
     }
     /**
      * {@snippet :
-     * gboolean gdk_event_get_root_coords(const GdkEvent* event, gdouble* x_root, gdouble* y_root);
+     * int gdk_event_get_root_coords(union _GdkEvent* event, double* x_root, double* y_root);
      * }
      */
     public static int gdk_event_get_root_coords(MemorySegment event, MemorySegment x_root, MemorySegment y_root) {
@@ -7094,11 +9568,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_button$MH() {
-        return RuntimeHelper.requireNonNull(constants$1068.gdk_event_get_button$MH,"gdk_event_get_button");
+        return RuntimeHelper.requireNonNull(constants$1806.const$2,"gdk_event_get_button");
     }
     /**
      * {@snippet :
-     * gboolean gdk_event_get_button(const GdkEvent* event, guint* button);
+     * int gdk_event_get_button(union _GdkEvent* event, unsigned int* button);
      * }
      */
     public static int gdk_event_get_button(MemorySegment event, MemorySegment button) {
@@ -7110,11 +9584,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_click_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1068.gdk_event_get_click_count$MH,"gdk_event_get_click_count");
+        return RuntimeHelper.requireNonNull(constants$1806.const$3,"gdk_event_get_click_count");
     }
     /**
      * {@snippet :
-     * gboolean gdk_event_get_click_count(const GdkEvent* event, guint* click_count);
+     * int gdk_event_get_click_count(union _GdkEvent* event, unsigned int* click_count);
      * }
      */
     public static int gdk_event_get_click_count(MemorySegment event, MemorySegment click_count) {
@@ -7126,11 +9600,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_keyval$MH() {
-        return RuntimeHelper.requireNonNull(constants$1068.gdk_event_get_keyval$MH,"gdk_event_get_keyval");
+        return RuntimeHelper.requireNonNull(constants$1806.const$4,"gdk_event_get_keyval");
     }
     /**
      * {@snippet :
-     * gboolean gdk_event_get_keyval(const GdkEvent* event, guint* keyval);
+     * int gdk_event_get_keyval(union _GdkEvent* event, unsigned int* keyval);
      * }
      */
     public static int gdk_event_get_keyval(MemorySegment event, MemorySegment keyval) {
@@ -7142,11 +9616,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_keycode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1068.gdk_event_get_keycode$MH,"gdk_event_get_keycode");
+        return RuntimeHelper.requireNonNull(constants$1806.const$5,"gdk_event_get_keycode");
     }
     /**
      * {@snippet :
-     * gboolean gdk_event_get_keycode(const GdkEvent* event, guint16* keycode);
+     * int gdk_event_get_keycode(union _GdkEvent* event, unsigned short* keycode);
      * }
      */
     public static int gdk_event_get_keycode(MemorySegment event, MemorySegment keycode) {
@@ -7158,11 +9632,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_scroll_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$1068.gdk_event_get_scroll_direction$MH,"gdk_event_get_scroll_direction");
+        return RuntimeHelper.requireNonNull(constants$1807.const$0,"gdk_event_get_scroll_direction");
     }
     /**
      * {@snippet :
-     * gboolean gdk_event_get_scroll_direction(const GdkEvent* event, GdkScrollDirection* direction);
+     * int gdk_event_get_scroll_direction(union _GdkEvent* event, enum GdkScrollDirection* direction);
      * }
      */
     public static int gdk_event_get_scroll_direction(MemorySegment event, MemorySegment direction) {
@@ -7174,11 +9648,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_scroll_deltas$MH() {
-        return RuntimeHelper.requireNonNull(constants$1069.gdk_event_get_scroll_deltas$MH,"gdk_event_get_scroll_deltas");
+        return RuntimeHelper.requireNonNull(constants$1807.const$1,"gdk_event_get_scroll_deltas");
     }
     /**
      * {@snippet :
-     * gboolean gdk_event_get_scroll_deltas(const GdkEvent* event, gdouble* delta_x, gdouble* delta_y);
+     * int gdk_event_get_scroll_deltas(union _GdkEvent* event, double* delta_x, double* delta_y);
      * }
      */
     public static int gdk_event_get_scroll_deltas(MemorySegment event, MemorySegment delta_x, MemorySegment delta_y) {
@@ -7190,11 +9664,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_is_scroll_stop_event$MH() {
-        return RuntimeHelper.requireNonNull(constants$1069.gdk_event_is_scroll_stop_event$MH,"gdk_event_is_scroll_stop_event");
+        return RuntimeHelper.requireNonNull(constants$1807.const$2,"gdk_event_is_scroll_stop_event");
     }
     /**
      * {@snippet :
-     * gboolean gdk_event_is_scroll_stop_event(const GdkEvent* event);
+     * int gdk_event_is_scroll_stop_event(union _GdkEvent* event);
      * }
      */
     public static int gdk_event_is_scroll_stop_event(MemorySegment event) {
@@ -7206,11 +9680,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_axis$MH() {
-        return RuntimeHelper.requireNonNull(constants$1069.gdk_event_get_axis$MH,"gdk_event_get_axis");
+        return RuntimeHelper.requireNonNull(constants$1807.const$3,"gdk_event_get_axis");
     }
     /**
      * {@snippet :
-     * gboolean gdk_event_get_axis(const GdkEvent* event, GdkAxisUse axis_use, gdouble* value);
+     * int gdk_event_get_axis(union _GdkEvent* event, enum GdkAxisUse axis_use, double* value);
      * }
      */
     public static int gdk_event_get_axis(MemorySegment event, int axis_use, MemorySegment value) {
@@ -7222,11 +9696,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_set_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1069.gdk_event_set_device$MH,"gdk_event_set_device");
+        return RuntimeHelper.requireNonNull(constants$1807.const$4,"gdk_event_set_device");
     }
     /**
      * {@snippet :
-     * void gdk_event_set_device(GdkEvent* event, GdkDevice* device);
+     * void gdk_event_set_device(union _GdkEvent* event, struct _GdkDevice* device);
      * }
      */
     public static void gdk_event_set_device(MemorySegment event, MemorySegment device) {
@@ -7238,11 +9712,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1069.gdk_event_get_device$MH,"gdk_event_get_device");
+        return RuntimeHelper.requireNonNull(constants$1807.const$5,"gdk_event_get_device");
     }
     /**
      * {@snippet :
-     * GdkDevice* gdk_event_get_device(const GdkEvent* event);
+     * struct _GdkDevice* gdk_event_get_device(union _GdkEvent* event);
      * }
      */
     public static MemorySegment gdk_event_get_device(MemorySegment event) {
@@ -7254,11 +9728,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_set_source_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1069.gdk_event_set_source_device$MH,"gdk_event_set_source_device");
+        return RuntimeHelper.requireNonNull(constants$1808.const$0,"gdk_event_set_source_device");
     }
     /**
      * {@snippet :
-     * void gdk_event_set_source_device(GdkEvent* event, GdkDevice* device);
+     * void gdk_event_set_source_device(union _GdkEvent* event, struct _GdkDevice* device);
      * }
      */
     public static void gdk_event_set_source_device(MemorySegment event, MemorySegment device) {
@@ -7270,11 +9744,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_source_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1070.gdk_event_get_source_device$MH,"gdk_event_get_source_device");
+        return RuntimeHelper.requireNonNull(constants$1808.const$1,"gdk_event_get_source_device");
     }
     /**
      * {@snippet :
-     * GdkDevice* gdk_event_get_source_device(const GdkEvent* event);
+     * struct _GdkDevice* gdk_event_get_source_device(union _GdkEvent* event);
      * }
      */
     public static MemorySegment gdk_event_get_source_device(MemorySegment event) {
@@ -7286,11 +9760,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_request_motions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1070.gdk_event_request_motions$MH,"gdk_event_request_motions");
+        return RuntimeHelper.requireNonNull(constants$1808.const$2,"gdk_event_request_motions");
     }
     /**
      * {@snippet :
-     * void gdk_event_request_motions(const GdkEventMotion* event);
+     * void gdk_event_request_motions(struct _GdkEventMotion* event);
      * }
      */
     public static void gdk_event_request_motions(MemorySegment event) {
@@ -7302,11 +9776,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_triggers_context_menu$MH() {
-        return RuntimeHelper.requireNonNull(constants$1070.gdk_event_triggers_context_menu$MH,"gdk_event_triggers_context_menu");
+        return RuntimeHelper.requireNonNull(constants$1808.const$3,"gdk_event_triggers_context_menu");
     }
     /**
      * {@snippet :
-     * gboolean gdk_event_triggers_context_menu(const GdkEvent* event);
+     * int gdk_event_triggers_context_menu(union _GdkEvent* event);
      * }
      */
     public static int gdk_event_triggers_context_menu(MemorySegment event) {
@@ -7318,11 +9792,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_events_get_distance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1070.gdk_events_get_distance$MH,"gdk_events_get_distance");
+        return RuntimeHelper.requireNonNull(constants$1808.const$4,"gdk_events_get_distance");
     }
     /**
      * {@snippet :
-     * gboolean gdk_events_get_distance(GdkEvent* event1, GdkEvent* event2, gdouble* distance);
+     * int gdk_events_get_distance(union _GdkEvent* event1, union _GdkEvent* event2, double* distance);
      * }
      */
     public static int gdk_events_get_distance(MemorySegment event1, MemorySegment event2, MemorySegment distance) {
@@ -7334,11 +9808,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_events_get_angle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1070.gdk_events_get_angle$MH,"gdk_events_get_angle");
+        return RuntimeHelper.requireNonNull(constants$1808.const$5,"gdk_events_get_angle");
     }
     /**
      * {@snippet :
-     * gboolean gdk_events_get_angle(GdkEvent* event1, GdkEvent* event2, gdouble* angle);
+     * int gdk_events_get_angle(union _GdkEvent* event1, union _GdkEvent* event2, double* angle);
      * }
      */
     public static int gdk_events_get_angle(MemorySegment event1, MemorySegment event2, MemorySegment angle) {
@@ -7350,11 +9824,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_events_get_center$MH() {
-        return RuntimeHelper.requireNonNull(constants$1070.gdk_events_get_center$MH,"gdk_events_get_center");
+        return RuntimeHelper.requireNonNull(constants$1809.const$0,"gdk_events_get_center");
     }
     /**
      * {@snippet :
-     * gboolean gdk_events_get_center(GdkEvent* event1, GdkEvent* event2, gdouble* x, gdouble* y);
+     * int gdk_events_get_center(union _GdkEvent* event1, union _GdkEvent* event2, double* x, double* y);
      * }
      */
     public static int gdk_events_get_center(MemorySegment event1, MemorySegment event2, MemorySegment x, MemorySegment y) {
@@ -7366,11 +9840,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_handler_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$1071.gdk_event_handler_set$MH,"gdk_event_handler_set");
+        return RuntimeHelper.requireNonNull(constants$1809.const$3,"gdk_event_handler_set");
     }
     /**
      * {@snippet :
-     * void gdk_event_handler_set(GdkEventFunc func, gpointer data, GDestroyNotify notify);
+     * void gdk_event_handler_set(void (*func)(union _GdkEvent*,void*), void* data, void (*notify)(void*));
      * }
      */
     public static void gdk_event_handler_set(MemorySegment func, MemorySegment data, MemorySegment notify) {
@@ -7382,11 +9856,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_set_screen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1071.gdk_event_set_screen$MH,"gdk_event_set_screen");
+        return RuntimeHelper.requireNonNull(constants$1809.const$4,"gdk_event_set_screen");
     }
     /**
      * {@snippet :
-     * void gdk_event_set_screen(GdkEvent* event, GdkScreen* screen);
+     * void gdk_event_set_screen(union _GdkEvent* event, struct _GdkScreen* screen);
      * }
      */
     public static void gdk_event_set_screen(MemorySegment event, MemorySegment screen) {
@@ -7398,11 +9872,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_screen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1071.gdk_event_get_screen$MH,"gdk_event_get_screen");
+        return RuntimeHelper.requireNonNull(constants$1809.const$5,"gdk_event_get_screen");
     }
     /**
      * {@snippet :
-     * GdkScreen* gdk_event_get_screen(const GdkEvent* event);
+     * struct _GdkScreen* gdk_event_get_screen(union _GdkEvent* event);
      * }
      */
     public static MemorySegment gdk_event_get_screen(MemorySegment event) {
@@ -7414,11 +9888,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_event_sequence$MH() {
-        return RuntimeHelper.requireNonNull(constants$1071.gdk_event_get_event_sequence$MH,"gdk_event_get_event_sequence");
+        return RuntimeHelper.requireNonNull(constants$1810.const$0,"gdk_event_get_event_sequence");
     }
     /**
      * {@snippet :
-     * GdkEventSequence* gdk_event_get_event_sequence(const GdkEvent* event);
+     * struct _GdkEventSequence* gdk_event_get_event_sequence(union _GdkEvent* event);
      * }
      */
     public static MemorySegment gdk_event_get_event_sequence(MemorySegment event) {
@@ -7430,11 +9904,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_event_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1071.gdk_event_get_event_type$MH,"gdk_event_get_event_type");
+        return RuntimeHelper.requireNonNull(constants$1810.const$1,"gdk_event_get_event_type");
     }
     /**
      * {@snippet :
-     * GdkEventType gdk_event_get_event_type(const GdkEvent* event);
+     * enum GdkEventType gdk_event_get_event_type(union _GdkEvent* event);
      * }
      */
     public static int gdk_event_get_event_type(MemorySegment event) {
@@ -7446,11 +9920,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_seat$MH() {
-        return RuntimeHelper.requireNonNull(constants$1071.gdk_event_get_seat$MH,"gdk_event_get_seat");
+        return RuntimeHelper.requireNonNull(constants$1810.const$2,"gdk_event_get_seat");
     }
     /**
      * {@snippet :
-     * GdkSeat* gdk_event_get_seat(const GdkEvent* event);
+     * struct _GdkSeat* gdk_event_get_seat(union _GdkEvent* event);
      * }
      */
     public static MemorySegment gdk_event_get_seat(MemorySegment event) {
@@ -7462,11 +9936,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_set_show_events$MH() {
-        return RuntimeHelper.requireNonNull(constants$1072.gdk_set_show_events$MH,"gdk_set_show_events");
+        return RuntimeHelper.requireNonNull(constants$1810.const$3,"gdk_set_show_events");
     }
     /**
      * {@snippet :
-     * void gdk_set_show_events(gboolean show_events);
+     * void gdk_set_show_events(int show_events);
      * }
      */
     public static void gdk_set_show_events(int show_events) {
@@ -7478,11 +9952,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_get_show_events$MH() {
-        return RuntimeHelper.requireNonNull(constants$1072.gdk_get_show_events$MH,"gdk_get_show_events");
+        return RuntimeHelper.requireNonNull(constants$1810.const$4,"gdk_get_show_events");
     }
     /**
      * {@snippet :
-     * gboolean gdk_get_show_events();
+     * int gdk_get_show_events();
      * }
      */
     public static int gdk_get_show_events() {
@@ -7494,11 +9968,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_setting_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$1072.gdk_setting_get$MH,"gdk_setting_get");
+        return RuntimeHelper.requireNonNull(constants$1810.const$5,"gdk_setting_get");
     }
     /**
      * {@snippet :
-     * gboolean gdk_setting_get(const gchar* name, GValue* value);
+     * int gdk_setting_get(char* name, struct _GValue* value);
      * }
      */
     public static int gdk_setting_get(MemorySegment name, MemorySegment value) {
@@ -7510,11 +9984,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_device_tool$MH() {
-        return RuntimeHelper.requireNonNull(constants$1072.gdk_event_get_device_tool$MH,"gdk_event_get_device_tool");
+        return RuntimeHelper.requireNonNull(constants$1811.const$0,"gdk_event_get_device_tool");
     }
     /**
      * {@snippet :
-     * GdkDeviceTool* gdk_event_get_device_tool(const GdkEvent* event);
+     * struct _GdkDeviceTool* gdk_event_get_device_tool(union _GdkEvent* event);
      * }
      */
     public static MemorySegment gdk_event_get_device_tool(MemorySegment event) {
@@ -7526,11 +10000,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_set_device_tool$MH() {
-        return RuntimeHelper.requireNonNull(constants$1072.gdk_event_set_device_tool$MH,"gdk_event_set_device_tool");
+        return RuntimeHelper.requireNonNull(constants$1811.const$1,"gdk_event_set_device_tool");
     }
     /**
      * {@snippet :
-     * void gdk_event_set_device_tool(GdkEvent* event, GdkDeviceTool* tool);
+     * void gdk_event_set_device_tool(union _GdkEvent* event, struct _GdkDeviceTool* tool);
      * }
      */
     public static void gdk_event_set_device_tool(MemorySegment event, MemorySegment tool) {
@@ -7542,11 +10016,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_scancode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1072.gdk_event_get_scancode$MH,"gdk_event_get_scancode");
+        return RuntimeHelper.requireNonNull(constants$1811.const$2,"gdk_event_get_scancode");
     }
     /**
      * {@snippet :
-     * int gdk_event_get_scancode(GdkEvent* event);
+     * int gdk_event_get_scancode(union _GdkEvent* event);
      * }
      */
     public static int gdk_event_get_scancode(MemorySegment event) {
@@ -7558,11 +10032,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_event_get_pointer_emulated$MH() {
-        return RuntimeHelper.requireNonNull(constants$1073.gdk_event_get_pointer_emulated$MH,"gdk_event_get_pointer_emulated");
+        return RuntimeHelper.requireNonNull(constants$1811.const$3,"gdk_event_get_pointer_emulated");
     }
     /**
      * {@snippet :
-     * gboolean gdk_event_get_pointer_emulated(GdkEvent* event);
+     * int gdk_event_get_pointer_emulated(union _GdkEvent* event);
      * }
      */
     public static int gdk_event_get_pointer_emulated(MemorySegment event) {
@@ -7574,11 +10048,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_manager_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1073.gdk_device_manager_get_type$MH,"gdk_device_manager_get_type");
+        return RuntimeHelper.requireNonNull(constants$1811.const$4,"gdk_device_manager_get_type");
     }
     /**
      * {@snippet :
-     * GType gdk_device_manager_get_type();
+     * unsigned long gdk_device_manager_get_type();
      * }
      */
     public static long gdk_device_manager_get_type() {
@@ -7590,11 +10064,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_manager_get_display$MH() {
-        return RuntimeHelper.requireNonNull(constants$1073.gdk_device_manager_get_display$MH,"gdk_device_manager_get_display");
+        return RuntimeHelper.requireNonNull(constants$1811.const$5,"gdk_device_manager_get_display");
     }
     /**
      * {@snippet :
-     * GdkDisplay* gdk_device_manager_get_display(GdkDeviceManager* device_manager);
+     * struct _GdkDisplay* gdk_device_manager_get_display(struct _GdkDeviceManager* device_manager);
      * }
      */
     public static MemorySegment gdk_device_manager_get_display(MemorySegment device_manager) {
@@ -7606,11 +10080,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_manager_list_devices$MH() {
-        return RuntimeHelper.requireNonNull(constants$1073.gdk_device_manager_list_devices$MH,"gdk_device_manager_list_devices");
+        return RuntimeHelper.requireNonNull(constants$1812.const$0,"gdk_device_manager_list_devices");
     }
     /**
      * {@snippet :
-     * GList* gdk_device_manager_list_devices(GdkDeviceManager* device_manager, GdkDeviceType type);
+     * struct _GList* gdk_device_manager_list_devices(struct _GdkDeviceManager* device_manager, enum GdkDeviceType type);
      * }
      */
     public static MemorySegment gdk_device_manager_list_devices(MemorySegment device_manager, int type) {
@@ -7622,11 +10096,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_device_manager_get_client_pointer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1073.gdk_device_manager_get_client_pointer$MH,"gdk_device_manager_get_client_pointer");
+        return RuntimeHelper.requireNonNull(constants$1812.const$1,"gdk_device_manager_get_client_pointer");
     }
     /**
      * {@snippet :
-     * GdkDevice* gdk_device_manager_get_client_pointer(GdkDeviceManager* device_manager);
+     * struct _GdkDevice* gdk_device_manager_get_client_pointer(struct _GdkDeviceManager* device_manager);
      * }
      */
     public static MemorySegment gdk_device_manager_get_client_pointer(MemorySegment device_manager) {
@@ -7638,11 +10112,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drawing_context_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1073.gdk_drawing_context_get_type$MH,"gdk_drawing_context_get_type");
+        return RuntimeHelper.requireNonNull(constants$1812.const$2,"gdk_drawing_context_get_type");
     }
     /**
      * {@snippet :
-     * GType gdk_drawing_context_get_type();
+     * unsigned long gdk_drawing_context_get_type();
      * }
      */
     public static long gdk_drawing_context_get_type() {
@@ -7654,11 +10128,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drawing_context_get_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1074.gdk_drawing_context_get_window$MH,"gdk_drawing_context_get_window");
+        return RuntimeHelper.requireNonNull(constants$1812.const$3,"gdk_drawing_context_get_window");
     }
     /**
      * {@snippet :
-     * GdkWindow* gdk_drawing_context_get_window(GdkDrawingContext* context);
+     * struct _GdkWindow* gdk_drawing_context_get_window(struct _GdkDrawingContext* context);
      * }
      */
     public static MemorySegment gdk_drawing_context_get_window(MemorySegment context) {
@@ -7670,11 +10144,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drawing_context_get_clip$MH() {
-        return RuntimeHelper.requireNonNull(constants$1074.gdk_drawing_context_get_clip$MH,"gdk_drawing_context_get_clip");
+        return RuntimeHelper.requireNonNull(constants$1812.const$4,"gdk_drawing_context_get_clip");
     }
     /**
      * {@snippet :
-     * cairo_region_t* gdk_drawing_context_get_clip(GdkDrawingContext* context);
+     * struct _cairo_region* gdk_drawing_context_get_clip(struct _GdkDrawingContext* context);
      * }
      */
     public static MemorySegment gdk_drawing_context_get_clip(MemorySegment context) {
@@ -7686,11 +10160,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drawing_context_is_valid$MH() {
-        return RuntimeHelper.requireNonNull(constants$1074.gdk_drawing_context_is_valid$MH,"gdk_drawing_context_is_valid");
+        return RuntimeHelper.requireNonNull(constants$1812.const$5,"gdk_drawing_context_is_valid");
     }
     /**
      * {@snippet :
-     * gboolean gdk_drawing_context_is_valid(GdkDrawingContext* context);
+     * int gdk_drawing_context_is_valid(struct _GdkDrawingContext* context);
      * }
      */
     public static int gdk_drawing_context_is_valid(MemorySegment context) {
@@ -7702,11 +10176,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_drawing_context_get_cairo_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$1074.gdk_drawing_context_get_cairo_context$MH,"gdk_drawing_context_get_cairo_context");
+        return RuntimeHelper.requireNonNull(constants$1813.const$0,"gdk_drawing_context_get_cairo_context");
     }
     /**
      * {@snippet :
-     * cairo_t* gdk_drawing_context_get_cairo_context(GdkDrawingContext* context);
+     * struct _cairo* gdk_drawing_context_get_cairo_context(struct _GdkDrawingContext* context);
      * }
      */
     public static MemorySegment gdk_drawing_context_get_cairo_context(MemorySegment context) {
@@ -7718,11 +10192,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1074.gdk_frame_timings_get_type$MH,"gdk_frame_timings_get_type");
+        return RuntimeHelper.requireNonNull(constants$1813.const$1,"gdk_frame_timings_get_type");
     }
     /**
      * {@snippet :
-     * GType gdk_frame_timings_get_type();
+     * unsigned long gdk_frame_timings_get_type();
      * }
      */
     public static long gdk_frame_timings_get_type() {
@@ -7734,11 +10208,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1074.gdk_frame_timings_ref$MH,"gdk_frame_timings_ref");
+        return RuntimeHelper.requireNonNull(constants$1813.const$2,"gdk_frame_timings_ref");
     }
     /**
      * {@snippet :
-     * GdkFrameTimings* gdk_frame_timings_ref(GdkFrameTimings* timings);
+     * struct _GdkFrameTimings* gdk_frame_timings_ref(struct _GdkFrameTimings* timings);
      * }
      */
     public static MemorySegment gdk_frame_timings_ref(MemorySegment timings) {
@@ -7750,11 +10224,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1075.gdk_frame_timings_unref$MH,"gdk_frame_timings_unref");
+        return RuntimeHelper.requireNonNull(constants$1813.const$3,"gdk_frame_timings_unref");
     }
     /**
      * {@snippet :
-     * void gdk_frame_timings_unref(GdkFrameTimings* timings);
+     * void gdk_frame_timings_unref(struct _GdkFrameTimings* timings);
      * }
      */
     public static void gdk_frame_timings_unref(MemorySegment timings) {
@@ -7766,11 +10240,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_get_frame_counter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1075.gdk_frame_timings_get_frame_counter$MH,"gdk_frame_timings_get_frame_counter");
+        return RuntimeHelper.requireNonNull(constants$1813.const$4,"gdk_frame_timings_get_frame_counter");
     }
     /**
      * {@snippet :
-     * gint64 gdk_frame_timings_get_frame_counter(GdkFrameTimings* timings);
+     * long gdk_frame_timings_get_frame_counter(struct _GdkFrameTimings* timings);
      * }
      */
     public static long gdk_frame_timings_get_frame_counter(MemorySegment timings) {
@@ -7782,11 +10256,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_get_complete$MH() {
-        return RuntimeHelper.requireNonNull(constants$1075.gdk_frame_timings_get_complete$MH,"gdk_frame_timings_get_complete");
+        return RuntimeHelper.requireNonNull(constants$1813.const$5,"gdk_frame_timings_get_complete");
     }
     /**
      * {@snippet :
-     * gboolean gdk_frame_timings_get_complete(GdkFrameTimings* timings);
+     * int gdk_frame_timings_get_complete(struct _GdkFrameTimings* timings);
      * }
      */
     public static int gdk_frame_timings_get_complete(MemorySegment timings) {
@@ -7798,11 +10272,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_get_frame_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$1075.gdk_frame_timings_get_frame_time$MH,"gdk_frame_timings_get_frame_time");
+        return RuntimeHelper.requireNonNull(constants$1814.const$0,"gdk_frame_timings_get_frame_time");
     }
     /**
      * {@snippet :
-     * gint64 gdk_frame_timings_get_frame_time(GdkFrameTimings* timings);
+     * long gdk_frame_timings_get_frame_time(struct _GdkFrameTimings* timings);
      * }
      */
     public static long gdk_frame_timings_get_frame_time(MemorySegment timings) {
@@ -7814,11 +10288,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_get_presentation_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$1075.gdk_frame_timings_get_presentation_time$MH,"gdk_frame_timings_get_presentation_time");
+        return RuntimeHelper.requireNonNull(constants$1814.const$1,"gdk_frame_timings_get_presentation_time");
     }
     /**
      * {@snippet :
-     * gint64 gdk_frame_timings_get_presentation_time(GdkFrameTimings* timings);
+     * long gdk_frame_timings_get_presentation_time(struct _GdkFrameTimings* timings);
      * }
      */
     public static long gdk_frame_timings_get_presentation_time(MemorySegment timings) {
@@ -7830,11 +10304,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_get_refresh_interval$MH() {
-        return RuntimeHelper.requireNonNull(constants$1075.gdk_frame_timings_get_refresh_interval$MH,"gdk_frame_timings_get_refresh_interval");
+        return RuntimeHelper.requireNonNull(constants$1814.const$2,"gdk_frame_timings_get_refresh_interval");
     }
     /**
      * {@snippet :
-     * gint64 gdk_frame_timings_get_refresh_interval(GdkFrameTimings* timings);
+     * long gdk_frame_timings_get_refresh_interval(struct _GdkFrameTimings* timings);
      * }
      */
     public static long gdk_frame_timings_get_refresh_interval(MemorySegment timings) {
@@ -7846,11 +10320,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_timings_get_predicted_presentation_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$1076.gdk_frame_timings_get_predicted_presentation_time$MH,"gdk_frame_timings_get_predicted_presentation_time");
+        return RuntimeHelper.requireNonNull(constants$1814.const$3,"gdk_frame_timings_get_predicted_presentation_time");
     }
     /**
      * {@snippet :
-     * gint64 gdk_frame_timings_get_predicted_presentation_time(GdkFrameTimings* timings);
+     * long gdk_frame_timings_get_predicted_presentation_time(struct _GdkFrameTimings* timings);
      * }
      */
     public static long gdk_frame_timings_get_predicted_presentation_time(MemorySegment timings) {
@@ -7863,7 +10337,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FRAME_CLOCK_PHASE_NONE = 0;
+     * enum GdkFrameClockPhase.GDK_FRAME_CLOCK_PHASE_NONE = 0;
      * }
      */
     public static int GDK_FRAME_CLOCK_PHASE_NONE() {
@@ -7871,7 +10345,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FRAME_CLOCK_PHASE_FLUSH_EVENTS = 1;
+     * enum GdkFrameClockPhase.GDK_FRAME_CLOCK_PHASE_FLUSH_EVENTS = 1;
      * }
      */
     public static int GDK_FRAME_CLOCK_PHASE_FLUSH_EVENTS() {
@@ -7879,7 +10353,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FRAME_CLOCK_PHASE_BEFORE_PAINT = 2;
+     * enum GdkFrameClockPhase.GDK_FRAME_CLOCK_PHASE_BEFORE_PAINT = 2;
      * }
      */
     public static int GDK_FRAME_CLOCK_PHASE_BEFORE_PAINT() {
@@ -7887,7 +10361,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FRAME_CLOCK_PHASE_UPDATE = 4;
+     * enum GdkFrameClockPhase.GDK_FRAME_CLOCK_PHASE_UPDATE = 4;
      * }
      */
     public static int GDK_FRAME_CLOCK_PHASE_UPDATE() {
@@ -7895,7 +10369,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FRAME_CLOCK_PHASE_LAYOUT = 8;
+     * enum GdkFrameClockPhase.GDK_FRAME_CLOCK_PHASE_LAYOUT = 8;
      * }
      */
     public static int GDK_FRAME_CLOCK_PHASE_LAYOUT() {
@@ -7903,7 +10377,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FRAME_CLOCK_PHASE_PAINT = 16;
+     * enum GdkFrameClockPhase.GDK_FRAME_CLOCK_PHASE_PAINT = 16;
      * }
      */
     public static int GDK_FRAME_CLOCK_PHASE_PAINT() {
@@ -7911,7 +10385,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FRAME_CLOCK_PHASE_RESUME_EVENTS = 32;
+     * enum GdkFrameClockPhase.GDK_FRAME_CLOCK_PHASE_RESUME_EVENTS = 32;
      * }
      */
     public static int GDK_FRAME_CLOCK_PHASE_RESUME_EVENTS() {
@@ -7919,18 +10393,18 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FRAME_CLOCK_PHASE_AFTER_PAINT = 64;
+     * enum GdkFrameClockPhase.GDK_FRAME_CLOCK_PHASE_AFTER_PAINT = 64;
      * }
      */
     public static int GDK_FRAME_CLOCK_PHASE_AFTER_PAINT() {
         return (int)64L;
     }
     public static MethodHandle gdk_frame_clock_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1076.gdk_frame_clock_get_type$MH,"gdk_frame_clock_get_type");
+        return RuntimeHelper.requireNonNull(constants$1814.const$4,"gdk_frame_clock_get_type");
     }
     /**
      * {@snippet :
-     * GType gdk_frame_clock_get_type();
+     * unsigned long gdk_frame_clock_get_type();
      * }
      */
     public static long gdk_frame_clock_get_type() {
@@ -7942,11 +10416,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_get_frame_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$1076.gdk_frame_clock_get_frame_time$MH,"gdk_frame_clock_get_frame_time");
+        return RuntimeHelper.requireNonNull(constants$1814.const$5,"gdk_frame_clock_get_frame_time");
     }
     /**
      * {@snippet :
-     * gint64 gdk_frame_clock_get_frame_time(GdkFrameClock* frame_clock);
+     * long gdk_frame_clock_get_frame_time(struct _GdkFrameClock* frame_clock);
      * }
      */
     public static long gdk_frame_clock_get_frame_time(MemorySegment frame_clock) {
@@ -7958,11 +10432,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_request_phase$MH() {
-        return RuntimeHelper.requireNonNull(constants$1076.gdk_frame_clock_request_phase$MH,"gdk_frame_clock_request_phase");
+        return RuntimeHelper.requireNonNull(constants$1815.const$0,"gdk_frame_clock_request_phase");
     }
     /**
      * {@snippet :
-     * void gdk_frame_clock_request_phase(GdkFrameClock* frame_clock, GdkFrameClockPhase phase);
+     * void gdk_frame_clock_request_phase(struct _GdkFrameClock* frame_clock, enum GdkFrameClockPhase phase);
      * }
      */
     public static void gdk_frame_clock_request_phase(MemorySegment frame_clock, int phase) {
@@ -7974,11 +10448,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_begin_updating$MH() {
-        return RuntimeHelper.requireNonNull(constants$1076.gdk_frame_clock_begin_updating$MH,"gdk_frame_clock_begin_updating");
+        return RuntimeHelper.requireNonNull(constants$1815.const$1,"gdk_frame_clock_begin_updating");
     }
     /**
      * {@snippet :
-     * void gdk_frame_clock_begin_updating(GdkFrameClock* frame_clock);
+     * void gdk_frame_clock_begin_updating(struct _GdkFrameClock* frame_clock);
      * }
      */
     public static void gdk_frame_clock_begin_updating(MemorySegment frame_clock) {
@@ -7990,11 +10464,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_end_updating$MH() {
-        return RuntimeHelper.requireNonNull(constants$1076.gdk_frame_clock_end_updating$MH,"gdk_frame_clock_end_updating");
+        return RuntimeHelper.requireNonNull(constants$1815.const$2,"gdk_frame_clock_end_updating");
     }
     /**
      * {@snippet :
-     * void gdk_frame_clock_end_updating(GdkFrameClock* frame_clock);
+     * void gdk_frame_clock_end_updating(struct _GdkFrameClock* frame_clock);
      * }
      */
     public static void gdk_frame_clock_end_updating(MemorySegment frame_clock) {
@@ -8006,11 +10480,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_get_frame_counter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1077.gdk_frame_clock_get_frame_counter$MH,"gdk_frame_clock_get_frame_counter");
+        return RuntimeHelper.requireNonNull(constants$1815.const$3,"gdk_frame_clock_get_frame_counter");
     }
     /**
      * {@snippet :
-     * gint64 gdk_frame_clock_get_frame_counter(GdkFrameClock* frame_clock);
+     * long gdk_frame_clock_get_frame_counter(struct _GdkFrameClock* frame_clock);
      * }
      */
     public static long gdk_frame_clock_get_frame_counter(MemorySegment frame_clock) {
@@ -8022,11 +10496,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_get_history_start$MH() {
-        return RuntimeHelper.requireNonNull(constants$1077.gdk_frame_clock_get_history_start$MH,"gdk_frame_clock_get_history_start");
+        return RuntimeHelper.requireNonNull(constants$1815.const$4,"gdk_frame_clock_get_history_start");
     }
     /**
      * {@snippet :
-     * gint64 gdk_frame_clock_get_history_start(GdkFrameClock* frame_clock);
+     * long gdk_frame_clock_get_history_start(struct _GdkFrameClock* frame_clock);
      * }
      */
     public static long gdk_frame_clock_get_history_start(MemorySegment frame_clock) {
@@ -8038,11 +10512,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_get_timings$MH() {
-        return RuntimeHelper.requireNonNull(constants$1077.gdk_frame_clock_get_timings$MH,"gdk_frame_clock_get_timings");
+        return RuntimeHelper.requireNonNull(constants$1815.const$5,"gdk_frame_clock_get_timings");
     }
     /**
      * {@snippet :
-     * GdkFrameTimings* gdk_frame_clock_get_timings(GdkFrameClock* frame_clock, gint64 frame_counter);
+     * struct _GdkFrameTimings* gdk_frame_clock_get_timings(struct _GdkFrameClock* frame_clock, long frame_counter);
      * }
      */
     public static MemorySegment gdk_frame_clock_get_timings(MemorySegment frame_clock, long frame_counter) {
@@ -8054,11 +10528,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_get_current_timings$MH() {
-        return RuntimeHelper.requireNonNull(constants$1077.gdk_frame_clock_get_current_timings$MH,"gdk_frame_clock_get_current_timings");
+        return RuntimeHelper.requireNonNull(constants$1816.const$0,"gdk_frame_clock_get_current_timings");
     }
     /**
      * {@snippet :
-     * GdkFrameTimings* gdk_frame_clock_get_current_timings(GdkFrameClock* frame_clock);
+     * struct _GdkFrameTimings* gdk_frame_clock_get_current_timings(struct _GdkFrameClock* frame_clock);
      * }
      */
     public static MemorySegment gdk_frame_clock_get_current_timings(MemorySegment frame_clock) {
@@ -8070,11 +10544,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_frame_clock_get_refresh_info$MH() {
-        return RuntimeHelper.requireNonNull(constants$1077.gdk_frame_clock_get_refresh_info$MH,"gdk_frame_clock_get_refresh_info");
+        return RuntimeHelper.requireNonNull(constants$1816.const$1,"gdk_frame_clock_get_refresh_info");
     }
     /**
      * {@snippet :
-     * void gdk_frame_clock_get_refresh_info(GdkFrameClock* frame_clock, gint64 base_time, gint64* refresh_interval_return, gint64* presentation_time_return);
+     * void gdk_frame_clock_get_refresh_info(struct _GdkFrameClock* frame_clock, long base_time, long* refresh_interval_return, long* presentation_time_return);
      * }
      */
     public static void gdk_frame_clock_get_refresh_info(MemorySegment frame_clock, long base_time, MemorySegment refresh_interval_return, MemorySegment presentation_time_return) {
@@ -8087,7 +10561,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_INPUT_OUTPUT = 0;
+     * enum GdkWindowWindowClass.GDK_INPUT_OUTPUT = 0;
      * }
      */
     public static int GDK_INPUT_OUTPUT() {
@@ -8095,7 +10569,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_INPUT_ONLY = 1;
+     * enum GdkWindowWindowClass.GDK_INPUT_ONLY = 1;
      * }
      */
     public static int GDK_INPUT_ONLY() {
@@ -8103,7 +10577,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_ROOT = 0;
+     * enum GdkWindowType.GDK_WINDOW_ROOT = 0;
      * }
      */
     public static int GDK_WINDOW_ROOT() {
@@ -8111,7 +10585,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_TOPLEVEL = 1;
+     * enum GdkWindowType.GDK_WINDOW_TOPLEVEL = 1;
      * }
      */
     public static int GDK_WINDOW_TOPLEVEL() {
@@ -8119,7 +10593,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_CHILD = 2;
+     * enum GdkWindowType.GDK_WINDOW_CHILD = 2;
      * }
      */
     public static int GDK_WINDOW_CHILD() {
@@ -8127,7 +10601,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_TEMP = 3;
+     * enum GdkWindowType.GDK_WINDOW_TEMP = 3;
      * }
      */
     public static int GDK_WINDOW_TEMP() {
@@ -8135,7 +10609,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_FOREIGN = 4;
+     * enum GdkWindowType.GDK_WINDOW_FOREIGN = 4;
      * }
      */
     public static int GDK_WINDOW_FOREIGN() {
@@ -8143,7 +10617,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_OFFSCREEN = 5;
+     * enum GdkWindowType.GDK_WINDOW_OFFSCREEN = 5;
      * }
      */
     public static int GDK_WINDOW_OFFSCREEN() {
@@ -8151,7 +10625,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_SUBSURFACE = 6;
+     * enum GdkWindowType.GDK_WINDOW_SUBSURFACE = 6;
      * }
      */
     public static int GDK_WINDOW_SUBSURFACE() {
@@ -8159,7 +10633,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WA_TITLE = 2;
+     * enum GdkWindowAttributesType.GDK_WA_TITLE = 2;
      * }
      */
     public static int GDK_WA_TITLE() {
@@ -8167,7 +10641,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WA_X = 4;
+     * enum GdkWindowAttributesType.GDK_WA_X = 4;
      * }
      */
     public static int GDK_WA_X() {
@@ -8175,7 +10649,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WA_Y = 8;
+     * enum GdkWindowAttributesType.GDK_WA_Y = 8;
      * }
      */
     public static int GDK_WA_Y() {
@@ -8183,7 +10657,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WA_CURSOR = 16;
+     * enum GdkWindowAttributesType.GDK_WA_CURSOR = 16;
      * }
      */
     public static int GDK_WA_CURSOR() {
@@ -8191,7 +10665,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WA_VISUAL = 32;
+     * enum GdkWindowAttributesType.GDK_WA_VISUAL = 32;
      * }
      */
     public static int GDK_WA_VISUAL() {
@@ -8199,7 +10673,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WA_WMCLASS = 64;
+     * enum GdkWindowAttributesType.GDK_WA_WMCLASS = 64;
      * }
      */
     public static int GDK_WA_WMCLASS() {
@@ -8207,7 +10681,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WA_NOREDIR = 128;
+     * enum GdkWindowAttributesType.GDK_WA_NOREDIR = 128;
      * }
      */
     public static int GDK_WA_NOREDIR() {
@@ -8215,7 +10689,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WA_TYPE_HINT = 256;
+     * enum GdkWindowAttributesType.GDK_WA_TYPE_HINT = 256;
      * }
      */
     public static int GDK_WA_TYPE_HINT() {
@@ -8223,7 +10697,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_HINT_POS = 1;
+     * enum GdkWindowHints.GDK_HINT_POS = 1;
      * }
      */
     public static int GDK_HINT_POS() {
@@ -8231,7 +10705,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_HINT_MIN_SIZE = 2;
+     * enum GdkWindowHints.GDK_HINT_MIN_SIZE = 2;
      * }
      */
     public static int GDK_HINT_MIN_SIZE() {
@@ -8239,7 +10713,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_HINT_MAX_SIZE = 4;
+     * enum GdkWindowHints.GDK_HINT_MAX_SIZE = 4;
      * }
      */
     public static int GDK_HINT_MAX_SIZE() {
@@ -8247,7 +10721,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_HINT_BASE_SIZE = 8;
+     * enum GdkWindowHints.GDK_HINT_BASE_SIZE = 8;
      * }
      */
     public static int GDK_HINT_BASE_SIZE() {
@@ -8255,7 +10729,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_HINT_ASPECT = 16;
+     * enum GdkWindowHints.GDK_HINT_ASPECT = 16;
      * }
      */
     public static int GDK_HINT_ASPECT() {
@@ -8263,7 +10737,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_HINT_RESIZE_INC = 32;
+     * enum GdkWindowHints.GDK_HINT_RESIZE_INC = 32;
      * }
      */
     public static int GDK_HINT_RESIZE_INC() {
@@ -8271,7 +10745,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_HINT_WIN_GRAVITY = 64;
+     * enum GdkWindowHints.GDK_HINT_WIN_GRAVITY = 64;
      * }
      */
     public static int GDK_HINT_WIN_GRAVITY() {
@@ -8279,7 +10753,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_HINT_USER_POS = 128;
+     * enum GdkWindowHints.GDK_HINT_USER_POS = 128;
      * }
      */
     public static int GDK_HINT_USER_POS() {
@@ -8287,7 +10761,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_HINT_USER_SIZE = 256;
+     * enum GdkWindowHints.GDK_HINT_USER_SIZE = 256;
      * }
      */
     public static int GDK_HINT_USER_SIZE() {
@@ -8295,7 +10769,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DECOR_ALL = 1;
+     * enum GdkWMDecoration.GDK_DECOR_ALL = 1;
      * }
      */
     public static int GDK_DECOR_ALL() {
@@ -8303,7 +10777,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DECOR_BORDER = 2;
+     * enum GdkWMDecoration.GDK_DECOR_BORDER = 2;
      * }
      */
     public static int GDK_DECOR_BORDER() {
@@ -8311,7 +10785,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DECOR_RESIZEH = 4;
+     * enum GdkWMDecoration.GDK_DECOR_RESIZEH = 4;
      * }
      */
     public static int GDK_DECOR_RESIZEH() {
@@ -8319,7 +10793,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DECOR_TITLE = 8;
+     * enum GdkWMDecoration.GDK_DECOR_TITLE = 8;
      * }
      */
     public static int GDK_DECOR_TITLE() {
@@ -8327,7 +10801,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DECOR_MENU = 16;
+     * enum GdkWMDecoration.GDK_DECOR_MENU = 16;
      * }
      */
     public static int GDK_DECOR_MENU() {
@@ -8335,7 +10809,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DECOR_MINIMIZE = 32;
+     * enum GdkWMDecoration.GDK_DECOR_MINIMIZE = 32;
      * }
      */
     public static int GDK_DECOR_MINIMIZE() {
@@ -8343,7 +10817,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_DECOR_MAXIMIZE = 64;
+     * enum GdkWMDecoration.GDK_DECOR_MAXIMIZE = 64;
      * }
      */
     public static int GDK_DECOR_MAXIMIZE() {
@@ -8351,7 +10825,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FUNC_ALL = 1;
+     * enum GdkWMFunction.GDK_FUNC_ALL = 1;
      * }
      */
     public static int GDK_FUNC_ALL() {
@@ -8359,7 +10833,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FUNC_RESIZE = 2;
+     * enum GdkWMFunction.GDK_FUNC_RESIZE = 2;
      * }
      */
     public static int GDK_FUNC_RESIZE() {
@@ -8367,7 +10841,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FUNC_MOVE = 4;
+     * enum GdkWMFunction.GDK_FUNC_MOVE = 4;
      * }
      */
     public static int GDK_FUNC_MOVE() {
@@ -8375,7 +10849,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FUNC_MINIMIZE = 8;
+     * enum GdkWMFunction.GDK_FUNC_MINIMIZE = 8;
      * }
      */
     public static int GDK_FUNC_MINIMIZE() {
@@ -8383,7 +10857,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FUNC_MAXIMIZE = 16;
+     * enum GdkWMFunction.GDK_FUNC_MAXIMIZE = 16;
      * }
      */
     public static int GDK_FUNC_MAXIMIZE() {
@@ -8391,7 +10865,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FUNC_CLOSE = 32;
+     * enum GdkWMFunction.GDK_FUNC_CLOSE = 32;
      * }
      */
     public static int GDK_FUNC_CLOSE() {
@@ -8399,7 +10873,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAVITY_NORTH_WEST = 1;
+     * enum GdkGravity.GDK_GRAVITY_NORTH_WEST = 1;
      * }
      */
     public static int GDK_GRAVITY_NORTH_WEST() {
@@ -8407,7 +10881,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAVITY_NORTH = 2;
+     * enum GdkGravity.GDK_GRAVITY_NORTH = 2;
      * }
      */
     public static int GDK_GRAVITY_NORTH() {
@@ -8415,7 +10889,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAVITY_NORTH_EAST = 3;
+     * enum GdkGravity.GDK_GRAVITY_NORTH_EAST = 3;
      * }
      */
     public static int GDK_GRAVITY_NORTH_EAST() {
@@ -8423,7 +10897,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAVITY_WEST = 4;
+     * enum GdkGravity.GDK_GRAVITY_WEST = 4;
      * }
      */
     public static int GDK_GRAVITY_WEST() {
@@ -8431,7 +10905,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAVITY_CENTER = 5;
+     * enum GdkGravity.GDK_GRAVITY_CENTER = 5;
      * }
      */
     public static int GDK_GRAVITY_CENTER() {
@@ -8439,7 +10913,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAVITY_EAST = 6;
+     * enum GdkGravity.GDK_GRAVITY_EAST = 6;
      * }
      */
     public static int GDK_GRAVITY_EAST() {
@@ -8447,7 +10921,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAVITY_SOUTH_WEST = 7;
+     * enum GdkGravity.GDK_GRAVITY_SOUTH_WEST = 7;
      * }
      */
     public static int GDK_GRAVITY_SOUTH_WEST() {
@@ -8455,7 +10929,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAVITY_SOUTH = 8;
+     * enum GdkGravity.GDK_GRAVITY_SOUTH = 8;
      * }
      */
     public static int GDK_GRAVITY_SOUTH() {
@@ -8463,7 +10937,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAVITY_SOUTH_EAST = 9;
+     * enum GdkGravity.GDK_GRAVITY_SOUTH_EAST = 9;
      * }
      */
     public static int GDK_GRAVITY_SOUTH_EAST() {
@@ -8471,7 +10945,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_GRAVITY_STATIC = 10;
+     * enum GdkGravity.GDK_GRAVITY_STATIC = 10;
      * }
      */
     public static int GDK_GRAVITY_STATIC() {
@@ -8479,7 +10953,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ANCHOR_FLIP_X = 1;
+     * enum GdkAnchorHints.GDK_ANCHOR_FLIP_X = 1;
      * }
      */
     public static int GDK_ANCHOR_FLIP_X() {
@@ -8487,7 +10961,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ANCHOR_FLIP_Y = 2;
+     * enum GdkAnchorHints.GDK_ANCHOR_FLIP_Y = 2;
      * }
      */
     public static int GDK_ANCHOR_FLIP_Y() {
@@ -8495,7 +10969,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ANCHOR_SLIDE_X = 4;
+     * enum GdkAnchorHints.GDK_ANCHOR_SLIDE_X = 4;
      * }
      */
     public static int GDK_ANCHOR_SLIDE_X() {
@@ -8503,7 +10977,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ANCHOR_SLIDE_Y = 8;
+     * enum GdkAnchorHints.GDK_ANCHOR_SLIDE_Y = 8;
      * }
      */
     public static int GDK_ANCHOR_SLIDE_Y() {
@@ -8511,7 +10985,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ANCHOR_RESIZE_X = 16;
+     * enum GdkAnchorHints.GDK_ANCHOR_RESIZE_X = 16;
      * }
      */
     public static int GDK_ANCHOR_RESIZE_X() {
@@ -8519,7 +10993,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ANCHOR_RESIZE_Y = 32;
+     * enum GdkAnchorHints.GDK_ANCHOR_RESIZE_Y = 32;
      * }
      */
     public static int GDK_ANCHOR_RESIZE_Y() {
@@ -8527,7 +11001,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ANCHOR_FLIP = 3;
+     * enum GdkAnchorHints.GDK_ANCHOR_FLIP = 3;
      * }
      */
     public static int GDK_ANCHOR_FLIP() {
@@ -8535,7 +11009,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ANCHOR_SLIDE = 12;
+     * enum GdkAnchorHints.GDK_ANCHOR_SLIDE = 12;
      * }
      */
     public static int GDK_ANCHOR_SLIDE() {
@@ -8543,7 +11017,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_ANCHOR_RESIZE = 48;
+     * enum GdkAnchorHints.GDK_ANCHOR_RESIZE = 48;
      * }
      */
     public static int GDK_ANCHOR_RESIZE() {
@@ -8551,7 +11025,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_EDGE_NORTH_WEST = 0;
+     * enum GdkWindowEdge.GDK_WINDOW_EDGE_NORTH_WEST = 0;
      * }
      */
     public static int GDK_WINDOW_EDGE_NORTH_WEST() {
@@ -8559,7 +11033,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_EDGE_NORTH = 1;
+     * enum GdkWindowEdge.GDK_WINDOW_EDGE_NORTH = 1;
      * }
      */
     public static int GDK_WINDOW_EDGE_NORTH() {
@@ -8567,7 +11041,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_EDGE_NORTH_EAST = 2;
+     * enum GdkWindowEdge.GDK_WINDOW_EDGE_NORTH_EAST = 2;
      * }
      */
     public static int GDK_WINDOW_EDGE_NORTH_EAST() {
@@ -8575,7 +11049,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_EDGE_WEST = 3;
+     * enum GdkWindowEdge.GDK_WINDOW_EDGE_WEST = 3;
      * }
      */
     public static int GDK_WINDOW_EDGE_WEST() {
@@ -8583,7 +11057,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_EDGE_EAST = 4;
+     * enum GdkWindowEdge.GDK_WINDOW_EDGE_EAST = 4;
      * }
      */
     public static int GDK_WINDOW_EDGE_EAST() {
@@ -8591,7 +11065,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_EDGE_SOUTH_WEST = 5;
+     * enum GdkWindowEdge.GDK_WINDOW_EDGE_SOUTH_WEST = 5;
      * }
      */
     public static int GDK_WINDOW_EDGE_SOUTH_WEST() {
@@ -8599,7 +11073,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_EDGE_SOUTH = 6;
+     * enum GdkWindowEdge.GDK_WINDOW_EDGE_SOUTH = 6;
      * }
      */
     public static int GDK_WINDOW_EDGE_SOUTH() {
@@ -8607,7 +11081,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_WINDOW_EDGE_SOUTH_EAST = 7;
+     * enum GdkWindowEdge.GDK_WINDOW_EDGE_SOUTH_EAST = 7;
      * }
      */
     public static int GDK_WINDOW_EDGE_SOUTH_EAST() {
@@ -8615,7 +11089,7 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FULLSCREEN_ON_CURRENT_MONITOR = 0;
+     * enum GdkFullscreenMode.GDK_FULLSCREEN_ON_CURRENT_MONITOR = 0;
      * }
      */
     public static int GDK_FULLSCREEN_ON_CURRENT_MONITOR() {
@@ -8623,18 +11097,18 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
     }
     /**
      * {@snippet :
-     * enum .GDK_FULLSCREEN_ON_ALL_MONITORS = 1;
+     * enum GdkFullscreenMode.GDK_FULLSCREEN_ON_ALL_MONITORS = 1;
      * }
      */
     public static int GDK_FULLSCREEN_ON_ALL_MONITORS() {
         return (int)1L;
     }
     public static MethodHandle gdk_window_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1077.gdk_window_get_type$MH,"gdk_window_get_type");
+        return RuntimeHelper.requireNonNull(constants$1825.const$5,"gdk_window_get_type");
     }
     /**
      * {@snippet :
-     * GType gdk_window_get_type();
+     * unsigned long gdk_window_get_type();
      * }
      */
     public static long gdk_window_get_type() {
@@ -8646,11 +11120,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1078.gdk_window_new$MH,"gdk_window_new");
+        return RuntimeHelper.requireNonNull(constants$1826.const$0,"gdk_window_new");
     }
     /**
      * {@snippet :
-     * GdkWindow* gdk_window_new(GdkWindow* parent, GdkWindowAttr* attributes, gint attributes_mask);
+     * struct _GdkWindow* gdk_window_new(struct _GdkWindow* parent, struct _GdkWindowAttr* attributes, int attributes_mask);
      * }
      */
     public static MemorySegment gdk_window_new(MemorySegment parent, MemorySegment attributes, int attributes_mask) {
@@ -8662,11 +11136,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1078.gdk_window_destroy$MH,"gdk_window_destroy");
+        return RuntimeHelper.requireNonNull(constants$1826.const$1,"gdk_window_destroy");
     }
     /**
      * {@snippet :
-     * void gdk_window_destroy(GdkWindow* window);
+     * void gdk_window_destroy(struct _GdkWindow* window);
      * }
      */
     public static void gdk_window_destroy(MemorySegment window) {
@@ -8678,11 +11152,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_window_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1078.gdk_window_get_window_type$MH,"gdk_window_get_window_type");
+        return RuntimeHelper.requireNonNull(constants$1826.const$2,"gdk_window_get_window_type");
     }
     /**
      * {@snippet :
-     * GdkWindowType gdk_window_get_window_type(GdkWindow* window);
+     * enum GdkWindowType gdk_window_get_window_type(struct _GdkWindow* window);
      * }
      */
     public static int gdk_window_get_window_type(MemorySegment window) {
@@ -8694,11 +11168,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_is_destroyed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1078.gdk_window_is_destroyed$MH,"gdk_window_is_destroyed");
+        return RuntimeHelper.requireNonNull(constants$1826.const$3,"gdk_window_is_destroyed");
     }
     /**
      * {@snippet :
-     * gboolean gdk_window_is_destroyed(GdkWindow* window);
+     * int gdk_window_is_destroyed(struct _GdkWindow* window);
      * }
      */
     public static int gdk_window_is_destroyed(MemorySegment window) {
@@ -8710,11 +11184,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_visual$MH() {
-        return RuntimeHelper.requireNonNull(constants$1078.gdk_window_get_visual$MH,"gdk_window_get_visual");
+        return RuntimeHelper.requireNonNull(constants$1826.const$4,"gdk_window_get_visual");
     }
     /**
      * {@snippet :
-     * GdkVisual* gdk_window_get_visual(GdkWindow* window);
+     * struct _GdkVisual* gdk_window_get_visual(struct _GdkWindow* window);
      * }
      */
     public static MemorySegment gdk_window_get_visual(MemorySegment window) {
@@ -8726,11 +11200,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_screen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1078.gdk_window_get_screen$MH,"gdk_window_get_screen");
+        return RuntimeHelper.requireNonNull(constants$1826.const$5,"gdk_window_get_screen");
     }
     /**
      * {@snippet :
-     * GdkScreen* gdk_window_get_screen(GdkWindow* window);
+     * struct _GdkScreen* gdk_window_get_screen(struct _GdkWindow* window);
      * }
      */
     public static MemorySegment gdk_window_get_screen(MemorySegment window) {
@@ -8742,11 +11216,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_display$MH() {
-        return RuntimeHelper.requireNonNull(constants$1079.gdk_window_get_display$MH,"gdk_window_get_display");
+        return RuntimeHelper.requireNonNull(constants$1827.const$0,"gdk_window_get_display");
     }
     /**
      * {@snippet :
-     * GdkDisplay* gdk_window_get_display(GdkWindow* window);
+     * struct _GdkDisplay* gdk_window_get_display(struct _GdkWindow* window);
      * }
      */
     public static MemorySegment gdk_window_get_display(MemorySegment window) {
@@ -8758,11 +11232,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_at_pointer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1079.gdk_window_at_pointer$MH,"gdk_window_at_pointer");
+        return RuntimeHelper.requireNonNull(constants$1827.const$1,"gdk_window_at_pointer");
     }
     /**
      * {@snippet :
-     * GdkWindow* gdk_window_at_pointer(gint* win_x, gint* win_y);
+     * struct _GdkWindow* gdk_window_at_pointer(int* win_x, int* win_y);
      * }
      */
     public static MemorySegment gdk_window_at_pointer(MemorySegment win_x, MemorySegment win_y) {
@@ -8774,11 +11248,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_show$MH() {
-        return RuntimeHelper.requireNonNull(constants$1079.gdk_window_show$MH,"gdk_window_show");
+        return RuntimeHelper.requireNonNull(constants$1827.const$2,"gdk_window_show");
     }
     /**
      * {@snippet :
-     * void gdk_window_show(GdkWindow* window);
+     * void gdk_window_show(struct _GdkWindow* window);
      * }
      */
     public static void gdk_window_show(MemorySegment window) {
@@ -8790,11 +11264,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_hide$MH() {
-        return RuntimeHelper.requireNonNull(constants$1079.gdk_window_hide$MH,"gdk_window_hide");
+        return RuntimeHelper.requireNonNull(constants$1827.const$3,"gdk_window_hide");
     }
     /**
      * {@snippet :
-     * void gdk_window_hide(GdkWindow* window);
+     * void gdk_window_hide(struct _GdkWindow* window);
      * }
      */
     public static void gdk_window_hide(MemorySegment window) {
@@ -8806,11 +11280,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_withdraw$MH() {
-        return RuntimeHelper.requireNonNull(constants$1079.gdk_window_withdraw$MH,"gdk_window_withdraw");
+        return RuntimeHelper.requireNonNull(constants$1827.const$4,"gdk_window_withdraw");
     }
     /**
      * {@snippet :
-     * void gdk_window_withdraw(GdkWindow* window);
+     * void gdk_window_withdraw(struct _GdkWindow* window);
      * }
      */
     public static void gdk_window_withdraw(MemorySegment window) {
@@ -8822,11 +11296,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_show_unraised$MH() {
-        return RuntimeHelper.requireNonNull(constants$1079.gdk_window_show_unraised$MH,"gdk_window_show_unraised");
+        return RuntimeHelper.requireNonNull(constants$1827.const$5,"gdk_window_show_unraised");
     }
     /**
      * {@snippet :
-     * void gdk_window_show_unraised(GdkWindow* window);
+     * void gdk_window_show_unraised(struct _GdkWindow* window);
      * }
      */
     public static void gdk_window_show_unraised(MemorySegment window) {
@@ -8838,11 +11312,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_move$MH() {
-        return RuntimeHelper.requireNonNull(constants$1080.gdk_window_move$MH,"gdk_window_move");
+        return RuntimeHelper.requireNonNull(constants$1828.const$0,"gdk_window_move");
     }
     /**
      * {@snippet :
-     * void gdk_window_move(GdkWindow* window, gint x, gint y);
+     * void gdk_window_move(struct _GdkWindow* window, int x, int y);
      * }
      */
     public static void gdk_window_move(MemorySegment window, int x, int y) {
@@ -8854,11 +11328,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_resize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1080.gdk_window_resize$MH,"gdk_window_resize");
+        return RuntimeHelper.requireNonNull(constants$1828.const$1,"gdk_window_resize");
     }
     /**
      * {@snippet :
-     * void gdk_window_resize(GdkWindow* window, gint width, gint height);
+     * void gdk_window_resize(struct _GdkWindow* window, int width, int height);
      * }
      */
     public static void gdk_window_resize(MemorySegment window, int width, int height) {
@@ -8870,11 +11344,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_move_resize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1080.gdk_window_move_resize$MH,"gdk_window_move_resize");
+        return RuntimeHelper.requireNonNull(constants$1828.const$2,"gdk_window_move_resize");
     }
     /**
      * {@snippet :
-     * void gdk_window_move_resize(GdkWindow* window, gint x, gint y, gint width, gint height);
+     * void gdk_window_move_resize(struct _GdkWindow* window, int x, int y, int width, int height);
      * }
      */
     public static void gdk_window_move_resize(MemorySegment window, int x, int y, int width, int height) {
@@ -8886,11 +11360,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_move_to_rect$MH() {
-        return RuntimeHelper.requireNonNull(constants$1080.gdk_window_move_to_rect$MH,"gdk_window_move_to_rect");
+        return RuntimeHelper.requireNonNull(constants$1828.const$4,"gdk_window_move_to_rect");
     }
     /**
      * {@snippet :
-     * void gdk_window_move_to_rect(GdkWindow* window, const GdkRectangle* rect, GdkGravity rect_anchor, GdkGravity window_anchor, GdkAnchorHints anchor_hints, gint rect_anchor_dx, gint rect_anchor_dy);
+     * void gdk_window_move_to_rect(struct _GdkWindow* window, struct _cairo_rectangle_int* rect, enum GdkGravity rect_anchor, enum GdkGravity window_anchor, enum GdkAnchorHints anchor_hints, int rect_anchor_dx, int rect_anchor_dy);
      * }
      */
     public static void gdk_window_move_to_rect(MemorySegment window, MemorySegment rect, int rect_anchor, int window_anchor, int anchor_hints, int rect_anchor_dx, int rect_anchor_dy) {
@@ -8902,11 +11376,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_reparent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1080.gdk_window_reparent$MH,"gdk_window_reparent");
+        return RuntimeHelper.requireNonNull(constants$1828.const$5,"gdk_window_reparent");
     }
     /**
      * {@snippet :
-     * void gdk_window_reparent(GdkWindow* window, GdkWindow* new_parent, gint x, gint y);
+     * void gdk_window_reparent(struct _GdkWindow* window, struct _GdkWindow* new_parent, int x, int y);
      * }
      */
     public static void gdk_window_reparent(MemorySegment window, MemorySegment new_parent, int x, int y) {
@@ -8918,11 +11392,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_raise$MH() {
-        return RuntimeHelper.requireNonNull(constants$1080.gdk_window_raise$MH,"gdk_window_raise");
+        return RuntimeHelper.requireNonNull(constants$1829.const$0,"gdk_window_raise");
     }
     /**
      * {@snippet :
-     * void gdk_window_raise(GdkWindow* window);
+     * void gdk_window_raise(struct _GdkWindow* window);
      * }
      */
     public static void gdk_window_raise(MemorySegment window) {
@@ -8934,11 +11408,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_lower$MH() {
-        return RuntimeHelper.requireNonNull(constants$1081.gdk_window_lower$MH,"gdk_window_lower");
+        return RuntimeHelper.requireNonNull(constants$1829.const$1,"gdk_window_lower");
     }
     /**
      * {@snippet :
-     * void gdk_window_lower(GdkWindow* window);
+     * void gdk_window_lower(struct _GdkWindow* window);
      * }
      */
     public static void gdk_window_lower(MemorySegment window) {
@@ -8950,11 +11424,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_restack$MH() {
-        return RuntimeHelper.requireNonNull(constants$1081.gdk_window_restack$MH,"gdk_window_restack");
+        return RuntimeHelper.requireNonNull(constants$1829.const$2,"gdk_window_restack");
     }
     /**
      * {@snippet :
-     * void gdk_window_restack(GdkWindow* window, GdkWindow* sibling, gboolean above);
+     * void gdk_window_restack(struct _GdkWindow* window, struct _GdkWindow* sibling, int above);
      * }
      */
     public static void gdk_window_restack(MemorySegment window, MemorySegment sibling, int above) {
@@ -8966,11 +11440,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_focus$MH() {
-        return RuntimeHelper.requireNonNull(constants$1081.gdk_window_focus$MH,"gdk_window_focus");
+        return RuntimeHelper.requireNonNull(constants$1829.const$3,"gdk_window_focus");
     }
     /**
      * {@snippet :
-     * void gdk_window_focus(GdkWindow* window, guint32 timestamp);
+     * void gdk_window_focus(struct _GdkWindow* window, unsigned int timestamp);
      * }
      */
     public static void gdk_window_focus(MemorySegment window, int timestamp) {
@@ -8982,11 +11456,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1081.gdk_window_set_user_data$MH,"gdk_window_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1829.const$4,"gdk_window_set_user_data");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_user_data(GdkWindow* window, gpointer user_data);
+     * void gdk_window_set_user_data(struct _GdkWindow* window, void* user_data);
      * }
      */
     public static void gdk_window_set_user_data(MemorySegment window, MemorySegment user_data) {
@@ -8998,11 +11472,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_override_redirect$MH() {
-        return RuntimeHelper.requireNonNull(constants$1081.gdk_window_set_override_redirect$MH,"gdk_window_set_override_redirect");
+        return RuntimeHelper.requireNonNull(constants$1829.const$5,"gdk_window_set_override_redirect");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_override_redirect(GdkWindow* window, gboolean override_redirect);
+     * void gdk_window_set_override_redirect(struct _GdkWindow* window, int override_redirect);
      * }
      */
     public static void gdk_window_set_override_redirect(MemorySegment window, int override_redirect) {
@@ -9014,11 +11488,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_accept_focus$MH() {
-        return RuntimeHelper.requireNonNull(constants$1081.gdk_window_get_accept_focus$MH,"gdk_window_get_accept_focus");
+        return RuntimeHelper.requireNonNull(constants$1830.const$0,"gdk_window_get_accept_focus");
     }
     /**
      * {@snippet :
-     * gboolean gdk_window_get_accept_focus(GdkWindow* window);
+     * int gdk_window_get_accept_focus(struct _GdkWindow* window);
      * }
      */
     public static int gdk_window_get_accept_focus(MemorySegment window) {
@@ -9030,11 +11504,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_accept_focus$MH() {
-        return RuntimeHelper.requireNonNull(constants$1082.gdk_window_set_accept_focus$MH,"gdk_window_set_accept_focus");
+        return RuntimeHelper.requireNonNull(constants$1830.const$1,"gdk_window_set_accept_focus");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_accept_focus(GdkWindow* window, gboolean accept_focus);
+     * void gdk_window_set_accept_focus(struct _GdkWindow* window, int accept_focus);
      * }
      */
     public static void gdk_window_set_accept_focus(MemorySegment window, int accept_focus) {
@@ -9046,11 +11520,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_focus_on_map$MH() {
-        return RuntimeHelper.requireNonNull(constants$1082.gdk_window_get_focus_on_map$MH,"gdk_window_get_focus_on_map");
+        return RuntimeHelper.requireNonNull(constants$1830.const$2,"gdk_window_get_focus_on_map");
     }
     /**
      * {@snippet :
-     * gboolean gdk_window_get_focus_on_map(GdkWindow* window);
+     * int gdk_window_get_focus_on_map(struct _GdkWindow* window);
      * }
      */
     public static int gdk_window_get_focus_on_map(MemorySegment window) {
@@ -9062,11 +11536,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_focus_on_map$MH() {
-        return RuntimeHelper.requireNonNull(constants$1082.gdk_window_set_focus_on_map$MH,"gdk_window_set_focus_on_map");
+        return RuntimeHelper.requireNonNull(constants$1830.const$3,"gdk_window_set_focus_on_map");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_focus_on_map(GdkWindow* window, gboolean focus_on_map);
+     * void gdk_window_set_focus_on_map(struct _GdkWindow* window, int focus_on_map);
      * }
      */
     public static void gdk_window_set_focus_on_map(MemorySegment window, int focus_on_map) {
@@ -9078,11 +11552,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_add_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1082.gdk_window_add_filter$MH,"gdk_window_add_filter");
+        return RuntimeHelper.requireNonNull(constants$1830.const$5,"gdk_window_add_filter");
     }
     /**
      * {@snippet :
-     * void gdk_window_add_filter(GdkWindow* window, GdkFilterFunc function, gpointer data);
+     * void gdk_window_add_filter(struct _GdkWindow* window, enum GdkFilterReturn (*function)(void*,union _GdkEvent*,void*), void* data);
      * }
      */
     public static void gdk_window_add_filter(MemorySegment window, MemorySegment function, MemorySegment data) {
@@ -9094,11 +11568,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_remove_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1082.gdk_window_remove_filter$MH,"gdk_window_remove_filter");
+        return RuntimeHelper.requireNonNull(constants$1831.const$1,"gdk_window_remove_filter");
     }
     /**
      * {@snippet :
-     * void gdk_window_remove_filter(GdkWindow* window, GdkFilterFunc function, gpointer data);
+     * void gdk_window_remove_filter(struct _GdkWindow* window, enum GdkFilterReturn (*function)(void*,union _GdkEvent*,void*), void* data);
      * }
      */
     public static void gdk_window_remove_filter(MemorySegment window, MemorySegment function, MemorySegment data) {
@@ -9110,11 +11584,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_scroll$MH() {
-        return RuntimeHelper.requireNonNull(constants$1082.gdk_window_scroll$MH,"gdk_window_scroll");
+        return RuntimeHelper.requireNonNull(constants$1831.const$2,"gdk_window_scroll");
     }
     /**
      * {@snippet :
-     * void gdk_window_scroll(GdkWindow* window, gint dx, gint dy);
+     * void gdk_window_scroll(struct _GdkWindow* window, int dx, int dy);
      * }
      */
     public static void gdk_window_scroll(MemorySegment window, int dx, int dy) {
@@ -9126,11 +11600,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_move_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1083.gdk_window_move_region$MH,"gdk_window_move_region");
+        return RuntimeHelper.requireNonNull(constants$1831.const$3,"gdk_window_move_region");
     }
     /**
      * {@snippet :
-     * void gdk_window_move_region(GdkWindow* window, const cairo_region_t* region, gint dx, gint dy);
+     * void gdk_window_move_region(struct _GdkWindow* window, struct _cairo_region* region, int dx, int dy);
      * }
      */
     public static void gdk_window_move_region(MemorySegment window, MemorySegment region, int dx, int dy) {
@@ -9142,11 +11616,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_ensure_native$MH() {
-        return RuntimeHelper.requireNonNull(constants$1083.gdk_window_ensure_native$MH,"gdk_window_ensure_native");
+        return RuntimeHelper.requireNonNull(constants$1831.const$4,"gdk_window_ensure_native");
     }
     /**
      * {@snippet :
-     * gboolean gdk_window_ensure_native(GdkWindow* window);
+     * int gdk_window_ensure_native(struct _GdkWindow* window);
      * }
      */
     public static int gdk_window_ensure_native(MemorySegment window) {
@@ -9158,11 +11632,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_shape_combine_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1083.gdk_window_shape_combine_region$MH,"gdk_window_shape_combine_region");
+        return RuntimeHelper.requireNonNull(constants$1831.const$5,"gdk_window_shape_combine_region");
     }
     /**
      * {@snippet :
-     * void gdk_window_shape_combine_region(GdkWindow* window, const cairo_region_t* shape_region, gint offset_x, gint offset_y);
+     * void gdk_window_shape_combine_region(struct _GdkWindow* window, struct _cairo_region* shape_region, int offset_x, int offset_y);
      * }
      */
     public static void gdk_window_shape_combine_region(MemorySegment window, MemorySegment shape_region, int offset_x, int offset_y) {
@@ -9174,11 +11648,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_child_shapes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1083.gdk_window_set_child_shapes$MH,"gdk_window_set_child_shapes");
+        return RuntimeHelper.requireNonNull(constants$1832.const$0,"gdk_window_set_child_shapes");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_child_shapes(GdkWindow* window);
+     * void gdk_window_set_child_shapes(struct _GdkWindow* window);
      * }
      */
     public static void gdk_window_set_child_shapes(MemorySegment window) {
@@ -9190,11 +11664,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_composited$MH() {
-        return RuntimeHelper.requireNonNull(constants$1083.gdk_window_get_composited$MH,"gdk_window_get_composited");
+        return RuntimeHelper.requireNonNull(constants$1832.const$1,"gdk_window_get_composited");
     }
     /**
      * {@snippet :
-     * gboolean gdk_window_get_composited(GdkWindow* window);
+     * int gdk_window_get_composited(struct _GdkWindow* window);
      * }
      */
     public static int gdk_window_get_composited(MemorySegment window) {
@@ -9206,11 +11680,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_composited$MH() {
-        return RuntimeHelper.requireNonNull(constants$1083.gdk_window_set_composited$MH,"gdk_window_set_composited");
+        return RuntimeHelper.requireNonNull(constants$1832.const$2,"gdk_window_set_composited");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_composited(GdkWindow* window, gboolean composited);
+     * void gdk_window_set_composited(struct _GdkWindow* window, int composited);
      * }
      */
     public static void gdk_window_set_composited(MemorySegment window, int composited) {
@@ -9222,11 +11696,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_merge_child_shapes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1084.gdk_window_merge_child_shapes$MH,"gdk_window_merge_child_shapes");
+        return RuntimeHelper.requireNonNull(constants$1832.const$3,"gdk_window_merge_child_shapes");
     }
     /**
      * {@snippet :
-     * void gdk_window_merge_child_shapes(GdkWindow* window);
+     * void gdk_window_merge_child_shapes(struct _GdkWindow* window);
      * }
      */
     public static void gdk_window_merge_child_shapes(MemorySegment window) {
@@ -9238,11 +11712,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_input_shape_combine_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1084.gdk_window_input_shape_combine_region$MH,"gdk_window_input_shape_combine_region");
+        return RuntimeHelper.requireNonNull(constants$1832.const$4,"gdk_window_input_shape_combine_region");
     }
     /**
      * {@snippet :
-     * void gdk_window_input_shape_combine_region(GdkWindow* window, const cairo_region_t* shape_region, gint offset_x, gint offset_y);
+     * void gdk_window_input_shape_combine_region(struct _GdkWindow* window, struct _cairo_region* shape_region, int offset_x, int offset_y);
      * }
      */
     public static void gdk_window_input_shape_combine_region(MemorySegment window, MemorySegment shape_region, int offset_x, int offset_y) {
@@ -9254,11 +11728,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_child_input_shapes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1084.gdk_window_set_child_input_shapes$MH,"gdk_window_set_child_input_shapes");
+        return RuntimeHelper.requireNonNull(constants$1832.const$5,"gdk_window_set_child_input_shapes");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_child_input_shapes(GdkWindow* window);
+     * void gdk_window_set_child_input_shapes(struct _GdkWindow* window);
      * }
      */
     public static void gdk_window_set_child_input_shapes(MemorySegment window) {
@@ -9270,11 +11744,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_merge_child_input_shapes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1084.gdk_window_merge_child_input_shapes$MH,"gdk_window_merge_child_input_shapes");
+        return RuntimeHelper.requireNonNull(constants$1833.const$0,"gdk_window_merge_child_input_shapes");
     }
     /**
      * {@snippet :
-     * void gdk_window_merge_child_input_shapes(GdkWindow* window);
+     * void gdk_window_merge_child_input_shapes(struct _GdkWindow* window);
      * }
      */
     public static void gdk_window_merge_child_input_shapes(MemorySegment window) {
@@ -9286,11 +11760,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_pass_through$MH() {
-        return RuntimeHelper.requireNonNull(constants$1084.gdk_window_set_pass_through$MH,"gdk_window_set_pass_through");
+        return RuntimeHelper.requireNonNull(constants$1833.const$1,"gdk_window_set_pass_through");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_pass_through(GdkWindow* window, gboolean pass_through);
+     * void gdk_window_set_pass_through(struct _GdkWindow* window, int pass_through);
      * }
      */
     public static void gdk_window_set_pass_through(MemorySegment window, int pass_through) {
@@ -9302,11 +11776,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_pass_through$MH() {
-        return RuntimeHelper.requireNonNull(constants$1084.gdk_window_get_pass_through$MH,"gdk_window_get_pass_through");
+        return RuntimeHelper.requireNonNull(constants$1833.const$2,"gdk_window_get_pass_through");
     }
     /**
      * {@snippet :
-     * gboolean gdk_window_get_pass_through(GdkWindow* window);
+     * int gdk_window_get_pass_through(struct _GdkWindow* window);
      * }
      */
     public static int gdk_window_get_pass_through(MemorySegment window) {
@@ -9318,11 +11792,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_is_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$1085.gdk_window_is_visible$MH,"gdk_window_is_visible");
+        return RuntimeHelper.requireNonNull(constants$1833.const$3,"gdk_window_is_visible");
     }
     /**
      * {@snippet :
-     * gboolean gdk_window_is_visible(GdkWindow* window);
+     * int gdk_window_is_visible(struct _GdkWindow* window);
      * }
      */
     public static int gdk_window_is_visible(MemorySegment window) {
@@ -9334,11 +11808,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_is_viewable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1085.gdk_window_is_viewable$MH,"gdk_window_is_viewable");
+        return RuntimeHelper.requireNonNull(constants$1833.const$4,"gdk_window_is_viewable");
     }
     /**
      * {@snippet :
-     * gboolean gdk_window_is_viewable(GdkWindow* window);
+     * int gdk_window_is_viewable(struct _GdkWindow* window);
      * }
      */
     public static int gdk_window_is_viewable(MemorySegment window) {
@@ -9350,11 +11824,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_is_input_only$MH() {
-        return RuntimeHelper.requireNonNull(constants$1085.gdk_window_is_input_only$MH,"gdk_window_is_input_only");
+        return RuntimeHelper.requireNonNull(constants$1833.const$5,"gdk_window_is_input_only");
     }
     /**
      * {@snippet :
-     * gboolean gdk_window_is_input_only(GdkWindow* window);
+     * int gdk_window_is_input_only(struct _GdkWindow* window);
      * }
      */
     public static int gdk_window_is_input_only(MemorySegment window) {
@@ -9366,11 +11840,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_is_shaped$MH() {
-        return RuntimeHelper.requireNonNull(constants$1085.gdk_window_is_shaped$MH,"gdk_window_is_shaped");
+        return RuntimeHelper.requireNonNull(constants$1834.const$0,"gdk_window_is_shaped");
     }
     /**
      * {@snippet :
-     * gboolean gdk_window_is_shaped(GdkWindow* window);
+     * int gdk_window_is_shaped(struct _GdkWindow* window);
      * }
      */
     public static int gdk_window_is_shaped(MemorySegment window) {
@@ -9382,11 +11856,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$1085.gdk_window_get_state$MH,"gdk_window_get_state");
+        return RuntimeHelper.requireNonNull(constants$1834.const$1,"gdk_window_get_state");
     }
     /**
      * {@snippet :
-     * GdkWindowState gdk_window_get_state(GdkWindow* window);
+     * enum GdkWindowState gdk_window_get_state(struct _GdkWindow* window);
      * }
      */
     public static int gdk_window_get_state(MemorySegment window) {
@@ -9398,11 +11872,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_static_gravities$MH() {
-        return RuntimeHelper.requireNonNull(constants$1085.gdk_window_set_static_gravities$MH,"gdk_window_set_static_gravities");
+        return RuntimeHelper.requireNonNull(constants$1834.const$2,"gdk_window_set_static_gravities");
     }
     /**
      * {@snippet :
-     * gboolean gdk_window_set_static_gravities(GdkWindow* window, gboolean use_static);
+     * int gdk_window_set_static_gravities(struct _GdkWindow* window, int use_static);
      * }
      */
     public static int gdk_window_set_static_gravities(MemorySegment window, int use_static) {
@@ -9414,11 +11888,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_invalidate_handler$MH() {
-        return RuntimeHelper.requireNonNull(constants$1086.gdk_window_set_invalidate_handler$MH,"gdk_window_set_invalidate_handler");
+        return RuntimeHelper.requireNonNull(constants$1834.const$5,"gdk_window_set_invalidate_handler");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_invalidate_handler(GdkWindow* window, GdkWindowInvalidateHandlerFunc handler);
+     * void gdk_window_set_invalidate_handler(struct _GdkWindow* window, void (*handler)(struct _GdkWindow*,struct _cairo_region*));
      * }
      */
     public static void gdk_window_set_invalidate_handler(MemorySegment window, MemorySegment handler) {
@@ -9430,11 +11904,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_has_native$MH() {
-        return RuntimeHelper.requireNonNull(constants$1086.gdk_window_has_native$MH,"gdk_window_has_native");
+        return RuntimeHelper.requireNonNull(constants$1835.const$0,"gdk_window_has_native");
     }
     /**
      * {@snippet :
-     * gboolean gdk_window_has_native(GdkWindow* window);
+     * int gdk_window_has_native(struct _GdkWindow* window);
      * }
      */
     public static int gdk_window_has_native(MemorySegment window) {
@@ -9446,11 +11920,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_type_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1086.gdk_window_set_type_hint$MH,"gdk_window_set_type_hint");
+        return RuntimeHelper.requireNonNull(constants$1835.const$1,"gdk_window_set_type_hint");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_type_hint(GdkWindow* window, GdkWindowTypeHint hint);
+     * void gdk_window_set_type_hint(struct _GdkWindow* window, enum GdkWindowTypeHint hint);
      * }
      */
     public static void gdk_window_set_type_hint(MemorySegment window, int hint) {
@@ -9462,11 +11936,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_type_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1086.gdk_window_get_type_hint$MH,"gdk_window_get_type_hint");
+        return RuntimeHelper.requireNonNull(constants$1835.const$2,"gdk_window_get_type_hint");
     }
     /**
      * {@snippet :
-     * GdkWindowTypeHint gdk_window_get_type_hint(GdkWindow* window);
+     * enum GdkWindowTypeHint gdk_window_get_type_hint(struct _GdkWindow* window);
      * }
      */
     public static int gdk_window_get_type_hint(MemorySegment window) {
@@ -9478,11 +11952,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_modal_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1087.gdk_window_get_modal_hint$MH,"gdk_window_get_modal_hint");
+        return RuntimeHelper.requireNonNull(constants$1835.const$3,"gdk_window_get_modal_hint");
     }
     /**
      * {@snippet :
-     * gboolean gdk_window_get_modal_hint(GdkWindow* window);
+     * int gdk_window_get_modal_hint(struct _GdkWindow* window);
      * }
      */
     public static int gdk_window_get_modal_hint(MemorySegment window) {
@@ -9494,11 +11968,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_modal_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1087.gdk_window_set_modal_hint$MH,"gdk_window_set_modal_hint");
+        return RuntimeHelper.requireNonNull(constants$1835.const$4,"gdk_window_set_modal_hint");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_modal_hint(GdkWindow* window, gboolean modal);
+     * void gdk_window_set_modal_hint(struct _GdkWindow* window, int modal);
      * }
      */
     public static void gdk_window_set_modal_hint(MemorySegment window, int modal) {
@@ -9510,11 +11984,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_skip_taskbar_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1087.gdk_window_set_skip_taskbar_hint$MH,"gdk_window_set_skip_taskbar_hint");
+        return RuntimeHelper.requireNonNull(constants$1835.const$5,"gdk_window_set_skip_taskbar_hint");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_skip_taskbar_hint(GdkWindow* window, gboolean skips_taskbar);
+     * void gdk_window_set_skip_taskbar_hint(struct _GdkWindow* window, int skips_taskbar);
      * }
      */
     public static void gdk_window_set_skip_taskbar_hint(MemorySegment window, int skips_taskbar) {
@@ -9526,11 +12000,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_skip_pager_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1087.gdk_window_set_skip_pager_hint$MH,"gdk_window_set_skip_pager_hint");
+        return RuntimeHelper.requireNonNull(constants$1836.const$0,"gdk_window_set_skip_pager_hint");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_skip_pager_hint(GdkWindow* window, gboolean skips_pager);
+     * void gdk_window_set_skip_pager_hint(struct _GdkWindow* window, int skips_pager);
      * }
      */
     public static void gdk_window_set_skip_pager_hint(MemorySegment window, int skips_pager) {
@@ -9542,11 +12016,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_urgency_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1087.gdk_window_set_urgency_hint$MH,"gdk_window_set_urgency_hint");
+        return RuntimeHelper.requireNonNull(constants$1836.const$1,"gdk_window_set_urgency_hint");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_urgency_hint(GdkWindow* window, gboolean urgent);
+     * void gdk_window_set_urgency_hint(struct _GdkWindow* window, int urgent);
      * }
      */
     public static void gdk_window_set_urgency_hint(MemorySegment window, int urgent) {
@@ -9558,11 +12032,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_geometry_hints$MH() {
-        return RuntimeHelper.requireNonNull(constants$1087.gdk_window_set_geometry_hints$MH,"gdk_window_set_geometry_hints");
+        return RuntimeHelper.requireNonNull(constants$1836.const$2,"gdk_window_set_geometry_hints");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_geometry_hints(GdkWindow* window, const GdkGeometry* geometry, GdkWindowHints geom_mask);
+     * void gdk_window_set_geometry_hints(struct _GdkWindow* window, struct _GdkGeometry* geometry, enum GdkWindowHints geom_mask);
      * }
      */
     public static void gdk_window_set_geometry_hints(MemorySegment window, MemorySegment geometry, int geom_mask) {
@@ -9574,11 +12048,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_clip_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1088.gdk_window_get_clip_region$MH,"gdk_window_get_clip_region");
+        return RuntimeHelper.requireNonNull(constants$1836.const$3,"gdk_window_get_clip_region");
     }
     /**
      * {@snippet :
-     * cairo_region_t* gdk_window_get_clip_region(GdkWindow* window);
+     * struct _cairo_region* gdk_window_get_clip_region(struct _GdkWindow* window);
      * }
      */
     public static MemorySegment gdk_window_get_clip_region(MemorySegment window) {
@@ -9590,11 +12064,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_visible_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1088.gdk_window_get_visible_region$MH,"gdk_window_get_visible_region");
+        return RuntimeHelper.requireNonNull(constants$1836.const$4,"gdk_window_get_visible_region");
     }
     /**
      * {@snippet :
-     * cairo_region_t* gdk_window_get_visible_region(GdkWindow* window);
+     * struct _cairo_region* gdk_window_get_visible_region(struct _GdkWindow* window);
      * }
      */
     public static MemorySegment gdk_window_get_visible_region(MemorySegment window) {
@@ -9606,11 +12080,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_begin_paint_rect$MH() {
-        return RuntimeHelper.requireNonNull(constants$1088.gdk_window_begin_paint_rect$MH,"gdk_window_begin_paint_rect");
+        return RuntimeHelper.requireNonNull(constants$1836.const$5,"gdk_window_begin_paint_rect");
     }
     /**
      * {@snippet :
-     * void gdk_window_begin_paint_rect(GdkWindow* window, const GdkRectangle* rectangle);
+     * void gdk_window_begin_paint_rect(struct _GdkWindow* window, struct _cairo_rectangle_int* rectangle);
      * }
      */
     public static void gdk_window_begin_paint_rect(MemorySegment window, MemorySegment rectangle) {
@@ -9622,11 +12096,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_mark_paint_from_clip$MH() {
-        return RuntimeHelper.requireNonNull(constants$1088.gdk_window_mark_paint_from_clip$MH,"gdk_window_mark_paint_from_clip");
+        return RuntimeHelper.requireNonNull(constants$1837.const$0,"gdk_window_mark_paint_from_clip");
     }
     /**
      * {@snippet :
-     * void gdk_window_mark_paint_from_clip(GdkWindow* window, cairo_t* cr);
+     * void gdk_window_mark_paint_from_clip(struct _GdkWindow* window, struct _cairo* cr);
      * }
      */
     public static void gdk_window_mark_paint_from_clip(MemorySegment window, MemorySegment cr) {
@@ -9638,11 +12112,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_begin_paint_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1088.gdk_window_begin_paint_region$MH,"gdk_window_begin_paint_region");
+        return RuntimeHelper.requireNonNull(constants$1837.const$1,"gdk_window_begin_paint_region");
     }
     /**
      * {@snippet :
-     * void gdk_window_begin_paint_region(GdkWindow* window, const cairo_region_t* region);
+     * void gdk_window_begin_paint_region(struct _GdkWindow* window, struct _cairo_region* region);
      * }
      */
     public static void gdk_window_begin_paint_region(MemorySegment window, MemorySegment region) {
@@ -9654,11 +12128,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_end_paint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1088.gdk_window_end_paint$MH,"gdk_window_end_paint");
+        return RuntimeHelper.requireNonNull(constants$1837.const$2,"gdk_window_end_paint");
     }
     /**
      * {@snippet :
-     * void gdk_window_end_paint(GdkWindow* window);
+     * void gdk_window_end_paint(struct _GdkWindow* window);
      * }
      */
     public static void gdk_window_end_paint(MemorySegment window) {
@@ -9670,11 +12144,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_begin_draw_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$1089.gdk_window_begin_draw_frame$MH,"gdk_window_begin_draw_frame");
+        return RuntimeHelper.requireNonNull(constants$1837.const$3,"gdk_window_begin_draw_frame");
     }
     /**
      * {@snippet :
-     * GdkDrawingContext* gdk_window_begin_draw_frame(GdkWindow* window, const cairo_region_t* region);
+     * struct _GdkDrawingContext* gdk_window_begin_draw_frame(struct _GdkWindow* window, struct _cairo_region* region);
      * }
      */
     public static MemorySegment gdk_window_begin_draw_frame(MemorySegment window, MemorySegment region) {
@@ -9686,11 +12160,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_end_draw_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$1089.gdk_window_end_draw_frame$MH,"gdk_window_end_draw_frame");
+        return RuntimeHelper.requireNonNull(constants$1837.const$4,"gdk_window_end_draw_frame");
     }
     /**
      * {@snippet :
-     * void gdk_window_end_draw_frame(GdkWindow* window, GdkDrawingContext* context);
+     * void gdk_window_end_draw_frame(struct _GdkWindow* window, struct _GdkDrawingContext* context);
      * }
      */
     public static void gdk_window_end_draw_frame(MemorySegment window, MemorySegment context) {
@@ -9702,11 +12176,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_flush$MH() {
-        return RuntimeHelper.requireNonNull(constants$1089.gdk_window_flush$MH,"gdk_window_flush");
+        return RuntimeHelper.requireNonNull(constants$1837.const$5,"gdk_window_flush");
     }
     /**
      * {@snippet :
-     * void gdk_window_flush(GdkWindow* window);
+     * void gdk_window_flush(struct _GdkWindow* window);
      * }
      */
     public static void gdk_window_flush(MemorySegment window) {
@@ -9718,11 +12192,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$1089.gdk_window_set_title$MH,"gdk_window_set_title");
+        return RuntimeHelper.requireNonNull(constants$1838.const$0,"gdk_window_set_title");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_title(GdkWindow* window, const gchar* title);
+     * void gdk_window_set_title(struct _GdkWindow* window, char* title);
      * }
      */
     public static void gdk_window_set_title(MemorySegment window, MemorySegment title) {
@@ -9734,11 +12208,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_role$MH() {
-        return RuntimeHelper.requireNonNull(constants$1089.gdk_window_set_role$MH,"gdk_window_set_role");
+        return RuntimeHelper.requireNonNull(constants$1838.const$1,"gdk_window_set_role");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_role(GdkWindow* window, const gchar* role);
+     * void gdk_window_set_role(struct _GdkWindow* window, char* role);
      * }
      */
     public static void gdk_window_set_role(MemorySegment window, MemorySegment role) {
@@ -9750,11 +12224,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_startup_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$1089.gdk_window_set_startup_id$MH,"gdk_window_set_startup_id");
+        return RuntimeHelper.requireNonNull(constants$1838.const$2,"gdk_window_set_startup_id");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_startup_id(GdkWindow* window, const gchar* startup_id);
+     * void gdk_window_set_startup_id(struct _GdkWindow* window, char* startup_id);
      * }
      */
     public static void gdk_window_set_startup_id(MemorySegment window, MemorySegment startup_id) {
@@ -9766,11 +12240,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_transient_for$MH() {
-        return RuntimeHelper.requireNonNull(constants$1090.gdk_window_set_transient_for$MH,"gdk_window_set_transient_for");
+        return RuntimeHelper.requireNonNull(constants$1838.const$3,"gdk_window_set_transient_for");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_transient_for(GdkWindow* window, GdkWindow* parent);
+     * void gdk_window_set_transient_for(struct _GdkWindow* window, struct _GdkWindow* parent);
      * }
      */
     public static void gdk_window_set_transient_for(MemorySegment window, MemorySegment parent) {
@@ -9782,11 +12256,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_background$MH() {
-        return RuntimeHelper.requireNonNull(constants$1090.gdk_window_set_background$MH,"gdk_window_set_background");
+        return RuntimeHelper.requireNonNull(constants$1838.const$4,"gdk_window_set_background");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_background(GdkWindow* window, const GdkColor* color);
+     * void gdk_window_set_background(struct _GdkWindow* window, struct _GdkColor* color);
      * }
      */
     public static void gdk_window_set_background(MemorySegment window, MemorySegment color) {
@@ -9798,11 +12272,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_background_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1090.gdk_window_set_background_rgba$MH,"gdk_window_set_background_rgba");
+        return RuntimeHelper.requireNonNull(constants$1838.const$5,"gdk_window_set_background_rgba");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_background_rgba(GdkWindow* window, const GdkRGBA* rgba);
+     * void gdk_window_set_background_rgba(struct _GdkWindow* window, struct _GdkRGBA* rgba);
      * }
      */
     public static void gdk_window_set_background_rgba(MemorySegment window, MemorySegment rgba) {
@@ -9814,11 +12288,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_background_pattern$MH() {
-        return RuntimeHelper.requireNonNull(constants$1090.gdk_window_set_background_pattern$MH,"gdk_window_set_background_pattern");
+        return RuntimeHelper.requireNonNull(constants$1839.const$0,"gdk_window_set_background_pattern");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_background_pattern(GdkWindow* window, cairo_pattern_t* pattern);
+     * void gdk_window_set_background_pattern(struct _GdkWindow* window, struct _cairo_pattern* pattern);
      * }
      */
     public static void gdk_window_set_background_pattern(MemorySegment window, MemorySegment pattern) {
@@ -9830,11 +12304,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_background_pattern$MH() {
-        return RuntimeHelper.requireNonNull(constants$1090.gdk_window_get_background_pattern$MH,"gdk_window_get_background_pattern");
+        return RuntimeHelper.requireNonNull(constants$1839.const$1,"gdk_window_get_background_pattern");
     }
     /**
      * {@snippet :
-     * cairo_pattern_t* gdk_window_get_background_pattern(GdkWindow* window);
+     * struct _cairo_pattern* gdk_window_get_background_pattern(struct _GdkWindow* window);
      * }
      */
     public static MemorySegment gdk_window_get_background_pattern(MemorySegment window) {
@@ -9846,11 +12320,11 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_set_cursor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1090.gdk_window_set_cursor$MH,"gdk_window_set_cursor");
+        return RuntimeHelper.requireNonNull(constants$1839.const$2,"gdk_window_set_cursor");
     }
     /**
      * {@snippet :
-     * void gdk_window_set_cursor(GdkWindow* window, GdkCursor* cursor);
+     * void gdk_window_set_cursor(struct _GdkWindow* window, struct _GdkCursor* cursor);
      * }
      */
     public static void gdk_window_set_cursor(MemorySegment window, MemorySegment cursor) {
@@ -9862,2825 +12336,17 @@ public class app_indicator_h_12 extends app_indicator_h_11 {
         }
     }
     public static MethodHandle gdk_window_get_cursor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1091.gdk_window_get_cursor$MH,"gdk_window_get_cursor");
+        return RuntimeHelper.requireNonNull(constants$1839.const$3,"gdk_window_get_cursor");
     }
     /**
      * {@snippet :
-     * GdkCursor* gdk_window_get_cursor(GdkWindow* window);
+     * struct _GdkCursor* gdk_window_get_cursor(struct _GdkWindow* window);
      * }
      */
     public static MemorySegment gdk_window_get_cursor(MemorySegment window) {
         var mh$ = gdk_window_get_cursor$MH();
         try {
             return (java.lang.foreign.MemorySegment)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_device_cursor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1091.gdk_window_set_device_cursor$MH,"gdk_window_set_device_cursor");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_device_cursor(GdkWindow* window, GdkDevice* device, GdkCursor* cursor);
-     * }
-     */
-    public static void gdk_window_set_device_cursor(MemorySegment window, MemorySegment device, MemorySegment cursor) {
-        var mh$ = gdk_window_set_device_cursor$MH();
-        try {
-            mh$.invokeExact(window, device, cursor);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_device_cursor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1091.gdk_window_get_device_cursor$MH,"gdk_window_get_device_cursor");
-    }
-    /**
-     * {@snippet :
-     * GdkCursor* gdk_window_get_device_cursor(GdkWindow* window, GdkDevice* device);
-     * }
-     */
-    public static MemorySegment gdk_window_get_device_cursor(MemorySegment window, MemorySegment device) {
-        var mh$ = gdk_window_get_device_cursor$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window, device);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1091.gdk_window_get_user_data$MH,"gdk_window_get_user_data");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_get_user_data(GdkWindow* window, gpointer* data);
-     * }
-     */
-    public static void gdk_window_get_user_data(MemorySegment window, MemorySegment data) {
-        var mh$ = gdk_window_get_user_data$MH();
-        try {
-            mh$.invokeExact(window, data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_geometry$MH() {
-        return RuntimeHelper.requireNonNull(constants$1091.gdk_window_get_geometry$MH,"gdk_window_get_geometry");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_get_geometry(GdkWindow* window, gint* x, gint* y, gint* width, gint* height);
-     * }
-     */
-    public static void gdk_window_get_geometry(MemorySegment window, MemorySegment x, MemorySegment y, MemorySegment width, MemorySegment height) {
-        var mh$ = gdk_window_get_geometry$MH();
-        try {
-            mh$.invokeExact(window, x, y, width, height);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1091.gdk_window_get_width$MH,"gdk_window_get_width");
-    }
-    /**
-     * {@snippet :
-     * int gdk_window_get_width(GdkWindow* window);
-     * }
-     */
-    public static int gdk_window_get_width(MemorySegment window) {
-        var mh$ = gdk_window_get_width$MH();
-        try {
-            return (int)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$1092.gdk_window_get_height$MH,"gdk_window_get_height");
-    }
-    /**
-     * {@snippet :
-     * int gdk_window_get_height(GdkWindow* window);
-     * }
-     */
-    public static int gdk_window_get_height(MemorySegment window) {
-        var mh$ = gdk_window_get_height$MH();
-        try {
-            return (int)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$1092.gdk_window_get_position$MH,"gdk_window_get_position");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_get_position(GdkWindow* window, gint* x, gint* y);
-     * }
-     */
-    public static void gdk_window_get_position(MemorySegment window, MemorySegment x, MemorySegment y) {
-        var mh$ = gdk_window_get_position$MH();
-        try {
-            mh$.invokeExact(window, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1092.gdk_window_get_origin$MH,"gdk_window_get_origin");
-    }
-    /**
-     * {@snippet :
-     * gint gdk_window_get_origin(GdkWindow* window, gint* x, gint* y);
-     * }
-     */
-    public static int gdk_window_get_origin(MemorySegment window, MemorySegment x, MemorySegment y) {
-        var mh$ = gdk_window_get_origin$MH();
-        try {
-            return (int)mh$.invokeExact(window, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_root_coords$MH() {
-        return RuntimeHelper.requireNonNull(constants$1092.gdk_window_get_root_coords$MH,"gdk_window_get_root_coords");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_get_root_coords(GdkWindow* window, gint x, gint y, gint* root_x, gint* root_y);
-     * }
-     */
-    public static void gdk_window_get_root_coords(MemorySegment window, int x, int y, MemorySegment root_x, MemorySegment root_y) {
-        var mh$ = gdk_window_get_root_coords$MH();
-        try {
-            mh$.invokeExact(window, x, y, root_x, root_y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_coords_to_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1092.gdk_window_coords_to_parent$MH,"gdk_window_coords_to_parent");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_coords_to_parent(GdkWindow* window, gdouble x, gdouble y, gdouble* parent_x, gdouble* parent_y);
-     * }
-     */
-    public static void gdk_window_coords_to_parent(MemorySegment window, double x, double y, MemorySegment parent_x, MemorySegment parent_y) {
-        var mh$ = gdk_window_coords_to_parent$MH();
-        try {
-            mh$.invokeExact(window, x, y, parent_x, parent_y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_coords_from_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1092.gdk_window_coords_from_parent$MH,"gdk_window_coords_from_parent");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_coords_from_parent(GdkWindow* window, gdouble parent_x, gdouble parent_y, gdouble* x, gdouble* y);
-     * }
-     */
-    public static void gdk_window_coords_from_parent(MemorySegment window, double parent_x, double parent_y, MemorySegment x, MemorySegment y) {
-        var mh$ = gdk_window_coords_from_parent$MH();
-        try {
-            mh$.invokeExact(window, parent_x, parent_y, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_root_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1093.gdk_window_get_root_origin$MH,"gdk_window_get_root_origin");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_get_root_origin(GdkWindow* window, gint* x, gint* y);
-     * }
-     */
-    public static void gdk_window_get_root_origin(MemorySegment window, MemorySegment x, MemorySegment y) {
-        var mh$ = gdk_window_get_root_origin$MH();
-        try {
-            mh$.invokeExact(window, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_frame_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1093.gdk_window_get_frame_extents$MH,"gdk_window_get_frame_extents");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_get_frame_extents(GdkWindow* window, GdkRectangle* rect);
-     * }
-     */
-    public static void gdk_window_get_frame_extents(MemorySegment window, MemorySegment rect) {
-        var mh$ = gdk_window_get_frame_extents$MH();
-        try {
-            mh$.invokeExact(window, rect);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_scale_factor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1093.gdk_window_get_scale_factor$MH,"gdk_window_get_scale_factor");
-    }
-    /**
-     * {@snippet :
-     * gint gdk_window_get_scale_factor(GdkWindow* window);
-     * }
-     */
-    public static int gdk_window_get_scale_factor(MemorySegment window) {
-        var mh$ = gdk_window_get_scale_factor$MH();
-        try {
-            return (int)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_pointer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1093.gdk_window_get_pointer$MH,"gdk_window_get_pointer");
-    }
-    /**
-     * {@snippet :
-     * GdkWindow* gdk_window_get_pointer(GdkWindow* window, gint* x, gint* y, GdkModifierType* mask);
-     * }
-     */
-    public static MemorySegment gdk_window_get_pointer(MemorySegment window, MemorySegment x, MemorySegment y, MemorySegment mask) {
-        var mh$ = gdk_window_get_pointer$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window, x, y, mask);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_device_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$1093.gdk_window_get_device_position$MH,"gdk_window_get_device_position");
-    }
-    /**
-     * {@snippet :
-     * GdkWindow* gdk_window_get_device_position(GdkWindow* window, GdkDevice* device, gint* x, gint* y, GdkModifierType* mask);
-     * }
-     */
-    public static MemorySegment gdk_window_get_device_position(MemorySegment window, MemorySegment device, MemorySegment x, MemorySegment y, MemorySegment mask) {
-        var mh$ = gdk_window_get_device_position$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window, device, x, y, mask);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_device_position_double$MH() {
-        return RuntimeHelper.requireNonNull(constants$1093.gdk_window_get_device_position_double$MH,"gdk_window_get_device_position_double");
-    }
-    /**
-     * {@snippet :
-     * GdkWindow* gdk_window_get_device_position_double(GdkWindow* window, GdkDevice* device, gdouble* x, gdouble* y, GdkModifierType* mask);
-     * }
-     */
-    public static MemorySegment gdk_window_get_device_position_double(MemorySegment window, MemorySegment device, MemorySegment x, MemorySegment y, MemorySegment mask) {
-        var mh$ = gdk_window_get_device_position_double$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window, device, x, y, mask);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1094.gdk_window_get_parent$MH,"gdk_window_get_parent");
-    }
-    /**
-     * {@snippet :
-     * GdkWindow* gdk_window_get_parent(GdkWindow* window);
-     * }
-     */
-    public static MemorySegment gdk_window_get_parent(MemorySegment window) {
-        var mh$ = gdk_window_get_parent$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_toplevel$MH() {
-        return RuntimeHelper.requireNonNull(constants$1094.gdk_window_get_toplevel$MH,"gdk_window_get_toplevel");
-    }
-    /**
-     * {@snippet :
-     * GdkWindow* gdk_window_get_toplevel(GdkWindow* window);
-     * }
-     */
-    public static MemorySegment gdk_window_get_toplevel(MemorySegment window) {
-        var mh$ = gdk_window_get_toplevel$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_effective_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1094.gdk_window_get_effective_parent$MH,"gdk_window_get_effective_parent");
-    }
-    /**
-     * {@snippet :
-     * GdkWindow* gdk_window_get_effective_parent(GdkWindow* window);
-     * }
-     */
-    public static MemorySegment gdk_window_get_effective_parent(MemorySegment window) {
-        var mh$ = gdk_window_get_effective_parent$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_effective_toplevel$MH() {
-        return RuntimeHelper.requireNonNull(constants$1094.gdk_window_get_effective_toplevel$MH,"gdk_window_get_effective_toplevel");
-    }
-    /**
-     * {@snippet :
-     * GdkWindow* gdk_window_get_effective_toplevel(GdkWindow* window);
-     * }
-     */
-    public static MemorySegment gdk_window_get_effective_toplevel(MemorySegment window) {
-        var mh$ = gdk_window_get_effective_toplevel$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_children$MH() {
-        return RuntimeHelper.requireNonNull(constants$1094.gdk_window_get_children$MH,"gdk_window_get_children");
-    }
-    /**
-     * {@snippet :
-     * GList* gdk_window_get_children(GdkWindow* window);
-     * }
-     */
-    public static MemorySegment gdk_window_get_children(MemorySegment window) {
-        var mh$ = gdk_window_get_children$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_peek_children$MH() {
-        return RuntimeHelper.requireNonNull(constants$1094.gdk_window_peek_children$MH,"gdk_window_peek_children");
-    }
-    /**
-     * {@snippet :
-     * GList* gdk_window_peek_children(GdkWindow* window);
-     * }
-     */
-    public static MemorySegment gdk_window_peek_children(MemorySegment window) {
-        var mh$ = gdk_window_peek_children$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_children_with_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1095.gdk_window_get_children_with_user_data$MH,"gdk_window_get_children_with_user_data");
-    }
-    /**
-     * {@snippet :
-     * GList* gdk_window_get_children_with_user_data(GdkWindow* window, gpointer user_data);
-     * }
-     */
-    public static MemorySegment gdk_window_get_children_with_user_data(MemorySegment window, MemorySegment user_data) {
-        var mh$ = gdk_window_get_children_with_user_data$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_events$MH() {
-        return RuntimeHelper.requireNonNull(constants$1095.gdk_window_get_events$MH,"gdk_window_get_events");
-    }
-    /**
-     * {@snippet :
-     * GdkEventMask gdk_window_get_events(GdkWindow* window);
-     * }
-     */
-    public static int gdk_window_get_events(MemorySegment window) {
-        var mh$ = gdk_window_get_events$MH();
-        try {
-            return (int)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_events$MH() {
-        return RuntimeHelper.requireNonNull(constants$1095.gdk_window_set_events$MH,"gdk_window_set_events");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_events(GdkWindow* window, GdkEventMask event_mask);
-     * }
-     */
-    public static void gdk_window_set_events(MemorySegment window, int event_mask) {
-        var mh$ = gdk_window_set_events$MH();
-        try {
-            mh$.invokeExact(window, event_mask);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_device_events$MH() {
-        return RuntimeHelper.requireNonNull(constants$1095.gdk_window_set_device_events$MH,"gdk_window_set_device_events");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_device_events(GdkWindow* window, GdkDevice* device, GdkEventMask event_mask);
-     * }
-     */
-    public static void gdk_window_set_device_events(MemorySegment window, MemorySegment device, int event_mask) {
-        var mh$ = gdk_window_set_device_events$MH();
-        try {
-            mh$.invokeExact(window, device, event_mask);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_device_events$MH() {
-        return RuntimeHelper.requireNonNull(constants$1095.gdk_window_get_device_events$MH,"gdk_window_get_device_events");
-    }
-    /**
-     * {@snippet :
-     * GdkEventMask gdk_window_get_device_events(GdkWindow* window, GdkDevice* device);
-     * }
-     */
-    public static int gdk_window_get_device_events(MemorySegment window, MemorySegment device) {
-        var mh$ = gdk_window_get_device_events$MH();
-        try {
-            return (int)mh$.invokeExact(window, device);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_source_events$MH() {
-        return RuntimeHelper.requireNonNull(constants$1095.gdk_window_set_source_events$MH,"gdk_window_set_source_events");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_source_events(GdkWindow* window, GdkInputSource source, GdkEventMask event_mask);
-     * }
-     */
-    public static void gdk_window_set_source_events(MemorySegment window, int source, int event_mask) {
-        var mh$ = gdk_window_set_source_events$MH();
-        try {
-            mh$.invokeExact(window, source, event_mask);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_source_events$MH() {
-        return RuntimeHelper.requireNonNull(constants$1096.gdk_window_get_source_events$MH,"gdk_window_get_source_events");
-    }
-    /**
-     * {@snippet :
-     * GdkEventMask gdk_window_get_source_events(GdkWindow* window, GdkInputSource source);
-     * }
-     */
-    public static int gdk_window_get_source_events(MemorySegment window, int source) {
-        var mh$ = gdk_window_get_source_events$MH();
-        try {
-            return (int)mh$.invokeExact(window, source);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_icon_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$1096.gdk_window_set_icon_list$MH,"gdk_window_set_icon_list");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_icon_list(GdkWindow* window, GList* pixbufs);
-     * }
-     */
-    public static void gdk_window_set_icon_list(MemorySegment window, MemorySegment pixbufs) {
-        var mh$ = gdk_window_set_icon_list$MH();
-        try {
-            mh$.invokeExact(window, pixbufs);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_icon_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1096.gdk_window_set_icon_name$MH,"gdk_window_set_icon_name");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_icon_name(GdkWindow* window, const gchar* name);
-     * }
-     */
-    public static void gdk_window_set_icon_name(MemorySegment window, MemorySegment name) {
-        var mh$ = gdk_window_set_icon_name$MH();
-        try {
-            mh$.invokeExact(window, name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$1096.gdk_window_set_group$MH,"gdk_window_set_group");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_group(GdkWindow* window, GdkWindow* leader);
-     * }
-     */
-    public static void gdk_window_set_group(MemorySegment window, MemorySegment leader) {
-        var mh$ = gdk_window_set_group$MH();
-        try {
-            mh$.invokeExact(window, leader);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$1096.gdk_window_get_group$MH,"gdk_window_get_group");
-    }
-    /**
-     * {@snippet :
-     * GdkWindow* gdk_window_get_group(GdkWindow* window);
-     * }
-     */
-    public static MemorySegment gdk_window_get_group(MemorySegment window) {
-        var mh$ = gdk_window_get_group$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_decorations$MH() {
-        return RuntimeHelper.requireNonNull(constants$1096.gdk_window_set_decorations$MH,"gdk_window_set_decorations");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_decorations(GdkWindow* window, GdkWMDecoration decorations);
-     * }
-     */
-    public static void gdk_window_set_decorations(MemorySegment window, int decorations) {
-        var mh$ = gdk_window_set_decorations$MH();
-        try {
-            mh$.invokeExact(window, decorations);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_decorations$MH() {
-        return RuntimeHelper.requireNonNull(constants$1097.gdk_window_get_decorations$MH,"gdk_window_get_decorations");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_window_get_decorations(GdkWindow* window, GdkWMDecoration* decorations);
-     * }
-     */
-    public static int gdk_window_get_decorations(MemorySegment window, MemorySegment decorations) {
-        var mh$ = gdk_window_get_decorations$MH();
-        try {
-            return (int)mh$.invokeExact(window, decorations);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_functions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1097.gdk_window_set_functions$MH,"gdk_window_set_functions");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_functions(GdkWindow* window, GdkWMFunction functions);
-     * }
-     */
-    public static void gdk_window_set_functions(MemorySegment window, int functions) {
-        var mh$ = gdk_window_set_functions$MH();
-        try {
-            mh$.invokeExact(window, functions);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_create_similar_surface$MH() {
-        return RuntimeHelper.requireNonNull(constants$1097.gdk_window_create_similar_surface$MH,"gdk_window_create_similar_surface");
-    }
-    /**
-     * {@snippet :
-     * cairo_surface_t* gdk_window_create_similar_surface(GdkWindow* window, cairo_content_t content, int width, int height);
-     * }
-     */
-    public static MemorySegment gdk_window_create_similar_surface(MemorySegment window, int content, int width, int height) {
-        var mh$ = gdk_window_create_similar_surface$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window, content, width, height);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_create_similar_image_surface$MH() {
-        return RuntimeHelper.requireNonNull(constants$1097.gdk_window_create_similar_image_surface$MH,"gdk_window_create_similar_image_surface");
-    }
-    /**
-     * {@snippet :
-     * cairo_surface_t* gdk_window_create_similar_image_surface(GdkWindow* window, cairo_format_t format, int width, int height, int scale);
-     * }
-     */
-    public static MemorySegment gdk_window_create_similar_image_surface(MemorySegment window, int format, int width, int height, int scale) {
-        var mh$ = gdk_window_create_similar_image_surface$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window, format, width, height, scale);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_beep$MH() {
-        return RuntimeHelper.requireNonNull(constants$1097.gdk_window_beep$MH,"gdk_window_beep");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_beep(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_beep(MemorySegment window) {
-        var mh$ = gdk_window_beep$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_iconify$MH() {
-        return RuntimeHelper.requireNonNull(constants$1097.gdk_window_iconify$MH,"gdk_window_iconify");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_iconify(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_iconify(MemorySegment window) {
-        var mh$ = gdk_window_iconify$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_deiconify$MH() {
-        return RuntimeHelper.requireNonNull(constants$1098.gdk_window_deiconify$MH,"gdk_window_deiconify");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_deiconify(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_deiconify(MemorySegment window) {
-        var mh$ = gdk_window_deiconify$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_stick$MH() {
-        return RuntimeHelper.requireNonNull(constants$1098.gdk_window_stick$MH,"gdk_window_stick");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_stick(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_stick(MemorySegment window) {
-        var mh$ = gdk_window_stick$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_unstick$MH() {
-        return RuntimeHelper.requireNonNull(constants$1098.gdk_window_unstick$MH,"gdk_window_unstick");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_unstick(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_unstick(MemorySegment window) {
-        var mh$ = gdk_window_unstick$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_maximize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1098.gdk_window_maximize$MH,"gdk_window_maximize");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_maximize(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_maximize(MemorySegment window) {
-        var mh$ = gdk_window_maximize$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_unmaximize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1098.gdk_window_unmaximize$MH,"gdk_window_unmaximize");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_unmaximize(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_unmaximize(MemorySegment window) {
-        var mh$ = gdk_window_unmaximize$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_fullscreen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1098.gdk_window_fullscreen$MH,"gdk_window_fullscreen");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_fullscreen(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_fullscreen(MemorySegment window) {
-        var mh$ = gdk_window_fullscreen$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_fullscreen_on_monitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1099.gdk_window_fullscreen_on_monitor$MH,"gdk_window_fullscreen_on_monitor");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_fullscreen_on_monitor(GdkWindow* window, gint monitor);
-     * }
-     */
-    public static void gdk_window_fullscreen_on_monitor(MemorySegment window, int monitor) {
-        var mh$ = gdk_window_fullscreen_on_monitor$MH();
-        try {
-            mh$.invokeExact(window, monitor);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_fullscreen_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1099.gdk_window_set_fullscreen_mode$MH,"gdk_window_set_fullscreen_mode");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_fullscreen_mode(GdkWindow* window, GdkFullscreenMode mode);
-     * }
-     */
-    public static void gdk_window_set_fullscreen_mode(MemorySegment window, int mode) {
-        var mh$ = gdk_window_set_fullscreen_mode$MH();
-        try {
-            mh$.invokeExact(window, mode);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_fullscreen_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1099.gdk_window_get_fullscreen_mode$MH,"gdk_window_get_fullscreen_mode");
-    }
-    /**
-     * {@snippet :
-     * GdkFullscreenMode gdk_window_get_fullscreen_mode(GdkWindow* window);
-     * }
-     */
-    public static int gdk_window_get_fullscreen_mode(MemorySegment window) {
-        var mh$ = gdk_window_get_fullscreen_mode$MH();
-        try {
-            return (int)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_unfullscreen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1099.gdk_window_unfullscreen$MH,"gdk_window_unfullscreen");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_unfullscreen(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_unfullscreen(MemorySegment window) {
-        var mh$ = gdk_window_unfullscreen$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_keep_above$MH() {
-        return RuntimeHelper.requireNonNull(constants$1099.gdk_window_set_keep_above$MH,"gdk_window_set_keep_above");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_keep_above(GdkWindow* window, gboolean setting);
-     * }
-     */
-    public static void gdk_window_set_keep_above(MemorySegment window, int setting) {
-        var mh$ = gdk_window_set_keep_above$MH();
-        try {
-            mh$.invokeExact(window, setting);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_keep_below$MH() {
-        return RuntimeHelper.requireNonNull(constants$1099.gdk_window_set_keep_below$MH,"gdk_window_set_keep_below");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_keep_below(GdkWindow* window, gboolean setting);
-     * }
-     */
-    public static void gdk_window_set_keep_below(MemorySegment window, int setting) {
-        var mh$ = gdk_window_set_keep_below$MH();
-        try {
-            mh$.invokeExact(window, setting);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_opacity$MH() {
-        return RuntimeHelper.requireNonNull(constants$1100.gdk_window_set_opacity$MH,"gdk_window_set_opacity");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_opacity(GdkWindow* window, gdouble opacity);
-     * }
-     */
-    public static void gdk_window_set_opacity(MemorySegment window, double opacity) {
-        var mh$ = gdk_window_set_opacity$MH();
-        try {
-            mh$.invokeExact(window, opacity);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_register_dnd$MH() {
-        return RuntimeHelper.requireNonNull(constants$1100.gdk_window_register_dnd$MH,"gdk_window_register_dnd");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_register_dnd(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_register_dnd(MemorySegment window) {
-        var mh$ = gdk_window_register_dnd$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_drag_protocol$MH() {
-        return RuntimeHelper.requireNonNull(constants$1100.gdk_window_get_drag_protocol$MH,"gdk_window_get_drag_protocol");
-    }
-    /**
-     * {@snippet :
-     * GdkDragProtocol gdk_window_get_drag_protocol(GdkWindow* window, GdkWindow** target);
-     * }
-     */
-    public static int gdk_window_get_drag_protocol(MemorySegment window, MemorySegment target) {
-        var mh$ = gdk_window_get_drag_protocol$MH();
-        try {
-            return (int)mh$.invokeExact(window, target);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_begin_resize_drag$MH() {
-        return RuntimeHelper.requireNonNull(constants$1100.gdk_window_begin_resize_drag$MH,"gdk_window_begin_resize_drag");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_begin_resize_drag(GdkWindow* window, GdkWindowEdge edge, gint button, gint root_x, gint root_y, guint32 timestamp);
-     * }
-     */
-    public static void gdk_window_begin_resize_drag(MemorySegment window, int edge, int button, int root_x, int root_y, int timestamp) {
-        var mh$ = gdk_window_begin_resize_drag$MH();
-        try {
-            mh$.invokeExact(window, edge, button, root_x, root_y, timestamp);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_begin_resize_drag_for_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1100.gdk_window_begin_resize_drag_for_device$MH,"gdk_window_begin_resize_drag_for_device");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_begin_resize_drag_for_device(GdkWindow* window, GdkWindowEdge edge, GdkDevice* device, gint button, gint root_x, gint root_y, guint32 timestamp);
-     * }
-     */
-    public static void gdk_window_begin_resize_drag_for_device(MemorySegment window, int edge, MemorySegment device, int button, int root_x, int root_y, int timestamp) {
-        var mh$ = gdk_window_begin_resize_drag_for_device$MH();
-        try {
-            mh$.invokeExact(window, edge, device, button, root_x, root_y, timestamp);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_begin_move_drag$MH() {
-        return RuntimeHelper.requireNonNull(constants$1100.gdk_window_begin_move_drag$MH,"gdk_window_begin_move_drag");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_begin_move_drag(GdkWindow* window, gint button, gint root_x, gint root_y, guint32 timestamp);
-     * }
-     */
-    public static void gdk_window_begin_move_drag(MemorySegment window, int button, int root_x, int root_y, int timestamp) {
-        var mh$ = gdk_window_begin_move_drag$MH();
-        try {
-            mh$.invokeExact(window, button, root_x, root_y, timestamp);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_begin_move_drag_for_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1101.gdk_window_begin_move_drag_for_device$MH,"gdk_window_begin_move_drag_for_device");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_begin_move_drag_for_device(GdkWindow* window, GdkDevice* device, gint button, gint root_x, gint root_y, guint32 timestamp);
-     * }
-     */
-    public static void gdk_window_begin_move_drag_for_device(MemorySegment window, MemorySegment device, int button, int root_x, int root_y, int timestamp) {
-        var mh$ = gdk_window_begin_move_drag_for_device$MH();
-        try {
-            mh$.invokeExact(window, device, button, root_x, root_y, timestamp);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_invalidate_rect$MH() {
-        return RuntimeHelper.requireNonNull(constants$1101.gdk_window_invalidate_rect$MH,"gdk_window_invalidate_rect");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_invalidate_rect(GdkWindow* window, const GdkRectangle* rect, gboolean invalidate_children);
-     * }
-     */
-    public static void gdk_window_invalidate_rect(MemorySegment window, MemorySegment rect, int invalidate_children) {
-        var mh$ = gdk_window_invalidate_rect$MH();
-        try {
-            mh$.invokeExact(window, rect, invalidate_children);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_invalidate_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1101.gdk_window_invalidate_region$MH,"gdk_window_invalidate_region");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_invalidate_region(GdkWindow* window, const cairo_region_t* region, gboolean invalidate_children);
-     * }
-     */
-    public static void gdk_window_invalidate_region(MemorySegment window, MemorySegment region, int invalidate_children) {
-        var mh$ = gdk_window_invalidate_region$MH();
-        try {
-            mh$.invokeExact(window, region, invalidate_children);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_invalidate_maybe_recurse$MH() {
-        return RuntimeHelper.requireNonNull(constants$1101.gdk_window_invalidate_maybe_recurse$MH,"gdk_window_invalidate_maybe_recurse");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_invalidate_maybe_recurse(GdkWindow* window, const cairo_region_t* region, GdkWindowChildFunc child_func, gpointer user_data);
-     * }
-     */
-    public static void gdk_window_invalidate_maybe_recurse(MemorySegment window, MemorySegment region, MemorySegment child_func, MemorySegment user_data) {
-        var mh$ = gdk_window_invalidate_maybe_recurse$MH();
-        try {
-            mh$.invokeExact(window, region, child_func, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_update_area$MH() {
-        return RuntimeHelper.requireNonNull(constants$1102.gdk_window_get_update_area$MH,"gdk_window_get_update_area");
-    }
-    /**
-     * {@snippet :
-     * cairo_region_t* gdk_window_get_update_area(GdkWindow* window);
-     * }
-     */
-    public static MemorySegment gdk_window_get_update_area(MemorySegment window) {
-        var mh$ = gdk_window_get_update_area$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_freeze_updates$MH() {
-        return RuntimeHelper.requireNonNull(constants$1102.gdk_window_freeze_updates$MH,"gdk_window_freeze_updates");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_freeze_updates(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_freeze_updates(MemorySegment window) {
-        var mh$ = gdk_window_freeze_updates$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_thaw_updates$MH() {
-        return RuntimeHelper.requireNonNull(constants$1102.gdk_window_thaw_updates$MH,"gdk_window_thaw_updates");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_thaw_updates(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_thaw_updates(MemorySegment window) {
-        var mh$ = gdk_window_thaw_updates$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_freeze_toplevel_updates_libgtk_only$MH() {
-        return RuntimeHelper.requireNonNull(constants$1102.gdk_window_freeze_toplevel_updates_libgtk_only$MH,"gdk_window_freeze_toplevel_updates_libgtk_only");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_freeze_toplevel_updates_libgtk_only(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_freeze_toplevel_updates_libgtk_only(MemorySegment window) {
-        var mh$ = gdk_window_freeze_toplevel_updates_libgtk_only$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_thaw_toplevel_updates_libgtk_only$MH() {
-        return RuntimeHelper.requireNonNull(constants$1102.gdk_window_thaw_toplevel_updates_libgtk_only$MH,"gdk_window_thaw_toplevel_updates_libgtk_only");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_thaw_toplevel_updates_libgtk_only(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_thaw_toplevel_updates_libgtk_only(MemorySegment window) {
-        var mh$ = gdk_window_thaw_toplevel_updates_libgtk_only$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_process_all_updates$MH() {
-        return RuntimeHelper.requireNonNull(constants$1102.gdk_window_process_all_updates$MH,"gdk_window_process_all_updates");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_process_all_updates();
-     * }
-     */
-    public static void gdk_window_process_all_updates() {
-        var mh$ = gdk_window_process_all_updates$MH();
-        try {
-            mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_process_updates$MH() {
-        return RuntimeHelper.requireNonNull(constants$1103.gdk_window_process_updates$MH,"gdk_window_process_updates");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_process_updates(GdkWindow* window, gboolean update_children);
-     * }
-     */
-    public static void gdk_window_process_updates(MemorySegment window, int update_children) {
-        var mh$ = gdk_window_process_updates$MH();
-        try {
-            mh$.invokeExact(window, update_children);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_debug_updates$MH() {
-        return RuntimeHelper.requireNonNull(constants$1103.gdk_window_set_debug_updates$MH,"gdk_window_set_debug_updates");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_debug_updates(gboolean setting);
-     * }
-     */
-    public static void gdk_window_set_debug_updates(int setting) {
-        var mh$ = gdk_window_set_debug_updates$MH();
-        try {
-            mh$.invokeExact(setting);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_constrain_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1103.gdk_window_constrain_size$MH,"gdk_window_constrain_size");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_constrain_size(GdkGeometry* geometry, GdkWindowHints flags, gint width, gint height, gint* new_width, gint* new_height);
-     * }
-     */
-    public static void gdk_window_constrain_size(MemorySegment geometry, int flags, int width, int height, MemorySegment new_width, MemorySegment new_height) {
-        var mh$ = gdk_window_constrain_size$MH();
-        try {
-            mh$.invokeExact(geometry, flags, width, height, new_width, new_height);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_enable_synchronized_configure$MH() {
-        return RuntimeHelper.requireNonNull(constants$1103.gdk_window_enable_synchronized_configure$MH,"gdk_window_enable_synchronized_configure");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_enable_synchronized_configure(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_enable_synchronized_configure(MemorySegment window) {
-        var mh$ = gdk_window_enable_synchronized_configure$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_configure_finished$MH() {
-        return RuntimeHelper.requireNonNull(constants$1103.gdk_window_configure_finished$MH,"gdk_window_configure_finished");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_configure_finished(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_configure_finished(MemorySegment window) {
-        var mh$ = gdk_window_configure_finished$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_get_default_root_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1103.gdk_get_default_root_window$MH,"gdk_get_default_root_window");
-    }
-    /**
-     * {@snippet :
-     * GdkWindow* gdk_get_default_root_window();
-     * }
-     */
-    public static MemorySegment gdk_get_default_root_window() {
-        var mh$ = gdk_get_default_root_window$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_offscreen_window_get_surface$MH() {
-        return RuntimeHelper.requireNonNull(constants$1104.gdk_offscreen_window_get_surface$MH,"gdk_offscreen_window_get_surface");
-    }
-    /**
-     * {@snippet :
-     * cairo_surface_t* gdk_offscreen_window_get_surface(GdkWindow* window);
-     * }
-     */
-    public static MemorySegment gdk_offscreen_window_get_surface(MemorySegment window) {
-        var mh$ = gdk_offscreen_window_get_surface$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_offscreen_window_set_embedder$MH() {
-        return RuntimeHelper.requireNonNull(constants$1104.gdk_offscreen_window_set_embedder$MH,"gdk_offscreen_window_set_embedder");
-    }
-    /**
-     * {@snippet :
-     * void gdk_offscreen_window_set_embedder(GdkWindow* window, GdkWindow* embedder);
-     * }
-     */
-    public static void gdk_offscreen_window_set_embedder(MemorySegment window, MemorySegment embedder) {
-        var mh$ = gdk_offscreen_window_set_embedder$MH();
-        try {
-            mh$.invokeExact(window, embedder);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_offscreen_window_get_embedder$MH() {
-        return RuntimeHelper.requireNonNull(constants$1104.gdk_offscreen_window_get_embedder$MH,"gdk_offscreen_window_get_embedder");
-    }
-    /**
-     * {@snippet :
-     * GdkWindow* gdk_offscreen_window_get_embedder(GdkWindow* window);
-     * }
-     */
-    public static MemorySegment gdk_offscreen_window_get_embedder(MemorySegment window) {
-        var mh$ = gdk_offscreen_window_get_embedder$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_geometry_changed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1104.gdk_window_geometry_changed$MH,"gdk_window_geometry_changed");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_geometry_changed(GdkWindow* window);
-     * }
-     */
-    public static void gdk_window_geometry_changed(MemorySegment window) {
-        var mh$ = gdk_window_geometry_changed$MH();
-        try {
-            mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_support_multidevice$MH() {
-        return RuntimeHelper.requireNonNull(constants$1104.gdk_window_set_support_multidevice$MH,"gdk_window_set_support_multidevice");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_support_multidevice(GdkWindow* window, gboolean support_multidevice);
-     * }
-     */
-    public static void gdk_window_set_support_multidevice(MemorySegment window, int support_multidevice) {
-        var mh$ = gdk_window_set_support_multidevice$MH();
-        try {
-            mh$.invokeExact(window, support_multidevice);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_support_multidevice$MH() {
-        return RuntimeHelper.requireNonNull(constants$1104.gdk_window_get_support_multidevice$MH,"gdk_window_get_support_multidevice");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_window_get_support_multidevice(GdkWindow* window);
-     * }
-     */
-    public static int gdk_window_get_support_multidevice(MemorySegment window) {
-        var mh$ = gdk_window_get_support_multidevice$MH();
-        try {
-            return (int)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_frame_clock$MH() {
-        return RuntimeHelper.requireNonNull(constants$1105.gdk_window_get_frame_clock$MH,"gdk_window_get_frame_clock");
-    }
-    /**
-     * {@snippet :
-     * GdkFrameClock* gdk_window_get_frame_clock(GdkWindow* window);
-     * }
-     */
-    public static MemorySegment gdk_window_get_frame_clock(MemorySegment window) {
-        var mh$ = gdk_window_get_frame_clock$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_opaque_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1105.gdk_window_set_opaque_region$MH,"gdk_window_set_opaque_region");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_opaque_region(GdkWindow* window, cairo_region_t* region);
-     * }
-     */
-    public static void gdk_window_set_opaque_region(MemorySegment window, MemorySegment region) {
-        var mh$ = gdk_window_set_opaque_region$MH();
-        try {
-            mh$.invokeExact(window, region);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_event_compression$MH() {
-        return RuntimeHelper.requireNonNull(constants$1105.gdk_window_set_event_compression$MH,"gdk_window_set_event_compression");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_event_compression(GdkWindow* window, gboolean event_compression);
-     * }
-     */
-    public static void gdk_window_set_event_compression(MemorySegment window, int event_compression) {
-        var mh$ = gdk_window_set_event_compression$MH();
-        try {
-            mh$.invokeExact(window, event_compression);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_get_event_compression$MH() {
-        return RuntimeHelper.requireNonNull(constants$1105.gdk_window_get_event_compression$MH,"gdk_window_get_event_compression");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_window_get_event_compression(GdkWindow* window);
-     * }
-     */
-    public static int gdk_window_get_event_compression(MemorySegment window) {
-        var mh$ = gdk_window_get_event_compression$MH();
-        try {
-            return (int)mh$.invokeExact(window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_set_shadow_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1105.gdk_window_set_shadow_width$MH,"gdk_window_set_shadow_width");
-    }
-    /**
-     * {@snippet :
-     * void gdk_window_set_shadow_width(GdkWindow* window, gint left, gint right, gint top, gint bottom);
-     * }
-     */
-    public static void gdk_window_set_shadow_width(MemorySegment window, int left, int right, int top, int bottom) {
-        var mh$ = gdk_window_set_shadow_width$MH();
-        try {
-            mh$.invokeExact(window, left, right, top, bottom);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_show_window_menu$MH() {
-        return RuntimeHelper.requireNonNull(constants$1105.gdk_window_show_window_menu$MH,"gdk_window_show_window_menu");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_window_show_window_menu(GdkWindow* window, GdkEvent* event);
-     * }
-     */
-    public static int gdk_window_show_window_menu(MemorySegment window, MemorySegment event) {
-        var mh$ = gdk_window_show_window_menu$MH();
-        try {
-            return (int)mh$.invokeExact(window, event);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_window_create_gl_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$1106.gdk_window_create_gl_context$MH,"gdk_window_create_gl_context");
-    }
-    /**
-     * {@snippet :
-     * GdkGLContext* gdk_window_create_gl_context(GdkWindow* window, GError** error);
-     * }
-     */
-    public static MemorySegment gdk_window_create_gl_context(MemorySegment window, MemorySegment error) {
-        var mh$ = gdk_window_create_gl_context$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window, error);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    /**
-     * {@snippet :
-     * enum .GDK_SEAT_CAPABILITY_NONE = 0;
-     * }
-     */
-    public static int GDK_SEAT_CAPABILITY_NONE() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum .GDK_SEAT_CAPABILITY_POINTER = 1;
-     * }
-     */
-    public static int GDK_SEAT_CAPABILITY_POINTER() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum .GDK_SEAT_CAPABILITY_TOUCH = 2;
-     * }
-     */
-    public static int GDK_SEAT_CAPABILITY_TOUCH() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * enum .GDK_SEAT_CAPABILITY_TABLET_STYLUS = 4;
-     * }
-     */
-    public static int GDK_SEAT_CAPABILITY_TABLET_STYLUS() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * enum .GDK_SEAT_CAPABILITY_KEYBOARD = 8;
-     * }
-     */
-    public static int GDK_SEAT_CAPABILITY_KEYBOARD() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * enum .GDK_SEAT_CAPABILITY_ALL_POINTING = 7;
-     * }
-     */
-    public static int GDK_SEAT_CAPABILITY_ALL_POINTING() {
-        return (int)7L;
-    }
-    /**
-     * {@snippet :
-     * enum .GDK_SEAT_CAPABILITY_ALL = 15;
-     * }
-     */
-    public static int GDK_SEAT_CAPABILITY_ALL() {
-        return (int)15L;
-    }
-    public static MethodHandle gdk_seat_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1106.gdk_seat_get_type$MH,"gdk_seat_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType gdk_seat_get_type();
-     * }
-     */
-    public static long gdk_seat_get_type() {
-        var mh$ = gdk_seat_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_seat_grab$MH() {
-        return RuntimeHelper.requireNonNull(constants$1106.gdk_seat_grab$MH,"gdk_seat_grab");
-    }
-    /**
-     * {@snippet :
-     * GdkGrabStatus gdk_seat_grab(GdkSeat* seat, GdkWindow* window, GdkSeatCapabilities capabilities, gboolean owner_events, GdkCursor* cursor, const GdkEvent* event, GdkSeatGrabPrepareFunc prepare_func, gpointer prepare_func_data);
-     * }
-     */
-    public static int gdk_seat_grab(MemorySegment seat, MemorySegment window, int capabilities, int owner_events, MemorySegment cursor, MemorySegment event, MemorySegment prepare_func, MemorySegment prepare_func_data) {
-        var mh$ = gdk_seat_grab$MH();
-        try {
-            return (int)mh$.invokeExact(seat, window, capabilities, owner_events, cursor, event, prepare_func, prepare_func_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_seat_ungrab$MH() {
-        return RuntimeHelper.requireNonNull(constants$1106.gdk_seat_ungrab$MH,"gdk_seat_ungrab");
-    }
-    /**
-     * {@snippet :
-     * void gdk_seat_ungrab(GdkSeat* seat);
-     * }
-     */
-    public static void gdk_seat_ungrab(MemorySegment seat) {
-        var mh$ = gdk_seat_ungrab$MH();
-        try {
-            mh$.invokeExact(seat);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_seat_get_display$MH() {
-        return RuntimeHelper.requireNonNull(constants$1107.gdk_seat_get_display$MH,"gdk_seat_get_display");
-    }
-    /**
-     * {@snippet :
-     * GdkDisplay* gdk_seat_get_display(GdkSeat* seat);
-     * }
-     */
-    public static MemorySegment gdk_seat_get_display(MemorySegment seat) {
-        var mh$ = gdk_seat_get_display$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(seat);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_seat_get_capabilities$MH() {
-        return RuntimeHelper.requireNonNull(constants$1107.gdk_seat_get_capabilities$MH,"gdk_seat_get_capabilities");
-    }
-    /**
-     * {@snippet :
-     * GdkSeatCapabilities gdk_seat_get_capabilities(GdkSeat* seat);
-     * }
-     */
-    public static int gdk_seat_get_capabilities(MemorySegment seat) {
-        var mh$ = gdk_seat_get_capabilities$MH();
-        try {
-            return (int)mh$.invokeExact(seat);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_seat_get_slaves$MH() {
-        return RuntimeHelper.requireNonNull(constants$1107.gdk_seat_get_slaves$MH,"gdk_seat_get_slaves");
-    }
-    /**
-     * {@snippet :
-     * GList* gdk_seat_get_slaves(GdkSeat* seat, GdkSeatCapabilities capabilities);
-     * }
-     */
-    public static MemorySegment gdk_seat_get_slaves(MemorySegment seat, int capabilities) {
-        var mh$ = gdk_seat_get_slaves$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(seat, capabilities);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_seat_get_pointer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1107.gdk_seat_get_pointer$MH,"gdk_seat_get_pointer");
-    }
-    /**
-     * {@snippet :
-     * GdkDevice* gdk_seat_get_pointer(GdkSeat* seat);
-     * }
-     */
-    public static MemorySegment gdk_seat_get_pointer(MemorySegment seat) {
-        var mh$ = gdk_seat_get_pointer$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(seat);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_seat_get_keyboard$MH() {
-        return RuntimeHelper.requireNonNull(constants$1107.gdk_seat_get_keyboard$MH,"gdk_seat_get_keyboard");
-    }
-    /**
-     * {@snippet :
-     * GdkDevice* gdk_seat_get_keyboard(GdkSeat* seat);
-     * }
-     */
-    public static MemorySegment gdk_seat_get_keyboard(MemorySegment seat) {
-        var mh$ = gdk_seat_get_keyboard$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(seat);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_rectangle_intersect$MH() {
-        return RuntimeHelper.requireNonNull(constants$1107.gdk_rectangle_intersect$MH,"gdk_rectangle_intersect");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_rectangle_intersect(const GdkRectangle* src1, const GdkRectangle* src2, GdkRectangle* dest);
-     * }
-     */
-    public static int gdk_rectangle_intersect(MemorySegment src1, MemorySegment src2, MemorySegment dest) {
-        var mh$ = gdk_rectangle_intersect$MH();
-        try {
-            return (int)mh$.invokeExact(src1, src2, dest);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_rectangle_union$MH() {
-        return RuntimeHelper.requireNonNull(constants$1108.gdk_rectangle_union$MH,"gdk_rectangle_union");
-    }
-    /**
-     * {@snippet :
-     * void gdk_rectangle_union(const GdkRectangle* src1, const GdkRectangle* src2, GdkRectangle* dest);
-     * }
-     */
-    public static void gdk_rectangle_union(MemorySegment src1, MemorySegment src2, MemorySegment dest) {
-        var mh$ = gdk_rectangle_union$MH();
-        try {
-            mh$.invokeExact(src1, src2, dest);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_rectangle_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$1108.gdk_rectangle_equal$MH,"gdk_rectangle_equal");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_rectangle_equal(const GdkRectangle* rect1, const GdkRectangle* rect2);
-     * }
-     */
-    public static int gdk_rectangle_equal(MemorySegment rect1, MemorySegment rect2) {
-        var mh$ = gdk_rectangle_equal$MH();
-        try {
-            return (int)mh$.invokeExact(rect1, rect2);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_rectangle_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1108.gdk_rectangle_get_type$MH,"gdk_rectangle_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType gdk_rectangle_get_type();
-     * }
-     */
-    public static long gdk_rectangle_get_type() {
-        var mh$ = gdk_rectangle_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    /**
-     * {@snippet :
-     * enum .GDK_SUBPIXEL_LAYOUT_UNKNOWN = 0;
-     * }
-     */
-    public static int GDK_SUBPIXEL_LAYOUT_UNKNOWN() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum .GDK_SUBPIXEL_LAYOUT_NONE = 1;
-     * }
-     */
-    public static int GDK_SUBPIXEL_LAYOUT_NONE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum .GDK_SUBPIXEL_LAYOUT_HORIZONTAL_RGB = 2;
-     * }
-     */
-    public static int GDK_SUBPIXEL_LAYOUT_HORIZONTAL_RGB() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * enum .GDK_SUBPIXEL_LAYOUT_HORIZONTAL_BGR = 3;
-     * }
-     */
-    public static int GDK_SUBPIXEL_LAYOUT_HORIZONTAL_BGR() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * enum .GDK_SUBPIXEL_LAYOUT_VERTICAL_RGB = 4;
-     * }
-     */
-    public static int GDK_SUBPIXEL_LAYOUT_VERTICAL_RGB() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * enum .GDK_SUBPIXEL_LAYOUT_VERTICAL_BGR = 5;
-     * }
-     */
-    public static int GDK_SUBPIXEL_LAYOUT_VERTICAL_BGR() {
-        return (int)5L;
-    }
-    public static MethodHandle gdk_monitor_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1108.gdk_monitor_get_type$MH,"gdk_monitor_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType gdk_monitor_get_type();
-     * }
-     */
-    public static long gdk_monitor_get_type() {
-        var mh$ = gdk_monitor_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_monitor_get_display$MH() {
-        return RuntimeHelper.requireNonNull(constants$1108.gdk_monitor_get_display$MH,"gdk_monitor_get_display");
-    }
-    /**
-     * {@snippet :
-     * GdkDisplay* gdk_monitor_get_display(GdkMonitor* monitor);
-     * }
-     */
-    public static MemorySegment gdk_monitor_get_display(MemorySegment monitor) {
-        var mh$ = gdk_monitor_get_display$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(monitor);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_monitor_get_geometry$MH() {
-        return RuntimeHelper.requireNonNull(constants$1108.gdk_monitor_get_geometry$MH,"gdk_monitor_get_geometry");
-    }
-    /**
-     * {@snippet :
-     * void gdk_monitor_get_geometry(GdkMonitor* monitor, GdkRectangle* geometry);
-     * }
-     */
-    public static void gdk_monitor_get_geometry(MemorySegment monitor, MemorySegment geometry) {
-        var mh$ = gdk_monitor_get_geometry$MH();
-        try {
-            mh$.invokeExact(monitor, geometry);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_monitor_get_workarea$MH() {
-        return RuntimeHelper.requireNonNull(constants$1109.gdk_monitor_get_workarea$MH,"gdk_monitor_get_workarea");
-    }
-    /**
-     * {@snippet :
-     * void gdk_monitor_get_workarea(GdkMonitor* monitor, GdkRectangle* workarea);
-     * }
-     */
-    public static void gdk_monitor_get_workarea(MemorySegment monitor, MemorySegment workarea) {
-        var mh$ = gdk_monitor_get_workarea$MH();
-        try {
-            mh$.invokeExact(monitor, workarea);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_monitor_get_width_mm$MH() {
-        return RuntimeHelper.requireNonNull(constants$1109.gdk_monitor_get_width_mm$MH,"gdk_monitor_get_width_mm");
-    }
-    /**
-     * {@snippet :
-     * int gdk_monitor_get_width_mm(GdkMonitor* monitor);
-     * }
-     */
-    public static int gdk_monitor_get_width_mm(MemorySegment monitor) {
-        var mh$ = gdk_monitor_get_width_mm$MH();
-        try {
-            return (int)mh$.invokeExact(monitor);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_monitor_get_height_mm$MH() {
-        return RuntimeHelper.requireNonNull(constants$1109.gdk_monitor_get_height_mm$MH,"gdk_monitor_get_height_mm");
-    }
-    /**
-     * {@snippet :
-     * int gdk_monitor_get_height_mm(GdkMonitor* monitor);
-     * }
-     */
-    public static int gdk_monitor_get_height_mm(MemorySegment monitor) {
-        var mh$ = gdk_monitor_get_height_mm$MH();
-        try {
-            return (int)mh$.invokeExact(monitor);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_monitor_get_manufacturer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1109.gdk_monitor_get_manufacturer$MH,"gdk_monitor_get_manufacturer");
-    }
-    /**
-     * {@snippet :
-     * char* gdk_monitor_get_manufacturer(GdkMonitor* monitor);
-     * }
-     */
-    public static MemorySegment gdk_monitor_get_manufacturer(MemorySegment monitor) {
-        var mh$ = gdk_monitor_get_manufacturer$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(monitor);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_monitor_get_model$MH() {
-        return RuntimeHelper.requireNonNull(constants$1109.gdk_monitor_get_model$MH,"gdk_monitor_get_model");
-    }
-    /**
-     * {@snippet :
-     * char* gdk_monitor_get_model(GdkMonitor* monitor);
-     * }
-     */
-    public static MemorySegment gdk_monitor_get_model(MemorySegment monitor) {
-        var mh$ = gdk_monitor_get_model$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(monitor);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_monitor_get_scale_factor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1109.gdk_monitor_get_scale_factor$MH,"gdk_monitor_get_scale_factor");
-    }
-    /**
-     * {@snippet :
-     * int gdk_monitor_get_scale_factor(GdkMonitor* monitor);
-     * }
-     */
-    public static int gdk_monitor_get_scale_factor(MemorySegment monitor) {
-        var mh$ = gdk_monitor_get_scale_factor$MH();
-        try {
-            return (int)mh$.invokeExact(monitor);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_monitor_get_refresh_rate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1110.gdk_monitor_get_refresh_rate$MH,"gdk_monitor_get_refresh_rate");
-    }
-    /**
-     * {@snippet :
-     * int gdk_monitor_get_refresh_rate(GdkMonitor* monitor);
-     * }
-     */
-    public static int gdk_monitor_get_refresh_rate(MemorySegment monitor) {
-        var mh$ = gdk_monitor_get_refresh_rate$MH();
-        try {
-            return (int)mh$.invokeExact(monitor);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_monitor_get_subpixel_layout$MH() {
-        return RuntimeHelper.requireNonNull(constants$1110.gdk_monitor_get_subpixel_layout$MH,"gdk_monitor_get_subpixel_layout");
-    }
-    /**
-     * {@snippet :
-     * GdkSubpixelLayout gdk_monitor_get_subpixel_layout(GdkMonitor* monitor);
-     * }
-     */
-    public static int gdk_monitor_get_subpixel_layout(MemorySegment monitor) {
-        var mh$ = gdk_monitor_get_subpixel_layout$MH();
-        try {
-            return (int)mh$.invokeExact(monitor);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_monitor_is_primary$MH() {
-        return RuntimeHelper.requireNonNull(constants$1110.gdk_monitor_is_primary$MH,"gdk_monitor_is_primary");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_monitor_is_primary(GdkMonitor* monitor);
-     * }
-     */
-    public static int gdk_monitor_is_primary(MemorySegment monitor) {
-        var mh$ = gdk_monitor_is_primary$MH();
-        try {
-            return (int)mh$.invokeExact(monitor);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1110.gdk_display_get_type$MH,"gdk_display_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType gdk_display_get_type();
-     * }
-     */
-    public static long gdk_display_get_type() {
-        var mh$ = gdk_display_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_open$MH() {
-        return RuntimeHelper.requireNonNull(constants$1110.gdk_display_open$MH,"gdk_display_open");
-    }
-    /**
-     * {@snippet :
-     * GdkDisplay* gdk_display_open(const gchar* display_name);
-     * }
-     */
-    public static MemorySegment gdk_display_open(MemorySegment display_name) {
-        var mh$ = gdk_display_open$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display_name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1110.gdk_display_get_name$MH,"gdk_display_get_name");
-    }
-    /**
-     * {@snippet :
-     * const gchar* gdk_display_get_name(GdkDisplay* display);
-     * }
-     */
-    public static MemorySegment gdk_display_get_name(MemorySegment display) {
-        var mh$ = gdk_display_get_name$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_n_screens$MH() {
-        return RuntimeHelper.requireNonNull(constants$1111.gdk_display_get_n_screens$MH,"gdk_display_get_n_screens");
-    }
-    /**
-     * {@snippet :
-     * gint gdk_display_get_n_screens(GdkDisplay* display);
-     * }
-     */
-    public static int gdk_display_get_n_screens(MemorySegment display) {
-        var mh$ = gdk_display_get_n_screens$MH();
-        try {
-            return (int)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_screen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1111.gdk_display_get_screen$MH,"gdk_display_get_screen");
-    }
-    /**
-     * {@snippet :
-     * GdkScreen* gdk_display_get_screen(GdkDisplay* display, gint screen_num);
-     * }
-     */
-    public static MemorySegment gdk_display_get_screen(MemorySegment display, int screen_num) {
-        var mh$ = gdk_display_get_screen$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display, screen_num);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_default_screen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1111.gdk_display_get_default_screen$MH,"gdk_display_get_default_screen");
-    }
-    /**
-     * {@snippet :
-     * GdkScreen* gdk_display_get_default_screen(GdkDisplay* display);
-     * }
-     */
-    public static MemorySegment gdk_display_get_default_screen(MemorySegment display) {
-        var mh$ = gdk_display_get_default_screen$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_pointer_ungrab$MH() {
-        return RuntimeHelper.requireNonNull(constants$1111.gdk_display_pointer_ungrab$MH,"gdk_display_pointer_ungrab");
-    }
-    /**
-     * {@snippet :
-     * void gdk_display_pointer_ungrab(GdkDisplay* display, guint32 time_);
-     * }
-     */
-    public static void gdk_display_pointer_ungrab(MemorySegment display, int time_) {
-        var mh$ = gdk_display_pointer_ungrab$MH();
-        try {
-            mh$.invokeExact(display, time_);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_keyboard_ungrab$MH() {
-        return RuntimeHelper.requireNonNull(constants$1111.gdk_display_keyboard_ungrab$MH,"gdk_display_keyboard_ungrab");
-    }
-    /**
-     * {@snippet :
-     * void gdk_display_keyboard_ungrab(GdkDisplay* display, guint32 time_);
-     * }
-     */
-    public static void gdk_display_keyboard_ungrab(MemorySegment display, int time_) {
-        var mh$ = gdk_display_keyboard_ungrab$MH();
-        try {
-            mh$.invokeExact(display, time_);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_pointer_is_grabbed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1111.gdk_display_pointer_is_grabbed$MH,"gdk_display_pointer_is_grabbed");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_display_pointer_is_grabbed(GdkDisplay* display);
-     * }
-     */
-    public static int gdk_display_pointer_is_grabbed(MemorySegment display) {
-        var mh$ = gdk_display_pointer_is_grabbed$MH();
-        try {
-            return (int)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_device_is_grabbed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1112.gdk_display_device_is_grabbed$MH,"gdk_display_device_is_grabbed");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_display_device_is_grabbed(GdkDisplay* display, GdkDevice* device);
-     * }
-     */
-    public static int gdk_display_device_is_grabbed(MemorySegment display, MemorySegment device) {
-        var mh$ = gdk_display_device_is_grabbed$MH();
-        try {
-            return (int)mh$.invokeExact(display, device);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_beep$MH() {
-        return RuntimeHelper.requireNonNull(constants$1112.gdk_display_beep$MH,"gdk_display_beep");
-    }
-    /**
-     * {@snippet :
-     * void gdk_display_beep(GdkDisplay* display);
-     * }
-     */
-    public static void gdk_display_beep(MemorySegment display) {
-        var mh$ = gdk_display_beep$MH();
-        try {
-            mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$1112.gdk_display_sync$MH,"gdk_display_sync");
-    }
-    /**
-     * {@snippet :
-     * void gdk_display_sync(GdkDisplay* display);
-     * }
-     */
-    public static void gdk_display_sync(MemorySegment display) {
-        var mh$ = gdk_display_sync$MH();
-        try {
-            mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_flush$MH() {
-        return RuntimeHelper.requireNonNull(constants$1112.gdk_display_flush$MH,"gdk_display_flush");
-    }
-    /**
-     * {@snippet :
-     * void gdk_display_flush(GdkDisplay* display);
-     * }
-     */
-    public static void gdk_display_flush(MemorySegment display) {
-        var mh$ = gdk_display_flush$MH();
-        try {
-            mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_close$MH() {
-        return RuntimeHelper.requireNonNull(constants$1112.gdk_display_close$MH,"gdk_display_close");
-    }
-    /**
-     * {@snippet :
-     * void gdk_display_close(GdkDisplay* display);
-     * }
-     */
-    public static void gdk_display_close(MemorySegment display) {
-        var mh$ = gdk_display_close$MH();
-        try {
-            mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_is_closed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1112.gdk_display_is_closed$MH,"gdk_display_is_closed");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_display_is_closed(GdkDisplay* display);
-     * }
-     */
-    public static int gdk_display_is_closed(MemorySegment display) {
-        var mh$ = gdk_display_is_closed$MH();
-        try {
-            return (int)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_list_devices$MH() {
-        return RuntimeHelper.requireNonNull(constants$1113.gdk_display_list_devices$MH,"gdk_display_list_devices");
-    }
-    /**
-     * {@snippet :
-     * GList* gdk_display_list_devices(GdkDisplay* display);
-     * }
-     */
-    public static MemorySegment gdk_display_list_devices(MemorySegment display) {
-        var mh$ = gdk_display_list_devices$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_event$MH() {
-        return RuntimeHelper.requireNonNull(constants$1113.gdk_display_get_event$MH,"gdk_display_get_event");
-    }
-    /**
-     * {@snippet :
-     * GdkEvent* gdk_display_get_event(GdkDisplay* display);
-     * }
-     */
-    public static MemorySegment gdk_display_get_event(MemorySegment display) {
-        var mh$ = gdk_display_get_event$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_peek_event$MH() {
-        return RuntimeHelper.requireNonNull(constants$1113.gdk_display_peek_event$MH,"gdk_display_peek_event");
-    }
-    /**
-     * {@snippet :
-     * GdkEvent* gdk_display_peek_event(GdkDisplay* display);
-     * }
-     */
-    public static MemorySegment gdk_display_peek_event(MemorySegment display) {
-        var mh$ = gdk_display_peek_event$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_put_event$MH() {
-        return RuntimeHelper.requireNonNull(constants$1113.gdk_display_put_event$MH,"gdk_display_put_event");
-    }
-    /**
-     * {@snippet :
-     * void gdk_display_put_event(GdkDisplay* display, const GdkEvent* event);
-     * }
-     */
-    public static void gdk_display_put_event(MemorySegment display, MemorySegment event) {
-        var mh$ = gdk_display_put_event$MH();
-        try {
-            mh$.invokeExact(display, event);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_has_pending$MH() {
-        return RuntimeHelper.requireNonNull(constants$1113.gdk_display_has_pending$MH,"gdk_display_has_pending");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_display_has_pending(GdkDisplay* display);
-     * }
-     */
-    public static int gdk_display_has_pending(MemorySegment display) {
-        var mh$ = gdk_display_has_pending$MH();
-        try {
-            return (int)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_set_double_click_time$MH() {
-        return RuntimeHelper.requireNonNull(constants$1113.gdk_display_set_double_click_time$MH,"gdk_display_set_double_click_time");
-    }
-    /**
-     * {@snippet :
-     * void gdk_display_set_double_click_time(GdkDisplay* display, guint msec);
-     * }
-     */
-    public static void gdk_display_set_double_click_time(MemorySegment display, int msec) {
-        var mh$ = gdk_display_set_double_click_time$MH();
-        try {
-            mh$.invokeExact(display, msec);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_set_double_click_distance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1114.gdk_display_set_double_click_distance$MH,"gdk_display_set_double_click_distance");
-    }
-    /**
-     * {@snippet :
-     * void gdk_display_set_double_click_distance(GdkDisplay* display, guint distance);
-     * }
-     */
-    public static void gdk_display_set_double_click_distance(MemorySegment display, int distance) {
-        var mh$ = gdk_display_set_double_click_distance$MH();
-        try {
-            mh$.invokeExact(display, distance);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_default$MH() {
-        return RuntimeHelper.requireNonNull(constants$1114.gdk_display_get_default$MH,"gdk_display_get_default");
-    }
-    /**
-     * {@snippet :
-     * GdkDisplay* gdk_display_get_default();
-     * }
-     */
-    public static MemorySegment gdk_display_get_default() {
-        var mh$ = gdk_display_get_default$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_pointer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1114.gdk_display_get_pointer$MH,"gdk_display_get_pointer");
-    }
-    /**
-     * {@snippet :
-     * void gdk_display_get_pointer(GdkDisplay* display, GdkScreen** screen, gint* x, gint* y, GdkModifierType* mask);
-     * }
-     */
-    public static void gdk_display_get_pointer(MemorySegment display, MemorySegment screen, MemorySegment x, MemorySegment y, MemorySegment mask) {
-        var mh$ = gdk_display_get_pointer$MH();
-        try {
-            mh$.invokeExact(display, screen, x, y, mask);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_window_at_pointer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1114.gdk_display_get_window_at_pointer$MH,"gdk_display_get_window_at_pointer");
-    }
-    /**
-     * {@snippet :
-     * GdkWindow* gdk_display_get_window_at_pointer(GdkDisplay* display, gint* win_x, gint* win_y);
-     * }
-     */
-    public static MemorySegment gdk_display_get_window_at_pointer(MemorySegment display, MemorySegment win_x, MemorySegment win_y) {
-        var mh$ = gdk_display_get_window_at_pointer$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display, win_x, win_y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_warp_pointer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1114.gdk_display_warp_pointer$MH,"gdk_display_warp_pointer");
-    }
-    /**
-     * {@snippet :
-     * void gdk_display_warp_pointer(GdkDisplay* display, GdkScreen* screen, gint x, gint y);
-     * }
-     */
-    public static void gdk_display_warp_pointer(MemorySegment display, MemorySegment screen, int x, int y) {
-        var mh$ = gdk_display_warp_pointer$MH();
-        try {
-            mh$.invokeExact(display, screen, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_open_default_libgtk_only$MH() {
-        return RuntimeHelper.requireNonNull(constants$1114.gdk_display_open_default_libgtk_only$MH,"gdk_display_open_default_libgtk_only");
-    }
-    /**
-     * {@snippet :
-     * GdkDisplay* gdk_display_open_default_libgtk_only();
-     * }
-     */
-    public static MemorySegment gdk_display_open_default_libgtk_only() {
-        var mh$ = gdk_display_open_default_libgtk_only$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_supports_cursor_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$1115.gdk_display_supports_cursor_alpha$MH,"gdk_display_supports_cursor_alpha");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_display_supports_cursor_alpha(GdkDisplay* display);
-     * }
-     */
-    public static int gdk_display_supports_cursor_alpha(MemorySegment display) {
-        var mh$ = gdk_display_supports_cursor_alpha$MH();
-        try {
-            return (int)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_supports_cursor_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$1115.gdk_display_supports_cursor_color$MH,"gdk_display_supports_cursor_color");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_display_supports_cursor_color(GdkDisplay* display);
-     * }
-     */
-    public static int gdk_display_supports_cursor_color(MemorySegment display) {
-        var mh$ = gdk_display_supports_cursor_color$MH();
-        try {
-            return (int)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_default_cursor_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1115.gdk_display_get_default_cursor_size$MH,"gdk_display_get_default_cursor_size");
-    }
-    /**
-     * {@snippet :
-     * guint gdk_display_get_default_cursor_size(GdkDisplay* display);
-     * }
-     */
-    public static int gdk_display_get_default_cursor_size(MemorySegment display) {
-        var mh$ = gdk_display_get_default_cursor_size$MH();
-        try {
-            return (int)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_maximal_cursor_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1115.gdk_display_get_maximal_cursor_size$MH,"gdk_display_get_maximal_cursor_size");
-    }
-    /**
-     * {@snippet :
-     * void gdk_display_get_maximal_cursor_size(GdkDisplay* display, guint* width, guint* height);
-     * }
-     */
-    public static void gdk_display_get_maximal_cursor_size(MemorySegment display, MemorySegment width, MemorySegment height) {
-        var mh$ = gdk_display_get_maximal_cursor_size$MH();
-        try {
-            mh$.invokeExact(display, width, height);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_default_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$1115.gdk_display_get_default_group$MH,"gdk_display_get_default_group");
-    }
-    /**
-     * {@snippet :
-     * GdkWindow* gdk_display_get_default_group(GdkDisplay* display);
-     * }
-     */
-    public static MemorySegment gdk_display_get_default_group(MemorySegment display) {
-        var mh$ = gdk_display_get_default_group$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_supports_selection_notification$MH() {
-        return RuntimeHelper.requireNonNull(constants$1115.gdk_display_supports_selection_notification$MH,"gdk_display_supports_selection_notification");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_display_supports_selection_notification(GdkDisplay* display);
-     * }
-     */
-    public static int gdk_display_supports_selection_notification(MemorySegment display) {
-        var mh$ = gdk_display_supports_selection_notification$MH();
-        try {
-            return (int)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_request_selection_notification$MH() {
-        return RuntimeHelper.requireNonNull(constants$1116.gdk_display_request_selection_notification$MH,"gdk_display_request_selection_notification");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_display_request_selection_notification(GdkDisplay* display, GdkAtom selection);
-     * }
-     */
-    public static int gdk_display_request_selection_notification(MemorySegment display, MemorySegment selection) {
-        var mh$ = gdk_display_request_selection_notification$MH();
-        try {
-            return (int)mh$.invokeExact(display, selection);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_supports_clipboard_persistence$MH() {
-        return RuntimeHelper.requireNonNull(constants$1116.gdk_display_supports_clipboard_persistence$MH,"gdk_display_supports_clipboard_persistence");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_display_supports_clipboard_persistence(GdkDisplay* display);
-     * }
-     */
-    public static int gdk_display_supports_clipboard_persistence(MemorySegment display) {
-        var mh$ = gdk_display_supports_clipboard_persistence$MH();
-        try {
-            return (int)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_store_clipboard$MH() {
-        return RuntimeHelper.requireNonNull(constants$1116.gdk_display_store_clipboard$MH,"gdk_display_store_clipboard");
-    }
-    /**
-     * {@snippet :
-     * void gdk_display_store_clipboard(GdkDisplay* display, GdkWindow* clipboard_window, guint32 time_, const GdkAtom* targets, gint n_targets);
-     * }
-     */
-    public static void gdk_display_store_clipboard(MemorySegment display, MemorySegment clipboard_window, int time_, MemorySegment targets, int n_targets) {
-        var mh$ = gdk_display_store_clipboard$MH();
-        try {
-            mh$.invokeExact(display, clipboard_window, time_, targets, n_targets);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_supports_shapes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1116.gdk_display_supports_shapes$MH,"gdk_display_supports_shapes");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_display_supports_shapes(GdkDisplay* display);
-     * }
-     */
-    public static int gdk_display_supports_shapes(MemorySegment display) {
-        var mh$ = gdk_display_supports_shapes$MH();
-        try {
-            return (int)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_supports_input_shapes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1116.gdk_display_supports_input_shapes$MH,"gdk_display_supports_input_shapes");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_display_supports_input_shapes(GdkDisplay* display);
-     * }
-     */
-    public static int gdk_display_supports_input_shapes(MemorySegment display) {
-        var mh$ = gdk_display_supports_input_shapes$MH();
-        try {
-            return (int)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_supports_composite$MH() {
-        return RuntimeHelper.requireNonNull(constants$1116.gdk_display_supports_composite$MH,"gdk_display_supports_composite");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_display_supports_composite(GdkDisplay* display);
-     * }
-     */
-    public static int gdk_display_supports_composite(MemorySegment display) {
-        var mh$ = gdk_display_supports_composite$MH();
-        try {
-            return (int)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_notify_startup_complete$MH() {
-        return RuntimeHelper.requireNonNull(constants$1117.gdk_display_notify_startup_complete$MH,"gdk_display_notify_startup_complete");
-    }
-    /**
-     * {@snippet :
-     * void gdk_display_notify_startup_complete(GdkDisplay* display, const gchar* startup_id);
-     * }
-     */
-    public static void gdk_display_notify_startup_complete(MemorySegment display, MemorySegment startup_id) {
-        var mh$ = gdk_display_notify_startup_complete$MH();
-        try {
-            mh$.invokeExact(display, startup_id);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_device_manager$MH() {
-        return RuntimeHelper.requireNonNull(constants$1117.gdk_display_get_device_manager$MH,"gdk_display_get_device_manager");
-    }
-    /**
-     * {@snippet :
-     * GdkDeviceManager* gdk_display_get_device_manager(GdkDisplay* display);
-     * }
-     */
-    public static MemorySegment gdk_display_get_device_manager(MemorySegment display) {
-        var mh$ = gdk_display_get_device_manager$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_app_launch_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$1117.gdk_display_get_app_launch_context$MH,"gdk_display_get_app_launch_context");
-    }
-    /**
-     * {@snippet :
-     * GdkAppLaunchContext* gdk_display_get_app_launch_context(GdkDisplay* display);
-     * }
-     */
-    public static MemorySegment gdk_display_get_app_launch_context(MemorySegment display) {
-        var mh$ = gdk_display_get_app_launch_context$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_default_seat$MH() {
-        return RuntimeHelper.requireNonNull(constants$1117.gdk_display_get_default_seat$MH,"gdk_display_get_default_seat");
-    }
-    /**
-     * {@snippet :
-     * GdkSeat* gdk_display_get_default_seat(GdkDisplay* display);
-     * }
-     */
-    public static MemorySegment gdk_display_get_default_seat(MemorySegment display) {
-        var mh$ = gdk_display_get_default_seat$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_list_seats$MH() {
-        return RuntimeHelper.requireNonNull(constants$1117.gdk_display_list_seats$MH,"gdk_display_list_seats");
-    }
-    /**
-     * {@snippet :
-     * GList* gdk_display_list_seats(GdkDisplay* display);
-     * }
-     */
-    public static MemorySegment gdk_display_list_seats(MemorySegment display) {
-        var mh$ = gdk_display_list_seats$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_n_monitors$MH() {
-        return RuntimeHelper.requireNonNull(constants$1117.gdk_display_get_n_monitors$MH,"gdk_display_get_n_monitors");
-    }
-    /**
-     * {@snippet :
-     * int gdk_display_get_n_monitors(GdkDisplay* display);
-     * }
-     */
-    public static int gdk_display_get_n_monitors(MemorySegment display) {
-        var mh$ = gdk_display_get_n_monitors$MH();
-        try {
-            return (int)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_monitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1118.gdk_display_get_monitor$MH,"gdk_display_get_monitor");
-    }
-    /**
-     * {@snippet :
-     * GdkMonitor* gdk_display_get_monitor(GdkDisplay* display, int monitor_num);
-     * }
-     */
-    public static MemorySegment gdk_display_get_monitor(MemorySegment display, int monitor_num) {
-        var mh$ = gdk_display_get_monitor$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display, monitor_num);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_primary_monitor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1118.gdk_display_get_primary_monitor$MH,"gdk_display_get_primary_monitor");
-    }
-    /**
-     * {@snippet :
-     * GdkMonitor* gdk_display_get_primary_monitor(GdkDisplay* display);
-     * }
-     */
-    public static MemorySegment gdk_display_get_primary_monitor(MemorySegment display) {
-        var mh$ = gdk_display_get_primary_monitor$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_monitor_at_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$1118.gdk_display_get_monitor_at_point$MH,"gdk_display_get_monitor_at_point");
-    }
-    /**
-     * {@snippet :
-     * GdkMonitor* gdk_display_get_monitor_at_point(GdkDisplay* display, int x, int y);
-     * }
-     */
-    public static MemorySegment gdk_display_get_monitor_at_point(MemorySegment display, int x, int y) {
-        var mh$ = gdk_display_get_monitor_at_point$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_display_get_monitor_at_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1118.gdk_display_get_monitor_at_window$MH,"gdk_display_get_monitor_at_window");
-    }
-    /**
-     * {@snippet :
-     * GdkMonitor* gdk_display_get_monitor_at_window(GdkDisplay* display, GdkWindow* window);
-     * }
-     */
-    public static MemorySegment gdk_display_get_monitor_at_window(MemorySegment display, MemorySegment window) {
-        var mh$ = gdk_display_get_monitor_at_window$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(display, window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_screen_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1118.gdk_screen_get_type$MH,"gdk_screen_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType gdk_screen_get_type();
-     * }
-     */
-    public static long gdk_screen_get_type() {
-        var mh$ = gdk_screen_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_screen_get_system_visual$MH() {
-        return RuntimeHelper.requireNonNull(constants$1118.gdk_screen_get_system_visual$MH,"gdk_screen_get_system_visual");
-    }
-    /**
-     * {@snippet :
-     * GdkVisual* gdk_screen_get_system_visual(GdkScreen* screen);
-     * }
-     */
-    public static MemorySegment gdk_screen_get_system_visual(MemorySegment screen) {
-        var mh$ = gdk_screen_get_system_visual$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(screen);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_screen_get_rgba_visual$MH() {
-        return RuntimeHelper.requireNonNull(constants$1119.gdk_screen_get_rgba_visual$MH,"gdk_screen_get_rgba_visual");
-    }
-    /**
-     * {@snippet :
-     * GdkVisual* gdk_screen_get_rgba_visual(GdkScreen* screen);
-     * }
-     */
-    public static MemorySegment gdk_screen_get_rgba_visual(MemorySegment screen) {
-        var mh$ = gdk_screen_get_rgba_visual$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(screen);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_screen_is_composited$MH() {
-        return RuntimeHelper.requireNonNull(constants$1119.gdk_screen_is_composited$MH,"gdk_screen_is_composited");
-    }
-    /**
-     * {@snippet :
-     * gboolean gdk_screen_is_composited(GdkScreen* screen);
-     * }
-     */
-    public static int gdk_screen_is_composited(MemorySegment screen) {
-        var mh$ = gdk_screen_is_composited$MH();
-        try {
-            return (int)mh$.invokeExact(screen);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_screen_get_root_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1119.gdk_screen_get_root_window$MH,"gdk_screen_get_root_window");
-    }
-    /**
-     * {@snippet :
-     * GdkWindow* gdk_screen_get_root_window(GdkScreen* screen);
-     * }
-     */
-    public static MemorySegment gdk_screen_get_root_window(MemorySegment screen) {
-        var mh$ = gdk_screen_get_root_window$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(screen);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_screen_get_display$MH() {
-        return RuntimeHelper.requireNonNull(constants$1119.gdk_screen_get_display$MH,"gdk_screen_get_display");
-    }
-    /**
-     * {@snippet :
-     * GdkDisplay* gdk_screen_get_display(GdkScreen* screen);
-     * }
-     */
-    public static MemorySegment gdk_screen_get_display(MemorySegment screen) {
-        var mh$ = gdk_screen_get_display$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(screen);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_screen_get_number$MH() {
-        return RuntimeHelper.requireNonNull(constants$1119.gdk_screen_get_number$MH,"gdk_screen_get_number");
-    }
-    /**
-     * {@snippet :
-     * gint gdk_screen_get_number(GdkScreen* screen);
-     * }
-     */
-    public static int gdk_screen_get_number(MemorySegment screen) {
-        var mh$ = gdk_screen_get_number$MH();
-        try {
-            return (int)mh$.invokeExact(screen);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gdk_screen_get_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1119.gdk_screen_get_width$MH,"gdk_screen_get_width");
-    }
-    /**
-     * {@snippet :
-     * gint gdk_screen_get_width(GdkScreen* screen);
-     * }
-     */
-    public static int gdk_screen_get_width(MemorySegment screen) {
-        var mh$ = gdk_screen_get_width$MH();
-        try {
-            return (int)mh$.invokeExact(screen);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

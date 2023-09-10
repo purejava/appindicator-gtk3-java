@@ -3,61 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1501 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1501() {}
-    static final FunctionDescriptor gtk_binding_set_by_class$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_font_set_ptem",
+        constants$689.const$1
     );
-    static final MethodHandle gtk_binding_set_by_class$MH = RuntimeHelper.downcallHandle(
-        "gtk_binding_set_by_class",
-        constants$1501.gtk_binding_set_by_class$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_font_get_ptem",
+        constants$689.const$3
     );
-    static final FunctionDescriptor gtk_binding_set_find$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_INT
     );
-    static final MethodHandle gtk_binding_set_find$MH = RuntimeHelper.downcallHandle(
-        "gtk_binding_set_find",
-        constants$1501.gtk_binding_set_find$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_font_set_synthetic_bold",
+        constants$1501.const$2
     );
-    static final FunctionDescriptor gtk_bindings_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_font_get_synthetic_bold",
+        constants$42.const$1
     );
-    static final MethodHandle gtk_bindings_activate$MH = RuntimeHelper.downcallHandle(
-        "gtk_bindings_activate",
-        constants$1501.gtk_bindings_activate$FUNC
-    );
-    static final FunctionDescriptor gtk_bindings_activate_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_bindings_activate_event$MH = RuntimeHelper.downcallHandle(
-        "gtk_bindings_activate_event",
-        constants$1501.gtk_bindings_activate_event$FUNC
-    );
-    static final FunctionDescriptor gtk_binding_set_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_binding_set_activate$MH = RuntimeHelper.downcallHandle(
-        "gtk_binding_set_activate",
-        constants$1501.gtk_binding_set_activate$FUNC
-    );
-    static final FunctionDescriptor gtk_binding_entry_skip$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_binding_entry_skip$MH = RuntimeHelper.downcallHandle(
-        "gtk_binding_entry_skip",
-        constants$1501.gtk_binding_entry_skip$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_font_set_synthetic_slant",
+        constants$689.const$1
     );
 }
 

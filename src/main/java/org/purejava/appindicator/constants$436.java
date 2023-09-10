@@ -3,53 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$436 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$436() {}
-    static final FunctionDescriptor g_object_thaw_notify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_sequence_sort_changed_iter",
+        constants$14.const$3
     );
-    static final MethodHandle g_object_thaw_notify$MH = RuntimeHelper.downcallHandle(
-        "g_object_thaw_notify",
-        constants$436.g_object_thaw_notify$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_sequence_remove",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_object_is_floating$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_sequence_remove_range",
+        constants$13.const$4
     );
-    static final MethodHandle g_object_is_floating$MH = RuntimeHelper.downcallHandle(
-        "g_object_is_floating",
-        constants$436.g_object_is_floating$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_sequence_move_range",
+        constants$14.const$3
     );
-    static final FunctionDescriptor g_object_ref_sink$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_ref_sink$MH = RuntimeHelper.downcallHandle(
-        "g_object_ref_sink",
-        constants$436.g_object_ref_sink$FUNC
-    );
-    static final FunctionDescriptor g_object_take_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_take_ref$MH = RuntimeHelper.downcallHandle(
-        "g_object_take_ref",
-        constants$436.g_object_take_ref$FUNC
-    );
-    static final FunctionDescriptor g_object_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_ref$MH = RuntimeHelper.downcallHandle(
-        "g_object_ref",
-        constants$436.g_object_ref$FUNC
-    );
-    static final FunctionDescriptor g_object_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_unref$MH = RuntimeHelper.downcallHandle(
-        "g_object_unref",
-        constants$436.g_object_unref$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_sequence_search$cmp_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_sequence_search",
+        constants$39.const$1
     );
 }
 

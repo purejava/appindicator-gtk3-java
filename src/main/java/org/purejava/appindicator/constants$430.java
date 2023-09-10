@@ -3,68 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$430 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$430() {}
-    static final FunctionDescriptor g_value_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_value_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_type",
-        constants$430.g_value_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_scanner_scope_foreach_symbol$func.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_scanner_scope_foreach_symbol",
+        constants$179.const$1
     );
-    static final FunctionDescriptor GObjectGetPropertyFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_scanner_lookup_symbol",
+        constants$5.const$5
     );
-    static final FunctionDescriptor GObjectGetPropertyFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final MethodHandle GObjectGetPropertyFunc_UP$MH = RuntimeHelper.upcallHandle(GObjectGetPropertyFunc.class, "apply", constants$430.GObjectGetPropertyFunc_UP$FUNC);
-    static final FunctionDescriptor GObjectGetPropertyFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_scanner_unexp_token",
+        constants$430.const$3
     );
-    static final MethodHandle GObjectGetPropertyFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$430.GObjectGetPropertyFunc_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "g_scanner_error",
+        constants$13.const$4
     );
-    static final FunctionDescriptor GObjectSetPropertyFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GObjectSetPropertyFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GObjectSetPropertyFunc_UP$MH = RuntimeHelper.upcallHandle(GObjectSetPropertyFunc.class, "apply", constants$430.GObjectSetPropertyFunc_UP$FUNC);
-    static final FunctionDescriptor GObjectSetPropertyFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GObjectSetPropertyFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$430.GObjectSetPropertyFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor GObjectFinalizeFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GObjectFinalizeFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GObjectFinalizeFunc_UP$MH = RuntimeHelper.upcallHandle(GObjectFinalizeFunc.class, "apply", constants$430.GObjectFinalizeFunc_UP$FUNC);
 }
 
 

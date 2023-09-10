@@ -3,54 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$238 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$238() {}
-    static final FunctionDescriptor g_variant_classify$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_classify$MH = RuntimeHelper.downcallHandle(
-        "g_variant_classify",
-        constants$238.g_variant_classify$FUNC
-    );
-    static final FunctionDescriptor g_variant_new_boolean$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_variant_new_boolean$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_boolean",
-        constants$238.g_variant_new_boolean$FUNC
-    );
-    static final FunctionDescriptor g_variant_new_byte$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
-    );
-    static final MethodHandle g_variant_new_byte$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_byte",
-        constants$238.g_variant_new_byte$FUNC
-    );
-    static final FunctionDescriptor g_variant_new_int16$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle g_variant_new_int16$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_int16",
-        constants$238.g_variant_new_int16$FUNC
-    );
-    static final FunctionDescriptor g_variant_new_uint16$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle g_variant_new_uint16$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_uint16",
-        constants$238.g_variant_new_uint16$FUNC
-    );
-    static final FunctionDescriptor g_variant_new_int32$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_variant_new_int32$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_int32",
-        constants$238.g_variant_new_int32$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GHookCompareFunc.class, "apply", constants$9.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GHookFindFunc.class, "apply", constants$9.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GHookMarshaller.class, "apply", constants$13.const$4);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GHookCheckMarshaller.class, "apply", constants$9.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GHookFunc.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GHookCheckFunc.class, "apply", constants$10.const$5);
 }
 
 

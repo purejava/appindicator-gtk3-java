@@ -3,64 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1000 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1000() {}
-    static final FunctionDescriptor cairo_set_dash$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_set_dash$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_dash",
-        constants$1000.cairo_set_dash$FUNC
-    );
-    static final FunctionDescriptor cairo_set_miter_limit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_set_miter_limit$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_miter_limit",
-        constants$1000.cairo_set_miter_limit$FUNC
-    );
-    static final FunctionDescriptor cairo_translate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_translate$MH = RuntimeHelper.downcallHandle(
-        "cairo_translate",
-        constants$1000.cairo_translate$FUNC
-    );
-    static final FunctionDescriptor cairo_scale$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_scale$MH = RuntimeHelper.downcallHandle(
-        "cairo_scale",
-        constants$1000.cairo_scale$FUNC
-    );
-    static final FunctionDescriptor cairo_rotate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_rotate$MH = RuntimeHelper.downcallHandle(
-        "cairo_rotate",
-        constants$1000.cairo_rotate$FUNC
-    );
-    static final FunctionDescriptor cairo_transform$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_transform$MH = RuntimeHelper.downcallHandle(
-        "cairo_transform",
-        constants$1000.cairo_transform$FUNC
-    );
+    static final VarHandle const$0 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("mount_enclosing_volume"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.mount_enclosing_volume_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$2 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("mount_enclosing_volume_finish"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.monitor_dir.class, "apply", constants$180.const$0);
+    static final VarHandle const$4 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("monitor_dir"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.monitor_file.class, "apply", constants$180.const$0);
 }
 
 

@@ -3,59 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$247 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$247() {}
-    static final FunctionDescriptor g_variant_lookup_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_hostname_to_unicode",
+        constants$5.const$2
     );
-    static final MethodHandle g_variant_lookup_value$MH = RuntimeHelper.downcallHandle(
-        "g_variant_lookup_value",
-        constants$247.g_variant_lookup_value$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GPollFunc.class, "apply", constants$49.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$49.const$0
     );
-    static final FunctionDescriptor g_variant_get_fixed_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_variant_get_fixed_array$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_fixed_array",
-        constants$247.g_variant_get_fixed_array$FUNC
-    );
-    static final FunctionDescriptor g_variant_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_get_size$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_size",
-        constants$247.g_variant_get_size$FUNC
-    );
-    static final FunctionDescriptor g_variant_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_get_data$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_data",
-        constants$247.g_variant_get_data$FUNC
-    );
-    static final FunctionDescriptor g_variant_get_data_as_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_get_data_as_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_data_as_bytes",
-        constants$247.g_variant_get_data_as_bytes$FUNC
-    );
-    static final FunctionDescriptor g_variant_store$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_store$MH = RuntimeHelper.downcallHandle(
-        "g_variant_store",
-        constants$247.g_variant_store$FUNC
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("fd"),
+        JAVA_SHORT.withName("events"),
+        JAVA_SHORT.withName("revents")
+    ).withName("_GPollFD");
+    static final VarHandle const$4 = constants$247.const$3.varHandle(MemoryLayout.PathElement.groupElement("fd"));
+    static final VarHandle const$5 = constants$247.const$3.varHandle(MemoryLayout.PathElement.groupElement("events"));
 }
 
 

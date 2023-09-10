@@ -2,91 +2,110 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GClosureNotifyData {
- *     gpointer data;
- *     GClosureNotify notify;
+ *     void* data;
+ *     void (*notify)(void*,struct _GClosure*);
  * };
  * }
  */
 public class _GClosureNotifyData {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("data"),
-        Constants$root.C_POINTER$LAYOUT.withName("notify")
-    ).withName("_GClosureNotifyData");
     public static MemoryLayout $LAYOUT() {
-        return _GClosureNotifyData.$struct$LAYOUT;
+        return constants$585.const$3;
     }
-    static final VarHandle data$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("data"));
     public static VarHandle data$VH() {
-        return _GClosureNotifyData.data$VH;
+        return constants$585.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gpointer data;
+     * void* data;
      * }
      */
     public static MemorySegment data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GClosureNotifyData.data$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$585.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gpointer data;
+     * void* data;
      * }
      */
     public static void data$set(MemorySegment seg, MemorySegment x) {
-        _GClosureNotifyData.data$VH.set(seg, x);
+        constants$585.const$4.set(seg, x);
     }
     public static MemorySegment data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GClosureNotifyData.data$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$585.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void data$set(MemorySegment seg, long index, MemorySegment x) {
-        _GClosureNotifyData.data$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$585.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle notify$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("notify"));
+    /**
+     * {@snippet :
+ * void (*notify)(void*,struct _GClosure*);
+     * }
+     */
+    public interface notify {
+
+        void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(notify fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$585.const$5, fi, constants$13.const$4, scope);
+        }
+        static notify ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
+                try {
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
+                } catch (Throwable ex$) {
+                    throw new AssertionError("should not reach here", ex$);
+                }
+            };
+        }
+    }
+
     public static VarHandle notify$VH() {
-        return _GClosureNotifyData.notify$VH;
+        return constants$586.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GClosureNotify notify;
+     * void (*notify)(void*,struct _GClosure*);
      * }
      */
     public static MemorySegment notify$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GClosureNotifyData.notify$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$586.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GClosureNotify notify;
+     * void (*notify)(void*,struct _GClosure*);
      * }
      */
     public static void notify$set(MemorySegment seg, MemorySegment x) {
-        _GClosureNotifyData.notify$VH.set(seg, x);
+        constants$586.const$0.set(seg, x);
     }
     public static MemorySegment notify$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GClosureNotifyData.notify$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$586.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void notify$set(MemorySegment seg, long index, MemorySegment x) {
-        _GClosureNotifyData.notify$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$586.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GClosureNotify notify(MemorySegment segment, SegmentScope scope) {
-        return GClosureNotify.ofAddress(notify$get(segment), scope);
+    public static notify notify(MemorySegment segment, Arena scope) {
+        return notify.ofAddress(notify$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -3,76 +3,46 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$872 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$872() {}
-    static final FunctionDescriptor hb_font_subtract_glyph_origin_for_direction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_error_register_error_domain",
+        constants$331.const$4
     );
-    static final MethodHandle hb_font_subtract_glyph_origin_for_direction$MH = RuntimeHelper.downcallHandle(
-        "hb_font_subtract_glyph_origin_for_direction",
-        constants$872.hb_font_subtract_glyph_origin_for_direction$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_error_new_for_dbus_error",
+        constants$5.const$5
     );
-    static final FunctionDescriptor hb_font_get_glyph_kerning_for_direction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "g_dbus_error_set_dbus_error",
+        constants$42.const$1
     );
-    static final MethodHandle hb_font_get_glyph_kerning_for_direction$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_kerning_for_direction",
-        constants$872.hb_font_get_glyph_kerning_for_direction$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final FunctionDescriptor hb_font_get_glyph_extents_for_origin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_error_set_dbus_error_valist",
+        constants$872.const$3
     );
-    static final MethodHandle hb_font_get_glyph_extents_for_origin$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_extents_for_origin",
-        constants$872.hb_font_get_glyph_extents_for_origin$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_glyph_contour_point_for_origin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_glyph_contour_point_for_origin$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_contour_point_for_origin",
-        constants$872.hb_font_get_glyph_contour_point_for_origin$FUNC
-    );
-    static final FunctionDescriptor hb_font_glyph_to_string$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_font_glyph_to_string$MH = RuntimeHelper.downcallHandle(
-        "hb_font_glyph_to_string",
-        constants$872.hb_font_glyph_to_string$FUNC
-    );
-    static final FunctionDescriptor hb_font_glyph_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_glyph_from_string$MH = RuntimeHelper.downcallHandle(
-        "hb_font_glyph_from_string",
-        constants$872.hb_font_glyph_from_string$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_error_encode_gerror",
+        constants$5.const$2
     );
 }
 

@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GtkColorSelectionChangePaletteWithScreenFunc)(struct _GdkScreen* screen,struct _GdkColor* colors,int n_colors);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GtkColorSelectionChangePaletteWithScreenFunc {
 
     void apply(java.lang.foreign.MemorySegment screen, java.lang.foreign.MemorySegment colors, int n_colors);
-    static MemorySegment allocate(GtkColorSelectionChangePaletteWithScreenFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$1923.GtkColorSelectionChangePaletteWithScreenFunc_UP$MH, fi, constants$1923.GtkColorSelectionChangePaletteWithScreenFunc$FUNC, scope);
+    static MemorySegment allocate(GtkColorSelectionChangePaletteWithScreenFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$3276.const$2, fi, constants$164.const$5, scope);
     }
-    static GtkColorSelectionChangePaletteWithScreenFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GtkColorSelectionChangePaletteWithScreenFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _screen, java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
             try {
-                constants$1923.GtkColorSelectionChangePaletteWithScreenFunc_DOWN$MH.invokeExact(symbol, _screen, _colors, _n_colors);
+                constants$420.const$2.invokeExact(symbol, _screen, _colors, _n_colors);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

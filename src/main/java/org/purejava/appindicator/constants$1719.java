@@ -3,64 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1719 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1719() {}
-    static final FunctionDescriptor gtk_pad_controller_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_pad_controller_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_pad_controller_new",
-        constants$1719.gtk_pad_controller_new$FUNC
-    );
-    static final FunctionDescriptor gtk_pad_controller_set_action_entries$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_pad_controller_set_action_entries$MH = RuntimeHelper.downcallHandle(
-        "gtk_pad_controller_set_action_entries",
-        constants$1719.gtk_pad_controller_set_action_entries$FUNC
-    );
-    static final FunctionDescriptor gtk_pad_controller_set_action$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_pad_controller_set_action$MH = RuntimeHelper.downcallHandle(
-        "gtk_pad_controller_set_action",
-        constants$1719.gtk_pad_controller_set_action$FUNC
-    );
-    static final FunctionDescriptor gtk_paper_size_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_paper_size_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_type",
-        constants$1719.gtk_paper_size_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_paper_size_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_paper_size_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_new",
-        constants$1719.gtk_paper_size_new$FUNC
-    );
-    static final FunctionDescriptor gtk_paper_size_new_from_ppd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_paper_size_new_from_ppd$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_new_from_ppd",
-        constants$1719.gtk_paper_size_new_from_ppd$FUNC
-    );
+    static final VarHandle const$0 = constants$1718.const$4.varHandle(MemoryLayout.PathElement.groupElement("length"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_DOUBLE.withName("x"),
+        JAVA_DOUBLE.withName("y")
+    ).withName("");
+    static final VarHandle const$2 = constants$1719.const$1.varHandle(MemoryLayout.PathElement.groupElement("x"));
+    static final VarHandle const$3 = constants$1719.const$1.varHandle(MemoryLayout.PathElement.groupElement("y"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("status"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("data"),
+        JAVA_INT.withName("num_data"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("cairo_path");
+    static final VarHandle const$5 = constants$1719.const$4.varHandle(MemoryLayout.PathElement.groupElement("status"));
 }
 
 

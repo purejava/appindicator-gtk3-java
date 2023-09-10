@@ -3,52 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$486 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$486() {}
-    static final FunctionDescriptor g_app_launch_context_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$485.const$5.varHandle(MemoryLayout.PathElement.groupElement("dummy0"));
+    static final VarHandle const$1 = constants$485.const$5.varHandle(MemoryLayout.PathElement.groupElement("dummy1"));
+    static final VarHandle const$2 = constants$485.const$5.varHandle(MemoryLayout.PathElement.groupElement("dummy2"));
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final MethodHandle g_app_launch_context_get_display$MH = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_get_display",
-        constants$486.g_app_launch_context_get_display$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_uri_params_iter_init",
+        constants$486.const$3
     );
-    static final FunctionDescriptor g_app_launch_context_get_startup_notify_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_launch_context_get_startup_notify_id$MH = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_get_startup_notify_id",
-        constants$486.g_app_launch_context_get_startup_notify_id$FUNC
-    );
-    static final FunctionDescriptor g_app_launch_context_launch_failed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_launch_context_launch_failed$MH = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_launch_failed",
-        constants$486.g_app_launch_context_launch_failed$FUNC
-    );
-    static final FunctionDescriptor g_app_info_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_app_info_monitor_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_monitor_get_type",
-        constants$486.g_app_info_monitor_get_type$FUNC
-    );
-    static final FunctionDescriptor g_app_info_monitor_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_app_info_monitor_get$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_monitor_get",
-        constants$486.g_app_info_monitor_get$FUNC
-    );
-    static final FunctionDescriptor g_application_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_application_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_type",
-        constants$486.g_application_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_uri_params_iter_next",
+        constants$34.const$5
     );
 }
 

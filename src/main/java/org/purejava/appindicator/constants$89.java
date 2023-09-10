@@ -3,53 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$89 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$89() {}
-    static final FunctionDescriptor g_date_time_get_day_of_week$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final MethodHandle g_date_time_get_day_of_week$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_day_of_week",
-        constants$89.g_date_time_get_day_of_week$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "posix_memalign",
+        constants$89.const$0
     );
-    static final FunctionDescriptor g_date_time_get_day_of_year$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "aligned_alloc",
+        constants$87.const$5
     );
-    static final MethodHandle g_date_time_get_day_of_year$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_day_of_year",
-        constants$89.g_date_time_get_day_of_year$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "abort",
+        constants$7.const$5
     );
-    static final FunctionDescriptor g_date_time_get_hour$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_get_hour$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_hour",
-        constants$89.g_date_time_get_hour$FUNC
-    );
-    static final FunctionDescriptor g_date_time_get_minute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_get_minute$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_minute",
-        constants$89.g_date_time_get_minute$FUNC
-    );
-    static final FunctionDescriptor g_date_time_get_second$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_get_second$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_second",
-        constants$89.g_date_time_get_second$FUNC
-    );
-    static final FunctionDescriptor g_date_time_get_microsecond$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_get_microsecond$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_microsecond",
-        constants$89.g_date_time_get_microsecond$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(atexit$__func.class, "apply", constants$7.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atexit",
+        constants$10.const$5
     );
 }
 

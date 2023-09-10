@@ -3,59 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$985 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$985() {}
-    static final FunctionDescriptor fputc_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.set_attributes_from_info.class, "apply", constants$859.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$859.const$1
     );
-    static final MethodHandle fputc_unlocked$MH = RuntimeHelper.downcallHandle(
-        "fputc_unlocked",
-        constants$985.fputc_unlocked$FUNC
-    );
-    static final FunctionDescriptor putc_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle putc_unlocked$MH = RuntimeHelper.downcallHandle(
-        "putc_unlocked",
-        constants$985.putc_unlocked$FUNC
-    );
-    static final FunctionDescriptor putchar_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle putchar_unlocked$MH = RuntimeHelper.downcallHandle(
-        "putchar_unlocked",
-        constants$985.putchar_unlocked$FUNC
-    );
-    static final FunctionDescriptor getw$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle getw$MH = RuntimeHelper.downcallHandle(
-        "getw",
-        constants$985.getw$FUNC
-    );
-    static final FunctionDescriptor putw$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle putw$MH = RuntimeHelper.downcallHandle(
-        "putw",
-        constants$985.putw$FUNC
-    );
-    static final FunctionDescriptor fgets$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle fgets$MH = RuntimeHelper.downcallHandle(
-        "fgets",
-        constants$985.fgets$FUNC
-    );
+    static final VarHandle const$2 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("set_attributes_from_info"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.set_attributes_async.class, "apply", constants$780.const$3);
+    static final VarHandle const$4 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("set_attributes_async"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.set_attributes_finish.class, "apply", constants$34.const$5);
 }
 
 

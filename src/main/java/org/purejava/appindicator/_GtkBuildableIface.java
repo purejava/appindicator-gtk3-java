@@ -4,81 +4,50 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkBuildableIface {
- *     GTypeInterface g_iface;
- *     void (*set_name)(GtkBuildable*,const gchar*);
- *     const gchar* (*get_name)(GtkBuildable*);
- *     void (*add_child)(GtkBuildable*,GtkBuilder*,GObject*,const gchar*);
- *     void (*set_buildable_property)(GtkBuildable*,GtkBuilder*,const gchar*,const GValue*);
- *     GObject* (*construct_child)(GtkBuildable*,GtkBuilder*,const gchar*);
- *     gboolean (*custom_tag_start)(GtkBuildable*,GtkBuilder*,GObject*,const gchar*,GMarkupParser*,gpointer*);
- *     void (*custom_tag_end)(GtkBuildable*,GtkBuilder*,GObject*,const gchar*,gpointer*);
- *     void (*custom_finished)(GtkBuildable*,GtkBuilder*,GObject*,const gchar*,gpointer);
- *     void (*parser_finished)(GtkBuildable*,GtkBuilder*);
- *     GObject* (*get_internal_child)(GtkBuildable*,GtkBuilder*,const gchar*);
+ *     struct _GTypeInterface g_iface;
+ *     void (*set_name)(struct _GtkBuildable*,char*);
+ *     char* (*get_name)(struct _GtkBuildable*);
+ *     void (*add_child)(struct _GtkBuildable*,struct _GtkBuilder*,struct _GObject*,char*);
+ *     void (*set_buildable_property)(struct _GtkBuildable*,struct _GtkBuilder*,char*,struct _GValue*);
+ *     struct _GObject* (*construct_child)(struct _GtkBuildable*,struct _GtkBuilder*,char*);
+ *     int (*custom_tag_start)(struct _GtkBuildable*,struct _GtkBuilder*,struct _GObject*,char*,struct _GMarkupParser*,void**);
+ *     void (*custom_tag_end)(struct _GtkBuildable*,struct _GtkBuilder*,struct _GObject*,char*,void**);
+ *     void (*custom_finished)(struct _GtkBuildable*,struct _GtkBuilder*,struct _GObject*,char*,void*);
+ *     void (*parser_finished)(struct _GtkBuildable*,struct _GtkBuilder*);
+ *     struct _GObject* (*get_internal_child)(struct _GtkBuildable*,struct _GtkBuilder*,char*);
  * };
  * }
  */
 public class _GtkBuildableIface {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
-        ).withName("g_iface"),
-        Constants$root.C_POINTER$LAYOUT.withName("set_name"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_name"),
-        Constants$root.C_POINTER$LAYOUT.withName("add_child"),
-        Constants$root.C_POINTER$LAYOUT.withName("set_buildable_property"),
-        Constants$root.C_POINTER$LAYOUT.withName("construct_child"),
-        Constants$root.C_POINTER$LAYOUT.withName("custom_tag_start"),
-        Constants$root.C_POINTER$LAYOUT.withName("custom_tag_end"),
-        Constants$root.C_POINTER$LAYOUT.withName("custom_finished"),
-        Constants$root.C_POINTER$LAYOUT.withName("parser_finished"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_internal_child")
-    ).withName("_GtkBuildableIface");
     public static MemoryLayout $LAYOUT() {
-        return _GtkBuildableIface.$struct$LAYOUT;
+        return constants$2543.const$4;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
-    static final FunctionDescriptor set_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor set_name_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle set_name_UP$MH = RuntimeHelper.upcallHandle(set_name.class, "apply", _GtkBuildableIface.set_name_UP$FUNC);
-    static final FunctionDescriptor set_name_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle set_name_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkBuildableIface.set_name_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*set_name)(GtkBuildable*,const gchar*);
+ * void (*set_name)(struct _GtkBuildable*,char*);
      * }
      */
     public interface set_name {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(set_name fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkBuildableIface.set_name_UP$MH, fi, _GtkBuildableIface.set_name$FUNC, scope);
+        static MemorySegment allocate(set_name fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2543.const$5, fi, constants$13.const$4, scope);
         }
-        static set_name ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static set_name ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkBuildableIface.set_name_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -86,66 +55,52 @@ public class _GtkBuildableIface {
         }
     }
 
-    static final VarHandle set_name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("set_name"));
     public static VarHandle set_name$VH() {
-        return _GtkBuildableIface.set_name$VH;
+        return constants$2544.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*set_name)(GtkBuildable*,const gchar*);
+     * void (*set_name)(struct _GtkBuildable*,char*);
      * }
      */
     public static MemorySegment set_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.set_name$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2544.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*set_name)(GtkBuildable*,const gchar*);
+     * void (*set_name)(struct _GtkBuildable*,char*);
      * }
      */
     public static void set_name$set(MemorySegment seg, MemorySegment x) {
-        _GtkBuildableIface.set_name$VH.set(seg, x);
+        constants$2544.const$0.set(seg, x);
     }
     public static MemorySegment set_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.set_name$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2544.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void set_name$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkBuildableIface.set_name$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2544.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_name set_name(MemorySegment segment, SegmentScope scope) {
+    public static set_name set_name(MemorySegment segment, Arena scope) {
         return set_name.ofAddress(set_name$get(segment), scope);
     }
-    static final FunctionDescriptor get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_name_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_name_UP$MH = RuntimeHelper.upcallHandle(get_name.class, "apply", _GtkBuildableIface.get_name_UP$FUNC);
-    static final FunctionDescriptor get_name_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_name_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkBuildableIface.get_name_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * const gchar* (*get_name)(GtkBuildable*);
+ * char* (*get_name)(struct _GtkBuildable*);
      * }
      */
     public interface get_name {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_name fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkBuildableIface.get_name_UP$MH, fi, _GtkBuildableIface.get_name$FUNC, scope);
+        static MemorySegment allocate(get_name fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2544.const$1, fi, constants$5.const$2, scope);
         }
-        static get_name ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_name ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GtkBuildableIface.get_name_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -153,75 +108,52 @@ public class _GtkBuildableIface {
         }
     }
 
-    static final VarHandle get_name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_name"));
     public static VarHandle get_name$VH() {
-        return _GtkBuildableIface.get_name$VH;
+        return constants$2544.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const gchar* (*get_name)(GtkBuildable*);
+     * char* (*get_name)(struct _GtkBuildable*);
      * }
      */
     public static MemorySegment get_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.get_name$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2544.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const gchar* (*get_name)(GtkBuildable*);
+     * char* (*get_name)(struct _GtkBuildable*);
      * }
      */
     public static void get_name$set(MemorySegment seg, MemorySegment x) {
-        _GtkBuildableIface.get_name$VH.set(seg, x);
+        constants$2544.const$2.set(seg, x);
     }
     public static MemorySegment get_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.get_name$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2544.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_name$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkBuildableIface.get_name$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2544.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_name get_name(MemorySegment segment, SegmentScope scope) {
+    public static get_name get_name(MemorySegment segment, Arena scope) {
         return get_name.ofAddress(get_name$get(segment), scope);
     }
-    static final FunctionDescriptor add_child$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor add_child_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle add_child_UP$MH = RuntimeHelper.upcallHandle(add_child.class, "apply", _GtkBuildableIface.add_child_UP$FUNC);
-    static final FunctionDescriptor add_child_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle add_child_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkBuildableIface.add_child_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*add_child)(GtkBuildable*,GtkBuilder*,GObject*,const gchar*);
+ * void (*add_child)(struct _GtkBuildable*,struct _GtkBuilder*,struct _GObject*,char*);
      * }
      */
     public interface add_child {
 
         void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(add_child fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkBuildableIface.add_child_UP$MH, fi, _GtkBuildableIface.add_child$FUNC, scope);
+        static MemorySegment allocate(add_child fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2544.const$3, fi, constants$42.const$1, scope);
         }
-        static add_child ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static add_child ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkBuildableIface.add_child_DOWN$MH.invokeExact(symbol, _model, _path, _iter, _data);
+                    constants$259.const$4.invokeExact(symbol, _model, _path, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -229,75 +161,52 @@ public class _GtkBuildableIface {
         }
     }
 
-    static final VarHandle add_child$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("add_child"));
     public static VarHandle add_child$VH() {
-        return _GtkBuildableIface.add_child$VH;
+        return constants$2544.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*add_child)(GtkBuildable*,GtkBuilder*,GObject*,const gchar*);
+     * void (*add_child)(struct _GtkBuildable*,struct _GtkBuilder*,struct _GObject*,char*);
      * }
      */
     public static MemorySegment add_child$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.add_child$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2544.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*add_child)(GtkBuildable*,GtkBuilder*,GObject*,const gchar*);
+     * void (*add_child)(struct _GtkBuildable*,struct _GtkBuilder*,struct _GObject*,char*);
      * }
      */
     public static void add_child$set(MemorySegment seg, MemorySegment x) {
-        _GtkBuildableIface.add_child$VH.set(seg, x);
+        constants$2544.const$4.set(seg, x);
     }
     public static MemorySegment add_child$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.add_child$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2544.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void add_child$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkBuildableIface.add_child$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2544.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static add_child add_child(MemorySegment segment, SegmentScope scope) {
+    public static add_child add_child(MemorySegment segment, Arena scope) {
         return add_child.ofAddress(add_child$get(segment), scope);
     }
-    static final FunctionDescriptor set_buildable_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor set_buildable_property_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle set_buildable_property_UP$MH = RuntimeHelper.upcallHandle(set_buildable_property.class, "apply", _GtkBuildableIface.set_buildable_property_UP$FUNC);
-    static final FunctionDescriptor set_buildable_property_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle set_buildable_property_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkBuildableIface.set_buildable_property_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*set_buildable_property)(GtkBuildable*,GtkBuilder*,const gchar*,const GValue*);
+ * void (*set_buildable_property)(struct _GtkBuildable*,struct _GtkBuilder*,char*,struct _GValue*);
      * }
      */
     public interface set_buildable_property {
 
         void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(set_buildable_property fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkBuildableIface.set_buildable_property_UP$MH, fi, _GtkBuildableIface.set_buildable_property$FUNC, scope);
+        static MemorySegment allocate(set_buildable_property fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2544.const$5, fi, constants$42.const$1, scope);
         }
-        static set_buildable_property ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static set_buildable_property ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkBuildableIface.set_buildable_property_DOWN$MH.invokeExact(symbol, _model, _path, _iter, _data);
+                    constants$259.const$4.invokeExact(symbol, _model, _path, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -305,72 +214,52 @@ public class _GtkBuildableIface {
         }
     }
 
-    static final VarHandle set_buildable_property$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("set_buildable_property"));
     public static VarHandle set_buildable_property$VH() {
-        return _GtkBuildableIface.set_buildable_property$VH;
+        return constants$2545.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*set_buildable_property)(GtkBuildable*,GtkBuilder*,const gchar*,const GValue*);
+     * void (*set_buildable_property)(struct _GtkBuildable*,struct _GtkBuilder*,char*,struct _GValue*);
      * }
      */
     public static MemorySegment set_buildable_property$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.set_buildable_property$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2545.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*set_buildable_property)(GtkBuildable*,GtkBuilder*,const gchar*,const GValue*);
+     * void (*set_buildable_property)(struct _GtkBuildable*,struct _GtkBuilder*,char*,struct _GValue*);
      * }
      */
     public static void set_buildable_property$set(MemorySegment seg, MemorySegment x) {
-        _GtkBuildableIface.set_buildable_property$VH.set(seg, x);
+        constants$2545.const$0.set(seg, x);
     }
     public static MemorySegment set_buildable_property$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.set_buildable_property$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2545.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void set_buildable_property$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkBuildableIface.set_buildable_property$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2545.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_buildable_property set_buildable_property(MemorySegment segment, SegmentScope scope) {
+    public static set_buildable_property set_buildable_property(MemorySegment segment, Arena scope) {
         return set_buildable_property.ofAddress(set_buildable_property$get(segment), scope);
     }
-    static final FunctionDescriptor construct_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor construct_child_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle construct_child_UP$MH = RuntimeHelper.upcallHandle(construct_child.class, "apply", _GtkBuildableIface.construct_child_UP$FUNC);
-    static final FunctionDescriptor construct_child_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle construct_child_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkBuildableIface.construct_child_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GObject* (*construct_child)(GtkBuildable*,GtkBuilder*,const gchar*);
+ * struct _GObject* (*construct_child)(struct _GtkBuildable*,struct _GtkBuilder*,char*);
      * }
      */
     public interface construct_child {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(construct_child fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkBuildableIface.construct_child_UP$MH, fi, _GtkBuildableIface.construct_child$FUNC, scope);
+        static MemorySegment allocate(construct_child fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2545.const$1, fi, constants$23.const$0, scope);
         }
-        static construct_child ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static construct_child ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GtkBuildableIface.construct_child_DOWN$MH.invokeExact(symbol, _vfs, _identifier, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -378,81 +267,52 @@ public class _GtkBuildableIface {
         }
     }
 
-    static final VarHandle construct_child$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("construct_child"));
     public static VarHandle construct_child$VH() {
-        return _GtkBuildableIface.construct_child$VH;
+        return constants$2545.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GObject* (*construct_child)(GtkBuildable*,GtkBuilder*,const gchar*);
+     * struct _GObject* (*construct_child)(struct _GtkBuildable*,struct _GtkBuilder*,char*);
      * }
      */
     public static MemorySegment construct_child$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.construct_child$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2545.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GObject* (*construct_child)(GtkBuildable*,GtkBuilder*,const gchar*);
+     * struct _GObject* (*construct_child)(struct _GtkBuildable*,struct _GtkBuilder*,char*);
      * }
      */
     public static void construct_child$set(MemorySegment seg, MemorySegment x) {
-        _GtkBuildableIface.construct_child$VH.set(seg, x);
+        constants$2545.const$2.set(seg, x);
     }
     public static MemorySegment construct_child$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.construct_child$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2545.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void construct_child$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkBuildableIface.construct_child$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2545.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static construct_child construct_child(MemorySegment segment, SegmentScope scope) {
+    public static construct_child construct_child(MemorySegment segment, Arena scope) {
         return construct_child.ofAddress(construct_child$get(segment), scope);
     }
-    static final FunctionDescriptor custom_tag_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor custom_tag_start_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle custom_tag_start_UP$MH = RuntimeHelper.upcallHandle(custom_tag_start.class, "apply", _GtkBuildableIface.custom_tag_start_UP$FUNC);
-    static final FunctionDescriptor custom_tag_start_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle custom_tag_start_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkBuildableIface.custom_tag_start_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*custom_tag_start)(GtkBuildable*,GtkBuilder*,GObject*,const gchar*,GMarkupParser*,gpointer*);
+ * int (*custom_tag_start)(struct _GtkBuildable*,struct _GtkBuilder*,struct _GObject*,char*,struct _GMarkupParser*,void**);
      * }
      */
     public interface custom_tag_start {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
-        static MemorySegment allocate(custom_tag_start fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkBuildableIface.custom_tag_start_UP$MH, fi, _GtkBuildableIface.custom_tag_start$FUNC, scope);
+        static MemorySegment allocate(custom_tag_start fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2545.const$3, fi, constants$638.const$1, scope);
         }
-        static custom_tag_start ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static custom_tag_start ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    return (int)_GtkBuildableIface.custom_tag_start_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    return (int)constants$1009.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -460,78 +320,52 @@ public class _GtkBuildableIface {
         }
     }
 
-    static final VarHandle custom_tag_start$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("custom_tag_start"));
     public static VarHandle custom_tag_start$VH() {
-        return _GtkBuildableIface.custom_tag_start$VH;
+        return constants$2545.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*custom_tag_start)(GtkBuildable*,GtkBuilder*,GObject*,const gchar*,GMarkupParser*,gpointer*);
+     * int (*custom_tag_start)(struct _GtkBuildable*,struct _GtkBuilder*,struct _GObject*,char*,struct _GMarkupParser*,void**);
      * }
      */
     public static MemorySegment custom_tag_start$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.custom_tag_start$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2545.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*custom_tag_start)(GtkBuildable*,GtkBuilder*,GObject*,const gchar*,GMarkupParser*,gpointer*);
+     * int (*custom_tag_start)(struct _GtkBuildable*,struct _GtkBuilder*,struct _GObject*,char*,struct _GMarkupParser*,void**);
      * }
      */
     public static void custom_tag_start$set(MemorySegment seg, MemorySegment x) {
-        _GtkBuildableIface.custom_tag_start$VH.set(seg, x);
+        constants$2545.const$4.set(seg, x);
     }
     public static MemorySegment custom_tag_start$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.custom_tag_start$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2545.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void custom_tag_start$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkBuildableIface.custom_tag_start$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2545.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static custom_tag_start custom_tag_start(MemorySegment segment, SegmentScope scope) {
+    public static custom_tag_start custom_tag_start(MemorySegment segment, Arena scope) {
         return custom_tag_start.ofAddress(custom_tag_start$get(segment), scope);
     }
-    static final FunctionDescriptor custom_tag_end$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor custom_tag_end_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle custom_tag_end_UP$MH = RuntimeHelper.upcallHandle(custom_tag_end.class, "apply", _GtkBuildableIface.custom_tag_end_UP$FUNC);
-    static final FunctionDescriptor custom_tag_end_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle custom_tag_end_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkBuildableIface.custom_tag_end_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*custom_tag_end)(GtkBuildable*,GtkBuilder*,GObject*,const gchar*,gpointer*);
+ * void (*custom_tag_end)(struct _GtkBuildable*,struct _GtkBuilder*,struct _GObject*,char*,void**);
      * }
      */
     public interface custom_tag_end {
 
         void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(custom_tag_end fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkBuildableIface.custom_tag_end_UP$MH, fi, _GtkBuildableIface.custom_tag_end$FUNC, scope);
+        static MemorySegment allocate(custom_tag_end fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2545.const$5, fi, constants$331.const$1, scope);
         }
-        static custom_tag_end ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static custom_tag_end ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkBuildableIface.custom_tag_end_DOWN$MH.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
+                    constants$916.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -539,78 +373,52 @@ public class _GtkBuildableIface {
         }
     }
 
-    static final VarHandle custom_tag_end$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("custom_tag_end"));
     public static VarHandle custom_tag_end$VH() {
-        return _GtkBuildableIface.custom_tag_end$VH;
+        return constants$2546.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*custom_tag_end)(GtkBuildable*,GtkBuilder*,GObject*,const gchar*,gpointer*);
+     * void (*custom_tag_end)(struct _GtkBuildable*,struct _GtkBuilder*,struct _GObject*,char*,void**);
      * }
      */
     public static MemorySegment custom_tag_end$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.custom_tag_end$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2546.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*custom_tag_end)(GtkBuildable*,GtkBuilder*,GObject*,const gchar*,gpointer*);
+     * void (*custom_tag_end)(struct _GtkBuildable*,struct _GtkBuilder*,struct _GObject*,char*,void**);
      * }
      */
     public static void custom_tag_end$set(MemorySegment seg, MemorySegment x) {
-        _GtkBuildableIface.custom_tag_end$VH.set(seg, x);
+        constants$2546.const$0.set(seg, x);
     }
     public static MemorySegment custom_tag_end$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.custom_tag_end$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2546.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void custom_tag_end$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkBuildableIface.custom_tag_end$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2546.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static custom_tag_end custom_tag_end(MemorySegment segment, SegmentScope scope) {
+    public static custom_tag_end custom_tag_end(MemorySegment segment, Arena scope) {
         return custom_tag_end.ofAddress(custom_tag_end$get(segment), scope);
     }
-    static final FunctionDescriptor custom_finished$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor custom_finished_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle custom_finished_UP$MH = RuntimeHelper.upcallHandle(custom_finished.class, "apply", _GtkBuildableIface.custom_finished_UP$FUNC);
-    static final FunctionDescriptor custom_finished_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle custom_finished_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkBuildableIface.custom_finished_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*custom_finished)(GtkBuildable*,GtkBuilder*,GObject*,const gchar*,gpointer);
+ * void (*custom_finished)(struct _GtkBuildable*,struct _GtkBuilder*,struct _GObject*,char*,void*);
      * }
      */
     public interface custom_finished {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(custom_finished fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkBuildableIface.custom_finished_UP$MH, fi, _GtkBuildableIface.custom_finished$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(custom_finished fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2546.const$1, fi, constants$331.const$1, scope);
         }
-        static custom_finished ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
+        static custom_finished ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkBuildableIface.custom_finished_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$916.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -618,69 +426,52 @@ public class _GtkBuildableIface {
         }
     }
 
-    static final VarHandle custom_finished$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("custom_finished"));
     public static VarHandle custom_finished$VH() {
-        return _GtkBuildableIface.custom_finished$VH;
+        return constants$2546.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*custom_finished)(GtkBuildable*,GtkBuilder*,GObject*,const gchar*,gpointer);
+     * void (*custom_finished)(struct _GtkBuildable*,struct _GtkBuilder*,struct _GObject*,char*,void*);
      * }
      */
     public static MemorySegment custom_finished$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.custom_finished$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2546.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*custom_finished)(GtkBuildable*,GtkBuilder*,GObject*,const gchar*,gpointer);
+     * void (*custom_finished)(struct _GtkBuildable*,struct _GtkBuilder*,struct _GObject*,char*,void*);
      * }
      */
     public static void custom_finished$set(MemorySegment seg, MemorySegment x) {
-        _GtkBuildableIface.custom_finished$VH.set(seg, x);
+        constants$2546.const$2.set(seg, x);
     }
     public static MemorySegment custom_finished$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.custom_finished$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2546.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void custom_finished$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkBuildableIface.custom_finished$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2546.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static custom_finished custom_finished(MemorySegment segment, SegmentScope scope) {
+    public static custom_finished custom_finished(MemorySegment segment, Arena scope) {
         return custom_finished.ofAddress(custom_finished$get(segment), scope);
     }
-    static final FunctionDescriptor parser_finished$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor parser_finished_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle parser_finished_UP$MH = RuntimeHelper.upcallHandle(parser_finished.class, "apply", _GtkBuildableIface.parser_finished_UP$FUNC);
-    static final FunctionDescriptor parser_finished_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle parser_finished_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkBuildableIface.parser_finished_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*parser_finished)(GtkBuildable*,GtkBuilder*);
+ * void (*parser_finished)(struct _GtkBuildable*,struct _GtkBuilder*);
      * }
      */
     public interface parser_finished {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(parser_finished fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkBuildableIface.parser_finished_UP$MH, fi, _GtkBuildableIface.parser_finished$FUNC, scope);
+        static MemorySegment allocate(parser_finished fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2546.const$3, fi, constants$13.const$4, scope);
         }
-        static parser_finished ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static parser_finished ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkBuildableIface.parser_finished_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -688,72 +479,52 @@ public class _GtkBuildableIface {
         }
     }
 
-    static final VarHandle parser_finished$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("parser_finished"));
     public static VarHandle parser_finished$VH() {
-        return _GtkBuildableIface.parser_finished$VH;
+        return constants$2546.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*parser_finished)(GtkBuildable*,GtkBuilder*);
+     * void (*parser_finished)(struct _GtkBuildable*,struct _GtkBuilder*);
      * }
      */
     public static MemorySegment parser_finished$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.parser_finished$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2546.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*parser_finished)(GtkBuildable*,GtkBuilder*);
+     * void (*parser_finished)(struct _GtkBuildable*,struct _GtkBuilder*);
      * }
      */
     public static void parser_finished$set(MemorySegment seg, MemorySegment x) {
-        _GtkBuildableIface.parser_finished$VH.set(seg, x);
+        constants$2546.const$4.set(seg, x);
     }
     public static MemorySegment parser_finished$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.parser_finished$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2546.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void parser_finished$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkBuildableIface.parser_finished$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2546.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static parser_finished parser_finished(MemorySegment segment, SegmentScope scope) {
+    public static parser_finished parser_finished(MemorySegment segment, Arena scope) {
         return parser_finished.ofAddress(parser_finished$get(segment), scope);
     }
-    static final FunctionDescriptor get_internal_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_internal_child_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_internal_child_UP$MH = RuntimeHelper.upcallHandle(get_internal_child.class, "apply", _GtkBuildableIface.get_internal_child_UP$FUNC);
-    static final FunctionDescriptor get_internal_child_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_internal_child_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkBuildableIface.get_internal_child_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GObject* (*get_internal_child)(GtkBuildable*,GtkBuilder*,const gchar*);
+ * struct _GObject* (*get_internal_child)(struct _GtkBuildable*,struct _GtkBuilder*,char*);
      * }
      */
     public interface get_internal_child {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_internal_child fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkBuildableIface.get_internal_child_UP$MH, fi, _GtkBuildableIface.get_internal_child$FUNC, scope);
+        static MemorySegment allocate(get_internal_child fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2546.const$5, fi, constants$23.const$0, scope);
         }
-        static get_internal_child ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_internal_child ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GtkBuildableIface.get_internal_child_DOWN$MH.invokeExact(symbol, _vfs, _identifier, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -761,35 +532,34 @@ public class _GtkBuildableIface {
         }
     }
 
-    static final VarHandle get_internal_child$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_internal_child"));
     public static VarHandle get_internal_child$VH() {
-        return _GtkBuildableIface.get_internal_child$VH;
+        return constants$2547.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GObject* (*get_internal_child)(GtkBuildable*,GtkBuilder*,const gchar*);
+     * struct _GObject* (*get_internal_child)(struct _GtkBuildable*,struct _GtkBuilder*,char*);
      * }
      */
     public static MemorySegment get_internal_child$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.get_internal_child$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2547.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GObject* (*get_internal_child)(GtkBuildable*,GtkBuilder*,const gchar*);
+     * struct _GObject* (*get_internal_child)(struct _GtkBuildable*,struct _GtkBuilder*,char*);
      * }
      */
     public static void get_internal_child$set(MemorySegment seg, MemorySegment x) {
-        _GtkBuildableIface.get_internal_child$VH.set(seg, x);
+        constants$2547.const$0.set(seg, x);
     }
     public static MemorySegment get_internal_child$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkBuildableIface.get_internal_child$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2547.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_internal_child$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkBuildableIface.get_internal_child$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2547.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_internal_child get_internal_child(MemorySegment segment, SegmentScope scope) {
+    public static get_internal_child get_internal_child(MemorySegment segment, Arena scope) {
         return get_internal_child.ofAddress(get_internal_child$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -797,7 +567,7 @@ public class _GtkBuildableIface {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

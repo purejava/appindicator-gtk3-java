@@ -3,51 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$800 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$800() {}
-    static final FunctionDescriptor g_test_dbus_unset$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_test_dbus_unset$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_unset",
-        constants$800.g_test_dbus_unset$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_cancellable_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor g_themed_icon_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_themed_icon_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_themed_icon_get_type",
-        constants$800.g_themed_icon_get_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_cancellable_new",
+        constants$35.const$2
     );
-    static final FunctionDescriptor g_themed_icon_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_cancellable_is_cancelled",
+        constants$10.const$5
     );
-    static final MethodHandle g_themed_icon_new$MH = RuntimeHelper.downcallHandle(
-        "g_themed_icon_new",
-        constants$800.g_themed_icon_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_cancellable_set_error_if_cancelled",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_themed_icon_new_with_default_fallbacks$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_cancellable_get_fd",
+        constants$10.const$5
     );
-    static final MethodHandle g_themed_icon_new_with_default_fallbacks$MH = RuntimeHelper.downcallHandle(
-        "g_themed_icon_new_with_default_fallbacks",
-        constants$800.g_themed_icon_new_with_default_fallbacks$FUNC
-    );
-    static final FunctionDescriptor g_themed_icon_new_from_names$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_themed_icon_new_from_names$MH = RuntimeHelper.downcallHandle(
-        "g_themed_icon_new_from_names",
-        constants$800.g_themed_icon_new_from_names$FUNC
-    );
-    static final FunctionDescriptor g_themed_icon_prepend_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_themed_icon_prepend_name$MH = RuntimeHelper.downcallHandle(
-        "g_themed_icon_prepend_name",
-        constants$800.g_themed_icon_prepend_name$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_cancellable_make_pollfd",
+        constants$9.const$0
     );
 }
 

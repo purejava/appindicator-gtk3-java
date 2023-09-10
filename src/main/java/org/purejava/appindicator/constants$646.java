@@ -3,59 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$646 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$646() {}
-    static final FunctionDescriptor g_file_info_set_attribute_int64$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_binding_group_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_file_info_set_attribute_int64$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_int64",
-        constants$646.g_file_info_set_attribute_int64$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_binding_group_new",
+        constants$35.const$2
     );
-    static final FunctionDescriptor g_file_info_set_attribute_object$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_binding_group_dup_source",
+        constants$5.const$2
     );
-    static final MethodHandle g_file_info_set_attribute_object$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_object",
-        constants$646.g_file_info_set_attribute_object$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_binding_group_set_source",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_file_info_set_attribute_stringv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final MethodHandle g_file_info_set_attribute_stringv$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_stringv",
-        constants$646.g_file_info_set_attribute_stringv$FUNC
-    );
-    static final FunctionDescriptor g_file_info_clear_status$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_clear_status$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_clear_status",
-        constants$646.g_file_info_clear_status$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_deletion_date$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_deletion_date$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_deletion_date",
-        constants$646.g_file_info_get_deletion_date$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_file_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_file_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_file_type",
-        constants$646.g_file_info_get_file_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_binding_group_bind",
+        constants$646.const$4
     );
 }
 

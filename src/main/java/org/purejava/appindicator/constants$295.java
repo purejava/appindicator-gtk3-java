@@ -3,61 +3,41 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$295 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$295() {}
-    static final FunctionDescriptor g_match_info_fetch_named_pos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_BYTE,
+        JAVA_BYTE
     );
-    static final MethodHandle g_match_info_fetch_named_pos$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_fetch_named_pos",
-        constants$295.g_match_info_fetch_named_pos$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_ascii_tolower",
+        constants$295.const$0
     );
-    static final FunctionDescriptor g_match_info_fetch_all$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_ascii_toupper",
+        constants$295.const$0
     );
-    static final MethodHandle g_match_info_fetch_all$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_fetch_all",
-        constants$295.g_match_info_fetch_all$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_ascii_digit_value",
+        constants$184.const$4
     );
-    static final FunctionDescriptor GScannerMsgFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_ascii_xdigit_value",
+        constants$184.const$4
     );
-    static final FunctionDescriptor GScannerMsgFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_BYTE
     );
-    static final MethodHandle GScannerMsgFunc_UP$MH = RuntimeHelper.upcallHandle(GScannerMsgFunc.class, "apply", constants$295.GScannerMsgFunc_UP$FUNC);
-    static final FunctionDescriptor GScannerMsgFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle GScannerMsgFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$295.GScannerMsgFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_scanner_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_scanner_new$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_new",
-        constants$295.g_scanner_new$FUNC
-    );
-    static final FunctionDescriptor g_scanner_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_scanner_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_destroy",
-        constants$295.g_scanner_destroy$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_strdelimit",
+        constants$295.const$5
     );
 }
 

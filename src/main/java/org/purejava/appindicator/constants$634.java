@@ -3,71 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$634 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$634() {}
-    static final FunctionDescriptor g_file_stop_mountable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_object_remove_weak_pointer",
+        constants$13.const$4
     );
-    static final MethodHandle g_file_stop_mountable$MH = RuntimeHelper.downcallHandle(
-        "g_file_stop_mountable",
-        constants$634.g_file_stop_mountable$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GToggleNotify.class, "apply", constants$164.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_object_add_toggle_ref$notify.class, "apply", constants$164.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_object_add_toggle_ref",
+        constants$14.const$3
     );
-    static final FunctionDescriptor g_file_stop_mountable_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_stop_mountable_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_stop_mountable_finish",
-        constants$634.g_file_stop_mountable_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_poll_mountable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_poll_mountable$MH = RuntimeHelper.downcallHandle(
-        "g_file_poll_mountable",
-        constants$634.g_file_poll_mountable$FUNC
-    );
-    static final FunctionDescriptor g_file_poll_mountable_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_poll_mountable_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_poll_mountable_finish",
-        constants$634.g_file_poll_mountable_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_query_default_handler$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_default_handler$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_default_handler",
-        constants$634.g_file_query_default_handler$FUNC
-    );
-    static final FunctionDescriptor g_file_query_default_handler_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_default_handler_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_default_handler_async",
-        constants$634.g_file_query_default_handler_async$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_object_remove_toggle_ref$notify.class, "apply", constants$164.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_object_remove_toggle_ref",
+        constants$14.const$3
     );
 }
 

@@ -3,55 +3,47 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$756 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$756() {}
-    static final FunctionDescriptor g_simple_async_result_get_op_res_gboolean$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_async_initable_newv_async$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_simple_async_result_get_op_res_gboolean$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_get_op_res_gboolean",
-        constants$756.g_simple_async_result_get_op_res_gboolean$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_async_initable_newv_async",
+        constants$756.const$1
     );
-    static final FunctionDescriptor g_simple_async_result_set_check_cancellable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_async_initable_new_valist_async$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list"),
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_simple_async_result_set_check_cancellable$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_set_check_cancellable",
-        constants$756.g_simple_async_result_set_check_cancellable$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_get_source_tag$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_get_source_tag$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_get_source_tag",
-        constants$756.g_simple_async_result_get_source_tag$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_set_handle_cancellation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_set_handle_cancellation$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_set_handle_cancellation",
-        constants$756.g_simple_async_result_set_handle_cancellation$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_complete$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_complete$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_complete",
-        constants$756.g_simple_async_result_complete$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_complete_in_idle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_complete_in_idle$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_complete_in_idle",
-        constants$756.g_simple_async_result_complete_in_idle$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_async_initable_new_valist_async",
+        constants$756.const$4
     );
 }
 

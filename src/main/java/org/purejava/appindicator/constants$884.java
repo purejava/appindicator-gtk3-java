@@ -3,57 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$884 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$884() {}
-    static final FunctionDescriptor hb_buffer_clear_contents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_clear_contents$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_clear_contents",
-        constants$884.hb_buffer_clear_contents$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_pre_allocate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_pre_allocate$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_pre_allocate",
-        constants$884.hb_buffer_pre_allocate$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_allocation_successful$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_allocation_successful$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_allocation_successful",
-        constants$884.hb_buffer_allocation_successful$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_reverse$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_reverse$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_reverse",
-        constants$884.hb_buffer_reverse$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_reverse_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_reverse_range$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_reverse_range",
-        constants$884.hb_buffer_reverse_range$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_reverse_clusters$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_reverse_clusters$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_reverse_clusters",
-        constants$884.hb_buffer_reverse_clusters$FUNC
-    );
+    static final VarHandle const$0 = constants$883.const$2.varHandle(MemoryLayout.PathElement.groupElement("flags"));
+    static final VarHandle const$1 = constants$883.const$2.varHandle(MemoryLayout.PathElement.groupElement("annotations"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("ref_count"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("name"),
+        RuntimeHelper.POINTER.withName("methods"),
+        RuntimeHelper.POINTER.withName("signals"),
+        RuntimeHelper.POINTER.withName("properties"),
+        RuntimeHelper.POINTER.withName("annotations")
+    ).withName("_GDBusInterfaceInfo");
+    static final VarHandle const$3 = constants$884.const$2.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
+    static final VarHandle const$4 = constants$884.const$2.varHandle(MemoryLayout.PathElement.groupElement("name"));
+    static final VarHandle const$5 = constants$884.const$2.varHandle(MemoryLayout.PathElement.groupElement("methods"));
 }
 
 

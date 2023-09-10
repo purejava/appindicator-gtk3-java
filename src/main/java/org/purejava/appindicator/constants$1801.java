@@ -3,57 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1801 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1801() {}
-    static final FunctionDescriptor gtk_scrolled_window_get_kinetic_scrolling$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_kinetic_scrolling$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_kinetic_scrolling",
-        constants$1801.gtk_scrolled_window_get_kinetic_scrolling$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_set_capture_button_press$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_capture_button_press$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_capture_button_press",
-        constants$1801.gtk_scrolled_window_set_capture_button_press$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_get_capture_button_press$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_capture_button_press$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_capture_button_press",
-        constants$1801.gtk_scrolled_window_get_capture_button_press$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_set_overlay_scrolling$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_overlay_scrolling$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_overlay_scrolling",
-        constants$1801.gtk_scrolled_window_set_overlay_scrolling$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_get_overlay_scrolling$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_overlay_scrolling$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_overlay_scrolling",
-        constants$1801.gtk_scrolled_window_get_overlay_scrolling$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_set_max_content_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_max_content_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_max_content_width",
-        constants$1801.gtk_scrolled_window_set_max_content_width$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        MemoryLayout.paddingLayout(3),
+        JAVA_INT.withName("time"),
+        JAVA_INT.withName("group"),
+        JAVA_INT.withName("index"),
+        JAVA_INT.withName("mode"),
+        MemoryLayout.paddingLayout(4),
+        JAVA_DOUBLE.withName("value")
+    ).withName("_GdkEventPadAxis");
+    static final VarHandle const$1 = constants$1801.const$0.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$2 = constants$1801.const$0.varHandle(MemoryLayout.PathElement.groupElement("window"));
+    static final VarHandle const$3 = constants$1801.const$0.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
+    static final VarHandle const$4 = constants$1801.const$0.varHandle(MemoryLayout.PathElement.groupElement("time"));
+    static final VarHandle const$5 = constants$1801.const$0.varHandle(MemoryLayout.PathElement.groupElement("group"));
 }
 
 

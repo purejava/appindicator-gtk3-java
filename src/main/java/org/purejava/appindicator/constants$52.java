@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$52 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$52() {}
-    static final FunctionDescriptor malloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_atomic_int_exchange_and_add",
+        constants$11.const$4
     );
-    static final MethodHandle malloc$MH = RuntimeHelper.downcallHandle(
-        "malloc",
-        constants$52.malloc$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_quark_try_string",
+        constants$10.const$5
     );
-    static final FunctionDescriptor calloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_quark_from_static_string",
+        constants$10.const$5
     );
-    static final MethodHandle calloc$MH = RuntimeHelper.downcallHandle(
-        "calloc",
-        constants$52.calloc$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_quark_from_string",
+        constants$10.const$5
     );
-    static final FunctionDescriptor realloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_quark_to_string",
+        constants$24.const$0
     );
-    static final MethodHandle realloc$MH = RuntimeHelper.downcallHandle(
-        "realloc",
-        constants$52.realloc$FUNC
-    );
-    static final FunctionDescriptor free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle free$MH = RuntimeHelper.downcallHandle(
-        "free",
-        constants$52.free$FUNC
-    );
-    static final FunctionDescriptor reallocarray$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle reallocarray$MH = RuntimeHelper.downcallHandle(
-        "reallocarray",
-        constants$52.reallocarray$FUNC
-    );
-    static final FunctionDescriptor alloca$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle alloca$MH = RuntimeHelper.downcallHandle(
-        "alloca",
-        constants$52.alloca$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_intern_string",
+        constants$5.const$2
     );
 }
 

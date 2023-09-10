@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1203 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1203() {}
-    static final FunctionDescriptor atk_object_set_role$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_notification_set_urgent",
+        constants$40.const$2
     );
-    static final MethodHandle atk_object_set_role$MH = RuntimeHelper.downcallHandle(
-        "atk_object_set_role",
-        constants$1203.atk_object_set_role$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_notification_set_priority",
+        constants$40.const$2
     );
-    static final FunctionDescriptor atk_object_connect_property_change_handler$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_notification_set_category",
+        constants$13.const$4
     );
-    static final MethodHandle atk_object_connect_property_change_handler$MH = RuntimeHelper.downcallHandle(
-        "atk_object_connect_property_change_handler",
-        constants$1203.atk_object_connect_property_change_handler$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_notification_add_button",
+        constants$14.const$3
     );
-    static final FunctionDescriptor atk_object_remove_property_change_handler$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "g_notification_add_button_with_target",
+        constants$42.const$1
     );
-    static final MethodHandle atk_object_remove_property_change_handler$MH = RuntimeHelper.downcallHandle(
-        "atk_object_remove_property_change_handler",
-        constants$1203.atk_object_remove_property_change_handler$FUNC
-    );
-    static final FunctionDescriptor atk_object_notify_state_change$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_object_notify_state_change$MH = RuntimeHelper.downcallHandle(
-        "atk_object_notify_state_change",
-        constants$1203.atk_object_notify_state_change$FUNC
-    );
-    static final FunctionDescriptor atk_object_initialize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_initialize$MH = RuntimeHelper.downcallHandle(
-        "atk_object_initialize",
-        constants$1203.atk_object_initialize$FUNC
-    );
-    static final FunctionDescriptor atk_role_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_role_get_name$MH = RuntimeHelper.downcallHandle(
-        "atk_role_get_name",
-        constants$1203.atk_role_get_name$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_notification_add_button_with_target_value",
+        constants$42.const$1
     );
 }
 

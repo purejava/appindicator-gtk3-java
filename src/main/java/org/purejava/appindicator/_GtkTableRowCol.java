@@ -2,124 +2,117 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkTableRowCol {
- *     guint16 requisition;
- *     guint16 allocation;
- *     guint16 spacing;
- *      *     guint need_expand;
- *     guint need_shrink;
- *     guint expand;
- *     guint shrink;
- *     guint empty;
+ *     unsigned short requisition;
+ *     unsigned short allocation;
+ *     unsigned short spacing;
+ *      *     unsigned int need_expand;
+ *     unsigned int need_shrink;
+ *     unsigned int expand;
+ *     unsigned int shrink;
+ *     unsigned int empty;
  * };
  * }
  */
 public class _GtkTableRowCol {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_SHORT$LAYOUT.withName("requisition"),
-        Constants$root.C_SHORT$LAYOUT.withName("allocation"),
-        Constants$root.C_SHORT$LAYOUT.withName("spacing"),
-        MemoryLayout.paddingLayout(16)
-    ).withName("_GtkTableRowCol");
     public static MemoryLayout $LAYOUT() {
-        return _GtkTableRowCol.$struct$LAYOUT;
+        return constants$3373.const$3;
     }
-    static final VarHandle requisition$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("requisition"));
     public static VarHandle requisition$VH() {
-        return _GtkTableRowCol.requisition$VH;
+        return constants$3373.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint16 requisition;
+     * unsigned short requisition;
      * }
      */
     public static short requisition$get(MemorySegment seg) {
-        return (short)_GtkTableRowCol.requisition$VH.get(seg);
+        return (short)constants$3373.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint16 requisition;
+     * unsigned short requisition;
      * }
      */
     public static void requisition$set(MemorySegment seg, short x) {
-        _GtkTableRowCol.requisition$VH.set(seg, x);
+        constants$3373.const$4.set(seg, x);
     }
     public static short requisition$get(MemorySegment seg, long index) {
-        return (short)_GtkTableRowCol.requisition$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3373.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void requisition$set(MemorySegment seg, long index, short x) {
-        _GtkTableRowCol.requisition$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3373.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle allocation$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("allocation"));
     public static VarHandle allocation$VH() {
-        return _GtkTableRowCol.allocation$VH;
+        return constants$3373.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint16 allocation;
+     * unsigned short allocation;
      * }
      */
     public static short allocation$get(MemorySegment seg) {
-        return (short)_GtkTableRowCol.allocation$VH.get(seg);
+        return (short)constants$3373.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint16 allocation;
+     * unsigned short allocation;
      * }
      */
     public static void allocation$set(MemorySegment seg, short x) {
-        _GtkTableRowCol.allocation$VH.set(seg, x);
+        constants$3373.const$5.set(seg, x);
     }
     public static short allocation$get(MemorySegment seg, long index) {
-        return (short)_GtkTableRowCol.allocation$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3373.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void allocation$set(MemorySegment seg, long index, short x) {
-        _GtkTableRowCol.allocation$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3373.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle spacing$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("spacing"));
     public static VarHandle spacing$VH() {
-        return _GtkTableRowCol.spacing$VH;
+        return constants$3374.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint16 spacing;
+     * unsigned short spacing;
      * }
      */
     public static short spacing$get(MemorySegment seg) {
-        return (short)_GtkTableRowCol.spacing$VH.get(seg);
+        return (short)constants$3374.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint16 spacing;
+     * unsigned short spacing;
      * }
      */
     public static void spacing$set(MemorySegment seg, short x) {
-        _GtkTableRowCol.spacing$VH.set(seg, x);
+        constants$3374.const$0.set(seg, x);
     }
     public static short spacing$get(MemorySegment seg, long index) {
-        return (short)_GtkTableRowCol.spacing$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3374.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void spacing$set(MemorySegment seg, long index, short x) {
-        _GtkTableRowCol.spacing$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3374.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

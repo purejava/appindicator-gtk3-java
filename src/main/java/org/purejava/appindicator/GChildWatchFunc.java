@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GChildWatchFunc)(int pid,int wait_status,void* user_data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GChildWatchFunc {
 
     void apply(int pid, int wait_status, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GChildWatchFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$167.GChildWatchFunc_UP$MH, fi, constants$167.GChildWatchFunc$FUNC, scope);
+    static MemorySegment allocate(GChildWatchFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$255.const$5, fi, constants$255.const$4, scope);
     }
-    static GChildWatchFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GChildWatchFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (int _pid, int _wait_status, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$167.GChildWatchFunc_DOWN$MH.invokeExact(symbol, _pid, _wait_status, _user_data);
+                constants$256.const$0.invokeExact(symbol, _pid, _wait_status, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

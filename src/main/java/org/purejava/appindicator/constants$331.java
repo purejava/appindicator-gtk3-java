@@ -3,53 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$331 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$331() {}
-    static final FunctionDescriptor g_tree_node_last$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_key_file_get_locale_for_key",
+        constants$39.const$1
     );
-    static final MethodHandle g_tree_node_last$MH = RuntimeHelper.downcallHandle(
-        "g_tree_node_last",
-        constants$331.g_tree_node_last$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_tree_node_previous$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_key_file_set_locale_string",
+        constants$331.const$1
     );
-    static final MethodHandle g_tree_node_previous$MH = RuntimeHelper.downcallHandle(
-        "g_tree_node_previous",
-        constants$331.g_tree_node_previous$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_key_file_get_boolean",
+        constants$34.const$5
     );
-    static final FunctionDescriptor g_tree_node_next$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final MethodHandle g_tree_node_next$MH = RuntimeHelper.downcallHandle(
-        "g_tree_node_next",
-        constants$331.g_tree_node_next$FUNC
-    );
-    static final FunctionDescriptor g_tree_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tree_ref$MH = RuntimeHelper.downcallHandle(
-        "g_tree_ref",
-        constants$331.g_tree_ref$FUNC
-    );
-    static final FunctionDescriptor g_tree_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tree_unref$MH = RuntimeHelper.downcallHandle(
-        "g_tree_unref",
-        constants$331.g_tree_unref$FUNC
-    );
-    static final FunctionDescriptor g_tree_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tree_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_tree_destroy",
-        constants$331.g_tree_destroy$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_key_file_set_boolean",
+        constants$331.const$4
     );
 }
 

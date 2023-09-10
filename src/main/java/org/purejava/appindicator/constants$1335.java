@@ -3,62 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1335 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1335() {}
-    static final FunctionDescriptor gtk_menu_set_screen$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_task_run_in_thread",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_menu_set_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_set_screen",
-        constants$1335.gtk_menu_set_screen$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_task_run_in_thread_sync$task_func.class, "apply", constants$42.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_task_run_in_thread_sync",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_menu_attach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_task_set_return_on_cancel",
+        constants$11.const$4
     );
-    static final MethodHandle gtk_menu_attach$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_attach",
-        constants$1335.gtk_menu_attach$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_task_get_return_on_cancel",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_menu_set_monitor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_menu_set_monitor$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_set_monitor",
-        constants$1335.gtk_menu_set_monitor$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_get_monitor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_get_monitor$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_get_monitor",
-        constants$1335.gtk_menu_get_monitor$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_place_on_monitor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_place_on_monitor$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_place_on_monitor",
-        constants$1335.gtk_menu_place_on_monitor$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_get_for_attach_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_get_for_attach_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_get_for_attach_widget",
-        constants$1335.gtk_menu_get_for_attach_widget$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_task_attach_source$callback.class, "apply", constants$10.const$5);
 }
 
 

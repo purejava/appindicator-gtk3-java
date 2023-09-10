@@ -3,62 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1664 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1664() {}
-    static final FunctionDescriptor gtk_info_bar_add_action_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
+        "fscanf",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_info_bar_add_action_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_add_action_widget",
-        constants$1664.gtk_info_bar_add_action_widget$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "scanf",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_info_bar_add_button$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "sscanf",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_info_bar_add_button$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_add_button",
-        constants$1664.gtk_info_bar_add_button$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "vfscanf",
+        constants$1662.const$2
     );
-    static final FunctionDescriptor gtk_info_bar_add_buttons$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "vscanf",
+        constants$1662.const$4
     );
-    static final MethodHandle gtk_info_bar_add_buttons$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_info_bar_add_buttons",
-        constants$1664.gtk_info_bar_add_buttons$FUNC
-    );
-    static final FunctionDescriptor gtk_info_bar_set_response_sensitive$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_info_bar_set_response_sensitive$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_set_response_sensitive",
-        constants$1664.gtk_info_bar_set_response_sensitive$FUNC
-    );
-    static final FunctionDescriptor gtk_info_bar_set_default_response$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_info_bar_set_default_response$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_set_default_response",
-        constants$1664.gtk_info_bar_set_default_response$FUNC
-    );
-    static final FunctionDescriptor gtk_info_bar_response$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_info_bar_response$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_response",
-        constants$1664.gtk_info_bar_response$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "vsscanf",
+        constants$1662.const$2
     );
 }
 

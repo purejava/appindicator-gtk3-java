@@ -3,60 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$195 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$195() {}
-    static final FunctionDescriptor g_utf8_casefold$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "seekdir",
+        constants$25.const$3
     );
-    static final MethodHandle g_utf8_casefold$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_casefold",
-        constants$195.g_utf8_casefold$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "telldir",
+        constants$4.const$0
     );
-    static final FunctionDescriptor g_utf8_normalize$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "dirfd",
+        constants$10.const$5
     );
-    static final MethodHandle g_utf8_normalize$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_normalize",
-        constants$195.g_utf8_normalize$FUNC
-    );
-    static final FunctionDescriptor g_utf8_collate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_utf8_collate$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_collate",
-        constants$195.g_utf8_collate$FUNC
-    );
-    static final FunctionDescriptor g_utf8_collate_key$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_utf8_collate_key$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_collate_key",
-        constants$195.g_utf8_collate_key$FUNC
-    );
-    static final FunctionDescriptor g_utf8_collate_key_for_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_utf8_collate_key_for_filename$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_collate_key_for_filename",
-        constants$195.g_utf8_collate_key_for_filename$FUNC
-    );
-    static final FunctionDescriptor g_utf8_make_valid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_utf8_make_valid$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_make_valid",
-        constants$195.g_utf8_make_valid$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(scandir$__selector.class, "apply", constants$10.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(scandir$__cmp.class, "apply", constants$9.const$0);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "scandir",
+        constants$34.const$5
     );
 }
 

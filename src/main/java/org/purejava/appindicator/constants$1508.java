@@ -3,72 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1508 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1508() {}
-    static final FunctionDescriptor gtk_buildable_set_buildable_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_user_data",
+        constants$1423.const$1
     );
-    static final MethodHandle gtk_buildable_set_buildable_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_set_buildable_property",
-        constants$1508.gtk_buildable_set_buildable_property$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_user_data",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_buildable_construct_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_content_type",
+        constants$40.const$2
     );
-    static final MethodHandle gtk_buildable_construct_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_construct_child",
-        constants$1508.gtk_buildable_construct_child$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_content_type",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_buildable_custom_tag_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_unicode_funcs",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_buildable_custom_tag_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_custom_tag_start",
-        constants$1508.gtk_buildable_custom_tag_start$FUNC
-    );
-    static final FunctionDescriptor gtk_buildable_custom_tag_end$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_buildable_custom_tag_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_custom_tag_end",
-        constants$1508.gtk_buildable_custom_tag_end$FUNC
-    );
-    static final FunctionDescriptor gtk_buildable_custom_finished$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_buildable_custom_finished$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_custom_finished",
-        constants$1508.gtk_buildable_custom_finished$FUNC
-    );
-    static final FunctionDescriptor gtk_buildable_parser_finished$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_buildable_parser_finished$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_parser_finished",
-        constants$1508.gtk_buildable_parser_finished$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_unicode_funcs",
+        constants$5.const$2
     );
 }
 

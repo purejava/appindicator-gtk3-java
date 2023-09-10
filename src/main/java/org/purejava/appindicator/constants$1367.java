@@ -3,57 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1367 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1367() {}
-    static final FunctionDescriptor gtk_tree_row_reference_inserted$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1364.const$2.varHandle(MemoryLayout.PathElement.groupElement("lookup_certificate_for_handle"));
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle gtk_tree_row_reference_inserted$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_row_reference_inserted",
-        constants$1367.gtk_tree_row_reference_inserted$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GTlsDatabaseClass.lookup_certificate_for_handle_async.class, "apply", constants$1367.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$1367.const$1
     );
-    static final FunctionDescriptor gtk_tree_row_reference_deleted$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_row_reference_deleted$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_row_reference_deleted",
-        constants$1367.gtk_tree_row_reference_deleted$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_row_reference_reordered$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_row_reference_reordered$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_row_reference_reordered",
-        constants$1367.gtk_tree_row_reference_reordered$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_iter_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_iter_copy$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_iter_copy",
-        constants$1367.gtk_tree_iter_copy$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_iter_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_iter_free$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_iter_free",
-        constants$1367.gtk_tree_iter_free$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_iter_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_iter_get_type",
-        constants$1367.gtk_tree_iter_get_type$FUNC
-    );
+    static final VarHandle const$4 = constants$1364.const$2.varHandle(MemoryLayout.PathElement.groupElement("lookup_certificate_for_handle_async"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GTlsDatabaseClass.lookup_certificate_for_handle_finish.class, "apply", constants$23.const$0);
 }
 
 

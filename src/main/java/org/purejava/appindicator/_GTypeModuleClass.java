@@ -4,14 +4,15 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GTypeModuleClass {
- *     GObjectClass parent_class;
- *     gboolean (*load)(GTypeModule*);
- *     void (*unload)(GTypeModule*);
+ *     struct _GObjectClass parent_class;
+ *     int (*load)(struct _GTypeModule*);
+ *     void (*unload)(struct _GTypeModule*);
  *     void (*reserved1)();
  *     void (*reserved2)();
  *     void (*reserved3)();
@@ -21,68 +22,28 @@ import java.lang.foreign.*;
  */
 public class _GTypeModuleClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-            ).withName("g_type_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-            Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("notify"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("load"),
-        Constants$root.C_POINTER$LAYOUT.withName("unload"),
-        Constants$root.C_POINTER$LAYOUT.withName("reserved1"),
-        Constants$root.C_POINTER$LAYOUT.withName("reserved2"),
-        Constants$root.C_POINTER$LAYOUT.withName("reserved3"),
-        Constants$root.C_POINTER$LAYOUT.withName("reserved4")
-    ).withName("_GTypeModuleClass");
     public static MemoryLayout $LAYOUT() {
-        return _GTypeModuleClass.$struct$LAYOUT;
+        return constants$675.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
     }
-    static final FunctionDescriptor load$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor load_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle load_UP$MH = RuntimeHelper.upcallHandle(load.class, "apply", _GTypeModuleClass.load_UP$FUNC);
-    static final FunctionDescriptor load_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle load_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GTypeModuleClass.load_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*load)(GTypeModule*);
+ * int (*load)(struct _GTypeModule*);
      * }
      */
     public interface load {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(load fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GTypeModuleClass.load_UP$MH, fi, _GTypeModuleClass.load$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(load fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$676.const$0, fi, constants$10.const$5, scope);
         }
-        static load ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0) -> {
+        static load ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GTypeModuleClass.load_DOWN$MH.invokeExact(symbol, __x0);
+                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -90,66 +51,52 @@ public class _GTypeModuleClass {
         }
     }
 
-    static final VarHandle load$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("load"));
     public static VarHandle load$VH() {
-        return _GTypeModuleClass.load$VH;
+        return constants$676.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*load)(GTypeModule*);
+     * int (*load)(struct _GTypeModule*);
      * }
      */
     public static MemorySegment load$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTypeModuleClass.load$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$676.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*load)(GTypeModule*);
+     * int (*load)(struct _GTypeModule*);
      * }
      */
     public static void load$set(MemorySegment seg, MemorySegment x) {
-        _GTypeModuleClass.load$VH.set(seg, x);
+        constants$676.const$1.set(seg, x);
     }
     public static MemorySegment load$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTypeModuleClass.load$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$676.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void load$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTypeModuleClass.load$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$676.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static load load(MemorySegment segment, SegmentScope scope) {
+    public static load load(MemorySegment segment, Arena scope) {
         return load.ofAddress(load$get(segment), scope);
     }
-    static final FunctionDescriptor unload$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor unload_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle unload_UP$MH = RuntimeHelper.upcallHandle(unload.class, "apply", _GTypeModuleClass.unload_UP$FUNC);
-    static final FunctionDescriptor unload_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle unload_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GTypeModuleClass.unload_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*unload)(GTypeModule*);
+ * void (*unload)(struct _GTypeModule*);
      * }
      */
     public interface unload {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(unload fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GTypeModuleClass.unload_UP$MH, fi, _GTypeModuleClass.unload$FUNC, scope);
+        static MemorySegment allocate(unload fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$676.const$2, fi, constants$13.const$1, scope);
         }
-        static unload ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static unload ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GTypeModuleClass.unload_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -157,44 +104,36 @@ public class _GTypeModuleClass {
         }
     }
 
-    static final VarHandle unload$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("unload"));
     public static VarHandle unload$VH() {
-        return _GTypeModuleClass.unload$VH;
+        return constants$676.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*unload)(GTypeModule*);
+     * void (*unload)(struct _GTypeModule*);
      * }
      */
     public static MemorySegment unload$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTypeModuleClass.unload$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$676.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*unload)(GTypeModule*);
+     * void (*unload)(struct _GTypeModule*);
      * }
      */
     public static void unload$set(MemorySegment seg, MemorySegment x) {
-        _GTypeModuleClass.unload$VH.set(seg, x);
+        constants$676.const$3.set(seg, x);
     }
     public static MemorySegment unload$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTypeModuleClass.unload$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$676.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void unload$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTypeModuleClass.unload$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$676.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static unload unload(MemorySegment segment, SegmentScope scope) {
+    public static unload unload(MemorySegment segment, Arena scope) {
         return unload.ofAddress(unload$get(segment), scope);
     }
-    static final FunctionDescriptor reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle reserved1_UP$MH = RuntimeHelper.upcallHandle(reserved1.class, "apply", _GTypeModuleClass.reserved1_UP$FUNC);
-    static final FunctionDescriptor reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GTypeModuleClass.reserved1_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*reserved1)();
@@ -203,14 +142,14 @@ public class _GTypeModuleClass {
     public interface reserved1 {
 
         void apply();
-        static MemorySegment allocate(reserved1 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GTypeModuleClass.reserved1_UP$MH, fi, _GTypeModuleClass.reserved1$FUNC, scope);
+        static MemorySegment allocate(reserved1 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$676.const$4, fi, constants$7.const$5, scope);
         }
-        static reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static reserved1 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GTypeModuleClass.reserved1_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -218,9 +157,8 @@ public class _GTypeModuleClass {
         }
     }
 
-    static final VarHandle reserved1$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reserved1"));
     public static VarHandle reserved1$VH() {
-        return _GTypeModuleClass.reserved1$VH;
+        return constants$676.const$5;
     }
     /**
      * Getter for field:
@@ -229,7 +167,7 @@ public class _GTypeModuleClass {
      * }
      */
     public static MemorySegment reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTypeModuleClass.reserved1$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$676.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -238,24 +176,17 @@ public class _GTypeModuleClass {
      * }
      */
     public static void reserved1$set(MemorySegment seg, MemorySegment x) {
-        _GTypeModuleClass.reserved1$VH.set(seg, x);
+        constants$676.const$5.set(seg, x);
     }
     public static MemorySegment reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTypeModuleClass.reserved1$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$676.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTypeModuleClass.reserved1$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$676.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reserved1 reserved1(MemorySegment segment, SegmentScope scope) {
+    public static reserved1 reserved1(MemorySegment segment, Arena scope) {
         return reserved1.ofAddress(reserved1$get(segment), scope);
     }
-    static final FunctionDescriptor reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle reserved2_UP$MH = RuntimeHelper.upcallHandle(reserved2.class, "apply", _GTypeModuleClass.reserved2_UP$FUNC);
-    static final FunctionDescriptor reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GTypeModuleClass.reserved2_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*reserved2)();
@@ -264,14 +195,14 @@ public class _GTypeModuleClass {
     public interface reserved2 {
 
         void apply();
-        static MemorySegment allocate(reserved2 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GTypeModuleClass.reserved2_UP$MH, fi, _GTypeModuleClass.reserved2$FUNC, scope);
+        static MemorySegment allocate(reserved2 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$677.const$0, fi, constants$7.const$5, scope);
         }
-        static reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static reserved2 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GTypeModuleClass.reserved2_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -279,9 +210,8 @@ public class _GTypeModuleClass {
         }
     }
 
-    static final VarHandle reserved2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reserved2"));
     public static VarHandle reserved2$VH() {
-        return _GTypeModuleClass.reserved2$VH;
+        return constants$677.const$1;
     }
     /**
      * Getter for field:
@@ -290,7 +220,7 @@ public class _GTypeModuleClass {
      * }
      */
     public static MemorySegment reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTypeModuleClass.reserved2$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$677.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -299,24 +229,17 @@ public class _GTypeModuleClass {
      * }
      */
     public static void reserved2$set(MemorySegment seg, MemorySegment x) {
-        _GTypeModuleClass.reserved2$VH.set(seg, x);
+        constants$677.const$1.set(seg, x);
     }
     public static MemorySegment reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTypeModuleClass.reserved2$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$677.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTypeModuleClass.reserved2$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$677.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reserved2 reserved2(MemorySegment segment, SegmentScope scope) {
+    public static reserved2 reserved2(MemorySegment segment, Arena scope) {
         return reserved2.ofAddress(reserved2$get(segment), scope);
     }
-    static final FunctionDescriptor reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle reserved3_UP$MH = RuntimeHelper.upcallHandle(reserved3.class, "apply", _GTypeModuleClass.reserved3_UP$FUNC);
-    static final FunctionDescriptor reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GTypeModuleClass.reserved3_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*reserved3)();
@@ -325,14 +248,14 @@ public class _GTypeModuleClass {
     public interface reserved3 {
 
         void apply();
-        static MemorySegment allocate(reserved3 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GTypeModuleClass.reserved3_UP$MH, fi, _GTypeModuleClass.reserved3$FUNC, scope);
+        static MemorySegment allocate(reserved3 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$677.const$2, fi, constants$7.const$5, scope);
         }
-        static reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static reserved3 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GTypeModuleClass.reserved3_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -340,9 +263,8 @@ public class _GTypeModuleClass {
         }
     }
 
-    static final VarHandle reserved3$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reserved3"));
     public static VarHandle reserved3$VH() {
-        return _GTypeModuleClass.reserved3$VH;
+        return constants$677.const$3;
     }
     /**
      * Getter for field:
@@ -351,7 +273,7 @@ public class _GTypeModuleClass {
      * }
      */
     public static MemorySegment reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTypeModuleClass.reserved3$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$677.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -360,24 +282,17 @@ public class _GTypeModuleClass {
      * }
      */
     public static void reserved3$set(MemorySegment seg, MemorySegment x) {
-        _GTypeModuleClass.reserved3$VH.set(seg, x);
+        constants$677.const$3.set(seg, x);
     }
     public static MemorySegment reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTypeModuleClass.reserved3$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$677.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTypeModuleClass.reserved3$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$677.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reserved3 reserved3(MemorySegment segment, SegmentScope scope) {
+    public static reserved3 reserved3(MemorySegment segment, Arena scope) {
         return reserved3.ofAddress(reserved3$get(segment), scope);
     }
-    static final FunctionDescriptor reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle reserved4_UP$MH = RuntimeHelper.upcallHandle(reserved4.class, "apply", _GTypeModuleClass.reserved4_UP$FUNC);
-    static final FunctionDescriptor reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GTypeModuleClass.reserved4_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*reserved4)();
@@ -386,14 +301,14 @@ public class _GTypeModuleClass {
     public interface reserved4 {
 
         void apply();
-        static MemorySegment allocate(reserved4 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GTypeModuleClass.reserved4_UP$MH, fi, _GTypeModuleClass.reserved4$FUNC, scope);
+        static MemorySegment allocate(reserved4 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$677.const$4, fi, constants$7.const$5, scope);
         }
-        static reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static reserved4 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GTypeModuleClass.reserved4_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -401,9 +316,8 @@ public class _GTypeModuleClass {
         }
     }
 
-    static final VarHandle reserved4$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reserved4"));
     public static VarHandle reserved4$VH() {
-        return _GTypeModuleClass.reserved4$VH;
+        return constants$677.const$5;
     }
     /**
      * Getter for field:
@@ -412,7 +326,7 @@ public class _GTypeModuleClass {
      * }
      */
     public static MemorySegment reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTypeModuleClass.reserved4$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$677.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -421,15 +335,15 @@ public class _GTypeModuleClass {
      * }
      */
     public static void reserved4$set(MemorySegment seg, MemorySegment x) {
-        _GTypeModuleClass.reserved4$VH.set(seg, x);
+        constants$677.const$5.set(seg, x);
     }
     public static MemorySegment reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTypeModuleClass.reserved4$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$677.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTypeModuleClass.reserved4$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$677.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reserved4 reserved4(MemorySegment segment, SegmentScope scope) {
+    public static reserved4 reserved4(MemorySegment segment, Arena scope) {
         return reserved4.ofAddress(reserved4$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -437,7 +351,7 @@ public class _GTypeModuleClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

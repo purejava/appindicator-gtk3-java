@@ -3,52 +3,56 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1200 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1200() {}
-    static final FunctionDescriptor atk_implementor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_implementor_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_implementor_get_type",
-        constants$1200.atk_implementor_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_network_monitor_can_reach_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_network_monitor_can_reach_async",
+        constants$331.const$1
     );
-    static final FunctionDescriptor atk_implementor_ref_accessible$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_network_monitor_can_reach_finish",
+        constants$12.const$2
     );
-    static final MethodHandle atk_implementor_ref_accessible$MH = RuntimeHelper.downcallHandle(
-        "atk_implementor_ref_accessible",
-        constants$1200.atk_implementor_ref_accessible$FUNC
-    );
-    static final FunctionDescriptor atk_object_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_get_name$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_name",
-        constants$1200.atk_object_get_name$FUNC
-    );
-    static final FunctionDescriptor atk_object_get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_get_description$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_description",
-        constants$1200.atk_object_get_description$FUNC
-    );
-    static final FunctionDescriptor atk_object_get_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_get_parent$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_parent",
-        constants$1200.atk_object_get_parent$FUNC
-    );
-    static final FunctionDescriptor atk_object_peek_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_peek_parent$MH = RuntimeHelper.downcallHandle(
-        "atk_object_peek_parent",
-        constants$1200.atk_object_peek_parent$FUNC
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GNetworkService");
+    static final VarHandle const$4 = constants$1200.const$3.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class")
+    ).withName("_GNetworkServiceClass");
 }
 
 

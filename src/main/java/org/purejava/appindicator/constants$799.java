@@ -3,55 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$799 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$799() {}
-    static final FunctionDescriptor g_test_dbus_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_dbus_get_flags$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_get_flags",
-        constants$799.g_test_dbus_get_flags$FUNC
-    );
-    static final FunctionDescriptor g_test_dbus_get_bus_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_dbus_get_bus_address$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_get_bus_address",
-        constants$799.g_test_dbus_get_bus_address$FUNC
-    );
-    static final FunctionDescriptor g_test_dbus_add_service_dir$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_dbus_add_service_dir$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_add_service_dir",
-        constants$799.g_test_dbus_add_service_dir$FUNC
-    );
-    static final FunctionDescriptor g_test_dbus_up$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_dbus_up$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_up",
-        constants$799.g_test_dbus_up$FUNC
-    );
-    static final FunctionDescriptor g_test_dbus_stop$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_dbus_stop$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_stop",
-        constants$799.g_test_dbus_stop$FUNC
-    );
-    static final FunctionDescriptor g_test_dbus_down$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_dbus_down$MH = RuntimeHelper.downcallHandle(
-        "g_test_dbus_down",
-        constants$799.g_test_dbus_down$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GCancellableClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$797.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GCancellableClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$797.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GCancellableClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$797.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
 }
 
 

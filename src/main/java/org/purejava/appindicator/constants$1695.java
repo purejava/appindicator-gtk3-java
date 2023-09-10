@@ -3,54 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1695 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1695() {}
-    static final FunctionDescriptor gtk_size_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_size_group_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_get_type",
-        constants$1695.gtk_size_group_get_type$FUNC
+    static final VarHandle const$0 = constants$1694.const$3.varHandle(MemoryLayout.PathElement.groupElement("y"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_glyph_allocate",
+        constants$24.const$0
     );
-    static final FunctionDescriptor gtk_size_group_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_glyph_free",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_size_group_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_new",
-        constants$1695.gtk_size_group_new$FUNC
-    );
-    static final FunctionDescriptor gtk_size_group_set_mode$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_size_group_set_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_set_mode",
-        constants$1695.gtk_size_group_set_mode$FUNC
-    );
-    static final FunctionDescriptor gtk_size_group_get_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_size_group_get_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_get_mode",
-        constants$1695.gtk_size_group_get_mode$FUNC
-    );
-    static final FunctionDescriptor gtk_size_group_set_ignore_hidden$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_size_group_set_ignore_hidden$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_set_ignore_hidden",
-        constants$1695.gtk_size_group_set_ignore_hidden$FUNC
-    );
-    static final FunctionDescriptor gtk_size_group_get_ignore_hidden$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_size_group_get_ignore_hidden$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_get_ignore_hidden",
-        constants$1695.gtk_size_group_get_ignore_hidden$FUNC
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("num_bytes"),
+        JAVA_INT.withName("num_glyphs")
+    ).withName("cairo_text_cluster_t");
+    static final VarHandle const$4 = constants$1695.const$3.varHandle(MemoryLayout.PathElement.groupElement("num_bytes"));
+    static final VarHandle const$5 = constants$1695.const$3.varHandle(MemoryLayout.PathElement.groupElement("num_glyphs"));
 }
 
 

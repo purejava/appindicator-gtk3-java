@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$358 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$358() {}
-    static final FunctionDescriptor pthread_attr_setschedpolicy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_dup_bytestring",
+        constants$5.const$5
     );
-    static final MethodHandle pthread_attr_setschedpolicy$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_setschedpolicy",
-        constants$358.pthread_attr_setschedpolicy$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_variant_get_bytestring_array",
+        constants$5.const$5
     );
-    static final FunctionDescriptor pthread_attr_getinheritsched$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_variant_dup_bytestring_array",
+        constants$5.const$5
     );
-    static final MethodHandle pthread_attr_getinheritsched$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_getinheritsched",
-        constants$358.pthread_attr_getinheritsched$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_variant_new_maybe",
+        constants$5.const$5
     );
-    static final FunctionDescriptor pthread_attr_setinheritsched$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_variant_new_array",
+        constants$17.const$1
     );
-    static final MethodHandle pthread_attr_setinheritsched$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_setinheritsched",
-        constants$358.pthread_attr_setinheritsched$FUNC
-    );
-    static final FunctionDescriptor pthread_attr_getscope$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_attr_getscope$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_getscope",
-        constants$358.pthread_attr_getscope$FUNC
-    );
-    static final FunctionDescriptor pthread_attr_setscope$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pthread_attr_setscope$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_setscope",
-        constants$358.pthread_attr_setscope$FUNC
-    );
-    static final FunctionDescriptor pthread_attr_getstackaddr$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_attr_getstackaddr$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_getstackaddr",
-        constants$358.pthread_attr_getstackaddr$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_variant_new_tuple",
+        constants$21.const$1
     );
 }
 

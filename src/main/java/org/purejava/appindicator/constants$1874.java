@@ -3,68 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1874 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1874() {}
-    static final FunctionDescriptor gtk_tree_store_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_set_desktop",
+        constants$40.const$2
     );
-    static final MethodHandle gtk_tree_store_set$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_store_set",
-        constants$1874.gtk_tree_store_set$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_set_timestamp",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_tree_store_set_valuesv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_set_icon",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_tree_store_set_valuesv$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_set_valuesv",
-        constants$1874.gtk_tree_store_set_valuesv$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_app_launch_context_set_icon_name",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_tree_store_set_valist$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_store_set_valist$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_set_valist",
-        constants$1874.gtk_tree_store_set_valist$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_store_remove$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_store_remove$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_remove",
-        constants$1874.gtk_tree_store_remove$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_store_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_store_insert$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_insert",
-        constants$1874.gtk_tree_store_insert$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_store_insert_before$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_store_insert_before$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_insert_before",
-        constants$1874.gtk_tree_store_insert_before$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("pixel"),
+        JAVA_SHORT.withName("red"),
+        JAVA_SHORT.withName("green"),
+        JAVA_SHORT.withName("blue"),
+        MemoryLayout.paddingLayout(2)
+    ).withName("_GdkColor");
+    static final VarHandle const$5 = constants$1874.const$4.varHandle(MemoryLayout.PathElement.groupElement("pixel"));
 }
 
 

@@ -2,273 +2,278 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GHook {
- *     gpointer data;
- *     GHook* next;
- *     GHook* prev;
- *     guint ref_count;
- *     gulong hook_id;
- *     guint flags;
- *     gpointer func;
- *     GDestroyNotify destroy;
+ *     void* data;
+ *     struct _GHook* next;
+ *     struct _GHook* prev;
+ *     unsigned int ref_count;
+ *     unsigned long hook_id;
+ *     unsigned int flags;
+ *     void* func;
+ *     void (*destroy)(void*);
  * };
  * }
  */
 public class _GHook {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("data"),
-        Constants$root.C_POINTER$LAYOUT.withName("next"),
-        Constants$root.C_POINTER$LAYOUT.withName("prev"),
-        Constants$root.C_INT$LAYOUT.withName("ref_count"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("hook_id"),
-        Constants$root.C_INT$LAYOUT.withName("flags"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("func"),
-        Constants$root.C_POINTER$LAYOUT.withName("destroy")
-    ).withName("_GHook");
     public static MemoryLayout $LAYOUT() {
-        return _GHook.$struct$LAYOUT;
+        return constants$240.const$1;
     }
-    static final VarHandle data$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("data"));
     public static VarHandle data$VH() {
-        return _GHook.data$VH;
+        return constants$240.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gpointer data;
+     * void* data;
      * }
      */
     public static MemorySegment data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GHook.data$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$240.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gpointer data;
+     * void* data;
      * }
      */
     public static void data$set(MemorySegment seg, MemorySegment x) {
-        _GHook.data$VH.set(seg, x);
+        constants$240.const$2.set(seg, x);
     }
     public static MemorySegment data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GHook.data$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$240.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void data$set(MemorySegment seg, long index, MemorySegment x) {
-        _GHook.data$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$240.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle next$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("next"));
     public static VarHandle next$VH() {
-        return _GHook.next$VH;
+        return constants$240.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GHook* next;
+     * struct _GHook* next;
      * }
      */
     public static MemorySegment next$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GHook.next$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$240.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GHook* next;
+     * struct _GHook* next;
      * }
      */
     public static void next$set(MemorySegment seg, MemorySegment x) {
-        _GHook.next$VH.set(seg, x);
+        constants$240.const$3.set(seg, x);
     }
     public static MemorySegment next$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GHook.next$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$240.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void next$set(MemorySegment seg, long index, MemorySegment x) {
-        _GHook.next$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$240.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle prev$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("prev"));
     public static VarHandle prev$VH() {
-        return _GHook.prev$VH;
+        return constants$240.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GHook* prev;
+     * struct _GHook* prev;
      * }
      */
     public static MemorySegment prev$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GHook.prev$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$240.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GHook* prev;
+     * struct _GHook* prev;
      * }
      */
     public static void prev$set(MemorySegment seg, MemorySegment x) {
-        _GHook.prev$VH.set(seg, x);
+        constants$240.const$4.set(seg, x);
     }
     public static MemorySegment prev$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GHook.prev$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$240.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void prev$set(MemorySegment seg, long index, MemorySegment x) {
-        _GHook.prev$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$240.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle ref_count$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
     public static VarHandle ref_count$VH() {
-        return _GHook.ref_count$VH;
+        return constants$240.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint ref_count;
+     * unsigned int ref_count;
      * }
      */
     public static int ref_count$get(MemorySegment seg) {
-        return (int)_GHook.ref_count$VH.get(seg);
+        return (int)constants$240.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint ref_count;
+     * unsigned int ref_count;
      * }
      */
     public static void ref_count$set(MemorySegment seg, int x) {
-        _GHook.ref_count$VH.set(seg, x);
+        constants$240.const$5.set(seg, x);
     }
     public static int ref_count$get(MemorySegment seg, long index) {
-        return (int)_GHook.ref_count$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$240.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void ref_count$set(MemorySegment seg, long index, int x) {
-        _GHook.ref_count$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$240.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle hook_id$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("hook_id"));
     public static VarHandle hook_id$VH() {
-        return _GHook.hook_id$VH;
+        return constants$241.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gulong hook_id;
+     * unsigned long hook_id;
      * }
      */
     public static long hook_id$get(MemorySegment seg) {
-        return (long)_GHook.hook_id$VH.get(seg);
+        return (long)constants$241.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gulong hook_id;
+     * unsigned long hook_id;
      * }
      */
     public static void hook_id$set(MemorySegment seg, long x) {
-        _GHook.hook_id$VH.set(seg, x);
+        constants$241.const$0.set(seg, x);
     }
     public static long hook_id$get(MemorySegment seg, long index) {
-        return (long)_GHook.hook_id$VH.get(seg.asSlice(index*sizeof()));
+        return (long)constants$241.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void hook_id$set(MemorySegment seg, long index, long x) {
-        _GHook.hook_id$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$241.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle flags$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("flags"));
     public static VarHandle flags$VH() {
-        return _GHook.flags$VH;
+        return constants$241.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint flags;
+     * unsigned int flags;
      * }
      */
     public static int flags$get(MemorySegment seg) {
-        return (int)_GHook.flags$VH.get(seg);
+        return (int)constants$241.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint flags;
+     * unsigned int flags;
      * }
      */
     public static void flags$set(MemorySegment seg, int x) {
-        _GHook.flags$VH.set(seg, x);
+        constants$241.const$1.set(seg, x);
     }
     public static int flags$get(MemorySegment seg, long index) {
-        return (int)_GHook.flags$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$241.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void flags$set(MemorySegment seg, long index, int x) {
-        _GHook.flags$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$241.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle func$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("func"));
     public static VarHandle func$VH() {
-        return _GHook.func$VH;
+        return constants$241.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gpointer func;
+     * void* func;
      * }
      */
     public static MemorySegment func$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GHook.func$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$241.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gpointer func;
+     * void* func;
      * }
      */
     public static void func$set(MemorySegment seg, MemorySegment x) {
-        _GHook.func$VH.set(seg, x);
+        constants$241.const$2.set(seg, x);
     }
     public static MemorySegment func$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GHook.func$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$241.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void func$set(MemorySegment seg, long index, MemorySegment x) {
-        _GHook.func$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$241.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle destroy$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("destroy"));
+    /**
+     * {@snippet :
+ * void (*destroy)(void*);
+     * }
+     */
+    public interface destroy {
+
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(destroy fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$241.const$3, fi, constants$13.const$1, scope);
+        }
+        static destroy ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _display) -> {
+                try {
+                    constants$13.const$3.invokeExact(symbol, _display);
+                } catch (Throwable ex$) {
+                    throw new AssertionError("should not reach here", ex$);
+                }
+            };
+        }
+    }
+
     public static VarHandle destroy$VH() {
-        return _GHook.destroy$VH;
+        return constants$241.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GDestroyNotify destroy;
+     * void (*destroy)(void*);
      * }
      */
     public static MemorySegment destroy$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GHook.destroy$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$241.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GDestroyNotify destroy;
+     * void (*destroy)(void*);
      * }
      */
     public static void destroy$set(MemorySegment seg, MemorySegment x) {
-        _GHook.destroy$VH.set(seg, x);
+        constants$241.const$4.set(seg, x);
     }
     public static MemorySegment destroy$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GHook.destroy$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$241.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void destroy$set(MemorySegment seg, long index, MemorySegment x) {
-        _GHook.destroy$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$241.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GDestroyNotify destroy(MemorySegment segment, SegmentScope scope) {
-        return GDestroyNotify.ofAddress(destroy$get(segment), scope);
+    public static destroy destroy(MemorySegment segment, Arena scope) {
+        return destroy.ofAddress(destroy$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

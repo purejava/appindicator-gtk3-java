@@ -2,73 +2,60 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkDrawingArea {
- *     GtkWidget widget;
- *     gpointer dummy;
+ *     struct _GtkWidget widget;
+ *     void* dummy;
  * };
  * }
  */
 public class _GtkDrawingArea {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    Constants$root.C_POINTER$LAYOUT.withName("g_class")
-                ).withName("g_type_instance"),
-                Constants$root.C_INT$LAYOUT.withName("ref_count"),
-                MemoryLayout.paddingLayout(32),
-                Constants$root.C_POINTER$LAYOUT.withName("qdata")
-            ).withName("parent_instance"),
-            Constants$root.C_POINTER$LAYOUT.withName("priv")
-        ).withName("widget"),
-        Constants$root.C_POINTER$LAYOUT.withName("dummy")
-    ).withName("_GtkDrawingArea");
     public static MemoryLayout $LAYOUT() {
-        return _GtkDrawingArea.$struct$LAYOUT;
+        return constants$2658.const$4;
     }
     public static MemorySegment widget$slice(MemorySegment seg) {
         return seg.asSlice(0, 32);
     }
-    static final VarHandle dummy$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("dummy"));
     public static VarHandle dummy$VH() {
-        return _GtkDrawingArea.dummy$VH;
+        return constants$2658.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gpointer dummy;
+     * void* dummy;
      * }
      */
     public static MemorySegment dummy$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkDrawingArea.dummy$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2658.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gpointer dummy;
+     * void* dummy;
      * }
      */
     public static void dummy$set(MemorySegment seg, MemorySegment x) {
-        _GtkDrawingArea.dummy$VH.set(seg, x);
+        constants$2658.const$5.set(seg, x);
     }
     public static MemorySegment dummy$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkDrawingArea.dummy$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2658.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void dummy$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkDrawingArea.dummy$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2658.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

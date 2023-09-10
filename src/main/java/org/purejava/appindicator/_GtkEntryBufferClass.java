@@ -4,18 +4,19 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkEntryBufferClass {
- *     GObjectClass parent_class;
- *     void (*inserted_text)(GtkEntryBuffer*,guint,const gchar*,guint);
- *     void (*deleted_text)(GtkEntryBuffer*,guint,guint);
- *     const gchar* (*get_text)(GtkEntryBuffer*,gsize*);
- *     guint (*get_length)(GtkEntryBuffer*);
- *     guint (*insert_text)(GtkEntryBuffer*,guint,const gchar*,guint);
- *     guint (*delete_text)(GtkEntryBuffer*,guint,guint);
+ *     struct _GObjectClass parent_class;
+ *     void (*inserted_text)(struct _GtkEntryBuffer*,unsigned int,char*,unsigned int);
+ *     void (*deleted_text)(struct _GtkEntryBuffer*,unsigned int,unsigned int);
+ *     char* (*get_text)(struct _GtkEntryBuffer*,unsigned long*);
+ *     unsigned int (*get_length)(struct _GtkEntryBuffer*);
+ *     unsigned int (*insert_text)(struct _GtkEntryBuffer*,unsigned int,char*,unsigned int);
+ *     unsigned int (*delete_text)(struct _GtkEntryBuffer*,unsigned int,unsigned int);
  *     void (*_gtk_reserved1)();
  *     void (*_gtk_reserved2)();
  *     void (*_gtk_reserved3)();
@@ -29,85 +30,28 @@ import java.lang.foreign.*;
  */
 public class _GtkEntryBufferClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-            ).withName("g_type_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-            Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("notify"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("inserted_text"),
-        Constants$root.C_POINTER$LAYOUT.withName("deleted_text"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_text"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_length"),
-        Constants$root.C_POINTER$LAYOUT.withName("insert_text"),
-        Constants$root.C_POINTER$LAYOUT.withName("delete_text"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved4"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved5"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved6"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved7"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved8")
-    ).withName("_GtkEntryBufferClass");
     public static MemoryLayout $LAYOUT() {
-        return _GtkEntryBufferClass.$struct$LAYOUT;
+        return constants$2412.const$4;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
     }
-    static final FunctionDescriptor inserted_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor inserted_text_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle inserted_text_UP$MH = RuntimeHelper.upcallHandle(inserted_text.class, "apply", _GtkEntryBufferClass.inserted_text_UP$FUNC);
-    static final FunctionDescriptor inserted_text_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle inserted_text_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkEntryBufferClass.inserted_text_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*inserted_text)(GtkEntryBuffer*,guint,const gchar*,guint);
+ * void (*inserted_text)(struct _GtkEntryBuffer*,unsigned int,char*,unsigned int);
      * }
      */
     public interface inserted_text {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, int _x3);
-        static MemorySegment allocate(inserted_text fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkEntryBufferClass.inserted_text_UP$MH, fi, _GtkEntryBufferClass.inserted_text$FUNC, scope);
+        static MemorySegment allocate(inserted_text fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2412.const$5, fi, constants$1496.const$3, scope);
         }
-        static inserted_text ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static inserted_text ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, int __x3) -> {
                 try {
-                    _GtkEntryBufferClass.inserted_text_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$2413.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -115,72 +59,52 @@ public class _GtkEntryBufferClass {
         }
     }
 
-    static final VarHandle inserted_text$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("inserted_text"));
     public static VarHandle inserted_text$VH() {
-        return _GtkEntryBufferClass.inserted_text$VH;
+        return constants$2413.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*inserted_text)(GtkEntryBuffer*,guint,const gchar*,guint);
+     * void (*inserted_text)(struct _GtkEntryBuffer*,unsigned int,char*,unsigned int);
      * }
      */
     public static MemorySegment inserted_text$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass.inserted_text$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2413.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*inserted_text)(GtkEntryBuffer*,guint,const gchar*,guint);
+     * void (*inserted_text)(struct _GtkEntryBuffer*,unsigned int,char*,unsigned int);
      * }
      */
     public static void inserted_text$set(MemorySegment seg, MemorySegment x) {
-        _GtkEntryBufferClass.inserted_text$VH.set(seg, x);
+        constants$2413.const$1.set(seg, x);
     }
     public static MemorySegment inserted_text$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass.inserted_text$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2413.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void inserted_text$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkEntryBufferClass.inserted_text$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2413.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static inserted_text inserted_text(MemorySegment segment, SegmentScope scope) {
+    public static inserted_text inserted_text(MemorySegment segment, Arena scope) {
         return inserted_text.ofAddress(inserted_text$get(segment), scope);
     }
-    static final FunctionDescriptor deleted_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor deleted_text_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle deleted_text_UP$MH = RuntimeHelper.upcallHandle(deleted_text.class, "apply", _GtkEntryBufferClass.deleted_text_UP$FUNC);
-    static final FunctionDescriptor deleted_text_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle deleted_text_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkEntryBufferClass.deleted_text_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*deleted_text)(GtkEntryBuffer*,guint,guint);
+ * void (*deleted_text)(struct _GtkEntryBuffer*,unsigned int,unsigned int);
      * }
      */
     public interface deleted_text {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
-        static MemorySegment allocate(deleted_text fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkEntryBufferClass.deleted_text_UP$MH, fi, _GtkEntryBufferClass.deleted_text$FUNC, scope);
+        static MemorySegment allocate(deleted_text fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2413.const$2, fi, constants$467.const$3, scope);
         }
-        static deleted_text ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static deleted_text ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    _GtkEntryBufferClass.deleted_text_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$1901.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -188,69 +112,52 @@ public class _GtkEntryBufferClass {
         }
     }
 
-    static final VarHandle deleted_text$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("deleted_text"));
     public static VarHandle deleted_text$VH() {
-        return _GtkEntryBufferClass.deleted_text$VH;
+        return constants$2413.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*deleted_text)(GtkEntryBuffer*,guint,guint);
+     * void (*deleted_text)(struct _GtkEntryBuffer*,unsigned int,unsigned int);
      * }
      */
     public static MemorySegment deleted_text$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass.deleted_text$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2413.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*deleted_text)(GtkEntryBuffer*,guint,guint);
+     * void (*deleted_text)(struct _GtkEntryBuffer*,unsigned int,unsigned int);
      * }
      */
     public static void deleted_text$set(MemorySegment seg, MemorySegment x) {
-        _GtkEntryBufferClass.deleted_text$VH.set(seg, x);
+        constants$2413.const$3.set(seg, x);
     }
     public static MemorySegment deleted_text$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass.deleted_text$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2413.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void deleted_text$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkEntryBufferClass.deleted_text$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2413.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static deleted_text deleted_text(MemorySegment segment, SegmentScope scope) {
+    public static deleted_text deleted_text(MemorySegment segment, Arena scope) {
         return deleted_text.ofAddress(deleted_text$get(segment), scope);
     }
-    static final FunctionDescriptor get_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_text_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_text_UP$MH = RuntimeHelper.upcallHandle(get_text.class, "apply", _GtkEntryBufferClass.get_text_UP$FUNC);
-    static final FunctionDescriptor get_text_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_text_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkEntryBufferClass.get_text_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * const gchar* (*get_text)(GtkEntryBuffer*,gsize*);
+ * char* (*get_text)(struct _GtkEntryBuffer*,unsigned long*);
      * }
      */
     public interface get_text {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
-        static MemorySegment allocate(get_text fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkEntryBufferClass.get_text_UP$MH, fi, _GtkEntryBufferClass.get_text$FUNC, scope);
+        static MemorySegment allocate(get_text fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2413.const$4, fi, constants$5.const$5, scope);
         }
-        static get_text ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_text ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass.get_text_DOWN$MH.invokeExact(symbol, _path, _func_data);
+                    return (java.lang.foreign.MemorySegment)constants$15.const$1.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -258,66 +165,52 @@ public class _GtkEntryBufferClass {
         }
     }
 
-    static final VarHandle get_text$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_text"));
     public static VarHandle get_text$VH() {
-        return _GtkEntryBufferClass.get_text$VH;
+        return constants$2413.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const gchar* (*get_text)(GtkEntryBuffer*,gsize*);
+     * char* (*get_text)(struct _GtkEntryBuffer*,unsigned long*);
      * }
      */
     public static MemorySegment get_text$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass.get_text$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2413.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const gchar* (*get_text)(GtkEntryBuffer*,gsize*);
+     * char* (*get_text)(struct _GtkEntryBuffer*,unsigned long*);
      * }
      */
     public static void get_text$set(MemorySegment seg, MemorySegment x) {
-        _GtkEntryBufferClass.get_text$VH.set(seg, x);
+        constants$2413.const$5.set(seg, x);
     }
     public static MemorySegment get_text$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass.get_text$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2413.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_text$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkEntryBufferClass.get_text$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2413.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_text get_text(MemorySegment segment, SegmentScope scope) {
+    public static get_text get_text(MemorySegment segment, Arena scope) {
         return get_text.ofAddress(get_text$get(segment), scope);
     }
-    static final FunctionDescriptor get_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_length_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_length_UP$MH = RuntimeHelper.upcallHandle(get_length.class, "apply", _GtkEntryBufferClass.get_length_UP$FUNC);
-    static final FunctionDescriptor get_length_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_length_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkEntryBufferClass.get_length_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * guint (*get_length)(GtkEntryBuffer*);
+ * unsigned int (*get_length)(struct _GtkEntryBuffer*);
      * }
      */
     public interface get_length {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(get_length fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkEntryBufferClass.get_length_UP$MH, fi, _GtkEntryBufferClass.get_length$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment key);
+        static MemorySegment allocate(get_length fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2414.const$0, fi, constants$10.const$5, scope);
         }
-        static get_length ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0) -> {
+        static get_length ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _key) -> {
                 try {
-                    return (int)_GtkEntryBufferClass.get_length_DOWN$MH.invokeExact(symbol, __x0);
+                    return (int)constants$14.const$2.invokeExact(symbol, _key);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -325,75 +218,52 @@ public class _GtkEntryBufferClass {
         }
     }
 
-    static final VarHandle get_length$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_length"));
     public static VarHandle get_length$VH() {
-        return _GtkEntryBufferClass.get_length$VH;
+        return constants$2414.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint (*get_length)(GtkEntryBuffer*);
+     * unsigned int (*get_length)(struct _GtkEntryBuffer*);
      * }
      */
     public static MemorySegment get_length$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass.get_length$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2414.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint (*get_length)(GtkEntryBuffer*);
+     * unsigned int (*get_length)(struct _GtkEntryBuffer*);
      * }
      */
     public static void get_length$set(MemorySegment seg, MemorySegment x) {
-        _GtkEntryBufferClass.get_length$VH.set(seg, x);
+        constants$2414.const$1.set(seg, x);
     }
     public static MemorySegment get_length$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass.get_length$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2414.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_length$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkEntryBufferClass.get_length$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2414.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_length get_length(MemorySegment segment, SegmentScope scope) {
+    public static get_length get_length(MemorySegment segment, Arena scope) {
         return get_length.ofAddress(get_length$get(segment), scope);
     }
-    static final FunctionDescriptor insert_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor insert_text_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle insert_text_UP$MH = RuntimeHelper.upcallHandle(insert_text.class, "apply", _GtkEntryBufferClass.insert_text_UP$FUNC);
-    static final FunctionDescriptor insert_text_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle insert_text_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkEntryBufferClass.insert_text_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * guint (*insert_text)(GtkEntryBuffer*,guint,const gchar*,guint);
+ * unsigned int (*insert_text)(struct _GtkEntryBuffer*,unsigned int,char*,unsigned int);
      * }
      */
     public interface insert_text {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, int _x3);
-        static MemorySegment allocate(insert_text fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkEntryBufferClass.insert_text_UP$MH, fi, _GtkEntryBufferClass.insert_text$FUNC, scope);
+        static MemorySegment allocate(insert_text fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2414.const$2, fi, constants$265.const$2, scope);
         }
-        static insert_text ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static insert_text ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, int __x3) -> {
                 try {
-                    return (int)_GtkEntryBufferClass.insert_text_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    return (int)constants$2414.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -401,72 +271,52 @@ public class _GtkEntryBufferClass {
         }
     }
 
-    static final VarHandle insert_text$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("insert_text"));
     public static VarHandle insert_text$VH() {
-        return _GtkEntryBufferClass.insert_text$VH;
+        return constants$2414.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint (*insert_text)(GtkEntryBuffer*,guint,const gchar*,guint);
+     * unsigned int (*insert_text)(struct _GtkEntryBuffer*,unsigned int,char*,unsigned int);
      * }
      */
     public static MemorySegment insert_text$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass.insert_text$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2414.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint (*insert_text)(GtkEntryBuffer*,guint,const gchar*,guint);
+     * unsigned int (*insert_text)(struct _GtkEntryBuffer*,unsigned int,char*,unsigned int);
      * }
      */
     public static void insert_text$set(MemorySegment seg, MemorySegment x) {
-        _GtkEntryBufferClass.insert_text$VH.set(seg, x);
+        constants$2414.const$4.set(seg, x);
     }
     public static MemorySegment insert_text$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass.insert_text$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2414.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void insert_text$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkEntryBufferClass.insert_text$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2414.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static insert_text insert_text(MemorySegment segment, SegmentScope scope) {
+    public static insert_text insert_text(MemorySegment segment, Arena scope) {
         return insert_text.ofAddress(insert_text$get(segment), scope);
     }
-    static final FunctionDescriptor delete_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor delete_text_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle delete_text_UP$MH = RuntimeHelper.upcallHandle(delete_text.class, "apply", _GtkEntryBufferClass.delete_text_UP$FUNC);
-    static final FunctionDescriptor delete_text_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle delete_text_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkEntryBufferClass.delete_text_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * guint (*delete_text)(GtkEntryBuffer*,guint,guint);
+ * unsigned int (*delete_text)(struct _GtkEntryBuffer*,unsigned int,unsigned int);
      * }
      */
     public interface delete_text {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
-        static MemorySegment allocate(delete_text fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkEntryBufferClass.delete_text_UP$MH, fi, _GtkEntryBufferClass.delete_text$FUNC, scope);
+        static MemorySegment allocate(delete_text fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2414.const$5, fi, constants$49.const$0, scope);
         }
-        static delete_text ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static delete_text ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    return (int)_GtkEntryBufferClass.delete_text_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$247.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -474,44 +324,36 @@ public class _GtkEntryBufferClass {
         }
     }
 
-    static final VarHandle delete_text$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("delete_text"));
     public static VarHandle delete_text$VH() {
-        return _GtkEntryBufferClass.delete_text$VH;
+        return constants$2415.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint (*delete_text)(GtkEntryBuffer*,guint,guint);
+     * unsigned int (*delete_text)(struct _GtkEntryBuffer*,unsigned int,unsigned int);
      * }
      */
     public static MemorySegment delete_text$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass.delete_text$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2415.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint (*delete_text)(GtkEntryBuffer*,guint,guint);
+     * unsigned int (*delete_text)(struct _GtkEntryBuffer*,unsigned int,unsigned int);
      * }
      */
     public static void delete_text$set(MemorySegment seg, MemorySegment x) {
-        _GtkEntryBufferClass.delete_text$VH.set(seg, x);
+        constants$2415.const$0.set(seg, x);
     }
     public static MemorySegment delete_text$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass.delete_text$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2415.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void delete_text$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkEntryBufferClass.delete_text$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2415.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static delete_text delete_text(MemorySegment segment, SegmentScope scope) {
+    public static delete_text delete_text(MemorySegment segment, Arena scope) {
         return delete_text.ofAddress(delete_text$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkEntryBufferClass._gtk_reserved1_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkEntryBufferClass._gtk_reserved1_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved1)();
@@ -520,14 +362,14 @@ public class _GtkEntryBufferClass {
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkEntryBufferClass._gtk_reserved1_UP$MH, fi, _GtkEntryBufferClass._gtk_reserved1$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved1 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2415.const$1, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkEntryBufferClass._gtk_reserved1_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -535,9 +377,8 @@ public class _GtkEntryBufferClass {
         }
     }
 
-    static final VarHandle _gtk_reserved1$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
     public static VarHandle _gtk_reserved1$VH() {
-        return _GtkEntryBufferClass._gtk_reserved1$VH;
+        return constants$2415.const$2;
     }
     /**
      * Getter for field:
@@ -546,7 +387,7 @@ public class _GtkEntryBufferClass {
      * }
      */
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass._gtk_reserved1$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2415.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -555,24 +396,17 @@ public class _GtkEntryBufferClass {
      * }
      */
     public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        _GtkEntryBufferClass._gtk_reserved1$VH.set(seg, x);
+        constants$2415.const$2.set(seg, x);
     }
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2415.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkEntryBufferClass._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2415.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, Arena scope) {
         return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkEntryBufferClass._gtk_reserved2_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkEntryBufferClass._gtk_reserved2_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved2)();
@@ -581,14 +415,14 @@ public class _GtkEntryBufferClass {
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkEntryBufferClass._gtk_reserved2_UP$MH, fi, _GtkEntryBufferClass._gtk_reserved2$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved2 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2415.const$3, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkEntryBufferClass._gtk_reserved2_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -596,9 +430,8 @@ public class _GtkEntryBufferClass {
         }
     }
 
-    static final VarHandle _gtk_reserved2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
     public static VarHandle _gtk_reserved2$VH() {
-        return _GtkEntryBufferClass._gtk_reserved2$VH;
+        return constants$2415.const$4;
     }
     /**
      * Getter for field:
@@ -607,7 +440,7 @@ public class _GtkEntryBufferClass {
      * }
      */
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass._gtk_reserved2$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2415.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -616,24 +449,17 @@ public class _GtkEntryBufferClass {
      * }
      */
     public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        _GtkEntryBufferClass._gtk_reserved2$VH.set(seg, x);
+        constants$2415.const$4.set(seg, x);
     }
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2415.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkEntryBufferClass._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2415.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, Arena scope) {
         return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkEntryBufferClass._gtk_reserved3_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkEntryBufferClass._gtk_reserved3_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved3)();
@@ -642,14 +468,14 @@ public class _GtkEntryBufferClass {
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkEntryBufferClass._gtk_reserved3_UP$MH, fi, _GtkEntryBufferClass._gtk_reserved3$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved3 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2415.const$5, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkEntryBufferClass._gtk_reserved3_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -657,9 +483,8 @@ public class _GtkEntryBufferClass {
         }
     }
 
-    static final VarHandle _gtk_reserved3$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
     public static VarHandle _gtk_reserved3$VH() {
-        return _GtkEntryBufferClass._gtk_reserved3$VH;
+        return constants$2416.const$0;
     }
     /**
      * Getter for field:
@@ -668,7 +493,7 @@ public class _GtkEntryBufferClass {
      * }
      */
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass._gtk_reserved3$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2416.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -677,24 +502,17 @@ public class _GtkEntryBufferClass {
      * }
      */
     public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        _GtkEntryBufferClass._gtk_reserved3$VH.set(seg, x);
+        constants$2416.const$0.set(seg, x);
     }
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2416.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkEntryBufferClass._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2416.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, Arena scope) {
         return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved4.class, "apply", _GtkEntryBufferClass._gtk_reserved4_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkEntryBufferClass._gtk_reserved4_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved4)();
@@ -703,14 +521,14 @@ public class _GtkEntryBufferClass {
     public interface _gtk_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved4 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkEntryBufferClass._gtk_reserved4_UP$MH, fi, _GtkEntryBufferClass._gtk_reserved4$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved4 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2416.const$1, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkEntryBufferClass._gtk_reserved4_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -718,9 +536,8 @@ public class _GtkEntryBufferClass {
         }
     }
 
-    static final VarHandle _gtk_reserved4$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
     public static VarHandle _gtk_reserved4$VH() {
-        return _GtkEntryBufferClass._gtk_reserved4$VH;
+        return constants$2416.const$2;
     }
     /**
      * Getter for field:
@@ -729,7 +546,7 @@ public class _GtkEntryBufferClass {
      * }
      */
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass._gtk_reserved4$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2416.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -738,24 +555,17 @@ public class _GtkEntryBufferClass {
      * }
      */
     public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        _GtkEntryBufferClass._gtk_reserved4$VH.set(seg, x);
+        constants$2416.const$2.set(seg, x);
     }
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2416.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkEntryBufferClass._gtk_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2416.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, Arena scope) {
         return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved5$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved5_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved5_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved5.class, "apply", _GtkEntryBufferClass._gtk_reserved5_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved5_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved5_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkEntryBufferClass._gtk_reserved5_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved5)();
@@ -764,14 +574,14 @@ public class _GtkEntryBufferClass {
     public interface _gtk_reserved5 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved5 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkEntryBufferClass._gtk_reserved5_UP$MH, fi, _GtkEntryBufferClass._gtk_reserved5$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved5 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2416.const$3, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved5 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved5 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkEntryBufferClass._gtk_reserved5_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -779,9 +589,8 @@ public class _GtkEntryBufferClass {
         }
     }
 
-    static final VarHandle _gtk_reserved5$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved5"));
     public static VarHandle _gtk_reserved5$VH() {
-        return _GtkEntryBufferClass._gtk_reserved5$VH;
+        return constants$2416.const$4;
     }
     /**
      * Getter for field:
@@ -790,7 +599,7 @@ public class _GtkEntryBufferClass {
      * }
      */
     public static MemorySegment _gtk_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass._gtk_reserved5$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2416.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -799,24 +608,17 @@ public class _GtkEntryBufferClass {
      * }
      */
     public static void _gtk_reserved5$set(MemorySegment seg, MemorySegment x) {
-        _GtkEntryBufferClass._gtk_reserved5$VH.set(seg, x);
+        constants$2416.const$4.set(seg, x);
     }
     public static MemorySegment _gtk_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass._gtk_reserved5$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2416.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkEntryBufferClass._gtk_reserved5$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2416.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved5 _gtk_reserved5(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved5 _gtk_reserved5(MemorySegment segment, Arena scope) {
         return _gtk_reserved5.ofAddress(_gtk_reserved5$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved6$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved6_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved6_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved6.class, "apply", _GtkEntryBufferClass._gtk_reserved6_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved6_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved6_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkEntryBufferClass._gtk_reserved6_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved6)();
@@ -825,14 +627,14 @@ public class _GtkEntryBufferClass {
     public interface _gtk_reserved6 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved6 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkEntryBufferClass._gtk_reserved6_UP$MH, fi, _GtkEntryBufferClass._gtk_reserved6$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved6 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2416.const$5, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved6 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved6 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkEntryBufferClass._gtk_reserved6_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -840,9 +642,8 @@ public class _GtkEntryBufferClass {
         }
     }
 
-    static final VarHandle _gtk_reserved6$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved6"));
     public static VarHandle _gtk_reserved6$VH() {
-        return _GtkEntryBufferClass._gtk_reserved6$VH;
+        return constants$2417.const$0;
     }
     /**
      * Getter for field:
@@ -851,7 +652,7 @@ public class _GtkEntryBufferClass {
      * }
      */
     public static MemorySegment _gtk_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass._gtk_reserved6$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2417.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -860,24 +661,17 @@ public class _GtkEntryBufferClass {
      * }
      */
     public static void _gtk_reserved6$set(MemorySegment seg, MemorySegment x) {
-        _GtkEntryBufferClass._gtk_reserved6$VH.set(seg, x);
+        constants$2417.const$0.set(seg, x);
     }
     public static MemorySegment _gtk_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass._gtk_reserved6$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2417.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkEntryBufferClass._gtk_reserved6$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2417.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved6 _gtk_reserved6(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved6 _gtk_reserved6(MemorySegment segment, Arena scope) {
         return _gtk_reserved6.ofAddress(_gtk_reserved6$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved7$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved7_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved7_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved7.class, "apply", _GtkEntryBufferClass._gtk_reserved7_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved7_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved7_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkEntryBufferClass._gtk_reserved7_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved7)();
@@ -886,14 +680,14 @@ public class _GtkEntryBufferClass {
     public interface _gtk_reserved7 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved7 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkEntryBufferClass._gtk_reserved7_UP$MH, fi, _GtkEntryBufferClass._gtk_reserved7$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved7 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2417.const$1, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved7 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved7 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkEntryBufferClass._gtk_reserved7_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -901,9 +695,8 @@ public class _GtkEntryBufferClass {
         }
     }
 
-    static final VarHandle _gtk_reserved7$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved7"));
     public static VarHandle _gtk_reserved7$VH() {
-        return _GtkEntryBufferClass._gtk_reserved7$VH;
+        return constants$2417.const$2;
     }
     /**
      * Getter for field:
@@ -912,7 +705,7 @@ public class _GtkEntryBufferClass {
      * }
      */
     public static MemorySegment _gtk_reserved7$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass._gtk_reserved7$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2417.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -921,24 +714,17 @@ public class _GtkEntryBufferClass {
      * }
      */
     public static void _gtk_reserved7$set(MemorySegment seg, MemorySegment x) {
-        _GtkEntryBufferClass._gtk_reserved7$VH.set(seg, x);
+        constants$2417.const$2.set(seg, x);
     }
     public static MemorySegment _gtk_reserved7$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass._gtk_reserved7$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2417.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved7$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkEntryBufferClass._gtk_reserved7$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2417.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved7 _gtk_reserved7(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved7 _gtk_reserved7(MemorySegment segment, Arena scope) {
         return _gtk_reserved7.ofAddress(_gtk_reserved7$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved8$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved8_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved8_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved8.class, "apply", _GtkEntryBufferClass._gtk_reserved8_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved8_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved8_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkEntryBufferClass._gtk_reserved8_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved8)();
@@ -947,14 +733,14 @@ public class _GtkEntryBufferClass {
     public interface _gtk_reserved8 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved8 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkEntryBufferClass._gtk_reserved8_UP$MH, fi, _GtkEntryBufferClass._gtk_reserved8$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved8 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2417.const$3, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved8 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved8 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkEntryBufferClass._gtk_reserved8_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -962,9 +748,8 @@ public class _GtkEntryBufferClass {
         }
     }
 
-    static final VarHandle _gtk_reserved8$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved8"));
     public static VarHandle _gtk_reserved8$VH() {
-        return _GtkEntryBufferClass._gtk_reserved8$VH;
+        return constants$2417.const$4;
     }
     /**
      * Getter for field:
@@ -973,7 +758,7 @@ public class _GtkEntryBufferClass {
      * }
      */
     public static MemorySegment _gtk_reserved8$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass._gtk_reserved8$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2417.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -982,15 +767,15 @@ public class _GtkEntryBufferClass {
      * }
      */
     public static void _gtk_reserved8$set(MemorySegment seg, MemorySegment x) {
-        _GtkEntryBufferClass._gtk_reserved8$VH.set(seg, x);
+        constants$2417.const$4.set(seg, x);
     }
     public static MemorySegment _gtk_reserved8$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkEntryBufferClass._gtk_reserved8$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2417.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved8$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkEntryBufferClass._gtk_reserved8$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2417.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved8 _gtk_reserved8(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved8 _gtk_reserved8(MemorySegment segment, Arena scope) {
         return _gtk_reserved8.ofAddress(_gtk_reserved8$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -998,7 +783,7 @@ public class _GtkEntryBufferClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

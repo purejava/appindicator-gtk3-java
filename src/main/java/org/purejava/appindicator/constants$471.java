@@ -3,65 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$471 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$471() {}
-    static final FunctionDescriptor GSocketSourceFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_timer_continue",
+        constants$13.const$1
     );
-    static final FunctionDescriptor GSocketSourceFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_timer_elapsed",
+        constants$67.const$5
     );
-    static final MethodHandle GSocketSourceFunc_UP$MH = RuntimeHelper.upcallHandle(GSocketSourceFunc.class, "apply", constants$471.GSocketSourceFunc_UP$FUNC);
-    static final FunctionDescriptor GSocketSourceFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_timer_is_active",
+        constants$10.const$5
     );
-    static final MethodHandle GSocketSourceFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$471.GSocketSourceFunc_DOWN$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_usleep",
+        constants$84.const$5
     );
-    static final FunctionDescriptor GDatagramBasedSourceFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_time_val_add",
+        constants$25.const$3
     );
-    static final FunctionDescriptor GDatagramBasedSourceFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GDatagramBasedSourceFunc_UP$MH = RuntimeHelper.upcallHandle(GDatagramBasedSourceFunc.class, "apply", constants$471.GDatagramBasedSourceFunc_UP$FUNC);
-    static final FunctionDescriptor GDatagramBasedSourceFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GDatagramBasedSourceFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$471.GDatagramBasedSourceFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor GCancellableSourceFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GCancellableSourceFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GCancellableSourceFunc_UP$MH = RuntimeHelper.upcallHandle(GCancellableSourceFunc.class, "apply", constants$471.GCancellableSourceFunc_UP$FUNC);
-    static final FunctionDescriptor GCancellableSourceFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GCancellableSourceFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$471.GCancellableSourceFunc_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_time_val_from_iso8601",
+        constants$9.const$0
     );
 }
 

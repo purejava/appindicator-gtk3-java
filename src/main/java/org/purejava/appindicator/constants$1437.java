@@ -3,73 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1437 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1437() {}
-    static final FunctionDescriptor gtk_list_store_swap$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_set_previous_range",
+        constants$12.const$2
     );
-    static final MethodHandle gtk_list_store_swap$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_swap",
-        constants$1437.gtk_list_store_swap$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_set_next_many",
+        constants$265.const$2
     );
-    static final FunctionDescriptor gtk_list_store_move_after$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_map_create",
+        constants$35.const$2
     );
-    static final MethodHandle gtk_list_store_move_after$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_move_after",
-        constants$1437.gtk_list_store_move_after$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_map_get_empty",
+        constants$35.const$2
     );
-    static final FunctionDescriptor gtk_list_store_move_before$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_map_reference",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_list_store_move_before$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_move_before",
-        constants$1437.gtk_list_store_move_before$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_map_destroy",
+        constants$13.const$1
     );
-    static final FunctionDescriptor GtkTreeModelFilterVisibleFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkTreeModelFilterVisibleFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkTreeModelFilterVisibleFunc_UP$MH = RuntimeHelper.upcallHandle(GtkTreeModelFilterVisibleFunc.class, "apply", constants$1437.GtkTreeModelFilterVisibleFunc_UP$FUNC);
-    static final FunctionDescriptor GtkTreeModelFilterVisibleFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkTreeModelFilterVisibleFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1437.GtkTreeModelFilterVisibleFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor GtkTreeModelFilterModifyFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkTreeModelFilterModifyFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkTreeModelFilterModifyFunc_UP$MH = RuntimeHelper.upcallHandle(GtkTreeModelFilterModifyFunc.class, "apply", constants$1437.GtkTreeModelFilterModifyFunc_UP$FUNC);
 }
 
 

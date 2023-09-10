@@ -3,57 +3,81 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1184 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1184() {}
-    static final FunctionDescriptor gdk_test_simulate_button$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_native_socket_address_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_test_simulate_button$MH = RuntimeHelper.downcallHandle(
-        "gdk_test_simulate_button",
-        constants$1184.gdk_test_simulate_button$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_native_socket_address_new",
+        constants$21.const$1
     );
-    static final FunctionDescriptor gdk_threads_init$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_threads_init$MH = RuntimeHelper.downcallHandle(
-        "gdk_threads_init",
-        constants$1184.gdk_threads_init$FUNC
-    );
-    static final FunctionDescriptor gdk_threads_enter$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_threads_enter$MH = RuntimeHelper.downcallHandle(
-        "gdk_threads_enter",
-        constants$1184.gdk_threads_enter$FUNC
-    );
-    static final FunctionDescriptor gdk_threads_leave$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_threads_leave$MH = RuntimeHelper.downcallHandle(
-        "gdk_threads_leave",
-        constants$1184.gdk_threads_leave$FUNC
-    );
-    static final FunctionDescriptor gdk_threads_set_lock_functions$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_threads_set_lock_functions$MH = RuntimeHelper.downcallHandle(
-        "gdk_threads_set_lock_functions",
-        constants$1184.gdk_threads_set_lock_functions$FUNC
-    );
-    static final FunctionDescriptor gdk_threads_add_idle_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_threads_add_idle_full$MH = RuntimeHelper.downcallHandle(
-        "gdk_threads_add_idle_full",
-        constants$1184.gdk_threads_add_idle_full$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GVolumeMonitor");
+    static final VarHandle const$3 = constants$1184.const$2.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("volume_added"),
+        RuntimeHelper.POINTER.withName("volume_removed"),
+        RuntimeHelper.POINTER.withName("volume_changed"),
+        RuntimeHelper.POINTER.withName("mount_added"),
+        RuntimeHelper.POINTER.withName("mount_removed"),
+        RuntimeHelper.POINTER.withName("mount_pre_unmount"),
+        RuntimeHelper.POINTER.withName("mount_changed"),
+        RuntimeHelper.POINTER.withName("drive_connected"),
+        RuntimeHelper.POINTER.withName("drive_disconnected"),
+        RuntimeHelper.POINTER.withName("drive_changed"),
+        RuntimeHelper.POINTER.withName("is_supported"),
+        RuntimeHelper.POINTER.withName("get_connected_drives"),
+        RuntimeHelper.POINTER.withName("get_volumes"),
+        RuntimeHelper.POINTER.withName("get_mounts"),
+        RuntimeHelper.POINTER.withName("get_volume_for_uuid"),
+        RuntimeHelper.POINTER.withName("get_mount_for_uuid"),
+        RuntimeHelper.POINTER.withName("adopt_orphan_mount"),
+        RuntimeHelper.POINTER.withName("drive_eject_button"),
+        RuntimeHelper.POINTER.withName("drive_stop_button"),
+        RuntimeHelper.POINTER.withName("_g_reserved1"),
+        RuntimeHelper.POINTER.withName("_g_reserved2"),
+        RuntimeHelper.POINTER.withName("_g_reserved3"),
+        RuntimeHelper.POINTER.withName("_g_reserved4"),
+        RuntimeHelper.POINTER.withName("_g_reserved5"),
+        RuntimeHelper.POINTER.withName("_g_reserved6")
+    ).withName("_GVolumeMonitorClass");
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.volume_added.class, "apply", constants$13.const$4);
 }
 
 

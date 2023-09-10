@@ -3,42 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1165 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1165() {}
-    static final FunctionDescriptor gdk_status_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_status_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_status_get_type",
-        constants$1165.gdk_status_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_grab_status_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_grab_status_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_grab_status_get_type",
-        constants$1165.gdk_grab_status_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_grab_ownership_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_grab_ownership_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_grab_ownership_get_type",
-        constants$1165.gdk_grab_ownership_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_event_mask_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_event_mask_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_mask_get_type",
-        constants$1165.gdk_event_mask_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_gl_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_gl_error_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_error_get_type",
-        constants$1165.gdk_gl_error_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_window_type_hint_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_window_type_hint_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_type_hint_get_type",
-        constants$1165.gdk_window_type_hint_get_type$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GMountIface.guess_content_type_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$1 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("guess_content_type_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GMountIface.guess_content_type_sync.class, "apply", constants$180.const$0);
+    static final VarHandle const$3 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("guess_content_type_sync"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GMountIface.pre_unmount.class, "apply", constants$13.const$1);
+    static final VarHandle const$5 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("pre_unmount"));
 }
 
 

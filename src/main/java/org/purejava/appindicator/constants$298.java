@@ -3,68 +3,44 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$298 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$298() {}
-    static final FunctionDescriptor g_scanner_scope_remove_symbol$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_ascii_strtod",
+        constants$67.const$5
     );
-    static final MethodHandle g_scanner_scope_remove_symbol$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_scope_remove_symbol",
-        constants$298.g_scanner_scope_remove_symbol$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_ascii_strtoull",
+        constants$68.const$2
     );
-    static final FunctionDescriptor g_scanner_scope_lookup_symbol$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_ascii_strtoll",
+        constants$68.const$2
     );
-    static final MethodHandle g_scanner_scope_lookup_symbol$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_scope_lookup_symbol",
-        constants$298.g_scanner_scope_lookup_symbol$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor g_scanner_scope_foreach_symbol$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_ascii_dtostr",
+        constants$298.const$3
     );
-    static final MethodHandle g_scanner_scope_foreach_symbol$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_scope_foreach_symbol",
-        constants$298.g_scanner_scope_foreach_symbol$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor g_scanner_lookup_symbol$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_scanner_lookup_symbol$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_lookup_symbol",
-        constants$298.g_scanner_lookup_symbol$FUNC
-    );
-    static final FunctionDescriptor g_scanner_unexp_token$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_scanner_unexp_token$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_unexp_token",
-        constants$298.g_scanner_unexp_token$FUNC
-    );
-    static final FunctionDescriptor g_scanner_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_scanner_error$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_scanner_error",
-        constants$298.g_scanner_error$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_ascii_formatd",
+        constants$298.const$5
     );
 }
 

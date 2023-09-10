@@ -3,53 +3,55 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1351 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1351() {}
-    static final FunctionDescriptor gtk_actionable_set_detailed_action_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tls_backend_get_dtls_server_connection_type",
+        constants$4.const$0
     );
-    static final MethodHandle gtk_actionable_set_detailed_action_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_actionable_set_detailed_action_name",
-        constants$1351.gtk_actionable_set_detailed_action_name$FUNC
-    );
-    static final FunctionDescriptor gtk_action_bar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_action_bar_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_bar_get_type",
-        constants$1351.gtk_action_bar_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_action_bar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_action_bar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_bar_new",
-        constants$1351.gtk_action_bar_new$FUNC
-    );
-    static final FunctionDescriptor gtk_action_bar_get_center_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_bar_get_center_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_bar_get_center_widget",
-        constants$1351.gtk_action_bar_get_center_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_action_bar_set_center_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_bar_set_center_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_bar_set_center_widget",
-        constants$1351.gtk_action_bar_set_center_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_action_bar_pack_start$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_bar_pack_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_bar_pack_start",
-        constants$1351.gtk_action_bar_pack_start$FUNC
-    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GTlsCertificate");
+    static final VarHandle const$2 = constants$1351.const$1.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("verify"),
+        MemoryLayout.sequenceLayout(8, RuntimeHelper.POINTER).withName("padding")
+    ).withName("_GTlsCertificateClass");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GTlsCertificateClass.verify.class, "apply", constants$12.const$2);
+    static final VarHandle const$5 = constants$1351.const$3.varHandle(MemoryLayout.PathElement.groupElement("verify"));
 }
 
 

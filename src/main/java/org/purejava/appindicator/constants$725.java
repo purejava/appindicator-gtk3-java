@@ -3,47 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$725 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$725() {}
-    static final FunctionDescriptor g_power_profile_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_power_profile_monitor_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_power_profile_monitor_get_type",
-        constants$725.g_power_profile_monitor_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_app_info_get_description",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_power_profile_monitor_dup_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_power_profile_monitor_dup_default$MH = RuntimeHelper.downcallHandle(
-        "g_power_profile_monitor_dup_default",
-        constants$725.g_power_profile_monitor_dup_default$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_app_info_get_executable",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_power_profile_monitor_get_power_saver_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_app_info_get_commandline",
+        constants$5.const$2
     );
-    static final MethodHandle g_power_profile_monitor_get_power_saver_enabled$MH = RuntimeHelper.downcallHandle(
-        "g_power_profile_monitor_get_power_saver_enabled",
-        constants$725.g_power_profile_monitor_get_power_saver_enabled$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_app_info_get_icon",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_property_action_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_property_action_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_property_action_get_type",
-        constants$725.g_property_action_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_app_info_launch",
+        constants$34.const$5
     );
-    static final FunctionDescriptor g_property_action_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_property_action_new$MH = RuntimeHelper.downcallHandle(
-        "g_property_action_new",
-        constants$725.g_property_action_new$FUNC
-    );
-    static final FunctionDescriptor g_proxy_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_proxy_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_proxy_get_type",
-        constants$725.g_proxy_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_app_info_supports_uris",
+        constants$10.const$5
     );
 }
 

@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1281 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1281() {}
-    static final FunctionDescriptor gtk_widget_input_shape_combine_region$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_socket_get_protocol",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_widget_input_shape_combine_region$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_input_shape_combine_region",
-        constants$1281.gtk_widget_input_shape_combine_region$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_socket_get_local_address",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_widget_list_mnemonic_labels$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_socket_get_remote_address",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_widget_list_mnemonic_labels$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_list_mnemonic_labels",
-        constants$1281.gtk_widget_list_mnemonic_labels$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_set_blocking",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_widget_add_mnemonic_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_get_blocking",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_widget_add_mnemonic_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_add_mnemonic_label",
-        constants$1281.gtk_widget_add_mnemonic_label$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_remove_mnemonic_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_remove_mnemonic_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_remove_mnemonic_label",
-        constants$1281.gtk_widget_remove_mnemonic_label$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_tooltip_window$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_tooltip_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_tooltip_window",
-        constants$1281.gtk_widget_set_tooltip_window$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_tooltip_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_tooltip_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_tooltip_window",
-        constants$1281.gtk_widget_get_tooltip_window$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_set_keepalive",
+        constants$40.const$2
     );
 }
 

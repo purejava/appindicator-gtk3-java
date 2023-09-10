@@ -3,59 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$789 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$789() {}
-    static final FunctionDescriptor g_subprocess_launcher_unsetenv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_output_stream_writev_finish",
+        constants$34.const$5
     );
-    static final MethodHandle g_subprocess_launcher_unsetenv$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_unsetenv",
-        constants$789.g_subprocess_launcher_unsetenv$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_output_stream_writev_all_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_output_stream_writev_all_async",
+        constants$761.const$1
     );
-    static final FunctionDescriptor g_subprocess_launcher_getenv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_output_stream_writev_all_finish",
+        constants$34.const$5
     );
-    static final MethodHandle g_subprocess_launcher_getenv$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_getenv",
-        constants$789.g_subprocess_launcher_getenv$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_launcher_set_cwd$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_launcher_set_cwd$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_set_cwd",
-        constants$789.g_subprocess_launcher_set_cwd$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_launcher_set_flags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_subprocess_launcher_set_flags$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_set_flags",
-        constants$789.g_subprocess_launcher_set_flags$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_launcher_set_stdin_file_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_launcher_set_stdin_file_path$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_set_stdin_file_path",
-        constants$789.g_subprocess_launcher_set_stdin_file_path$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_launcher_take_stdin_fd$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_subprocess_launcher_take_stdin_fd$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_take_stdin_fd",
-        constants$789.g_subprocess_launcher_take_stdin_fd$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_output_stream_write_bytes_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_output_stream_write_bytes_async",
+        constants$584.const$3
     );
 }
 

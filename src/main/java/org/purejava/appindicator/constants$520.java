@@ -3,63 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$520 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$520() {}
-    static final FunctionDescriptor close$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pthread_attr_setscope",
+        constants$11.const$4
     );
-    static final MethodHandle close$MH = RuntimeHelper.downcallHandle(
-        "close",
-        constants$520.close$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pthread_attr_getstackaddr",
+        constants$9.const$0
     );
-    static final FunctionDescriptor closefrom$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pthread_attr_setstackaddr",
+        constants$9.const$0
     );
-    static final MethodHandle closefrom$MH = RuntimeHelper.downcallHandle(
-        "closefrom",
-        constants$520.closefrom$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pthread_attr_getstacksize",
+        constants$9.const$0
     );
-    static final FunctionDescriptor read$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pthread_attr_setstacksize",
+        constants$97.const$1
     );
-    static final MethodHandle read$MH = RuntimeHelper.downcallHandle(
-        "read",
-        constants$520.read$FUNC
-    );
-    static final FunctionDescriptor write$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle write$MH = RuntimeHelper.downcallHandle(
-        "write",
-        constants$520.write$FUNC
-    );
-    static final FunctionDescriptor pread$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle pread$MH = RuntimeHelper.downcallHandle(
-        "pread",
-        constants$520.pread$FUNC
-    );
-    static final FunctionDescriptor pwrite$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle pwrite$MH = RuntimeHelper.downcallHandle(
-        "pwrite",
-        constants$520.pwrite$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pthread_attr_getstack",
+        constants$12.const$2
     );
 }
 

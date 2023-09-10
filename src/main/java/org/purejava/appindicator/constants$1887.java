@@ -3,41 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1887 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1887() {}
-    static final FunctionDescriptor gtk_tree_view_grid_lines_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_view_grid_lines_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_grid_lines_get_type",
-        constants$1887.gtk_tree_view_grid_lines_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_save_to_bufferv",
+        constants$164.const$2
     );
-    static final FunctionDescriptor gtk_drag_result_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_drag_result_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_result_get_type",
-        constants$1887.gtk_drag_result_get_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_stream",
+        constants$23.const$0
     );
-    static final FunctionDescriptor gtk_size_group_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_size_group_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_mode_get_type",
-        constants$1887.gtk_size_group_mode_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(gdk_pixbuf_new_from_stream_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_stream_async",
+        constants$42.const$1
     );
-    static final FunctionDescriptor gtk_size_request_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_size_request_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_request_mode_get_type",
-        constants$1887.gtk_size_request_mode_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_stream_finish",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_scrollable_policy_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_scrollable_policy_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_policy_get_type",
-        constants$1887.gtk_scrollable_policy_get_type$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gtk_state_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_state_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_state_flags_get_type",
-        constants$1887.gtk_state_flags_get_type$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_stream_at_scale",
+        constants$1887.const$5
     );
 }
 

@@ -3,66 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1028 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1028() {}
-    static final FunctionDescriptor cairo_surface_unmap_image$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_query_settable_attributes",
+        constants$23.const$0
     );
-    static final MethodHandle cairo_surface_unmap_image$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_unmap_image",
-        constants$1028.cairo_surface_unmap_image$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_query_writable_namespaces",
+        constants$23.const$0
     );
-    static final FunctionDescriptor cairo_surface_create_for_rectangle$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_set_attribute",
+        constants$984.const$2
     );
-    static final MethodHandle cairo_surface_create_for_rectangle$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_create_for_rectangle",
-        constants$1028.cairo_surface_create_for_rectangle$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_set_attributes_from_info",
+        constants$859.const$1
     );
-    static final FunctionDescriptor cairo_surface_create_observer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_surface_create_observer$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_create_observer",
-        constants$1028.cairo_surface_create_observer$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_observer_callback_t$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor cairo_surface_observer_callback_t_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_observer_callback_t_UP$MH = RuntimeHelper.upcallHandle(cairo_surface_observer_callback_t.class, "apply", constants$1028.cairo_surface_observer_callback_t_UP$FUNC);
-    static final FunctionDescriptor cairo_surface_observer_callback_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_observer_callback_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1028.cairo_surface_observer_callback_t_DOWN$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_observer_add_paint_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_observer_add_paint_callback$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_observer_add_paint_callback",
-        constants$1028.cairo_surface_observer_add_paint_callback$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_file_set_attributes_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_set_attributes_async",
+        constants$780.const$3
     );
 }
 

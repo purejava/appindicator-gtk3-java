@@ -3,66 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$764 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$764() {}
-    static final FunctionDescriptor g_socket_get_multicast_ttl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_multicast_ttl$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_multicast_ttl",
-        constants$764.g_socket_get_multicast_ttl$FUNC
-    );
-    static final FunctionDescriptor g_socket_set_multicast_ttl$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_set_multicast_ttl$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_multicast_ttl",
-        constants$764.g_socket_set_multicast_ttl$FUNC
-    );
-    static final FunctionDescriptor g_socket_is_connected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_is_connected$MH = RuntimeHelper.downcallHandle(
-        "g_socket_is_connected",
-        constants$764.g_socket_is_connected$FUNC
-    );
-    static final FunctionDescriptor g_socket_bind$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_bind$MH = RuntimeHelper.downcallHandle(
-        "g_socket_bind",
-        constants$764.g_socket_bind$FUNC
-    );
-    static final FunctionDescriptor g_socket_join_multicast_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_join_multicast_group$MH = RuntimeHelper.downcallHandle(
-        "g_socket_join_multicast_group",
-        constants$764.g_socket_join_multicast_group$FUNC
-    );
-    static final FunctionDescriptor g_socket_leave_multicast_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_leave_multicast_group$MH = RuntimeHelper.downcallHandle(
-        "g_socket_leave_multicast_group",
-        constants$764.g_socket_leave_multicast_group$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GInputStreamClass._g_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$759.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GInputStreamClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$759.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GInputStreamClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$759.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
 }
 
 

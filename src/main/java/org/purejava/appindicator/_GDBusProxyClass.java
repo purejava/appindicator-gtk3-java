@@ -4,85 +4,43 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GDBusProxyClass {
- *     GObjectClass parent_class;
- *     void (*g_properties_changed)(GDBusProxy*,GVariant*,const gchar**);
- *     void (*g_signal)(GDBusProxy*,const gchar*,const gchar*,GVariant*);
- *     gpointer padding[32];
+ *     struct _GObjectClass parent_class;
+ *     void (*g_properties_changed)(struct _GDBusProxy*,struct _GVariant*,char**);
+ *     void (*g_signal)(struct _GDBusProxy*,char*,char*,struct _GVariant*);
+ *     void* padding[32];
  * };
  * }
  */
 public class _GDBusProxyClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-            ).withName("g_type_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-            Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("notify"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("g_properties_changed"),
-        Constants$root.C_POINTER$LAYOUT.withName("g_signal"),
-        MemoryLayout.sequenceLayout(32, Constants$root.C_POINTER$LAYOUT).withName("padding")
-    ).withName("_GDBusProxyClass");
     public static MemoryLayout $LAYOUT() {
-        return _GDBusProxyClass.$struct$LAYOUT;
+        return constants$926.const$1;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
     }
-    static final FunctionDescriptor g_properties_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor g_properties_changed_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_properties_changed_UP$MH = RuntimeHelper.upcallHandle(g_properties_changed.class, "apply", _GDBusProxyClass.g_properties_changed_UP$FUNC);
-    static final FunctionDescriptor g_properties_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_properties_changed_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GDBusProxyClass.g_properties_changed_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*g_properties_changed)(GDBusProxy*,GVariant*,const gchar**);
+ * void (*g_properties_changed)(struct _GDBusProxy*,struct _GVariant*,char**);
      * }
      */
     public interface g_properties_changed {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(g_properties_changed fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GDBusProxyClass.g_properties_changed_UP$MH, fi, _GDBusProxyClass.g_properties_changed$FUNC, scope);
+        static MemorySegment allocate(g_properties_changed fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$926.const$2, fi, constants$14.const$3, scope);
         }
-        static g_properties_changed ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static g_properties_changed ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GDBusProxyClass.g_properties_changed_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
+                    constants$14.const$5.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -90,75 +48,52 @@ public class _GDBusProxyClass {
         }
     }
 
-    static final VarHandle g_properties_changed$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("g_properties_changed"));
     public static VarHandle g_properties_changed$VH() {
-        return _GDBusProxyClass.g_properties_changed$VH;
+        return constants$926.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*g_properties_changed)(GDBusProxy*,GVariant*,const gchar**);
+     * void (*g_properties_changed)(struct _GDBusProxy*,struct _GVariant*,char**);
      * }
      */
     public static MemorySegment g_properties_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GDBusProxyClass.g_properties_changed$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$926.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*g_properties_changed)(GDBusProxy*,GVariant*,const gchar**);
+     * void (*g_properties_changed)(struct _GDBusProxy*,struct _GVariant*,char**);
      * }
      */
     public static void g_properties_changed$set(MemorySegment seg, MemorySegment x) {
-        _GDBusProxyClass.g_properties_changed$VH.set(seg, x);
+        constants$926.const$3.set(seg, x);
     }
     public static MemorySegment g_properties_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GDBusProxyClass.g_properties_changed$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$926.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void g_properties_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        _GDBusProxyClass.g_properties_changed$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$926.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static g_properties_changed g_properties_changed(MemorySegment segment, SegmentScope scope) {
+    public static g_properties_changed g_properties_changed(MemorySegment segment, Arena scope) {
         return g_properties_changed.ofAddress(g_properties_changed$get(segment), scope);
     }
-    static final FunctionDescriptor g_signal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor g_signal_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_UP$MH = RuntimeHelper.upcallHandle(g_signal.class, "apply", _GDBusProxyClass.g_signal_UP$FUNC);
-    static final FunctionDescriptor g_signal_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GDBusProxyClass.g_signal_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*g_signal)(GDBusProxy*,const gchar*,const gchar*,GVariant*);
+ * void (*g_signal)(struct _GDBusProxy*,char*,char*,struct _GVariant*);
      * }
      */
     public interface g_signal {
 
         void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(g_signal fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GDBusProxyClass.g_signal_UP$MH, fi, _GDBusProxyClass.g_signal$FUNC, scope);
+        static MemorySegment allocate(g_signal fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$926.const$4, fi, constants$42.const$1, scope);
         }
-        static g_signal ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static g_signal ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GDBusProxyClass.g_signal_DOWN$MH.invokeExact(symbol, _model, _path, _iter, _data);
+                    constants$259.const$4.invokeExact(symbol, _model, _path, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -166,35 +101,34 @@ public class _GDBusProxyClass {
         }
     }
 
-    static final VarHandle g_signal$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("g_signal"));
     public static VarHandle g_signal$VH() {
-        return _GDBusProxyClass.g_signal$VH;
+        return constants$926.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*g_signal)(GDBusProxy*,const gchar*,const gchar*,GVariant*);
+     * void (*g_signal)(struct _GDBusProxy*,char*,char*,struct _GVariant*);
      * }
      */
     public static MemorySegment g_signal$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GDBusProxyClass.g_signal$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$926.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*g_signal)(GDBusProxy*,const gchar*,const gchar*,GVariant*);
+     * void (*g_signal)(struct _GDBusProxy*,char*,char*,struct _GVariant*);
      * }
      */
     public static void g_signal$set(MemorySegment seg, MemorySegment x) {
-        _GDBusProxyClass.g_signal$VH.set(seg, x);
+        constants$926.const$5.set(seg, x);
     }
     public static MemorySegment g_signal$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GDBusProxyClass.g_signal$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$926.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void g_signal$set(MemorySegment seg, long index, MemorySegment x) {
-        _GDBusProxyClass.g_signal$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$926.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static g_signal g_signal(MemorySegment segment, SegmentScope scope) {
+    public static g_signal g_signal(MemorySegment segment, Arena scope) {
         return g_signal.ofAddress(g_signal$get(segment), scope);
     }
     public static MemorySegment padding$slice(MemorySegment seg) {
@@ -205,7 +139,7 @@ public class _GDBusProxyClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

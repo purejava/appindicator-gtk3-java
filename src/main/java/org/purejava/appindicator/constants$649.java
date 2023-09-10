@@ -3,55 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$649 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$649() {}
-    static final FunctionDescriptor g_file_info_get_access_date_time$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_access_date_time$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_access_date_time",
-        constants$649.g_file_info_get_access_date_time$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_creation_date_time$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_creation_date_time$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_creation_date_time",
-        constants$649.g_file_info_get_creation_date_time$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_symlink_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_symlink_target$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_symlink_target",
-        constants$649.g_file_info_get_symlink_target$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_etag$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_etag$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_etag",
-        constants$649.g_file_info_get_etag$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_sort_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_sort_order$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_sort_order",
-        constants$649.g_file_info_get_sort_order$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_attribute_mask$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_attribute_mask$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_mask",
-        constants$649.g_file_info_set_attribute_mask$FUNC
-    );
+    static final VarHandle const$0 = constants$648.const$5.varHandle(MemoryLayout.PathElement.groupElement("mask"));
+    static final VarHandle const$1 = constants$648.const$5.varHandle(MemoryLayout.PathElement.groupElement("n_values"));
+    static final VarHandle const$2 = constants$648.const$5.varHandle(MemoryLayout.PathElement.groupElement("values"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("value"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("value_name"),
+        RuntimeHelper.POINTER.withName("value_nick")
+    ).withName("_GEnumValue");
+    static final VarHandle const$4 = constants$649.const$3.varHandle(MemoryLayout.PathElement.groupElement("value"));
+    static final VarHandle const$5 = constants$649.const$3.varHandle(MemoryLayout.PathElement.groupElement("value_name"));
 }
 
 

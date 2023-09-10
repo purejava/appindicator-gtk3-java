@@ -3,52 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$714 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$714() {}
-    static final FunctionDescriptor g_volume_monitor_adopt_orphan_mount$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$713.const$1.varHandle(MemoryLayout.PathElement.groupElement("state"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GActionEntry.change_state.class, "apply", constants$14.const$3);
+    static final VarHandle const$2 = constants$713.const$1.varHandle(MemoryLayout.PathElement.groupElement("change_state"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_action_map_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_volume_monitor_adopt_orphan_mount$MH = RuntimeHelper.downcallHandle(
-        "g_volume_monitor_adopt_orphan_mount",
-        constants$714.g_volume_monitor_adopt_orphan_mount$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_action_map_lookup_action",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_native_volume_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_native_volume_monitor_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_native_volume_monitor_get_type",
-        constants$714.g_native_volume_monitor_get_type$FUNC
-    );
-    static final FunctionDescriptor g_network_address_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_network_address_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_network_address_get_type",
-        constants$714.g_network_address_get_type$FUNC
-    );
-    static final FunctionDescriptor g_network_address_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle g_network_address_new$MH = RuntimeHelper.downcallHandle(
-        "g_network_address_new",
-        constants$714.g_network_address_new$FUNC
-    );
-    static final FunctionDescriptor g_network_address_new_loopback$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle g_network_address_new_loopback$MH = RuntimeHelper.downcallHandle(
-        "g_network_address_new_loopback",
-        constants$714.g_network_address_new_loopback$FUNC
-    );
-    static final FunctionDescriptor g_network_address_parse$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_network_address_parse$MH = RuntimeHelper.downcallHandle(
-        "g_network_address_parse",
-        constants$714.g_network_address_parse$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_action_map_add_action",
+        constants$13.const$4
     );
 }
 

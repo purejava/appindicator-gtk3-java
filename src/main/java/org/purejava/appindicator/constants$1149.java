@@ -3,66 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1149 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1149() {}
-    static final FunctionDescriptor gdk_pixbuf_get_from_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
+        "g_menu_model_get_item_attribute",
+        constants$11.const$0
     );
-    static final MethodHandle gdk_pixbuf_get_from_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_from_window",
-        constants$1149.gdk_pixbuf_get_from_window$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_menu_model_iterate_item_links",
+        constants$21.const$3
     );
-    static final FunctionDescriptor gdk_pixbuf_get_from_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_menu_model_get_item_link",
+        constants$196.const$3
     );
-    static final MethodHandle gdk_pixbuf_get_from_surface$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_from_surface",
-        constants$1149.gdk_pixbuf_get_from_surface$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_menu_model_items_changed",
+        constants$1131.const$1
     );
-    static final FunctionDescriptor PangoCairoShapeRendererFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor PangoCairoShapeRendererFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle PangoCairoShapeRendererFunc_UP$MH = RuntimeHelper.upcallHandle(PangoCairoShapeRendererFunc.class, "apply", constants$1149.PangoCairoShapeRendererFunc_UP$FUNC);
-    static final FunctionDescriptor PangoCairoShapeRendererFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle PangoCairoShapeRendererFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1149.PangoCairoShapeRendererFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor pango_cairo_font_map_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_cairo_font_map_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_font_map_get_type",
-        constants$1149.pango_cairo_font_map_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_cairo_font_map_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_cairo_font_map_new$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_font_map_new",
-        constants$1149.pango_cairo_font_map_new$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GMenuAttributeIter");
+    static final VarHandle const$5 = constants$1149.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

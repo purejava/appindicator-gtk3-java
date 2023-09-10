@@ -2,241 +2,225 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkBindingSet {
- *     gchar* set_name;
- *     gint priority;
- *     GSList* widget_path_pspecs;
- *     GSList* widget_class_pspecs;
- *     GSList* class_branch_pspecs;
- *     GtkBindingEntry* entries;
- *     GtkBindingEntry* current;
- *      *     guint parsed;
+ *     char* set_name;
+ *     int priority;
+ *     struct _GSList* widget_path_pspecs;
+ *     struct _GSList* widget_class_pspecs;
+ *     struct _GSList* class_branch_pspecs;
+ *     struct _GtkBindingEntry* entries;
+ *     struct _GtkBindingEntry* current;
+ *      *     unsigned int parsed;
  * };
  * }
  */
 public class _GtkBindingSet {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("set_name"),
-        Constants$root.C_INT$LAYOUT.withName("priority"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("widget_path_pspecs"),
-        Constants$root.C_POINTER$LAYOUT.withName("widget_class_pspecs"),
-        Constants$root.C_POINTER$LAYOUT.withName("class_branch_pspecs"),
-        Constants$root.C_POINTER$LAYOUT.withName("entries"),
-        Constants$root.C_POINTER$LAYOUT.withName("current"),
-        MemoryLayout.paddingLayout(64)
-    ).withName("_GtkBindingSet");
     public static MemoryLayout $LAYOUT() {
-        return _GtkBindingSet.$struct$LAYOUT;
+        return constants$2528.const$2;
     }
-    static final VarHandle set_name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("set_name"));
     public static VarHandle set_name$VH() {
-        return _GtkBindingSet.set_name$VH;
+        return constants$2528.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* set_name;
+     * char* set_name;
      * }
      */
     public static MemorySegment set_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkBindingSet.set_name$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2528.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* set_name;
+     * char* set_name;
      * }
      */
     public static void set_name$set(MemorySegment seg, MemorySegment x) {
-        _GtkBindingSet.set_name$VH.set(seg, x);
+        constants$2528.const$3.set(seg, x);
     }
     public static MemorySegment set_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkBindingSet.set_name$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2528.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void set_name$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkBindingSet.set_name$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2528.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle priority$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("priority"));
     public static VarHandle priority$VH() {
-        return _GtkBindingSet.priority$VH;
+        return constants$2528.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint priority;
+     * int priority;
      * }
      */
     public static int priority$get(MemorySegment seg) {
-        return (int)_GtkBindingSet.priority$VH.get(seg);
+        return (int)constants$2528.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint priority;
+     * int priority;
      * }
      */
     public static void priority$set(MemorySegment seg, int x) {
-        _GtkBindingSet.priority$VH.set(seg, x);
+        constants$2528.const$4.set(seg, x);
     }
     public static int priority$get(MemorySegment seg, long index) {
-        return (int)_GtkBindingSet.priority$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2528.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void priority$set(MemorySegment seg, long index, int x) {
-        _GtkBindingSet.priority$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2528.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle widget_path_pspecs$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("widget_path_pspecs"));
     public static VarHandle widget_path_pspecs$VH() {
-        return _GtkBindingSet.widget_path_pspecs$VH;
+        return constants$2528.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GSList* widget_path_pspecs;
+     * struct _GSList* widget_path_pspecs;
      * }
      */
     public static MemorySegment widget_path_pspecs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkBindingSet.widget_path_pspecs$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2528.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GSList* widget_path_pspecs;
+     * struct _GSList* widget_path_pspecs;
      * }
      */
     public static void widget_path_pspecs$set(MemorySegment seg, MemorySegment x) {
-        _GtkBindingSet.widget_path_pspecs$VH.set(seg, x);
+        constants$2528.const$5.set(seg, x);
     }
     public static MemorySegment widget_path_pspecs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkBindingSet.widget_path_pspecs$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2528.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void widget_path_pspecs$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkBindingSet.widget_path_pspecs$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2528.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle widget_class_pspecs$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("widget_class_pspecs"));
     public static VarHandle widget_class_pspecs$VH() {
-        return _GtkBindingSet.widget_class_pspecs$VH;
+        return constants$2529.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GSList* widget_class_pspecs;
+     * struct _GSList* widget_class_pspecs;
      * }
      */
     public static MemorySegment widget_class_pspecs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkBindingSet.widget_class_pspecs$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2529.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GSList* widget_class_pspecs;
+     * struct _GSList* widget_class_pspecs;
      * }
      */
     public static void widget_class_pspecs$set(MemorySegment seg, MemorySegment x) {
-        _GtkBindingSet.widget_class_pspecs$VH.set(seg, x);
+        constants$2529.const$0.set(seg, x);
     }
     public static MemorySegment widget_class_pspecs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkBindingSet.widget_class_pspecs$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2529.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void widget_class_pspecs$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkBindingSet.widget_class_pspecs$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2529.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle class_branch_pspecs$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("class_branch_pspecs"));
     public static VarHandle class_branch_pspecs$VH() {
-        return _GtkBindingSet.class_branch_pspecs$VH;
+        return constants$2529.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GSList* class_branch_pspecs;
+     * struct _GSList* class_branch_pspecs;
      * }
      */
     public static MemorySegment class_branch_pspecs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkBindingSet.class_branch_pspecs$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2529.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GSList* class_branch_pspecs;
+     * struct _GSList* class_branch_pspecs;
      * }
      */
     public static void class_branch_pspecs$set(MemorySegment seg, MemorySegment x) {
-        _GtkBindingSet.class_branch_pspecs$VH.set(seg, x);
+        constants$2529.const$1.set(seg, x);
     }
     public static MemorySegment class_branch_pspecs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkBindingSet.class_branch_pspecs$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2529.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void class_branch_pspecs$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkBindingSet.class_branch_pspecs$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2529.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle entries$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("entries"));
     public static VarHandle entries$VH() {
-        return _GtkBindingSet.entries$VH;
+        return constants$2529.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GtkBindingEntry* entries;
+     * struct _GtkBindingEntry* entries;
      * }
      */
     public static MemorySegment entries$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkBindingSet.entries$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2529.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GtkBindingEntry* entries;
+     * struct _GtkBindingEntry* entries;
      * }
      */
     public static void entries$set(MemorySegment seg, MemorySegment x) {
-        _GtkBindingSet.entries$VH.set(seg, x);
+        constants$2529.const$2.set(seg, x);
     }
     public static MemorySegment entries$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkBindingSet.entries$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2529.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void entries$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkBindingSet.entries$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2529.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle current$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("current"));
     public static VarHandle current$VH() {
-        return _GtkBindingSet.current$VH;
+        return constants$2529.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GtkBindingEntry* current;
+     * struct _GtkBindingEntry* current;
      * }
      */
     public static MemorySegment current$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkBindingSet.current$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2529.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GtkBindingEntry* current;
+     * struct _GtkBindingEntry* current;
      * }
      */
     public static void current$set(MemorySegment seg, MemorySegment x) {
-        _GtkBindingSet.current$VH.set(seg, x);
+        constants$2529.const$3.set(seg, x);
     }
     public static MemorySegment current$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkBindingSet.current$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2529.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void current$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkBindingSet.current$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2529.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

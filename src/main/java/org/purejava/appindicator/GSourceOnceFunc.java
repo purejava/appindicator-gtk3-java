@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GSourceOnceFunc)(void* user_data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GSourceOnceFunc {
 
     void apply(java.lang.foreign.MemorySegment display);
-    static MemorySegment allocate(GSourceOnceFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$167.GSourceOnceFunc_UP$MH, fi, constants$167.GSourceOnceFunc$FUNC, scope);
+    static MemorySegment allocate(GSourceOnceFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$255.const$3, fi, constants$13.const$1, scope);
     }
-    static GSourceOnceFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GSourceOnceFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$167.GSourceOnceFunc_DOWN$MH.invokeExact(symbol, _display);
+                constants$13.const$3.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

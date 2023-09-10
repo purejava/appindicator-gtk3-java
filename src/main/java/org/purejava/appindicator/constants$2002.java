@@ -2,18 +2,39 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2002 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2002() {}
-    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::allocated-size");
-    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::symlink-target");
-    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_TARGET_URI$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::target-uri");
-    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::sort-order");
-    static final MemorySegment G_FILE_ATTRIBUTE_ETAG_VALUE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("etag::value");
-    static final MemorySegment G_FILE_ATTRIBUTE_ID_FILE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("id::file");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_component_get_extents",
+        constants$673.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_component_get_position",
+        constants$331.const$4
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_component_get_size",
+        constants$14.const$3
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_component_get_layer",
+        constants$10.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_component_get_mdi_zorder",
+        constants$10.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_component_grab_focus",
+        constants$10.const$5
+    );
 }
 
 

@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$399 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$399() {}
-    static final FunctionDescriptor g_param_spec_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_queue_sort",
+        constants$14.const$3
     );
-    static final MethodHandle g_param_spec_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_name",
-        constants$399.g_param_spec_get_name$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_queue_push_head",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_param_spec_get_nick$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_queue_push_tail",
+        constants$13.const$4
     );
-    static final MethodHandle g_param_spec_get_nick$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_nick",
-        constants$399.g_param_spec_get_nick$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_queue_push_nth",
+        constants$164.const$5
     );
-    static final FunctionDescriptor g_param_spec_get_blurb$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_queue_pop_head",
+        constants$5.const$2
     );
-    static final MethodHandle g_param_spec_get_blurb$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_blurb",
-        constants$399.g_param_spec_get_blurb$FUNC
-    );
-    static final FunctionDescriptor g_value_set_param$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_set_param$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_param",
-        constants$399.g_value_set_param$FUNC
-    );
-    static final FunctionDescriptor g_value_get_param$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_get_param$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_param",
-        constants$399.g_value_get_param$FUNC
-    );
-    static final FunctionDescriptor g_value_dup_param$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_dup_param$MH = RuntimeHelper.downcallHandle(
-        "g_value_dup_param",
-        constants$399.g_value_dup_param$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_queue_pop_tail",
+        constants$5.const$2
     );
 }
 

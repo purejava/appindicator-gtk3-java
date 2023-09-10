@@ -2,22 +2,22 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
- * struct {
- *     __cpu_mask __bits[16];
+ * struct cpu_set_t {
+ *     unsigned long __bits[16];
  * };
  * }
  */
 public class cpu_set_t {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.sequenceLayout(16, Constants$root.C_LONG_LONG$LAYOUT).withName("__bits")
-    );
     public static MemoryLayout $LAYOUT() {
-        return cpu_set_t.$struct$LAYOUT;
+        return constants$513.const$1;
     }
     public static MemorySegment __bits$slice(MemorySegment seg) {
         return seg.asSlice(0, 128);
@@ -27,7 +27,7 @@ public class cpu_set_t {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

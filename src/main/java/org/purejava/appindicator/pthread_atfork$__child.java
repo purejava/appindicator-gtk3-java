@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*pthread_atfork$__child)();
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface pthread_atfork$__child {
 
     void apply();
-    static MemorySegment allocate(pthread_atfork$__child fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$374.pthread_atfork$__child_UP$MH, fi, constants$374.pthread_atfork$__child$FUNC, scope);
+    static MemorySegment allocate(pthread_atfork$__child fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$536.const$3, fi, constants$7.const$5, scope);
     }
-    static pthread_atfork$__child ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static pthread_atfork$__child ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return () -> {
             try {
-                constants$374.pthread_atfork$__child_DOWN$MH.invokeExact(symbol);
+                constants$64.const$1.invokeExact(symbol);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

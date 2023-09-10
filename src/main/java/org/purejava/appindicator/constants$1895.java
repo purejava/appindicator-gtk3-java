@@ -3,41 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1895 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1895() {}
-    static final FunctionDescriptor gtk_style_context_print_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_style_context_print_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_print_flags_get_type",
-        constants$1895.gtk_style_context_print_flags_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_is_static_image",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_text_buffer_target_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_text_buffer_target_info_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_target_info_get_type",
-        constants$1895.gtk_text_buffer_target_info_get_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_get_static_image",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_text_search_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_text_search_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_search_flags_get_type",
-        constants$1895.gtk_text_search_flags_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_get_iter",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_text_window_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_text_window_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_window_type_get_type",
-        constants$1895.gtk_text_window_type_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_iter_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_text_view_layer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_text_view_layer_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_layer_get_type",
-        constants$1895.gtk_text_view_layer_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_iter_get_delay_time",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_text_extend_selection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_text_extend_selection_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_extend_selection_get_type",
-        constants$1895.gtk_text_extend_selection_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_iter_get_pixbuf",
+        constants$5.const$2
     );
 }
 

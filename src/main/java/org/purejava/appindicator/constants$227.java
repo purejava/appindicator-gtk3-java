@@ -3,60 +3,23 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$227 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$227() {}
-    static final FunctionDescriptor g_key_file_remove_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_hash_table_new$hash_func.class, "apply", constants$10.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_hash_table_new$key_equal_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_hash_table_new",
+        constants$5.const$5
     );
-    static final MethodHandle g_key_file_remove_group$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_remove_group",
-        constants$227.g_key_file_remove_group$FUNC
-    );
-    static final FunctionDescriptor g_mapped_file_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mapped_file_new$MH = RuntimeHelper.downcallHandle(
-        "g_mapped_file_new",
-        constants$227.g_mapped_file_new$FUNC
-    );
-    static final FunctionDescriptor g_mapped_file_new_from_fd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mapped_file_new_from_fd$MH = RuntimeHelper.downcallHandle(
-        "g_mapped_file_new_from_fd",
-        constants$227.g_mapped_file_new_from_fd$FUNC
-    );
-    static final FunctionDescriptor g_mapped_file_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mapped_file_get_length$MH = RuntimeHelper.downcallHandle(
-        "g_mapped_file_get_length",
-        constants$227.g_mapped_file_get_length$FUNC
-    );
-    static final FunctionDescriptor g_mapped_file_get_contents$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mapped_file_get_contents$MH = RuntimeHelper.downcallHandle(
-        "g_mapped_file_get_contents",
-        constants$227.g_mapped_file_get_contents$FUNC
-    );
-    static final FunctionDescriptor g_mapped_file_get_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mapped_file_get_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_mapped_file_get_bytes",
-        constants$227.g_mapped_file_get_bytes$FUNC
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_hash_table_new_full$hash_func.class, "apply", constants$10.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_hash_table_new_full$key_equal_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_hash_table_new_full$key_destroy_func.class, "apply", constants$13.const$1);
 }
 
 

@@ -3,59 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$478 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$478() {}
-    static final FunctionDescriptor g_action_map_remove_action$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_tree_foreach$func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_tree_foreach",
+        constants$14.const$3
     );
-    static final MethodHandle g_action_map_remove_action$MH = RuntimeHelper.downcallHandle(
-        "g_action_map_remove_action",
-        constants$478.g_action_map_remove_action$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_tree_foreach_node$func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tree_foreach_node",
+        constants$14.const$3
     );
-    static final FunctionDescriptor g_action_map_add_action_entries$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_map_add_action_entries$MH = RuntimeHelper.downcallHandle(
-        "g_action_map_add_action_entries",
-        constants$478.g_action_map_add_action_entries$FUNC
-    );
-    static final FunctionDescriptor g_app_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_app_info_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_get_type",
-        constants$478.g_app_info_get_type$FUNC
-    );
-    static final FunctionDescriptor g_app_info_create_from_commandline$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_info_create_from_commandline$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_create_from_commandline",
-        constants$478.g_app_info_create_from_commandline$FUNC
-    );
-    static final FunctionDescriptor g_app_info_dup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_info_dup$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_dup",
-        constants$478.g_app_info_dup$FUNC
-    );
-    static final FunctionDescriptor g_app_info_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_info_equal$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_equal",
-        constants$478.g_app_info_equal$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_tree_traverse$traverse_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tree_traverse",
+        constants$464.const$4
     );
 }
 

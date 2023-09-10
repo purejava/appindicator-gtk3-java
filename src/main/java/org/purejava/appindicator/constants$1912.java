@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1912 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1912() {}
-    static final FunctionDescriptor gtk_action_set_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_cairo_set_source_window",
+        constants$1683.const$0
     );
-    static final MethodHandle gtk_action_set_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_set_label",
-        constants$1912.gtk_action_set_label$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_cairo_rectangle",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_action_get_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_cairo_region",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_action_get_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_get_label",
-        constants$1912.gtk_action_get_label$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_cairo_region_create_from_surface",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_action_set_short_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_cairo_set_source_color",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_action_set_short_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_set_short_label",
-        constants$1912.gtk_action_set_short_label$FUNC
-    );
-    static final FunctionDescriptor gtk_action_get_short_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_get_short_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_get_short_label",
-        constants$1912.gtk_action_get_short_label$FUNC
-    );
-    static final FunctionDescriptor gtk_action_set_tooltip$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_set_tooltip$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_set_tooltip",
-        constants$1912.gtk_action_set_tooltip$FUNC
-    );
-    static final FunctionDescriptor gtk_action_get_tooltip$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_get_tooltip$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_get_tooltip",
-        constants$1912.gtk_action_get_tooltip$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_cairo_surface_create_from_pixbuf",
+        constants$196.const$3
     );
 }
 

@@ -3,55 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1298 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1298() {}
-    static final FunctionDescriptor _gtk_bin_set_child$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_socket_client_connect_to_service_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_service_async",
+        constants$338.const$3
     );
-    static final MethodHandle _gtk_bin_set_child$MH = RuntimeHelper.downcallHandle(
-        "_gtk_bin_set_child",
-        constants$1298._gtk_bin_set_child$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_service_finish",
+        constants$23.const$0
     );
-    static final FunctionDescriptor gtk_window_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_window_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_type",
-        constants$1298.gtk_window_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_socket_client_connect_to_uri_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_uri_async",
+        constants$1297.const$3
     );
-    static final FunctionDescriptor gtk_window_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_window_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_new",
-        constants$1298.gtk_window_new$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_title$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_title",
-        constants$1298.gtk_window_set_title$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_title",
-        constants$1298.gtk_window_get_title$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_wmclass$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_wmclass$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_wmclass",
-        constants$1298.gtk_window_set_wmclass$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_uri_finish",
+        constants$23.const$0
     );
 }
 

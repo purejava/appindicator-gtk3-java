@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1201 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1201() {}
-    static final FunctionDescriptor atk_object_get_n_accessible_children$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_network_service_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle atk_object_get_n_accessible_children$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_n_accessible_children",
-        constants$1201.atk_object_get_n_accessible_children$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_network_service_new",
+        constants$23.const$0
     );
-    static final FunctionDescriptor atk_object_ref_accessible_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_network_service_get_service",
+        constants$5.const$2
     );
-    static final MethodHandle atk_object_ref_accessible_child$MH = RuntimeHelper.downcallHandle(
-        "atk_object_ref_accessible_child",
-        constants$1201.atk_object_ref_accessible_child$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_network_service_get_protocol",
+        constants$5.const$2
     );
-    static final FunctionDescriptor atk_object_ref_relation_set$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_network_service_get_domain",
+        constants$5.const$2
     );
-    static final MethodHandle atk_object_ref_relation_set$MH = RuntimeHelper.downcallHandle(
-        "atk_object_ref_relation_set",
-        constants$1201.atk_object_ref_relation_set$FUNC
-    );
-    static final FunctionDescriptor atk_object_get_role$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_get_role$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_role",
-        constants$1201.atk_object_get_role$FUNC
-    );
-    static final FunctionDescriptor atk_object_get_layer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_get_layer$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_layer",
-        constants$1201.atk_object_get_layer$FUNC
-    );
-    static final FunctionDescriptor atk_object_get_mdi_zorder$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_get_mdi_zorder$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_mdi_zorder",
-        constants$1201.atk_object_get_mdi_zorder$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_network_service_get_scheme",
+        constants$5.const$2
     );
 }
 

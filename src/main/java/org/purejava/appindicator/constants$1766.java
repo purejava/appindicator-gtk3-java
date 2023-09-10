@@ -3,57 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1766 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1766() {}
-    static final FunctionDescriptor gtk_range_get_inverted$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_drag_context_manage_dnd",
+        constants$62.const$0
     );
-    static final MethodHandle gtk_range_get_inverted$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_inverted",
-        constants$1766.gtk_range_get_inverted$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_device_tool_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_range_set_flippable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_device_tool_get_serial",
+        constants$4.const$0
     );
-    static final MethodHandle gtk_range_set_flippable$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_set_flippable",
-        constants$1766.gtk_range_set_flippable$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_device_tool_get_hardware_id",
+        constants$4.const$0
     );
-    static final FunctionDescriptor gtk_range_get_flippable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_device_tool_get_tool_type",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_range_get_flippable$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_flippable",
-        constants$1766.gtk_range_get_flippable$FUNC
-    );
-    static final FunctionDescriptor gtk_range_set_slider_size_fixed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_range_set_slider_size_fixed$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_set_slider_size_fixed",
-        constants$1766.gtk_range_set_slider_size_fixed$FUNC
-    );
-    static final FunctionDescriptor gtk_range_get_slider_size_fixed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_range_get_slider_size_fixed$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_get_slider_size_fixed",
-        constants$1766.gtk_range_get_slider_size_fixed$FUNC
-    );
-    static final FunctionDescriptor gtk_range_set_min_slider_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_range_set_min_slider_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_range_set_min_slider_size",
-        constants$1766.gtk_range_set_min_slider_size$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GdkEventFunc.class, "apply", constants$13.const$4);
 }
 
 

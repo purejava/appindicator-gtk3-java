@@ -3,52 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1532 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1532() {}
-    static final FunctionDescriptor _gtk_check_button_get_props$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_matrix_transform_distance",
+        constants$14.const$3
     );
-    static final MethodHandle _gtk_check_button_get_props$MH = RuntimeHelper.downcallHandle(
-        "_gtk_check_button_get_props",
-        constants$1532._gtk_check_button_get_props$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_matrix_transform_rectangle",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_menu_item_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_menu_item_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_get_type",
-        constants$1532.gtk_menu_item_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_matrix_transform_pixel_rectangle",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_menu_item_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_menu_item_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_new",
-        constants$1532.gtk_menu_item_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_matrix_get_font_scale_factor",
+        constants$67.const$0
     );
-    static final FunctionDescriptor gtk_menu_item_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_matrix_get_font_scale_factors",
+        constants$14.const$3
     );
-    static final MethodHandle gtk_menu_item_new_with_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_new_with_label",
-        constants$1532.gtk_menu_item_new_with_label$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_item_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_item_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_new_with_mnemonic",
-        constants$1532.gtk_menu_item_new_with_mnemonic$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_item_set_submenu$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_item_set_submenu$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_set_submenu",
-        constants$1532.gtk_menu_item_set_submenu$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_matrix_get_slant_ratio",
+        constants$67.const$0
     );
 }
 

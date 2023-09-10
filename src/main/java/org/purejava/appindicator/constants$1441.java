@@ -3,58 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1441 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1441() {}
-    static final FunctionDescriptor gtk_entry_completion_get_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_face_count",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_entry_completion_get_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_get_entry",
-        constants$1441.gtk_entry_completion_get_entry$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_face_create",
+        constants$21.const$3
     );
-    static final FunctionDescriptor gtk_entry_completion_set_model$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_completion_set_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_set_model",
-        constants$1441.gtk_entry_completion_set_model$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_completion_get_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_completion_get_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_get_model",
-        constants$1441.gtk_entry_completion_get_model$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_completion_set_match_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_completion_set_match_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_set_match_func",
-        constants$1441.gtk_entry_completion_set_match_func$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_completion_set_minimum_key_length$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_completion_set_minimum_key_length$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_set_minimum_key_length",
-        constants$1441.gtk_entry_completion_set_minimum_key_length$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_completion_get_minimum_key_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_completion_get_minimum_key_length$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_get_minimum_key_length",
-        constants$1441.gtk_entry_completion_get_minimum_key_length$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_reference_table_func_t.class, "apply", constants$196.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_face_create_for_tables$reference_table_func.class, "apply", constants$196.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_face_create_for_tables$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_face_create_for_tables",
+        constants$23.const$0
     );
 }
 

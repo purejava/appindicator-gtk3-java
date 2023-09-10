@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$170 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$170() {}
-    static final FunctionDescriptor g_main_context_wakeup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_bytes_new_from_bytes",
+        constants$88.const$2
     );
-    static final MethodHandle g_main_context_wakeup$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_wakeup",
-        constants$170.g_main_context_wakeup$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_bytes_get_data",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_main_context_acquire$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_bytes_get_size",
+        constants$4.const$0
     );
-    static final MethodHandle g_main_context_acquire$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_acquire",
-        constants$170.g_main_context_acquire$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_bytes_ref",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_main_context_release$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_bytes_unref",
+        constants$13.const$1
     );
-    static final MethodHandle g_main_context_release$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_release",
-        constants$170.g_main_context_release$FUNC
-    );
-    static final FunctionDescriptor g_main_context_is_owner$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_context_is_owner$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_is_owner",
-        constants$170.g_main_context_is_owner$FUNC
-    );
-    static final FunctionDescriptor g_main_context_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_context_wait$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_wait",
-        constants$170.g_main_context_wait$FUNC
-    );
-    static final FunctionDescriptor g_main_context_prepare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_context_prepare$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_prepare",
-        constants$170.g_main_context_prepare$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_bytes_unref_to_data",
+        constants$5.const$5
     );
 }
 

@@ -3,47 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$42 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$42() {}
-    static final FunctionDescriptor g_nullify_pointer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_ptr_array_extend$func.class, "apply", constants$5.const$5);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_nullify_pointer$MH = RuntimeHelper.downcallHandle(
-        "g_nullify_pointer",
-        constants$42.g_nullify_pointer$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_extend",
+        constants$42.const$1
     );
-    static final FunctionDescriptor g_format_size_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_extend_and_steal",
+        constants$13.const$4
     );
-    static final MethodHandle g_format_size_full$MH = RuntimeHelper.downcallHandle(
-        "g_format_size_full",
-        constants$42.g_format_size_full$FUNC
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_format_size$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_format_size$MH = RuntimeHelper.downcallHandle(
-        "g_format_size",
-        constants$42.g_format_size$FUNC
-    );
-    static final FunctionDescriptor g_format_size_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_format_size_for_display$MH = RuntimeHelper.downcallHandle(
-        "g_format_size_for_display",
-        constants$42.g_format_size_for_display$FUNC
-    );
-    static final FunctionDescriptor GVoidFunc$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor GVoidFunc_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle GVoidFunc_UP$MH = RuntimeHelper.upcallHandle(GVoidFunc.class, "apply", constants$42.GVoidFunc_UP$FUNC);
-    static final FunctionDescriptor GVoidFunc_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle GVoidFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$42.GVoidFunc_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_insert",
+        constants$42.const$4
     );
 }
 

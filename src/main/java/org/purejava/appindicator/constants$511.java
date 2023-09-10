@@ -3,53 +3,24 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$511 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$511() {}
-    static final FunctionDescriptor g_buffered_output_stream_set_buffer_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MemorySegment const$0 = RuntimeHelper.lookupGlobalVariable("g_thread_use_default_impl", JAVA_INT);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_thread_gettime.class, "apply", constants$3.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$3.const$5
     );
-    static final MethodHandle g_buffered_output_stream_set_buffer_size$MH = RuntimeHelper.downcallHandle(
-        "g_buffered_output_stream_set_buffer_size",
-        constants$511.g_buffered_output_stream_set_buffer_size$FUNC
-    );
-    static final FunctionDescriptor g_buffered_output_stream_get_auto_grow$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_buffered_output_stream_get_auto_grow$MH = RuntimeHelper.downcallHandle(
-        "g_buffered_output_stream_get_auto_grow",
-        constants$511.g_buffered_output_stream_get_auto_grow$FUNC
-    );
-    static final FunctionDescriptor g_buffered_output_stream_set_auto_grow$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_buffered_output_stream_set_auto_grow$MH = RuntimeHelper.downcallHandle(
-        "g_buffered_output_stream_set_auto_grow",
-        constants$511.g_buffered_output_stream_set_auto_grow$FUNC
-    );
-    static final FunctionDescriptor g_bytes_icon_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_bytes_icon_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_bytes_icon_get_type",
-        constants$511.g_bytes_icon_get_type$FUNC
-    );
-    static final FunctionDescriptor g_bytes_icon_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bytes_icon_new$MH = RuntimeHelper.downcallHandle(
-        "g_bytes_icon_new",
-        constants$511.g_bytes_icon_new$FUNC
-    );
-    static final FunctionDescriptor g_bytes_icon_get_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bytes_icon_get_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_bytes_icon_get_bytes",
-        constants$511.g_bytes_icon_get_bytes$FUNC
+    static final MemorySegment const$3 = RuntimeHelper.lookupGlobalVariable("g_thread_gettime", RuntimeHelper.POINTER);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_thread_create$func.class, "apply", constants$5.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_thread_create",
+        constants$482.const$3
     );
 }
 

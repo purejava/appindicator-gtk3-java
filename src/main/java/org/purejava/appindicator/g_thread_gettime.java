@@ -2,24 +2,27 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
- * guint64 (*g_thread_gettime)();
+ * unsigned long (*g_thread_gettime)();
  * }
  */
 public interface g_thread_gettime {
 
     long apply();
-    static MemorySegment allocate(g_thread_gettime fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$352.g_thread_gettime_UP$MH, fi, constants$352.g_thread_gettime$FUNC, scope);
+    static MemorySegment allocate(g_thread_gettime fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$511.const$1, fi, constants$3.const$5, scope);
     }
-    static g_thread_gettime ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static g_thread_gettime ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return () -> {
             try {
-                return (long)constants$352.g_thread_gettime_DOWN$MH.invokeExact(symbol);
+                return (long)constants$511.const$2.invokeExact(symbol);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

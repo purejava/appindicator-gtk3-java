@@ -3,62 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$116 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$116() {}
-    static final FunctionDescriptor g_date_set_time_val$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_set_time_val$MH = RuntimeHelper.downcallHandle(
-        "g_date_set_time_val",
-        constants$116.g_date_set_time_val$FUNC
-    );
-    static final FunctionDescriptor g_date_set_time$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_date_set_time$MH = RuntimeHelper.downcallHandle(
-        "g_date_set_time",
-        constants$116.g_date_set_time$FUNC
-    );
-    static final FunctionDescriptor g_date_set_month$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_date_set_month$MH = RuntimeHelper.downcallHandle(
-        "g_date_set_month",
-        constants$116.g_date_set_month$FUNC
-    );
-    static final FunctionDescriptor g_date_set_day$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
-    );
-    static final MethodHandle g_date_set_day$MH = RuntimeHelper.downcallHandle(
-        "g_date_set_day",
-        constants$116.g_date_set_day$FUNC
-    );
-    static final FunctionDescriptor g_date_set_year$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle g_date_set_year$MH = RuntimeHelper.downcallHandle(
-        "g_date_set_year",
-        constants$116.g_date_set_year$FUNC
-    );
-    static final FunctionDescriptor g_date_set_dmy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle g_date_set_dmy$MH = RuntimeHelper.downcallHandle(
-        "g_date_set_dmy",
-        constants$116.g_date_set_dmy$FUNC
-    );
+    static final VarHandle const$0 = constants$115.const$4.varHandle(MemoryLayout.PathElement.groupElement("si_uid"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_INT.withName("si_tid"),
+        JAVA_INT.withName("si_overrun"),
+        MemoryLayout.unionLayout(
+            JAVA_INT.withName("sival_int"),
+            RuntimeHelper.POINTER.withName("sival_ptr")
+        ).withName("si_sigval")
+    ).withName("");
+    static final VarHandle const$2 = constants$116.const$1.varHandle(MemoryLayout.PathElement.groupElement("si_tid"));
+    static final VarHandle const$3 = constants$116.const$1.varHandle(MemoryLayout.PathElement.groupElement("si_overrun"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("si_pid"),
+        JAVA_INT.withName("si_uid"),
+        MemoryLayout.unionLayout(
+            JAVA_INT.withName("sival_int"),
+            RuntimeHelper.POINTER.withName("sival_ptr")
+        ).withName("si_sigval")
+    ).withName("");
+    static final VarHandle const$5 = constants$116.const$4.varHandle(MemoryLayout.PathElement.groupElement("si_pid"));
 }
 
 

@@ -3,53 +3,55 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$753 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$753() {}
-    static final FunctionDescriptor g_simple_action_set_state$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_initable_init",
+        constants$12.const$2
     );
-    static final MethodHandle g_simple_action_set_state$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_set_state",
-        constants$753.g_simple_action_set_state$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_simple_action_set_state_hint$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "g_initable_new",
+        constants$753.const$1
     );
-    static final MethodHandle g_simple_action_set_state_hint$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_set_state_hint",
-        constants$753.g_simple_action_set_state_hint$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_simple_action_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_simple_action_group_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_group_get_type",
-        constants$753.g_simple_action_group_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_initable_newv",
+        constants$753.const$3
     );
-    static final FunctionDescriptor g_simple_action_group_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_simple_action_group_new$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_group_new",
-        constants$753.g_simple_action_group_new$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list"),
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_simple_action_group_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_action_group_lookup$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_group_lookup",
-        constants$753.g_simple_action_group_lookup$FUNC
-    );
-    static final FunctionDescriptor g_simple_action_group_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_action_group_insert$MH = RuntimeHelper.downcallHandle(
-        "g_simple_action_group_insert",
-        constants$753.g_simple_action_group_insert$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_initable_new_valist",
+        constants$753.const$5
     );
 }
 

@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$711 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$711() {}
-    static final FunctionDescriptor g_mount_operation_get_choice$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_action_group_action_removed",
+        constants$13.const$4
     );
-    static final MethodHandle g_mount_operation_get_choice$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_choice",
-        constants$711.g_mount_operation_get_choice$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_action_group_action_enabled_changed",
+        constants$164.const$5
     );
-    static final FunctionDescriptor g_mount_operation_set_choice$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_action_group_action_state_changed",
+        constants$14.const$3
     );
-    static final MethodHandle g_mount_operation_set_choice$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_set_choice",
-        constants$711.g_mount_operation_set_choice$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_action_group_query_action",
+        constants$164.const$2
     );
-    static final FunctionDescriptor g_mount_operation_reply$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_export_action_group",
+        constants$34.const$5
     );
-    static final MethodHandle g_mount_operation_reply$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_reply",
-        constants$711.g_mount_operation_reply$FUNC
-    );
-    static final FunctionDescriptor g_mount_operation_get_is_tcrypt_hidden_volume$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_operation_get_is_tcrypt_hidden_volume$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_is_tcrypt_hidden_volume",
-        constants$711.g_mount_operation_get_is_tcrypt_hidden_volume$FUNC
-    );
-    static final FunctionDescriptor g_mount_operation_set_is_tcrypt_hidden_volume$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_mount_operation_set_is_tcrypt_hidden_volume$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_set_is_tcrypt_hidden_volume",
-        constants$711.g_mount_operation_set_is_tcrypt_hidden_volume$FUNC
-    );
-    static final FunctionDescriptor g_mount_operation_get_is_tcrypt_system_volume$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_operation_get_is_tcrypt_system_volume$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_is_tcrypt_system_volume",
-        constants$711.g_mount_operation_get_is_tcrypt_system_volume$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_unexport_action_group",
+        constants$40.const$2
     );
 }
 

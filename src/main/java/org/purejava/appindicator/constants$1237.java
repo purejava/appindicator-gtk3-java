@@ -3,55 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1237 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1237() {}
-    static final FunctionDescriptor atk_state_set_xor_sets$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_by_name_async",
+        constants$331.const$1
     );
-    static final MethodHandle atk_state_set_xor_sets$MH = RuntimeHelper.downcallHandle(
-        "atk_state_set_xor_sets",
-        constants$1237.atk_state_set_xor_sets$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_by_name_finish",
+        constants$23.const$0
     );
-    static final FunctionDescriptor atk_streamable_content_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_streamable_content_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_streamable_content_get_type",
-        constants$1237.atk_streamable_content_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_resolver_lookup_by_name_with_flags_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_by_name_with_flags_async",
+        constants$584.const$3
     );
-    static final FunctionDescriptor atk_streamable_content_get_n_mime_types$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_by_name_with_flags_finish",
+        constants$23.const$0
     );
-    static final MethodHandle atk_streamable_content_get_n_mime_types$MH = RuntimeHelper.downcallHandle(
-        "atk_streamable_content_get_n_mime_types",
-        constants$1237.atk_streamable_content_get_n_mime_types$FUNC
-    );
-    static final FunctionDescriptor atk_streamable_content_get_mime_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_streamable_content_get_mime_type$MH = RuntimeHelper.downcallHandle(
-        "atk_streamable_content_get_mime_type",
-        constants$1237.atk_streamable_content_get_mime_type$FUNC
-    );
-    static final FunctionDescriptor atk_streamable_content_get_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_streamable_content_get_stream$MH = RuntimeHelper.downcallHandle(
-        "atk_streamable_content_get_stream",
-        constants$1237.atk_streamable_content_get_stream$FUNC
-    );
-    static final FunctionDescriptor atk_streamable_content_get_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_streamable_content_get_uri$MH = RuntimeHelper.downcallHandle(
-        "atk_streamable_content_get_uri",
-        constants$1237.atk_streamable_content_get_uri$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_by_name_with_flags",
+        constants$977.const$0
     );
 }
 

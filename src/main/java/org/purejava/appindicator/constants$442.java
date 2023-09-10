@@ -3,57 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$442 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$442() {}
-    static final FunctionDescriptor g_value_take_object$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_slice_get_config",
+        constants$173.const$0
     );
-    static final MethodHandle g_value_take_object$MH = RuntimeHelper.downcallHandle(
-        "g_value_take_object",
-        constants$442.g_value_take_object$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_value_set_object_take_ownership$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_slice_get_config_state",
+        constants$442.const$1
     );
-    static final MethodHandle g_value_set_object_take_ownership$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_object_take_ownership",
-        constants$442.g_value_set_object_take_ownership$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GSpawnChildSetupFunc.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_spawn_error_quark",
+        constants$83.const$1
     );
-    static final FunctionDescriptor g_object_compat_control$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_compat_control$MH = RuntimeHelper.downcallHandle(
-        "g_object_compat_control",
-        constants$442.g_object_compat_control$FUNC
-    );
-    static final FunctionDescriptor g_clear_object$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_clear_object$MH = RuntimeHelper.downcallHandle(
-        "g_clear_object",
-        constants$442.g_clear_object$FUNC
-    );
-    static final FunctionDescriptor g_weak_ref_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_weak_ref_init$MH = RuntimeHelper.downcallHandle(
-        "g_weak_ref_init",
-        constants$442.g_weak_ref_init$FUNC
-    );
-    static final FunctionDescriptor g_weak_ref_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_weak_ref_clear$MH = RuntimeHelper.downcallHandle(
-        "g_weak_ref_clear",
-        constants$442.g_weak_ref_clear$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_spawn_exit_error_quark",
+        constants$83.const$1
     );
 }
 

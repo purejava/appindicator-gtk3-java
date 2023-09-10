@@ -3,57 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$881 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$881() {}
-    static final FunctionDescriptor hb_buffer_get_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_get_direction$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_direction",
-        constants$881.hb_buffer_get_direction$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_set_script$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_set_script$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_script",
-        constants$881.hb_buffer_set_script$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_get_script$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_get_script$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_script",
-        constants$881.hb_buffer_get_script$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_set_language$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_set_language$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_language",
-        constants$881.hb_buffer_set_language$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_get_language$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_get_language$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_language",
-        constants$881.hb_buffer_get_language$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_set_segment_properties$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_set_segment_properties$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_segment_properties",
-        constants$881.hb_buffer_set_segment_properties$FUNC
-    );
+    static final VarHandle const$0 = constants$880.const$4.varHandle(MemoryLayout.PathElement.groupElement("name"));
+    static final VarHandle const$1 = constants$880.const$4.varHandle(MemoryLayout.PathElement.groupElement("signature"));
+    static final VarHandle const$2 = constants$880.const$4.varHandle(MemoryLayout.PathElement.groupElement("annotations"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("ref_count"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("name"),
+        RuntimeHelper.POINTER.withName("in_args"),
+        RuntimeHelper.POINTER.withName("out_args"),
+        RuntimeHelper.POINTER.withName("annotations")
+    ).withName("_GDBusMethodInfo");
+    static final VarHandle const$4 = constants$881.const$3.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
+    static final VarHandle const$5 = constants$881.const$3.varHandle(MemoryLayout.PathElement.groupElement("name"));
 }
 
 

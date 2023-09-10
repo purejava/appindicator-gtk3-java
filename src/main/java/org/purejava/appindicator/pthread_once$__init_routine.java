@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*pthread_once$__init_routine)();
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface pthread_once$__init_routine {
 
     void apply();
-    static MemorySegment allocate(pthread_once$__init_routine fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$360.pthread_once$__init_routine_UP$MH, fi, constants$360.pthread_once$__init_routine$FUNC, scope);
+    static MemorySegment allocate(pthread_once$__init_routine fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$522.const$0, fi, constants$7.const$5, scope);
     }
-    static pthread_once$__init_routine ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static pthread_once$__init_routine ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return () -> {
             try {
-                constants$360.pthread_once$__init_routine_DOWN$MH.invokeExact(symbol);
+                constants$64.const$1.invokeExact(symbol);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

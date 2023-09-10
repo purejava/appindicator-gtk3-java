@@ -2,22 +2,22 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GPathBuf {
- *     gpointer dummy[8];
+ *     void* dummy[8];
  * };
  * }
  */
 public class _GPathBuf {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.sequenceLayout(8, Constants$root.C_POINTER$LAYOUT).withName("dummy")
-    ).withName("_GPathBuf");
     public static MemoryLayout $LAYOUT() {
-        return _GPathBuf.$struct$LAYOUT;
+        return constants$390.const$2;
     }
     public static MemorySegment dummy$slice(MemorySegment seg) {
         return seg.asSlice(0, 64);
@@ -27,7 +27,7 @@ public class _GPathBuf {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

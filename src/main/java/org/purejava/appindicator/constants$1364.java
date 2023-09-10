@@ -3,52 +3,74 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1364 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1364() {}
-    static final FunctionDescriptor gtk_tree_path_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GTlsDatabase");
+    static final VarHandle const$1 = constants$1364.const$0.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("verify_chain"),
+        RuntimeHelper.POINTER.withName("verify_chain_async"),
+        RuntimeHelper.POINTER.withName("verify_chain_finish"),
+        RuntimeHelper.POINTER.withName("create_certificate_handle"),
+        RuntimeHelper.POINTER.withName("lookup_certificate_for_handle"),
+        RuntimeHelper.POINTER.withName("lookup_certificate_for_handle_async"),
+        RuntimeHelper.POINTER.withName("lookup_certificate_for_handle_finish"),
+        RuntimeHelper.POINTER.withName("lookup_certificate_issuer"),
+        RuntimeHelper.POINTER.withName("lookup_certificate_issuer_async"),
+        RuntimeHelper.POINTER.withName("lookup_certificate_issuer_finish"),
+        RuntimeHelper.POINTER.withName("lookup_certificates_issued_by"),
+        RuntimeHelper.POINTER.withName("lookup_certificates_issued_by_async"),
+        RuntimeHelper.POINTER.withName("lookup_certificates_issued_by_finish"),
+        MemoryLayout.sequenceLayout(16, RuntimeHelper.POINTER).withName("padding")
+    ).withName("_GTlsDatabaseClass");
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle gtk_tree_path_free$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_free",
-        constants$1364.gtk_tree_path_free$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_path_copy$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_copy",
-        constants$1364.gtk_tree_path_copy$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_path_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_get_type",
-        constants$1364.gtk_tree_path_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_path_compare$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_compare",
-        constants$1364.gtk_tree_path_compare$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_next$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_path_next$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_next",
-        constants$1364.gtk_tree_path_next$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_prev$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_path_prev$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_prev",
-        constants$1364.gtk_tree_path_prev$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GTlsDatabaseClass.verify_chain.class, "apply", constants$1364.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$1364.const$3
     );
 }
 

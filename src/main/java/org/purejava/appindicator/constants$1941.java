@@ -3,56 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1941 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1941() {}
-    static final FunctionDescriptor gtk_image_menu_item_set_always_show_image$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_selection_owner_get",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_image_menu_item_set_always_show_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_menu_item_set_always_show_image",
-        constants$1941.gtk_image_menu_item_set_always_show_image$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final FunctionDescriptor gtk_image_menu_item_get_always_show_image$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_selection_owner_set_for_display",
+        constants$1941.const$1
     );
-    static final MethodHandle gtk_image_menu_item_get_always_show_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_menu_item_get_always_show_image",
-        constants$1941.gtk_image_menu_item_get_always_show_image$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_selection_owner_get_for_display",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_image_menu_item_set_image$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_selection_convert",
+        constants$331.const$4
     );
-    static final MethodHandle gtk_image_menu_item_set_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_menu_item_set_image",
-        constants$1941.gtk_image_menu_item_set_image$FUNC
-    );
-    static final FunctionDescriptor gtk_image_menu_item_get_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_image_menu_item_get_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_menu_item_get_image",
-        constants$1941.gtk_image_menu_item_get_image$FUNC
-    );
-    static final FunctionDescriptor gtk_image_menu_item_set_use_stock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_image_menu_item_set_use_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_menu_item_set_use_stock",
-        constants$1941.gtk_image_menu_item_set_use_stock$FUNC
-    );
-    static final FunctionDescriptor gtk_image_menu_item_get_use_stock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_image_menu_item_get_use_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_menu_item_get_use_stock",
-        constants$1941.gtk_image_menu_item_get_use_stock$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_selection_property_get",
+        constants$34.const$5
     );
 }
 

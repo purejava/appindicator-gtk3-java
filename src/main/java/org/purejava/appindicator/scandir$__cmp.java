@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * int (*scandir$__cmp)(struct dirent**,struct dirent**);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface scandir$__cmp {
 
     int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(scandir$__cmp fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$122.scandir$__cmp_UP$MH, fi, constants$122.scandir$__cmp$FUNC, scope);
+    static MemorySegment allocate(scandir$__cmp fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$195.const$4, fi, constants$9.const$0, scope);
     }
-    static scandir$__cmp ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static scandir$__cmp ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$122.scandir$__cmp_DOWN$MH.invokeExact(symbol, _filter_info, _user_data);
+                return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

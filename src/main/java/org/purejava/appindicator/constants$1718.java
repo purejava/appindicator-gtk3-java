@@ -3,56 +3,41 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1718 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1718() {}
-    static final FunctionDescriptor gtk_overlay_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_overlay_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_overlay_new",
-        constants$1718.gtk_overlay_new$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_get_matrix",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_overlay_add_overlay$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_get_target",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_overlay_add_overlay$MH = RuntimeHelper.downcallHandle(
-        "gtk_overlay_add_overlay",
-        constants$1718.gtk_overlay_add_overlay$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_get_group_target",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_overlay_reorder_overlay$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_overlay_reorder_overlay$MH = RuntimeHelper.downcallHandle(
-        "gtk_overlay_reorder_overlay",
-        constants$1718.gtk_overlay_reorder_overlay$FUNC
-    );
-    static final FunctionDescriptor gtk_overlay_get_overlay_pass_through$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_overlay_get_overlay_pass_through$MH = RuntimeHelper.downcallHandle(
-        "gtk_overlay_get_overlay_pass_through",
-        constants$1718.gtk_overlay_get_overlay_pass_through$FUNC
-    );
-    static final FunctionDescriptor gtk_overlay_set_overlay_pass_through$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_overlay_set_overlay_pass_through$MH = RuntimeHelper.downcallHandle(
-        "gtk_overlay_set_overlay_pass_through",
-        constants$1718.gtk_overlay_set_overlay_pass_through$FUNC
-    );
-    static final FunctionDescriptor gtk_pad_controller_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_pad_controller_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_pad_controller_get_type",
-        constants$1718.gtk_pad_controller_get_type$FUNC
-    );
+    static final UnionLayout const$3 = MemoryLayout.unionLayout(
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("type"),
+            JAVA_INT.withName("length")
+        ).withName("header"),
+        MemoryLayout.structLayout(
+            JAVA_DOUBLE.withName("x"),
+            JAVA_DOUBLE.withName("y")
+        ).withName("point")
+    ).withName("_cairo_path_data_t");
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        JAVA_INT.withName("length")
+    ).withName("");
+    static final VarHandle const$5 = constants$1718.const$4.varHandle(MemoryLayout.PathElement.groupElement("type"));
 }
 
 

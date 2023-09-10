@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$377 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$377() {}
-    static final FunctionDescriptor g_static_rw_lock_writer_trylock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_log_set_writer_func$func.class, "apply", constants$82.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_log_set_writer_func$user_data_free.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_log_set_writer_func",
+        constants$14.const$3
     );
-    static final MethodHandle g_static_rw_lock_writer_trylock$MH = RuntimeHelper.downcallHandle(
-        "g_static_rw_lock_writer_trylock",
-        constants$377.g_static_rw_lock_writer_trylock$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_log_writer_supports_color",
+        constants$8.const$4
     );
-    static final FunctionDescriptor g_static_rw_lock_writer_unlock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_log_writer_is_journald",
+        constants$8.const$4
     );
-    static final MethodHandle g_static_rw_lock_writer_unlock$MH = RuntimeHelper.downcallHandle(
-        "g_static_rw_lock_writer_unlock",
-        constants$377.g_static_rw_lock_writer_unlock$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT
     );
-    static final FunctionDescriptor g_static_rw_lock_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_rw_lock_free$MH = RuntimeHelper.downcallHandle(
-        "g_static_rw_lock_free",
-        constants$377.g_static_rw_lock_free$FUNC
-    );
-    static final FunctionDescriptor g_private_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_private_new$MH = RuntimeHelper.downcallHandle(
-        "g_private_new",
-        constants$377.g_private_new$FUNC
-    );
-    static final FunctionDescriptor g_static_private_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_private_init$MH = RuntimeHelper.downcallHandle(
-        "g_static_private_init",
-        constants$377.g_static_private_init$FUNC
-    );
-    static final FunctionDescriptor g_static_private_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_private_get$MH = RuntimeHelper.downcallHandle(
-        "g_static_private_get",
-        constants$377.g_static_private_get$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_log_writer_format_fields",
+        constants$377.const$5
     );
 }
 

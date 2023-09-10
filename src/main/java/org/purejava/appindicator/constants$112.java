@@ -3,54 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$112 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$112() {}
-    static final FunctionDescriptor g_date_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_date_new$MH = RuntimeHelper.downcallHandle(
-        "g_date_new",
-        constants$112.g_date_new$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_async_queue_timeout_pop_unlocked",
+        constants$21.const$1
     );
-    static final FunctionDescriptor g_date_new_dmy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_async_queue_length",
+        constants$10.const$5
     );
-    static final MethodHandle g_date_new_dmy$MH = RuntimeHelper.downcallHandle(
-        "g_date_new_dmy",
-        constants$112.g_date_new_dmy$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_async_queue_length_unlocked",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_date_new_julian$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_async_queue_sort$func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_async_queue_sort",
+        constants$14.const$3
     );
-    static final MethodHandle g_date_new_julian$MH = RuntimeHelper.downcallHandle(
-        "g_date_new_julian",
-        constants$112.g_date_new_julian$FUNC
-    );
-    static final FunctionDescriptor g_date_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_free$MH = RuntimeHelper.downcallHandle(
-        "g_date_free",
-        constants$112.g_date_free$FUNC
-    );
-    static final FunctionDescriptor g_date_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_copy$MH = RuntimeHelper.downcallHandle(
-        "g_date_copy",
-        constants$112.g_date_copy$FUNC
-    );
-    static final FunctionDescriptor g_date_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_valid$MH = RuntimeHelper.downcallHandle(
-        "g_date_valid",
-        constants$112.g_date_valid$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_async_queue_sort_unlocked$func.class, "apply", constants$12.const$2);
 }
 
 

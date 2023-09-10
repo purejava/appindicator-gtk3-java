@@ -3,64 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1830 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1830() {}
-    static final FunctionDescriptor gtk_text_buffer_add_mark$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_accept_focus",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_text_buffer_add_mark$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_add_mark",
-        constants$1830.gtk_text_buffer_add_mark$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_window_set_accept_focus",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_text_buffer_create_mark$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_focus_on_map",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_text_buffer_create_mark$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_create_mark",
-        constants$1830.gtk_text_buffer_create_mark$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_window_set_focus_on_map",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_text_buffer_move_mark$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_move_mark$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_move_mark",
-        constants$1830.gtk_text_buffer_move_mark$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_delete_mark$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_delete_mark$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_delete_mark",
-        constants$1830.gtk_text_buffer_delete_mark$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_mark$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_mark$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_mark",
-        constants$1830.gtk_text_buffer_get_mark$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_move_mark_by_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_move_mark_by_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_move_mark_by_name",
-        constants$1830.gtk_text_buffer_move_mark_by_name$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gdk_window_add_filter$function.class, "apply", constants$12.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_window_add_filter",
+        constants$14.const$3
     );
 }
 

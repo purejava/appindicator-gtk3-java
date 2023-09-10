@@ -3,54 +3,50 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1662 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1662() {}
-    static final FunctionDescriptor gtk_im_context_simple_add_table$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
+        "printf",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_im_context_simple_add_table$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_simple_add_table",
-        constants$1662.gtk_im_context_simple_add_table$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "sprintf",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gtk_im_context_simple_add_compose_file$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final MethodHandle gtk_im_context_simple_add_compose_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_simple_add_compose_file",
-        constants$1662.gtk_im_context_simple_add_compose_file$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "vfprintf",
+        constants$1662.const$2
     );
-    static final FunctionDescriptor gtk_im_multicontext_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_im_multicontext_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_multicontext_get_type",
-        constants$1662.gtk_im_multicontext_get_type$FUNC
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final FunctionDescriptor gtk_im_multicontext_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_im_multicontext_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_multicontext_new",
-        constants$1662.gtk_im_multicontext_new$FUNC
-    );
-    static final FunctionDescriptor gtk_im_multicontext_append_menuitems$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_im_multicontext_append_menuitems$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_multicontext_append_menuitems",
-        constants$1662.gtk_im_multicontext_append_menuitems$FUNC
-    );
-    static final FunctionDescriptor gtk_im_multicontext_get_context_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_im_multicontext_get_context_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_multicontext_get_context_id",
-        constants$1662.gtk_im_multicontext_get_context_id$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "vprintf",
+        constants$1662.const$4
     );
 }
 

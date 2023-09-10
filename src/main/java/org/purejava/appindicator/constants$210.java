@@ -3,63 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$210 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$210() {}
-    static final FunctionDescriptor g_string_overwrite_len$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GMemVTable.try_malloc.class, "apply", constants$63.const$3);
+    static final VarHandle const$1 = constants$208.const$0.varHandle(MemoryLayout.PathElement.groupElement("try_malloc"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GMemVTable.try_realloc.class, "apply", constants$21.const$1);
+    static final VarHandle const$3 = constants$208.const$0.varHandle(MemoryLayout.PathElement.groupElement("try_realloc"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_mem_set_vtable",
+        constants$13.const$1
     );
-    static final MethodHandle g_string_overwrite_len$MH = RuntimeHelper.downcallHandle(
-        "g_string_overwrite_len",
-        constants$210.g_string_overwrite_len$FUNC
-    );
-    static final FunctionDescriptor g_string_erase$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_string_erase$MH = RuntimeHelper.downcallHandle(
-        "g_string_erase",
-        constants$210.g_string_erase$FUNC
-    );
-    static final FunctionDescriptor g_string_replace$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_string_replace$MH = RuntimeHelper.downcallHandle(
-        "g_string_replace",
-        constants$210.g_string_replace$FUNC
-    );
-    static final FunctionDescriptor g_string_ascii_down$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_ascii_down$MH = RuntimeHelper.downcallHandle(
-        "g_string_ascii_down",
-        constants$210.g_string_ascii_down$FUNC
-    );
-    static final FunctionDescriptor g_string_ascii_up$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_ascii_up$MH = RuntimeHelper.downcallHandle(
-        "g_string_ascii_up",
-        constants$210.g_string_ascii_up$FUNC
-    );
-    static final FunctionDescriptor g_string_vprintf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_vprintf$MH = RuntimeHelper.downcallHandle(
-        "g_string_vprintf",
-        constants$210.g_string_vprintf$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_mem_is_system_malloc",
+        constants$83.const$1
     );
 }
 

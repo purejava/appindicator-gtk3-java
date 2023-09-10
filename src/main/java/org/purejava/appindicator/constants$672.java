@@ -3,41 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$672 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$672() {}
-    static final FunctionDescriptor g_io_stream_splice_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_io_stream_splice_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_io_stream_splice_flags_get_type",
-        constants$672.g_io_stream_splice_flags_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_signal_group_dup_target",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_emblem_origin_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_emblem_origin_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_emblem_origin_get_type",
-        constants$672.g_emblem_origin_get_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_signal_group_block",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_resolver_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_resolver_error_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_error_get_type",
-        constants$672.g_resolver_error_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_signal_group_unblock",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_resolver_record_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_resolver_record_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_record_type_get_type",
-        constants$672.g_resolver_record_type_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_signal_group_connect_closure",
+        constants$331.const$4
     );
-    static final FunctionDescriptor g_resource_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_resource_error_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_resource_error_get_type",
-        constants$672.g_resource_error_get_type$FUNC
-    );
-    static final FunctionDescriptor g_resource_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_resource_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_resource_flags_get_type",
-        constants$672.g_resource_flags_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_signal_group_connect_object$c_handler.class, "apply", constants$7.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_signal_group_connect_object",
+        constants$646.const$4
     );
 }
 

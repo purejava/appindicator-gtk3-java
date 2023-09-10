@@ -3,83 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1837 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1837() {}
-    static final FunctionDescriptor GtkTextBufferDeserializeFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_window_mark_paint_from_clip",
+        constants$13.const$4
     );
-    static final FunctionDescriptor GtkTextBufferDeserializeFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_window_begin_paint_region",
+        constants$13.const$4
     );
-    static final MethodHandle GtkTextBufferDeserializeFunc_UP$MH = RuntimeHelper.upcallHandle(GtkTextBufferDeserializeFunc.class, "apply", constants$1837.GtkTextBufferDeserializeFunc_UP$FUNC);
-    static final FunctionDescriptor GtkTextBufferDeserializeFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_window_end_paint",
+        constants$13.const$1
     );
-    static final MethodHandle GtkTextBufferDeserializeFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1837.GtkTextBufferDeserializeFunc_DOWN$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_window_begin_draw_frame",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_text_buffer_register_serialize_format$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_window_end_draw_frame",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_text_buffer_register_serialize_format$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_register_serialize_format",
-        constants$1837.gtk_text_buffer_register_serialize_format$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_register_serialize_tagset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_register_serialize_tagset$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_register_serialize_tagset",
-        constants$1837.gtk_text_buffer_register_serialize_tagset$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_register_deserialize_format$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_register_deserialize_format$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_register_deserialize_format",
-        constants$1837.gtk_text_buffer_register_deserialize_format$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_register_deserialize_tagset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_register_deserialize_tagset$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_register_deserialize_tagset",
-        constants$1837.gtk_text_buffer_register_deserialize_tagset$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_window_flush",
+        constants$13.const$1
     );
 }
 

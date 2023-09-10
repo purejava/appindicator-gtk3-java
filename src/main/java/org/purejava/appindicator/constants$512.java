@@ -3,52 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$512 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$512() {}
-    static final FunctionDescriptor g_cancellable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_cancellable_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_get_type",
-        constants$512.g_cancellable_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_thread_create_full$func.class, "apply", constants$5.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_thread_create_full",
+        constants$416.const$1
     );
-    static final FunctionDescriptor g_cancellable_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_cancellable_new$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_new",
-        constants$512.g_cancellable_new$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_thread_set_priority",
+        constants$40.const$2
     );
-    static final FunctionDescriptor g_cancellable_is_cancelled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_thread_foreach$thread_func.class, "apply", constants$13.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_thread_foreach",
+        constants$13.const$4
     );
-    static final MethodHandle g_cancellable_is_cancelled$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_is_cancelled",
-        constants$512.g_cancellable_is_cancelled$FUNC
-    );
-    static final FunctionDescriptor g_cancellable_set_error_if_cancelled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cancellable_set_error_if_cancelled$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_set_error_if_cancelled",
-        constants$512.g_cancellable_set_error_if_cancelled$FUNC
-    );
-    static final FunctionDescriptor g_cancellable_get_fd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cancellable_get_fd$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_get_fd",
-        constants$512.g_cancellable_get_fd$FUNC
-    );
-    static final FunctionDescriptor g_cancellable_make_pollfd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cancellable_make_pollfd$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_make_pollfd",
-        constants$512.g_cancellable_make_pollfd$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_INT.withName("sched_priority")
+    ).withName("sched_param");
 }
 
 

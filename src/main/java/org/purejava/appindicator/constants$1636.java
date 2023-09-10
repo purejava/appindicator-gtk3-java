@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1636 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1636() {}
-    static final FunctionDescriptor gtk_style_context_set_frame_clock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_layout_line_get_pixel_extents",
+        constants$14.const$3
     );
-    static final MethodHandle gtk_style_context_set_frame_clock$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_set_frame_clock",
-        constants$1636.gtk_style_context_set_frame_clock$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_style_context_get_frame_clock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_layout_get_iter",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_style_context_get_frame_clock$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_frame_clock",
-        constants$1636.gtk_style_context_get_frame_clock$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_copy",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_style_context_set_direction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_free",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_style_context_set_direction$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_set_direction",
-        constants$1636.gtk_style_context_set_direction$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_get_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_get_direction$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_direction",
-        constants$1636.gtk_style_context_get_direction$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_set_junction_sides$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_set_junction_sides$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_set_junction_sides",
-        constants$1636.gtk_style_context_set_junction_sides$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_get_junction_sides$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_get_junction_sides$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_junction_sides",
-        constants$1636.gtk_style_context_get_junction_sides$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_layout_iter_get_index",
+        constants$10.const$5
     );
 }
 

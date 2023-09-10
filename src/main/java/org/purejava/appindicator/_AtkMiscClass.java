@@ -4,79 +4,43 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _AtkMiscClass {
- *     GObjectClass parent;
- *     void (*threads_enter)(AtkMisc*);
- *     void (*threads_leave)(AtkMisc*);
- *     gpointer vfuncs[32];
+ *     struct _GObjectClass parent;
+ *     void (*threads_enter)(struct _AtkMisc*);
+ *     void (*threads_leave)(struct _AtkMisc*);
+ *     void* vfuncs[32];
  * };
  * }
  */
 public class _AtkMiscClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-            ).withName("g_type_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-            Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("notify"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-        ).withName("parent"),
-        Constants$root.C_POINTER$LAYOUT.withName("threads_enter"),
-        Constants$root.C_POINTER$LAYOUT.withName("threads_leave"),
-        MemoryLayout.sequenceLayout(32, Constants$root.C_POINTER$LAYOUT).withName("vfuncs")
-    ).withName("_AtkMiscClass");
     public static MemoryLayout $LAYOUT() {
-        return _AtkMiscClass.$struct$LAYOUT;
+        return constants$2041.const$2;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
     }
-    static final FunctionDescriptor threads_enter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor threads_enter_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle threads_enter_UP$MH = RuntimeHelper.upcallHandle(threads_enter.class, "apply", _AtkMiscClass.threads_enter_UP$FUNC);
-    static final FunctionDescriptor threads_enter_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle threads_enter_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkMiscClass.threads_enter_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*threads_enter)(AtkMisc*);
+ * void (*threads_enter)(struct _AtkMisc*);
      * }
      */
     public interface threads_enter {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(threads_enter fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkMiscClass.threads_enter_UP$MH, fi, _AtkMiscClass.threads_enter$FUNC, scope);
+        static MemorySegment allocate(threads_enter fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2041.const$3, fi, constants$13.const$1, scope);
         }
-        static threads_enter ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static threads_enter ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _AtkMiscClass.threads_enter_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -84,66 +48,52 @@ public class _AtkMiscClass {
         }
     }
 
-    static final VarHandle threads_enter$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("threads_enter"));
     public static VarHandle threads_enter$VH() {
-        return _AtkMiscClass.threads_enter$VH;
+        return constants$2041.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*threads_enter)(AtkMisc*);
+     * void (*threads_enter)(struct _AtkMisc*);
      * }
      */
     public static MemorySegment threads_enter$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkMiscClass.threads_enter$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2041.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*threads_enter)(AtkMisc*);
+     * void (*threads_enter)(struct _AtkMisc*);
      * }
      */
     public static void threads_enter$set(MemorySegment seg, MemorySegment x) {
-        _AtkMiscClass.threads_enter$VH.set(seg, x);
+        constants$2041.const$4.set(seg, x);
     }
     public static MemorySegment threads_enter$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkMiscClass.threads_enter$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2041.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void threads_enter$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkMiscClass.threads_enter$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2041.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static threads_enter threads_enter(MemorySegment segment, SegmentScope scope) {
+    public static threads_enter threads_enter(MemorySegment segment, Arena scope) {
         return threads_enter.ofAddress(threads_enter$get(segment), scope);
     }
-    static final FunctionDescriptor threads_leave$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor threads_leave_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle threads_leave_UP$MH = RuntimeHelper.upcallHandle(threads_leave.class, "apply", _AtkMiscClass.threads_leave_UP$FUNC);
-    static final FunctionDescriptor threads_leave_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle threads_leave_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkMiscClass.threads_leave_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*threads_leave)(AtkMisc*);
+ * void (*threads_leave)(struct _AtkMisc*);
      * }
      */
     public interface threads_leave {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(threads_leave fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkMiscClass.threads_leave_UP$MH, fi, _AtkMiscClass.threads_leave$FUNC, scope);
+        static MemorySegment allocate(threads_leave fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2041.const$5, fi, constants$13.const$1, scope);
         }
-        static threads_leave ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static threads_leave ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _AtkMiscClass.threads_leave_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -151,35 +101,34 @@ public class _AtkMiscClass {
         }
     }
 
-    static final VarHandle threads_leave$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("threads_leave"));
     public static VarHandle threads_leave$VH() {
-        return _AtkMiscClass.threads_leave$VH;
+        return constants$2042.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*threads_leave)(AtkMisc*);
+     * void (*threads_leave)(struct _AtkMisc*);
      * }
      */
     public static MemorySegment threads_leave$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkMiscClass.threads_leave$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2042.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*threads_leave)(AtkMisc*);
+     * void (*threads_leave)(struct _AtkMisc*);
      * }
      */
     public static void threads_leave$set(MemorySegment seg, MemorySegment x) {
-        _AtkMiscClass.threads_leave$VH.set(seg, x);
+        constants$2042.const$0.set(seg, x);
     }
     public static MemorySegment threads_leave$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkMiscClass.threads_leave$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2042.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void threads_leave$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkMiscClass.threads_leave$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2042.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static threads_leave threads_leave(MemorySegment segment, SegmentScope scope) {
+    public static threads_leave threads_leave(MemorySegment segment, Arena scope) {
         return threads_leave.ofAddress(threads_leave$get(segment), scope);
     }
     public static MemorySegment vfuncs$slice(MemorySegment seg) {
@@ -190,7 +139,7 @@ public class _AtkMiscClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

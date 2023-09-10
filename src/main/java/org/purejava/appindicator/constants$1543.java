@@ -3,60 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1543 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1543() {}
-    static final FunctionDescriptor gtk_clipboard_wait_for_contents$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_font_description_to_filename",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_clipboard_wait_for_contents$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_contents",
-        constants$1543.gtk_clipboard_wait_for_contents$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_wait_for_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_wait_for_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_text",
-        constants$1543.gtk_clipboard_wait_for_text$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_wait_for_rich_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_wait_for_rich_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_rich_text",
-        constants$1543.gtk_clipboard_wait_for_rich_text$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_wait_for_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_wait_for_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_image",
-        constants$1543.gtk_clipboard_wait_for_image$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_wait_for_uris$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_wait_for_uris$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_uris",
-        constants$1543.gtk_clipboard_wait_for_uris$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_wait_for_targets$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_wait_for_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_wait_for_targets",
-        constants$1543.gtk_clipboard_wait_for_targets$FUNC
-    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_INT.withName("ref_count"),
+        JAVA_INT.withName("ascent"),
+        JAVA_INT.withName("descent"),
+        JAVA_INT.withName("height"),
+        JAVA_INT.withName("approximate_char_width"),
+        JAVA_INT.withName("approximate_digit_width"),
+        JAVA_INT.withName("underline_position"),
+        JAVA_INT.withName("underline_thickness"),
+        JAVA_INT.withName("strikethrough_position"),
+        JAVA_INT.withName("strikethrough_thickness")
+    ).withName("_PangoFontMetrics");
+    static final VarHandle const$2 = constants$1543.const$1.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
+    static final VarHandle const$3 = constants$1543.const$1.varHandle(MemoryLayout.PathElement.groupElement("ascent"));
+    static final VarHandle const$4 = constants$1543.const$1.varHandle(MemoryLayout.PathElement.groupElement("descent"));
+    static final VarHandle const$5 = constants$1543.const$1.varHandle(MemoryLayout.PathElement.groupElement("height"));
 }
 
 

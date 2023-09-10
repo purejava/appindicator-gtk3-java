@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1681 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1681() {}
-    static final FunctionDescriptor gtk_lock_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_set_user_data",
+        constants$34.const$5
     );
-    static final MethodHandle gtk_lock_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_lock_button_new",
-        constants$1681.gtk_lock_button_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_save",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_lock_button_get_permission$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_restore",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_lock_button_get_permission$MH = RuntimeHelper.downcallHandle(
-        "gtk_lock_button_get_permission",
-        constants$1681.gtk_lock_button_get_permission$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_push_group",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_lock_button_set_permission$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_push_group_with_content",
+        constants$40.const$2
     );
-    static final MethodHandle gtk_lock_button_set_permission$MH = RuntimeHelper.downcallHandle(
-        "gtk_lock_button_set_permission",
-        constants$1681.gtk_lock_button_set_permission$FUNC
-    );
-    static final FunctionDescriptor GtkKeySnoopFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkKeySnoopFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkKeySnoopFunc_UP$MH = RuntimeHelper.upcallHandle(GtkKeySnoopFunc.class, "apply", constants$1681.GtkKeySnoopFunc_UP$FUNC);
-    static final FunctionDescriptor GtkKeySnoopFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkKeySnoopFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1681.GtkKeySnoopFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor gtk_get_major_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_get_major_version$MH = RuntimeHelper.downcallHandle(
-        "gtk_get_major_version",
-        constants$1681.gtk_get_major_version$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_pop_group",
+        constants$5.const$2
     );
 }
 

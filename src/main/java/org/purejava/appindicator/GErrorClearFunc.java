@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GErrorClearFunc)(struct _GError* error);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GErrorClearFunc {
 
     void apply(java.lang.foreign.MemorySegment display);
-    static MemorySegment allocate(GErrorClearFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$35.GErrorClearFunc_UP$MH, fi, constants$35.GErrorClearFunc$FUNC, scope);
+    static MemorySegment allocate(GErrorClearFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$54.const$1, fi, constants$13.const$1, scope);
     }
-    static GErrorClearFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GErrorClearFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$35.GErrorClearFunc_DOWN$MH.invokeExact(symbol, _display);
+                constants$13.const$3.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

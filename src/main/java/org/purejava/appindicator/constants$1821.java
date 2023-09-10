@@ -3,56 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1821 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1821() {}
-    static final FunctionDescriptor gtk_statusbar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_statusbar_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_statusbar_get_type",
-        constants$1821.gtk_statusbar_get_type$FUNC
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor gtk_statusbar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_statusbar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_statusbar_new",
-        constants$1821.gtk_statusbar_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GdkWindowClass.pick_embedded_child.class, "apply", constants$1821.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$1821.const$0
     );
-    static final FunctionDescriptor gtk_statusbar_get_context_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$3 = constants$1820.const$5.varHandle(MemoryLayout.PathElement.groupElement("pick_embedded_child"));
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle gtk_statusbar_get_context_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_statusbar_get_context_id",
-        constants$1821.gtk_statusbar_get_context_id$FUNC
-    );
-    static final FunctionDescriptor gtk_statusbar_push$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_statusbar_push$MH = RuntimeHelper.downcallHandle(
-        "gtk_statusbar_push",
-        constants$1821.gtk_statusbar_push$FUNC
-    );
-    static final FunctionDescriptor gtk_statusbar_pop$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_statusbar_pop$MH = RuntimeHelper.downcallHandle(
-        "gtk_statusbar_pop",
-        constants$1821.gtk_statusbar_pop$FUNC
-    );
-    static final FunctionDescriptor gtk_statusbar_remove$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_statusbar_remove$MH = RuntimeHelper.downcallHandle(
-        "gtk_statusbar_remove",
-        constants$1821.gtk_statusbar_remove$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GdkWindowClass.to_embedder.class, "apply", constants$1821.const$4);
 }
 
 

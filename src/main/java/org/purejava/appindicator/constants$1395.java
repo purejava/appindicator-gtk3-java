@@ -3,57 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1395 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1395() {}
-    static final FunctionDescriptor gtk_tree_view_column_set_reorderable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final VarHandle const$0 = constants$1392.const$2.varHandle(MemoryLayout.PathElement.groupElement("add_writable_namespaces"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GVfsClass.local_file_set_attributes.class, "apply", constants$1029.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$1029.const$1
     );
-    static final MethodHandle gtk_tree_view_column_set_reorderable$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_reorderable",
-        constants$1395.gtk_tree_view_column_set_reorderable$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_get_reorderable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_get_reorderable$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_reorderable",
-        constants$1395.gtk_tree_view_column_get_reorderable$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_set_sort_column_id$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_set_sort_column_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_sort_column_id",
-        constants$1395.gtk_tree_view_column_set_sort_column_id$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_get_sort_column_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_get_sort_column_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_sort_column_id",
-        constants$1395.gtk_tree_view_column_get_sort_column_id$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_set_sort_indicator$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_set_sort_indicator$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_sort_indicator",
-        constants$1395.gtk_tree_view_column_set_sort_indicator$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_get_sort_indicator$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_get_sort_indicator$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_sort_indicator",
-        constants$1395.gtk_tree_view_column_get_sort_indicator$FUNC
-    );
+    static final VarHandle const$3 = constants$1392.const$2.varHandle(MemoryLayout.PathElement.groupElement("local_file_set_attributes"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GVfsClass.local_file_removed.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$1392.const$2.varHandle(MemoryLayout.PathElement.groupElement("local_file_removed"));
 }
 
 

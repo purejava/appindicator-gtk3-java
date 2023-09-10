@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*sig_t)(int);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface sig_t {
 
     void apply(int _x0);
-    static MemorySegment allocate(sig_t fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$75.sig_t_UP$MH, fi, constants$75.sig_t$FUNC, scope);
+    static MemorySegment allocate(sig_t fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$125.const$5, fi, constants$80.const$1, scope);
     }
-    static sig_t ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static sig_t ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (int __x0) -> {
             try {
-                constants$75.sig_t_DOWN$MH.invokeExact(symbol, __x0);
+                constants$122.const$4.invokeExact(symbol, __x0);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1111 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1111() {}
-    static final FunctionDescriptor gdk_display_get_n_screens$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_monitor_event_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_display_get_n_screens$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_n_screens",
-        constants$1111.gdk_display_get_n_screens$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_io_error_enum_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_display_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_ask_password_flags_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_display_get_screen$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_screen",
-        constants$1111.gdk_display_get_screen$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_password_save_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_display_get_default_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_mount_operation_result_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_display_get_default_screen$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_default_screen",
-        constants$1111.gdk_display_get_default_screen$FUNC
-    );
-    static final FunctionDescriptor gdk_display_pointer_ungrab$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_display_pointer_ungrab$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_pointer_ungrab",
-        constants$1111.gdk_display_pointer_ungrab$FUNC
-    );
-    static final FunctionDescriptor gdk_display_keyboard_ungrab$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_display_keyboard_ungrab$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_keyboard_ungrab",
-        constants$1111.gdk_display_keyboard_ungrab$FUNC
-    );
-    static final FunctionDescriptor gdk_display_pointer_is_grabbed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_pointer_is_grabbed$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_pointer_is_grabbed",
-        constants$1111.gdk_display_pointer_is_grabbed$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_output_stream_splice_flags_get_type",
+        constants$3.const$5
     );
 }
 

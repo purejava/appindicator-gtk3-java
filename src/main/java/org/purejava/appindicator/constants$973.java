@@ -3,62 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$973 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$973() {}
-    static final FunctionDescriptor pango_layout_iter_get_baseline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_iter_get_baseline$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_baseline",
-        constants$973.pango_layout_iter_get_baseline$FUNC
-    );
-    static final FunctionDescriptor pango_layout_iter_get_run_baseline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_iter_get_run_baseline$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_iter_get_run_baseline",
-        constants$973.pango_layout_iter_get_run_baseline$FUNC
-    );
-    static final FunctionDescriptor pango_markup_parser_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_markup_parser_new$MH = RuntimeHelper.downcallHandle(
-        "pango_markup_parser_new",
-        constants$973.pango_markup_parser_new$FUNC
-    );
-    static final FunctionDescriptor pango_markup_parser_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_markup_parser_finish$MH = RuntimeHelper.downcallHandle(
-        "pango_markup_parser_finish",
-        constants$973.pango_markup_parser_finish$FUNC
-    );
-    static final FunctionDescriptor pango_parse_markup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_parse_markup$MH = RuntimeHelper.downcallHandle(
-        "pango_parse_markup",
-        constants$973.pango_parse_markup$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_renderer_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_get_type",
-        constants$973.pango_renderer_get_type$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.is_native.class, "apply", constants$10.const$5);
+    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("is_native"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.has_uri_scheme.class, "apply", constants$9.const$0);
+    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("has_uri_scheme"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.get_uri_scheme.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_uri_scheme"));
 }
 
 

@@ -3,42 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$424 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$424() {}
-    static final FunctionDescriptor g_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_error_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_error_get_type",
-        constants$424.g_error_get_type$FUNC
-    );
-    static final FunctionDescriptor g_date_time_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_date_time_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_type",
-        constants$424.g_date_time_get_type$FUNC
-    );
-    static final FunctionDescriptor g_time_zone_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_time_zone_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_time_zone_get_type",
-        constants$424.g_time_zone_get_type$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_io_channel_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_type",
-        constants$424.g_io_channel_get_type$FUNC
-    );
-    static final FunctionDescriptor g_io_condition_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_io_condition_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_io_condition_get_type",
-        constants$424.g_io_condition_get_type$FUNC
-    );
-    static final FunctionDescriptor g_variant_builder_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_variant_builder_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_variant_builder_get_type",
-        constants$424.g_variant_builder_get_type$FUNC
-    );
+    static final VarHandle const$0 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("max_parse_errors"));
+    static final VarHandle const$1 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("parse_errors"));
+    static final VarHandle const$2 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("input_name"));
+    static final VarHandle const$3 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("qdata"));
+    static final VarHandle const$4 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("config"));
+    static final VarHandle const$5 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("token"));
 }
 
 

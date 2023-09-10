@@ -3,61 +3,58 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1516 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1516() {}
-    static final FunctionDescriptor gtk_calendar_get_date$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final MethodHandle gtk_calendar_get_date$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_get_date",
-        constants$1516.gtk_calendar_get_date$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_buffer_serialize_glyphs",
+        constants$1516.const$0
     );
-    static final FunctionDescriptor gtk_calendar_set_detail_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final MethodHandle gtk_calendar_set_detail_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_set_detail_func",
-        constants$1516.gtk_calendar_set_detail_func$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_buffer_serialize_unicode",
+        constants$1516.const$2
     );
-    static final FunctionDescriptor gtk_calendar_set_detail_width_chars$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_buffer_serialize",
+        constants$1516.const$0
     );
-    static final MethodHandle gtk_calendar_set_detail_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_set_detail_width_chars",
-        constants$1516.gtk_calendar_set_detail_width_chars$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor gtk_calendar_set_detail_height_rows$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_calendar_set_detail_height_rows$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_set_detail_height_rows",
-        constants$1516.gtk_calendar_set_detail_height_rows$FUNC
-    );
-    static final FunctionDescriptor gtk_calendar_get_detail_width_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_calendar_get_detail_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_get_detail_width_chars",
-        constants$1516.gtk_calendar_get_detail_width_chars$FUNC
-    );
-    static final FunctionDescriptor gtk_calendar_get_detail_height_rows$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_calendar_get_detail_height_rows$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_get_detail_height_rows",
-        constants$1516.gtk_calendar_get_detail_height_rows$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "hb_buffer_deserialize_glyphs",
+        constants$1516.const$5
     );
 }
 

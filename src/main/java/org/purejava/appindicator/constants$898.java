@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$898 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$898() {}
-    static final FunctionDescriptor pango_coverage_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_sender",
+        constants$5.const$2
     );
-    static final MethodHandle pango_coverage_unref$MH = RuntimeHelper.downcallHandle(
-        "pango_coverage_unref",
-        constants$898.pango_coverage_unref$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_sender",
+        constants$13.const$4
     );
-    static final FunctionDescriptor pango_coverage_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_destination",
+        constants$5.const$2
     );
-    static final MethodHandle pango_coverage_copy$MH = RuntimeHelper.downcallHandle(
-        "pango_coverage_copy",
-        constants$898.pango_coverage_copy$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_destination",
+        constants$13.const$4
     );
-    static final FunctionDescriptor pango_coverage_get$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_error_name",
+        constants$5.const$2
     );
-    static final MethodHandle pango_coverage_get$MH = RuntimeHelper.downcallHandle(
-        "pango_coverage_get",
-        constants$898.pango_coverage_get$FUNC
-    );
-    static final FunctionDescriptor pango_coverage_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_coverage_set$MH = RuntimeHelper.downcallHandle(
-        "pango_coverage_set",
-        constants$898.pango_coverage_set$FUNC
-    );
-    static final FunctionDescriptor pango_coverage_max$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_coverage_max$MH = RuntimeHelper.downcallHandle(
-        "pango_coverage_max",
-        constants$898.pango_coverage_max$FUNC
-    );
-    static final FunctionDescriptor pango_coverage_to_bytes$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_coverage_to_bytes$MH = RuntimeHelper.downcallHandle(
-        "pango_coverage_to_bytes",
-        constants$898.pango_coverage_to_bytes$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_error_name",
+        constants$13.const$4
     );
 }
 

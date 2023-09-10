@@ -3,61 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$60 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$60() {}
-    static final FunctionDescriptor mblen$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_reload_user_special_dirs_cache",
+        constants$7.const$5
     );
-    static final MethodHandle mblen$MH = RuntimeHelper.downcallHandle(
-        "mblen",
-        constants$60.mblen$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_get_user_data_dir",
+        constants$35.const$2
     );
-    static final FunctionDescriptor mbtowc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_get_user_config_dir",
+        constants$35.const$2
     );
-    static final MethodHandle mbtowc$MH = RuntimeHelper.downcallHandle(
-        "mbtowc",
-        constants$60.mbtowc$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_get_user_cache_dir",
+        constants$35.const$2
     );
-    static final FunctionDescriptor wctomb$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_get_user_state_dir",
+        constants$35.const$2
     );
-    static final MethodHandle wctomb$MH = RuntimeHelper.downcallHandle(
-        "wctomb",
-        constants$60.wctomb$FUNC
-    );
-    static final FunctionDescriptor mbstowcs$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle mbstowcs$MH = RuntimeHelper.downcallHandle(
-        "mbstowcs",
-        constants$60.mbstowcs$FUNC
-    );
-    static final FunctionDescriptor wcstombs$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle wcstombs$MH = RuntimeHelper.downcallHandle(
-        "wcstombs",
-        constants$60.wcstombs$FUNC
-    );
-    static final FunctionDescriptor rpmatch$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rpmatch$MH = RuntimeHelper.downcallHandle(
-        "rpmatch",
-        constants$60.rpmatch$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_get_system_data_dirs",
+        constants$35.const$2
     );
 }
 

@@ -3,56 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$464 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$464() {}
-    static final FunctionDescriptor g_value_set_long$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$11.const$0
     );
-    static final MethodHandle g_value_set_long$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_long",
-        constants$464.g_value_set_long$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_test_log_set_fatal_handler$log_func.class, "apply", constants$11.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_test_log_set_fatal_handler",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_value_get_long$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_test_expect_message",
+        constants$42.const$4
     );
-    static final MethodHandle g_value_get_long$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_long",
-        constants$464.g_value_get_long$FUNC
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_value_set_ulong$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_value_set_ulong$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_ulong",
-        constants$464.g_value_set_ulong$FUNC
-    );
-    static final FunctionDescriptor g_value_get_ulong$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_get_ulong$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_ulong",
-        constants$464.g_value_get_ulong$FUNC
-    );
-    static final FunctionDescriptor g_value_set_int64$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_value_set_int64$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_int64",
-        constants$464.g_value_set_int64$FUNC
-    );
-    static final FunctionDescriptor g_value_get_int64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_get_int64$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_int64",
-        constants$464.g_value_get_int64$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_test_assert_expected_messages_internal",
+        constants$464.const$4
     );
 }
 

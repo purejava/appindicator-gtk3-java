@@ -3,64 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$549 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$549() {}
-    static final FunctionDescriptor g_dbus_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_connection_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_get_type",
-        constants$549.g_dbus_connection_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_type_class_ref",
+        constants$63.const$3
     );
-    static final FunctionDescriptor g_bus_get$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_type_class_peek",
+        constants$63.const$3
     );
-    static final MethodHandle g_bus_get$MH = RuntimeHelper.downcallHandle(
-        "g_bus_get",
-        constants$549.g_bus_get$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_type_class_peek_static",
+        constants$63.const$3
     );
-    static final FunctionDescriptor g_bus_get_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_type_class_unref",
+        constants$13.const$1
     );
-    static final MethodHandle g_bus_get_finish$MH = RuntimeHelper.downcallHandle(
-        "g_bus_get_finish",
-        constants$549.g_bus_get_finish$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_type_class_peek_parent",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_bus_get_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bus_get_sync$MH = RuntimeHelper.downcallHandle(
-        "g_bus_get_sync",
-        constants$549.g_bus_get_sync$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_new$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_new$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_new",
-        constants$549.g_dbus_connection_new$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_new_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_new_finish$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_new_finish",
-        constants$549.g_dbus_connection_new_finish$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_type_interface_peek",
+        constants$21.const$1
     );
 }
 

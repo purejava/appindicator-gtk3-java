@@ -3,82 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1381 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1381() {}
-    static final FunctionDescriptor gtk_cell_area_foreach_alloc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tls_password_get_description",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_cell_area_foreach_alloc$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_foreach_alloc",
-        constants$1381.gtk_cell_area_foreach_alloc$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_tls_password_set_description",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_cell_area_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tls_password_get_warning",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_cell_area_event$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_event",
-        constants$1381.gtk_cell_area_event$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tls_password_set_warning",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_cell_area_render$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_render$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_render",
-        constants$1381.gtk_cell_area_render$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_get_cell_allocation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_get_cell_allocation$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_get_cell_allocation",
-        constants$1381.gtk_cell_area_get_cell_allocation$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_get_cell_at_position$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_get_cell_at_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_get_cell_at_position",
-        constants$1381.gtk_cell_area_get_cell_at_position$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_create_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_create_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_create_context",
-        constants$1381.gtk_cell_area_create_context$FUNC
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface")
+    ).withName("_GTlsServerConnectionInterface");
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tls_server_connection_get_type",
+        constants$3.const$5
     );
 }
 

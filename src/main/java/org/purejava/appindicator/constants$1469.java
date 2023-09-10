@@ -3,61 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1469 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1469() {}
-    static final FunctionDescriptor gtk_tree_view_get_columns$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_pop_group_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_set_pop_group_func",
+        constants$42.const$1
     );
-    static final MethodHandle gtk_tree_view_get_columns$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_columns",
-        constants$1469.gtk_tree_view_get_columns$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_custom_palette_color_func$func.class, "apply", constants$859.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_custom_palette_color_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_set_custom_palette_color_func",
+        constants$42.const$1
     );
-    static final FunctionDescriptor gtk_tree_view_move_column_after$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT
     );
-    static final MethodHandle gtk_tree_view_move_column_after$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_move_column_after",
-        constants$1469.gtk_tree_view_move_column_after$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_expander_column$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_expander_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_expander_column",
-        constants$1469.gtk_tree_view_set_expander_column$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_expander_column$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_expander_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_expander_column",
-        constants$1469.gtk_tree_view_get_expander_column$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_column_drag_function$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_column_drag_function$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_column_drag_function",
-        constants$1469.gtk_tree_view_set_column_drag_function$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_scroll_to_point$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_scroll_to_point$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_scroll_to_point",
-        constants$1469.gtk_tree_view_scroll_to_point$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "hb_paint_push_transform",
+        constants$1469.const$5
     );
 }
 

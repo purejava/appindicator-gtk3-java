@@ -3,65 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$100 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$100() {}
-    static final FunctionDescriptor g_bookmark_file_move_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_move_item$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_move_item",
-        constants$100.g_bookmark_file_move_item$FUNC
-    );
-    static final FunctionDescriptor g_bytes_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_bytes_new$MH = RuntimeHelper.downcallHandle(
-        "g_bytes_new",
-        constants$100.g_bytes_new$FUNC
-    );
-    static final FunctionDescriptor g_bytes_new_take$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_bytes_new_take$MH = RuntimeHelper.downcallHandle(
-        "g_bytes_new_take",
-        constants$100.g_bytes_new_take$FUNC
-    );
-    static final FunctionDescriptor g_bytes_new_static$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_bytes_new_static$MH = RuntimeHelper.downcallHandle(
-        "g_bytes_new_static",
-        constants$100.g_bytes_new_static$FUNC
-    );
-    static final FunctionDescriptor g_bytes_new_with_free_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bytes_new_with_free_func$MH = RuntimeHelper.downcallHandle(
-        "g_bytes_new_with_free_func",
-        constants$100.g_bytes_new_with_free_func$FUNC
-    );
-    static final FunctionDescriptor g_bytes_new_from_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_bytes_new_from_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_bytes_new_from_bytes",
-        constants$100.g_bytes_new_from_bytes$FUNC
-    );
+    static final VarHandle const$0 = constants$99.const$5.varHandle(MemoryLayout.PathElement.groupElement("p"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("p"),
+        MemoryLayout.sequenceLayout(2, JAVA_INT).withName("i")
+    ).withName("_GRecMutex");
+    static final VarHandle const$2 = constants$100.const$1.varHandle(MemoryLayout.PathElement.groupElement("p"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("p"),
+        RuntimeHelper.POINTER.withName("notify"),
+        MemoryLayout.sequenceLayout(2, RuntimeHelper.POINTER).withName("future")
+    ).withName("_GPrivate");
+    static final VarHandle const$4 = constants$100.const$3.varHandle(MemoryLayout.PathElement.groupElement("p"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GPrivate.notify.class, "apply", constants$13.const$1);
 }
 
 

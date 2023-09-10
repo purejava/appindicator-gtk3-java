@@ -3,56 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$269 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$269() {}
-    static final FunctionDescriptor g_option_group_set_translate_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_source_new",
+        constants$21.const$3
     );
-    static final MethodHandle g_option_group_set_translate_func$MH = RuntimeHelper.downcallHandle(
-        "g_option_group_set_translate_func",
-        constants$269.g_option_group_set_translate_func$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_source_set_dispose_function$dispose.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_source_set_dispose_function",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_option_group_set_translation_domain$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_source_ref",
+        constants$5.const$2
     );
-    static final MethodHandle g_option_group_set_translation_domain$MH = RuntimeHelper.downcallHandle(
-        "g_option_group_set_translation_domain",
-        constants$269.g_option_group_set_translation_domain$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_source_unref",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_path_buf_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_path_buf_new$MH = RuntimeHelper.downcallHandle(
-        "g_path_buf_new",
-        constants$269.g_path_buf_new$FUNC
-    );
-    static final FunctionDescriptor g_path_buf_new_from_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_path_buf_new_from_path$MH = RuntimeHelper.downcallHandle(
-        "g_path_buf_new_from_path",
-        constants$269.g_path_buf_new_from_path$FUNC
-    );
-    static final FunctionDescriptor g_path_buf_init$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_path_buf_init$MH = RuntimeHelper.downcallHandle(
-        "g_path_buf_init",
-        constants$269.g_path_buf_init$FUNC
-    );
-    static final FunctionDescriptor g_path_buf_init_from_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_path_buf_init_from_path$MH = RuntimeHelper.downcallHandle(
-        "g_path_buf_init_from_path",
-        constants$269.g_path_buf_init_from_path$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_source_attach",
+        constants$9.const$0
     );
 }
 

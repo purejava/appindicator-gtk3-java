@@ -3,42 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$425 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$425() {}
-    static final FunctionDescriptor g_variant_dict_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_variant_dict_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_get_type",
-        constants$425.g_variant_dict_get_type$FUNC
-    );
-    static final FunctionDescriptor g_key_file_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_key_file_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_type",
-        constants$425.g_key_file_get_type$FUNC
-    );
-    static final FunctionDescriptor g_main_loop_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_main_loop_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_main_loop_get_type",
-        constants$425.g_main_loop_get_type$FUNC
-    );
-    static final FunctionDescriptor g_main_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_main_context_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_get_type",
-        constants$425.g_main_context_get_type$FUNC
-    );
-    static final FunctionDescriptor g_source_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_source_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_source_get_type",
-        constants$425.g_source_get_type$FUNC
-    );
-    static final FunctionDescriptor g_pollfd_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_pollfd_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_pollfd_get_type",
-        constants$425.g_pollfd_get_type$FUNC
-    );
+    static final VarHandle const$0 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("line"));
+    static final VarHandle const$1 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("position"));
+    static final VarHandle const$2 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("next_token"));
+    static final VarHandle const$3 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("next_line"));
+    static final VarHandle const$4 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("next_position"));
+    static final VarHandle const$5 = constants$423.const$4.varHandle(MemoryLayout.PathElement.groupElement("symbol_table"));
 }
 
 

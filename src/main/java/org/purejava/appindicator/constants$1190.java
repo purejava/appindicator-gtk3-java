@@ -3,56 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1190 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1190() {}
-    static final FunctionDescriptor gtk_accel_group_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_accel_group_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_new",
-        constants$1190.gtk_accel_group_new$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_group_get_is_locked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_group_get_is_locked$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_get_is_locked",
-        constants$1190.gtk_accel_group_get_is_locked$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_group_get_modifier_mask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_group_get_modifier_mask$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_get_modifier_mask",
-        constants$1190.gtk_accel_group_get_modifier_mask$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_group_lock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_group_lock$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_lock",
-        constants$1190.gtk_accel_group_lock$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_group_unlock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_group_unlock$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_unlock",
-        constants$1190.gtk_accel_group_unlock$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_group_connect$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_group_connect$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_connect",
-        constants$1190.gtk_accel_group_connect$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.get_mount_for_uuid.class, "apply", constants$5.const$5);
+    static final VarHandle const$1 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_mount_for_uuid"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.adopt_orphan_mount.class, "apply", constants$5.const$5);
+    static final VarHandle const$3 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("adopt_orphan_mount"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.drive_eject_button.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("drive_eject_button"));
 }
 
 

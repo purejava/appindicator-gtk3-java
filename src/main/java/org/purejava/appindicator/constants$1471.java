@@ -3,61 +3,43 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1471 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1471() {}
-    static final FunctionDescriptor gtk_tree_view_collapse_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_FLOAT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle gtk_tree_view_collapse_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_collapse_row",
-        constants$1471.gtk_tree_view_collapse_row$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_paint_image",
+        constants$1471.const$0
     );
-    static final FunctionDescriptor gtk_tree_view_map_expanded_rows$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_paint_linear_gradient",
+        constants$1453.const$3
     );
-    static final MethodHandle gtk_tree_view_map_expanded_rows$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_map_expanded_rows",
-        constants$1471.gtk_tree_view_map_expanded_rows$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_paint_radial_gradient",
+        constants$1453.const$3
     );
-    static final FunctionDescriptor gtk_tree_view_row_expanded$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_paint_sweep_gradient",
+        constants$1453.const$1
     );
-    static final MethodHandle gtk_tree_view_row_expanded$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_row_expanded",
-        constants$1471.gtk_tree_view_row_expanded$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_reorderable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_reorderable$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_reorderable",
-        constants$1471.gtk_tree_view_set_reorderable$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_reorderable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_reorderable$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_reorderable",
-        constants$1471.gtk_tree_view_get_reorderable$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_cursor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_cursor$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_cursor",
-        constants$1471.gtk_tree_view_set_cursor$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_paint_push_group",
+        constants$13.const$4
     );
 }
 

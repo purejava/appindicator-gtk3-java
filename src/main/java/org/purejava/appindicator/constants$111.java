@@ -3,61 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$111 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$111() {}
-    static final FunctionDescriptor g_dataset_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_async_queue_push_sorted_unlocked",
+        constants$42.const$1
     );
-    static final MethodHandle g_dataset_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_dataset_destroy",
-        constants$111.g_dataset_destroy$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_async_queue_pop",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_dataset_id_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_async_queue_pop_unlocked",
+        constants$5.const$2
     );
-    static final MethodHandle g_dataset_id_get_data$MH = RuntimeHelper.downcallHandle(
-        "g_dataset_id_get_data",
-        constants$111.g_dataset_id_get_data$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_async_queue_try_pop",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_datalist_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_async_queue_try_pop_unlocked",
+        constants$5.const$2
     );
-    static final MethodHandle g_datalist_get_data$MH = RuntimeHelper.downcallHandle(
-        "g_datalist_get_data",
-        constants$111.g_datalist_get_data$FUNC
-    );
-    static final FunctionDescriptor g_dataset_id_set_data_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dataset_id_set_data_full$MH = RuntimeHelper.downcallHandle(
-        "g_dataset_id_set_data_full",
-        constants$111.g_dataset_id_set_data_full$FUNC
-    );
-    static final FunctionDescriptor g_dataset_id_remove_no_notify$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dataset_id_remove_no_notify$MH = RuntimeHelper.downcallHandle(
-        "g_dataset_id_remove_no_notify",
-        constants$111.g_dataset_id_remove_no_notify$FUNC
-    );
-    static final FunctionDescriptor g_dataset_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dataset_foreach$MH = RuntimeHelper.downcallHandle(
-        "g_dataset_foreach",
-        constants$111.g_dataset_foreach$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_async_queue_timeout_pop",
+        constants$21.const$1
     );
 }
 

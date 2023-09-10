@@ -3,58 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$325 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$325() {}
-    static final FunctionDescriptor g_thread_pool_unprocessed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_io_channel_read_unichar",
+        constants$12.const$2
     );
-    static final MethodHandle g_thread_pool_unprocessed$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_unprocessed",
-        constants$325.g_thread_pool_unprocessed$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_io_channel_write_chars",
+        constants$315.const$5
     );
-    static final FunctionDescriptor g_thread_pool_set_sort_function$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_io_channel_write_unichar",
+        constants$150.const$0
     );
-    static final MethodHandle g_thread_pool_set_sort_function$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_set_sort_function",
-        constants$325.g_thread_pool_set_sort_function$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_io_channel_seek_position",
+        constants$316.const$5
     );
-    static final FunctionDescriptor g_thread_pool_move_to_front$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_io_channel_new_file",
+        constants$23.const$0
     );
-    static final MethodHandle g_thread_pool_move_to_front$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_move_to_front",
-        constants$325.g_thread_pool_move_to_front$FUNC
-    );
-    static final FunctionDescriptor g_thread_pool_set_max_threads$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_thread_pool_set_max_threads$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_set_max_threads",
-        constants$325.g_thread_pool_set_max_threads$FUNC
-    );
-    static final FunctionDescriptor g_thread_pool_get_max_threads$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_thread_pool_get_max_threads$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_get_max_threads",
-        constants$325.g_thread_pool_get_max_threads$FUNC
-    );
-    static final FunctionDescriptor g_thread_pool_get_num_threads$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_thread_pool_get_num_threads$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_get_num_threads",
-        constants$325.g_thread_pool_get_num_threads$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_io_channel_error_quark",
+        constants$83.const$1
     );
 }
 

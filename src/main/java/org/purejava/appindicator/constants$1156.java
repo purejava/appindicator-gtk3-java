@@ -3,63 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1156 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1156() {}
-    static final FunctionDescriptor gdk_cairo_set_source_color$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_menu_item_new",
+        constants$5.const$5
     );
-    static final MethodHandle gdk_cairo_set_source_color$MH = RuntimeHelper.downcallHandle(
-        "gdk_cairo_set_source_color",
-        constants$1156.gdk_cairo_set_source_color$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_menu_item_new_from_model",
+        constants$21.const$3
     );
-    static final FunctionDescriptor gdk_cairo_surface_create_from_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_menu_item_new_submenu",
+        constants$5.const$5
     );
-    static final MethodHandle gdk_cairo_surface_create_from_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gdk_cairo_surface_create_from_pixbuf",
-        constants$1156.gdk_cairo_surface_create_from_pixbuf$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_menu_item_new_section",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gdk_cairo_draw_from_gl$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_menu_item_get_attribute_value",
+        constants$23.const$0
     );
-    static final MethodHandle gdk_cairo_draw_from_gl$MH = RuntimeHelper.downcallHandle(
-        "gdk_cairo_draw_from_gl",
-        constants$1156.gdk_cairo_draw_from_gl$FUNC
-    );
-    static final FunctionDescriptor gdk_cairo_get_drawing_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_cairo_get_drawing_context$MH = RuntimeHelper.downcallHandle(
-        "gdk_cairo_get_drawing_context",
-        constants$1156.gdk_cairo_get_drawing_context$FUNC
-    );
-    static final FunctionDescriptor gdk_cursor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_cursor_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_get_type",
-        constants$1156.gdk_cursor_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_cursor_new_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_cursor_new_for_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_new_for_display",
-        constants$1156.gdk_cursor_new_for_display$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "g_menu_item_get_attribute",
+        constants$12.const$2
     );
 }
 

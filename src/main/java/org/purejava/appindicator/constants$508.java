@@ -3,68 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$508 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$508() {}
-    static final FunctionDescriptor g_output_stream_splice_finish$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_output_stream_splice_finish$MH = RuntimeHelper.downcallHandle(
-        "g_output_stream_splice_finish",
-        constants$508.g_output_stream_splice_finish$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GThreadFunctions.thread_create.class, "apply", constants$508.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$508.const$0
     );
-    static final FunctionDescriptor g_output_stream_flush_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_output_stream_flush_async$MH = RuntimeHelper.downcallHandle(
-        "g_output_stream_flush_async",
-        constants$508.g_output_stream_flush_async$FUNC
-    );
-    static final FunctionDescriptor g_output_stream_flush_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_output_stream_flush_finish$MH = RuntimeHelper.downcallHandle(
-        "g_output_stream_flush_finish",
-        constants$508.g_output_stream_flush_finish$FUNC
-    );
-    static final FunctionDescriptor g_output_stream_close_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_output_stream_close_async$MH = RuntimeHelper.downcallHandle(
-        "g_output_stream_close_async",
-        constants$508.g_output_stream_close_async$FUNC
-    );
-    static final FunctionDescriptor g_output_stream_close_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_output_stream_close_finish$MH = RuntimeHelper.downcallHandle(
-        "g_output_stream_close_finish",
-        constants$508.g_output_stream_close_finish$FUNC
-    );
-    static final FunctionDescriptor g_output_stream_is_closed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_output_stream_is_closed$MH = RuntimeHelper.downcallHandle(
-        "g_output_stream_is_closed",
-        constants$508.g_output_stream_is_closed$FUNC
-    );
+    static final VarHandle const$3 = constants$503.const$0.varHandle(MemoryLayout.PathElement.groupElement("thread_create"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GThreadFunctions.thread_yield.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$503.const$0.varHandle(MemoryLayout.PathElement.groupElement("thread_yield"));
 }
 
 

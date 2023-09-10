@@ -3,53 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1795 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1795() {}
-    static final FunctionDescriptor gtk_scale_button_get_plus_button$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_button_get_plus_button$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_button_get_plus_button",
-        constants$1795.gtk_scale_button_get_plus_button$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_button_get_minus_button$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_button_get_minus_button$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_button_get_minus_button",
-        constants$1795.gtk_scale_button_get_minus_button$FUNC
-    );
-    static final FunctionDescriptor gtk_scale_button_get_popup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scale_button_get_popup$MH = RuntimeHelper.downcallHandle(
-        "gtk_scale_button_get_popup",
-        constants$1795.gtk_scale_button_get_popup$FUNC
-    );
-    static final FunctionDescriptor gtk_scrollable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_scrollable_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_get_type",
-        constants$1795.gtk_scrollable_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_scrollable_get_hadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrollable_get_hadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_get_hadjustment",
-        constants$1795.gtk_scrollable_get_hadjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_scrollable_set_hadjustment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrollable_set_hadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrollable_set_hadjustment",
-        constants$1795.gtk_scrollable_set_hadjustment$FUNC
-    );
+    static final VarHandle const$0 = constants$1794.const$4.varHandle(MemoryLayout.PathElement.groupElement("window"));
+    static final VarHandle const$1 = constants$1794.const$4.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
+    static final VarHandle const$2 = constants$1794.const$4.varHandle(MemoryLayout.PathElement.groupElement("phase"));
+    static final VarHandle const$3 = constants$1794.const$4.varHandle(MemoryLayout.PathElement.groupElement("n_fingers"));
+    static final VarHandle const$4 = constants$1794.const$4.varHandle(MemoryLayout.PathElement.groupElement("time"));
+    static final VarHandle const$5 = constants$1794.const$4.varHandle(MemoryLayout.PathElement.groupElement("x"));
 }
 
 

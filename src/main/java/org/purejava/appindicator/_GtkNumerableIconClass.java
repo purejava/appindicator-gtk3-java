@@ -2,44 +2,23 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkNumerableIconClass {
- *     GEmblemedIconClass parent_class;
- *     gpointer padding[16];
+ *     struct _GEmblemedIconClass parent_class;
+ *     void* padding[16];
  * };
  * }
  */
 public class _GtkNumerableIconClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-                ).withName("g_type_class"),
-                Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-                Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-                Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-                MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-            ).withName("parent_class")
-        ).withName("parent_class"),
-        MemoryLayout.sequenceLayout(16, Constants$root.C_POINTER$LAYOUT).withName("padding")
-    ).withName("_GtkNumerableIconClass");
     public static MemoryLayout $LAYOUT() {
-        return _GtkNumerableIconClass.$struct$LAYOUT;
+        return constants$3312.const$1;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
@@ -52,7 +31,7 @@ public class _GtkNumerableIconClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

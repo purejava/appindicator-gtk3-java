@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1258 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1258() {}
-    static final FunctionDescriptor gtk_widget_has_grab$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_settings_get_uint64",
+        constants$22.const$0
     );
-    static final MethodHandle gtk_widget_has_grab$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_has_grab",
-        constants$1258.gtk_widget_has_grab$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_settings_set_uint64",
+        constants$18.const$2
     );
-    static final FunctionDescriptor gtk_widget_device_is_shadowed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_settings_get_string",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_widget_device_is_shadowed$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_device_is_shadowed",
-        constants$1258.gtk_widget_device_is_shadowed$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_settings_set_string",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gtk_widget_set_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_settings_get_boolean",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_widget_set_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_name",
-        constants$1258.gtk_widget_set_name$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_name",
-        constants$1258.gtk_widget_get_name$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_state$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_state",
-        constants$1258.gtk_widget_set_state$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_state",
-        constants$1258.gtk_widget_get_state$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_settings_set_boolean",
+        constants$62.const$0
     );
 }
 

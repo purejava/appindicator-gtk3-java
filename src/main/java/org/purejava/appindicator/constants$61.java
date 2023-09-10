@@ -3,54 +3,33 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$61 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$61() {}
-    static final FunctionDescriptor getsubopt$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_get_system_config_dirs",
+        constants$35.const$2
     );
-    static final MethodHandle getsubopt$MH = RuntimeHelper.downcallHandle(
-        "getsubopt",
-        constants$61.getsubopt$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_get_user_runtime_dir",
+        constants$35.const$2
     );
-    static final FunctionDescriptor getloadavg$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_get_user_special_dir",
+        constants$24.const$0
     );
-    static final MethodHandle getloadavg$MH = RuntimeHelper.downcallHandle(
-        "getloadavg",
-        constants$61.getloadavg$FUNC
-    );
-    static final FunctionDescriptor g_thread_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_thread_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_thread_error_quark",
-        constants$61.g_thread_error_quark$FUNC
-    );
-    static final FunctionDescriptor GThreadFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GThreadFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GThreadFunc_UP$MH = RuntimeHelper.upcallHandle(GThreadFunc.class, "apply", constants$61.GThreadFunc_UP$FUNC);
-    static final FunctionDescriptor GThreadFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GThreadFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$61.GThreadFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_thread_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_thread_ref$MH = RuntimeHelper.downcallHandle(
-        "g_thread_ref",
-        constants$61.g_thread_ref$FUNC
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("key"),
+        JAVA_INT.withName("value"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GDebugKey");
+    static final VarHandle const$4 = constants$61.const$3.varHandle(MemoryLayout.PathElement.groupElement("key"));
+    static final VarHandle const$5 = constants$61.const$3.varHandle(MemoryLayout.PathElement.groupElement("value"));
 }
 
 

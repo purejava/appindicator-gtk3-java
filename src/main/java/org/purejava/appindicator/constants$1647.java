@@ -3,80 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1647 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1647() {}
-    static final FunctionDescriptor gtk_icon_info_load_symbolic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_load_symbolic$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_load_symbolic",
-        constants$1647.gtk_icon_info_load_symbolic$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_load_symbolic_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_load_symbolic_async$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_load_symbolic_async",
-        constants$1647.gtk_icon_info_load_symbolic_async$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_load_symbolic_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_load_symbolic_finish$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_load_symbolic_finish",
-        constants$1647.gtk_icon_info_load_symbolic_finish$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_load_symbolic_for_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_load_symbolic_for_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_load_symbolic_for_context",
-        constants$1647.gtk_icon_info_load_symbolic_for_context$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_load_symbolic_for_context_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_load_symbolic_for_context_async$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_load_symbolic_for_context_async",
-        constants$1647.gtk_icon_info_load_symbolic_for_context_async$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_load_symbolic_for_context_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_load_symbolic_for_context_finish$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_load_symbolic_for_context_finish",
-        constants$1647.gtk_icon_info_load_symbolic_for_context_finish$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_PangoRendererClass.draw_glyph_item.class, "apply", constants$1641.const$5);
+    static final VarHandle const$1 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("draw_glyph_item"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_PangoRendererClass._pango_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("_pango_reserved2"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_PangoRendererClass._pango_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("_pango_reserved3"));
 }
 
 

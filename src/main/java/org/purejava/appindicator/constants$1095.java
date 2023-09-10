@@ -3,61 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1095 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1095() {}
-    static final FunctionDescriptor gdk_window_get_children_with_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_children_with_user_data$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_children_with_user_data",
-        constants$1095.gdk_window_get_children_with_user_data$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_events$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_events$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_events",
-        constants$1095.gdk_window_get_events$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_events$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_events$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_events",
-        constants$1095.gdk_window_set_events$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_device_events$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_device_events$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_device_events",
-        constants$1095.gdk_window_set_device_events$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_device_events$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_device_events$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_device_events",
-        constants$1095.gdk_window_get_device_events$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_source_events$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_source_events$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_source_events",
-        constants$1095.gdk_window_set_source_events$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1091.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1091.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1091.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
 }
 
 

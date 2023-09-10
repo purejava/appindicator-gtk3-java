@@ -3,62 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1876 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1876() {}
-    static final FunctionDescriptor gtk_tree_store_iter_depth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_color_hash",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_tree_store_iter_depth$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_iter_depth",
-        constants$1876.gtk_tree_store_iter_depth$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_color_equal",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gtk_tree_store_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_color_parse",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_tree_store_clear$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_clear",
-        constants$1876.gtk_tree_store_clear$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_color_to_string",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_tree_store_iter_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_store_iter_is_valid$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_iter_is_valid",
-        constants$1876.gtk_tree_store_iter_is_valid$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_store_reorder$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_store_reorder$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_reorder",
-        constants$1876.gtk_tree_store_reorder$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_store_swap$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_store_swap$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_swap",
-        constants$1876.gtk_tree_store_swap$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_store_move_before$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_store_move_before$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_store_move_before",
-        constants$1876.gtk_tree_store_move_before$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_DOUBLE.withName("red"),
+        JAVA_DOUBLE.withName("green"),
+        JAVA_DOUBLE.withName("blue"),
+        JAVA_DOUBLE.withName("alpha")
+    ).withName("_GdkRGBA");
+    static final VarHandle const$5 = constants$1876.const$4.varHandle(MemoryLayout.PathElement.groupElement("red"));
 }
 
 

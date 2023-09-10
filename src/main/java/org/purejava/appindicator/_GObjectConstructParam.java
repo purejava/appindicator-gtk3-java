@@ -2,88 +2,84 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GObjectConstructParam {
- *     GParamSpec* pspec;
- *     GValue* value;
+ *     struct _GParamSpec* pspec;
+ *     struct _GValue* value;
  * };
  * }
  */
 public class _GObjectConstructParam {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("pspec"),
-        Constants$root.C_POINTER$LAYOUT.withName("value")
-    ).withName("_GObjectConstructParam");
     public static MemoryLayout $LAYOUT() {
-        return _GObjectConstructParam.$struct$LAYOUT;
+        return constants$627.const$0;
     }
-    static final VarHandle pspec$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("pspec"));
     public static VarHandle pspec$VH() {
-        return _GObjectConstructParam.pspec$VH;
+        return constants$627.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GParamSpec* pspec;
+     * struct _GParamSpec* pspec;
      * }
      */
     public static MemorySegment pspec$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GObjectConstructParam.pspec$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$627.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GParamSpec* pspec;
+     * struct _GParamSpec* pspec;
      * }
      */
     public static void pspec$set(MemorySegment seg, MemorySegment x) {
-        _GObjectConstructParam.pspec$VH.set(seg, x);
+        constants$627.const$1.set(seg, x);
     }
     public static MemorySegment pspec$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GObjectConstructParam.pspec$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$627.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void pspec$set(MemorySegment seg, long index, MemorySegment x) {
-        _GObjectConstructParam.pspec$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$627.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle value$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("value"));
     public static VarHandle value$VH() {
-        return _GObjectConstructParam.value$VH;
+        return constants$627.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GValue* value;
+     * struct _GValue* value;
      * }
      */
     public static MemorySegment value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GObjectConstructParam.value$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$627.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GValue* value;
+     * struct _GValue* value;
      * }
      */
     public static void value$set(MemorySegment seg, MemorySegment x) {
-        _GObjectConstructParam.value$VH.set(seg, x);
+        constants$627.const$2.set(seg, x);
     }
     public static MemorySegment value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GObjectConstructParam.value$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$627.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void value$set(MemorySegment seg, long index, MemorySegment x) {
-        _GObjectConstructParam.value$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$627.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

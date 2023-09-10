@@ -3,65 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1057 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1057() {}
-    static final FunctionDescriptor gdk_device_get_history$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_info_get_deletion_date",
+        constants$5.const$2
     );
-    static final MethodHandle gdk_device_get_history$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_history",
-        constants$1057.gdk_device_get_history$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_info_get_file_type",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gdk_device_free_history$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_info_get_is_hidden",
+        constants$10.const$5
     );
-    static final MethodHandle gdk_device_free_history$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_free_history",
-        constants$1057.gdk_device_free_history$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_info_get_is_backup",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gdk_device_get_n_axes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_info_get_is_symlink",
+        constants$10.const$5
     );
-    static final MethodHandle gdk_device_get_n_axes$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_n_axes",
-        constants$1057.gdk_device_get_n_axes$FUNC
-    );
-    static final FunctionDescriptor gdk_device_list_axes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_device_list_axes$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_list_axes",
-        constants$1057.gdk_device_list_axes$FUNC
-    );
-    static final FunctionDescriptor gdk_device_get_axis_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_device_get_axis_value$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_axis_value",
-        constants$1057.gdk_device_get_axis_value$FUNC
-    );
-    static final FunctionDescriptor gdk_device_get_axis$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_device_get_axis$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_get_axis",
-        constants$1057.gdk_device_get_axis$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_info_get_name",
+        constants$5.const$2
     );
 }
 

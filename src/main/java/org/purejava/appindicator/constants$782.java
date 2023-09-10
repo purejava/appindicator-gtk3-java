@@ -3,55 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$782 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$782() {}
-    static final FunctionDescriptor g_srv_target_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_srv_target_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_get_type",
-        constants$782.g_srv_target_get_type$FUNC
-    );
-    static final FunctionDescriptor g_srv_target_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle g_srv_target_new$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_new",
-        constants$782.g_srv_target_new$FUNC
-    );
-    static final FunctionDescriptor g_srv_target_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_srv_target_copy$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_copy",
-        constants$782.g_srv_target_copy$FUNC
-    );
-    static final FunctionDescriptor g_srv_target_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_srv_target_free$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_free",
-        constants$782.g_srv_target_free$FUNC
-    );
-    static final FunctionDescriptor g_srv_target_get_hostname$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_srv_target_get_hostname$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_get_hostname",
-        constants$782.g_srv_target_get_hostname$FUNC
-    );
-    static final FunctionDescriptor g_srv_target_get_port$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_srv_target_get_port$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_get_port",
-        constants$782.g_srv_target_get_port$FUNC
-    );
+    static final VarHandle const$0 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("flush_finish"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GOutputStreamClass.close_async.class, "apply", constants$281.const$5);
+    static final VarHandle const$2 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("close_async"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GOutputStreamClass.close_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$4 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("close_finish"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GOutputStreamClass.writev_fn.class, "apply", constants$766.const$0);
 }
 
 

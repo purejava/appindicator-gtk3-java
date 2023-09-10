@@ -3,62 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$980 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$980() {}
-    static final FunctionDescriptor open_memstream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle open_memstream$MH = RuntimeHelper.downcallHandle(
-        "open_memstream",
-        constants$980.open_memstream$FUNC
-    );
-    static final FunctionDescriptor setbuf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle setbuf$MH = RuntimeHelper.downcallHandle(
-        "setbuf",
-        constants$980.setbuf$FUNC
-    );
-    static final FunctionDescriptor setvbuf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle setvbuf$MH = RuntimeHelper.downcallHandle(
-        "setvbuf",
-        constants$980.setvbuf$FUNC
-    );
-    static final FunctionDescriptor setbuffer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle setbuffer$MH = RuntimeHelper.downcallHandle(
-        "setbuffer",
-        constants$980.setbuffer$FUNC
-    );
-    static final FunctionDescriptor setlinebuf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle setlinebuf$MH = RuntimeHelper.downcallHandle(
-        "setlinebuf",
-        constants$980.setlinebuf$FUNC
-    );
-    static final FunctionDescriptor fprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle fprintf$MH = RuntimeHelper.downcallHandleVariadic(
-        "fprintf",
-        constants$980.fprintf$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.query_filesystem_info_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("query_filesystem_info_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.find_enclosing_mount.class, "apply", constants$23.const$0);
+    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("find_enclosing_mount"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.find_enclosing_mount_async.class, "apply", constants$281.const$5);
+    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("find_enclosing_mount_async"));
 }
 
 

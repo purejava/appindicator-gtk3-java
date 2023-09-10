@@ -3,53 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$338 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$338() {}
-    static final FunctionDescriptor g_uri_get_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_mapped_file_free",
+        constants$13.const$1
     );
-    static final MethodHandle g_uri_get_scheme$MH = RuntimeHelper.downcallHandle(
-        "g_uri_get_scheme",
-        constants$338.g_uri_get_scheme$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_markup_error_quark",
+        constants$83.const$1
     );
-    static final FunctionDescriptor g_uri_get_userinfo$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("start_element"),
+        RuntimeHelper.POINTER.withName("end_element"),
+        RuntimeHelper.POINTER.withName("text"),
+        RuntimeHelper.POINTER.withName("passthrough"),
+        RuntimeHelper.POINTER.withName("error")
+    ).withName("_GMarkupParser");
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_uri_get_userinfo$MH = RuntimeHelper.downcallHandle(
-        "g_uri_get_userinfo",
-        constants$338.g_uri_get_userinfo$FUNC
-    );
-    static final FunctionDescriptor g_uri_get_user$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uri_get_user$MH = RuntimeHelper.downcallHandle(
-        "g_uri_get_user",
-        constants$338.g_uri_get_user$FUNC
-    );
-    static final FunctionDescriptor g_uri_get_password$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uri_get_password$MH = RuntimeHelper.downcallHandle(
-        "g_uri_get_password",
-        constants$338.g_uri_get_password$FUNC
-    );
-    static final FunctionDescriptor g_uri_get_auth_params$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uri_get_auth_params$MH = RuntimeHelper.downcallHandle(
-        "g_uri_get_auth_params",
-        constants$338.g_uri_get_auth_params$FUNC
-    );
-    static final FunctionDescriptor g_uri_get_host$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uri_get_host$MH = RuntimeHelper.downcallHandle(
-        "g_uri_get_host",
-        constants$338.g_uri_get_host$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GMarkupParser.start_element.class, "apply", constants$338.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$338.const$3
     );
 }
 

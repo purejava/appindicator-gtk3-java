@@ -3,54 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$697 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$697() {}
-    static final FunctionDescriptor g_menu_attribute_iter_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_attribute_iter_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_menu_attribute_iter_get_name",
-        constants$697.g_menu_attribute_iter_get_name$FUNC
-    );
-    static final FunctionDescriptor g_menu_attribute_iter_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_attribute_iter_get_value$MH = RuntimeHelper.downcallHandle(
-        "g_menu_attribute_iter_get_value",
-        constants$697.g_menu_attribute_iter_get_value$FUNC
-    );
-    static final FunctionDescriptor g_menu_link_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_menu_link_iter_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_menu_link_iter_get_type",
-        constants$697.g_menu_link_iter_get_type$FUNC
-    );
-    static final FunctionDescriptor g_menu_link_iter_get_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_link_iter_get_next$MH = RuntimeHelper.downcallHandle(
-        "g_menu_link_iter_get_next",
-        constants$697.g_menu_link_iter_get_next$FUNC
-    );
-    static final FunctionDescriptor g_menu_link_iter_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_link_iter_next$MH = RuntimeHelper.downcallHandle(
-        "g_menu_link_iter_next",
-        constants$697.g_menu_link_iter_next$FUNC
-    );
-    static final FunctionDescriptor g_menu_link_iter_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_link_iter_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_menu_link_iter_get_name",
-        constants$697.g_menu_link_iter_get_name$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("buffer"),
+        JAVA_LONG.withName("size")
+    ).withName("_GOutputVector");
+    static final VarHandle const$1 = constants$697.const$0.varHandle(MemoryLayout.PathElement.groupElement("buffer"));
+    static final VarHandle const$2 = constants$697.const$0.varHandle(MemoryLayout.PathElement.groupElement("size"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("address"),
+        RuntimeHelper.POINTER.withName("vectors"),
+        JAVA_INT.withName("num_vectors"),
+        JAVA_INT.withName("bytes_sent"),
+        RuntimeHelper.POINTER.withName("control_messages"),
+        JAVA_INT.withName("num_control_messages"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GOutputMessage");
+    static final VarHandle const$4 = constants$697.const$3.varHandle(MemoryLayout.PathElement.groupElement("address"));
+    static final VarHandle const$5 = constants$697.const$3.varHandle(MemoryLayout.PathElement.groupElement("vectors"));
 }
 
 

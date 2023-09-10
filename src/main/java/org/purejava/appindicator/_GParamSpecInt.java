@@ -2,138 +2,116 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GParamSpecInt {
- *     GParamSpec parent_instance;
- *     gint minimum;
- *     gint maximum;
- *     gint default_value;
+ *     struct _GParamSpec parent_instance;
+ *     int minimum;
+ *     int maximum;
+ *     int default_value;
  * };
  * }
  */
 public class _GParamSpecInt {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_POINTER$LAYOUT.withName("g_class")
-            ).withName("g_type_instance"),
-            Constants$root.C_POINTER$LAYOUT.withName("name"),
-            Constants$root.C_INT$LAYOUT.withName("flags"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("value_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("owner_type"),
-            Constants$root.C_POINTER$LAYOUT.withName("_nick"),
-            Constants$root.C_POINTER$LAYOUT.withName("_blurb"),
-            Constants$root.C_POINTER$LAYOUT.withName("qdata"),
-            Constants$root.C_INT$LAYOUT.withName("ref_count"),
-            Constants$root.C_INT$LAYOUT.withName("param_id")
-        ).withName("parent_instance"),
-        Constants$root.C_INT$LAYOUT.withName("minimum"),
-        Constants$root.C_INT$LAYOUT.withName("maximum"),
-        Constants$root.C_INT$LAYOUT.withName("default_value"),
-        MemoryLayout.paddingLayout(32)
-    ).withName("_GParamSpecInt");
     public static MemoryLayout $LAYOUT() {
-        return _GParamSpecInt.$struct$LAYOUT;
+        return constants$656.const$0;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 72);
     }
-    static final VarHandle minimum$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("minimum"));
     public static VarHandle minimum$VH() {
-        return _GParamSpecInt.minimum$VH;
+        return constants$656.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint minimum;
+     * int minimum;
      * }
      */
     public static int minimum$get(MemorySegment seg) {
-        return (int)_GParamSpecInt.minimum$VH.get(seg);
+        return (int)constants$656.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint minimum;
+     * int minimum;
      * }
      */
     public static void minimum$set(MemorySegment seg, int x) {
-        _GParamSpecInt.minimum$VH.set(seg, x);
+        constants$656.const$1.set(seg, x);
     }
     public static int minimum$get(MemorySegment seg, long index) {
-        return (int)_GParamSpecInt.minimum$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$656.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void minimum$set(MemorySegment seg, long index, int x) {
-        _GParamSpecInt.minimum$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$656.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle maximum$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("maximum"));
     public static VarHandle maximum$VH() {
-        return _GParamSpecInt.maximum$VH;
+        return constants$656.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint maximum;
+     * int maximum;
      * }
      */
     public static int maximum$get(MemorySegment seg) {
-        return (int)_GParamSpecInt.maximum$VH.get(seg);
+        return (int)constants$656.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint maximum;
+     * int maximum;
      * }
      */
     public static void maximum$set(MemorySegment seg, int x) {
-        _GParamSpecInt.maximum$VH.set(seg, x);
+        constants$656.const$2.set(seg, x);
     }
     public static int maximum$get(MemorySegment seg, long index) {
-        return (int)_GParamSpecInt.maximum$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$656.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void maximum$set(MemorySegment seg, long index, int x) {
-        _GParamSpecInt.maximum$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$656.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle default_value$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
     public static VarHandle default_value$VH() {
-        return _GParamSpecInt.default_value$VH;
+        return constants$656.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint default_value;
+     * int default_value;
      * }
      */
     public static int default_value$get(MemorySegment seg) {
-        return (int)_GParamSpecInt.default_value$VH.get(seg);
+        return (int)constants$656.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint default_value;
+     * int default_value;
      * }
      */
     public static void default_value$set(MemorySegment seg, int x) {
-        _GParamSpecInt.default_value$VH.set(seg, x);
+        constants$656.const$3.set(seg, x);
     }
     public static int default_value$get(MemorySegment seg, long index) {
-        return (int)_GParamSpecInt.default_value$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$656.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void default_value$set(MemorySegment seg, long index, int x) {
-        _GParamSpecInt.default_value$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$656.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

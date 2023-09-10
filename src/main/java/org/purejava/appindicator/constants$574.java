@@ -3,57 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$574 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$574() {}
-    static final FunctionDescriptor g_dbus_message_set_body$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_set_body$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_body",
-        constants$574.g_dbus_message_set_body$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_get_unix_fd_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_get_unix_fd_list$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_unix_fd_list",
-        constants$574.g_dbus_message_get_unix_fd_list$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_set_unix_fd_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_set_unix_fd_list$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_unix_fd_list",
-        constants$574.g_dbus_message_set_unix_fd_list$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_get_reply_serial$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_get_reply_serial$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_reply_serial",
-        constants$574.g_dbus_message_get_reply_serial$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_set_reply_serial$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_set_reply_serial$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_reply_serial",
-        constants$574.g_dbus_message_set_reply_serial$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_get_interface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_get_interface$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_interface",
-        constants$574.g_dbus_message_get_interface$FUNC
-    );
+    static final VarHandle const$0 = constants$573.const$1.varHandle(MemoryLayout.PathElement.groupElement("value_set_default"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GParamSpecClass.value_validate.class, "apply", constants$9.const$0);
+    static final VarHandle const$2 = constants$573.const$1.varHandle(MemoryLayout.PathElement.groupElement("value_validate"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GParamSpecClass.values_cmp.class, "apply", constants$12.const$2);
+    static final VarHandle const$4 = constants$573.const$1.varHandle(MemoryLayout.PathElement.groupElement("values_cmp"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GParamSpecClass.value_is_valid.class, "apply", constants$9.const$0);
 }
 
 

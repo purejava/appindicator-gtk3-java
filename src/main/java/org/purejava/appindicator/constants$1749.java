@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1749 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1749() {}
-    static final FunctionDescriptor gtk_print_settings_set_default_source$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_matrix_init_identity",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_print_settings_set_default_source$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_default_source",
-        constants$1749.gtk_print_settings_set_default_source$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_matrix_init_translate",
+        constants$1531.const$0
     );
-    static final FunctionDescriptor gtk_print_settings_get_media_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_matrix_init_scale",
+        constants$1531.const$0
     );
-    static final MethodHandle gtk_print_settings_get_media_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_media_type",
-        constants$1749.gtk_print_settings_get_media_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_matrix_init_rotate",
+        constants$689.const$5
     );
-    static final FunctionDescriptor gtk_print_settings_set_media_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_matrix_translate",
+        constants$1531.const$0
     );
-    static final MethodHandle gtk_print_settings_set_media_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_media_type",
-        constants$1749.gtk_print_settings_set_media_type$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_get_dither$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_get_dither$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_dither",
-        constants$1749.gtk_print_settings_get_dither$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_set_dither$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_set_dither$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_dither",
-        constants$1749.gtk_print_settings_set_dither$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_get_finishings$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_get_finishings$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_finishings",
-        constants$1749.gtk_print_settings_get_finishings$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_matrix_scale",
+        constants$1531.const$0
     );
 }
 

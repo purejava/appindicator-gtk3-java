@@ -3,52 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1562 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1562() {}
-    static final FunctionDescriptor gtk_event_controller_key_forward$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_key_forward$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_key_forward",
-        constants$1562.gtk_event_controller_key_forward$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_key_get_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_key_get_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_key_get_group",
-        constants$1562.gtk_event_controller_key_get_group$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_motion_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_event_controller_motion_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_motion_get_type",
-        constants$1562.gtk_event_controller_motion_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_motion_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_motion_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_motion_new",
-        constants$1562.gtk_event_controller_motion_new$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_scroll_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_event_controller_scroll_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_scroll_get_type",
-        constants$1562.gtk_event_controller_scroll_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_scroll_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_scroll_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_scroll_new",
-        constants$1562.gtk_event_controller_scroll_new$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(PangoAttrDataCopyFunc.class, "apply", constants$5.const$2);
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("copy"),
+        RuntimeHelper.POINTER.withName("destroy"),
+        RuntimeHelper.POINTER.withName("equal")
+    ).withName("_PangoAttrClass");
+    static final VarHandle const$2 = constants$1562.const$1.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_PangoAttrClass.copy.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$1562.const$1.varHandle(MemoryLayout.PathElement.groupElement("copy"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_PangoAttrClass.destroy.class, "apply", constants$13.const$1);
 }
 
 

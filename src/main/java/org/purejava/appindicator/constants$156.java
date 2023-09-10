@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$156 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$156() {}
-    static final FunctionDescriptor GHookCheckFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_date_time_get_year",
+        constants$10.const$5
     );
-    static final MethodHandle GHookCheckFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$156.GHookCheckFunc_DOWN$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_date_time_get_month",
+        constants$10.const$5
     );
-    static final FunctionDescriptor GHookFinalizeFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_date_time_get_day_of_month",
+        constants$10.const$5
     );
-    static final FunctionDescriptor GHookFinalizeFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_date_time_get_week_numbering_year",
+        constants$10.const$5
     );
-    static final MethodHandle GHookFinalizeFunc_UP$MH = RuntimeHelper.upcallHandle(GHookFinalizeFunc.class, "apply", constants$156.GHookFinalizeFunc_UP$FUNC);
-    static final FunctionDescriptor GHookFinalizeFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_date_time_get_week_of_year",
+        constants$10.const$5
     );
-    static final MethodHandle GHookFinalizeFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$156.GHookFinalizeFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_hook_list_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_hook_list_init$MH = RuntimeHelper.downcallHandle(
-        "g_hook_list_init",
-        constants$156.g_hook_list_init$FUNC
-    );
-    static final FunctionDescriptor g_hook_list_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hook_list_clear$MH = RuntimeHelper.downcallHandle(
-        "g_hook_list_clear",
-        constants$156.g_hook_list_clear$FUNC
-    );
-    static final FunctionDescriptor g_hook_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hook_alloc$MH = RuntimeHelper.downcallHandle(
-        "g_hook_alloc",
-        constants$156.g_hook_alloc$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_date_time_get_day_of_week",
+        constants$10.const$5
     );
 }
 

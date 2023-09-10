@@ -3,57 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$963 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$963() {}
-    static final FunctionDescriptor pango_layout_get_unknown_glyphs_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_dtls_connection_close_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_close_async",
+        constants$281.const$5
     );
-    static final MethodHandle pango_layout_get_unknown_glyphs_count$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_unknown_glyphs_count",
-        constants$963.pango_layout_get_unknown_glyphs_count$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_close_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor pango_layout_get_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_emit_accept_certificate",
+        constants$62.const$0
     );
-    static final MethodHandle pango_layout_get_direction$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_direction",
-        constants$963.pango_layout_get_direction$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_set_advertised_protocols",
+        constants$13.const$4
     );
-    static final FunctionDescriptor pango_layout_context_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_context_changed$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_context_changed",
-        constants$963.pango_layout_context_changed$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_serial$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_serial$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_serial",
-        constants$963.pango_layout_get_serial$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_log_attrs$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_log_attrs$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_log_attrs",
-        constants$963.pango_layout_get_log_attrs$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_log_attrs_readonly$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_log_attrs_readonly$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_log_attrs_readonly",
-        constants$963.pango_layout_get_log_attrs_readonly$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_get_negotiated_protocol",
+        constants$5.const$2
     );
 }
 

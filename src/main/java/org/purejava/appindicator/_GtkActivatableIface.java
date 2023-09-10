@@ -4,68 +4,42 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkActivatableIface {
- *     GTypeInterface g_iface;
- *     void (*update)(GtkActivatable*,GtkAction*,const gchar*);
- *     void (*sync_action_properties)(GtkActivatable*,GtkAction*);
+ *     struct _GTypeInterface g_iface;
+ *     void (*update)(struct _GtkActivatable*,struct _GtkAction*,char*);
+ *     void (*sync_action_properties)(struct _GtkActivatable*,struct _GtkAction*);
  * };
  * }
  */
 public class _GtkActivatableIface {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
-        ).withName("g_iface"),
-        Constants$root.C_POINTER$LAYOUT.withName("update"),
-        Constants$root.C_POINTER$LAYOUT.withName("sync_action_properties")
-    ).withName("_GtkActivatableIface");
     public static MemoryLayout $LAYOUT() {
-        return _GtkActivatableIface.$struct$LAYOUT;
+        return constants$3256.const$3;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
-    static final FunctionDescriptor update$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor update_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle update_UP$MH = RuntimeHelper.upcallHandle(update.class, "apply", _GtkActivatableIface.update_UP$FUNC);
-    static final FunctionDescriptor update_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle update_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkActivatableIface.update_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*update)(GtkActivatable*,GtkAction*,const gchar*);
+ * void (*update)(struct _GtkActivatable*,struct _GtkAction*,char*);
      * }
      */
     public interface update {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(update fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkActivatableIface.update_UP$MH, fi, _GtkActivatableIface.update$FUNC, scope);
+        static MemorySegment allocate(update fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3256.const$4, fi, constants$14.const$3, scope);
         }
-        static update ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static update ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GtkActivatableIface.update_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
+                    constants$14.const$5.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -73,69 +47,52 @@ public class _GtkActivatableIface {
         }
     }
 
-    static final VarHandle update$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("update"));
     public static VarHandle update$VH() {
-        return _GtkActivatableIface.update$VH;
+        return constants$3256.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*update)(GtkActivatable*,GtkAction*,const gchar*);
+     * void (*update)(struct _GtkActivatable*,struct _GtkAction*,char*);
      * }
      */
     public static MemorySegment update$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkActivatableIface.update$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3256.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*update)(GtkActivatable*,GtkAction*,const gchar*);
+     * void (*update)(struct _GtkActivatable*,struct _GtkAction*,char*);
      * }
      */
     public static void update$set(MemorySegment seg, MemorySegment x) {
-        _GtkActivatableIface.update$VH.set(seg, x);
+        constants$3256.const$5.set(seg, x);
     }
     public static MemorySegment update$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkActivatableIface.update$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3256.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void update$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkActivatableIface.update$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3256.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static update update(MemorySegment segment, SegmentScope scope) {
+    public static update update(MemorySegment segment, Arena scope) {
         return update.ofAddress(update$get(segment), scope);
     }
-    static final FunctionDescriptor sync_action_properties$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor sync_action_properties_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle sync_action_properties_UP$MH = RuntimeHelper.upcallHandle(sync_action_properties.class, "apply", _GtkActivatableIface.sync_action_properties_UP$FUNC);
-    static final FunctionDescriptor sync_action_properties_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle sync_action_properties_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkActivatableIface.sync_action_properties_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*sync_action_properties)(GtkActivatable*,GtkAction*);
+ * void (*sync_action_properties)(struct _GtkActivatable*,struct _GtkAction*);
      * }
      */
     public interface sync_action_properties {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(sync_action_properties fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkActivatableIface.sync_action_properties_UP$MH, fi, _GtkActivatableIface.sync_action_properties$FUNC, scope);
+        static MemorySegment allocate(sync_action_properties fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3257.const$0, fi, constants$13.const$4, scope);
         }
-        static sync_action_properties ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static sync_action_properties ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkActivatableIface.sync_action_properties_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -143,35 +100,34 @@ public class _GtkActivatableIface {
         }
     }
 
-    static final VarHandle sync_action_properties$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("sync_action_properties"));
     public static VarHandle sync_action_properties$VH() {
-        return _GtkActivatableIface.sync_action_properties$VH;
+        return constants$3257.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*sync_action_properties)(GtkActivatable*,GtkAction*);
+     * void (*sync_action_properties)(struct _GtkActivatable*,struct _GtkAction*);
      * }
      */
     public static MemorySegment sync_action_properties$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkActivatableIface.sync_action_properties$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3257.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*sync_action_properties)(GtkActivatable*,GtkAction*);
+     * void (*sync_action_properties)(struct _GtkActivatable*,struct _GtkAction*);
      * }
      */
     public static void sync_action_properties$set(MemorySegment seg, MemorySegment x) {
-        _GtkActivatableIface.sync_action_properties$VH.set(seg, x);
+        constants$3257.const$1.set(seg, x);
     }
     public static MemorySegment sync_action_properties$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkActivatableIface.sync_action_properties$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3257.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void sync_action_properties$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkActivatableIface.sync_action_properties$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3257.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static sync_action_properties sync_action_properties(MemorySegment segment, SegmentScope scope) {
+    public static sync_action_properties sync_action_properties(MemorySegment segment, Arena scope) {
         return sync_action_properties.ofAddress(sync_action_properties$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -179,7 +135,7 @@ public class _GtkActivatableIface {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -3,57 +3,33 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$74 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$74() {}
-    static final FunctionDescriptor raise$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle raise$MH = RuntimeHelper.downcallHandle(
-        "raise",
-        constants$74.raise$FUNC
-    );
-    static final FunctionDescriptor ssignal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle ssignal$MH = RuntimeHelper.downcallHandle(
-        "ssignal",
-        constants$74.ssignal$FUNC
-    );
-    static final FunctionDescriptor gsignal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gsignal$MH = RuntimeHelper.downcallHandle(
-        "gsignal",
-        constants$74.gsignal$FUNC
-    );
-    static final FunctionDescriptor psignal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle psignal$MH = RuntimeHelper.downcallHandle(
-        "psignal",
-        constants$74.psignal$FUNC
-    );
-    static final FunctionDescriptor psiginfo$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle psiginfo$MH = RuntimeHelper.downcallHandle(
-        "psiginfo",
-        constants$74.psiginfo$FUNC
-    );
-    static final FunctionDescriptor sigblock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle sigblock$MH = RuntimeHelper.downcallHandle(
-        "sigblock",
-        constants$74.sigblock$FUNC
-    );
+    static final VarHandle const$0 = constants$73.const$0.varHandle(MemoryLayout.PathElement.groupElement("__spins"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_INT.withName("__readers"),
+        JAVA_INT.withName("__writers"),
+        JAVA_INT.withName("__wrphase_futex"),
+        JAVA_INT.withName("__writers_futex"),
+        JAVA_INT.withName("__pad3"),
+        JAVA_INT.withName("__pad4"),
+        JAVA_INT.withName("__cur_writer"),
+        JAVA_INT.withName("__shared"),
+        JAVA_LONG.withName("__pad1"),
+        JAVA_LONG.withName("__pad2"),
+        JAVA_INT.withName("__flags"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("__pthread_rwlock_arch_t");
+    static final VarHandle const$2 = constants$74.const$1.varHandle(MemoryLayout.PathElement.groupElement("__readers"));
+    static final VarHandle const$3 = constants$74.const$1.varHandle(MemoryLayout.PathElement.groupElement("__writers"));
+    static final VarHandle const$4 = constants$74.const$1.varHandle(MemoryLayout.PathElement.groupElement("__wrphase_futex"));
+    static final VarHandle const$5 = constants$74.const$1.varHandle(MemoryLayout.PathElement.groupElement("__writers_futex"));
 }
 
 

@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * int (*hb_font_get_glyph_h_origin_func_t)(struct hb_font_t*,void*,unsigned int,int*,int*,void*);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface hb_font_get_glyph_h_origin_func_t {
 
     int apply(java.lang.foreign.MemorySegment font, java.lang.foreign.MemorySegment font_data, int glyph, java.lang.foreign.MemorySegment x, java.lang.foreign.MemorySegment y, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(hb_font_get_glyph_h_origin_func_t fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$862.hb_font_get_glyph_h_origin_func_t_UP$MH, fi, constants$862.hb_font_get_glyph_h_origin_func_t$FUNC, scope);
+    static MemorySegment allocate(hb_font_get_glyph_h_origin_func_t fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$1479.const$1, fi, constants$1243.const$0, scope);
     }
-    static hb_font_get_glyph_h_origin_func_t ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static hb_font_get_glyph_h_origin_func_t ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _font, java.lang.foreign.MemorySegment _font_data, int _glyph, java.lang.foreign.MemorySegment _x, java.lang.foreign.MemorySegment _y, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$862.hb_font_get_glyph_h_origin_func_t_DOWN$MH.invokeExact(symbol, _font, _font_data, _glyph, _x, _y, _user_data);
+                return (int)constants$1459.const$0.invokeExact(symbol, _font, _font_data, _glyph, _x, _y, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

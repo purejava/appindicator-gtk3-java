@@ -3,62 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$982 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$982() {}
-    static final FunctionDescriptor vsnprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle vsnprintf$MH = RuntimeHelper.downcallHandle(
-        "vsnprintf",
-        constants$982.vsnprintf$FUNC
-    );
-    static final FunctionDescriptor vdprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle vdprintf$MH = RuntimeHelper.downcallHandle(
-        "vdprintf",
-        constants$982.vdprintf$FUNC
-    );
-    static final FunctionDescriptor dprintf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle dprintf$MH = RuntimeHelper.downcallHandleVariadic(
-        "dprintf",
-        constants$982.dprintf$FUNC
-    );
-    static final FunctionDescriptor fscanf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle fscanf$MH = RuntimeHelper.downcallHandleVariadic(
-        "fscanf",
-        constants$982.fscanf$FUNC
-    );
-    static final FunctionDescriptor scanf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle scanf$MH = RuntimeHelper.downcallHandleVariadic(
-        "scanf",
-        constants$982.scanf$FUNC
-    );
-    static final FunctionDescriptor sscanf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle sscanf$MH = RuntimeHelper.downcallHandleVariadic(
-        "sscanf",
-        constants$982.sscanf$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.set_display_name_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("set_display_name_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.query_settable_attributes.class, "apply", constants$23.const$0);
+    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("query_settable_attributes"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface._query_settable_attributes_async.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("_query_settable_attributes_async"));
 }
 
 

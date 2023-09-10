@@ -3,60 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1327 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1327() {}
-    static final FunctionDescriptor gtk_misc_set_alignment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_subprocess_communicate_utf8_finish",
+        constants$165.const$2
     );
-    static final MethodHandle gtk_misc_set_alignment$MH = RuntimeHelper.downcallHandle(
-        "gtk_misc_set_alignment",
-        constants$1327.gtk_misc_set_alignment$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_misc_get_alignment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_new",
+        constants$24.const$0
     );
-    static final MethodHandle gtk_misc_get_alignment$MH = RuntimeHelper.downcallHandle(
-        "gtk_misc_get_alignment",
-        constants$1327.gtk_misc_get_alignment$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_subprocess_launcher_spawn",
+        constants$23.const$0
     );
-    static final FunctionDescriptor gtk_misc_set_padding$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_spawnv",
+        constants$23.const$0
     );
-    static final MethodHandle gtk_misc_set_padding$MH = RuntimeHelper.downcallHandle(
-        "gtk_misc_set_padding",
-        constants$1327.gtk_misc_set_padding$FUNC
-    );
-    static final FunctionDescriptor gtk_misc_get_padding$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_misc_get_padding$MH = RuntimeHelper.downcallHandle(
-        "gtk_misc_get_padding",
-        constants$1327.gtk_misc_get_padding$FUNC
-    );
-    static final FunctionDescriptor _gtk_misc_get_padding_and_border$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle _gtk_misc_get_padding_and_border$MH = RuntimeHelper.downcallHandle(
-        "_gtk_misc_get_padding_and_border",
-        constants$1327._gtk_misc_get_padding_and_border$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_shell_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_menu_shell_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_shell_get_type",
-        constants$1327.gtk_menu_shell_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_subprocess_launcher_set_environ",
+        constants$13.const$4
     );
 }
 

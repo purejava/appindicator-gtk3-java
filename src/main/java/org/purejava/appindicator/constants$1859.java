@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1859 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1859() {}
-    static final FunctionDescriptor gtk_tool_palette_unset_icon_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_monitor_get_scale_factor",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_tool_palette_unset_icon_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_palette_unset_icon_size",
-        constants$1859.gtk_tool_palette_unset_icon_size$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_monitor_get_refresh_rate",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_tool_palette_set_style$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_monitor_get_subpixel_layout",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_tool_palette_set_style$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_palette_set_style",
-        constants$1859.gtk_tool_palette_set_style$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_monitor_is_primary",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_tool_palette_unset_style$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_display_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_tool_palette_unset_style$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_palette_unset_style",
-        constants$1859.gtk_tool_palette_unset_style$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_palette_get_icon_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_palette_get_icon_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_palette_get_icon_size",
-        constants$1859.gtk_tool_palette_get_icon_size$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_palette_get_style$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_palette_get_style$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_palette_get_style",
-        constants$1859.gtk_tool_palette_get_style$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_palette_get_drop_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tool_palette_get_drop_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_palette_get_drop_item",
-        constants$1859.gtk_tool_palette_get_drop_item$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_display_open",
+        constants$5.const$2
     );
 }
 

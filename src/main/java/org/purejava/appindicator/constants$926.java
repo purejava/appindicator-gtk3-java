@@ -3,52 +3,43 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$926 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$926() {}
-    static final FunctionDescriptor pango_attr_allow_breaks_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_attr_allow_breaks_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_allow_breaks_new",
-        constants$926.pango_attr_allow_breaks_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_word_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_attr_word_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_word_new",
-        constants$926.pango_attr_word_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_sentence_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_attr_sentence_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_sentence_new",
-        constants$926.pango_attr_sentence_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_insert_hyphens_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_attr_insert_hyphens_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_insert_hyphens_new",
-        constants$926.pango_attr_insert_hyphens_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_overline_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_attr_overline_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_overline_new",
-        constants$926.pango_attr_overline_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_overline_color_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle pango_attr_overline_color_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_overline_color_new",
-        constants$926.pango_attr_overline_color_new$FUNC
-    );
+    static final VarHandle const$0 = constants$925.const$5.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("g_properties_changed"),
+        RuntimeHelper.POINTER.withName("g_signal"),
+        MemoryLayout.sequenceLayout(32, RuntimeHelper.POINTER).withName("padding")
+    ).withName("_GDBusProxyClass");
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDBusProxyClass.g_properties_changed.class, "apply", constants$14.const$3);
+    static final VarHandle const$3 = constants$926.const$1.varHandle(MemoryLayout.PathElement.groupElement("g_properties_changed"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDBusProxyClass.g_signal.class, "apply", constants$42.const$1);
+    static final VarHandle const$5 = constants$926.const$1.varHandle(MemoryLayout.PathElement.groupElement("g_signal"));
 }
 
 

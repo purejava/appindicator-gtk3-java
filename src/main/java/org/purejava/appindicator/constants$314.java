@@ -3,57 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$314 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$314() {}
-    static final FunctionDescriptor g_test_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_init$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_test_init",
-        constants$314.g_test_init$FUNC
-    );
-    static final FunctionDescriptor g_test_subprocess$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_test_subprocess$MH = RuntimeHelper.downcallHandle(
-        "g_test_subprocess",
-        constants$314.g_test_subprocess$FUNC
-    );
-    static final FunctionDescriptor g_test_run$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_test_run$MH = RuntimeHelper.downcallHandle(
-        "g_test_run",
-        constants$314.g_test_run$FUNC
-    );
-    static final FunctionDescriptor g_test_add_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_add_func$MH = RuntimeHelper.downcallHandle(
-        "g_test_add_func",
-        constants$314.g_test_add_func$FUNC
-    );
-    static final FunctionDescriptor g_test_add_data_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_add_data_func$MH = RuntimeHelper.downcallHandle(
-        "g_test_add_data_func",
-        constants$314.g_test_add_data_func$FUNC
-    );
-    static final FunctionDescriptor g_test_add_data_func_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_add_data_func_full$MH = RuntimeHelper.downcallHandle(
-        "g_test_add_data_func_full",
-        constants$314.g_test_add_data_func_full$FUNC
-    );
+    static final VarHandle const$0 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("line_term"));
+    static final VarHandle const$1 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("line_term_len"));
+    static final VarHandle const$2 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("buf_size"));
+    static final VarHandle const$3 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("read_buf"));
+    static final VarHandle const$4 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("encoded_read_buf"));
+    static final VarHandle const$5 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("write_buf"));
 }
 
 

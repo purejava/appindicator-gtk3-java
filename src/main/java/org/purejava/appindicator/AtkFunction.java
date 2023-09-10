@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * int (*AtkFunction)(void* user_data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface AtkFunction {
 
     int apply(java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(AtkFunction fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$1199.AtkFunction_UP$MH, fi, constants$1199.AtkFunction$FUNC, scope);
+    static MemorySegment allocate(AtkFunction fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$1965.const$1, fi, constants$10.const$5, scope);
     }
-    static AtkFunction ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static AtkFunction ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (int)constants$1199.AtkFunction_DOWN$MH.invokeExact(symbol, _user_data);
+                return (int)constants$14.const$2.invokeExact(symbol, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

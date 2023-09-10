@@ -3,61 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$23 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$23() {}
-    static final FunctionDescriptor g_ptr_array_new_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_ptr_array_new_full$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_new_full",
-        constants$23.g_ptr_array_new_full$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "__strtok_r",
+        constants$23.const$0
     );
-    static final FunctionDescriptor g_ptr_array_new_null_terminated$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "strtok_r",
+        constants$23.const$0
     );
-    static final MethodHandle g_ptr_array_new_null_terminated$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_new_null_terminated",
-        constants$23.g_ptr_array_new_null_terminated$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "strlen",
+        constants$4.const$0
     );
-    static final FunctionDescriptor g_ptr_array_new_take_null_terminated$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final MethodHandle g_ptr_array_new_take_null_terminated$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_new_take_null_terminated",
-        constants$23.g_ptr_array_new_take_null_terminated$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_new_from_null_terminated_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_new_from_null_terminated_array$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_new_from_null_terminated_array",
-        constants$23.g_ptr_array_new_from_null_terminated_array$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_free$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_free$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_free",
-        constants$23.g_ptr_array_free$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_ref$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_ref",
-        constants$23.g_ptr_array_ref$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "strnlen",
+        constants$23.const$4
     );
 }
 

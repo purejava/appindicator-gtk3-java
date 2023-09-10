@@ -3,56 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1683 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1683() {}
-    static final FunctionDescriptor gtk_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final MethodHandle gtk_init$MH = RuntimeHelper.downcallHandle(
-        "gtk_init",
-        constants$1683.gtk_init$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_set_source_surface",
+        constants$1683.const$0
     );
-    static final FunctionDescriptor gtk_init_check$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_set_tolerance",
+        constants$689.const$5
     );
-    static final MethodHandle gtk_init_check$MH = RuntimeHelper.downcallHandle(
-        "gtk_init_check",
-        constants$1683.gtk_init_check$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_set_antialias",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_init_with_args$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_set_fill_rule",
+        constants$40.const$2
     );
-    static final MethodHandle gtk_init_with_args$MH = RuntimeHelper.downcallHandle(
-        "gtk_init_with_args",
-        constants$1683.gtk_init_with_args$FUNC
-    );
-    static final FunctionDescriptor gtk_get_option_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_get_option_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_get_option_group",
-        constants$1683.gtk_get_option_group$FUNC
-    );
-    static final FunctionDescriptor gtk_disable_setlocale$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gtk_disable_setlocale$MH = RuntimeHelper.downcallHandle(
-        "gtk_disable_setlocale",
-        constants$1683.gtk_disable_setlocale$FUNC
-    );
-    static final FunctionDescriptor gtk_get_default_language$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_get_default_language$MH = RuntimeHelper.downcallHandle(
-        "gtk_get_default_language",
-        constants$1683.gtk_get_default_language$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_set_line_width",
+        constants$689.const$5
     );
 }
 

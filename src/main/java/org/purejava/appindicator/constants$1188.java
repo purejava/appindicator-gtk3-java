@@ -3,60 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1188 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1188() {}
-    static final FunctionDescriptor gdk_visual_get_depth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("drive_changed"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.is_supported.class, "apply", constants$83.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$83.const$1
     );
-    static final MethodHandle gdk_visual_get_depth$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_depth",
-        constants$1188.gdk_visual_get_depth$FUNC
-    );
-    static final FunctionDescriptor gdk_visual_get_byte_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_visual_get_byte_order$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_byte_order",
-        constants$1188.gdk_visual_get_byte_order$FUNC
-    );
-    static final FunctionDescriptor gdk_visual_get_colormap_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_visual_get_colormap_size$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_colormap_size",
-        constants$1188.gdk_visual_get_colormap_size$FUNC
-    );
-    static final FunctionDescriptor gdk_visual_get_bits_per_rgb$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_visual_get_bits_per_rgb$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_bits_per_rgb",
-        constants$1188.gdk_visual_get_bits_per_rgb$FUNC
-    );
-    static final FunctionDescriptor gdk_visual_get_red_pixel_details$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_visual_get_red_pixel_details$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_red_pixel_details",
-        constants$1188.gdk_visual_get_red_pixel_details$FUNC
-    );
-    static final FunctionDescriptor gdk_visual_get_green_pixel_details$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_visual_get_green_pixel_details$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_green_pixel_details",
-        constants$1188.gdk_visual_get_green_pixel_details$FUNC
-    );
+    static final VarHandle const$3 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("is_supported"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.get_connected_drives.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_connected_drives"));
 }
 
 

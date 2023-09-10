@@ -3,48 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1599 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1599() {}
-    static final FunctionDescriptor gtk_font_chooser_set_language$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_font_chooser_set_language$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_set_language",
-        constants$1599.gtk_font_chooser_set_language$FUNC
-    );
-    static final FunctionDescriptor gtk_font_chooser_dialog_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_font_chooser_dialog_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_dialog_get_type",
-        constants$1599.gtk_font_chooser_dialog_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_font_chooser_dialog_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_font_chooser_dialog_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_dialog_new",
-        constants$1599.gtk_font_chooser_dialog_new$FUNC
-    );
-    static final FunctionDescriptor gtk_font_chooser_widget_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_font_chooser_widget_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_widget_get_type",
-        constants$1599.gtk_font_chooser_widget_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_font_chooser_widget_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_font_chooser_widget_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_widget_new",
-        constants$1599.gtk_font_chooser_widget_new$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_gesture_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_get_type",
-        constants$1599.gtk_gesture_get_type$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_INT.withName("glyph"),
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("width"),
+            JAVA_INT.withName("x_offset"),
+            JAVA_INT.withName("y_offset")
+        ).withName("geometry"),
+        MemoryLayout.structLayout(
+            MemoryLayout.paddingLayout(4)
+        ).withName("attr")
+    ).withName("_PangoGlyphInfo");
+    static final VarHandle const$1 = constants$1599.const$0.varHandle(MemoryLayout.PathElement.groupElement("glyph"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("num_glyphs"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("glyphs"),
+        RuntimeHelper.POINTER.withName("log_clusters"),
+        JAVA_INT.withName("space"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_PangoGlyphString");
+    static final VarHandle const$3 = constants$1599.const$2.varHandle(MemoryLayout.PathElement.groupElement("num_glyphs"));
+    static final VarHandle const$4 = constants$1599.const$2.varHandle(MemoryLayout.PathElement.groupElement("glyphs"));
+    static final VarHandle const$5 = constants$1599.const$2.varHandle(MemoryLayout.PathElement.groupElement("log_clusters"));
 }
 
 

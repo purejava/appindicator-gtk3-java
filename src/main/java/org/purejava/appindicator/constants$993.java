@@ -3,65 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$993 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$993() {}
-    static final FunctionDescriptor pango_parse_style$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_parse_style$MH = RuntimeHelper.downcallHandle(
-        "pango_parse_style",
-        constants$993.pango_parse_style$FUNC
-    );
-    static final FunctionDescriptor pango_parse_variant$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_parse_variant$MH = RuntimeHelper.downcallHandle(
-        "pango_parse_variant",
-        constants$993.pango_parse_variant$FUNC
-    );
-    static final FunctionDescriptor pango_parse_weight$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_parse_weight$MH = RuntimeHelper.downcallHandle(
-        "pango_parse_weight",
-        constants$993.pango_parse_weight$FUNC
-    );
-    static final FunctionDescriptor pango_parse_stretch$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_parse_stretch$MH = RuntimeHelper.downcallHandle(
-        "pango_parse_stretch",
-        constants$993.pango_parse_stretch$FUNC
-    );
-    static final FunctionDescriptor pango_quantize_line_geometry$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_quantize_line_geometry$MH = RuntimeHelper.downcallHandle(
-        "pango_quantize_line_geometry",
-        constants$993.pango_quantize_line_geometry$FUNC
-    );
-    static final FunctionDescriptor pango_log2vis_get_embedding_levels$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_log2vis_get_embedding_levels$MH = RuntimeHelper.downcallHandle(
-        "pango_log2vis_get_embedding_levels",
-        constants$993.pango_log2vis_get_embedding_levels$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.trash_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("trash_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.make_directory.class, "apply", constants$12.const$2);
+    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("make_directory"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.make_directory_async.class, "apply", constants$281.const$5);
+    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("make_directory_async"));
 }
 
 

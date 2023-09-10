@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1341 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1341() {}
-    static final FunctionDescriptor gtk_label_get_lines$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_test_dbus_get_bus_address",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_label_get_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_lines",
-        constants$1341.gtk_label_get_lines$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_test_dbus_add_service_dir",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_label_set_pattern$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_test_dbus_up",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_label_set_pattern$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_pattern",
-        constants$1341.gtk_label_set_pattern$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_test_dbus_stop",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_label_set_line_wrap$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_test_dbus_down",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_label_set_line_wrap$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_line_wrap",
-        constants$1341.gtk_label_set_line_wrap$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_line_wrap$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_line_wrap$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_line_wrap",
-        constants$1341.gtk_label_get_line_wrap$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_line_wrap_mode$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_line_wrap_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_line_wrap_mode",
-        constants$1341.gtk_label_set_line_wrap_mode$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_line_wrap_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_line_wrap_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_line_wrap_mode",
-        constants$1341.gtk_label_get_line_wrap_mode$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_test_dbus_unset",
+        constants$7.const$5
     );
 }
 

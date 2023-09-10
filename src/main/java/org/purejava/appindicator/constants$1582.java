@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1582 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1582() {}
-    static final FunctionDescriptor gtk_file_chooser_dialog_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_dialog_new$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_file_chooser_dialog_new",
-        constants$1582.gtk_file_chooser_dialog_new$FUNC
-    );
-    static final FunctionDescriptor gtk_native_dialog_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_native_dialog_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_native_dialog_get_type",
-        constants$1582.gtk_native_dialog_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_native_dialog_show$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_native_dialog_show$MH = RuntimeHelper.downcallHandle(
-        "gtk_native_dialog_show",
-        constants$1582.gtk_native_dialog_show$FUNC
-    );
-    static final FunctionDescriptor gtk_native_dialog_hide$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_native_dialog_hide$MH = RuntimeHelper.downcallHandle(
-        "gtk_native_dialog_hide",
-        constants$1582.gtk_native_dialog_hide$FUNC
-    );
-    static final FunctionDescriptor gtk_native_dialog_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_native_dialog_destroy$MH = RuntimeHelper.downcallHandle(
-        "gtk_native_dialog_destroy",
-        constants$1582.gtk_native_dialog_destroy$FUNC
-    );
-    static final FunctionDescriptor gtk_native_dialog_get_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_native_dialog_get_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_native_dialog_get_visible",
-        constants$1582.gtk_native_dialog_get_visible$FUNC
-    );
+    static final VarHandle const$0 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("language"));
+    static final VarHandle const$1 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("extra_attrs"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("offset"),
+        JAVA_INT.withName("length"),
+        JAVA_INT.withName("num_chars"),
+        MemoryLayout.paddingLayout(4),
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("shape_engine"),
+            RuntimeHelper.POINTER.withName("lang_engine"),
+            RuntimeHelper.POINTER.withName("font"),
+            JAVA_BYTE.withName("level"),
+            JAVA_BYTE.withName("gravity"),
+            JAVA_BYTE.withName("flags"),
+            JAVA_BYTE.withName("script"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("language"),
+            RuntimeHelper.POINTER.withName("extra_attrs")
+        ).withName("analysis")
+    ).withName("_PangoItem");
+    static final VarHandle const$3 = constants$1582.const$2.varHandle(MemoryLayout.PathElement.groupElement("offset"));
+    static final VarHandle const$4 = constants$1582.const$2.varHandle(MemoryLayout.PathElement.groupElement("length"));
+    static final VarHandle const$5 = constants$1582.const$2.varHandle(MemoryLayout.PathElement.groupElement("num_chars"));
 }
 
 

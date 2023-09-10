@@ -3,54 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$836 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$836() {}
-    static final FunctionDescriptor hb_blob_make_immutable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle hb_blob_make_immutable$MH = RuntimeHelper.downcallHandle(
-        "hb_blob_make_immutable",
-        constants$836.hb_blob_make_immutable$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDatagramBasedInterface.receive_messages.class, "apply", constants$836.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$836.const$0
     );
-    static final FunctionDescriptor hb_blob_is_immutable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_blob_is_immutable$MH = RuntimeHelper.downcallHandle(
-        "hb_blob_is_immutable",
-        constants$836.hb_blob_is_immutable$FUNC
-    );
-    static final FunctionDescriptor hb_blob_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_blob_get_length$MH = RuntimeHelper.downcallHandle(
-        "hb_blob_get_length",
-        constants$836.hb_blob_get_length$FUNC
-    );
-    static final FunctionDescriptor hb_blob_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_blob_get_data$MH = RuntimeHelper.downcallHandle(
-        "hb_blob_get_data",
-        constants$836.hb_blob_get_data$FUNC
-    );
-    static final FunctionDescriptor hb_blob_get_data_writable$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_blob_get_data_writable$MH = RuntimeHelper.downcallHandle(
-        "hb_blob_get_data_writable",
-        constants$836.hb_blob_get_data_writable$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_unicode_funcs_get_default$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_get_default",
-        constants$836.hb_unicode_funcs_get_default$FUNC
-    );
+    static final VarHandle const$3 = constants$835.const$5.varHandle(MemoryLayout.PathElement.groupElement("receive_messages"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDatagramBasedInterface.send_messages.class, "apply", constants$836.const$0);
+    static final VarHandle const$5 = constants$835.const$5.varHandle(MemoryLayout.PathElement.groupElement("send_messages"));
 }
 
 

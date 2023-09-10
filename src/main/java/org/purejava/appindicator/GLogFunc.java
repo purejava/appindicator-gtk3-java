@@ -2,24 +2,27 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
- * void (*GLogFunc)(char* log_domain,enum  log_level,char* message,void* user_data);
+ * void (*GLogFunc)(char* log_domain,enum GLogLevelFlags log_level,char* message,void* user_data);
  * }
  */
 public interface GLogFunc {
 
     void apply(java.lang.foreign.MemorySegment log_domain, int log_level, java.lang.foreign.MemorySegment message, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GLogFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$256.GLogFunc_UP$MH, fi, constants$256.GLogFunc$FUNC, scope);
+    static MemorySegment allocate(GLogFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$372.const$2, fi, constants$179.const$1, scope);
     }
-    static GLogFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GLogFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _log_domain, int _log_level, java.lang.foreign.MemorySegment _message, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$257.GLogFunc_DOWN$MH.invokeExact(symbol, _log_domain, _log_level, _message, _user_data);
+                constants$372.const$3.invokeExact(symbol, _log_domain, _log_level, _message, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

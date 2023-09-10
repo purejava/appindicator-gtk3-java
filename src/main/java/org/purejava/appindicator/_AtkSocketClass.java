@@ -4,107 +4,41 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _AtkSocketClass {
- *     AtkObjectClass parent_class;
- *     void (*embed)(AtkSocket*,const gchar*);
+ *     struct _AtkObjectClass parent_class;
+ *     void (*embed)(struct _AtkSocket*,char*);
  * };
  * }
  */
 public class _AtkSocketClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-                ).withName("g_type_class"),
-                Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-                Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-                Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-                MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-            ).withName("parent"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_name"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_description"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_parent"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_n_children"),
-            Constants$root.C_POINTER$LAYOUT.withName("ref_child"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_index_in_parent"),
-            Constants$root.C_POINTER$LAYOUT.withName("ref_relation_set"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_role"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_layer"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_mdi_zorder"),
-            Constants$root.C_POINTER$LAYOUT.withName("ref_state_set"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_name"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_description"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_parent"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_role"),
-            Constants$root.C_POINTER$LAYOUT.withName("connect_property_change_handler"),
-            Constants$root.C_POINTER$LAYOUT.withName("remove_property_change_handler"),
-            Constants$root.C_POINTER$LAYOUT.withName("initialize"),
-            Constants$root.C_POINTER$LAYOUT.withName("children_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("focus_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("property_change"),
-            Constants$root.C_POINTER$LAYOUT.withName("state_change"),
-            Constants$root.C_POINTER$LAYOUT.withName("visible_data_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("active_descendant_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_attributes"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_object_locale"),
-            Constants$root.C_POINTER$LAYOUT.withName("pad1")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("embed")
-    ).withName("_AtkSocketClass");
     public static MemoryLayout $LAYOUT() {
-        return _AtkSocketClass.$struct$LAYOUT;
+        return constants$2060.const$4;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 352);
     }
-    static final FunctionDescriptor embed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor embed_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle embed_UP$MH = RuntimeHelper.upcallHandle(embed.class, "apply", _AtkSocketClass.embed_UP$FUNC);
-    static final FunctionDescriptor embed_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle embed_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkSocketClass.embed_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*embed)(AtkSocket*,const gchar*);
+ * void (*embed)(struct _AtkSocket*,char*);
      * }
      */
     public interface embed {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(embed fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkSocketClass.embed_UP$MH, fi, _AtkSocketClass.embed$FUNC, scope);
+        static MemorySegment allocate(embed fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2060.const$5, fi, constants$13.const$4, scope);
         }
-        static embed ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static embed ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _AtkSocketClass.embed_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -112,35 +46,34 @@ public class _AtkSocketClass {
         }
     }
 
-    static final VarHandle embed$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("embed"));
     public static VarHandle embed$VH() {
-        return _AtkSocketClass.embed$VH;
+        return constants$2061.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*embed)(AtkSocket*,const gchar*);
+     * void (*embed)(struct _AtkSocket*,char*);
      * }
      */
     public static MemorySegment embed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkSocketClass.embed$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2061.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*embed)(AtkSocket*,const gchar*);
+     * void (*embed)(struct _AtkSocket*,char*);
      * }
      */
     public static void embed$set(MemorySegment seg, MemorySegment x) {
-        _AtkSocketClass.embed$VH.set(seg, x);
+        constants$2061.const$0.set(seg, x);
     }
     public static MemorySegment embed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkSocketClass.embed$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2061.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void embed$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkSocketClass.embed$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2061.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static embed embed(MemorySegment segment, SegmentScope scope) {
+    public static embed embed(MemorySegment segment, Arena scope) {
         return embed.ofAddress(embed$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -148,7 +81,7 @@ public class _AtkSocketClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

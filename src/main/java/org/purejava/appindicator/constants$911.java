@@ -3,60 +3,45 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$911 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$911() {}
-    static final FunctionDescriptor pango_font_description_merge$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final VarHandle const$0 = constants$909.const$2.varHandle(MemoryLayout.PathElement.groupElement("interface_removed"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle pango_font_description_merge$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_merge",
-        constants$911.pango_font_description_merge$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_get_object_path",
+        constants$5.const$2
     );
-    static final FunctionDescriptor pango_font_description_merge_static$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_get_interfaces",
+        constants$5.const$2
     );
-    static final MethodHandle pango_font_description_merge_static$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_merge_static",
-        constants$911.pango_font_description_merge_static$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_get_interface",
+        constants$5.const$5
     );
-    static final FunctionDescriptor pango_font_description_better_match$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_description_better_match$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_better_match",
-        constants$911.pango_font_description_better_match$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_description_from_string$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_from_string",
-        constants$911.pango_font_description_from_string$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_description_to_string$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_to_string",
-        constants$911.pango_font_description_to_string$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_to_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_description_to_filename$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_to_filename",
-        constants$911.pango_font_description_to_filename$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("parent_iface"),
+        RuntimeHelper.POINTER.withName("get_object_path"),
+        RuntimeHelper.POINTER.withName("get_objects"),
+        RuntimeHelper.POINTER.withName("get_object"),
+        RuntimeHelper.POINTER.withName("get_interface"),
+        RuntimeHelper.POINTER.withName("object_added"),
+        RuntimeHelper.POINTER.withName("object_removed"),
+        RuntimeHelper.POINTER.withName("interface_added"),
+        RuntimeHelper.POINTER.withName("interface_removed")
+    ).withName("_GDBusObjectManagerIface");
 }
 
 

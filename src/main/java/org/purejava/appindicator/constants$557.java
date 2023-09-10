@@ -3,90 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$557 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$557() {}
-    static final FunctionDescriptor GDBusSubtreeEnumerateFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GDBusSubtreeEnumerateFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$557.GDBusSubtreeEnumerateFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor GDBusSubtreeIntrospectFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GDBusSubtreeIntrospectFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GDBusSubtreeIntrospectFunc_UP$MH = RuntimeHelper.upcallHandle(GDBusSubtreeIntrospectFunc.class, "apply", constants$557.GDBusSubtreeIntrospectFunc_UP$FUNC);
-    static final FunctionDescriptor GDBusSubtreeIntrospectFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GDBusSubtreeIntrospectFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$557.GDBusSubtreeIntrospectFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor GDBusSubtreeDispatchFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GDBusSubtreeDispatchFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GDBusSubtreeDispatchFunc_UP$MH = RuntimeHelper.upcallHandle(GDBusSubtreeDispatchFunc.class, "apply", constants$557.GDBusSubtreeDispatchFunc_UP$FUNC);
-    static final FunctionDescriptor GDBusSubtreeDispatchFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GDBusSubtreeDispatchFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$557.GDBusSubtreeDispatchFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_register_subtree$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_register_subtree$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_register_subtree",
-        constants$557.g_dbus_connection_register_subtree$FUNC
-    );
+    static final VarHandle const$0 = constants$556.const$2.varHandle(MemoryLayout.PathElement.groupElement("interface_finalize"));
+    static final VarHandle const$1 = constants$556.const$2.varHandle(MemoryLayout.PathElement.groupElement("interface_data"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("value_init"),
+        RuntimeHelper.POINTER.withName("value_free"),
+        RuntimeHelper.POINTER.withName("value_copy"),
+        RuntimeHelper.POINTER.withName("value_peek_pointer"),
+        RuntimeHelper.POINTER.withName("collect_format"),
+        RuntimeHelper.POINTER.withName("collect_value"),
+        RuntimeHelper.POINTER.withName("lcopy_format"),
+        RuntimeHelper.POINTER.withName("lcopy_value")
+    ).withName("_GTypeValueTable");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GTypeValueTable.value_init.class, "apply", constants$13.const$1);
+    static final VarHandle const$4 = constants$557.const$2.varHandle(MemoryLayout.PathElement.groupElement("value_init"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GTypeValueTable.value_free.class, "apply", constants$13.const$1);
 }
 
 

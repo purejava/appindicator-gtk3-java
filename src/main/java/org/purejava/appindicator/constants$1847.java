@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1847 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1847() {}
-    static final FunctionDescriptor gtk_text_view_get_accepts_tab$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_window_maximize",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_text_view_get_accepts_tab$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_accepts_tab",
-        constants$1847.gtk_text_view_get_accepts_tab$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_window_unmaximize",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_text_view_set_pixels_above_lines$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_window_fullscreen",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_text_view_set_pixels_above_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_pixels_above_lines",
-        constants$1847.gtk_text_view_set_pixels_above_lines$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_window_fullscreen_on_monitor",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_text_view_get_pixels_above_lines$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_window_set_fullscreen_mode",
+        constants$40.const$2
     );
-    static final MethodHandle gtk_text_view_get_pixels_above_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_pixels_above_lines",
-        constants$1847.gtk_text_view_get_pixels_above_lines$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_pixels_below_lines$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_pixels_below_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_pixels_below_lines",
-        constants$1847.gtk_text_view_set_pixels_below_lines$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_pixels_below_lines$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_pixels_below_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_pixels_below_lines",
-        constants$1847.gtk_text_view_get_pixels_below_lines$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_pixels_inside_wrap$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_pixels_inside_wrap$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_pixels_inside_wrap",
-        constants$1847.gtk_text_view_set_pixels_inside_wrap$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_fullscreen_mode",
+        constants$10.const$5
     );
 }
 

@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GTestFixtureFunc)(void* fixture,void* user_data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GTestFixtureFunc {
 
     void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(GTestFixtureFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$313.GTestFixtureFunc_UP$MH, fi, constants$313.GTestFixtureFunc$FUNC, scope);
+    static MemorySegment allocate(GTestFixtureFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$449.const$0, fi, constants$13.const$4, scope);
     }
-    static GTestFixtureFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GTestFixtureFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$313.GTestFixtureFunc_DOWN$MH.invokeExact(symbol, _tag, _data);
+                constants$14.const$0.invokeExact(symbol, _tag, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

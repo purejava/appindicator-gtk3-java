@@ -3,52 +3,33 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1008 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1008() {}
-    static final FunctionDescriptor cairo_glyph_allocate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$1007.const$4
     );
-    static final MethodHandle cairo_glyph_allocate$MH = RuntimeHelper.downcallHandle(
-        "cairo_glyph_allocate",
-        constants$1008.cairo_glyph_allocate$FUNC
+    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("measure_disk_usage"));
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor cairo_glyph_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.measure_disk_usage_async.class, "apply", constants$1008.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$1008.const$2
     );
-    static final MethodHandle cairo_glyph_free$MH = RuntimeHelper.downcallHandle(
-        "cairo_glyph_free",
-        constants$1008.cairo_glyph_free$FUNC
-    );
-    static final FunctionDescriptor cairo_text_cluster_allocate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_text_cluster_allocate$MH = RuntimeHelper.downcallHandle(
-        "cairo_text_cluster_allocate",
-        constants$1008.cairo_text_cluster_allocate$FUNC
-    );
-    static final FunctionDescriptor cairo_text_cluster_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_text_cluster_free$MH = RuntimeHelper.downcallHandle(
-        "cairo_text_cluster_free",
-        constants$1008.cairo_text_cluster_free$FUNC
-    );
-    static final FunctionDescriptor cairo_font_options_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle cairo_font_options_create$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_options_create",
-        constants$1008.cairo_font_options_create$FUNC
-    );
-    static final FunctionDescriptor cairo_font_options_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_font_options_copy$MH = RuntimeHelper.downcallHandle(
-        "cairo_font_options_copy",
-        constants$1008.cairo_font_options_copy$FUNC
-    );
+    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("measure_disk_usage_async"));
 }
 
 

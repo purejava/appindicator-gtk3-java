@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1867 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1867() {}
-    static final FunctionDescriptor gtk_tree_set_row_drag_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_display_list_seats",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_tree_set_row_drag_data$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_set_row_drag_data",
-        constants$1867.gtk_tree_set_row_drag_data$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_display_get_n_monitors",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_tree_get_row_drag_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_display_get_monitor",
+        constants$21.const$3
     );
-    static final MethodHandle gtk_tree_get_row_drag_data$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_get_row_drag_data",
-        constants$1867.gtk_tree_get_row_drag_data$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_display_get_primary_monitor",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_tree_model_sort_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_model_sort_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_sort_get_type",
-        constants$1867.gtk_tree_model_sort_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_display_get_monitor_at_point",
+        constants$33.const$5
     );
-    static final FunctionDescriptor gtk_tree_model_sort_new_with_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_sort_new_with_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_sort_new_with_model",
-        constants$1867.gtk_tree_model_sort_new_with_model$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_sort_get_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_sort_get_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_sort_get_model",
-        constants$1867.gtk_tree_model_sort_get_model$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_sort_convert_child_path_to_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_sort_convert_child_path_to_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_sort_convert_child_path_to_path",
-        constants$1867.gtk_tree_model_sort_convert_child_path_to_path$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_display_get_monitor_at_window",
+        constants$5.const$5
     );
 }
 

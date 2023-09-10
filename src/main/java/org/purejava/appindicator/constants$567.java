@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$567 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$567() {}
-    static final FunctionDescriptor g_dbus_arg_info_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_type_check_instance_cast",
+        constants$21.const$1
     );
-    static final MethodHandle g_dbus_arg_info_ref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_arg_info_ref",
-        constants$567.g_dbus_arg_info_ref$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_type_check_instance_is_a",
+        constants$97.const$1
     );
-    static final FunctionDescriptor g_dbus_annotation_info_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_type_check_instance_is_fundamentally_a",
+        constants$97.const$1
     );
-    static final MethodHandle g_dbus_annotation_info_ref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_annotation_info_ref",
-        constants$567.g_dbus_annotation_info_ref$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_type_check_class_cast",
+        constants$21.const$1
     );
-    static final FunctionDescriptor g_dbus_node_info_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_type_check_class_is_a",
+        constants$97.const$1
     );
-    static final MethodHandle g_dbus_node_info_unref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_node_info_unref",
-        constants$567.g_dbus_node_info_unref$FUNC
-    );
-    static final FunctionDescriptor g_dbus_interface_info_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_interface_info_unref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_info_unref",
-        constants$567.g_dbus_interface_info_unref$FUNC
-    );
-    static final FunctionDescriptor g_dbus_method_info_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_method_info_unref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_info_unref",
-        constants$567.g_dbus_method_info_unref$FUNC
-    );
-    static final FunctionDescriptor g_dbus_signal_info_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_signal_info_unref$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_signal_info_unref",
-        constants$567.g_dbus_signal_info_unref$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_type_check_is_value_type",
+        constants$26.const$2
     );
 }
 

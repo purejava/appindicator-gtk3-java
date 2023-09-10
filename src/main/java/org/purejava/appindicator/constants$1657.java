@@ -3,58 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1657 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1657() {}
-    static final FunctionDescriptor gtk_icon_view_unselect_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_unselect_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_unselect_path",
-        constants$1657.gtk_icon_view_unselect_path$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_path_is_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_path_is_selected$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_path_is_selected",
-        constants$1657.gtk_icon_view_path_is_selected$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_get_item_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_item_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_item_row",
-        constants$1657.gtk_icon_view_get_item_row$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_get_item_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_item_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_item_column",
-        constants$1657.gtk_icon_view_get_item_column$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_get_selected_items$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_selected_items$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_selected_items",
-        constants$1657.gtk_icon_view_get_selected_items$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_select_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_select_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_select_all",
-        constants$1657.gtk_icon_view_select_all$FUNC
-    );
+    static final VarHandle const$0 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_codecvt"));
+    static final VarHandle const$1 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_wide_data"));
+    static final VarHandle const$2 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_freeres_list"));
+    static final VarHandle const$3 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_freeres_buf"));
+    static final VarHandle const$4 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("__pad5"));
+    static final VarHandle const$5 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_mode"));
 }
 
 

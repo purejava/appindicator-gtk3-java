@@ -3,57 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1271 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1271() {}
-    static final FunctionDescriptor gtk_widget_set_vexpand_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_is_valid",
+        constants$12.const$2
     );
-    static final MethodHandle gtk_widget_set_vexpand_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_vexpand_set",
-        constants$1271.gtk_widget_set_vexpand_set$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_simple_async_report_error_in_idle$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gtk_widget_queue_compute_expand$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_simple_async_report_error_in_idle",
+        constants$1271.const$2
     );
-    static final MethodHandle gtk_widget_queue_compute_expand$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_compute_expand",
-        constants$1271.gtk_widget_queue_compute_expand$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_compute_expand$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_compute_expand$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_compute_expand",
-        constants$1271.gtk_widget_compute_expand$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_support_multidevice$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_support_multidevice$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_support_multidevice",
-        constants$1271.gtk_widget_get_support_multidevice$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_support_multidevice$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_support_multidevice$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_support_multidevice",
-        constants$1271.gtk_widget_set_support_multidevice$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_class_set_accessible_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle gtk_widget_class_set_accessible_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_set_accessible_type",
-        constants$1271.gtk_widget_class_set_accessible_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_simple_async_report_gerror_in_idle$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_simple_async_report_gerror_in_idle",
+        constants$42.const$1
     );
 }
 

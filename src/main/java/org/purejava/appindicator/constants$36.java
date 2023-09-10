@@ -3,64 +3,36 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$36 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$36() {}
-    static final FunctionDescriptor g_error_domain_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_ptr_array_new_take$element_free_func.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_error_domain_register$MH = RuntimeHelper.downcallHandle(
-        "g_error_domain_register",
-        constants$36.g_error_domain_register$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_new_take",
+        constants$36.const$1
     );
-    static final FunctionDescriptor g_error_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_ptr_array_new_from_array$copy_func.class, "apply", constants$5.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_ptr_array_new_from_array$element_free_func.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_error_new$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_error_new",
-        constants$36.g_error_new$FUNC
-    );
-    static final FunctionDescriptor g_error_new_literal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_error_new_literal$MH = RuntimeHelper.downcallHandle(
-        "g_error_new_literal",
-        constants$36.g_error_new_literal$FUNC
-    );
-    static final FunctionDescriptor g_error_new_valist$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_error_new_valist$MH = RuntimeHelper.downcallHandle(
-        "g_error_new_valist",
-        constants$36.g_error_new_valist$FUNC
-    );
-    static final FunctionDescriptor g_error_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_error_free$MH = RuntimeHelper.downcallHandle(
-        "g_error_free",
-        constants$36.g_error_free$FUNC
-    );
-    static final FunctionDescriptor g_error_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_error_copy$MH = RuntimeHelper.downcallHandle(
-        "g_error_copy",
-        constants$36.g_error_copy$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_new_from_array",
+        constants$36.const$5
     );
 }
 

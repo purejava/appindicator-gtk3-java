@@ -3,41 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1885 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1885() {}
-    static final FunctionDescriptor gtk_wrap_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_wrap_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_wrap_mode_get_type",
-        constants$1885.gtk_wrap_mode_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_xpm_data",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_sort_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_sort_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_sort_type_get_type",
-        constants$1885.gtk_sort_type_get_type$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gtk_im_preedit_style_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_im_preedit_style_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_preedit_style_get_type",
-        constants$1885.gtk_im_preedit_style_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_inline",
+        constants$1885.const$1
     );
-    static final FunctionDescriptor gtk_im_status_style_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_im_status_style_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_status_style_get_type",
-        constants$1885.gtk_im_status_style_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_fill",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_pack_direction_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_pack_direction_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_pack_direction_get_type",
-        constants$1885.gtk_pack_direction_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "gdk_pixbuf_save",
+        constants$34.const$5
     );
-    static final FunctionDescriptor gtk_print_pages_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_print_pages_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_pages_get_type",
-        constants$1885.gtk_print_pages_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_savev",
+        constants$638.const$1
     );
 }
 

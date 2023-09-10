@@ -3,64 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$132 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$132() {}
-    static final FunctionDescriptor g_realloc_n$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_realloc_n$MH = RuntimeHelper.downcallHandle(
-        "g_realloc_n",
-        constants$132.g_realloc_n$FUNC
-    );
-    static final FunctionDescriptor g_try_malloc_n$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_try_malloc_n$MH = RuntimeHelper.downcallHandle(
-        "g_try_malloc_n",
-        constants$132.g_try_malloc_n$FUNC
-    );
-    static final FunctionDescriptor g_try_malloc0_n$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_try_malloc0_n$MH = RuntimeHelper.downcallHandle(
-        "g_try_malloc0_n",
-        constants$132.g_try_malloc0_n$FUNC
-    );
-    static final FunctionDescriptor g_try_realloc_n$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_try_realloc_n$MH = RuntimeHelper.downcallHandle(
-        "g_try_realloc_n",
-        constants$132.g_try_realloc_n$FUNC
-    );
-    static final FunctionDescriptor g_aligned_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_aligned_alloc$MH = RuntimeHelper.downcallHandle(
-        "g_aligned_alloc",
-        constants$132.g_aligned_alloc$FUNC
-    );
-    static final FunctionDescriptor g_aligned_alloc0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_aligned_alloc0$MH = RuntimeHelper.downcallHandle(
-        "g_aligned_alloc0",
-        constants$132.g_aligned_alloc0$FUNC
-    );
+    static final VarHandle const$0 = constants$131.const$5.varHandle(MemoryLayout.PathElement.groupElement("fpsr"));
+    static final VarHandle const$1 = constants$131.const$5.varHandle(MemoryLayout.PathElement.groupElement("fpcr"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("magic"),
+            JAVA_INT.withName("size")
+        ).withName("head"),
+        JAVA_LONG.withName("esr")
+    ).withName("esr_context");
+    static final VarHandle const$3 = constants$132.const$2.varHandle(MemoryLayout.PathElement.groupElement("esr"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("magic"),
+            JAVA_INT.withName("size")
+        ).withName("head"),
+        JAVA_LONG.withName("datap"),
+        JAVA_INT.withName("size"),
+        MemoryLayout.sequenceLayout(3, JAVA_INT).withName("__reserved")
+    ).withName("extra_context");
+    static final VarHandle const$5 = constants$132.const$4.varHandle(MemoryLayout.PathElement.groupElement("datap"));
 }
 
 

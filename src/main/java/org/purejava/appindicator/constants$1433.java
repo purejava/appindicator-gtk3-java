@@ -3,61 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1433 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1433() {}
-    static final FunctionDescriptor gtk_entry_buffer_get_max_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_set_clear",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_entry_buffer_get_max_length$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_get_max_length",
-        constants$1433.gtk_entry_buffer_get_max_length$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_set_is_empty",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_entry_buffer_insert_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_set_invert",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_entry_buffer_insert_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_insert_text",
-        constants$1433.gtk_entry_buffer_insert_text$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_set_is_inverted",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_entry_buffer_delete_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_set_has",
+        constants$11.const$4
     );
-    static final MethodHandle gtk_entry_buffer_delete_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_delete_text",
-        constants$1433.gtk_entry_buffer_delete_text$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_buffer_emit_inserted_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_buffer_emit_inserted_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_emit_inserted_text",
-        constants$1433.gtk_entry_buffer_emit_inserted_text$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_buffer_emit_deleted_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_buffer_emit_deleted_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_buffer_emit_deleted_text",
-        constants$1433.gtk_entry_buffer_emit_deleted_text$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_list_store_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_get_type",
-        constants$1433.gtk_list_store_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_set_add",
+        constants$40.const$2
     );
 }
 

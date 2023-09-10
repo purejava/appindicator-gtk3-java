@@ -3,58 +3,44 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1043 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1043() {}
-    static final FunctionDescriptor cairo_pattern_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_info_list_dup",
+        constants$5.const$2
     );
-    static final MethodHandle cairo_pattern_destroy$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_destroy",
-        constants$1043.cairo_pattern_destroy$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_info_list_lookup",
+        constants$5.const$5
     );
-    static final FunctionDescriptor cairo_pattern_get_reference_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final MethodHandle cairo_pattern_get_reference_count$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_reference_count",
-        constants$1043.cairo_pattern_get_reference_count$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_info_list_add",
+        constants$1043.const$2
     );
-    static final FunctionDescriptor cairo_pattern_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pattern_status$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_status",
-        constants$1043.cairo_pattern_status$FUNC
-    );
-    static final FunctionDescriptor cairo_pattern_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pattern_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_user_data",
-        constants$1043.cairo_pattern_get_user_data$FUNC
-    );
-    static final FunctionDescriptor cairo_pattern_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pattern_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_set_user_data",
-        constants$1043.cairo_pattern_set_user_data$FUNC
-    );
-    static final FunctionDescriptor cairo_pattern_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pattern_get_type$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_type",
-        constants$1043.cairo_pattern_get_type$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GFileEnumerator");
+    static final VarHandle const$5 = constants$1043.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

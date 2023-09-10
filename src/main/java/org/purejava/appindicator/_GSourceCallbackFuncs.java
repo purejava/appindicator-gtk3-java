@@ -4,56 +4,39 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GSourceCallbackFuncs {
- *     void (*ref)(gpointer);
- *     void (*unref)(gpointer);
- *     void (*get)(gpointer,GSource*,GSourceFunc*,gpointer*);
+ *     void (*ref)(void*);
+ *     void (*unref)(void*);
+ *     void (*get)(void*,struct _GSource*,int (**)(void*),void**);
  * };
  * }
  */
 public class _GSourceCallbackFuncs {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("ref"),
-        Constants$root.C_POINTER$LAYOUT.withName("unref"),
-        Constants$root.C_POINTER$LAYOUT.withName("get")
-    ).withName("_GSourceCallbackFuncs");
     public static MemoryLayout $LAYOUT() {
-        return _GSourceCallbackFuncs.$struct$LAYOUT;
+        return constants$258.const$4;
     }
-    static final FunctionDescriptor ref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor ref_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle ref_UP$MH = RuntimeHelper.upcallHandle(ref.class, "apply", _GSourceCallbackFuncs.ref_UP$FUNC);
-    static final FunctionDescriptor ref_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle ref_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GSourceCallbackFuncs.ref_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*ref)(gpointer);
+ * void (*ref)(void*);
      * }
      */
     public interface ref {
 
-        void apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(ref fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GSourceCallbackFuncs.ref_UP$MH, fi, _GSourceCallbackFuncs.ref$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(ref fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$258.const$5, fi, constants$13.const$1, scope);
         }
-        static ref ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0) -> {
+        static ref ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GSourceCallbackFuncs.ref_DOWN$MH.invokeExact(symbol, __x0);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -61,66 +44,52 @@ public class _GSourceCallbackFuncs {
         }
     }
 
-    static final VarHandle ref$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("ref"));
     public static VarHandle ref$VH() {
-        return _GSourceCallbackFuncs.ref$VH;
+        return constants$259.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*ref)(gpointer);
+     * void (*ref)(void*);
      * }
      */
     public static MemorySegment ref$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GSourceCallbackFuncs.ref$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$259.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*ref)(gpointer);
+     * void (*ref)(void*);
      * }
      */
     public static void ref$set(MemorySegment seg, MemorySegment x) {
-        _GSourceCallbackFuncs.ref$VH.set(seg, x);
+        constants$259.const$0.set(seg, x);
     }
     public static MemorySegment ref$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GSourceCallbackFuncs.ref$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$259.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void ref$set(MemorySegment seg, long index, MemorySegment x) {
-        _GSourceCallbackFuncs.ref$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$259.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static ref ref(MemorySegment segment, SegmentScope scope) {
+    public static ref ref(MemorySegment segment, Arena scope) {
         return ref.ofAddress(ref$get(segment), scope);
     }
-    static final FunctionDescriptor unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor unref_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle unref_UP$MH = RuntimeHelper.upcallHandle(unref.class, "apply", _GSourceCallbackFuncs.unref_UP$FUNC);
-    static final FunctionDescriptor unref_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle unref_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GSourceCallbackFuncs.unref_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*unref)(gpointer);
+ * void (*unref)(void*);
      * }
      */
     public interface unref {
 
-        void apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(unref fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GSourceCallbackFuncs.unref_UP$MH, fi, _GSourceCallbackFuncs.unref$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(unref fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$259.const$1, fi, constants$13.const$1, scope);
         }
-        static unref ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0) -> {
+        static unref ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GSourceCallbackFuncs.unref_DOWN$MH.invokeExact(symbol, __x0);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -128,75 +97,52 @@ public class _GSourceCallbackFuncs {
         }
     }
 
-    static final VarHandle unref$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("unref"));
     public static VarHandle unref$VH() {
-        return _GSourceCallbackFuncs.unref$VH;
+        return constants$259.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*unref)(gpointer);
+     * void (*unref)(void*);
      * }
      */
     public static MemorySegment unref$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GSourceCallbackFuncs.unref$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$259.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*unref)(gpointer);
+     * void (*unref)(void*);
      * }
      */
     public static void unref$set(MemorySegment seg, MemorySegment x) {
-        _GSourceCallbackFuncs.unref$VH.set(seg, x);
+        constants$259.const$2.set(seg, x);
     }
     public static MemorySegment unref$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GSourceCallbackFuncs.unref$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$259.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void unref$set(MemorySegment seg, long index, MemorySegment x) {
-        _GSourceCallbackFuncs.unref$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$259.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static unref unref(MemorySegment segment, SegmentScope scope) {
+    public static unref unref(MemorySegment segment, Arena scope) {
         return unref.ofAddress(unref$get(segment), scope);
     }
-    static final FunctionDescriptor get$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_UP$MH = RuntimeHelper.upcallHandle(get.class, "apply", _GSourceCallbackFuncs.get_UP$FUNC);
-    static final FunctionDescriptor get_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GSourceCallbackFuncs.get_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*get)(gpointer,GSource*,GSourceFunc*,gpointer*);
+ * void (*get)(void*,struct _GSource*,int (**)(void*),void**);
      * }
      */
     public interface get {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(get fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GSourceCallbackFuncs.get_UP$MH, fi, _GSourceCallbackFuncs.get$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(get fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$259.const$3, fi, constants$42.const$1, scope);
         }
-        static get ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
+        static get ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GSourceCallbackFuncs.get_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$259.const$4.invokeExact(symbol, _model, _path, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -204,35 +150,34 @@ public class _GSourceCallbackFuncs {
         }
     }
 
-    static final VarHandle get$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get"));
     public static VarHandle get$VH() {
-        return _GSourceCallbackFuncs.get$VH;
+        return constants$259.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*get)(gpointer,GSource*,GSourceFunc*,gpointer*);
+     * void (*get)(void*,struct _GSource*,int (**)(void*),void**);
      * }
      */
     public static MemorySegment get$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GSourceCallbackFuncs.get$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$259.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*get)(gpointer,GSource*,GSourceFunc*,gpointer*);
+     * void (*get)(void*,struct _GSource*,int (**)(void*),void**);
      * }
      */
     public static void get$set(MemorySegment seg, MemorySegment x) {
-        _GSourceCallbackFuncs.get$VH.set(seg, x);
+        constants$259.const$5.set(seg, x);
     }
     public static MemorySegment get$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GSourceCallbackFuncs.get$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$259.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get$set(MemorySegment seg, long index, MemorySegment x) {
-        _GSourceCallbackFuncs.get$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$259.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get get(MemorySegment segment, SegmentScope scope) {
+    public static get get(MemorySegment segment, Arena scope) {
         return get.ofAddress(get$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -240,7 +185,7 @@ public class _GSourceCallbackFuncs {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

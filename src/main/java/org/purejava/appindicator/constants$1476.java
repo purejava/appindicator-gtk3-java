@@ -3,69 +3,21 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1476 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1476() {}
-    static final FunctionDescriptor gtk_tree_view_set_search_entry$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_search_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_search_entry",
-        constants$1476.gtk_tree_view_set_search_entry$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_search_position_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_search_position_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_search_position_func",
-        constants$1476.gtk_tree_view_get_search_position_func$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_search_position_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_search_position_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_search_position_func",
-        constants$1476.gtk_tree_view_set_search_position_func$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_convert_widget_to_tree_coords$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_convert_widget_to_tree_coords$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_convert_widget_to_tree_coords",
-        constants$1476.gtk_tree_view_convert_widget_to_tree_coords$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_convert_tree_to_widget_coords$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_convert_tree_to_widget_coords$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_convert_tree_to_widget_coords",
-        constants$1476.gtk_tree_view_convert_tree_to_widget_coords$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_convert_widget_to_bin_window_coords$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_convert_widget_to_bin_window_coords$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_convert_widget_to_bin_window_coords",
-        constants$1476.gtk_tree_view_convert_widget_to_bin_window_coords$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_font_get_font_extents_func_t.class, "apply", constants$34.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_get_font_h_extents_func_t.class, "apply", constants$34.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_font_get_font_v_extents_func_t.class, "apply", constants$34.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_font_get_nominal_glyph_func_t.class, "apply", constants$859.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_get_variation_glyph_func_t.class, "apply", constants$1029.const$4);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$1029.const$4
     );
 }
 

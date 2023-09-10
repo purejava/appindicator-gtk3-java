@@ -3,41 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$674 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$674() {}
-    static final FunctionDescriptor g_unix_socket_address_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_unix_socket_address_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_unix_socket_address_type_get_type",
-        constants$674.g_unix_socket_address_type_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_signal_group_connect_after$c_handler.class, "apply", constants$7.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_signal_group_connect_after",
+        constants$42.const$1
     );
-    static final FunctionDescriptor g_bus_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_bus_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_bus_type_get_type",
-        constants$674.g_bus_type_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_signal_group_connect_swapped$c_handler.class, "apply", constants$7.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_signal_group_connect_swapped",
+        constants$42.const$1
     );
-    static final FunctionDescriptor g_bus_name_owner_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_bus_name_owner_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_bus_name_owner_flags_get_type",
-        constants$674.g_bus_name_owner_flags_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_source_set_closure",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_bus_name_watcher_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_bus_name_watcher_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_bus_name_watcher_flags_get_type",
-        constants$674.g_bus_name_watcher_flags_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_proxy_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_proxy_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_flags_get_type",
-        constants$674.g_dbus_proxy_flags_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_error_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_error_get_type",
-        constants$674.g_dbus_error_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_source_set_dummy_callback",
+        constants$13.const$1
     );
 }
 

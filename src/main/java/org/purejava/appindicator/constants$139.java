@@ -3,54 +3,53 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$139 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$139() {}
-    static final FunctionDescriptor g_node_last_sibling$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_last_sibling$MH = RuntimeHelper.downcallHandle(
-        "g_node_last_sibling",
-        constants$139.g_node_last_sibling$FUNC
-    );
-    static final FunctionDescriptor g_list_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_list_alloc$MH = RuntimeHelper.downcallHandle(
-        "g_list_alloc",
-        constants$139.g_list_alloc$FUNC
-    );
-    static final FunctionDescriptor g_list_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_free$MH = RuntimeHelper.downcallHandle(
-        "g_list_free",
-        constants$139.g_list_free$FUNC
-    );
-    static final FunctionDescriptor g_list_free_1$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_free_1$MH = RuntimeHelper.downcallHandle(
-        "g_list_free_1",
-        constants$139.g_list_free_1$FUNC
-    );
-    static final FunctionDescriptor g_list_free_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_free_full$MH = RuntimeHelper.downcallHandle(
-        "g_list_free_full",
-        constants$139.g_list_free_full$FUNC
-    );
-    static final FunctionDescriptor g_list_append$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_append$MH = RuntimeHelper.downcallHandle(
-        "g_list_append",
-        constants$139.g_list_append$FUNC
-    );
+    static final VarHandle const$0 = constants$138.const$4.varHandle(MemoryLayout.PathElement.groupElement("si_code"));
+    static final VarHandle const$1 = constants$138.const$4.varHandle(MemoryLayout.PathElement.groupElement("si_errno"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("si_signo"),
+            JAVA_INT.withName("si_code"),
+            JAVA_INT.withName("si_errno")
+        ).withName("pr_info"),
+        JAVA_SHORT.withName("pr_cursig"),
+        MemoryLayout.paddingLayout(2),
+        JAVA_LONG.withName("pr_sigpend"),
+        JAVA_LONG.withName("pr_sighold"),
+        JAVA_INT.withName("pr_pid"),
+        JAVA_INT.withName("pr_ppid"),
+        JAVA_INT.withName("pr_pgrp"),
+        JAVA_INT.withName("pr_sid"),
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("tv_sec"),
+            JAVA_LONG.withName("tv_usec")
+        ).withName("pr_utime"),
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("tv_sec"),
+            JAVA_LONG.withName("tv_usec")
+        ).withName("pr_stime"),
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("tv_sec"),
+            JAVA_LONG.withName("tv_usec")
+        ).withName("pr_cutime"),
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("tv_sec"),
+            JAVA_LONG.withName("tv_usec")
+        ).withName("pr_cstime"),
+        MemoryLayout.sequenceLayout(34, JAVA_LONG).withName("pr_reg"),
+        JAVA_INT.withName("pr_fpvalid"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("elf_prstatus");
+    static final VarHandle const$3 = constants$139.const$2.varHandle(MemoryLayout.PathElement.groupElement("pr_cursig"));
+    static final VarHandle const$4 = constants$139.const$2.varHandle(MemoryLayout.PathElement.groupElement("pr_sigpend"));
+    static final VarHandle const$5 = constants$139.const$2.varHandle(MemoryLayout.PathElement.groupElement("pr_sighold"));
 }
 
 

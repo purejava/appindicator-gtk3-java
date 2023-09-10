@@ -3,75 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$499 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$499() {}
-    static final FunctionDescriptor g_input_stream_skip$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_completion_set_compare$strncmp_func.class, "apply", constants$18.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_completion_set_compare",
+        constants$13.const$4
     );
-    static final MethodHandle g_input_stream_skip$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_skip",
-        constants$499.g_input_stream_skip$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_completion_free",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_input_stream_close$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_close$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_close",
-        constants$499.g_input_stream_close$FUNC
-    );
-    static final FunctionDescriptor g_input_stream_read_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_read_async$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_read_async",
-        constants$499.g_input_stream_read_async$FUNC
-    );
-    static final FunctionDescriptor g_input_stream_read_finish$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_read_finish$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_read_finish",
-        constants$499.g_input_stream_read_finish$FUNC
-    );
-    static final FunctionDescriptor g_input_stream_read_all_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_read_all_async$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_read_all_async",
-        constants$499.g_input_stream_read_all_async$FUNC
-    );
-    static final FunctionDescriptor g_input_stream_read_all_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_read_all_finish$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_read_all_finish",
-        constants$499.g_input_stream_read_all_finish$FUNC
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("len")
+    ).withName("_GTuples");
+    static final VarHandle const$4 = constants$499.const$3.varHandle(MemoryLayout.PathElement.groupElement("len"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_relation_new",
+        constants$24.const$0
     );
 }
 

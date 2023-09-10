@@ -3,62 +3,24 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1427 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1427() {}
-    static final FunctionDescriptor gtk_drag_set_icon_gicon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_unicode_compose_func_t.class, "apply", constants$956.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_unicode_decompose_func_t.class, "apply", constants$373.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$373.const$2
     );
-    static final MethodHandle gtk_drag_set_icon_gicon$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_set_icon_gicon",
-        constants$1427.gtk_drag_set_icon_gicon$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_set_icon_default$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_drag_set_icon_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_set_icon_default",
-        constants$1427.gtk_drag_set_icon_default$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_check_threshold$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_drag_check_threshold$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_check_threshold",
-        constants$1427.gtk_drag_check_threshold$FUNC
-    );
-    static final FunctionDescriptor gtk_editable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_editable_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_editable_get_type",
-        constants$1427.gtk_editable_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_editable_select_region$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_editable_select_region$MH = RuntimeHelper.downcallHandle(
-        "gtk_editable_select_region",
-        constants$1427.gtk_editable_select_region$FUNC
-    );
-    static final FunctionDescriptor gtk_editable_get_selection_bounds$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_editable_get_selection_bounds$MH = RuntimeHelper.downcallHandle(
-        "gtk_editable_get_selection_bounds",
-        constants$1427.gtk_editable_get_selection_bounds$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_combining_class_func$func.class, "apply", constants$150.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_combining_class_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_set_combining_class_func",
+        constants$42.const$1
     );
 }
 

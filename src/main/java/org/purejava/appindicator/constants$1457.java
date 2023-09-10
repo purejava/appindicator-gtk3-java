@@ -3,59 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1457 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1457() {}
-    static final FunctionDescriptor gtk_entry_get_progress_pulse_step$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_paint_pop_clip_func_t.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle gtk_entry_get_progress_pulse_step$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_progress_pulse_step",
-        constants$1457.gtk_entry_get_progress_pulse_step$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_paint_color_func_t.class, "apply", constants$1457.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$1457.const$1
     );
-    static final FunctionDescriptor gtk_entry_progress_pulse$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_FLOAT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle gtk_entry_progress_pulse$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_progress_pulse",
-        constants$1457.gtk_entry_progress_pulse$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_placeholder_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_placeholder_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_placeholder_text",
-        constants$1457.gtk_entry_get_placeholder_text$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_placeholder_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_placeholder_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_placeholder_text",
-        constants$1457.gtk_entry_set_placeholder_text$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_icon_from_pixbuf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_icon_from_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_icon_from_pixbuf",
-        constants$1457.gtk_entry_set_icon_from_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_icon_from_stock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_icon_from_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_icon_from_stock",
-        constants$1457.gtk_entry_set_icon_from_stock$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_paint_image_func_t.class, "apply", constants$1457.const$4);
 }
 
 

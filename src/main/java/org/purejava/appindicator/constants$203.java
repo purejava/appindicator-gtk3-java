@@ -3,61 +3,43 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$203 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$203() {}
-    static final FunctionDescriptor g_strescape$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_path_get_dirname",
+        constants$5.const$2
     );
-    static final MethodHandle g_strescape$MH = RuntimeHelper.downcallHandle(
-        "g_strescape",
-        constants$203.g_strescape$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_canonicalize_filename",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_memdup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_strip_context",
+        constants$5.const$5
     );
-    static final MethodHandle g_memdup$MH = RuntimeHelper.downcallHandle(
-        "g_memdup",
-        constants$203.g_memdup$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dgettext",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_memdup2$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dcgettext",
+        constants$32.const$3
     );
-    static final MethodHandle g_memdup2$MH = RuntimeHelper.downcallHandle(
-        "g_memdup2",
-        constants$203.g_memdup2$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final FunctionDescriptor g_strsplit$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_strsplit$MH = RuntimeHelper.downcallHandle(
-        "g_strsplit",
-        constants$203.g_strsplit$FUNC
-    );
-    static final FunctionDescriptor g_strsplit_set$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_strsplit_set$MH = RuntimeHelper.downcallHandle(
-        "g_strsplit_set",
-        constants$203.g_strsplit_set$FUNC
-    );
-    static final FunctionDescriptor g_strjoinv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_strjoinv$MH = RuntimeHelper.downcallHandle(
-        "g_strjoinv",
-        constants$203.g_strjoinv$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_dngettext",
+        constants$203.const$5
     );
 }
 

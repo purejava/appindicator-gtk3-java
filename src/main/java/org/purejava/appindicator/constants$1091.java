@@ -3,62 +3,92 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1091 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1091() {}
-    static final FunctionDescriptor gdk_window_get_cursor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_filename_completer_set_dirs_only",
+        constants$40.const$2
     );
-    static final MethodHandle gdk_window_get_cursor$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_cursor",
-        constants$1091.gdk_window_get_cursor$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_device_cursor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_device_cursor$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_device_cursor",
-        constants$1091.gdk_window_set_device_cursor$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_device_cursor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_device_cursor$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_device_cursor",
-        constants$1091.gdk_window_get_device_cursor$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_user_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_user_data",
-        constants$1091.gdk_window_get_user_data$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_geometry$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_geometry$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_geometry",
-        constants$1091.gdk_window_get_geometry$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_width$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_width",
-        constants$1091.gdk_window_get_width$FUNC
-    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    RuntimeHelper.POINTER.withName("g_class")
+                ).withName("g_type_instance"),
+                JAVA_INT.withName("ref_count"),
+                MemoryLayout.paddingLayout(4),
+                RuntimeHelper.POINTER.withName("qdata")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GFileOutputStream");
+    static final VarHandle const$2 = constants$1091.const$1.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    JAVA_LONG.withName("g_type")
+                ).withName("g_type_class"),
+                RuntimeHelper.POINTER.withName("construct_properties"),
+                RuntimeHelper.POINTER.withName("constructor"),
+                RuntimeHelper.POINTER.withName("set_property"),
+                RuntimeHelper.POINTER.withName("get_property"),
+                RuntimeHelper.POINTER.withName("dispose"),
+                RuntimeHelper.POINTER.withName("finalize"),
+                RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+                RuntimeHelper.POINTER.withName("notify"),
+                RuntimeHelper.POINTER.withName("constructed"),
+                JAVA_LONG.withName("flags"),
+                JAVA_LONG.withName("n_construct_properties"),
+                RuntimeHelper.POINTER.withName("pspecs"),
+                JAVA_LONG.withName("n_pspecs"),
+                MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+            ).withName("parent_class"),
+            RuntimeHelper.POINTER.withName("write_fn"),
+            RuntimeHelper.POINTER.withName("splice"),
+            RuntimeHelper.POINTER.withName("flush"),
+            RuntimeHelper.POINTER.withName("close_fn"),
+            RuntimeHelper.POINTER.withName("write_async"),
+            RuntimeHelper.POINTER.withName("write_finish"),
+            RuntimeHelper.POINTER.withName("splice_async"),
+            RuntimeHelper.POINTER.withName("splice_finish"),
+            RuntimeHelper.POINTER.withName("flush_async"),
+            RuntimeHelper.POINTER.withName("flush_finish"),
+            RuntimeHelper.POINTER.withName("close_async"),
+            RuntimeHelper.POINTER.withName("close_finish"),
+            RuntimeHelper.POINTER.withName("writev_fn"),
+            RuntimeHelper.POINTER.withName("writev_async"),
+            RuntimeHelper.POINTER.withName("writev_finish"),
+            RuntimeHelper.POINTER.withName("_g_reserved4"),
+            RuntimeHelper.POINTER.withName("_g_reserved5"),
+            RuntimeHelper.POINTER.withName("_g_reserved6"),
+            RuntimeHelper.POINTER.withName("_g_reserved7"),
+            RuntimeHelper.POINTER.withName("_g_reserved8")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("tell"),
+        RuntimeHelper.POINTER.withName("can_seek"),
+        RuntimeHelper.POINTER.withName("seek"),
+        RuntimeHelper.POINTER.withName("can_truncate"),
+        RuntimeHelper.POINTER.withName("truncate_fn"),
+        RuntimeHelper.POINTER.withName("query_info"),
+        RuntimeHelper.POINTER.withName("query_info_async"),
+        RuntimeHelper.POINTER.withName("query_info_finish"),
+        RuntimeHelper.POINTER.withName("get_etag"),
+        RuntimeHelper.POINTER.withName("_g_reserved1"),
+        RuntimeHelper.POINTER.withName("_g_reserved2"),
+        RuntimeHelper.POINTER.withName("_g_reserved3"),
+        RuntimeHelper.POINTER.withName("_g_reserved4"),
+        RuntimeHelper.POINTER.withName("_g_reserved5")
+    ).withName("_GFileOutputStreamClass");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass.tell.class, "apply", constants$4.const$0);
+    static final VarHandle const$5 = constants$1091.const$3.varHandle(MemoryLayout.PathElement.groupElement("tell"));
 }
 
 

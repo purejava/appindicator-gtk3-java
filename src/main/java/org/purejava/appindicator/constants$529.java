@@ -3,52 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$529 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$529() {}
-    static final FunctionDescriptor setregid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_rdlock",
+        constants$10.const$5
     );
-    static final MethodHandle setregid$MH = RuntimeHelper.downcallHandle(
-        "setregid",
-        constants$529.setregid$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_tryrdlock",
+        constants$10.const$5
     );
-    static final FunctionDescriptor setegid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_timedrdlock",
+        constants$9.const$0
     );
-    static final MethodHandle setegid$MH = RuntimeHelper.downcallHandle(
-        "setegid",
-        constants$529.setegid$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_wrlock",
+        constants$10.const$5
     );
-    static final FunctionDescriptor fork$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle fork$MH = RuntimeHelper.downcallHandle(
-        "fork",
-        constants$529.fork$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_trywrlock",
+        constants$10.const$5
     );
-    static final FunctionDescriptor vfork$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle vfork$MH = RuntimeHelper.downcallHandle(
-        "vfork",
-        constants$529.vfork$FUNC
-    );
-    static final FunctionDescriptor ttyname$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle ttyname$MH = RuntimeHelper.downcallHandle(
-        "ttyname",
-        constants$529.ttyname$FUNC
-    );
-    static final FunctionDescriptor ttyname_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle ttyname_r$MH = RuntimeHelper.downcallHandle(
-        "ttyname_r",
-        constants$529.ttyname_r$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_timedwrlock",
+        constants$9.const$0
     );
 }
 

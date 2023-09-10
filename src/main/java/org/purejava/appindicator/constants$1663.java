@@ -3,50 +3,44 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1663 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1663() {}
-    static final FunctionDescriptor gtk_im_multicontext_set_context_id$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "vsprintf",
+        constants$1662.const$2
     );
-    static final MethodHandle gtk_im_multicontext_set_context_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_multicontext_set_context_id",
-        constants$1663.gtk_im_multicontext_set_context_id$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "snprintf",
+        constants$62.const$2
     );
-    static final FunctionDescriptor gtk_info_bar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_info_bar_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_get_type",
-        constants$1663.gtk_info_bar_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "vsnprintf",
+        constants$62.const$4
     );
-    static final FunctionDescriptor gtk_info_bar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_info_bar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_new",
-        constants$1663.gtk_info_bar_new$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final FunctionDescriptor gtk_info_bar_new_with_buttons$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "vdprintf",
+        constants$1663.const$3
     );
-    static final MethodHandle gtk_info_bar_new_with_buttons$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_info_bar_new_with_buttons",
-        constants$1663.gtk_info_bar_new_with_buttons$FUNC
-    );
-    static final FunctionDescriptor gtk_info_bar_get_action_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_info_bar_get_action_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_get_action_area",
-        constants$1663.gtk_info_bar_get_action_area$FUNC
-    );
-    static final FunctionDescriptor gtk_info_bar_get_content_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_info_bar_get_content_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_info_bar_get_content_area",
-        constants$1663.gtk_info_bar_get_content_area$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "dprintf",
+        constants$9.const$2
     );
 }
 

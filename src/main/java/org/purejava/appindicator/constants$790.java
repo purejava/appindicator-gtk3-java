@@ -3,59 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$790 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$790() {}
-    static final FunctionDescriptor g_subprocess_launcher_set_stdout_file_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_output_stream_write_bytes_finish",
+        constants$166.const$0
     );
-    static final MethodHandle g_subprocess_launcher_set_stdout_file_path$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_set_stdout_file_path",
-        constants$790.g_subprocess_launcher_set_stdout_file_path$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_output_stream_splice_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_output_stream_splice_async",
+        constants$780.const$3
     );
-    static final FunctionDescriptor g_subprocess_launcher_take_stdout_fd$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_output_stream_splice_finish",
+        constants$166.const$0
     );
-    static final MethodHandle g_subprocess_launcher_take_stdout_fd$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_take_stdout_fd",
-        constants$790.g_subprocess_launcher_take_stdout_fd$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_launcher_set_stderr_file_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_launcher_set_stderr_file_path$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_set_stderr_file_path",
-        constants$790.g_subprocess_launcher_set_stderr_file_path$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_launcher_take_stderr_fd$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_subprocess_launcher_take_stderr_fd$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_take_stderr_fd",
-        constants$790.g_subprocess_launcher_take_stderr_fd$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_launcher_take_fd$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_subprocess_launcher_take_fd$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_take_fd",
-        constants$790.g_subprocess_launcher_take_fd$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_launcher_close$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_launcher_close$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_close",
-        constants$790.g_subprocess_launcher_close$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_output_stream_flush_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_output_stream_flush_async",
+        constants$281.const$5
     );
 }
 

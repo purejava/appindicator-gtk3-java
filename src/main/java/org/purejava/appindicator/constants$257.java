@@ -3,68 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$257 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$257() {}
-    static final FunctionDescriptor GLogFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GLogFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$257.GLogFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_log_set_handler$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_log_set_handler$MH = RuntimeHelper.downcallHandle(
-        "g_log_set_handler",
-        constants$257.g_log_set_handler$FUNC
-    );
-    static final FunctionDescriptor g_log_set_handler_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_log_set_handler_full$MH = RuntimeHelper.downcallHandle(
-        "g_log_set_handler_full",
-        constants$257.g_log_set_handler_full$FUNC
-    );
-    static final FunctionDescriptor g_log_remove_handler$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_log_remove_handler$MH = RuntimeHelper.downcallHandle(
-        "g_log_remove_handler",
-        constants$257.g_log_remove_handler$FUNC
-    );
-    static final FunctionDescriptor g_log_default_handler$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_log_default_handler$MH = RuntimeHelper.downcallHandle(
-        "g_log_default_handler",
-        constants$257.g_log_default_handler$FUNC
-    );
-    static final FunctionDescriptor g_log_set_default_handler$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_log_set_default_handler$MH = RuntimeHelper.downcallHandle(
-        "g_log_set_default_handler",
-        constants$257.g_log_set_default_handler$FUNC
-    );
+    static final VarHandle const$0 = constants$256.const$2.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
+    static final VarHandle const$1 = constants$256.const$2.varHandle(MemoryLayout.PathElement.groupElement("context"));
+    static final VarHandle const$2 = constants$256.const$2.varHandle(MemoryLayout.PathElement.groupElement("priority"));
+    static final VarHandle const$3 = constants$256.const$2.varHandle(MemoryLayout.PathElement.groupElement("flags"));
+    static final VarHandle const$4 = constants$256.const$2.varHandle(MemoryLayout.PathElement.groupElement("source_id"));
+    static final VarHandle const$5 = constants$256.const$2.varHandle(MemoryLayout.PathElement.groupElement("poll_fds"));
 }
 
 

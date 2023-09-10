@@ -3,73 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$500 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$500() {}
-    static final FunctionDescriptor g_input_stream_read_bytes_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_relation_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle g_input_stream_read_bytes_async$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_read_bytes_async",
-        constants$500.g_input_stream_read_bytes_async$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_relation_index$hash_func.class, "apply", constants$10.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_relation_index$key_equal_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_relation_index",
+        constants$179.const$1
     );
-    static final FunctionDescriptor g_input_stream_read_bytes_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "g_relation_insert",
+        constants$13.const$1
     );
-    static final MethodHandle g_input_stream_read_bytes_finish$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_read_bytes_finish",
-        constants$500.g_input_stream_read_bytes_finish$FUNC
-    );
-    static final FunctionDescriptor g_input_stream_skip_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_skip_async$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_skip_async",
-        constants$500.g_input_stream_skip_async$FUNC
-    );
-    static final FunctionDescriptor g_input_stream_skip_finish$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_skip_finish$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_skip_finish",
-        constants$500.g_input_stream_skip_finish$FUNC
-    );
-    static final FunctionDescriptor g_input_stream_close_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_close_async$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_close_async",
-        constants$500.g_input_stream_close_async$FUNC
-    );
-    static final FunctionDescriptor g_input_stream_close_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_close_finish$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_close_finish",
-        constants$500.g_input_stream_close_finish$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_relation_delete",
+        constants$62.const$0
     );
 }
 

@@ -3,57 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1783 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1783() {}
-    static final FunctionDescriptor gtk_recent_chooser_get_current_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_chooser_get_current_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_get_current_item",
-        constants$1783.gtk_recent_chooser_get_current_item$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_select_uri$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_chooser_select_uri$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_select_uri",
-        constants$1783.gtk_recent_chooser_select_uri$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_unselect_uri$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_chooser_unselect_uri$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_unselect_uri",
-        constants$1783.gtk_recent_chooser_unselect_uri$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_select_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_chooser_select_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_select_all",
-        constants$1783.gtk_recent_chooser_select_all$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_unselect_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_chooser_unselect_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_unselect_all",
-        constants$1783.gtk_recent_chooser_unselect_all$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_get_items$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_chooser_get_items$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_get_items",
-        constants$1783.gtk_recent_chooser_get_items$FUNC
-    );
+    static final VarHandle const$0 = constants$1782.const$5.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$1 = constants$1782.const$5.varHandle(MemoryLayout.PathElement.groupElement("window"));
+    static final VarHandle const$2 = constants$1782.const$5.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
+    static final VarHandle const$3 = constants$1782.const$5.varHandle(MemoryLayout.PathElement.groupElement("in"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        MemoryLayout.paddingLayout(3),
+        JAVA_INT.withName("x"),
+        JAVA_INT.withName("y"),
+        JAVA_INT.withName("width"),
+        JAVA_INT.withName("height"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GdkEventConfigure");
+    static final VarHandle const$5 = constants$1783.const$4.varHandle(MemoryLayout.PathElement.groupElement("type"));
 }
 
 

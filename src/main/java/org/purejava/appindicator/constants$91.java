@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$91 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$91() {}
-    static final FunctionDescriptor g_date_time_is_daylight_savings$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "exit",
+        constants$80.const$1
     );
-    static final MethodHandle g_date_time_is_daylight_savings$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_is_daylight_savings",
-        constants$91.g_date_time_is_daylight_savings$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "quick_exit",
+        constants$80.const$1
     );
-    static final FunctionDescriptor g_date_time_to_timezone$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "_Exit",
+        constants$80.const$1
     );
-    static final MethodHandle g_date_time_to_timezone$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_to_timezone",
-        constants$91.g_date_time_to_timezone$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "getenv",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_date_time_to_local$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "putenv",
+        constants$10.const$5
     );
-    static final MethodHandle g_date_time_to_local$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_to_local",
-        constants$91.g_date_time_to_local$FUNC
-    );
-    static final FunctionDescriptor g_date_time_to_utc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_to_utc$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_to_utc",
-        constants$91.g_date_time_to_utc$FUNC
-    );
-    static final FunctionDescriptor g_date_time_format$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_format$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_format",
-        constants$91.g_date_time_format$FUNC
-    );
-    static final FunctionDescriptor g_date_time_format_iso8601$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_format_iso8601$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_format_iso8601",
-        constants$91.g_date_time_format_iso8601$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "setenv",
+        constants$62.const$0
     );
 }
 

@@ -3,52 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1509 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1509() {}
-    static final FunctionDescriptor gtk_buildable_get_internal_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_direction",
+        constants$40.const$2
     );
-    static final MethodHandle gtk_buildable_get_internal_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_buildable_get_internal_child",
-        constants$1509.gtk_buildable_get_internal_child$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_direction",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_get_type",
-        constants$1509.gtk_button_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_script",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_new",
-        constants$1509.gtk_button_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_script",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_button_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_language",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_button_new_with_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_new_with_label",
-        constants$1509.gtk_button_new_with_label$FUNC
-    );
-    static final FunctionDescriptor gtk_button_new_from_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_button_new_from_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_new_from_icon_name",
-        constants$1509.gtk_button_new_from_icon_name$FUNC
-    );
-    static final FunctionDescriptor gtk_button_new_from_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_button_new_from_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_new_from_stock",
-        constants$1509.gtk_button_new_from_stock$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_language",
+        constants$5.const$2
     );
 }
 

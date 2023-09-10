@@ -3,55 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1407 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1407() {}
-    static final FunctionDescriptor gtk_text_iter_get_language$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_language$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_language",
-        constants$1407.gtk_text_iter_get_language$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_is_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_is_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_is_end",
-        constants$1407.gtk_text_iter_is_end$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_is_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_is_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_is_start",
-        constants$1407.gtk_text_iter_is_start$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_forward_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_forward_char$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_char",
-        constants$1407.gtk_text_iter_forward_char$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_backward_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_backward_char$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_char",
-        constants$1407.gtk_text_iter_backward_char$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_forward_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_forward_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_chars",
-        constants$1407.gtk_text_iter_forward_chars$FUNC
-    );
+    static final VarHandle const$0 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("eject_with_operation"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GVolumeIface.eject_with_operation_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$2 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("eject_with_operation_finish"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GVolumeIface.get_sort_key.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_sort_key"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GVolumeIface.get_symbolic_icon.class, "apply", constants$5.const$2);
 }
 
 

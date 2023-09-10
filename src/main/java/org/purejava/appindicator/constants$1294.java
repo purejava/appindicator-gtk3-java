@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1294 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1294() {}
-    static final FunctionDescriptor gtk_container_set_focus_vadjustment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_socket_client_get_local_address",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_container_set_focus_vadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_set_focus_vadjustment",
-        constants$1294.gtk_container_set_focus_vadjustment$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_socket_client_set_local_address",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_container_get_focus_vadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_socket_client_get_timeout",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_container_get_focus_vadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_get_focus_vadjustment",
-        constants$1294.gtk_container_get_focus_vadjustment$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_client_set_timeout",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_container_set_focus_hadjustment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_client_get_enable_proxy",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_container_set_focus_hadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_set_focus_hadjustment",
-        constants$1294.gtk_container_set_focus_hadjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_container_get_focus_hadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_container_get_focus_hadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_get_focus_hadjustment",
-        constants$1294.gtk_container_get_focus_hadjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_container_resize_children$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_container_resize_children$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_resize_children",
-        constants$1294.gtk_container_resize_children$FUNC
-    );
-    static final FunctionDescriptor gtk_container_child_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_container_child_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_child_type",
-        constants$1294.gtk_container_child_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_client_set_enable_proxy",
+        constants$40.const$2
     );
 }
 

@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1440 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1440() {}
-    static final FunctionDescriptor gtk_tree_model_filter_clear_cache$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_map_del",
+        constants$40.const$2
     );
-    static final MethodHandle gtk_tree_model_filter_clear_cache$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_filter_clear_cache",
-        constants$1440.gtk_tree_model_filter_clear_cache$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_map_has",
+        constants$11.const$4
     );
-    static final FunctionDescriptor GtkEntryCompletionMatchFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_map_update",
+        constants$13.const$4
     );
-    static final FunctionDescriptor GtkEntryCompletionMatchFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_map_next",
+        constants$34.const$5
     );
-    static final MethodHandle GtkEntryCompletionMatchFunc_UP$MH = RuntimeHelper.upcallHandle(GtkEntryCompletionMatchFunc.class, "apply", constants$1440.GtkEntryCompletionMatchFunc_UP$FUNC);
-    static final FunctionDescriptor GtkEntryCompletionMatchFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_map_keys",
+        constants$13.const$4
     );
-    static final MethodHandle GtkEntryCompletionMatchFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1440.GtkEntryCompletionMatchFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_completion_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_entry_completion_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_get_type",
-        constants$1440.gtk_entry_completion_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_completion_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_entry_completion_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_new",
-        constants$1440.gtk_entry_completion_new$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_completion_new_with_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_completion_new_with_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_new_with_area",
-        constants$1440.gtk_entry_completion_new_with_area$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_map_values",
+        constants$13.const$4
     );
 }
 

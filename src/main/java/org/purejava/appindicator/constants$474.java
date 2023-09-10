@@ -3,57 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$474 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$474() {}
-    static final FunctionDescriptor g_action_activate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tree_new_with_data",
+        constants$5.const$5
     );
-    static final MethodHandle g_action_activate$MH = RuntimeHelper.downcallHandle(
-        "g_action_activate",
-        constants$474.g_action_activate$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_tree_new_full$key_compare_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_tree_new_full$key_destroy_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_tree_new_full$value_destroy_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tree_new_full",
+        constants$39.const$1
     );
-    static final FunctionDescriptor g_action_name_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_name_is_valid$MH = RuntimeHelper.downcallHandle(
-        "g_action_name_is_valid",
-        constants$474.g_action_name_is_valid$FUNC
-    );
-    static final FunctionDescriptor g_action_parse_detailed_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_parse_detailed_name$MH = RuntimeHelper.downcallHandle(
-        "g_action_parse_detailed_name",
-        constants$474.g_action_parse_detailed_name$FUNC
-    );
-    static final FunctionDescriptor g_action_print_detailed_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_print_detailed_name$MH = RuntimeHelper.downcallHandle(
-        "g_action_print_detailed_name",
-        constants$474.g_action_print_detailed_name$FUNC
-    );
-    static final FunctionDescriptor g_action_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_action_group_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_get_type",
-        constants$474.g_action_group_get_type$FUNC
-    );
-    static final FunctionDescriptor g_action_group_has_action$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_group_has_action$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_has_action",
-        constants$474.g_action_group_has_action$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tree_node_first",
+        constants$5.const$2
     );
 }
 

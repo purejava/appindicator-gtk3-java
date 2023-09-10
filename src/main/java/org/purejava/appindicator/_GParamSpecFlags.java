@@ -2,108 +2,88 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GParamSpecFlags {
- *     GParamSpec parent_instance;
- *     GFlagsClass* flags_class;
- *     guint default_value;
+ *     struct _GParamSpec parent_instance;
+ *     struct _GFlagsClass* flags_class;
+ *     unsigned int default_value;
  * };
  * }
  */
 public class _GParamSpecFlags {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_POINTER$LAYOUT.withName("g_class")
-            ).withName("g_type_instance"),
-            Constants$root.C_POINTER$LAYOUT.withName("name"),
-            Constants$root.C_INT$LAYOUT.withName("flags"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("value_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("owner_type"),
-            Constants$root.C_POINTER$LAYOUT.withName("_nick"),
-            Constants$root.C_POINTER$LAYOUT.withName("_blurb"),
-            Constants$root.C_POINTER$LAYOUT.withName("qdata"),
-            Constants$root.C_INT$LAYOUT.withName("ref_count"),
-            Constants$root.C_INT$LAYOUT.withName("param_id")
-        ).withName("parent_instance"),
-        Constants$root.C_POINTER$LAYOUT.withName("flags_class"),
-        Constants$root.C_INT$LAYOUT.withName("default_value"),
-        MemoryLayout.paddingLayout(32)
-    ).withName("_GParamSpecFlags");
     public static MemoryLayout $LAYOUT() {
-        return _GParamSpecFlags.$struct$LAYOUT;
+        return constants$660.const$5;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 72);
     }
-    static final VarHandle flags_class$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("flags_class"));
     public static VarHandle flags_class$VH() {
-        return _GParamSpecFlags.flags_class$VH;
+        return constants$661.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GFlagsClass* flags_class;
+     * struct _GFlagsClass* flags_class;
      * }
      */
     public static MemorySegment flags_class$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecFlags.flags_class$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$661.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GFlagsClass* flags_class;
+     * struct _GFlagsClass* flags_class;
      * }
      */
     public static void flags_class$set(MemorySegment seg, MemorySegment x) {
-        _GParamSpecFlags.flags_class$VH.set(seg, x);
+        constants$661.const$0.set(seg, x);
     }
     public static MemorySegment flags_class$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecFlags.flags_class$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$661.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void flags_class$set(MemorySegment seg, long index, MemorySegment x) {
-        _GParamSpecFlags.flags_class$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$661.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle default_value$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
     public static VarHandle default_value$VH() {
-        return _GParamSpecFlags.default_value$VH;
+        return constants$661.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint default_value;
+     * unsigned int default_value;
      * }
      */
     public static int default_value$get(MemorySegment seg) {
-        return (int)_GParamSpecFlags.default_value$VH.get(seg);
+        return (int)constants$661.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint default_value;
+     * unsigned int default_value;
      * }
      */
     public static void default_value$set(MemorySegment seg, int x) {
-        _GParamSpecFlags.default_value$VH.set(seg, x);
+        constants$661.const$1.set(seg, x);
     }
     public static int default_value$get(MemorySegment seg, long index) {
-        return (int)_GParamSpecFlags.default_value$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$661.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void default_value$set(MemorySegment seg, long index, int x) {
-        _GParamSpecFlags.default_value$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$661.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

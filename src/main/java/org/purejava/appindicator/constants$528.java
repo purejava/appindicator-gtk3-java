@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$528 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$528() {}
-    static final FunctionDescriptor getegid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle getegid$MH = RuntimeHelper.downcallHandle(
-        "getegid",
-        constants$528.getegid$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pthread_mutexattr_getprioceiling",
+        constants$9.const$0
     );
-    static final FunctionDescriptor getgroups$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pthread_mutexattr_setprioceiling",
+        constants$11.const$4
     );
-    static final MethodHandle getgroups$MH = RuntimeHelper.downcallHandle(
-        "getgroups",
-        constants$528.getgroups$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pthread_mutexattr_getrobust",
+        constants$9.const$0
     );
-    static final FunctionDescriptor setuid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pthread_mutexattr_setrobust",
+        constants$11.const$4
     );
-    static final MethodHandle setuid$MH = RuntimeHelper.downcallHandle(
-        "setuid",
-        constants$528.setuid$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_init",
+        constants$9.const$0
     );
-    static final FunctionDescriptor setreuid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle setreuid$MH = RuntimeHelper.downcallHandle(
-        "setreuid",
-        constants$528.setreuid$FUNC
-    );
-    static final FunctionDescriptor seteuid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle seteuid$MH = RuntimeHelper.downcallHandle(
-        "seteuid",
-        constants$528.seteuid$FUNC
-    );
-    static final FunctionDescriptor setgid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle setgid$MH = RuntimeHelper.downcallHandle(
-        "setgid",
-        constants$528.setgid$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pthread_rwlock_destroy",
+        constants$10.const$5
     );
 }
 

@@ -4,49 +4,36 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 final class constants$533 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$533() {}
-    static final OfInt opterr$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle opterr$VH = constants$533.opterr$LAYOUT.varHandle();
-    static final MemorySegment opterr$SEGMENT = RuntimeHelper.lookupGlobalVariable("opterr", constants$533.opterr$LAYOUT);
-    static final OfInt optopt$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle optopt$VH = constants$533.optopt$LAYOUT.varHandle();
-    static final MemorySegment optopt$SEGMENT = RuntimeHelper.lookupGlobalVariable("optopt", constants$533.optopt$LAYOUT);
-    static final FunctionDescriptor getopt$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pthread_condattr_setclock",
+        constants$11.const$4
     );
-    static final MethodHandle getopt$MH = RuntimeHelper.downcallHandle(
-        "getopt",
-        constants$533.getopt$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pthread_spin_init",
+        constants$11.const$4
     );
-    static final FunctionDescriptor gethostname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pthread_spin_destroy",
+        constants$10.const$5
     );
-    static final MethodHandle gethostname$MH = RuntimeHelper.downcallHandle(
-        "gethostname",
-        constants$533.gethostname$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pthread_spin_lock",
+        constants$10.const$5
     );
-    static final FunctionDescriptor sethostname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pthread_spin_trylock",
+        constants$10.const$5
     );
-    static final MethodHandle sethostname$MH = RuntimeHelper.downcallHandle(
-        "sethostname",
-        constants$533.sethostname$FUNC
-    );
-    static final FunctionDescriptor sethostid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle sethostid$MH = RuntimeHelper.downcallHandle(
-        "sethostid",
-        constants$533.sethostid$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pthread_spin_unlock",
+        constants$10.const$5
     );
 }
 

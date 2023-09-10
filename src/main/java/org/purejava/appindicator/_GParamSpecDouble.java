@@ -2,167 +2,144 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GParamSpecDouble {
- *     GParamSpec parent_instance;
- *     gdouble minimum;
- *     gdouble maximum;
- *     gdouble default_value;
- *     gdouble epsilon;
+ *     struct _GParamSpec parent_instance;
+ *     double minimum;
+ *     double maximum;
+ *     double default_value;
+ *     double epsilon;
  * };
  * }
  */
 public class _GParamSpecDouble {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_POINTER$LAYOUT.withName("g_class")
-            ).withName("g_type_instance"),
-            Constants$root.C_POINTER$LAYOUT.withName("name"),
-            Constants$root.C_INT$LAYOUT.withName("flags"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("value_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("owner_type"),
-            Constants$root.C_POINTER$LAYOUT.withName("_nick"),
-            Constants$root.C_POINTER$LAYOUT.withName("_blurb"),
-            Constants$root.C_POINTER$LAYOUT.withName("qdata"),
-            Constants$root.C_INT$LAYOUT.withName("ref_count"),
-            Constants$root.C_INT$LAYOUT.withName("param_id")
-        ).withName("parent_instance"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("minimum"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("maximum"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("default_value"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("epsilon")
-    ).withName("_GParamSpecDouble");
     public static MemoryLayout $LAYOUT() {
-        return _GParamSpecDouble.$struct$LAYOUT;
+        return constants$662.const$1;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 72);
     }
-    static final VarHandle minimum$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("minimum"));
     public static VarHandle minimum$VH() {
-        return _GParamSpecDouble.minimum$VH;
+        return constants$662.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gdouble minimum;
+     * double minimum;
      * }
      */
     public static double minimum$get(MemorySegment seg) {
-        return (double)_GParamSpecDouble.minimum$VH.get(seg);
+        return (double)constants$662.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gdouble minimum;
+     * double minimum;
      * }
      */
     public static void minimum$set(MemorySegment seg, double x) {
-        _GParamSpecDouble.minimum$VH.set(seg, x);
+        constants$662.const$2.set(seg, x);
     }
     public static double minimum$get(MemorySegment seg, long index) {
-        return (double)_GParamSpecDouble.minimum$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$662.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void minimum$set(MemorySegment seg, long index, double x) {
-        _GParamSpecDouble.minimum$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$662.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle maximum$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("maximum"));
     public static VarHandle maximum$VH() {
-        return _GParamSpecDouble.maximum$VH;
+        return constants$662.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gdouble maximum;
+     * double maximum;
      * }
      */
     public static double maximum$get(MemorySegment seg) {
-        return (double)_GParamSpecDouble.maximum$VH.get(seg);
+        return (double)constants$662.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gdouble maximum;
+     * double maximum;
      * }
      */
     public static void maximum$set(MemorySegment seg, double x) {
-        _GParamSpecDouble.maximum$VH.set(seg, x);
+        constants$662.const$3.set(seg, x);
     }
     public static double maximum$get(MemorySegment seg, long index) {
-        return (double)_GParamSpecDouble.maximum$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$662.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void maximum$set(MemorySegment seg, long index, double x) {
-        _GParamSpecDouble.maximum$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$662.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle default_value$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
     public static VarHandle default_value$VH() {
-        return _GParamSpecDouble.default_value$VH;
+        return constants$662.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gdouble default_value;
+     * double default_value;
      * }
      */
     public static double default_value$get(MemorySegment seg) {
-        return (double)_GParamSpecDouble.default_value$VH.get(seg);
+        return (double)constants$662.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gdouble default_value;
+     * double default_value;
      * }
      */
     public static void default_value$set(MemorySegment seg, double x) {
-        _GParamSpecDouble.default_value$VH.set(seg, x);
+        constants$662.const$4.set(seg, x);
     }
     public static double default_value$get(MemorySegment seg, long index) {
-        return (double)_GParamSpecDouble.default_value$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$662.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void default_value$set(MemorySegment seg, long index, double x) {
-        _GParamSpecDouble.default_value$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$662.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle epsilon$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("epsilon"));
     public static VarHandle epsilon$VH() {
-        return _GParamSpecDouble.epsilon$VH;
+        return constants$662.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gdouble epsilon;
+     * double epsilon;
      * }
      */
     public static double epsilon$get(MemorySegment seg) {
-        return (double)_GParamSpecDouble.epsilon$VH.get(seg);
+        return (double)constants$662.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gdouble epsilon;
+     * double epsilon;
      * }
      */
     public static void epsilon$set(MemorySegment seg, double x) {
-        _GParamSpecDouble.epsilon$VH.set(seg, x);
+        constants$662.const$5.set(seg, x);
     }
     public static double epsilon$get(MemorySegment seg, long index) {
-        return (double)_GParamSpecDouble.epsilon$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$662.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void epsilon$set(MemorySegment seg, long index, double x) {
-        _GParamSpecDouble.epsilon$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$662.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

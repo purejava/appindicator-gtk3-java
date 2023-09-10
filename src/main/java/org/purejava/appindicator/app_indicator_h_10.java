@@ -3,1168 +3,1632 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 public class app_indicator_h_10 extends app_indicator_h_9 {
 
     /**
      * {@snippet :
+     * typedef struct _GQueue* GMount_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GMount_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GMountOperation* GMountOperation_autoptr;
+     * }
+     */
+    public static final AddressLayout GMountOperation_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GMountOperation_listautoptr;
+     * }
+     */
+    public static final AddressLayout GMountOperation_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GMountOperation_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GMountOperation_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GMountOperation_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GMountOperation_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GNativeVolumeMonitor* GNativeVolumeMonitor_autoptr;
+     * }
+     */
+    public static final AddressLayout GNativeVolumeMonitor_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GNativeVolumeMonitor_listautoptr;
+     * }
+     */
+    public static final AddressLayout GNativeVolumeMonitor_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GNativeVolumeMonitor_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GNativeVolumeMonitor_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GNativeVolumeMonitor_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GNativeVolumeMonitor_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GNetworkAddress* GNetworkAddress_autoptr;
+     * }
+     */
+    public static final AddressLayout GNetworkAddress_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GNetworkAddress_listautoptr;
+     * }
+     */
+    public static final AddressLayout GNetworkAddress_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GNetworkAddress_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GNetworkAddress_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GNetworkAddress_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GNetworkAddress_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GNetworkMonitor* GNetworkMonitor_autoptr;
+     * }
+     */
+    public static final AddressLayout GNetworkMonitor_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GNetworkMonitor_listautoptr;
+     * }
+     */
+    public static final AddressLayout GNetworkMonitor_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GNetworkMonitor_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GNetworkMonitor_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GNetworkMonitor_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GNetworkMonitor_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GNetworkService* GNetworkService_autoptr;
+     * }
+     */
+    public static final AddressLayout GNetworkService_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GNetworkService_listautoptr;
+     * }
+     */
+    public static final AddressLayout GNetworkService_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GNetworkService_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GNetworkService_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GNetworkService_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GNetworkService_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GNotification* GNotification_autoptr;
+     * }
+     */
+    public static final AddressLayout GNotification_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GNotification_listautoptr;
+     * }
+     */
+    public static final AddressLayout GNotification_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GNotification_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GNotification_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GNotification_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GNotification_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GOutputStream* GOutputStream_autoptr;
+     * }
+     */
+    public static final AddressLayout GOutputStream_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GOutputStream_listautoptr;
+     * }
+     */
+    public static final AddressLayout GOutputStream_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GOutputStream_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GOutputStream_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GOutputStream_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GOutputStream_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GPermission* GPermission_autoptr;
+     * }
+     */
+    public static final AddressLayout GPermission_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GPermission_listautoptr;
+     * }
+     */
+    public static final AddressLayout GPermission_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GPermission_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GPermission_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GPermission_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GPermission_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GPollableInputStream* GPollableInputStream_autoptr;
+     * }
+     */
+    public static final AddressLayout GPollableInputStream_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GPollableInputStream_listautoptr;
+     * }
+     */
+    public static final AddressLayout GPollableInputStream_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GPollableInputStream_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GPollableInputStream_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GPollableInputStream_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GPollableInputStream_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GPollableOutputStream* GPollableOutputStream_autoptr;
+     * }
+     */
+    public static final AddressLayout GPollableOutputStream_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GPollableOutputStream_listautoptr;
+     * }
+     */
+    public static final AddressLayout GPollableOutputStream_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GPollableOutputStream_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GPollableOutputStream_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GPollableOutputStream_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GPollableOutputStream_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GPropertyAction* GPropertyAction_autoptr;
+     * }
+     */
+    public static final AddressLayout GPropertyAction_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GPropertyAction_listautoptr;
+     * }
+     */
+    public static final AddressLayout GPropertyAction_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GPropertyAction_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GPropertyAction_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GPropertyAction_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GPropertyAction_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GProxyAddressEnumerator* GProxyAddressEnumerator_autoptr;
+     * }
+     */
+    public static final AddressLayout GProxyAddressEnumerator_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GProxyAddressEnumerator_listautoptr;
+     * }
+     */
+    public static final AddressLayout GProxyAddressEnumerator_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GProxyAddressEnumerator_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GProxyAddressEnumerator_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GProxyAddressEnumerator_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GProxyAddressEnumerator_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GProxyAddress* GProxyAddress_autoptr;
+     * }
+     */
+    public static final AddressLayout GProxyAddress_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GProxyAddress_listautoptr;
+     * }
+     */
+    public static final AddressLayout GProxyAddress_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GProxyAddress_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GProxyAddress_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GProxyAddress_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GProxyAddress_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GProxy* GProxy_autoptr;
+     * }
+     */
+    public static final AddressLayout GProxy_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GProxy_listautoptr;
+     * }
+     */
+    public static final AddressLayout GProxy_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GProxy_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GProxy_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GProxy_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GProxy_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GProxyResolver* GProxyResolver_autoptr;
+     * }
+     */
+    public static final AddressLayout GProxyResolver_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GProxyResolver_listautoptr;
+     * }
+     */
+    public static final AddressLayout GProxyResolver_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GProxyResolver_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GProxyResolver_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GProxyResolver_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GProxyResolver_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GRemoteActionGroup* GRemoteActionGroup_autoptr;
+     * }
+     */
+    public static final AddressLayout GRemoteActionGroup_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GRemoteActionGroup_listautoptr;
+     * }
+     */
+    public static final AddressLayout GRemoteActionGroup_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GRemoteActionGroup_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GRemoteActionGroup_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GRemoteActionGroup_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GRemoteActionGroup_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GResolver* GResolver_autoptr;
+     * }
+     */
+    public static final AddressLayout GResolver_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GResolver_listautoptr;
+     * }
+     */
+    public static final AddressLayout GResolver_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GResolver_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GResolver_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GResolver_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GResolver_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GResource* GResource_autoptr;
+     * }
+     */
+    public static final AddressLayout GResource_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GResource_listautoptr;
+     * }
+     */
+    public static final AddressLayout GResource_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GResource_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GResource_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GResource_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GResource_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSeekable* GSeekable_autoptr;
+     * }
+     */
+    public static final AddressLayout GSeekable_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GSeekable_listautoptr;
+     * }
+     */
+    public static final AddressLayout GSeekable_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GSeekable_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GSeekable_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GSeekable_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GSeekable_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
      * typedef struct _GSettingsBackend* GSettingsBackend_autoptr;
      * }
      */
-    public static final OfAddress GSettingsBackend_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettingsBackend_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSettingsBackend_listautoptr;
      * }
      */
-    public static final OfAddress GSettingsBackend_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettingsBackend_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSettingsBackend_slistautoptr;
      * }
      */
-    public static final OfAddress GSettingsBackend_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettingsBackend_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSettingsBackend_queueautoptr;
      * }
      */
-    public static final OfAddress GSettingsBackend_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettingsBackend_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSettingsSchema* GSettingsSchema_autoptr;
      * }
      */
-    public static final OfAddress GSettingsSchema_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettingsSchema_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSettingsSchema_listautoptr;
      * }
      */
-    public static final OfAddress GSettingsSchema_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettingsSchema_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSettingsSchema_slistautoptr;
      * }
      */
-    public static final OfAddress GSettingsSchema_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettingsSchema_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSettingsSchema_queueautoptr;
      * }
      */
-    public static final OfAddress GSettingsSchema_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettingsSchema_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSettingsSchemaKey* GSettingsSchemaKey_autoptr;
      * }
      */
-    public static final OfAddress GSettingsSchemaKey_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettingsSchemaKey_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSettingsSchemaKey_listautoptr;
      * }
      */
-    public static final OfAddress GSettingsSchemaKey_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettingsSchemaKey_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSettingsSchemaKey_slistautoptr;
      * }
      */
-    public static final OfAddress GSettingsSchemaKey_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettingsSchemaKey_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSettingsSchemaKey_queueautoptr;
      * }
      */
-    public static final OfAddress GSettingsSchemaKey_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettingsSchemaKey_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSettingsSchemaSource* GSettingsSchemaSource_autoptr;
      * }
      */
-    public static final OfAddress GSettingsSchemaSource_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettingsSchemaSource_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSettingsSchemaSource_listautoptr;
      * }
      */
-    public static final OfAddress GSettingsSchemaSource_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettingsSchemaSource_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSettingsSchemaSource_slistautoptr;
      * }
      */
-    public static final OfAddress GSettingsSchemaSource_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettingsSchemaSource_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSettingsSchemaSource_queueautoptr;
      * }
      */
-    public static final OfAddress GSettingsSchemaSource_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettingsSchemaSource_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSettings* GSettings_autoptr;
      * }
      */
-    public static final OfAddress GSettings_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettings_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSettings_listautoptr;
      * }
      */
-    public static final OfAddress GSettings_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettings_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSettings_slistautoptr;
      * }
      */
-    public static final OfAddress GSettings_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettings_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSettings_queueautoptr;
      * }
      */
-    public static final OfAddress GSettings_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSettings_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSimpleActionGroup* GSimpleActionGroup_autoptr;
      * }
      */
-    public static final OfAddress GSimpleActionGroup_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimpleActionGroup_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSimpleActionGroup_listautoptr;
      * }
      */
-    public static final OfAddress GSimpleActionGroup_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimpleActionGroup_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSimpleActionGroup_slistautoptr;
      * }
      */
-    public static final OfAddress GSimpleActionGroup_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimpleActionGroup_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSimpleActionGroup_queueautoptr;
      * }
      */
-    public static final OfAddress GSimpleActionGroup_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimpleActionGroup_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSimpleAction* GSimpleAction_autoptr;
      * }
      */
-    public static final OfAddress GSimpleAction_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimpleAction_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSimpleAction_listautoptr;
      * }
      */
-    public static final OfAddress GSimpleAction_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimpleAction_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSimpleAction_slistautoptr;
      * }
      */
-    public static final OfAddress GSimpleAction_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimpleAction_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSimpleAction_queueautoptr;
      * }
      */
-    public static final OfAddress GSimpleAction_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimpleAction_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSimpleAsyncResult* GSimpleAsyncResult_autoptr;
      * }
      */
-    public static final OfAddress GSimpleAsyncResult_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimpleAsyncResult_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSimpleAsyncResult_listautoptr;
      * }
      */
-    public static final OfAddress GSimpleAsyncResult_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimpleAsyncResult_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSimpleAsyncResult_slistautoptr;
      * }
      */
-    public static final OfAddress GSimpleAsyncResult_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimpleAsyncResult_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSimpleAsyncResult_queueautoptr;
      * }
      */
-    public static final OfAddress GSimpleAsyncResult_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimpleAsyncResult_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSimplePermission* GSimplePermission_autoptr;
      * }
      */
-    public static final OfAddress GSimplePermission_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimplePermission_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSimplePermission_listautoptr;
      * }
      */
-    public static final OfAddress GSimplePermission_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimplePermission_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSimplePermission_slistautoptr;
      * }
      */
-    public static final OfAddress GSimplePermission_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimplePermission_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSimplePermission_queueautoptr;
      * }
      */
-    public static final OfAddress GSimplePermission_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimplePermission_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSimpleProxyResolver* GSimpleProxyResolver_autoptr;
      * }
      */
-    public static final OfAddress GSimpleProxyResolver_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimpleProxyResolver_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSimpleProxyResolver_listautoptr;
      * }
      */
-    public static final OfAddress GSimpleProxyResolver_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimpleProxyResolver_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSimpleProxyResolver_slistautoptr;
      * }
      */
-    public static final OfAddress GSimpleProxyResolver_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimpleProxyResolver_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSimpleProxyResolver_queueautoptr;
      * }
      */
-    public static final OfAddress GSimpleProxyResolver_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSimpleProxyResolver_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSocketAddressEnumerator* GSocketAddressEnumerator_autoptr;
      * }
      */
-    public static final OfAddress GSocketAddressEnumerator_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketAddressEnumerator_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSocketAddressEnumerator_listautoptr;
      * }
      */
-    public static final OfAddress GSocketAddressEnumerator_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketAddressEnumerator_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSocketAddressEnumerator_slistautoptr;
      * }
      */
-    public static final OfAddress GSocketAddressEnumerator_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketAddressEnumerator_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSocketAddressEnumerator_queueautoptr;
      * }
      */
-    public static final OfAddress GSocketAddressEnumerator_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketAddressEnumerator_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSocketAddress* GSocketAddress_autoptr;
      * }
      */
-    public static final OfAddress GSocketAddress_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketAddress_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSocketAddress_listautoptr;
      * }
      */
-    public static final OfAddress GSocketAddress_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketAddress_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSocketAddress_slistautoptr;
      * }
      */
-    public static final OfAddress GSocketAddress_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketAddress_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSocketAddress_queueautoptr;
      * }
      */
-    public static final OfAddress GSocketAddress_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketAddress_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSocketClient* GSocketClient_autoptr;
      * }
      */
-    public static final OfAddress GSocketClient_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketClient_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSocketClient_listautoptr;
      * }
      */
-    public static final OfAddress GSocketClient_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketClient_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSocketClient_slistautoptr;
      * }
      */
-    public static final OfAddress GSocketClient_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketClient_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSocketClient_queueautoptr;
      * }
      */
-    public static final OfAddress GSocketClient_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketClient_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSocketConnectable* GSocketConnectable_autoptr;
      * }
      */
-    public static final OfAddress GSocketConnectable_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketConnectable_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSocketConnectable_listautoptr;
      * }
      */
-    public static final OfAddress GSocketConnectable_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketConnectable_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSocketConnectable_slistautoptr;
      * }
      */
-    public static final OfAddress GSocketConnectable_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketConnectable_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSocketConnectable_queueautoptr;
      * }
      */
-    public static final OfAddress GSocketConnectable_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketConnectable_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSocketConnection* GSocketConnection_autoptr;
      * }
      */
-    public static final OfAddress GSocketConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketConnection_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSocketConnection_listautoptr;
      * }
      */
-    public static final OfAddress GSocketConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketConnection_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSocketConnection_slistautoptr;
      * }
      */
-    public static final OfAddress GSocketConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketConnection_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSocketConnection_queueautoptr;
      * }
      */
-    public static final OfAddress GSocketConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketConnection_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSocketControlMessage* GSocketControlMessage_autoptr;
      * }
      */
-    public static final OfAddress GSocketControlMessage_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketControlMessage_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSocketControlMessage_listautoptr;
      * }
      */
-    public static final OfAddress GSocketControlMessage_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketControlMessage_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSocketControlMessage_slistautoptr;
      * }
      */
-    public static final OfAddress GSocketControlMessage_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketControlMessage_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSocketControlMessage_queueautoptr;
      * }
      */
-    public static final OfAddress GSocketControlMessage_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketControlMessage_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSocket* GSocket_autoptr;
      * }
      */
-    public static final OfAddress GSocket_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocket_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSocket_listautoptr;
      * }
      */
-    public static final OfAddress GSocket_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocket_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSocket_slistautoptr;
      * }
      */
-    public static final OfAddress GSocket_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocket_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSocket_queueautoptr;
      * }
      */
-    public static final OfAddress GSocket_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocket_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSocketListener* GSocketListener_autoptr;
      * }
      */
-    public static final OfAddress GSocketListener_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketListener_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSocketListener_listautoptr;
      * }
      */
-    public static final OfAddress GSocketListener_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketListener_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSocketListener_slistautoptr;
      * }
      */
-    public static final OfAddress GSocketListener_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketListener_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSocketListener_queueautoptr;
      * }
      */
-    public static final OfAddress GSocketListener_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketListener_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSocketService* GSocketService_autoptr;
      * }
      */
-    public static final OfAddress GSocketService_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketService_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSocketService_listautoptr;
      * }
      */
-    public static final OfAddress GSocketService_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketService_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSocketService_slistautoptr;
      * }
      */
-    public static final OfAddress GSocketService_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketService_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSocketService_queueautoptr;
      * }
      */
-    public static final OfAddress GSocketService_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSocketService_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSubprocess* GSubprocess_autoptr;
      * }
      */
-    public static final OfAddress GSubprocess_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSubprocess_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSubprocess_listautoptr;
      * }
      */
-    public static final OfAddress GSubprocess_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSubprocess_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSubprocess_slistautoptr;
      * }
      */
-    public static final OfAddress GSubprocess_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSubprocess_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSubprocess_queueautoptr;
      * }
      */
-    public static final OfAddress GSubprocess_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSubprocess_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSubprocessLauncher* GSubprocessLauncher_autoptr;
      * }
      */
-    public static final OfAddress GSubprocessLauncher_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSubprocessLauncher_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GSubprocessLauncher_listautoptr;
      * }
      */
-    public static final OfAddress GSubprocessLauncher_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSubprocessLauncher_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GSubprocessLauncher_slistautoptr;
      * }
      */
-    public static final OfAddress GSubprocessLauncher_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSubprocessLauncher_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GSubprocessLauncher_queueautoptr;
      * }
      */
-    public static final OfAddress GSubprocessLauncher_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GSubprocessLauncher_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GTask* GTask_autoptr;
      * }
      */
-    public static final OfAddress GTask_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTask_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GTask_listautoptr;
      * }
      */
-    public static final OfAddress GTask_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTask_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GTask_slistautoptr;
      * }
      */
-    public static final OfAddress GTask_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTask_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GTask_queueautoptr;
      * }
      */
-    public static final OfAddress GTask_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTask_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GTcpConnection* GTcpConnection_autoptr;
      * }
      */
-    public static final OfAddress GTcpConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTcpConnection_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GTcpConnection_listautoptr;
      * }
      */
-    public static final OfAddress GTcpConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTcpConnection_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GTcpConnection_slistautoptr;
      * }
      */
-    public static final OfAddress GTcpConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTcpConnection_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GTcpConnection_queueautoptr;
      * }
      */
-    public static final OfAddress GTcpConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTcpConnection_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GTcpWrapperConnection* GTcpWrapperConnection_autoptr;
      * }
      */
-    public static final OfAddress GTcpWrapperConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTcpWrapperConnection_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GTcpWrapperConnection_listautoptr;
      * }
      */
-    public static final OfAddress GTcpWrapperConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTcpWrapperConnection_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GTcpWrapperConnection_slistautoptr;
      * }
      */
-    public static final OfAddress GTcpWrapperConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTcpWrapperConnection_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GTcpWrapperConnection_queueautoptr;
      * }
      */
-    public static final OfAddress GTcpWrapperConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTcpWrapperConnection_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GTestDBus* GTestDBus_autoptr;
      * }
      */
-    public static final OfAddress GTestDBus_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTestDBus_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GTestDBus_listautoptr;
      * }
      */
-    public static final OfAddress GTestDBus_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTestDBus_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GTestDBus_slistautoptr;
      * }
      */
-    public static final OfAddress GTestDBus_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTestDBus_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GTestDBus_queueautoptr;
      * }
      */
-    public static final OfAddress GTestDBus_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTestDBus_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GThemedIcon* GThemedIcon_autoptr;
      * }
      */
-    public static final OfAddress GThemedIcon_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GThemedIcon_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GThemedIcon_listautoptr;
      * }
      */
-    public static final OfAddress GThemedIcon_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GThemedIcon_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GThemedIcon_slistautoptr;
      * }
      */
-    public static final OfAddress GThemedIcon_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GThemedIcon_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GThemedIcon_queueautoptr;
      * }
      */
-    public static final OfAddress GThemedIcon_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GThemedIcon_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GThreadedSocketService* GThreadedSocketService_autoptr;
      * }
      */
-    public static final OfAddress GThreadedSocketService_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GThreadedSocketService_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GThreadedSocketService_listautoptr;
      * }
      */
-    public static final OfAddress GThreadedSocketService_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GThreadedSocketService_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GThreadedSocketService_slistautoptr;
      * }
      */
-    public static final OfAddress GThreadedSocketService_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GThreadedSocketService_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GThreadedSocketService_queueautoptr;
      * }
      */
-    public static final OfAddress GThreadedSocketService_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GThreadedSocketService_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GTlsBackend* GTlsBackend_autoptr;
      * }
      */
-    public static final OfAddress GTlsBackend_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsBackend_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GTlsBackend_listautoptr;
      * }
      */
-    public static final OfAddress GTlsBackend_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsBackend_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GTlsBackend_slistautoptr;
      * }
      */
-    public static final OfAddress GTlsBackend_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsBackend_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GTlsBackend_queueautoptr;
      * }
      */
-    public static final OfAddress GTlsBackend_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsBackend_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GTlsCertificate* GTlsCertificate_autoptr;
      * }
      */
-    public static final OfAddress GTlsCertificate_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsCertificate_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GTlsCertificate_listautoptr;
      * }
      */
-    public static final OfAddress GTlsCertificate_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsCertificate_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GTlsCertificate_slistautoptr;
      * }
      */
-    public static final OfAddress GTlsCertificate_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsCertificate_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GTlsCertificate_queueautoptr;
      * }
      */
-    public static final OfAddress GTlsCertificate_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsCertificate_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GTlsClientConnection* GTlsClientConnection_autoptr;
      * }
      */
-    public static final OfAddress GTlsClientConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsClientConnection_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GTlsClientConnection_listautoptr;
      * }
      */
-    public static final OfAddress GTlsClientConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsClientConnection_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GTlsClientConnection_slistautoptr;
      * }
      */
-    public static final OfAddress GTlsClientConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsClientConnection_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GTlsClientConnection_queueautoptr;
      * }
      */
-    public static final OfAddress GTlsClientConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsClientConnection_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GTlsConnection* GTlsConnection_autoptr;
      * }
      */
-    public static final OfAddress GTlsConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsConnection_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GTlsConnection_listautoptr;
      * }
      */
-    public static final OfAddress GTlsConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsConnection_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GTlsConnection_slistautoptr;
      * }
      */
-    public static final OfAddress GTlsConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsConnection_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GTlsConnection_queueautoptr;
      * }
      */
-    public static final OfAddress GTlsConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsConnection_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GTlsDatabase* GTlsDatabase_autoptr;
      * }
      */
-    public static final OfAddress GTlsDatabase_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsDatabase_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GTlsDatabase_listautoptr;
      * }
      */
-    public static final OfAddress GTlsDatabase_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsDatabase_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GTlsDatabase_slistautoptr;
      * }
      */
-    public static final OfAddress GTlsDatabase_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsDatabase_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GTlsDatabase_queueautoptr;
      * }
      */
-    public static final OfAddress GTlsDatabase_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsDatabase_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GTlsFileDatabase* GTlsFileDatabase_autoptr;
      * }
      */
-    public static final OfAddress GTlsFileDatabase_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsFileDatabase_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GTlsFileDatabase_listautoptr;
      * }
      */
-    public static final OfAddress GTlsFileDatabase_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsFileDatabase_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GTlsFileDatabase_slistautoptr;
      * }
      */
-    public static final OfAddress GTlsFileDatabase_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsFileDatabase_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GTlsFileDatabase_queueautoptr;
      * }
      */
-    public static final OfAddress GTlsFileDatabase_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsFileDatabase_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GTlsInteraction* GTlsInteraction_autoptr;
      * }
      */
-    public static final OfAddress GTlsInteraction_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsInteraction_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GTlsInteraction_listautoptr;
      * }
      */
-    public static final OfAddress GTlsInteraction_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsInteraction_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GTlsInteraction_slistautoptr;
      * }
      */
-    public static final OfAddress GTlsInteraction_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsInteraction_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GTlsInteraction_queueautoptr;
      * }
      */
-    public static final OfAddress GTlsInteraction_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsInteraction_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GTlsPassword* GTlsPassword_autoptr;
      * }
      */
-    public static final OfAddress GTlsPassword_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsPassword_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GTlsPassword_listautoptr;
      * }
      */
-    public static final OfAddress GTlsPassword_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsPassword_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GTlsPassword_slistautoptr;
      * }
      */
-    public static final OfAddress GTlsPassword_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsPassword_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GTlsPassword_queueautoptr;
      * }
      */
-    public static final OfAddress GTlsPassword_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsPassword_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GTlsServerConnection* GTlsServerConnection_autoptr;
      * }
      */
-    public static final OfAddress GTlsServerConnection_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsServerConnection_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GTlsServerConnection_listautoptr;
      * }
      */
-    public static final OfAddress GTlsServerConnection_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsServerConnection_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GTlsServerConnection_slistautoptr;
      * }
      */
-    public static final OfAddress GTlsServerConnection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsServerConnection_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GTlsServerConnection_queueautoptr;
      * }
      */
-    public static final OfAddress GTlsServerConnection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GTlsServerConnection_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GVfs* GVfs_autoptr;
      * }
      */
-    public static final OfAddress GVfs_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GVfs_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GVfs_listautoptr;
      * }
      */
-    public static final OfAddress GVfs_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GVfs_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GVfs_slistautoptr;
      * }
      */
-    public static final OfAddress GVfs_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GVfs_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GVfs_queueautoptr;
      * }
      */
-    public static final OfAddress GVfs_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GVfs_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GVolume* GVolume_autoptr;
      * }
      */
-    public static final OfAddress GVolume_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GVolume_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GVolume_listautoptr;
      * }
      */
-    public static final OfAddress GVolume_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GVolume_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GVolume_slistautoptr;
      * }
      */
-    public static final OfAddress GVolume_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GVolume_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GVolume_queueautoptr;
      * }
      */
-    public static final OfAddress GVolume_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GVolume_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GVolumeMonitor* GVolumeMonitor_autoptr;
      * }
      */
-    public static final OfAddress GVolumeMonitor_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GVolumeMonitor_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GVolumeMonitor_listautoptr;
      * }
      */
-    public static final OfAddress GVolumeMonitor_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GVolumeMonitor_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GVolumeMonitor_slistautoptr;
      * }
      */
-    public static final OfAddress GVolumeMonitor_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GVolumeMonitor_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GVolumeMonitor_queueautoptr;
      * }
      */
-    public static final OfAddress GVolumeMonitor_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GVolumeMonitor_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GZlibCompressor* GZlibCompressor_autoptr;
      * }
      */
-    public static final OfAddress GZlibCompressor_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GZlibCompressor_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GZlibCompressor_listautoptr;
      * }
      */
-    public static final OfAddress GZlibCompressor_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GZlibCompressor_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GZlibCompressor_slistautoptr;
      * }
      */
-    public static final OfAddress GZlibCompressor_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GZlibCompressor_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GZlibCompressor_queueautoptr;
      * }
      */
-    public static final OfAddress GZlibCompressor_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GZlibCompressor_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GZlibDecompressor* GZlibDecompressor_autoptr;
      * }
      */
-    public static final OfAddress GZlibDecompressor_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GZlibDecompressor_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GZlibDecompressor_listautoptr;
      * }
      */
-    public static final OfAddress GZlibDecompressor_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GZlibDecompressor_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GZlibDecompressor_slistautoptr;
      * }
      */
-    public static final OfAddress GZlibDecompressor_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GZlibDecompressor_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GZlibDecompressor_queueautoptr;
      * }
      */
-    public static final OfAddress GZlibDecompressor_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GZlibDecompressor_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef unsigned char uint8_t;
      * }
      */
-    public static final OfByte uint8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte uint8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned short uint16_t;
      * }
      */
-    public static final OfShort uint16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort uint16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned int uint32_t;
      * }
      */
-    public static final OfInt uint32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt uint32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned long uint64_t;
      * }
      */
-    public static final OfLong uint64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong uint64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef signed char int_least8_t;
      * }
      */
-    public static final OfByte int_least8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte int_least8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef short int_least16_t;
      * }
      */
-    public static final OfShort int_least16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort int_least16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef int int_least32_t;
      * }
      */
-    public static final OfInt int_least32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt int_least32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long int_least64_t;
      * }
      */
-    public static final OfLong int_least64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong int_least64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned char uint_least8_t;
      * }
      */
-    public static final OfByte uint_least8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte uint_least8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned short uint_least16_t;
      * }
      */
-    public static final OfShort uint_least16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort uint_least16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned int uint_least32_t;
      * }
      */
-    public static final OfInt uint_least32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt uint_least32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned long uint_least64_t;
      * }
      */
-    public static final OfLong uint_least64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong uint_least64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef signed char int_fast8_t;
      * }
      */
-    public static final OfByte int_fast8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte int_fast8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef long int_fast16_t;
      * }
      */
-    public static final OfLong int_fast16_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong int_fast16_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long int_fast32_t;
      * }
      */
-    public static final OfLong int_fast32_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong int_fast32_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long int_fast64_t;
      * }
      */
-    public static final OfLong int_fast64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong int_fast64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned char uint_fast8_t;
      * }
      */
-    public static final OfByte uint_fast8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte uint_fast8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned long uint_fast16_t;
      * }
      */
-    public static final OfLong uint_fast16_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong uint_fast16_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long uint_fast32_t;
      * }
      */
-    public static final OfLong uint_fast32_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong uint_fast32_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long uint_fast64_t;
      * }
      */
-    public static final OfLong uint_fast64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong uint_fast64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long uintptr_t;
      * }
      */
-    public static final OfLong uintptr_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong uintptr_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long intmax_t;
      * }
      */
-    public static final OfLong intmax_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong intmax_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long uintmax_t;
      * }
      */
-    public static final OfLong uintmax_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong uintmax_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef int hb_bool_t;
      * }
      */
-    public static final OfInt hb_bool_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt hb_bool_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned int hb_codepoint_t;
      * }
      */
-    public static final OfInt hb_codepoint_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt hb_codepoint_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef int hb_position_t;
      * }
      */
-    public static final OfInt hb_position_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt hb_position_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned int hb_mask_t;
      * }
      */
-    public static final OfInt hb_mask_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt hb_mask_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned int hb_tag_t;
      * }
      */
-    public static final OfInt hb_tag_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt hb_tag_t = JAVA_INT;
     public static MethodHandle hb_tag_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$830.hb_tag_from_string$MH,"hb_tag_from_string");
+        return RuntimeHelper.requireNonNull(constants$1414.const$5,"hb_tag_from_string");
     }
     /**
      * {@snippet :
-     * hb_tag_t hb_tag_from_string(char* str, int len);
+     * unsigned int hb_tag_from_string(char* str, int len);
      * }
      */
     public static int hb_tag_from_string(MemorySegment str, int len) {
@@ -1176,11 +1640,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_tag_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$830.hb_tag_to_string$MH,"hb_tag_to_string");
+        return RuntimeHelper.requireNonNull(constants$1415.const$0,"hb_tag_to_string");
     }
     /**
      * {@snippet :
-     * void hb_tag_to_string(hb_tag_t tag, char* buf);
+     * void hb_tag_to_string(unsigned int tag, char* buf);
      * }
      */
     public static void hb_tag_to_string(int tag, MemorySegment buf) {
@@ -1193,7 +1657,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_DIRECTION_INVALID = 0;
+     * enum hb_direction_t.HB_DIRECTION_INVALID = 0;
      * }
      */
     public static int HB_DIRECTION_INVALID() {
@@ -1201,7 +1665,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_DIRECTION_LTR = 4;
+     * enum hb_direction_t.HB_DIRECTION_LTR = 4;
      * }
      */
     public static int HB_DIRECTION_LTR() {
@@ -1209,7 +1673,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_DIRECTION_RTL = 5;
+     * enum hb_direction_t.HB_DIRECTION_RTL = 5;
      * }
      */
     public static int HB_DIRECTION_RTL() {
@@ -1217,7 +1681,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_DIRECTION_TTB = 6;
+     * enum hb_direction_t.HB_DIRECTION_TTB = 6;
      * }
      */
     public static int HB_DIRECTION_TTB() {
@@ -1225,18 +1689,18 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_DIRECTION_BTT = 7;
+     * enum hb_direction_t.HB_DIRECTION_BTT = 7;
      * }
      */
     public static int HB_DIRECTION_BTT() {
         return (int)7L;
     }
     public static MethodHandle hb_direction_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$830.hb_direction_from_string$MH,"hb_direction_from_string");
+        return RuntimeHelper.requireNonNull(constants$1415.const$1,"hb_direction_from_string");
     }
     /**
      * {@snippet :
-     * hb_direction_t hb_direction_from_string(char* str, int len);
+     * enum hb_direction_t hb_direction_from_string(char* str, int len);
      * }
      */
     public static int hb_direction_from_string(MemorySegment str, int len) {
@@ -1248,11 +1712,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_direction_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$831.hb_direction_to_string$MH,"hb_direction_to_string");
+        return RuntimeHelper.requireNonNull(constants$1415.const$2,"hb_direction_to_string");
     }
     /**
      * {@snippet :
-     * char* hb_direction_to_string(hb_direction_t direction);
+     * char* hb_direction_to_string(enum hb_direction_t direction);
      * }
      */
     public static MemorySegment hb_direction_to_string(int direction) {
@@ -1268,13 +1732,13 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
      * typedef struct hb_language_impl_t* hb_language_t;
      * }
      */
-    public static final OfAddress hb_language_t = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout hb_language_t = RuntimeHelper.POINTER;
     public static MethodHandle hb_language_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$831.hb_language_from_string$MH,"hb_language_from_string");
+        return RuntimeHelper.requireNonNull(constants$1415.const$3,"hb_language_from_string");
     }
     /**
      * {@snippet :
-     * hb_language_t hb_language_from_string(char* str, int len);
+     * struct hb_language_impl_t* hb_language_from_string(char* str, int len);
      * }
      */
     public static MemorySegment hb_language_from_string(MemorySegment str, int len) {
@@ -1286,11 +1750,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_language_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$831.hb_language_to_string$MH,"hb_language_to_string");
+        return RuntimeHelper.requireNonNull(constants$1415.const$4,"hb_language_to_string");
     }
     /**
      * {@snippet :
-     * char* hb_language_to_string(hb_language_t language);
+     * char* hb_language_to_string(struct hb_language_impl_t* language);
      * }
      */
     public static MemorySegment hb_language_to_string(MemorySegment language) {
@@ -1302,11 +1766,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_language_get_default$MH() {
-        return RuntimeHelper.requireNonNull(constants$831.hb_language_get_default$MH,"hb_language_get_default");
+        return RuntimeHelper.requireNonNull(constants$1415.const$5,"hb_language_get_default");
     }
     /**
      * {@snippet :
-     * hb_language_t hb_language_get_default();
+     * struct hb_language_impl_t* hb_language_get_default();
      * }
      */
     public static MemorySegment hb_language_get_default() {
@@ -1318,11 +1782,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_language_matches$MH() {
-        return RuntimeHelper.requireNonNull(constants$831.hb_language_matches$MH,"hb_language_matches");
+        return RuntimeHelper.requireNonNull(constants$1416.const$0,"hb_language_matches");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_language_matches(hb_language_t language, hb_language_t specific);
+     * int hb_language_matches(struct hb_language_impl_t* language, struct hb_language_impl_t* specific);
      * }
      */
     public static int hb_language_matches(MemorySegment language, MemorySegment specific) {
@@ -1335,7 +1799,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_COMMON = 1517910393;
+     * enum hb_script_t.HB_SCRIPT_COMMON = 1517910393;
      * }
      */
     public static int HB_SCRIPT_COMMON() {
@@ -1343,7 +1807,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_INHERITED = 1516858984;
+     * enum hb_script_t.HB_SCRIPT_INHERITED = 1516858984;
      * }
      */
     public static int HB_SCRIPT_INHERITED() {
@@ -1351,7 +1815,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_UNKNOWN = 1517976186;
+     * enum hb_script_t.HB_SCRIPT_UNKNOWN = 1517976186;
      * }
      */
     public static int HB_SCRIPT_UNKNOWN() {
@@ -1359,7 +1823,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_ARABIC = 1098015074;
+     * enum hb_script_t.HB_SCRIPT_ARABIC = 1098015074;
      * }
      */
     public static int HB_SCRIPT_ARABIC() {
@@ -1367,7 +1831,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_ARMENIAN = 1098018158;
+     * enum hb_script_t.HB_SCRIPT_ARMENIAN = 1098018158;
      * }
      */
     public static int HB_SCRIPT_ARMENIAN() {
@@ -1375,7 +1839,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_BENGALI = 1113943655;
+     * enum hb_script_t.HB_SCRIPT_BENGALI = 1113943655;
      * }
      */
     public static int HB_SCRIPT_BENGALI() {
@@ -1383,7 +1847,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_CYRILLIC = 1132032620;
+     * enum hb_script_t.HB_SCRIPT_CYRILLIC = 1132032620;
      * }
      */
     public static int HB_SCRIPT_CYRILLIC() {
@@ -1391,7 +1855,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_DEVANAGARI = 1147500129;
+     * enum hb_script_t.HB_SCRIPT_DEVANAGARI = 1147500129;
      * }
      */
     public static int HB_SCRIPT_DEVANAGARI() {
@@ -1399,7 +1863,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_GEORGIAN = 1197830002;
+     * enum hb_script_t.HB_SCRIPT_GEORGIAN = 1197830002;
      * }
      */
     public static int HB_SCRIPT_GEORGIAN() {
@@ -1407,7 +1871,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_GREEK = 1198679403;
+     * enum hb_script_t.HB_SCRIPT_GREEK = 1198679403;
      * }
      */
     public static int HB_SCRIPT_GREEK() {
@@ -1415,7 +1879,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_GUJARATI = 1198877298;
+     * enum hb_script_t.HB_SCRIPT_GUJARATI = 1198877298;
      * }
      */
     public static int HB_SCRIPT_GUJARATI() {
@@ -1423,7 +1887,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_GURMUKHI = 1198879349;
+     * enum hb_script_t.HB_SCRIPT_GURMUKHI = 1198879349;
      * }
      */
     public static int HB_SCRIPT_GURMUKHI() {
@@ -1431,7 +1895,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_HANGUL = 1214344807;
+     * enum hb_script_t.HB_SCRIPT_HANGUL = 1214344807;
      * }
      */
     public static int HB_SCRIPT_HANGUL() {
@@ -1439,7 +1903,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_HAN = 1214344809;
+     * enum hb_script_t.HB_SCRIPT_HAN = 1214344809;
      * }
      */
     public static int HB_SCRIPT_HAN() {
@@ -1447,7 +1911,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_HEBREW = 1214603890;
+     * enum hb_script_t.HB_SCRIPT_HEBREW = 1214603890;
      * }
      */
     public static int HB_SCRIPT_HEBREW() {
@@ -1455,7 +1919,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_HIRAGANA = 1214870113;
+     * enum hb_script_t.HB_SCRIPT_HIRAGANA = 1214870113;
      * }
      */
     public static int HB_SCRIPT_HIRAGANA() {
@@ -1463,7 +1927,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_KANNADA = 1265525857;
+     * enum hb_script_t.HB_SCRIPT_KANNADA = 1265525857;
      * }
      */
     public static int HB_SCRIPT_KANNADA() {
@@ -1471,7 +1935,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_KATAKANA = 1264676449;
+     * enum hb_script_t.HB_SCRIPT_KATAKANA = 1264676449;
      * }
      */
     public static int HB_SCRIPT_KATAKANA() {
@@ -1479,7 +1943,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_LAO = 1281453935;
+     * enum hb_script_t.HB_SCRIPT_LAO = 1281453935;
      * }
      */
     public static int HB_SCRIPT_LAO() {
@@ -1487,7 +1951,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_LATIN = 1281455214;
+     * enum hb_script_t.HB_SCRIPT_LATIN = 1281455214;
      * }
      */
     public static int HB_SCRIPT_LATIN() {
@@ -1495,7 +1959,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MALAYALAM = 1298954605;
+     * enum hb_script_t.HB_SCRIPT_MALAYALAM = 1298954605;
      * }
      */
     public static int HB_SCRIPT_MALAYALAM() {
@@ -1503,7 +1967,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_ORIYA = 1332902241;
+     * enum hb_script_t.HB_SCRIPT_ORIYA = 1332902241;
      * }
      */
     public static int HB_SCRIPT_ORIYA() {
@@ -1511,7 +1975,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_TAMIL = 1415671148;
+     * enum hb_script_t.HB_SCRIPT_TAMIL = 1415671148;
      * }
      */
     public static int HB_SCRIPT_TAMIL() {
@@ -1519,7 +1983,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_TELUGU = 1415933045;
+     * enum hb_script_t.HB_SCRIPT_TELUGU = 1415933045;
      * }
      */
     public static int HB_SCRIPT_TELUGU() {
@@ -1527,7 +1991,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_THAI = 1416126825;
+     * enum hb_script_t.HB_SCRIPT_THAI = 1416126825;
      * }
      */
     public static int HB_SCRIPT_THAI() {
@@ -1535,7 +1999,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_TIBETAN = 1416192628;
+     * enum hb_script_t.HB_SCRIPT_TIBETAN = 1416192628;
      * }
      */
     public static int HB_SCRIPT_TIBETAN() {
@@ -1543,7 +2007,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_BOPOMOFO = 1114599535;
+     * enum hb_script_t.HB_SCRIPT_BOPOMOFO = 1114599535;
      * }
      */
     public static int HB_SCRIPT_BOPOMOFO() {
@@ -1551,7 +2015,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_BRAILLE = 1114792297;
+     * enum hb_script_t.HB_SCRIPT_BRAILLE = 1114792297;
      * }
      */
     public static int HB_SCRIPT_BRAILLE() {
@@ -1559,7 +2023,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_CANADIAN_SYLLABICS = 1130458739;
+     * enum hb_script_t.HB_SCRIPT_CANADIAN_SYLLABICS = 1130458739;
      * }
      */
     public static int HB_SCRIPT_CANADIAN_SYLLABICS() {
@@ -1567,7 +2031,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_CHEROKEE = 1130915186;
+     * enum hb_script_t.HB_SCRIPT_CHEROKEE = 1130915186;
      * }
      */
     public static int HB_SCRIPT_CHEROKEE() {
@@ -1575,7 +2039,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_ETHIOPIC = 1165256809;
+     * enum hb_script_t.HB_SCRIPT_ETHIOPIC = 1165256809;
      * }
      */
     public static int HB_SCRIPT_ETHIOPIC() {
@@ -1583,7 +2047,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_KHMER = 1265134962;
+     * enum hb_script_t.HB_SCRIPT_KHMER = 1265134962;
      * }
      */
     public static int HB_SCRIPT_KHMER() {
@@ -1591,7 +2055,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MONGOLIAN = 1299148391;
+     * enum hb_script_t.HB_SCRIPT_MONGOLIAN = 1299148391;
      * }
      */
     public static int HB_SCRIPT_MONGOLIAN() {
@@ -1599,7 +2063,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MYANMAR = 1299803506;
+     * enum hb_script_t.HB_SCRIPT_MYANMAR = 1299803506;
      * }
      */
     public static int HB_SCRIPT_MYANMAR() {
@@ -1607,7 +2071,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_OGHAM = 1332175213;
+     * enum hb_script_t.HB_SCRIPT_OGHAM = 1332175213;
      * }
      */
     public static int HB_SCRIPT_OGHAM() {
@@ -1615,7 +2079,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_RUNIC = 1383427698;
+     * enum hb_script_t.HB_SCRIPT_RUNIC = 1383427698;
      * }
      */
     public static int HB_SCRIPT_RUNIC() {
@@ -1623,7 +2087,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_SINHALA = 1399418472;
+     * enum hb_script_t.HB_SCRIPT_SINHALA = 1399418472;
      * }
      */
     public static int HB_SCRIPT_SINHALA() {
@@ -1631,7 +2095,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_SYRIAC = 1400468067;
+     * enum hb_script_t.HB_SCRIPT_SYRIAC = 1400468067;
      * }
      */
     public static int HB_SCRIPT_SYRIAC() {
@@ -1639,7 +2103,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_THAANA = 1416126817;
+     * enum hb_script_t.HB_SCRIPT_THAANA = 1416126817;
      * }
      */
     public static int HB_SCRIPT_THAANA() {
@@ -1647,7 +2111,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_YI = 1500080489;
+     * enum hb_script_t.HB_SCRIPT_YI = 1500080489;
      * }
      */
     public static int HB_SCRIPT_YI() {
@@ -1655,7 +2119,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_DESERET = 1148416628;
+     * enum hb_script_t.HB_SCRIPT_DESERET = 1148416628;
      * }
      */
     public static int HB_SCRIPT_DESERET() {
@@ -1663,7 +2127,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_GOTHIC = 1198486632;
+     * enum hb_script_t.HB_SCRIPT_GOTHIC = 1198486632;
      * }
      */
     public static int HB_SCRIPT_GOTHIC() {
@@ -1671,7 +2135,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_OLD_ITALIC = 1232363884;
+     * enum hb_script_t.HB_SCRIPT_OLD_ITALIC = 1232363884;
      * }
      */
     public static int HB_SCRIPT_OLD_ITALIC() {
@@ -1679,7 +2143,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_BUHID = 1114990692;
+     * enum hb_script_t.HB_SCRIPT_BUHID = 1114990692;
      * }
      */
     public static int HB_SCRIPT_BUHID() {
@@ -1687,7 +2151,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_HANUNOO = 1214344815;
+     * enum hb_script_t.HB_SCRIPT_HANUNOO = 1214344815;
      * }
      */
     public static int HB_SCRIPT_HANUNOO() {
@@ -1695,7 +2159,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_TAGALOG = 1416064103;
+     * enum hb_script_t.HB_SCRIPT_TAGALOG = 1416064103;
      * }
      */
     public static int HB_SCRIPT_TAGALOG() {
@@ -1703,7 +2167,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_TAGBANWA = 1415669602;
+     * enum hb_script_t.HB_SCRIPT_TAGBANWA = 1415669602;
      * }
      */
     public static int HB_SCRIPT_TAGBANWA() {
@@ -1711,7 +2175,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_CYPRIOT = 1131442804;
+     * enum hb_script_t.HB_SCRIPT_CYPRIOT = 1131442804;
      * }
      */
     public static int HB_SCRIPT_CYPRIOT() {
@@ -1719,7 +2183,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_LIMBU = 1281977698;
+     * enum hb_script_t.HB_SCRIPT_LIMBU = 1281977698;
      * }
      */
     public static int HB_SCRIPT_LIMBU() {
@@ -1727,7 +2191,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_LINEAR_B = 1281977954;
+     * enum hb_script_t.HB_SCRIPT_LINEAR_B = 1281977954;
      * }
      */
     public static int HB_SCRIPT_LINEAR_B() {
@@ -1735,7 +2199,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_OSMANYA = 1332964705;
+     * enum hb_script_t.HB_SCRIPT_OSMANYA = 1332964705;
      * }
      */
     public static int HB_SCRIPT_OSMANYA() {
@@ -1743,7 +2207,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_SHAVIAN = 1399349623;
+     * enum hb_script_t.HB_SCRIPT_SHAVIAN = 1399349623;
      * }
      */
     public static int HB_SCRIPT_SHAVIAN() {
@@ -1751,7 +2215,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_TAI_LE = 1415670885;
+     * enum hb_script_t.HB_SCRIPT_TAI_LE = 1415670885;
      * }
      */
     public static int HB_SCRIPT_TAI_LE() {
@@ -1759,7 +2223,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_UGARITIC = 1432838514;
+     * enum hb_script_t.HB_SCRIPT_UGARITIC = 1432838514;
      * }
      */
     public static int HB_SCRIPT_UGARITIC() {
@@ -1767,7 +2231,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_BUGINESE = 1114990441;
+     * enum hb_script_t.HB_SCRIPT_BUGINESE = 1114990441;
      * }
      */
     public static int HB_SCRIPT_BUGINESE() {
@@ -1775,7 +2239,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_COPTIC = 1131376756;
+     * enum hb_script_t.HB_SCRIPT_COPTIC = 1131376756;
      * }
      */
     public static int HB_SCRIPT_COPTIC() {
@@ -1783,7 +2247,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_GLAGOLITIC = 1198285159;
+     * enum hb_script_t.HB_SCRIPT_GLAGOLITIC = 1198285159;
      * }
      */
     public static int HB_SCRIPT_GLAGOLITIC() {
@@ -1791,7 +2255,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_KHAROSHTHI = 1265131890;
+     * enum hb_script_t.HB_SCRIPT_KHAROSHTHI = 1265131890;
      * }
      */
     public static int HB_SCRIPT_KHAROSHTHI() {
@@ -1799,7 +2263,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_NEW_TAI_LUE = 1415670901;
+     * enum hb_script_t.HB_SCRIPT_NEW_TAI_LUE = 1415670901;
      * }
      */
     public static int HB_SCRIPT_NEW_TAI_LUE() {
@@ -1807,7 +2271,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_OLD_PERSIAN = 1483761007;
+     * enum hb_script_t.HB_SCRIPT_OLD_PERSIAN = 1483761007;
      * }
      */
     public static int HB_SCRIPT_OLD_PERSIAN() {
@@ -1815,7 +2279,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_SYLOTI_NAGRI = 1400466543;
+     * enum hb_script_t.HB_SCRIPT_SYLOTI_NAGRI = 1400466543;
      * }
      */
     public static int HB_SCRIPT_SYLOTI_NAGRI() {
@@ -1823,7 +2287,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_TIFINAGH = 1415999079;
+     * enum hb_script_t.HB_SCRIPT_TIFINAGH = 1415999079;
      * }
      */
     public static int HB_SCRIPT_TIFINAGH() {
@@ -1831,7 +2295,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_BALINESE = 1113681001;
+     * enum hb_script_t.HB_SCRIPT_BALINESE = 1113681001;
      * }
      */
     public static int HB_SCRIPT_BALINESE() {
@@ -1839,7 +2303,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_CUNEIFORM = 1483961720;
+     * enum hb_script_t.HB_SCRIPT_CUNEIFORM = 1483961720;
      * }
      */
     public static int HB_SCRIPT_CUNEIFORM() {
@@ -1847,7 +2311,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_NKO = 1315663727;
+     * enum hb_script_t.HB_SCRIPT_NKO = 1315663727;
      * }
      */
     public static int HB_SCRIPT_NKO() {
@@ -1855,7 +2319,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_PHAGS_PA = 1349017959;
+     * enum hb_script_t.HB_SCRIPT_PHAGS_PA = 1349017959;
      * }
      */
     public static int HB_SCRIPT_PHAGS_PA() {
@@ -1863,7 +2327,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_PHOENICIAN = 1349021304;
+     * enum hb_script_t.HB_SCRIPT_PHOENICIAN = 1349021304;
      * }
      */
     public static int HB_SCRIPT_PHOENICIAN() {
@@ -1871,7 +2335,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_CARIAN = 1130459753;
+     * enum hb_script_t.HB_SCRIPT_CARIAN = 1130459753;
      * }
      */
     public static int HB_SCRIPT_CARIAN() {
@@ -1879,7 +2343,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_CHAM = 1130914157;
+     * enum hb_script_t.HB_SCRIPT_CHAM = 1130914157;
      * }
      */
     public static int HB_SCRIPT_CHAM() {
@@ -1887,7 +2351,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_KAYAH_LI = 1264675945;
+     * enum hb_script_t.HB_SCRIPT_KAYAH_LI = 1264675945;
      * }
      */
     public static int HB_SCRIPT_KAYAH_LI() {
@@ -1895,7 +2359,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_LEPCHA = 1281716323;
+     * enum hb_script_t.HB_SCRIPT_LEPCHA = 1281716323;
      * }
      */
     public static int HB_SCRIPT_LEPCHA() {
@@ -1903,7 +2367,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_LYCIAN = 1283023721;
+     * enum hb_script_t.HB_SCRIPT_LYCIAN = 1283023721;
      * }
      */
     public static int HB_SCRIPT_LYCIAN() {
@@ -1911,7 +2375,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_LYDIAN = 1283023977;
+     * enum hb_script_t.HB_SCRIPT_LYDIAN = 1283023977;
      * }
      */
     public static int HB_SCRIPT_LYDIAN() {
@@ -1919,7 +2383,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_OL_CHIKI = 1332503403;
+     * enum hb_script_t.HB_SCRIPT_OL_CHIKI = 1332503403;
      * }
      */
     public static int HB_SCRIPT_OL_CHIKI() {
@@ -1927,7 +2391,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_REJANG = 1382706791;
+     * enum hb_script_t.HB_SCRIPT_REJANG = 1382706791;
      * }
      */
     public static int HB_SCRIPT_REJANG() {
@@ -1935,7 +2399,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_SAURASHTRA = 1398895986;
+     * enum hb_script_t.HB_SCRIPT_SAURASHTRA = 1398895986;
      * }
      */
     public static int HB_SCRIPT_SAURASHTRA() {
@@ -1943,7 +2407,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_SUNDANESE = 1400204900;
+     * enum hb_script_t.HB_SCRIPT_SUNDANESE = 1400204900;
      * }
      */
     public static int HB_SCRIPT_SUNDANESE() {
@@ -1951,7 +2415,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_VAI = 1449224553;
+     * enum hb_script_t.HB_SCRIPT_VAI = 1449224553;
      * }
      */
     public static int HB_SCRIPT_VAI() {
@@ -1959,7 +2423,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_AVESTAN = 1098281844;
+     * enum hb_script_t.HB_SCRIPT_AVESTAN = 1098281844;
      * }
      */
     public static int HB_SCRIPT_AVESTAN() {
@@ -1967,7 +2431,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_BAMUM = 1113681269;
+     * enum hb_script_t.HB_SCRIPT_BAMUM = 1113681269;
      * }
      */
     public static int HB_SCRIPT_BAMUM() {
@@ -1975,7 +2439,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_EGYPTIAN_HIEROGLYPHS = 1164409200;
+     * enum hb_script_t.HB_SCRIPT_EGYPTIAN_HIEROGLYPHS = 1164409200;
      * }
      */
     public static int HB_SCRIPT_EGYPTIAN_HIEROGLYPHS() {
@@ -1983,7 +2447,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_IMPERIAL_ARAMAIC = 1098018153;
+     * enum hb_script_t.HB_SCRIPT_IMPERIAL_ARAMAIC = 1098018153;
      * }
      */
     public static int HB_SCRIPT_IMPERIAL_ARAMAIC() {
@@ -1991,7 +2455,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_INSCRIPTIONAL_PAHLAVI = 1349020777;
+     * enum hb_script_t.HB_SCRIPT_INSCRIPTIONAL_PAHLAVI = 1349020777;
      * }
      */
     public static int HB_SCRIPT_INSCRIPTIONAL_PAHLAVI() {
@@ -1999,7 +2463,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_INSCRIPTIONAL_PARTHIAN = 1349678185;
+     * enum hb_script_t.HB_SCRIPT_INSCRIPTIONAL_PARTHIAN = 1349678185;
      * }
      */
     public static int HB_SCRIPT_INSCRIPTIONAL_PARTHIAN() {
@@ -2007,7 +2471,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_JAVANESE = 1247901281;
+     * enum hb_script_t.HB_SCRIPT_JAVANESE = 1247901281;
      * }
      */
     public static int HB_SCRIPT_JAVANESE() {
@@ -2015,7 +2479,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_KAITHI = 1265920105;
+     * enum hb_script_t.HB_SCRIPT_KAITHI = 1265920105;
      * }
      */
     public static int HB_SCRIPT_KAITHI() {
@@ -2023,7 +2487,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_LISU = 1281979253;
+     * enum hb_script_t.HB_SCRIPT_LISU = 1281979253;
      * }
      */
     public static int HB_SCRIPT_LISU() {
@@ -2031,7 +2495,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MEETEI_MAYEK = 1299473769;
+     * enum hb_script_t.HB_SCRIPT_MEETEI_MAYEK = 1299473769;
      * }
      */
     public static int HB_SCRIPT_MEETEI_MAYEK() {
@@ -2039,7 +2503,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_OLD_SOUTH_ARABIAN = 1398895202;
+     * enum hb_script_t.HB_SCRIPT_OLD_SOUTH_ARABIAN = 1398895202;
      * }
      */
     public static int HB_SCRIPT_OLD_SOUTH_ARABIAN() {
@@ -2047,7 +2511,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_OLD_TURKIC = 1332898664;
+     * enum hb_script_t.HB_SCRIPT_OLD_TURKIC = 1332898664;
      * }
      */
     public static int HB_SCRIPT_OLD_TURKIC() {
@@ -2055,7 +2519,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_SAMARITAN = 1398893938;
+     * enum hb_script_t.HB_SCRIPT_SAMARITAN = 1398893938;
      * }
      */
     public static int HB_SCRIPT_SAMARITAN() {
@@ -2063,7 +2527,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_TAI_THAM = 1281453665;
+     * enum hb_script_t.HB_SCRIPT_TAI_THAM = 1281453665;
      * }
      */
     public static int HB_SCRIPT_TAI_THAM() {
@@ -2071,7 +2535,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_TAI_VIET = 1415673460;
+     * enum hb_script_t.HB_SCRIPT_TAI_VIET = 1415673460;
      * }
      */
     public static int HB_SCRIPT_TAI_VIET() {
@@ -2079,7 +2543,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_BATAK = 1113683051;
+     * enum hb_script_t.HB_SCRIPT_BATAK = 1113683051;
      * }
      */
     public static int HB_SCRIPT_BATAK() {
@@ -2087,7 +2551,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_BRAHMI = 1114792296;
+     * enum hb_script_t.HB_SCRIPT_BRAHMI = 1114792296;
      * }
      */
     public static int HB_SCRIPT_BRAHMI() {
@@ -2095,7 +2559,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MANDAIC = 1298230884;
+     * enum hb_script_t.HB_SCRIPT_MANDAIC = 1298230884;
      * }
      */
     public static int HB_SCRIPT_MANDAIC() {
@@ -2103,7 +2567,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_CHAKMA = 1130457965;
+     * enum hb_script_t.HB_SCRIPT_CHAKMA = 1130457965;
      * }
      */
     public static int HB_SCRIPT_CHAKMA() {
@@ -2111,7 +2575,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MEROITIC_CURSIVE = 1298494051;
+     * enum hb_script_t.HB_SCRIPT_MEROITIC_CURSIVE = 1298494051;
      * }
      */
     public static int HB_SCRIPT_MEROITIC_CURSIVE() {
@@ -2119,7 +2583,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MEROITIC_HIEROGLYPHS = 1298494063;
+     * enum hb_script_t.HB_SCRIPT_MEROITIC_HIEROGLYPHS = 1298494063;
      * }
      */
     public static int HB_SCRIPT_MEROITIC_HIEROGLYPHS() {
@@ -2127,7 +2591,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MIAO = 1349284452;
+     * enum hb_script_t.HB_SCRIPT_MIAO = 1349284452;
      * }
      */
     public static int HB_SCRIPT_MIAO() {
@@ -2135,7 +2599,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_SHARADA = 1399353956;
+     * enum hb_script_t.HB_SCRIPT_SHARADA = 1399353956;
      * }
      */
     public static int HB_SCRIPT_SHARADA() {
@@ -2143,7 +2607,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_SORA_SOMPENG = 1399812705;
+     * enum hb_script_t.HB_SCRIPT_SORA_SOMPENG = 1399812705;
      * }
      */
     public static int HB_SCRIPT_SORA_SOMPENG() {
@@ -2151,7 +2615,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_TAKRI = 1415670642;
+     * enum hb_script_t.HB_SCRIPT_TAKRI = 1415670642;
      * }
      */
     public static int HB_SCRIPT_TAKRI() {
@@ -2159,7 +2623,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_BASSA_VAH = 1113682803;
+     * enum hb_script_t.HB_SCRIPT_BASSA_VAH = 1113682803;
      * }
      */
     public static int HB_SCRIPT_BASSA_VAH() {
@@ -2167,7 +2631,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_CAUCASIAN_ALBANIAN = 1097295970;
+     * enum hb_script_t.HB_SCRIPT_CAUCASIAN_ALBANIAN = 1097295970;
      * }
      */
     public static int HB_SCRIPT_CAUCASIAN_ALBANIAN() {
@@ -2175,7 +2639,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_DUPLOYAN = 1148547180;
+     * enum hb_script_t.HB_SCRIPT_DUPLOYAN = 1148547180;
      * }
      */
     public static int HB_SCRIPT_DUPLOYAN() {
@@ -2183,7 +2647,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_ELBASAN = 1164730977;
+     * enum hb_script_t.HB_SCRIPT_ELBASAN = 1164730977;
      * }
      */
     public static int HB_SCRIPT_ELBASAN() {
@@ -2191,7 +2655,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_GRANTHA = 1198678382;
+     * enum hb_script_t.HB_SCRIPT_GRANTHA = 1198678382;
      * }
      */
     public static int HB_SCRIPT_GRANTHA() {
@@ -2199,7 +2663,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_KHOJKI = 1265135466;
+     * enum hb_script_t.HB_SCRIPT_KHOJKI = 1265135466;
      * }
      */
     public static int HB_SCRIPT_KHOJKI() {
@@ -2207,7 +2671,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_KHUDAWADI = 1399418468;
+     * enum hb_script_t.HB_SCRIPT_KHUDAWADI = 1399418468;
      * }
      */
     public static int HB_SCRIPT_KHUDAWADI() {
@@ -2215,7 +2679,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_LINEAR_A = 1281977953;
+     * enum hb_script_t.HB_SCRIPT_LINEAR_A = 1281977953;
      * }
      */
     public static int HB_SCRIPT_LINEAR_A() {
@@ -2223,7 +2687,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MAHAJANI = 1298229354;
+     * enum hb_script_t.HB_SCRIPT_MAHAJANI = 1298229354;
      * }
      */
     public static int HB_SCRIPT_MAHAJANI() {
@@ -2231,7 +2695,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MANICHAEAN = 1298230889;
+     * enum hb_script_t.HB_SCRIPT_MANICHAEAN = 1298230889;
      * }
      */
     public static int HB_SCRIPT_MANICHAEAN() {
@@ -2239,7 +2703,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MENDE_KIKAKUI = 1298493028;
+     * enum hb_script_t.HB_SCRIPT_MENDE_KIKAKUI = 1298493028;
      * }
      */
     public static int HB_SCRIPT_MENDE_KIKAKUI() {
@@ -2247,7 +2711,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MODI = 1299145833;
+     * enum hb_script_t.HB_SCRIPT_MODI = 1299145833;
      * }
      */
     public static int HB_SCRIPT_MODI() {
@@ -2255,7 +2719,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MRO = 1299345263;
+     * enum hb_script_t.HB_SCRIPT_MRO = 1299345263;
      * }
      */
     public static int HB_SCRIPT_MRO() {
@@ -2263,7 +2727,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_NABATAEAN = 1315070324;
+     * enum hb_script_t.HB_SCRIPT_NABATAEAN = 1315070324;
      * }
      */
     public static int HB_SCRIPT_NABATAEAN() {
@@ -2271,7 +2735,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_OLD_NORTH_ARABIAN = 1315009122;
+     * enum hb_script_t.HB_SCRIPT_OLD_NORTH_ARABIAN = 1315009122;
      * }
      */
     public static int HB_SCRIPT_OLD_NORTH_ARABIAN() {
@@ -2279,7 +2743,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_OLD_PERMIC = 1348825709;
+     * enum hb_script_t.HB_SCRIPT_OLD_PERMIC = 1348825709;
      * }
      */
     public static int HB_SCRIPT_OLD_PERMIC() {
@@ -2287,7 +2751,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_PAHAWH_HMONG = 1215131239;
+     * enum hb_script_t.HB_SCRIPT_PAHAWH_HMONG = 1215131239;
      * }
      */
     public static int HB_SCRIPT_PAHAWH_HMONG() {
@@ -2295,7 +2759,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_PALMYRENE = 1348562029;
+     * enum hb_script_t.HB_SCRIPT_PALMYRENE = 1348562029;
      * }
      */
     public static int HB_SCRIPT_PALMYRENE() {
@@ -2303,7 +2767,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_PAU_CIN_HAU = 1348564323;
+     * enum hb_script_t.HB_SCRIPT_PAU_CIN_HAU = 1348564323;
      * }
      */
     public static int HB_SCRIPT_PAU_CIN_HAU() {
@@ -2311,7 +2775,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_PSALTER_PAHLAVI = 1349020784;
+     * enum hb_script_t.HB_SCRIPT_PSALTER_PAHLAVI = 1349020784;
      * }
      */
     public static int HB_SCRIPT_PSALTER_PAHLAVI() {
@@ -2319,7 +2783,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_SIDDHAM = 1399415908;
+     * enum hb_script_t.HB_SCRIPT_SIDDHAM = 1399415908;
      * }
      */
     public static int HB_SCRIPT_SIDDHAM() {
@@ -2327,7 +2791,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_TIRHUTA = 1416196712;
+     * enum hb_script_t.HB_SCRIPT_TIRHUTA = 1416196712;
      * }
      */
     public static int HB_SCRIPT_TIRHUTA() {
@@ -2335,7 +2799,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_WARANG_CITI = 1466004065;
+     * enum hb_script_t.HB_SCRIPT_WARANG_CITI = 1466004065;
      * }
      */
     public static int HB_SCRIPT_WARANG_CITI() {
@@ -2343,7 +2807,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_AHOM = 1097363309;
+     * enum hb_script_t.HB_SCRIPT_AHOM = 1097363309;
      * }
      */
     public static int HB_SCRIPT_AHOM() {
@@ -2351,7 +2815,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_ANATOLIAN_HIEROGLYPHS = 1215067511;
+     * enum hb_script_t.HB_SCRIPT_ANATOLIAN_HIEROGLYPHS = 1215067511;
      * }
      */
     public static int HB_SCRIPT_ANATOLIAN_HIEROGLYPHS() {
@@ -2359,7 +2823,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_HATRAN = 1214346354;
+     * enum hb_script_t.HB_SCRIPT_HATRAN = 1214346354;
      * }
      */
     public static int HB_SCRIPT_HATRAN() {
@@ -2367,7 +2831,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MULTANI = 1299541108;
+     * enum hb_script_t.HB_SCRIPT_MULTANI = 1299541108;
      * }
      */
     public static int HB_SCRIPT_MULTANI() {
@@ -2375,7 +2839,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_OLD_HUNGARIAN = 1215655527;
+     * enum hb_script_t.HB_SCRIPT_OLD_HUNGARIAN = 1215655527;
      * }
      */
     public static int HB_SCRIPT_OLD_HUNGARIAN() {
@@ -2383,7 +2847,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_SIGNWRITING = 1399287415;
+     * enum hb_script_t.HB_SCRIPT_SIGNWRITING = 1399287415;
      * }
      */
     public static int HB_SCRIPT_SIGNWRITING() {
@@ -2391,7 +2855,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_ADLAM = 1097100397;
+     * enum hb_script_t.HB_SCRIPT_ADLAM = 1097100397;
      * }
      */
     public static int HB_SCRIPT_ADLAM() {
@@ -2399,7 +2863,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_BHAIKSUKI = 1114139507;
+     * enum hb_script_t.HB_SCRIPT_BHAIKSUKI = 1114139507;
      * }
      */
     public static int HB_SCRIPT_BHAIKSUKI() {
@@ -2407,7 +2871,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MARCHEN = 1298231907;
+     * enum hb_script_t.HB_SCRIPT_MARCHEN = 1298231907;
      * }
      */
     public static int HB_SCRIPT_MARCHEN() {
@@ -2415,7 +2879,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_OSAGE = 1332963173;
+     * enum hb_script_t.HB_SCRIPT_OSAGE = 1332963173;
      * }
      */
     public static int HB_SCRIPT_OSAGE() {
@@ -2423,7 +2887,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_TANGUT = 1415671399;
+     * enum hb_script_t.HB_SCRIPT_TANGUT = 1415671399;
      * }
      */
     public static int HB_SCRIPT_TANGUT() {
@@ -2431,7 +2895,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_NEWA = 1315272545;
+     * enum hb_script_t.HB_SCRIPT_NEWA = 1315272545;
      * }
      */
     public static int HB_SCRIPT_NEWA() {
@@ -2439,7 +2903,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MASARAM_GONDI = 1198485101;
+     * enum hb_script_t.HB_SCRIPT_MASARAM_GONDI = 1198485101;
      * }
      */
     public static int HB_SCRIPT_MASARAM_GONDI() {
@@ -2447,7 +2911,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_NUSHU = 1316186229;
+     * enum hb_script_t.HB_SCRIPT_NUSHU = 1316186229;
      * }
      */
     public static int HB_SCRIPT_NUSHU() {
@@ -2455,7 +2919,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_SOYOMBO = 1399814511;
+     * enum hb_script_t.HB_SCRIPT_SOYOMBO = 1399814511;
      * }
      */
     public static int HB_SCRIPT_SOYOMBO() {
@@ -2463,7 +2927,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_ZANABAZAR_SQUARE = 1516334690;
+     * enum hb_script_t.HB_SCRIPT_ZANABAZAR_SQUARE = 1516334690;
      * }
      */
     public static int HB_SCRIPT_ZANABAZAR_SQUARE() {
@@ -2471,7 +2935,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_DOGRA = 1148151666;
+     * enum hb_script_t.HB_SCRIPT_DOGRA = 1148151666;
      * }
      */
     public static int HB_SCRIPT_DOGRA() {
@@ -2479,7 +2943,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_GUNJALA_GONDI = 1198485095;
+     * enum hb_script_t.HB_SCRIPT_GUNJALA_GONDI = 1198485095;
      * }
      */
     public static int HB_SCRIPT_GUNJALA_GONDI() {
@@ -2487,7 +2951,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_HANIFI_ROHINGYA = 1383032935;
+     * enum hb_script_t.HB_SCRIPT_HANIFI_ROHINGYA = 1383032935;
      * }
      */
     public static int HB_SCRIPT_HANIFI_ROHINGYA() {
@@ -2495,7 +2959,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MAKASAR = 1298230113;
+     * enum hb_script_t.HB_SCRIPT_MAKASAR = 1298230113;
      * }
      */
     public static int HB_SCRIPT_MAKASAR() {
@@ -2503,7 +2967,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MEDEFAIDRIN = 1298490470;
+     * enum hb_script_t.HB_SCRIPT_MEDEFAIDRIN = 1298490470;
      * }
      */
     public static int HB_SCRIPT_MEDEFAIDRIN() {
@@ -2511,7 +2975,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_OLD_SOGDIAN = 1399809903;
+     * enum hb_script_t.HB_SCRIPT_OLD_SOGDIAN = 1399809903;
      * }
      */
     public static int HB_SCRIPT_OLD_SOGDIAN() {
@@ -2519,7 +2983,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_SOGDIAN = 1399809892;
+     * enum hb_script_t.HB_SCRIPT_SOGDIAN = 1399809892;
      * }
      */
     public static int HB_SCRIPT_SOGDIAN() {
@@ -2527,7 +2991,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_ELYMAIC = 1164736877;
+     * enum hb_script_t.HB_SCRIPT_ELYMAIC = 1164736877;
      * }
      */
     public static int HB_SCRIPT_ELYMAIC() {
@@ -2535,7 +2999,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_NANDINAGARI = 1315008100;
+     * enum hb_script_t.HB_SCRIPT_NANDINAGARI = 1315008100;
      * }
      */
     public static int HB_SCRIPT_NANDINAGARI() {
@@ -2543,7 +3007,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_NYIAKENG_PUACHUE_HMONG = 1215131248;
+     * enum hb_script_t.HB_SCRIPT_NYIAKENG_PUACHUE_HMONG = 1215131248;
      * }
      */
     public static int HB_SCRIPT_NYIAKENG_PUACHUE_HMONG() {
@@ -2551,7 +3015,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_WANCHO = 1466132591;
+     * enum hb_script_t.HB_SCRIPT_WANCHO = 1466132591;
      * }
      */
     public static int HB_SCRIPT_WANCHO() {
@@ -2559,7 +3023,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_CHORASMIAN = 1130918515;
+     * enum hb_script_t.HB_SCRIPT_CHORASMIAN = 1130918515;
      * }
      */
     public static int HB_SCRIPT_CHORASMIAN() {
@@ -2567,7 +3031,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_DIVES_AKURU = 1147756907;
+     * enum hb_script_t.HB_SCRIPT_DIVES_AKURU = 1147756907;
      * }
      */
     public static int HB_SCRIPT_DIVES_AKURU() {
@@ -2575,7 +3039,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_KHITAN_SMALL_SCRIPT = 1265202291;
+     * enum hb_script_t.HB_SCRIPT_KHITAN_SMALL_SCRIPT = 1265202291;
      * }
      */
     public static int HB_SCRIPT_KHITAN_SMALL_SCRIPT() {
@@ -2583,7 +3047,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_YEZIDI = 1499822697;
+     * enum hb_script_t.HB_SCRIPT_YEZIDI = 1499822697;
      * }
      */
     public static int HB_SCRIPT_YEZIDI() {
@@ -2591,7 +3055,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_CYPRO_MINOAN = 1131441518;
+     * enum hb_script_t.HB_SCRIPT_CYPRO_MINOAN = 1131441518;
      * }
      */
     public static int HB_SCRIPT_CYPRO_MINOAN() {
@@ -2599,7 +3063,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_OLD_UYGHUR = 1333094258;
+     * enum hb_script_t.HB_SCRIPT_OLD_UYGHUR = 1333094258;
      * }
      */
     public static int HB_SCRIPT_OLD_UYGHUR() {
@@ -2607,7 +3071,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_TANGSA = 1416524641;
+     * enum hb_script_t.HB_SCRIPT_TANGSA = 1416524641;
      * }
      */
     public static int HB_SCRIPT_TANGSA() {
@@ -2615,7 +3079,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_TOTO = 1416590447;
+     * enum hb_script_t.HB_SCRIPT_TOTO = 1416590447;
      * }
      */
     public static int HB_SCRIPT_TOTO() {
@@ -2623,7 +3087,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_VITHKUQI = 1449751656;
+     * enum hb_script_t.HB_SCRIPT_VITHKUQI = 1449751656;
      * }
      */
     public static int HB_SCRIPT_VITHKUQI() {
@@ -2631,7 +3095,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_MATH = 1517122664;
+     * enum hb_script_t.HB_SCRIPT_MATH = 1517122664;
      * }
      */
     public static int HB_SCRIPT_MATH() {
@@ -2639,7 +3103,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_KAWI = 1264678761;
+     * enum hb_script_t.HB_SCRIPT_KAWI = 1264678761;
      * }
      */
     public static int HB_SCRIPT_KAWI() {
@@ -2647,7 +3111,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_NAG_MUNDARI = 1315006317;
+     * enum hb_script_t.HB_SCRIPT_NAG_MUNDARI = 1315006317;
      * }
      */
     public static int HB_SCRIPT_NAG_MUNDARI() {
@@ -2655,7 +3119,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_SCRIPT_INVALID = 0;
+     * enum hb_script_t.HB_SCRIPT_INVALID = 0;
      * }
      */
     public static int HB_SCRIPT_INVALID() {
@@ -2663,7 +3127,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum ._HB_SCRIPT_MAX_VALUE = 2147483647;
+     * enum hb_script_t._HB_SCRIPT_MAX_VALUE = 2147483647;
      * }
      */
     public static int _HB_SCRIPT_MAX_VALUE() {
@@ -2671,18 +3135,18 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum ._HB_SCRIPT_MAX_VALUE_SIGNED = 2147483647;
+     * enum hb_script_t._HB_SCRIPT_MAX_VALUE_SIGNED = 2147483647;
      * }
      */
     public static int _HB_SCRIPT_MAX_VALUE_SIGNED() {
         return (int)2147483647L;
     }
     public static MethodHandle hb_script_from_iso15924_tag$MH() {
-        return RuntimeHelper.requireNonNull(constants$831.hb_script_from_iso15924_tag$MH,"hb_script_from_iso15924_tag");
+        return RuntimeHelper.requireNonNull(constants$1416.const$1,"hb_script_from_iso15924_tag");
     }
     /**
      * {@snippet :
-     * hb_script_t hb_script_from_iso15924_tag(hb_tag_t tag);
+     * enum hb_script_t hb_script_from_iso15924_tag(unsigned int tag);
      * }
      */
     public static int hb_script_from_iso15924_tag(int tag) {
@@ -2694,11 +3158,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_script_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$832.hb_script_from_string$MH,"hb_script_from_string");
+        return RuntimeHelper.requireNonNull(constants$1416.const$2,"hb_script_from_string");
     }
     /**
      * {@snippet :
-     * hb_script_t hb_script_from_string(char* str, int len);
+     * enum hb_script_t hb_script_from_string(char* str, int len);
      * }
      */
     public static int hb_script_from_string(MemorySegment str, int len) {
@@ -2710,11 +3174,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_script_to_iso15924_tag$MH() {
-        return RuntimeHelper.requireNonNull(constants$832.hb_script_to_iso15924_tag$MH,"hb_script_to_iso15924_tag");
+        return RuntimeHelper.requireNonNull(constants$1416.const$3,"hb_script_to_iso15924_tag");
     }
     /**
      * {@snippet :
-     * hb_tag_t hb_script_to_iso15924_tag(hb_script_t script);
+     * unsigned int hb_script_to_iso15924_tag(enum hb_script_t script);
      * }
      */
     public static int hb_script_to_iso15924_tag(int script) {
@@ -2726,11 +3190,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_script_get_horizontal_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$832.hb_script_get_horizontal_direction$MH,"hb_script_get_horizontal_direction");
+        return RuntimeHelper.requireNonNull(constants$1416.const$4,"hb_script_get_horizontal_direction");
     }
     /**
      * {@snippet :
-     * hb_direction_t hb_script_get_horizontal_direction(hb_script_t script);
+     * enum hb_direction_t hb_script_get_horizontal_direction(enum hb_script_t script);
      * }
      */
     public static int hb_script_get_horizontal_direction(int script) {
@@ -2742,11 +3206,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_feature_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$832.hb_feature_from_string$MH,"hb_feature_from_string");
+        return RuntimeHelper.requireNonNull(constants$1418.const$1,"hb_feature_from_string");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_feature_from_string(char* str, int len, hb_feature_t* feature);
+     * int hb_feature_from_string(char* str, int len, struct hb_feature_t* feature);
      * }
      */
     public static int hb_feature_from_string(MemorySegment str, int len, MemorySegment feature) {
@@ -2758,11 +3222,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_feature_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$833.hb_feature_to_string$MH,"hb_feature_to_string");
+        return RuntimeHelper.requireNonNull(constants$1418.const$2,"hb_feature_to_string");
     }
     /**
      * {@snippet :
-     * void hb_feature_to_string(hb_feature_t* feature, char* buf, unsigned int size);
+     * void hb_feature_to_string(struct hb_feature_t* feature, char* buf, unsigned int size);
      * }
      */
     public static void hb_feature_to_string(MemorySegment feature, MemorySegment buf, int size) {
@@ -2774,11 +3238,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_variation_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$833.hb_variation_from_string$MH,"hb_variation_from_string");
+        return RuntimeHelper.requireNonNull(constants$1419.const$0,"hb_variation_from_string");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_variation_from_string(char* str, int len, hb_variation_t* variation);
+     * int hb_variation_from_string(char* str, int len, struct hb_variation_t* variation);
      * }
      */
     public static int hb_variation_from_string(MemorySegment str, int len, MemorySegment variation) {
@@ -2790,11 +3254,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_variation_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$833.hb_variation_to_string$MH,"hb_variation_to_string");
+        return RuntimeHelper.requireNonNull(constants$1419.const$1,"hb_variation_to_string");
     }
     /**
      * {@snippet :
-     * void hb_variation_to_string(hb_variation_t* variation, char* buf, unsigned int size);
+     * void hb_variation_to_string(struct hb_variation_t* variation, char* buf, unsigned int size);
      * }
      */
     public static void hb_variation_to_string(MemorySegment variation, MemorySegment buf, int size) {
@@ -2810,13 +3274,13 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
      * typedef unsigned int hb_color_t;
      * }
      */
-    public static final OfInt hb_color_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt hb_color_t = JAVA_INT;
     public static MethodHandle hb_color_get_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$833.hb_color_get_alpha$MH,"hb_color_get_alpha");
+        return RuntimeHelper.requireNonNull(constants$1419.const$3,"hb_color_get_alpha");
     }
     /**
      * {@snippet :
-     * uint8_t hb_color_get_alpha(hb_color_t color);
+     * unsigned char hb_color_get_alpha(unsigned int color);
      * }
      */
     public static byte hb_color_get_alpha(int color) {
@@ -2828,11 +3292,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_color_get_red$MH() {
-        return RuntimeHelper.requireNonNull(constants$833.hb_color_get_red$MH,"hb_color_get_red");
+        return RuntimeHelper.requireNonNull(constants$1419.const$4,"hb_color_get_red");
     }
     /**
      * {@snippet :
-     * uint8_t hb_color_get_red(hb_color_t color);
+     * unsigned char hb_color_get_red(unsigned int color);
      * }
      */
     public static byte hb_color_get_red(int color) {
@@ -2844,11 +3308,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_color_get_green$MH() {
-        return RuntimeHelper.requireNonNull(constants$833.hb_color_get_green$MH,"hb_color_get_green");
+        return RuntimeHelper.requireNonNull(constants$1419.const$5,"hb_color_get_green");
     }
     /**
      * {@snippet :
-     * uint8_t hb_color_get_green(hb_color_t color);
+     * unsigned char hb_color_get_green(unsigned int color);
      * }
      */
     public static byte hb_color_get_green(int color) {
@@ -2860,11 +3324,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_color_get_blue$MH() {
-        return RuntimeHelper.requireNonNull(constants$834.hb_color_get_blue$MH,"hb_color_get_blue");
+        return RuntimeHelper.requireNonNull(constants$1420.const$0,"hb_color_get_blue");
     }
     /**
      * {@snippet :
-     * uint8_t hb_color_get_blue(hb_color_t color);
+     * unsigned char hb_color_get_blue(unsigned int color);
      * }
      */
     public static byte hb_color_get_blue(int color) {
@@ -2877,7 +3341,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_MEMORY_MODE_DUPLICATE = 0;
+     * enum hb_memory_mode_t.HB_MEMORY_MODE_DUPLICATE = 0;
      * }
      */
     public static int HB_MEMORY_MODE_DUPLICATE() {
@@ -2885,7 +3349,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_MEMORY_MODE_READONLY = 1;
+     * enum hb_memory_mode_t.HB_MEMORY_MODE_READONLY = 1;
      * }
      */
     public static int HB_MEMORY_MODE_READONLY() {
@@ -2893,7 +3357,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_MEMORY_MODE_WRITABLE = 2;
+     * enum hb_memory_mode_t.HB_MEMORY_MODE_WRITABLE = 2;
      * }
      */
     public static int HB_MEMORY_MODE_WRITABLE() {
@@ -2901,18 +3365,18 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_MEMORY_MODE_READONLY_MAY_MAKE_WRITABLE = 3;
+     * enum hb_memory_mode_t.HB_MEMORY_MODE_READONLY_MAY_MAKE_WRITABLE = 3;
      * }
      */
     public static int HB_MEMORY_MODE_READONLY_MAY_MAKE_WRITABLE() {
         return (int)3L;
     }
     public static MethodHandle hb_blob_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$834.hb_blob_create$MH,"hb_blob_create");
+        return RuntimeHelper.requireNonNull(constants$1421.const$2,"hb_blob_create");
     }
     /**
      * {@snippet :
-     * hb_blob_t* hb_blob_create(char* data, unsigned int length, hb_memory_mode_t mode, void* user_data, hb_destroy_func_t destroy);
+     * struct hb_blob_t* hb_blob_create(char* data, unsigned int length, enum hb_memory_mode_t mode, void* user_data, void (*destroy)(void*));
      * }
      */
     public static MemorySegment hb_blob_create(MemorySegment data, int length, int mode, MemorySegment user_data, MemorySegment destroy) {
@@ -2924,11 +3388,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_create_or_fail$MH() {
-        return RuntimeHelper.requireNonNull(constants$834.hb_blob_create_or_fail$MH,"hb_blob_create_or_fail");
+        return RuntimeHelper.requireNonNull(constants$1421.const$4,"hb_blob_create_or_fail");
     }
     /**
      * {@snippet :
-     * hb_blob_t* hb_blob_create_or_fail(char* data, unsigned int length, hb_memory_mode_t mode, void* user_data, hb_destroy_func_t destroy);
+     * struct hb_blob_t* hb_blob_create_or_fail(char* data, unsigned int length, enum hb_memory_mode_t mode, void* user_data, void (*destroy)(void*));
      * }
      */
     public static MemorySegment hb_blob_create_or_fail(MemorySegment data, int length, int mode, MemorySegment user_data, MemorySegment destroy) {
@@ -2940,11 +3404,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_create_from_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$834.hb_blob_create_from_file$MH,"hb_blob_create_from_file");
+        return RuntimeHelper.requireNonNull(constants$1421.const$5,"hb_blob_create_from_file");
     }
     /**
      * {@snippet :
-     * hb_blob_t* hb_blob_create_from_file(char* file_name);
+     * struct hb_blob_t* hb_blob_create_from_file(char* file_name);
      * }
      */
     public static MemorySegment hb_blob_create_from_file(MemorySegment file_name) {
@@ -2956,11 +3420,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_create_from_file_or_fail$MH() {
-        return RuntimeHelper.requireNonNull(constants$834.hb_blob_create_from_file_or_fail$MH,"hb_blob_create_from_file_or_fail");
+        return RuntimeHelper.requireNonNull(constants$1422.const$0,"hb_blob_create_from_file_or_fail");
     }
     /**
      * {@snippet :
-     * hb_blob_t* hb_blob_create_from_file_or_fail(char* file_name);
+     * struct hb_blob_t* hb_blob_create_from_file_or_fail(char* file_name);
      * }
      */
     public static MemorySegment hb_blob_create_from_file_or_fail(MemorySegment file_name) {
@@ -2972,11 +3436,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_create_sub_blob$MH() {
-        return RuntimeHelper.requireNonNull(constants$834.hb_blob_create_sub_blob$MH,"hb_blob_create_sub_blob");
+        return RuntimeHelper.requireNonNull(constants$1422.const$1,"hb_blob_create_sub_blob");
     }
     /**
      * {@snippet :
-     * hb_blob_t* hb_blob_create_sub_blob(hb_blob_t* parent, unsigned int offset, unsigned int length);
+     * struct hb_blob_t* hb_blob_create_sub_blob(struct hb_blob_t* parent, unsigned int offset, unsigned int length);
      * }
      */
     public static MemorySegment hb_blob_create_sub_blob(MemorySegment parent, int offset, int length) {
@@ -2988,11 +3452,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_copy_writable_or_fail$MH() {
-        return RuntimeHelper.requireNonNull(constants$835.hb_blob_copy_writable_or_fail$MH,"hb_blob_copy_writable_or_fail");
+        return RuntimeHelper.requireNonNull(constants$1422.const$2,"hb_blob_copy_writable_or_fail");
     }
     /**
      * {@snippet :
-     * hb_blob_t* hb_blob_copy_writable_or_fail(hb_blob_t* blob);
+     * struct hb_blob_t* hb_blob_copy_writable_or_fail(struct hb_blob_t* blob);
      * }
      */
     public static MemorySegment hb_blob_copy_writable_or_fail(MemorySegment blob) {
@@ -3004,11 +3468,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$835.hb_blob_get_empty$MH,"hb_blob_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1422.const$3,"hb_blob_get_empty");
     }
     /**
      * {@snippet :
-     * hb_blob_t* hb_blob_get_empty();
+     * struct hb_blob_t* hb_blob_get_empty();
      * }
      */
     public static MemorySegment hb_blob_get_empty() {
@@ -3020,11 +3484,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$835.hb_blob_reference$MH,"hb_blob_reference");
+        return RuntimeHelper.requireNonNull(constants$1422.const$4,"hb_blob_reference");
     }
     /**
      * {@snippet :
-     * hb_blob_t* hb_blob_reference(hb_blob_t* blob);
+     * struct hb_blob_t* hb_blob_reference(struct hb_blob_t* blob);
      * }
      */
     public static MemorySegment hb_blob_reference(MemorySegment blob) {
@@ -3036,11 +3500,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$835.hb_blob_destroy$MH,"hb_blob_destroy");
+        return RuntimeHelper.requireNonNull(constants$1422.const$5,"hb_blob_destroy");
     }
     /**
      * {@snippet :
-     * void hb_blob_destroy(hb_blob_t* blob);
+     * void hb_blob_destroy(struct hb_blob_t* blob);
      * }
      */
     public static void hb_blob_destroy(MemorySegment blob) {
@@ -3052,11 +3516,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$835.hb_blob_set_user_data$MH,"hb_blob_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1423.const$2,"hb_blob_set_user_data");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_blob_set_user_data(hb_blob_t* blob, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * int hb_blob_set_user_data(struct hb_blob_t* blob, struct hb_user_data_key_t* key, void* data, void (*destroy)(void*), int replace);
      * }
      */
     public static int hb_blob_set_user_data(MemorySegment blob, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
@@ -3068,11 +3532,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$835.hb_blob_get_user_data$MH,"hb_blob_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1423.const$3,"hb_blob_get_user_data");
     }
     /**
      * {@snippet :
-     * void* hb_blob_get_user_data(const hb_blob_t* blob, hb_user_data_key_t* key);
+     * void* hb_blob_get_user_data(struct hb_blob_t* blob, struct hb_user_data_key_t* key);
      * }
      */
     public static MemorySegment hb_blob_get_user_data(MemorySegment blob, MemorySegment key) {
@@ -3084,11 +3548,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$836.hb_blob_make_immutable$MH,"hb_blob_make_immutable");
+        return RuntimeHelper.requireNonNull(constants$1423.const$4,"hb_blob_make_immutable");
     }
     /**
      * {@snippet :
-     * void hb_blob_make_immutable(hb_blob_t* blob);
+     * void hb_blob_make_immutable(struct hb_blob_t* blob);
      * }
      */
     public static void hb_blob_make_immutable(MemorySegment blob) {
@@ -3100,11 +3564,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$836.hb_blob_is_immutable$MH,"hb_blob_is_immutable");
+        return RuntimeHelper.requireNonNull(constants$1423.const$5,"hb_blob_is_immutable");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_blob_is_immutable(hb_blob_t* blob);
+     * int hb_blob_is_immutable(struct hb_blob_t* blob);
      * }
      */
     public static int hb_blob_is_immutable(MemorySegment blob) {
@@ -3116,11 +3580,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_get_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$836.hb_blob_get_length$MH,"hb_blob_get_length");
+        return RuntimeHelper.requireNonNull(constants$1424.const$0,"hb_blob_get_length");
     }
     /**
      * {@snippet :
-     * unsigned int hb_blob_get_length(hb_blob_t* blob);
+     * unsigned int hb_blob_get_length(struct hb_blob_t* blob);
      * }
      */
     public static int hb_blob_get_length(MemorySegment blob) {
@@ -3132,11 +3596,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_get_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$836.hb_blob_get_data$MH,"hb_blob_get_data");
+        return RuntimeHelper.requireNonNull(constants$1424.const$1,"hb_blob_get_data");
     }
     /**
      * {@snippet :
-     * char* hb_blob_get_data(hb_blob_t* blob, unsigned int* length);
+     * char* hb_blob_get_data(struct hb_blob_t* blob, unsigned int* length);
      * }
      */
     public static MemorySegment hb_blob_get_data(MemorySegment blob, MemorySegment length) {
@@ -3148,11 +3612,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_blob_get_data_writable$MH() {
-        return RuntimeHelper.requireNonNull(constants$836.hb_blob_get_data_writable$MH,"hb_blob_get_data_writable");
+        return RuntimeHelper.requireNonNull(constants$1424.const$2,"hb_blob_get_data_writable");
     }
     /**
      * {@snippet :
-     * char* hb_blob_get_data_writable(hb_blob_t* blob, unsigned int* length);
+     * char* hb_blob_get_data_writable(struct hb_blob_t* blob, unsigned int* length);
      * }
      */
     public static MemorySegment hb_blob_get_data_writable(MemorySegment blob, MemorySegment length) {
@@ -3165,7 +3629,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_CONTROL = 0;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_CONTROL = 0;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_CONTROL() {
@@ -3173,7 +3637,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_FORMAT = 1;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_FORMAT = 1;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_FORMAT() {
@@ -3181,7 +3645,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_UNASSIGNED = 2;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_UNASSIGNED = 2;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_UNASSIGNED() {
@@ -3189,7 +3653,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_PRIVATE_USE = 3;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_PRIVATE_USE = 3;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_PRIVATE_USE() {
@@ -3197,7 +3661,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_SURROGATE = 4;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_SURROGATE = 4;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_SURROGATE() {
@@ -3205,7 +3669,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_LOWERCASE_LETTER = 5;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_LOWERCASE_LETTER = 5;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_LOWERCASE_LETTER() {
@@ -3213,7 +3677,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_MODIFIER_LETTER = 6;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_MODIFIER_LETTER = 6;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_MODIFIER_LETTER() {
@@ -3221,7 +3685,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_OTHER_LETTER = 7;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_OTHER_LETTER = 7;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_OTHER_LETTER() {
@@ -3229,7 +3693,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_TITLECASE_LETTER = 8;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_TITLECASE_LETTER = 8;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_TITLECASE_LETTER() {
@@ -3237,7 +3701,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_UPPERCASE_LETTER = 9;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_UPPERCASE_LETTER = 9;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_UPPERCASE_LETTER() {
@@ -3245,7 +3709,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_SPACING_MARK = 10;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_SPACING_MARK = 10;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_SPACING_MARK() {
@@ -3253,7 +3717,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_ENCLOSING_MARK = 11;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_ENCLOSING_MARK = 11;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_ENCLOSING_MARK() {
@@ -3261,7 +3725,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_NON_SPACING_MARK = 12;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_NON_SPACING_MARK = 12;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_NON_SPACING_MARK() {
@@ -3269,7 +3733,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_DECIMAL_NUMBER = 13;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_DECIMAL_NUMBER = 13;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_DECIMAL_NUMBER() {
@@ -3277,7 +3741,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_LETTER_NUMBER = 14;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_LETTER_NUMBER = 14;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_LETTER_NUMBER() {
@@ -3285,7 +3749,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_OTHER_NUMBER = 15;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_OTHER_NUMBER = 15;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_OTHER_NUMBER() {
@@ -3293,7 +3757,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_CONNECT_PUNCTUATION = 16;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_CONNECT_PUNCTUATION = 16;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_CONNECT_PUNCTUATION() {
@@ -3301,7 +3765,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_DASH_PUNCTUATION = 17;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_DASH_PUNCTUATION = 17;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_DASH_PUNCTUATION() {
@@ -3309,7 +3773,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_CLOSE_PUNCTUATION = 18;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_CLOSE_PUNCTUATION = 18;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_CLOSE_PUNCTUATION() {
@@ -3317,7 +3781,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_FINAL_PUNCTUATION = 19;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_FINAL_PUNCTUATION = 19;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_FINAL_PUNCTUATION() {
@@ -3325,7 +3789,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_INITIAL_PUNCTUATION = 20;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_INITIAL_PUNCTUATION = 20;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_INITIAL_PUNCTUATION() {
@@ -3333,7 +3797,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_OTHER_PUNCTUATION = 21;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_OTHER_PUNCTUATION = 21;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_OTHER_PUNCTUATION() {
@@ -3341,7 +3805,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_OPEN_PUNCTUATION = 22;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_OPEN_PUNCTUATION = 22;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_OPEN_PUNCTUATION() {
@@ -3349,7 +3813,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_CURRENCY_SYMBOL = 23;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_CURRENCY_SYMBOL = 23;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_CURRENCY_SYMBOL() {
@@ -3357,7 +3821,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_MODIFIER_SYMBOL = 24;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_MODIFIER_SYMBOL = 24;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_MODIFIER_SYMBOL() {
@@ -3365,7 +3829,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_MATH_SYMBOL = 25;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_MATH_SYMBOL = 25;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_MATH_SYMBOL() {
@@ -3373,7 +3837,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_OTHER_SYMBOL = 26;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_OTHER_SYMBOL = 26;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_OTHER_SYMBOL() {
@@ -3381,7 +3845,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_LINE_SEPARATOR = 27;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_LINE_SEPARATOR = 27;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_LINE_SEPARATOR() {
@@ -3389,7 +3853,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_PARAGRAPH_SEPARATOR = 28;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_PARAGRAPH_SEPARATOR = 28;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_PARAGRAPH_SEPARATOR() {
@@ -3397,7 +3861,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_GENERAL_CATEGORY_SPACE_SEPARATOR = 29;
+     * enum hb_unicode_general_category_t.HB_UNICODE_GENERAL_CATEGORY_SPACE_SEPARATOR = 29;
      * }
      */
     public static int HB_UNICODE_GENERAL_CATEGORY_SPACE_SEPARATOR() {
@@ -3405,7 +3869,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_NOT_REORDERED = 0;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_NOT_REORDERED = 0;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_NOT_REORDERED() {
@@ -3413,7 +3877,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_OVERLAY = 1;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_OVERLAY = 1;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_OVERLAY() {
@@ -3421,7 +3885,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_NUKTA = 7;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_NUKTA = 7;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_NUKTA() {
@@ -3429,7 +3893,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_KANA_VOICING = 8;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_KANA_VOICING = 8;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_KANA_VOICING() {
@@ -3437,7 +3901,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_VIRAMA = 9;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_VIRAMA = 9;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_VIRAMA() {
@@ -3445,7 +3909,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC10 = 10;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC10 = 10;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC10() {
@@ -3453,7 +3917,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC11 = 11;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC11 = 11;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC11() {
@@ -3461,7 +3925,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC12 = 12;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC12 = 12;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC12() {
@@ -3469,7 +3933,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC13 = 13;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC13 = 13;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC13() {
@@ -3477,7 +3941,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC14 = 14;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC14 = 14;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC14() {
@@ -3485,7 +3949,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC15 = 15;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC15 = 15;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC15() {
@@ -3493,7 +3957,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC16 = 16;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC16 = 16;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC16() {
@@ -3501,7 +3965,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC17 = 17;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC17 = 17;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC17() {
@@ -3509,7 +3973,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC18 = 18;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC18 = 18;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC18() {
@@ -3517,7 +3981,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC19 = 19;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC19 = 19;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC19() {
@@ -3525,7 +3989,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC20 = 20;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC20 = 20;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC20() {
@@ -3533,7 +3997,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC21 = 21;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC21 = 21;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC21() {
@@ -3541,7 +4005,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC22 = 22;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC22 = 22;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC22() {
@@ -3549,7 +4013,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC23 = 23;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC23 = 23;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC23() {
@@ -3557,7 +4021,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC24 = 24;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC24 = 24;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC24() {
@@ -3565,7 +4029,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC25 = 25;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC25 = 25;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC25() {
@@ -3573,7 +4037,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC26 = 26;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC26 = 26;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC26() {
@@ -3581,7 +4045,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC27 = 27;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC27 = 27;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC27() {
@@ -3589,7 +4053,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC28 = 28;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC28 = 28;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC28() {
@@ -3597,7 +4061,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC29 = 29;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC29 = 29;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC29() {
@@ -3605,7 +4069,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC30 = 30;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC30 = 30;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC30() {
@@ -3613,7 +4077,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC31 = 31;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC31 = 31;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC31() {
@@ -3621,7 +4085,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC32 = 32;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC32 = 32;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC32() {
@@ -3629,7 +4093,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC33 = 33;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC33 = 33;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC33() {
@@ -3637,7 +4101,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC34 = 34;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC34 = 34;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC34() {
@@ -3645,7 +4109,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC35 = 35;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC35 = 35;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC35() {
@@ -3653,7 +4117,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC36 = 36;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC36 = 36;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC36() {
@@ -3661,7 +4125,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC84 = 84;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC84 = 84;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC84() {
@@ -3669,7 +4133,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC91 = 91;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC91 = 91;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC91() {
@@ -3677,7 +4141,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC103 = 103;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC103 = 103;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC103() {
@@ -3685,7 +4149,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC107 = 107;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC107 = 107;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC107() {
@@ -3693,7 +4157,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC118 = 118;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC118 = 118;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC118() {
@@ -3701,7 +4165,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC122 = 122;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC122 = 122;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC122() {
@@ -3709,7 +4173,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC129 = 129;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC129 = 129;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC129() {
@@ -3717,7 +4181,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC130 = 130;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC130 = 130;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_CCC130() {
@@ -3725,15 +4189,15 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_CCC133 = 132;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_CCC132 = 132;
      * }
      */
-    public static int HB_UNICODE_COMBINING_CLASS_CCC133() {
+    public static int HB_UNICODE_COMBINING_CLASS_CCC132() {
         return (int)132L;
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_ATTACHED_BELOW_LEFT = 200;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_ATTACHED_BELOW_LEFT = 200;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_ATTACHED_BELOW_LEFT() {
@@ -3741,7 +4205,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_ATTACHED_BELOW = 202;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_ATTACHED_BELOW = 202;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_ATTACHED_BELOW() {
@@ -3749,7 +4213,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_ATTACHED_ABOVE = 214;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_ATTACHED_ABOVE = 214;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_ATTACHED_ABOVE() {
@@ -3757,7 +4221,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_ATTACHED_ABOVE_RIGHT = 216;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_ATTACHED_ABOVE_RIGHT = 216;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_ATTACHED_ABOVE_RIGHT() {
@@ -3765,7 +4229,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_BELOW_LEFT = 218;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_BELOW_LEFT = 218;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_BELOW_LEFT() {
@@ -3773,7 +4237,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_BELOW = 220;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_BELOW = 220;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_BELOW() {
@@ -3781,7 +4245,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_BELOW_RIGHT = 222;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_BELOW_RIGHT = 222;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_BELOW_RIGHT() {
@@ -3789,7 +4253,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_LEFT = 224;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_LEFT = 224;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_LEFT() {
@@ -3797,7 +4261,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_RIGHT = 226;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_RIGHT = 226;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_RIGHT() {
@@ -3805,7 +4269,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_ABOVE_LEFT = 228;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_ABOVE_LEFT = 228;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_ABOVE_LEFT() {
@@ -3813,7 +4277,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_ABOVE = 230;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_ABOVE = 230;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_ABOVE() {
@@ -3821,7 +4285,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_ABOVE_RIGHT = 232;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_ABOVE_RIGHT = 232;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_ABOVE_RIGHT() {
@@ -3829,7 +4293,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_DOUBLE_BELOW = 233;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_DOUBLE_BELOW = 233;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_DOUBLE_BELOW() {
@@ -3837,7 +4301,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_DOUBLE_ABOVE = 234;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_DOUBLE_ABOVE = 234;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_DOUBLE_ABOVE() {
@@ -3845,7 +4309,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_IOTA_SUBSCRIPT = 240;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_IOTA_SUBSCRIPT = 240;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_IOTA_SUBSCRIPT() {
@@ -3853,18 +4317,18 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_UNICODE_COMBINING_CLASS_INVALID = 255;
+     * enum hb_unicode_combining_class_t.HB_UNICODE_COMBINING_CLASS_INVALID = 255;
      * }
      */
     public static int HB_UNICODE_COMBINING_CLASS_INVALID() {
         return (int)255L;
     }
     public static MethodHandle hb_unicode_funcs_get_default$MH() {
-        return RuntimeHelper.requireNonNull(constants$836.hb_unicode_funcs_get_default$MH,"hb_unicode_funcs_get_default");
+        return RuntimeHelper.requireNonNull(constants$1424.const$3,"hb_unicode_funcs_get_default");
     }
     /**
      * {@snippet :
-     * hb_unicode_funcs_t* hb_unicode_funcs_get_default();
+     * struct hb_unicode_funcs_t* hb_unicode_funcs_get_default();
      * }
      */
     public static MemorySegment hb_unicode_funcs_get_default() {
@@ -3876,11 +4340,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$837.hb_unicode_funcs_create$MH,"hb_unicode_funcs_create");
+        return RuntimeHelper.requireNonNull(constants$1424.const$4,"hb_unicode_funcs_create");
     }
     /**
      * {@snippet :
-     * hb_unicode_funcs_t* hb_unicode_funcs_create(hb_unicode_funcs_t* parent);
+     * struct hb_unicode_funcs_t* hb_unicode_funcs_create(struct hb_unicode_funcs_t* parent);
      * }
      */
     public static MemorySegment hb_unicode_funcs_create(MemorySegment parent) {
@@ -3892,11 +4356,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$837.hb_unicode_funcs_get_empty$MH,"hb_unicode_funcs_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1424.const$5,"hb_unicode_funcs_get_empty");
     }
     /**
      * {@snippet :
-     * hb_unicode_funcs_t* hb_unicode_funcs_get_empty();
+     * struct hb_unicode_funcs_t* hb_unicode_funcs_get_empty();
      * }
      */
     public static MemorySegment hb_unicode_funcs_get_empty() {
@@ -3908,11 +4372,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$837.hb_unicode_funcs_reference$MH,"hb_unicode_funcs_reference");
+        return RuntimeHelper.requireNonNull(constants$1425.const$0,"hb_unicode_funcs_reference");
     }
     /**
      * {@snippet :
-     * hb_unicode_funcs_t* hb_unicode_funcs_reference(hb_unicode_funcs_t* ufuncs);
+     * struct hb_unicode_funcs_t* hb_unicode_funcs_reference(struct hb_unicode_funcs_t* ufuncs);
      * }
      */
     public static MemorySegment hb_unicode_funcs_reference(MemorySegment ufuncs) {
@@ -3924,11 +4388,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$837.hb_unicode_funcs_destroy$MH,"hb_unicode_funcs_destroy");
+        return RuntimeHelper.requireNonNull(constants$1425.const$1,"hb_unicode_funcs_destroy");
     }
     /**
      * {@snippet :
-     * void hb_unicode_funcs_destroy(hb_unicode_funcs_t* ufuncs);
+     * void hb_unicode_funcs_destroy(struct hb_unicode_funcs_t* ufuncs);
      * }
      */
     public static void hb_unicode_funcs_destroy(MemorySegment ufuncs) {
@@ -3940,11 +4404,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$837.hb_unicode_funcs_set_user_data$MH,"hb_unicode_funcs_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1425.const$3,"hb_unicode_funcs_set_user_data");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_unicode_funcs_set_user_data(hb_unicode_funcs_t* ufuncs, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * int hb_unicode_funcs_set_user_data(struct hb_unicode_funcs_t* ufuncs, struct hb_user_data_key_t* key, void* data, void (*destroy)(void*), int replace);
      * }
      */
     public static int hb_unicode_funcs_set_user_data(MemorySegment ufuncs, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
@@ -3956,11 +4420,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$837.hb_unicode_funcs_get_user_data$MH,"hb_unicode_funcs_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1425.const$4,"hb_unicode_funcs_get_user_data");
     }
     /**
      * {@snippet :
-     * void* hb_unicode_funcs_get_user_data(const hb_unicode_funcs_t* ufuncs, hb_user_data_key_t* key);
+     * void* hb_unicode_funcs_get_user_data(struct hb_unicode_funcs_t* ufuncs, struct hb_user_data_key_t* key);
      * }
      */
     public static MemorySegment hb_unicode_funcs_get_user_data(MemorySegment ufuncs, MemorySegment key) {
@@ -3972,11 +4436,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$838.hb_unicode_funcs_make_immutable$MH,"hb_unicode_funcs_make_immutable");
+        return RuntimeHelper.requireNonNull(constants$1425.const$5,"hb_unicode_funcs_make_immutable");
     }
     /**
      * {@snippet :
-     * void hb_unicode_funcs_make_immutable(hb_unicode_funcs_t* ufuncs);
+     * void hb_unicode_funcs_make_immutable(struct hb_unicode_funcs_t* ufuncs);
      * }
      */
     public static void hb_unicode_funcs_make_immutable(MemorySegment ufuncs) {
@@ -3988,11 +4452,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$838.hb_unicode_funcs_is_immutable$MH,"hb_unicode_funcs_is_immutable");
+        return RuntimeHelper.requireNonNull(constants$1426.const$0,"hb_unicode_funcs_is_immutable");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_unicode_funcs_is_immutable(hb_unicode_funcs_t* ufuncs);
+     * int hb_unicode_funcs_is_immutable(struct hb_unicode_funcs_t* ufuncs);
      * }
      */
     public static int hb_unicode_funcs_is_immutable(MemorySegment ufuncs) {
@@ -4004,11 +4468,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_get_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$838.hb_unicode_funcs_get_parent$MH,"hb_unicode_funcs_get_parent");
+        return RuntimeHelper.requireNonNull(constants$1426.const$1,"hb_unicode_funcs_get_parent");
     }
     /**
      * {@snippet :
-     * hb_unicode_funcs_t* hb_unicode_funcs_get_parent(hb_unicode_funcs_t* ufuncs);
+     * struct hb_unicode_funcs_t* hb_unicode_funcs_get_parent(struct hb_unicode_funcs_t* ufuncs);
      * }
      */
     public static MemorySegment hb_unicode_funcs_get_parent(MemorySegment ufuncs) {
@@ -4020,11 +4484,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_combining_class_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$840.hb_unicode_funcs_set_combining_class_func$MH,"hb_unicode_funcs_set_combining_class_func");
+        return RuntimeHelper.requireNonNull(constants$1427.const$5,"hb_unicode_funcs_set_combining_class_func");
     }
     /**
      * {@snippet :
-     * void hb_unicode_funcs_set_combining_class_func(hb_unicode_funcs_t* ufuncs, hb_unicode_combining_class_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_unicode_funcs_set_combining_class_func(struct hb_unicode_funcs_t* ufuncs, enum hb_unicode_combining_class_t (*func)(struct hb_unicode_funcs_t*,unsigned int,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_unicode_funcs_set_combining_class_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -4036,11 +4500,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_general_category_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$840.hb_unicode_funcs_set_general_category_func$MH,"hb_unicode_funcs_set_general_category_func");
+        return RuntimeHelper.requireNonNull(constants$1428.const$2,"hb_unicode_funcs_set_general_category_func");
     }
     /**
      * {@snippet :
-     * void hb_unicode_funcs_set_general_category_func(hb_unicode_funcs_t* ufuncs, hb_unicode_general_category_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_unicode_funcs_set_general_category_func(struct hb_unicode_funcs_t* ufuncs, enum hb_unicode_general_category_t (*func)(struct hb_unicode_funcs_t*,unsigned int,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_unicode_funcs_set_general_category_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -4052,11 +4516,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_mirroring_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$840.hb_unicode_funcs_set_mirroring_func$MH,"hb_unicode_funcs_set_mirroring_func");
+        return RuntimeHelper.requireNonNull(constants$1428.const$5,"hb_unicode_funcs_set_mirroring_func");
     }
     /**
      * {@snippet :
-     * void hb_unicode_funcs_set_mirroring_func(hb_unicode_funcs_t* ufuncs, hb_unicode_mirroring_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_unicode_funcs_set_mirroring_func(struct hb_unicode_funcs_t* ufuncs, unsigned int (*func)(struct hb_unicode_funcs_t*,unsigned int,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_unicode_funcs_set_mirroring_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -4068,11 +4532,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_script_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$841.hb_unicode_funcs_set_script_func$MH,"hb_unicode_funcs_set_script_func");
+        return RuntimeHelper.requireNonNull(constants$1429.const$2,"hb_unicode_funcs_set_script_func");
     }
     /**
      * {@snippet :
-     * void hb_unicode_funcs_set_script_func(hb_unicode_funcs_t* ufuncs, hb_unicode_script_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_unicode_funcs_set_script_func(struct hb_unicode_funcs_t* ufuncs, enum hb_script_t (*func)(struct hb_unicode_funcs_t*,unsigned int,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_unicode_funcs_set_script_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -4084,11 +4548,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_compose_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$841.hb_unicode_funcs_set_compose_func$MH,"hb_unicode_funcs_set_compose_func");
+        return RuntimeHelper.requireNonNull(constants$1429.const$5,"hb_unicode_funcs_set_compose_func");
     }
     /**
      * {@snippet :
-     * void hb_unicode_funcs_set_compose_func(hb_unicode_funcs_t* ufuncs, hb_unicode_compose_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_unicode_funcs_set_compose_func(struct hb_unicode_funcs_t* ufuncs, int (*func)(struct hb_unicode_funcs_t*,unsigned int,unsigned int,unsigned int*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_unicode_funcs_set_compose_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -4100,11 +4564,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_decompose_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$841.hb_unicode_funcs_set_decompose_func$MH,"hb_unicode_funcs_set_decompose_func");
+        return RuntimeHelper.requireNonNull(constants$1430.const$2,"hb_unicode_funcs_set_decompose_func");
     }
     /**
      * {@snippet :
-     * void hb_unicode_funcs_set_decompose_func(hb_unicode_funcs_t* ufuncs, hb_unicode_decompose_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_unicode_funcs_set_decompose_func(struct hb_unicode_funcs_t* ufuncs, int (*func)(struct hb_unicode_funcs_t*,unsigned int,unsigned int*,unsigned int*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_unicode_funcs_set_decompose_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -4116,11 +4580,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_combining_class$MH() {
-        return RuntimeHelper.requireNonNull(constants$841.hb_unicode_combining_class$MH,"hb_unicode_combining_class");
+        return RuntimeHelper.requireNonNull(constants$1430.const$3,"hb_unicode_combining_class");
     }
     /**
      * {@snippet :
-     * hb_unicode_combining_class_t hb_unicode_combining_class(hb_unicode_funcs_t* ufuncs, hb_codepoint_t unicode);
+     * enum hb_unicode_combining_class_t hb_unicode_combining_class(struct hb_unicode_funcs_t* ufuncs, unsigned int unicode);
      * }
      */
     public static int hb_unicode_combining_class(MemorySegment ufuncs, int unicode) {
@@ -4132,11 +4596,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_general_category$MH() {
-        return RuntimeHelper.requireNonNull(constants$841.hb_unicode_general_category$MH,"hb_unicode_general_category");
+        return RuntimeHelper.requireNonNull(constants$1430.const$4,"hb_unicode_general_category");
     }
     /**
      * {@snippet :
-     * hb_unicode_general_category_t hb_unicode_general_category(hb_unicode_funcs_t* ufuncs, hb_codepoint_t unicode);
+     * enum hb_unicode_general_category_t hb_unicode_general_category(struct hb_unicode_funcs_t* ufuncs, unsigned int unicode);
      * }
      */
     public static int hb_unicode_general_category(MemorySegment ufuncs, int unicode) {
@@ -4148,11 +4612,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_mirroring$MH() {
-        return RuntimeHelper.requireNonNull(constants$841.hb_unicode_mirroring$MH,"hb_unicode_mirroring");
+        return RuntimeHelper.requireNonNull(constants$1430.const$5,"hb_unicode_mirroring");
     }
     /**
      * {@snippet :
-     * hb_codepoint_t hb_unicode_mirroring(hb_unicode_funcs_t* ufuncs, hb_codepoint_t unicode);
+     * unsigned int hb_unicode_mirroring(struct hb_unicode_funcs_t* ufuncs, unsigned int unicode);
      * }
      */
     public static int hb_unicode_mirroring(MemorySegment ufuncs, int unicode) {
@@ -4164,11 +4628,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_script$MH() {
-        return RuntimeHelper.requireNonNull(constants$842.hb_unicode_script$MH,"hb_unicode_script");
+        return RuntimeHelper.requireNonNull(constants$1431.const$0,"hb_unicode_script");
     }
     /**
      * {@snippet :
-     * hb_script_t hb_unicode_script(hb_unicode_funcs_t* ufuncs, hb_codepoint_t unicode);
+     * enum hb_script_t hb_unicode_script(struct hb_unicode_funcs_t* ufuncs, unsigned int unicode);
      * }
      */
     public static int hb_unicode_script(MemorySegment ufuncs, int unicode) {
@@ -4180,11 +4644,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_compose$MH() {
-        return RuntimeHelper.requireNonNull(constants$842.hb_unicode_compose$MH,"hb_unicode_compose");
+        return RuntimeHelper.requireNonNull(constants$1431.const$1,"hb_unicode_compose");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_unicode_compose(hb_unicode_funcs_t* ufuncs, hb_codepoint_t a, hb_codepoint_t b, hb_codepoint_t* ab);
+     * int hb_unicode_compose(struct hb_unicode_funcs_t* ufuncs, unsigned int a, unsigned int b, unsigned int* ab);
      * }
      */
     public static int hb_unicode_compose(MemorySegment ufuncs, int a, int b, MemorySegment ab) {
@@ -4196,11 +4660,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_decompose$MH() {
-        return RuntimeHelper.requireNonNull(constants$842.hb_unicode_decompose$MH,"hb_unicode_decompose");
+        return RuntimeHelper.requireNonNull(constants$1431.const$2,"hb_unicode_decompose");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_unicode_decompose(hb_unicode_funcs_t* ufuncs, hb_codepoint_t ab, hb_codepoint_t* a, hb_codepoint_t* b);
+     * int hb_unicode_decompose(struct hb_unicode_funcs_t* ufuncs, unsigned int ab, unsigned int* a, unsigned int* b);
      * }
      */
     public static int hb_unicode_decompose(MemorySegment ufuncs, int ab, MemorySegment a, MemorySegment b) {
@@ -4212,11 +4676,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$842.hb_set_create$MH,"hb_set_create");
+        return RuntimeHelper.requireNonNull(constants$1431.const$3,"hb_set_create");
     }
     /**
      * {@snippet :
-     * hb_set_t* hb_set_create();
+     * struct hb_set_t* hb_set_create();
      * }
      */
     public static MemorySegment hb_set_create() {
@@ -4228,11 +4692,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$842.hb_set_get_empty$MH,"hb_set_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1431.const$4,"hb_set_get_empty");
     }
     /**
      * {@snippet :
-     * hb_set_t* hb_set_get_empty();
+     * struct hb_set_t* hb_set_get_empty();
      * }
      */
     public static MemorySegment hb_set_get_empty() {
@@ -4244,11 +4708,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$842.hb_set_reference$MH,"hb_set_reference");
+        return RuntimeHelper.requireNonNull(constants$1431.const$5,"hb_set_reference");
     }
     /**
      * {@snippet :
-     * hb_set_t* hb_set_reference(hb_set_t* set);
+     * struct hb_set_t* hb_set_reference(struct hb_set_t* set);
      * }
      */
     public static MemorySegment hb_set_reference(MemorySegment set) {
@@ -4260,11 +4724,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$843.hb_set_destroy$MH,"hb_set_destroy");
+        return RuntimeHelper.requireNonNull(constants$1432.const$0,"hb_set_destroy");
     }
     /**
      * {@snippet :
-     * void hb_set_destroy(hb_set_t* set);
+     * void hb_set_destroy(struct hb_set_t* set);
      * }
      */
     public static void hb_set_destroy(MemorySegment set) {
@@ -4276,11 +4740,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$843.hb_set_set_user_data$MH,"hb_set_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1432.const$2,"hb_set_set_user_data");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_set_set_user_data(hb_set_t* set, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * int hb_set_set_user_data(struct hb_set_t* set, struct hb_user_data_key_t* key, void* data, void (*destroy)(void*), int replace);
      * }
      */
     public static int hb_set_set_user_data(MemorySegment set, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
@@ -4292,11 +4756,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$843.hb_set_get_user_data$MH,"hb_set_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1432.const$3,"hb_set_get_user_data");
     }
     /**
      * {@snippet :
-     * void* hb_set_get_user_data(const hb_set_t* set, hb_user_data_key_t* key);
+     * void* hb_set_get_user_data(struct hb_set_t* set, struct hb_user_data_key_t* key);
      * }
      */
     public static MemorySegment hb_set_get_user_data(MemorySegment set, MemorySegment key) {
@@ -4308,11 +4772,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_allocation_successful$MH() {
-        return RuntimeHelper.requireNonNull(constants$843.hb_set_allocation_successful$MH,"hb_set_allocation_successful");
+        return RuntimeHelper.requireNonNull(constants$1432.const$4,"hb_set_allocation_successful");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_set_allocation_successful(const hb_set_t* set);
+     * int hb_set_allocation_successful(struct hb_set_t* set);
      * }
      */
     public static int hb_set_allocation_successful(MemorySegment set) {
@@ -4324,11 +4788,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$843.hb_set_copy$MH,"hb_set_copy");
+        return RuntimeHelper.requireNonNull(constants$1432.const$5,"hb_set_copy");
     }
     /**
      * {@snippet :
-     * hb_set_t* hb_set_copy(const hb_set_t* set);
+     * struct hb_set_t* hb_set_copy(struct hb_set_t* set);
      * }
      */
     public static MemorySegment hb_set_copy(MemorySegment set) {
@@ -4340,11 +4804,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_clear$MH() {
-        return RuntimeHelper.requireNonNull(constants$843.hb_set_clear$MH,"hb_set_clear");
+        return RuntimeHelper.requireNonNull(constants$1433.const$0,"hb_set_clear");
     }
     /**
      * {@snippet :
-     * void hb_set_clear(hb_set_t* set);
+     * void hb_set_clear(struct hb_set_t* set);
      * }
      */
     public static void hb_set_clear(MemorySegment set) {
@@ -4356,11 +4820,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_is_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$844.hb_set_is_empty$MH,"hb_set_is_empty");
+        return RuntimeHelper.requireNonNull(constants$1433.const$1,"hb_set_is_empty");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_set_is_empty(const hb_set_t* set);
+     * int hb_set_is_empty(struct hb_set_t* set);
      * }
      */
     public static int hb_set_is_empty(MemorySegment set) {
@@ -4372,11 +4836,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_invert$MH() {
-        return RuntimeHelper.requireNonNull(constants$844.hb_set_invert$MH,"hb_set_invert");
+        return RuntimeHelper.requireNonNull(constants$1433.const$2,"hb_set_invert");
     }
     /**
      * {@snippet :
-     * void hb_set_invert(hb_set_t* set);
+     * void hb_set_invert(struct hb_set_t* set);
      * }
      */
     public static void hb_set_invert(MemorySegment set) {
@@ -4387,12 +4851,28 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle hb_set_has$MH() {
-        return RuntimeHelper.requireNonNull(constants$844.hb_set_has$MH,"hb_set_has");
+    public static MethodHandle hb_set_is_inverted$MH() {
+        return RuntimeHelper.requireNonNull(constants$1433.const$3,"hb_set_is_inverted");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_set_has(const hb_set_t* set, hb_codepoint_t codepoint);
+     * int hb_set_is_inverted(struct hb_set_t* set);
+     * }
+     */
+    public static int hb_set_is_inverted(MemorySegment set) {
+        var mh$ = hb_set_is_inverted$MH();
+        try {
+            return (int)mh$.invokeExact(set);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_set_has$MH() {
+        return RuntimeHelper.requireNonNull(constants$1433.const$4,"hb_set_has");
+    }
+    /**
+     * {@snippet :
+     * int hb_set_has(struct hb_set_t* set, unsigned int codepoint);
      * }
      */
     public static int hb_set_has(MemorySegment set, int codepoint) {
@@ -4404,11 +4884,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_add$MH() {
-        return RuntimeHelper.requireNonNull(constants$844.hb_set_add$MH,"hb_set_add");
+        return RuntimeHelper.requireNonNull(constants$1433.const$5,"hb_set_add");
     }
     /**
      * {@snippet :
-     * void hb_set_add(hb_set_t* set, hb_codepoint_t codepoint);
+     * void hb_set_add(struct hb_set_t* set, unsigned int codepoint);
      * }
      */
     public static void hb_set_add(MemorySegment set, int codepoint) {
@@ -4420,11 +4900,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_add_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$844.hb_set_add_range$MH,"hb_set_add_range");
+        return RuntimeHelper.requireNonNull(constants$1434.const$0,"hb_set_add_range");
     }
     /**
      * {@snippet :
-     * void hb_set_add_range(hb_set_t* set, hb_codepoint_t first, hb_codepoint_t last);
+     * void hb_set_add_range(struct hb_set_t* set, unsigned int first, unsigned int last);
      * }
      */
     public static void hb_set_add_range(MemorySegment set, int first, int last) {
@@ -4436,11 +4916,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_add_sorted_array$MH() {
-        return RuntimeHelper.requireNonNull(constants$844.hb_set_add_sorted_array$MH,"hb_set_add_sorted_array");
+        return RuntimeHelper.requireNonNull(constants$1434.const$1,"hb_set_add_sorted_array");
     }
     /**
      * {@snippet :
-     * void hb_set_add_sorted_array(hb_set_t* set, const hb_codepoint_t* sorted_codepoints, unsigned int num_codepoints);
+     * void hb_set_add_sorted_array(struct hb_set_t* set, unsigned int* sorted_codepoints, unsigned int num_codepoints);
      * }
      */
     public static void hb_set_add_sorted_array(MemorySegment set, MemorySegment sorted_codepoints, int num_codepoints) {
@@ -4452,11 +4932,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_del$MH() {
-        return RuntimeHelper.requireNonNull(constants$845.hb_set_del$MH,"hb_set_del");
+        return RuntimeHelper.requireNonNull(constants$1434.const$2,"hb_set_del");
     }
     /**
      * {@snippet :
-     * void hb_set_del(hb_set_t* set, hb_codepoint_t codepoint);
+     * void hb_set_del(struct hb_set_t* set, unsigned int codepoint);
      * }
      */
     public static void hb_set_del(MemorySegment set, int codepoint) {
@@ -4468,11 +4948,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_del_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$845.hb_set_del_range$MH,"hb_set_del_range");
+        return RuntimeHelper.requireNonNull(constants$1434.const$3,"hb_set_del_range");
     }
     /**
      * {@snippet :
-     * void hb_set_del_range(hb_set_t* set, hb_codepoint_t first, hb_codepoint_t last);
+     * void hb_set_del_range(struct hb_set_t* set, unsigned int first, unsigned int last);
      * }
      */
     public static void hb_set_del_range(MemorySegment set, int first, int last) {
@@ -4484,11 +4964,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_is_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$845.hb_set_is_equal$MH,"hb_set_is_equal");
+        return RuntimeHelper.requireNonNull(constants$1434.const$4,"hb_set_is_equal");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_set_is_equal(const hb_set_t* set, const hb_set_t* other);
+     * int hb_set_is_equal(struct hb_set_t* set, struct hb_set_t* other);
      * }
      */
     public static int hb_set_is_equal(MemorySegment set, MemorySegment other) {
@@ -4500,11 +4980,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_hash$MH() {
-        return RuntimeHelper.requireNonNull(constants$845.hb_set_hash$MH,"hb_set_hash");
+        return RuntimeHelper.requireNonNull(constants$1434.const$5,"hb_set_hash");
     }
     /**
      * {@snippet :
-     * unsigned int hb_set_hash(const hb_set_t* set);
+     * unsigned int hb_set_hash(struct hb_set_t* set);
      * }
      */
     public static int hb_set_hash(MemorySegment set) {
@@ -4516,11 +4996,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_is_subset$MH() {
-        return RuntimeHelper.requireNonNull(constants$845.hb_set_is_subset$MH,"hb_set_is_subset");
+        return RuntimeHelper.requireNonNull(constants$1435.const$0,"hb_set_is_subset");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_set_is_subset(const hb_set_t* set, const hb_set_t* larger_set);
+     * int hb_set_is_subset(struct hb_set_t* set, struct hb_set_t* larger_set);
      * }
      */
     public static int hb_set_is_subset(MemorySegment set, MemorySegment larger_set) {
@@ -4532,11 +5012,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$845.hb_set_set$MH,"hb_set_set");
+        return RuntimeHelper.requireNonNull(constants$1435.const$1,"hb_set_set");
     }
     /**
      * {@snippet :
-     * void hb_set_set(hb_set_t* set, const hb_set_t* other);
+     * void hb_set_set(struct hb_set_t* set, struct hb_set_t* other);
      * }
      */
     public static void hb_set_set(MemorySegment set, MemorySegment other) {
@@ -4548,11 +5028,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_union$MH() {
-        return RuntimeHelper.requireNonNull(constants$846.hb_set_union$MH,"hb_set_union");
+        return RuntimeHelper.requireNonNull(constants$1435.const$2,"hb_set_union");
     }
     /**
      * {@snippet :
-     * void hb_set_union(hb_set_t* set, const hb_set_t* other);
+     * void hb_set_union(struct hb_set_t* set, struct hb_set_t* other);
      * }
      */
     public static void hb_set_union(MemorySegment set, MemorySegment other) {
@@ -4564,11 +5044,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_intersect$MH() {
-        return RuntimeHelper.requireNonNull(constants$846.hb_set_intersect$MH,"hb_set_intersect");
+        return RuntimeHelper.requireNonNull(constants$1435.const$3,"hb_set_intersect");
     }
     /**
      * {@snippet :
-     * void hb_set_intersect(hb_set_t* set, const hb_set_t* other);
+     * void hb_set_intersect(struct hb_set_t* set, struct hb_set_t* other);
      * }
      */
     public static void hb_set_intersect(MemorySegment set, MemorySegment other) {
@@ -4580,11 +5060,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_subtract$MH() {
-        return RuntimeHelper.requireNonNull(constants$846.hb_set_subtract$MH,"hb_set_subtract");
+        return RuntimeHelper.requireNonNull(constants$1435.const$4,"hb_set_subtract");
     }
     /**
      * {@snippet :
-     * void hb_set_subtract(hb_set_t* set, const hb_set_t* other);
+     * void hb_set_subtract(struct hb_set_t* set, struct hb_set_t* other);
      * }
      */
     public static void hb_set_subtract(MemorySegment set, MemorySegment other) {
@@ -4596,11 +5076,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_symmetric_difference$MH() {
-        return RuntimeHelper.requireNonNull(constants$846.hb_set_symmetric_difference$MH,"hb_set_symmetric_difference");
+        return RuntimeHelper.requireNonNull(constants$1435.const$5,"hb_set_symmetric_difference");
     }
     /**
      * {@snippet :
-     * void hb_set_symmetric_difference(hb_set_t* set, const hb_set_t* other);
+     * void hb_set_symmetric_difference(struct hb_set_t* set, struct hb_set_t* other);
      * }
      */
     public static void hb_set_symmetric_difference(MemorySegment set, MemorySegment other) {
@@ -4612,11 +5092,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_get_population$MH() {
-        return RuntimeHelper.requireNonNull(constants$846.hb_set_get_population$MH,"hb_set_get_population");
+        return RuntimeHelper.requireNonNull(constants$1436.const$0,"hb_set_get_population");
     }
     /**
      * {@snippet :
-     * unsigned int hb_set_get_population(const hb_set_t* set);
+     * unsigned int hb_set_get_population(struct hb_set_t* set);
      * }
      */
     public static int hb_set_get_population(MemorySegment set) {
@@ -4628,11 +5108,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_get_min$MH() {
-        return RuntimeHelper.requireNonNull(constants$846.hb_set_get_min$MH,"hb_set_get_min");
+        return RuntimeHelper.requireNonNull(constants$1436.const$1,"hb_set_get_min");
     }
     /**
      * {@snippet :
-     * hb_codepoint_t hb_set_get_min(const hb_set_t* set);
+     * unsigned int hb_set_get_min(struct hb_set_t* set);
      * }
      */
     public static int hb_set_get_min(MemorySegment set) {
@@ -4644,11 +5124,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_get_max$MH() {
-        return RuntimeHelper.requireNonNull(constants$847.hb_set_get_max$MH,"hb_set_get_max");
+        return RuntimeHelper.requireNonNull(constants$1436.const$2,"hb_set_get_max");
     }
     /**
      * {@snippet :
-     * hb_codepoint_t hb_set_get_max(const hb_set_t* set);
+     * unsigned int hb_set_get_max(struct hb_set_t* set);
      * }
      */
     public static int hb_set_get_max(MemorySegment set) {
@@ -4660,11 +5140,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_next$MH() {
-        return RuntimeHelper.requireNonNull(constants$847.hb_set_next$MH,"hb_set_next");
+        return RuntimeHelper.requireNonNull(constants$1436.const$3,"hb_set_next");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_set_next(const hb_set_t* set, hb_codepoint_t* codepoint);
+     * int hb_set_next(struct hb_set_t* set, unsigned int* codepoint);
      * }
      */
     public static int hb_set_next(MemorySegment set, MemorySegment codepoint) {
@@ -4676,11 +5156,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_previous$MH() {
-        return RuntimeHelper.requireNonNull(constants$847.hb_set_previous$MH,"hb_set_previous");
+        return RuntimeHelper.requireNonNull(constants$1436.const$4,"hb_set_previous");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_set_previous(const hb_set_t* set, hb_codepoint_t* codepoint);
+     * int hb_set_previous(struct hb_set_t* set, unsigned int* codepoint);
      * }
      */
     public static int hb_set_previous(MemorySegment set, MemorySegment codepoint) {
@@ -4692,11 +5172,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_next_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$847.hb_set_next_range$MH,"hb_set_next_range");
+        return RuntimeHelper.requireNonNull(constants$1436.const$5,"hb_set_next_range");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_set_next_range(const hb_set_t* set, hb_codepoint_t* first, hb_codepoint_t* last);
+     * int hb_set_next_range(struct hb_set_t* set, unsigned int* first, unsigned int* last);
      * }
      */
     public static int hb_set_next_range(MemorySegment set, MemorySegment first, MemorySegment last) {
@@ -4708,11 +5188,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_previous_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$847.hb_set_previous_range$MH,"hb_set_previous_range");
+        return RuntimeHelper.requireNonNull(constants$1437.const$0,"hb_set_previous_range");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_set_previous_range(const hb_set_t* set, hb_codepoint_t* first, hb_codepoint_t* last);
+     * int hb_set_previous_range(struct hb_set_t* set, unsigned int* first, unsigned int* last);
      * }
      */
     public static int hb_set_previous_range(MemorySegment set, MemorySegment first, MemorySegment last) {
@@ -4724,11 +5204,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_set_next_many$MH() {
-        return RuntimeHelper.requireNonNull(constants$847.hb_set_next_many$MH,"hb_set_next_many");
+        return RuntimeHelper.requireNonNull(constants$1437.const$1,"hb_set_next_many");
     }
     /**
      * {@snippet :
-     * unsigned int hb_set_next_many(const hb_set_t* set, hb_codepoint_t codepoint, hb_codepoint_t* out, unsigned int size);
+     * unsigned int hb_set_next_many(struct hb_set_t* set, unsigned int codepoint, unsigned int* out, unsigned int size);
      * }
      */
     public static int hb_set_next_many(MemorySegment set, int codepoint, MemorySegment out, int size) {
@@ -4739,12 +5219,348 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle hb_face_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$848.hb_face_count$MH,"hb_face_count");
+    public static MethodHandle hb_map_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$1437.const$2,"hb_map_create");
     }
     /**
      * {@snippet :
-     * unsigned int hb_face_count(hb_blob_t* blob);
+     * struct hb_map_t* hb_map_create();
+     * }
+     */
+    public static MemorySegment hb_map_create() {
+        var mh$ = hb_map_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_get_empty$MH() {
+        return RuntimeHelper.requireNonNull(constants$1437.const$3,"hb_map_get_empty");
+    }
+    /**
+     * {@snippet :
+     * struct hb_map_t* hb_map_get_empty();
+     * }
+     */
+    public static MemorySegment hb_map_get_empty() {
+        var mh$ = hb_map_get_empty$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$1437.const$4,"hb_map_reference");
+    }
+    /**
+     * {@snippet :
+     * struct hb_map_t* hb_map_reference(struct hb_map_t* map);
+     * }
+     */
+    public static MemorySegment hb_map_reference(MemorySegment map) {
+        var mh$ = hb_map_reference$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(map);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$1437.const$5,"hb_map_destroy");
+    }
+    /**
+     * {@snippet :
+     * void hb_map_destroy(struct hb_map_t* map);
+     * }
+     */
+    public static void hb_map_destroy(MemorySegment map) {
+        var mh$ = hb_map_destroy$MH();
+        try {
+            mh$.invokeExact(map);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$1438.const$1,"hb_map_set_user_data");
+    }
+    /**
+     * {@snippet :
+     * int hb_map_set_user_data(struct hb_map_t* map, struct hb_user_data_key_t* key, void* data, void (*destroy)(void*), int replace);
+     * }
+     */
+    public static int hb_map_set_user_data(MemorySegment map, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
+        var mh$ = hb_map_set_user_data$MH();
+        try {
+            return (int)mh$.invokeExact(map, key, data, destroy, replace);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$1438.const$2,"hb_map_get_user_data");
+    }
+    /**
+     * {@snippet :
+     * void* hb_map_get_user_data(struct hb_map_t* map, struct hb_user_data_key_t* key);
+     * }
+     */
+    public static MemorySegment hb_map_get_user_data(MemorySegment map, MemorySegment key) {
+        var mh$ = hb_map_get_user_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(map, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_allocation_successful$MH() {
+        return RuntimeHelper.requireNonNull(constants$1438.const$3,"hb_map_allocation_successful");
+    }
+    /**
+     * {@snippet :
+     * int hb_map_allocation_successful(struct hb_map_t* map);
+     * }
+     */
+    public static int hb_map_allocation_successful(MemorySegment map) {
+        var mh$ = hb_map_allocation_successful$MH();
+        try {
+            return (int)mh$.invokeExact(map);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$1438.const$4,"hb_map_copy");
+    }
+    /**
+     * {@snippet :
+     * struct hb_map_t* hb_map_copy(struct hb_map_t* map);
+     * }
+     */
+    public static MemorySegment hb_map_copy(MemorySegment map) {
+        var mh$ = hb_map_copy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(map);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_clear$MH() {
+        return RuntimeHelper.requireNonNull(constants$1438.const$5,"hb_map_clear");
+    }
+    /**
+     * {@snippet :
+     * void hb_map_clear(struct hb_map_t* map);
+     * }
+     */
+    public static void hb_map_clear(MemorySegment map) {
+        var mh$ = hb_map_clear$MH();
+        try {
+            mh$.invokeExact(map);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_is_empty$MH() {
+        return RuntimeHelper.requireNonNull(constants$1439.const$0,"hb_map_is_empty");
+    }
+    /**
+     * {@snippet :
+     * int hb_map_is_empty(struct hb_map_t* map);
+     * }
+     */
+    public static int hb_map_is_empty(MemorySegment map) {
+        var mh$ = hb_map_is_empty$MH();
+        try {
+            return (int)mh$.invokeExact(map);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_get_population$MH() {
+        return RuntimeHelper.requireNonNull(constants$1439.const$1,"hb_map_get_population");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_map_get_population(struct hb_map_t* map);
+     * }
+     */
+    public static int hb_map_get_population(MemorySegment map) {
+        var mh$ = hb_map_get_population$MH();
+        try {
+            return (int)mh$.invokeExact(map);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_is_equal$MH() {
+        return RuntimeHelper.requireNonNull(constants$1439.const$2,"hb_map_is_equal");
+    }
+    /**
+     * {@snippet :
+     * int hb_map_is_equal(struct hb_map_t* map, struct hb_map_t* other);
+     * }
+     */
+    public static int hb_map_is_equal(MemorySegment map, MemorySegment other) {
+        var mh$ = hb_map_is_equal$MH();
+        try {
+            return (int)mh$.invokeExact(map, other);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_hash$MH() {
+        return RuntimeHelper.requireNonNull(constants$1439.const$3,"hb_map_hash");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_map_hash(struct hb_map_t* map);
+     * }
+     */
+    public static int hb_map_hash(MemorySegment map) {
+        var mh$ = hb_map_hash$MH();
+        try {
+            return (int)mh$.invokeExact(map);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_set$MH() {
+        return RuntimeHelper.requireNonNull(constants$1439.const$4,"hb_map_set");
+    }
+    /**
+     * {@snippet :
+     * void hb_map_set(struct hb_map_t* map, unsigned int key, unsigned int value);
+     * }
+     */
+    public static void hb_map_set(MemorySegment map, int key, int value) {
+        var mh$ = hb_map_set$MH();
+        try {
+            mh$.invokeExact(map, key, value);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_get$MH() {
+        return RuntimeHelper.requireNonNull(constants$1439.const$5,"hb_map_get");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_map_get(struct hb_map_t* map, unsigned int key);
+     * }
+     */
+    public static int hb_map_get(MemorySegment map, int key) {
+        var mh$ = hb_map_get$MH();
+        try {
+            return (int)mh$.invokeExact(map, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_del$MH() {
+        return RuntimeHelper.requireNonNull(constants$1440.const$0,"hb_map_del");
+    }
+    /**
+     * {@snippet :
+     * void hb_map_del(struct hb_map_t* map, unsigned int key);
+     * }
+     */
+    public static void hb_map_del(MemorySegment map, int key) {
+        var mh$ = hb_map_del$MH();
+        try {
+            mh$.invokeExact(map, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_has$MH() {
+        return RuntimeHelper.requireNonNull(constants$1440.const$1,"hb_map_has");
+    }
+    /**
+     * {@snippet :
+     * int hb_map_has(struct hb_map_t* map, unsigned int key);
+     * }
+     */
+    public static int hb_map_has(MemorySegment map, int key) {
+        var mh$ = hb_map_has$MH();
+        try {
+            return (int)mh$.invokeExact(map, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_update$MH() {
+        return RuntimeHelper.requireNonNull(constants$1440.const$2,"hb_map_update");
+    }
+    /**
+     * {@snippet :
+     * void hb_map_update(struct hb_map_t* map, struct hb_map_t* other);
+     * }
+     */
+    public static void hb_map_update(MemorySegment map, MemorySegment other) {
+        var mh$ = hb_map_update$MH();
+        try {
+            mh$.invokeExact(map, other);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_next$MH() {
+        return RuntimeHelper.requireNonNull(constants$1440.const$3,"hb_map_next");
+    }
+    /**
+     * {@snippet :
+     * int hb_map_next(struct hb_map_t* map, int* idx, unsigned int* key, unsigned int* value);
+     * }
+     */
+    public static int hb_map_next(MemorySegment map, MemorySegment idx, MemorySegment key, MemorySegment value) {
+        var mh$ = hb_map_next$MH();
+        try {
+            return (int)mh$.invokeExact(map, idx, key, value);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_keys$MH() {
+        return RuntimeHelper.requireNonNull(constants$1440.const$4,"hb_map_keys");
+    }
+    /**
+     * {@snippet :
+     * void hb_map_keys(struct hb_map_t* map, struct hb_set_t* keys);
+     * }
+     */
+    public static void hb_map_keys(MemorySegment map, MemorySegment keys) {
+        var mh$ = hb_map_keys$MH();
+        try {
+            mh$.invokeExact(map, keys);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_map_values$MH() {
+        return RuntimeHelper.requireNonNull(constants$1440.const$5,"hb_map_values");
+    }
+    /**
+     * {@snippet :
+     * void hb_map_values(struct hb_map_t* map, struct hb_set_t* values);
+     * }
+     */
+    public static void hb_map_values(MemorySegment map, MemorySegment values) {
+        var mh$ = hb_map_values$MH();
+        try {
+            mh$.invokeExact(map, values);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_count$MH() {
+        return RuntimeHelper.requireNonNull(constants$1441.const$0,"hb_face_count");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_face_count(struct hb_blob_t* blob);
      * }
      */
     public static int hb_face_count(MemorySegment blob) {
@@ -4756,11 +5572,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$848.hb_face_create$MH,"hb_face_create");
+        return RuntimeHelper.requireNonNull(constants$1441.const$1,"hb_face_create");
     }
     /**
      * {@snippet :
-     * hb_face_t* hb_face_create(hb_blob_t* blob, unsigned int index);
+     * struct hb_face_t* hb_face_create(struct hb_blob_t* blob, unsigned int index);
      * }
      */
     public static MemorySegment hb_face_create(MemorySegment blob, int index) {
@@ -4772,11 +5588,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_create_for_tables$MH() {
-        return RuntimeHelper.requireNonNull(constants$848.hb_face_create_for_tables$MH,"hb_face_create_for_tables");
+        return RuntimeHelper.requireNonNull(constants$1441.const$5,"hb_face_create_for_tables");
     }
     /**
      * {@snippet :
-     * hb_face_t* hb_face_create_for_tables(hb_reference_table_func_t reference_table_func, void* user_data, hb_destroy_func_t destroy);
+     * struct hb_face_t* hb_face_create_for_tables(struct hb_blob_t* (*reference_table_func)(struct hb_face_t*,unsigned int,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static MemorySegment hb_face_create_for_tables(MemorySegment reference_table_func, MemorySegment user_data, MemorySegment destroy) {
@@ -4788,11 +5604,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$848.hb_face_get_empty$MH,"hb_face_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1442.const$0,"hb_face_get_empty");
     }
     /**
      * {@snippet :
-     * hb_face_t* hb_face_get_empty();
+     * struct hb_face_t* hb_face_get_empty();
      * }
      */
     public static MemorySegment hb_face_get_empty() {
@@ -4804,11 +5620,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$849.hb_face_reference$MH,"hb_face_reference");
+        return RuntimeHelper.requireNonNull(constants$1442.const$1,"hb_face_reference");
     }
     /**
      * {@snippet :
-     * hb_face_t* hb_face_reference(hb_face_t* face);
+     * struct hb_face_t* hb_face_reference(struct hb_face_t* face);
      * }
      */
     public static MemorySegment hb_face_reference(MemorySegment face) {
@@ -4820,11 +5636,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$849.hb_face_destroy$MH,"hb_face_destroy");
+        return RuntimeHelper.requireNonNull(constants$1442.const$2,"hb_face_destroy");
     }
     /**
      * {@snippet :
-     * void hb_face_destroy(hb_face_t* face);
+     * void hb_face_destroy(struct hb_face_t* face);
      * }
      */
     public static void hb_face_destroy(MemorySegment face) {
@@ -4836,11 +5652,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$849.hb_face_set_user_data$MH,"hb_face_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1442.const$4,"hb_face_set_user_data");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_face_set_user_data(hb_face_t* face, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * int hb_face_set_user_data(struct hb_face_t* face, struct hb_user_data_key_t* key, void* data, void (*destroy)(void*), int replace);
      * }
      */
     public static int hb_face_set_user_data(MemorySegment face, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
@@ -4852,11 +5668,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$849.hb_face_get_user_data$MH,"hb_face_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1442.const$5,"hb_face_get_user_data");
     }
     /**
      * {@snippet :
-     * void* hb_face_get_user_data(const hb_face_t* face, hb_user_data_key_t* key);
+     * void* hb_face_get_user_data(struct hb_face_t* face, struct hb_user_data_key_t* key);
      * }
      */
     public static MemorySegment hb_face_get_user_data(MemorySegment face, MemorySegment key) {
@@ -4868,11 +5684,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$849.hb_face_make_immutable$MH,"hb_face_make_immutable");
+        return RuntimeHelper.requireNonNull(constants$1443.const$0,"hb_face_make_immutable");
     }
     /**
      * {@snippet :
-     * void hb_face_make_immutable(hb_face_t* face);
+     * void hb_face_make_immutable(struct hb_face_t* face);
      * }
      */
     public static void hb_face_make_immutable(MemorySegment face) {
@@ -4884,11 +5700,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$849.hb_face_is_immutable$MH,"hb_face_is_immutable");
+        return RuntimeHelper.requireNonNull(constants$1443.const$1,"hb_face_is_immutable");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_face_is_immutable(const hb_face_t* face);
+     * int hb_face_is_immutable(struct hb_face_t* face);
      * }
      */
     public static int hb_face_is_immutable(MemorySegment face) {
@@ -4900,11 +5716,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_reference_table$MH() {
-        return RuntimeHelper.requireNonNull(constants$850.hb_face_reference_table$MH,"hb_face_reference_table");
+        return RuntimeHelper.requireNonNull(constants$1443.const$2,"hb_face_reference_table");
     }
     /**
      * {@snippet :
-     * hb_blob_t* hb_face_reference_table(const hb_face_t* face, hb_tag_t tag);
+     * struct hb_blob_t* hb_face_reference_table(struct hb_face_t* face, unsigned int tag);
      * }
      */
     public static MemorySegment hb_face_reference_table(MemorySegment face, int tag) {
@@ -4916,11 +5732,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_reference_blob$MH() {
-        return RuntimeHelper.requireNonNull(constants$850.hb_face_reference_blob$MH,"hb_face_reference_blob");
+        return RuntimeHelper.requireNonNull(constants$1443.const$3,"hb_face_reference_blob");
     }
     /**
      * {@snippet :
-     * hb_blob_t* hb_face_reference_blob(hb_face_t* face);
+     * struct hb_blob_t* hb_face_reference_blob(struct hb_face_t* face);
      * }
      */
     public static MemorySegment hb_face_reference_blob(MemorySegment face) {
@@ -4932,11 +5748,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_set_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$850.hb_face_set_index$MH,"hb_face_set_index");
+        return RuntimeHelper.requireNonNull(constants$1443.const$4,"hb_face_set_index");
     }
     /**
      * {@snippet :
-     * void hb_face_set_index(hb_face_t* face, unsigned int index);
+     * void hb_face_set_index(struct hb_face_t* face, unsigned int index);
      * }
      */
     public static void hb_face_set_index(MemorySegment face, int index) {
@@ -4948,11 +5764,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_get_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$850.hb_face_get_index$MH,"hb_face_get_index");
+        return RuntimeHelper.requireNonNull(constants$1443.const$5,"hb_face_get_index");
     }
     /**
      * {@snippet :
-     * unsigned int hb_face_get_index(const hb_face_t* face);
+     * unsigned int hb_face_get_index(struct hb_face_t* face);
      * }
      */
     public static int hb_face_get_index(MemorySegment face) {
@@ -4964,11 +5780,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_set_upem$MH() {
-        return RuntimeHelper.requireNonNull(constants$850.hb_face_set_upem$MH,"hb_face_set_upem");
+        return RuntimeHelper.requireNonNull(constants$1444.const$0,"hb_face_set_upem");
     }
     /**
      * {@snippet :
-     * void hb_face_set_upem(hb_face_t* face, unsigned int upem);
+     * void hb_face_set_upem(struct hb_face_t* face, unsigned int upem);
      * }
      */
     public static void hb_face_set_upem(MemorySegment face, int upem) {
@@ -4980,11 +5796,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_get_upem$MH() {
-        return RuntimeHelper.requireNonNull(constants$850.hb_face_get_upem$MH,"hb_face_get_upem");
+        return RuntimeHelper.requireNonNull(constants$1444.const$1,"hb_face_get_upem");
     }
     /**
      * {@snippet :
-     * unsigned int hb_face_get_upem(const hb_face_t* face);
+     * unsigned int hb_face_get_upem(struct hb_face_t* face);
      * }
      */
     public static int hb_face_get_upem(MemorySegment face) {
@@ -4996,11 +5812,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_set_glyph_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$851.hb_face_set_glyph_count$MH,"hb_face_set_glyph_count");
+        return RuntimeHelper.requireNonNull(constants$1444.const$2,"hb_face_set_glyph_count");
     }
     /**
      * {@snippet :
-     * void hb_face_set_glyph_count(hb_face_t* face, unsigned int glyph_count);
+     * void hb_face_set_glyph_count(struct hb_face_t* face, unsigned int glyph_count);
      * }
      */
     public static void hb_face_set_glyph_count(MemorySegment face, int glyph_count) {
@@ -5012,11 +5828,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_get_glyph_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$851.hb_face_get_glyph_count$MH,"hb_face_get_glyph_count");
+        return RuntimeHelper.requireNonNull(constants$1444.const$3,"hb_face_get_glyph_count");
     }
     /**
      * {@snippet :
-     * unsigned int hb_face_get_glyph_count(const hb_face_t* face);
+     * unsigned int hb_face_get_glyph_count(struct hb_face_t* face);
      * }
      */
     public static int hb_face_get_glyph_count(MemorySegment face) {
@@ -5028,11 +5844,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_get_table_tags$MH() {
-        return RuntimeHelper.requireNonNull(constants$851.hb_face_get_table_tags$MH,"hb_face_get_table_tags");
+        return RuntimeHelper.requireNonNull(constants$1444.const$4,"hb_face_get_table_tags");
     }
     /**
      * {@snippet :
-     * unsigned int hb_face_get_table_tags(const hb_face_t* face, unsigned int start_offset, unsigned int* table_count, hb_tag_t* table_tags);
+     * unsigned int hb_face_get_table_tags(struct hb_face_t* face, unsigned int start_offset, unsigned int* table_count, unsigned int* table_tags);
      * }
      */
     public static int hb_face_get_table_tags(MemorySegment face, int start_offset, MemorySegment table_count, MemorySegment table_tags) {
@@ -5044,11 +5860,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_collect_unicodes$MH() {
-        return RuntimeHelper.requireNonNull(constants$851.hb_face_collect_unicodes$MH,"hb_face_collect_unicodes");
+        return RuntimeHelper.requireNonNull(constants$1444.const$5,"hb_face_collect_unicodes");
     }
     /**
      * {@snippet :
-     * void hb_face_collect_unicodes(hb_face_t* face, hb_set_t* out);
+     * void hb_face_collect_unicodes(struct hb_face_t* face, struct hb_set_t* out);
      * }
      */
     public static void hb_face_collect_unicodes(MemorySegment face, MemorySegment out) {
@@ -5059,12 +5875,28 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle hb_face_collect_variation_selectors$MH() {
-        return RuntimeHelper.requireNonNull(constants$851.hb_face_collect_variation_selectors$MH,"hb_face_collect_variation_selectors");
+    public static MethodHandle hb_face_collect_nominal_glyph_mapping$MH() {
+        return RuntimeHelper.requireNonNull(constants$1445.const$0,"hb_face_collect_nominal_glyph_mapping");
     }
     /**
      * {@snippet :
-     * void hb_face_collect_variation_selectors(hb_face_t* face, hb_set_t* out);
+     * void hb_face_collect_nominal_glyph_mapping(struct hb_face_t* face, struct hb_map_t* mapping, struct hb_set_t* unicodes);
+     * }
+     */
+    public static void hb_face_collect_nominal_glyph_mapping(MemorySegment face, MemorySegment mapping, MemorySegment unicodes) {
+        var mh$ = hb_face_collect_nominal_glyph_mapping$MH();
+        try {
+            mh$.invokeExact(face, mapping, unicodes);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_face_collect_variation_selectors$MH() {
+        return RuntimeHelper.requireNonNull(constants$1445.const$1,"hb_face_collect_variation_selectors");
+    }
+    /**
+     * {@snippet :
+     * void hb_face_collect_variation_selectors(struct hb_face_t* face, struct hb_set_t* out);
      * }
      */
     public static void hb_face_collect_variation_selectors(MemorySegment face, MemorySegment out) {
@@ -5076,11 +5908,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_collect_variation_unicodes$MH() {
-        return RuntimeHelper.requireNonNull(constants$851.hb_face_collect_variation_unicodes$MH,"hb_face_collect_variation_unicodes");
+        return RuntimeHelper.requireNonNull(constants$1445.const$2,"hb_face_collect_variation_unicodes");
     }
     /**
      * {@snippet :
-     * void hb_face_collect_variation_unicodes(hb_face_t* face, hb_codepoint_t variation_selector, hb_set_t* out);
+     * void hb_face_collect_variation_unicodes(struct hb_face_t* face, unsigned int variation_selector, struct hb_set_t* out);
      * }
      */
     public static void hb_face_collect_variation_unicodes(MemorySegment face, int variation_selector, MemorySegment out) {
@@ -5092,11 +5924,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_builder_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$852.hb_face_builder_create$MH,"hb_face_builder_create");
+        return RuntimeHelper.requireNonNull(constants$1445.const$3,"hb_face_builder_create");
     }
     /**
      * {@snippet :
-     * hb_face_t* hb_face_builder_create();
+     * struct hb_face_t* hb_face_builder_create();
      * }
      */
     public static MemorySegment hb_face_builder_create() {
@@ -5108,11 +5940,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_builder_add_table$MH() {
-        return RuntimeHelper.requireNonNull(constants$852.hb_face_builder_add_table$MH,"hb_face_builder_add_table");
+        return RuntimeHelper.requireNonNull(constants$1445.const$4,"hb_face_builder_add_table");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_face_builder_add_table(hb_face_t* face, hb_tag_t tag, hb_blob_t* blob);
+     * int hb_face_builder_add_table(struct hb_face_t* face, unsigned int tag, struct hb_blob_t* blob);
      * }
      */
     public static int hb_face_builder_add_table(MemorySegment face, int tag, MemorySegment blob) {
@@ -5124,11 +5956,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_face_builder_sort_tables$MH() {
-        return RuntimeHelper.requireNonNull(constants$852.hb_face_builder_sort_tables$MH,"hb_face_builder_sort_tables");
+        return RuntimeHelper.requireNonNull(constants$1445.const$5,"hb_face_builder_sort_tables");
     }
     /**
      * {@snippet :
-     * void hb_face_builder_sort_tables(hb_face_t* face, const hb_tag_t* tags);
+     * void hb_face_builder_sort_tables(struct hb_face_t* face, unsigned int* tags);
      * }
      */
     public static void hb_face_builder_sort_tables(MemorySegment face, MemorySegment tags) {
@@ -5140,11 +5972,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_set_move_to_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$854.hb_draw_funcs_set_move_to_func$MH,"hb_draw_funcs_set_move_to_func");
+        return RuntimeHelper.requireNonNull(constants$1449.const$1,"hb_draw_funcs_set_move_to_func");
     }
     /**
      * {@snippet :
-     * void hb_draw_funcs_set_move_to_func(hb_draw_funcs_t* dfuncs, hb_draw_move_to_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_draw_funcs_set_move_to_func(struct hb_draw_funcs_t* dfuncs, void (*func)(struct hb_draw_funcs_t*,void*,struct hb_draw_state_t*,float,float,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_draw_funcs_set_move_to_func(MemorySegment dfuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5156,11 +5988,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_set_line_to_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$854.hb_draw_funcs_set_line_to_func$MH,"hb_draw_funcs_set_line_to_func");
+        return RuntimeHelper.requireNonNull(constants$1449.const$4,"hb_draw_funcs_set_line_to_func");
     }
     /**
      * {@snippet :
-     * void hb_draw_funcs_set_line_to_func(hb_draw_funcs_t* dfuncs, hb_draw_line_to_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_draw_funcs_set_line_to_func(struct hb_draw_funcs_t* dfuncs, void (*func)(struct hb_draw_funcs_t*,void*,struct hb_draw_state_t*,float,float,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_draw_funcs_set_line_to_func(MemorySegment dfuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5172,11 +6004,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_set_quadratic_to_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$854.hb_draw_funcs_set_quadratic_to_func$MH,"hb_draw_funcs_set_quadratic_to_func");
+        return RuntimeHelper.requireNonNull(constants$1450.const$1,"hb_draw_funcs_set_quadratic_to_func");
     }
     /**
      * {@snippet :
-     * void hb_draw_funcs_set_quadratic_to_func(hb_draw_funcs_t* dfuncs, hb_draw_quadratic_to_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_draw_funcs_set_quadratic_to_func(struct hb_draw_funcs_t* dfuncs, void (*func)(struct hb_draw_funcs_t*,void*,struct hb_draw_state_t*,float,float,float,float,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_draw_funcs_set_quadratic_to_func(MemorySegment dfuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5188,11 +6020,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_set_cubic_to_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$854.hb_draw_funcs_set_cubic_to_func$MH,"hb_draw_funcs_set_cubic_to_func");
+        return RuntimeHelper.requireNonNull(constants$1450.const$4,"hb_draw_funcs_set_cubic_to_func");
     }
     /**
      * {@snippet :
-     * void hb_draw_funcs_set_cubic_to_func(hb_draw_funcs_t* dfuncs, hb_draw_cubic_to_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_draw_funcs_set_cubic_to_func(struct hb_draw_funcs_t* dfuncs, void (*func)(struct hb_draw_funcs_t*,void*,struct hb_draw_state_t*,float,float,float,float,float,float,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_draw_funcs_set_cubic_to_func(MemorySegment dfuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5204,11 +6036,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_set_close_path_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$854.hb_draw_funcs_set_close_path_func$MH,"hb_draw_funcs_set_close_path_func");
+        return RuntimeHelper.requireNonNull(constants$1451.const$1,"hb_draw_funcs_set_close_path_func");
     }
     /**
      * {@snippet :
-     * void hb_draw_funcs_set_close_path_func(hb_draw_funcs_t* dfuncs, hb_draw_close_path_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_draw_funcs_set_close_path_func(struct hb_draw_funcs_t* dfuncs, void (*func)(struct hb_draw_funcs_t*,void*,struct hb_draw_state_t*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_draw_funcs_set_close_path_func(MemorySegment dfuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5220,11 +6052,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$855.hb_draw_funcs_create$MH,"hb_draw_funcs_create");
+        return RuntimeHelper.requireNonNull(constants$1451.const$2,"hb_draw_funcs_create");
     }
     /**
      * {@snippet :
-     * hb_draw_funcs_t* hb_draw_funcs_create();
+     * struct hb_draw_funcs_t* hb_draw_funcs_create();
      * }
      */
     public static MemorySegment hb_draw_funcs_create() {
@@ -5235,12 +6067,28 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle hb_draw_funcs_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$855.hb_draw_funcs_reference$MH,"hb_draw_funcs_reference");
+    public static MethodHandle hb_draw_funcs_get_empty$MH() {
+        return RuntimeHelper.requireNonNull(constants$1451.const$3,"hb_draw_funcs_get_empty");
     }
     /**
      * {@snippet :
-     * hb_draw_funcs_t* hb_draw_funcs_reference(hb_draw_funcs_t* dfuncs);
+     * struct hb_draw_funcs_t* hb_draw_funcs_get_empty();
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_get_empty() {
+        var mh$ = hb_draw_funcs_get_empty$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_funcs_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$1451.const$4,"hb_draw_funcs_reference");
+    }
+    /**
+     * {@snippet :
+     * struct hb_draw_funcs_t* hb_draw_funcs_reference(struct hb_draw_funcs_t* dfuncs);
      * }
      */
     public static MemorySegment hb_draw_funcs_reference(MemorySegment dfuncs) {
@@ -5252,11 +6100,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$855.hb_draw_funcs_destroy$MH,"hb_draw_funcs_destroy");
+        return RuntimeHelper.requireNonNull(constants$1451.const$5,"hb_draw_funcs_destroy");
     }
     /**
      * {@snippet :
-     * void hb_draw_funcs_destroy(hb_draw_funcs_t* dfuncs);
+     * void hb_draw_funcs_destroy(struct hb_draw_funcs_t* dfuncs);
      * }
      */
     public static void hb_draw_funcs_destroy(MemorySegment dfuncs) {
@@ -5267,12 +6115,44 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle hb_draw_funcs_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$855.hb_draw_funcs_make_immutable$MH,"hb_draw_funcs_make_immutable");
+    public static MethodHandle hb_draw_funcs_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$1452.const$1,"hb_draw_funcs_set_user_data");
     }
     /**
      * {@snippet :
-     * void hb_draw_funcs_make_immutable(hb_draw_funcs_t* dfuncs);
+     * int hb_draw_funcs_set_user_data(struct hb_draw_funcs_t* dfuncs, struct hb_user_data_key_t* key, void* data, void (*destroy)(void*), int replace);
+     * }
+     */
+    public static int hb_draw_funcs_set_user_data(MemorySegment dfuncs, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
+        var mh$ = hb_draw_funcs_set_user_data$MH();
+        try {
+            return (int)mh$.invokeExact(dfuncs, key, data, destroy, replace);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_funcs_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$1452.const$2,"hb_draw_funcs_get_user_data");
+    }
+    /**
+     * {@snippet :
+     * void* hb_draw_funcs_get_user_data(struct hb_draw_funcs_t* dfuncs, struct hb_user_data_key_t* key);
+     * }
+     */
+    public static MemorySegment hb_draw_funcs_get_user_data(MemorySegment dfuncs, MemorySegment key) {
+        var mh$ = hb_draw_funcs_get_user_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(dfuncs, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_draw_funcs_make_immutable$MH() {
+        return RuntimeHelper.requireNonNull(constants$1452.const$3,"hb_draw_funcs_make_immutable");
+    }
+    /**
+     * {@snippet :
+     * void hb_draw_funcs_make_immutable(struct hb_draw_funcs_t* dfuncs);
      * }
      */
     public static void hb_draw_funcs_make_immutable(MemorySegment dfuncs) {
@@ -5284,11 +6164,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_funcs_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$855.hb_draw_funcs_is_immutable$MH,"hb_draw_funcs_is_immutable");
+        return RuntimeHelper.requireNonNull(constants$1452.const$4,"hb_draw_funcs_is_immutable");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_draw_funcs_is_immutable(hb_draw_funcs_t* dfuncs);
+     * int hb_draw_funcs_is_immutable(struct hb_draw_funcs_t* dfuncs);
      * }
      */
     public static int hb_draw_funcs_is_immutable(MemorySegment dfuncs) {
@@ -5300,11 +6180,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_move_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$855.hb_draw_move_to$MH,"hb_draw_move_to");
+        return RuntimeHelper.requireNonNull(constants$1452.const$6,"hb_draw_move_to");
     }
     /**
      * {@snippet :
-     * void hb_draw_move_to(hb_draw_funcs_t* dfuncs, void* draw_data, hb_draw_state_t* st, float to_x, float to_y);
+     * void hb_draw_move_to(struct hb_draw_funcs_t* dfuncs, void* draw_data, struct hb_draw_state_t* st, float to_x, float to_y);
      * }
      */
     public static void hb_draw_move_to(MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float to_x, float to_y) {
@@ -5316,11 +6196,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_line_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$856.hb_draw_line_to$MH,"hb_draw_line_to");
+        return RuntimeHelper.requireNonNull(constants$1453.const$0,"hb_draw_line_to");
     }
     /**
      * {@snippet :
-     * void hb_draw_line_to(hb_draw_funcs_t* dfuncs, void* draw_data, hb_draw_state_t* st, float to_x, float to_y);
+     * void hb_draw_line_to(struct hb_draw_funcs_t* dfuncs, void* draw_data, struct hb_draw_state_t* st, float to_x, float to_y);
      * }
      */
     public static void hb_draw_line_to(MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float to_x, float to_y) {
@@ -5332,11 +6212,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_quadratic_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$856.hb_draw_quadratic_to$MH,"hb_draw_quadratic_to");
+        return RuntimeHelper.requireNonNull(constants$1453.const$2,"hb_draw_quadratic_to");
     }
     /**
      * {@snippet :
-     * void hb_draw_quadratic_to(hb_draw_funcs_t* dfuncs, void* draw_data, hb_draw_state_t* st, float control_x, float control_y, float to_x, float to_y);
+     * void hb_draw_quadratic_to(struct hb_draw_funcs_t* dfuncs, void* draw_data, struct hb_draw_state_t* st, float control_x, float control_y, float to_x, float to_y);
      * }
      */
     public static void hb_draw_quadratic_to(MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float control_x, float control_y, float to_x, float to_y) {
@@ -5348,11 +6228,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_cubic_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$856.hb_draw_cubic_to$MH,"hb_draw_cubic_to");
+        return RuntimeHelper.requireNonNull(constants$1453.const$4,"hb_draw_cubic_to");
     }
     /**
      * {@snippet :
-     * void hb_draw_cubic_to(hb_draw_funcs_t* dfuncs, void* draw_data, hb_draw_state_t* st, float control1_x, float control1_y, float control2_x, float control2_y, float to_x, float to_y);
+     * void hb_draw_cubic_to(struct hb_draw_funcs_t* dfuncs, void* draw_data, struct hb_draw_state_t* st, float control1_x, float control1_y, float control2_x, float control2_y, float to_x, float to_y);
      * }
      */
     public static void hb_draw_cubic_to(MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st, float control1_x, float control1_y, float control2_x, float control2_y, float to_x, float to_y) {
@@ -5364,11 +6244,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_draw_close_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$856.hb_draw_close_path$MH,"hb_draw_close_path");
+        return RuntimeHelper.requireNonNull(constants$1453.const$5,"hb_draw_close_path");
     }
     /**
      * {@snippet :
-     * void hb_draw_close_path(hb_draw_funcs_t* dfuncs, void* draw_data, hb_draw_state_t* st);
+     * void hb_draw_close_path(struct hb_draw_funcs_t* dfuncs, void* draw_data, struct hb_draw_state_t* st);
      * }
      */
     public static void hb_draw_close_path(MemorySegment dfuncs, MemorySegment draw_data, MemorySegment st) {
@@ -5379,12 +6259,836 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle hb_font_funcs_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$856.hb_font_funcs_create$MH,"hb_font_funcs_create");
+    public static MethodHandle hb_paint_funcs_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$1454.const$0,"hb_paint_funcs_create");
     }
     /**
      * {@snippet :
-     * hb_font_funcs_t* hb_font_funcs_create();
+     * struct hb_paint_funcs_t* hb_paint_funcs_create();
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_create() {
+        var mh$ = hb_paint_funcs_create$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_get_empty$MH() {
+        return RuntimeHelper.requireNonNull(constants$1454.const$1,"hb_paint_funcs_get_empty");
+    }
+    /**
+     * {@snippet :
+     * struct hb_paint_funcs_t* hb_paint_funcs_get_empty();
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_get_empty() {
+        var mh$ = hb_paint_funcs_get_empty$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_reference$MH() {
+        return RuntimeHelper.requireNonNull(constants$1454.const$2,"hb_paint_funcs_reference");
+    }
+    /**
+     * {@snippet :
+     * struct hb_paint_funcs_t* hb_paint_funcs_reference(struct hb_paint_funcs_t* funcs);
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_reference(MemorySegment funcs) {
+        var mh$ = hb_paint_funcs_reference$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(funcs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_destroy$MH() {
+        return RuntimeHelper.requireNonNull(constants$1454.const$3,"hb_paint_funcs_destroy");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_funcs_destroy(struct hb_paint_funcs_t* funcs);
+     * }
+     */
+    public static void hb_paint_funcs_destroy(MemorySegment funcs) {
+        var mh$ = hb_paint_funcs_destroy$MH();
+        try {
+            mh$.invokeExact(funcs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_set_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$1454.const$5,"hb_paint_funcs_set_user_data");
+    }
+    /**
+     * {@snippet :
+     * int hb_paint_funcs_set_user_data(struct hb_paint_funcs_t* funcs, struct hb_user_data_key_t* key, void* data, void (*destroy)(void*), int replace);
+     * }
+     */
+    public static int hb_paint_funcs_set_user_data(MemorySegment funcs, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
+        var mh$ = hb_paint_funcs_set_user_data$MH();
+        try {
+            return (int)mh$.invokeExact(funcs, key, data, destroy, replace);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_get_user_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$1455.const$0,"hb_paint_funcs_get_user_data");
+    }
+    /**
+     * {@snippet :
+     * void* hb_paint_funcs_get_user_data(struct hb_paint_funcs_t* funcs, struct hb_user_data_key_t* key);
+     * }
+     */
+    public static MemorySegment hb_paint_funcs_get_user_data(MemorySegment funcs, MemorySegment key) {
+        var mh$ = hb_paint_funcs_get_user_data$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(funcs, key);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_make_immutable$MH() {
+        return RuntimeHelper.requireNonNull(constants$1455.const$1,"hb_paint_funcs_make_immutable");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_funcs_make_immutable(struct hb_paint_funcs_t* funcs);
+     * }
+     */
+    public static void hb_paint_funcs_make_immutable(MemorySegment funcs) {
+        var mh$ = hb_paint_funcs_make_immutable$MH();
+        try {
+            mh$.invokeExact(funcs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_is_immutable$MH() {
+        return RuntimeHelper.requireNonNull(constants$1455.const$2,"hb_paint_funcs_is_immutable");
+    }
+    /**
+     * {@snippet :
+     * int hb_paint_funcs_is_immutable(struct hb_paint_funcs_t* funcs);
+     * }
+     */
+    public static int hb_paint_funcs_is_immutable(MemorySegment funcs) {
+        var mh$ = hb_paint_funcs_is_immutable$MH();
+        try {
+            return (int)mh$.invokeExact(funcs);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_extend_t.HB_PAINT_EXTEND_PAD = 0;
+     * }
+     */
+    public static int HB_PAINT_EXTEND_PAD() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_extend_t.HB_PAINT_EXTEND_REPEAT = 1;
+     * }
+     */
+    public static int HB_PAINT_EXTEND_REPEAT() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_extend_t.HB_PAINT_EXTEND_REFLECT = 2;
+     * }
+     */
+    public static int HB_PAINT_EXTEND_REFLECT() {
+        return (int)2L;
+    }
+    public static MethodHandle hb_color_line_get_color_stops$MH() {
+        return RuntimeHelper.requireNonNull(constants$1462.const$0,"hb_color_line_get_color_stops");
+    }
+    /**
+     * {@snippet :
+     * unsigned int hb_color_line_get_color_stops(struct hb_color_line_t* color_line, unsigned int start, unsigned int* count, struct hb_color_stop_t* color_stops);
+     * }
+     */
+    public static int hb_color_line_get_color_stops(MemorySegment color_line, int start, MemorySegment count, MemorySegment color_stops) {
+        var mh$ = hb_color_line_get_color_stops$MH();
+        try {
+            return (int)mh$.invokeExact(color_line, start, count, color_stops);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_color_line_get_extend$MH() {
+        return RuntimeHelper.requireNonNull(constants$1462.const$1,"hb_color_line_get_extend");
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_extend_t hb_color_line_get_extend(struct hb_color_line_t* color_line);
+     * }
+     */
+    public static int hb_color_line_get_extend(MemorySegment color_line) {
+        var mh$ = hb_color_line_get_extend$MH();
+        try {
+            return (int)mh$.invokeExact(color_line);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_CLEAR = 0;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_CLEAR() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_SRC = 1;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_SRC() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_DEST = 2;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_DEST() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_SRC_OVER = 3;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_SRC_OVER() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_DEST_OVER = 4;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_DEST_OVER() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_SRC_IN = 5;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_SRC_IN() {
+        return (int)5L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_DEST_IN = 6;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_DEST_IN() {
+        return (int)6L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_SRC_OUT = 7;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_SRC_OUT() {
+        return (int)7L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_DEST_OUT = 8;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_DEST_OUT() {
+        return (int)8L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_SRC_ATOP = 9;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_SRC_ATOP() {
+        return (int)9L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_DEST_ATOP = 10;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_DEST_ATOP() {
+        return (int)10L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_XOR = 11;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_XOR() {
+        return (int)11L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_PLUS = 12;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_PLUS() {
+        return (int)12L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_SCREEN = 13;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_SCREEN() {
+        return (int)13L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_OVERLAY = 14;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_OVERLAY() {
+        return (int)14L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_DARKEN = 15;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_DARKEN() {
+        return (int)15L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_LIGHTEN = 16;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_LIGHTEN() {
+        return (int)16L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_COLOR_DODGE = 17;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_COLOR_DODGE() {
+        return (int)17L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_COLOR_BURN = 18;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_COLOR_BURN() {
+        return (int)18L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_HARD_LIGHT = 19;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_HARD_LIGHT() {
+        return (int)19L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_SOFT_LIGHT = 20;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_SOFT_LIGHT() {
+        return (int)20L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_DIFFERENCE = 21;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_DIFFERENCE() {
+        return (int)21L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_EXCLUSION = 22;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_EXCLUSION() {
+        return (int)22L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_MULTIPLY = 23;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_MULTIPLY() {
+        return (int)23L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_HSL_HUE = 24;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_HSL_HUE() {
+        return (int)24L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_HSL_SATURATION = 25;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_HSL_SATURATION() {
+        return (int)25L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_HSL_COLOR = 26;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_HSL_COLOR() {
+        return (int)26L;
+    }
+    /**
+     * {@snippet :
+     * enum hb_paint_composite_mode_t.HB_PAINT_COMPOSITE_MODE_HSL_LUMINOSITY = 27;
+     * }
+     */
+    public static int HB_PAINT_COMPOSITE_MODE_HSL_LUMINOSITY() {
+        return (int)27L;
+    }
+    public static MethodHandle hb_paint_funcs_set_push_transform_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1463.const$4,"hb_paint_funcs_set_push_transform_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_funcs_set_push_transform_func(struct hb_paint_funcs_t* funcs, void (*func)(struct hb_paint_funcs_t*,void*,float,float,float,float,float,float,void*), void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static void hb_paint_funcs_set_push_transform_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_push_transform_func$MH();
+        try {
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_set_pop_transform_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1464.const$1,"hb_paint_funcs_set_pop_transform_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_funcs_set_pop_transform_func(struct hb_paint_funcs_t* funcs, void (*func)(struct hb_paint_funcs_t*,void*,void*), void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static void hb_paint_funcs_set_pop_transform_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_pop_transform_func$MH();
+        try {
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_set_push_clip_glyph_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1464.const$4,"hb_paint_funcs_set_push_clip_glyph_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_funcs_set_push_clip_glyph_func(struct hb_paint_funcs_t* funcs, void (*func)(struct hb_paint_funcs_t*,void*,unsigned int,struct hb_font_t*,void*), void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static void hb_paint_funcs_set_push_clip_glyph_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_push_clip_glyph_func$MH();
+        try {
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_set_push_clip_rectangle_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1465.const$1,"hb_paint_funcs_set_push_clip_rectangle_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_funcs_set_push_clip_rectangle_func(struct hb_paint_funcs_t* funcs, void (*func)(struct hb_paint_funcs_t*,void*,float,float,float,float,void*), void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static void hb_paint_funcs_set_push_clip_rectangle_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_push_clip_rectangle_func$MH();
+        try {
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_set_pop_clip_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1465.const$4,"hb_paint_funcs_set_pop_clip_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_funcs_set_pop_clip_func(struct hb_paint_funcs_t* funcs, void (*func)(struct hb_paint_funcs_t*,void*,void*), void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static void hb_paint_funcs_set_pop_clip_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_pop_clip_func$MH();
+        try {
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_set_color_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1466.const$1,"hb_paint_funcs_set_color_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_funcs_set_color_func(struct hb_paint_funcs_t* funcs, void (*func)(struct hb_paint_funcs_t*,void*,int,unsigned int,void*), void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static void hb_paint_funcs_set_color_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_color_func$MH();
+        try {
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_set_image_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1466.const$4,"hb_paint_funcs_set_image_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_funcs_set_image_func(struct hb_paint_funcs_t* funcs, int (*func)(struct hb_paint_funcs_t*,void*,struct hb_blob_t*,unsigned int,unsigned int,unsigned int,float,struct hb_glyph_extents_t*,void*), void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static void hb_paint_funcs_set_image_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_image_func$MH();
+        try {
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_set_linear_gradient_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1467.const$1,"hb_paint_funcs_set_linear_gradient_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_funcs_set_linear_gradient_func(struct hb_paint_funcs_t* funcs, void (*func)(struct hb_paint_funcs_t*,void*,struct hb_color_line_t*,float,float,float,float,float,float,void*), void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static void hb_paint_funcs_set_linear_gradient_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_linear_gradient_func$MH();
+        try {
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_set_radial_gradient_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1467.const$4,"hb_paint_funcs_set_radial_gradient_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_funcs_set_radial_gradient_func(struct hb_paint_funcs_t* funcs, void (*func)(struct hb_paint_funcs_t*,void*,struct hb_color_line_t*,float,float,float,float,float,float,void*), void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static void hb_paint_funcs_set_radial_gradient_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_radial_gradient_func$MH();
+        try {
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_set_sweep_gradient_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1468.const$1,"hb_paint_funcs_set_sweep_gradient_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_funcs_set_sweep_gradient_func(struct hb_paint_funcs_t* funcs, void (*func)(struct hb_paint_funcs_t*,void*,struct hb_color_line_t*,float,float,float,float,void*), void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static void hb_paint_funcs_set_sweep_gradient_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_sweep_gradient_func$MH();
+        try {
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_set_push_group_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1468.const$4,"hb_paint_funcs_set_push_group_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_funcs_set_push_group_func(struct hb_paint_funcs_t* funcs, void (*func)(struct hb_paint_funcs_t*,void*,void*), void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static void hb_paint_funcs_set_push_group_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_push_group_func$MH();
+        try {
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_set_pop_group_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1469.const$1,"hb_paint_funcs_set_pop_group_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_funcs_set_pop_group_func(struct hb_paint_funcs_t* funcs, void (*func)(struct hb_paint_funcs_t*,void*,enum hb_paint_composite_mode_t,void*), void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static void hb_paint_funcs_set_pop_group_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_pop_group_func$MH();
+        try {
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_funcs_set_custom_palette_color_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1469.const$4,"hb_paint_funcs_set_custom_palette_color_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_funcs_set_custom_palette_color_func(struct hb_paint_funcs_t* funcs, int (*func)(struct hb_paint_funcs_t*,void*,unsigned int,unsigned int*,void*), void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static void hb_paint_funcs_set_custom_palette_color_func(MemorySegment funcs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_paint_funcs_set_custom_palette_color_func$MH();
+        try {
+            mh$.invokeExact(funcs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_push_transform$MH() {
+        return RuntimeHelper.requireNonNull(constants$1469.const$6,"hb_paint_push_transform");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_push_transform(struct hb_paint_funcs_t* funcs, void* paint_data, float xx, float yx, float xy, float yy, float dx, float dy);
+     * }
+     */
+    public static void hb_paint_push_transform(MemorySegment funcs, MemorySegment paint_data, float xx, float yx, float xy, float yy, float dx, float dy) {
+        var mh$ = hb_paint_push_transform$MH();
+        try {
+            mh$.invokeExact(funcs, paint_data, xx, yx, xy, yy, dx, dy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_pop_transform$MH() {
+        return RuntimeHelper.requireNonNull(constants$1470.const$0,"hb_paint_pop_transform");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_pop_transform(struct hb_paint_funcs_t* funcs, void* paint_data);
+     * }
+     */
+    public static void hb_paint_pop_transform(MemorySegment funcs, MemorySegment paint_data) {
+        var mh$ = hb_paint_pop_transform$MH();
+        try {
+            mh$.invokeExact(funcs, paint_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_push_clip_glyph$MH() {
+        return RuntimeHelper.requireNonNull(constants$1470.const$1,"hb_paint_push_clip_glyph");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_push_clip_glyph(struct hb_paint_funcs_t* funcs, void* paint_data, unsigned int glyph, struct hb_font_t* font);
+     * }
+     */
+    public static void hb_paint_push_clip_glyph(MemorySegment funcs, MemorySegment paint_data, int glyph, MemorySegment font) {
+        var mh$ = hb_paint_push_clip_glyph$MH();
+        try {
+            mh$.invokeExact(funcs, paint_data, glyph, font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_push_clip_rectangle$MH() {
+        return RuntimeHelper.requireNonNull(constants$1470.const$3,"hb_paint_push_clip_rectangle");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_push_clip_rectangle(struct hb_paint_funcs_t* funcs, void* paint_data, float xmin, float ymin, float xmax, float ymax);
+     * }
+     */
+    public static void hb_paint_push_clip_rectangle(MemorySegment funcs, MemorySegment paint_data, float xmin, float ymin, float xmax, float ymax) {
+        var mh$ = hb_paint_push_clip_rectangle$MH();
+        try {
+            mh$.invokeExact(funcs, paint_data, xmin, ymin, xmax, ymax);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_pop_clip$MH() {
+        return RuntimeHelper.requireNonNull(constants$1470.const$4,"hb_paint_pop_clip");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_pop_clip(struct hb_paint_funcs_t* funcs, void* paint_data);
+     * }
+     */
+    public static void hb_paint_pop_clip(MemorySegment funcs, MemorySegment paint_data) {
+        var mh$ = hb_paint_pop_clip$MH();
+        try {
+            mh$.invokeExact(funcs, paint_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_color$MH() {
+        return RuntimeHelper.requireNonNull(constants$1470.const$5,"hb_paint_color");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_color(struct hb_paint_funcs_t* funcs, void* paint_data, int is_foreground, unsigned int color);
+     * }
+     */
+    public static void hb_paint_color(MemorySegment funcs, MemorySegment paint_data, int is_foreground, int color) {
+        var mh$ = hb_paint_color$MH();
+        try {
+            mh$.invokeExact(funcs, paint_data, is_foreground, color);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_image$MH() {
+        return RuntimeHelper.requireNonNull(constants$1471.const$1,"hb_paint_image");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_image(struct hb_paint_funcs_t* funcs, void* paint_data, struct hb_blob_t* image, unsigned int width, unsigned int height, unsigned int format, float slant, struct hb_glyph_extents_t* extents);
+     * }
+     */
+    public static void hb_paint_image(MemorySegment funcs, MemorySegment paint_data, MemorySegment image, int width, int height, int format, float slant, MemorySegment extents) {
+        var mh$ = hb_paint_image$MH();
+        try {
+            mh$.invokeExact(funcs, paint_data, image, width, height, format, slant, extents);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_linear_gradient$MH() {
+        return RuntimeHelper.requireNonNull(constants$1471.const$2,"hb_paint_linear_gradient");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_linear_gradient(struct hb_paint_funcs_t* funcs, void* paint_data, struct hb_color_line_t* color_line, float x0, float y0, float x1, float y1, float x2, float y2);
+     * }
+     */
+    public static void hb_paint_linear_gradient(MemorySegment funcs, MemorySegment paint_data, MemorySegment color_line, float x0, float y0, float x1, float y1, float x2, float y2) {
+        var mh$ = hb_paint_linear_gradient$MH();
+        try {
+            mh$.invokeExact(funcs, paint_data, color_line, x0, y0, x1, y1, x2, y2);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_radial_gradient$MH() {
+        return RuntimeHelper.requireNonNull(constants$1471.const$3,"hb_paint_radial_gradient");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_radial_gradient(struct hb_paint_funcs_t* funcs, void* paint_data, struct hb_color_line_t* color_line, float x0, float y0, float r0, float x1, float y1, float r1);
+     * }
+     */
+    public static void hb_paint_radial_gradient(MemorySegment funcs, MemorySegment paint_data, MemorySegment color_line, float x0, float y0, float r0, float x1, float y1, float r1) {
+        var mh$ = hb_paint_radial_gradient$MH();
+        try {
+            mh$.invokeExact(funcs, paint_data, color_line, x0, y0, r0, x1, y1, r1);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_sweep_gradient$MH() {
+        return RuntimeHelper.requireNonNull(constants$1471.const$4,"hb_paint_sweep_gradient");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_sweep_gradient(struct hb_paint_funcs_t* funcs, void* paint_data, struct hb_color_line_t* color_line, float x0, float y0, float start_angle, float end_angle);
+     * }
+     */
+    public static void hb_paint_sweep_gradient(MemorySegment funcs, MemorySegment paint_data, MemorySegment color_line, float x0, float y0, float start_angle, float end_angle) {
+        var mh$ = hb_paint_sweep_gradient$MH();
+        try {
+            mh$.invokeExact(funcs, paint_data, color_line, x0, y0, start_angle, end_angle);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_push_group$MH() {
+        return RuntimeHelper.requireNonNull(constants$1471.const$5,"hb_paint_push_group");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_push_group(struct hb_paint_funcs_t* funcs, void* paint_data);
+     * }
+     */
+    public static void hb_paint_push_group(MemorySegment funcs, MemorySegment paint_data) {
+        var mh$ = hb_paint_push_group$MH();
+        try {
+            mh$.invokeExact(funcs, paint_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_pop_group$MH() {
+        return RuntimeHelper.requireNonNull(constants$1472.const$0,"hb_paint_pop_group");
+    }
+    /**
+     * {@snippet :
+     * void hb_paint_pop_group(struct hb_paint_funcs_t* funcs, void* paint_data, enum hb_paint_composite_mode_t mode);
+     * }
+     */
+    public static void hb_paint_pop_group(MemorySegment funcs, MemorySegment paint_data, int mode) {
+        var mh$ = hb_paint_pop_group$MH();
+        try {
+            mh$.invokeExact(funcs, paint_data, mode);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_paint_custom_palette_color$MH() {
+        return RuntimeHelper.requireNonNull(constants$1472.const$1,"hb_paint_custom_palette_color");
+    }
+    /**
+     * {@snippet :
+     * int hb_paint_custom_palette_color(struct hb_paint_funcs_t* funcs, void* paint_data, unsigned int color_index, unsigned int* color);
+     * }
+     */
+    public static int hb_paint_custom_palette_color(MemorySegment funcs, MemorySegment paint_data, int color_index, MemorySegment color) {
+        var mh$ = hb_paint_custom_palette_color$MH();
+        try {
+            return (int)mh$.invokeExact(funcs, paint_data, color_index, color);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$1472.const$2,"hb_font_funcs_create");
+    }
+    /**
+     * {@snippet :
+     * struct hb_font_funcs_t* hb_font_funcs_create();
      * }
      */
     public static MemorySegment hb_font_funcs_create() {
@@ -5396,11 +7100,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$856.hb_font_funcs_get_empty$MH,"hb_font_funcs_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1472.const$3,"hb_font_funcs_get_empty");
     }
     /**
      * {@snippet :
-     * hb_font_funcs_t* hb_font_funcs_get_empty();
+     * struct hb_font_funcs_t* hb_font_funcs_get_empty();
      * }
      */
     public static MemorySegment hb_font_funcs_get_empty() {
@@ -5412,11 +7116,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$857.hb_font_funcs_reference$MH,"hb_font_funcs_reference");
+        return RuntimeHelper.requireNonNull(constants$1472.const$4,"hb_font_funcs_reference");
     }
     /**
      * {@snippet :
-     * hb_font_funcs_t* hb_font_funcs_reference(hb_font_funcs_t* ffuncs);
+     * struct hb_font_funcs_t* hb_font_funcs_reference(struct hb_font_funcs_t* ffuncs);
      * }
      */
     public static MemorySegment hb_font_funcs_reference(MemorySegment ffuncs) {
@@ -5428,11 +7132,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$857.hb_font_funcs_destroy$MH,"hb_font_funcs_destroy");
+        return RuntimeHelper.requireNonNull(constants$1472.const$5,"hb_font_funcs_destroy");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_destroy(hb_font_funcs_t* ffuncs);
+     * void hb_font_funcs_destroy(struct hb_font_funcs_t* ffuncs);
      * }
      */
     public static void hb_font_funcs_destroy(MemorySegment ffuncs) {
@@ -5444,11 +7148,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$857.hb_font_funcs_set_user_data$MH,"hb_font_funcs_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1473.const$1,"hb_font_funcs_set_user_data");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_funcs_set_user_data(hb_font_funcs_t* ffuncs, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * int hb_font_funcs_set_user_data(struct hb_font_funcs_t* ffuncs, struct hb_user_data_key_t* key, void* data, void (*destroy)(void*), int replace);
      * }
      */
     public static int hb_font_funcs_set_user_data(MemorySegment ffuncs, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
@@ -5460,11 +7164,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$857.hb_font_funcs_get_user_data$MH,"hb_font_funcs_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1473.const$2,"hb_font_funcs_get_user_data");
     }
     /**
      * {@snippet :
-     * void* hb_font_funcs_get_user_data(const hb_font_funcs_t* ffuncs, hb_user_data_key_t* key);
+     * void* hb_font_funcs_get_user_data(struct hb_font_funcs_t* ffuncs, struct hb_user_data_key_t* key);
      * }
      */
     public static MemorySegment hb_font_funcs_get_user_data(MemorySegment ffuncs, MemorySegment key) {
@@ -5476,11 +7180,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$857.hb_font_funcs_make_immutable$MH,"hb_font_funcs_make_immutable");
+        return RuntimeHelper.requireNonNull(constants$1473.const$3,"hb_font_funcs_make_immutable");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_make_immutable(hb_font_funcs_t* ffuncs);
+     * void hb_font_funcs_make_immutable(struct hb_font_funcs_t* ffuncs);
      * }
      */
     public static void hb_font_funcs_make_immutable(MemorySegment ffuncs) {
@@ -5492,11 +7196,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$857.hb_font_funcs_is_immutable$MH,"hb_font_funcs_is_immutable");
+        return RuntimeHelper.requireNonNull(constants$1473.const$4,"hb_font_funcs_is_immutable");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_funcs_is_immutable(hb_font_funcs_t* ffuncs);
+     * int hb_font_funcs_is_immutable(struct hb_font_funcs_t* ffuncs);
      * }
      */
     public static int hb_font_funcs_is_immutable(MemorySegment ffuncs) {
@@ -5508,11 +7212,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_font_h_extents_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$865.hb_font_funcs_set_font_h_extents_func$MH,"hb_font_funcs_set_font_h_extents_func");
+        return RuntimeHelper.requireNonNull(constants$1482.const$2,"hb_font_funcs_set_font_h_extents_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_font_h_extents_func(hb_font_funcs_t* ffuncs, hb_font_get_font_h_extents_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_font_h_extents_func(struct hb_font_funcs_t* ffuncs, int (*func)(struct hb_font_t*,void*,struct hb_font_extents_t*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_font_h_extents_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5524,11 +7228,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_font_v_extents_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$865.hb_font_funcs_set_font_v_extents_func$MH,"hb_font_funcs_set_font_v_extents_func");
+        return RuntimeHelper.requireNonNull(constants$1482.const$5,"hb_font_funcs_set_font_v_extents_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_font_v_extents_func(hb_font_funcs_t* ffuncs, hb_font_get_font_v_extents_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_font_v_extents_func(struct hb_font_funcs_t* ffuncs, int (*func)(struct hb_font_t*,void*,struct hb_font_extents_t*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_font_v_extents_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5540,11 +7244,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_nominal_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$865.hb_font_funcs_set_nominal_glyph_func$MH,"hb_font_funcs_set_nominal_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1483.const$2,"hb_font_funcs_set_nominal_glyph_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_nominal_glyph_func(hb_font_funcs_t* ffuncs, hb_font_get_nominal_glyph_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_nominal_glyph_func(struct hb_font_funcs_t* ffuncs, int (*func)(struct hb_font_t*,void*,unsigned int,unsigned int*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_nominal_glyph_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5556,11 +7260,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_nominal_glyphs_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$865.hb_font_funcs_set_nominal_glyphs_func$MH,"hb_font_funcs_set_nominal_glyphs_func");
+        return RuntimeHelper.requireNonNull(constants$1483.const$5,"hb_font_funcs_set_nominal_glyphs_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_nominal_glyphs_func(hb_font_funcs_t* ffuncs, hb_font_get_nominal_glyphs_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_nominal_glyphs_func(struct hb_font_funcs_t* ffuncs, unsigned int (*func)(struct hb_font_t*,void*,unsigned int,unsigned int*,unsigned int,unsigned int*,unsigned int,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_nominal_glyphs_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5572,11 +7276,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_variation_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$866.hb_font_funcs_set_variation_glyph_func$MH,"hb_font_funcs_set_variation_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1484.const$2,"hb_font_funcs_set_variation_glyph_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_variation_glyph_func(hb_font_funcs_t* ffuncs, hb_font_get_variation_glyph_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_variation_glyph_func(struct hb_font_funcs_t* ffuncs, int (*func)(struct hb_font_t*,void*,unsigned int,unsigned int,unsigned int*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_variation_glyph_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5588,11 +7292,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_h_advance_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$866.hb_font_funcs_set_glyph_h_advance_func$MH,"hb_font_funcs_set_glyph_h_advance_func");
+        return RuntimeHelper.requireNonNull(constants$1484.const$5,"hb_font_funcs_set_glyph_h_advance_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_glyph_h_advance_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_h_advance_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_glyph_h_advance_func(struct hb_font_funcs_t* ffuncs, int (*func)(struct hb_font_t*,void*,unsigned int,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_glyph_h_advance_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5604,11 +7308,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_v_advance_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$866.hb_font_funcs_set_glyph_v_advance_func$MH,"hb_font_funcs_set_glyph_v_advance_func");
+        return RuntimeHelper.requireNonNull(constants$1485.const$2,"hb_font_funcs_set_glyph_v_advance_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_glyph_v_advance_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_v_advance_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_glyph_v_advance_func(struct hb_font_funcs_t* ffuncs, int (*func)(struct hb_font_t*,void*,unsigned int,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_glyph_v_advance_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5620,11 +7324,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_h_advances_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$866.hb_font_funcs_set_glyph_h_advances_func$MH,"hb_font_funcs_set_glyph_h_advances_func");
+        return RuntimeHelper.requireNonNull(constants$1485.const$5,"hb_font_funcs_set_glyph_h_advances_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_glyph_h_advances_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_h_advances_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_glyph_h_advances_func(struct hb_font_funcs_t* ffuncs, void (*func)(struct hb_font_t*,void*,unsigned int,unsigned int*,unsigned int,int*,unsigned int,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_glyph_h_advances_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5636,11 +7340,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_v_advances_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$866.hb_font_funcs_set_glyph_v_advances_func$MH,"hb_font_funcs_set_glyph_v_advances_func");
+        return RuntimeHelper.requireNonNull(constants$1486.const$2,"hb_font_funcs_set_glyph_v_advances_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_glyph_v_advances_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_v_advances_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_glyph_v_advances_func(struct hb_font_funcs_t* ffuncs, void (*func)(struct hb_font_t*,void*,unsigned int,unsigned int*,unsigned int,int*,unsigned int,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_glyph_v_advances_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5652,11 +7356,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_h_origin_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$866.hb_font_funcs_set_glyph_h_origin_func$MH,"hb_font_funcs_set_glyph_h_origin_func");
+        return RuntimeHelper.requireNonNull(constants$1486.const$5,"hb_font_funcs_set_glyph_h_origin_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_glyph_h_origin_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_h_origin_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_glyph_h_origin_func(struct hb_font_funcs_t* ffuncs, int (*func)(struct hb_font_t*,void*,unsigned int,int*,int*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_glyph_h_origin_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5668,11 +7372,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_v_origin_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$867.hb_font_funcs_set_glyph_v_origin_func$MH,"hb_font_funcs_set_glyph_v_origin_func");
+        return RuntimeHelper.requireNonNull(constants$1487.const$2,"hb_font_funcs_set_glyph_v_origin_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_glyph_v_origin_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_v_origin_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_glyph_v_origin_func(struct hb_font_funcs_t* ffuncs, int (*func)(struct hb_font_t*,void*,unsigned int,int*,int*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_glyph_v_origin_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5684,11 +7388,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_h_kerning_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$867.hb_font_funcs_set_glyph_h_kerning_func$MH,"hb_font_funcs_set_glyph_h_kerning_func");
+        return RuntimeHelper.requireNonNull(constants$1487.const$5,"hb_font_funcs_set_glyph_h_kerning_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_glyph_h_kerning_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_h_kerning_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_glyph_h_kerning_func(struct hb_font_funcs_t* ffuncs, int (*func)(struct hb_font_t*,void*,unsigned int,unsigned int,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_glyph_h_kerning_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5700,11 +7404,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_extents_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$867.hb_font_funcs_set_glyph_extents_func$MH,"hb_font_funcs_set_glyph_extents_func");
+        return RuntimeHelper.requireNonNull(constants$1488.const$2,"hb_font_funcs_set_glyph_extents_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_glyph_extents_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_extents_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_glyph_extents_func(struct hb_font_funcs_t* ffuncs, int (*func)(struct hb_font_t*,void*,unsigned int,struct hb_glyph_extents_t*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_glyph_extents_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5716,11 +7420,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_contour_point_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$867.hb_font_funcs_set_glyph_contour_point_func$MH,"hb_font_funcs_set_glyph_contour_point_func");
+        return RuntimeHelper.requireNonNull(constants$1488.const$5,"hb_font_funcs_set_glyph_contour_point_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_glyph_contour_point_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_contour_point_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_glyph_contour_point_func(struct hb_font_funcs_t* ffuncs, int (*func)(struct hb_font_t*,void*,unsigned int,unsigned int,int*,int*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_glyph_contour_point_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5732,11 +7436,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_name_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$867.hb_font_funcs_set_glyph_name_func$MH,"hb_font_funcs_set_glyph_name_func");
+        return RuntimeHelper.requireNonNull(constants$1489.const$2,"hb_font_funcs_set_glyph_name_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_glyph_name_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_name_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_glyph_name_func(struct hb_font_funcs_t* ffuncs, int (*func)(struct hb_font_t*,void*,unsigned int,char*,unsigned int,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_glyph_name_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5748,11 +7452,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_from_name_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$867.hb_font_funcs_set_glyph_from_name_func$MH,"hb_font_funcs_set_glyph_from_name_func");
+        return RuntimeHelper.requireNonNull(constants$1489.const$5,"hb_font_funcs_set_glyph_from_name_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_glyph_from_name_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_from_name_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_glyph_from_name_func(struct hb_font_funcs_t* ffuncs, int (*func)(struct hb_font_t*,void*,char*,int,unsigned int*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_glyph_from_name_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -5763,16 +7467,32 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle hb_font_funcs_set_glyph_shape_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$868.hb_font_funcs_set_glyph_shape_func$MH,"hb_font_funcs_set_glyph_shape_func");
+    public static MethodHandle hb_font_funcs_set_draw_glyph_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1490.const$2,"hb_font_funcs_set_draw_glyph_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_glyph_shape_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_shape_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_draw_glyph_func(struct hb_font_funcs_t* ffuncs, void (*func)(struct hb_font_t*,void*,unsigned int,struct hb_draw_funcs_t*,void*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
-    public static void hb_font_funcs_set_glyph_shape_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
-        var mh$ = hb_font_funcs_set_glyph_shape_func$MH();
+    public static void hb_font_funcs_set_draw_glyph_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_draw_glyph_func$MH();
+        try {
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_funcs_set_paint_glyph_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1490.const$5,"hb_font_funcs_set_paint_glyph_func");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_funcs_set_paint_glyph_func(struct hb_font_funcs_t* ffuncs, void (*func)(struct hb_font_t*,void*,unsigned int,struct hb_paint_funcs_t*,void*,unsigned int,unsigned int,void*), void* user_data, void (*destroy)(void*));
+     * }
+     */
+    public static void hb_font_funcs_set_paint_glyph_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_paint_glyph_func$MH();
         try {
             mh$.invokeExact(ffuncs, func, user_data, destroy);
         } catch (Throwable ex$) {
@@ -5780,11 +7500,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_h_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$868.hb_font_get_h_extents$MH,"hb_font_get_h_extents");
+        return RuntimeHelper.requireNonNull(constants$1491.const$0,"hb_font_get_h_extents");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_get_h_extents(hb_font_t* font, hb_font_extents_t* extents);
+     * int hb_font_get_h_extents(struct hb_font_t* font, struct hb_font_extents_t* extents);
      * }
      */
     public static int hb_font_get_h_extents(MemorySegment font, MemorySegment extents) {
@@ -5796,11 +7516,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_v_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$868.hb_font_get_v_extents$MH,"hb_font_get_v_extents");
+        return RuntimeHelper.requireNonNull(constants$1491.const$1,"hb_font_get_v_extents");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_get_v_extents(hb_font_t* font, hb_font_extents_t* extents);
+     * int hb_font_get_v_extents(struct hb_font_t* font, struct hb_font_extents_t* extents);
      * }
      */
     public static int hb_font_get_v_extents(MemorySegment font, MemorySegment extents) {
@@ -5812,11 +7532,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_nominal_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$868.hb_font_get_nominal_glyph$MH,"hb_font_get_nominal_glyph");
+        return RuntimeHelper.requireNonNull(constants$1491.const$2,"hb_font_get_nominal_glyph");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_get_nominal_glyph(hb_font_t* font, hb_codepoint_t unicode, hb_codepoint_t* glyph);
+     * int hb_font_get_nominal_glyph(struct hb_font_t* font, unsigned int unicode, unsigned int* glyph);
      * }
      */
     public static int hb_font_get_nominal_glyph(MemorySegment font, int unicode, MemorySegment glyph) {
@@ -5828,11 +7548,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_variation_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$868.hb_font_get_variation_glyph$MH,"hb_font_get_variation_glyph");
+        return RuntimeHelper.requireNonNull(constants$1491.const$3,"hb_font_get_variation_glyph");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_get_variation_glyph(hb_font_t* font, hb_codepoint_t unicode, hb_codepoint_t variation_selector, hb_codepoint_t* glyph);
+     * int hb_font_get_variation_glyph(struct hb_font_t* font, unsigned int unicode, unsigned int variation_selector, unsigned int* glyph);
      * }
      */
     public static int hb_font_get_variation_glyph(MemorySegment font, int unicode, int variation_selector, MemorySegment glyph) {
@@ -5844,11 +7564,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_nominal_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$868.hb_font_get_nominal_glyphs$MH,"hb_font_get_nominal_glyphs");
+        return RuntimeHelper.requireNonNull(constants$1491.const$5,"hb_font_get_nominal_glyphs");
     }
     /**
      * {@snippet :
-     * unsigned int hb_font_get_nominal_glyphs(hb_font_t* font, unsigned int count, const hb_codepoint_t* first_unicode, unsigned int unicode_stride, hb_codepoint_t* first_glyph, unsigned int glyph_stride);
+     * unsigned int hb_font_get_nominal_glyphs(struct hb_font_t* font, unsigned int count, unsigned int* first_unicode, unsigned int unicode_stride, unsigned int* first_glyph, unsigned int glyph_stride);
      * }
      */
     public static int hb_font_get_nominal_glyphs(MemorySegment font, int count, MemorySegment first_unicode, int unicode_stride, MemorySegment first_glyph, int glyph_stride) {
@@ -5860,11 +7580,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_h_advance$MH() {
-        return RuntimeHelper.requireNonNull(constants$869.hb_font_get_glyph_h_advance$MH,"hb_font_get_glyph_h_advance");
+        return RuntimeHelper.requireNonNull(constants$1492.const$0,"hb_font_get_glyph_h_advance");
     }
     /**
      * {@snippet :
-     * hb_position_t hb_font_get_glyph_h_advance(hb_font_t* font, hb_codepoint_t glyph);
+     * int hb_font_get_glyph_h_advance(struct hb_font_t* font, unsigned int glyph);
      * }
      */
     public static int hb_font_get_glyph_h_advance(MemorySegment font, int glyph) {
@@ -5876,11 +7596,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_v_advance$MH() {
-        return RuntimeHelper.requireNonNull(constants$869.hb_font_get_glyph_v_advance$MH,"hb_font_get_glyph_v_advance");
+        return RuntimeHelper.requireNonNull(constants$1492.const$1,"hb_font_get_glyph_v_advance");
     }
     /**
      * {@snippet :
-     * hb_position_t hb_font_get_glyph_v_advance(hb_font_t* font, hb_codepoint_t glyph);
+     * int hb_font_get_glyph_v_advance(struct hb_font_t* font, unsigned int glyph);
      * }
      */
     public static int hb_font_get_glyph_v_advance(MemorySegment font, int glyph) {
@@ -5892,11 +7612,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_h_advances$MH() {
-        return RuntimeHelper.requireNonNull(constants$869.hb_font_get_glyph_h_advances$MH,"hb_font_get_glyph_h_advances");
+        return RuntimeHelper.requireNonNull(constants$1492.const$3,"hb_font_get_glyph_h_advances");
     }
     /**
      * {@snippet :
-     * void hb_font_get_glyph_h_advances(hb_font_t* font, unsigned int count, const hb_codepoint_t* first_glyph, unsigned int glyph_stride, hb_position_t* first_advance, unsigned int advance_stride);
+     * void hb_font_get_glyph_h_advances(struct hb_font_t* font, unsigned int count, unsigned int* first_glyph, unsigned int glyph_stride, int* first_advance, unsigned int advance_stride);
      * }
      */
     public static void hb_font_get_glyph_h_advances(MemorySegment font, int count, MemorySegment first_glyph, int glyph_stride, MemorySegment first_advance, int advance_stride) {
@@ -5908,11 +7628,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_v_advances$MH() {
-        return RuntimeHelper.requireNonNull(constants$869.hb_font_get_glyph_v_advances$MH,"hb_font_get_glyph_v_advances");
+        return RuntimeHelper.requireNonNull(constants$1492.const$4,"hb_font_get_glyph_v_advances");
     }
     /**
      * {@snippet :
-     * void hb_font_get_glyph_v_advances(hb_font_t* font, unsigned int count, const hb_codepoint_t* first_glyph, unsigned int glyph_stride, hb_position_t* first_advance, unsigned int advance_stride);
+     * void hb_font_get_glyph_v_advances(struct hb_font_t* font, unsigned int count, unsigned int* first_glyph, unsigned int glyph_stride, int* first_advance, unsigned int advance_stride);
      * }
      */
     public static void hb_font_get_glyph_v_advances(MemorySegment font, int count, MemorySegment first_glyph, int glyph_stride, MemorySegment first_advance, int advance_stride) {
@@ -5924,11 +7644,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_h_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$869.hb_font_get_glyph_h_origin$MH,"hb_font_get_glyph_h_origin");
+        return RuntimeHelper.requireNonNull(constants$1492.const$5,"hb_font_get_glyph_h_origin");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_get_glyph_h_origin(hb_font_t* font, hb_codepoint_t glyph, hb_position_t* x, hb_position_t* y);
+     * int hb_font_get_glyph_h_origin(struct hb_font_t* font, unsigned int glyph, int* x, int* y);
      * }
      */
     public static int hb_font_get_glyph_h_origin(MemorySegment font, int glyph, MemorySegment x, MemorySegment y) {
@@ -5940,11 +7660,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_v_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$869.hb_font_get_glyph_v_origin$MH,"hb_font_get_glyph_v_origin");
+        return RuntimeHelper.requireNonNull(constants$1493.const$0,"hb_font_get_glyph_v_origin");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_get_glyph_v_origin(hb_font_t* font, hb_codepoint_t glyph, hb_position_t* x, hb_position_t* y);
+     * int hb_font_get_glyph_v_origin(struct hb_font_t* font, unsigned int glyph, int* x, int* y);
      * }
      */
     public static int hb_font_get_glyph_v_origin(MemorySegment font, int glyph, MemorySegment x, MemorySegment y) {
@@ -5956,11 +7676,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_h_kerning$MH() {
-        return RuntimeHelper.requireNonNull(constants$870.hb_font_get_glyph_h_kerning$MH,"hb_font_get_glyph_h_kerning");
+        return RuntimeHelper.requireNonNull(constants$1493.const$1,"hb_font_get_glyph_h_kerning");
     }
     /**
      * {@snippet :
-     * hb_position_t hb_font_get_glyph_h_kerning(hb_font_t* font, hb_codepoint_t left_glyph, hb_codepoint_t right_glyph);
+     * int hb_font_get_glyph_h_kerning(struct hb_font_t* font, unsigned int left_glyph, unsigned int right_glyph);
      * }
      */
     public static int hb_font_get_glyph_h_kerning(MemorySegment font, int left_glyph, int right_glyph) {
@@ -5972,11 +7692,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$870.hb_font_get_glyph_extents$MH,"hb_font_get_glyph_extents");
+        return RuntimeHelper.requireNonNull(constants$1493.const$2,"hb_font_get_glyph_extents");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_get_glyph_extents(hb_font_t* font, hb_codepoint_t glyph, hb_glyph_extents_t* extents);
+     * int hb_font_get_glyph_extents(struct hb_font_t* font, unsigned int glyph, struct hb_glyph_extents_t* extents);
      * }
      */
     public static int hb_font_get_glyph_extents(MemorySegment font, int glyph, MemorySegment extents) {
@@ -5988,11 +7708,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_contour_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$870.hb_font_get_glyph_contour_point$MH,"hb_font_get_glyph_contour_point");
+        return RuntimeHelper.requireNonNull(constants$1493.const$3,"hb_font_get_glyph_contour_point");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_get_glyph_contour_point(hb_font_t* font, hb_codepoint_t glyph, unsigned int point_index, hb_position_t* x, hb_position_t* y);
+     * int hb_font_get_glyph_contour_point(struct hb_font_t* font, unsigned int glyph, unsigned int point_index, int* x, int* y);
      * }
      */
     public static int hb_font_get_glyph_contour_point(MemorySegment font, int glyph, int point_index, MemorySegment x, MemorySegment y) {
@@ -6004,11 +7724,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$870.hb_font_get_glyph_name$MH,"hb_font_get_glyph_name");
+        return RuntimeHelper.requireNonNull(constants$1493.const$4,"hb_font_get_glyph_name");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_get_glyph_name(hb_font_t* font, hb_codepoint_t glyph, char* name, unsigned int size);
+     * int hb_font_get_glyph_name(struct hb_font_t* font, unsigned int glyph, char* name, unsigned int size);
      * }
      */
     public static int hb_font_get_glyph_name(MemorySegment font, int glyph, MemorySegment name, int size) {
@@ -6020,11 +7740,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_from_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$870.hb_font_get_glyph_from_name$MH,"hb_font_get_glyph_from_name");
+        return RuntimeHelper.requireNonNull(constants$1493.const$5,"hb_font_get_glyph_from_name");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_get_glyph_from_name(hb_font_t* font, char* name, int len, hb_codepoint_t* glyph);
+     * int hb_font_get_glyph_from_name(struct hb_font_t* font, char* name, int len, unsigned int* glyph);
      * }
      */
     public static int hb_font_get_glyph_from_name(MemorySegment font, MemorySegment name, int len, MemorySegment glyph) {
@@ -6035,28 +7755,44 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle hb_font_get_glyph_shape$MH() {
-        return RuntimeHelper.requireNonNull(constants$870.hb_font_get_glyph_shape$MH,"hb_font_get_glyph_shape");
+    public static MethodHandle hb_font_draw_glyph$MH() {
+        return RuntimeHelper.requireNonNull(constants$1494.const$0,"hb_font_draw_glyph");
     }
     /**
      * {@snippet :
-     * void hb_font_get_glyph_shape(hb_font_t* font, hb_codepoint_t glyph, hb_draw_funcs_t* dfuncs, void* draw_data);
+     * void hb_font_draw_glyph(struct hb_font_t* font, unsigned int glyph, struct hb_draw_funcs_t* dfuncs, void* draw_data);
      * }
      */
-    public static void hb_font_get_glyph_shape(MemorySegment font, int glyph, MemorySegment dfuncs, MemorySegment draw_data) {
-        var mh$ = hb_font_get_glyph_shape$MH();
+    public static void hb_font_draw_glyph(MemorySegment font, int glyph, MemorySegment dfuncs, MemorySegment draw_data) {
+        var mh$ = hb_font_draw_glyph$MH();
         try {
             mh$.invokeExact(font, glyph, dfuncs, draw_data);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle hb_font_get_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$871.hb_font_get_glyph$MH,"hb_font_get_glyph");
+    public static MethodHandle hb_font_paint_glyph$MH() {
+        return RuntimeHelper.requireNonNull(constants$1494.const$2,"hb_font_paint_glyph");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_get_glyph(hb_font_t* font, hb_codepoint_t unicode, hb_codepoint_t variation_selector, hb_codepoint_t* glyph);
+     * void hb_font_paint_glyph(struct hb_font_t* font, unsigned int glyph, struct hb_paint_funcs_t* pfuncs, void* paint_data, unsigned int palette_index, unsigned int foreground);
+     * }
+     */
+    public static void hb_font_paint_glyph(MemorySegment font, int glyph, MemorySegment pfuncs, MemorySegment paint_data, int palette_index, int foreground) {
+        var mh$ = hb_font_paint_glyph$MH();
+        try {
+            mh$.invokeExact(font, glyph, pfuncs, paint_data, palette_index, foreground);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_glyph$MH() {
+        return RuntimeHelper.requireNonNull(constants$1494.const$3,"hb_font_get_glyph");
+    }
+    /**
+     * {@snippet :
+     * int hb_font_get_glyph(struct hb_font_t* font, unsigned int unicode, unsigned int variation_selector, unsigned int* glyph);
      * }
      */
     public static int hb_font_get_glyph(MemorySegment font, int unicode, int variation_selector, MemorySegment glyph) {
@@ -6068,11 +7804,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_extents_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$871.hb_font_get_extents_for_direction$MH,"hb_font_get_extents_for_direction");
+        return RuntimeHelper.requireNonNull(constants$1494.const$4,"hb_font_get_extents_for_direction");
     }
     /**
      * {@snippet :
-     * void hb_font_get_extents_for_direction(hb_font_t* font, hb_direction_t direction, hb_font_extents_t* extents);
+     * void hb_font_get_extents_for_direction(struct hb_font_t* font, enum hb_direction_t direction, struct hb_font_extents_t* extents);
      * }
      */
     public static void hb_font_get_extents_for_direction(MemorySegment font, int direction, MemorySegment extents) {
@@ -6084,11 +7820,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_advance_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$871.hb_font_get_glyph_advance_for_direction$MH,"hb_font_get_glyph_advance_for_direction");
+        return RuntimeHelper.requireNonNull(constants$1494.const$6,"hb_font_get_glyph_advance_for_direction");
     }
     /**
      * {@snippet :
-     * void hb_font_get_glyph_advance_for_direction(hb_font_t* font, hb_codepoint_t glyph, hb_direction_t direction, hb_position_t* x, hb_position_t* y);
+     * void hb_font_get_glyph_advance_for_direction(struct hb_font_t* font, unsigned int glyph, enum hb_direction_t direction, int* x, int* y);
      * }
      */
     public static void hb_font_get_glyph_advance_for_direction(MemorySegment font, int glyph, int direction, MemorySegment x, MemorySegment y) {
@@ -6100,11 +7836,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_advances_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$871.hb_font_get_glyph_advances_for_direction$MH,"hb_font_get_glyph_advances_for_direction");
+        return RuntimeHelper.requireNonNull(constants$1495.const$1,"hb_font_get_glyph_advances_for_direction");
     }
     /**
      * {@snippet :
-     * void hb_font_get_glyph_advances_for_direction(hb_font_t* font, hb_direction_t direction, unsigned int count, const hb_codepoint_t* first_glyph, unsigned int glyph_stride, hb_position_t* first_advance, unsigned int advance_stride);
+     * void hb_font_get_glyph_advances_for_direction(struct hb_font_t* font, enum hb_direction_t direction, unsigned int count, unsigned int* first_glyph, unsigned int glyph_stride, int* first_advance, unsigned int advance_stride);
      * }
      */
     public static void hb_font_get_glyph_advances_for_direction(MemorySegment font, int direction, int count, MemorySegment first_glyph, int glyph_stride, MemorySegment first_advance, int advance_stride) {
@@ -6116,11 +7852,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_origin_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$871.hb_font_get_glyph_origin_for_direction$MH,"hb_font_get_glyph_origin_for_direction");
+        return RuntimeHelper.requireNonNull(constants$1495.const$2,"hb_font_get_glyph_origin_for_direction");
     }
     /**
      * {@snippet :
-     * void hb_font_get_glyph_origin_for_direction(hb_font_t* font, hb_codepoint_t glyph, hb_direction_t direction, hb_position_t* x, hb_position_t* y);
+     * void hb_font_get_glyph_origin_for_direction(struct hb_font_t* font, unsigned int glyph, enum hb_direction_t direction, int* x, int* y);
      * }
      */
     public static void hb_font_get_glyph_origin_for_direction(MemorySegment font, int glyph, int direction, MemorySegment x, MemorySegment y) {
@@ -6132,11 +7868,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_add_glyph_origin_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$871.hb_font_add_glyph_origin_for_direction$MH,"hb_font_add_glyph_origin_for_direction");
+        return RuntimeHelper.requireNonNull(constants$1495.const$3,"hb_font_add_glyph_origin_for_direction");
     }
     /**
      * {@snippet :
-     * void hb_font_add_glyph_origin_for_direction(hb_font_t* font, hb_codepoint_t glyph, hb_direction_t direction, hb_position_t* x, hb_position_t* y);
+     * void hb_font_add_glyph_origin_for_direction(struct hb_font_t* font, unsigned int glyph, enum hb_direction_t direction, int* x, int* y);
      * }
      */
     public static void hb_font_add_glyph_origin_for_direction(MemorySegment font, int glyph, int direction, MemorySegment x, MemorySegment y) {
@@ -6148,11 +7884,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_subtract_glyph_origin_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$872.hb_font_subtract_glyph_origin_for_direction$MH,"hb_font_subtract_glyph_origin_for_direction");
+        return RuntimeHelper.requireNonNull(constants$1495.const$4,"hb_font_subtract_glyph_origin_for_direction");
     }
     /**
      * {@snippet :
-     * void hb_font_subtract_glyph_origin_for_direction(hb_font_t* font, hb_codepoint_t glyph, hb_direction_t direction, hb_position_t* x, hb_position_t* y);
+     * void hb_font_subtract_glyph_origin_for_direction(struct hb_font_t* font, unsigned int glyph, enum hb_direction_t direction, int* x, int* y);
      * }
      */
     public static void hb_font_subtract_glyph_origin_for_direction(MemorySegment font, int glyph, int direction, MemorySegment x, MemorySegment y) {
@@ -6164,11 +7900,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_kerning_for_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$872.hb_font_get_glyph_kerning_for_direction$MH,"hb_font_get_glyph_kerning_for_direction");
+        return RuntimeHelper.requireNonNull(constants$1495.const$5,"hb_font_get_glyph_kerning_for_direction");
     }
     /**
      * {@snippet :
-     * void hb_font_get_glyph_kerning_for_direction(hb_font_t* font, hb_codepoint_t first_glyph, hb_codepoint_t second_glyph, hb_direction_t direction, hb_position_t* x, hb_position_t* y);
+     * void hb_font_get_glyph_kerning_for_direction(struct hb_font_t* font, unsigned int first_glyph, unsigned int second_glyph, enum hb_direction_t direction, int* x, int* y);
      * }
      */
     public static void hb_font_get_glyph_kerning_for_direction(MemorySegment font, int first_glyph, int second_glyph, int direction, MemorySegment x, MemorySegment y) {
@@ -6180,11 +7916,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_extents_for_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$872.hb_font_get_glyph_extents_for_origin$MH,"hb_font_get_glyph_extents_for_origin");
+        return RuntimeHelper.requireNonNull(constants$1496.const$0,"hb_font_get_glyph_extents_for_origin");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_get_glyph_extents_for_origin(hb_font_t* font, hb_codepoint_t glyph, hb_direction_t direction, hb_glyph_extents_t* extents);
+     * int hb_font_get_glyph_extents_for_origin(struct hb_font_t* font, unsigned int glyph, enum hb_direction_t direction, struct hb_glyph_extents_t* extents);
      * }
      */
     public static int hb_font_get_glyph_extents_for_origin(MemorySegment font, int glyph, int direction, MemorySegment extents) {
@@ -6196,11 +7932,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_contour_point_for_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$872.hb_font_get_glyph_contour_point_for_origin$MH,"hb_font_get_glyph_contour_point_for_origin");
+        return RuntimeHelper.requireNonNull(constants$1496.const$2,"hb_font_get_glyph_contour_point_for_origin");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_get_glyph_contour_point_for_origin(hb_font_t* font, hb_codepoint_t glyph, unsigned int point_index, hb_direction_t direction, hb_position_t* x, hb_position_t* y);
+     * int hb_font_get_glyph_contour_point_for_origin(struct hb_font_t* font, unsigned int glyph, unsigned int point_index, enum hb_direction_t direction, int* x, int* y);
      * }
      */
     public static int hb_font_get_glyph_contour_point_for_origin(MemorySegment font, int glyph, int point_index, int direction, MemorySegment x, MemorySegment y) {
@@ -6212,11 +7948,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_glyph_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$872.hb_font_glyph_to_string$MH,"hb_font_glyph_to_string");
+        return RuntimeHelper.requireNonNull(constants$1496.const$4,"hb_font_glyph_to_string");
     }
     /**
      * {@snippet :
-     * void hb_font_glyph_to_string(hb_font_t* font, hb_codepoint_t glyph, char* s, unsigned int size);
+     * void hb_font_glyph_to_string(struct hb_font_t* font, unsigned int glyph, char* s, unsigned int size);
      * }
      */
     public static void hb_font_glyph_to_string(MemorySegment font, int glyph, MemorySegment s, int size) {
@@ -6228,11 +7964,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_glyph_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$872.hb_font_glyph_from_string$MH,"hb_font_glyph_from_string");
+        return RuntimeHelper.requireNonNull(constants$1496.const$5,"hb_font_glyph_from_string");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_glyph_from_string(hb_font_t* font, char* s, int len, hb_codepoint_t* glyph);
+     * int hb_font_glyph_from_string(struct hb_font_t* font, char* s, int len, unsigned int* glyph);
      * }
      */
     public static int hb_font_glyph_from_string(MemorySegment font, MemorySegment s, int len, MemorySegment glyph) {
@@ -6244,11 +7980,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$873.hb_font_create$MH,"hb_font_create");
+        return RuntimeHelper.requireNonNull(constants$1497.const$0,"hb_font_create");
     }
     /**
      * {@snippet :
-     * hb_font_t* hb_font_create(hb_face_t* face);
+     * struct hb_font_t* hb_font_create(struct hb_face_t* face);
      * }
      */
     public static MemorySegment hb_font_create(MemorySegment face) {
@@ -6260,11 +7996,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_create_sub_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$873.hb_font_create_sub_font$MH,"hb_font_create_sub_font");
+        return RuntimeHelper.requireNonNull(constants$1497.const$1,"hb_font_create_sub_font");
     }
     /**
      * {@snippet :
-     * hb_font_t* hb_font_create_sub_font(hb_font_t* parent);
+     * struct hb_font_t* hb_font_create_sub_font(struct hb_font_t* parent);
      * }
      */
     public static MemorySegment hb_font_create_sub_font(MemorySegment parent) {
@@ -6276,11 +8012,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$873.hb_font_get_empty$MH,"hb_font_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1497.const$2,"hb_font_get_empty");
     }
     /**
      * {@snippet :
-     * hb_font_t* hb_font_get_empty();
+     * struct hb_font_t* hb_font_get_empty();
      * }
      */
     public static MemorySegment hb_font_get_empty() {
@@ -6292,11 +8028,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$873.hb_font_reference$MH,"hb_font_reference");
+        return RuntimeHelper.requireNonNull(constants$1497.const$3,"hb_font_reference");
     }
     /**
      * {@snippet :
-     * hb_font_t* hb_font_reference(hb_font_t* font);
+     * struct hb_font_t* hb_font_reference(struct hb_font_t* font);
      * }
      */
     public static MemorySegment hb_font_reference(MemorySegment font) {
@@ -6308,11 +8044,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$873.hb_font_destroy$MH,"hb_font_destroy");
+        return RuntimeHelper.requireNonNull(constants$1497.const$4,"hb_font_destroy");
     }
     /**
      * {@snippet :
-     * void hb_font_destroy(hb_font_t* font);
+     * void hb_font_destroy(struct hb_font_t* font);
      * }
      */
     public static void hb_font_destroy(MemorySegment font) {
@@ -6324,11 +8060,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$873.hb_font_set_user_data$MH,"hb_font_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1498.const$0,"hb_font_set_user_data");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_set_user_data(hb_font_t* font, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * int hb_font_set_user_data(struct hb_font_t* font, struct hb_user_data_key_t* key, void* data, void (*destroy)(void*), int replace);
      * }
      */
     public static int hb_font_set_user_data(MemorySegment font, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
@@ -6340,11 +8076,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$874.hb_font_get_user_data$MH,"hb_font_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1498.const$1,"hb_font_get_user_data");
     }
     /**
      * {@snippet :
-     * void* hb_font_get_user_data(const hb_font_t* font, hb_user_data_key_t* key);
+     * void* hb_font_get_user_data(struct hb_font_t* font, struct hb_user_data_key_t* key);
      * }
      */
     public static MemorySegment hb_font_get_user_data(MemorySegment font, MemorySegment key) {
@@ -6356,11 +8092,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_make_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$874.hb_font_make_immutable$MH,"hb_font_make_immutable");
+        return RuntimeHelper.requireNonNull(constants$1498.const$2,"hb_font_make_immutable");
     }
     /**
      * {@snippet :
-     * void hb_font_make_immutable(hb_font_t* font);
+     * void hb_font_make_immutable(struct hb_font_t* font);
      * }
      */
     public static void hb_font_make_immutable(MemorySegment font) {
@@ -6372,11 +8108,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_is_immutable$MH() {
-        return RuntimeHelper.requireNonNull(constants$874.hb_font_is_immutable$MH,"hb_font_is_immutable");
+        return RuntimeHelper.requireNonNull(constants$1498.const$3,"hb_font_is_immutable");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_font_is_immutable(hb_font_t* font);
+     * int hb_font_is_immutable(struct hb_font_t* font);
      * }
      */
     public static int hb_font_is_immutable(MemorySegment font) {
@@ -6388,11 +8124,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_serial$MH() {
-        return RuntimeHelper.requireNonNull(constants$874.hb_font_get_serial$MH,"hb_font_get_serial");
+        return RuntimeHelper.requireNonNull(constants$1498.const$4,"hb_font_get_serial");
     }
     /**
      * {@snippet :
-     * unsigned int hb_font_get_serial(hb_font_t* font);
+     * unsigned int hb_font_get_serial(struct hb_font_t* font);
      * }
      */
     public static int hb_font_get_serial(MemorySegment font) {
@@ -6404,11 +8140,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_changed$MH() {
-        return RuntimeHelper.requireNonNull(constants$874.hb_font_changed$MH,"hb_font_changed");
+        return RuntimeHelper.requireNonNull(constants$1498.const$5,"hb_font_changed");
     }
     /**
      * {@snippet :
-     * void hb_font_changed(hb_font_t* font);
+     * void hb_font_changed(struct hb_font_t* font);
      * }
      */
     public static void hb_font_changed(MemorySegment font) {
@@ -6420,11 +8156,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$874.hb_font_set_parent$MH,"hb_font_set_parent");
+        return RuntimeHelper.requireNonNull(constants$1499.const$0,"hb_font_set_parent");
     }
     /**
      * {@snippet :
-     * void hb_font_set_parent(hb_font_t* font, hb_font_t* parent);
+     * void hb_font_set_parent(struct hb_font_t* font, struct hb_font_t* parent);
      * }
      */
     public static void hb_font_set_parent(MemorySegment font, MemorySegment parent) {
@@ -6436,11 +8172,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$875.hb_font_get_parent$MH,"hb_font_get_parent");
+        return RuntimeHelper.requireNonNull(constants$1499.const$1,"hb_font_get_parent");
     }
     /**
      * {@snippet :
-     * hb_font_t* hb_font_get_parent(hb_font_t* font);
+     * struct hb_font_t* hb_font_get_parent(struct hb_font_t* font);
      * }
      */
     public static MemorySegment hb_font_get_parent(MemorySegment font) {
@@ -6452,11 +8188,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$875.hb_font_set_face$MH,"hb_font_set_face");
+        return RuntimeHelper.requireNonNull(constants$1499.const$2,"hb_font_set_face");
     }
     /**
      * {@snippet :
-     * void hb_font_set_face(hb_font_t* font, hb_face_t* face);
+     * void hb_font_set_face(struct hb_font_t* font, struct hb_face_t* face);
      * }
      */
     public static void hb_font_set_face(MemorySegment font, MemorySegment face) {
@@ -6468,11 +8204,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$875.hb_font_get_face$MH,"hb_font_get_face");
+        return RuntimeHelper.requireNonNull(constants$1499.const$3,"hb_font_get_face");
     }
     /**
      * {@snippet :
-     * hb_face_t* hb_font_get_face(hb_font_t* font);
+     * struct hb_face_t* hb_font_get_face(struct hb_font_t* font);
      * }
      */
     public static MemorySegment hb_font_get_face(MemorySegment font) {
@@ -6484,11 +8220,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_funcs$MH() {
-        return RuntimeHelper.requireNonNull(constants$875.hb_font_set_funcs$MH,"hb_font_set_funcs");
+        return RuntimeHelper.requireNonNull(constants$1499.const$5,"hb_font_set_funcs");
     }
     /**
      * {@snippet :
-     * void hb_font_set_funcs(hb_font_t* font, hb_font_funcs_t* klass, void* font_data, hb_destroy_func_t destroy);
+     * void hb_font_set_funcs(struct hb_font_t* font, struct hb_font_funcs_t* klass, void* font_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_set_funcs(MemorySegment font, MemorySegment klass, MemorySegment font_data, MemorySegment destroy) {
@@ -6500,11 +8236,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_funcs_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$875.hb_font_set_funcs_data$MH,"hb_font_set_funcs_data");
+        return RuntimeHelper.requireNonNull(constants$1500.const$1,"hb_font_set_funcs_data");
     }
     /**
      * {@snippet :
-     * void hb_font_set_funcs_data(hb_font_t* font, void* font_data, hb_destroy_func_t destroy);
+     * void hb_font_set_funcs_data(struct hb_font_t* font, void* font_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_set_funcs_data(MemorySegment font, MemorySegment font_data, MemorySegment destroy) {
@@ -6516,11 +8252,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$875.hb_font_set_scale$MH,"hb_font_set_scale");
+        return RuntimeHelper.requireNonNull(constants$1500.const$2,"hb_font_set_scale");
     }
     /**
      * {@snippet :
-     * void hb_font_set_scale(hb_font_t* font, int x_scale, int y_scale);
+     * void hb_font_set_scale(struct hb_font_t* font, int x_scale, int y_scale);
      * }
      */
     public static void hb_font_set_scale(MemorySegment font, int x_scale, int y_scale) {
@@ -6532,11 +8268,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$876.hb_font_get_scale$MH,"hb_font_get_scale");
+        return RuntimeHelper.requireNonNull(constants$1500.const$3,"hb_font_get_scale");
     }
     /**
      * {@snippet :
-     * void hb_font_get_scale(hb_font_t* font, int* x_scale, int* y_scale);
+     * void hb_font_get_scale(struct hb_font_t* font, int* x_scale, int* y_scale);
      * }
      */
     public static void hb_font_get_scale(MemorySegment font, MemorySegment x_scale, MemorySegment y_scale) {
@@ -6548,11 +8284,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_ppem$MH() {
-        return RuntimeHelper.requireNonNull(constants$876.hb_font_set_ppem$MH,"hb_font_set_ppem");
+        return RuntimeHelper.requireNonNull(constants$1500.const$4,"hb_font_set_ppem");
     }
     /**
      * {@snippet :
-     * void hb_font_set_ppem(hb_font_t* font, unsigned int x_ppem, unsigned int y_ppem);
+     * void hb_font_set_ppem(struct hb_font_t* font, unsigned int x_ppem, unsigned int y_ppem);
      * }
      */
     public static void hb_font_set_ppem(MemorySegment font, int x_ppem, int y_ppem) {
@@ -6564,11 +8300,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_ppem$MH() {
-        return RuntimeHelper.requireNonNull(constants$876.hb_font_get_ppem$MH,"hb_font_get_ppem");
+        return RuntimeHelper.requireNonNull(constants$1500.const$5,"hb_font_get_ppem");
     }
     /**
      * {@snippet :
-     * void hb_font_get_ppem(hb_font_t* font, unsigned int* x_ppem, unsigned int* y_ppem);
+     * void hb_font_get_ppem(struct hb_font_t* font, unsigned int* x_ppem, unsigned int* y_ppem);
      * }
      */
     public static void hb_font_get_ppem(MemorySegment font, MemorySegment x_ppem, MemorySegment y_ppem) {
@@ -6580,11 +8316,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_ptem$MH() {
-        return RuntimeHelper.requireNonNull(constants$876.hb_font_set_ptem$MH,"hb_font_set_ptem");
+        return RuntimeHelper.requireNonNull(constants$1501.const$0,"hb_font_set_ptem");
     }
     /**
      * {@snippet :
-     * void hb_font_set_ptem(hb_font_t* font, float ptem);
+     * void hb_font_set_ptem(struct hb_font_t* font, float ptem);
      * }
      */
     public static void hb_font_set_ptem(MemorySegment font, float ptem) {
@@ -6596,11 +8332,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_ptem$MH() {
-        return RuntimeHelper.requireNonNull(constants$876.hb_font_get_ptem$MH,"hb_font_get_ptem");
+        return RuntimeHelper.requireNonNull(constants$1501.const$1,"hb_font_get_ptem");
     }
     /**
      * {@snippet :
-     * float hb_font_get_ptem(hb_font_t* font);
+     * float hb_font_get_ptem(struct hb_font_t* font);
      * }
      */
     public static float hb_font_get_ptem(MemorySegment font) {
@@ -6611,12 +8347,44 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle hb_font_set_synthetic_slant$MH() {
-        return RuntimeHelper.requireNonNull(constants$876.hb_font_set_synthetic_slant$MH,"hb_font_set_synthetic_slant");
+    public static MethodHandle hb_font_set_synthetic_bold$MH() {
+        return RuntimeHelper.requireNonNull(constants$1501.const$3,"hb_font_set_synthetic_bold");
     }
     /**
      * {@snippet :
-     * void hb_font_set_synthetic_slant(hb_font_t* font, float slant);
+     * void hb_font_set_synthetic_bold(struct hb_font_t* font, float x_embolden, float y_embolden, int in_place);
+     * }
+     */
+    public static void hb_font_set_synthetic_bold(MemorySegment font, float x_embolden, float y_embolden, int in_place) {
+        var mh$ = hb_font_set_synthetic_bold$MH();
+        try {
+            mh$.invokeExact(font, x_embolden, y_embolden, in_place);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_get_synthetic_bold$MH() {
+        return RuntimeHelper.requireNonNull(constants$1501.const$4,"hb_font_get_synthetic_bold");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_get_synthetic_bold(struct hb_font_t* font, float* x_embolden, float* y_embolden, int* in_place);
+     * }
+     */
+    public static void hb_font_get_synthetic_bold(MemorySegment font, MemorySegment x_embolden, MemorySegment y_embolden, MemorySegment in_place) {
+        var mh$ = hb_font_get_synthetic_bold$MH();
+        try {
+            mh$.invokeExact(font, x_embolden, y_embolden, in_place);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_set_synthetic_slant$MH() {
+        return RuntimeHelper.requireNonNull(constants$1501.const$5,"hb_font_set_synthetic_slant");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_set_synthetic_slant(struct hb_font_t* font, float slant);
      * }
      */
     public static void hb_font_set_synthetic_slant(MemorySegment font, float slant) {
@@ -6628,11 +8396,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_synthetic_slant$MH() {
-        return RuntimeHelper.requireNonNull(constants$877.hb_font_get_synthetic_slant$MH,"hb_font_get_synthetic_slant");
+        return RuntimeHelper.requireNonNull(constants$1502.const$0,"hb_font_get_synthetic_slant");
     }
     /**
      * {@snippet :
-     * float hb_font_get_synthetic_slant(hb_font_t* font);
+     * float hb_font_get_synthetic_slant(struct hb_font_t* font);
      * }
      */
     public static float hb_font_get_synthetic_slant(MemorySegment font) {
@@ -6644,11 +8412,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_variations$MH() {
-        return RuntimeHelper.requireNonNull(constants$877.hb_font_set_variations$MH,"hb_font_set_variations");
+        return RuntimeHelper.requireNonNull(constants$1502.const$1,"hb_font_set_variations");
     }
     /**
      * {@snippet :
-     * void hb_font_set_variations(hb_font_t* font, const hb_variation_t* variations, unsigned int variations_length);
+     * void hb_font_set_variations(struct hb_font_t* font, struct hb_variation_t* variations, unsigned int variations_length);
      * }
      */
     public static void hb_font_set_variations(MemorySegment font, MemorySegment variations, int variations_length) {
@@ -6659,12 +8427,28 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle hb_font_set_var_coords_design$MH() {
-        return RuntimeHelper.requireNonNull(constants$877.hb_font_set_var_coords_design$MH,"hb_font_set_var_coords_design");
+    public static MethodHandle hb_font_set_variation$MH() {
+        return RuntimeHelper.requireNonNull(constants$1502.const$3,"hb_font_set_variation");
     }
     /**
      * {@snippet :
-     * void hb_font_set_var_coords_design(hb_font_t* font, float* coords, unsigned int coords_length);
+     * void hb_font_set_variation(struct hb_font_t* font, unsigned int tag, float value);
+     * }
+     */
+    public static void hb_font_set_variation(MemorySegment font, int tag, float value) {
+        var mh$ = hb_font_set_variation$MH();
+        try {
+            mh$.invokeExact(font, tag, value);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle hb_font_set_var_coords_design$MH() {
+        return RuntimeHelper.requireNonNull(constants$1502.const$4,"hb_font_set_var_coords_design");
+    }
+    /**
+     * {@snippet :
+     * void hb_font_set_var_coords_design(struct hb_font_t* font, float* coords, unsigned int coords_length);
      * }
      */
     public static void hb_font_set_var_coords_design(MemorySegment font, MemorySegment coords, int coords_length) {
@@ -6676,11 +8460,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_var_coords_design$MH() {
-        return RuntimeHelper.requireNonNull(constants$877.hb_font_get_var_coords_design$MH,"hb_font_get_var_coords_design");
+        return RuntimeHelper.requireNonNull(constants$1502.const$5,"hb_font_get_var_coords_design");
     }
     /**
      * {@snippet :
-     * float* hb_font_get_var_coords_design(hb_font_t* font, unsigned int* length);
+     * float* hb_font_get_var_coords_design(struct hb_font_t* font, unsigned int* length);
      * }
      */
     public static MemorySegment hb_font_get_var_coords_design(MemorySegment font, MemorySegment length) {
@@ -6692,11 +8476,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_var_coords_normalized$MH() {
-        return RuntimeHelper.requireNonNull(constants$877.hb_font_set_var_coords_normalized$MH,"hb_font_set_var_coords_normalized");
+        return RuntimeHelper.requireNonNull(constants$1503.const$0,"hb_font_set_var_coords_normalized");
     }
     /**
      * {@snippet :
-     * void hb_font_set_var_coords_normalized(hb_font_t* font, int* coords, unsigned int coords_length);
+     * void hb_font_set_var_coords_normalized(struct hb_font_t* font, int* coords, unsigned int coords_length);
      * }
      */
     public static void hb_font_set_var_coords_normalized(MemorySegment font, MemorySegment coords, int coords_length) {
@@ -6708,11 +8492,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_var_coords_normalized$MH() {
-        return RuntimeHelper.requireNonNull(constants$877.hb_font_get_var_coords_normalized$MH,"hb_font_get_var_coords_normalized");
+        return RuntimeHelper.requireNonNull(constants$1503.const$1,"hb_font_get_var_coords_normalized");
     }
     /**
      * {@snippet :
-     * int* hb_font_get_var_coords_normalized(hb_font_t* font, unsigned int* length);
+     * int* hb_font_get_var_coords_normalized(struct hb_font_t* font, unsigned int* length);
      * }
      */
     public static MemorySegment hb_font_get_var_coords_normalized(MemorySegment font, MemorySegment length) {
@@ -6724,11 +8508,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_set_var_named_instance$MH() {
-        return RuntimeHelper.requireNonNull(constants$878.hb_font_set_var_named_instance$MH,"hb_font_set_var_named_instance");
+        return RuntimeHelper.requireNonNull(constants$1503.const$2,"hb_font_set_var_named_instance");
     }
     /**
      * {@snippet :
-     * void hb_font_set_var_named_instance(hb_font_t* font, unsigned int instance_index);
+     * void hb_font_set_var_named_instance(struct hb_font_t* font, unsigned int instance_index);
      * }
      */
     public static void hb_font_set_var_named_instance(MemorySegment font, int instance_index) {
@@ -6739,9 +8523,25 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
+    public static MethodHandle hb_font_get_var_named_instance$MH() {
+        return RuntimeHelper.requireNonNull(constants$1503.const$3,"hb_font_get_var_named_instance");
+    }
     /**
      * {@snippet :
-     * enum .HB_GLYPH_FLAG_UNSAFE_TO_BREAK = 1;
+     * unsigned int hb_font_get_var_named_instance(struct hb_font_t* font);
+     * }
+     */
+    public static int hb_font_get_var_named_instance(MemorySegment font) {
+        var mh$ = hb_font_get_var_named_instance$MH();
+        try {
+            return (int)mh$.invokeExact(font);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum hb_glyph_flags_t.HB_GLYPH_FLAG_UNSAFE_TO_BREAK = 1;
      * }
      */
     public static int HB_GLYPH_FLAG_UNSAFE_TO_BREAK() {
@@ -6749,7 +8549,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_GLYPH_FLAG_UNSAFE_TO_CONCAT = 2;
+     * enum hb_glyph_flags_t.HB_GLYPH_FLAG_UNSAFE_TO_CONCAT = 2;
      * }
      */
     public static int HB_GLYPH_FLAG_UNSAFE_TO_CONCAT() {
@@ -6757,7 +8557,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_GLYPH_FLAG_SAFE_TO_INSERT_TATWEEL = 4;
+     * enum hb_glyph_flags_t.HB_GLYPH_FLAG_SAFE_TO_INSERT_TATWEEL = 4;
      * }
      */
     public static int HB_GLYPH_FLAG_SAFE_TO_INSERT_TATWEEL() {
@@ -6765,18 +8565,18 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_GLYPH_FLAG_DEFINED = 7;
+     * enum hb_glyph_flags_t.HB_GLYPH_FLAG_DEFINED = 7;
      * }
      */
     public static int HB_GLYPH_FLAG_DEFINED() {
         return (int)7L;
     }
     public static MethodHandle hb_glyph_info_get_glyph_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$878.hb_glyph_info_get_glyph_flags$MH,"hb_glyph_info_get_glyph_flags");
+        return RuntimeHelper.requireNonNull(constants$1504.const$2,"hb_glyph_info_get_glyph_flags");
     }
     /**
      * {@snippet :
-     * hb_glyph_flags_t hb_glyph_info_get_glyph_flags(const hb_glyph_info_t* info);
+     * enum hb_glyph_flags_t hb_glyph_info_get_glyph_flags(struct hb_glyph_info_t* info);
      * }
      */
     public static int hb_glyph_info_get_glyph_flags(MemorySegment info) {
@@ -6788,11 +8588,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_segment_properties_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$878.hb_segment_properties_equal$MH,"hb_segment_properties_equal");
+        return RuntimeHelper.requireNonNull(constants$1506.const$2,"hb_segment_properties_equal");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_segment_properties_equal(const hb_segment_properties_t* a, const hb_segment_properties_t* b);
+     * int hb_segment_properties_equal(struct hb_segment_properties_t* a, struct hb_segment_properties_t* b);
      * }
      */
     public static int hb_segment_properties_equal(MemorySegment a, MemorySegment b) {
@@ -6804,11 +8604,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_segment_properties_hash$MH() {
-        return RuntimeHelper.requireNonNull(constants$878.hb_segment_properties_hash$MH,"hb_segment_properties_hash");
+        return RuntimeHelper.requireNonNull(constants$1506.const$3,"hb_segment_properties_hash");
     }
     /**
      * {@snippet :
-     * unsigned int hb_segment_properties_hash(const hb_segment_properties_t* p);
+     * unsigned int hb_segment_properties_hash(struct hb_segment_properties_t* p);
      * }
      */
     public static int hb_segment_properties_hash(MemorySegment p) {
@@ -6820,11 +8620,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_segment_properties_overlay$MH() {
-        return RuntimeHelper.requireNonNull(constants$878.hb_segment_properties_overlay$MH,"hb_segment_properties_overlay");
+        return RuntimeHelper.requireNonNull(constants$1506.const$4,"hb_segment_properties_overlay");
     }
     /**
      * {@snippet :
-     * void hb_segment_properties_overlay(hb_segment_properties_t* p, const hb_segment_properties_t* src);
+     * void hb_segment_properties_overlay(struct hb_segment_properties_t* p, struct hb_segment_properties_t* src);
      * }
      */
     public static void hb_segment_properties_overlay(MemorySegment p, MemorySegment src) {
@@ -6836,11 +8636,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$878.hb_buffer_create$MH,"hb_buffer_create");
+        return RuntimeHelper.requireNonNull(constants$1506.const$5,"hb_buffer_create");
     }
     /**
      * {@snippet :
-     * hb_buffer_t* hb_buffer_create();
+     * struct hb_buffer_t* hb_buffer_create();
      * }
      */
     public static MemorySegment hb_buffer_create() {
@@ -6852,11 +8652,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_create_similar$MH() {
-        return RuntimeHelper.requireNonNull(constants$879.hb_buffer_create_similar$MH,"hb_buffer_create_similar");
+        return RuntimeHelper.requireNonNull(constants$1507.const$0,"hb_buffer_create_similar");
     }
     /**
      * {@snippet :
-     * hb_buffer_t* hb_buffer_create_similar(const hb_buffer_t* src);
+     * struct hb_buffer_t* hb_buffer_create_similar(struct hb_buffer_t* src);
      * }
      */
     public static MemorySegment hb_buffer_create_similar(MemorySegment src) {
@@ -6868,11 +8668,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_reset$MH() {
-        return RuntimeHelper.requireNonNull(constants$879.hb_buffer_reset$MH,"hb_buffer_reset");
+        return RuntimeHelper.requireNonNull(constants$1507.const$1,"hb_buffer_reset");
     }
     /**
      * {@snippet :
-     * void hb_buffer_reset(hb_buffer_t* buffer);
+     * void hb_buffer_reset(struct hb_buffer_t* buffer);
      * }
      */
     public static void hb_buffer_reset(MemorySegment buffer) {
@@ -6884,11 +8684,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$879.hb_buffer_get_empty$MH,"hb_buffer_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1507.const$2,"hb_buffer_get_empty");
     }
     /**
      * {@snippet :
-     * hb_buffer_t* hb_buffer_get_empty();
+     * struct hb_buffer_t* hb_buffer_get_empty();
      * }
      */
     public static MemorySegment hb_buffer_get_empty() {
@@ -6900,11 +8700,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$879.hb_buffer_reference$MH,"hb_buffer_reference");
+        return RuntimeHelper.requireNonNull(constants$1507.const$3,"hb_buffer_reference");
     }
     /**
      * {@snippet :
-     * hb_buffer_t* hb_buffer_reference(hb_buffer_t* buffer);
+     * struct hb_buffer_t* hb_buffer_reference(struct hb_buffer_t* buffer);
      * }
      */
     public static MemorySegment hb_buffer_reference(MemorySegment buffer) {
@@ -6916,11 +8716,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$879.hb_buffer_destroy$MH,"hb_buffer_destroy");
+        return RuntimeHelper.requireNonNull(constants$1507.const$4,"hb_buffer_destroy");
     }
     /**
      * {@snippet :
-     * void hb_buffer_destroy(hb_buffer_t* buffer);
+     * void hb_buffer_destroy(struct hb_buffer_t* buffer);
      * }
      */
     public static void hb_buffer_destroy(MemorySegment buffer) {
@@ -6932,11 +8732,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$879.hb_buffer_set_user_data$MH,"hb_buffer_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1508.const$0,"hb_buffer_set_user_data");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_buffer_set_user_data(hb_buffer_t* buffer, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * int hb_buffer_set_user_data(struct hb_buffer_t* buffer, struct hb_user_data_key_t* key, void* data, void (*destroy)(void*), int replace);
      * }
      */
     public static int hb_buffer_set_user_data(MemorySegment buffer, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
@@ -6948,11 +8748,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$880.hb_buffer_get_user_data$MH,"hb_buffer_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1508.const$1,"hb_buffer_get_user_data");
     }
     /**
      * {@snippet :
-     * void* hb_buffer_get_user_data(const hb_buffer_t* buffer, hb_user_data_key_t* key);
+     * void* hb_buffer_get_user_data(struct hb_buffer_t* buffer, struct hb_user_data_key_t* key);
      * }
      */
     public static MemorySegment hb_buffer_get_user_data(MemorySegment buffer, MemorySegment key) {
@@ -6965,7 +8765,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_CONTENT_TYPE_INVALID = 0;
+     * enum hb_buffer_content_type_t.HB_BUFFER_CONTENT_TYPE_INVALID = 0;
      * }
      */
     public static int HB_BUFFER_CONTENT_TYPE_INVALID() {
@@ -6973,7 +8773,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_CONTENT_TYPE_UNICODE = 1;
+     * enum hb_buffer_content_type_t.HB_BUFFER_CONTENT_TYPE_UNICODE = 1;
      * }
      */
     public static int HB_BUFFER_CONTENT_TYPE_UNICODE() {
@@ -6981,18 +8781,18 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_CONTENT_TYPE_GLYPHS = 2;
+     * enum hb_buffer_content_type_t.HB_BUFFER_CONTENT_TYPE_GLYPHS = 2;
      * }
      */
     public static int HB_BUFFER_CONTENT_TYPE_GLYPHS() {
         return (int)2L;
     }
     public static MethodHandle hb_buffer_set_content_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$880.hb_buffer_set_content_type$MH,"hb_buffer_set_content_type");
+        return RuntimeHelper.requireNonNull(constants$1508.const$2,"hb_buffer_set_content_type");
     }
     /**
      * {@snippet :
-     * void hb_buffer_set_content_type(hb_buffer_t* buffer, hb_buffer_content_type_t content_type);
+     * void hb_buffer_set_content_type(struct hb_buffer_t* buffer, enum hb_buffer_content_type_t content_type);
      * }
      */
     public static void hb_buffer_set_content_type(MemorySegment buffer, int content_type) {
@@ -7004,11 +8804,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_content_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$880.hb_buffer_get_content_type$MH,"hb_buffer_get_content_type");
+        return RuntimeHelper.requireNonNull(constants$1508.const$3,"hb_buffer_get_content_type");
     }
     /**
      * {@snippet :
-     * hb_buffer_content_type_t hb_buffer_get_content_type(const hb_buffer_t* buffer);
+     * enum hb_buffer_content_type_t hb_buffer_get_content_type(struct hb_buffer_t* buffer);
      * }
      */
     public static int hb_buffer_get_content_type(MemorySegment buffer) {
@@ -7020,11 +8820,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_unicode_funcs$MH() {
-        return RuntimeHelper.requireNonNull(constants$880.hb_buffer_set_unicode_funcs$MH,"hb_buffer_set_unicode_funcs");
+        return RuntimeHelper.requireNonNull(constants$1508.const$4,"hb_buffer_set_unicode_funcs");
     }
     /**
      * {@snippet :
-     * void hb_buffer_set_unicode_funcs(hb_buffer_t* buffer, hb_unicode_funcs_t* unicode_funcs);
+     * void hb_buffer_set_unicode_funcs(struct hb_buffer_t* buffer, struct hb_unicode_funcs_t* unicode_funcs);
      * }
      */
     public static void hb_buffer_set_unicode_funcs(MemorySegment buffer, MemorySegment unicode_funcs) {
@@ -7036,11 +8836,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_unicode_funcs$MH() {
-        return RuntimeHelper.requireNonNull(constants$880.hb_buffer_get_unicode_funcs$MH,"hb_buffer_get_unicode_funcs");
+        return RuntimeHelper.requireNonNull(constants$1508.const$5,"hb_buffer_get_unicode_funcs");
     }
     /**
      * {@snippet :
-     * hb_unicode_funcs_t* hb_buffer_get_unicode_funcs(const hb_buffer_t* buffer);
+     * struct hb_unicode_funcs_t* hb_buffer_get_unicode_funcs(struct hb_buffer_t* buffer);
      * }
      */
     public static MemorySegment hb_buffer_get_unicode_funcs(MemorySegment buffer) {
@@ -7052,11 +8852,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$880.hb_buffer_set_direction$MH,"hb_buffer_set_direction");
+        return RuntimeHelper.requireNonNull(constants$1509.const$0,"hb_buffer_set_direction");
     }
     /**
      * {@snippet :
-     * void hb_buffer_set_direction(hb_buffer_t* buffer, hb_direction_t direction);
+     * void hb_buffer_set_direction(struct hb_buffer_t* buffer, enum hb_direction_t direction);
      * }
      */
     public static void hb_buffer_set_direction(MemorySegment buffer, int direction) {
@@ -7068,11 +8868,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$881.hb_buffer_get_direction$MH,"hb_buffer_get_direction");
+        return RuntimeHelper.requireNonNull(constants$1509.const$1,"hb_buffer_get_direction");
     }
     /**
      * {@snippet :
-     * hb_direction_t hb_buffer_get_direction(const hb_buffer_t* buffer);
+     * enum hb_direction_t hb_buffer_get_direction(struct hb_buffer_t* buffer);
      * }
      */
     public static int hb_buffer_get_direction(MemorySegment buffer) {
@@ -7084,11 +8884,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_script$MH() {
-        return RuntimeHelper.requireNonNull(constants$881.hb_buffer_set_script$MH,"hb_buffer_set_script");
+        return RuntimeHelper.requireNonNull(constants$1509.const$2,"hb_buffer_set_script");
     }
     /**
      * {@snippet :
-     * void hb_buffer_set_script(hb_buffer_t* buffer, hb_script_t script);
+     * void hb_buffer_set_script(struct hb_buffer_t* buffer, enum hb_script_t script);
      * }
      */
     public static void hb_buffer_set_script(MemorySegment buffer, int script) {
@@ -7100,11 +8900,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_script$MH() {
-        return RuntimeHelper.requireNonNull(constants$881.hb_buffer_get_script$MH,"hb_buffer_get_script");
+        return RuntimeHelper.requireNonNull(constants$1509.const$3,"hb_buffer_get_script");
     }
     /**
      * {@snippet :
-     * hb_script_t hb_buffer_get_script(const hb_buffer_t* buffer);
+     * enum hb_script_t hb_buffer_get_script(struct hb_buffer_t* buffer);
      * }
      */
     public static int hb_buffer_get_script(MemorySegment buffer) {
@@ -7116,11 +8916,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_language$MH() {
-        return RuntimeHelper.requireNonNull(constants$881.hb_buffer_set_language$MH,"hb_buffer_set_language");
+        return RuntimeHelper.requireNonNull(constants$1509.const$4,"hb_buffer_set_language");
     }
     /**
      * {@snippet :
-     * void hb_buffer_set_language(hb_buffer_t* buffer, hb_language_t language);
+     * void hb_buffer_set_language(struct hb_buffer_t* buffer, struct hb_language_impl_t* language);
      * }
      */
     public static void hb_buffer_set_language(MemorySegment buffer, MemorySegment language) {
@@ -7132,11 +8932,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_language$MH() {
-        return RuntimeHelper.requireNonNull(constants$881.hb_buffer_get_language$MH,"hb_buffer_get_language");
+        return RuntimeHelper.requireNonNull(constants$1509.const$5,"hb_buffer_get_language");
     }
     /**
      * {@snippet :
-     * hb_language_t hb_buffer_get_language(const hb_buffer_t* buffer);
+     * struct hb_language_impl_t* hb_buffer_get_language(struct hb_buffer_t* buffer);
      * }
      */
     public static MemorySegment hb_buffer_get_language(MemorySegment buffer) {
@@ -7148,11 +8948,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_segment_properties$MH() {
-        return RuntimeHelper.requireNonNull(constants$881.hb_buffer_set_segment_properties$MH,"hb_buffer_set_segment_properties");
+        return RuntimeHelper.requireNonNull(constants$1510.const$0,"hb_buffer_set_segment_properties");
     }
     /**
      * {@snippet :
-     * void hb_buffer_set_segment_properties(hb_buffer_t* buffer, const hb_segment_properties_t* props);
+     * void hb_buffer_set_segment_properties(struct hb_buffer_t* buffer, struct hb_segment_properties_t* props);
      * }
      */
     public static void hb_buffer_set_segment_properties(MemorySegment buffer, MemorySegment props) {
@@ -7164,11 +8964,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_segment_properties$MH() {
-        return RuntimeHelper.requireNonNull(constants$882.hb_buffer_get_segment_properties$MH,"hb_buffer_get_segment_properties");
+        return RuntimeHelper.requireNonNull(constants$1510.const$1,"hb_buffer_get_segment_properties");
     }
     /**
      * {@snippet :
-     * void hb_buffer_get_segment_properties(const hb_buffer_t* buffer, hb_segment_properties_t* props);
+     * void hb_buffer_get_segment_properties(struct hb_buffer_t* buffer, struct hb_segment_properties_t* props);
      * }
      */
     public static void hb_buffer_get_segment_properties(MemorySegment buffer, MemorySegment props) {
@@ -7180,11 +8980,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_guess_segment_properties$MH() {
-        return RuntimeHelper.requireNonNull(constants$882.hb_buffer_guess_segment_properties$MH,"hb_buffer_guess_segment_properties");
+        return RuntimeHelper.requireNonNull(constants$1510.const$2,"hb_buffer_guess_segment_properties");
     }
     /**
      * {@snippet :
-     * void hb_buffer_guess_segment_properties(hb_buffer_t* buffer);
+     * void hb_buffer_guess_segment_properties(struct hb_buffer_t* buffer);
      * }
      */
     public static void hb_buffer_guess_segment_properties(MemorySegment buffer) {
@@ -7197,7 +8997,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_FLAG_DEFAULT = 0;
+     * enum hb_buffer_flags_t.HB_BUFFER_FLAG_DEFAULT = 0;
      * }
      */
     public static int HB_BUFFER_FLAG_DEFAULT() {
@@ -7205,7 +9005,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_FLAG_BOT = 1;
+     * enum hb_buffer_flags_t.HB_BUFFER_FLAG_BOT = 1;
      * }
      */
     public static int HB_BUFFER_FLAG_BOT() {
@@ -7213,7 +9013,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_FLAG_EOT = 2;
+     * enum hb_buffer_flags_t.HB_BUFFER_FLAG_EOT = 2;
      * }
      */
     public static int HB_BUFFER_FLAG_EOT() {
@@ -7221,7 +9021,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_FLAG_PRESERVE_DEFAULT_IGNORABLES = 4;
+     * enum hb_buffer_flags_t.HB_BUFFER_FLAG_PRESERVE_DEFAULT_IGNORABLES = 4;
      * }
      */
     public static int HB_BUFFER_FLAG_PRESERVE_DEFAULT_IGNORABLES() {
@@ -7229,7 +9029,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_FLAG_REMOVE_DEFAULT_IGNORABLES = 8;
+     * enum hb_buffer_flags_t.HB_BUFFER_FLAG_REMOVE_DEFAULT_IGNORABLES = 8;
      * }
      */
     public static int HB_BUFFER_FLAG_REMOVE_DEFAULT_IGNORABLES() {
@@ -7237,7 +9037,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_FLAG_DO_NOT_INSERT_DOTTED_CIRCLE = 16;
+     * enum hb_buffer_flags_t.HB_BUFFER_FLAG_DO_NOT_INSERT_DOTTED_CIRCLE = 16;
      * }
      */
     public static int HB_BUFFER_FLAG_DO_NOT_INSERT_DOTTED_CIRCLE() {
@@ -7245,7 +9045,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_FLAG_VERIFY = 32;
+     * enum hb_buffer_flags_t.HB_BUFFER_FLAG_VERIFY = 32;
      * }
      */
     public static int HB_BUFFER_FLAG_VERIFY() {
@@ -7253,7 +9053,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_FLAG_PRODUCE_UNSAFE_TO_CONCAT = 64;
+     * enum hb_buffer_flags_t.HB_BUFFER_FLAG_PRODUCE_UNSAFE_TO_CONCAT = 64;
      * }
      */
     public static int HB_BUFFER_FLAG_PRODUCE_UNSAFE_TO_CONCAT() {
@@ -7261,7 +9061,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_FLAG_PRODUCE_SAFE_TO_INSERT_TATWEEL = 128;
+     * enum hb_buffer_flags_t.HB_BUFFER_FLAG_PRODUCE_SAFE_TO_INSERT_TATWEEL = 128;
      * }
      */
     public static int HB_BUFFER_FLAG_PRODUCE_SAFE_TO_INSERT_TATWEEL() {
@@ -7269,18 +9069,18 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_FLAG_DEFINED = 255;
+     * enum hb_buffer_flags_t.HB_BUFFER_FLAG_DEFINED = 255;
      * }
      */
     public static int HB_BUFFER_FLAG_DEFINED() {
         return (int)255L;
     }
     public static MethodHandle hb_buffer_set_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$882.hb_buffer_set_flags$MH,"hb_buffer_set_flags");
+        return RuntimeHelper.requireNonNull(constants$1510.const$3,"hb_buffer_set_flags");
     }
     /**
      * {@snippet :
-     * void hb_buffer_set_flags(hb_buffer_t* buffer, hb_buffer_flags_t flags);
+     * void hb_buffer_set_flags(struct hb_buffer_t* buffer, enum hb_buffer_flags_t flags);
      * }
      */
     public static void hb_buffer_set_flags(MemorySegment buffer, int flags) {
@@ -7292,11 +9092,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$882.hb_buffer_get_flags$MH,"hb_buffer_get_flags");
+        return RuntimeHelper.requireNonNull(constants$1510.const$4,"hb_buffer_get_flags");
     }
     /**
      * {@snippet :
-     * hb_buffer_flags_t hb_buffer_get_flags(const hb_buffer_t* buffer);
+     * enum hb_buffer_flags_t hb_buffer_get_flags(struct hb_buffer_t* buffer);
      * }
      */
     public static int hb_buffer_get_flags(MemorySegment buffer) {
@@ -7309,7 +9109,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES = 0;
+     * enum hb_buffer_cluster_level_t.HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES = 0;
      * }
      */
     public static int HB_BUFFER_CLUSTER_LEVEL_MONOTONE_GRAPHEMES() {
@@ -7317,7 +9117,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS = 1;
+     * enum hb_buffer_cluster_level_t.HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS = 1;
      * }
      */
     public static int HB_BUFFER_CLUSTER_LEVEL_MONOTONE_CHARACTERS() {
@@ -7325,7 +9125,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_CLUSTER_LEVEL_CHARACTERS = 2;
+     * enum hb_buffer_cluster_level_t.HB_BUFFER_CLUSTER_LEVEL_CHARACTERS = 2;
      * }
      */
     public static int HB_BUFFER_CLUSTER_LEVEL_CHARACTERS() {
@@ -7333,18 +9133,18 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_CLUSTER_LEVEL_DEFAULT = 0;
+     * enum hb_buffer_cluster_level_t.HB_BUFFER_CLUSTER_LEVEL_DEFAULT = 0;
      * }
      */
     public static int HB_BUFFER_CLUSTER_LEVEL_DEFAULT() {
         return (int)0L;
     }
     public static MethodHandle hb_buffer_set_cluster_level$MH() {
-        return RuntimeHelper.requireNonNull(constants$882.hb_buffer_set_cluster_level$MH,"hb_buffer_set_cluster_level");
+        return RuntimeHelper.requireNonNull(constants$1510.const$5,"hb_buffer_set_cluster_level");
     }
     /**
      * {@snippet :
-     * void hb_buffer_set_cluster_level(hb_buffer_t* buffer, hb_buffer_cluster_level_t cluster_level);
+     * void hb_buffer_set_cluster_level(struct hb_buffer_t* buffer, enum hb_buffer_cluster_level_t cluster_level);
      * }
      */
     public static void hb_buffer_set_cluster_level(MemorySegment buffer, int cluster_level) {
@@ -7356,11 +9156,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_cluster_level$MH() {
-        return RuntimeHelper.requireNonNull(constants$882.hb_buffer_get_cluster_level$MH,"hb_buffer_get_cluster_level");
+        return RuntimeHelper.requireNonNull(constants$1511.const$0,"hb_buffer_get_cluster_level");
     }
     /**
      * {@snippet :
-     * hb_buffer_cluster_level_t hb_buffer_get_cluster_level(const hb_buffer_t* buffer);
+     * enum hb_buffer_cluster_level_t hb_buffer_get_cluster_level(struct hb_buffer_t* buffer);
      * }
      */
     public static int hb_buffer_get_cluster_level(MemorySegment buffer) {
@@ -7372,11 +9172,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_replacement_codepoint$MH() {
-        return RuntimeHelper.requireNonNull(constants$883.hb_buffer_set_replacement_codepoint$MH,"hb_buffer_set_replacement_codepoint");
+        return RuntimeHelper.requireNonNull(constants$1511.const$1,"hb_buffer_set_replacement_codepoint");
     }
     /**
      * {@snippet :
-     * void hb_buffer_set_replacement_codepoint(hb_buffer_t* buffer, hb_codepoint_t replacement);
+     * void hb_buffer_set_replacement_codepoint(struct hb_buffer_t* buffer, unsigned int replacement);
      * }
      */
     public static void hb_buffer_set_replacement_codepoint(MemorySegment buffer, int replacement) {
@@ -7388,11 +9188,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_replacement_codepoint$MH() {
-        return RuntimeHelper.requireNonNull(constants$883.hb_buffer_get_replacement_codepoint$MH,"hb_buffer_get_replacement_codepoint");
+        return RuntimeHelper.requireNonNull(constants$1511.const$2,"hb_buffer_get_replacement_codepoint");
     }
     /**
      * {@snippet :
-     * hb_codepoint_t hb_buffer_get_replacement_codepoint(const hb_buffer_t* buffer);
+     * unsigned int hb_buffer_get_replacement_codepoint(struct hb_buffer_t* buffer);
      * }
      */
     public static int hb_buffer_get_replacement_codepoint(MemorySegment buffer) {
@@ -7404,11 +9204,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_invisible_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$883.hb_buffer_set_invisible_glyph$MH,"hb_buffer_set_invisible_glyph");
+        return RuntimeHelper.requireNonNull(constants$1511.const$3,"hb_buffer_set_invisible_glyph");
     }
     /**
      * {@snippet :
-     * void hb_buffer_set_invisible_glyph(hb_buffer_t* buffer, hb_codepoint_t invisible);
+     * void hb_buffer_set_invisible_glyph(struct hb_buffer_t* buffer, unsigned int invisible);
      * }
      */
     public static void hb_buffer_set_invisible_glyph(MemorySegment buffer, int invisible) {
@@ -7420,11 +9220,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_invisible_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$883.hb_buffer_get_invisible_glyph$MH,"hb_buffer_get_invisible_glyph");
+        return RuntimeHelper.requireNonNull(constants$1511.const$4,"hb_buffer_get_invisible_glyph");
     }
     /**
      * {@snippet :
-     * hb_codepoint_t hb_buffer_get_invisible_glyph(const hb_buffer_t* buffer);
+     * unsigned int hb_buffer_get_invisible_glyph(struct hb_buffer_t* buffer);
      * }
      */
     public static int hb_buffer_get_invisible_glyph(MemorySegment buffer) {
@@ -7436,11 +9236,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_not_found_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$883.hb_buffer_set_not_found_glyph$MH,"hb_buffer_set_not_found_glyph");
+        return RuntimeHelper.requireNonNull(constants$1511.const$5,"hb_buffer_set_not_found_glyph");
     }
     /**
      * {@snippet :
-     * void hb_buffer_set_not_found_glyph(hb_buffer_t* buffer, hb_codepoint_t not_found);
+     * void hb_buffer_set_not_found_glyph(struct hb_buffer_t* buffer, unsigned int not_found);
      * }
      */
     public static void hb_buffer_set_not_found_glyph(MemorySegment buffer, int not_found) {
@@ -7452,11 +9252,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_not_found_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$883.hb_buffer_get_not_found_glyph$MH,"hb_buffer_get_not_found_glyph");
+        return RuntimeHelper.requireNonNull(constants$1512.const$0,"hb_buffer_get_not_found_glyph");
     }
     /**
      * {@snippet :
-     * hb_codepoint_t hb_buffer_get_not_found_glyph(const hb_buffer_t* buffer);
+     * unsigned int hb_buffer_get_not_found_glyph(struct hb_buffer_t* buffer);
      * }
      */
     public static int hb_buffer_get_not_found_glyph(MemorySegment buffer) {
@@ -7468,11 +9268,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_clear_contents$MH() {
-        return RuntimeHelper.requireNonNull(constants$884.hb_buffer_clear_contents$MH,"hb_buffer_clear_contents");
+        return RuntimeHelper.requireNonNull(constants$1512.const$1,"hb_buffer_clear_contents");
     }
     /**
      * {@snippet :
-     * void hb_buffer_clear_contents(hb_buffer_t* buffer);
+     * void hb_buffer_clear_contents(struct hb_buffer_t* buffer);
      * }
      */
     public static void hb_buffer_clear_contents(MemorySegment buffer) {
@@ -7484,11 +9284,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_pre_allocate$MH() {
-        return RuntimeHelper.requireNonNull(constants$884.hb_buffer_pre_allocate$MH,"hb_buffer_pre_allocate");
+        return RuntimeHelper.requireNonNull(constants$1512.const$2,"hb_buffer_pre_allocate");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_buffer_pre_allocate(hb_buffer_t* buffer, unsigned int size);
+     * int hb_buffer_pre_allocate(struct hb_buffer_t* buffer, unsigned int size);
      * }
      */
     public static int hb_buffer_pre_allocate(MemorySegment buffer, int size) {
@@ -7500,11 +9300,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_allocation_successful$MH() {
-        return RuntimeHelper.requireNonNull(constants$884.hb_buffer_allocation_successful$MH,"hb_buffer_allocation_successful");
+        return RuntimeHelper.requireNonNull(constants$1512.const$3,"hb_buffer_allocation_successful");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_buffer_allocation_successful(hb_buffer_t* buffer);
+     * int hb_buffer_allocation_successful(struct hb_buffer_t* buffer);
      * }
      */
     public static int hb_buffer_allocation_successful(MemorySegment buffer) {
@@ -7516,11 +9316,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_reverse$MH() {
-        return RuntimeHelper.requireNonNull(constants$884.hb_buffer_reverse$MH,"hb_buffer_reverse");
+        return RuntimeHelper.requireNonNull(constants$1512.const$4,"hb_buffer_reverse");
     }
     /**
      * {@snippet :
-     * void hb_buffer_reverse(hb_buffer_t* buffer);
+     * void hb_buffer_reverse(struct hb_buffer_t* buffer);
      * }
      */
     public static void hb_buffer_reverse(MemorySegment buffer) {
@@ -7532,11 +9332,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_reverse_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$884.hb_buffer_reverse_range$MH,"hb_buffer_reverse_range");
+        return RuntimeHelper.requireNonNull(constants$1512.const$5,"hb_buffer_reverse_range");
     }
     /**
      * {@snippet :
-     * void hb_buffer_reverse_range(hb_buffer_t* buffer, unsigned int start, unsigned int end);
+     * void hb_buffer_reverse_range(struct hb_buffer_t* buffer, unsigned int start, unsigned int end);
      * }
      */
     public static void hb_buffer_reverse_range(MemorySegment buffer, int start, int end) {
@@ -7548,11 +9348,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_reverse_clusters$MH() {
-        return RuntimeHelper.requireNonNull(constants$884.hb_buffer_reverse_clusters$MH,"hb_buffer_reverse_clusters");
+        return RuntimeHelper.requireNonNull(constants$1513.const$0,"hb_buffer_reverse_clusters");
     }
     /**
      * {@snippet :
-     * void hb_buffer_reverse_clusters(hb_buffer_t* buffer);
+     * void hb_buffer_reverse_clusters(struct hb_buffer_t* buffer);
      * }
      */
     public static void hb_buffer_reverse_clusters(MemorySegment buffer) {
@@ -7564,11 +9364,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_add$MH() {
-        return RuntimeHelper.requireNonNull(constants$885.hb_buffer_add$MH,"hb_buffer_add");
+        return RuntimeHelper.requireNonNull(constants$1513.const$1,"hb_buffer_add");
     }
     /**
      * {@snippet :
-     * void hb_buffer_add(hb_buffer_t* buffer, hb_codepoint_t codepoint, unsigned int cluster);
+     * void hb_buffer_add(struct hb_buffer_t* buffer, unsigned int codepoint, unsigned int cluster);
      * }
      */
     public static void hb_buffer_add(MemorySegment buffer, int codepoint, int cluster) {
@@ -7580,11 +9380,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_add_utf8$MH() {
-        return RuntimeHelper.requireNonNull(constants$885.hb_buffer_add_utf8$MH,"hb_buffer_add_utf8");
+        return RuntimeHelper.requireNonNull(constants$1513.const$3,"hb_buffer_add_utf8");
     }
     /**
      * {@snippet :
-     * void hb_buffer_add_utf8(hb_buffer_t* buffer, char* text, int text_length, unsigned int item_offset, int item_length);
+     * void hb_buffer_add_utf8(struct hb_buffer_t* buffer, char* text, int text_length, unsigned int item_offset, int item_length);
      * }
      */
     public static void hb_buffer_add_utf8(MemorySegment buffer, MemorySegment text, int text_length, int item_offset, int item_length) {
@@ -7596,11 +9396,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_add_utf16$MH() {
-        return RuntimeHelper.requireNonNull(constants$885.hb_buffer_add_utf16$MH,"hb_buffer_add_utf16");
+        return RuntimeHelper.requireNonNull(constants$1513.const$4,"hb_buffer_add_utf16");
     }
     /**
      * {@snippet :
-     * void hb_buffer_add_utf16(hb_buffer_t* buffer, const uint16_t* text, int text_length, unsigned int item_offset, int item_length);
+     * void hb_buffer_add_utf16(struct hb_buffer_t* buffer, unsigned short* text, int text_length, unsigned int item_offset, int item_length);
      * }
      */
     public static void hb_buffer_add_utf16(MemorySegment buffer, MemorySegment text, int text_length, int item_offset, int item_length) {
@@ -7612,11 +9412,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_add_utf32$MH() {
-        return RuntimeHelper.requireNonNull(constants$885.hb_buffer_add_utf32$MH,"hb_buffer_add_utf32");
+        return RuntimeHelper.requireNonNull(constants$1513.const$5,"hb_buffer_add_utf32");
     }
     /**
      * {@snippet :
-     * void hb_buffer_add_utf32(hb_buffer_t* buffer, const uint32_t* text, int text_length, unsigned int item_offset, int item_length);
+     * void hb_buffer_add_utf32(struct hb_buffer_t* buffer, unsigned int* text, int text_length, unsigned int item_offset, int item_length);
      * }
      */
     public static void hb_buffer_add_utf32(MemorySegment buffer, MemorySegment text, int text_length, int item_offset, int item_length) {
@@ -7628,11 +9428,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_add_latin1$MH() {
-        return RuntimeHelper.requireNonNull(constants$885.hb_buffer_add_latin1$MH,"hb_buffer_add_latin1");
+        return RuntimeHelper.requireNonNull(constants$1514.const$0,"hb_buffer_add_latin1");
     }
     /**
      * {@snippet :
-     * void hb_buffer_add_latin1(hb_buffer_t* buffer, const uint8_t* text, int text_length, unsigned int item_offset, int item_length);
+     * void hb_buffer_add_latin1(struct hb_buffer_t* buffer, unsigned char* text, int text_length, unsigned int item_offset, int item_length);
      * }
      */
     public static void hb_buffer_add_latin1(MemorySegment buffer, MemorySegment text, int text_length, int item_offset, int item_length) {
@@ -7644,11 +9444,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_add_codepoints$MH() {
-        return RuntimeHelper.requireNonNull(constants$885.hb_buffer_add_codepoints$MH,"hb_buffer_add_codepoints");
+        return RuntimeHelper.requireNonNull(constants$1514.const$1,"hb_buffer_add_codepoints");
     }
     /**
      * {@snippet :
-     * void hb_buffer_add_codepoints(hb_buffer_t* buffer, const hb_codepoint_t* text, int text_length, unsigned int item_offset, int item_length);
+     * void hb_buffer_add_codepoints(struct hb_buffer_t* buffer, unsigned int* text, int text_length, unsigned int item_offset, int item_length);
      * }
      */
     public static void hb_buffer_add_codepoints(MemorySegment buffer, MemorySegment text, int text_length, int item_offset, int item_length) {
@@ -7660,11 +9460,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_append$MH() {
-        return RuntimeHelper.requireNonNull(constants$886.hb_buffer_append$MH,"hb_buffer_append");
+        return RuntimeHelper.requireNonNull(constants$1514.const$2,"hb_buffer_append");
     }
     /**
      * {@snippet :
-     * void hb_buffer_append(hb_buffer_t* buffer, const hb_buffer_t* source, unsigned int start, unsigned int end);
+     * void hb_buffer_append(struct hb_buffer_t* buffer, struct hb_buffer_t* source, unsigned int start, unsigned int end);
      * }
      */
     public static void hb_buffer_append(MemorySegment buffer, MemorySegment source, int start, int end) {
@@ -7676,11 +9476,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$886.hb_buffer_set_length$MH,"hb_buffer_set_length");
+        return RuntimeHelper.requireNonNull(constants$1514.const$3,"hb_buffer_set_length");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_buffer_set_length(hb_buffer_t* buffer, unsigned int length);
+     * int hb_buffer_set_length(struct hb_buffer_t* buffer, unsigned int length);
      * }
      */
     public static int hb_buffer_set_length(MemorySegment buffer, int length) {
@@ -7692,11 +9492,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$886.hb_buffer_get_length$MH,"hb_buffer_get_length");
+        return RuntimeHelper.requireNonNull(constants$1514.const$4,"hb_buffer_get_length");
     }
     /**
      * {@snippet :
-     * unsigned int hb_buffer_get_length(const hb_buffer_t* buffer);
+     * unsigned int hb_buffer_get_length(struct hb_buffer_t* buffer);
      * }
      */
     public static int hb_buffer_get_length(MemorySegment buffer) {
@@ -7708,11 +9508,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_glyph_infos$MH() {
-        return RuntimeHelper.requireNonNull(constants$886.hb_buffer_get_glyph_infos$MH,"hb_buffer_get_glyph_infos");
+        return RuntimeHelper.requireNonNull(constants$1514.const$5,"hb_buffer_get_glyph_infos");
     }
     /**
      * {@snippet :
-     * hb_glyph_info_t* hb_buffer_get_glyph_infos(hb_buffer_t* buffer, unsigned int* length);
+     * struct hb_glyph_info_t* hb_buffer_get_glyph_infos(struct hb_buffer_t* buffer, unsigned int* length);
      * }
      */
     public static MemorySegment hb_buffer_get_glyph_infos(MemorySegment buffer, MemorySegment length) {
@@ -7724,11 +9524,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_get_glyph_positions$MH() {
-        return RuntimeHelper.requireNonNull(constants$886.hb_buffer_get_glyph_positions$MH,"hb_buffer_get_glyph_positions");
+        return RuntimeHelper.requireNonNull(constants$1515.const$0,"hb_buffer_get_glyph_positions");
     }
     /**
      * {@snippet :
-     * hb_glyph_position_t* hb_buffer_get_glyph_positions(hb_buffer_t* buffer, unsigned int* length);
+     * struct hb_glyph_position_t* hb_buffer_get_glyph_positions(struct hb_buffer_t* buffer, unsigned int* length);
      * }
      */
     public static MemorySegment hb_buffer_get_glyph_positions(MemorySegment buffer, MemorySegment length) {
@@ -7740,11 +9540,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_has_positions$MH() {
-        return RuntimeHelper.requireNonNull(constants$886.hb_buffer_has_positions$MH,"hb_buffer_has_positions");
+        return RuntimeHelper.requireNonNull(constants$1515.const$1,"hb_buffer_has_positions");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_buffer_has_positions(hb_buffer_t* buffer);
+     * int hb_buffer_has_positions(struct hb_buffer_t* buffer);
      * }
      */
     public static int hb_buffer_has_positions(MemorySegment buffer) {
@@ -7756,11 +9556,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_normalize_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$887.hb_buffer_normalize_glyphs$MH,"hb_buffer_normalize_glyphs");
+        return RuntimeHelper.requireNonNull(constants$1515.const$2,"hb_buffer_normalize_glyphs");
     }
     /**
      * {@snippet :
-     * void hb_buffer_normalize_glyphs(hb_buffer_t* buffer);
+     * void hb_buffer_normalize_glyphs(struct hb_buffer_t* buffer);
      * }
      */
     public static void hb_buffer_normalize_glyphs(MemorySegment buffer) {
@@ -7773,7 +9573,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_SERIALIZE_FLAG_DEFAULT = 0;
+     * enum hb_buffer_serialize_flags_t.HB_BUFFER_SERIALIZE_FLAG_DEFAULT = 0;
      * }
      */
     public static int HB_BUFFER_SERIALIZE_FLAG_DEFAULT() {
@@ -7781,7 +9581,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_SERIALIZE_FLAG_NO_CLUSTERS = 1;
+     * enum hb_buffer_serialize_flags_t.HB_BUFFER_SERIALIZE_FLAG_NO_CLUSTERS = 1;
      * }
      */
     public static int HB_BUFFER_SERIALIZE_FLAG_NO_CLUSTERS() {
@@ -7789,7 +9589,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_SERIALIZE_FLAG_NO_POSITIONS = 2;
+     * enum hb_buffer_serialize_flags_t.HB_BUFFER_SERIALIZE_FLAG_NO_POSITIONS = 2;
      * }
      */
     public static int HB_BUFFER_SERIALIZE_FLAG_NO_POSITIONS() {
@@ -7797,7 +9597,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_SERIALIZE_FLAG_NO_GLYPH_NAMES = 4;
+     * enum hb_buffer_serialize_flags_t.HB_BUFFER_SERIALIZE_FLAG_NO_GLYPH_NAMES = 4;
      * }
      */
     public static int HB_BUFFER_SERIALIZE_FLAG_NO_GLYPH_NAMES() {
@@ -7805,7 +9605,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_SERIALIZE_FLAG_GLYPH_EXTENTS = 8;
+     * enum hb_buffer_serialize_flags_t.HB_BUFFER_SERIALIZE_FLAG_GLYPH_EXTENTS = 8;
      * }
      */
     public static int HB_BUFFER_SERIALIZE_FLAG_GLYPH_EXTENTS() {
@@ -7813,7 +9613,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_SERIALIZE_FLAG_GLYPH_FLAGS = 16;
+     * enum hb_buffer_serialize_flags_t.HB_BUFFER_SERIALIZE_FLAG_GLYPH_FLAGS = 16;
      * }
      */
     public static int HB_BUFFER_SERIALIZE_FLAG_GLYPH_FLAGS() {
@@ -7821,7 +9621,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_SERIALIZE_FLAG_NO_ADVANCES = 32;
+     * enum hb_buffer_serialize_flags_t.HB_BUFFER_SERIALIZE_FLAG_NO_ADVANCES = 32;
      * }
      */
     public static int HB_BUFFER_SERIALIZE_FLAG_NO_ADVANCES() {
@@ -7829,7 +9629,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_SERIALIZE_FLAG_DEFINED = 63;
+     * enum hb_buffer_serialize_flags_t.HB_BUFFER_SERIALIZE_FLAG_DEFINED = 63;
      * }
      */
     public static int HB_BUFFER_SERIALIZE_FLAG_DEFINED() {
@@ -7837,7 +9637,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_SERIALIZE_FORMAT_TEXT = 1413830740;
+     * enum hb_buffer_serialize_format_t.HB_BUFFER_SERIALIZE_FORMAT_TEXT = 1413830740;
      * }
      */
     public static int HB_BUFFER_SERIALIZE_FORMAT_TEXT() {
@@ -7845,7 +9645,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_SERIALIZE_FORMAT_JSON = 1246973774;
+     * enum hb_buffer_serialize_format_t.HB_BUFFER_SERIALIZE_FORMAT_JSON = 1246973774;
      * }
      */
     public static int HB_BUFFER_SERIALIZE_FORMAT_JSON() {
@@ -7853,18 +9653,18 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_SERIALIZE_FORMAT_INVALID = 0;
+     * enum hb_buffer_serialize_format_t.HB_BUFFER_SERIALIZE_FORMAT_INVALID = 0;
      * }
      */
     public static int HB_BUFFER_SERIALIZE_FORMAT_INVALID() {
         return (int)0L;
     }
     public static MethodHandle hb_buffer_serialize_format_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$887.hb_buffer_serialize_format_from_string$MH,"hb_buffer_serialize_format_from_string");
+        return RuntimeHelper.requireNonNull(constants$1515.const$3,"hb_buffer_serialize_format_from_string");
     }
     /**
      * {@snippet :
-     * hb_buffer_serialize_format_t hb_buffer_serialize_format_from_string(char* str, int len);
+     * enum hb_buffer_serialize_format_t hb_buffer_serialize_format_from_string(char* str, int len);
      * }
      */
     public static int hb_buffer_serialize_format_from_string(MemorySegment str, int len) {
@@ -7876,11 +9676,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_serialize_format_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$887.hb_buffer_serialize_format_to_string$MH,"hb_buffer_serialize_format_to_string");
+        return RuntimeHelper.requireNonNull(constants$1515.const$4,"hb_buffer_serialize_format_to_string");
     }
     /**
      * {@snippet :
-     * char* hb_buffer_serialize_format_to_string(hb_buffer_serialize_format_t format);
+     * char* hb_buffer_serialize_format_to_string(enum hb_buffer_serialize_format_t format);
      * }
      */
     public static MemorySegment hb_buffer_serialize_format_to_string(int format) {
@@ -7892,7 +9692,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_serialize_list_formats$MH() {
-        return RuntimeHelper.requireNonNull(constants$887.hb_buffer_serialize_list_formats$MH,"hb_buffer_serialize_list_formats");
+        return RuntimeHelper.requireNonNull(constants$1515.const$5,"hb_buffer_serialize_list_formats");
     }
     /**
      * {@snippet :
@@ -7908,11 +9708,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_serialize_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$887.hb_buffer_serialize_glyphs$MH,"hb_buffer_serialize_glyphs");
+        return RuntimeHelper.requireNonNull(constants$1516.const$1,"hb_buffer_serialize_glyphs");
     }
     /**
      * {@snippet :
-     * unsigned int hb_buffer_serialize_glyphs(hb_buffer_t* buffer, unsigned int start, unsigned int end, char* buf, unsigned int buf_size, unsigned int* buf_consumed, hb_font_t* font, hb_buffer_serialize_format_t format, hb_buffer_serialize_flags_t flags);
+     * unsigned int hb_buffer_serialize_glyphs(struct hb_buffer_t* buffer, unsigned int start, unsigned int end, char* buf, unsigned int buf_size, unsigned int* buf_consumed, struct hb_font_t* font, enum hb_buffer_serialize_format_t format, enum hb_buffer_serialize_flags_t flags);
      * }
      */
     public static int hb_buffer_serialize_glyphs(MemorySegment buffer, int start, int end, MemorySegment buf, int buf_size, MemorySegment buf_consumed, MemorySegment font, int format, int flags) {
@@ -7924,11 +9724,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_serialize_unicode$MH() {
-        return RuntimeHelper.requireNonNull(constants$887.hb_buffer_serialize_unicode$MH,"hb_buffer_serialize_unicode");
+        return RuntimeHelper.requireNonNull(constants$1516.const$3,"hb_buffer_serialize_unicode");
     }
     /**
      * {@snippet :
-     * unsigned int hb_buffer_serialize_unicode(hb_buffer_t* buffer, unsigned int start, unsigned int end, char* buf, unsigned int buf_size, unsigned int* buf_consumed, hb_buffer_serialize_format_t format, hb_buffer_serialize_flags_t flags);
+     * unsigned int hb_buffer_serialize_unicode(struct hb_buffer_t* buffer, unsigned int start, unsigned int end, char* buf, unsigned int buf_size, unsigned int* buf_consumed, enum hb_buffer_serialize_format_t format, enum hb_buffer_serialize_flags_t flags);
      * }
      */
     public static int hb_buffer_serialize_unicode(MemorySegment buffer, int start, int end, MemorySegment buf, int buf_size, MemorySegment buf_consumed, int format, int flags) {
@@ -7940,11 +9740,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_serialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$888.hb_buffer_serialize$MH,"hb_buffer_serialize");
+        return RuntimeHelper.requireNonNull(constants$1516.const$4,"hb_buffer_serialize");
     }
     /**
      * {@snippet :
-     * unsigned int hb_buffer_serialize(hb_buffer_t* buffer, unsigned int start, unsigned int end, char* buf, unsigned int buf_size, unsigned int* buf_consumed, hb_font_t* font, hb_buffer_serialize_format_t format, hb_buffer_serialize_flags_t flags);
+     * unsigned int hb_buffer_serialize(struct hb_buffer_t* buffer, unsigned int start, unsigned int end, char* buf, unsigned int buf_size, unsigned int* buf_consumed, struct hb_font_t* font, enum hb_buffer_serialize_format_t format, enum hb_buffer_serialize_flags_t flags);
      * }
      */
     public static int hb_buffer_serialize(MemorySegment buffer, int start, int end, MemorySegment buf, int buf_size, MemorySegment buf_consumed, MemorySegment font, int format, int flags) {
@@ -7956,11 +9756,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_deserialize_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$888.hb_buffer_deserialize_glyphs$MH,"hb_buffer_deserialize_glyphs");
+        return RuntimeHelper.requireNonNull(constants$1516.const$6,"hb_buffer_deserialize_glyphs");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_buffer_deserialize_glyphs(hb_buffer_t* buffer, char* buf, int buf_len, char** end_ptr, hb_font_t* font, hb_buffer_serialize_format_t format);
+     * int hb_buffer_deserialize_glyphs(struct hb_buffer_t* buffer, char* buf, int buf_len, char** end_ptr, struct hb_font_t* font, enum hb_buffer_serialize_format_t format);
      * }
      */
     public static int hb_buffer_deserialize_glyphs(MemorySegment buffer, MemorySegment buf, int buf_len, MemorySegment end_ptr, MemorySegment font, int format) {
@@ -7972,11 +9772,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_deserialize_unicode$MH() {
-        return RuntimeHelper.requireNonNull(constants$888.hb_buffer_deserialize_unicode$MH,"hb_buffer_deserialize_unicode");
+        return RuntimeHelper.requireNonNull(constants$1517.const$1,"hb_buffer_deserialize_unicode");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_buffer_deserialize_unicode(hb_buffer_t* buffer, char* buf, int buf_len, char** end_ptr, hb_buffer_serialize_format_t format);
+     * int hb_buffer_deserialize_unicode(struct hb_buffer_t* buffer, char* buf, int buf_len, char** end_ptr, enum hb_buffer_serialize_format_t format);
      * }
      */
     public static int hb_buffer_deserialize_unicode(MemorySegment buffer, MemorySegment buf, int buf_len, MemorySegment end_ptr, int format) {
@@ -7989,7 +9789,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_DIFF_FLAG_EQUAL = 0;
+     * enum hb_buffer_diff_flags_t.HB_BUFFER_DIFF_FLAG_EQUAL = 0;
      * }
      */
     public static int HB_BUFFER_DIFF_FLAG_EQUAL() {
@@ -7997,7 +9797,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_DIFF_FLAG_CONTENT_TYPE_MISMATCH = 1;
+     * enum hb_buffer_diff_flags_t.HB_BUFFER_DIFF_FLAG_CONTENT_TYPE_MISMATCH = 1;
      * }
      */
     public static int HB_BUFFER_DIFF_FLAG_CONTENT_TYPE_MISMATCH() {
@@ -8005,7 +9805,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_DIFF_FLAG_LENGTH_MISMATCH = 2;
+     * enum hb_buffer_diff_flags_t.HB_BUFFER_DIFF_FLAG_LENGTH_MISMATCH = 2;
      * }
      */
     public static int HB_BUFFER_DIFF_FLAG_LENGTH_MISMATCH() {
@@ -8013,7 +9813,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_DIFF_FLAG_NOTDEF_PRESENT = 4;
+     * enum hb_buffer_diff_flags_t.HB_BUFFER_DIFF_FLAG_NOTDEF_PRESENT = 4;
      * }
      */
     public static int HB_BUFFER_DIFF_FLAG_NOTDEF_PRESENT() {
@@ -8021,7 +9821,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_DIFF_FLAG_DOTTED_CIRCLE_PRESENT = 8;
+     * enum hb_buffer_diff_flags_t.HB_BUFFER_DIFF_FLAG_DOTTED_CIRCLE_PRESENT = 8;
      * }
      */
     public static int HB_BUFFER_DIFF_FLAG_DOTTED_CIRCLE_PRESENT() {
@@ -8029,7 +9829,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_DIFF_FLAG_CODEPOINT_MISMATCH = 16;
+     * enum hb_buffer_diff_flags_t.HB_BUFFER_DIFF_FLAG_CODEPOINT_MISMATCH = 16;
      * }
      */
     public static int HB_BUFFER_DIFF_FLAG_CODEPOINT_MISMATCH() {
@@ -8037,7 +9837,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_DIFF_FLAG_CLUSTER_MISMATCH = 32;
+     * enum hb_buffer_diff_flags_t.HB_BUFFER_DIFF_FLAG_CLUSTER_MISMATCH = 32;
      * }
      */
     public static int HB_BUFFER_DIFF_FLAG_CLUSTER_MISMATCH() {
@@ -8045,7 +9845,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_DIFF_FLAG_GLYPH_FLAGS_MISMATCH = 64;
+     * enum hb_buffer_diff_flags_t.HB_BUFFER_DIFF_FLAG_GLYPH_FLAGS_MISMATCH = 64;
      * }
      */
     public static int HB_BUFFER_DIFF_FLAG_GLYPH_FLAGS_MISMATCH() {
@@ -8053,18 +9853,18 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_BUFFER_DIFF_FLAG_POSITION_MISMATCH = 128;
+     * enum hb_buffer_diff_flags_t.HB_BUFFER_DIFF_FLAG_POSITION_MISMATCH = 128;
      * }
      */
     public static int HB_BUFFER_DIFF_FLAG_POSITION_MISMATCH() {
         return (int)128L;
     }
     public static MethodHandle hb_buffer_diff$MH() {
-        return RuntimeHelper.requireNonNull(constants$888.hb_buffer_diff$MH,"hb_buffer_diff");
+        return RuntimeHelper.requireNonNull(constants$1517.const$2,"hb_buffer_diff");
     }
     /**
      * {@snippet :
-     * hb_buffer_diff_flags_t hb_buffer_diff(hb_buffer_t* buffer, hb_buffer_t* reference, hb_codepoint_t dottedcircle_glyph, unsigned int position_fuzz);
+     * enum hb_buffer_diff_flags_t hb_buffer_diff(struct hb_buffer_t* buffer, struct hb_buffer_t* reference, unsigned int dottedcircle_glyph, unsigned int position_fuzz);
      * }
      */
     public static int hb_buffer_diff(MemorySegment buffer, MemorySegment reference, int dottedcircle_glyph, int position_fuzz) {
@@ -8076,11 +9876,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_buffer_set_message_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$889.hb_buffer_set_message_func$MH,"hb_buffer_set_message_func");
+        return RuntimeHelper.requireNonNull(constants$1518.const$0,"hb_buffer_set_message_func");
     }
     /**
      * {@snippet :
-     * void hb_buffer_set_message_func(hb_buffer_t* buffer, hb_buffer_message_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_buffer_set_message_func(struct hb_buffer_t* buffer, int (*func)(struct hb_buffer_t*,struct hb_font_t*,char*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_buffer_set_message_func(MemorySegment buffer, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -8092,11 +9892,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$889.hb_font_funcs_set_glyph_func$MH,"hb_font_funcs_set_glyph_func");
+        return RuntimeHelper.requireNonNull(constants$1518.const$4,"hb_font_funcs_set_glyph_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_glyph_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_glyph_func(struct hb_font_funcs_t* ffuncs, int (*func)(struct hb_font_t*,void*,unsigned int,unsigned int,unsigned int*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_glyph_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -8108,11 +9908,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_eastasian_width_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$890.hb_unicode_funcs_set_eastasian_width_func$MH,"hb_unicode_funcs_set_eastasian_width_func");
+        return RuntimeHelper.requireNonNull(constants$1519.const$2,"hb_unicode_funcs_set_eastasian_width_func");
     }
     /**
      * {@snippet :
-     * void hb_unicode_funcs_set_eastasian_width_func(hb_unicode_funcs_t* ufuncs, hb_unicode_eastasian_width_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_unicode_funcs_set_eastasian_width_func(struct hb_unicode_funcs_t* ufuncs, unsigned int (*func)(struct hb_unicode_funcs_t*,unsigned int,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_unicode_funcs_set_eastasian_width_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -8124,11 +9924,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_eastasian_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$890.hb_unicode_eastasian_width$MH,"hb_unicode_eastasian_width");
+        return RuntimeHelper.requireNonNull(constants$1519.const$3,"hb_unicode_eastasian_width");
     }
     /**
      * {@snippet :
-     * unsigned int hb_unicode_eastasian_width(hb_unicode_funcs_t* ufuncs, hb_codepoint_t unicode);
+     * unsigned int hb_unicode_eastasian_width(struct hb_unicode_funcs_t* ufuncs, unsigned int unicode);
      * }
      */
     public static int hb_unicode_eastasian_width(MemorySegment ufuncs, int unicode) {
@@ -8140,11 +9940,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_funcs_set_decompose_compatibility_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$890.hb_unicode_funcs_set_decompose_compatibility_func$MH,"hb_unicode_funcs_set_decompose_compatibility_func");
+        return RuntimeHelper.requireNonNull(constants$1520.const$1,"hb_unicode_funcs_set_decompose_compatibility_func");
     }
     /**
      * {@snippet :
-     * void hb_unicode_funcs_set_decompose_compatibility_func(hb_unicode_funcs_t* ufuncs, hb_unicode_decompose_compatibility_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_unicode_funcs_set_decompose_compatibility_func(struct hb_unicode_funcs_t* ufuncs, unsigned int (*func)(struct hb_unicode_funcs_t*,unsigned int,unsigned int*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_unicode_funcs_set_decompose_compatibility_func(MemorySegment ufuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -8156,11 +9956,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_unicode_decompose_compatibility$MH() {
-        return RuntimeHelper.requireNonNull(constants$890.hb_unicode_decompose_compatibility$MH,"hb_unicode_decompose_compatibility");
+        return RuntimeHelper.requireNonNull(constants$1520.const$2,"hb_unicode_decompose_compatibility");
     }
     /**
      * {@snippet :
-     * unsigned int hb_unicode_decompose_compatibility(hb_unicode_funcs_t* ufuncs, hb_codepoint_t u, hb_codepoint_t* decomposed);
+     * unsigned int hb_unicode_decompose_compatibility(struct hb_unicode_funcs_t* ufuncs, unsigned int u, unsigned int* decomposed);
      * }
      */
     public static int hb_unicode_decompose_compatibility(MemorySegment ufuncs, int u, MemorySegment decomposed) {
@@ -8172,11 +9972,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_funcs_set_glyph_v_kerning_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$891.hb_font_funcs_set_glyph_v_kerning_func$MH,"hb_font_funcs_set_glyph_v_kerning_func");
+        return RuntimeHelper.requireNonNull(constants$1521.const$0,"hb_font_funcs_set_glyph_v_kerning_func");
     }
     /**
      * {@snippet :
-     * void hb_font_funcs_set_glyph_v_kerning_func(hb_font_funcs_t* ffuncs, hb_font_get_glyph_v_kerning_func_t func, void* user_data, hb_destroy_func_t destroy);
+     * void hb_font_funcs_set_glyph_v_kerning_func(struct hb_font_funcs_t* ffuncs, int (*func)(struct hb_font_t*,void*,unsigned int,unsigned int,void*), void* user_data, void (*destroy)(void*));
      * }
      */
     public static void hb_font_funcs_set_glyph_v_kerning_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
@@ -8188,11 +9988,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_font_get_glyph_v_kerning$MH() {
-        return RuntimeHelper.requireNonNull(constants$891.hb_font_get_glyph_v_kerning$MH,"hb_font_get_glyph_v_kerning");
+        return RuntimeHelper.requireNonNull(constants$1521.const$1,"hb_font_get_glyph_v_kerning");
     }
     /**
      * {@snippet :
-     * hb_position_t hb_font_get_glyph_v_kerning(hb_font_t* font, hb_codepoint_t top_glyph, hb_codepoint_t bottom_glyph);
+     * int hb_font_get_glyph_v_kerning(struct hb_font_t* font, unsigned int top_glyph, unsigned int bottom_glyph);
      * }
      */
     public static int hb_font_get_glyph_v_kerning(MemorySegment font, int top_glyph, int bottom_glyph) {
@@ -8203,284 +10003,44 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle hb_map_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$891.hb_map_create$MH,"hb_map_create");
+    public static MethodHandle hb_font_funcs_set_glyph_shape_func$MH() {
+        return RuntimeHelper.requireNonNull(constants$1521.const$5,"hb_font_funcs_set_glyph_shape_func");
     }
     /**
      * {@snippet :
-     * hb_map_t* hb_map_create();
+     * void hb_font_funcs_set_glyph_shape_func(struct hb_font_funcs_t* ffuncs, void (*func)(struct hb_font_t*,void*,unsigned int,struct hb_draw_funcs_t*,void*,void*), void* user_data, void (*destroy)(void*));
      * }
      */
-    public static MemorySegment hb_map_create() {
-        var mh$ = hb_map_create$MH();
+    public static void hb_font_funcs_set_glyph_shape_func(MemorySegment ffuncs, MemorySegment func, MemorySegment user_data, MemorySegment destroy) {
+        var mh$ = hb_font_funcs_set_glyph_shape_func$MH();
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+            mh$.invokeExact(ffuncs, func, user_data, destroy);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
-    public static MethodHandle hb_map_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$891.hb_map_get_empty$MH,"hb_map_get_empty");
+    public static MethodHandle hb_font_get_glyph_shape$MH() {
+        return RuntimeHelper.requireNonNull(constants$1522.const$0,"hb_font_get_glyph_shape");
     }
     /**
      * {@snippet :
-     * hb_map_t* hb_map_get_empty();
+     * void hb_font_get_glyph_shape(struct hb_font_t* font, unsigned int glyph, struct hb_draw_funcs_t* dfuncs, void* draw_data);
      * }
      */
-    public static MemorySegment hb_map_get_empty() {
-        var mh$ = hb_map_get_empty$MH();
+    public static void hb_font_get_glyph_shape(MemorySegment font, int glyph, MemorySegment dfuncs, MemorySegment draw_data) {
+        var mh$ = hb_font_get_glyph_shape$MH();
         try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$892.hb_map_reference$MH,"hb_map_reference");
-    }
-    /**
-     * {@snippet :
-     * hb_map_t* hb_map_reference(hb_map_t* map);
-     * }
-     */
-    public static MemorySegment hb_map_reference(MemorySegment map) {
-        var mh$ = hb_map_reference$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(map);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$892.hb_map_destroy$MH,"hb_map_destroy");
-    }
-    /**
-     * {@snippet :
-     * void hb_map_destroy(hb_map_t* map);
-     * }
-     */
-    public static void hb_map_destroy(MemorySegment map) {
-        var mh$ = hb_map_destroy$MH();
-        try {
-            mh$.invokeExact(map);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$892.hb_map_set_user_data$MH,"hb_map_set_user_data");
-    }
-    /**
-     * {@snippet :
-     * hb_bool_t hb_map_set_user_data(hb_map_t* map, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
-     * }
-     */
-    public static int hb_map_set_user_data(MemorySegment map, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
-        var mh$ = hb_map_set_user_data$MH();
-        try {
-            return (int)mh$.invokeExact(map, key, data, destroy, replace);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$892.hb_map_get_user_data$MH,"hb_map_get_user_data");
-    }
-    /**
-     * {@snippet :
-     * void* hb_map_get_user_data(const hb_map_t* map, hb_user_data_key_t* key);
-     * }
-     */
-    public static MemorySegment hb_map_get_user_data(MemorySegment map, MemorySegment key) {
-        var mh$ = hb_map_get_user_data$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(map, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_allocation_successful$MH() {
-        return RuntimeHelper.requireNonNull(constants$892.hb_map_allocation_successful$MH,"hb_map_allocation_successful");
-    }
-    /**
-     * {@snippet :
-     * hb_bool_t hb_map_allocation_successful(const hb_map_t* map);
-     * }
-     */
-    public static int hb_map_allocation_successful(MemorySegment map) {
-        var mh$ = hb_map_allocation_successful$MH();
-        try {
-            return (int)mh$.invokeExact(map);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$892.hb_map_copy$MH,"hb_map_copy");
-    }
-    /**
-     * {@snippet :
-     * hb_map_t* hb_map_copy(const hb_map_t* map);
-     * }
-     */
-    public static MemorySegment hb_map_copy(MemorySegment map) {
-        var mh$ = hb_map_copy$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(map);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_clear$MH() {
-        return RuntimeHelper.requireNonNull(constants$893.hb_map_clear$MH,"hb_map_clear");
-    }
-    /**
-     * {@snippet :
-     * void hb_map_clear(hb_map_t* map);
-     * }
-     */
-    public static void hb_map_clear(MemorySegment map) {
-        var mh$ = hb_map_clear$MH();
-        try {
-            mh$.invokeExact(map);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_is_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$893.hb_map_is_empty$MH,"hb_map_is_empty");
-    }
-    /**
-     * {@snippet :
-     * hb_bool_t hb_map_is_empty(const hb_map_t* map);
-     * }
-     */
-    public static int hb_map_is_empty(MemorySegment map) {
-        var mh$ = hb_map_is_empty$MH();
-        try {
-            return (int)mh$.invokeExact(map);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_get_population$MH() {
-        return RuntimeHelper.requireNonNull(constants$893.hb_map_get_population$MH,"hb_map_get_population");
-    }
-    /**
-     * {@snippet :
-     * unsigned int hb_map_get_population(const hb_map_t* map);
-     * }
-     */
-    public static int hb_map_get_population(MemorySegment map) {
-        var mh$ = hb_map_get_population$MH();
-        try {
-            return (int)mh$.invokeExact(map);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_is_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$893.hb_map_is_equal$MH,"hb_map_is_equal");
-    }
-    /**
-     * {@snippet :
-     * hb_bool_t hb_map_is_equal(const hb_map_t* map, const hb_map_t* other);
-     * }
-     */
-    public static int hb_map_is_equal(MemorySegment map, MemorySegment other) {
-        var mh$ = hb_map_is_equal$MH();
-        try {
-            return (int)mh$.invokeExact(map, other);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_hash$MH() {
-        return RuntimeHelper.requireNonNull(constants$893.hb_map_hash$MH,"hb_map_hash");
-    }
-    /**
-     * {@snippet :
-     * unsigned int hb_map_hash(const hb_map_t* map);
-     * }
-     */
-    public static int hb_map_hash(MemorySegment map) {
-        var mh$ = hb_map_hash$MH();
-        try {
-            return (int)mh$.invokeExact(map);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$893.hb_map_set$MH,"hb_map_set");
-    }
-    /**
-     * {@snippet :
-     * void hb_map_set(hb_map_t* map, hb_codepoint_t key, hb_codepoint_t value);
-     * }
-     */
-    public static void hb_map_set(MemorySegment map, int key, int value) {
-        var mh$ = hb_map_set$MH();
-        try {
-            mh$.invokeExact(map, key, value);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$894.hb_map_get$MH,"hb_map_get");
-    }
-    /**
-     * {@snippet :
-     * hb_codepoint_t hb_map_get(const hb_map_t* map, hb_codepoint_t key);
-     * }
-     */
-    public static int hb_map_get(MemorySegment map, int key) {
-        var mh$ = hb_map_get$MH();
-        try {
-            return (int)mh$.invokeExact(map, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_del$MH() {
-        return RuntimeHelper.requireNonNull(constants$894.hb_map_del$MH,"hb_map_del");
-    }
-    /**
-     * {@snippet :
-     * void hb_map_del(hb_map_t* map, hb_codepoint_t key);
-     * }
-     */
-    public static void hb_map_del(MemorySegment map, int key) {
-        var mh$ = hb_map_del$MH();
-        try {
-            mh$.invokeExact(map, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle hb_map_has$MH() {
-        return RuntimeHelper.requireNonNull(constants$894.hb_map_has$MH,"hb_map_has");
-    }
-    /**
-     * {@snippet :
-     * hb_bool_t hb_map_has(const hb_map_t* map, hb_codepoint_t key);
-     * }
-     */
-    public static int hb_map_has(MemorySegment map, int key) {
-        var mh$ = hb_map_has$MH();
-        try {
-            return (int)mh$.invokeExact(map, key);
+            mh$.invokeExact(font, glyph, dfuncs, draw_data);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
     }
     public static MethodHandle hb_shape$MH() {
-        return RuntimeHelper.requireNonNull(constants$894.hb_shape$MH,"hb_shape");
+        return RuntimeHelper.requireNonNull(constants$1522.const$1,"hb_shape");
     }
     /**
      * {@snippet :
-     * void hb_shape(hb_font_t* font, hb_buffer_t* buffer, const hb_feature_t* features, unsigned int num_features);
+     * void hb_shape(struct hb_font_t* font, struct hb_buffer_t* buffer, struct hb_feature_t* features, unsigned int num_features);
      * }
      */
     public static void hb_shape(MemorySegment font, MemorySegment buffer, MemorySegment features, int num_features) {
@@ -8492,11 +10052,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$894.hb_shape_full$MH,"hb_shape_full");
+        return RuntimeHelper.requireNonNull(constants$1522.const$2,"hb_shape_full");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_shape_full(hb_font_t* font, hb_buffer_t* buffer, const hb_feature_t* features, unsigned int num_features, char** shaper_list);
+     * int hb_shape_full(struct hb_font_t* font, struct hb_buffer_t* buffer, struct hb_feature_t* features, unsigned int num_features, char** shaper_list);
      * }
      */
     public static int hb_shape_full(MemorySegment font, MemorySegment buffer, MemorySegment features, int num_features, MemorySegment shaper_list) {
@@ -8507,8 +10067,24 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
             throw new AssertionError("should not reach here", ex$);
         }
     }
+    public static MethodHandle hb_shape_justify$MH() {
+        return RuntimeHelper.requireNonNull(constants$1522.const$4,"hb_shape_justify");
+    }
+    /**
+     * {@snippet :
+     * int hb_shape_justify(struct hb_font_t* font, struct hb_buffer_t* buffer, struct hb_feature_t* features, unsigned int num_features, char** shaper_list, float min_target_advance, float max_target_advance, float* advance, unsigned int* var_tag, float* var_value);
+     * }
+     */
+    public static int hb_shape_justify(MemorySegment font, MemorySegment buffer, MemorySegment features, int num_features, MemorySegment shaper_list, float min_target_advance, float max_target_advance, MemorySegment advance, MemorySegment var_tag, MemorySegment var_value) {
+        var mh$ = hb_shape_justify$MH();
+        try {
+            return (int)mh$.invokeExact(font, buffer, features, num_features, shaper_list, min_target_advance, max_target_advance, advance, var_tag, var_value);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
     public static MethodHandle hb_shape_list_shapers$MH() {
-        return RuntimeHelper.requireNonNull(constants$894.hb_shape_list_shapers$MH,"hb_shape_list_shapers");
+        return RuntimeHelper.requireNonNull(constants$1522.const$5,"hb_shape_list_shapers");
     }
     /**
      * {@snippet :
@@ -8524,11 +10100,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$895.hb_shape_plan_create$MH,"hb_shape_plan_create");
+        return RuntimeHelper.requireNonNull(constants$1523.const$1,"hb_shape_plan_create");
     }
     /**
      * {@snippet :
-     * hb_shape_plan_t* hb_shape_plan_create(hb_face_t* face, const hb_segment_properties_t* props, const hb_feature_t* user_features, unsigned int num_user_features, char** shaper_list);
+     * struct hb_shape_plan_t* hb_shape_plan_create(struct hb_face_t* face, struct hb_segment_properties_t* props, struct hb_feature_t* user_features, unsigned int num_user_features, char** shaper_list);
      * }
      */
     public static MemorySegment hb_shape_plan_create(MemorySegment face, MemorySegment props, MemorySegment user_features, int num_user_features, MemorySegment shaper_list) {
@@ -8540,11 +10116,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_create_cached$MH() {
-        return RuntimeHelper.requireNonNull(constants$895.hb_shape_plan_create_cached$MH,"hb_shape_plan_create_cached");
+        return RuntimeHelper.requireNonNull(constants$1523.const$2,"hb_shape_plan_create_cached");
     }
     /**
      * {@snippet :
-     * hb_shape_plan_t* hb_shape_plan_create_cached(hb_face_t* face, const hb_segment_properties_t* props, const hb_feature_t* user_features, unsigned int num_user_features, char** shaper_list);
+     * struct hb_shape_plan_t* hb_shape_plan_create_cached(struct hb_face_t* face, struct hb_segment_properties_t* props, struct hb_feature_t* user_features, unsigned int num_user_features, char** shaper_list);
      * }
      */
     public static MemorySegment hb_shape_plan_create_cached(MemorySegment face, MemorySegment props, MemorySegment user_features, int num_user_features, MemorySegment shaper_list) {
@@ -8556,11 +10132,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_create2$MH() {
-        return RuntimeHelper.requireNonNull(constants$895.hb_shape_plan_create2$MH,"hb_shape_plan_create2");
+        return RuntimeHelper.requireNonNull(constants$1523.const$4,"hb_shape_plan_create2");
     }
     /**
      * {@snippet :
-     * hb_shape_plan_t* hb_shape_plan_create2(hb_face_t* face, const hb_segment_properties_t* props, const hb_feature_t* user_features, unsigned int num_user_features, int* coords, unsigned int num_coords, char** shaper_list);
+     * struct hb_shape_plan_t* hb_shape_plan_create2(struct hb_face_t* face, struct hb_segment_properties_t* props, struct hb_feature_t* user_features, unsigned int num_user_features, int* coords, unsigned int num_coords, char** shaper_list);
      * }
      */
     public static MemorySegment hb_shape_plan_create2(MemorySegment face, MemorySegment props, MemorySegment user_features, int num_user_features, MemorySegment coords, int num_coords, MemorySegment shaper_list) {
@@ -8572,11 +10148,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_create_cached2$MH() {
-        return RuntimeHelper.requireNonNull(constants$895.hb_shape_plan_create_cached2$MH,"hb_shape_plan_create_cached2");
+        return RuntimeHelper.requireNonNull(constants$1523.const$5,"hb_shape_plan_create_cached2");
     }
     /**
      * {@snippet :
-     * hb_shape_plan_t* hb_shape_plan_create_cached2(hb_face_t* face, const hb_segment_properties_t* props, const hb_feature_t* user_features, unsigned int num_user_features, int* coords, unsigned int num_coords, char** shaper_list);
+     * struct hb_shape_plan_t* hb_shape_plan_create_cached2(struct hb_face_t* face, struct hb_segment_properties_t* props, struct hb_feature_t* user_features, unsigned int num_user_features, int* coords, unsigned int num_coords, char** shaper_list);
      * }
      */
     public static MemorySegment hb_shape_plan_create_cached2(MemorySegment face, MemorySegment props, MemorySegment user_features, int num_user_features, MemorySegment coords, int num_coords, MemorySegment shaper_list) {
@@ -8588,11 +10164,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_get_empty$MH() {
-        return RuntimeHelper.requireNonNull(constants$895.hb_shape_plan_get_empty$MH,"hb_shape_plan_get_empty");
+        return RuntimeHelper.requireNonNull(constants$1524.const$0,"hb_shape_plan_get_empty");
     }
     /**
      * {@snippet :
-     * hb_shape_plan_t* hb_shape_plan_get_empty();
+     * struct hb_shape_plan_t* hb_shape_plan_get_empty();
      * }
      */
     public static MemorySegment hb_shape_plan_get_empty() {
@@ -8604,11 +10180,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$895.hb_shape_plan_reference$MH,"hb_shape_plan_reference");
+        return RuntimeHelper.requireNonNull(constants$1524.const$1,"hb_shape_plan_reference");
     }
     /**
      * {@snippet :
-     * hb_shape_plan_t* hb_shape_plan_reference(hb_shape_plan_t* shape_plan);
+     * struct hb_shape_plan_t* hb_shape_plan_reference(struct hb_shape_plan_t* shape_plan);
      * }
      */
     public static MemorySegment hb_shape_plan_reference(MemorySegment shape_plan) {
@@ -8620,11 +10196,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$896.hb_shape_plan_destroy$MH,"hb_shape_plan_destroy");
+        return RuntimeHelper.requireNonNull(constants$1524.const$2,"hb_shape_plan_destroy");
     }
     /**
      * {@snippet :
-     * void hb_shape_plan_destroy(hb_shape_plan_t* shape_plan);
+     * void hb_shape_plan_destroy(struct hb_shape_plan_t* shape_plan);
      * }
      */
     public static void hb_shape_plan_destroy(MemorySegment shape_plan) {
@@ -8636,11 +10212,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$896.hb_shape_plan_set_user_data$MH,"hb_shape_plan_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1524.const$4,"hb_shape_plan_set_user_data");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_shape_plan_set_user_data(hb_shape_plan_t* shape_plan, hb_user_data_key_t* key, void* data, hb_destroy_func_t destroy, hb_bool_t replace);
+     * int hb_shape_plan_set_user_data(struct hb_shape_plan_t* shape_plan, struct hb_user_data_key_t* key, void* data, void (*destroy)(void*), int replace);
      * }
      */
     public static int hb_shape_plan_set_user_data(MemorySegment shape_plan, MemorySegment key, MemorySegment data, MemorySegment destroy, int replace) {
@@ -8652,11 +10228,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$896.hb_shape_plan_get_user_data$MH,"hb_shape_plan_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1524.const$5,"hb_shape_plan_get_user_data");
     }
     /**
      * {@snippet :
-     * void* hb_shape_plan_get_user_data(const hb_shape_plan_t* shape_plan, hb_user_data_key_t* key);
+     * void* hb_shape_plan_get_user_data(struct hb_shape_plan_t* shape_plan, struct hb_user_data_key_t* key);
      * }
      */
     public static MemorySegment hb_shape_plan_get_user_data(MemorySegment shape_plan, MemorySegment key) {
@@ -8668,11 +10244,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_execute$MH() {
-        return RuntimeHelper.requireNonNull(constants$896.hb_shape_plan_execute$MH,"hb_shape_plan_execute");
+        return RuntimeHelper.requireNonNull(constants$1525.const$0,"hb_shape_plan_execute");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_shape_plan_execute(hb_shape_plan_t* shape_plan, hb_font_t* font, hb_buffer_t* buffer, const hb_feature_t* features, unsigned int num_features);
+     * int hb_shape_plan_execute(struct hb_shape_plan_t* shape_plan, struct hb_font_t* font, struct hb_buffer_t* buffer, struct hb_feature_t* features, unsigned int num_features);
      * }
      */
     public static int hb_shape_plan_execute(MemorySegment shape_plan, MemorySegment font, MemorySegment buffer, MemorySegment features, int num_features) {
@@ -8684,11 +10260,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_shape_plan_get_shaper$MH() {
-        return RuntimeHelper.requireNonNull(constants$896.hb_shape_plan_get_shaper$MH,"hb_shape_plan_get_shaper");
+        return RuntimeHelper.requireNonNull(constants$1525.const$1,"hb_shape_plan_get_shaper");
     }
     /**
      * {@snippet :
-     * char* hb_shape_plan_get_shaper(hb_shape_plan_t* shape_plan);
+     * char* hb_shape_plan_get_shaper(struct hb_shape_plan_t* shape_plan);
      * }
      */
     public static MemorySegment hb_shape_plan_get_shaper(MemorySegment shape_plan) {
@@ -8701,7 +10277,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_STYLE_TAG_ITALIC = 1769234796;
+     * enum hb_style_tag_t.HB_STYLE_TAG_ITALIC = 1769234796;
      * }
      */
     public static int HB_STYLE_TAG_ITALIC() {
@@ -8709,7 +10285,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_STYLE_TAG_OPTICAL_SIZE = 1869640570;
+     * enum hb_style_tag_t.HB_STYLE_TAG_OPTICAL_SIZE = 1869640570;
      * }
      */
     public static int HB_STYLE_TAG_OPTICAL_SIZE() {
@@ -8717,7 +10293,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_STYLE_TAG_SLANT_ANGLE = 1936486004;
+     * enum hb_style_tag_t.HB_STYLE_TAG_SLANT_ANGLE = 1936486004;
      * }
      */
     public static int HB_STYLE_TAG_SLANT_ANGLE() {
@@ -8725,7 +10301,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_STYLE_TAG_SLANT_RATIO = 1399615092;
+     * enum hb_style_tag_t.HB_STYLE_TAG_SLANT_RATIO = 1399615092;
      * }
      */
     public static int HB_STYLE_TAG_SLANT_RATIO() {
@@ -8733,7 +10309,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_STYLE_TAG_WIDTH = 2003072104;
+     * enum hb_style_tag_t.HB_STYLE_TAG_WIDTH = 2003072104;
      * }
      */
     public static int HB_STYLE_TAG_WIDTH() {
@@ -8741,7 +10317,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .HB_STYLE_TAG_WEIGHT = 2003265652;
+     * enum hb_style_tag_t.HB_STYLE_TAG_WEIGHT = 2003265652;
      * }
      */
     public static int HB_STYLE_TAG_WEIGHT() {
@@ -8749,18 +10325,18 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum ._HB_STYLE_TAG_MAX_VALUE = 2147483647;
+     * enum hb_style_tag_t._HB_STYLE_TAG_MAX_VALUE = 2147483647;
      * }
      */
     public static int _HB_STYLE_TAG_MAX_VALUE() {
         return (int)2147483647L;
     }
     public static MethodHandle hb_style_get_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$896.hb_style_get_value$MH,"hb_style_get_value");
+        return RuntimeHelper.requireNonNull(constants$1525.const$3,"hb_style_get_value");
     }
     /**
      * {@snippet :
-     * float hb_style_get_value(hb_font_t* font, hb_style_tag_t style_tag);
+     * float hb_style_get_value(struct hb_font_t* font, enum hb_style_tag_t style_tag);
      * }
      */
     public static float hb_style_get_value(MemorySegment font, int style_tag) {
@@ -8772,7 +10348,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_version$MH() {
-        return RuntimeHelper.requireNonNull(constants$897.hb_version$MH,"hb_version");
+        return RuntimeHelper.requireNonNull(constants$1525.const$4,"hb_version");
     }
     /**
      * {@snippet :
@@ -8788,7 +10364,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_version_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$897.hb_version_string$MH,"hb_version_string");
+        return RuntimeHelper.requireNonNull(constants$1525.const$5,"hb_version_string");
     }
     /**
      * {@snippet :
@@ -8804,11 +10380,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle hb_version_atleast$MH() {
-        return RuntimeHelper.requireNonNull(constants$897.hb_version_atleast$MH,"hb_version_atleast");
+        return RuntimeHelper.requireNonNull(constants$1526.const$0,"hb_version_atleast");
     }
     /**
      * {@snippet :
-     * hb_bool_t hb_version_atleast(unsigned int major, unsigned int minor, unsigned int micro);
+     * int hb_version_atleast(unsigned int major, unsigned int minor, unsigned int micro);
      * }
      */
     public static int hb_version_atleast(int major, int minor, int micro) {
@@ -8821,7 +10397,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_COVERAGE_NONE = 0;
+     * enum PangoCoverageLevel.PANGO_COVERAGE_NONE = 0;
      * }
      */
     public static int PANGO_COVERAGE_NONE() {
@@ -8829,7 +10405,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_COVERAGE_FALLBACK = 1;
+     * enum PangoCoverageLevel.PANGO_COVERAGE_FALLBACK = 1;
      * }
      */
     public static int PANGO_COVERAGE_FALLBACK() {
@@ -8837,7 +10413,7 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_COVERAGE_APPROXIMATE = 2;
+     * enum PangoCoverageLevel.PANGO_COVERAGE_APPROXIMATE = 2;
      * }
      */
     public static int PANGO_COVERAGE_APPROXIMATE() {
@@ -8845,18 +10421,18 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_COVERAGE_EXACT = 3;
+     * enum PangoCoverageLevel.PANGO_COVERAGE_EXACT = 3;
      * }
      */
     public static int PANGO_COVERAGE_EXACT() {
         return (int)3L;
     }
     public static MethodHandle pango_coverage_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$897.pango_coverage_get_type$MH,"pango_coverage_get_type");
+        return RuntimeHelper.requireNonNull(constants$1526.const$1,"pango_coverage_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_coverage_get_type();
+     * unsigned long pango_coverage_get_type();
      * }
      */
     public static long pango_coverage_get_type() {
@@ -8868,11 +10444,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle pango_coverage_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$897.pango_coverage_new$MH,"pango_coverage_new");
+        return RuntimeHelper.requireNonNull(constants$1526.const$2,"pango_coverage_new");
     }
     /**
      * {@snippet :
-     * PangoCoverage* pango_coverage_new();
+     * struct _PangoCoverage* pango_coverage_new();
      * }
      */
     public static MemorySegment pango_coverage_new() {
@@ -8884,11 +10460,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle pango_coverage_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$897.pango_coverage_ref$MH,"pango_coverage_ref");
+        return RuntimeHelper.requireNonNull(constants$1526.const$3,"pango_coverage_ref");
     }
     /**
      * {@snippet :
-     * PangoCoverage* pango_coverage_ref(PangoCoverage* coverage);
+     * struct _PangoCoverage* pango_coverage_ref(struct _PangoCoverage* coverage);
      * }
      */
     public static MemorySegment pango_coverage_ref(MemorySegment coverage) {
@@ -8900,11 +10476,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle pango_coverage_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$898.pango_coverage_unref$MH,"pango_coverage_unref");
+        return RuntimeHelper.requireNonNull(constants$1526.const$4,"pango_coverage_unref");
     }
     /**
      * {@snippet :
-     * void pango_coverage_unref(PangoCoverage* coverage);
+     * void pango_coverage_unref(struct _PangoCoverage* coverage);
      * }
      */
     public static void pango_coverage_unref(MemorySegment coverage) {
@@ -8916,11 +10492,11 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle pango_coverage_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$898.pango_coverage_copy$MH,"pango_coverage_copy");
+        return RuntimeHelper.requireNonNull(constants$1526.const$5,"pango_coverage_copy");
     }
     /**
      * {@snippet :
-     * PangoCoverage* pango_coverage_copy(PangoCoverage* coverage);
+     * struct _PangoCoverage* pango_coverage_copy(struct _PangoCoverage* coverage);
      * }
      */
     public static MemorySegment pango_coverage_copy(MemorySegment coverage) {
@@ -8932,1551 +10508,17 @@ public class app_indicator_h_10 extends app_indicator_h_9 {
         }
     }
     public static MethodHandle pango_coverage_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$898.pango_coverage_get$MH,"pango_coverage_get");
+        return RuntimeHelper.requireNonNull(constants$1527.const$0,"pango_coverage_get");
     }
     /**
      * {@snippet :
-     * PangoCoverageLevel pango_coverage_get(PangoCoverage* coverage, int index_);
+     * enum PangoCoverageLevel pango_coverage_get(struct _PangoCoverage* coverage, int index_);
      * }
      */
     public static int pango_coverage_get(MemorySegment coverage, int index_) {
         var mh$ = pango_coverage_get$MH();
         try {
             return (int)mh$.invokeExact(coverage, index_);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$898.pango_coverage_set$MH,"pango_coverage_set");
-    }
-    /**
-     * {@snippet :
-     * void pango_coverage_set(PangoCoverage* coverage, int index_, PangoCoverageLevel level);
-     * }
-     */
-    public static void pango_coverage_set(MemorySegment coverage, int index_, int level) {
-        var mh$ = pango_coverage_set$MH();
-        try {
-            mh$.invokeExact(coverage, index_, level);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_max$MH() {
-        return RuntimeHelper.requireNonNull(constants$898.pango_coverage_max$MH,"pango_coverage_max");
-    }
-    /**
-     * {@snippet :
-     * void pango_coverage_max(PangoCoverage* coverage, PangoCoverage* other);
-     * }
-     */
-    public static void pango_coverage_max(MemorySegment coverage, MemorySegment other) {
-        var mh$ = pango_coverage_max$MH();
-        try {
-            mh$.invokeExact(coverage, other);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_to_bytes$MH() {
-        return RuntimeHelper.requireNonNull(constants$898.pango_coverage_to_bytes$MH,"pango_coverage_to_bytes");
-    }
-    /**
-     * {@snippet :
-     * void pango_coverage_to_bytes(PangoCoverage* coverage, guchar** bytes, int* n_bytes);
-     * }
-     */
-    public static void pango_coverage_to_bytes(MemorySegment coverage, MemorySegment bytes, MemorySegment n_bytes) {
-        var mh$ = pango_coverage_to_bytes$MH();
-        try {
-            mh$.invokeExact(coverage, bytes, n_bytes);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_coverage_from_bytes$MH() {
-        return RuntimeHelper.requireNonNull(constants$899.pango_coverage_from_bytes$MH,"pango_coverage_from_bytes");
-    }
-    /**
-     * {@snippet :
-     * PangoCoverage* pango_coverage_from_bytes(guchar* bytes, int n_bytes);
-     * }
-     */
-    public static MemorySegment pango_coverage_from_bytes(MemorySegment bytes, int n_bytes) {
-        var mh$ = pango_coverage_from_bytes$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(bytes, n_bytes);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    /**
-     * {@snippet :
-     * typedef struct _PangoCoverage* PangoCoverage_autoptr;
-     * }
-     */
-    public static final OfAddress PangoCoverage_autoptr = Constants$root.C_POINTER$LAYOUT;
-    /**
-     * {@snippet :
-     * typedef struct _GList* PangoCoverage_listautoptr;
-     * }
-     */
-    public static final OfAddress PangoCoverage_listautoptr = Constants$root.C_POINTER$LAYOUT;
-    /**
-     * {@snippet :
-     * typedef struct _GSList* PangoCoverage_slistautoptr;
-     * }
-     */
-    public static final OfAddress PangoCoverage_slistautoptr = Constants$root.C_POINTER$LAYOUT;
-    /**
-     * {@snippet :
-     * typedef struct _GQueue* PangoCoverage_queueautoptr;
-     * }
-     */
-    public static final OfAddress PangoCoverage_queueautoptr = Constants$root.C_POINTER$LAYOUT;
-    /**
-     * {@snippet :
-     * typedef unsigned int PangoGlyph;
-     * }
-     */
-    public static final OfInt PangoGlyph = Constants$root.C_INT$LAYOUT;
-    public static MethodHandle pango_units_from_double$MH() {
-        return RuntimeHelper.requireNonNull(constants$899.pango_units_from_double$MH,"pango_units_from_double");
-    }
-    /**
-     * {@snippet :
-     * int pango_units_from_double(double d);
-     * }
-     */
-    public static int pango_units_from_double(double d) {
-        var mh$ = pango_units_from_double$MH();
-        try {
-            return (int)mh$.invokeExact(d);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_units_to_double$MH() {
-        return RuntimeHelper.requireNonNull(constants$899.pango_units_to_double$MH,"pango_units_to_double");
-    }
-    /**
-     * {@snippet :
-     * double pango_units_to_double(int i);
-     * }
-     */
-    public static double pango_units_to_double(int i) {
-        var mh$ = pango_units_to_double$MH();
-        try {
-            return (double)mh$.invokeExact(i);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_extents_to_pixels$MH() {
-        return RuntimeHelper.requireNonNull(constants$899.pango_extents_to_pixels$MH,"pango_extents_to_pixels");
-    }
-    /**
-     * {@snippet :
-     * void pango_extents_to_pixels(PangoRectangle* inclusive, PangoRectangle* nearest);
-     * }
-     */
-    public static void pango_extents_to_pixels(MemorySegment inclusive, MemorySegment nearest) {
-        var mh$ = pango_extents_to_pixels$MH();
-        try {
-            mh$.invokeExact(inclusive, nearest);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_GRAVITY_SOUTH = 0;
-     * }
-     */
-    public static int PANGO_GRAVITY_SOUTH() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_GRAVITY_EAST = 1;
-     * }
-     */
-    public static int PANGO_GRAVITY_EAST() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_GRAVITY_NORTH = 2;
-     * }
-     */
-    public static int PANGO_GRAVITY_NORTH() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_GRAVITY_WEST = 3;
-     * }
-     */
-    public static int PANGO_GRAVITY_WEST() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_GRAVITY_AUTO = 4;
-     * }
-     */
-    public static int PANGO_GRAVITY_AUTO() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_GRAVITY_HINT_NATURAL = 0;
-     * }
-     */
-    public static int PANGO_GRAVITY_HINT_NATURAL() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_GRAVITY_HINT_STRONG = 1;
-     * }
-     */
-    public static int PANGO_GRAVITY_HINT_STRONG() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_GRAVITY_HINT_LINE = 2;
-     * }
-     */
-    public static int PANGO_GRAVITY_HINT_LINE() {
-        return (int)2L;
-    }
-    public static MethodHandle pango_matrix_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$899.pango_matrix_get_type$MH,"pango_matrix_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType pango_matrix_get_type();
-     * }
-     */
-    public static long pango_matrix_get_type() {
-        var mh$ = pango_matrix_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$899.pango_matrix_copy$MH,"pango_matrix_copy");
-    }
-    /**
-     * {@snippet :
-     * PangoMatrix* pango_matrix_copy(const PangoMatrix* matrix);
-     * }
-     */
-    public static MemorySegment pango_matrix_copy(MemorySegment matrix) {
-        var mh$ = pango_matrix_copy$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(matrix);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$900.pango_matrix_free$MH,"pango_matrix_free");
-    }
-    /**
-     * {@snippet :
-     * void pango_matrix_free(PangoMatrix* matrix);
-     * }
-     */
-    public static void pango_matrix_free(MemorySegment matrix) {
-        var mh$ = pango_matrix_free$MH();
-        try {
-            mh$.invokeExact(matrix);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_translate$MH() {
-        return RuntimeHelper.requireNonNull(constants$900.pango_matrix_translate$MH,"pango_matrix_translate");
-    }
-    /**
-     * {@snippet :
-     * void pango_matrix_translate(PangoMatrix* matrix, double tx, double ty);
-     * }
-     */
-    public static void pango_matrix_translate(MemorySegment matrix, double tx, double ty) {
-        var mh$ = pango_matrix_translate$MH();
-        try {
-            mh$.invokeExact(matrix, tx, ty);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$900.pango_matrix_scale$MH,"pango_matrix_scale");
-    }
-    /**
-     * {@snippet :
-     * void pango_matrix_scale(PangoMatrix* matrix, double scale_x, double scale_y);
-     * }
-     */
-    public static void pango_matrix_scale(MemorySegment matrix, double scale_x, double scale_y) {
-        var mh$ = pango_matrix_scale$MH();
-        try {
-            mh$.invokeExact(matrix, scale_x, scale_y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_rotate$MH() {
-        return RuntimeHelper.requireNonNull(constants$900.pango_matrix_rotate$MH,"pango_matrix_rotate");
-    }
-    /**
-     * {@snippet :
-     * void pango_matrix_rotate(PangoMatrix* matrix, double degrees);
-     * }
-     */
-    public static void pango_matrix_rotate(MemorySegment matrix, double degrees) {
-        var mh$ = pango_matrix_rotate$MH();
-        try {
-            mh$.invokeExact(matrix, degrees);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_concat$MH() {
-        return RuntimeHelper.requireNonNull(constants$900.pango_matrix_concat$MH,"pango_matrix_concat");
-    }
-    /**
-     * {@snippet :
-     * void pango_matrix_concat(PangoMatrix* matrix, const PangoMatrix* new_matrix);
-     * }
-     */
-    public static void pango_matrix_concat(MemorySegment matrix, MemorySegment new_matrix) {
-        var mh$ = pango_matrix_concat$MH();
-        try {
-            mh$.invokeExact(matrix, new_matrix);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_transform_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$900.pango_matrix_transform_point$MH,"pango_matrix_transform_point");
-    }
-    /**
-     * {@snippet :
-     * void pango_matrix_transform_point(const PangoMatrix* matrix, double* x, double* y);
-     * }
-     */
-    public static void pango_matrix_transform_point(MemorySegment matrix, MemorySegment x, MemorySegment y) {
-        var mh$ = pango_matrix_transform_point$MH();
-        try {
-            mh$.invokeExact(matrix, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_transform_distance$MH() {
-        return RuntimeHelper.requireNonNull(constants$901.pango_matrix_transform_distance$MH,"pango_matrix_transform_distance");
-    }
-    /**
-     * {@snippet :
-     * void pango_matrix_transform_distance(const PangoMatrix* matrix, double* dx, double* dy);
-     * }
-     */
-    public static void pango_matrix_transform_distance(MemorySegment matrix, MemorySegment dx, MemorySegment dy) {
-        var mh$ = pango_matrix_transform_distance$MH();
-        try {
-            mh$.invokeExact(matrix, dx, dy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_transform_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$901.pango_matrix_transform_rectangle$MH,"pango_matrix_transform_rectangle");
-    }
-    /**
-     * {@snippet :
-     * void pango_matrix_transform_rectangle(const PangoMatrix* matrix, PangoRectangle* rect);
-     * }
-     */
-    public static void pango_matrix_transform_rectangle(MemorySegment matrix, MemorySegment rect) {
-        var mh$ = pango_matrix_transform_rectangle$MH();
-        try {
-            mh$.invokeExact(matrix, rect);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_transform_pixel_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$901.pango_matrix_transform_pixel_rectangle$MH,"pango_matrix_transform_pixel_rectangle");
-    }
-    /**
-     * {@snippet :
-     * void pango_matrix_transform_pixel_rectangle(const PangoMatrix* matrix, PangoRectangle* rect);
-     * }
-     */
-    public static void pango_matrix_transform_pixel_rectangle(MemorySegment matrix, MemorySegment rect) {
-        var mh$ = pango_matrix_transform_pixel_rectangle$MH();
-        try {
-            mh$.invokeExact(matrix, rect);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_get_font_scale_factor$MH() {
-        return RuntimeHelper.requireNonNull(constants$901.pango_matrix_get_font_scale_factor$MH,"pango_matrix_get_font_scale_factor");
-    }
-    /**
-     * {@snippet :
-     * double pango_matrix_get_font_scale_factor(const PangoMatrix* matrix);
-     * }
-     */
-    public static double pango_matrix_get_font_scale_factor(MemorySegment matrix) {
-        var mh$ = pango_matrix_get_font_scale_factor$MH();
-        try {
-            return (double)mh$.invokeExact(matrix);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_get_font_scale_factors$MH() {
-        return RuntimeHelper.requireNonNull(constants$901.pango_matrix_get_font_scale_factors$MH,"pango_matrix_get_font_scale_factors");
-    }
-    /**
-     * {@snippet :
-     * void pango_matrix_get_font_scale_factors(const PangoMatrix* matrix, double* xscale, double* yscale);
-     * }
-     */
-    public static void pango_matrix_get_font_scale_factors(MemorySegment matrix, MemorySegment xscale, MemorySegment yscale) {
-        var mh$ = pango_matrix_get_font_scale_factors$MH();
-        try {
-            mh$.invokeExact(matrix, xscale, yscale);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_matrix_get_slant_ratio$MH() {
-        return RuntimeHelper.requireNonNull(constants$901.pango_matrix_get_slant_ratio$MH,"pango_matrix_get_slant_ratio");
-    }
-    /**
-     * {@snippet :
-     * double pango_matrix_get_slant_ratio(const PangoMatrix* matrix);
-     * }
-     */
-    public static double pango_matrix_get_slant_ratio(MemorySegment matrix) {
-        var mh$ = pango_matrix_get_slant_ratio$MH();
-        try {
-            return (double)mh$.invokeExact(matrix);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_INVALID_CODE = -1;
-     * }
-     */
-    public static int PANGO_SCRIPT_INVALID_CODE() {
-        return (int)-1L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_COMMON = 0;
-     * }
-     */
-    public static int PANGO_SCRIPT_COMMON() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_INHERITED = 1;
-     * }
-     */
-    public static int PANGO_SCRIPT_INHERITED() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_ARABIC = 2;
-     * }
-     */
-    public static int PANGO_SCRIPT_ARABIC() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_ARMENIAN = 3;
-     * }
-     */
-    public static int PANGO_SCRIPT_ARMENIAN() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_BENGALI = 4;
-     * }
-     */
-    public static int PANGO_SCRIPT_BENGALI() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_BOPOMOFO = 5;
-     * }
-     */
-    public static int PANGO_SCRIPT_BOPOMOFO() {
-        return (int)5L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_CHEROKEE = 6;
-     * }
-     */
-    public static int PANGO_SCRIPT_CHEROKEE() {
-        return (int)6L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_COPTIC = 7;
-     * }
-     */
-    public static int PANGO_SCRIPT_COPTIC() {
-        return (int)7L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_CYRILLIC = 8;
-     * }
-     */
-    public static int PANGO_SCRIPT_CYRILLIC() {
-        return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_DESERET = 9;
-     * }
-     */
-    public static int PANGO_SCRIPT_DESERET() {
-        return (int)9L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_DEVANAGARI = 10;
-     * }
-     */
-    public static int PANGO_SCRIPT_DEVANAGARI() {
-        return (int)10L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_ETHIOPIC = 11;
-     * }
-     */
-    public static int PANGO_SCRIPT_ETHIOPIC() {
-        return (int)11L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_GEORGIAN = 12;
-     * }
-     */
-    public static int PANGO_SCRIPT_GEORGIAN() {
-        return (int)12L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_GOTHIC = 13;
-     * }
-     */
-    public static int PANGO_SCRIPT_GOTHIC() {
-        return (int)13L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_GREEK = 14;
-     * }
-     */
-    public static int PANGO_SCRIPT_GREEK() {
-        return (int)14L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_GUJARATI = 15;
-     * }
-     */
-    public static int PANGO_SCRIPT_GUJARATI() {
-        return (int)15L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_GURMUKHI = 16;
-     * }
-     */
-    public static int PANGO_SCRIPT_GURMUKHI() {
-        return (int)16L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_HAN = 17;
-     * }
-     */
-    public static int PANGO_SCRIPT_HAN() {
-        return (int)17L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_HANGUL = 18;
-     * }
-     */
-    public static int PANGO_SCRIPT_HANGUL() {
-        return (int)18L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_HEBREW = 19;
-     * }
-     */
-    public static int PANGO_SCRIPT_HEBREW() {
-        return (int)19L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_HIRAGANA = 20;
-     * }
-     */
-    public static int PANGO_SCRIPT_HIRAGANA() {
-        return (int)20L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_KANNADA = 21;
-     * }
-     */
-    public static int PANGO_SCRIPT_KANNADA() {
-        return (int)21L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_KATAKANA = 22;
-     * }
-     */
-    public static int PANGO_SCRIPT_KATAKANA() {
-        return (int)22L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_KHMER = 23;
-     * }
-     */
-    public static int PANGO_SCRIPT_KHMER() {
-        return (int)23L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_LAO = 24;
-     * }
-     */
-    public static int PANGO_SCRIPT_LAO() {
-        return (int)24L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_LATIN = 25;
-     * }
-     */
-    public static int PANGO_SCRIPT_LATIN() {
-        return (int)25L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_MALAYALAM = 26;
-     * }
-     */
-    public static int PANGO_SCRIPT_MALAYALAM() {
-        return (int)26L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_MONGOLIAN = 27;
-     * }
-     */
-    public static int PANGO_SCRIPT_MONGOLIAN() {
-        return (int)27L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_MYANMAR = 28;
-     * }
-     */
-    public static int PANGO_SCRIPT_MYANMAR() {
-        return (int)28L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_OGHAM = 29;
-     * }
-     */
-    public static int PANGO_SCRIPT_OGHAM() {
-        return (int)29L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_OLD_ITALIC = 30;
-     * }
-     */
-    public static int PANGO_SCRIPT_OLD_ITALIC() {
-        return (int)30L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_ORIYA = 31;
-     * }
-     */
-    public static int PANGO_SCRIPT_ORIYA() {
-        return (int)31L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_RUNIC = 32;
-     * }
-     */
-    public static int PANGO_SCRIPT_RUNIC() {
-        return (int)32L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_SINHALA = 33;
-     * }
-     */
-    public static int PANGO_SCRIPT_SINHALA() {
-        return (int)33L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_SYRIAC = 34;
-     * }
-     */
-    public static int PANGO_SCRIPT_SYRIAC() {
-        return (int)34L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_TAMIL = 35;
-     * }
-     */
-    public static int PANGO_SCRIPT_TAMIL() {
-        return (int)35L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_TELUGU = 36;
-     * }
-     */
-    public static int PANGO_SCRIPT_TELUGU() {
-        return (int)36L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_THAANA = 37;
-     * }
-     */
-    public static int PANGO_SCRIPT_THAANA() {
-        return (int)37L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_THAI = 38;
-     * }
-     */
-    public static int PANGO_SCRIPT_THAI() {
-        return (int)38L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_TIBETAN = 39;
-     * }
-     */
-    public static int PANGO_SCRIPT_TIBETAN() {
-        return (int)39L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_CANADIAN_ABORIGINAL = 40;
-     * }
-     */
-    public static int PANGO_SCRIPT_CANADIAN_ABORIGINAL() {
-        return (int)40L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_YI = 41;
-     * }
-     */
-    public static int PANGO_SCRIPT_YI() {
-        return (int)41L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_TAGALOG = 42;
-     * }
-     */
-    public static int PANGO_SCRIPT_TAGALOG() {
-        return (int)42L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_HANUNOO = 43;
-     * }
-     */
-    public static int PANGO_SCRIPT_HANUNOO() {
-        return (int)43L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_BUHID = 44;
-     * }
-     */
-    public static int PANGO_SCRIPT_BUHID() {
-        return (int)44L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_TAGBANWA = 45;
-     * }
-     */
-    public static int PANGO_SCRIPT_TAGBANWA() {
-        return (int)45L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_BRAILLE = 46;
-     * }
-     */
-    public static int PANGO_SCRIPT_BRAILLE() {
-        return (int)46L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_CYPRIOT = 47;
-     * }
-     */
-    public static int PANGO_SCRIPT_CYPRIOT() {
-        return (int)47L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_LIMBU = 48;
-     * }
-     */
-    public static int PANGO_SCRIPT_LIMBU() {
-        return (int)48L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_OSMANYA = 49;
-     * }
-     */
-    public static int PANGO_SCRIPT_OSMANYA() {
-        return (int)49L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_SHAVIAN = 50;
-     * }
-     */
-    public static int PANGO_SCRIPT_SHAVIAN() {
-        return (int)50L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_LINEAR_B = 51;
-     * }
-     */
-    public static int PANGO_SCRIPT_LINEAR_B() {
-        return (int)51L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_TAI_LE = 52;
-     * }
-     */
-    public static int PANGO_SCRIPT_TAI_LE() {
-        return (int)52L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_UGARITIC = 53;
-     * }
-     */
-    public static int PANGO_SCRIPT_UGARITIC() {
-        return (int)53L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_NEW_TAI_LUE = 54;
-     * }
-     */
-    public static int PANGO_SCRIPT_NEW_TAI_LUE() {
-        return (int)54L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_BUGINESE = 55;
-     * }
-     */
-    public static int PANGO_SCRIPT_BUGINESE() {
-        return (int)55L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_GLAGOLITIC = 56;
-     * }
-     */
-    public static int PANGO_SCRIPT_GLAGOLITIC() {
-        return (int)56L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_TIFINAGH = 57;
-     * }
-     */
-    public static int PANGO_SCRIPT_TIFINAGH() {
-        return (int)57L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_SYLOTI_NAGRI = 58;
-     * }
-     */
-    public static int PANGO_SCRIPT_SYLOTI_NAGRI() {
-        return (int)58L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_OLD_PERSIAN = 59;
-     * }
-     */
-    public static int PANGO_SCRIPT_OLD_PERSIAN() {
-        return (int)59L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_KHAROSHTHI = 60;
-     * }
-     */
-    public static int PANGO_SCRIPT_KHAROSHTHI() {
-        return (int)60L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_UNKNOWN = 61;
-     * }
-     */
-    public static int PANGO_SCRIPT_UNKNOWN() {
-        return (int)61L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_BALINESE = 62;
-     * }
-     */
-    public static int PANGO_SCRIPT_BALINESE() {
-        return (int)62L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_CUNEIFORM = 63;
-     * }
-     */
-    public static int PANGO_SCRIPT_CUNEIFORM() {
-        return (int)63L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_PHOENICIAN = 64;
-     * }
-     */
-    public static int PANGO_SCRIPT_PHOENICIAN() {
-        return (int)64L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_PHAGS_PA = 65;
-     * }
-     */
-    public static int PANGO_SCRIPT_PHAGS_PA() {
-        return (int)65L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_NKO = 66;
-     * }
-     */
-    public static int PANGO_SCRIPT_NKO() {
-        return (int)66L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_KAYAH_LI = 67;
-     * }
-     */
-    public static int PANGO_SCRIPT_KAYAH_LI() {
-        return (int)67L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_LEPCHA = 68;
-     * }
-     */
-    public static int PANGO_SCRIPT_LEPCHA() {
-        return (int)68L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_REJANG = 69;
-     * }
-     */
-    public static int PANGO_SCRIPT_REJANG() {
-        return (int)69L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_SUNDANESE = 70;
-     * }
-     */
-    public static int PANGO_SCRIPT_SUNDANESE() {
-        return (int)70L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_SAURASHTRA = 71;
-     * }
-     */
-    public static int PANGO_SCRIPT_SAURASHTRA() {
-        return (int)71L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_CHAM = 72;
-     * }
-     */
-    public static int PANGO_SCRIPT_CHAM() {
-        return (int)72L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_OL_CHIKI = 73;
-     * }
-     */
-    public static int PANGO_SCRIPT_OL_CHIKI() {
-        return (int)73L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_VAI = 74;
-     * }
-     */
-    public static int PANGO_SCRIPT_VAI() {
-        return (int)74L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_CARIAN = 75;
-     * }
-     */
-    public static int PANGO_SCRIPT_CARIAN() {
-        return (int)75L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_LYCIAN = 76;
-     * }
-     */
-    public static int PANGO_SCRIPT_LYCIAN() {
-        return (int)76L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_LYDIAN = 77;
-     * }
-     */
-    public static int PANGO_SCRIPT_LYDIAN() {
-        return (int)77L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_BATAK = 78;
-     * }
-     */
-    public static int PANGO_SCRIPT_BATAK() {
-        return (int)78L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_BRAHMI = 79;
-     * }
-     */
-    public static int PANGO_SCRIPT_BRAHMI() {
-        return (int)79L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_MANDAIC = 80;
-     * }
-     */
-    public static int PANGO_SCRIPT_MANDAIC() {
-        return (int)80L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_CHAKMA = 81;
-     * }
-     */
-    public static int PANGO_SCRIPT_CHAKMA() {
-        return (int)81L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_MEROITIC_CURSIVE = 82;
-     * }
-     */
-    public static int PANGO_SCRIPT_MEROITIC_CURSIVE() {
-        return (int)82L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_MEROITIC_HIEROGLYPHS = 83;
-     * }
-     */
-    public static int PANGO_SCRIPT_MEROITIC_HIEROGLYPHS() {
-        return (int)83L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_MIAO = 84;
-     * }
-     */
-    public static int PANGO_SCRIPT_MIAO() {
-        return (int)84L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_SHARADA = 85;
-     * }
-     */
-    public static int PANGO_SCRIPT_SHARADA() {
-        return (int)85L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_SORA_SOMPENG = 86;
-     * }
-     */
-    public static int PANGO_SCRIPT_SORA_SOMPENG() {
-        return (int)86L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_TAKRI = 87;
-     * }
-     */
-    public static int PANGO_SCRIPT_TAKRI() {
-        return (int)87L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_BASSA_VAH = 88;
-     * }
-     */
-    public static int PANGO_SCRIPT_BASSA_VAH() {
-        return (int)88L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_CAUCASIAN_ALBANIAN = 89;
-     * }
-     */
-    public static int PANGO_SCRIPT_CAUCASIAN_ALBANIAN() {
-        return (int)89L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_DUPLOYAN = 90;
-     * }
-     */
-    public static int PANGO_SCRIPT_DUPLOYAN() {
-        return (int)90L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_ELBASAN = 91;
-     * }
-     */
-    public static int PANGO_SCRIPT_ELBASAN() {
-        return (int)91L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_GRANTHA = 92;
-     * }
-     */
-    public static int PANGO_SCRIPT_GRANTHA() {
-        return (int)92L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_KHOJKI = 93;
-     * }
-     */
-    public static int PANGO_SCRIPT_KHOJKI() {
-        return (int)93L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_KHUDAWADI = 94;
-     * }
-     */
-    public static int PANGO_SCRIPT_KHUDAWADI() {
-        return (int)94L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_LINEAR_A = 95;
-     * }
-     */
-    public static int PANGO_SCRIPT_LINEAR_A() {
-        return (int)95L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_MAHAJANI = 96;
-     * }
-     */
-    public static int PANGO_SCRIPT_MAHAJANI() {
-        return (int)96L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_MANICHAEAN = 97;
-     * }
-     */
-    public static int PANGO_SCRIPT_MANICHAEAN() {
-        return (int)97L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_MENDE_KIKAKUI = 98;
-     * }
-     */
-    public static int PANGO_SCRIPT_MENDE_KIKAKUI() {
-        return (int)98L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_MODI = 99;
-     * }
-     */
-    public static int PANGO_SCRIPT_MODI() {
-        return (int)99L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_MRO = 100;
-     * }
-     */
-    public static int PANGO_SCRIPT_MRO() {
-        return (int)100L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_NABATAEAN = 101;
-     * }
-     */
-    public static int PANGO_SCRIPT_NABATAEAN() {
-        return (int)101L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_OLD_NORTH_ARABIAN = 102;
-     * }
-     */
-    public static int PANGO_SCRIPT_OLD_NORTH_ARABIAN() {
-        return (int)102L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_OLD_PERMIC = 103;
-     * }
-     */
-    public static int PANGO_SCRIPT_OLD_PERMIC() {
-        return (int)103L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_PAHAWH_HMONG = 104;
-     * }
-     */
-    public static int PANGO_SCRIPT_PAHAWH_HMONG() {
-        return (int)104L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_PALMYRENE = 105;
-     * }
-     */
-    public static int PANGO_SCRIPT_PALMYRENE() {
-        return (int)105L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_PAU_CIN_HAU = 106;
-     * }
-     */
-    public static int PANGO_SCRIPT_PAU_CIN_HAU() {
-        return (int)106L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_PSALTER_PAHLAVI = 107;
-     * }
-     */
-    public static int PANGO_SCRIPT_PSALTER_PAHLAVI() {
-        return (int)107L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_SIDDHAM = 108;
-     * }
-     */
-    public static int PANGO_SCRIPT_SIDDHAM() {
-        return (int)108L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_TIRHUTA = 109;
-     * }
-     */
-    public static int PANGO_SCRIPT_TIRHUTA() {
-        return (int)109L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_WARANG_CITI = 110;
-     * }
-     */
-    public static int PANGO_SCRIPT_WARANG_CITI() {
-        return (int)110L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_AHOM = 111;
-     * }
-     */
-    public static int PANGO_SCRIPT_AHOM() {
-        return (int)111L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_ANATOLIAN_HIEROGLYPHS = 112;
-     * }
-     */
-    public static int PANGO_SCRIPT_ANATOLIAN_HIEROGLYPHS() {
-        return (int)112L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_HATRAN = 113;
-     * }
-     */
-    public static int PANGO_SCRIPT_HATRAN() {
-        return (int)113L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_MULTANI = 114;
-     * }
-     */
-    public static int PANGO_SCRIPT_MULTANI() {
-        return (int)114L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_OLD_HUNGARIAN = 115;
-     * }
-     */
-    public static int PANGO_SCRIPT_OLD_HUNGARIAN() {
-        return (int)115L;
-    }
-    /**
-     * {@snippet :
-     * enum .PANGO_SCRIPT_SIGNWRITING = 116;
-     * }
-     */
-    public static int PANGO_SCRIPT_SIGNWRITING() {
-        return (int)116L;
-    }
-    public static MethodHandle pango_script_for_unichar$MH() {
-        return RuntimeHelper.requireNonNull(constants$902.pango_script_for_unichar$MH,"pango_script_for_unichar");
-    }
-    /**
-     * {@snippet :
-     * PangoScript pango_script_for_unichar(gunichar ch);
-     * }
-     */
-    public static int pango_script_for_unichar(int ch) {
-        var mh$ = pango_script_for_unichar$MH();
-        try {
-            return (int)mh$.invokeExact(ch);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_script_iter_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$902.pango_script_iter_get_type$MH,"pango_script_iter_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType pango_script_iter_get_type();
-     * }
-     */
-    public static long pango_script_iter_get_type() {
-        var mh$ = pango_script_iter_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_script_iter_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$902.pango_script_iter_new$MH,"pango_script_iter_new");
-    }
-    /**
-     * {@snippet :
-     * PangoScriptIter* pango_script_iter_new(char* text, int length);
-     * }
-     */
-    public static MemorySegment pango_script_iter_new(MemorySegment text, int length) {
-        var mh$ = pango_script_iter_new$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(text, length);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_script_iter_get_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$902.pango_script_iter_get_range$MH,"pango_script_iter_get_range");
-    }
-    /**
-     * {@snippet :
-     * void pango_script_iter_get_range(PangoScriptIter* iter, char** start, char** end, PangoScript* script);
-     * }
-     */
-    public static void pango_script_iter_get_range(MemorySegment iter, MemorySegment start, MemorySegment end, MemorySegment script) {
-        var mh$ = pango_script_iter_get_range$MH();
-        try {
-            mh$.invokeExact(iter, start, end, script);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_script_iter_next$MH() {
-        return RuntimeHelper.requireNonNull(constants$902.pango_script_iter_next$MH,"pango_script_iter_next");
-    }
-    /**
-     * {@snippet :
-     * gboolean pango_script_iter_next(PangoScriptIter* iter);
-     * }
-     */
-    public static int pango_script_iter_next(MemorySegment iter) {
-        var mh$ = pango_script_iter_next$MH();
-        try {
-            return (int)mh$.invokeExact(iter);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_script_iter_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$902.pango_script_iter_free$MH,"pango_script_iter_free");
-    }
-    /**
-     * {@snippet :
-     * void pango_script_iter_free(PangoScriptIter* iter);
-     * }
-     */
-    public static void pango_script_iter_free(MemorySegment iter) {
-        var mh$ = pango_script_iter_free$MH();
-        try {
-            mh$.invokeExact(iter);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_language_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$903.pango_language_get_type$MH,"pango_language_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType pango_language_get_type();
-     * }
-     */
-    public static long pango_language_get_type() {
-        var mh$ = pango_language_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_language_get_default$MH() {
-        return RuntimeHelper.requireNonNull(constants$903.pango_language_get_default$MH,"pango_language_get_default");
-    }
-    /**
-     * {@snippet :
-     * PangoLanguage* pango_language_get_default();
-     * }
-     */
-    public static MemorySegment pango_language_get_default() {
-        var mh$ = pango_language_get_default$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_language_get_preferred$MH() {
-        return RuntimeHelper.requireNonNull(constants$903.pango_language_get_preferred$MH,"pango_language_get_preferred");
-    }
-    /**
-     * {@snippet :
-     * PangoLanguage** pango_language_get_preferred();
-     * }
-     */
-    public static MemorySegment pango_language_get_preferred() {
-        var mh$ = pango_language_get_preferred$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle pango_language_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$903.pango_language_from_string$MH,"pango_language_from_string");
-    }
-    /**
-     * {@snippet :
-     * PangoLanguage* pango_language_from_string(char* language);
-     * }
-     */
-    public static MemorySegment pango_language_from_string(MemorySegment language) {
-        var mh$ = pango_language_from_string$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(language);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

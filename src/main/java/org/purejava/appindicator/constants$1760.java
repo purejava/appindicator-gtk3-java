@@ -3,54 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1760 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1760() {}
-    static final FunctionDescriptor gtk_radio_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_radio_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_radio_button_get_type",
-        constants$1760.gtk_radio_button_get_type$FUNC
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor gtk_radio_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_device_grab",
+        constants$1760.const$0
     );
-    static final MethodHandle gtk_radio_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_radio_button_new",
-        constants$1760.gtk_radio_button_new$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_device_ungrab",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_radio_button_new_from_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_device_warp",
+        constants$1043.const$2
     );
-    static final MethodHandle gtk_radio_button_new_from_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_radio_button_new_from_widget",
-        constants$1760.gtk_radio_button_new_from_widget$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_device_grab_info_libgtk_only",
+        constants$34.const$5
     );
-    static final FunctionDescriptor gtk_radio_button_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_radio_button_new_with_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_radio_button_new_with_label",
-        constants$1760.gtk_radio_button_new_with_label$FUNC
-    );
-    static final FunctionDescriptor gtk_radio_button_new_with_label_from_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_radio_button_new_with_label_from_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_radio_button_new_with_label_from_widget",
-        constants$1760.gtk_radio_button_new_with_label_from_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_radio_button_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_radio_button_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
-        "gtk_radio_button_new_with_mnemonic",
-        constants$1760.gtk_radio_button_new_with_mnemonic$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_device_get_last_event_window",
+        constants$5.const$2
     );
 }
 

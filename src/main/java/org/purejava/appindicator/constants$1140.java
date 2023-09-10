@@ -3,55 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1140 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1140() {}
-    static final FunctionDescriptor gdk_pixbuf_animation_new_from_stream_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_memory_input_stream_add_bytes",
+        constants$13.const$4
     );
-    static final MethodHandle gdk_pixbuf_animation_new_from_stream_finish$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_new_from_stream_finish",
-        constants$1140.gdk_pixbuf_animation_new_from_stream_finish$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_memory_monitor_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_pixbuf_animation_new_from_resource$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_animation_new_from_resource$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_new_from_resource",
-        constants$1140.gdk_pixbuf_animation_new_from_resource$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_animation_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_animation_ref$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_ref",
-        constants$1140.gdk_pixbuf_animation_ref$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_animation_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_animation_unref$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_unref",
-        constants$1140.gdk_pixbuf_animation_unref$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_animation_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_animation_get_width$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_get_width",
-        constants$1140.gdk_pixbuf_animation_get_width$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_animation_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_animation_get_height$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_get_height",
-        constants$1140.gdk_pixbuf_animation_get_height$FUNC
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("low_memory_warning")
+    ).withName("_GMemoryMonitorInterface");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GMemoryMonitorInterface.low_memory_warning.class, "apply", constants$40.const$2);
+    static final VarHandle const$4 = constants$1140.const$2.varHandle(MemoryLayout.PathElement.groupElement("low_memory_warning"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_memory_monitor_dup_default",
+        constants$35.const$2
     );
 }
 

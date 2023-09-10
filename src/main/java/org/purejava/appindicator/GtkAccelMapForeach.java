@@ -2,24 +2,27 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
- * void (*GtkAccelMapForeach)(void* data,char* accel_path,unsigned int accel_key,enum  accel_mods,int changed);
+ * void (*GtkAccelMapForeach)(void* data,char* accel_path,unsigned int accel_key,enum GdkModifierType accel_mods,int changed);
  * }
  */
 public interface GtkAccelMapForeach {
 
     void apply(java.lang.foreign.MemorySegment data, java.lang.foreign.MemorySegment accel_path, int accel_key, int accel_mods, int changed);
-    static MemorySegment allocate(GtkAccelMapForeach fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$1346.GtkAccelMapForeach_UP$MH, fi, constants$1346.GtkAccelMapForeach$FUNC, scope);
+    static MemorySegment allocate(GtkAccelMapForeach fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$2260.const$0, fi, constants$1513.const$2, scope);
     }
-    static GtkAccelMapForeach ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GtkAccelMapForeach ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _data, java.lang.foreign.MemorySegment _accel_path, int _accel_key, int _accel_mods, int _changed) -> {
             try {
-                constants$1346.GtkAccelMapForeach_DOWN$MH.invokeExact(symbol, _data, _accel_path, _accel_key, _accel_mods, _changed);
+                constants$2260.const$1.invokeExact(symbol, _data, _accel_path, _accel_key, _accel_mods, _changed);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1139 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1139() {}
-    static final FunctionDescriptor gdk_pixbuf_rotate_simple$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_memory_input_stream_new",
+        constants$35.const$2
     );
-    static final MethodHandle gdk_pixbuf_rotate_simple$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_rotate_simple",
-        constants$1139.gdk_pixbuf_rotate_simple$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_memory_input_stream_new_from_data$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_memory_input_stream_new_from_data",
+        constants$36.const$1
     );
-    static final FunctionDescriptor gdk_pixbuf_flip$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_memory_input_stream_new_from_bytes",
+        constants$5.const$2
     );
-    static final MethodHandle gdk_pixbuf_flip$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_flip",
-        constants$1139.gdk_pixbuf_flip$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_memory_input_stream_add_data$destroy.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gdk_pixbuf_animation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_pixbuf_animation_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_get_type",
-        constants$1139.gdk_pixbuf_animation_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_animation_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_animation_new_from_file$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_new_from_file",
-        constants$1139.gdk_pixbuf_animation_new_from_file$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_animation_new_from_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_animation_new_from_stream$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_new_from_stream",
-        constants$1139.gdk_pixbuf_animation_new_from_stream$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_animation_new_from_stream_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_animation_new_from_stream_async$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_new_from_stream_async",
-        constants$1139.gdk_pixbuf_animation_new_from_stream_async$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_memory_input_stream_add_data",
+        constants$1139.const$5
     );
 }
 

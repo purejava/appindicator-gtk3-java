@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * int (*GtkTextBufferDeserializeFunc)(struct _GtkTextBuffer* register_buffer,struct _GtkTextBuffer* content_buffer,struct _GtkTextIter* iter,unsigned char* data,unsigned long length,int create_tags,void* user_data,struct _GError** error);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GtkTextBufferDeserializeFunc {
 
     int apply(java.lang.foreign.MemorySegment register_buffer, java.lang.foreign.MemorySegment content_buffer, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data, long length, int create_tags, java.lang.foreign.MemorySegment user_data, java.lang.foreign.MemorySegment error);
-    static MemorySegment allocate(GtkTextBufferDeserializeFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$1837.GtkTextBufferDeserializeFunc_UP$MH, fi, constants$1837.GtkTextBufferDeserializeFunc$FUNC, scope);
+    static MemorySegment allocate(GtkTextBufferDeserializeFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$3140.const$5, fi, constants$3140.const$4, scope);
     }
-    static GtkTextBufferDeserializeFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GtkTextBufferDeserializeFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _register_buffer, java.lang.foreign.MemorySegment _content_buffer, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data, long _length, int _create_tags, java.lang.foreign.MemorySegment _user_data, java.lang.foreign.MemorySegment _error) -> {
             try {
-                return (int)constants$1837.GtkTextBufferDeserializeFunc_DOWN$MH.invokeExact(symbol, _register_buffer, _content_buffer, _iter, _data, _length, _create_tags, _user_data, _error);
+                return (int)constants$3141.const$0.invokeExact(symbol, _register_buffer, _content_buffer, _iter, _data, _length, _create_tags, _user_data, _error);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -4,54 +4,35 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 final class constants$523 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$523() {}
-    static final FunctionDescriptor getcwd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle getcwd$MH = RuntimeHelper.downcallHandle(
-        "getcwd",
-        constants$523.getcwd$FUNC
-    );
-    static final FunctionDescriptor getwd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle getwd$MH = RuntimeHelper.downcallHandle(
-        "getwd",
-        constants$523.getwd$FUNC
-    );
-    static final FunctionDescriptor dup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle dup$MH = RuntimeHelper.downcallHandle(
-        "dup",
-        constants$523.dup$FUNC
-    );
-    static final FunctionDescriptor dup2$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle dup2$MH = RuntimeHelper.downcallHandle(
-        "dup2",
-        constants$523.dup2$FUNC
-    );
-    static final OfAddress __environ$LAYOUT = Constants$root.C_POINTER$LAYOUT;
-    static final VarHandle __environ$VH = constants$523.__environ$LAYOUT.varHandle();
-    static final MemorySegment __environ$SEGMENT = RuntimeHelper.lookupGlobalVariable("__environ", constants$523.__environ$LAYOUT);
-    static final FunctionDescriptor execve$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle execve$MH = RuntimeHelper.downcallHandle(
-        "execve",
-        constants$523.execve$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(22, JAVA_LONG).withName("__cancel_jmp_buf"),
+        JAVA_INT.withName("__mask_was_saved"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("__cancel_jmp_buf_tag");
+    static final VarHandle const$1 = constants$523.const$0.varHandle(MemoryLayout.PathElement.groupElement("__mask_was_saved"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(1, MemoryLayout.structLayout(
+            MemoryLayout.sequenceLayout(22, JAVA_LONG).withName("__cancel_jmp_buf"),
+            JAVA_INT.withName("__mask_was_saved"),
+            MemoryLayout.paddingLayout(4)
+        ).withName("__cancel_jmp_buf_tag")).withName("__cancel_jmp_buf"),
+        MemoryLayout.sequenceLayout(4, RuntimeHelper.POINTER).withName("__pad")
+    ).withName("__pthread_unwind_buf_t");
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("__cancel_routine"),
+        RuntimeHelper.POINTER.withName("__cancel_arg"),
+        JAVA_INT.withName("__do_it"),
+        JAVA_INT.withName("__cancel_type")
+    ).withName("__pthread_cleanup_frame");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(__pthread_cleanup_frame.__cancel_routine.class, "apply", constants$13.const$1);
+    static final VarHandle const$5 = constants$523.const$3.varHandle(MemoryLayout.PathElement.groupElement("__cancel_routine"));
 }
 
 

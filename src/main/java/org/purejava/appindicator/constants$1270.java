@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1270 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1270() {}
-    static final FunctionDescriptor gtk_widget_set_hexpand$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_run_in_thread",
+        constants$464.const$4
     );
-    static final MethodHandle gtk_widget_set_hexpand$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_hexpand",
-        constants$1270.gtk_widget_set_hexpand$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_set_from_error",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_widget_get_hexpand_set$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_take_error",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_widget_get_hexpand_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_hexpand_set",
-        constants$1270.gtk_widget_get_hexpand_set$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_propagate_error",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gtk_widget_set_hexpand_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "g_simple_async_result_set_error",
+        constants$57.const$0
     );
-    static final MethodHandle gtk_widget_set_hexpand_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_hexpand_set",
-        constants$1270.gtk_widget_set_hexpand_set$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_vexpand$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_vexpand$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_vexpand",
-        constants$1270.gtk_widget_get_vexpand$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_vexpand$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_vexpand$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_vexpand",
-        constants$1270.gtk_widget_set_vexpand$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_vexpand_set$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_vexpand_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_vexpand_set",
-        constants$1270.gtk_widget_get_vexpand_set$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_set_error_va",
+        constants$903.const$0
     );
 }
 

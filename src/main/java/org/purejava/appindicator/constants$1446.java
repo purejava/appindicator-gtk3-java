@@ -3,58 +3,89 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1446 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1446() {}
-    static final FunctionDescriptor gtk_image_new_from_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_image_new_from_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_stock",
-        constants$1446.gtk_image_new_from_stock$FUNC
-    );
-    static final FunctionDescriptor gtk_image_new_from_icon_set$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_image_new_from_icon_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_icon_set",
-        constants$1446.gtk_image_new_from_icon_set$FUNC
-    );
-    static final FunctionDescriptor gtk_image_new_from_animation$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_image_new_from_animation$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_animation",
-        constants$1446.gtk_image_new_from_animation$FUNC
-    );
-    static final FunctionDescriptor gtk_image_new_from_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_image_new_from_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_icon_name",
-        constants$1446.gtk_image_new_from_icon_name$FUNC
-    );
-    static final FunctionDescriptor gtk_image_new_from_gicon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_image_new_from_gicon$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_gicon",
-        constants$1446.gtk_image_new_from_gicon$FUNC
-    );
-    static final FunctionDescriptor gtk_image_new_from_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_image_new_from_surface$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_surface",
-        constants$1446.gtk_image_new_from_surface$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_INT.withName("path_open"),
+        JAVA_FLOAT.withName("path_start_x"),
+        JAVA_FLOAT.withName("path_start_y"),
+        JAVA_FLOAT.withName("current_x"),
+        JAVA_FLOAT.withName("current_y"),
+        MemoryLayout.unionLayout(
+            JAVA_FLOAT.withName("f"),
+            JAVA_INT.withName("u32"),
+            JAVA_INT.withName("i32"),
+            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
+            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
+        ).withName("reserved1"),
+        MemoryLayout.unionLayout(
+            JAVA_FLOAT.withName("f"),
+            JAVA_INT.withName("u32"),
+            JAVA_INT.withName("i32"),
+            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
+            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
+        ).withName("reserved2"),
+        MemoryLayout.unionLayout(
+            JAVA_FLOAT.withName("f"),
+            JAVA_INT.withName("u32"),
+            JAVA_INT.withName("i32"),
+            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
+            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
+        ).withName("reserved3"),
+        MemoryLayout.unionLayout(
+            JAVA_FLOAT.withName("f"),
+            JAVA_INT.withName("u32"),
+            JAVA_INT.withName("i32"),
+            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
+            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
+        ).withName("reserved4"),
+        MemoryLayout.unionLayout(
+            JAVA_FLOAT.withName("f"),
+            JAVA_INT.withName("u32"),
+            JAVA_INT.withName("i32"),
+            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
+            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
+        ).withName("reserved5"),
+        MemoryLayout.unionLayout(
+            JAVA_FLOAT.withName("f"),
+            JAVA_INT.withName("u32"),
+            JAVA_INT.withName("i32"),
+            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
+            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
+        ).withName("reserved6"),
+        MemoryLayout.unionLayout(
+            JAVA_FLOAT.withName("f"),
+            JAVA_INT.withName("u32"),
+            JAVA_INT.withName("i32"),
+            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
+            MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
+        ).withName("reserved7")
+    ).withName("hb_draw_state_t");
+    static final VarHandle const$1 = constants$1446.const$0.varHandle(MemoryLayout.PathElement.groupElement("path_open"));
+    static final VarHandle const$2 = constants$1446.const$0.varHandle(MemoryLayout.PathElement.groupElement("path_start_x"));
+    static final VarHandle const$3 = constants$1446.const$0.varHandle(MemoryLayout.PathElement.groupElement("path_start_y"));
+    static final VarHandle const$4 = constants$1446.const$0.varHandle(MemoryLayout.PathElement.groupElement("current_x"));
+    static final VarHandle const$5 = constants$1446.const$0.varHandle(MemoryLayout.PathElement.groupElement("current_y"));
 }
 
 

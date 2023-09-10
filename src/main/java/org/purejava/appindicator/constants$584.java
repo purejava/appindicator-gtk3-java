@@ -3,71 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$584 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$584() {}
-    static final FunctionDescriptor g_bus_watch_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_param_spec_pool_list",
+        constants$36.const$1
     );
-    static final MethodHandle g_bus_watch_name$MH = RuntimeHelper.downcallHandle(
-        "g_bus_watch_name",
-        constants$584.g_bus_watch_name$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GCallback.class, "apply", constants$7.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GClosureNotify.class, "apply", constants$13.const$4);
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_bus_watch_name_on_connection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bus_watch_name_on_connection$MH = RuntimeHelper.downcallHandle(
-        "g_bus_watch_name_on_connection",
-        constants$584.g_bus_watch_name_on_connection$FUNC
-    );
-    static final FunctionDescriptor g_bus_watch_name_with_closures$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bus_watch_name_with_closures$MH = RuntimeHelper.downcallHandle(
-        "g_bus_watch_name_with_closures",
-        constants$584.g_bus_watch_name_with_closures$FUNC
-    );
-    static final FunctionDescriptor g_bus_watch_name_on_connection_with_closures$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bus_watch_name_on_connection_with_closures$MH = RuntimeHelper.downcallHandle(
-        "g_bus_watch_name_on_connection_with_closures",
-        constants$584.g_bus_watch_name_on_connection_with_closures$FUNC
-    );
-    static final FunctionDescriptor g_bus_unwatch_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_bus_unwatch_name$MH = RuntimeHelper.downcallHandle(
-        "g_bus_unwatch_name",
-        constants$584.g_bus_unwatch_name$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_object_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_get_type",
-        constants$584.g_dbus_object_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GClosureMarshal.class, "apply", constants$584.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$584.const$3
     );
 }
 

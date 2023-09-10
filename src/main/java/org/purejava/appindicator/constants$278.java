@@ -3,66 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$278 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$278() {}
-    static final FunctionDescriptor g_queue_insert_before$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_timeout_add_once$function.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_timeout_add_once",
+        constants$10.const$3
     );
-    static final MethodHandle g_queue_insert_before$MH = RuntimeHelper.downcallHandle(
-        "g_queue_insert_before",
-        constants$278.g_queue_insert_before$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_timeout_add_seconds_full$function.class, "apply", constants$10.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_timeout_add_seconds_full$notify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_timeout_add_seconds_full",
+        constants$277.const$2
     );
-    static final FunctionDescriptor g_queue_insert_before_link$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_insert_before_link$MH = RuntimeHelper.downcallHandle(
-        "g_queue_insert_before_link",
-        constants$278.g_queue_insert_before_link$FUNC
-    );
-    static final FunctionDescriptor g_queue_insert_after$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_insert_after$MH = RuntimeHelper.downcallHandle(
-        "g_queue_insert_after",
-        constants$278.g_queue_insert_after$FUNC
-    );
-    static final FunctionDescriptor g_queue_insert_after_link$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_insert_after_link$MH = RuntimeHelper.downcallHandle(
-        "g_queue_insert_after_link",
-        constants$278.g_queue_insert_after_link$FUNC
-    );
-    static final FunctionDescriptor g_queue_insert_sorted$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_insert_sorted$MH = RuntimeHelper.downcallHandle(
-        "g_queue_insert_sorted",
-        constants$278.g_queue_insert_sorted$FUNC
-    );
-    static final FunctionDescriptor g_queue_push_head_link$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_push_head_link$MH = RuntimeHelper.downcallHandle(
-        "g_queue_push_head_link",
-        constants$278.g_queue_push_head_link$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_timeout_add_seconds$function.class, "apply", constants$10.const$5);
 }
 
 

@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1340 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1340() {}
-    static final FunctionDescriptor gtk_label_get_ellipsize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tcp_wrapper_connection_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_label_get_ellipsize$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_ellipsize",
-        constants$1340.gtk_label_get_ellipsize$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_tcp_wrapper_connection_new",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_label_set_width_chars$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tcp_wrapper_connection_get_base_io_stream",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_label_set_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_width_chars",
-        constants$1340.gtk_label_set_width_chars$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_test_dbus_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_label_get_width_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_test_dbus_new",
+        constants$24.const$0
     );
-    static final MethodHandle gtk_label_get_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_width_chars",
-        constants$1340.gtk_label_get_width_chars$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_max_width_chars$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_max_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_max_width_chars",
-        constants$1340.gtk_label_set_max_width_chars$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_max_width_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_max_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_max_width_chars",
-        constants$1340.gtk_label_get_max_width_chars$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_lines$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_lines",
-        constants$1340.gtk_label_set_lines$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_test_dbus_get_flags",
+        constants$10.const$5
     );
 }
 

@@ -2,53 +2,50 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GRecMutex {
- *     gpointer p;
- *     guint i[2];
+ *     void* p;
+ *     unsigned int i[2];
  * };
  * }
  */
 public class _GRecMutex {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("p"),
-        MemoryLayout.sequenceLayout(2, Constants$root.C_INT$LAYOUT).withName("i")
-    ).withName("_GRecMutex");
     public static MemoryLayout $LAYOUT() {
-        return _GRecMutex.$struct$LAYOUT;
+        return constants$100.const$1;
     }
-    static final VarHandle p$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("p"));
     public static VarHandle p$VH() {
-        return _GRecMutex.p$VH;
+        return constants$100.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gpointer p;
+     * void* p;
      * }
      */
     public static MemorySegment p$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GRecMutex.p$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$100.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gpointer p;
+     * void* p;
      * }
      */
     public static void p$set(MemorySegment seg, MemorySegment x) {
-        _GRecMutex.p$VH.set(seg, x);
+        constants$100.const$2.set(seg, x);
     }
     public static MemorySegment p$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GRecMutex.p$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$100.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void p$set(MemorySegment seg, long index, MemorySegment x) {
-        _GRecMutex.p$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$100.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment i$slice(MemorySegment seg) {
         return seg.asSlice(8, 8);
@@ -58,7 +55,7 @@ public class _GRecMutex {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

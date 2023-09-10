@@ -3,63 +3,36 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$6 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$6() {}
-    static final FunctionDescriptor GCompareFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "localtime_r",
+        constants$5.const$5
     );
-    static final FunctionDescriptor GCompareFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "asctime",
+        constants$5.const$2
     );
-    static final MethodHandle GCompareFunc_UP$MH = RuntimeHelper.upcallHandle(GCompareFunc.class, "apply", constants$6.GCompareFunc_UP$FUNC);
-    static final FunctionDescriptor GCompareFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "ctime",
+        constants$5.const$2
     );
-    static final MethodHandle GCompareFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$6.GCompareFunc_DOWN$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "asctime_r",
+        constants$5.const$5
     );
-    static final FunctionDescriptor GCompareDataFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "ctime_r",
+        constants$5.const$5
     );
-    static final FunctionDescriptor GCompareDataFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GCompareDataFunc_UP$MH = RuntimeHelper.upcallHandle(GCompareDataFunc.class, "apply", constants$6.GCompareDataFunc_UP$FUNC);
-    static final FunctionDescriptor GCompareDataFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GCompareDataFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$6.GCompareDataFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor GEqualFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GEqualFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GEqualFunc_UP$MH = RuntimeHelper.upcallHandle(GEqualFunc.class, "apply", constants$6.GEqualFunc_UP$FUNC);
-    static final FunctionDescriptor GEqualFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GEqualFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$6.GEqualFunc_DOWN$FUNC
-    );
+    static final SequenceLayout const$5 = MemoryLayout.sequenceLayout(2, RuntimeHelper.POINTER);
+    static final MemorySegment const$6 = RuntimeHelper.lookupGlobalVariable("__tzname", constants$6.const$5);
 }
 
 

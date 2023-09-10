@@ -3,72 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$631 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$631() {}
-    static final FunctionDescriptor g_file_unmount_mountable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_object_getv",
+        constants$179.const$1
     );
-    static final MethodHandle g_file_unmount_mountable$MH = RuntimeHelper.downcallHandle(
-        "g_file_unmount_mountable",
-        constants$631.g_file_unmount_mountable$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_object_get_valist",
+        constants$311.const$4
     );
-    static final FunctionDescriptor g_file_unmount_mountable_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_object_set_property",
+        constants$14.const$3
     );
-    static final MethodHandle g_file_unmount_mountable_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_unmount_mountable_finish",
-        constants$631.g_file_unmount_mountable_finish$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_object_get_property",
+        constants$14.const$3
     );
-    static final FunctionDescriptor g_file_unmount_mountable_with_operation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_object_freeze_notify",
+        constants$13.const$1
     );
-    static final MethodHandle g_file_unmount_mountable_with_operation$MH = RuntimeHelper.downcallHandle(
-        "g_file_unmount_mountable_with_operation",
-        constants$631.g_file_unmount_mountable_with_operation$FUNC
-    );
-    static final FunctionDescriptor g_file_unmount_mountable_with_operation_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_unmount_mountable_with_operation_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_unmount_mountable_with_operation_finish",
-        constants$631.g_file_unmount_mountable_with_operation_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_eject_mountable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_eject_mountable$MH = RuntimeHelper.downcallHandle(
-        "g_file_eject_mountable",
-        constants$631.g_file_eject_mountable$FUNC
-    );
-    static final FunctionDescriptor g_file_eject_mountable_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_eject_mountable_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_eject_mountable_finish",
-        constants$631.g_file_eject_mountable_finish$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_object_notify",
+        constants$13.const$4
     );
 }
 

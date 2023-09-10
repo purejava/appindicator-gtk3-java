@@ -3,61 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$294 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$294() {}
-    static final FunctionDescriptor g_match_info_get_match_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_utf8_normalize",
+        constants$291.const$1
     );
-    static final MethodHandle g_match_info_get_match_count$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_get_match_count",
-        constants$294.g_match_info_get_match_count$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_utf8_collate",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_match_info_is_partial_match$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_utf8_collate_key",
+        constants$21.const$1
     );
-    static final MethodHandle g_match_info_is_partial_match$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_is_partial_match",
-        constants$294.g_match_info_is_partial_match$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_utf8_collate_key_for_filename",
+        constants$21.const$1
     );
-    static final FunctionDescriptor g_match_info_expand_references$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_utf8_make_valid",
+        constants$21.const$1
     );
-    static final MethodHandle g_match_info_expand_references$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_expand_references",
-        constants$294.g_match_info_expand_references$FUNC
-    );
-    static final FunctionDescriptor g_match_info_fetch$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_match_info_fetch$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_fetch",
-        constants$294.g_match_info_fetch$FUNC
-    );
-    static final FunctionDescriptor g_match_info_fetch_pos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_match_info_fetch_pos$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_fetch_pos",
-        constants$294.g_match_info_fetch_pos$FUNC
-    );
-    static final FunctionDescriptor g_match_info_fetch_named$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_match_info_fetch_named$MH = RuntimeHelper.downcallHandle(
-        "g_match_info_fetch_named",
-        constants$294.g_match_info_fetch_named$FUNC
-    );
+    static final MemorySegment const$5 = RuntimeHelper.lookupGlobalVariable("g_ascii_table", RuntimeHelper.POINTER);
 }
 
 

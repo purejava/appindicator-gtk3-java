@@ -3,63 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$699 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$699() {}
-    static final FunctionDescriptor g_menu_append_item$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GDBusProxyTypeFunc.class, "apply", constants$332.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$332.const$2
     );
-    static final MethodHandle g_menu_append_item$MH = RuntimeHelper.downcallHandle(
-        "g_menu_append_item",
-        constants$699.g_menu_append_item$FUNC
-    );
-    static final FunctionDescriptor g_menu_remove$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_menu_remove$MH = RuntimeHelper.downcallHandle(
-        "g_menu_remove",
-        constants$699.g_menu_remove$FUNC
-    );
-    static final FunctionDescriptor g_menu_remove_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_remove_all$MH = RuntimeHelper.downcallHandle(
-        "g_menu_remove_all",
-        constants$699.g_menu_remove_all$FUNC
-    );
-    static final FunctionDescriptor g_menu_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_insert$MH = RuntimeHelper.downcallHandle(
-        "g_menu_insert",
-        constants$699.g_menu_insert$FUNC
-    );
-    static final FunctionDescriptor g_menu_prepend$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_prepend$MH = RuntimeHelper.downcallHandle(
-        "g_menu_prepend",
-        constants$699.g_menu_prepend$FUNC
-    );
-    static final FunctionDescriptor g_menu_append$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_append$MH = RuntimeHelper.downcallHandle(
-        "g_menu_append",
-        constants$699.g_menu_append$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("get_name"),
+        RuntimeHelper.POINTER.withName("get_parameter_type"),
+        RuntimeHelper.POINTER.withName("get_state_type"),
+        RuntimeHelper.POINTER.withName("get_state_hint"),
+        RuntimeHelper.POINTER.withName("get_enabled"),
+        RuntimeHelper.POINTER.withName("get_state"),
+        RuntimeHelper.POINTER.withName("change_state"),
+        RuntimeHelper.POINTER.withName("activate")
+    ).withName("_GActionInterface");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GActionInterface.get_name.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$699.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_name"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GActionInterface.get_parameter_type.class, "apply", constants$5.const$2);
 }
 
 

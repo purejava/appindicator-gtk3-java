@@ -2,12 +2,14 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
- * struct {
+ * struct cairo_text_cluster_t {
  *     int num_bytes;
  *     int num_glyphs;
  * };
@@ -15,16 +17,11 @@ import java.lang.foreign.*;
  */
 public class cairo_text_cluster_t {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("num_bytes"),
-        Constants$root.C_INT$LAYOUT.withName("num_glyphs")
-    );
     public static MemoryLayout $LAYOUT() {
-        return cairo_text_cluster_t.$struct$LAYOUT;
+        return constants$1695.const$3;
     }
-    static final VarHandle num_bytes$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("num_bytes"));
     public static VarHandle num_bytes$VH() {
-        return cairo_text_cluster_t.num_bytes$VH;
+        return constants$1695.const$4;
     }
     /**
      * Getter for field:
@@ -33,7 +30,7 @@ public class cairo_text_cluster_t {
      * }
      */
     public static int num_bytes$get(MemorySegment seg) {
-        return (int)cairo_text_cluster_t.num_bytes$VH.get(seg);
+        return (int)constants$1695.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -42,17 +39,16 @@ public class cairo_text_cluster_t {
      * }
      */
     public static void num_bytes$set(MemorySegment seg, int x) {
-        cairo_text_cluster_t.num_bytes$VH.set(seg, x);
+        constants$1695.const$4.set(seg, x);
     }
     public static int num_bytes$get(MemorySegment seg, long index) {
-        return (int)cairo_text_cluster_t.num_bytes$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1695.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void num_bytes$set(MemorySegment seg, long index, int x) {
-        cairo_text_cluster_t.num_bytes$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1695.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle num_glyphs$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("num_glyphs"));
     public static VarHandle num_glyphs$VH() {
-        return cairo_text_cluster_t.num_glyphs$VH;
+        return constants$1695.const$5;
     }
     /**
      * Getter for field:
@@ -61,7 +57,7 @@ public class cairo_text_cluster_t {
      * }
      */
     public static int num_glyphs$get(MemorySegment seg) {
-        return (int)cairo_text_cluster_t.num_glyphs$VH.get(seg);
+        return (int)constants$1695.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -70,20 +66,20 @@ public class cairo_text_cluster_t {
      * }
      */
     public static void num_glyphs$set(MemorySegment seg, int x) {
-        cairo_text_cluster_t.num_glyphs$VH.set(seg, x);
+        constants$1695.const$5.set(seg, x);
     }
     public static int num_glyphs$get(MemorySegment seg, long index) {
-        return (int)cairo_text_cluster_t.num_glyphs$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1695.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void num_glyphs$set(MemorySegment seg, long index, int x) {
-        cairo_text_cluster_t.num_glyphs$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1695.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

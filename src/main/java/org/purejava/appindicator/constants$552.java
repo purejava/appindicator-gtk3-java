@@ -3,62 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$552 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$552() {}
-    static final FunctionDescriptor g_dbus_connection_set_exit_on_close$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_set_exit_on_close$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_set_exit_on_close",
-        constants$552.g_dbus_connection_set_exit_on_close$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_get_capabilities$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_get_capabilities$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_get_capabilities",
-        constants$552.g_dbus_connection_get_capabilities$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_get_flags$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_get_flags",
-        constants$552.g_dbus_connection_get_flags$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_close$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_close$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_close",
-        constants$552.g_dbus_connection_close$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_close_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_close_finish$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_close_finish",
-        constants$552.g_dbus_connection_close_finish$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_close_sync$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_close_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_close_sync",
-        constants$552.g_dbus_connection_close_sync$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GBaseFinalizeFunc.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GClassInitFunc.class, "apply", constants$13.const$4);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GClassFinalizeFunc.class, "apply", constants$13.const$4);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GInstanceInitFunc.class, "apply", constants$13.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GInterfaceInitFunc.class, "apply", constants$13.const$4);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GInterfaceFinalizeFunc.class, "apply", constants$13.const$4);
 }
 
 

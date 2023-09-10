@@ -3,60 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$207 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$207() {}
-    static final FunctionDescriptor g_string_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final MethodHandle g_string_equal$MH = RuntimeHelper.downcallHandle(
-        "g_string_equal",
-        constants$207.g_string_equal$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_aligned_alloc",
+        constants$207.const$0
     );
-    static final FunctionDescriptor g_string_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_aligned_alloc0",
+        constants$207.const$0
     );
-    static final MethodHandle g_string_hash$MH = RuntimeHelper.downcallHandle(
-        "g_string_hash",
-        constants$207.g_string_hash$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_aligned_free",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_string_assign$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final MethodHandle g_string_assign$MH = RuntimeHelper.downcallHandle(
-        "g_string_assign",
-        constants$207.g_string_assign$FUNC
-    );
-    static final FunctionDescriptor g_string_truncate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_string_truncate$MH = RuntimeHelper.downcallHandle(
-        "g_string_truncate",
-        constants$207.g_string_truncate$FUNC
-    );
-    static final FunctionDescriptor g_string_set_size$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_string_set_size$MH = RuntimeHelper.downcallHandle(
-        "g_string_set_size",
-        constants$207.g_string_set_size$FUNC
-    );
-    static final FunctionDescriptor g_string_insert_len$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_string_insert_len$MH = RuntimeHelper.downcallHandle(
-        "g_string_insert_len",
-        constants$207.g_string_insert_len$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_aligned_free_sized",
+        constants$207.const$4
     );
 }
 

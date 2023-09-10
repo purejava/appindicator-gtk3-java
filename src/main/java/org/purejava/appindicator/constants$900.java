@@ -3,61 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$900 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$900() {}
-    static final FunctionDescriptor pango_matrix_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle pango_matrix_free$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_free",
-        constants$900.pango_matrix_free$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_bytes_needed",
+        constants$900.const$0
     );
-    static final FunctionDescriptor pango_matrix_translate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_to_blob",
+        constants$482.const$3
     );
-    static final MethodHandle pango_matrix_translate$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_translate",
-        constants$900.pango_matrix_translate$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_to_gerror",
+        constants$9.const$0
     );
-    static final FunctionDescriptor pango_matrix_scale$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle pango_matrix_scale$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_scale",
-        constants$900.pango_matrix_scale$FUNC
-    );
-    static final FunctionDescriptor pango_matrix_rotate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle pango_matrix_rotate$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_rotate",
-        constants$900.pango_matrix_rotate$FUNC
-    );
-    static final FunctionDescriptor pango_matrix_concat$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_matrix_concat$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_concat",
-        constants$900.pango_matrix_concat$FUNC
-    );
-    static final FunctionDescriptor pango_matrix_transform_point$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_matrix_transform_point$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_transform_point",
-        constants$900.pango_matrix_transform_point$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_sender",
+        constants$5.const$2
     );
 }
 

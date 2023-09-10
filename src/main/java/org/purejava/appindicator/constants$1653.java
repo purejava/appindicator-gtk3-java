@@ -3,57 +3,61 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1653 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1653() {}
-    static final FunctionDescriptor gtk_icon_view_get_item_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_item_orientation$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_item_orientation",
-        constants$1653.gtk_icon_view_get_item_orientation$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_set_columns$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_set_columns$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_columns",
-        constants$1653.gtk_icon_view_set_columns$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_get_columns$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_columns$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_columns",
-        constants$1653.gtk_icon_view_get_columns$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_set_item_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_set_item_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_item_width",
-        constants$1653.gtk_icon_view_set_item_width$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_get_item_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_item_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_item_width",
-        constants$1653.gtk_icon_view_get_item_width$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_set_spacing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_set_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_spacing",
-        constants$1653.gtk_icon_view_set_spacing$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("__pos"),
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("__count"),
+            MemoryLayout.unionLayout(
+                JAVA_INT.withName("__wch"),
+                MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("__wchb")
+            ).withName("__value")
+        ).withName("__state")
+    ).withName("_G_fpos64_t");
+    static final VarHandle const$1 = constants$1653.const$0.varHandle(MemoryLayout.PathElement.groupElement("__pos"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("_flags"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("_IO_read_ptr"),
+        RuntimeHelper.POINTER.withName("_IO_read_end"),
+        RuntimeHelper.POINTER.withName("_IO_read_base"),
+        RuntimeHelper.POINTER.withName("_IO_write_base"),
+        RuntimeHelper.POINTER.withName("_IO_write_ptr"),
+        RuntimeHelper.POINTER.withName("_IO_write_end"),
+        RuntimeHelper.POINTER.withName("_IO_buf_base"),
+        RuntimeHelper.POINTER.withName("_IO_buf_end"),
+        RuntimeHelper.POINTER.withName("_IO_save_base"),
+        RuntimeHelper.POINTER.withName("_IO_backup_base"),
+        RuntimeHelper.POINTER.withName("_IO_save_end"),
+        RuntimeHelper.POINTER.withName("_markers"),
+        RuntimeHelper.POINTER.withName("_chain"),
+        JAVA_INT.withName("_fileno"),
+        JAVA_INT.withName("_flags2"),
+        JAVA_LONG.withName("_old_offset"),
+        JAVA_SHORT.withName("_cur_column"),
+        JAVA_BYTE.withName("_vtable_offset"),
+        MemoryLayout.sequenceLayout(1, JAVA_BYTE).withName("_shortbuf"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("_lock"),
+        JAVA_LONG.withName("_offset"),
+        RuntimeHelper.POINTER.withName("_codecvt"),
+        RuntimeHelper.POINTER.withName("_wide_data"),
+        RuntimeHelper.POINTER.withName("_freeres_list"),
+        RuntimeHelper.POINTER.withName("_freeres_buf"),
+        JAVA_LONG.withName("__pad5"),
+        JAVA_INT.withName("_mode"),
+        MemoryLayout.sequenceLayout(20, JAVA_BYTE).withName("_unused2")
+    ).withName("_IO_FILE");
+    static final VarHandle const$3 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_flags"));
+    static final VarHandle const$4 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_IO_read_ptr"));
+    static final VarHandle const$5 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_IO_read_end"));
 }
 
 

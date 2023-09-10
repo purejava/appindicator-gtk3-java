@@ -3,58 +3,44 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$33 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$33() {}
-    static final FunctionDescriptor g_atomic_pointer_add$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final MethodHandle g_atomic_pointer_add$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_pointer_add",
-        constants$33.g_atomic_pointer_add$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_array_insert_vals",
+        constants$33.const$0
     );
-    static final FunctionDescriptor g_atomic_pointer_and$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_array_set_size",
+        constants$21.const$3
     );
-    static final MethodHandle g_atomic_pointer_and$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_pointer_and",
-        constants$33.g_atomic_pointer_and$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_array_remove_index",
+        constants$21.const$3
     );
-    static final FunctionDescriptor g_atomic_pointer_or$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_array_remove_index_fast",
+        constants$21.const$3
     );
-    static final MethodHandle g_atomic_pointer_or$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_pointer_or",
-        constants$33.g_atomic_pointer_or$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final FunctionDescriptor g_atomic_pointer_xor$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_atomic_pointer_xor$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_pointer_xor",
-        constants$33.g_atomic_pointer_xor$FUNC
-    );
-    static final FunctionDescriptor g_atomic_int_exchange_and_add$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_atomic_int_exchange_and_add$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_int_exchange_and_add",
-        constants$33.g_atomic_int_exchange_and_add$FUNC
-    );
-    static final FunctionDescriptor g_quark_try_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_quark_try_string$MH = RuntimeHelper.downcallHandle(
-        "g_quark_try_string",
-        constants$33.g_quark_try_string$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_array_remove_range",
+        constants$33.const$5
     );
 }
 

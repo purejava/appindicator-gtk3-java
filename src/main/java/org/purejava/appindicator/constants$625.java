@@ -3,70 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$625 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$625() {}
-    static final FunctionDescriptor g_file_set_display_name_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$622.const$5.varHandle(MemoryLayout.PathElement.groupElement("finalize"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GObjectClass.dispatch_properties_changed.class, "apply", constants$42.const$4);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$42.const$4
     );
-    static final MethodHandle g_file_set_display_name_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_display_name_finish",
-        constants$625.g_file_set_display_name_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_delete$MH = RuntimeHelper.downcallHandle(
-        "g_file_delete",
-        constants$625.g_file_delete$FUNC
-    );
-    static final FunctionDescriptor g_file_delete_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_delete_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_delete_async",
-        constants$625.g_file_delete_async$FUNC
-    );
-    static final FunctionDescriptor g_file_delete_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_delete_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_delete_finish",
-        constants$625.g_file_delete_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_trash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_trash$MH = RuntimeHelper.downcallHandle(
-        "g_file_trash",
-        constants$625.g_file_trash$FUNC
-    );
-    static final FunctionDescriptor g_file_trash_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_trash_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_trash_async",
-        constants$625.g_file_trash_async$FUNC
-    );
+    static final VarHandle const$3 = constants$622.const$5.varHandle(MemoryLayout.PathElement.groupElement("dispatch_properties_changed"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GObjectClass.notify.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$622.const$5.varHandle(MemoryLayout.PathElement.groupElement("notify"));
 }
 
 

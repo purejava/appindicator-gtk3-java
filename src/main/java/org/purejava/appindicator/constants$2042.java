@@ -2,18 +2,52 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2042 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2042() {}
-    static final MemorySegment GTK_STYLE_CLASS_WIDE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("wide");
-    static final MemorySegment GTK_STYLE_REGION_ROW$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("row");
-    static final MemorySegment GTK_STYLE_REGION_COLUMN$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("column");
-    static final MemorySegment GTK_STYLE_REGION_COLUMN_HEADER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("column-header");
-    static final MemorySegment GTK_STYLE_REGION_TAB$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("tab");
-    static final MemorySegment GTK_LEVEL_BAR_OFFSET_LOW$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("low");
+    static final VarHandle const$0 = constants$2041.const$2.varHandle(MemoryLayout.PathElement.groupElement("threads_leave"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_misc_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_misc_threads_enter",
+        constants$13.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_misc_threads_leave",
+        constants$13.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_misc_get_instance",
+        constants$35.const$2
+    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    RuntimeHelper.POINTER.withName("g_class")
+                ).withName("g_type_instance"),
+                JAVA_INT.withName("ref_count"),
+                MemoryLayout.paddingLayout(4),
+                RuntimeHelper.POINTER.withName("qdata")
+            ).withName("parent"),
+            RuntimeHelper.POINTER.withName("description"),
+            RuntimeHelper.POINTER.withName("name"),
+            RuntimeHelper.POINTER.withName("accessible_parent"),
+            JAVA_INT.withName("role"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("relation_set"),
+            JAVA_INT.withName("layer"),
+            MemoryLayout.paddingLayout(4)
+        ).withName("parent")
+    ).withName("_AtkNoOpObject");
 }
 
 

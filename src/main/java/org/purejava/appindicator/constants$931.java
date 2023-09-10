@@ -3,52 +3,49 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$931 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$931() {}
-    static final FunctionDescriptor pango_attr_list_get_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_get_cached_property_names",
+        constants$5.const$2
     );
-    static final MethodHandle pango_attr_list_get_attributes$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_get_attributes",
-        constants$931.pango_attr_list_get_attributes$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_dbus_proxy_call$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor pango_attr_list_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_call",
+        constants$931.const$2
     );
-    static final MethodHandle pango_attr_list_equal$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_equal",
-        constants$931.pango_attr_list_equal$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_call_finish",
+        constants$23.const$0
     );
-    static final FunctionDescriptor pango_attr_list_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle pango_attr_list_to_string$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_to_string",
-        constants$931.pango_attr_list_to_string$FUNC
-    );
-    static final FunctionDescriptor pango_attr_list_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attr_list_from_string$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_from_string",
-        constants$931.pango_attr_list_from_string$FUNC
-    );
-    static final FunctionDescriptor pango_attr_iterator_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_attr_iterator_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_iterator_get_type",
-        constants$931.pango_attr_iterator_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_attr_list_get_iterator$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attr_list_get_iterator$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_get_iterator",
-        constants$931.pango_attr_list_get_iterator$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_call_sync",
+        constants$931.const$5
     );
 }
 

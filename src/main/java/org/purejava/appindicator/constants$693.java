@@ -3,52 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$693 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$693() {}
-    static final FunctionDescriptor g_memory_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_memory_monitor_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_memory_monitor_get_type",
-        constants$693.g_memory_monitor_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_value_set_string_take_ownership",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_memory_monitor_dup_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_memory_monitor_dup_default$MH = RuntimeHelper.downcallHandle(
-        "g_memory_monitor_dup_default",
-        constants$693.g_memory_monitor_dup_default$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GAsyncReadyCallback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GFileProgressCallback.class, "apply", constants$561.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$561.const$3
     );
-    static final FunctionDescriptor GReallocFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final FunctionDescriptor GReallocFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle GReallocFunc_UP$MH = RuntimeHelper.upcallHandle(GReallocFunc.class, "apply", constants$693.GReallocFunc_UP$FUNC);
-    static final FunctionDescriptor GReallocFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle GReallocFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$693.GReallocFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_memory_output_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_memory_output_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_memory_output_stream_get_type",
-        constants$693.g_memory_output_stream_get_type$FUNC
-    );
-    static final FunctionDescriptor g_memory_output_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_memory_output_stream_new$MH = RuntimeHelper.downcallHandle(
-        "g_memory_output_stream_new",
-        constants$693.g_memory_output_stream_new$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GFileReadMoreCallback.class, "apply", constants$62.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$62.const$2
     );
 }
 

@@ -3,64 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1417 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1417() {}
-    static final FunctionDescriptor gtk_target_list_add_text_targets$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_target_list_add_text_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_add_text_targets",
-        constants$1417.gtk_target_list_add_text_targets$FUNC
-    );
-    static final FunctionDescriptor gtk_target_list_add_rich_text_targets$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_target_list_add_rich_text_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_add_rich_text_targets",
-        constants$1417.gtk_target_list_add_rich_text_targets$FUNC
-    );
-    static final FunctionDescriptor gtk_target_list_add_image_targets$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_target_list_add_image_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_add_image_targets",
-        constants$1417.gtk_target_list_add_image_targets$FUNC
-    );
-    static final FunctionDescriptor gtk_target_list_add_uri_targets$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_target_list_add_uri_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_add_uri_targets",
-        constants$1417.gtk_target_list_add_uri_targets$FUNC
-    );
-    static final FunctionDescriptor gtk_target_list_add_table$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_target_list_add_table$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_add_table",
-        constants$1417.gtk_target_list_add_table$FUNC
-    );
-    static final FunctionDescriptor gtk_target_list_remove$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_target_list_remove$MH = RuntimeHelper.downcallHandle(
-        "gtk_target_list_remove",
-        constants$1417.gtk_target_list_remove$FUNC
-    );
+    static final VarHandle const$0 = constants$1416.const$5.varHandle(MemoryLayout.PathElement.groupElement("unused"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_destroy_func_t.class, "apply", constants$13.const$1);
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("tag"),
+        JAVA_INT.withName("value"),
+        JAVA_INT.withName("start"),
+        JAVA_INT.withName("end")
+    ).withName("hb_feature_t");
+    static final VarHandle const$3 = constants$1417.const$2.varHandle(MemoryLayout.PathElement.groupElement("tag"));
+    static final VarHandle const$4 = constants$1417.const$2.varHandle(MemoryLayout.PathElement.groupElement("value"));
+    static final VarHandle const$5 = constants$1417.const$2.varHandle(MemoryLayout.PathElement.groupElement("start"));
 }
 
 

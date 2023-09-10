@@ -4,16 +4,1551 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 public class app_indicator_h_11 extends app_indicator_h_10 {
 
-    public static MethodHandle pango_language_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$903.pango_language_to_string$MH,"pango_language_to_string");
+    public static MethodHandle pango_coverage_set$MH() {
+        return RuntimeHelper.requireNonNull(constants$1527.const$1,"pango_coverage_set");
     }
     /**
      * {@snippet :
-     * char* pango_language_to_string(PangoLanguage* language);
+     * void pango_coverage_set(struct _PangoCoverage* coverage, int index_, enum PangoCoverageLevel level);
+     * }
+     */
+    public static void pango_coverage_set(MemorySegment coverage, int index_, int level) {
+        var mh$ = pango_coverage_set$MH();
+        try {
+            mh$.invokeExact(coverage, index_, level);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_coverage_max$MH() {
+        return RuntimeHelper.requireNonNull(constants$1527.const$2,"pango_coverage_max");
+    }
+    /**
+     * {@snippet :
+     * void pango_coverage_max(struct _PangoCoverage* coverage, struct _PangoCoverage* other);
+     * }
+     */
+    public static void pango_coverage_max(MemorySegment coverage, MemorySegment other) {
+        var mh$ = pango_coverage_max$MH();
+        try {
+            mh$.invokeExact(coverage, other);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_coverage_to_bytes$MH() {
+        return RuntimeHelper.requireNonNull(constants$1527.const$3,"pango_coverage_to_bytes");
+    }
+    /**
+     * {@snippet :
+     * void pango_coverage_to_bytes(struct _PangoCoverage* coverage, unsigned char** bytes, int* n_bytes);
+     * }
+     */
+    public static void pango_coverage_to_bytes(MemorySegment coverage, MemorySegment bytes, MemorySegment n_bytes) {
+        var mh$ = pango_coverage_to_bytes$MH();
+        try {
+            mh$.invokeExact(coverage, bytes, n_bytes);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_coverage_from_bytes$MH() {
+        return RuntimeHelper.requireNonNull(constants$1527.const$4,"pango_coverage_from_bytes");
+    }
+    /**
+     * {@snippet :
+     * struct _PangoCoverage* pango_coverage_from_bytes(unsigned char* bytes, int n_bytes);
+     * }
+     */
+    public static MemorySegment pango_coverage_from_bytes(MemorySegment bytes, int n_bytes) {
+        var mh$ = pango_coverage_from_bytes$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(bytes, n_bytes);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * typedef struct _PangoCoverage* PangoCoverage_autoptr;
+     * }
+     */
+    public static final AddressLayout PangoCoverage_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* PangoCoverage_listautoptr;
+     * }
+     */
+    public static final AddressLayout PangoCoverage_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* PangoCoverage_slistautoptr;
+     * }
+     */
+    public static final AddressLayout PangoCoverage_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* PangoCoverage_queueautoptr;
+     * }
+     */
+    public static final AddressLayout PangoCoverage_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef unsigned int PangoGlyph;
+     * }
+     */
+    public static final OfInt PangoGlyph = JAVA_INT;
+    public static MethodHandle pango_units_from_double$MH() {
+        return RuntimeHelper.requireNonNull(constants$1527.const$6,"pango_units_from_double");
+    }
+    /**
+     * {@snippet :
+     * int pango_units_from_double(double d);
+     * }
+     */
+    public static int pango_units_from_double(double d) {
+        var mh$ = pango_units_from_double$MH();
+        try {
+            return (int)mh$.invokeExact(d);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_units_to_double$MH() {
+        return RuntimeHelper.requireNonNull(constants$1528.const$1,"pango_units_to_double");
+    }
+    /**
+     * {@snippet :
+     * double pango_units_to_double(int i);
+     * }
+     */
+    public static double pango_units_to_double(int i) {
+        var mh$ = pango_units_to_double$MH();
+        try {
+            return (double)mh$.invokeExact(i);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_extents_to_pixels$MH() {
+        return RuntimeHelper.requireNonNull(constants$1529.const$1,"pango_extents_to_pixels");
+    }
+    /**
+     * {@snippet :
+     * void pango_extents_to_pixels(struct _PangoRectangle* inclusive, struct _PangoRectangle* nearest);
+     * }
+     */
+    public static void pango_extents_to_pixels(MemorySegment inclusive, MemorySegment nearest) {
+        var mh$ = pango_extents_to_pixels$MH();
+        try {
+            mh$.invokeExact(inclusive, nearest);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum PangoGravity.PANGO_GRAVITY_SOUTH = 0;
+     * }
+     */
+    public static int PANGO_GRAVITY_SOUTH() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoGravity.PANGO_GRAVITY_EAST = 1;
+     * }
+     */
+    public static int PANGO_GRAVITY_EAST() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoGravity.PANGO_GRAVITY_NORTH = 2;
+     * }
+     */
+    public static int PANGO_GRAVITY_NORTH() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoGravity.PANGO_GRAVITY_WEST = 3;
+     * }
+     */
+    public static int PANGO_GRAVITY_WEST() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoGravity.PANGO_GRAVITY_AUTO = 4;
+     * }
+     */
+    public static int PANGO_GRAVITY_AUTO() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoGravityHint.PANGO_GRAVITY_HINT_NATURAL = 0;
+     * }
+     */
+    public static int PANGO_GRAVITY_HINT_NATURAL() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoGravityHint.PANGO_GRAVITY_HINT_STRONG = 1;
+     * }
+     */
+    public static int PANGO_GRAVITY_HINT_STRONG() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoGravityHint.PANGO_GRAVITY_HINT_LINE = 2;
+     * }
+     */
+    public static int PANGO_GRAVITY_HINT_LINE() {
+        return (int)2L;
+    }
+    public static MethodHandle pango_matrix_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$1530.const$3,"pango_matrix_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long pango_matrix_get_type();
+     * }
+     */
+    public static long pango_matrix_get_type() {
+        var mh$ = pango_matrix_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_matrix_copy$MH() {
+        return RuntimeHelper.requireNonNull(constants$1530.const$4,"pango_matrix_copy");
+    }
+    /**
+     * {@snippet :
+     * struct _PangoMatrix* pango_matrix_copy(struct _PangoMatrix* matrix);
+     * }
+     */
+    public static MemorySegment pango_matrix_copy(MemorySegment matrix) {
+        var mh$ = pango_matrix_copy$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(matrix);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_matrix_free$MH() {
+        return RuntimeHelper.requireNonNull(constants$1530.const$5,"pango_matrix_free");
+    }
+    /**
+     * {@snippet :
+     * void pango_matrix_free(struct _PangoMatrix* matrix);
+     * }
+     */
+    public static void pango_matrix_free(MemorySegment matrix) {
+        var mh$ = pango_matrix_free$MH();
+        try {
+            mh$.invokeExact(matrix);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_matrix_translate$MH() {
+        return RuntimeHelper.requireNonNull(constants$1531.const$1,"pango_matrix_translate");
+    }
+    /**
+     * {@snippet :
+     * void pango_matrix_translate(struct _PangoMatrix* matrix, double tx, double ty);
+     * }
+     */
+    public static void pango_matrix_translate(MemorySegment matrix, double tx, double ty) {
+        var mh$ = pango_matrix_translate$MH();
+        try {
+            mh$.invokeExact(matrix, tx, ty);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_matrix_scale$MH() {
+        return RuntimeHelper.requireNonNull(constants$1531.const$2,"pango_matrix_scale");
+    }
+    /**
+     * {@snippet :
+     * void pango_matrix_scale(struct _PangoMatrix* matrix, double scale_x, double scale_y);
+     * }
+     */
+    public static void pango_matrix_scale(MemorySegment matrix, double scale_x, double scale_y) {
+        var mh$ = pango_matrix_scale$MH();
+        try {
+            mh$.invokeExact(matrix, scale_x, scale_y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_matrix_rotate$MH() {
+        return RuntimeHelper.requireNonNull(constants$1531.const$3,"pango_matrix_rotate");
+    }
+    /**
+     * {@snippet :
+     * void pango_matrix_rotate(struct _PangoMatrix* matrix, double degrees);
+     * }
+     */
+    public static void pango_matrix_rotate(MemorySegment matrix, double degrees) {
+        var mh$ = pango_matrix_rotate$MH();
+        try {
+            mh$.invokeExact(matrix, degrees);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_matrix_concat$MH() {
+        return RuntimeHelper.requireNonNull(constants$1531.const$4,"pango_matrix_concat");
+    }
+    /**
+     * {@snippet :
+     * void pango_matrix_concat(struct _PangoMatrix* matrix, struct _PangoMatrix* new_matrix);
+     * }
+     */
+    public static void pango_matrix_concat(MemorySegment matrix, MemorySegment new_matrix) {
+        var mh$ = pango_matrix_concat$MH();
+        try {
+            mh$.invokeExact(matrix, new_matrix);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_matrix_transform_point$MH() {
+        return RuntimeHelper.requireNonNull(constants$1531.const$5,"pango_matrix_transform_point");
+    }
+    /**
+     * {@snippet :
+     * void pango_matrix_transform_point(struct _PangoMatrix* matrix, double* x, double* y);
+     * }
+     */
+    public static void pango_matrix_transform_point(MemorySegment matrix, MemorySegment x, MemorySegment y) {
+        var mh$ = pango_matrix_transform_point$MH();
+        try {
+            mh$.invokeExact(matrix, x, y);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_matrix_transform_distance$MH() {
+        return RuntimeHelper.requireNonNull(constants$1532.const$0,"pango_matrix_transform_distance");
+    }
+    /**
+     * {@snippet :
+     * void pango_matrix_transform_distance(struct _PangoMatrix* matrix, double* dx, double* dy);
+     * }
+     */
+    public static void pango_matrix_transform_distance(MemorySegment matrix, MemorySegment dx, MemorySegment dy) {
+        var mh$ = pango_matrix_transform_distance$MH();
+        try {
+            mh$.invokeExact(matrix, dx, dy);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_matrix_transform_rectangle$MH() {
+        return RuntimeHelper.requireNonNull(constants$1532.const$1,"pango_matrix_transform_rectangle");
+    }
+    /**
+     * {@snippet :
+     * void pango_matrix_transform_rectangle(struct _PangoMatrix* matrix, struct _PangoRectangle* rect);
+     * }
+     */
+    public static void pango_matrix_transform_rectangle(MemorySegment matrix, MemorySegment rect) {
+        var mh$ = pango_matrix_transform_rectangle$MH();
+        try {
+            mh$.invokeExact(matrix, rect);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_matrix_transform_pixel_rectangle$MH() {
+        return RuntimeHelper.requireNonNull(constants$1532.const$2,"pango_matrix_transform_pixel_rectangle");
+    }
+    /**
+     * {@snippet :
+     * void pango_matrix_transform_pixel_rectangle(struct _PangoMatrix* matrix, struct _PangoRectangle* rect);
+     * }
+     */
+    public static void pango_matrix_transform_pixel_rectangle(MemorySegment matrix, MemorySegment rect) {
+        var mh$ = pango_matrix_transform_pixel_rectangle$MH();
+        try {
+            mh$.invokeExact(matrix, rect);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_matrix_get_font_scale_factor$MH() {
+        return RuntimeHelper.requireNonNull(constants$1532.const$3,"pango_matrix_get_font_scale_factor");
+    }
+    /**
+     * {@snippet :
+     * double pango_matrix_get_font_scale_factor(struct _PangoMatrix* matrix);
+     * }
+     */
+    public static double pango_matrix_get_font_scale_factor(MemorySegment matrix) {
+        var mh$ = pango_matrix_get_font_scale_factor$MH();
+        try {
+            return (double)mh$.invokeExact(matrix);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_matrix_get_font_scale_factors$MH() {
+        return RuntimeHelper.requireNonNull(constants$1532.const$4,"pango_matrix_get_font_scale_factors");
+    }
+    /**
+     * {@snippet :
+     * void pango_matrix_get_font_scale_factors(struct _PangoMatrix* matrix, double* xscale, double* yscale);
+     * }
+     */
+    public static void pango_matrix_get_font_scale_factors(MemorySegment matrix, MemorySegment xscale, MemorySegment yscale) {
+        var mh$ = pango_matrix_get_font_scale_factors$MH();
+        try {
+            mh$.invokeExact(matrix, xscale, yscale);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_matrix_get_slant_ratio$MH() {
+        return RuntimeHelper.requireNonNull(constants$1532.const$5,"pango_matrix_get_slant_ratio");
+    }
+    /**
+     * {@snippet :
+     * double pango_matrix_get_slant_ratio(struct _PangoMatrix* matrix);
+     * }
+     */
+    public static double pango_matrix_get_slant_ratio(MemorySegment matrix) {
+        var mh$ = pango_matrix_get_slant_ratio$MH();
+        try {
+            return (double)mh$.invokeExact(matrix);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_INVALID_CODE = -1;
+     * }
+     */
+    public static int PANGO_SCRIPT_INVALID_CODE() {
+        return (int)-1L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_COMMON = 0;
+     * }
+     */
+    public static int PANGO_SCRIPT_COMMON() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_INHERITED = 1;
+     * }
+     */
+    public static int PANGO_SCRIPT_INHERITED() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_ARABIC = 2;
+     * }
+     */
+    public static int PANGO_SCRIPT_ARABIC() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_ARMENIAN = 3;
+     * }
+     */
+    public static int PANGO_SCRIPT_ARMENIAN() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_BENGALI = 4;
+     * }
+     */
+    public static int PANGO_SCRIPT_BENGALI() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_BOPOMOFO = 5;
+     * }
+     */
+    public static int PANGO_SCRIPT_BOPOMOFO() {
+        return (int)5L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_CHEROKEE = 6;
+     * }
+     */
+    public static int PANGO_SCRIPT_CHEROKEE() {
+        return (int)6L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_COPTIC = 7;
+     * }
+     */
+    public static int PANGO_SCRIPT_COPTIC() {
+        return (int)7L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_CYRILLIC = 8;
+     * }
+     */
+    public static int PANGO_SCRIPT_CYRILLIC() {
+        return (int)8L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_DESERET = 9;
+     * }
+     */
+    public static int PANGO_SCRIPT_DESERET() {
+        return (int)9L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_DEVANAGARI = 10;
+     * }
+     */
+    public static int PANGO_SCRIPT_DEVANAGARI() {
+        return (int)10L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_ETHIOPIC = 11;
+     * }
+     */
+    public static int PANGO_SCRIPT_ETHIOPIC() {
+        return (int)11L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_GEORGIAN = 12;
+     * }
+     */
+    public static int PANGO_SCRIPT_GEORGIAN() {
+        return (int)12L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_GOTHIC = 13;
+     * }
+     */
+    public static int PANGO_SCRIPT_GOTHIC() {
+        return (int)13L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_GREEK = 14;
+     * }
+     */
+    public static int PANGO_SCRIPT_GREEK() {
+        return (int)14L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_GUJARATI = 15;
+     * }
+     */
+    public static int PANGO_SCRIPT_GUJARATI() {
+        return (int)15L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_GURMUKHI = 16;
+     * }
+     */
+    public static int PANGO_SCRIPT_GURMUKHI() {
+        return (int)16L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_HAN = 17;
+     * }
+     */
+    public static int PANGO_SCRIPT_HAN() {
+        return (int)17L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_HANGUL = 18;
+     * }
+     */
+    public static int PANGO_SCRIPT_HANGUL() {
+        return (int)18L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_HEBREW = 19;
+     * }
+     */
+    public static int PANGO_SCRIPT_HEBREW() {
+        return (int)19L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_HIRAGANA = 20;
+     * }
+     */
+    public static int PANGO_SCRIPT_HIRAGANA() {
+        return (int)20L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_KANNADA = 21;
+     * }
+     */
+    public static int PANGO_SCRIPT_KANNADA() {
+        return (int)21L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_KATAKANA = 22;
+     * }
+     */
+    public static int PANGO_SCRIPT_KATAKANA() {
+        return (int)22L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_KHMER = 23;
+     * }
+     */
+    public static int PANGO_SCRIPT_KHMER() {
+        return (int)23L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_LAO = 24;
+     * }
+     */
+    public static int PANGO_SCRIPT_LAO() {
+        return (int)24L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_LATIN = 25;
+     * }
+     */
+    public static int PANGO_SCRIPT_LATIN() {
+        return (int)25L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_MALAYALAM = 26;
+     * }
+     */
+    public static int PANGO_SCRIPT_MALAYALAM() {
+        return (int)26L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_MONGOLIAN = 27;
+     * }
+     */
+    public static int PANGO_SCRIPT_MONGOLIAN() {
+        return (int)27L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_MYANMAR = 28;
+     * }
+     */
+    public static int PANGO_SCRIPT_MYANMAR() {
+        return (int)28L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_OGHAM = 29;
+     * }
+     */
+    public static int PANGO_SCRIPT_OGHAM() {
+        return (int)29L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_OLD_ITALIC = 30;
+     * }
+     */
+    public static int PANGO_SCRIPT_OLD_ITALIC() {
+        return (int)30L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_ORIYA = 31;
+     * }
+     */
+    public static int PANGO_SCRIPT_ORIYA() {
+        return (int)31L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_RUNIC = 32;
+     * }
+     */
+    public static int PANGO_SCRIPT_RUNIC() {
+        return (int)32L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_SINHALA = 33;
+     * }
+     */
+    public static int PANGO_SCRIPT_SINHALA() {
+        return (int)33L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_SYRIAC = 34;
+     * }
+     */
+    public static int PANGO_SCRIPT_SYRIAC() {
+        return (int)34L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_TAMIL = 35;
+     * }
+     */
+    public static int PANGO_SCRIPT_TAMIL() {
+        return (int)35L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_TELUGU = 36;
+     * }
+     */
+    public static int PANGO_SCRIPT_TELUGU() {
+        return (int)36L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_THAANA = 37;
+     * }
+     */
+    public static int PANGO_SCRIPT_THAANA() {
+        return (int)37L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_THAI = 38;
+     * }
+     */
+    public static int PANGO_SCRIPT_THAI() {
+        return (int)38L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_TIBETAN = 39;
+     * }
+     */
+    public static int PANGO_SCRIPT_TIBETAN() {
+        return (int)39L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_CANADIAN_ABORIGINAL = 40;
+     * }
+     */
+    public static int PANGO_SCRIPT_CANADIAN_ABORIGINAL() {
+        return (int)40L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_YI = 41;
+     * }
+     */
+    public static int PANGO_SCRIPT_YI() {
+        return (int)41L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_TAGALOG = 42;
+     * }
+     */
+    public static int PANGO_SCRIPT_TAGALOG() {
+        return (int)42L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_HANUNOO = 43;
+     * }
+     */
+    public static int PANGO_SCRIPT_HANUNOO() {
+        return (int)43L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_BUHID = 44;
+     * }
+     */
+    public static int PANGO_SCRIPT_BUHID() {
+        return (int)44L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_TAGBANWA = 45;
+     * }
+     */
+    public static int PANGO_SCRIPT_TAGBANWA() {
+        return (int)45L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_BRAILLE = 46;
+     * }
+     */
+    public static int PANGO_SCRIPT_BRAILLE() {
+        return (int)46L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_CYPRIOT = 47;
+     * }
+     */
+    public static int PANGO_SCRIPT_CYPRIOT() {
+        return (int)47L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_LIMBU = 48;
+     * }
+     */
+    public static int PANGO_SCRIPT_LIMBU() {
+        return (int)48L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_OSMANYA = 49;
+     * }
+     */
+    public static int PANGO_SCRIPT_OSMANYA() {
+        return (int)49L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_SHAVIAN = 50;
+     * }
+     */
+    public static int PANGO_SCRIPT_SHAVIAN() {
+        return (int)50L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_LINEAR_B = 51;
+     * }
+     */
+    public static int PANGO_SCRIPT_LINEAR_B() {
+        return (int)51L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_TAI_LE = 52;
+     * }
+     */
+    public static int PANGO_SCRIPT_TAI_LE() {
+        return (int)52L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_UGARITIC = 53;
+     * }
+     */
+    public static int PANGO_SCRIPT_UGARITIC() {
+        return (int)53L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_NEW_TAI_LUE = 54;
+     * }
+     */
+    public static int PANGO_SCRIPT_NEW_TAI_LUE() {
+        return (int)54L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_BUGINESE = 55;
+     * }
+     */
+    public static int PANGO_SCRIPT_BUGINESE() {
+        return (int)55L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_GLAGOLITIC = 56;
+     * }
+     */
+    public static int PANGO_SCRIPT_GLAGOLITIC() {
+        return (int)56L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_TIFINAGH = 57;
+     * }
+     */
+    public static int PANGO_SCRIPT_TIFINAGH() {
+        return (int)57L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_SYLOTI_NAGRI = 58;
+     * }
+     */
+    public static int PANGO_SCRIPT_SYLOTI_NAGRI() {
+        return (int)58L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_OLD_PERSIAN = 59;
+     * }
+     */
+    public static int PANGO_SCRIPT_OLD_PERSIAN() {
+        return (int)59L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_KHAROSHTHI = 60;
+     * }
+     */
+    public static int PANGO_SCRIPT_KHAROSHTHI() {
+        return (int)60L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_UNKNOWN = 61;
+     * }
+     */
+    public static int PANGO_SCRIPT_UNKNOWN() {
+        return (int)61L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_BALINESE = 62;
+     * }
+     */
+    public static int PANGO_SCRIPT_BALINESE() {
+        return (int)62L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_CUNEIFORM = 63;
+     * }
+     */
+    public static int PANGO_SCRIPT_CUNEIFORM() {
+        return (int)63L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_PHOENICIAN = 64;
+     * }
+     */
+    public static int PANGO_SCRIPT_PHOENICIAN() {
+        return (int)64L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_PHAGS_PA = 65;
+     * }
+     */
+    public static int PANGO_SCRIPT_PHAGS_PA() {
+        return (int)65L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_NKO = 66;
+     * }
+     */
+    public static int PANGO_SCRIPT_NKO() {
+        return (int)66L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_KAYAH_LI = 67;
+     * }
+     */
+    public static int PANGO_SCRIPT_KAYAH_LI() {
+        return (int)67L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_LEPCHA = 68;
+     * }
+     */
+    public static int PANGO_SCRIPT_LEPCHA() {
+        return (int)68L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_REJANG = 69;
+     * }
+     */
+    public static int PANGO_SCRIPT_REJANG() {
+        return (int)69L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_SUNDANESE = 70;
+     * }
+     */
+    public static int PANGO_SCRIPT_SUNDANESE() {
+        return (int)70L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_SAURASHTRA = 71;
+     * }
+     */
+    public static int PANGO_SCRIPT_SAURASHTRA() {
+        return (int)71L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_CHAM = 72;
+     * }
+     */
+    public static int PANGO_SCRIPT_CHAM() {
+        return (int)72L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_OL_CHIKI = 73;
+     * }
+     */
+    public static int PANGO_SCRIPT_OL_CHIKI() {
+        return (int)73L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_VAI = 74;
+     * }
+     */
+    public static int PANGO_SCRIPT_VAI() {
+        return (int)74L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_CARIAN = 75;
+     * }
+     */
+    public static int PANGO_SCRIPT_CARIAN() {
+        return (int)75L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_LYCIAN = 76;
+     * }
+     */
+    public static int PANGO_SCRIPT_LYCIAN() {
+        return (int)76L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_LYDIAN = 77;
+     * }
+     */
+    public static int PANGO_SCRIPT_LYDIAN() {
+        return (int)77L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_BATAK = 78;
+     * }
+     */
+    public static int PANGO_SCRIPT_BATAK() {
+        return (int)78L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_BRAHMI = 79;
+     * }
+     */
+    public static int PANGO_SCRIPT_BRAHMI() {
+        return (int)79L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_MANDAIC = 80;
+     * }
+     */
+    public static int PANGO_SCRIPT_MANDAIC() {
+        return (int)80L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_CHAKMA = 81;
+     * }
+     */
+    public static int PANGO_SCRIPT_CHAKMA() {
+        return (int)81L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_MEROITIC_CURSIVE = 82;
+     * }
+     */
+    public static int PANGO_SCRIPT_MEROITIC_CURSIVE() {
+        return (int)82L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_MEROITIC_HIEROGLYPHS = 83;
+     * }
+     */
+    public static int PANGO_SCRIPT_MEROITIC_HIEROGLYPHS() {
+        return (int)83L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_MIAO = 84;
+     * }
+     */
+    public static int PANGO_SCRIPT_MIAO() {
+        return (int)84L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_SHARADA = 85;
+     * }
+     */
+    public static int PANGO_SCRIPT_SHARADA() {
+        return (int)85L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_SORA_SOMPENG = 86;
+     * }
+     */
+    public static int PANGO_SCRIPT_SORA_SOMPENG() {
+        return (int)86L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_TAKRI = 87;
+     * }
+     */
+    public static int PANGO_SCRIPT_TAKRI() {
+        return (int)87L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_BASSA_VAH = 88;
+     * }
+     */
+    public static int PANGO_SCRIPT_BASSA_VAH() {
+        return (int)88L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_CAUCASIAN_ALBANIAN = 89;
+     * }
+     */
+    public static int PANGO_SCRIPT_CAUCASIAN_ALBANIAN() {
+        return (int)89L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_DUPLOYAN = 90;
+     * }
+     */
+    public static int PANGO_SCRIPT_DUPLOYAN() {
+        return (int)90L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_ELBASAN = 91;
+     * }
+     */
+    public static int PANGO_SCRIPT_ELBASAN() {
+        return (int)91L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_GRANTHA = 92;
+     * }
+     */
+    public static int PANGO_SCRIPT_GRANTHA() {
+        return (int)92L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_KHOJKI = 93;
+     * }
+     */
+    public static int PANGO_SCRIPT_KHOJKI() {
+        return (int)93L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_KHUDAWADI = 94;
+     * }
+     */
+    public static int PANGO_SCRIPT_KHUDAWADI() {
+        return (int)94L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_LINEAR_A = 95;
+     * }
+     */
+    public static int PANGO_SCRIPT_LINEAR_A() {
+        return (int)95L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_MAHAJANI = 96;
+     * }
+     */
+    public static int PANGO_SCRIPT_MAHAJANI() {
+        return (int)96L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_MANICHAEAN = 97;
+     * }
+     */
+    public static int PANGO_SCRIPT_MANICHAEAN() {
+        return (int)97L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_MENDE_KIKAKUI = 98;
+     * }
+     */
+    public static int PANGO_SCRIPT_MENDE_KIKAKUI() {
+        return (int)98L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_MODI = 99;
+     * }
+     */
+    public static int PANGO_SCRIPT_MODI() {
+        return (int)99L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_MRO = 100;
+     * }
+     */
+    public static int PANGO_SCRIPT_MRO() {
+        return (int)100L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_NABATAEAN = 101;
+     * }
+     */
+    public static int PANGO_SCRIPT_NABATAEAN() {
+        return (int)101L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_OLD_NORTH_ARABIAN = 102;
+     * }
+     */
+    public static int PANGO_SCRIPT_OLD_NORTH_ARABIAN() {
+        return (int)102L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_OLD_PERMIC = 103;
+     * }
+     */
+    public static int PANGO_SCRIPT_OLD_PERMIC() {
+        return (int)103L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_PAHAWH_HMONG = 104;
+     * }
+     */
+    public static int PANGO_SCRIPT_PAHAWH_HMONG() {
+        return (int)104L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_PALMYRENE = 105;
+     * }
+     */
+    public static int PANGO_SCRIPT_PALMYRENE() {
+        return (int)105L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_PAU_CIN_HAU = 106;
+     * }
+     */
+    public static int PANGO_SCRIPT_PAU_CIN_HAU() {
+        return (int)106L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_PSALTER_PAHLAVI = 107;
+     * }
+     */
+    public static int PANGO_SCRIPT_PSALTER_PAHLAVI() {
+        return (int)107L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_SIDDHAM = 108;
+     * }
+     */
+    public static int PANGO_SCRIPT_SIDDHAM() {
+        return (int)108L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_TIRHUTA = 109;
+     * }
+     */
+    public static int PANGO_SCRIPT_TIRHUTA() {
+        return (int)109L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_WARANG_CITI = 110;
+     * }
+     */
+    public static int PANGO_SCRIPT_WARANG_CITI() {
+        return (int)110L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_AHOM = 111;
+     * }
+     */
+    public static int PANGO_SCRIPT_AHOM() {
+        return (int)111L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_ANATOLIAN_HIEROGLYPHS = 112;
+     * }
+     */
+    public static int PANGO_SCRIPT_ANATOLIAN_HIEROGLYPHS() {
+        return (int)112L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_HATRAN = 113;
+     * }
+     */
+    public static int PANGO_SCRIPT_HATRAN() {
+        return (int)113L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_MULTANI = 114;
+     * }
+     */
+    public static int PANGO_SCRIPT_MULTANI() {
+        return (int)114L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_OLD_HUNGARIAN = 115;
+     * }
+     */
+    public static int PANGO_SCRIPT_OLD_HUNGARIAN() {
+        return (int)115L;
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript.PANGO_SCRIPT_SIGNWRITING = 116;
+     * }
+     */
+    public static int PANGO_SCRIPT_SIGNWRITING() {
+        return (int)116L;
+    }
+    public static MethodHandle pango_script_for_unichar$MH() {
+        return RuntimeHelper.requireNonNull(constants$1533.const$0,"pango_script_for_unichar");
+    }
+    /**
+     * {@snippet :
+     * enum PangoScript pango_script_for_unichar(unsigned int ch);
+     * }
+     */
+    public static int pango_script_for_unichar(int ch) {
+        var mh$ = pango_script_for_unichar$MH();
+        try {
+            return (int)mh$.invokeExact(ch);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_script_iter_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$1533.const$1,"pango_script_iter_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long pango_script_iter_get_type();
+     * }
+     */
+    public static long pango_script_iter_get_type() {
+        var mh$ = pango_script_iter_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_script_iter_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$1533.const$2,"pango_script_iter_new");
+    }
+    /**
+     * {@snippet :
+     * struct _PangoScriptIter* pango_script_iter_new(char* text, int length);
+     * }
+     */
+    public static MemorySegment pango_script_iter_new(MemorySegment text, int length) {
+        var mh$ = pango_script_iter_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(text, length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_script_iter_get_range$MH() {
+        return RuntimeHelper.requireNonNull(constants$1533.const$3,"pango_script_iter_get_range");
+    }
+    /**
+     * {@snippet :
+     * void pango_script_iter_get_range(struct _PangoScriptIter* iter, char** start, char** end, enum PangoScript* script);
+     * }
+     */
+    public static void pango_script_iter_get_range(MemorySegment iter, MemorySegment start, MemorySegment end, MemorySegment script) {
+        var mh$ = pango_script_iter_get_range$MH();
+        try {
+            mh$.invokeExact(iter, start, end, script);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_script_iter_next$MH() {
+        return RuntimeHelper.requireNonNull(constants$1533.const$4,"pango_script_iter_next");
+    }
+    /**
+     * {@snippet :
+     * int pango_script_iter_next(struct _PangoScriptIter* iter);
+     * }
+     */
+    public static int pango_script_iter_next(MemorySegment iter) {
+        var mh$ = pango_script_iter_next$MH();
+        try {
+            return (int)mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_script_iter_free$MH() {
+        return RuntimeHelper.requireNonNull(constants$1533.const$5,"pango_script_iter_free");
+    }
+    /**
+     * {@snippet :
+     * void pango_script_iter_free(struct _PangoScriptIter* iter);
+     * }
+     */
+    public static void pango_script_iter_free(MemorySegment iter) {
+        var mh$ = pango_script_iter_free$MH();
+        try {
+            mh$.invokeExact(iter);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_language_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$1534.const$0,"pango_language_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long pango_language_get_type();
+     * }
+     */
+    public static long pango_language_get_type() {
+        var mh$ = pango_language_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_language_get_default$MH() {
+        return RuntimeHelper.requireNonNull(constants$1534.const$1,"pango_language_get_default");
+    }
+    /**
+     * {@snippet :
+     * struct _PangoLanguage* pango_language_get_default();
+     * }
+     */
+    public static MemorySegment pango_language_get_default() {
+        var mh$ = pango_language_get_default$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_language_get_preferred$MH() {
+        return RuntimeHelper.requireNonNull(constants$1534.const$2,"pango_language_get_preferred");
+    }
+    /**
+     * {@snippet :
+     * struct _PangoLanguage** pango_language_get_preferred();
+     * }
+     */
+    public static MemorySegment pango_language_get_preferred() {
+        var mh$ = pango_language_get_preferred$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_language_from_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$1534.const$3,"pango_language_from_string");
+    }
+    /**
+     * {@snippet :
+     * struct _PangoLanguage* pango_language_from_string(char* language);
+     * }
+     */
+    public static MemorySegment pango_language_from_string(MemorySegment language) {
+        var mh$ = pango_language_from_string$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(language);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle pango_language_to_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$1534.const$4,"pango_language_to_string");
+    }
+    /**
+     * {@snippet :
+     * char* pango_language_to_string(struct _PangoLanguage* language);
      * }
      */
     public static MemorySegment pango_language_to_string(MemorySegment language) {
@@ -25,11 +1560,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_language_get_sample_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$903.pango_language_get_sample_string$MH,"pango_language_get_sample_string");
+        return RuntimeHelper.requireNonNull(constants$1534.const$5,"pango_language_get_sample_string");
     }
     /**
      * {@snippet :
-     * char* pango_language_get_sample_string(PangoLanguage* language);
+     * char* pango_language_get_sample_string(struct _PangoLanguage* language);
      * }
      */
     public static MemorySegment pango_language_get_sample_string(MemorySegment language) {
@@ -41,11 +1576,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_language_matches$MH() {
-        return RuntimeHelper.requireNonNull(constants$904.pango_language_matches$MH,"pango_language_matches");
+        return RuntimeHelper.requireNonNull(constants$1535.const$0,"pango_language_matches");
     }
     /**
      * {@snippet :
-     * gboolean pango_language_matches(PangoLanguage* language, char* range_list);
+     * int pango_language_matches(struct _PangoLanguage* language, char* range_list);
      * }
      */
     public static int pango_language_matches(MemorySegment language, MemorySegment range_list) {
@@ -57,11 +1592,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_language_includes_script$MH() {
-        return RuntimeHelper.requireNonNull(constants$904.pango_language_includes_script$MH,"pango_language_includes_script");
+        return RuntimeHelper.requireNonNull(constants$1535.const$1,"pango_language_includes_script");
     }
     /**
      * {@snippet :
-     * gboolean pango_language_includes_script(PangoLanguage* language, PangoScript script);
+     * int pango_language_includes_script(struct _PangoLanguage* language, enum PangoScript script);
      * }
      */
     public static int pango_language_includes_script(MemorySegment language, int script) {
@@ -73,11 +1608,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_language_get_scripts$MH() {
-        return RuntimeHelper.requireNonNull(constants$904.pango_language_get_scripts$MH,"pango_language_get_scripts");
+        return RuntimeHelper.requireNonNull(constants$1535.const$2,"pango_language_get_scripts");
     }
     /**
      * {@snippet :
-     * const PangoScript* pango_language_get_scripts(PangoLanguage* language, int* num_scripts);
+     * enum PangoScript* pango_language_get_scripts(struct _PangoLanguage* language, int* num_scripts);
      * }
      */
     public static MemorySegment pango_language_get_scripts(MemorySegment language, MemorySegment num_scripts) {
@@ -89,11 +1624,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_script_get_sample_language$MH() {
-        return RuntimeHelper.requireNonNull(constants$904.pango_script_get_sample_language$MH,"pango_script_get_sample_language");
+        return RuntimeHelper.requireNonNull(constants$1535.const$3,"pango_script_get_sample_language");
     }
     /**
      * {@snippet :
-     * PangoLanguage* pango_script_get_sample_language(PangoScript script);
+     * struct _PangoLanguage* pango_script_get_sample_language(enum PangoScript script);
      * }
      */
     public static MemorySegment pango_script_get_sample_language(int script) {
@@ -105,11 +1640,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_gravity_to_rotation$MH() {
-        return RuntimeHelper.requireNonNull(constants$904.pango_gravity_to_rotation$MH,"pango_gravity_to_rotation");
+        return RuntimeHelper.requireNonNull(constants$1535.const$4,"pango_gravity_to_rotation");
     }
     /**
      * {@snippet :
-     * double pango_gravity_to_rotation(PangoGravity gravity);
+     * double pango_gravity_to_rotation(enum PangoGravity gravity);
      * }
      */
     public static double pango_gravity_to_rotation(int gravity) {
@@ -121,11 +1656,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_gravity_get_for_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$904.pango_gravity_get_for_matrix$MH,"pango_gravity_get_for_matrix");
+        return RuntimeHelper.requireNonNull(constants$1535.const$5,"pango_gravity_get_for_matrix");
     }
     /**
      * {@snippet :
-     * PangoGravity pango_gravity_get_for_matrix(const PangoMatrix* matrix);
+     * enum PangoGravity pango_gravity_get_for_matrix(struct _PangoMatrix* matrix);
      * }
      */
     public static int pango_gravity_get_for_matrix(MemorySegment matrix) {
@@ -137,11 +1672,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_gravity_get_for_script$MH() {
-        return RuntimeHelper.requireNonNull(constants$905.pango_gravity_get_for_script$MH,"pango_gravity_get_for_script");
+        return RuntimeHelper.requireNonNull(constants$1536.const$0,"pango_gravity_get_for_script");
     }
     /**
      * {@snippet :
-     * PangoGravity pango_gravity_get_for_script(PangoScript script, PangoGravity base_gravity, PangoGravityHint hint);
+     * enum PangoGravity pango_gravity_get_for_script(enum PangoScript script, enum PangoGravity base_gravity, enum PangoGravityHint hint);
      * }
      */
     public static int pango_gravity_get_for_script(int script, int base_gravity, int hint) {
@@ -153,11 +1688,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_gravity_get_for_script_and_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$905.pango_gravity_get_for_script_and_width$MH,"pango_gravity_get_for_script_and_width");
+        return RuntimeHelper.requireNonNull(constants$1536.const$2,"pango_gravity_get_for_script_and_width");
     }
     /**
      * {@snippet :
-     * PangoGravity pango_gravity_get_for_script_and_width(PangoScript script, gboolean wide, PangoGravity base_gravity, PangoGravityHint hint);
+     * enum PangoGravity pango_gravity_get_for_script_and_width(enum PangoScript script, int wide, enum PangoGravity base_gravity, enum PangoGravityHint hint);
      * }
      */
     public static int pango_gravity_get_for_script_and_width(int script, int wide, int base_gravity, int hint) {
@@ -170,7 +1705,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_DIRECTION_LTR = 0;
+     * enum PangoDirection.PANGO_DIRECTION_LTR = 0;
      * }
      */
     public static int PANGO_DIRECTION_LTR() {
@@ -178,7 +1713,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_DIRECTION_RTL = 1;
+     * enum PangoDirection.PANGO_DIRECTION_RTL = 1;
      * }
      */
     public static int PANGO_DIRECTION_RTL() {
@@ -186,7 +1721,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_DIRECTION_TTB_LTR = 2;
+     * enum PangoDirection.PANGO_DIRECTION_TTB_LTR = 2;
      * }
      */
     public static int PANGO_DIRECTION_TTB_LTR() {
@@ -194,7 +1729,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_DIRECTION_TTB_RTL = 3;
+     * enum PangoDirection.PANGO_DIRECTION_TTB_RTL = 3;
      * }
      */
     public static int PANGO_DIRECTION_TTB_RTL() {
@@ -202,7 +1737,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_DIRECTION_WEAK_LTR = 4;
+     * enum PangoDirection.PANGO_DIRECTION_WEAK_LTR = 4;
      * }
      */
     public static int PANGO_DIRECTION_WEAK_LTR() {
@@ -210,7 +1745,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_DIRECTION_WEAK_RTL = 5;
+     * enum PangoDirection.PANGO_DIRECTION_WEAK_RTL = 5;
      * }
      */
     public static int PANGO_DIRECTION_WEAK_RTL() {
@@ -218,7 +1753,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_DIRECTION_NEUTRAL = 6;
+     * enum PangoDirection.PANGO_DIRECTION_NEUTRAL = 6;
      * }
      */
     public static int PANGO_DIRECTION_NEUTRAL() {
@@ -226,7 +1761,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_L = 0;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_L = 0;
      * }
      */
     public static int PANGO_BIDI_TYPE_L() {
@@ -234,7 +1769,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_LRE = 1;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_LRE = 1;
      * }
      */
     public static int PANGO_BIDI_TYPE_LRE() {
@@ -242,7 +1777,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_LRO = 2;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_LRO = 2;
      * }
      */
     public static int PANGO_BIDI_TYPE_LRO() {
@@ -250,7 +1785,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_R = 3;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_R = 3;
      * }
      */
     public static int PANGO_BIDI_TYPE_R() {
@@ -258,7 +1793,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_AL = 4;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_AL = 4;
      * }
      */
     public static int PANGO_BIDI_TYPE_AL() {
@@ -266,7 +1801,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_RLE = 5;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_RLE = 5;
      * }
      */
     public static int PANGO_BIDI_TYPE_RLE() {
@@ -274,7 +1809,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_RLO = 6;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_RLO = 6;
      * }
      */
     public static int PANGO_BIDI_TYPE_RLO() {
@@ -282,7 +1817,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_PDF = 7;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_PDF = 7;
      * }
      */
     public static int PANGO_BIDI_TYPE_PDF() {
@@ -290,7 +1825,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_EN = 8;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_EN = 8;
      * }
      */
     public static int PANGO_BIDI_TYPE_EN() {
@@ -298,7 +1833,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_ES = 9;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_ES = 9;
      * }
      */
     public static int PANGO_BIDI_TYPE_ES() {
@@ -306,7 +1841,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_ET = 10;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_ET = 10;
      * }
      */
     public static int PANGO_BIDI_TYPE_ET() {
@@ -314,7 +1849,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_AN = 11;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_AN = 11;
      * }
      */
     public static int PANGO_BIDI_TYPE_AN() {
@@ -322,7 +1857,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_CS = 12;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_CS = 12;
      * }
      */
     public static int PANGO_BIDI_TYPE_CS() {
@@ -330,7 +1865,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_NSM = 13;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_NSM = 13;
      * }
      */
     public static int PANGO_BIDI_TYPE_NSM() {
@@ -338,7 +1873,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_BN = 14;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_BN = 14;
      * }
      */
     public static int PANGO_BIDI_TYPE_BN() {
@@ -346,7 +1881,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_B = 15;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_B = 15;
      * }
      */
     public static int PANGO_BIDI_TYPE_B() {
@@ -354,7 +1889,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_S = 16;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_S = 16;
      * }
      */
     public static int PANGO_BIDI_TYPE_S() {
@@ -362,7 +1897,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_WS = 17;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_WS = 17;
      * }
      */
     public static int PANGO_BIDI_TYPE_WS() {
@@ -370,7 +1905,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_ON = 18;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_ON = 18;
      * }
      */
     public static int PANGO_BIDI_TYPE_ON() {
@@ -378,7 +1913,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_LRI = 19;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_LRI = 19;
      * }
      */
     public static int PANGO_BIDI_TYPE_LRI() {
@@ -386,7 +1921,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_RLI = 20;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_RLI = 20;
      * }
      */
     public static int PANGO_BIDI_TYPE_RLI() {
@@ -394,7 +1929,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_FSI = 21;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_FSI = 21;
      * }
      */
     public static int PANGO_BIDI_TYPE_FSI() {
@@ -402,18 +1937,18 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BIDI_TYPE_PDI = 22;
+     * enum PangoBidiType.PANGO_BIDI_TYPE_PDI = 22;
      * }
      */
     public static int PANGO_BIDI_TYPE_PDI() {
         return (int)22L;
     }
     public static MethodHandle pango_bidi_type_for_unichar$MH() {
-        return RuntimeHelper.requireNonNull(constants$905.pango_bidi_type_for_unichar$MH,"pango_bidi_type_for_unichar");
+        return RuntimeHelper.requireNonNull(constants$1536.const$3,"pango_bidi_type_for_unichar");
     }
     /**
      * {@snippet :
-     * PangoBidiType pango_bidi_type_for_unichar(gunichar ch);
+     * enum PangoBidiType pango_bidi_type_for_unichar(unsigned int ch);
      * }
      */
     public static int pango_bidi_type_for_unichar(int ch) {
@@ -425,11 +1960,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_unichar_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$905.pango_unichar_direction$MH,"pango_unichar_direction");
+        return RuntimeHelper.requireNonNull(constants$1536.const$4,"pango_unichar_direction");
     }
     /**
      * {@snippet :
-     * PangoDirection pango_unichar_direction(gunichar ch);
+     * enum PangoDirection pango_unichar_direction(unsigned int ch);
      * }
      */
     public static int pango_unichar_direction(int ch) {
@@ -441,11 +1976,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_find_base_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$905.pango_find_base_dir$MH,"pango_find_base_dir");
+        return RuntimeHelper.requireNonNull(constants$1536.const$5,"pango_find_base_dir");
     }
     /**
      * {@snippet :
-     * PangoDirection pango_find_base_dir(const gchar* text, gint length);
+     * enum PangoDirection pango_find_base_dir(char* text, int length);
      * }
      */
     public static int pango_find_base_dir(MemorySegment text, int length) {
@@ -457,11 +1992,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_get_mirror_char$MH() {
-        return RuntimeHelper.requireNonNull(constants$905.pango_get_mirror_char$MH,"pango_get_mirror_char");
+        return RuntimeHelper.requireNonNull(constants$1537.const$0,"pango_get_mirror_char");
     }
     /**
      * {@snippet :
-     * gboolean pango_get_mirror_char(gunichar ch, gunichar* mirrored_ch);
+     * int pango_get_mirror_char(unsigned int ch, unsigned int* mirrored_ch);
      * }
      */
     public static int pango_get_mirror_char(int ch, MemorySegment mirrored_ch) {
@@ -474,7 +2009,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_STYLE_NORMAL = 0;
+     * enum PangoStyle.PANGO_STYLE_NORMAL = 0;
      * }
      */
     public static int PANGO_STYLE_NORMAL() {
@@ -482,7 +2017,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_STYLE_OBLIQUE = 1;
+     * enum PangoStyle.PANGO_STYLE_OBLIQUE = 1;
      * }
      */
     public static int PANGO_STYLE_OBLIQUE() {
@@ -490,7 +2025,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_STYLE_ITALIC = 2;
+     * enum PangoStyle.PANGO_STYLE_ITALIC = 2;
      * }
      */
     public static int PANGO_STYLE_ITALIC() {
@@ -498,7 +2033,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_VARIANT_NORMAL = 0;
+     * enum PangoVariant.PANGO_VARIANT_NORMAL = 0;
      * }
      */
     public static int PANGO_VARIANT_NORMAL() {
@@ -506,7 +2041,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_VARIANT_SMALL_CAPS = 1;
+     * enum PangoVariant.PANGO_VARIANT_SMALL_CAPS = 1;
      * }
      */
     public static int PANGO_VARIANT_SMALL_CAPS() {
@@ -514,7 +2049,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_VARIANT_ALL_SMALL_CAPS = 2;
+     * enum PangoVariant.PANGO_VARIANT_ALL_SMALL_CAPS = 2;
      * }
      */
     public static int PANGO_VARIANT_ALL_SMALL_CAPS() {
@@ -522,7 +2057,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_VARIANT_PETITE_CAPS = 3;
+     * enum PangoVariant.PANGO_VARIANT_PETITE_CAPS = 3;
      * }
      */
     public static int PANGO_VARIANT_PETITE_CAPS() {
@@ -530,7 +2065,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_VARIANT_ALL_PETITE_CAPS = 4;
+     * enum PangoVariant.PANGO_VARIANT_ALL_PETITE_CAPS = 4;
      * }
      */
     public static int PANGO_VARIANT_ALL_PETITE_CAPS() {
@@ -538,7 +2073,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_VARIANT_UNICASE = 5;
+     * enum PangoVariant.PANGO_VARIANT_UNICASE = 5;
      * }
      */
     public static int PANGO_VARIANT_UNICASE() {
@@ -546,7 +2081,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_VARIANT_TITLE_CAPS = 6;
+     * enum PangoVariant.PANGO_VARIANT_TITLE_CAPS = 6;
      * }
      */
     public static int PANGO_VARIANT_TITLE_CAPS() {
@@ -554,7 +2089,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_WEIGHT_THIN = 100;
+     * enum PangoWeight.PANGO_WEIGHT_THIN = 100;
      * }
      */
     public static int PANGO_WEIGHT_THIN() {
@@ -562,7 +2097,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_WEIGHT_ULTRALIGHT = 200;
+     * enum PangoWeight.PANGO_WEIGHT_ULTRALIGHT = 200;
      * }
      */
     public static int PANGO_WEIGHT_ULTRALIGHT() {
@@ -570,7 +2105,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_WEIGHT_LIGHT = 300;
+     * enum PangoWeight.PANGO_WEIGHT_LIGHT = 300;
      * }
      */
     public static int PANGO_WEIGHT_LIGHT() {
@@ -578,7 +2113,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_WEIGHT_SEMILIGHT = 350;
+     * enum PangoWeight.PANGO_WEIGHT_SEMILIGHT = 350;
      * }
      */
     public static int PANGO_WEIGHT_SEMILIGHT() {
@@ -586,7 +2121,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_WEIGHT_BOOK = 380;
+     * enum PangoWeight.PANGO_WEIGHT_BOOK = 380;
      * }
      */
     public static int PANGO_WEIGHT_BOOK() {
@@ -594,7 +2129,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_WEIGHT_NORMAL = 400;
+     * enum PangoWeight.PANGO_WEIGHT_NORMAL = 400;
      * }
      */
     public static int PANGO_WEIGHT_NORMAL() {
@@ -602,7 +2137,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_WEIGHT_MEDIUM = 500;
+     * enum PangoWeight.PANGO_WEIGHT_MEDIUM = 500;
      * }
      */
     public static int PANGO_WEIGHT_MEDIUM() {
@@ -610,7 +2145,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_WEIGHT_SEMIBOLD = 600;
+     * enum PangoWeight.PANGO_WEIGHT_SEMIBOLD = 600;
      * }
      */
     public static int PANGO_WEIGHT_SEMIBOLD() {
@@ -618,7 +2153,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_WEIGHT_BOLD = 700;
+     * enum PangoWeight.PANGO_WEIGHT_BOLD = 700;
      * }
      */
     public static int PANGO_WEIGHT_BOLD() {
@@ -626,7 +2161,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_WEIGHT_ULTRABOLD = 800;
+     * enum PangoWeight.PANGO_WEIGHT_ULTRABOLD = 800;
      * }
      */
     public static int PANGO_WEIGHT_ULTRABOLD() {
@@ -634,7 +2169,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_WEIGHT_HEAVY = 900;
+     * enum PangoWeight.PANGO_WEIGHT_HEAVY = 900;
      * }
      */
     public static int PANGO_WEIGHT_HEAVY() {
@@ -642,7 +2177,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_WEIGHT_ULTRAHEAVY = 1000;
+     * enum PangoWeight.PANGO_WEIGHT_ULTRAHEAVY = 1000;
      * }
      */
     public static int PANGO_WEIGHT_ULTRAHEAVY() {
@@ -650,7 +2185,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_STRETCH_ULTRA_CONDENSED = 0;
+     * enum PangoStretch.PANGO_STRETCH_ULTRA_CONDENSED = 0;
      * }
      */
     public static int PANGO_STRETCH_ULTRA_CONDENSED() {
@@ -658,7 +2193,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_STRETCH_EXTRA_CONDENSED = 1;
+     * enum PangoStretch.PANGO_STRETCH_EXTRA_CONDENSED = 1;
      * }
      */
     public static int PANGO_STRETCH_EXTRA_CONDENSED() {
@@ -666,7 +2201,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_STRETCH_CONDENSED = 2;
+     * enum PangoStretch.PANGO_STRETCH_CONDENSED = 2;
      * }
      */
     public static int PANGO_STRETCH_CONDENSED() {
@@ -674,7 +2209,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_STRETCH_SEMI_CONDENSED = 3;
+     * enum PangoStretch.PANGO_STRETCH_SEMI_CONDENSED = 3;
      * }
      */
     public static int PANGO_STRETCH_SEMI_CONDENSED() {
@@ -682,7 +2217,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_STRETCH_NORMAL = 4;
+     * enum PangoStretch.PANGO_STRETCH_NORMAL = 4;
      * }
      */
     public static int PANGO_STRETCH_NORMAL() {
@@ -690,7 +2225,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_STRETCH_SEMI_EXPANDED = 5;
+     * enum PangoStretch.PANGO_STRETCH_SEMI_EXPANDED = 5;
      * }
      */
     public static int PANGO_STRETCH_SEMI_EXPANDED() {
@@ -698,7 +2233,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_STRETCH_EXPANDED = 6;
+     * enum PangoStretch.PANGO_STRETCH_EXPANDED = 6;
      * }
      */
     public static int PANGO_STRETCH_EXPANDED() {
@@ -706,7 +2241,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_STRETCH_EXTRA_EXPANDED = 7;
+     * enum PangoStretch.PANGO_STRETCH_EXTRA_EXPANDED = 7;
      * }
      */
     public static int PANGO_STRETCH_EXTRA_EXPANDED() {
@@ -714,7 +2249,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_STRETCH_ULTRA_EXPANDED = 8;
+     * enum PangoStretch.PANGO_STRETCH_ULTRA_EXPANDED = 8;
      * }
      */
     public static int PANGO_STRETCH_ULTRA_EXPANDED() {
@@ -722,7 +2257,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_FONT_MASK_FAMILY = 1;
+     * enum PangoFontMask.PANGO_FONT_MASK_FAMILY = 1;
      * }
      */
     public static int PANGO_FONT_MASK_FAMILY() {
@@ -730,7 +2265,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_FONT_MASK_STYLE = 2;
+     * enum PangoFontMask.PANGO_FONT_MASK_STYLE = 2;
      * }
      */
     public static int PANGO_FONT_MASK_STYLE() {
@@ -738,7 +2273,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_FONT_MASK_VARIANT = 4;
+     * enum PangoFontMask.PANGO_FONT_MASK_VARIANT = 4;
      * }
      */
     public static int PANGO_FONT_MASK_VARIANT() {
@@ -746,7 +2281,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_FONT_MASK_WEIGHT = 8;
+     * enum PangoFontMask.PANGO_FONT_MASK_WEIGHT = 8;
      * }
      */
     public static int PANGO_FONT_MASK_WEIGHT() {
@@ -754,7 +2289,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_FONT_MASK_STRETCH = 16;
+     * enum PangoFontMask.PANGO_FONT_MASK_STRETCH = 16;
      * }
      */
     public static int PANGO_FONT_MASK_STRETCH() {
@@ -762,7 +2297,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_FONT_MASK_SIZE = 32;
+     * enum PangoFontMask.PANGO_FONT_MASK_SIZE = 32;
      * }
      */
     public static int PANGO_FONT_MASK_SIZE() {
@@ -770,7 +2305,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_FONT_MASK_GRAVITY = 64;
+     * enum PangoFontMask.PANGO_FONT_MASK_GRAVITY = 64;
      * }
      */
     public static int PANGO_FONT_MASK_GRAVITY() {
@@ -778,18 +2313,18 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_FONT_MASK_VARIATIONS = 128;
+     * enum PangoFontMask.PANGO_FONT_MASK_VARIATIONS = 128;
      * }
      */
     public static int PANGO_FONT_MASK_VARIATIONS() {
         return (int)128L;
     }
     public static MethodHandle pango_font_description_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$906.pango_font_description_get_type$MH,"pango_font_description_get_type");
+        return RuntimeHelper.requireNonNull(constants$1537.const$1,"pango_font_description_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_font_description_get_type();
+     * unsigned long pango_font_description_get_type();
      * }
      */
     public static long pango_font_description_get_type() {
@@ -801,11 +2336,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$906.pango_font_description_new$MH,"pango_font_description_new");
+        return RuntimeHelper.requireNonNull(constants$1537.const$2,"pango_font_description_new");
     }
     /**
      * {@snippet :
-     * PangoFontDescription* pango_font_description_new();
+     * struct _PangoFontDescription* pango_font_description_new();
      * }
      */
     public static MemorySegment pango_font_description_new() {
@@ -817,11 +2352,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$906.pango_font_description_copy$MH,"pango_font_description_copy");
+        return RuntimeHelper.requireNonNull(constants$1537.const$3,"pango_font_description_copy");
     }
     /**
      * {@snippet :
-     * PangoFontDescription* pango_font_description_copy(const PangoFontDescription* desc);
+     * struct _PangoFontDescription* pango_font_description_copy(struct _PangoFontDescription* desc);
      * }
      */
     public static MemorySegment pango_font_description_copy(MemorySegment desc) {
@@ -833,11 +2368,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_copy_static$MH() {
-        return RuntimeHelper.requireNonNull(constants$906.pango_font_description_copy_static$MH,"pango_font_description_copy_static");
+        return RuntimeHelper.requireNonNull(constants$1537.const$4,"pango_font_description_copy_static");
     }
     /**
      * {@snippet :
-     * PangoFontDescription* pango_font_description_copy_static(const PangoFontDescription* desc);
+     * struct _PangoFontDescription* pango_font_description_copy_static(struct _PangoFontDescription* desc);
      * }
      */
     public static MemorySegment pango_font_description_copy_static(MemorySegment desc) {
@@ -849,11 +2384,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_hash$MH() {
-        return RuntimeHelper.requireNonNull(constants$906.pango_font_description_hash$MH,"pango_font_description_hash");
+        return RuntimeHelper.requireNonNull(constants$1537.const$5,"pango_font_description_hash");
     }
     /**
      * {@snippet :
-     * guint pango_font_description_hash(const PangoFontDescription* desc);
+     * unsigned int pango_font_description_hash(struct _PangoFontDescription* desc);
      * }
      */
     public static int pango_font_description_hash(MemorySegment desc) {
@@ -865,11 +2400,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$906.pango_font_description_equal$MH,"pango_font_description_equal");
+        return RuntimeHelper.requireNonNull(constants$1538.const$0,"pango_font_description_equal");
     }
     /**
      * {@snippet :
-     * gboolean pango_font_description_equal(const PangoFontDescription* desc1, const PangoFontDescription* desc2);
+     * int pango_font_description_equal(struct _PangoFontDescription* desc1, struct _PangoFontDescription* desc2);
      * }
      */
     public static int pango_font_description_equal(MemorySegment desc1, MemorySegment desc2) {
@@ -881,11 +2416,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$907.pango_font_description_free$MH,"pango_font_description_free");
+        return RuntimeHelper.requireNonNull(constants$1538.const$1,"pango_font_description_free");
     }
     /**
      * {@snippet :
-     * void pango_font_description_free(PangoFontDescription* desc);
+     * void pango_font_description_free(struct _PangoFontDescription* desc);
      * }
      */
     public static void pango_font_description_free(MemorySegment desc) {
@@ -897,11 +2432,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_descriptions_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$907.pango_font_descriptions_free$MH,"pango_font_descriptions_free");
+        return RuntimeHelper.requireNonNull(constants$1538.const$2,"pango_font_descriptions_free");
     }
     /**
      * {@snippet :
-     * void pango_font_descriptions_free(PangoFontDescription** descs, int n_descs);
+     * void pango_font_descriptions_free(struct _PangoFontDescription** descs, int n_descs);
      * }
      */
     public static void pango_font_descriptions_free(MemorySegment descs, int n_descs) {
@@ -913,11 +2448,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$907.pango_font_description_set_family$MH,"pango_font_description_set_family");
+        return RuntimeHelper.requireNonNull(constants$1538.const$3,"pango_font_description_set_family");
     }
     /**
      * {@snippet :
-     * void pango_font_description_set_family(PangoFontDescription* desc, char* family);
+     * void pango_font_description_set_family(struct _PangoFontDescription* desc, char* family);
      * }
      */
     public static void pango_font_description_set_family(MemorySegment desc, MemorySegment family) {
@@ -929,11 +2464,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_family_static$MH() {
-        return RuntimeHelper.requireNonNull(constants$907.pango_font_description_set_family_static$MH,"pango_font_description_set_family_static");
+        return RuntimeHelper.requireNonNull(constants$1538.const$4,"pango_font_description_set_family_static");
     }
     /**
      * {@snippet :
-     * void pango_font_description_set_family_static(PangoFontDescription* desc, char* family);
+     * void pango_font_description_set_family_static(struct _PangoFontDescription* desc, char* family);
      * }
      */
     public static void pango_font_description_set_family_static(MemorySegment desc, MemorySegment family) {
@@ -945,11 +2480,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$907.pango_font_description_get_family$MH,"pango_font_description_get_family");
+        return RuntimeHelper.requireNonNull(constants$1538.const$5,"pango_font_description_get_family");
     }
     /**
      * {@snippet :
-     * char* pango_font_description_get_family(const PangoFontDescription* desc);
+     * char* pango_font_description_get_family(struct _PangoFontDescription* desc);
      * }
      */
     public static MemorySegment pango_font_description_get_family(MemorySegment desc) {
@@ -961,11 +2496,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$907.pango_font_description_set_style$MH,"pango_font_description_set_style");
+        return RuntimeHelper.requireNonNull(constants$1539.const$0,"pango_font_description_set_style");
     }
     /**
      * {@snippet :
-     * void pango_font_description_set_style(PangoFontDescription* desc, PangoStyle style);
+     * void pango_font_description_set_style(struct _PangoFontDescription* desc, enum PangoStyle style);
      * }
      */
     public static void pango_font_description_set_style(MemorySegment desc, int style) {
@@ -977,11 +2512,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$908.pango_font_description_get_style$MH,"pango_font_description_get_style");
+        return RuntimeHelper.requireNonNull(constants$1539.const$1,"pango_font_description_get_style");
     }
     /**
      * {@snippet :
-     * PangoStyle pango_font_description_get_style(const PangoFontDescription* desc);
+     * enum PangoStyle pango_font_description_get_style(struct _PangoFontDescription* desc);
      * }
      */
     public static int pango_font_description_get_style(MemorySegment desc) {
@@ -993,11 +2528,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_variant$MH() {
-        return RuntimeHelper.requireNonNull(constants$908.pango_font_description_set_variant$MH,"pango_font_description_set_variant");
+        return RuntimeHelper.requireNonNull(constants$1539.const$2,"pango_font_description_set_variant");
     }
     /**
      * {@snippet :
-     * void pango_font_description_set_variant(PangoFontDescription* desc, PangoVariant variant);
+     * void pango_font_description_set_variant(struct _PangoFontDescription* desc, enum PangoVariant variant);
      * }
      */
     public static void pango_font_description_set_variant(MemorySegment desc, int variant) {
@@ -1009,11 +2544,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_variant$MH() {
-        return RuntimeHelper.requireNonNull(constants$908.pango_font_description_get_variant$MH,"pango_font_description_get_variant");
+        return RuntimeHelper.requireNonNull(constants$1539.const$3,"pango_font_description_get_variant");
     }
     /**
      * {@snippet :
-     * PangoVariant pango_font_description_get_variant(const PangoFontDescription* desc);
+     * enum PangoVariant pango_font_description_get_variant(struct _PangoFontDescription* desc);
      * }
      */
     public static int pango_font_description_get_variant(MemorySegment desc) {
@@ -1025,11 +2560,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_weight$MH() {
-        return RuntimeHelper.requireNonNull(constants$908.pango_font_description_set_weight$MH,"pango_font_description_set_weight");
+        return RuntimeHelper.requireNonNull(constants$1539.const$4,"pango_font_description_set_weight");
     }
     /**
      * {@snippet :
-     * void pango_font_description_set_weight(PangoFontDescription* desc, PangoWeight weight);
+     * void pango_font_description_set_weight(struct _PangoFontDescription* desc, enum PangoWeight weight);
      * }
      */
     public static void pango_font_description_set_weight(MemorySegment desc, int weight) {
@@ -1041,11 +2576,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_weight$MH() {
-        return RuntimeHelper.requireNonNull(constants$908.pango_font_description_get_weight$MH,"pango_font_description_get_weight");
+        return RuntimeHelper.requireNonNull(constants$1539.const$5,"pango_font_description_get_weight");
     }
     /**
      * {@snippet :
-     * PangoWeight pango_font_description_get_weight(const PangoFontDescription* desc);
+     * enum PangoWeight pango_font_description_get_weight(struct _PangoFontDescription* desc);
      * }
      */
     public static int pango_font_description_get_weight(MemorySegment desc) {
@@ -1057,11 +2592,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_stretch$MH() {
-        return RuntimeHelper.requireNonNull(constants$908.pango_font_description_set_stretch$MH,"pango_font_description_set_stretch");
+        return RuntimeHelper.requireNonNull(constants$1540.const$0,"pango_font_description_set_stretch");
     }
     /**
      * {@snippet :
-     * void pango_font_description_set_stretch(PangoFontDescription* desc, PangoStretch stretch);
+     * void pango_font_description_set_stretch(struct _PangoFontDescription* desc, enum PangoStretch stretch);
      * }
      */
     public static void pango_font_description_set_stretch(MemorySegment desc, int stretch) {
@@ -1073,11 +2608,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_stretch$MH() {
-        return RuntimeHelper.requireNonNull(constants$909.pango_font_description_get_stretch$MH,"pango_font_description_get_stretch");
+        return RuntimeHelper.requireNonNull(constants$1540.const$1,"pango_font_description_get_stretch");
     }
     /**
      * {@snippet :
-     * PangoStretch pango_font_description_get_stretch(const PangoFontDescription* desc);
+     * enum PangoStretch pango_font_description_get_stretch(struct _PangoFontDescription* desc);
      * }
      */
     public static int pango_font_description_get_stretch(MemorySegment desc) {
@@ -1089,11 +2624,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$909.pango_font_description_set_size$MH,"pango_font_description_set_size");
+        return RuntimeHelper.requireNonNull(constants$1540.const$2,"pango_font_description_set_size");
     }
     /**
      * {@snippet :
-     * void pango_font_description_set_size(PangoFontDescription* desc, gint size);
+     * void pango_font_description_set_size(struct _PangoFontDescription* desc, int size);
      * }
      */
     public static void pango_font_description_set_size(MemorySegment desc, int size) {
@@ -1105,11 +2640,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$909.pango_font_description_get_size$MH,"pango_font_description_get_size");
+        return RuntimeHelper.requireNonNull(constants$1540.const$3,"pango_font_description_get_size");
     }
     /**
      * {@snippet :
-     * gint pango_font_description_get_size(const PangoFontDescription* desc);
+     * int pango_font_description_get_size(struct _PangoFontDescription* desc);
      * }
      */
     public static int pango_font_description_get_size(MemorySegment desc) {
@@ -1121,11 +2656,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_absolute_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$909.pango_font_description_set_absolute_size$MH,"pango_font_description_set_absolute_size");
+        return RuntimeHelper.requireNonNull(constants$1540.const$4,"pango_font_description_set_absolute_size");
     }
     /**
      * {@snippet :
-     * void pango_font_description_set_absolute_size(PangoFontDescription* desc, double size);
+     * void pango_font_description_set_absolute_size(struct _PangoFontDescription* desc, double size);
      * }
      */
     public static void pango_font_description_set_absolute_size(MemorySegment desc, double size) {
@@ -1137,11 +2672,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_size_is_absolute$MH() {
-        return RuntimeHelper.requireNonNull(constants$909.pango_font_description_get_size_is_absolute$MH,"pango_font_description_get_size_is_absolute");
+        return RuntimeHelper.requireNonNull(constants$1540.const$5,"pango_font_description_get_size_is_absolute");
     }
     /**
      * {@snippet :
-     * gboolean pango_font_description_get_size_is_absolute(const PangoFontDescription* desc);
+     * int pango_font_description_get_size_is_absolute(struct _PangoFontDescription* desc);
      * }
      */
     public static int pango_font_description_get_size_is_absolute(MemorySegment desc) {
@@ -1153,11 +2688,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_gravity$MH() {
-        return RuntimeHelper.requireNonNull(constants$909.pango_font_description_set_gravity$MH,"pango_font_description_set_gravity");
+        return RuntimeHelper.requireNonNull(constants$1541.const$0,"pango_font_description_set_gravity");
     }
     /**
      * {@snippet :
-     * void pango_font_description_set_gravity(PangoFontDescription* desc, PangoGravity gravity);
+     * void pango_font_description_set_gravity(struct _PangoFontDescription* desc, enum PangoGravity gravity);
      * }
      */
     public static void pango_font_description_set_gravity(MemorySegment desc, int gravity) {
@@ -1169,11 +2704,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_gravity$MH() {
-        return RuntimeHelper.requireNonNull(constants$910.pango_font_description_get_gravity$MH,"pango_font_description_get_gravity");
+        return RuntimeHelper.requireNonNull(constants$1541.const$1,"pango_font_description_get_gravity");
     }
     /**
      * {@snippet :
-     * PangoGravity pango_font_description_get_gravity(const PangoFontDescription* desc);
+     * enum PangoGravity pango_font_description_get_gravity(struct _PangoFontDescription* desc);
      * }
      */
     public static int pango_font_description_get_gravity(MemorySegment desc) {
@@ -1185,11 +2720,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_variations_static$MH() {
-        return RuntimeHelper.requireNonNull(constants$910.pango_font_description_set_variations_static$MH,"pango_font_description_set_variations_static");
+        return RuntimeHelper.requireNonNull(constants$1541.const$2,"pango_font_description_set_variations_static");
     }
     /**
      * {@snippet :
-     * void pango_font_description_set_variations_static(PangoFontDescription* desc, char* variations);
+     * void pango_font_description_set_variations_static(struct _PangoFontDescription* desc, char* variations);
      * }
      */
     public static void pango_font_description_set_variations_static(MemorySegment desc, MemorySegment variations) {
@@ -1201,11 +2736,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_set_variations$MH() {
-        return RuntimeHelper.requireNonNull(constants$910.pango_font_description_set_variations$MH,"pango_font_description_set_variations");
+        return RuntimeHelper.requireNonNull(constants$1541.const$3,"pango_font_description_set_variations");
     }
     /**
      * {@snippet :
-     * void pango_font_description_set_variations(PangoFontDescription* desc, char* variations);
+     * void pango_font_description_set_variations(struct _PangoFontDescription* desc, char* variations);
      * }
      */
     public static void pango_font_description_set_variations(MemorySegment desc, MemorySegment variations) {
@@ -1217,11 +2752,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_variations$MH() {
-        return RuntimeHelper.requireNonNull(constants$910.pango_font_description_get_variations$MH,"pango_font_description_get_variations");
+        return RuntimeHelper.requireNonNull(constants$1541.const$4,"pango_font_description_get_variations");
     }
     /**
      * {@snippet :
-     * char* pango_font_description_get_variations(const PangoFontDescription* desc);
+     * char* pango_font_description_get_variations(struct _PangoFontDescription* desc);
      * }
      */
     public static MemorySegment pango_font_description_get_variations(MemorySegment desc) {
@@ -1233,11 +2768,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_get_set_fields$MH() {
-        return RuntimeHelper.requireNonNull(constants$910.pango_font_description_get_set_fields$MH,"pango_font_description_get_set_fields");
+        return RuntimeHelper.requireNonNull(constants$1541.const$5,"pango_font_description_get_set_fields");
     }
     /**
      * {@snippet :
-     * PangoFontMask pango_font_description_get_set_fields(const PangoFontDescription* desc);
+     * enum PangoFontMask pango_font_description_get_set_fields(struct _PangoFontDescription* desc);
      * }
      */
     public static int pango_font_description_get_set_fields(MemorySegment desc) {
@@ -1249,11 +2784,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_unset_fields$MH() {
-        return RuntimeHelper.requireNonNull(constants$910.pango_font_description_unset_fields$MH,"pango_font_description_unset_fields");
+        return RuntimeHelper.requireNonNull(constants$1542.const$0,"pango_font_description_unset_fields");
     }
     /**
      * {@snippet :
-     * void pango_font_description_unset_fields(PangoFontDescription* desc, PangoFontMask to_unset);
+     * void pango_font_description_unset_fields(struct _PangoFontDescription* desc, enum PangoFontMask to_unset);
      * }
      */
     public static void pango_font_description_unset_fields(MemorySegment desc, int to_unset) {
@@ -1265,11 +2800,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_merge$MH() {
-        return RuntimeHelper.requireNonNull(constants$911.pango_font_description_merge$MH,"pango_font_description_merge");
+        return RuntimeHelper.requireNonNull(constants$1542.const$1,"pango_font_description_merge");
     }
     /**
      * {@snippet :
-     * void pango_font_description_merge(PangoFontDescription* desc, const PangoFontDescription* desc_to_merge, gboolean replace_existing);
+     * void pango_font_description_merge(struct _PangoFontDescription* desc, struct _PangoFontDescription* desc_to_merge, int replace_existing);
      * }
      */
     public static void pango_font_description_merge(MemorySegment desc, MemorySegment desc_to_merge, int replace_existing) {
@@ -1281,11 +2816,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_merge_static$MH() {
-        return RuntimeHelper.requireNonNull(constants$911.pango_font_description_merge_static$MH,"pango_font_description_merge_static");
+        return RuntimeHelper.requireNonNull(constants$1542.const$2,"pango_font_description_merge_static");
     }
     /**
      * {@snippet :
-     * void pango_font_description_merge_static(PangoFontDescription* desc, const PangoFontDescription* desc_to_merge, gboolean replace_existing);
+     * void pango_font_description_merge_static(struct _PangoFontDescription* desc, struct _PangoFontDescription* desc_to_merge, int replace_existing);
      * }
      */
     public static void pango_font_description_merge_static(MemorySegment desc, MemorySegment desc_to_merge, int replace_existing) {
@@ -1297,11 +2832,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_better_match$MH() {
-        return RuntimeHelper.requireNonNull(constants$911.pango_font_description_better_match$MH,"pango_font_description_better_match");
+        return RuntimeHelper.requireNonNull(constants$1542.const$3,"pango_font_description_better_match");
     }
     /**
      * {@snippet :
-     * gboolean pango_font_description_better_match(const PangoFontDescription* desc, const PangoFontDescription* old_match, const PangoFontDescription* new_match);
+     * int pango_font_description_better_match(struct _PangoFontDescription* desc, struct _PangoFontDescription* old_match, struct _PangoFontDescription* new_match);
      * }
      */
     public static int pango_font_description_better_match(MemorySegment desc, MemorySegment old_match, MemorySegment new_match) {
@@ -1313,11 +2848,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$911.pango_font_description_from_string$MH,"pango_font_description_from_string");
+        return RuntimeHelper.requireNonNull(constants$1542.const$4,"pango_font_description_from_string");
     }
     /**
      * {@snippet :
-     * PangoFontDescription* pango_font_description_from_string(char* str);
+     * struct _PangoFontDescription* pango_font_description_from_string(char* str);
      * }
      */
     public static MemorySegment pango_font_description_from_string(MemorySegment str) {
@@ -1329,11 +2864,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$911.pango_font_description_to_string$MH,"pango_font_description_to_string");
+        return RuntimeHelper.requireNonNull(constants$1542.const$5,"pango_font_description_to_string");
     }
     /**
      * {@snippet :
-     * char* pango_font_description_to_string(const PangoFontDescription* desc);
+     * char* pango_font_description_to_string(struct _PangoFontDescription* desc);
      * }
      */
     public static MemorySegment pango_font_description_to_string(MemorySegment desc) {
@@ -1345,11 +2880,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_description_to_filename$MH() {
-        return RuntimeHelper.requireNonNull(constants$911.pango_font_description_to_filename$MH,"pango_font_description_to_filename");
+        return RuntimeHelper.requireNonNull(constants$1543.const$0,"pango_font_description_to_filename");
     }
     /**
      * {@snippet :
-     * char* pango_font_description_to_filename(const PangoFontDescription* desc);
+     * char* pango_font_description_to_filename(struct _PangoFontDescription* desc);
      * }
      */
     public static MemorySegment pango_font_description_to_filename(MemorySegment desc) {
@@ -1361,11 +2896,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$912.pango_font_metrics_get_type$MH,"pango_font_metrics_get_type");
+        return RuntimeHelper.requireNonNull(constants$1545.const$0,"pango_font_metrics_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_font_metrics_get_type();
+     * unsigned long pango_font_metrics_get_type();
      * }
      */
     public static long pango_font_metrics_get_type() {
@@ -1377,11 +2912,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$912.pango_font_metrics_ref$MH,"pango_font_metrics_ref");
+        return RuntimeHelper.requireNonNull(constants$1545.const$1,"pango_font_metrics_ref");
     }
     /**
      * {@snippet :
-     * PangoFontMetrics* pango_font_metrics_ref(PangoFontMetrics* metrics);
+     * struct _PangoFontMetrics* pango_font_metrics_ref(struct _PangoFontMetrics* metrics);
      * }
      */
     public static MemorySegment pango_font_metrics_ref(MemorySegment metrics) {
@@ -1393,11 +2928,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$912.pango_font_metrics_unref$MH,"pango_font_metrics_unref");
+        return RuntimeHelper.requireNonNull(constants$1545.const$2,"pango_font_metrics_unref");
     }
     /**
      * {@snippet :
-     * void pango_font_metrics_unref(PangoFontMetrics* metrics);
+     * void pango_font_metrics_unref(struct _PangoFontMetrics* metrics);
      * }
      */
     public static void pango_font_metrics_unref(MemorySegment metrics) {
@@ -1409,11 +2944,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_ascent$MH() {
-        return RuntimeHelper.requireNonNull(constants$912.pango_font_metrics_get_ascent$MH,"pango_font_metrics_get_ascent");
+        return RuntimeHelper.requireNonNull(constants$1545.const$3,"pango_font_metrics_get_ascent");
     }
     /**
      * {@snippet :
-     * int pango_font_metrics_get_ascent(PangoFontMetrics* metrics);
+     * int pango_font_metrics_get_ascent(struct _PangoFontMetrics* metrics);
      * }
      */
     public static int pango_font_metrics_get_ascent(MemorySegment metrics) {
@@ -1425,11 +2960,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_descent$MH() {
-        return RuntimeHelper.requireNonNull(constants$912.pango_font_metrics_get_descent$MH,"pango_font_metrics_get_descent");
+        return RuntimeHelper.requireNonNull(constants$1545.const$4,"pango_font_metrics_get_descent");
     }
     /**
      * {@snippet :
-     * int pango_font_metrics_get_descent(PangoFontMetrics* metrics);
+     * int pango_font_metrics_get_descent(struct _PangoFontMetrics* metrics);
      * }
      */
     public static int pango_font_metrics_get_descent(MemorySegment metrics) {
@@ -1441,11 +2976,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$912.pango_font_metrics_get_height$MH,"pango_font_metrics_get_height");
+        return RuntimeHelper.requireNonNull(constants$1545.const$5,"pango_font_metrics_get_height");
     }
     /**
      * {@snippet :
-     * int pango_font_metrics_get_height(PangoFontMetrics* metrics);
+     * int pango_font_metrics_get_height(struct _PangoFontMetrics* metrics);
      * }
      */
     public static int pango_font_metrics_get_height(MemorySegment metrics) {
@@ -1457,11 +2992,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_approximate_char_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$913.pango_font_metrics_get_approximate_char_width$MH,"pango_font_metrics_get_approximate_char_width");
+        return RuntimeHelper.requireNonNull(constants$1546.const$0,"pango_font_metrics_get_approximate_char_width");
     }
     /**
      * {@snippet :
-     * int pango_font_metrics_get_approximate_char_width(PangoFontMetrics* metrics);
+     * int pango_font_metrics_get_approximate_char_width(struct _PangoFontMetrics* metrics);
      * }
      */
     public static int pango_font_metrics_get_approximate_char_width(MemorySegment metrics) {
@@ -1473,11 +3008,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_approximate_digit_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$913.pango_font_metrics_get_approximate_digit_width$MH,"pango_font_metrics_get_approximate_digit_width");
+        return RuntimeHelper.requireNonNull(constants$1546.const$1,"pango_font_metrics_get_approximate_digit_width");
     }
     /**
      * {@snippet :
-     * int pango_font_metrics_get_approximate_digit_width(PangoFontMetrics* metrics);
+     * int pango_font_metrics_get_approximate_digit_width(struct _PangoFontMetrics* metrics);
      * }
      */
     public static int pango_font_metrics_get_approximate_digit_width(MemorySegment metrics) {
@@ -1489,11 +3024,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_underline_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$913.pango_font_metrics_get_underline_position$MH,"pango_font_metrics_get_underline_position");
+        return RuntimeHelper.requireNonNull(constants$1546.const$2,"pango_font_metrics_get_underline_position");
     }
     /**
      * {@snippet :
-     * int pango_font_metrics_get_underline_position(PangoFontMetrics* metrics);
+     * int pango_font_metrics_get_underline_position(struct _PangoFontMetrics* metrics);
      * }
      */
     public static int pango_font_metrics_get_underline_position(MemorySegment metrics) {
@@ -1505,11 +3040,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_underline_thickness$MH() {
-        return RuntimeHelper.requireNonNull(constants$913.pango_font_metrics_get_underline_thickness$MH,"pango_font_metrics_get_underline_thickness");
+        return RuntimeHelper.requireNonNull(constants$1546.const$3,"pango_font_metrics_get_underline_thickness");
     }
     /**
      * {@snippet :
-     * int pango_font_metrics_get_underline_thickness(PangoFontMetrics* metrics);
+     * int pango_font_metrics_get_underline_thickness(struct _PangoFontMetrics* metrics);
      * }
      */
     public static int pango_font_metrics_get_underline_thickness(MemorySegment metrics) {
@@ -1521,11 +3056,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_strikethrough_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$913.pango_font_metrics_get_strikethrough_position$MH,"pango_font_metrics_get_strikethrough_position");
+        return RuntimeHelper.requireNonNull(constants$1546.const$4,"pango_font_metrics_get_strikethrough_position");
     }
     /**
      * {@snippet :
-     * int pango_font_metrics_get_strikethrough_position(PangoFontMetrics* metrics);
+     * int pango_font_metrics_get_strikethrough_position(struct _PangoFontMetrics* metrics);
      * }
      */
     public static int pango_font_metrics_get_strikethrough_position(MemorySegment metrics) {
@@ -1537,11 +3072,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_metrics_get_strikethrough_thickness$MH() {
-        return RuntimeHelper.requireNonNull(constants$913.pango_font_metrics_get_strikethrough_thickness$MH,"pango_font_metrics_get_strikethrough_thickness");
+        return RuntimeHelper.requireNonNull(constants$1546.const$5,"pango_font_metrics_get_strikethrough_thickness");
     }
     /**
      * {@snippet :
-     * int pango_font_metrics_get_strikethrough_thickness(PangoFontMetrics* metrics);
+     * int pango_font_metrics_get_strikethrough_thickness(struct _PangoFontMetrics* metrics);
      * }
      */
     public static int pango_font_metrics_get_strikethrough_thickness(MemorySegment metrics) {
@@ -1553,11 +3088,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_family_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$914.pango_font_family_get_type$MH,"pango_font_family_get_type");
+        return RuntimeHelper.requireNonNull(constants$1549.const$2,"pango_font_family_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_font_family_get_type();
+     * unsigned long pango_font_family_get_type();
      * }
      */
     public static long pango_font_family_get_type() {
@@ -1569,11 +3104,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_family_list_faces$MH() {
-        return RuntimeHelper.requireNonNull(constants$914.pango_font_family_list_faces$MH,"pango_font_family_list_faces");
+        return RuntimeHelper.requireNonNull(constants$1549.const$3,"pango_font_family_list_faces");
     }
     /**
      * {@snippet :
-     * void pango_font_family_list_faces(PangoFontFamily* family, PangoFontFace*** faces, int* n_faces);
+     * void pango_font_family_list_faces(struct _PangoFontFamily* family, struct _PangoFontFace*** faces, int* n_faces);
      * }
      */
     public static void pango_font_family_list_faces(MemorySegment family, MemorySegment faces, MemorySegment n_faces) {
@@ -1585,11 +3120,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_family_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$914.pango_font_family_get_name$MH,"pango_font_family_get_name");
+        return RuntimeHelper.requireNonNull(constants$1549.const$4,"pango_font_family_get_name");
     }
     /**
      * {@snippet :
-     * char* pango_font_family_get_name(PangoFontFamily* family);
+     * char* pango_font_family_get_name(struct _PangoFontFamily* family);
      * }
      */
     public static MemorySegment pango_font_family_get_name(MemorySegment family) {
@@ -1601,11 +3136,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_family_is_monospace$MH() {
-        return RuntimeHelper.requireNonNull(constants$914.pango_font_family_is_monospace$MH,"pango_font_family_is_monospace");
+        return RuntimeHelper.requireNonNull(constants$1549.const$5,"pango_font_family_is_monospace");
     }
     /**
      * {@snippet :
-     * gboolean pango_font_family_is_monospace(PangoFontFamily* family);
+     * int pango_font_family_is_monospace(struct _PangoFontFamily* family);
      * }
      */
     public static int pango_font_family_is_monospace(MemorySegment family) {
@@ -1617,11 +3152,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_family_is_variable$MH() {
-        return RuntimeHelper.requireNonNull(constants$914.pango_font_family_is_variable$MH,"pango_font_family_is_variable");
+        return RuntimeHelper.requireNonNull(constants$1550.const$0,"pango_font_family_is_variable");
     }
     /**
      * {@snippet :
-     * gboolean pango_font_family_is_variable(PangoFontFamily* family);
+     * int pango_font_family_is_variable(struct _PangoFontFamily* family);
      * }
      */
     public static int pango_font_family_is_variable(MemorySegment family) {
@@ -1633,11 +3168,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_family_get_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$914.pango_font_family_get_face$MH,"pango_font_family_get_face");
+        return RuntimeHelper.requireNonNull(constants$1550.const$1,"pango_font_family_get_face");
     }
     /**
      * {@snippet :
-     * PangoFontFace* pango_font_family_get_face(PangoFontFamily* family, char* name);
+     * struct _PangoFontFace* pango_font_family_get_face(struct _PangoFontFamily* family, char* name);
      * }
      */
     public static MemorySegment pango_font_family_get_face(MemorySegment family, MemorySegment name) {
@@ -1649,11 +3184,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_face_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$915.pango_font_face_get_type$MH,"pango_font_face_get_type");
+        return RuntimeHelper.requireNonNull(constants$1553.const$0,"pango_font_face_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_font_face_get_type();
+     * unsigned long pango_font_face_get_type();
      * }
      */
     public static long pango_font_face_get_type() {
@@ -1665,11 +3200,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_face_describe$MH() {
-        return RuntimeHelper.requireNonNull(constants$915.pango_font_face_describe$MH,"pango_font_face_describe");
+        return RuntimeHelper.requireNonNull(constants$1553.const$1,"pango_font_face_describe");
     }
     /**
      * {@snippet :
-     * PangoFontDescription* pango_font_face_describe(PangoFontFace* face);
+     * struct _PangoFontDescription* pango_font_face_describe(struct _PangoFontFace* face);
      * }
      */
     public static MemorySegment pango_font_face_describe(MemorySegment face) {
@@ -1681,11 +3216,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_face_get_face_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$915.pango_font_face_get_face_name$MH,"pango_font_face_get_face_name");
+        return RuntimeHelper.requireNonNull(constants$1553.const$2,"pango_font_face_get_face_name");
     }
     /**
      * {@snippet :
-     * char* pango_font_face_get_face_name(PangoFontFace* face);
+     * char* pango_font_face_get_face_name(struct _PangoFontFace* face);
      * }
      */
     public static MemorySegment pango_font_face_get_face_name(MemorySegment face) {
@@ -1697,11 +3232,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_face_list_sizes$MH() {
-        return RuntimeHelper.requireNonNull(constants$915.pango_font_face_list_sizes$MH,"pango_font_face_list_sizes");
+        return RuntimeHelper.requireNonNull(constants$1553.const$3,"pango_font_face_list_sizes");
     }
     /**
      * {@snippet :
-     * void pango_font_face_list_sizes(PangoFontFace* face, int** sizes, int* n_sizes);
+     * void pango_font_face_list_sizes(struct _PangoFontFace* face, int** sizes, int* n_sizes);
      * }
      */
     public static void pango_font_face_list_sizes(MemorySegment face, MemorySegment sizes, MemorySegment n_sizes) {
@@ -1713,11 +3248,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_face_is_synthesized$MH() {
-        return RuntimeHelper.requireNonNull(constants$915.pango_font_face_is_synthesized$MH,"pango_font_face_is_synthesized");
+        return RuntimeHelper.requireNonNull(constants$1553.const$4,"pango_font_face_is_synthesized");
     }
     /**
      * {@snippet :
-     * gboolean pango_font_face_is_synthesized(PangoFontFace* face);
+     * int pango_font_face_is_synthesized(struct _PangoFontFace* face);
      * }
      */
     public static int pango_font_face_is_synthesized(MemorySegment face) {
@@ -1729,11 +3264,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_face_get_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$915.pango_font_face_get_family$MH,"pango_font_face_get_family");
+        return RuntimeHelper.requireNonNull(constants$1553.const$5,"pango_font_face_get_family");
     }
     /**
      * {@snippet :
-     * PangoFontFamily* pango_font_face_get_family(PangoFontFace* face);
+     * struct _PangoFontFamily* pango_font_face_get_family(struct _PangoFontFace* face);
      * }
      */
     public static MemorySegment pango_font_face_get_family(MemorySegment face) {
@@ -1745,11 +3280,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$916.pango_font_get_type$MH,"pango_font_get_type");
+        return RuntimeHelper.requireNonNull(constants$1557.const$0,"pango_font_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_font_get_type();
+     * unsigned long pango_font_get_type();
      * }
      */
     public static long pango_font_get_type() {
@@ -1761,11 +3296,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_describe$MH() {
-        return RuntimeHelper.requireNonNull(constants$916.pango_font_describe$MH,"pango_font_describe");
+        return RuntimeHelper.requireNonNull(constants$1557.const$1,"pango_font_describe");
     }
     /**
      * {@snippet :
-     * PangoFontDescription* pango_font_describe(PangoFont* font);
+     * struct _PangoFontDescription* pango_font_describe(struct _PangoFont* font);
      * }
      */
     public static MemorySegment pango_font_describe(MemorySegment font) {
@@ -1777,11 +3312,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_describe_with_absolute_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$916.pango_font_describe_with_absolute_size$MH,"pango_font_describe_with_absolute_size");
+        return RuntimeHelper.requireNonNull(constants$1557.const$2,"pango_font_describe_with_absolute_size");
     }
     /**
      * {@snippet :
-     * PangoFontDescription* pango_font_describe_with_absolute_size(PangoFont* font);
+     * struct _PangoFontDescription* pango_font_describe_with_absolute_size(struct _PangoFont* font);
      * }
      */
     public static MemorySegment pango_font_describe_with_absolute_size(MemorySegment font) {
@@ -1793,11 +3328,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_coverage$MH() {
-        return RuntimeHelper.requireNonNull(constants$916.pango_font_get_coverage$MH,"pango_font_get_coverage");
+        return RuntimeHelper.requireNonNull(constants$1557.const$3,"pango_font_get_coverage");
     }
     /**
      * {@snippet :
-     * PangoCoverage* pango_font_get_coverage(PangoFont* font, PangoLanguage* language);
+     * struct _PangoCoverage* pango_font_get_coverage(struct _PangoFont* font, struct _PangoLanguage* language);
      * }
      */
     public static MemorySegment pango_font_get_coverage(MemorySegment font, MemorySegment language) {
@@ -1809,11 +3344,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_find_shaper$MH() {
-        return RuntimeHelper.requireNonNull(constants$916.pango_font_find_shaper$MH,"pango_font_find_shaper");
+        return RuntimeHelper.requireNonNull(constants$1557.const$4,"pango_font_find_shaper");
     }
     /**
      * {@snippet :
-     * PangoEngineShape* pango_font_find_shaper(PangoFont* font, PangoLanguage* language, guint32 ch);
+     * struct _PangoEngineShape* pango_font_find_shaper(struct _PangoFont* font, struct _PangoLanguage* language, unsigned int ch);
      * }
      */
     public static MemorySegment pango_font_find_shaper(MemorySegment font, MemorySegment language, int ch) {
@@ -1825,11 +3360,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_metrics$MH() {
-        return RuntimeHelper.requireNonNull(constants$916.pango_font_get_metrics$MH,"pango_font_get_metrics");
+        return RuntimeHelper.requireNonNull(constants$1557.const$5,"pango_font_get_metrics");
     }
     /**
      * {@snippet :
-     * PangoFontMetrics* pango_font_get_metrics(PangoFont* font, PangoLanguage* language);
+     * struct _PangoFontMetrics* pango_font_get_metrics(struct _PangoFont* font, struct _PangoLanguage* language);
      * }
      */
     public static MemorySegment pango_font_get_metrics(MemorySegment font, MemorySegment language) {
@@ -1841,11 +3376,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_glyph_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$917.pango_font_get_glyph_extents$MH,"pango_font_get_glyph_extents");
+        return RuntimeHelper.requireNonNull(constants$1558.const$0,"pango_font_get_glyph_extents");
     }
     /**
      * {@snippet :
-     * void pango_font_get_glyph_extents(PangoFont* font, PangoGlyph glyph, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * void pango_font_get_glyph_extents(struct _PangoFont* font, unsigned int glyph, struct _PangoRectangle* ink_rect, struct _PangoRectangle* logical_rect);
      * }
      */
     public static void pango_font_get_glyph_extents(MemorySegment font, int glyph, MemorySegment ink_rect, MemorySegment logical_rect) {
@@ -1857,11 +3392,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_font_map$MH() {
-        return RuntimeHelper.requireNonNull(constants$917.pango_font_get_font_map$MH,"pango_font_get_font_map");
+        return RuntimeHelper.requireNonNull(constants$1558.const$1,"pango_font_get_font_map");
     }
     /**
      * {@snippet :
-     * PangoFontMap* pango_font_get_font_map(PangoFont* font);
+     * struct _PangoFontMap* pango_font_get_font_map(struct _PangoFont* font);
      * }
      */
     public static MemorySegment pango_font_get_font_map(MemorySegment font) {
@@ -1873,11 +3408,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$917.pango_font_get_face$MH,"pango_font_get_face");
+        return RuntimeHelper.requireNonNull(constants$1558.const$2,"pango_font_get_face");
     }
     /**
      * {@snippet :
-     * PangoFontFace* pango_font_get_face(PangoFont* font);
+     * struct _PangoFontFace* pango_font_get_face(struct _PangoFont* font);
      * }
      */
     public static MemorySegment pango_font_get_face(MemorySegment font) {
@@ -1889,11 +3424,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_has_char$MH() {
-        return RuntimeHelper.requireNonNull(constants$917.pango_font_has_char$MH,"pango_font_has_char");
+        return RuntimeHelper.requireNonNull(constants$1558.const$3,"pango_font_has_char");
     }
     /**
      * {@snippet :
-     * gboolean pango_font_has_char(PangoFont* font, gunichar wc);
+     * int pango_font_has_char(struct _PangoFont* font, unsigned int wc);
      * }
      */
     public static int pango_font_has_char(MemorySegment font, int wc) {
@@ -1905,11 +3440,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_features$MH() {
-        return RuntimeHelper.requireNonNull(constants$917.pango_font_get_features$MH,"pango_font_get_features");
+        return RuntimeHelper.requireNonNull(constants$1558.const$4,"pango_font_get_features");
     }
     /**
      * {@snippet :
-     * void pango_font_get_features(PangoFont* font, hb_feature_t* features, guint len, guint* num_features);
+     * void pango_font_get_features(struct _PangoFont* font, struct hb_feature_t* features, unsigned int len, unsigned int* num_features);
      * }
      */
     public static void pango_font_get_features(MemorySegment font, MemorySegment features, int len, MemorySegment num_features) {
@@ -1921,11 +3456,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_hb_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$917.pango_font_get_hb_font$MH,"pango_font_get_hb_font");
+        return RuntimeHelper.requireNonNull(constants$1558.const$5,"pango_font_get_hb_font");
     }
     /**
      * {@snippet :
-     * hb_font_t* pango_font_get_hb_font(PangoFont* font);
+     * struct hb_font_t* pango_font_get_hb_font(struct _PangoFont* font);
      * }
      */
     public static MemorySegment pango_font_get_hb_font(MemorySegment font) {
@@ -1937,11 +3472,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_get_languages$MH() {
-        return RuntimeHelper.requireNonNull(constants$918.pango_font_get_languages$MH,"pango_font_get_languages");
+        return RuntimeHelper.requireNonNull(constants$1559.const$0,"pango_font_get_languages");
     }
     /**
      * {@snippet :
-     * PangoLanguage** pango_font_get_languages(PangoFont* font);
+     * struct _PangoLanguage** pango_font_get_languages(struct _PangoFont* font);
      * }
      */
     public static MemorySegment pango_font_get_languages(MemorySegment font) {
@@ -1953,11 +3488,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_serialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$918.pango_font_serialize$MH,"pango_font_serialize");
+        return RuntimeHelper.requireNonNull(constants$1559.const$1,"pango_font_serialize");
     }
     /**
      * {@snippet :
-     * GBytes* pango_font_serialize(PangoFont* font);
+     * struct _GBytes* pango_font_serialize(struct _PangoFont* font);
      * }
      */
     public static MemorySegment pango_font_serialize(MemorySegment font) {
@@ -1969,11 +3504,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_deserialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$918.pango_font_deserialize$MH,"pango_font_deserialize");
+        return RuntimeHelper.requireNonNull(constants$1559.const$2,"pango_font_deserialize");
     }
     /**
      * {@snippet :
-     * PangoFont* pango_font_deserialize(PangoContext* context, GBytes* bytes, GError** error);
+     * struct _PangoFont* pango_font_deserialize(struct _PangoContext* context, struct _GBytes* bytes, struct _GError** error);
      * }
      */
     public static MemorySegment pango_font_deserialize(MemorySegment context, MemorySegment bytes, MemorySegment error) {
@@ -1989,103 +3524,103 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      * typedef struct _PangoFontFamily* PangoFontFamily_autoptr;
      * }
      */
-    public static final OfAddress PangoFontFamily_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFontFamily_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* PangoFontFamily_listautoptr;
      * }
      */
-    public static final OfAddress PangoFontFamily_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFontFamily_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* PangoFontFamily_slistautoptr;
      * }
      */
-    public static final OfAddress PangoFontFamily_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFontFamily_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* PangoFontFamily_queueautoptr;
      * }
      */
-    public static final OfAddress PangoFontFamily_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFontFamily_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _PangoFontFace* PangoFontFace_autoptr;
      * }
      */
-    public static final OfAddress PangoFontFace_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFontFace_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* PangoFontFace_listautoptr;
      * }
      */
-    public static final OfAddress PangoFontFace_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFontFace_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* PangoFontFace_slistautoptr;
      * }
      */
-    public static final OfAddress PangoFontFace_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFontFace_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* PangoFontFace_queueautoptr;
      * }
      */
-    public static final OfAddress PangoFontFace_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFontFace_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _PangoFont* PangoFont_autoptr;
      * }
      */
-    public static final OfAddress PangoFont_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFont_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* PangoFont_listautoptr;
      * }
      */
-    public static final OfAddress PangoFont_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFont_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* PangoFont_slistautoptr;
      * }
      */
-    public static final OfAddress PangoFont_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFont_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* PangoFont_queueautoptr;
      * }
      */
-    public static final OfAddress PangoFont_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFont_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _PangoFontDescription* PangoFontDescription_autoptr;
      * }
      */
-    public static final OfAddress PangoFontDescription_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFontDescription_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* PangoFontDescription_listautoptr;
      * }
      */
-    public static final OfAddress PangoFontDescription_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFontDescription_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* PangoFontDescription_slistautoptr;
      * }
      */
-    public static final OfAddress PangoFontDescription_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFontDescription_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* PangoFontDescription_queueautoptr;
      * }
      */
-    public static final OfAddress PangoFontDescription_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFontDescription_queueautoptr = RuntimeHelper.POINTER;
     public static MethodHandle pango_color_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$918.pango_color_get_type$MH,"pango_color_get_type");
+        return RuntimeHelper.requireNonNull(constants$1560.const$1,"pango_color_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_color_get_type();
+     * unsigned long pango_color_get_type();
      * }
      */
     public static long pango_color_get_type() {
@@ -2097,11 +3632,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_color_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$918.pango_color_copy$MH,"pango_color_copy");
+        return RuntimeHelper.requireNonNull(constants$1560.const$2,"pango_color_copy");
     }
     /**
      * {@snippet :
-     * PangoColor* pango_color_copy(const PangoColor* src);
+     * struct _PangoColor* pango_color_copy(struct _PangoColor* src);
      * }
      */
     public static MemorySegment pango_color_copy(MemorySegment src) {
@@ -2113,11 +3648,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_color_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$918.pango_color_free$MH,"pango_color_free");
+        return RuntimeHelper.requireNonNull(constants$1560.const$3,"pango_color_free");
     }
     /**
      * {@snippet :
-     * void pango_color_free(PangoColor* color);
+     * void pango_color_free(struct _PangoColor* color);
      * }
      */
     public static void pango_color_free(MemorySegment color) {
@@ -2129,11 +3664,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_color_parse$MH() {
-        return RuntimeHelper.requireNonNull(constants$919.pango_color_parse$MH,"pango_color_parse");
+        return RuntimeHelper.requireNonNull(constants$1560.const$4,"pango_color_parse");
     }
     /**
      * {@snippet :
-     * gboolean pango_color_parse(PangoColor* color, char* spec);
+     * int pango_color_parse(struct _PangoColor* color, char* spec);
      * }
      */
     public static int pango_color_parse(MemorySegment color, MemorySegment spec) {
@@ -2145,11 +3680,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_color_parse_with_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$919.pango_color_parse_with_alpha$MH,"pango_color_parse_with_alpha");
+        return RuntimeHelper.requireNonNull(constants$1560.const$5,"pango_color_parse_with_alpha");
     }
     /**
      * {@snippet :
-     * gboolean pango_color_parse_with_alpha(PangoColor* color, guint16* alpha, char* spec);
+     * int pango_color_parse_with_alpha(struct _PangoColor* color, unsigned short* alpha, char* spec);
      * }
      */
     public static int pango_color_parse_with_alpha(MemorySegment color, MemorySegment alpha, MemorySegment spec) {
@@ -2161,11 +3696,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_color_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$919.pango_color_to_string$MH,"pango_color_to_string");
+        return RuntimeHelper.requireNonNull(constants$1561.const$0,"pango_color_to_string");
     }
     /**
      * {@snippet :
-     * char* pango_color_to_string(const PangoColor* color);
+     * char* pango_color_to_string(struct _PangoColor* color);
      * }
      */
     public static MemorySegment pango_color_to_string(MemorySegment color) {
@@ -2178,7 +3713,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_INVALID = 0;
+     * enum PangoAttrType.PANGO_ATTR_INVALID = 0;
      * }
      */
     public static int PANGO_ATTR_INVALID() {
@@ -2186,7 +3721,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_LANGUAGE = 1;
+     * enum PangoAttrType.PANGO_ATTR_LANGUAGE = 1;
      * }
      */
     public static int PANGO_ATTR_LANGUAGE() {
@@ -2194,7 +3729,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_FAMILY = 2;
+     * enum PangoAttrType.PANGO_ATTR_FAMILY = 2;
      * }
      */
     public static int PANGO_ATTR_FAMILY() {
@@ -2202,7 +3737,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_STYLE = 3;
+     * enum PangoAttrType.PANGO_ATTR_STYLE = 3;
      * }
      */
     public static int PANGO_ATTR_STYLE() {
@@ -2210,7 +3745,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_WEIGHT = 4;
+     * enum PangoAttrType.PANGO_ATTR_WEIGHT = 4;
      * }
      */
     public static int PANGO_ATTR_WEIGHT() {
@@ -2218,7 +3753,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_VARIANT = 5;
+     * enum PangoAttrType.PANGO_ATTR_VARIANT = 5;
      * }
      */
     public static int PANGO_ATTR_VARIANT() {
@@ -2226,7 +3761,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_STRETCH = 6;
+     * enum PangoAttrType.PANGO_ATTR_STRETCH = 6;
      * }
      */
     public static int PANGO_ATTR_STRETCH() {
@@ -2234,7 +3769,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_SIZE = 7;
+     * enum PangoAttrType.PANGO_ATTR_SIZE = 7;
      * }
      */
     public static int PANGO_ATTR_SIZE() {
@@ -2242,7 +3777,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_FONT_DESC = 8;
+     * enum PangoAttrType.PANGO_ATTR_FONT_DESC = 8;
      * }
      */
     public static int PANGO_ATTR_FONT_DESC() {
@@ -2250,7 +3785,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_FOREGROUND = 9;
+     * enum PangoAttrType.PANGO_ATTR_FOREGROUND = 9;
      * }
      */
     public static int PANGO_ATTR_FOREGROUND() {
@@ -2258,7 +3793,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_BACKGROUND = 10;
+     * enum PangoAttrType.PANGO_ATTR_BACKGROUND = 10;
      * }
      */
     public static int PANGO_ATTR_BACKGROUND() {
@@ -2266,7 +3801,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_UNDERLINE = 11;
+     * enum PangoAttrType.PANGO_ATTR_UNDERLINE = 11;
      * }
      */
     public static int PANGO_ATTR_UNDERLINE() {
@@ -2274,7 +3809,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_STRIKETHROUGH = 12;
+     * enum PangoAttrType.PANGO_ATTR_STRIKETHROUGH = 12;
      * }
      */
     public static int PANGO_ATTR_STRIKETHROUGH() {
@@ -2282,7 +3817,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_RISE = 13;
+     * enum PangoAttrType.PANGO_ATTR_RISE = 13;
      * }
      */
     public static int PANGO_ATTR_RISE() {
@@ -2290,7 +3825,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_SHAPE = 14;
+     * enum PangoAttrType.PANGO_ATTR_SHAPE = 14;
      * }
      */
     public static int PANGO_ATTR_SHAPE() {
@@ -2298,7 +3833,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_SCALE = 15;
+     * enum PangoAttrType.PANGO_ATTR_SCALE = 15;
      * }
      */
     public static int PANGO_ATTR_SCALE() {
@@ -2306,7 +3841,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_FALLBACK = 16;
+     * enum PangoAttrType.PANGO_ATTR_FALLBACK = 16;
      * }
      */
     public static int PANGO_ATTR_FALLBACK() {
@@ -2314,7 +3849,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_LETTER_SPACING = 17;
+     * enum PangoAttrType.PANGO_ATTR_LETTER_SPACING = 17;
      * }
      */
     public static int PANGO_ATTR_LETTER_SPACING() {
@@ -2322,7 +3857,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_UNDERLINE_COLOR = 18;
+     * enum PangoAttrType.PANGO_ATTR_UNDERLINE_COLOR = 18;
      * }
      */
     public static int PANGO_ATTR_UNDERLINE_COLOR() {
@@ -2330,7 +3865,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_STRIKETHROUGH_COLOR = 19;
+     * enum PangoAttrType.PANGO_ATTR_STRIKETHROUGH_COLOR = 19;
      * }
      */
     public static int PANGO_ATTR_STRIKETHROUGH_COLOR() {
@@ -2338,7 +3873,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_ABSOLUTE_SIZE = 20;
+     * enum PangoAttrType.PANGO_ATTR_ABSOLUTE_SIZE = 20;
      * }
      */
     public static int PANGO_ATTR_ABSOLUTE_SIZE() {
@@ -2346,7 +3881,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_GRAVITY = 21;
+     * enum PangoAttrType.PANGO_ATTR_GRAVITY = 21;
      * }
      */
     public static int PANGO_ATTR_GRAVITY() {
@@ -2354,7 +3889,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_GRAVITY_HINT = 22;
+     * enum PangoAttrType.PANGO_ATTR_GRAVITY_HINT = 22;
      * }
      */
     public static int PANGO_ATTR_GRAVITY_HINT() {
@@ -2362,7 +3897,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_FONT_FEATURES = 23;
+     * enum PangoAttrType.PANGO_ATTR_FONT_FEATURES = 23;
      * }
      */
     public static int PANGO_ATTR_FONT_FEATURES() {
@@ -2370,7 +3905,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_FOREGROUND_ALPHA = 24;
+     * enum PangoAttrType.PANGO_ATTR_FOREGROUND_ALPHA = 24;
      * }
      */
     public static int PANGO_ATTR_FOREGROUND_ALPHA() {
@@ -2378,7 +3913,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_BACKGROUND_ALPHA = 25;
+     * enum PangoAttrType.PANGO_ATTR_BACKGROUND_ALPHA = 25;
      * }
      */
     public static int PANGO_ATTR_BACKGROUND_ALPHA() {
@@ -2386,7 +3921,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_ALLOW_BREAKS = 26;
+     * enum PangoAttrType.PANGO_ATTR_ALLOW_BREAKS = 26;
      * }
      */
     public static int PANGO_ATTR_ALLOW_BREAKS() {
@@ -2394,7 +3929,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_SHOW = 27;
+     * enum PangoAttrType.PANGO_ATTR_SHOW = 27;
      * }
      */
     public static int PANGO_ATTR_SHOW() {
@@ -2402,7 +3937,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_INSERT_HYPHENS = 28;
+     * enum PangoAttrType.PANGO_ATTR_INSERT_HYPHENS = 28;
      * }
      */
     public static int PANGO_ATTR_INSERT_HYPHENS() {
@@ -2410,7 +3945,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_OVERLINE = 29;
+     * enum PangoAttrType.PANGO_ATTR_OVERLINE = 29;
      * }
      */
     public static int PANGO_ATTR_OVERLINE() {
@@ -2418,7 +3953,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_OVERLINE_COLOR = 30;
+     * enum PangoAttrType.PANGO_ATTR_OVERLINE_COLOR = 30;
      * }
      */
     public static int PANGO_ATTR_OVERLINE_COLOR() {
@@ -2426,7 +3961,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_LINE_HEIGHT = 31;
+     * enum PangoAttrType.PANGO_ATTR_LINE_HEIGHT = 31;
      * }
      */
     public static int PANGO_ATTR_LINE_HEIGHT() {
@@ -2434,7 +3969,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_ABSOLUTE_LINE_HEIGHT = 32;
+     * enum PangoAttrType.PANGO_ATTR_ABSOLUTE_LINE_HEIGHT = 32;
      * }
      */
     public static int PANGO_ATTR_ABSOLUTE_LINE_HEIGHT() {
@@ -2442,7 +3977,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_TEXT_TRANSFORM = 33;
+     * enum PangoAttrType.PANGO_ATTR_TEXT_TRANSFORM = 33;
      * }
      */
     public static int PANGO_ATTR_TEXT_TRANSFORM() {
@@ -2450,7 +3985,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_WORD = 34;
+     * enum PangoAttrType.PANGO_ATTR_WORD = 34;
      * }
      */
     public static int PANGO_ATTR_WORD() {
@@ -2458,7 +3993,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_SENTENCE = 35;
+     * enum PangoAttrType.PANGO_ATTR_SENTENCE = 35;
      * }
      */
     public static int PANGO_ATTR_SENTENCE() {
@@ -2466,7 +4001,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_BASELINE_SHIFT = 36;
+     * enum PangoAttrType.PANGO_ATTR_BASELINE_SHIFT = 36;
      * }
      */
     public static int PANGO_ATTR_BASELINE_SHIFT() {
@@ -2474,7 +4009,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ATTR_FONT_SCALE = 37;
+     * enum PangoAttrType.PANGO_ATTR_FONT_SCALE = 37;
      * }
      */
     public static int PANGO_ATTR_FONT_SCALE() {
@@ -2482,7 +4017,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_UNDERLINE_NONE = 0;
+     * enum PangoUnderline.PANGO_UNDERLINE_NONE = 0;
      * }
      */
     public static int PANGO_UNDERLINE_NONE() {
@@ -2490,7 +4025,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_UNDERLINE_SINGLE = 1;
+     * enum PangoUnderline.PANGO_UNDERLINE_SINGLE = 1;
      * }
      */
     public static int PANGO_UNDERLINE_SINGLE() {
@@ -2498,7 +4033,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_UNDERLINE_DOUBLE = 2;
+     * enum PangoUnderline.PANGO_UNDERLINE_DOUBLE = 2;
      * }
      */
     public static int PANGO_UNDERLINE_DOUBLE() {
@@ -2506,7 +4041,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_UNDERLINE_LOW = 3;
+     * enum PangoUnderline.PANGO_UNDERLINE_LOW = 3;
      * }
      */
     public static int PANGO_UNDERLINE_LOW() {
@@ -2514,7 +4049,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_UNDERLINE_ERROR = 4;
+     * enum PangoUnderline.PANGO_UNDERLINE_ERROR = 4;
      * }
      */
     public static int PANGO_UNDERLINE_ERROR() {
@@ -2522,7 +4057,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_UNDERLINE_SINGLE_LINE = 5;
+     * enum PangoUnderline.PANGO_UNDERLINE_SINGLE_LINE = 5;
      * }
      */
     public static int PANGO_UNDERLINE_SINGLE_LINE() {
@@ -2530,7 +4065,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_UNDERLINE_DOUBLE_LINE = 6;
+     * enum PangoUnderline.PANGO_UNDERLINE_DOUBLE_LINE = 6;
      * }
      */
     public static int PANGO_UNDERLINE_DOUBLE_LINE() {
@@ -2538,7 +4073,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_UNDERLINE_ERROR_LINE = 7;
+     * enum PangoUnderline.PANGO_UNDERLINE_ERROR_LINE = 7;
      * }
      */
     public static int PANGO_UNDERLINE_ERROR_LINE() {
@@ -2546,7 +4081,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_OVERLINE_NONE = 0;
+     * enum PangoOverline.PANGO_OVERLINE_NONE = 0;
      * }
      */
     public static int PANGO_OVERLINE_NONE() {
@@ -2554,7 +4089,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_OVERLINE_SINGLE = 1;
+     * enum PangoOverline.PANGO_OVERLINE_SINGLE = 1;
      * }
      */
     public static int PANGO_OVERLINE_SINGLE() {
@@ -2562,7 +4097,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_SHOW_NONE = 0;
+     * enum PangoShowFlags.PANGO_SHOW_NONE = 0;
      * }
      */
     public static int PANGO_SHOW_NONE() {
@@ -2570,7 +4105,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_SHOW_SPACES = 1;
+     * enum PangoShowFlags.PANGO_SHOW_SPACES = 1;
      * }
      */
     public static int PANGO_SHOW_SPACES() {
@@ -2578,7 +4113,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_SHOW_LINE_BREAKS = 2;
+     * enum PangoShowFlags.PANGO_SHOW_LINE_BREAKS = 2;
      * }
      */
     public static int PANGO_SHOW_LINE_BREAKS() {
@@ -2586,7 +4121,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_SHOW_IGNORABLES = 4;
+     * enum PangoShowFlags.PANGO_SHOW_IGNORABLES = 4;
      * }
      */
     public static int PANGO_SHOW_IGNORABLES() {
@@ -2594,7 +4129,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_TEXT_TRANSFORM_NONE = 0;
+     * enum PangoTextTransform.PANGO_TEXT_TRANSFORM_NONE = 0;
      * }
      */
     public static int PANGO_TEXT_TRANSFORM_NONE() {
@@ -2602,7 +4137,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_TEXT_TRANSFORM_LOWERCASE = 1;
+     * enum PangoTextTransform.PANGO_TEXT_TRANSFORM_LOWERCASE = 1;
      * }
      */
     public static int PANGO_TEXT_TRANSFORM_LOWERCASE() {
@@ -2610,7 +4145,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_TEXT_TRANSFORM_UPPERCASE = 2;
+     * enum PangoTextTransform.PANGO_TEXT_TRANSFORM_UPPERCASE = 2;
      * }
      */
     public static int PANGO_TEXT_TRANSFORM_UPPERCASE() {
@@ -2618,7 +4153,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_TEXT_TRANSFORM_CAPITALIZE = 3;
+     * enum PangoTextTransform.PANGO_TEXT_TRANSFORM_CAPITALIZE = 3;
      * }
      */
     public static int PANGO_TEXT_TRANSFORM_CAPITALIZE() {
@@ -2626,7 +4161,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BASELINE_SHIFT_NONE = 0;
+     * enum PangoBaselineShift.PANGO_BASELINE_SHIFT_NONE = 0;
      * }
      */
     public static int PANGO_BASELINE_SHIFT_NONE() {
@@ -2634,7 +4169,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BASELINE_SHIFT_SUPERSCRIPT = 1;
+     * enum PangoBaselineShift.PANGO_BASELINE_SHIFT_SUPERSCRIPT = 1;
      * }
      */
     public static int PANGO_BASELINE_SHIFT_SUPERSCRIPT() {
@@ -2642,7 +4177,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_BASELINE_SHIFT_SUBSCRIPT = 2;
+     * enum PangoBaselineShift.PANGO_BASELINE_SHIFT_SUBSCRIPT = 2;
      * }
      */
     public static int PANGO_BASELINE_SHIFT_SUBSCRIPT() {
@@ -2650,7 +4185,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_FONT_SCALE_NONE = 0;
+     * enum PangoFontScale.PANGO_FONT_SCALE_NONE = 0;
      * }
      */
     public static int PANGO_FONT_SCALE_NONE() {
@@ -2658,7 +4193,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_FONT_SCALE_SUPERSCRIPT = 1;
+     * enum PangoFontScale.PANGO_FONT_SCALE_SUPERSCRIPT = 1;
      * }
      */
     public static int PANGO_FONT_SCALE_SUPERSCRIPT() {
@@ -2666,7 +4201,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_FONT_SCALE_SUBSCRIPT = 2;
+     * enum PangoFontScale.PANGO_FONT_SCALE_SUBSCRIPT = 2;
      * }
      */
     public static int PANGO_FONT_SCALE_SUBSCRIPT() {
@@ -2674,18 +4209,18 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_FONT_SCALE_SMALL_CAPS = 3;
+     * enum PangoFontScale.PANGO_FONT_SCALE_SMALL_CAPS = 3;
      * }
      */
     public static int PANGO_FONT_SCALE_SMALL_CAPS() {
         return (int)3L;
     }
     public static MethodHandle pango_attribute_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$920.pango_attribute_get_type$MH,"pango_attribute_get_type");
+        return RuntimeHelper.requireNonNull(constants$1567.const$0,"pango_attribute_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_attribute_get_type();
+     * unsigned long pango_attribute_get_type();
      * }
      */
     public static long pango_attribute_get_type() {
@@ -2697,11 +4232,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_type_register$MH() {
-        return RuntimeHelper.requireNonNull(constants$920.pango_attr_type_register$MH,"pango_attr_type_register");
+        return RuntimeHelper.requireNonNull(constants$1567.const$1,"pango_attr_type_register");
     }
     /**
      * {@snippet :
-     * PangoAttrType pango_attr_type_register(char* name);
+     * enum PangoAttrType pango_attr_type_register(char* name);
      * }
      */
     public static int pango_attr_type_register(MemorySegment name) {
@@ -2713,11 +4248,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_type_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$920.pango_attr_type_get_name$MH,"pango_attr_type_get_name");
+        return RuntimeHelper.requireNonNull(constants$1567.const$2,"pango_attr_type_get_name");
     }
     /**
      * {@snippet :
-     * char* pango_attr_type_get_name(PangoAttrType type);
+     * char* pango_attr_type_get_name(enum PangoAttrType type);
      * }
      */
     public static MemorySegment pango_attr_type_get_name(int type) {
@@ -2729,11 +4264,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_init$MH() {
-        return RuntimeHelper.requireNonNull(constants$920.pango_attribute_init$MH,"pango_attribute_init");
+        return RuntimeHelper.requireNonNull(constants$1567.const$3,"pango_attribute_init");
     }
     /**
      * {@snippet :
-     * void pango_attribute_init(PangoAttribute* attr, const PangoAttrClass* klass);
+     * void pango_attribute_init(struct _PangoAttribute* attr, struct _PangoAttrClass* klass);
      * }
      */
     public static void pango_attribute_init(MemorySegment attr, MemorySegment klass) {
@@ -2745,11 +4280,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$920.pango_attribute_copy$MH,"pango_attribute_copy");
+        return RuntimeHelper.requireNonNull(constants$1567.const$4,"pango_attribute_copy");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attribute_copy(const PangoAttribute* attr);
+     * struct _PangoAttribute* pango_attribute_copy(struct _PangoAttribute* attr);
      * }
      */
     public static MemorySegment pango_attribute_copy(MemorySegment attr) {
@@ -2761,11 +4296,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$921.pango_attribute_destroy$MH,"pango_attribute_destroy");
+        return RuntimeHelper.requireNonNull(constants$1567.const$5,"pango_attribute_destroy");
     }
     /**
      * {@snippet :
-     * void pango_attribute_destroy(PangoAttribute* attr);
+     * void pango_attribute_destroy(struct _PangoAttribute* attr);
      * }
      */
     public static void pango_attribute_destroy(MemorySegment attr) {
@@ -2777,11 +4312,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$921.pango_attribute_equal$MH,"pango_attribute_equal");
+        return RuntimeHelper.requireNonNull(constants$1568.const$0,"pango_attribute_equal");
     }
     /**
      * {@snippet :
-     * gboolean pango_attribute_equal(const PangoAttribute* attr1, const PangoAttribute* attr2);
+     * int pango_attribute_equal(struct _PangoAttribute* attr1, struct _PangoAttribute* attr2);
      * }
      */
     public static int pango_attribute_equal(MemorySegment attr1, MemorySegment attr2) {
@@ -2793,11 +4328,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_language_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$921.pango_attr_language_new$MH,"pango_attr_language_new");
+        return RuntimeHelper.requireNonNull(constants$1568.const$1,"pango_attr_language_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_language_new(PangoLanguage* language);
+     * struct _PangoAttribute* pango_attr_language_new(struct _PangoLanguage* language);
      * }
      */
     public static MemorySegment pango_attr_language_new(MemorySegment language) {
@@ -2809,11 +4344,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_family_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$921.pango_attr_family_new$MH,"pango_attr_family_new");
+        return RuntimeHelper.requireNonNull(constants$1568.const$2,"pango_attr_family_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_family_new(char* family);
+     * struct _PangoAttribute* pango_attr_family_new(char* family);
      * }
      */
     public static MemorySegment pango_attr_family_new(MemorySegment family) {
@@ -2825,11 +4360,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_foreground_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$921.pango_attr_foreground_new$MH,"pango_attr_foreground_new");
+        return RuntimeHelper.requireNonNull(constants$1568.const$4,"pango_attr_foreground_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_foreground_new(guint16 red, guint16 green, guint16 blue);
+     * struct _PangoAttribute* pango_attr_foreground_new(unsigned short red, unsigned short green, unsigned short blue);
      * }
      */
     public static MemorySegment pango_attr_foreground_new(short red, short green, short blue) {
@@ -2841,11 +4376,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_background_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$921.pango_attr_background_new$MH,"pango_attr_background_new");
+        return RuntimeHelper.requireNonNull(constants$1568.const$5,"pango_attr_background_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_background_new(guint16 red, guint16 green, guint16 blue);
+     * struct _PangoAttribute* pango_attr_background_new(unsigned short red, unsigned short green, unsigned short blue);
      * }
      */
     public static MemorySegment pango_attr_background_new(short red, short green, short blue) {
@@ -2857,11 +4392,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_size_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$922.pango_attr_size_new$MH,"pango_attr_size_new");
+        return RuntimeHelper.requireNonNull(constants$1569.const$0,"pango_attr_size_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_size_new(int size);
+     * struct _PangoAttribute* pango_attr_size_new(int size);
      * }
      */
     public static MemorySegment pango_attr_size_new(int size) {
@@ -2873,11 +4408,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_size_new_absolute$MH() {
-        return RuntimeHelper.requireNonNull(constants$922.pango_attr_size_new_absolute$MH,"pango_attr_size_new_absolute");
+        return RuntimeHelper.requireNonNull(constants$1569.const$1,"pango_attr_size_new_absolute");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_size_new_absolute(int size);
+     * struct _PangoAttribute* pango_attr_size_new_absolute(int size);
      * }
      */
     public static MemorySegment pango_attr_size_new_absolute(int size) {
@@ -2889,11 +4424,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_style_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$922.pango_attr_style_new$MH,"pango_attr_style_new");
+        return RuntimeHelper.requireNonNull(constants$1569.const$2,"pango_attr_style_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_style_new(PangoStyle style);
+     * struct _PangoAttribute* pango_attr_style_new(enum PangoStyle style);
      * }
      */
     public static MemorySegment pango_attr_style_new(int style) {
@@ -2905,11 +4440,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_weight_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$922.pango_attr_weight_new$MH,"pango_attr_weight_new");
+        return RuntimeHelper.requireNonNull(constants$1569.const$3,"pango_attr_weight_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_weight_new(PangoWeight weight);
+     * struct _PangoAttribute* pango_attr_weight_new(enum PangoWeight weight);
      * }
      */
     public static MemorySegment pango_attr_weight_new(int weight) {
@@ -2921,11 +4456,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_variant_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$922.pango_attr_variant_new$MH,"pango_attr_variant_new");
+        return RuntimeHelper.requireNonNull(constants$1569.const$4,"pango_attr_variant_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_variant_new(PangoVariant variant);
+     * struct _PangoAttribute* pango_attr_variant_new(enum PangoVariant variant);
      * }
      */
     public static MemorySegment pango_attr_variant_new(int variant) {
@@ -2937,11 +4472,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_stretch_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$922.pango_attr_stretch_new$MH,"pango_attr_stretch_new");
+        return RuntimeHelper.requireNonNull(constants$1569.const$5,"pango_attr_stretch_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_stretch_new(PangoStretch stretch);
+     * struct _PangoAttribute* pango_attr_stretch_new(enum PangoStretch stretch);
      * }
      */
     public static MemorySegment pango_attr_stretch_new(int stretch) {
@@ -2953,11 +4488,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_font_desc_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$923.pango_attr_font_desc_new$MH,"pango_attr_font_desc_new");
+        return RuntimeHelper.requireNonNull(constants$1570.const$0,"pango_attr_font_desc_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_font_desc_new(const PangoFontDescription* desc);
+     * struct _PangoAttribute* pango_attr_font_desc_new(struct _PangoFontDescription* desc);
      * }
      */
     public static MemorySegment pango_attr_font_desc_new(MemorySegment desc) {
@@ -2969,11 +4504,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_underline_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$923.pango_attr_underline_new$MH,"pango_attr_underline_new");
+        return RuntimeHelper.requireNonNull(constants$1570.const$1,"pango_attr_underline_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_underline_new(PangoUnderline underline);
+     * struct _PangoAttribute* pango_attr_underline_new(enum PangoUnderline underline);
      * }
      */
     public static MemorySegment pango_attr_underline_new(int underline) {
@@ -2985,11 +4520,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_underline_color_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$923.pango_attr_underline_color_new$MH,"pango_attr_underline_color_new");
+        return RuntimeHelper.requireNonNull(constants$1570.const$2,"pango_attr_underline_color_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_underline_color_new(guint16 red, guint16 green, guint16 blue);
+     * struct _PangoAttribute* pango_attr_underline_color_new(unsigned short red, unsigned short green, unsigned short blue);
      * }
      */
     public static MemorySegment pango_attr_underline_color_new(short red, short green, short blue) {
@@ -3001,11 +4536,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_strikethrough_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$923.pango_attr_strikethrough_new$MH,"pango_attr_strikethrough_new");
+        return RuntimeHelper.requireNonNull(constants$1570.const$3,"pango_attr_strikethrough_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_strikethrough_new(gboolean strikethrough);
+     * struct _PangoAttribute* pango_attr_strikethrough_new(int strikethrough);
      * }
      */
     public static MemorySegment pango_attr_strikethrough_new(int strikethrough) {
@@ -3017,11 +4552,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_strikethrough_color_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$923.pango_attr_strikethrough_color_new$MH,"pango_attr_strikethrough_color_new");
+        return RuntimeHelper.requireNonNull(constants$1570.const$4,"pango_attr_strikethrough_color_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_strikethrough_color_new(guint16 red, guint16 green, guint16 blue);
+     * struct _PangoAttribute* pango_attr_strikethrough_color_new(unsigned short red, unsigned short green, unsigned short blue);
      * }
      */
     public static MemorySegment pango_attr_strikethrough_color_new(short red, short green, short blue) {
@@ -3033,11 +4568,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_rise_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$923.pango_attr_rise_new$MH,"pango_attr_rise_new");
+        return RuntimeHelper.requireNonNull(constants$1570.const$5,"pango_attr_rise_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_rise_new(int rise);
+     * struct _PangoAttribute* pango_attr_rise_new(int rise);
      * }
      */
     public static MemorySegment pango_attr_rise_new(int rise) {
@@ -3049,11 +4584,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_baseline_shift_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$924.pango_attr_baseline_shift_new$MH,"pango_attr_baseline_shift_new");
+        return RuntimeHelper.requireNonNull(constants$1571.const$0,"pango_attr_baseline_shift_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_baseline_shift_new(int shift);
+     * struct _PangoAttribute* pango_attr_baseline_shift_new(int shift);
      * }
      */
     public static MemorySegment pango_attr_baseline_shift_new(int shift) {
@@ -3065,11 +4600,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_font_scale_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$924.pango_attr_font_scale_new$MH,"pango_attr_font_scale_new");
+        return RuntimeHelper.requireNonNull(constants$1571.const$1,"pango_attr_font_scale_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_font_scale_new(PangoFontScale scale);
+     * struct _PangoAttribute* pango_attr_font_scale_new(enum PangoFontScale scale);
      * }
      */
     public static MemorySegment pango_attr_font_scale_new(int scale) {
@@ -3081,11 +4616,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_scale_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$924.pango_attr_scale_new$MH,"pango_attr_scale_new");
+        return RuntimeHelper.requireNonNull(constants$1571.const$2,"pango_attr_scale_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_scale_new(double scale_factor);
+     * struct _PangoAttribute* pango_attr_scale_new(double scale_factor);
      * }
      */
     public static MemorySegment pango_attr_scale_new(double scale_factor) {
@@ -3097,11 +4632,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_fallback_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$924.pango_attr_fallback_new$MH,"pango_attr_fallback_new");
+        return RuntimeHelper.requireNonNull(constants$1571.const$3,"pango_attr_fallback_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_fallback_new(gboolean enable_fallback);
+     * struct _PangoAttribute* pango_attr_fallback_new(int enable_fallback);
      * }
      */
     public static MemorySegment pango_attr_fallback_new(int enable_fallback) {
@@ -3113,11 +4648,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_letter_spacing_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$924.pango_attr_letter_spacing_new$MH,"pango_attr_letter_spacing_new");
+        return RuntimeHelper.requireNonNull(constants$1571.const$4,"pango_attr_letter_spacing_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_letter_spacing_new(int letter_spacing);
+     * struct _PangoAttribute* pango_attr_letter_spacing_new(int letter_spacing);
      * }
      */
     public static MemorySegment pango_attr_letter_spacing_new(int letter_spacing) {
@@ -3129,11 +4664,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_shape_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$924.pango_attr_shape_new$MH,"pango_attr_shape_new");
+        return RuntimeHelper.requireNonNull(constants$1571.const$5,"pango_attr_shape_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_shape_new(const PangoRectangle* ink_rect, const PangoRectangle* logical_rect);
+     * struct _PangoAttribute* pango_attr_shape_new(struct _PangoRectangle* ink_rect, struct _PangoRectangle* logical_rect);
      * }
      */
     public static MemorySegment pango_attr_shape_new(MemorySegment ink_rect, MemorySegment logical_rect) {
@@ -3145,11 +4680,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_shape_new_with_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$925.pango_attr_shape_new_with_data$MH,"pango_attr_shape_new_with_data");
+        return RuntimeHelper.requireNonNull(constants$1572.const$2,"pango_attr_shape_new_with_data");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_shape_new_with_data(const PangoRectangle* ink_rect, const PangoRectangle* logical_rect, gpointer data, PangoAttrDataCopyFunc copy_func, GDestroyNotify destroy_func);
+     * struct _PangoAttribute* pango_attr_shape_new_with_data(struct _PangoRectangle* ink_rect, struct _PangoRectangle* logical_rect, void* data, void* (*copy_func)(void*), void (*destroy_func)(void*));
      * }
      */
     public static MemorySegment pango_attr_shape_new_with_data(MemorySegment ink_rect, MemorySegment logical_rect, MemorySegment data, MemorySegment copy_func, MemorySegment destroy_func) {
@@ -3161,11 +4696,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_gravity_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$925.pango_attr_gravity_new$MH,"pango_attr_gravity_new");
+        return RuntimeHelper.requireNonNull(constants$1572.const$3,"pango_attr_gravity_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_gravity_new(PangoGravity gravity);
+     * struct _PangoAttribute* pango_attr_gravity_new(enum PangoGravity gravity);
      * }
      */
     public static MemorySegment pango_attr_gravity_new(int gravity) {
@@ -3177,11 +4712,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_gravity_hint_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$925.pango_attr_gravity_hint_new$MH,"pango_attr_gravity_hint_new");
+        return RuntimeHelper.requireNonNull(constants$1572.const$4,"pango_attr_gravity_hint_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_gravity_hint_new(PangoGravityHint hint);
+     * struct _PangoAttribute* pango_attr_gravity_hint_new(enum PangoGravityHint hint);
      * }
      */
     public static MemorySegment pango_attr_gravity_hint_new(int hint) {
@@ -3193,11 +4728,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_font_features_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$925.pango_attr_font_features_new$MH,"pango_attr_font_features_new");
+        return RuntimeHelper.requireNonNull(constants$1572.const$5,"pango_attr_font_features_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_font_features_new(char* features);
+     * struct _PangoAttribute* pango_attr_font_features_new(char* features);
      * }
      */
     public static MemorySegment pango_attr_font_features_new(MemorySegment features) {
@@ -3209,11 +4744,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_foreground_alpha_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$925.pango_attr_foreground_alpha_new$MH,"pango_attr_foreground_alpha_new");
+        return RuntimeHelper.requireNonNull(constants$1573.const$0,"pango_attr_foreground_alpha_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_foreground_alpha_new(guint16 alpha);
+     * struct _PangoAttribute* pango_attr_foreground_alpha_new(unsigned short alpha);
      * }
      */
     public static MemorySegment pango_attr_foreground_alpha_new(short alpha) {
@@ -3225,11 +4760,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_background_alpha_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$925.pango_attr_background_alpha_new$MH,"pango_attr_background_alpha_new");
+        return RuntimeHelper.requireNonNull(constants$1573.const$1,"pango_attr_background_alpha_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_background_alpha_new(guint16 alpha);
+     * struct _PangoAttribute* pango_attr_background_alpha_new(unsigned short alpha);
      * }
      */
     public static MemorySegment pango_attr_background_alpha_new(short alpha) {
@@ -3241,11 +4776,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_allow_breaks_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$926.pango_attr_allow_breaks_new$MH,"pango_attr_allow_breaks_new");
+        return RuntimeHelper.requireNonNull(constants$1573.const$2,"pango_attr_allow_breaks_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_allow_breaks_new(gboolean allow_breaks);
+     * struct _PangoAttribute* pango_attr_allow_breaks_new(int allow_breaks);
      * }
      */
     public static MemorySegment pango_attr_allow_breaks_new(int allow_breaks) {
@@ -3257,11 +4792,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_word_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$926.pango_attr_word_new$MH,"pango_attr_word_new");
+        return RuntimeHelper.requireNonNull(constants$1573.const$3,"pango_attr_word_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_word_new();
+     * struct _PangoAttribute* pango_attr_word_new();
      * }
      */
     public static MemorySegment pango_attr_word_new() {
@@ -3273,11 +4808,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_sentence_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$926.pango_attr_sentence_new$MH,"pango_attr_sentence_new");
+        return RuntimeHelper.requireNonNull(constants$1573.const$4,"pango_attr_sentence_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_sentence_new();
+     * struct _PangoAttribute* pango_attr_sentence_new();
      * }
      */
     public static MemorySegment pango_attr_sentence_new() {
@@ -3289,11 +4824,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_insert_hyphens_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$926.pango_attr_insert_hyphens_new$MH,"pango_attr_insert_hyphens_new");
+        return RuntimeHelper.requireNonNull(constants$1573.const$5,"pango_attr_insert_hyphens_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_insert_hyphens_new(gboolean insert_hyphens);
+     * struct _PangoAttribute* pango_attr_insert_hyphens_new(int insert_hyphens);
      * }
      */
     public static MemorySegment pango_attr_insert_hyphens_new(int insert_hyphens) {
@@ -3305,11 +4840,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_overline_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$926.pango_attr_overline_new$MH,"pango_attr_overline_new");
+        return RuntimeHelper.requireNonNull(constants$1574.const$0,"pango_attr_overline_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_overline_new(PangoOverline overline);
+     * struct _PangoAttribute* pango_attr_overline_new(enum PangoOverline overline);
      * }
      */
     public static MemorySegment pango_attr_overline_new(int overline) {
@@ -3321,11 +4856,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_overline_color_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$926.pango_attr_overline_color_new$MH,"pango_attr_overline_color_new");
+        return RuntimeHelper.requireNonNull(constants$1574.const$1,"pango_attr_overline_color_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_overline_color_new(guint16 red, guint16 green, guint16 blue);
+     * struct _PangoAttribute* pango_attr_overline_color_new(unsigned short red, unsigned short green, unsigned short blue);
      * }
      */
     public static MemorySegment pango_attr_overline_color_new(short red, short green, short blue) {
@@ -3337,11 +4872,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_show_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$927.pango_attr_show_new$MH,"pango_attr_show_new");
+        return RuntimeHelper.requireNonNull(constants$1574.const$2,"pango_attr_show_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_show_new(PangoShowFlags flags);
+     * struct _PangoAttribute* pango_attr_show_new(enum PangoShowFlags flags);
      * }
      */
     public static MemorySegment pango_attr_show_new(int flags) {
@@ -3353,11 +4888,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_line_height_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$927.pango_attr_line_height_new$MH,"pango_attr_line_height_new");
+        return RuntimeHelper.requireNonNull(constants$1574.const$3,"pango_attr_line_height_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_line_height_new(double factor);
+     * struct _PangoAttribute* pango_attr_line_height_new(double factor);
      * }
      */
     public static MemorySegment pango_attr_line_height_new(double factor) {
@@ -3369,11 +4904,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_line_height_new_absolute$MH() {
-        return RuntimeHelper.requireNonNull(constants$927.pango_attr_line_height_new_absolute$MH,"pango_attr_line_height_new_absolute");
+        return RuntimeHelper.requireNonNull(constants$1574.const$4,"pango_attr_line_height_new_absolute");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_line_height_new_absolute(int height);
+     * struct _PangoAttribute* pango_attr_line_height_new_absolute(int height);
      * }
      */
     public static MemorySegment pango_attr_line_height_new_absolute(int height) {
@@ -3385,11 +4920,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_text_transform_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$927.pango_attr_text_transform_new$MH,"pango_attr_text_transform_new");
+        return RuntimeHelper.requireNonNull(constants$1574.const$5,"pango_attr_text_transform_new");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_text_transform_new(PangoTextTransform transform);
+     * struct _PangoAttribute* pango_attr_text_transform_new(enum PangoTextTransform transform);
      * }
      */
     public static MemorySegment pango_attr_text_transform_new(int transform) {
@@ -3401,11 +4936,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$927.pango_attribute_as_string$MH,"pango_attribute_as_string");
+        return RuntimeHelper.requireNonNull(constants$1575.const$0,"pango_attribute_as_string");
     }
     /**
      * {@snippet :
-     * PangoAttrString* pango_attribute_as_string(PangoAttribute* attr);
+     * struct _PangoAttrString* pango_attribute_as_string(struct _PangoAttribute* attr);
      * }
      */
     public static MemorySegment pango_attribute_as_string(MemorySegment attr) {
@@ -3417,11 +4952,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_language$MH() {
-        return RuntimeHelper.requireNonNull(constants$927.pango_attribute_as_language$MH,"pango_attribute_as_language");
+        return RuntimeHelper.requireNonNull(constants$1575.const$1,"pango_attribute_as_language");
     }
     /**
      * {@snippet :
-     * PangoAttrLanguage* pango_attribute_as_language(PangoAttribute* attr);
+     * struct _PangoAttrLanguage* pango_attribute_as_language(struct _PangoAttribute* attr);
      * }
      */
     public static MemorySegment pango_attribute_as_language(MemorySegment attr) {
@@ -3433,11 +4968,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_int$MH() {
-        return RuntimeHelper.requireNonNull(constants$928.pango_attribute_as_int$MH,"pango_attribute_as_int");
+        return RuntimeHelper.requireNonNull(constants$1575.const$2,"pango_attribute_as_int");
     }
     /**
      * {@snippet :
-     * PangoAttrInt* pango_attribute_as_int(PangoAttribute* attr);
+     * struct _PangoAttrInt* pango_attribute_as_int(struct _PangoAttribute* attr);
      * }
      */
     public static MemorySegment pango_attribute_as_int(MemorySegment attr) {
@@ -3449,11 +4984,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$928.pango_attribute_as_size$MH,"pango_attribute_as_size");
+        return RuntimeHelper.requireNonNull(constants$1575.const$3,"pango_attribute_as_size");
     }
     /**
      * {@snippet :
-     * PangoAttrSize* pango_attribute_as_size(PangoAttribute* attr);
+     * struct _PangoAttrSize* pango_attribute_as_size(struct _PangoAttribute* attr);
      * }
      */
     public static MemorySegment pango_attribute_as_size(MemorySegment attr) {
@@ -3465,11 +5000,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_float$MH() {
-        return RuntimeHelper.requireNonNull(constants$928.pango_attribute_as_float$MH,"pango_attribute_as_float");
+        return RuntimeHelper.requireNonNull(constants$1575.const$4,"pango_attribute_as_float");
     }
     /**
      * {@snippet :
-     * PangoAttrFloat* pango_attribute_as_float(PangoAttribute* attr);
+     * struct _PangoAttrFloat* pango_attribute_as_float(struct _PangoAttribute* attr);
      * }
      */
     public static MemorySegment pango_attribute_as_float(MemorySegment attr) {
@@ -3481,11 +5016,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$928.pango_attribute_as_color$MH,"pango_attribute_as_color");
+        return RuntimeHelper.requireNonNull(constants$1575.const$5,"pango_attribute_as_color");
     }
     /**
      * {@snippet :
-     * PangoAttrColor* pango_attribute_as_color(PangoAttribute* attr);
+     * struct _PangoAttrColor* pango_attribute_as_color(struct _PangoAttribute* attr);
      * }
      */
     public static MemorySegment pango_attribute_as_color(MemorySegment attr) {
@@ -3497,11 +5032,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_font_desc$MH() {
-        return RuntimeHelper.requireNonNull(constants$928.pango_attribute_as_font_desc$MH,"pango_attribute_as_font_desc");
+        return RuntimeHelper.requireNonNull(constants$1576.const$0,"pango_attribute_as_font_desc");
     }
     /**
      * {@snippet :
-     * PangoAttrFontDesc* pango_attribute_as_font_desc(PangoAttribute* attr);
+     * struct _PangoAttrFontDesc* pango_attribute_as_font_desc(struct _PangoAttribute* attr);
      * }
      */
     public static MemorySegment pango_attribute_as_font_desc(MemorySegment attr) {
@@ -3513,11 +5048,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_shape$MH() {
-        return RuntimeHelper.requireNonNull(constants$928.pango_attribute_as_shape$MH,"pango_attribute_as_shape");
+        return RuntimeHelper.requireNonNull(constants$1576.const$1,"pango_attribute_as_shape");
     }
     /**
      * {@snippet :
-     * PangoAttrShape* pango_attribute_as_shape(PangoAttribute* attr);
+     * struct _PangoAttrShape* pango_attribute_as_shape(struct _PangoAttribute* attr);
      * }
      */
     public static MemorySegment pango_attribute_as_shape(MemorySegment attr) {
@@ -3529,11 +5064,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attribute_as_font_features$MH() {
-        return RuntimeHelper.requireNonNull(constants$929.pango_attribute_as_font_features$MH,"pango_attribute_as_font_features");
+        return RuntimeHelper.requireNonNull(constants$1576.const$2,"pango_attribute_as_font_features");
     }
     /**
      * {@snippet :
-     * PangoAttrFontFeatures* pango_attribute_as_font_features(PangoAttribute* attr);
+     * struct _PangoAttrFontFeatures* pango_attribute_as_font_features(struct _PangoAttribute* attr);
      * }
      */
     public static MemorySegment pango_attribute_as_font_features(MemorySegment attr) {
@@ -3545,11 +5080,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$929.pango_attr_list_get_type$MH,"pango_attr_list_get_type");
+        return RuntimeHelper.requireNonNull(constants$1576.const$3,"pango_attr_list_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_attr_list_get_type();
+     * unsigned long pango_attr_list_get_type();
      * }
      */
     public static long pango_attr_list_get_type() {
@@ -3561,11 +5096,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$929.pango_attr_list_new$MH,"pango_attr_list_new");
+        return RuntimeHelper.requireNonNull(constants$1576.const$4,"pango_attr_list_new");
     }
     /**
      * {@snippet :
-     * PangoAttrList* pango_attr_list_new();
+     * struct _PangoAttrList* pango_attr_list_new();
      * }
      */
     public static MemorySegment pango_attr_list_new() {
@@ -3577,11 +5112,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$929.pango_attr_list_ref$MH,"pango_attr_list_ref");
+        return RuntimeHelper.requireNonNull(constants$1576.const$5,"pango_attr_list_ref");
     }
     /**
      * {@snippet :
-     * PangoAttrList* pango_attr_list_ref(PangoAttrList* list);
+     * struct _PangoAttrList* pango_attr_list_ref(struct _PangoAttrList* list);
      * }
      */
     public static MemorySegment pango_attr_list_ref(MemorySegment list) {
@@ -3593,11 +5128,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$929.pango_attr_list_unref$MH,"pango_attr_list_unref");
+        return RuntimeHelper.requireNonNull(constants$1577.const$0,"pango_attr_list_unref");
     }
     /**
      * {@snippet :
-     * void pango_attr_list_unref(PangoAttrList* list);
+     * void pango_attr_list_unref(struct _PangoAttrList* list);
      * }
      */
     public static void pango_attr_list_unref(MemorySegment list) {
@@ -3609,11 +5144,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$929.pango_attr_list_copy$MH,"pango_attr_list_copy");
+        return RuntimeHelper.requireNonNull(constants$1577.const$1,"pango_attr_list_copy");
     }
     /**
      * {@snippet :
-     * PangoAttrList* pango_attr_list_copy(PangoAttrList* list);
+     * struct _PangoAttrList* pango_attr_list_copy(struct _PangoAttrList* list);
      * }
      */
     public static MemorySegment pango_attr_list_copy(MemorySegment list) {
@@ -3625,11 +5160,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_insert$MH() {
-        return RuntimeHelper.requireNonNull(constants$930.pango_attr_list_insert$MH,"pango_attr_list_insert");
+        return RuntimeHelper.requireNonNull(constants$1577.const$2,"pango_attr_list_insert");
     }
     /**
      * {@snippet :
-     * void pango_attr_list_insert(PangoAttrList* list, PangoAttribute* attr);
+     * void pango_attr_list_insert(struct _PangoAttrList* list, struct _PangoAttribute* attr);
      * }
      */
     public static void pango_attr_list_insert(MemorySegment list, MemorySegment attr) {
@@ -3641,11 +5176,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_insert_before$MH() {
-        return RuntimeHelper.requireNonNull(constants$930.pango_attr_list_insert_before$MH,"pango_attr_list_insert_before");
+        return RuntimeHelper.requireNonNull(constants$1577.const$3,"pango_attr_list_insert_before");
     }
     /**
      * {@snippet :
-     * void pango_attr_list_insert_before(PangoAttrList* list, PangoAttribute* attr);
+     * void pango_attr_list_insert_before(struct _PangoAttrList* list, struct _PangoAttribute* attr);
      * }
      */
     public static void pango_attr_list_insert_before(MemorySegment list, MemorySegment attr) {
@@ -3657,11 +5192,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_change$MH() {
-        return RuntimeHelper.requireNonNull(constants$930.pango_attr_list_change$MH,"pango_attr_list_change");
+        return RuntimeHelper.requireNonNull(constants$1577.const$4,"pango_attr_list_change");
     }
     /**
      * {@snippet :
-     * void pango_attr_list_change(PangoAttrList* list, PangoAttribute* attr);
+     * void pango_attr_list_change(struct _PangoAttrList* list, struct _PangoAttribute* attr);
      * }
      */
     public static void pango_attr_list_change(MemorySegment list, MemorySegment attr) {
@@ -3673,11 +5208,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_splice$MH() {
-        return RuntimeHelper.requireNonNull(constants$930.pango_attr_list_splice$MH,"pango_attr_list_splice");
+        return RuntimeHelper.requireNonNull(constants$1577.const$5,"pango_attr_list_splice");
     }
     /**
      * {@snippet :
-     * void pango_attr_list_splice(PangoAttrList* list, PangoAttrList* other, int pos, int len);
+     * void pango_attr_list_splice(struct _PangoAttrList* list, struct _PangoAttrList* other, int pos, int len);
      * }
      */
     public static void pango_attr_list_splice(MemorySegment list, MemorySegment other, int pos, int len) {
@@ -3689,11 +5224,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_update$MH() {
-        return RuntimeHelper.requireNonNull(constants$930.pango_attr_list_update$MH,"pango_attr_list_update");
+        return RuntimeHelper.requireNonNull(constants$1578.const$0,"pango_attr_list_update");
     }
     /**
      * {@snippet :
-     * void pango_attr_list_update(PangoAttrList* list, int pos, int remove, int add);
+     * void pango_attr_list_update(struct _PangoAttrList* list, int pos, int remove, int add);
      * }
      */
     public static void pango_attr_list_update(MemorySegment list, int pos, int remove, int add) {
@@ -3705,11 +5240,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$930.pango_attr_list_filter$MH,"pango_attr_list_filter");
+        return RuntimeHelper.requireNonNull(constants$1578.const$2,"pango_attr_list_filter");
     }
     /**
      * {@snippet :
-     * PangoAttrList* pango_attr_list_filter(PangoAttrList* list, PangoAttrFilterFunc func, gpointer data);
+     * struct _PangoAttrList* pango_attr_list_filter(struct _PangoAttrList* list, int (*func)(struct _PangoAttribute*,void*), void* data);
      * }
      */
     public static MemorySegment pango_attr_list_filter(MemorySegment list, MemorySegment func, MemorySegment data) {
@@ -3721,11 +5256,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_get_attributes$MH() {
-        return RuntimeHelper.requireNonNull(constants$931.pango_attr_list_get_attributes$MH,"pango_attr_list_get_attributes");
+        return RuntimeHelper.requireNonNull(constants$1578.const$3,"pango_attr_list_get_attributes");
     }
     /**
      * {@snippet :
-     * GSList* pango_attr_list_get_attributes(PangoAttrList* list);
+     * struct _GSList* pango_attr_list_get_attributes(struct _PangoAttrList* list);
      * }
      */
     public static MemorySegment pango_attr_list_get_attributes(MemorySegment list) {
@@ -3737,11 +5272,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$931.pango_attr_list_equal$MH,"pango_attr_list_equal");
+        return RuntimeHelper.requireNonNull(constants$1578.const$4,"pango_attr_list_equal");
     }
     /**
      * {@snippet :
-     * gboolean pango_attr_list_equal(PangoAttrList* list, PangoAttrList* other_list);
+     * int pango_attr_list_equal(struct _PangoAttrList* list, struct _PangoAttrList* other_list);
      * }
      */
     public static int pango_attr_list_equal(MemorySegment list, MemorySegment other_list) {
@@ -3753,11 +5288,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$931.pango_attr_list_to_string$MH,"pango_attr_list_to_string");
+        return RuntimeHelper.requireNonNull(constants$1578.const$5,"pango_attr_list_to_string");
     }
     /**
      * {@snippet :
-     * char* pango_attr_list_to_string(PangoAttrList* list);
+     * char* pango_attr_list_to_string(struct _PangoAttrList* list);
      * }
      */
     public static MemorySegment pango_attr_list_to_string(MemorySegment list) {
@@ -3769,11 +5304,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$931.pango_attr_list_from_string$MH,"pango_attr_list_from_string");
+        return RuntimeHelper.requireNonNull(constants$1579.const$0,"pango_attr_list_from_string");
     }
     /**
      * {@snippet :
-     * PangoAttrList* pango_attr_list_from_string(char* text);
+     * struct _PangoAttrList* pango_attr_list_from_string(char* text);
      * }
      */
     public static MemorySegment pango_attr_list_from_string(MemorySegment text) {
@@ -3785,11 +5320,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_iterator_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$931.pango_attr_iterator_get_type$MH,"pango_attr_iterator_get_type");
+        return RuntimeHelper.requireNonNull(constants$1579.const$1,"pango_attr_iterator_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_attr_iterator_get_type();
+     * unsigned long pango_attr_iterator_get_type();
      * }
      */
     public static long pango_attr_iterator_get_type() {
@@ -3801,11 +5336,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_list_get_iterator$MH() {
-        return RuntimeHelper.requireNonNull(constants$931.pango_attr_list_get_iterator$MH,"pango_attr_list_get_iterator");
+        return RuntimeHelper.requireNonNull(constants$1579.const$2,"pango_attr_list_get_iterator");
     }
     /**
      * {@snippet :
-     * PangoAttrIterator* pango_attr_list_get_iterator(PangoAttrList* list);
+     * struct _PangoAttrIterator* pango_attr_list_get_iterator(struct _PangoAttrList* list);
      * }
      */
     public static MemorySegment pango_attr_list_get_iterator(MemorySegment list) {
@@ -3817,11 +5352,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_iterator_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$932.pango_attr_iterator_range$MH,"pango_attr_iterator_range");
+        return RuntimeHelper.requireNonNull(constants$1579.const$3,"pango_attr_iterator_range");
     }
     /**
      * {@snippet :
-     * void pango_attr_iterator_range(PangoAttrIterator* iterator, int* start, int* end);
+     * void pango_attr_iterator_range(struct _PangoAttrIterator* iterator, int* start, int* end);
      * }
      */
     public static void pango_attr_iterator_range(MemorySegment iterator, MemorySegment start, MemorySegment end) {
@@ -3833,11 +5368,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_iterator_next$MH() {
-        return RuntimeHelper.requireNonNull(constants$932.pango_attr_iterator_next$MH,"pango_attr_iterator_next");
+        return RuntimeHelper.requireNonNull(constants$1579.const$4,"pango_attr_iterator_next");
     }
     /**
      * {@snippet :
-     * gboolean pango_attr_iterator_next(PangoAttrIterator* iterator);
+     * int pango_attr_iterator_next(struct _PangoAttrIterator* iterator);
      * }
      */
     public static int pango_attr_iterator_next(MemorySegment iterator) {
@@ -3849,11 +5384,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_iterator_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$932.pango_attr_iterator_copy$MH,"pango_attr_iterator_copy");
+        return RuntimeHelper.requireNonNull(constants$1579.const$5,"pango_attr_iterator_copy");
     }
     /**
      * {@snippet :
-     * PangoAttrIterator* pango_attr_iterator_copy(PangoAttrIterator* iterator);
+     * struct _PangoAttrIterator* pango_attr_iterator_copy(struct _PangoAttrIterator* iterator);
      * }
      */
     public static MemorySegment pango_attr_iterator_copy(MemorySegment iterator) {
@@ -3865,11 +5400,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_iterator_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$932.pango_attr_iterator_destroy$MH,"pango_attr_iterator_destroy");
+        return RuntimeHelper.requireNonNull(constants$1580.const$0,"pango_attr_iterator_destroy");
     }
     /**
      * {@snippet :
-     * void pango_attr_iterator_destroy(PangoAttrIterator* iterator);
+     * void pango_attr_iterator_destroy(struct _PangoAttrIterator* iterator);
      * }
      */
     public static void pango_attr_iterator_destroy(MemorySegment iterator) {
@@ -3881,11 +5416,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_iterator_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$932.pango_attr_iterator_get$MH,"pango_attr_iterator_get");
+        return RuntimeHelper.requireNonNull(constants$1580.const$1,"pango_attr_iterator_get");
     }
     /**
      * {@snippet :
-     * PangoAttribute* pango_attr_iterator_get(PangoAttrIterator* iterator, PangoAttrType type);
+     * struct _PangoAttribute* pango_attr_iterator_get(struct _PangoAttrIterator* iterator, enum PangoAttrType type);
      * }
      */
     public static MemorySegment pango_attr_iterator_get(MemorySegment iterator, int type) {
@@ -3897,11 +5432,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_iterator_get_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$932.pango_attr_iterator_get_font$MH,"pango_attr_iterator_get_font");
+        return RuntimeHelper.requireNonNull(constants$1580.const$2,"pango_attr_iterator_get_font");
     }
     /**
      * {@snippet :
-     * void pango_attr_iterator_get_font(PangoAttrIterator* iterator, PangoFontDescription* desc, PangoLanguage** language, GSList** extra_attrs);
+     * void pango_attr_iterator_get_font(struct _PangoAttrIterator* iterator, struct _PangoFontDescription* desc, struct _PangoLanguage** language, struct _GSList** extra_attrs);
      * }
      */
     public static void pango_attr_iterator_get_font(MemorySegment iterator, MemorySegment desc, MemorySegment language, MemorySegment extra_attrs) {
@@ -3913,11 +5448,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_iterator_get_attrs$MH() {
-        return RuntimeHelper.requireNonNull(constants$933.pango_attr_iterator_get_attrs$MH,"pango_attr_iterator_get_attrs");
+        return RuntimeHelper.requireNonNull(constants$1580.const$3,"pango_attr_iterator_get_attrs");
     }
     /**
      * {@snippet :
-     * GSList* pango_attr_iterator_get_attrs(PangoAttrIterator* iterator);
+     * struct _GSList* pango_attr_iterator_get_attrs(struct _PangoAttrIterator* iterator);
      * }
      */
     public static MemorySegment pango_attr_iterator_get_attrs(MemorySegment iterator) {
@@ -3933,79 +5468,79 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      * typedef struct _PangoAttribute* PangoAttribute_autoptr;
      * }
      */
-    public static final OfAddress PangoAttribute_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoAttribute_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* PangoAttribute_listautoptr;
      * }
      */
-    public static final OfAddress PangoAttribute_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoAttribute_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* PangoAttribute_slistautoptr;
      * }
      */
-    public static final OfAddress PangoAttribute_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoAttribute_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* PangoAttribute_queueautoptr;
      * }
      */
-    public static final OfAddress PangoAttribute_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoAttribute_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _PangoAttrList* PangoAttrList_autoptr;
      * }
      */
-    public static final OfAddress PangoAttrList_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoAttrList_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* PangoAttrList_listautoptr;
      * }
      */
-    public static final OfAddress PangoAttrList_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoAttrList_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* PangoAttrList_slistautoptr;
      * }
      */
-    public static final OfAddress PangoAttrList_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoAttrList_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* PangoAttrList_queueautoptr;
      * }
      */
-    public static final OfAddress PangoAttrList_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoAttrList_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _PangoAttrIterator* PangoAttrIterator_autoptr;
      * }
      */
-    public static final OfAddress PangoAttrIterator_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoAttrIterator_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* PangoAttrIterator_listautoptr;
      * }
      */
-    public static final OfAddress PangoAttrIterator_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoAttrIterator_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* PangoAttrIterator_slistautoptr;
      * }
      */
-    public static final OfAddress PangoAttrIterator_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoAttrIterator_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* PangoAttrIterator_queueautoptr;
      * }
      */
-    public static final OfAddress PangoAttrIterator_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoAttrIterator_queueautoptr = RuntimeHelper.POINTER;
     public static MethodHandle pango_item_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$933.pango_item_get_type$MH,"pango_item_get_type");
+        return RuntimeHelper.requireNonNull(constants$1583.const$0,"pango_item_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_item_get_type();
+     * unsigned long pango_item_get_type();
      * }
      */
     public static long pango_item_get_type() {
@@ -4017,11 +5552,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_item_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$933.pango_item_new$MH,"pango_item_new");
+        return RuntimeHelper.requireNonNull(constants$1583.const$1,"pango_item_new");
     }
     /**
      * {@snippet :
-     * PangoItem* pango_item_new();
+     * struct _PangoItem* pango_item_new();
      * }
      */
     public static MemorySegment pango_item_new() {
@@ -4033,11 +5568,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_item_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$933.pango_item_copy$MH,"pango_item_copy");
+        return RuntimeHelper.requireNonNull(constants$1583.const$2,"pango_item_copy");
     }
     /**
      * {@snippet :
-     * PangoItem* pango_item_copy(PangoItem* item);
+     * struct _PangoItem* pango_item_copy(struct _PangoItem* item);
      * }
      */
     public static MemorySegment pango_item_copy(MemorySegment item) {
@@ -4049,11 +5584,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_item_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$933.pango_item_free$MH,"pango_item_free");
+        return RuntimeHelper.requireNonNull(constants$1583.const$3,"pango_item_free");
     }
     /**
      * {@snippet :
-     * void pango_item_free(PangoItem* item);
+     * void pango_item_free(struct _PangoItem* item);
      * }
      */
     public static void pango_item_free(MemorySegment item) {
@@ -4065,11 +5600,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_item_split$MH() {
-        return RuntimeHelper.requireNonNull(constants$933.pango_item_split$MH,"pango_item_split");
+        return RuntimeHelper.requireNonNull(constants$1583.const$4,"pango_item_split");
     }
     /**
      * {@snippet :
-     * PangoItem* pango_item_split(PangoItem* orig, int split_index, int split_offset);
+     * struct _PangoItem* pango_item_split(struct _PangoItem* orig, int split_index, int split_offset);
      * }
      */
     public static MemorySegment pango_item_split(MemorySegment orig, int split_index, int split_offset) {
@@ -4081,11 +5616,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_item_apply_attrs$MH() {
-        return RuntimeHelper.requireNonNull(constants$934.pango_item_apply_attrs$MH,"pango_item_apply_attrs");
+        return RuntimeHelper.requireNonNull(constants$1583.const$5,"pango_item_apply_attrs");
     }
     /**
      * {@snippet :
-     * void pango_item_apply_attrs(PangoItem* item, PangoAttrIterator* iter);
+     * void pango_item_apply_attrs(struct _PangoItem* item, struct _PangoAttrIterator* iter);
      * }
      */
     public static void pango_item_apply_attrs(MemorySegment item, MemorySegment iter) {
@@ -4097,11 +5632,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_reorder_items$MH() {
-        return RuntimeHelper.requireNonNull(constants$934.pango_reorder_items$MH,"pango_reorder_items");
+        return RuntimeHelper.requireNonNull(constants$1584.const$0,"pango_reorder_items");
     }
     /**
      * {@snippet :
-     * GList* pango_reorder_items(GList* items);
+     * struct _GList* pango_reorder_items(struct _GList* items);
      * }
      */
     public static MemorySegment pango_reorder_items(MemorySegment items) {
@@ -4113,11 +5648,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_itemize$MH() {
-        return RuntimeHelper.requireNonNull(constants$934.pango_itemize$MH,"pango_itemize");
+        return RuntimeHelper.requireNonNull(constants$1584.const$1,"pango_itemize");
     }
     /**
      * {@snippet :
-     * GList* pango_itemize(PangoContext* context, char* text, int start_index, int length, PangoAttrList* attrs, PangoAttrIterator* cached_iter);
+     * struct _GList* pango_itemize(struct _PangoContext* context, char* text, int start_index, int length, struct _PangoAttrList* attrs, struct _PangoAttrIterator* cached_iter);
      * }
      */
     public static MemorySegment pango_itemize(MemorySegment context, MemorySegment text, int start_index, int length, MemorySegment attrs, MemorySegment cached_iter) {
@@ -4129,11 +5664,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_itemize_with_base_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$934.pango_itemize_with_base_dir$MH,"pango_itemize_with_base_dir");
+        return RuntimeHelper.requireNonNull(constants$1584.const$3,"pango_itemize_with_base_dir");
     }
     /**
      * {@snippet :
-     * GList* pango_itemize_with_base_dir(PangoContext* context, PangoDirection base_dir, char* text, int start_index, int length, PangoAttrList* attrs, PangoAttrIterator* cached_iter);
+     * struct _GList* pango_itemize_with_base_dir(struct _PangoContext* context, enum PangoDirection base_dir, char* text, int start_index, int length, struct _PangoAttrList* attrs, struct _PangoAttrIterator* cached_iter);
      * }
      */
     public static MemorySegment pango_itemize_with_base_dir(MemorySegment context, int base_dir, MemorySegment text, int start_index, int length, MemorySegment attrs, MemorySegment cached_iter) {
@@ -4145,11 +5680,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_break$MH() {
-        return RuntimeHelper.requireNonNull(constants$934.pango_break$MH,"pango_break");
+        return RuntimeHelper.requireNonNull(constants$1584.const$6,"pango_break");
     }
     /**
      * {@snippet :
-     * void pango_break(char* text, int length, PangoAnalysis* analysis, PangoLogAttr* attrs, int attrs_len);
+     * void pango_break(char* text, int length, struct _PangoAnalysis* analysis, struct _PangoLogAttr* attrs, int attrs_len);
      * }
      */
     public static void pango_break(MemorySegment text, int length, MemorySegment analysis, MemorySegment attrs, int attrs_len) {
@@ -4161,11 +5696,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_get_log_attrs$MH() {
-        return RuntimeHelper.requireNonNull(constants$934.pango_get_log_attrs$MH,"pango_get_log_attrs");
+        return RuntimeHelper.requireNonNull(constants$1585.const$1,"pango_get_log_attrs");
     }
     /**
      * {@snippet :
-     * void pango_get_log_attrs(char* text, int length, int level, PangoLanguage* language, PangoLogAttr* attrs, int attrs_len);
+     * void pango_get_log_attrs(char* text, int length, int level, struct _PangoLanguage* language, struct _PangoLogAttr* attrs, int attrs_len);
      * }
      */
     public static void pango_get_log_attrs(MemorySegment text, int length, int level, MemorySegment language, MemorySegment attrs, int attrs_len) {
@@ -4177,11 +5712,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_default_break$MH() {
-        return RuntimeHelper.requireNonNull(constants$935.pango_default_break$MH,"pango_default_break");
+        return RuntimeHelper.requireNonNull(constants$1585.const$2,"pango_default_break");
     }
     /**
      * {@snippet :
-     * void pango_default_break(char* text, int length, PangoAnalysis* analysis, PangoLogAttr* attrs, int attrs_len);
+     * void pango_default_break(char* text, int length, struct _PangoAnalysis* analysis, struct _PangoLogAttr* attrs, int attrs_len);
      * }
      */
     public static void pango_default_break(MemorySegment text, int length, MemorySegment analysis, MemorySegment attrs, int attrs_len) {
@@ -4193,11 +5728,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tailor_break$MH() {
-        return RuntimeHelper.requireNonNull(constants$935.pango_tailor_break$MH,"pango_tailor_break");
+        return RuntimeHelper.requireNonNull(constants$1585.const$3,"pango_tailor_break");
     }
     /**
      * {@snippet :
-     * void pango_tailor_break(char* text, int length, PangoAnalysis* analysis, int offset, PangoLogAttr* attrs, int attrs_len);
+     * void pango_tailor_break(char* text, int length, struct _PangoAnalysis* analysis, int offset, struct _PangoLogAttr* attrs, int attrs_len);
      * }
      */
     public static void pango_tailor_break(MemorySegment text, int length, MemorySegment analysis, int offset, MemorySegment attrs, int attrs_len) {
@@ -4209,11 +5744,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_break$MH() {
-        return RuntimeHelper.requireNonNull(constants$935.pango_attr_break$MH,"pango_attr_break");
+        return RuntimeHelper.requireNonNull(constants$1585.const$4,"pango_attr_break");
     }
     /**
      * {@snippet :
-     * void pango_attr_break(char* text, int length, PangoAttrList* attr_list, int offset, PangoLogAttr* attrs, int attrs_len);
+     * void pango_attr_break(char* text, int length, struct _PangoAttrList* attr_list, int offset, struct _PangoLogAttr* attrs, int attrs_len);
      * }
      */
     public static void pango_attr_break(MemorySegment text, int length, MemorySegment attr_list, int offset, MemorySegment attrs, int attrs_len) {
@@ -4225,11 +5760,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_fontset_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$935.pango_fontset_get_type$MH,"pango_fontset_get_type");
+        return RuntimeHelper.requireNonNull(constants$1585.const$5,"pango_fontset_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_fontset_get_type();
+     * unsigned long pango_fontset_get_type();
      * }
      */
     public static long pango_fontset_get_type() {
@@ -4241,11 +5776,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_fontset_get_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$936.pango_fontset_get_font$MH,"pango_fontset_get_font");
+        return RuntimeHelper.requireNonNull(constants$1589.const$1,"pango_fontset_get_font");
     }
     /**
      * {@snippet :
-     * PangoFont* pango_fontset_get_font(PangoFontset* fontset, guint wc);
+     * struct _PangoFont* pango_fontset_get_font(struct _PangoFontset* fontset, unsigned int wc);
      * }
      */
     public static MemorySegment pango_fontset_get_font(MemorySegment fontset, int wc) {
@@ -4257,11 +5792,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_fontset_get_metrics$MH() {
-        return RuntimeHelper.requireNonNull(constants$936.pango_fontset_get_metrics$MH,"pango_fontset_get_metrics");
+        return RuntimeHelper.requireNonNull(constants$1589.const$2,"pango_fontset_get_metrics");
     }
     /**
      * {@snippet :
-     * PangoFontMetrics* pango_fontset_get_metrics(PangoFontset* fontset);
+     * struct _PangoFontMetrics* pango_fontset_get_metrics(struct _PangoFontset* fontset);
      * }
      */
     public static MemorySegment pango_fontset_get_metrics(MemorySegment fontset) {
@@ -4273,11 +5808,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_fontset_foreach$MH() {
-        return RuntimeHelper.requireNonNull(constants$936.pango_fontset_foreach$MH,"pango_fontset_foreach");
+        return RuntimeHelper.requireNonNull(constants$1589.const$4,"pango_fontset_foreach");
     }
     /**
      * {@snippet :
-     * void pango_fontset_foreach(PangoFontset* fontset, PangoFontsetForeachFunc func, gpointer data);
+     * void pango_fontset_foreach(struct _PangoFontset* fontset, int (*func)(struct _PangoFontset*,struct _PangoFont*,void*), void* data);
      * }
      */
     public static void pango_fontset_foreach(MemorySegment fontset, MemorySegment func, MemorySegment data) {
@@ -4289,11 +5824,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_map_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$936.pango_font_map_get_type$MH,"pango_font_map_get_type");
+        return RuntimeHelper.requireNonNull(constants$1592.const$4,"pango_font_map_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_font_map_get_type();
+     * unsigned long pango_font_map_get_type();
      * }
      */
     public static long pango_font_map_get_type() {
@@ -4305,11 +5840,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_map_create_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$936.pango_font_map_create_context$MH,"pango_font_map_create_context");
+        return RuntimeHelper.requireNonNull(constants$1592.const$5,"pango_font_map_create_context");
     }
     /**
      * {@snippet :
-     * PangoContext* pango_font_map_create_context(PangoFontMap* fontmap);
+     * struct _PangoContext* pango_font_map_create_context(struct _PangoFontMap* fontmap);
      * }
      */
     public static MemorySegment pango_font_map_create_context(MemorySegment fontmap) {
@@ -4321,11 +5856,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_map_load_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$936.pango_font_map_load_font$MH,"pango_font_map_load_font");
+        return RuntimeHelper.requireNonNull(constants$1593.const$0,"pango_font_map_load_font");
     }
     /**
      * {@snippet :
-     * PangoFont* pango_font_map_load_font(PangoFontMap* fontmap, PangoContext* context, const PangoFontDescription* desc);
+     * struct _PangoFont* pango_font_map_load_font(struct _PangoFontMap* fontmap, struct _PangoContext* context, struct _PangoFontDescription* desc);
      * }
      */
     public static MemorySegment pango_font_map_load_font(MemorySegment fontmap, MemorySegment context, MemorySegment desc) {
@@ -4337,11 +5872,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_map_load_fontset$MH() {
-        return RuntimeHelper.requireNonNull(constants$937.pango_font_map_load_fontset$MH,"pango_font_map_load_fontset");
+        return RuntimeHelper.requireNonNull(constants$1593.const$1,"pango_font_map_load_fontset");
     }
     /**
      * {@snippet :
-     * PangoFontset* pango_font_map_load_fontset(PangoFontMap* fontmap, PangoContext* context, const PangoFontDescription* desc, PangoLanguage* language);
+     * struct _PangoFontset* pango_font_map_load_fontset(struct _PangoFontMap* fontmap, struct _PangoContext* context, struct _PangoFontDescription* desc, struct _PangoLanguage* language);
      * }
      */
     public static MemorySegment pango_font_map_load_fontset(MemorySegment fontmap, MemorySegment context, MemorySegment desc, MemorySegment language) {
@@ -4353,11 +5888,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_map_list_families$MH() {
-        return RuntimeHelper.requireNonNull(constants$937.pango_font_map_list_families$MH,"pango_font_map_list_families");
+        return RuntimeHelper.requireNonNull(constants$1593.const$2,"pango_font_map_list_families");
     }
     /**
      * {@snippet :
-     * void pango_font_map_list_families(PangoFontMap* fontmap, PangoFontFamily*** families, int* n_families);
+     * void pango_font_map_list_families(struct _PangoFontMap* fontmap, struct _PangoFontFamily*** families, int* n_families);
      * }
      */
     public static void pango_font_map_list_families(MemorySegment fontmap, MemorySegment families, MemorySegment n_families) {
@@ -4369,11 +5904,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_map_get_serial$MH() {
-        return RuntimeHelper.requireNonNull(constants$937.pango_font_map_get_serial$MH,"pango_font_map_get_serial");
+        return RuntimeHelper.requireNonNull(constants$1593.const$3,"pango_font_map_get_serial");
     }
     /**
      * {@snippet :
-     * guint pango_font_map_get_serial(PangoFontMap* fontmap);
+     * unsigned int pango_font_map_get_serial(struct _PangoFontMap* fontmap);
      * }
      */
     public static int pango_font_map_get_serial(MemorySegment fontmap) {
@@ -4385,11 +5920,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_map_changed$MH() {
-        return RuntimeHelper.requireNonNull(constants$937.pango_font_map_changed$MH,"pango_font_map_changed");
+        return RuntimeHelper.requireNonNull(constants$1593.const$4,"pango_font_map_changed");
     }
     /**
      * {@snippet :
-     * void pango_font_map_changed(PangoFontMap* fontmap);
+     * void pango_font_map_changed(struct _PangoFontMap* fontmap);
      * }
      */
     public static void pango_font_map_changed(MemorySegment fontmap) {
@@ -4401,11 +5936,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_map_get_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$937.pango_font_map_get_family$MH,"pango_font_map_get_family");
+        return RuntimeHelper.requireNonNull(constants$1593.const$5,"pango_font_map_get_family");
     }
     /**
      * {@snippet :
-     * PangoFontFamily* pango_font_map_get_family(PangoFontMap* fontmap, char* name);
+     * struct _PangoFontFamily* pango_font_map_get_family(struct _PangoFontMap* fontmap, char* name);
      * }
      */
     public static MemorySegment pango_font_map_get_family(MemorySegment fontmap, MemorySegment name) {
@@ -4421,31 +5956,31 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      * typedef struct _PangoFontMap* PangoFontMap_autoptr;
      * }
      */
-    public static final OfAddress PangoFontMap_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFontMap_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* PangoFontMap_listautoptr;
      * }
      */
-    public static final OfAddress PangoFontMap_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFontMap_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* PangoFontMap_slistautoptr;
      * }
      */
-    public static final OfAddress PangoFontMap_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFontMap_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* PangoFontMap_queueautoptr;
      * }
      */
-    public static final OfAddress PangoFontMap_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoFontMap_queueautoptr = RuntimeHelper.POINTER;
     public static MethodHandle pango_context_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$937.pango_context_get_type$MH,"pango_context_get_type");
+        return RuntimeHelper.requireNonNull(constants$1594.const$0,"pango_context_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_context_get_type();
+     * unsigned long pango_context_get_type();
      * }
      */
     public static long pango_context_get_type() {
@@ -4457,11 +5992,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$938.pango_context_new$MH,"pango_context_new");
+        return RuntimeHelper.requireNonNull(constants$1594.const$1,"pango_context_new");
     }
     /**
      * {@snippet :
-     * PangoContext* pango_context_new();
+     * struct _PangoContext* pango_context_new();
      * }
      */
     public static MemorySegment pango_context_new() {
@@ -4473,11 +6008,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_changed$MH() {
-        return RuntimeHelper.requireNonNull(constants$938.pango_context_changed$MH,"pango_context_changed");
+        return RuntimeHelper.requireNonNull(constants$1594.const$2,"pango_context_changed");
     }
     /**
      * {@snippet :
-     * void pango_context_changed(PangoContext* context);
+     * void pango_context_changed(struct _PangoContext* context);
      * }
      */
     public static void pango_context_changed(MemorySegment context) {
@@ -4489,11 +6024,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_set_font_map$MH() {
-        return RuntimeHelper.requireNonNull(constants$938.pango_context_set_font_map$MH,"pango_context_set_font_map");
+        return RuntimeHelper.requireNonNull(constants$1594.const$3,"pango_context_set_font_map");
     }
     /**
      * {@snippet :
-     * void pango_context_set_font_map(PangoContext* context, PangoFontMap* font_map);
+     * void pango_context_set_font_map(struct _PangoContext* context, struct _PangoFontMap* font_map);
      * }
      */
     public static void pango_context_set_font_map(MemorySegment context, MemorySegment font_map) {
@@ -4505,11 +6040,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_font_map$MH() {
-        return RuntimeHelper.requireNonNull(constants$938.pango_context_get_font_map$MH,"pango_context_get_font_map");
+        return RuntimeHelper.requireNonNull(constants$1594.const$4,"pango_context_get_font_map");
     }
     /**
      * {@snippet :
-     * PangoFontMap* pango_context_get_font_map(PangoContext* context);
+     * struct _PangoFontMap* pango_context_get_font_map(struct _PangoContext* context);
      * }
      */
     public static MemorySegment pango_context_get_font_map(MemorySegment context) {
@@ -4521,11 +6056,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_serial$MH() {
-        return RuntimeHelper.requireNonNull(constants$938.pango_context_get_serial$MH,"pango_context_get_serial");
+        return RuntimeHelper.requireNonNull(constants$1594.const$5,"pango_context_get_serial");
     }
     /**
      * {@snippet :
-     * guint pango_context_get_serial(PangoContext* context);
+     * unsigned int pango_context_get_serial(struct _PangoContext* context);
      * }
      */
     public static int pango_context_get_serial(MemorySegment context) {
@@ -4537,11 +6072,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_list_families$MH() {
-        return RuntimeHelper.requireNonNull(constants$938.pango_context_list_families$MH,"pango_context_list_families");
+        return RuntimeHelper.requireNonNull(constants$1595.const$0,"pango_context_list_families");
     }
     /**
      * {@snippet :
-     * void pango_context_list_families(PangoContext* context, PangoFontFamily*** families, int* n_families);
+     * void pango_context_list_families(struct _PangoContext* context, struct _PangoFontFamily*** families, int* n_families);
      * }
      */
     public static void pango_context_list_families(MemorySegment context, MemorySegment families, MemorySegment n_families) {
@@ -4553,11 +6088,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_load_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$939.pango_context_load_font$MH,"pango_context_load_font");
+        return RuntimeHelper.requireNonNull(constants$1595.const$1,"pango_context_load_font");
     }
     /**
      * {@snippet :
-     * PangoFont* pango_context_load_font(PangoContext* context, const PangoFontDescription* desc);
+     * struct _PangoFont* pango_context_load_font(struct _PangoContext* context, struct _PangoFontDescription* desc);
      * }
      */
     public static MemorySegment pango_context_load_font(MemorySegment context, MemorySegment desc) {
@@ -4569,11 +6104,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_load_fontset$MH() {
-        return RuntimeHelper.requireNonNull(constants$939.pango_context_load_fontset$MH,"pango_context_load_fontset");
+        return RuntimeHelper.requireNonNull(constants$1595.const$2,"pango_context_load_fontset");
     }
     /**
      * {@snippet :
-     * PangoFontset* pango_context_load_fontset(PangoContext* context, const PangoFontDescription* desc, PangoLanguage* language);
+     * struct _PangoFontset* pango_context_load_fontset(struct _PangoContext* context, struct _PangoFontDescription* desc, struct _PangoLanguage* language);
      * }
      */
     public static MemorySegment pango_context_load_fontset(MemorySegment context, MemorySegment desc, MemorySegment language) {
@@ -4585,11 +6120,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_metrics$MH() {
-        return RuntimeHelper.requireNonNull(constants$939.pango_context_get_metrics$MH,"pango_context_get_metrics");
+        return RuntimeHelper.requireNonNull(constants$1595.const$3,"pango_context_get_metrics");
     }
     /**
      * {@snippet :
-     * PangoFontMetrics* pango_context_get_metrics(PangoContext* context, const PangoFontDescription* desc, PangoLanguage* language);
+     * struct _PangoFontMetrics* pango_context_get_metrics(struct _PangoContext* context, struct _PangoFontDescription* desc, struct _PangoLanguage* language);
      * }
      */
     public static MemorySegment pango_context_get_metrics(MemorySegment context, MemorySegment desc, MemorySegment language) {
@@ -4601,11 +6136,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_set_font_description$MH() {
-        return RuntimeHelper.requireNonNull(constants$939.pango_context_set_font_description$MH,"pango_context_set_font_description");
+        return RuntimeHelper.requireNonNull(constants$1595.const$4,"pango_context_set_font_description");
     }
     /**
      * {@snippet :
-     * void pango_context_set_font_description(PangoContext* context, const PangoFontDescription* desc);
+     * void pango_context_set_font_description(struct _PangoContext* context, struct _PangoFontDescription* desc);
      * }
      */
     public static void pango_context_set_font_description(MemorySegment context, MemorySegment desc) {
@@ -4617,11 +6152,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_font_description$MH() {
-        return RuntimeHelper.requireNonNull(constants$939.pango_context_get_font_description$MH,"pango_context_get_font_description");
+        return RuntimeHelper.requireNonNull(constants$1595.const$5,"pango_context_get_font_description");
     }
     /**
      * {@snippet :
-     * PangoFontDescription* pango_context_get_font_description(PangoContext* context);
+     * struct _PangoFontDescription* pango_context_get_font_description(struct _PangoContext* context);
      * }
      */
     public static MemorySegment pango_context_get_font_description(MemorySegment context) {
@@ -4633,11 +6168,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_language$MH() {
-        return RuntimeHelper.requireNonNull(constants$939.pango_context_get_language$MH,"pango_context_get_language");
+        return RuntimeHelper.requireNonNull(constants$1596.const$0,"pango_context_get_language");
     }
     /**
      * {@snippet :
-     * PangoLanguage* pango_context_get_language(PangoContext* context);
+     * struct _PangoLanguage* pango_context_get_language(struct _PangoContext* context);
      * }
      */
     public static MemorySegment pango_context_get_language(MemorySegment context) {
@@ -4649,11 +6184,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_set_language$MH() {
-        return RuntimeHelper.requireNonNull(constants$940.pango_context_set_language$MH,"pango_context_set_language");
+        return RuntimeHelper.requireNonNull(constants$1596.const$1,"pango_context_set_language");
     }
     /**
      * {@snippet :
-     * void pango_context_set_language(PangoContext* context, PangoLanguage* language);
+     * void pango_context_set_language(struct _PangoContext* context, struct _PangoLanguage* language);
      * }
      */
     public static void pango_context_set_language(MemorySegment context, MemorySegment language) {
@@ -4665,11 +6200,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_set_base_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$940.pango_context_set_base_dir$MH,"pango_context_set_base_dir");
+        return RuntimeHelper.requireNonNull(constants$1596.const$2,"pango_context_set_base_dir");
     }
     /**
      * {@snippet :
-     * void pango_context_set_base_dir(PangoContext* context, PangoDirection direction);
+     * void pango_context_set_base_dir(struct _PangoContext* context, enum PangoDirection direction);
      * }
      */
     public static void pango_context_set_base_dir(MemorySegment context, int direction) {
@@ -4681,11 +6216,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_base_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$940.pango_context_get_base_dir$MH,"pango_context_get_base_dir");
+        return RuntimeHelper.requireNonNull(constants$1596.const$3,"pango_context_get_base_dir");
     }
     /**
      * {@snippet :
-     * PangoDirection pango_context_get_base_dir(PangoContext* context);
+     * enum PangoDirection pango_context_get_base_dir(struct _PangoContext* context);
      * }
      */
     public static int pango_context_get_base_dir(MemorySegment context) {
@@ -4697,11 +6232,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_set_base_gravity$MH() {
-        return RuntimeHelper.requireNonNull(constants$940.pango_context_set_base_gravity$MH,"pango_context_set_base_gravity");
+        return RuntimeHelper.requireNonNull(constants$1596.const$4,"pango_context_set_base_gravity");
     }
     /**
      * {@snippet :
-     * void pango_context_set_base_gravity(PangoContext* context, PangoGravity gravity);
+     * void pango_context_set_base_gravity(struct _PangoContext* context, enum PangoGravity gravity);
      * }
      */
     public static void pango_context_set_base_gravity(MemorySegment context, int gravity) {
@@ -4713,11 +6248,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_base_gravity$MH() {
-        return RuntimeHelper.requireNonNull(constants$940.pango_context_get_base_gravity$MH,"pango_context_get_base_gravity");
+        return RuntimeHelper.requireNonNull(constants$1596.const$5,"pango_context_get_base_gravity");
     }
     /**
      * {@snippet :
-     * PangoGravity pango_context_get_base_gravity(PangoContext* context);
+     * enum PangoGravity pango_context_get_base_gravity(struct _PangoContext* context);
      * }
      */
     public static int pango_context_get_base_gravity(MemorySegment context) {
@@ -4729,11 +6264,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_gravity$MH() {
-        return RuntimeHelper.requireNonNull(constants$940.pango_context_get_gravity$MH,"pango_context_get_gravity");
+        return RuntimeHelper.requireNonNull(constants$1597.const$0,"pango_context_get_gravity");
     }
     /**
      * {@snippet :
-     * PangoGravity pango_context_get_gravity(PangoContext* context);
+     * enum PangoGravity pango_context_get_gravity(struct _PangoContext* context);
      * }
      */
     public static int pango_context_get_gravity(MemorySegment context) {
@@ -4745,11 +6280,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_set_gravity_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$941.pango_context_set_gravity_hint$MH,"pango_context_set_gravity_hint");
+        return RuntimeHelper.requireNonNull(constants$1597.const$1,"pango_context_set_gravity_hint");
     }
     /**
      * {@snippet :
-     * void pango_context_set_gravity_hint(PangoContext* context, PangoGravityHint hint);
+     * void pango_context_set_gravity_hint(struct _PangoContext* context, enum PangoGravityHint hint);
      * }
      */
     public static void pango_context_set_gravity_hint(MemorySegment context, int hint) {
@@ -4761,11 +6296,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_gravity_hint$MH() {
-        return RuntimeHelper.requireNonNull(constants$941.pango_context_get_gravity_hint$MH,"pango_context_get_gravity_hint");
+        return RuntimeHelper.requireNonNull(constants$1597.const$2,"pango_context_get_gravity_hint");
     }
     /**
      * {@snippet :
-     * PangoGravityHint pango_context_get_gravity_hint(PangoContext* context);
+     * enum PangoGravityHint pango_context_get_gravity_hint(struct _PangoContext* context);
      * }
      */
     public static int pango_context_get_gravity_hint(MemorySegment context) {
@@ -4777,11 +6312,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_set_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$941.pango_context_set_matrix$MH,"pango_context_set_matrix");
+        return RuntimeHelper.requireNonNull(constants$1597.const$3,"pango_context_set_matrix");
     }
     /**
      * {@snippet :
-     * void pango_context_set_matrix(PangoContext* context, const PangoMatrix* matrix);
+     * void pango_context_set_matrix(struct _PangoContext* context, struct _PangoMatrix* matrix);
      * }
      */
     public static void pango_context_set_matrix(MemorySegment context, MemorySegment matrix) {
@@ -4793,11 +6328,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$941.pango_context_get_matrix$MH,"pango_context_get_matrix");
+        return RuntimeHelper.requireNonNull(constants$1597.const$4,"pango_context_get_matrix");
     }
     /**
      * {@snippet :
-     * const PangoMatrix* pango_context_get_matrix(PangoContext* context);
+     * struct _PangoMatrix* pango_context_get_matrix(struct _PangoContext* context);
      * }
      */
     public static MemorySegment pango_context_get_matrix(MemorySegment context) {
@@ -4809,11 +6344,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_set_round_glyph_positions$MH() {
-        return RuntimeHelper.requireNonNull(constants$941.pango_context_set_round_glyph_positions$MH,"pango_context_set_round_glyph_positions");
+        return RuntimeHelper.requireNonNull(constants$1597.const$5,"pango_context_set_round_glyph_positions");
     }
     /**
      * {@snippet :
-     * void pango_context_set_round_glyph_positions(PangoContext* context, gboolean round_positions);
+     * void pango_context_set_round_glyph_positions(struct _PangoContext* context, int round_positions);
      * }
      */
     public static void pango_context_set_round_glyph_positions(MemorySegment context, int round_positions) {
@@ -4825,11 +6360,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_context_get_round_glyph_positions$MH() {
-        return RuntimeHelper.requireNonNull(constants$941.pango_context_get_round_glyph_positions$MH,"pango_context_get_round_glyph_positions");
+        return RuntimeHelper.requireNonNull(constants$1598.const$0,"pango_context_get_round_glyph_positions");
     }
     /**
      * {@snippet :
-     * gboolean pango_context_get_round_glyph_positions(PangoContext* context);
+     * int pango_context_get_round_glyph_positions(struct _PangoContext* context);
      * }
      */
     public static int pango_context_get_round_glyph_positions(MemorySegment context) {
@@ -4845,13 +6380,13 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      * typedef int PangoGlyphUnit;
      * }
      */
-    public static final OfInt PangoGlyphUnit = Constants$root.C_INT$LAYOUT;
+    public static final OfInt PangoGlyphUnit = JAVA_INT;
     public static MethodHandle pango_glyph_string_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$942.pango_glyph_string_get_type$MH,"pango_glyph_string_get_type");
+        return RuntimeHelper.requireNonNull(constants$1600.const$1,"pango_glyph_string_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_glyph_string_get_type();
+     * unsigned long pango_glyph_string_get_type();
      * }
      */
     public static long pango_glyph_string_get_type() {
@@ -4863,11 +6398,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$942.pango_glyph_string_new$MH,"pango_glyph_string_new");
+        return RuntimeHelper.requireNonNull(constants$1600.const$2,"pango_glyph_string_new");
     }
     /**
      * {@snippet :
-     * PangoGlyphString* pango_glyph_string_new();
+     * struct _PangoGlyphString* pango_glyph_string_new();
      * }
      */
     public static MemorySegment pango_glyph_string_new() {
@@ -4879,11 +6414,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_set_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$942.pango_glyph_string_set_size$MH,"pango_glyph_string_set_size");
+        return RuntimeHelper.requireNonNull(constants$1600.const$3,"pango_glyph_string_set_size");
     }
     /**
      * {@snippet :
-     * void pango_glyph_string_set_size(PangoGlyphString* string, int new_len);
+     * void pango_glyph_string_set_size(struct _PangoGlyphString* string, int new_len);
      * }
      */
     public static void pango_glyph_string_set_size(MemorySegment string, int new_len) {
@@ -4895,11 +6430,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$942.pango_glyph_string_copy$MH,"pango_glyph_string_copy");
+        return RuntimeHelper.requireNonNull(constants$1600.const$4,"pango_glyph_string_copy");
     }
     /**
      * {@snippet :
-     * PangoGlyphString* pango_glyph_string_copy(PangoGlyphString* string);
+     * struct _PangoGlyphString* pango_glyph_string_copy(struct _PangoGlyphString* string);
      * }
      */
     public static MemorySegment pango_glyph_string_copy(MemorySegment string) {
@@ -4911,11 +6446,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$942.pango_glyph_string_free$MH,"pango_glyph_string_free");
+        return RuntimeHelper.requireNonNull(constants$1600.const$5,"pango_glyph_string_free");
     }
     /**
      * {@snippet :
-     * void pango_glyph_string_free(PangoGlyphString* string);
+     * void pango_glyph_string_free(struct _PangoGlyphString* string);
      * }
      */
     public static void pango_glyph_string_free(MemorySegment string) {
@@ -4927,11 +6462,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$942.pango_glyph_string_extents$MH,"pango_glyph_string_extents");
+        return RuntimeHelper.requireNonNull(constants$1601.const$0,"pango_glyph_string_extents");
     }
     /**
      * {@snippet :
-     * void pango_glyph_string_extents(PangoGlyphString* glyphs, PangoFont* font, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * void pango_glyph_string_extents(struct _PangoGlyphString* glyphs, struct _PangoFont* font, struct _PangoRectangle* ink_rect, struct _PangoRectangle* logical_rect);
      * }
      */
     public static void pango_glyph_string_extents(MemorySegment glyphs, MemorySegment font, MemorySegment ink_rect, MemorySegment logical_rect) {
@@ -4943,11 +6478,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_get_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$943.pango_glyph_string_get_width$MH,"pango_glyph_string_get_width");
+        return RuntimeHelper.requireNonNull(constants$1601.const$1,"pango_glyph_string_get_width");
     }
     /**
      * {@snippet :
-     * int pango_glyph_string_get_width(PangoGlyphString* glyphs);
+     * int pango_glyph_string_get_width(struct _PangoGlyphString* glyphs);
      * }
      */
     public static int pango_glyph_string_get_width(MemorySegment glyphs) {
@@ -4959,11 +6494,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_extents_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$943.pango_glyph_string_extents_range$MH,"pango_glyph_string_extents_range");
+        return RuntimeHelper.requireNonNull(constants$1601.const$2,"pango_glyph_string_extents_range");
     }
     /**
      * {@snippet :
-     * void pango_glyph_string_extents_range(PangoGlyphString* glyphs, int start, int end, PangoFont* font, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * void pango_glyph_string_extents_range(struct _PangoGlyphString* glyphs, int start, int end, struct _PangoFont* font, struct _PangoRectangle* ink_rect, struct _PangoRectangle* logical_rect);
      * }
      */
     public static void pango_glyph_string_extents_range(MemorySegment glyphs, int start, int end, MemorySegment font, MemorySegment ink_rect, MemorySegment logical_rect) {
@@ -4975,11 +6510,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_get_logical_widths$MH() {
-        return RuntimeHelper.requireNonNull(constants$943.pango_glyph_string_get_logical_widths$MH,"pango_glyph_string_get_logical_widths");
+        return RuntimeHelper.requireNonNull(constants$1601.const$3,"pango_glyph_string_get_logical_widths");
     }
     /**
      * {@snippet :
-     * void pango_glyph_string_get_logical_widths(PangoGlyphString* glyphs, char* text, int length, int embedding_level, int* logical_widths);
+     * void pango_glyph_string_get_logical_widths(struct _PangoGlyphString* glyphs, char* text, int length, int embedding_level, int* logical_widths);
      * }
      */
     public static void pango_glyph_string_get_logical_widths(MemorySegment glyphs, MemorySegment text, int length, int embedding_level, MemorySegment logical_widths) {
@@ -4991,11 +6526,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_index_to_x$MH() {
-        return RuntimeHelper.requireNonNull(constants$943.pango_glyph_string_index_to_x$MH,"pango_glyph_string_index_to_x");
+        return RuntimeHelper.requireNonNull(constants$1601.const$5,"pango_glyph_string_index_to_x");
     }
     /**
      * {@snippet :
-     * void pango_glyph_string_index_to_x(PangoGlyphString* glyphs, char* text, int length, PangoAnalysis* analysis, int index_, gboolean trailing, int* x_pos);
+     * void pango_glyph_string_index_to_x(struct _PangoGlyphString* glyphs, char* text, int length, struct _PangoAnalysis* analysis, int index_, int trailing, int* x_pos);
      * }
      */
     public static void pango_glyph_string_index_to_x(MemorySegment glyphs, MemorySegment text, int length, MemorySegment analysis, int index_, int trailing, MemorySegment x_pos) {
@@ -5007,11 +6542,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_x_to_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$943.pango_glyph_string_x_to_index$MH,"pango_glyph_string_x_to_index");
+        return RuntimeHelper.requireNonNull(constants$1602.const$1,"pango_glyph_string_x_to_index");
     }
     /**
      * {@snippet :
-     * void pango_glyph_string_x_to_index(PangoGlyphString* glyphs, char* text, int length, PangoAnalysis* analysis, int x_pos, int* index_, int* trailing);
+     * void pango_glyph_string_x_to_index(struct _PangoGlyphString* glyphs, char* text, int length, struct _PangoAnalysis* analysis, int x_pos, int* index_, int* trailing);
      * }
      */
     public static void pango_glyph_string_x_to_index(MemorySegment glyphs, MemorySegment text, int length, MemorySegment analysis, int x_pos, MemorySegment index_, MemorySegment trailing) {
@@ -5023,11 +6558,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_string_index_to_x_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$943.pango_glyph_string_index_to_x_full$MH,"pango_glyph_string_index_to_x_full");
+        return RuntimeHelper.requireNonNull(constants$1602.const$2,"pango_glyph_string_index_to_x_full");
     }
     /**
      * {@snippet :
-     * void pango_glyph_string_index_to_x_full(PangoGlyphString* glyphs, char* text, int length, PangoAnalysis* analysis, PangoLogAttr* attrs, int index_, gboolean trailing, int* x_pos);
+     * void pango_glyph_string_index_to_x_full(struct _PangoGlyphString* glyphs, char* text, int length, struct _PangoAnalysis* analysis, struct _PangoLogAttr* attrs, int index_, int trailing, int* x_pos);
      * }
      */
     public static void pango_glyph_string_index_to_x_full(MemorySegment glyphs, MemorySegment text, int length, MemorySegment analysis, MemorySegment attrs, int index_, int trailing, MemorySegment x_pos) {
@@ -5040,7 +6575,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_SHAPE_NONE = 0;
+     * enum PangoShapeFlags.PANGO_SHAPE_NONE = 0;
      * }
      */
     public static int PANGO_SHAPE_NONE() {
@@ -5048,18 +6583,18 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_SHAPE_ROUND_POSITIONS = 1;
+     * enum PangoShapeFlags.PANGO_SHAPE_ROUND_POSITIONS = 1;
      * }
      */
     public static int PANGO_SHAPE_ROUND_POSITIONS() {
         return (int)1L;
     }
     public static MethodHandle pango_shape$MH() {
-        return RuntimeHelper.requireNonNull(constants$944.pango_shape$MH,"pango_shape");
+        return RuntimeHelper.requireNonNull(constants$1602.const$3,"pango_shape");
     }
     /**
      * {@snippet :
-     * void pango_shape(char* text, int length, const PangoAnalysis* analysis, PangoGlyphString* glyphs);
+     * void pango_shape(char* text, int length, struct _PangoAnalysis* analysis, struct _PangoGlyphString* glyphs);
      * }
      */
     public static void pango_shape(MemorySegment text, int length, MemorySegment analysis, MemorySegment glyphs) {
@@ -5071,11 +6606,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_shape_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$944.pango_shape_full$MH,"pango_shape_full");
+        return RuntimeHelper.requireNonNull(constants$1602.const$5,"pango_shape_full");
     }
     /**
      * {@snippet :
-     * void pango_shape_full(char* item_text, int item_length, char* paragraph_text, int paragraph_length, const PangoAnalysis* analysis, PangoGlyphString* glyphs);
+     * void pango_shape_full(char* item_text, int item_length, char* paragraph_text, int paragraph_length, struct _PangoAnalysis* analysis, struct _PangoGlyphString* glyphs);
      * }
      */
     public static void pango_shape_full(MemorySegment item_text, int item_length, MemorySegment paragraph_text, int paragraph_length, MemorySegment analysis, MemorySegment glyphs) {
@@ -5087,11 +6622,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_shape_with_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$944.pango_shape_with_flags$MH,"pango_shape_with_flags");
+        return RuntimeHelper.requireNonNull(constants$1603.const$1,"pango_shape_with_flags");
     }
     /**
      * {@snippet :
-     * void pango_shape_with_flags(char* item_text, int item_length, char* paragraph_text, int paragraph_length, const PangoAnalysis* analysis, PangoGlyphString* glyphs, PangoShapeFlags flags);
+     * void pango_shape_with_flags(char* item_text, int item_length, char* paragraph_text, int paragraph_length, struct _PangoAnalysis* analysis, struct _PangoGlyphString* glyphs, enum PangoShapeFlags flags);
      * }
      */
     public static void pango_shape_with_flags(MemorySegment item_text, int item_length, MemorySegment paragraph_text, int paragraph_length, MemorySegment analysis, MemorySegment glyphs, int flags) {
@@ -5103,11 +6638,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_shape_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$944.pango_shape_item$MH,"pango_shape_item");
+        return RuntimeHelper.requireNonNull(constants$1603.const$3,"pango_shape_item");
     }
     /**
      * {@snippet :
-     * void pango_shape_item(PangoItem* item, char* paragraph_text, int paragraph_length, PangoLogAttr* log_attrs, PangoGlyphString* glyphs, PangoShapeFlags flags);
+     * void pango_shape_item(struct _PangoItem* item, char* paragraph_text, int paragraph_length, struct _PangoLogAttr* log_attrs, struct _PangoGlyphString* glyphs, enum PangoShapeFlags flags);
      * }
      */
     public static void pango_shape_item(MemorySegment item, MemorySegment paragraph_text, int paragraph_length, MemorySegment log_attrs, MemorySegment glyphs, int flags) {
@@ -5119,11 +6654,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_engine_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$944.pango_engine_get_type$MH,"pango_engine_get_type");
+        return RuntimeHelper.requireNonNull(constants$1604.const$0,"pango_engine_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_engine_get_type();
+     * unsigned long pango_engine_get_type();
      * }
      */
     public static long pango_engine_get_type() {
@@ -5135,11 +6670,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_engine_lang_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$944.pango_engine_lang_get_type$MH,"pango_engine_lang_get_type");
+        return RuntimeHelper.requireNonNull(constants$1605.const$0,"pango_engine_lang_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_engine_lang_get_type();
+     * unsigned long pango_engine_lang_get_type();
      * }
      */
     public static long pango_engine_lang_get_type() {
@@ -5151,11 +6686,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_engine_shape_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$945.pango_engine_shape_get_type$MH,"pango_engine_shape_get_type");
+        return RuntimeHelper.requireNonNull(constants$1606.const$4,"pango_engine_shape_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_engine_shape_get_type();
+     * unsigned long pango_engine_shape_get_type();
      * }
      */
     public static long pango_engine_shape_get_type() {
@@ -5167,11 +6702,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle script_engine_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$945.script_engine_list$MH,"script_engine_list");
+        return RuntimeHelper.requireNonNull(constants$1608.const$2,"script_engine_list");
     }
     /**
      * {@snippet :
-     * void script_engine_list(PangoEngineInfo** engines, int* n_engines);
+     * void script_engine_list(struct _PangoEngineInfo** engines, int* n_engines);
      * }
      */
     public static void script_engine_list(MemorySegment engines, MemorySegment n_engines) {
@@ -5183,11 +6718,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle script_engine_init$MH() {
-        return RuntimeHelper.requireNonNull(constants$945.script_engine_init$MH,"script_engine_init");
+        return RuntimeHelper.requireNonNull(constants$1608.const$3,"script_engine_init");
     }
     /**
      * {@snippet :
-     * void script_engine_init(GTypeModule* module);
+     * void script_engine_init(struct _GTypeModule* module);
      * }
      */
     public static void script_engine_init(MemorySegment module) {
@@ -5199,7 +6734,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle script_engine_exit$MH() {
-        return RuntimeHelper.requireNonNull(constants$945.script_engine_exit$MH,"script_engine_exit");
+        return RuntimeHelper.requireNonNull(constants$1608.const$4,"script_engine_exit");
     }
     /**
      * {@snippet :
@@ -5215,11 +6750,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle script_engine_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$945.script_engine_create$MH,"script_engine_create");
+        return RuntimeHelper.requireNonNull(constants$1608.const$5,"script_engine_create");
     }
     /**
      * {@snippet :
-     * PangoEngine* script_engine_create(char* id);
+     * struct _PangoEngine* script_engine_create(char* id);
      * }
      */
     public static MemorySegment script_engine_create(MemorySegment id) {
@@ -5231,11 +6766,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_attr_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$945.pango_attr_type_get_type$MH,"pango_attr_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$1609.const$0,"pango_attr_type_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_attr_type_get_type();
+     * unsigned long pango_attr_type_get_type();
      * }
      */
     public static long pango_attr_type_get_type() {
@@ -5247,11 +6782,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_underline_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$946.pango_underline_get_type$MH,"pango_underline_get_type");
+        return RuntimeHelper.requireNonNull(constants$1609.const$1,"pango_underline_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_underline_get_type();
+     * unsigned long pango_underline_get_type();
      * }
      */
     public static long pango_underline_get_type() {
@@ -5263,11 +6798,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_overline_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$946.pango_overline_get_type$MH,"pango_overline_get_type");
+        return RuntimeHelper.requireNonNull(constants$1609.const$2,"pango_overline_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_overline_get_type();
+     * unsigned long pango_overline_get_type();
      * }
      */
     public static long pango_overline_get_type() {
@@ -5279,11 +6814,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_show_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$946.pango_show_flags_get_type$MH,"pango_show_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$1609.const$3,"pango_show_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_show_flags_get_type();
+     * unsigned long pango_show_flags_get_type();
      * }
      */
     public static long pango_show_flags_get_type() {
@@ -5295,11 +6830,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_text_transform_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$946.pango_text_transform_get_type$MH,"pango_text_transform_get_type");
+        return RuntimeHelper.requireNonNull(constants$1609.const$4,"pango_text_transform_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_text_transform_get_type();
+     * unsigned long pango_text_transform_get_type();
      * }
      */
     public static long pango_text_transform_get_type() {
@@ -5311,11 +6846,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_baseline_shift_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$946.pango_baseline_shift_get_type$MH,"pango_baseline_shift_get_type");
+        return RuntimeHelper.requireNonNull(constants$1609.const$5,"pango_baseline_shift_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_baseline_shift_get_type();
+     * unsigned long pango_baseline_shift_get_type();
      * }
      */
     public static long pango_baseline_shift_get_type() {
@@ -5327,11 +6862,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_scale_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$946.pango_font_scale_get_type$MH,"pango_font_scale_get_type");
+        return RuntimeHelper.requireNonNull(constants$1610.const$0,"pango_font_scale_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_font_scale_get_type();
+     * unsigned long pango_font_scale_get_type();
      * }
      */
     public static long pango_font_scale_get_type() {
@@ -5343,11 +6878,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_bidi_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$947.pango_bidi_type_get_type$MH,"pango_bidi_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$1610.const$1,"pango_bidi_type_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_bidi_type_get_type();
+     * unsigned long pango_bidi_type_get_type();
      * }
      */
     public static long pango_bidi_type_get_type() {
@@ -5359,11 +6894,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_coverage_level_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$947.pango_coverage_level_get_type$MH,"pango_coverage_level_get_type");
+        return RuntimeHelper.requireNonNull(constants$1610.const$2,"pango_coverage_level_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_coverage_level_get_type();
+     * unsigned long pango_coverage_level_get_type();
      * }
      */
     public static long pango_coverage_level_get_type() {
@@ -5375,11 +6910,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_direction_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$947.pango_direction_get_type$MH,"pango_direction_get_type");
+        return RuntimeHelper.requireNonNull(constants$1610.const$3,"pango_direction_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_direction_get_type();
+     * unsigned long pango_direction_get_type();
      * }
      */
     public static long pango_direction_get_type() {
@@ -5391,11 +6926,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_style_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$947.pango_style_get_type$MH,"pango_style_get_type");
+        return RuntimeHelper.requireNonNull(constants$1610.const$4,"pango_style_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_style_get_type();
+     * unsigned long pango_style_get_type();
      * }
      */
     public static long pango_style_get_type() {
@@ -5407,11 +6942,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_variant_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$947.pango_variant_get_type$MH,"pango_variant_get_type");
+        return RuntimeHelper.requireNonNull(constants$1610.const$5,"pango_variant_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_variant_get_type();
+     * unsigned long pango_variant_get_type();
      * }
      */
     public static long pango_variant_get_type() {
@@ -5423,11 +6958,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_weight_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$947.pango_weight_get_type$MH,"pango_weight_get_type");
+        return RuntimeHelper.requireNonNull(constants$1611.const$0,"pango_weight_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_weight_get_type();
+     * unsigned long pango_weight_get_type();
      * }
      */
     public static long pango_weight_get_type() {
@@ -5439,11 +6974,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_stretch_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$948.pango_stretch_get_type$MH,"pango_stretch_get_type");
+        return RuntimeHelper.requireNonNull(constants$1611.const$1,"pango_stretch_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_stretch_get_type();
+     * unsigned long pango_stretch_get_type();
      * }
      */
     public static long pango_stretch_get_type() {
@@ -5455,11 +6990,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_font_mask_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$948.pango_font_mask_get_type$MH,"pango_font_mask_get_type");
+        return RuntimeHelper.requireNonNull(constants$1611.const$2,"pango_font_mask_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_font_mask_get_type();
+     * unsigned long pango_font_mask_get_type();
      * }
      */
     public static long pango_font_mask_get_type() {
@@ -5471,11 +7006,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_shape_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$948.pango_shape_flags_get_type$MH,"pango_shape_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$1611.const$3,"pango_shape_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_shape_flags_get_type();
+     * unsigned long pango_shape_flags_get_type();
      * }
      */
     public static long pango_shape_flags_get_type() {
@@ -5487,11 +7022,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_gravity_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$948.pango_gravity_get_type$MH,"pango_gravity_get_type");
+        return RuntimeHelper.requireNonNull(constants$1611.const$4,"pango_gravity_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_gravity_get_type();
+     * unsigned long pango_gravity_get_type();
      * }
      */
     public static long pango_gravity_get_type() {
@@ -5503,11 +7038,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_gravity_hint_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$948.pango_gravity_hint_get_type$MH,"pango_gravity_hint_get_type");
+        return RuntimeHelper.requireNonNull(constants$1611.const$5,"pango_gravity_hint_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_gravity_hint_get_type();
+     * unsigned long pango_gravity_hint_get_type();
      * }
      */
     public static long pango_gravity_hint_get_type() {
@@ -5519,11 +7054,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_alignment_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$948.pango_alignment_get_type$MH,"pango_alignment_get_type");
+        return RuntimeHelper.requireNonNull(constants$1612.const$0,"pango_alignment_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_alignment_get_type();
+     * unsigned long pango_alignment_get_type();
      * }
      */
     public static long pango_alignment_get_type() {
@@ -5535,11 +7070,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_wrap_mode_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$949.pango_wrap_mode_get_type$MH,"pango_wrap_mode_get_type");
+        return RuntimeHelper.requireNonNull(constants$1612.const$1,"pango_wrap_mode_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_wrap_mode_get_type();
+     * unsigned long pango_wrap_mode_get_type();
      * }
      */
     public static long pango_wrap_mode_get_type() {
@@ -5551,11 +7086,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_ellipsize_mode_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$949.pango_ellipsize_mode_get_type$MH,"pango_ellipsize_mode_get_type");
+        return RuntimeHelper.requireNonNull(constants$1612.const$2,"pango_ellipsize_mode_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_ellipsize_mode_get_type();
+     * unsigned long pango_ellipsize_mode_get_type();
      * }
      */
     public static long pango_ellipsize_mode_get_type() {
@@ -5567,11 +7102,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_serialize_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$949.pango_layout_serialize_flags_get_type$MH,"pango_layout_serialize_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$1612.const$3,"pango_layout_serialize_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_layout_serialize_flags_get_type();
+     * unsigned long pango_layout_serialize_flags_get_type();
      * }
      */
     public static long pango_layout_serialize_flags_get_type() {
@@ -5583,11 +7118,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_deserialize_error_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$949.pango_layout_deserialize_error_get_type$MH,"pango_layout_deserialize_error_get_type");
+        return RuntimeHelper.requireNonNull(constants$1612.const$4,"pango_layout_deserialize_error_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_layout_deserialize_error_get_type();
+     * unsigned long pango_layout_deserialize_error_get_type();
      * }
      */
     public static long pango_layout_deserialize_error_get_type() {
@@ -5599,11 +7134,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_deserialize_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$949.pango_layout_deserialize_flags_get_type$MH,"pango_layout_deserialize_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$1612.const$5,"pango_layout_deserialize_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_layout_deserialize_flags_get_type();
+     * unsigned long pango_layout_deserialize_flags_get_type();
      * }
      */
     public static long pango_layout_deserialize_flags_get_type() {
@@ -5615,11 +7150,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_render_part_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$949.pango_render_part_get_type$MH,"pango_render_part_get_type");
+        return RuntimeHelper.requireNonNull(constants$1613.const$0,"pango_render_part_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_render_part_get_type();
+     * unsigned long pango_render_part_get_type();
      * }
      */
     public static long pango_render_part_get_type() {
@@ -5631,11 +7166,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_script_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$950.pango_script_get_type$MH,"pango_script_get_type");
+        return RuntimeHelper.requireNonNull(constants$1613.const$1,"pango_script_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_script_get_type();
+     * unsigned long pango_script_get_type();
      * }
      */
     public static long pango_script_get_type() {
@@ -5647,11 +7182,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_align_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$950.pango_tab_align_get_type$MH,"pango_tab_align_get_type");
+        return RuntimeHelper.requireNonNull(constants$1613.const$2,"pango_tab_align_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_tab_align_get_type();
+     * unsigned long pango_tab_align_get_type();
      * }
      */
     public static long pango_tab_align_get_type() {
@@ -5663,11 +7198,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_fontset_simple_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$950.pango_fontset_simple_get_type$MH,"pango_fontset_simple_get_type");
+        return RuntimeHelper.requireNonNull(constants$1613.const$3,"pango_fontset_simple_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_fontset_simple_get_type();
+     * unsigned long pango_fontset_simple_get_type();
      * }
      */
     public static long pango_fontset_simple_get_type() {
@@ -5679,11 +7214,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_fontset_simple_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$950.pango_fontset_simple_new$MH,"pango_fontset_simple_new");
+        return RuntimeHelper.requireNonNull(constants$1613.const$4,"pango_fontset_simple_new");
     }
     /**
      * {@snippet :
-     * PangoFontsetSimple* pango_fontset_simple_new(PangoLanguage* language);
+     * struct _PangoFontsetSimple* pango_fontset_simple_new(struct _PangoLanguage* language);
      * }
      */
     public static MemorySegment pango_fontset_simple_new(MemorySegment language) {
@@ -5695,11 +7230,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_fontset_simple_append$MH() {
-        return RuntimeHelper.requireNonNull(constants$950.pango_fontset_simple_append$MH,"pango_fontset_simple_append");
+        return RuntimeHelper.requireNonNull(constants$1613.const$5,"pango_fontset_simple_append");
     }
     /**
      * {@snippet :
-     * void pango_fontset_simple_append(PangoFontsetSimple* fontset, PangoFont* font);
+     * void pango_fontset_simple_append(struct _PangoFontsetSimple* fontset, struct _PangoFont* font);
      * }
      */
     public static void pango_fontset_simple_append(MemorySegment fontset, MemorySegment font) {
@@ -5711,11 +7246,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_fontset_simple_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$950.pango_fontset_simple_size$MH,"pango_fontset_simple_size");
+        return RuntimeHelper.requireNonNull(constants$1614.const$0,"pango_fontset_simple_size");
     }
     /**
      * {@snippet :
-     * int pango_fontset_simple_size(PangoFontsetSimple* fontset);
+     * int pango_fontset_simple_size(struct _PangoFontsetSimple* fontset);
      * }
      */
     public static int pango_fontset_simple_size(MemorySegment fontset) {
@@ -5727,11 +7262,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$951.pango_glyph_item_get_type$MH,"pango_glyph_item_get_type");
+        return RuntimeHelper.requireNonNull(constants$1615.const$1,"pango_glyph_item_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_glyph_item_get_type();
+     * unsigned long pango_glyph_item_get_type();
      * }
      */
     public static long pango_glyph_item_get_type() {
@@ -5743,11 +7278,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_split$MH() {
-        return RuntimeHelper.requireNonNull(constants$951.pango_glyph_item_split$MH,"pango_glyph_item_split");
+        return RuntimeHelper.requireNonNull(constants$1615.const$2,"pango_glyph_item_split");
     }
     /**
      * {@snippet :
-     * PangoGlyphItem* pango_glyph_item_split(PangoGlyphItem* orig, char* text, int split_index);
+     * struct _PangoGlyphItem* pango_glyph_item_split(struct _PangoGlyphItem* orig, char* text, int split_index);
      * }
      */
     public static MemorySegment pango_glyph_item_split(MemorySegment orig, MemorySegment text, int split_index) {
@@ -5759,11 +7294,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$951.pango_glyph_item_copy$MH,"pango_glyph_item_copy");
+        return RuntimeHelper.requireNonNull(constants$1615.const$3,"pango_glyph_item_copy");
     }
     /**
      * {@snippet :
-     * PangoGlyphItem* pango_glyph_item_copy(PangoGlyphItem* orig);
+     * struct _PangoGlyphItem* pango_glyph_item_copy(struct _PangoGlyphItem* orig);
      * }
      */
     public static MemorySegment pango_glyph_item_copy(MemorySegment orig) {
@@ -5775,11 +7310,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$951.pango_glyph_item_free$MH,"pango_glyph_item_free");
+        return RuntimeHelper.requireNonNull(constants$1615.const$4,"pango_glyph_item_free");
     }
     /**
      * {@snippet :
-     * void pango_glyph_item_free(PangoGlyphItem* glyph_item);
+     * void pango_glyph_item_free(struct _PangoGlyphItem* glyph_item);
      * }
      */
     public static void pango_glyph_item_free(MemorySegment glyph_item) {
@@ -5791,11 +7326,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_apply_attrs$MH() {
-        return RuntimeHelper.requireNonNull(constants$951.pango_glyph_item_apply_attrs$MH,"pango_glyph_item_apply_attrs");
+        return RuntimeHelper.requireNonNull(constants$1615.const$5,"pango_glyph_item_apply_attrs");
     }
     /**
      * {@snippet :
-     * GSList* pango_glyph_item_apply_attrs(PangoGlyphItem* glyph_item, char* text, PangoAttrList* list);
+     * struct _GSList* pango_glyph_item_apply_attrs(struct _PangoGlyphItem* glyph_item, char* text, struct _PangoAttrList* list);
      * }
      */
     public static MemorySegment pango_glyph_item_apply_attrs(MemorySegment glyph_item, MemorySegment text, MemorySegment list) {
@@ -5807,11 +7342,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_letter_space$MH() {
-        return RuntimeHelper.requireNonNull(constants$951.pango_glyph_item_letter_space$MH,"pango_glyph_item_letter_space");
+        return RuntimeHelper.requireNonNull(constants$1616.const$0,"pango_glyph_item_letter_space");
     }
     /**
      * {@snippet :
-     * void pango_glyph_item_letter_space(PangoGlyphItem* glyph_item, char* text, PangoLogAttr* log_attrs, int letter_spacing);
+     * void pango_glyph_item_letter_space(struct _PangoGlyphItem* glyph_item, char* text, struct _PangoLogAttr* log_attrs, int letter_spacing);
      * }
      */
     public static void pango_glyph_item_letter_space(MemorySegment glyph_item, MemorySegment text, MemorySegment log_attrs, int letter_spacing) {
@@ -5823,11 +7358,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_get_logical_widths$MH() {
-        return RuntimeHelper.requireNonNull(constants$952.pango_glyph_item_get_logical_widths$MH,"pango_glyph_item_get_logical_widths");
+        return RuntimeHelper.requireNonNull(constants$1616.const$1,"pango_glyph_item_get_logical_widths");
     }
     /**
      * {@snippet :
-     * void pango_glyph_item_get_logical_widths(PangoGlyphItem* glyph_item, char* text, int* logical_widths);
+     * void pango_glyph_item_get_logical_widths(struct _PangoGlyphItem* glyph_item, char* text, int* logical_widths);
      * }
      */
     public static void pango_glyph_item_get_logical_widths(MemorySegment glyph_item, MemorySegment text, MemorySegment logical_widths) {
@@ -5839,11 +7374,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_iter_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$952.pango_glyph_item_iter_get_type$MH,"pango_glyph_item_iter_get_type");
+        return RuntimeHelper.requireNonNull(constants$1617.const$5,"pango_glyph_item_iter_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_glyph_item_iter_get_type();
+     * unsigned long pango_glyph_item_iter_get_type();
      * }
      */
     public static long pango_glyph_item_iter_get_type() {
@@ -5855,11 +7390,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_iter_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$952.pango_glyph_item_iter_copy$MH,"pango_glyph_item_iter_copy");
+        return RuntimeHelper.requireNonNull(constants$1618.const$0,"pango_glyph_item_iter_copy");
     }
     /**
      * {@snippet :
-     * PangoGlyphItemIter* pango_glyph_item_iter_copy(PangoGlyphItemIter* orig);
+     * struct _PangoGlyphItemIter* pango_glyph_item_iter_copy(struct _PangoGlyphItemIter* orig);
      * }
      */
     public static MemorySegment pango_glyph_item_iter_copy(MemorySegment orig) {
@@ -5871,11 +7406,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_iter_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$952.pango_glyph_item_iter_free$MH,"pango_glyph_item_iter_free");
+        return RuntimeHelper.requireNonNull(constants$1618.const$1,"pango_glyph_item_iter_free");
     }
     /**
      * {@snippet :
-     * void pango_glyph_item_iter_free(PangoGlyphItemIter* iter);
+     * void pango_glyph_item_iter_free(struct _PangoGlyphItemIter* iter);
      * }
      */
     public static void pango_glyph_item_iter_free(MemorySegment iter) {
@@ -5887,11 +7422,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_iter_init_start$MH() {
-        return RuntimeHelper.requireNonNull(constants$952.pango_glyph_item_iter_init_start$MH,"pango_glyph_item_iter_init_start");
+        return RuntimeHelper.requireNonNull(constants$1618.const$2,"pango_glyph_item_iter_init_start");
     }
     /**
      * {@snippet :
-     * gboolean pango_glyph_item_iter_init_start(PangoGlyphItemIter* iter, PangoGlyphItem* glyph_item, char* text);
+     * int pango_glyph_item_iter_init_start(struct _PangoGlyphItemIter* iter, struct _PangoGlyphItem* glyph_item, char* text);
      * }
      */
     public static int pango_glyph_item_iter_init_start(MemorySegment iter, MemorySegment glyph_item, MemorySegment text) {
@@ -5903,11 +7438,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_iter_init_end$MH() {
-        return RuntimeHelper.requireNonNull(constants$952.pango_glyph_item_iter_init_end$MH,"pango_glyph_item_iter_init_end");
+        return RuntimeHelper.requireNonNull(constants$1618.const$3,"pango_glyph_item_iter_init_end");
     }
     /**
      * {@snippet :
-     * gboolean pango_glyph_item_iter_init_end(PangoGlyphItemIter* iter, PangoGlyphItem* glyph_item, char* text);
+     * int pango_glyph_item_iter_init_end(struct _PangoGlyphItemIter* iter, struct _PangoGlyphItem* glyph_item, char* text);
      * }
      */
     public static int pango_glyph_item_iter_init_end(MemorySegment iter, MemorySegment glyph_item, MemorySegment text) {
@@ -5919,11 +7454,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_iter_next_cluster$MH() {
-        return RuntimeHelper.requireNonNull(constants$953.pango_glyph_item_iter_next_cluster$MH,"pango_glyph_item_iter_next_cluster");
+        return RuntimeHelper.requireNonNull(constants$1618.const$4,"pango_glyph_item_iter_next_cluster");
     }
     /**
      * {@snippet :
-     * gboolean pango_glyph_item_iter_next_cluster(PangoGlyphItemIter* iter);
+     * int pango_glyph_item_iter_next_cluster(struct _PangoGlyphItemIter* iter);
      * }
      */
     public static int pango_glyph_item_iter_next_cluster(MemorySegment iter) {
@@ -5935,11 +7470,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_glyph_item_iter_prev_cluster$MH() {
-        return RuntimeHelper.requireNonNull(constants$953.pango_glyph_item_iter_prev_cluster$MH,"pango_glyph_item_iter_prev_cluster");
+        return RuntimeHelper.requireNonNull(constants$1618.const$5,"pango_glyph_item_iter_prev_cluster");
     }
     /**
      * {@snippet :
-     * gboolean pango_glyph_item_iter_prev_cluster(PangoGlyphItemIter* iter);
+     * int pango_glyph_item_iter_prev_cluster(struct _PangoGlyphItemIter* iter);
      * }
      */
     public static int pango_glyph_item_iter_prev_cluster(MemorySegment iter) {
@@ -5952,7 +7487,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_TAB_LEFT = 0;
+     * enum PangoTabAlign.PANGO_TAB_LEFT = 0;
      * }
      */
     public static int PANGO_TAB_LEFT() {
@@ -5960,7 +7495,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_TAB_RIGHT = 1;
+     * enum PangoTabAlign.PANGO_TAB_RIGHT = 1;
      * }
      */
     public static int PANGO_TAB_RIGHT() {
@@ -5968,7 +7503,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_TAB_CENTER = 2;
+     * enum PangoTabAlign.PANGO_TAB_CENTER = 2;
      * }
      */
     public static int PANGO_TAB_CENTER() {
@@ -5976,18 +7511,18 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_TAB_DECIMAL = 3;
+     * enum PangoTabAlign.PANGO_TAB_DECIMAL = 3;
      * }
      */
     public static int PANGO_TAB_DECIMAL() {
         return (int)3L;
     }
     public static MethodHandle pango_tab_array_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$953.pango_tab_array_new$MH,"pango_tab_array_new");
+        return RuntimeHelper.requireNonNull(constants$1619.const$0,"pango_tab_array_new");
     }
     /**
      * {@snippet :
-     * PangoTabArray* pango_tab_array_new(gint initial_size, gboolean positions_in_pixels);
+     * struct _PangoTabArray* pango_tab_array_new(int initial_size, int positions_in_pixels);
      * }
      */
     public static MemorySegment pango_tab_array_new(int initial_size, int positions_in_pixels) {
@@ -5999,11 +7534,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_new_with_positions$MH() {
-        return RuntimeHelper.requireNonNull(constants$953.pango_tab_array_new_with_positions$MH,"pango_tab_array_new_with_positions");
+        return RuntimeHelper.requireNonNull(constants$1619.const$1,"pango_tab_array_new_with_positions");
     }
     /**
      * {@snippet :
-     * PangoTabArray* pango_tab_array_new_with_positions(gint size, gboolean positions_in_pixels, PangoTabAlign first_alignment, gint first_position,...);
+     * struct _PangoTabArray* pango_tab_array_new_with_positions(int size, int positions_in_pixels, enum PangoTabAlign first_alignment, int first_position,...);
      * }
      */
     public static MemorySegment pango_tab_array_new_with_positions(int size, int positions_in_pixels, int first_alignment, int first_position, Object... x4) {
@@ -6015,11 +7550,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$953.pango_tab_array_get_type$MH,"pango_tab_array_get_type");
+        return RuntimeHelper.requireNonNull(constants$1619.const$2,"pango_tab_array_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_tab_array_get_type();
+     * unsigned long pango_tab_array_get_type();
      * }
      */
     public static long pango_tab_array_get_type() {
@@ -6031,11 +7566,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$953.pango_tab_array_copy$MH,"pango_tab_array_copy");
+        return RuntimeHelper.requireNonNull(constants$1619.const$3,"pango_tab_array_copy");
     }
     /**
      * {@snippet :
-     * PangoTabArray* pango_tab_array_copy(PangoTabArray* src);
+     * struct _PangoTabArray* pango_tab_array_copy(struct _PangoTabArray* src);
      * }
      */
     public static MemorySegment pango_tab_array_copy(MemorySegment src) {
@@ -6047,11 +7582,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$954.pango_tab_array_free$MH,"pango_tab_array_free");
+        return RuntimeHelper.requireNonNull(constants$1619.const$4,"pango_tab_array_free");
     }
     /**
      * {@snippet :
-     * void pango_tab_array_free(PangoTabArray* tab_array);
+     * void pango_tab_array_free(struct _PangoTabArray* tab_array);
      * }
      */
     public static void pango_tab_array_free(MemorySegment tab_array) {
@@ -6063,11 +7598,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_get_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$954.pango_tab_array_get_size$MH,"pango_tab_array_get_size");
+        return RuntimeHelper.requireNonNull(constants$1619.const$5,"pango_tab_array_get_size");
     }
     /**
      * {@snippet :
-     * gint pango_tab_array_get_size(PangoTabArray* tab_array);
+     * int pango_tab_array_get_size(struct _PangoTabArray* tab_array);
      * }
      */
     public static int pango_tab_array_get_size(MemorySegment tab_array) {
@@ -6079,11 +7614,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_resize$MH() {
-        return RuntimeHelper.requireNonNull(constants$954.pango_tab_array_resize$MH,"pango_tab_array_resize");
+        return RuntimeHelper.requireNonNull(constants$1620.const$0,"pango_tab_array_resize");
     }
     /**
      * {@snippet :
-     * void pango_tab_array_resize(PangoTabArray* tab_array, gint new_size);
+     * void pango_tab_array_resize(struct _PangoTabArray* tab_array, int new_size);
      * }
      */
     public static void pango_tab_array_resize(MemorySegment tab_array, int new_size) {
@@ -6095,11 +7630,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_set_tab$MH() {
-        return RuntimeHelper.requireNonNull(constants$954.pango_tab_array_set_tab$MH,"pango_tab_array_set_tab");
+        return RuntimeHelper.requireNonNull(constants$1620.const$1,"pango_tab_array_set_tab");
     }
     /**
      * {@snippet :
-     * void pango_tab_array_set_tab(PangoTabArray* tab_array, gint tab_index, PangoTabAlign alignment, gint location);
+     * void pango_tab_array_set_tab(struct _PangoTabArray* tab_array, int tab_index, enum PangoTabAlign alignment, int location);
      * }
      */
     public static void pango_tab_array_set_tab(MemorySegment tab_array, int tab_index, int alignment, int location) {
@@ -6111,11 +7646,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_get_tab$MH() {
-        return RuntimeHelper.requireNonNull(constants$954.pango_tab_array_get_tab$MH,"pango_tab_array_get_tab");
+        return RuntimeHelper.requireNonNull(constants$1620.const$2,"pango_tab_array_get_tab");
     }
     /**
      * {@snippet :
-     * void pango_tab_array_get_tab(PangoTabArray* tab_array, gint tab_index, PangoTabAlign* alignment, gint* location);
+     * void pango_tab_array_get_tab(struct _PangoTabArray* tab_array, int tab_index, enum PangoTabAlign* alignment, int* location);
      * }
      */
     public static void pango_tab_array_get_tab(MemorySegment tab_array, int tab_index, MemorySegment alignment, MemorySegment location) {
@@ -6127,11 +7662,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_get_tabs$MH() {
-        return RuntimeHelper.requireNonNull(constants$954.pango_tab_array_get_tabs$MH,"pango_tab_array_get_tabs");
+        return RuntimeHelper.requireNonNull(constants$1620.const$3,"pango_tab_array_get_tabs");
     }
     /**
      * {@snippet :
-     * void pango_tab_array_get_tabs(PangoTabArray* tab_array, PangoTabAlign** alignments, gint** locations);
+     * void pango_tab_array_get_tabs(struct _PangoTabArray* tab_array, enum PangoTabAlign** alignments, int** locations);
      * }
      */
     public static void pango_tab_array_get_tabs(MemorySegment tab_array, MemorySegment alignments, MemorySegment locations) {
@@ -6143,11 +7678,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_get_positions_in_pixels$MH() {
-        return RuntimeHelper.requireNonNull(constants$955.pango_tab_array_get_positions_in_pixels$MH,"pango_tab_array_get_positions_in_pixels");
+        return RuntimeHelper.requireNonNull(constants$1620.const$4,"pango_tab_array_get_positions_in_pixels");
     }
     /**
      * {@snippet :
-     * gboolean pango_tab_array_get_positions_in_pixels(PangoTabArray* tab_array);
+     * int pango_tab_array_get_positions_in_pixels(struct _PangoTabArray* tab_array);
      * }
      */
     public static int pango_tab_array_get_positions_in_pixels(MemorySegment tab_array) {
@@ -6159,11 +7694,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_set_positions_in_pixels$MH() {
-        return RuntimeHelper.requireNonNull(constants$955.pango_tab_array_set_positions_in_pixels$MH,"pango_tab_array_set_positions_in_pixels");
+        return RuntimeHelper.requireNonNull(constants$1620.const$5,"pango_tab_array_set_positions_in_pixels");
     }
     /**
      * {@snippet :
-     * void pango_tab_array_set_positions_in_pixels(PangoTabArray* tab_array, gboolean positions_in_pixels);
+     * void pango_tab_array_set_positions_in_pixels(struct _PangoTabArray* tab_array, int positions_in_pixels);
      * }
      */
     public static void pango_tab_array_set_positions_in_pixels(MemorySegment tab_array, int positions_in_pixels) {
@@ -6175,11 +7710,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$955.pango_tab_array_to_string$MH,"pango_tab_array_to_string");
+        return RuntimeHelper.requireNonNull(constants$1621.const$0,"pango_tab_array_to_string");
     }
     /**
      * {@snippet :
-     * char* pango_tab_array_to_string(PangoTabArray* tab_array);
+     * char* pango_tab_array_to_string(struct _PangoTabArray* tab_array);
      * }
      */
     public static MemorySegment pango_tab_array_to_string(MemorySegment tab_array) {
@@ -6191,11 +7726,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$955.pango_tab_array_from_string$MH,"pango_tab_array_from_string");
+        return RuntimeHelper.requireNonNull(constants$1621.const$1,"pango_tab_array_from_string");
     }
     /**
      * {@snippet :
-     * PangoTabArray* pango_tab_array_from_string(char* text);
+     * struct _PangoTabArray* pango_tab_array_from_string(char* text);
      * }
      */
     public static MemorySegment pango_tab_array_from_string(MemorySegment text) {
@@ -6207,11 +7742,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_set_decimal_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$955.pango_tab_array_set_decimal_point$MH,"pango_tab_array_set_decimal_point");
+        return RuntimeHelper.requireNonNull(constants$1621.const$2,"pango_tab_array_set_decimal_point");
     }
     /**
      * {@snippet :
-     * void pango_tab_array_set_decimal_point(PangoTabArray* tab_array, int tab_index, gunichar decimal_point);
+     * void pango_tab_array_set_decimal_point(struct _PangoTabArray* tab_array, int tab_index, unsigned int decimal_point);
      * }
      */
     public static void pango_tab_array_set_decimal_point(MemorySegment tab_array, int tab_index, int decimal_point) {
@@ -6223,11 +7758,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_get_decimal_point$MH() {
-        return RuntimeHelper.requireNonNull(constants$955.pango_tab_array_get_decimal_point$MH,"pango_tab_array_get_decimal_point");
+        return RuntimeHelper.requireNonNull(constants$1621.const$3,"pango_tab_array_get_decimal_point");
     }
     /**
      * {@snippet :
-     * gunichar pango_tab_array_get_decimal_point(PangoTabArray* tab_array, int tab_index);
+     * unsigned int pango_tab_array_get_decimal_point(struct _PangoTabArray* tab_array, int tab_index);
      * }
      */
     public static int pango_tab_array_get_decimal_point(MemorySegment tab_array, int tab_index) {
@@ -6239,11 +7774,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_tab_array_sort$MH() {
-        return RuntimeHelper.requireNonNull(constants$956.pango_tab_array_sort$MH,"pango_tab_array_sort");
+        return RuntimeHelper.requireNonNull(constants$1621.const$4,"pango_tab_array_sort");
     }
     /**
      * {@snippet :
-     * void pango_tab_array_sort(PangoTabArray* tab_array);
+     * void pango_tab_array_sort(struct _PangoTabArray* tab_array);
      * }
      */
     public static void pango_tab_array_sort(MemorySegment tab_array) {
@@ -6259,28 +7794,28 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      * typedef struct _PangoTabArray* PangoTabArray_autoptr;
      * }
      */
-    public static final OfAddress PangoTabArray_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoTabArray_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* PangoTabArray_listautoptr;
      * }
      */
-    public static final OfAddress PangoTabArray_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoTabArray_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* PangoTabArray_slistautoptr;
      * }
      */
-    public static final OfAddress PangoTabArray_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoTabArray_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* PangoTabArray_queueautoptr;
      * }
      */
-    public static final OfAddress PangoTabArray_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoTabArray_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
-     * enum .PANGO_ALIGN_LEFT = 0;
+     * enum PangoAlignment.PANGO_ALIGN_LEFT = 0;
      * }
      */
     public static int PANGO_ALIGN_LEFT() {
@@ -6288,7 +7823,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ALIGN_CENTER = 1;
+     * enum PangoAlignment.PANGO_ALIGN_CENTER = 1;
      * }
      */
     public static int PANGO_ALIGN_CENTER() {
@@ -6296,7 +7831,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ALIGN_RIGHT = 2;
+     * enum PangoAlignment.PANGO_ALIGN_RIGHT = 2;
      * }
      */
     public static int PANGO_ALIGN_RIGHT() {
@@ -6304,7 +7839,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_WRAP_WORD = 0;
+     * enum PangoWrapMode.PANGO_WRAP_WORD = 0;
      * }
      */
     public static int PANGO_WRAP_WORD() {
@@ -6312,7 +7847,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_WRAP_CHAR = 1;
+     * enum PangoWrapMode.PANGO_WRAP_CHAR = 1;
      * }
      */
     public static int PANGO_WRAP_CHAR() {
@@ -6320,7 +7855,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_WRAP_WORD_CHAR = 2;
+     * enum PangoWrapMode.PANGO_WRAP_WORD_CHAR = 2;
      * }
      */
     public static int PANGO_WRAP_WORD_CHAR() {
@@ -6328,7 +7863,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ELLIPSIZE_NONE = 0;
+     * enum PangoEllipsizeMode.PANGO_ELLIPSIZE_NONE = 0;
      * }
      */
     public static int PANGO_ELLIPSIZE_NONE() {
@@ -6336,7 +7871,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ELLIPSIZE_START = 1;
+     * enum PangoEllipsizeMode.PANGO_ELLIPSIZE_START = 1;
      * }
      */
     public static int PANGO_ELLIPSIZE_START() {
@@ -6344,7 +7879,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ELLIPSIZE_MIDDLE = 2;
+     * enum PangoEllipsizeMode.PANGO_ELLIPSIZE_MIDDLE = 2;
      * }
      */
     public static int PANGO_ELLIPSIZE_MIDDLE() {
@@ -6352,18 +7887,18 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_ELLIPSIZE_END = 3;
+     * enum PangoEllipsizeMode.PANGO_ELLIPSIZE_END = 3;
      * }
      */
     public static int PANGO_ELLIPSIZE_END() {
         return (int)3L;
     }
     public static MethodHandle pango_layout_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$956.pango_layout_get_type$MH,"pango_layout_get_type");
+        return RuntimeHelper.requireNonNull(constants$1622.const$4,"pango_layout_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_layout_get_type();
+     * unsigned long pango_layout_get_type();
      * }
      */
     public static long pango_layout_get_type() {
@@ -6375,11 +7910,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$956.pango_layout_new$MH,"pango_layout_new");
+        return RuntimeHelper.requireNonNull(constants$1622.const$5,"pango_layout_new");
     }
     /**
      * {@snippet :
-     * PangoLayout* pango_layout_new(PangoContext* context);
+     * struct _PangoLayout* pango_layout_new(struct _PangoContext* context);
      * }
      */
     public static MemorySegment pango_layout_new(MemorySegment context) {
@@ -6391,11 +7926,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$956.pango_layout_copy$MH,"pango_layout_copy");
+        return RuntimeHelper.requireNonNull(constants$1623.const$0,"pango_layout_copy");
     }
     /**
      * {@snippet :
-     * PangoLayout* pango_layout_copy(PangoLayout* src);
+     * struct _PangoLayout* pango_layout_copy(struct _PangoLayout* src);
      * }
      */
     public static MemorySegment pango_layout_copy(MemorySegment src) {
@@ -6407,11 +7942,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$956.pango_layout_get_context$MH,"pango_layout_get_context");
+        return RuntimeHelper.requireNonNull(constants$1623.const$1,"pango_layout_get_context");
     }
     /**
      * {@snippet :
-     * PangoContext* pango_layout_get_context(PangoLayout* layout);
+     * struct _PangoContext* pango_layout_get_context(struct _PangoLayout* layout);
      * }
      */
     public static MemorySegment pango_layout_get_context(MemorySegment layout) {
@@ -6423,11 +7958,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_attributes$MH() {
-        return RuntimeHelper.requireNonNull(constants$956.pango_layout_set_attributes$MH,"pango_layout_set_attributes");
+        return RuntimeHelper.requireNonNull(constants$1623.const$2,"pango_layout_set_attributes");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_attributes(PangoLayout* layout, PangoAttrList* attrs);
+     * void pango_layout_set_attributes(struct _PangoLayout* layout, struct _PangoAttrList* attrs);
      * }
      */
     public static void pango_layout_set_attributes(MemorySegment layout, MemorySegment attrs) {
@@ -6439,11 +7974,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_attributes$MH() {
-        return RuntimeHelper.requireNonNull(constants$957.pango_layout_get_attributes$MH,"pango_layout_get_attributes");
+        return RuntimeHelper.requireNonNull(constants$1623.const$3,"pango_layout_get_attributes");
     }
     /**
      * {@snippet :
-     * PangoAttrList* pango_layout_get_attributes(PangoLayout* layout);
+     * struct _PangoAttrList* pango_layout_get_attributes(struct _PangoLayout* layout);
      * }
      */
     public static MemorySegment pango_layout_get_attributes(MemorySegment layout) {
@@ -6455,11 +7990,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$957.pango_layout_set_text$MH,"pango_layout_set_text");
+        return RuntimeHelper.requireNonNull(constants$1623.const$4,"pango_layout_set_text");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_text(PangoLayout* layout, char* text, int length);
+     * void pango_layout_set_text(struct _PangoLayout* layout, char* text, int length);
      * }
      */
     public static void pango_layout_set_text(MemorySegment layout, MemorySegment text, int length) {
@@ -6471,11 +8006,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$957.pango_layout_get_text$MH,"pango_layout_get_text");
+        return RuntimeHelper.requireNonNull(constants$1623.const$5,"pango_layout_get_text");
     }
     /**
      * {@snippet :
-     * char* pango_layout_get_text(PangoLayout* layout);
+     * char* pango_layout_get_text(struct _PangoLayout* layout);
      * }
      */
     public static MemorySegment pango_layout_get_text(MemorySegment layout) {
@@ -6487,11 +8022,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_character_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$957.pango_layout_get_character_count$MH,"pango_layout_get_character_count");
+        return RuntimeHelper.requireNonNull(constants$1624.const$0,"pango_layout_get_character_count");
     }
     /**
      * {@snippet :
-     * gint pango_layout_get_character_count(PangoLayout* layout);
+     * int pango_layout_get_character_count(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_get_character_count(MemorySegment layout) {
@@ -6503,11 +8038,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_markup$MH() {
-        return RuntimeHelper.requireNonNull(constants$957.pango_layout_set_markup$MH,"pango_layout_set_markup");
+        return RuntimeHelper.requireNonNull(constants$1624.const$1,"pango_layout_set_markup");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_markup(PangoLayout* layout, char* markup, int length);
+     * void pango_layout_set_markup(struct _PangoLayout* layout, char* markup, int length);
      * }
      */
     public static void pango_layout_set_markup(MemorySegment layout, MemorySegment markup, int length) {
@@ -6519,11 +8054,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_markup_with_accel$MH() {
-        return RuntimeHelper.requireNonNull(constants$957.pango_layout_set_markup_with_accel$MH,"pango_layout_set_markup_with_accel");
+        return RuntimeHelper.requireNonNull(constants$1624.const$2,"pango_layout_set_markup_with_accel");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_markup_with_accel(PangoLayout* layout, char* markup, int length, gunichar accel_marker, gunichar* accel_char);
+     * void pango_layout_set_markup_with_accel(struct _PangoLayout* layout, char* markup, int length, unsigned int accel_marker, unsigned int* accel_char);
      * }
      */
     public static void pango_layout_set_markup_with_accel(MemorySegment layout, MemorySegment markup, int length, int accel_marker, MemorySegment accel_char) {
@@ -6535,11 +8070,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_font_description$MH() {
-        return RuntimeHelper.requireNonNull(constants$958.pango_layout_set_font_description$MH,"pango_layout_set_font_description");
+        return RuntimeHelper.requireNonNull(constants$1624.const$3,"pango_layout_set_font_description");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_font_description(PangoLayout* layout, const PangoFontDescription* desc);
+     * void pango_layout_set_font_description(struct _PangoLayout* layout, struct _PangoFontDescription* desc);
      * }
      */
     public static void pango_layout_set_font_description(MemorySegment layout, MemorySegment desc) {
@@ -6551,11 +8086,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_font_description$MH() {
-        return RuntimeHelper.requireNonNull(constants$958.pango_layout_get_font_description$MH,"pango_layout_get_font_description");
+        return RuntimeHelper.requireNonNull(constants$1624.const$4,"pango_layout_get_font_description");
     }
     /**
      * {@snippet :
-     * const PangoFontDescription* pango_layout_get_font_description(PangoLayout* layout);
+     * struct _PangoFontDescription* pango_layout_get_font_description(struct _PangoLayout* layout);
      * }
      */
     public static MemorySegment pango_layout_get_font_description(MemorySegment layout) {
@@ -6567,11 +8102,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$958.pango_layout_set_width$MH,"pango_layout_set_width");
+        return RuntimeHelper.requireNonNull(constants$1624.const$5,"pango_layout_set_width");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_width(PangoLayout* layout, int width);
+     * void pango_layout_set_width(struct _PangoLayout* layout, int width);
      * }
      */
     public static void pango_layout_set_width(MemorySegment layout, int width) {
@@ -6583,11 +8118,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$958.pango_layout_get_width$MH,"pango_layout_get_width");
+        return RuntimeHelper.requireNonNull(constants$1625.const$0,"pango_layout_get_width");
     }
     /**
      * {@snippet :
-     * int pango_layout_get_width(PangoLayout* layout);
+     * int pango_layout_get_width(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_get_width(MemorySegment layout) {
@@ -6599,11 +8134,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$958.pango_layout_set_height$MH,"pango_layout_set_height");
+        return RuntimeHelper.requireNonNull(constants$1625.const$1,"pango_layout_set_height");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_height(PangoLayout* layout, int height);
+     * void pango_layout_set_height(struct _PangoLayout* layout, int height);
      * }
      */
     public static void pango_layout_set_height(MemorySegment layout, int height) {
@@ -6615,11 +8150,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$958.pango_layout_get_height$MH,"pango_layout_get_height");
+        return RuntimeHelper.requireNonNull(constants$1625.const$2,"pango_layout_get_height");
     }
     /**
      * {@snippet :
-     * int pango_layout_get_height(PangoLayout* layout);
+     * int pango_layout_get_height(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_get_height(MemorySegment layout) {
@@ -6631,11 +8166,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_wrap$MH() {
-        return RuntimeHelper.requireNonNull(constants$959.pango_layout_set_wrap$MH,"pango_layout_set_wrap");
+        return RuntimeHelper.requireNonNull(constants$1625.const$3,"pango_layout_set_wrap");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_wrap(PangoLayout* layout, PangoWrapMode wrap);
+     * void pango_layout_set_wrap(struct _PangoLayout* layout, enum PangoWrapMode wrap);
      * }
      */
     public static void pango_layout_set_wrap(MemorySegment layout, int wrap) {
@@ -6647,11 +8182,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_wrap$MH() {
-        return RuntimeHelper.requireNonNull(constants$959.pango_layout_get_wrap$MH,"pango_layout_get_wrap");
+        return RuntimeHelper.requireNonNull(constants$1625.const$4,"pango_layout_get_wrap");
     }
     /**
      * {@snippet :
-     * PangoWrapMode pango_layout_get_wrap(PangoLayout* layout);
+     * enum PangoWrapMode pango_layout_get_wrap(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_get_wrap(MemorySegment layout) {
@@ -6663,11 +8198,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_is_wrapped$MH() {
-        return RuntimeHelper.requireNonNull(constants$959.pango_layout_is_wrapped$MH,"pango_layout_is_wrapped");
+        return RuntimeHelper.requireNonNull(constants$1625.const$5,"pango_layout_is_wrapped");
     }
     /**
      * {@snippet :
-     * gboolean pango_layout_is_wrapped(PangoLayout* layout);
+     * int pango_layout_is_wrapped(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_is_wrapped(MemorySegment layout) {
@@ -6679,11 +8214,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_indent$MH() {
-        return RuntimeHelper.requireNonNull(constants$959.pango_layout_set_indent$MH,"pango_layout_set_indent");
+        return RuntimeHelper.requireNonNull(constants$1626.const$0,"pango_layout_set_indent");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_indent(PangoLayout* layout, int indent);
+     * void pango_layout_set_indent(struct _PangoLayout* layout, int indent);
      * }
      */
     public static void pango_layout_set_indent(MemorySegment layout, int indent) {
@@ -6695,11 +8230,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_indent$MH() {
-        return RuntimeHelper.requireNonNull(constants$959.pango_layout_get_indent$MH,"pango_layout_get_indent");
+        return RuntimeHelper.requireNonNull(constants$1626.const$1,"pango_layout_get_indent");
     }
     /**
      * {@snippet :
-     * int pango_layout_get_indent(PangoLayout* layout);
+     * int pango_layout_get_indent(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_get_indent(MemorySegment layout) {
@@ -6711,11 +8246,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_spacing$MH() {
-        return RuntimeHelper.requireNonNull(constants$959.pango_layout_set_spacing$MH,"pango_layout_set_spacing");
+        return RuntimeHelper.requireNonNull(constants$1626.const$2,"pango_layout_set_spacing");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_spacing(PangoLayout* layout, int spacing);
+     * void pango_layout_set_spacing(struct _PangoLayout* layout, int spacing);
      * }
      */
     public static void pango_layout_set_spacing(MemorySegment layout, int spacing) {
@@ -6727,11 +8262,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_spacing$MH() {
-        return RuntimeHelper.requireNonNull(constants$960.pango_layout_get_spacing$MH,"pango_layout_get_spacing");
+        return RuntimeHelper.requireNonNull(constants$1626.const$3,"pango_layout_get_spacing");
     }
     /**
      * {@snippet :
-     * int pango_layout_get_spacing(PangoLayout* layout);
+     * int pango_layout_get_spacing(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_get_spacing(MemorySegment layout) {
@@ -6743,11 +8278,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_line_spacing$MH() {
-        return RuntimeHelper.requireNonNull(constants$960.pango_layout_set_line_spacing$MH,"pango_layout_set_line_spacing");
+        return RuntimeHelper.requireNonNull(constants$1626.const$4,"pango_layout_set_line_spacing");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_line_spacing(PangoLayout* layout, float factor);
+     * void pango_layout_set_line_spacing(struct _PangoLayout* layout, float factor);
      * }
      */
     public static void pango_layout_set_line_spacing(MemorySegment layout, float factor) {
@@ -6759,11 +8294,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_line_spacing$MH() {
-        return RuntimeHelper.requireNonNull(constants$960.pango_layout_get_line_spacing$MH,"pango_layout_get_line_spacing");
+        return RuntimeHelper.requireNonNull(constants$1626.const$5,"pango_layout_get_line_spacing");
     }
     /**
      * {@snippet :
-     * float pango_layout_get_line_spacing(PangoLayout* layout);
+     * float pango_layout_get_line_spacing(struct _PangoLayout* layout);
      * }
      */
     public static float pango_layout_get_line_spacing(MemorySegment layout) {
@@ -6775,11 +8310,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_justify$MH() {
-        return RuntimeHelper.requireNonNull(constants$960.pango_layout_set_justify$MH,"pango_layout_set_justify");
+        return RuntimeHelper.requireNonNull(constants$1627.const$0,"pango_layout_set_justify");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_justify(PangoLayout* layout, gboolean justify);
+     * void pango_layout_set_justify(struct _PangoLayout* layout, int justify);
      * }
      */
     public static void pango_layout_set_justify(MemorySegment layout, int justify) {
@@ -6791,11 +8326,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_justify$MH() {
-        return RuntimeHelper.requireNonNull(constants$960.pango_layout_get_justify$MH,"pango_layout_get_justify");
+        return RuntimeHelper.requireNonNull(constants$1627.const$1,"pango_layout_get_justify");
     }
     /**
      * {@snippet :
-     * gboolean pango_layout_get_justify(PangoLayout* layout);
+     * int pango_layout_get_justify(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_get_justify(MemorySegment layout) {
@@ -6807,11 +8342,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_justify_last_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$960.pango_layout_set_justify_last_line$MH,"pango_layout_set_justify_last_line");
+        return RuntimeHelper.requireNonNull(constants$1627.const$2,"pango_layout_set_justify_last_line");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_justify_last_line(PangoLayout* layout, gboolean justify);
+     * void pango_layout_set_justify_last_line(struct _PangoLayout* layout, int justify);
      * }
      */
     public static void pango_layout_set_justify_last_line(MemorySegment layout, int justify) {
@@ -6823,11 +8358,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_justify_last_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$961.pango_layout_get_justify_last_line$MH,"pango_layout_get_justify_last_line");
+        return RuntimeHelper.requireNonNull(constants$1627.const$3,"pango_layout_get_justify_last_line");
     }
     /**
      * {@snippet :
-     * gboolean pango_layout_get_justify_last_line(PangoLayout* layout);
+     * int pango_layout_get_justify_last_line(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_get_justify_last_line(MemorySegment layout) {
@@ -6839,11 +8374,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_auto_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$961.pango_layout_set_auto_dir$MH,"pango_layout_set_auto_dir");
+        return RuntimeHelper.requireNonNull(constants$1627.const$4,"pango_layout_set_auto_dir");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_auto_dir(PangoLayout* layout, gboolean auto_dir);
+     * void pango_layout_set_auto_dir(struct _PangoLayout* layout, int auto_dir);
      * }
      */
     public static void pango_layout_set_auto_dir(MemorySegment layout, int auto_dir) {
@@ -6855,11 +8390,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_auto_dir$MH() {
-        return RuntimeHelper.requireNonNull(constants$961.pango_layout_get_auto_dir$MH,"pango_layout_get_auto_dir");
+        return RuntimeHelper.requireNonNull(constants$1627.const$5,"pango_layout_get_auto_dir");
     }
     /**
      * {@snippet :
-     * gboolean pango_layout_get_auto_dir(PangoLayout* layout);
+     * int pango_layout_get_auto_dir(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_get_auto_dir(MemorySegment layout) {
@@ -6871,11 +8406,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_alignment$MH() {
-        return RuntimeHelper.requireNonNull(constants$961.pango_layout_set_alignment$MH,"pango_layout_set_alignment");
+        return RuntimeHelper.requireNonNull(constants$1628.const$0,"pango_layout_set_alignment");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_alignment(PangoLayout* layout, PangoAlignment alignment);
+     * void pango_layout_set_alignment(struct _PangoLayout* layout, enum PangoAlignment alignment);
      * }
      */
     public static void pango_layout_set_alignment(MemorySegment layout, int alignment) {
@@ -6887,11 +8422,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_alignment$MH() {
-        return RuntimeHelper.requireNonNull(constants$961.pango_layout_get_alignment$MH,"pango_layout_get_alignment");
+        return RuntimeHelper.requireNonNull(constants$1628.const$1,"pango_layout_get_alignment");
     }
     /**
      * {@snippet :
-     * PangoAlignment pango_layout_get_alignment(PangoLayout* layout);
+     * enum PangoAlignment pango_layout_get_alignment(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_get_alignment(MemorySegment layout) {
@@ -6903,11 +8438,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_tabs$MH() {
-        return RuntimeHelper.requireNonNull(constants$961.pango_layout_set_tabs$MH,"pango_layout_set_tabs");
+        return RuntimeHelper.requireNonNull(constants$1628.const$2,"pango_layout_set_tabs");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_tabs(PangoLayout* layout, PangoTabArray* tabs);
+     * void pango_layout_set_tabs(struct _PangoLayout* layout, struct _PangoTabArray* tabs);
      * }
      */
     public static void pango_layout_set_tabs(MemorySegment layout, MemorySegment tabs) {
@@ -6919,11 +8454,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_tabs$MH() {
-        return RuntimeHelper.requireNonNull(constants$962.pango_layout_get_tabs$MH,"pango_layout_get_tabs");
+        return RuntimeHelper.requireNonNull(constants$1628.const$3,"pango_layout_get_tabs");
     }
     /**
      * {@snippet :
-     * PangoTabArray* pango_layout_get_tabs(PangoLayout* layout);
+     * struct _PangoTabArray* pango_layout_get_tabs(struct _PangoLayout* layout);
      * }
      */
     public static MemorySegment pango_layout_get_tabs(MemorySegment layout) {
@@ -6935,11 +8470,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_single_paragraph_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$962.pango_layout_set_single_paragraph_mode$MH,"pango_layout_set_single_paragraph_mode");
+        return RuntimeHelper.requireNonNull(constants$1628.const$4,"pango_layout_set_single_paragraph_mode");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_single_paragraph_mode(PangoLayout* layout, gboolean setting);
+     * void pango_layout_set_single_paragraph_mode(struct _PangoLayout* layout, int setting);
      * }
      */
     public static void pango_layout_set_single_paragraph_mode(MemorySegment layout, int setting) {
@@ -6951,11 +8486,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_single_paragraph_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$962.pango_layout_get_single_paragraph_mode$MH,"pango_layout_get_single_paragraph_mode");
+        return RuntimeHelper.requireNonNull(constants$1628.const$5,"pango_layout_get_single_paragraph_mode");
     }
     /**
      * {@snippet :
-     * gboolean pango_layout_get_single_paragraph_mode(PangoLayout* layout);
+     * int pango_layout_get_single_paragraph_mode(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_get_single_paragraph_mode(MemorySegment layout) {
@@ -6967,11 +8502,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_set_ellipsize$MH() {
-        return RuntimeHelper.requireNonNull(constants$962.pango_layout_set_ellipsize$MH,"pango_layout_set_ellipsize");
+        return RuntimeHelper.requireNonNull(constants$1629.const$0,"pango_layout_set_ellipsize");
     }
     /**
      * {@snippet :
-     * void pango_layout_set_ellipsize(PangoLayout* layout, PangoEllipsizeMode ellipsize);
+     * void pango_layout_set_ellipsize(struct _PangoLayout* layout, enum PangoEllipsizeMode ellipsize);
      * }
      */
     public static void pango_layout_set_ellipsize(MemorySegment layout, int ellipsize) {
@@ -6983,11 +8518,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_ellipsize$MH() {
-        return RuntimeHelper.requireNonNull(constants$962.pango_layout_get_ellipsize$MH,"pango_layout_get_ellipsize");
+        return RuntimeHelper.requireNonNull(constants$1629.const$1,"pango_layout_get_ellipsize");
     }
     /**
      * {@snippet :
-     * PangoEllipsizeMode pango_layout_get_ellipsize(PangoLayout* layout);
+     * enum PangoEllipsizeMode pango_layout_get_ellipsize(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_get_ellipsize(MemorySegment layout) {
@@ -6999,11 +8534,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_is_ellipsized$MH() {
-        return RuntimeHelper.requireNonNull(constants$962.pango_layout_is_ellipsized$MH,"pango_layout_is_ellipsized");
+        return RuntimeHelper.requireNonNull(constants$1629.const$2,"pango_layout_is_ellipsized");
     }
     /**
      * {@snippet :
-     * gboolean pango_layout_is_ellipsized(PangoLayout* layout);
+     * int pango_layout_is_ellipsized(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_is_ellipsized(MemorySegment layout) {
@@ -7015,11 +8550,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_unknown_glyphs_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$963.pango_layout_get_unknown_glyphs_count$MH,"pango_layout_get_unknown_glyphs_count");
+        return RuntimeHelper.requireNonNull(constants$1629.const$3,"pango_layout_get_unknown_glyphs_count");
     }
     /**
      * {@snippet :
-     * int pango_layout_get_unknown_glyphs_count(PangoLayout* layout);
+     * int pango_layout_get_unknown_glyphs_count(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_get_unknown_glyphs_count(MemorySegment layout) {
@@ -7031,11 +8566,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$963.pango_layout_get_direction$MH,"pango_layout_get_direction");
+        return RuntimeHelper.requireNonNull(constants$1629.const$4,"pango_layout_get_direction");
     }
     /**
      * {@snippet :
-     * PangoDirection pango_layout_get_direction(PangoLayout* layout, int index);
+     * enum PangoDirection pango_layout_get_direction(struct _PangoLayout* layout, int index);
      * }
      */
     public static int pango_layout_get_direction(MemorySegment layout, int index) {
@@ -7047,11 +8582,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_context_changed$MH() {
-        return RuntimeHelper.requireNonNull(constants$963.pango_layout_context_changed$MH,"pango_layout_context_changed");
+        return RuntimeHelper.requireNonNull(constants$1629.const$5,"pango_layout_context_changed");
     }
     /**
      * {@snippet :
-     * void pango_layout_context_changed(PangoLayout* layout);
+     * void pango_layout_context_changed(struct _PangoLayout* layout);
      * }
      */
     public static void pango_layout_context_changed(MemorySegment layout) {
@@ -7063,11 +8598,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_serial$MH() {
-        return RuntimeHelper.requireNonNull(constants$963.pango_layout_get_serial$MH,"pango_layout_get_serial");
+        return RuntimeHelper.requireNonNull(constants$1630.const$0,"pango_layout_get_serial");
     }
     /**
      * {@snippet :
-     * guint pango_layout_get_serial(PangoLayout* layout);
+     * unsigned int pango_layout_get_serial(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_get_serial(MemorySegment layout) {
@@ -7079,11 +8614,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_log_attrs$MH() {
-        return RuntimeHelper.requireNonNull(constants$963.pango_layout_get_log_attrs$MH,"pango_layout_get_log_attrs");
+        return RuntimeHelper.requireNonNull(constants$1630.const$1,"pango_layout_get_log_attrs");
     }
     /**
      * {@snippet :
-     * void pango_layout_get_log_attrs(PangoLayout* layout, PangoLogAttr** attrs, gint* n_attrs);
+     * void pango_layout_get_log_attrs(struct _PangoLayout* layout, struct _PangoLogAttr** attrs, int* n_attrs);
      * }
      */
     public static void pango_layout_get_log_attrs(MemorySegment layout, MemorySegment attrs, MemorySegment n_attrs) {
@@ -7095,11 +8630,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_log_attrs_readonly$MH() {
-        return RuntimeHelper.requireNonNull(constants$963.pango_layout_get_log_attrs_readonly$MH,"pango_layout_get_log_attrs_readonly");
+        return RuntimeHelper.requireNonNull(constants$1630.const$2,"pango_layout_get_log_attrs_readonly");
     }
     /**
      * {@snippet :
-     * const PangoLogAttr* pango_layout_get_log_attrs_readonly(PangoLayout* layout, gint* n_attrs);
+     * struct _PangoLogAttr* pango_layout_get_log_attrs_readonly(struct _PangoLayout* layout, int* n_attrs);
      * }
      */
     public static MemorySegment pango_layout_get_log_attrs_readonly(MemorySegment layout, MemorySegment n_attrs) {
@@ -7111,11 +8646,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_index_to_pos$MH() {
-        return RuntimeHelper.requireNonNull(constants$964.pango_layout_index_to_pos$MH,"pango_layout_index_to_pos");
+        return RuntimeHelper.requireNonNull(constants$1630.const$3,"pango_layout_index_to_pos");
     }
     /**
      * {@snippet :
-     * void pango_layout_index_to_pos(PangoLayout* layout, int index_, PangoRectangle* pos);
+     * void pango_layout_index_to_pos(struct _PangoLayout* layout, int index_, struct _PangoRectangle* pos);
      * }
      */
     public static void pango_layout_index_to_pos(MemorySegment layout, int index_, MemorySegment pos) {
@@ -7127,11 +8662,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_index_to_line_x$MH() {
-        return RuntimeHelper.requireNonNull(constants$964.pango_layout_index_to_line_x$MH,"pango_layout_index_to_line_x");
+        return RuntimeHelper.requireNonNull(constants$1630.const$4,"pango_layout_index_to_line_x");
     }
     /**
      * {@snippet :
-     * void pango_layout_index_to_line_x(PangoLayout* layout, int index_, gboolean trailing, int* line, int* x_pos);
+     * void pango_layout_index_to_line_x(struct _PangoLayout* layout, int index_, int trailing, int* line, int* x_pos);
      * }
      */
     public static void pango_layout_index_to_line_x(MemorySegment layout, int index_, int trailing, MemorySegment line, MemorySegment x_pos) {
@@ -7143,11 +8678,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_cursor_pos$MH() {
-        return RuntimeHelper.requireNonNull(constants$964.pango_layout_get_cursor_pos$MH,"pango_layout_get_cursor_pos");
+        return RuntimeHelper.requireNonNull(constants$1630.const$5,"pango_layout_get_cursor_pos");
     }
     /**
      * {@snippet :
-     * void pango_layout_get_cursor_pos(PangoLayout* layout, int index_, PangoRectangle* strong_pos, PangoRectangle* weak_pos);
+     * void pango_layout_get_cursor_pos(struct _PangoLayout* layout, int index_, struct _PangoRectangle* strong_pos, struct _PangoRectangle* weak_pos);
      * }
      */
     public static void pango_layout_get_cursor_pos(MemorySegment layout, int index_, MemorySegment strong_pos, MemorySegment weak_pos) {
@@ -7159,11 +8694,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_caret_pos$MH() {
-        return RuntimeHelper.requireNonNull(constants$964.pango_layout_get_caret_pos$MH,"pango_layout_get_caret_pos");
+        return RuntimeHelper.requireNonNull(constants$1631.const$0,"pango_layout_get_caret_pos");
     }
     /**
      * {@snippet :
-     * void pango_layout_get_caret_pos(PangoLayout* layout, int index_, PangoRectangle* strong_pos, PangoRectangle* weak_pos);
+     * void pango_layout_get_caret_pos(struct _PangoLayout* layout, int index_, struct _PangoRectangle* strong_pos, struct _PangoRectangle* weak_pos);
      * }
      */
     public static void pango_layout_get_caret_pos(MemorySegment layout, int index_, MemorySegment strong_pos, MemorySegment weak_pos) {
@@ -7175,11 +8710,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_move_cursor_visually$MH() {
-        return RuntimeHelper.requireNonNull(constants$964.pango_layout_move_cursor_visually$MH,"pango_layout_move_cursor_visually");
+        return RuntimeHelper.requireNonNull(constants$1631.const$2,"pango_layout_move_cursor_visually");
     }
     /**
      * {@snippet :
-     * void pango_layout_move_cursor_visually(PangoLayout* layout, gboolean strong, int old_index, int old_trailing, int direction, int* new_index, int* new_trailing);
+     * void pango_layout_move_cursor_visually(struct _PangoLayout* layout, int strong, int old_index, int old_trailing, int direction, int* new_index, int* new_trailing);
      * }
      */
     public static void pango_layout_move_cursor_visually(MemorySegment layout, int strong, int old_index, int old_trailing, int direction, MemorySegment new_index, MemorySegment new_trailing) {
@@ -7191,11 +8726,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_xy_to_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$964.pango_layout_xy_to_index$MH,"pango_layout_xy_to_index");
+        return RuntimeHelper.requireNonNull(constants$1631.const$3,"pango_layout_xy_to_index");
     }
     /**
      * {@snippet :
-     * gboolean pango_layout_xy_to_index(PangoLayout* layout, int x, int y, int* index_, int* trailing);
+     * int pango_layout_xy_to_index(struct _PangoLayout* layout, int x, int y, int* index_, int* trailing);
      * }
      */
     public static int pango_layout_xy_to_index(MemorySegment layout, int x, int y, MemorySegment index_, MemorySegment trailing) {
@@ -7207,11 +8742,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$965.pango_layout_get_extents$MH,"pango_layout_get_extents");
+        return RuntimeHelper.requireNonNull(constants$1631.const$4,"pango_layout_get_extents");
     }
     /**
      * {@snippet :
-     * void pango_layout_get_extents(PangoLayout* layout, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * void pango_layout_get_extents(struct _PangoLayout* layout, struct _PangoRectangle* ink_rect, struct _PangoRectangle* logical_rect);
      * }
      */
     public static void pango_layout_get_extents(MemorySegment layout, MemorySegment ink_rect, MemorySegment logical_rect) {
@@ -7223,11 +8758,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_pixel_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$965.pango_layout_get_pixel_extents$MH,"pango_layout_get_pixel_extents");
+        return RuntimeHelper.requireNonNull(constants$1631.const$5,"pango_layout_get_pixel_extents");
     }
     /**
      * {@snippet :
-     * void pango_layout_get_pixel_extents(PangoLayout* layout, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * void pango_layout_get_pixel_extents(struct _PangoLayout* layout, struct _PangoRectangle* ink_rect, struct _PangoRectangle* logical_rect);
      * }
      */
     public static void pango_layout_get_pixel_extents(MemorySegment layout, MemorySegment ink_rect, MemorySegment logical_rect) {
@@ -7239,11 +8774,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$965.pango_layout_get_size$MH,"pango_layout_get_size");
+        return RuntimeHelper.requireNonNull(constants$1632.const$0,"pango_layout_get_size");
     }
     /**
      * {@snippet :
-     * void pango_layout_get_size(PangoLayout* layout, int* width, int* height);
+     * void pango_layout_get_size(struct _PangoLayout* layout, int* width, int* height);
      * }
      */
     public static void pango_layout_get_size(MemorySegment layout, MemorySegment width, MemorySegment height) {
@@ -7255,11 +8790,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_pixel_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$965.pango_layout_get_pixel_size$MH,"pango_layout_get_pixel_size");
+        return RuntimeHelper.requireNonNull(constants$1632.const$1,"pango_layout_get_pixel_size");
     }
     /**
      * {@snippet :
-     * void pango_layout_get_pixel_size(PangoLayout* layout, int* width, int* height);
+     * void pango_layout_get_pixel_size(struct _PangoLayout* layout, int* width, int* height);
      * }
      */
     public static void pango_layout_get_pixel_size(MemorySegment layout, MemorySegment width, MemorySegment height) {
@@ -7271,11 +8806,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_baseline$MH() {
-        return RuntimeHelper.requireNonNull(constants$965.pango_layout_get_baseline$MH,"pango_layout_get_baseline");
+        return RuntimeHelper.requireNonNull(constants$1632.const$2,"pango_layout_get_baseline");
     }
     /**
      * {@snippet :
-     * int pango_layout_get_baseline(PangoLayout* layout);
+     * int pango_layout_get_baseline(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_get_baseline(MemorySegment layout) {
@@ -7287,11 +8822,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_line_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$965.pango_layout_get_line_count$MH,"pango_layout_get_line_count");
+        return RuntimeHelper.requireNonNull(constants$1632.const$3,"pango_layout_get_line_count");
     }
     /**
      * {@snippet :
-     * int pango_layout_get_line_count(PangoLayout* layout);
+     * int pango_layout_get_line_count(struct _PangoLayout* layout);
      * }
      */
     public static int pango_layout_get_line_count(MemorySegment layout) {
@@ -7303,11 +8838,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$966.pango_layout_get_line$MH,"pango_layout_get_line");
+        return RuntimeHelper.requireNonNull(constants$1632.const$4,"pango_layout_get_line");
     }
     /**
      * {@snippet :
-     * PangoLayoutLine* pango_layout_get_line(PangoLayout* layout, int line);
+     * struct _PangoLayoutLine* pango_layout_get_line(struct _PangoLayout* layout, int line);
      * }
      */
     public static MemorySegment pango_layout_get_line(MemorySegment layout, int line) {
@@ -7319,11 +8854,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_line_readonly$MH() {
-        return RuntimeHelper.requireNonNull(constants$966.pango_layout_get_line_readonly$MH,"pango_layout_get_line_readonly");
+        return RuntimeHelper.requireNonNull(constants$1632.const$5,"pango_layout_get_line_readonly");
     }
     /**
      * {@snippet :
-     * PangoLayoutLine* pango_layout_get_line_readonly(PangoLayout* layout, int line);
+     * struct _PangoLayoutLine* pango_layout_get_line_readonly(struct _PangoLayout* layout, int line);
      * }
      */
     public static MemorySegment pango_layout_get_line_readonly(MemorySegment layout, int line) {
@@ -7335,11 +8870,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_lines$MH() {
-        return RuntimeHelper.requireNonNull(constants$966.pango_layout_get_lines$MH,"pango_layout_get_lines");
+        return RuntimeHelper.requireNonNull(constants$1633.const$0,"pango_layout_get_lines");
     }
     /**
      * {@snippet :
-     * GSList* pango_layout_get_lines(PangoLayout* layout);
+     * struct _GSList* pango_layout_get_lines(struct _PangoLayout* layout);
      * }
      */
     public static MemorySegment pango_layout_get_lines(MemorySegment layout) {
@@ -7351,11 +8886,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_lines_readonly$MH() {
-        return RuntimeHelper.requireNonNull(constants$966.pango_layout_get_lines_readonly$MH,"pango_layout_get_lines_readonly");
+        return RuntimeHelper.requireNonNull(constants$1633.const$1,"pango_layout_get_lines_readonly");
     }
     /**
      * {@snippet :
-     * GSList* pango_layout_get_lines_readonly(PangoLayout* layout);
+     * struct _GSList* pango_layout_get_lines_readonly(struct _PangoLayout* layout);
      * }
      */
     public static MemorySegment pango_layout_get_lines_readonly(MemorySegment layout) {
@@ -7368,7 +8903,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_LAYOUT_SERIALIZE_DEFAULT = 0;
+     * enum PangoLayoutSerializeFlags.PANGO_LAYOUT_SERIALIZE_DEFAULT = 0;
      * }
      */
     public static int PANGO_LAYOUT_SERIALIZE_DEFAULT() {
@@ -7376,7 +8911,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_LAYOUT_SERIALIZE_CONTEXT = 1;
+     * enum PangoLayoutSerializeFlags.PANGO_LAYOUT_SERIALIZE_CONTEXT = 1;
      * }
      */
     public static int PANGO_LAYOUT_SERIALIZE_CONTEXT() {
@@ -7384,18 +8919,18 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_LAYOUT_SERIALIZE_OUTPUT = 2;
+     * enum PangoLayoutSerializeFlags.PANGO_LAYOUT_SERIALIZE_OUTPUT = 2;
      * }
      */
     public static int PANGO_LAYOUT_SERIALIZE_OUTPUT() {
         return (int)2L;
     }
     public static MethodHandle pango_layout_serialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$966.pango_layout_serialize$MH,"pango_layout_serialize");
+        return RuntimeHelper.requireNonNull(constants$1633.const$2,"pango_layout_serialize");
     }
     /**
      * {@snippet :
-     * GBytes* pango_layout_serialize(PangoLayout* layout, PangoLayoutSerializeFlags flags);
+     * struct _GBytes* pango_layout_serialize(struct _PangoLayout* layout, enum PangoLayoutSerializeFlags flags);
      * }
      */
     public static MemorySegment pango_layout_serialize(MemorySegment layout, int flags) {
@@ -7407,11 +8942,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_write_to_file$MH() {
-        return RuntimeHelper.requireNonNull(constants$966.pango_layout_write_to_file$MH,"pango_layout_write_to_file");
+        return RuntimeHelper.requireNonNull(constants$1633.const$3,"pango_layout_write_to_file");
     }
     /**
      * {@snippet :
-     * gboolean pango_layout_write_to_file(PangoLayout* layout, PangoLayoutSerializeFlags flags, char* filename, GError** error);
+     * int pango_layout_write_to_file(struct _PangoLayout* layout, enum PangoLayoutSerializeFlags flags, char* filename, struct _GError** error);
      * }
      */
     public static int pango_layout_write_to_file(MemorySegment layout, int flags, MemorySegment filename, MemorySegment error) {
@@ -7424,7 +8959,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_LAYOUT_DESERIALIZE_INVALID = 0;
+     * enum PangoLayoutDeserializeError.PANGO_LAYOUT_DESERIALIZE_INVALID = 0;
      * }
      */
     public static int PANGO_LAYOUT_DESERIALIZE_INVALID() {
@@ -7432,7 +8967,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_LAYOUT_DESERIALIZE_INVALID_VALUE = 1;
+     * enum PangoLayoutDeserializeError.PANGO_LAYOUT_DESERIALIZE_INVALID_VALUE = 1;
      * }
      */
     public static int PANGO_LAYOUT_DESERIALIZE_INVALID_VALUE() {
@@ -7440,18 +8975,18 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_LAYOUT_DESERIALIZE_MISSING_VALUE = 2;
+     * enum PangoLayoutDeserializeError.PANGO_LAYOUT_DESERIALIZE_MISSING_VALUE = 2;
      * }
      */
     public static int PANGO_LAYOUT_DESERIALIZE_MISSING_VALUE() {
         return (int)2L;
     }
     public static MethodHandle pango_layout_deserialize_error_quark$MH() {
-        return RuntimeHelper.requireNonNull(constants$967.pango_layout_deserialize_error_quark$MH,"pango_layout_deserialize_error_quark");
+        return RuntimeHelper.requireNonNull(constants$1633.const$4,"pango_layout_deserialize_error_quark");
     }
     /**
      * {@snippet :
-     * GQuark pango_layout_deserialize_error_quark();
+     * unsigned int pango_layout_deserialize_error_quark();
      * }
      */
     public static int pango_layout_deserialize_error_quark() {
@@ -7464,7 +8999,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_LAYOUT_DESERIALIZE_DEFAULT = 0;
+     * enum PangoLayoutDeserializeFlags.PANGO_LAYOUT_DESERIALIZE_DEFAULT = 0;
      * }
      */
     public static int PANGO_LAYOUT_DESERIALIZE_DEFAULT() {
@@ -7472,18 +9007,18 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_LAYOUT_DESERIALIZE_CONTEXT = 1;
+     * enum PangoLayoutDeserializeFlags.PANGO_LAYOUT_DESERIALIZE_CONTEXT = 1;
      * }
      */
     public static int PANGO_LAYOUT_DESERIALIZE_CONTEXT() {
         return (int)1L;
     }
     public static MethodHandle pango_layout_deserialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$967.pango_layout_deserialize$MH,"pango_layout_deserialize");
+        return RuntimeHelper.requireNonNull(constants$1633.const$5,"pango_layout_deserialize");
     }
     /**
      * {@snippet :
-     * PangoLayout* pango_layout_deserialize(PangoContext* context, GBytes* bytes, PangoLayoutDeserializeFlags flags, GError** error);
+     * struct _PangoLayout* pango_layout_deserialize(struct _PangoContext* context, struct _GBytes* bytes, enum PangoLayoutDeserializeFlags flags, struct _GError** error);
      * }
      */
     public static MemorySegment pango_layout_deserialize(MemorySegment context, MemorySegment bytes, int flags, MemorySegment error) {
@@ -7495,11 +9030,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$967.pango_layout_line_get_type$MH,"pango_layout_line_get_type");
+        return RuntimeHelper.requireNonNull(constants$1634.const$0,"pango_layout_line_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_layout_line_get_type();
+     * unsigned long pango_layout_line_get_type();
      * }
      */
     public static long pango_layout_line_get_type() {
@@ -7511,11 +9046,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$967.pango_layout_line_ref$MH,"pango_layout_line_ref");
+        return RuntimeHelper.requireNonNull(constants$1634.const$1,"pango_layout_line_ref");
     }
     /**
      * {@snippet :
-     * PangoLayoutLine* pango_layout_line_ref(PangoLayoutLine* line);
+     * struct _PangoLayoutLine* pango_layout_line_ref(struct _PangoLayoutLine* line);
      * }
      */
     public static MemorySegment pango_layout_line_ref(MemorySegment line) {
@@ -7527,11 +9062,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$967.pango_layout_line_unref$MH,"pango_layout_line_unref");
+        return RuntimeHelper.requireNonNull(constants$1634.const$2,"pango_layout_line_unref");
     }
     /**
      * {@snippet :
-     * void pango_layout_line_unref(PangoLayoutLine* line);
+     * void pango_layout_line_unref(struct _PangoLayoutLine* line);
      * }
      */
     public static void pango_layout_line_unref(MemorySegment line) {
@@ -7543,11 +9078,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_get_start_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$967.pango_layout_line_get_start_index$MH,"pango_layout_line_get_start_index");
+        return RuntimeHelper.requireNonNull(constants$1634.const$3,"pango_layout_line_get_start_index");
     }
     /**
      * {@snippet :
-     * int pango_layout_line_get_start_index(PangoLayoutLine* line);
+     * int pango_layout_line_get_start_index(struct _PangoLayoutLine* line);
      * }
      */
     public static int pango_layout_line_get_start_index(MemorySegment line) {
@@ -7559,11 +9094,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_get_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$968.pango_layout_line_get_length$MH,"pango_layout_line_get_length");
+        return RuntimeHelper.requireNonNull(constants$1634.const$4,"pango_layout_line_get_length");
     }
     /**
      * {@snippet :
-     * int pango_layout_line_get_length(PangoLayoutLine* line);
+     * int pango_layout_line_get_length(struct _PangoLayoutLine* line);
      * }
      */
     public static int pango_layout_line_get_length(MemorySegment line) {
@@ -7575,11 +9110,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_is_paragraph_start$MH() {
-        return RuntimeHelper.requireNonNull(constants$968.pango_layout_line_is_paragraph_start$MH,"pango_layout_line_is_paragraph_start");
+        return RuntimeHelper.requireNonNull(constants$1634.const$5,"pango_layout_line_is_paragraph_start");
     }
     /**
      * {@snippet :
-     * gboolean pango_layout_line_is_paragraph_start(PangoLayoutLine* line);
+     * int pango_layout_line_is_paragraph_start(struct _PangoLayoutLine* line);
      * }
      */
     public static int pango_layout_line_is_paragraph_start(MemorySegment line) {
@@ -7591,11 +9126,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_get_resolved_direction$MH() {
-        return RuntimeHelper.requireNonNull(constants$968.pango_layout_line_get_resolved_direction$MH,"pango_layout_line_get_resolved_direction");
+        return RuntimeHelper.requireNonNull(constants$1635.const$0,"pango_layout_line_get_resolved_direction");
     }
     /**
      * {@snippet :
-     * PangoDirection pango_layout_line_get_resolved_direction(PangoLayoutLine* line);
+     * enum PangoDirection pango_layout_line_get_resolved_direction(struct _PangoLayoutLine* line);
      * }
      */
     public static int pango_layout_line_get_resolved_direction(MemorySegment line) {
@@ -7607,11 +9142,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_x_to_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$968.pango_layout_line_x_to_index$MH,"pango_layout_line_x_to_index");
+        return RuntimeHelper.requireNonNull(constants$1635.const$1,"pango_layout_line_x_to_index");
     }
     /**
      * {@snippet :
-     * gboolean pango_layout_line_x_to_index(PangoLayoutLine* line, int x_pos, int* index_, int* trailing);
+     * int pango_layout_line_x_to_index(struct _PangoLayoutLine* line, int x_pos, int* index_, int* trailing);
      * }
      */
     public static int pango_layout_line_x_to_index(MemorySegment line, int x_pos, MemorySegment index_, MemorySegment trailing) {
@@ -7623,11 +9158,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_index_to_x$MH() {
-        return RuntimeHelper.requireNonNull(constants$968.pango_layout_line_index_to_x$MH,"pango_layout_line_index_to_x");
+        return RuntimeHelper.requireNonNull(constants$1635.const$2,"pango_layout_line_index_to_x");
     }
     /**
      * {@snippet :
-     * void pango_layout_line_index_to_x(PangoLayoutLine* line, int index_, gboolean trailing, int* x_pos);
+     * void pango_layout_line_index_to_x(struct _PangoLayoutLine* line, int index_, int trailing, int* x_pos);
      * }
      */
     public static void pango_layout_line_index_to_x(MemorySegment line, int index_, int trailing, MemorySegment x_pos) {
@@ -7639,11 +9174,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_get_x_ranges$MH() {
-        return RuntimeHelper.requireNonNull(constants$968.pango_layout_line_get_x_ranges$MH,"pango_layout_line_get_x_ranges");
+        return RuntimeHelper.requireNonNull(constants$1635.const$3,"pango_layout_line_get_x_ranges");
     }
     /**
      * {@snippet :
-     * void pango_layout_line_get_x_ranges(PangoLayoutLine* line, int start_index, int end_index, int** ranges, int* n_ranges);
+     * void pango_layout_line_get_x_ranges(struct _PangoLayoutLine* line, int start_index, int end_index, int** ranges, int* n_ranges);
      * }
      */
     public static void pango_layout_line_get_x_ranges(MemorySegment line, int start_index, int end_index, MemorySegment ranges, MemorySegment n_ranges) {
@@ -7655,11 +9190,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_get_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$969.pango_layout_line_get_extents$MH,"pango_layout_line_get_extents");
+        return RuntimeHelper.requireNonNull(constants$1635.const$4,"pango_layout_line_get_extents");
     }
     /**
      * {@snippet :
-     * void pango_layout_line_get_extents(PangoLayoutLine* line, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * void pango_layout_line_get_extents(struct _PangoLayoutLine* line, struct _PangoRectangle* ink_rect, struct _PangoRectangle* logical_rect);
      * }
      */
     public static void pango_layout_line_get_extents(MemorySegment line, MemorySegment ink_rect, MemorySegment logical_rect) {
@@ -7671,11 +9206,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_get_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$969.pango_layout_line_get_height$MH,"pango_layout_line_get_height");
+        return RuntimeHelper.requireNonNull(constants$1635.const$5,"pango_layout_line_get_height");
     }
     /**
      * {@snippet :
-     * void pango_layout_line_get_height(PangoLayoutLine* line, int* height);
+     * void pango_layout_line_get_height(struct _PangoLayoutLine* line, int* height);
      * }
      */
     public static void pango_layout_line_get_height(MemorySegment line, MemorySegment height) {
@@ -7687,11 +9222,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_line_get_pixel_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$969.pango_layout_line_get_pixel_extents$MH,"pango_layout_line_get_pixel_extents");
+        return RuntimeHelper.requireNonNull(constants$1636.const$0,"pango_layout_line_get_pixel_extents");
     }
     /**
      * {@snippet :
-     * void pango_layout_line_get_pixel_extents(PangoLayoutLine* layout_line, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * void pango_layout_line_get_pixel_extents(struct _PangoLayoutLine* layout_line, struct _PangoRectangle* ink_rect, struct _PangoRectangle* logical_rect);
      * }
      */
     public static void pango_layout_line_get_pixel_extents(MemorySegment layout_line, MemorySegment ink_rect, MemorySegment logical_rect) {
@@ -7703,11 +9238,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$969.pango_layout_iter_get_type$MH,"pango_layout_iter_get_type");
+        return RuntimeHelper.requireNonNull(constants$1636.const$1,"pango_layout_iter_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_layout_iter_get_type();
+     * unsigned long pango_layout_iter_get_type();
      * }
      */
     public static long pango_layout_iter_get_type() {
@@ -7719,11 +9254,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_get_iter$MH() {
-        return RuntimeHelper.requireNonNull(constants$969.pango_layout_get_iter$MH,"pango_layout_get_iter");
+        return RuntimeHelper.requireNonNull(constants$1636.const$2,"pango_layout_get_iter");
     }
     /**
      * {@snippet :
-     * PangoLayoutIter* pango_layout_get_iter(PangoLayout* layout);
+     * struct _PangoLayoutIter* pango_layout_get_iter(struct _PangoLayout* layout);
      * }
      */
     public static MemorySegment pango_layout_get_iter(MemorySegment layout) {
@@ -7735,11 +9270,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$969.pango_layout_iter_copy$MH,"pango_layout_iter_copy");
+        return RuntimeHelper.requireNonNull(constants$1636.const$3,"pango_layout_iter_copy");
     }
     /**
      * {@snippet :
-     * PangoLayoutIter* pango_layout_iter_copy(PangoLayoutIter* iter);
+     * struct _PangoLayoutIter* pango_layout_iter_copy(struct _PangoLayoutIter* iter);
      * }
      */
     public static MemorySegment pango_layout_iter_copy(MemorySegment iter) {
@@ -7751,11 +9286,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$970.pango_layout_iter_free$MH,"pango_layout_iter_free");
+        return RuntimeHelper.requireNonNull(constants$1636.const$4,"pango_layout_iter_free");
     }
     /**
      * {@snippet :
-     * void pango_layout_iter_free(PangoLayoutIter* iter);
+     * void pango_layout_iter_free(struct _PangoLayoutIter* iter);
      * }
      */
     public static void pango_layout_iter_free(MemorySegment iter) {
@@ -7767,11 +9302,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$970.pango_layout_iter_get_index$MH,"pango_layout_iter_get_index");
+        return RuntimeHelper.requireNonNull(constants$1636.const$5,"pango_layout_iter_get_index");
     }
     /**
      * {@snippet :
-     * int pango_layout_iter_get_index(PangoLayoutIter* iter);
+     * int pango_layout_iter_get_index(struct _PangoLayoutIter* iter);
      * }
      */
     public static int pango_layout_iter_get_index(MemorySegment iter) {
@@ -7783,11 +9318,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_run$MH() {
-        return RuntimeHelper.requireNonNull(constants$970.pango_layout_iter_get_run$MH,"pango_layout_iter_get_run");
+        return RuntimeHelper.requireNonNull(constants$1637.const$0,"pango_layout_iter_get_run");
     }
     /**
      * {@snippet :
-     * PangoLayoutRun* pango_layout_iter_get_run(PangoLayoutIter* iter);
+     * struct _PangoGlyphItem* pango_layout_iter_get_run(struct _PangoLayoutIter* iter);
      * }
      */
     public static MemorySegment pango_layout_iter_get_run(MemorySegment iter) {
@@ -7799,11 +9334,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_run_readonly$MH() {
-        return RuntimeHelper.requireNonNull(constants$970.pango_layout_iter_get_run_readonly$MH,"pango_layout_iter_get_run_readonly");
+        return RuntimeHelper.requireNonNull(constants$1637.const$1,"pango_layout_iter_get_run_readonly");
     }
     /**
      * {@snippet :
-     * PangoLayoutRun* pango_layout_iter_get_run_readonly(PangoLayoutIter* iter);
+     * struct _PangoGlyphItem* pango_layout_iter_get_run_readonly(struct _PangoLayoutIter* iter);
      * }
      */
     public static MemorySegment pango_layout_iter_get_run_readonly(MemorySegment iter) {
@@ -7815,11 +9350,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$970.pango_layout_iter_get_line$MH,"pango_layout_iter_get_line");
+        return RuntimeHelper.requireNonNull(constants$1637.const$2,"pango_layout_iter_get_line");
     }
     /**
      * {@snippet :
-     * PangoLayoutLine* pango_layout_iter_get_line(PangoLayoutIter* iter);
+     * struct _PangoLayoutLine* pango_layout_iter_get_line(struct _PangoLayoutIter* iter);
      * }
      */
     public static MemorySegment pango_layout_iter_get_line(MemorySegment iter) {
@@ -7831,11 +9366,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_line_readonly$MH() {
-        return RuntimeHelper.requireNonNull(constants$970.pango_layout_iter_get_line_readonly$MH,"pango_layout_iter_get_line_readonly");
+        return RuntimeHelper.requireNonNull(constants$1637.const$3,"pango_layout_iter_get_line_readonly");
     }
     /**
      * {@snippet :
-     * PangoLayoutLine* pango_layout_iter_get_line_readonly(PangoLayoutIter* iter);
+     * struct _PangoLayoutLine* pango_layout_iter_get_line_readonly(struct _PangoLayoutIter* iter);
      * }
      */
     public static MemorySegment pango_layout_iter_get_line_readonly(MemorySegment iter) {
@@ -7847,11 +9382,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_at_last_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$971.pango_layout_iter_at_last_line$MH,"pango_layout_iter_at_last_line");
+        return RuntimeHelper.requireNonNull(constants$1637.const$4,"pango_layout_iter_at_last_line");
     }
     /**
      * {@snippet :
-     * gboolean pango_layout_iter_at_last_line(PangoLayoutIter* iter);
+     * int pango_layout_iter_at_last_line(struct _PangoLayoutIter* iter);
      * }
      */
     public static int pango_layout_iter_at_last_line(MemorySegment iter) {
@@ -7863,11 +9398,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_layout$MH() {
-        return RuntimeHelper.requireNonNull(constants$971.pango_layout_iter_get_layout$MH,"pango_layout_iter_get_layout");
+        return RuntimeHelper.requireNonNull(constants$1637.const$5,"pango_layout_iter_get_layout");
     }
     /**
      * {@snippet :
-     * PangoLayout* pango_layout_iter_get_layout(PangoLayoutIter* iter);
+     * struct _PangoLayout* pango_layout_iter_get_layout(struct _PangoLayoutIter* iter);
      * }
      */
     public static MemorySegment pango_layout_iter_get_layout(MemorySegment iter) {
@@ -7879,11 +9414,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_next_char$MH() {
-        return RuntimeHelper.requireNonNull(constants$971.pango_layout_iter_next_char$MH,"pango_layout_iter_next_char");
+        return RuntimeHelper.requireNonNull(constants$1638.const$0,"pango_layout_iter_next_char");
     }
     /**
      * {@snippet :
-     * gboolean pango_layout_iter_next_char(PangoLayoutIter* iter);
+     * int pango_layout_iter_next_char(struct _PangoLayoutIter* iter);
      * }
      */
     public static int pango_layout_iter_next_char(MemorySegment iter) {
@@ -7895,11 +9430,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_next_cluster$MH() {
-        return RuntimeHelper.requireNonNull(constants$971.pango_layout_iter_next_cluster$MH,"pango_layout_iter_next_cluster");
+        return RuntimeHelper.requireNonNull(constants$1638.const$1,"pango_layout_iter_next_cluster");
     }
     /**
      * {@snippet :
-     * gboolean pango_layout_iter_next_cluster(PangoLayoutIter* iter);
+     * int pango_layout_iter_next_cluster(struct _PangoLayoutIter* iter);
      * }
      */
     public static int pango_layout_iter_next_cluster(MemorySegment iter) {
@@ -7911,11 +9446,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_next_run$MH() {
-        return RuntimeHelper.requireNonNull(constants$971.pango_layout_iter_next_run$MH,"pango_layout_iter_next_run");
+        return RuntimeHelper.requireNonNull(constants$1638.const$2,"pango_layout_iter_next_run");
     }
     /**
      * {@snippet :
-     * gboolean pango_layout_iter_next_run(PangoLayoutIter* iter);
+     * int pango_layout_iter_next_run(struct _PangoLayoutIter* iter);
      * }
      */
     public static int pango_layout_iter_next_run(MemorySegment iter) {
@@ -7927,11 +9462,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_next_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$971.pango_layout_iter_next_line$MH,"pango_layout_iter_next_line");
+        return RuntimeHelper.requireNonNull(constants$1638.const$3,"pango_layout_iter_next_line");
     }
     /**
      * {@snippet :
-     * gboolean pango_layout_iter_next_line(PangoLayoutIter* iter);
+     * int pango_layout_iter_next_line(struct _PangoLayoutIter* iter);
      * }
      */
     public static int pango_layout_iter_next_line(MemorySegment iter) {
@@ -7943,11 +9478,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_char_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$972.pango_layout_iter_get_char_extents$MH,"pango_layout_iter_get_char_extents");
+        return RuntimeHelper.requireNonNull(constants$1638.const$4,"pango_layout_iter_get_char_extents");
     }
     /**
      * {@snippet :
-     * void pango_layout_iter_get_char_extents(PangoLayoutIter* iter, PangoRectangle* logical_rect);
+     * void pango_layout_iter_get_char_extents(struct _PangoLayoutIter* iter, struct _PangoRectangle* logical_rect);
      * }
      */
     public static void pango_layout_iter_get_char_extents(MemorySegment iter, MemorySegment logical_rect) {
@@ -7959,11 +9494,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_cluster_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$972.pango_layout_iter_get_cluster_extents$MH,"pango_layout_iter_get_cluster_extents");
+        return RuntimeHelper.requireNonNull(constants$1638.const$5,"pango_layout_iter_get_cluster_extents");
     }
     /**
      * {@snippet :
-     * void pango_layout_iter_get_cluster_extents(PangoLayoutIter* iter, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * void pango_layout_iter_get_cluster_extents(struct _PangoLayoutIter* iter, struct _PangoRectangle* ink_rect, struct _PangoRectangle* logical_rect);
      * }
      */
     public static void pango_layout_iter_get_cluster_extents(MemorySegment iter, MemorySegment ink_rect, MemorySegment logical_rect) {
@@ -7975,11 +9510,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_run_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$972.pango_layout_iter_get_run_extents$MH,"pango_layout_iter_get_run_extents");
+        return RuntimeHelper.requireNonNull(constants$1639.const$0,"pango_layout_iter_get_run_extents");
     }
     /**
      * {@snippet :
-     * void pango_layout_iter_get_run_extents(PangoLayoutIter* iter, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * void pango_layout_iter_get_run_extents(struct _PangoLayoutIter* iter, struct _PangoRectangle* ink_rect, struct _PangoRectangle* logical_rect);
      * }
      */
     public static void pango_layout_iter_get_run_extents(MemorySegment iter, MemorySegment ink_rect, MemorySegment logical_rect) {
@@ -7991,11 +9526,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_line_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$972.pango_layout_iter_get_line_extents$MH,"pango_layout_iter_get_line_extents");
+        return RuntimeHelper.requireNonNull(constants$1639.const$1,"pango_layout_iter_get_line_extents");
     }
     /**
      * {@snippet :
-     * void pango_layout_iter_get_line_extents(PangoLayoutIter* iter, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * void pango_layout_iter_get_line_extents(struct _PangoLayoutIter* iter, struct _PangoRectangle* ink_rect, struct _PangoRectangle* logical_rect);
      * }
      */
     public static void pango_layout_iter_get_line_extents(MemorySegment iter, MemorySegment ink_rect, MemorySegment logical_rect) {
@@ -8007,11 +9542,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_line_yrange$MH() {
-        return RuntimeHelper.requireNonNull(constants$972.pango_layout_iter_get_line_yrange$MH,"pango_layout_iter_get_line_yrange");
+        return RuntimeHelper.requireNonNull(constants$1639.const$2,"pango_layout_iter_get_line_yrange");
     }
     /**
      * {@snippet :
-     * void pango_layout_iter_get_line_yrange(PangoLayoutIter* iter, int* y0_, int* y1_);
+     * void pango_layout_iter_get_line_yrange(struct _PangoLayoutIter* iter, int* y0_, int* y1_);
      * }
      */
     public static void pango_layout_iter_get_line_yrange(MemorySegment iter, MemorySegment y0_, MemorySegment y1_) {
@@ -8023,11 +9558,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_layout_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$972.pango_layout_iter_get_layout_extents$MH,"pango_layout_iter_get_layout_extents");
+        return RuntimeHelper.requireNonNull(constants$1639.const$3,"pango_layout_iter_get_layout_extents");
     }
     /**
      * {@snippet :
-     * void pango_layout_iter_get_layout_extents(PangoLayoutIter* iter, PangoRectangle* ink_rect, PangoRectangle* logical_rect);
+     * void pango_layout_iter_get_layout_extents(struct _PangoLayoutIter* iter, struct _PangoRectangle* ink_rect, struct _PangoRectangle* logical_rect);
      * }
      */
     public static void pango_layout_iter_get_layout_extents(MemorySegment iter, MemorySegment ink_rect, MemorySegment logical_rect) {
@@ -8039,11 +9574,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_baseline$MH() {
-        return RuntimeHelper.requireNonNull(constants$973.pango_layout_iter_get_baseline$MH,"pango_layout_iter_get_baseline");
+        return RuntimeHelper.requireNonNull(constants$1639.const$4,"pango_layout_iter_get_baseline");
     }
     /**
      * {@snippet :
-     * int pango_layout_iter_get_baseline(PangoLayoutIter* iter);
+     * int pango_layout_iter_get_baseline(struct _PangoLayoutIter* iter);
      * }
      */
     public static int pango_layout_iter_get_baseline(MemorySegment iter) {
@@ -8055,11 +9590,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_layout_iter_get_run_baseline$MH() {
-        return RuntimeHelper.requireNonNull(constants$973.pango_layout_iter_get_run_baseline$MH,"pango_layout_iter_get_run_baseline");
+        return RuntimeHelper.requireNonNull(constants$1639.const$5,"pango_layout_iter_get_run_baseline");
     }
     /**
      * {@snippet :
-     * int pango_layout_iter_get_run_baseline(PangoLayoutIter* iter);
+     * int pango_layout_iter_get_run_baseline(struct _PangoLayoutIter* iter);
      * }
      */
     public static int pango_layout_iter_get_run_baseline(MemorySegment iter) {
@@ -8075,55 +9610,55 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      * typedef struct _PangoLayout* PangoLayout_autoptr;
      * }
      */
-    public static final OfAddress PangoLayout_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoLayout_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* PangoLayout_listautoptr;
      * }
      */
-    public static final OfAddress PangoLayout_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoLayout_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* PangoLayout_slistautoptr;
      * }
      */
-    public static final OfAddress PangoLayout_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoLayout_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* PangoLayout_queueautoptr;
      * }
      */
-    public static final OfAddress PangoLayout_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoLayout_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _PangoLayoutIter* PangoLayoutIter_autoptr;
      * }
      */
-    public static final OfAddress PangoLayoutIter_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoLayoutIter_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* PangoLayoutIter_listautoptr;
      * }
      */
-    public static final OfAddress PangoLayoutIter_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoLayoutIter_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* PangoLayoutIter_slistautoptr;
      * }
      */
-    public static final OfAddress PangoLayoutIter_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoLayoutIter_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* PangoLayoutIter_queueautoptr;
      * }
      */
-    public static final OfAddress PangoLayoutIter_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout PangoLayoutIter_queueautoptr = RuntimeHelper.POINTER;
     public static MethodHandle pango_markup_parser_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$973.pango_markup_parser_new$MH,"pango_markup_parser_new");
+        return RuntimeHelper.requireNonNull(constants$1640.const$0,"pango_markup_parser_new");
     }
     /**
      * {@snippet :
-     * GMarkupParseContext* pango_markup_parser_new(gunichar accel_marker);
+     * struct _GMarkupParseContext* pango_markup_parser_new(unsigned int accel_marker);
      * }
      */
     public static MemorySegment pango_markup_parser_new(int accel_marker) {
@@ -8135,11 +9670,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_markup_parser_finish$MH() {
-        return RuntimeHelper.requireNonNull(constants$973.pango_markup_parser_finish$MH,"pango_markup_parser_finish");
+        return RuntimeHelper.requireNonNull(constants$1640.const$1,"pango_markup_parser_finish");
     }
     /**
      * {@snippet :
-     * gboolean pango_markup_parser_finish(GMarkupParseContext* context, PangoAttrList** attr_list, char** text, gunichar* accel_char, GError** error);
+     * int pango_markup_parser_finish(struct _GMarkupParseContext* context, struct _PangoAttrList** attr_list, char** text, unsigned int* accel_char, struct _GError** error);
      * }
      */
     public static int pango_markup_parser_finish(MemorySegment context, MemorySegment attr_list, MemorySegment text, MemorySegment accel_char, MemorySegment error) {
@@ -8151,11 +9686,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_parse_markup$MH() {
-        return RuntimeHelper.requireNonNull(constants$973.pango_parse_markup$MH,"pango_parse_markup");
+        return RuntimeHelper.requireNonNull(constants$1640.const$3,"pango_parse_markup");
     }
     /**
      * {@snippet :
-     * gboolean pango_parse_markup(char* markup_text, int length, gunichar accel_marker, PangoAttrList** attr_list, char** text, gunichar* accel_char, GError** error);
+     * int pango_parse_markup(char* markup_text, int length, unsigned int accel_marker, struct _PangoAttrList** attr_list, char** text, unsigned int* accel_char, struct _GError** error);
      * }
      */
     public static int pango_parse_markup(MemorySegment markup_text, int length, int accel_marker, MemorySegment attr_list, MemorySegment text, MemorySegment accel_char, MemorySegment error) {
@@ -8168,7 +9703,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_RENDER_PART_FOREGROUND = 0;
+     * enum PangoRenderPart.PANGO_RENDER_PART_FOREGROUND = 0;
      * }
      */
     public static int PANGO_RENDER_PART_FOREGROUND() {
@@ -8176,7 +9711,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_RENDER_PART_BACKGROUND = 1;
+     * enum PangoRenderPart.PANGO_RENDER_PART_BACKGROUND = 1;
      * }
      */
     public static int PANGO_RENDER_PART_BACKGROUND() {
@@ -8184,7 +9719,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_RENDER_PART_UNDERLINE = 2;
+     * enum PangoRenderPart.PANGO_RENDER_PART_UNDERLINE = 2;
      * }
      */
     public static int PANGO_RENDER_PART_UNDERLINE() {
@@ -8192,7 +9727,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_RENDER_PART_STRIKETHROUGH = 3;
+     * enum PangoRenderPart.PANGO_RENDER_PART_STRIKETHROUGH = 3;
      * }
      */
     public static int PANGO_RENDER_PART_STRIKETHROUGH() {
@@ -8200,18 +9735,18 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum .PANGO_RENDER_PART_OVERLINE = 4;
+     * enum PangoRenderPart.PANGO_RENDER_PART_OVERLINE = 4;
      * }
      */
     public static int PANGO_RENDER_PART_OVERLINE() {
         return (int)4L;
     }
     public static MethodHandle pango_renderer_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$973.pango_renderer_get_type$MH,"pango_renderer_get_type");
+        return RuntimeHelper.requireNonNull(constants$1648.const$2,"pango_renderer_get_type");
     }
     /**
      * {@snippet :
-     * GType pango_renderer_get_type();
+     * unsigned long pango_renderer_get_type();
      * }
      */
     public static long pango_renderer_get_type() {
@@ -8223,11 +9758,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_draw_layout$MH() {
-        return RuntimeHelper.requireNonNull(constants$974.pango_renderer_draw_layout$MH,"pango_renderer_draw_layout");
+        return RuntimeHelper.requireNonNull(constants$1648.const$3,"pango_renderer_draw_layout");
     }
     /**
      * {@snippet :
-     * void pango_renderer_draw_layout(PangoRenderer* renderer, PangoLayout* layout, int x, int y);
+     * void pango_renderer_draw_layout(struct _PangoRenderer* renderer, struct _PangoLayout* layout, int x, int y);
      * }
      */
     public static void pango_renderer_draw_layout(MemorySegment renderer, MemorySegment layout, int x, int y) {
@@ -8239,11 +9774,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_draw_layout_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$974.pango_renderer_draw_layout_line$MH,"pango_renderer_draw_layout_line");
+        return RuntimeHelper.requireNonNull(constants$1648.const$4,"pango_renderer_draw_layout_line");
     }
     /**
      * {@snippet :
-     * void pango_renderer_draw_layout_line(PangoRenderer* renderer, PangoLayoutLine* line, int x, int y);
+     * void pango_renderer_draw_layout_line(struct _PangoRenderer* renderer, struct _PangoLayoutLine* line, int x, int y);
      * }
      */
     public static void pango_renderer_draw_layout_line(MemorySegment renderer, MemorySegment line, int x, int y) {
@@ -8255,11 +9790,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_draw_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$974.pango_renderer_draw_glyphs$MH,"pango_renderer_draw_glyphs");
+        return RuntimeHelper.requireNonNull(constants$1648.const$5,"pango_renderer_draw_glyphs");
     }
     /**
      * {@snippet :
-     * void pango_renderer_draw_glyphs(PangoRenderer* renderer, PangoFont* font, PangoGlyphString* glyphs, int x, int y);
+     * void pango_renderer_draw_glyphs(struct _PangoRenderer* renderer, struct _PangoFont* font, struct _PangoGlyphString* glyphs, int x, int y);
      * }
      */
     public static void pango_renderer_draw_glyphs(MemorySegment renderer, MemorySegment font, MemorySegment glyphs, int x, int y) {
@@ -8271,11 +9806,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_draw_glyph_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$974.pango_renderer_draw_glyph_item$MH,"pango_renderer_draw_glyph_item");
+        return RuntimeHelper.requireNonNull(constants$1649.const$0,"pango_renderer_draw_glyph_item");
     }
     /**
      * {@snippet :
-     * void pango_renderer_draw_glyph_item(PangoRenderer* renderer, char* text, PangoGlyphItem* glyph_item, int x, int y);
+     * void pango_renderer_draw_glyph_item(struct _PangoRenderer* renderer, char* text, struct _PangoGlyphItem* glyph_item, int x, int y);
      * }
      */
     public static void pango_renderer_draw_glyph_item(MemorySegment renderer, MemorySegment text, MemorySegment glyph_item, int x, int y) {
@@ -8287,11 +9822,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_draw_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$974.pango_renderer_draw_rectangle$MH,"pango_renderer_draw_rectangle");
+        return RuntimeHelper.requireNonNull(constants$1649.const$1,"pango_renderer_draw_rectangle");
     }
     /**
      * {@snippet :
-     * void pango_renderer_draw_rectangle(PangoRenderer* renderer, PangoRenderPart part, int x, int y, int width, int height);
+     * void pango_renderer_draw_rectangle(struct _PangoRenderer* renderer, enum PangoRenderPart part, int x, int y, int width, int height);
      * }
      */
     public static void pango_renderer_draw_rectangle(MemorySegment renderer, int part, int x, int y, int width, int height) {
@@ -8303,11 +9838,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_draw_error_underline$MH() {
-        return RuntimeHelper.requireNonNull(constants$974.pango_renderer_draw_error_underline$MH,"pango_renderer_draw_error_underline");
+        return RuntimeHelper.requireNonNull(constants$1649.const$2,"pango_renderer_draw_error_underline");
     }
     /**
      * {@snippet :
-     * void pango_renderer_draw_error_underline(PangoRenderer* renderer, int x, int y, int width, int height);
+     * void pango_renderer_draw_error_underline(struct _PangoRenderer* renderer, int x, int y, int width, int height);
      * }
      */
     public static void pango_renderer_draw_error_underline(MemorySegment renderer, int x, int y, int width, int height) {
@@ -8319,11 +9854,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_draw_trapezoid$MH() {
-        return RuntimeHelper.requireNonNull(constants$975.pango_renderer_draw_trapezoid$MH,"pango_renderer_draw_trapezoid");
+        return RuntimeHelper.requireNonNull(constants$1649.const$3,"pango_renderer_draw_trapezoid");
     }
     /**
      * {@snippet :
-     * void pango_renderer_draw_trapezoid(PangoRenderer* renderer, PangoRenderPart part, double y1_, double x11, double x21, double y2, double x12, double x22);
+     * void pango_renderer_draw_trapezoid(struct _PangoRenderer* renderer, enum PangoRenderPart part, double y1_, double x11, double x21, double y2, double x12, double x22);
      * }
      */
     public static void pango_renderer_draw_trapezoid(MemorySegment renderer, int part, double y1_, double x11, double x21, double y2, double x12, double x22) {
@@ -8335,11 +9870,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_draw_glyph$MH() {
-        return RuntimeHelper.requireNonNull(constants$975.pango_renderer_draw_glyph$MH,"pango_renderer_draw_glyph");
+        return RuntimeHelper.requireNonNull(constants$1649.const$4,"pango_renderer_draw_glyph");
     }
     /**
      * {@snippet :
-     * void pango_renderer_draw_glyph(PangoRenderer* renderer, PangoFont* font, PangoGlyph glyph, double x, double y);
+     * void pango_renderer_draw_glyph(struct _PangoRenderer* renderer, struct _PangoFont* font, unsigned int glyph, double x, double y);
      * }
      */
     public static void pango_renderer_draw_glyph(MemorySegment renderer, MemorySegment font, int glyph, double x, double y) {
@@ -8351,11 +9886,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_activate$MH() {
-        return RuntimeHelper.requireNonNull(constants$975.pango_renderer_activate$MH,"pango_renderer_activate");
+        return RuntimeHelper.requireNonNull(constants$1649.const$5,"pango_renderer_activate");
     }
     /**
      * {@snippet :
-     * void pango_renderer_activate(PangoRenderer* renderer);
+     * void pango_renderer_activate(struct _PangoRenderer* renderer);
      * }
      */
     public static void pango_renderer_activate(MemorySegment renderer) {
@@ -8367,11 +9902,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_deactivate$MH() {
-        return RuntimeHelper.requireNonNull(constants$975.pango_renderer_deactivate$MH,"pango_renderer_deactivate");
+        return RuntimeHelper.requireNonNull(constants$1650.const$0,"pango_renderer_deactivate");
     }
     /**
      * {@snippet :
-     * void pango_renderer_deactivate(PangoRenderer* renderer);
+     * void pango_renderer_deactivate(struct _PangoRenderer* renderer);
      * }
      */
     public static void pango_renderer_deactivate(MemorySegment renderer) {
@@ -8383,11 +9918,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_part_changed$MH() {
-        return RuntimeHelper.requireNonNull(constants$975.pango_renderer_part_changed$MH,"pango_renderer_part_changed");
+        return RuntimeHelper.requireNonNull(constants$1650.const$1,"pango_renderer_part_changed");
     }
     /**
      * {@snippet :
-     * void pango_renderer_part_changed(PangoRenderer* renderer, PangoRenderPart part);
+     * void pango_renderer_part_changed(struct _PangoRenderer* renderer, enum PangoRenderPart part);
      * }
      */
     public static void pango_renderer_part_changed(MemorySegment renderer, int part) {
@@ -8399,11 +9934,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_set_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$975.pango_renderer_set_color$MH,"pango_renderer_set_color");
+        return RuntimeHelper.requireNonNull(constants$1650.const$2,"pango_renderer_set_color");
     }
     /**
      * {@snippet :
-     * void pango_renderer_set_color(PangoRenderer* renderer, PangoRenderPart part, const PangoColor* color);
+     * void pango_renderer_set_color(struct _PangoRenderer* renderer, enum PangoRenderPart part, struct _PangoColor* color);
      * }
      */
     public static void pango_renderer_set_color(MemorySegment renderer, int part, MemorySegment color) {
@@ -8415,11 +9950,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_get_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$976.pango_renderer_get_color$MH,"pango_renderer_get_color");
+        return RuntimeHelper.requireNonNull(constants$1650.const$3,"pango_renderer_get_color");
     }
     /**
      * {@snippet :
-     * PangoColor* pango_renderer_get_color(PangoRenderer* renderer, PangoRenderPart part);
+     * struct _PangoColor* pango_renderer_get_color(struct _PangoRenderer* renderer, enum PangoRenderPart part);
      * }
      */
     public static MemorySegment pango_renderer_get_color(MemorySegment renderer, int part) {
@@ -8431,11 +9966,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_set_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$976.pango_renderer_set_alpha$MH,"pango_renderer_set_alpha");
+        return RuntimeHelper.requireNonNull(constants$1650.const$5,"pango_renderer_set_alpha");
     }
     /**
      * {@snippet :
-     * void pango_renderer_set_alpha(PangoRenderer* renderer, PangoRenderPart part, guint16 alpha);
+     * void pango_renderer_set_alpha(struct _PangoRenderer* renderer, enum PangoRenderPart part, unsigned short alpha);
      * }
      */
     public static void pango_renderer_set_alpha(MemorySegment renderer, int part, short alpha) {
@@ -8447,11 +9982,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_get_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$976.pango_renderer_get_alpha$MH,"pango_renderer_get_alpha");
+        return RuntimeHelper.requireNonNull(constants$1651.const$1,"pango_renderer_get_alpha");
     }
     /**
      * {@snippet :
-     * guint16 pango_renderer_get_alpha(PangoRenderer* renderer, PangoRenderPart part);
+     * unsigned short pango_renderer_get_alpha(struct _PangoRenderer* renderer, enum PangoRenderPart part);
      * }
      */
     public static short pango_renderer_get_alpha(MemorySegment renderer, int part) {
@@ -8463,11 +9998,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_set_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$976.pango_renderer_set_matrix$MH,"pango_renderer_set_matrix");
+        return RuntimeHelper.requireNonNull(constants$1651.const$2,"pango_renderer_set_matrix");
     }
     /**
      * {@snippet :
-     * void pango_renderer_set_matrix(PangoRenderer* renderer, const PangoMatrix* matrix);
+     * void pango_renderer_set_matrix(struct _PangoRenderer* renderer, struct _PangoMatrix* matrix);
      * }
      */
     public static void pango_renderer_set_matrix(MemorySegment renderer, MemorySegment matrix) {
@@ -8479,11 +10014,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_get_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$976.pango_renderer_get_matrix$MH,"pango_renderer_get_matrix");
+        return RuntimeHelper.requireNonNull(constants$1651.const$3,"pango_renderer_get_matrix");
     }
     /**
      * {@snippet :
-     * const PangoMatrix* pango_renderer_get_matrix(PangoRenderer* renderer);
+     * struct _PangoMatrix* pango_renderer_get_matrix(struct _PangoRenderer* renderer);
      * }
      */
     public static MemorySegment pango_renderer_get_matrix(MemorySegment renderer) {
@@ -8495,11 +10030,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_get_layout$MH() {
-        return RuntimeHelper.requireNonNull(constants$976.pango_renderer_get_layout$MH,"pango_renderer_get_layout");
+        return RuntimeHelper.requireNonNull(constants$1651.const$4,"pango_renderer_get_layout");
     }
     /**
      * {@snippet :
-     * PangoLayout* pango_renderer_get_layout(PangoRenderer* renderer);
+     * struct _PangoLayout* pango_renderer_get_layout(struct _PangoRenderer* renderer);
      * }
      */
     public static MemorySegment pango_renderer_get_layout(MemorySegment renderer) {
@@ -8511,11 +10046,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_renderer_get_layout_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$977.pango_renderer_get_layout_line$MH,"pango_renderer_get_layout_line");
+        return RuntimeHelper.requireNonNull(constants$1651.const$5,"pango_renderer_get_layout_line");
     }
     /**
      * {@snippet :
-     * PangoLayoutLine* pango_renderer_get_layout_line(PangoRenderer* renderer);
+     * struct _PangoLayoutLine* pango_renderer_get_layout_line(struct _PangoRenderer* renderer);
      * }
      */
     public static MemorySegment pango_renderer_get_layout_line(MemorySegment renderer) {
@@ -8527,88 +10062,88 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MemoryLayout stdin$LAYOUT() {
-        return constants$977.stdin$LAYOUT;
+        return RuntimeHelper.POINTER;
     }
     public static VarHandle stdin$VH() {
-        return constants$977.stdin$VH;
+        return constants$211.const$1;
     }
     public static MemorySegment stdin$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$977.stdin$SEGMENT,"stdin");
+        return RuntimeHelper.requireNonNull(constants$1658.const$0,"stdin");
     }
     /**
      * Getter for variable:
      * {@snippet :
-     * FILE* stdin;
+     * struct _IO_FILE* stdin;
      * }
      */
     public static MemorySegment stdin$get() {
-        return (java.lang.foreign.MemorySegment) constants$977.stdin$VH.get(RuntimeHelper.requireNonNull(constants$977.stdin$SEGMENT, "stdin"));
+        return (java.lang.foreign.MemorySegment) constants$211.const$1.get(RuntimeHelper.requireNonNull(constants$1658.const$0, "stdin"));
     }
     /**
      * Setter for variable:
      * {@snippet :
-     * FILE* stdin;
+     * struct _IO_FILE* stdin;
      * }
      */
     public static void stdin$set(MemorySegment x) {
-        constants$977.stdin$VH.set(RuntimeHelper.requireNonNull(constants$977.stdin$SEGMENT, "stdin"), x);
+        constants$211.const$1.set(RuntimeHelper.requireNonNull(constants$1658.const$0, "stdin"), x);
     }
     public static MemoryLayout stdout$LAYOUT() {
-        return constants$977.stdout$LAYOUT;
+        return RuntimeHelper.POINTER;
     }
     public static VarHandle stdout$VH() {
-        return constants$977.stdout$VH;
+        return constants$211.const$1;
     }
     public static MemorySegment stdout$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$977.stdout$SEGMENT,"stdout");
+        return RuntimeHelper.requireNonNull(constants$1658.const$1,"stdout");
     }
     /**
      * Getter for variable:
      * {@snippet :
-     * FILE* stdout;
+     * struct _IO_FILE* stdout;
      * }
      */
     public static MemorySegment stdout$get() {
-        return (java.lang.foreign.MemorySegment) constants$977.stdout$VH.get(RuntimeHelper.requireNonNull(constants$977.stdout$SEGMENT, "stdout"));
+        return (java.lang.foreign.MemorySegment) constants$211.const$1.get(RuntimeHelper.requireNonNull(constants$1658.const$1, "stdout"));
     }
     /**
      * Setter for variable:
      * {@snippet :
-     * FILE* stdout;
+     * struct _IO_FILE* stdout;
      * }
      */
     public static void stdout$set(MemorySegment x) {
-        constants$977.stdout$VH.set(RuntimeHelper.requireNonNull(constants$977.stdout$SEGMENT, "stdout"), x);
+        constants$211.const$1.set(RuntimeHelper.requireNonNull(constants$1658.const$1, "stdout"), x);
     }
     public static MemoryLayout stderr$LAYOUT() {
-        return constants$977.stderr$LAYOUT;
+        return RuntimeHelper.POINTER;
     }
     public static VarHandle stderr$VH() {
-        return constants$977.stderr$VH;
+        return constants$211.const$1;
     }
     public static MemorySegment stderr$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$977.stderr$SEGMENT,"stderr");
+        return RuntimeHelper.requireNonNull(constants$1658.const$2,"stderr");
     }
     /**
      * Getter for variable:
      * {@snippet :
-     * FILE* stderr;
+     * struct _IO_FILE* stderr;
      * }
      */
     public static MemorySegment stderr$get() {
-        return (java.lang.foreign.MemorySegment) constants$977.stderr$VH.get(RuntimeHelper.requireNonNull(constants$977.stderr$SEGMENT, "stderr"));
+        return (java.lang.foreign.MemorySegment) constants$211.const$1.get(RuntimeHelper.requireNonNull(constants$1658.const$2, "stderr"));
     }
     /**
      * Setter for variable:
      * {@snippet :
-     * FILE* stderr;
+     * struct _IO_FILE* stderr;
      * }
      */
     public static void stderr$set(MemorySegment x) {
-        constants$977.stderr$VH.set(RuntimeHelper.requireNonNull(constants$977.stderr$SEGMENT, "stderr"), x);
+        constants$211.const$1.set(RuntimeHelper.requireNonNull(constants$1658.const$2, "stderr"), x);
     }
     public static MethodHandle remove$MH() {
-        return RuntimeHelper.requireNonNull(constants$977.remove$MH,"remove");
+        return RuntimeHelper.requireNonNull(constants$1658.const$3,"remove");
     }
     /**
      * {@snippet :
@@ -8624,7 +10159,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle rename$MH() {
-        return RuntimeHelper.requireNonNull(constants$977.rename$MH,"rename");
+        return RuntimeHelper.requireNonNull(constants$1658.const$4,"rename");
     }
     /**
      * {@snippet :
@@ -8640,7 +10175,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle renameat$MH() {
-        return RuntimeHelper.requireNonNull(constants$978.renameat$MH,"renameat");
+        return RuntimeHelper.requireNonNull(constants$1658.const$6,"renameat");
     }
     /**
      * {@snippet :
@@ -8656,11 +10191,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fclose$MH() {
-        return RuntimeHelper.requireNonNull(constants$978.fclose$MH,"fclose");
+        return RuntimeHelper.requireNonNull(constants$1659.const$0,"fclose");
     }
     /**
      * {@snippet :
-     * int fclose(FILE* __stream);
+     * int fclose(struct _IO_FILE* __stream);
      * }
      */
     public static int fclose(MemorySegment __stream) {
@@ -8672,11 +10207,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle tmpfile$MH() {
-        return RuntimeHelper.requireNonNull(constants$978.tmpfile$MH,"tmpfile");
+        return RuntimeHelper.requireNonNull(constants$1659.const$1,"tmpfile");
     }
     /**
      * {@snippet :
-     * FILE* tmpfile();
+     * struct _IO_FILE* tmpfile();
      * }
      */
     public static MemorySegment tmpfile() {
@@ -8688,7 +10223,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle tmpnam$MH() {
-        return RuntimeHelper.requireNonNull(constants$978.tmpnam$MH,"tmpnam");
+        return RuntimeHelper.requireNonNull(constants$1659.const$2,"tmpnam");
     }
     /**
      * {@snippet :
@@ -8704,7 +10239,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle tmpnam_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$978.tmpnam_r$MH,"tmpnam_r");
+        return RuntimeHelper.requireNonNull(constants$1659.const$3,"tmpnam_r");
     }
     /**
      * {@snippet :
@@ -8720,7 +10255,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle tempnam$MH() {
-        return RuntimeHelper.requireNonNull(constants$978.tempnam$MH,"tempnam");
+        return RuntimeHelper.requireNonNull(constants$1659.const$4,"tempnam");
     }
     /**
      * {@snippet :
@@ -8736,11 +10271,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fflush$MH() {
-        return RuntimeHelper.requireNonNull(constants$979.fflush$MH,"fflush");
+        return RuntimeHelper.requireNonNull(constants$1659.const$5,"fflush");
     }
     /**
      * {@snippet :
-     * int fflush(FILE* __stream);
+     * int fflush(struct _IO_FILE* __stream);
      * }
      */
     public static int fflush(MemorySegment __stream) {
@@ -8752,11 +10287,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fflush_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$979.fflush_unlocked$MH,"fflush_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1660.const$0,"fflush_unlocked");
     }
     /**
      * {@snippet :
-     * int fflush_unlocked(FILE* __stream);
+     * int fflush_unlocked(struct _IO_FILE* __stream);
      * }
      */
     public static int fflush_unlocked(MemorySegment __stream) {
@@ -8768,7 +10303,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fopen$MH() {
-        return RuntimeHelper.requireNonNull(constants$979.fopen$MH,"fopen");
+        return RuntimeHelper.requireNonNull(constants$1660.const$1,"fopen");
     }
     /**
      * {@snippet :
@@ -8784,11 +10319,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle freopen$MH() {
-        return RuntimeHelper.requireNonNull(constants$979.freopen$MH,"freopen");
+        return RuntimeHelper.requireNonNull(constants$1660.const$2,"freopen");
     }
     /**
      * {@snippet :
-     * FILE* freopen(char* __filename, char* __modes, FILE* __stream);
+     * struct _IO_FILE* freopen(char* __filename, char* __modes, struct _IO_FILE* __stream);
      * }
      */
     public static MemorySegment freopen(MemorySegment __filename, MemorySegment __modes, MemorySegment __stream) {
@@ -8800,11 +10335,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fdopen$MH() {
-        return RuntimeHelper.requireNonNull(constants$979.fdopen$MH,"fdopen");
+        return RuntimeHelper.requireNonNull(constants$1660.const$3,"fdopen");
     }
     /**
      * {@snippet :
-     * FILE* fdopen(int __fd, char* __modes);
+     * struct _IO_FILE* fdopen(int __fd, char* __modes);
      * }
      */
     public static MemorySegment fdopen(int __fd, MemorySegment __modes) {
@@ -8816,11 +10351,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fmemopen$MH() {
-        return RuntimeHelper.requireNonNull(constants$979.fmemopen$MH,"fmemopen");
+        return RuntimeHelper.requireNonNull(constants$1660.const$4,"fmemopen");
     }
     /**
      * {@snippet :
-     * FILE* fmemopen(void* __s, size_t __len, char* __modes);
+     * struct _IO_FILE* fmemopen(void* __s, unsigned long __len, char* __modes);
      * }
      */
     public static MemorySegment fmemopen(MemorySegment __s, long __len, MemorySegment __modes) {
@@ -8832,11 +10367,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle open_memstream$MH() {
-        return RuntimeHelper.requireNonNull(constants$980.open_memstream$MH,"open_memstream");
+        return RuntimeHelper.requireNonNull(constants$1660.const$5,"open_memstream");
     }
     /**
      * {@snippet :
-     * FILE* open_memstream(char** __bufloc, size_t* __sizeloc);
+     * struct _IO_FILE* open_memstream(char** __bufloc, unsigned long* __sizeloc);
      * }
      */
     public static MemorySegment open_memstream(MemorySegment __bufloc, MemorySegment __sizeloc) {
@@ -8848,11 +10383,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle setbuf$MH() {
-        return RuntimeHelper.requireNonNull(constants$980.setbuf$MH,"setbuf");
+        return RuntimeHelper.requireNonNull(constants$1661.const$0,"setbuf");
     }
     /**
      * {@snippet :
-     * void setbuf(FILE* __stream, char* __buf);
+     * void setbuf(struct _IO_FILE* __stream, char* __buf);
      * }
      */
     public static void setbuf(MemorySegment __stream, MemorySegment __buf) {
@@ -8864,11 +10399,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle setvbuf$MH() {
-        return RuntimeHelper.requireNonNull(constants$980.setvbuf$MH,"setvbuf");
+        return RuntimeHelper.requireNonNull(constants$1661.const$2,"setvbuf");
     }
     /**
      * {@snippet :
-     * int setvbuf(FILE* __stream, char* __buf, int __modes, size_t __n);
+     * int setvbuf(struct _IO_FILE* __stream, char* __buf, int __modes, unsigned long __n);
      * }
      */
     public static int setvbuf(MemorySegment __stream, MemorySegment __buf, int __modes, long __n) {
@@ -8880,11 +10415,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle setbuffer$MH() {
-        return RuntimeHelper.requireNonNull(constants$980.setbuffer$MH,"setbuffer");
+        return RuntimeHelper.requireNonNull(constants$1661.const$3,"setbuffer");
     }
     /**
      * {@snippet :
-     * void setbuffer(FILE* __stream, char* __buf, size_t __size);
+     * void setbuffer(struct _IO_FILE* __stream, char* __buf, unsigned long __size);
      * }
      */
     public static void setbuffer(MemorySegment __stream, MemorySegment __buf, long __size) {
@@ -8896,11 +10431,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle setlinebuf$MH() {
-        return RuntimeHelper.requireNonNull(constants$980.setlinebuf$MH,"setlinebuf");
+        return RuntimeHelper.requireNonNull(constants$1661.const$4,"setlinebuf");
     }
     /**
      * {@snippet :
-     * void setlinebuf(FILE* __stream);
+     * void setlinebuf(struct _IO_FILE* __stream);
      * }
      */
     public static void setlinebuf(MemorySegment __stream) {
@@ -8912,11 +10447,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$980.fprintf$MH,"fprintf");
+        return RuntimeHelper.requireNonNull(constants$1661.const$5,"fprintf");
     }
     /**
      * {@snippet :
-     * int fprintf(FILE* __stream, char* __format,...);
+     * int fprintf(struct _IO_FILE* __stream, char* __format,...);
      * }
      */
     public static int fprintf(MemorySegment __stream, MemorySegment __format, Object... x2) {
@@ -8928,7 +10463,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle printf$MH() {
-        return RuntimeHelper.requireNonNull(constants$981.printf$MH,"printf");
+        return RuntimeHelper.requireNonNull(constants$1662.const$0,"printf");
     }
     /**
      * {@snippet :
@@ -8944,7 +10479,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle sprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$981.sprintf$MH,"sprintf");
+        return RuntimeHelper.requireNonNull(constants$1662.const$1,"sprintf");
     }
     /**
      * {@snippet :
@@ -8960,11 +10495,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle vfprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$981.vfprintf$MH,"vfprintf");
+        return RuntimeHelper.requireNonNull(constants$1662.const$3,"vfprintf");
     }
     /**
      * {@snippet :
-     * int vfprintf(FILE* __s, char* __format, __gnuc_va_list __arg);
+     * int vfprintf(struct _IO_FILE* __s, char* __format, struct __va_list __arg);
      * }
      */
     public static int vfprintf(MemorySegment __s, MemorySegment __format, MemorySegment __arg) {
@@ -8976,11 +10511,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle vprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$981.vprintf$MH,"vprintf");
+        return RuntimeHelper.requireNonNull(constants$1662.const$5,"vprintf");
     }
     /**
      * {@snippet :
-     * int vprintf(char* __format, __gnuc_va_list __arg);
+     * int vprintf(char* __format, struct __va_list __arg);
      * }
      */
     public static int vprintf(MemorySegment __format, MemorySegment __arg) {
@@ -8992,11 +10527,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle vsprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$981.vsprintf$MH,"vsprintf");
+        return RuntimeHelper.requireNonNull(constants$1663.const$0,"vsprintf");
     }
     /**
      * {@snippet :
-     * int vsprintf(char* __s, char* __format, __gnuc_va_list __arg);
+     * int vsprintf(char* __s, char* __format, struct __va_list __arg);
      * }
      */
     public static int vsprintf(MemorySegment __s, MemorySegment __format, MemorySegment __arg) {
@@ -9008,11 +10543,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle snprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$981.snprintf$MH,"snprintf");
+        return RuntimeHelper.requireNonNull(constants$1663.const$1,"snprintf");
     }
     /**
      * {@snippet :
-     * int snprintf(char* __s, size_t __maxlen, char* __format,...);
+     * int snprintf(char* __s, unsigned long __maxlen, char* __format,...);
      * }
      */
     public static int snprintf(MemorySegment __s, long __maxlen, MemorySegment __format, Object... x3) {
@@ -9024,11 +10559,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle vsnprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$982.vsnprintf$MH,"vsnprintf");
+        return RuntimeHelper.requireNonNull(constants$1663.const$2,"vsnprintf");
     }
     /**
      * {@snippet :
-     * int vsnprintf(char* __s, size_t __maxlen, char* __format, __gnuc_va_list __arg);
+     * int vsnprintf(char* __s, unsigned long __maxlen, char* __format, struct __va_list __arg);
      * }
      */
     public static int vsnprintf(MemorySegment __s, long __maxlen, MemorySegment __format, MemorySegment __arg) {
@@ -9040,11 +10575,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle vdprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$982.vdprintf$MH,"vdprintf");
+        return RuntimeHelper.requireNonNull(constants$1663.const$4,"vdprintf");
     }
     /**
      * {@snippet :
-     * int vdprintf(int __fd, char* __fmt, __gnuc_va_list __arg);
+     * int vdprintf(int __fd, char* __fmt, struct __va_list __arg);
      * }
      */
     public static int vdprintf(int __fd, MemorySegment __fmt, MemorySegment __arg) {
@@ -9056,7 +10591,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle dprintf$MH() {
-        return RuntimeHelper.requireNonNull(constants$982.dprintf$MH,"dprintf");
+        return RuntimeHelper.requireNonNull(constants$1663.const$5,"dprintf");
     }
     /**
      * {@snippet :
@@ -9072,11 +10607,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fscanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$982.fscanf$MH,"fscanf");
+        return RuntimeHelper.requireNonNull(constants$1664.const$0,"fscanf");
     }
     /**
      * {@snippet :
-     * int fscanf(FILE* __stream, char* __format,...);
+     * int fscanf(struct _IO_FILE* __stream, char* __format,...);
      * }
      */
     public static int fscanf(MemorySegment __stream, MemorySegment __format, Object... x2) {
@@ -9088,7 +10623,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle scanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$982.scanf$MH,"scanf");
+        return RuntimeHelper.requireNonNull(constants$1664.const$1,"scanf");
     }
     /**
      * {@snippet :
@@ -9104,7 +10639,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle sscanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$982.sscanf$MH,"sscanf");
+        return RuntimeHelper.requireNonNull(constants$1664.const$2,"sscanf");
     }
     /**
      * {@snippet :
@@ -9120,11 +10655,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle vfscanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$983.vfscanf$MH,"vfscanf");
+        return RuntimeHelper.requireNonNull(constants$1664.const$3,"vfscanf");
     }
     /**
      * {@snippet :
-     * int vfscanf(FILE* __s, char* __format, __gnuc_va_list __arg);
+     * int vfscanf(struct _IO_FILE* __s, char* __format, struct __va_list __arg);
      * }
      */
     public static int vfscanf(MemorySegment __s, MemorySegment __format, MemorySegment __arg) {
@@ -9136,11 +10671,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle vscanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$983.vscanf$MH,"vscanf");
+        return RuntimeHelper.requireNonNull(constants$1664.const$4,"vscanf");
     }
     /**
      * {@snippet :
-     * int vscanf(char* __format, __gnuc_va_list __arg);
+     * int vscanf(char* __format, struct __va_list __arg);
      * }
      */
     public static int vscanf(MemorySegment __format, MemorySegment __arg) {
@@ -9152,11 +10687,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle vsscanf$MH() {
-        return RuntimeHelper.requireNonNull(constants$983.vsscanf$MH,"vsscanf");
+        return RuntimeHelper.requireNonNull(constants$1664.const$5,"vsscanf");
     }
     /**
      * {@snippet :
-     * int vsscanf(char* __s, char* __format, __gnuc_va_list __arg);
+     * int vsscanf(char* __s, char* __format, struct __va_list __arg);
      * }
      */
     public static int vsscanf(MemorySegment __s, MemorySegment __format, MemorySegment __arg) {
@@ -9168,11 +10703,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fgetc$MH() {
-        return RuntimeHelper.requireNonNull(constants$983.fgetc$MH,"fgetc");
+        return RuntimeHelper.requireNonNull(constants$1665.const$0,"fgetc");
     }
     /**
      * {@snippet :
-     * int fgetc(FILE* __stream);
+     * int fgetc(struct _IO_FILE* __stream);
      * }
      */
     public static int fgetc(MemorySegment __stream) {
@@ -9184,11 +10719,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle getc$MH() {
-        return RuntimeHelper.requireNonNull(constants$983.getc$MH,"getc");
+        return RuntimeHelper.requireNonNull(constants$1665.const$1,"getc");
     }
     /**
      * {@snippet :
-     * int getc(FILE* __stream);
+     * int getc(struct _IO_FILE* __stream);
      * }
      */
     public static int getc(MemorySegment __stream) {
@@ -9200,7 +10735,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle getchar$MH() {
-        return RuntimeHelper.requireNonNull(constants$983.getchar$MH,"getchar");
+        return RuntimeHelper.requireNonNull(constants$1665.const$2,"getchar");
     }
     /**
      * {@snippet :
@@ -9216,11 +10751,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle getc_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$984.getc_unlocked$MH,"getc_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1665.const$3,"getc_unlocked");
     }
     /**
      * {@snippet :
-     * int getc_unlocked(FILE* __stream);
+     * int getc_unlocked(struct _IO_FILE* __stream);
      * }
      */
     public static int getc_unlocked(MemorySegment __stream) {
@@ -9232,7 +10767,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle getchar_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$984.getchar_unlocked$MH,"getchar_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1665.const$4,"getchar_unlocked");
     }
     /**
      * {@snippet :
@@ -9248,11 +10783,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fgetc_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$984.fgetc_unlocked$MH,"fgetc_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1665.const$5,"fgetc_unlocked");
     }
     /**
      * {@snippet :
-     * int fgetc_unlocked(FILE* __stream);
+     * int fgetc_unlocked(struct _IO_FILE* __stream);
      * }
      */
     public static int fgetc_unlocked(MemorySegment __stream) {
@@ -9264,11 +10799,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fputc$MH() {
-        return RuntimeHelper.requireNonNull(constants$984.fputc$MH,"fputc");
+        return RuntimeHelper.requireNonNull(constants$1666.const$0,"fputc");
     }
     /**
      * {@snippet :
-     * int fputc(int __c, FILE* __stream);
+     * int fputc(int __c, struct _IO_FILE* __stream);
      * }
      */
     public static int fputc(int __c, MemorySegment __stream) {
@@ -9280,11 +10815,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle putc$MH() {
-        return RuntimeHelper.requireNonNull(constants$984.putc$MH,"putc");
+        return RuntimeHelper.requireNonNull(constants$1666.const$1,"putc");
     }
     /**
      * {@snippet :
-     * int putc(int __c, FILE* __stream);
+     * int putc(int __c, struct _IO_FILE* __stream);
      * }
      */
     public static int putc(int __c, MemorySegment __stream) {
@@ -9296,7 +10831,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle putchar$MH() {
-        return RuntimeHelper.requireNonNull(constants$984.putchar$MH,"putchar");
+        return RuntimeHelper.requireNonNull(constants$1666.const$2,"putchar");
     }
     /**
      * {@snippet :
@@ -9312,11 +10847,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fputc_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$985.fputc_unlocked$MH,"fputc_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1666.const$3,"fputc_unlocked");
     }
     /**
      * {@snippet :
-     * int fputc_unlocked(int __c, FILE* __stream);
+     * int fputc_unlocked(int __c, struct _IO_FILE* __stream);
      * }
      */
     public static int fputc_unlocked(int __c, MemorySegment __stream) {
@@ -9328,11 +10863,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle putc_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$985.putc_unlocked$MH,"putc_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1666.const$4,"putc_unlocked");
     }
     /**
      * {@snippet :
-     * int putc_unlocked(int __c, FILE* __stream);
+     * int putc_unlocked(int __c, struct _IO_FILE* __stream);
      * }
      */
     public static int putc_unlocked(int __c, MemorySegment __stream) {
@@ -9344,7 +10879,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle putchar_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$985.putchar_unlocked$MH,"putchar_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1666.const$5,"putchar_unlocked");
     }
     /**
      * {@snippet :
@@ -9360,11 +10895,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle getw$MH() {
-        return RuntimeHelper.requireNonNull(constants$985.getw$MH,"getw");
+        return RuntimeHelper.requireNonNull(constants$1667.const$0,"getw");
     }
     /**
      * {@snippet :
-     * int getw(FILE* __stream);
+     * int getw(struct _IO_FILE* __stream);
      * }
      */
     public static int getw(MemorySegment __stream) {
@@ -9376,11 +10911,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle putw$MH() {
-        return RuntimeHelper.requireNonNull(constants$985.putw$MH,"putw");
+        return RuntimeHelper.requireNonNull(constants$1667.const$1,"putw");
     }
     /**
      * {@snippet :
-     * int putw(int __w, FILE* __stream);
+     * int putw(int __w, struct _IO_FILE* __stream);
      * }
      */
     public static int putw(int __w, MemorySegment __stream) {
@@ -9392,11 +10927,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fgets$MH() {
-        return RuntimeHelper.requireNonNull(constants$985.fgets$MH,"fgets");
+        return RuntimeHelper.requireNonNull(constants$1667.const$2,"fgets");
     }
     /**
      * {@snippet :
-     * char* fgets(char* __s, int __n, FILE* __stream);
+     * char* fgets(char* __s, int __n, struct _IO_FILE* __stream);
      * }
      */
     public static MemorySegment fgets(MemorySegment __s, int __n, MemorySegment __stream) {
@@ -9408,11 +10943,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle __getdelim$MH() {
-        return RuntimeHelper.requireNonNull(constants$986.__getdelim$MH,"__getdelim");
+        return RuntimeHelper.requireNonNull(constants$1667.const$4,"__getdelim");
     }
     /**
      * {@snippet :
-     * __ssize_t __getdelim(char** __lineptr, size_t* __n, int __delimiter, FILE* __stream);
+     * long __getdelim(char** __lineptr, unsigned long* __n, int __delimiter, struct _IO_FILE* __stream);
      * }
      */
     public static long __getdelim(MemorySegment __lineptr, MemorySegment __n, int __delimiter, MemorySegment __stream) {
@@ -9424,11 +10959,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle getdelim$MH() {
-        return RuntimeHelper.requireNonNull(constants$986.getdelim$MH,"getdelim");
+        return RuntimeHelper.requireNonNull(constants$1667.const$5,"getdelim");
     }
     /**
      * {@snippet :
-     * __ssize_t getdelim(char** __lineptr, size_t* __n, int __delimiter, FILE* __stream);
+     * long getdelim(char** __lineptr, unsigned long* __n, int __delimiter, struct _IO_FILE* __stream);
      * }
      */
     public static long getdelim(MemorySegment __lineptr, MemorySegment __n, int __delimiter, MemorySegment __stream) {
@@ -9440,11 +10975,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle getline$MH() {
-        return RuntimeHelper.requireNonNull(constants$986.getline$MH,"getline");
+        return RuntimeHelper.requireNonNull(constants$1668.const$0,"getline");
     }
     /**
      * {@snippet :
-     * __ssize_t getline(char** __lineptr, size_t* __n, FILE* __stream);
+     * long getline(char** __lineptr, unsigned long* __n, struct _IO_FILE* __stream);
      * }
      */
     public static long getline(MemorySegment __lineptr, MemorySegment __n, MemorySegment __stream) {
@@ -9456,11 +10991,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fputs$MH() {
-        return RuntimeHelper.requireNonNull(constants$986.fputs$MH,"fputs");
+        return RuntimeHelper.requireNonNull(constants$1668.const$1,"fputs");
     }
     /**
      * {@snippet :
-     * int fputs(char* __s, FILE* __stream);
+     * int fputs(char* __s, struct _IO_FILE* __stream);
      * }
      */
     public static int fputs(MemorySegment __s, MemorySegment __stream) {
@@ -9472,7 +11007,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle puts$MH() {
-        return RuntimeHelper.requireNonNull(constants$986.puts$MH,"puts");
+        return RuntimeHelper.requireNonNull(constants$1668.const$2,"puts");
     }
     /**
      * {@snippet :
@@ -9488,11 +11023,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle ungetc$MH() {
-        return RuntimeHelper.requireNonNull(constants$986.ungetc$MH,"ungetc");
+        return RuntimeHelper.requireNonNull(constants$1668.const$3,"ungetc");
     }
     /**
      * {@snippet :
-     * int ungetc(int __c, FILE* __stream);
+     * int ungetc(int __c, struct _IO_FILE* __stream);
      * }
      */
     public static int ungetc(int __c, MemorySegment __stream) {
@@ -9504,11 +11039,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fread$MH() {
-        return RuntimeHelper.requireNonNull(constants$987.fread$MH,"fread");
+        return RuntimeHelper.requireNonNull(constants$1668.const$5,"fread");
     }
     /**
      * {@snippet :
-     * unsigned long fread(void* __ptr, size_t __size, size_t __n, FILE* __stream);
+     * unsigned long fread(void* __ptr, unsigned long __size, unsigned long __n, struct _IO_FILE* __stream);
      * }
      */
     public static long fread(MemorySegment __ptr, long __size, long __n, MemorySegment __stream) {
@@ -9520,11 +11055,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fwrite$MH() {
-        return RuntimeHelper.requireNonNull(constants$987.fwrite$MH,"fwrite");
+        return RuntimeHelper.requireNonNull(constants$1669.const$0,"fwrite");
     }
     /**
      * {@snippet :
-     * unsigned long fwrite(void* __ptr, size_t __size, size_t __n, FILE* __s);
+     * unsigned long fwrite(void* __ptr, unsigned long __size, unsigned long __n, struct _IO_FILE* __s);
      * }
      */
     public static long fwrite(MemorySegment __ptr, long __size, long __n, MemorySegment __s) {
@@ -9536,11 +11071,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fread_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$987.fread_unlocked$MH,"fread_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1669.const$1,"fread_unlocked");
     }
     /**
      * {@snippet :
-     * size_t fread_unlocked(void* __ptr, size_t __size, size_t __n, FILE* __stream);
+     * unsigned long fread_unlocked(void* __ptr, unsigned long __size, unsigned long __n, struct _IO_FILE* __stream);
      * }
      */
     public static long fread_unlocked(MemorySegment __ptr, long __size, long __n, MemorySegment __stream) {
@@ -9552,11 +11087,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fwrite_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$987.fwrite_unlocked$MH,"fwrite_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1669.const$2,"fwrite_unlocked");
     }
     /**
      * {@snippet :
-     * size_t fwrite_unlocked(void* __ptr, size_t __size, size_t __n, FILE* __stream);
+     * unsigned long fwrite_unlocked(void* __ptr, unsigned long __size, unsigned long __n, struct _IO_FILE* __stream);
      * }
      */
     public static long fwrite_unlocked(MemorySegment __ptr, long __size, long __n, MemorySegment __stream) {
@@ -9568,11 +11103,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fseek$MH() {
-        return RuntimeHelper.requireNonNull(constants$987.fseek$MH,"fseek");
+        return RuntimeHelper.requireNonNull(constants$1669.const$3,"fseek");
     }
     /**
      * {@snippet :
-     * int fseek(FILE* __stream, long __off, int __whence);
+     * int fseek(struct _IO_FILE* __stream, long __off, int __whence);
      * }
      */
     public static int fseek(MemorySegment __stream, long __off, int __whence) {
@@ -9584,11 +11119,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle ftell$MH() {
-        return RuntimeHelper.requireNonNull(constants$987.ftell$MH,"ftell");
+        return RuntimeHelper.requireNonNull(constants$1669.const$4,"ftell");
     }
     /**
      * {@snippet :
-     * long ftell(FILE* __stream);
+     * long ftell(struct _IO_FILE* __stream);
      * }
      */
     public static long ftell(MemorySegment __stream) {
@@ -9600,11 +11135,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle rewind$MH() {
-        return RuntimeHelper.requireNonNull(constants$988.rewind$MH,"rewind");
+        return RuntimeHelper.requireNonNull(constants$1669.const$5,"rewind");
     }
     /**
      * {@snippet :
-     * void rewind(FILE* __stream);
+     * void rewind(struct _IO_FILE* __stream);
      * }
      */
     public static void rewind(MemorySegment __stream) {
@@ -9616,11 +11151,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fseeko$MH() {
-        return RuntimeHelper.requireNonNull(constants$988.fseeko$MH,"fseeko");
+        return RuntimeHelper.requireNonNull(constants$1670.const$0,"fseeko");
     }
     /**
      * {@snippet :
-     * int fseeko(FILE* __stream, __off_t __off, int __whence);
+     * int fseeko(struct _IO_FILE* __stream, long __off, int __whence);
      * }
      */
     public static int fseeko(MemorySegment __stream, long __off, int __whence) {
@@ -9632,11 +11167,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle ftello$MH() {
-        return RuntimeHelper.requireNonNull(constants$988.ftello$MH,"ftello");
+        return RuntimeHelper.requireNonNull(constants$1670.const$1,"ftello");
     }
     /**
      * {@snippet :
-     * __off_t ftello(FILE* __stream);
+     * long ftello(struct _IO_FILE* __stream);
      * }
      */
     public static long ftello(MemorySegment __stream) {
@@ -9648,11 +11183,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fgetpos$MH() {
-        return RuntimeHelper.requireNonNull(constants$988.fgetpos$MH,"fgetpos");
+        return RuntimeHelper.requireNonNull(constants$1670.const$2,"fgetpos");
     }
     /**
      * {@snippet :
-     * int fgetpos(FILE* __stream, fpos_t* __pos);
+     * int fgetpos(struct _IO_FILE* __stream, struct _G_fpos_t* __pos);
      * }
      */
     public static int fgetpos(MemorySegment __stream, MemorySegment __pos) {
@@ -9664,11 +11199,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fsetpos$MH() {
-        return RuntimeHelper.requireNonNull(constants$988.fsetpos$MH,"fsetpos");
+        return RuntimeHelper.requireNonNull(constants$1670.const$3,"fsetpos");
     }
     /**
      * {@snippet :
-     * int fsetpos(FILE* __stream, const fpos_t* __pos);
+     * int fsetpos(struct _IO_FILE* __stream, struct _G_fpos_t* __pos);
      * }
      */
     public static int fsetpos(MemorySegment __stream, MemorySegment __pos) {
@@ -9680,11 +11215,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle clearerr$MH() {
-        return RuntimeHelper.requireNonNull(constants$988.clearerr$MH,"clearerr");
+        return RuntimeHelper.requireNonNull(constants$1670.const$4,"clearerr");
     }
     /**
      * {@snippet :
-     * void clearerr(FILE* __stream);
+     * void clearerr(struct _IO_FILE* __stream);
      * }
      */
     public static void clearerr(MemorySegment __stream) {
@@ -9696,11 +11231,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle feof$MH() {
-        return RuntimeHelper.requireNonNull(constants$989.feof$MH,"feof");
+        return RuntimeHelper.requireNonNull(constants$1670.const$5,"feof");
     }
     /**
      * {@snippet :
-     * int feof(FILE* __stream);
+     * int feof(struct _IO_FILE* __stream);
      * }
      */
     public static int feof(MemorySegment __stream) {
@@ -9712,11 +11247,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle ferror$MH() {
-        return RuntimeHelper.requireNonNull(constants$989.ferror$MH,"ferror");
+        return RuntimeHelper.requireNonNull(constants$1671.const$0,"ferror");
     }
     /**
      * {@snippet :
-     * int ferror(FILE* __stream);
+     * int ferror(struct _IO_FILE* __stream);
      * }
      */
     public static int ferror(MemorySegment __stream) {
@@ -9728,11 +11263,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle clearerr_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$989.clearerr_unlocked$MH,"clearerr_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1671.const$1,"clearerr_unlocked");
     }
     /**
      * {@snippet :
-     * void clearerr_unlocked(FILE* __stream);
+     * void clearerr_unlocked(struct _IO_FILE* __stream);
      * }
      */
     public static void clearerr_unlocked(MemorySegment __stream) {
@@ -9744,11 +11279,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle feof_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$989.feof_unlocked$MH,"feof_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1671.const$2,"feof_unlocked");
     }
     /**
      * {@snippet :
-     * int feof_unlocked(FILE* __stream);
+     * int feof_unlocked(struct _IO_FILE* __stream);
      * }
      */
     public static int feof_unlocked(MemorySegment __stream) {
@@ -9760,11 +11295,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle ferror_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$989.ferror_unlocked$MH,"ferror_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1671.const$3,"ferror_unlocked");
     }
     /**
      * {@snippet :
-     * int ferror_unlocked(FILE* __stream);
+     * int ferror_unlocked(struct _IO_FILE* __stream);
      * }
      */
     public static int ferror_unlocked(MemorySegment __stream) {
@@ -9776,7 +11311,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle perror$MH() {
-        return RuntimeHelper.requireNonNull(constants$989.perror$MH,"perror");
+        return RuntimeHelper.requireNonNull(constants$1671.const$4,"perror");
     }
     /**
      * {@snippet :
@@ -9792,11 +11327,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fileno$MH() {
-        return RuntimeHelper.requireNonNull(constants$990.fileno$MH,"fileno");
+        return RuntimeHelper.requireNonNull(constants$1671.const$5,"fileno");
     }
     /**
      * {@snippet :
-     * int fileno(FILE* __stream);
+     * int fileno(struct _IO_FILE* __stream);
      * }
      */
     public static int fileno(MemorySegment __stream) {
@@ -9808,11 +11343,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle fileno_unlocked$MH() {
-        return RuntimeHelper.requireNonNull(constants$990.fileno_unlocked$MH,"fileno_unlocked");
+        return RuntimeHelper.requireNonNull(constants$1672.const$0,"fileno_unlocked");
     }
     /**
      * {@snippet :
-     * int fileno_unlocked(FILE* __stream);
+     * int fileno_unlocked(struct _IO_FILE* __stream);
      * }
      */
     public static int fileno_unlocked(MemorySegment __stream) {
@@ -9824,11 +11359,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pclose$MH() {
-        return RuntimeHelper.requireNonNull(constants$990.pclose$MH,"pclose");
+        return RuntimeHelper.requireNonNull(constants$1672.const$1,"pclose");
     }
     /**
      * {@snippet :
-     * int pclose(FILE* __stream);
+     * int pclose(struct _IO_FILE* __stream);
      * }
      */
     public static int pclose(MemorySegment __stream) {
@@ -9840,11 +11375,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle popen$MH() {
-        return RuntimeHelper.requireNonNull(constants$990.popen$MH,"popen");
+        return RuntimeHelper.requireNonNull(constants$1672.const$2,"popen");
     }
     /**
      * {@snippet :
-     * FILE* popen(char* __command, char* __modes);
+     * struct _IO_FILE* popen(char* __command, char* __modes);
      * }
      */
     public static MemorySegment popen(MemorySegment __command, MemorySegment __modes) {
@@ -9856,7 +11391,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle ctermid$MH() {
-        return RuntimeHelper.requireNonNull(constants$990.ctermid$MH,"ctermid");
+        return RuntimeHelper.requireNonNull(constants$1672.const$3,"ctermid");
     }
     /**
      * {@snippet :
@@ -9872,11 +11407,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle flockfile$MH() {
-        return RuntimeHelper.requireNonNull(constants$990.flockfile$MH,"flockfile");
+        return RuntimeHelper.requireNonNull(constants$1672.const$4,"flockfile");
     }
     /**
      * {@snippet :
-     * void flockfile(FILE* __stream);
+     * void flockfile(struct _IO_FILE* __stream);
      * }
      */
     public static void flockfile(MemorySegment __stream) {
@@ -9888,11 +11423,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle ftrylockfile$MH() {
-        return RuntimeHelper.requireNonNull(constants$991.ftrylockfile$MH,"ftrylockfile");
+        return RuntimeHelper.requireNonNull(constants$1672.const$5,"ftrylockfile");
     }
     /**
      * {@snippet :
-     * int ftrylockfile(FILE* __stream);
+     * int ftrylockfile(struct _IO_FILE* __stream);
      * }
      */
     public static int ftrylockfile(MemorySegment __stream) {
@@ -9904,11 +11439,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle funlockfile$MH() {
-        return RuntimeHelper.requireNonNull(constants$991.funlockfile$MH,"funlockfile");
+        return RuntimeHelper.requireNonNull(constants$1673.const$0,"funlockfile");
     }
     /**
      * {@snippet :
-     * void funlockfile(FILE* __stream);
+     * void funlockfile(struct _IO_FILE* __stream);
      * }
      */
     public static void funlockfile(MemorySegment __stream) {
@@ -9920,11 +11455,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle __uflow$MH() {
-        return RuntimeHelper.requireNonNull(constants$991.__uflow$MH,"__uflow");
+        return RuntimeHelper.requireNonNull(constants$1673.const$1,"__uflow");
     }
     /**
      * {@snippet :
-     * int __uflow(FILE*);
+     * int __uflow(struct _IO_FILE*);
      * }
      */
     public static int __uflow(MemorySegment x0) {
@@ -9936,11 +11471,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle __overflow$MH() {
-        return RuntimeHelper.requireNonNull(constants$991.__overflow$MH,"__overflow");
+        return RuntimeHelper.requireNonNull(constants$1673.const$2,"__overflow");
     }
     /**
      * {@snippet :
-     * int __overflow(FILE*, int);
+     * int __overflow(struct _IO_FILE*, int);
      * }
      */
     public static int __overflow(MemorySegment x0, int x1) {
@@ -9952,7 +11487,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_split_file_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$991.pango_split_file_list$MH,"pango_split_file_list");
+        return RuntimeHelper.requireNonNull(constants$1673.const$3,"pango_split_file_list");
     }
     /**
      * {@snippet :
@@ -9968,7 +11503,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_trim_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$991.pango_trim_string$MH,"pango_trim_string");
+        return RuntimeHelper.requireNonNull(constants$1673.const$4,"pango_trim_string");
     }
     /**
      * {@snippet :
@@ -9984,11 +11519,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_read_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$992.pango_read_line$MH,"pango_read_line");
+        return RuntimeHelper.requireNonNull(constants$1673.const$5,"pango_read_line");
     }
     /**
      * {@snippet :
-     * gint pango_read_line(FILE* stream, GString* str);
+     * int pango_read_line(struct _IO_FILE* stream, struct _GString* str);
      * }
      */
     public static int pango_read_line(MemorySegment stream, MemorySegment str) {
@@ -10000,11 +11535,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_skip_space$MH() {
-        return RuntimeHelper.requireNonNull(constants$992.pango_skip_space$MH,"pango_skip_space");
+        return RuntimeHelper.requireNonNull(constants$1674.const$0,"pango_skip_space");
     }
     /**
      * {@snippet :
-     * gboolean pango_skip_space(char** pos);
+     * int pango_skip_space(char** pos);
      * }
      */
     public static int pango_skip_space(MemorySegment pos) {
@@ -10016,11 +11551,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_scan_word$MH() {
-        return RuntimeHelper.requireNonNull(constants$992.pango_scan_word$MH,"pango_scan_word");
+        return RuntimeHelper.requireNonNull(constants$1674.const$1,"pango_scan_word");
     }
     /**
      * {@snippet :
-     * gboolean pango_scan_word(char** pos, GString* out);
+     * int pango_scan_word(char** pos, struct _GString* out);
      * }
      */
     public static int pango_scan_word(MemorySegment pos, MemorySegment out) {
@@ -10032,11 +11567,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_scan_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$992.pango_scan_string$MH,"pango_scan_string");
+        return RuntimeHelper.requireNonNull(constants$1674.const$2,"pango_scan_string");
     }
     /**
      * {@snippet :
-     * gboolean pango_scan_string(char** pos, GString* out);
+     * int pango_scan_string(char** pos, struct _GString* out);
      * }
      */
     public static int pango_scan_string(MemorySegment pos, MemorySegment out) {
@@ -10048,11 +11583,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_scan_int$MH() {
-        return RuntimeHelper.requireNonNull(constants$992.pango_scan_int$MH,"pango_scan_int");
+        return RuntimeHelper.requireNonNull(constants$1674.const$3,"pango_scan_int");
     }
     /**
      * {@snippet :
-     * gboolean pango_scan_int(char** pos, int* out);
+     * int pango_scan_int(char** pos, int* out);
      * }
      */
     public static int pango_scan_int(MemorySegment pos, MemorySegment out) {
@@ -10064,11 +11599,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_parse_enum$MH() {
-        return RuntimeHelper.requireNonNull(constants$992.pango_parse_enum$MH,"pango_parse_enum");
+        return RuntimeHelper.requireNonNull(constants$1674.const$5,"pango_parse_enum");
     }
     /**
      * {@snippet :
-     * gboolean pango_parse_enum(GType type, char* str, int* value, gboolean warn, char** possible_values);
+     * int pango_parse_enum(unsigned long type, char* str, int* value, int warn, char** possible_values);
      * }
      */
     public static int pango_parse_enum(long type, MemorySegment str, MemorySegment value, int warn, MemorySegment possible_values) {
@@ -10080,11 +11615,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_parse_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$993.pango_parse_style$MH,"pango_parse_style");
+        return RuntimeHelper.requireNonNull(constants$1675.const$0,"pango_parse_style");
     }
     /**
      * {@snippet :
-     * gboolean pango_parse_style(char* str, PangoStyle* style, gboolean warn);
+     * int pango_parse_style(char* str, enum PangoStyle* style, int warn);
      * }
      */
     public static int pango_parse_style(MemorySegment str, MemorySegment style, int warn) {
@@ -10096,11 +11631,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_parse_variant$MH() {
-        return RuntimeHelper.requireNonNull(constants$993.pango_parse_variant$MH,"pango_parse_variant");
+        return RuntimeHelper.requireNonNull(constants$1675.const$1,"pango_parse_variant");
     }
     /**
      * {@snippet :
-     * gboolean pango_parse_variant(char* str, PangoVariant* variant, gboolean warn);
+     * int pango_parse_variant(char* str, enum PangoVariant* variant, int warn);
      * }
      */
     public static int pango_parse_variant(MemorySegment str, MemorySegment variant, int warn) {
@@ -10112,11 +11647,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_parse_weight$MH() {
-        return RuntimeHelper.requireNonNull(constants$993.pango_parse_weight$MH,"pango_parse_weight");
+        return RuntimeHelper.requireNonNull(constants$1675.const$2,"pango_parse_weight");
     }
     /**
      * {@snippet :
-     * gboolean pango_parse_weight(char* str, PangoWeight* weight, gboolean warn);
+     * int pango_parse_weight(char* str, enum PangoWeight* weight, int warn);
      * }
      */
     public static int pango_parse_weight(MemorySegment str, MemorySegment weight, int warn) {
@@ -10128,11 +11663,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_parse_stretch$MH() {
-        return RuntimeHelper.requireNonNull(constants$993.pango_parse_stretch$MH,"pango_parse_stretch");
+        return RuntimeHelper.requireNonNull(constants$1675.const$3,"pango_parse_stretch");
     }
     /**
      * {@snippet :
-     * gboolean pango_parse_stretch(char* str, PangoStretch* stretch, gboolean warn);
+     * int pango_parse_stretch(char* str, enum PangoStretch* stretch, int warn);
      * }
      */
     public static int pango_parse_stretch(MemorySegment str, MemorySegment stretch, int warn) {
@@ -10144,7 +11679,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_quantize_line_geometry$MH() {
-        return RuntimeHelper.requireNonNull(constants$993.pango_quantize_line_geometry$MH,"pango_quantize_line_geometry");
+        return RuntimeHelper.requireNonNull(constants$1675.const$4,"pango_quantize_line_geometry");
     }
     /**
      * {@snippet :
@@ -10160,11 +11695,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_log2vis_get_embedding_levels$MH() {
-        return RuntimeHelper.requireNonNull(constants$993.pango_log2vis_get_embedding_levels$MH,"pango_log2vis_get_embedding_levels");
+        return RuntimeHelper.requireNonNull(constants$1675.const$5,"pango_log2vis_get_embedding_levels");
     }
     /**
      * {@snippet :
-     * guint8* pango_log2vis_get_embedding_levels(const gchar* text, int length, PangoDirection* pbase_dir);
+     * unsigned char* pango_log2vis_get_embedding_levels(char* text, int length, enum PangoDirection* pbase_dir);
      * }
      */
     public static MemorySegment pango_log2vis_get_embedding_levels(MemorySegment text, int length, MemorySegment pbase_dir) {
@@ -10176,11 +11711,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_is_zero_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$994.pango_is_zero_width$MH,"pango_is_zero_width");
+        return RuntimeHelper.requireNonNull(constants$1676.const$0,"pango_is_zero_width");
     }
     /**
      * {@snippet :
-     * gboolean pango_is_zero_width(gunichar ch);
+     * int pango_is_zero_width(unsigned int ch);
      * }
      */
     public static int pango_is_zero_width(int ch) {
@@ -10192,7 +11727,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_find_paragraph_boundary$MH() {
-        return RuntimeHelper.requireNonNull(constants$994.pango_find_paragraph_boundary$MH,"pango_find_paragraph_boundary");
+        return RuntimeHelper.requireNonNull(constants$1676.const$1,"pango_find_paragraph_boundary");
     }
     /**
      * {@snippet :
@@ -10208,7 +11743,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_version$MH() {
-        return RuntimeHelper.requireNonNull(constants$994.pango_version$MH,"pango_version");
+        return RuntimeHelper.requireNonNull(constants$1676.const$2,"pango_version");
     }
     /**
      * {@snippet :
@@ -10224,7 +11759,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_version_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$994.pango_version_string$MH,"pango_version_string");
+        return RuntimeHelper.requireNonNull(constants$1676.const$3,"pango_version_string");
     }
     /**
      * {@snippet :
@@ -10240,7 +11775,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle pango_version_check$MH() {
-        return RuntimeHelper.requireNonNull(constants$994.pango_version_check$MH,"pango_version_check");
+        return RuntimeHelper.requireNonNull(constants$1676.const$4,"pango_version_check");
     }
     /**
      * {@snippet :
@@ -10256,7 +11791,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_version$MH() {
-        return RuntimeHelper.requireNonNull(constants$994.cairo_version$MH,"cairo_version");
+        return RuntimeHelper.requireNonNull(constants$1676.const$5,"cairo_version");
     }
     /**
      * {@snippet :
@@ -10272,7 +11807,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_version_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$995.cairo_version_string$MH,"cairo_version_string");
+        return RuntimeHelper.requireNonNull(constants$1677.const$0,"cairo_version_string");
     }
     /**
      * {@snippet :
@@ -10292,7 +11827,7 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      * typedef int cairo_bool_t;
      * }
      */
-    public static final OfInt cairo_bool_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt cairo_bool_t = JAVA_INT;
     /**
      * {@snippet :
      * enum _cairo_status.CAIRO_STATUS_SUCCESS = 0;
@@ -10639,11 +12174,27 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     }
     /**
      * {@snippet :
-     * enum _cairo_status.CAIRO_STATUS_LAST_STATUS = 43;
+     * enum _cairo_status.CAIRO_STATUS_DWRITE_ERROR = 43;
+     * }
+     */
+    public static int CAIRO_STATUS_DWRITE_ERROR() {
+        return (int)43L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_SVG_FONT_ERROR = 44;
+     * }
+     */
+    public static int CAIRO_STATUS_SVG_FONT_ERROR() {
+        return (int)44L;
+    }
+    /**
+     * {@snippet :
+     * enum _cairo_status.CAIRO_STATUS_LAST_STATUS = 45;
      * }
      */
     public static int CAIRO_STATUS_LAST_STATUS() {
-        return (int)43L;
+        return (int)45L;
     }
     /**
      * {@snippet :
@@ -10725,12 +12276,28 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
     public static int CAIRO_FORMAT_RGB30() {
         return (int)5L;
     }
-    public static MethodHandle cairo_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$996.cairo_create$MH,"cairo_create");
+    /**
+     * {@snippet :
+     * enum _cairo_format.CAIRO_FORMAT_RGB96F = 6;
+     * }
+     */
+    public static int CAIRO_FORMAT_RGB96F() {
+        return (int)6L;
     }
     /**
      * {@snippet :
-     * cairo_t* cairo_create(cairo_surface_t* target);
+     * enum _cairo_format.CAIRO_FORMAT_RGBA128F = 7;
+     * }
+     */
+    public static int CAIRO_FORMAT_RGBA128F() {
+        return (int)7L;
+    }
+    public static MethodHandle cairo_create$MH() {
+        return RuntimeHelper.requireNonNull(constants$1680.const$0,"cairo_create");
+    }
+    /**
+     * {@snippet :
+     * struct _cairo* cairo_create(struct _cairo_surface* target);
      * }
      */
     public static MemorySegment cairo_create(MemorySegment target) {
@@ -10742,11 +12309,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$996.cairo_reference$MH,"cairo_reference");
+        return RuntimeHelper.requireNonNull(constants$1680.const$1,"cairo_reference");
     }
     /**
      * {@snippet :
-     * cairo_t* cairo_reference(cairo_t* cr);
+     * struct _cairo* cairo_reference(struct _cairo* cr);
      * }
      */
     public static MemorySegment cairo_reference(MemorySegment cr) {
@@ -10758,11 +12325,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$996.cairo_destroy$MH,"cairo_destroy");
+        return RuntimeHelper.requireNonNull(constants$1680.const$2,"cairo_destroy");
     }
     /**
      * {@snippet :
-     * void cairo_destroy(cairo_t* cr);
+     * void cairo_destroy(struct _cairo* cr);
      * }
      */
     public static void cairo_destroy(MemorySegment cr) {
@@ -10774,11 +12341,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_get_reference_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$996.cairo_get_reference_count$MH,"cairo_get_reference_count");
+        return RuntimeHelper.requireNonNull(constants$1680.const$3,"cairo_get_reference_count");
     }
     /**
      * {@snippet :
-     * unsigned int cairo_get_reference_count(cairo_t* cr);
+     * unsigned int cairo_get_reference_count(struct _cairo* cr);
      * }
      */
     public static int cairo_get_reference_count(MemorySegment cr) {
@@ -10790,11 +12357,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$996.cairo_get_user_data$MH,"cairo_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$1680.const$4,"cairo_get_user_data");
     }
     /**
      * {@snippet :
-     * void* cairo_get_user_data(cairo_t* cr, const cairo_user_data_key_t* key);
+     * void* cairo_get_user_data(struct _cairo* cr, struct _cairo_user_data_key* key);
      * }
      */
     public static MemorySegment cairo_get_user_data(MemorySegment cr, MemorySegment key) {
@@ -10806,11 +12373,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$997.cairo_set_user_data$MH,"cairo_set_user_data");
+        return RuntimeHelper.requireNonNull(constants$1681.const$0,"cairo_set_user_data");
     }
     /**
      * {@snippet :
-     * cairo_status_t cairo_set_user_data(cairo_t* cr, const cairo_user_data_key_t* key, void* user_data, cairo_destroy_func_t destroy);
+     * enum _cairo_status cairo_set_user_data(struct _cairo* cr, struct _cairo_user_data_key* key, void* user_data, void (*destroy)(void*));
      * }
      */
     public static int cairo_set_user_data(MemorySegment cr, MemorySegment key, MemorySegment user_data, MemorySegment destroy) {
@@ -10822,11 +12389,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_save$MH() {
-        return RuntimeHelper.requireNonNull(constants$997.cairo_save$MH,"cairo_save");
+        return RuntimeHelper.requireNonNull(constants$1681.const$1,"cairo_save");
     }
     /**
      * {@snippet :
-     * void cairo_save(cairo_t* cr);
+     * void cairo_save(struct _cairo* cr);
      * }
      */
     public static void cairo_save(MemorySegment cr) {
@@ -10838,11 +12405,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_restore$MH() {
-        return RuntimeHelper.requireNonNull(constants$997.cairo_restore$MH,"cairo_restore");
+        return RuntimeHelper.requireNonNull(constants$1681.const$2,"cairo_restore");
     }
     /**
      * {@snippet :
-     * void cairo_restore(cairo_t* cr);
+     * void cairo_restore(struct _cairo* cr);
      * }
      */
     public static void cairo_restore(MemorySegment cr) {
@@ -10854,11 +12421,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_push_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$997.cairo_push_group$MH,"cairo_push_group");
+        return RuntimeHelper.requireNonNull(constants$1681.const$3,"cairo_push_group");
     }
     /**
      * {@snippet :
-     * void cairo_push_group(cairo_t* cr);
+     * void cairo_push_group(struct _cairo* cr);
      * }
      */
     public static void cairo_push_group(MemorySegment cr) {
@@ -10870,11 +12437,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_push_group_with_content$MH() {
-        return RuntimeHelper.requireNonNull(constants$997.cairo_push_group_with_content$MH,"cairo_push_group_with_content");
+        return RuntimeHelper.requireNonNull(constants$1681.const$4,"cairo_push_group_with_content");
     }
     /**
      * {@snippet :
-     * void cairo_push_group_with_content(cairo_t* cr, cairo_content_t content);
+     * void cairo_push_group_with_content(struct _cairo* cr, enum _cairo_content content);
      * }
      */
     public static void cairo_push_group_with_content(MemorySegment cr, int content) {
@@ -10886,11 +12453,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_pop_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$997.cairo_pop_group$MH,"cairo_pop_group");
+        return RuntimeHelper.requireNonNull(constants$1681.const$5,"cairo_pop_group");
     }
     /**
      * {@snippet :
-     * cairo_pattern_t* cairo_pop_group(cairo_t* cr);
+     * struct _cairo_pattern* cairo_pop_group(struct _cairo* cr);
      * }
      */
     public static MemorySegment cairo_pop_group(MemorySegment cr) {
@@ -10902,11 +12469,11 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
         }
     }
     public static MethodHandle cairo_pop_group_to_source$MH() {
-        return RuntimeHelper.requireNonNull(constants$998.cairo_pop_group_to_source$MH,"cairo_pop_group_to_source");
+        return RuntimeHelper.requireNonNull(constants$1682.const$0,"cairo_pop_group_to_source");
     }
     /**
      * {@snippet :
-     * void cairo_pop_group_to_source(cairo_t* cr);
+     * void cairo_pop_group_to_source(struct _cairo* cr);
      * }
      */
     public static void cairo_pop_group_to_source(MemorySegment cr) {
@@ -11052,2254 +12619,6 @@ public class app_indicator_h_11 extends app_indicator_h_10 {
      */
     public static int CAIRO_OPERATOR_OVERLAY() {
         return (int)16L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_DARKEN = 17;
-     * }
-     */
-    public static int CAIRO_OPERATOR_DARKEN() {
-        return (int)17L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_LIGHTEN = 18;
-     * }
-     */
-    public static int CAIRO_OPERATOR_LIGHTEN() {
-        return (int)18L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_COLOR_DODGE = 19;
-     * }
-     */
-    public static int CAIRO_OPERATOR_COLOR_DODGE() {
-        return (int)19L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_COLOR_BURN = 20;
-     * }
-     */
-    public static int CAIRO_OPERATOR_COLOR_BURN() {
-        return (int)20L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_HARD_LIGHT = 21;
-     * }
-     */
-    public static int CAIRO_OPERATOR_HARD_LIGHT() {
-        return (int)21L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_SOFT_LIGHT = 22;
-     * }
-     */
-    public static int CAIRO_OPERATOR_SOFT_LIGHT() {
-        return (int)22L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_DIFFERENCE = 23;
-     * }
-     */
-    public static int CAIRO_OPERATOR_DIFFERENCE() {
-        return (int)23L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_EXCLUSION = 24;
-     * }
-     */
-    public static int CAIRO_OPERATOR_EXCLUSION() {
-        return (int)24L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_HSL_HUE = 25;
-     * }
-     */
-    public static int CAIRO_OPERATOR_HSL_HUE() {
-        return (int)25L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_HSL_SATURATION = 26;
-     * }
-     */
-    public static int CAIRO_OPERATOR_HSL_SATURATION() {
-        return (int)26L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_HSL_COLOR = 27;
-     * }
-     */
-    public static int CAIRO_OPERATOR_HSL_COLOR() {
-        return (int)27L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_operator.CAIRO_OPERATOR_HSL_LUMINOSITY = 28;
-     * }
-     */
-    public static int CAIRO_OPERATOR_HSL_LUMINOSITY() {
-        return (int)28L;
-    }
-    public static MethodHandle cairo_set_operator$MH() {
-        return RuntimeHelper.requireNonNull(constants$998.cairo_set_operator$MH,"cairo_set_operator");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_operator(cairo_t* cr, cairo_operator_t op);
-     * }
-     */
-    public static void cairo_set_operator(MemorySegment cr, int op) {
-        var mh$ = cairo_set_operator$MH();
-        try {
-            mh$.invokeExact(cr, op);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_set_source$MH() {
-        return RuntimeHelper.requireNonNull(constants$998.cairo_set_source$MH,"cairo_set_source");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_source(cairo_t* cr, cairo_pattern_t* source);
-     * }
-     */
-    public static void cairo_set_source(MemorySegment cr, MemorySegment source) {
-        var mh$ = cairo_set_source$MH();
-        try {
-            mh$.invokeExact(cr, source);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_set_source_rgb$MH() {
-        return RuntimeHelper.requireNonNull(constants$998.cairo_set_source_rgb$MH,"cairo_set_source_rgb");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_source_rgb(cairo_t* cr, double red, double green, double blue);
-     * }
-     */
-    public static void cairo_set_source_rgb(MemorySegment cr, double red, double green, double blue) {
-        var mh$ = cairo_set_source_rgb$MH();
-        try {
-            mh$.invokeExact(cr, red, green, blue);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_set_source_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$998.cairo_set_source_rgba$MH,"cairo_set_source_rgba");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_source_rgba(cairo_t* cr, double red, double green, double blue, double alpha);
-     * }
-     */
-    public static void cairo_set_source_rgba(MemorySegment cr, double red, double green, double blue, double alpha) {
-        var mh$ = cairo_set_source_rgba$MH();
-        try {
-            mh$.invokeExact(cr, red, green, blue, alpha);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_set_source_surface$MH() {
-        return RuntimeHelper.requireNonNull(constants$998.cairo_set_source_surface$MH,"cairo_set_source_surface");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_source_surface(cairo_t* cr, cairo_surface_t* surface, double x, double y);
-     * }
-     */
-    public static void cairo_set_source_surface(MemorySegment cr, MemorySegment surface, double x, double y) {
-        var mh$ = cairo_set_source_surface$MH();
-        try {
-            mh$.invokeExact(cr, surface, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_set_tolerance$MH() {
-        return RuntimeHelper.requireNonNull(constants$999.cairo_set_tolerance$MH,"cairo_set_tolerance");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_tolerance(cairo_t* cr, double tolerance);
-     * }
-     */
-    public static void cairo_set_tolerance(MemorySegment cr, double tolerance) {
-        var mh$ = cairo_set_tolerance$MH();
-        try {
-            mh$.invokeExact(cr, tolerance);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_antialias.CAIRO_ANTIALIAS_DEFAULT = 0;
-     * }
-     */
-    public static int CAIRO_ANTIALIAS_DEFAULT() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_antialias.CAIRO_ANTIALIAS_NONE = 1;
-     * }
-     */
-    public static int CAIRO_ANTIALIAS_NONE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_antialias.CAIRO_ANTIALIAS_GRAY = 2;
-     * }
-     */
-    public static int CAIRO_ANTIALIAS_GRAY() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_antialias.CAIRO_ANTIALIAS_SUBPIXEL = 3;
-     * }
-     */
-    public static int CAIRO_ANTIALIAS_SUBPIXEL() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_antialias.CAIRO_ANTIALIAS_FAST = 4;
-     * }
-     */
-    public static int CAIRO_ANTIALIAS_FAST() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_antialias.CAIRO_ANTIALIAS_GOOD = 5;
-     * }
-     */
-    public static int CAIRO_ANTIALIAS_GOOD() {
-        return (int)5L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_antialias.CAIRO_ANTIALIAS_BEST = 6;
-     * }
-     */
-    public static int CAIRO_ANTIALIAS_BEST() {
-        return (int)6L;
-    }
-    public static MethodHandle cairo_set_antialias$MH() {
-        return RuntimeHelper.requireNonNull(constants$999.cairo_set_antialias$MH,"cairo_set_antialias");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_antialias(cairo_t* cr, cairo_antialias_t antialias);
-     * }
-     */
-    public static void cairo_set_antialias(MemorySegment cr, int antialias) {
-        var mh$ = cairo_set_antialias$MH();
-        try {
-            mh$.invokeExact(cr, antialias);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_fill_rule.CAIRO_FILL_RULE_WINDING = 0;
-     * }
-     */
-    public static int CAIRO_FILL_RULE_WINDING() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_fill_rule.CAIRO_FILL_RULE_EVEN_ODD = 1;
-     * }
-     */
-    public static int CAIRO_FILL_RULE_EVEN_ODD() {
-        return (int)1L;
-    }
-    public static MethodHandle cairo_set_fill_rule$MH() {
-        return RuntimeHelper.requireNonNull(constants$999.cairo_set_fill_rule$MH,"cairo_set_fill_rule");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_fill_rule(cairo_t* cr, cairo_fill_rule_t fill_rule);
-     * }
-     */
-    public static void cairo_set_fill_rule(MemorySegment cr, int fill_rule) {
-        var mh$ = cairo_set_fill_rule$MH();
-        try {
-            mh$.invokeExact(cr, fill_rule);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_set_line_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$999.cairo_set_line_width$MH,"cairo_set_line_width");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_line_width(cairo_t* cr, double width);
-     * }
-     */
-    public static void cairo_set_line_width(MemorySegment cr, double width) {
-        var mh$ = cairo_set_line_width$MH();
-        try {
-            mh$.invokeExact(cr, width);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_line_cap.CAIRO_LINE_CAP_BUTT = 0;
-     * }
-     */
-    public static int CAIRO_LINE_CAP_BUTT() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_line_cap.CAIRO_LINE_CAP_ROUND = 1;
-     * }
-     */
-    public static int CAIRO_LINE_CAP_ROUND() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_line_cap.CAIRO_LINE_CAP_SQUARE = 2;
-     * }
-     */
-    public static int CAIRO_LINE_CAP_SQUARE() {
-        return (int)2L;
-    }
-    public static MethodHandle cairo_set_line_cap$MH() {
-        return RuntimeHelper.requireNonNull(constants$999.cairo_set_line_cap$MH,"cairo_set_line_cap");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_line_cap(cairo_t* cr, cairo_line_cap_t line_cap);
-     * }
-     */
-    public static void cairo_set_line_cap(MemorySegment cr, int line_cap) {
-        var mh$ = cairo_set_line_cap$MH();
-        try {
-            mh$.invokeExact(cr, line_cap);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_line_join.CAIRO_LINE_JOIN_MITER = 0;
-     * }
-     */
-    public static int CAIRO_LINE_JOIN_MITER() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_line_join.CAIRO_LINE_JOIN_ROUND = 1;
-     * }
-     */
-    public static int CAIRO_LINE_JOIN_ROUND() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_line_join.CAIRO_LINE_JOIN_BEVEL = 2;
-     * }
-     */
-    public static int CAIRO_LINE_JOIN_BEVEL() {
-        return (int)2L;
-    }
-    public static MethodHandle cairo_set_line_join$MH() {
-        return RuntimeHelper.requireNonNull(constants$999.cairo_set_line_join$MH,"cairo_set_line_join");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_line_join(cairo_t* cr, cairo_line_join_t line_join);
-     * }
-     */
-    public static void cairo_set_line_join(MemorySegment cr, int line_join) {
-        var mh$ = cairo_set_line_join$MH();
-        try {
-            mh$.invokeExact(cr, line_join);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_set_dash$MH() {
-        return RuntimeHelper.requireNonNull(constants$1000.cairo_set_dash$MH,"cairo_set_dash");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_dash(cairo_t* cr, double* dashes, int num_dashes, double offset);
-     * }
-     */
-    public static void cairo_set_dash(MemorySegment cr, MemorySegment dashes, int num_dashes, double offset) {
-        var mh$ = cairo_set_dash$MH();
-        try {
-            mh$.invokeExact(cr, dashes, num_dashes, offset);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_set_miter_limit$MH() {
-        return RuntimeHelper.requireNonNull(constants$1000.cairo_set_miter_limit$MH,"cairo_set_miter_limit");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_miter_limit(cairo_t* cr, double limit);
-     * }
-     */
-    public static void cairo_set_miter_limit(MemorySegment cr, double limit) {
-        var mh$ = cairo_set_miter_limit$MH();
-        try {
-            mh$.invokeExact(cr, limit);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_translate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1000.cairo_translate$MH,"cairo_translate");
-    }
-    /**
-     * {@snippet :
-     * void cairo_translate(cairo_t* cr, double tx, double ty);
-     * }
-     */
-    public static void cairo_translate(MemorySegment cr, double tx, double ty) {
-        var mh$ = cairo_translate$MH();
-        try {
-            mh$.invokeExact(cr, tx, ty);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_scale$MH() {
-        return RuntimeHelper.requireNonNull(constants$1000.cairo_scale$MH,"cairo_scale");
-    }
-    /**
-     * {@snippet :
-     * void cairo_scale(cairo_t* cr, double sx, double sy);
-     * }
-     */
-    public static void cairo_scale(MemorySegment cr, double sx, double sy) {
-        var mh$ = cairo_scale$MH();
-        try {
-            mh$.invokeExact(cr, sx, sy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_rotate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1000.cairo_rotate$MH,"cairo_rotate");
-    }
-    /**
-     * {@snippet :
-     * void cairo_rotate(cairo_t* cr, double angle);
-     * }
-     */
-    public static void cairo_rotate(MemorySegment cr, double angle) {
-        var mh$ = cairo_rotate$MH();
-        try {
-            mh$.invokeExact(cr, angle);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_transform$MH() {
-        return RuntimeHelper.requireNonNull(constants$1000.cairo_transform$MH,"cairo_transform");
-    }
-    /**
-     * {@snippet :
-     * void cairo_transform(cairo_t* cr, const cairo_matrix_t* matrix);
-     * }
-     */
-    public static void cairo_transform(MemorySegment cr, MemorySegment matrix) {
-        var mh$ = cairo_transform$MH();
-        try {
-            mh$.invokeExact(cr, matrix);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_set_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1001.cairo_set_matrix$MH,"cairo_set_matrix");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_matrix(cairo_t* cr, const cairo_matrix_t* matrix);
-     * }
-     */
-    public static void cairo_set_matrix(MemorySegment cr, MemorySegment matrix) {
-        var mh$ = cairo_set_matrix$MH();
-        try {
-            mh$.invokeExact(cr, matrix);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_identity_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1001.cairo_identity_matrix$MH,"cairo_identity_matrix");
-    }
-    /**
-     * {@snippet :
-     * void cairo_identity_matrix(cairo_t* cr);
-     * }
-     */
-    public static void cairo_identity_matrix(MemorySegment cr) {
-        var mh$ = cairo_identity_matrix$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_user_to_device$MH() {
-        return RuntimeHelper.requireNonNull(constants$1001.cairo_user_to_device$MH,"cairo_user_to_device");
-    }
-    /**
-     * {@snippet :
-     * void cairo_user_to_device(cairo_t* cr, double* x, double* y);
-     * }
-     */
-    public static void cairo_user_to_device(MemorySegment cr, MemorySegment x, MemorySegment y) {
-        var mh$ = cairo_user_to_device$MH();
-        try {
-            mh$.invokeExact(cr, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_user_to_device_distance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1001.cairo_user_to_device_distance$MH,"cairo_user_to_device_distance");
-    }
-    /**
-     * {@snippet :
-     * void cairo_user_to_device_distance(cairo_t* cr, double* dx, double* dy);
-     * }
-     */
-    public static void cairo_user_to_device_distance(MemorySegment cr, MemorySegment dx, MemorySegment dy) {
-        var mh$ = cairo_user_to_device_distance$MH();
-        try {
-            mh$.invokeExact(cr, dx, dy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_device_to_user$MH() {
-        return RuntimeHelper.requireNonNull(constants$1001.cairo_device_to_user$MH,"cairo_device_to_user");
-    }
-    /**
-     * {@snippet :
-     * void cairo_device_to_user(cairo_t* cr, double* x, double* y);
-     * }
-     */
-    public static void cairo_device_to_user(MemorySegment cr, MemorySegment x, MemorySegment y) {
-        var mh$ = cairo_device_to_user$MH();
-        try {
-            mh$.invokeExact(cr, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_device_to_user_distance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1001.cairo_device_to_user_distance$MH,"cairo_device_to_user_distance");
-    }
-    /**
-     * {@snippet :
-     * void cairo_device_to_user_distance(cairo_t* cr, double* dx, double* dy);
-     * }
-     */
-    public static void cairo_device_to_user_distance(MemorySegment cr, MemorySegment dx, MemorySegment dy) {
-        var mh$ = cairo_device_to_user_distance$MH();
-        try {
-            mh$.invokeExact(cr, dx, dy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_new_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1002.cairo_new_path$MH,"cairo_new_path");
-    }
-    /**
-     * {@snippet :
-     * void cairo_new_path(cairo_t* cr);
-     * }
-     */
-    public static void cairo_new_path(MemorySegment cr) {
-        var mh$ = cairo_new_path$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_move_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1002.cairo_move_to$MH,"cairo_move_to");
-    }
-    /**
-     * {@snippet :
-     * void cairo_move_to(cairo_t* cr, double x, double y);
-     * }
-     */
-    public static void cairo_move_to(MemorySegment cr, double x, double y) {
-        var mh$ = cairo_move_to$MH();
-        try {
-            mh$.invokeExact(cr, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_new_sub_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1002.cairo_new_sub_path$MH,"cairo_new_sub_path");
-    }
-    /**
-     * {@snippet :
-     * void cairo_new_sub_path(cairo_t* cr);
-     * }
-     */
-    public static void cairo_new_sub_path(MemorySegment cr) {
-        var mh$ = cairo_new_sub_path$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_line_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1002.cairo_line_to$MH,"cairo_line_to");
-    }
-    /**
-     * {@snippet :
-     * void cairo_line_to(cairo_t* cr, double x, double y);
-     * }
-     */
-    public static void cairo_line_to(MemorySegment cr, double x, double y) {
-        var mh$ = cairo_line_to$MH();
-        try {
-            mh$.invokeExact(cr, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_curve_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1002.cairo_curve_to$MH,"cairo_curve_to");
-    }
-    /**
-     * {@snippet :
-     * void cairo_curve_to(cairo_t* cr, double x1, double y1, double x2, double y2, double x3, double y3);
-     * }
-     */
-    public static void cairo_curve_to(MemorySegment cr, double x1, double y1, double x2, double y2, double x3, double y3) {
-        var mh$ = cairo_curve_to$MH();
-        try {
-            mh$.invokeExact(cr, x1, y1, x2, y2, x3, y3);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_arc$MH() {
-        return RuntimeHelper.requireNonNull(constants$1002.cairo_arc$MH,"cairo_arc");
-    }
-    /**
-     * {@snippet :
-     * void cairo_arc(cairo_t* cr, double xc, double yc, double radius, double angle1, double angle2);
-     * }
-     */
-    public static void cairo_arc(MemorySegment cr, double xc, double yc, double radius, double angle1, double angle2) {
-        var mh$ = cairo_arc$MH();
-        try {
-            mh$.invokeExact(cr, xc, yc, radius, angle1, angle2);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_arc_negative$MH() {
-        return RuntimeHelper.requireNonNull(constants$1003.cairo_arc_negative$MH,"cairo_arc_negative");
-    }
-    /**
-     * {@snippet :
-     * void cairo_arc_negative(cairo_t* cr, double xc, double yc, double radius, double angle1, double angle2);
-     * }
-     */
-    public static void cairo_arc_negative(MemorySegment cr, double xc, double yc, double radius, double angle1, double angle2) {
-        var mh$ = cairo_arc_negative$MH();
-        try {
-            mh$.invokeExact(cr, xc, yc, radius, angle1, angle2);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_rel_move_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1003.cairo_rel_move_to$MH,"cairo_rel_move_to");
-    }
-    /**
-     * {@snippet :
-     * void cairo_rel_move_to(cairo_t* cr, double dx, double dy);
-     * }
-     */
-    public static void cairo_rel_move_to(MemorySegment cr, double dx, double dy) {
-        var mh$ = cairo_rel_move_to$MH();
-        try {
-            mh$.invokeExact(cr, dx, dy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_rel_line_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1003.cairo_rel_line_to$MH,"cairo_rel_line_to");
-    }
-    /**
-     * {@snippet :
-     * void cairo_rel_line_to(cairo_t* cr, double dx, double dy);
-     * }
-     */
-    public static void cairo_rel_line_to(MemorySegment cr, double dx, double dy) {
-        var mh$ = cairo_rel_line_to$MH();
-        try {
-            mh$.invokeExact(cr, dx, dy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_rel_curve_to$MH() {
-        return RuntimeHelper.requireNonNull(constants$1003.cairo_rel_curve_to$MH,"cairo_rel_curve_to");
-    }
-    /**
-     * {@snippet :
-     * void cairo_rel_curve_to(cairo_t* cr, double dx1, double dy1, double dx2, double dy2, double dx3, double dy3);
-     * }
-     */
-    public static void cairo_rel_curve_to(MemorySegment cr, double dx1, double dy1, double dx2, double dy2, double dx3, double dy3) {
-        var mh$ = cairo_rel_curve_to$MH();
-        try {
-            mh$.invokeExact(cr, dx1, dy1, dx2, dy2, dx3, dy3);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_rectangle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1003.cairo_rectangle$MH,"cairo_rectangle");
-    }
-    /**
-     * {@snippet :
-     * void cairo_rectangle(cairo_t* cr, double x, double y, double width, double height);
-     * }
-     */
-    public static void cairo_rectangle(MemorySegment cr, double x, double y, double width, double height) {
-        var mh$ = cairo_rectangle$MH();
-        try {
-            mh$.invokeExact(cr, x, y, width, height);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_close_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1003.cairo_close_path$MH,"cairo_close_path");
-    }
-    /**
-     * {@snippet :
-     * void cairo_close_path(cairo_t* cr);
-     * }
-     */
-    public static void cairo_close_path(MemorySegment cr) {
-        var mh$ = cairo_close_path$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_path_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1004.cairo_path_extents$MH,"cairo_path_extents");
-    }
-    /**
-     * {@snippet :
-     * void cairo_path_extents(cairo_t* cr, double* x1, double* y1, double* x2, double* y2);
-     * }
-     */
-    public static void cairo_path_extents(MemorySegment cr, MemorySegment x1, MemorySegment y1, MemorySegment x2, MemorySegment y2) {
-        var mh$ = cairo_path_extents$MH();
-        try {
-            mh$.invokeExact(cr, x1, y1, x2, y2);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_paint$MH() {
-        return RuntimeHelper.requireNonNull(constants$1004.cairo_paint$MH,"cairo_paint");
-    }
-    /**
-     * {@snippet :
-     * void cairo_paint(cairo_t* cr);
-     * }
-     */
-    public static void cairo_paint(MemorySegment cr) {
-        var mh$ = cairo_paint$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_paint_with_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$1004.cairo_paint_with_alpha$MH,"cairo_paint_with_alpha");
-    }
-    /**
-     * {@snippet :
-     * void cairo_paint_with_alpha(cairo_t* cr, double alpha);
-     * }
-     */
-    public static void cairo_paint_with_alpha(MemorySegment cr, double alpha) {
-        var mh$ = cairo_paint_with_alpha$MH();
-        try {
-            mh$.invokeExact(cr, alpha);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_mask$MH() {
-        return RuntimeHelper.requireNonNull(constants$1004.cairo_mask$MH,"cairo_mask");
-    }
-    /**
-     * {@snippet :
-     * void cairo_mask(cairo_t* cr, cairo_pattern_t* pattern);
-     * }
-     */
-    public static void cairo_mask(MemorySegment cr, MemorySegment pattern) {
-        var mh$ = cairo_mask$MH();
-        try {
-            mh$.invokeExact(cr, pattern);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_mask_surface$MH() {
-        return RuntimeHelper.requireNonNull(constants$1004.cairo_mask_surface$MH,"cairo_mask_surface");
-    }
-    /**
-     * {@snippet :
-     * void cairo_mask_surface(cairo_t* cr, cairo_surface_t* surface, double surface_x, double surface_y);
-     * }
-     */
-    public static void cairo_mask_surface(MemorySegment cr, MemorySegment surface, double surface_x, double surface_y) {
-        var mh$ = cairo_mask_surface$MH();
-        try {
-            mh$.invokeExact(cr, surface, surface_x, surface_y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_stroke$MH() {
-        return RuntimeHelper.requireNonNull(constants$1004.cairo_stroke$MH,"cairo_stroke");
-    }
-    /**
-     * {@snippet :
-     * void cairo_stroke(cairo_t* cr);
-     * }
-     */
-    public static void cairo_stroke(MemorySegment cr) {
-        var mh$ = cairo_stroke$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_stroke_preserve$MH() {
-        return RuntimeHelper.requireNonNull(constants$1005.cairo_stroke_preserve$MH,"cairo_stroke_preserve");
-    }
-    /**
-     * {@snippet :
-     * void cairo_stroke_preserve(cairo_t* cr);
-     * }
-     */
-    public static void cairo_stroke_preserve(MemorySegment cr) {
-        var mh$ = cairo_stroke_preserve$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_fill$MH() {
-        return RuntimeHelper.requireNonNull(constants$1005.cairo_fill$MH,"cairo_fill");
-    }
-    /**
-     * {@snippet :
-     * void cairo_fill(cairo_t* cr);
-     * }
-     */
-    public static void cairo_fill(MemorySegment cr) {
-        var mh$ = cairo_fill$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_fill_preserve$MH() {
-        return RuntimeHelper.requireNonNull(constants$1005.cairo_fill_preserve$MH,"cairo_fill_preserve");
-    }
-    /**
-     * {@snippet :
-     * void cairo_fill_preserve(cairo_t* cr);
-     * }
-     */
-    public static void cairo_fill_preserve(MemorySegment cr) {
-        var mh$ = cairo_fill_preserve$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_copy_page$MH() {
-        return RuntimeHelper.requireNonNull(constants$1005.cairo_copy_page$MH,"cairo_copy_page");
-    }
-    /**
-     * {@snippet :
-     * void cairo_copy_page(cairo_t* cr);
-     * }
-     */
-    public static void cairo_copy_page(MemorySegment cr) {
-        var mh$ = cairo_copy_page$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_show_page$MH() {
-        return RuntimeHelper.requireNonNull(constants$1005.cairo_show_page$MH,"cairo_show_page");
-    }
-    /**
-     * {@snippet :
-     * void cairo_show_page(cairo_t* cr);
-     * }
-     */
-    public static void cairo_show_page(MemorySegment cr) {
-        var mh$ = cairo_show_page$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_in_stroke$MH() {
-        return RuntimeHelper.requireNonNull(constants$1005.cairo_in_stroke$MH,"cairo_in_stroke");
-    }
-    /**
-     * {@snippet :
-     * cairo_bool_t cairo_in_stroke(cairo_t* cr, double x, double y);
-     * }
-     */
-    public static int cairo_in_stroke(MemorySegment cr, double x, double y) {
-        var mh$ = cairo_in_stroke$MH();
-        try {
-            return (int)mh$.invokeExact(cr, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_in_fill$MH() {
-        return RuntimeHelper.requireNonNull(constants$1006.cairo_in_fill$MH,"cairo_in_fill");
-    }
-    /**
-     * {@snippet :
-     * cairo_bool_t cairo_in_fill(cairo_t* cr, double x, double y);
-     * }
-     */
-    public static int cairo_in_fill(MemorySegment cr, double x, double y) {
-        var mh$ = cairo_in_fill$MH();
-        try {
-            return (int)mh$.invokeExact(cr, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_in_clip$MH() {
-        return RuntimeHelper.requireNonNull(constants$1006.cairo_in_clip$MH,"cairo_in_clip");
-    }
-    /**
-     * {@snippet :
-     * cairo_bool_t cairo_in_clip(cairo_t* cr, double x, double y);
-     * }
-     */
-    public static int cairo_in_clip(MemorySegment cr, double x, double y) {
-        var mh$ = cairo_in_clip$MH();
-        try {
-            return (int)mh$.invokeExact(cr, x, y);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_stroke_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1006.cairo_stroke_extents$MH,"cairo_stroke_extents");
-    }
-    /**
-     * {@snippet :
-     * void cairo_stroke_extents(cairo_t* cr, double* x1, double* y1, double* x2, double* y2);
-     * }
-     */
-    public static void cairo_stroke_extents(MemorySegment cr, MemorySegment x1, MemorySegment y1, MemorySegment x2, MemorySegment y2) {
-        var mh$ = cairo_stroke_extents$MH();
-        try {
-            mh$.invokeExact(cr, x1, y1, x2, y2);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_fill_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1006.cairo_fill_extents$MH,"cairo_fill_extents");
-    }
-    /**
-     * {@snippet :
-     * void cairo_fill_extents(cairo_t* cr, double* x1, double* y1, double* x2, double* y2);
-     * }
-     */
-    public static void cairo_fill_extents(MemorySegment cr, MemorySegment x1, MemorySegment y1, MemorySegment x2, MemorySegment y2) {
-        var mh$ = cairo_fill_extents$MH();
-        try {
-            mh$.invokeExact(cr, x1, y1, x2, y2);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_reset_clip$MH() {
-        return RuntimeHelper.requireNonNull(constants$1006.cairo_reset_clip$MH,"cairo_reset_clip");
-    }
-    /**
-     * {@snippet :
-     * void cairo_reset_clip(cairo_t* cr);
-     * }
-     */
-    public static void cairo_reset_clip(MemorySegment cr) {
-        var mh$ = cairo_reset_clip$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_clip$MH() {
-        return RuntimeHelper.requireNonNull(constants$1006.cairo_clip$MH,"cairo_clip");
-    }
-    /**
-     * {@snippet :
-     * void cairo_clip(cairo_t* cr);
-     * }
-     */
-    public static void cairo_clip(MemorySegment cr) {
-        var mh$ = cairo_clip$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_clip_preserve$MH() {
-        return RuntimeHelper.requireNonNull(constants$1007.cairo_clip_preserve$MH,"cairo_clip_preserve");
-    }
-    /**
-     * {@snippet :
-     * void cairo_clip_preserve(cairo_t* cr);
-     * }
-     */
-    public static void cairo_clip_preserve(MemorySegment cr) {
-        var mh$ = cairo_clip_preserve$MH();
-        try {
-            mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_clip_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1007.cairo_clip_extents$MH,"cairo_clip_extents");
-    }
-    /**
-     * {@snippet :
-     * void cairo_clip_extents(cairo_t* cr, double* x1, double* y1, double* x2, double* y2);
-     * }
-     */
-    public static void cairo_clip_extents(MemorySegment cr, MemorySegment x1, MemorySegment y1, MemorySegment x2, MemorySegment y2) {
-        var mh$ = cairo_clip_extents$MH();
-        try {
-            mh$.invokeExact(cr, x1, y1, x2, y2);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_copy_clip_rectangle_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$1007.cairo_copy_clip_rectangle_list$MH,"cairo_copy_clip_rectangle_list");
-    }
-    /**
-     * {@snippet :
-     * cairo_rectangle_list_t* cairo_copy_clip_rectangle_list(cairo_t* cr);
-     * }
-     */
-    public static MemorySegment cairo_copy_clip_rectangle_list(MemorySegment cr) {
-        var mh$ = cairo_copy_clip_rectangle_list$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_rectangle_list_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1007.cairo_rectangle_list_destroy$MH,"cairo_rectangle_list_destroy");
-    }
-    /**
-     * {@snippet :
-     * void cairo_rectangle_list_destroy(cairo_rectangle_list_t* rectangle_list);
-     * }
-     */
-    public static void cairo_rectangle_list_destroy(MemorySegment rectangle_list) {
-        var mh$ = cairo_rectangle_list_destroy$MH();
-        try {
-            mh$.invokeExact(rectangle_list);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_tag_begin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1007.cairo_tag_begin$MH,"cairo_tag_begin");
-    }
-    /**
-     * {@snippet :
-     * void cairo_tag_begin(cairo_t* cr, char* tag_name, char* attributes);
-     * }
-     */
-    public static void cairo_tag_begin(MemorySegment cr, MemorySegment tag_name, MemorySegment attributes) {
-        var mh$ = cairo_tag_begin$MH();
-        try {
-            mh$.invokeExact(cr, tag_name, attributes);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_tag_end$MH() {
-        return RuntimeHelper.requireNonNull(constants$1007.cairo_tag_end$MH,"cairo_tag_end");
-    }
-    /**
-     * {@snippet :
-     * void cairo_tag_end(cairo_t* cr, char* tag_name);
-     * }
-     */
-    public static void cairo_tag_end(MemorySegment cr, MemorySegment tag_name) {
-        var mh$ = cairo_tag_end$MH();
-        try {
-            mh$.invokeExact(cr, tag_name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_glyph_allocate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1008.cairo_glyph_allocate$MH,"cairo_glyph_allocate");
-    }
-    /**
-     * {@snippet :
-     * cairo_glyph_t* cairo_glyph_allocate(int num_glyphs);
-     * }
-     */
-    public static MemorySegment cairo_glyph_allocate(int num_glyphs) {
-        var mh$ = cairo_glyph_allocate$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(num_glyphs);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_glyph_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1008.cairo_glyph_free$MH,"cairo_glyph_free");
-    }
-    /**
-     * {@snippet :
-     * void cairo_glyph_free(cairo_glyph_t* glyphs);
-     * }
-     */
-    public static void cairo_glyph_free(MemorySegment glyphs) {
-        var mh$ = cairo_glyph_free$MH();
-        try {
-            mh$.invokeExact(glyphs);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_text_cluster_allocate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1008.cairo_text_cluster_allocate$MH,"cairo_text_cluster_allocate");
-    }
-    /**
-     * {@snippet :
-     * cairo_text_cluster_t* cairo_text_cluster_allocate(int num_clusters);
-     * }
-     */
-    public static MemorySegment cairo_text_cluster_allocate(int num_clusters) {
-        var mh$ = cairo_text_cluster_allocate$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(num_clusters);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_text_cluster_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1008.cairo_text_cluster_free$MH,"cairo_text_cluster_free");
-    }
-    /**
-     * {@snippet :
-     * void cairo_text_cluster_free(cairo_text_cluster_t* clusters);
-     * }
-     */
-    public static void cairo_text_cluster_free(MemorySegment clusters) {
-        var mh$ = cairo_text_cluster_free$MH();
-        try {
-            mh$.invokeExact(clusters);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_text_cluster_flags.CAIRO_TEXT_CLUSTER_FLAG_BACKWARD = 1;
-     * }
-     */
-    public static int CAIRO_TEXT_CLUSTER_FLAG_BACKWARD() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_font_slant.CAIRO_FONT_SLANT_NORMAL = 0;
-     * }
-     */
-    public static int CAIRO_FONT_SLANT_NORMAL() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_font_slant.CAIRO_FONT_SLANT_ITALIC = 1;
-     * }
-     */
-    public static int CAIRO_FONT_SLANT_ITALIC() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_font_slant.CAIRO_FONT_SLANT_OBLIQUE = 2;
-     * }
-     */
-    public static int CAIRO_FONT_SLANT_OBLIQUE() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_font_weight.CAIRO_FONT_WEIGHT_NORMAL = 0;
-     * }
-     */
-    public static int CAIRO_FONT_WEIGHT_NORMAL() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_font_weight.CAIRO_FONT_WEIGHT_BOLD = 1;
-     * }
-     */
-    public static int CAIRO_FONT_WEIGHT_BOLD() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_subpixel_order.CAIRO_SUBPIXEL_ORDER_DEFAULT = 0;
-     * }
-     */
-    public static int CAIRO_SUBPIXEL_ORDER_DEFAULT() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_subpixel_order.CAIRO_SUBPIXEL_ORDER_RGB = 1;
-     * }
-     */
-    public static int CAIRO_SUBPIXEL_ORDER_RGB() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_subpixel_order.CAIRO_SUBPIXEL_ORDER_BGR = 2;
-     * }
-     */
-    public static int CAIRO_SUBPIXEL_ORDER_BGR() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_subpixel_order.CAIRO_SUBPIXEL_ORDER_VRGB = 3;
-     * }
-     */
-    public static int CAIRO_SUBPIXEL_ORDER_VRGB() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_subpixel_order.CAIRO_SUBPIXEL_ORDER_VBGR = 4;
-     * }
-     */
-    public static int CAIRO_SUBPIXEL_ORDER_VBGR() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_hint_style.CAIRO_HINT_STYLE_DEFAULT = 0;
-     * }
-     */
-    public static int CAIRO_HINT_STYLE_DEFAULT() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_hint_style.CAIRO_HINT_STYLE_NONE = 1;
-     * }
-     */
-    public static int CAIRO_HINT_STYLE_NONE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_hint_style.CAIRO_HINT_STYLE_SLIGHT = 2;
-     * }
-     */
-    public static int CAIRO_HINT_STYLE_SLIGHT() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_hint_style.CAIRO_HINT_STYLE_MEDIUM = 3;
-     * }
-     */
-    public static int CAIRO_HINT_STYLE_MEDIUM() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_hint_style.CAIRO_HINT_STYLE_FULL = 4;
-     * }
-     */
-    public static int CAIRO_HINT_STYLE_FULL() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_hint_metrics.CAIRO_HINT_METRICS_DEFAULT = 0;
-     * }
-     */
-    public static int CAIRO_HINT_METRICS_DEFAULT() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_hint_metrics.CAIRO_HINT_METRICS_OFF = 1;
-     * }
-     */
-    public static int CAIRO_HINT_METRICS_OFF() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_hint_metrics.CAIRO_HINT_METRICS_ON = 2;
-     * }
-     */
-    public static int CAIRO_HINT_METRICS_ON() {
-        return (int)2L;
-    }
-    public static MethodHandle cairo_font_options_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1008.cairo_font_options_create$MH,"cairo_font_options_create");
-    }
-    /**
-     * {@snippet :
-     * cairo_font_options_t* cairo_font_options_create();
-     * }
-     */
-    public static MemorySegment cairo_font_options_create() {
-        var mh$ = cairo_font_options_create$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_options_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1008.cairo_font_options_copy$MH,"cairo_font_options_copy");
-    }
-    /**
-     * {@snippet :
-     * cairo_font_options_t* cairo_font_options_copy(const cairo_font_options_t* original);
-     * }
-     */
-    public static MemorySegment cairo_font_options_copy(MemorySegment original) {
-        var mh$ = cairo_font_options_copy$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(original);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_options_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1009.cairo_font_options_destroy$MH,"cairo_font_options_destroy");
-    }
-    /**
-     * {@snippet :
-     * void cairo_font_options_destroy(cairo_font_options_t* options);
-     * }
-     */
-    public static void cairo_font_options_destroy(MemorySegment options) {
-        var mh$ = cairo_font_options_destroy$MH();
-        try {
-            mh$.invokeExact(options);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_options_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1009.cairo_font_options_status$MH,"cairo_font_options_status");
-    }
-    /**
-     * {@snippet :
-     * cairo_status_t cairo_font_options_status(cairo_font_options_t* options);
-     * }
-     */
-    public static int cairo_font_options_status(MemorySegment options) {
-        var mh$ = cairo_font_options_status$MH();
-        try {
-            return (int)mh$.invokeExact(options);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_options_merge$MH() {
-        return RuntimeHelper.requireNonNull(constants$1009.cairo_font_options_merge$MH,"cairo_font_options_merge");
-    }
-    /**
-     * {@snippet :
-     * void cairo_font_options_merge(cairo_font_options_t* options, const cairo_font_options_t* other);
-     * }
-     */
-    public static void cairo_font_options_merge(MemorySegment options, MemorySegment other) {
-        var mh$ = cairo_font_options_merge$MH();
-        try {
-            mh$.invokeExact(options, other);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_options_equal$MH() {
-        return RuntimeHelper.requireNonNull(constants$1009.cairo_font_options_equal$MH,"cairo_font_options_equal");
-    }
-    /**
-     * {@snippet :
-     * cairo_bool_t cairo_font_options_equal(const cairo_font_options_t* options, const cairo_font_options_t* other);
-     * }
-     */
-    public static int cairo_font_options_equal(MemorySegment options, MemorySegment other) {
-        var mh$ = cairo_font_options_equal$MH();
-        try {
-            return (int)mh$.invokeExact(options, other);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_options_hash$MH() {
-        return RuntimeHelper.requireNonNull(constants$1009.cairo_font_options_hash$MH,"cairo_font_options_hash");
-    }
-    /**
-     * {@snippet :
-     * unsigned long cairo_font_options_hash(const cairo_font_options_t* options);
-     * }
-     */
-    public static long cairo_font_options_hash(MemorySegment options) {
-        var mh$ = cairo_font_options_hash$MH();
-        try {
-            return (long)mh$.invokeExact(options);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_options_set_antialias$MH() {
-        return RuntimeHelper.requireNonNull(constants$1009.cairo_font_options_set_antialias$MH,"cairo_font_options_set_antialias");
-    }
-    /**
-     * {@snippet :
-     * void cairo_font_options_set_antialias(cairo_font_options_t* options, cairo_antialias_t antialias);
-     * }
-     */
-    public static void cairo_font_options_set_antialias(MemorySegment options, int antialias) {
-        var mh$ = cairo_font_options_set_antialias$MH();
-        try {
-            mh$.invokeExact(options, antialias);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_options_get_antialias$MH() {
-        return RuntimeHelper.requireNonNull(constants$1010.cairo_font_options_get_antialias$MH,"cairo_font_options_get_antialias");
-    }
-    /**
-     * {@snippet :
-     * cairo_antialias_t cairo_font_options_get_antialias(const cairo_font_options_t* options);
-     * }
-     */
-    public static int cairo_font_options_get_antialias(MemorySegment options) {
-        var mh$ = cairo_font_options_get_antialias$MH();
-        try {
-            return (int)mh$.invokeExact(options);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_options_set_subpixel_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$1010.cairo_font_options_set_subpixel_order$MH,"cairo_font_options_set_subpixel_order");
-    }
-    /**
-     * {@snippet :
-     * void cairo_font_options_set_subpixel_order(cairo_font_options_t* options, cairo_subpixel_order_t subpixel_order);
-     * }
-     */
-    public static void cairo_font_options_set_subpixel_order(MemorySegment options, int subpixel_order) {
-        var mh$ = cairo_font_options_set_subpixel_order$MH();
-        try {
-            mh$.invokeExact(options, subpixel_order);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_options_get_subpixel_order$MH() {
-        return RuntimeHelper.requireNonNull(constants$1010.cairo_font_options_get_subpixel_order$MH,"cairo_font_options_get_subpixel_order");
-    }
-    /**
-     * {@snippet :
-     * cairo_subpixel_order_t cairo_font_options_get_subpixel_order(const cairo_font_options_t* options);
-     * }
-     */
-    public static int cairo_font_options_get_subpixel_order(MemorySegment options) {
-        var mh$ = cairo_font_options_get_subpixel_order$MH();
-        try {
-            return (int)mh$.invokeExact(options);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_options_set_hint_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1010.cairo_font_options_set_hint_style$MH,"cairo_font_options_set_hint_style");
-    }
-    /**
-     * {@snippet :
-     * void cairo_font_options_set_hint_style(cairo_font_options_t* options, cairo_hint_style_t hint_style);
-     * }
-     */
-    public static void cairo_font_options_set_hint_style(MemorySegment options, int hint_style) {
-        var mh$ = cairo_font_options_set_hint_style$MH();
-        try {
-            mh$.invokeExact(options, hint_style);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_options_get_hint_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1010.cairo_font_options_get_hint_style$MH,"cairo_font_options_get_hint_style");
-    }
-    /**
-     * {@snippet :
-     * cairo_hint_style_t cairo_font_options_get_hint_style(const cairo_font_options_t* options);
-     * }
-     */
-    public static int cairo_font_options_get_hint_style(MemorySegment options) {
-        var mh$ = cairo_font_options_get_hint_style$MH();
-        try {
-            return (int)mh$.invokeExact(options);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_options_set_hint_metrics$MH() {
-        return RuntimeHelper.requireNonNull(constants$1010.cairo_font_options_set_hint_metrics$MH,"cairo_font_options_set_hint_metrics");
-    }
-    /**
-     * {@snippet :
-     * void cairo_font_options_set_hint_metrics(cairo_font_options_t* options, cairo_hint_metrics_t hint_metrics);
-     * }
-     */
-    public static void cairo_font_options_set_hint_metrics(MemorySegment options, int hint_metrics) {
-        var mh$ = cairo_font_options_set_hint_metrics$MH();
-        try {
-            mh$.invokeExact(options, hint_metrics);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_options_get_hint_metrics$MH() {
-        return RuntimeHelper.requireNonNull(constants$1011.cairo_font_options_get_hint_metrics$MH,"cairo_font_options_get_hint_metrics");
-    }
-    /**
-     * {@snippet :
-     * cairo_hint_metrics_t cairo_font_options_get_hint_metrics(const cairo_font_options_t* options);
-     * }
-     */
-    public static int cairo_font_options_get_hint_metrics(MemorySegment options) {
-        var mh$ = cairo_font_options_get_hint_metrics$MH();
-        try {
-            return (int)mh$.invokeExact(options);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_options_get_variations$MH() {
-        return RuntimeHelper.requireNonNull(constants$1011.cairo_font_options_get_variations$MH,"cairo_font_options_get_variations");
-    }
-    /**
-     * {@snippet :
-     * char* cairo_font_options_get_variations(cairo_font_options_t* options);
-     * }
-     */
-    public static MemorySegment cairo_font_options_get_variations(MemorySegment options) {
-        var mh$ = cairo_font_options_get_variations$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(options);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_options_set_variations$MH() {
-        return RuntimeHelper.requireNonNull(constants$1011.cairo_font_options_set_variations$MH,"cairo_font_options_set_variations");
-    }
-    /**
-     * {@snippet :
-     * void cairo_font_options_set_variations(cairo_font_options_t* options, char* variations);
-     * }
-     */
-    public static void cairo_font_options_set_variations(MemorySegment options, MemorySegment variations) {
-        var mh$ = cairo_font_options_set_variations$MH();
-        try {
-            mh$.invokeExact(options, variations);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_select_font_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1011.cairo_select_font_face$MH,"cairo_select_font_face");
-    }
-    /**
-     * {@snippet :
-     * void cairo_select_font_face(cairo_t* cr, char* family, cairo_font_slant_t slant, cairo_font_weight_t weight);
-     * }
-     */
-    public static void cairo_select_font_face(MemorySegment cr, MemorySegment family, int slant, int weight) {
-        var mh$ = cairo_select_font_face$MH();
-        try {
-            mh$.invokeExact(cr, family, slant, weight);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_set_font_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1011.cairo_set_font_size$MH,"cairo_set_font_size");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_font_size(cairo_t* cr, double size);
-     * }
-     */
-    public static void cairo_set_font_size(MemorySegment cr, double size) {
-        var mh$ = cairo_set_font_size$MH();
-        try {
-            mh$.invokeExact(cr, size);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_set_font_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1011.cairo_set_font_matrix$MH,"cairo_set_font_matrix");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_font_matrix(cairo_t* cr, const cairo_matrix_t* matrix);
-     * }
-     */
-    public static void cairo_set_font_matrix(MemorySegment cr, MemorySegment matrix) {
-        var mh$ = cairo_set_font_matrix$MH();
-        try {
-            mh$.invokeExact(cr, matrix);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_get_font_matrix$MH() {
-        return RuntimeHelper.requireNonNull(constants$1012.cairo_get_font_matrix$MH,"cairo_get_font_matrix");
-    }
-    /**
-     * {@snippet :
-     * void cairo_get_font_matrix(cairo_t* cr, cairo_matrix_t* matrix);
-     * }
-     */
-    public static void cairo_get_font_matrix(MemorySegment cr, MemorySegment matrix) {
-        var mh$ = cairo_get_font_matrix$MH();
-        try {
-            mh$.invokeExact(cr, matrix);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_set_font_options$MH() {
-        return RuntimeHelper.requireNonNull(constants$1012.cairo_set_font_options$MH,"cairo_set_font_options");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_font_options(cairo_t* cr, const cairo_font_options_t* options);
-     * }
-     */
-    public static void cairo_set_font_options(MemorySegment cr, MemorySegment options) {
-        var mh$ = cairo_set_font_options$MH();
-        try {
-            mh$.invokeExact(cr, options);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_get_font_options$MH() {
-        return RuntimeHelper.requireNonNull(constants$1012.cairo_get_font_options$MH,"cairo_get_font_options");
-    }
-    /**
-     * {@snippet :
-     * void cairo_get_font_options(cairo_t* cr, cairo_font_options_t* options);
-     * }
-     */
-    public static void cairo_get_font_options(MemorySegment cr, MemorySegment options) {
-        var mh$ = cairo_get_font_options$MH();
-        try {
-            mh$.invokeExact(cr, options);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_set_font_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1012.cairo_set_font_face$MH,"cairo_set_font_face");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_font_face(cairo_t* cr, cairo_font_face_t* font_face);
-     * }
-     */
-    public static void cairo_set_font_face(MemorySegment cr, MemorySegment font_face) {
-        var mh$ = cairo_set_font_face$MH();
-        try {
-            mh$.invokeExact(cr, font_face);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_get_font_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1012.cairo_get_font_face$MH,"cairo_get_font_face");
-    }
-    /**
-     * {@snippet :
-     * cairo_font_face_t* cairo_get_font_face(cairo_t* cr);
-     * }
-     */
-    public static MemorySegment cairo_get_font_face(MemorySegment cr) {
-        var mh$ = cairo_get_font_face$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_set_scaled_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$1012.cairo_set_scaled_font$MH,"cairo_set_scaled_font");
-    }
-    /**
-     * {@snippet :
-     * void cairo_set_scaled_font(cairo_t* cr, const cairo_scaled_font_t* scaled_font);
-     * }
-     */
-    public static void cairo_set_scaled_font(MemorySegment cr, MemorySegment scaled_font) {
-        var mh$ = cairo_set_scaled_font$MH();
-        try {
-            mh$.invokeExact(cr, scaled_font);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_get_scaled_font$MH() {
-        return RuntimeHelper.requireNonNull(constants$1013.cairo_get_scaled_font$MH,"cairo_get_scaled_font");
-    }
-    /**
-     * {@snippet :
-     * cairo_scaled_font_t* cairo_get_scaled_font(cairo_t* cr);
-     * }
-     */
-    public static MemorySegment cairo_get_scaled_font(MemorySegment cr) {
-        var mh$ = cairo_get_scaled_font$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(cr);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_show_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$1013.cairo_show_text$MH,"cairo_show_text");
-    }
-    /**
-     * {@snippet :
-     * void cairo_show_text(cairo_t* cr, char* utf8);
-     * }
-     */
-    public static void cairo_show_text(MemorySegment cr, MemorySegment utf8) {
-        var mh$ = cairo_show_text$MH();
-        try {
-            mh$.invokeExact(cr, utf8);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_show_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1013.cairo_show_glyphs$MH,"cairo_show_glyphs");
-    }
-    /**
-     * {@snippet :
-     * void cairo_show_glyphs(cairo_t* cr, const cairo_glyph_t* glyphs, int num_glyphs);
-     * }
-     */
-    public static void cairo_show_glyphs(MemorySegment cr, MemorySegment glyphs, int num_glyphs) {
-        var mh$ = cairo_show_glyphs$MH();
-        try {
-            mh$.invokeExact(cr, glyphs, num_glyphs);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_show_text_glyphs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1013.cairo_show_text_glyphs$MH,"cairo_show_text_glyphs");
-    }
-    /**
-     * {@snippet :
-     * void cairo_show_text_glyphs(cairo_t* cr, char* utf8, int utf8_len, const cairo_glyph_t* glyphs, int num_glyphs, const cairo_text_cluster_t* clusters, int num_clusters, cairo_text_cluster_flags_t cluster_flags);
-     * }
-     */
-    public static void cairo_show_text_glyphs(MemorySegment cr, MemorySegment utf8, int utf8_len, MemorySegment glyphs, int num_glyphs, MemorySegment clusters, int num_clusters, int cluster_flags) {
-        var mh$ = cairo_show_text_glyphs$MH();
-        try {
-            mh$.invokeExact(cr, utf8, utf8_len, glyphs, num_glyphs, clusters, num_clusters, cluster_flags);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_text_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1013.cairo_text_path$MH,"cairo_text_path");
-    }
-    /**
-     * {@snippet :
-     * void cairo_text_path(cairo_t* cr, char* utf8);
-     * }
-     */
-    public static void cairo_text_path(MemorySegment cr, MemorySegment utf8) {
-        var mh$ = cairo_text_path$MH();
-        try {
-            mh$.invokeExact(cr, utf8);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_glyph_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1013.cairo_glyph_path$MH,"cairo_glyph_path");
-    }
-    /**
-     * {@snippet :
-     * void cairo_glyph_path(cairo_t* cr, const cairo_glyph_t* glyphs, int num_glyphs);
-     * }
-     */
-    public static void cairo_glyph_path(MemorySegment cr, MemorySegment glyphs, int num_glyphs) {
-        var mh$ = cairo_glyph_path$MH();
-        try {
-            mh$.invokeExact(cr, glyphs, num_glyphs);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_text_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1014.cairo_text_extents$MH,"cairo_text_extents");
-    }
-    /**
-     * {@snippet :
-     * void cairo_text_extents(cairo_t* cr, char* utf8, cairo_text_extents_t* extents);
-     * }
-     */
-    public static void cairo_text_extents(MemorySegment cr, MemorySegment utf8, MemorySegment extents) {
-        var mh$ = cairo_text_extents$MH();
-        try {
-            mh$.invokeExact(cr, utf8, extents);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_glyph_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1014.cairo_glyph_extents$MH,"cairo_glyph_extents");
-    }
-    /**
-     * {@snippet :
-     * void cairo_glyph_extents(cairo_t* cr, const cairo_glyph_t* glyphs, int num_glyphs, cairo_text_extents_t* extents);
-     * }
-     */
-    public static void cairo_glyph_extents(MemorySegment cr, MemorySegment glyphs, int num_glyphs, MemorySegment extents) {
-        var mh$ = cairo_glyph_extents$MH();
-        try {
-            mh$.invokeExact(cr, glyphs, num_glyphs, extents);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1014.cairo_font_extents$MH,"cairo_font_extents");
-    }
-    /**
-     * {@snippet :
-     * void cairo_font_extents(cairo_t* cr, cairo_font_extents_t* extents);
-     * }
-     */
-    public static void cairo_font_extents(MemorySegment cr, MemorySegment extents) {
-        var mh$ = cairo_font_extents$MH();
-        try {
-            mh$.invokeExact(cr, extents);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_face_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1014.cairo_font_face_reference$MH,"cairo_font_face_reference");
-    }
-    /**
-     * {@snippet :
-     * cairo_font_face_t* cairo_font_face_reference(cairo_font_face_t* font_face);
-     * }
-     */
-    public static MemorySegment cairo_font_face_reference(MemorySegment font_face) {
-        var mh$ = cairo_font_face_reference$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font_face);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_face_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1014.cairo_font_face_destroy$MH,"cairo_font_face_destroy");
-    }
-    /**
-     * {@snippet :
-     * void cairo_font_face_destroy(cairo_font_face_t* font_face);
-     * }
-     */
-    public static void cairo_font_face_destroy(MemorySegment font_face) {
-        var mh$ = cairo_font_face_destroy$MH();
-        try {
-            mh$.invokeExact(font_face);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_face_get_reference_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1014.cairo_font_face_get_reference_count$MH,"cairo_font_face_get_reference_count");
-    }
-    /**
-     * {@snippet :
-     * unsigned int cairo_font_face_get_reference_count(cairo_font_face_t* font_face);
-     * }
-     */
-    public static int cairo_font_face_get_reference_count(MemorySegment font_face) {
-        var mh$ = cairo_font_face_get_reference_count$MH();
-        try {
-            return (int)mh$.invokeExact(font_face);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_face_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1015.cairo_font_face_status$MH,"cairo_font_face_status");
-    }
-    /**
-     * {@snippet :
-     * cairo_status_t cairo_font_face_status(cairo_font_face_t* font_face);
-     * }
-     */
-    public static int cairo_font_face_status(MemorySegment font_face) {
-        var mh$ = cairo_font_face_status$MH();
-        try {
-            return (int)mh$.invokeExact(font_face);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_font_type.CAIRO_FONT_TYPE_TOY = 0;
-     * }
-     */
-    public static int CAIRO_FONT_TYPE_TOY() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_font_type.CAIRO_FONT_TYPE_FT = 1;
-     * }
-     */
-    public static int CAIRO_FONT_TYPE_FT() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_font_type.CAIRO_FONT_TYPE_WIN32 = 2;
-     * }
-     */
-    public static int CAIRO_FONT_TYPE_WIN32() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_font_type.CAIRO_FONT_TYPE_QUARTZ = 3;
-     * }
-     */
-    public static int CAIRO_FONT_TYPE_QUARTZ() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * enum _cairo_font_type.CAIRO_FONT_TYPE_USER = 4;
-     * }
-     */
-    public static int CAIRO_FONT_TYPE_USER() {
-        return (int)4L;
-    }
-    public static MethodHandle cairo_font_face_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1015.cairo_font_face_get_type$MH,"cairo_font_face_get_type");
-    }
-    /**
-     * {@snippet :
-     * cairo_font_type_t cairo_font_face_get_type(cairo_font_face_t* font_face);
-     * }
-     */
-    public static int cairo_font_face_get_type(MemorySegment font_face) {
-        var mh$ = cairo_font_face_get_type$MH();
-        try {
-            return (int)mh$.invokeExact(font_face);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_face_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1015.cairo_font_face_get_user_data$MH,"cairo_font_face_get_user_data");
-    }
-    /**
-     * {@snippet :
-     * void* cairo_font_face_get_user_data(cairo_font_face_t* font_face, const cairo_user_data_key_t* key);
-     * }
-     */
-    public static MemorySegment cairo_font_face_get_user_data(MemorySegment font_face, MemorySegment key) {
-        var mh$ = cairo_font_face_get_user_data$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font_face, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_font_face_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1015.cairo_font_face_set_user_data$MH,"cairo_font_face_set_user_data");
-    }
-    /**
-     * {@snippet :
-     * cairo_status_t cairo_font_face_set_user_data(cairo_font_face_t* font_face, const cairo_user_data_key_t* key, void* user_data, cairo_destroy_func_t destroy);
-     * }
-     */
-    public static int cairo_font_face_set_user_data(MemorySegment font_face, MemorySegment key, MemorySegment user_data, MemorySegment destroy) {
-        var mh$ = cairo_font_face_set_user_data$MH();
-        try {
-            return (int)mh$.invokeExact(font_face, key, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_scaled_font_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$1015.cairo_scaled_font_create$MH,"cairo_scaled_font_create");
-    }
-    /**
-     * {@snippet :
-     * cairo_scaled_font_t* cairo_scaled_font_create(cairo_font_face_t* font_face, const cairo_matrix_t* font_matrix, const cairo_matrix_t* ctm, const cairo_font_options_t* options);
-     * }
-     */
-    public static MemorySegment cairo_scaled_font_create(MemorySegment font_face, MemorySegment font_matrix, MemorySegment ctm, MemorySegment options) {
-        var mh$ = cairo_scaled_font_create$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(font_face, font_matrix, ctm, options);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_scaled_font_reference$MH() {
-        return RuntimeHelper.requireNonNull(constants$1015.cairo_scaled_font_reference$MH,"cairo_scaled_font_reference");
-    }
-    /**
-     * {@snippet :
-     * cairo_scaled_font_t* cairo_scaled_font_reference(cairo_scaled_font_t* scaled_font);
-     * }
-     */
-    public static MemorySegment cairo_scaled_font_reference(MemorySegment scaled_font) {
-        var mh$ = cairo_scaled_font_reference$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(scaled_font);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_scaled_font_destroy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1016.cairo_scaled_font_destroy$MH,"cairo_scaled_font_destroy");
-    }
-    /**
-     * {@snippet :
-     * void cairo_scaled_font_destroy(cairo_scaled_font_t* scaled_font);
-     * }
-     */
-    public static void cairo_scaled_font_destroy(MemorySegment scaled_font) {
-        var mh$ = cairo_scaled_font_destroy$MH();
-        try {
-            mh$.invokeExact(scaled_font);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_scaled_font_get_reference_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1016.cairo_scaled_font_get_reference_count$MH,"cairo_scaled_font_get_reference_count");
-    }
-    /**
-     * {@snippet :
-     * unsigned int cairo_scaled_font_get_reference_count(cairo_scaled_font_t* scaled_font);
-     * }
-     */
-    public static int cairo_scaled_font_get_reference_count(MemorySegment scaled_font) {
-        var mh$ = cairo_scaled_font_get_reference_count$MH();
-        try {
-            return (int)mh$.invokeExact(scaled_font);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_scaled_font_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1016.cairo_scaled_font_status$MH,"cairo_scaled_font_status");
-    }
-    /**
-     * {@snippet :
-     * cairo_status_t cairo_scaled_font_status(cairo_scaled_font_t* scaled_font);
-     * }
-     */
-    public static int cairo_scaled_font_status(MemorySegment scaled_font) {
-        var mh$ = cairo_scaled_font_status$MH();
-        try {
-            return (int)mh$.invokeExact(scaled_font);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_scaled_font_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1016.cairo_scaled_font_get_type$MH,"cairo_scaled_font_get_type");
-    }
-    /**
-     * {@snippet :
-     * cairo_font_type_t cairo_scaled_font_get_type(cairo_scaled_font_t* scaled_font);
-     * }
-     */
-    public static int cairo_scaled_font_get_type(MemorySegment scaled_font) {
-        var mh$ = cairo_scaled_font_get_type$MH();
-        try {
-            return (int)mh$.invokeExact(scaled_font);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_scaled_font_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1016.cairo_scaled_font_get_user_data$MH,"cairo_scaled_font_get_user_data");
-    }
-    /**
-     * {@snippet :
-     * void* cairo_scaled_font_get_user_data(cairo_scaled_font_t* scaled_font, const cairo_user_data_key_t* key);
-     * }
-     */
-    public static MemorySegment cairo_scaled_font_get_user_data(MemorySegment scaled_font, MemorySegment key) {
-        var mh$ = cairo_scaled_font_get_user_data$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(scaled_font, key);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_scaled_font_set_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1016.cairo_scaled_font_set_user_data$MH,"cairo_scaled_font_set_user_data");
-    }
-    /**
-     * {@snippet :
-     * cairo_status_t cairo_scaled_font_set_user_data(cairo_scaled_font_t* scaled_font, const cairo_user_data_key_t* key, void* user_data, cairo_destroy_func_t destroy);
-     * }
-     */
-    public static int cairo_scaled_font_set_user_data(MemorySegment scaled_font, MemorySegment key, MemorySegment user_data, MemorySegment destroy) {
-        var mh$ = cairo_scaled_font_set_user_data$MH();
-        try {
-            return (int)mh$.invokeExact(scaled_font, key, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_scaled_font_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1017.cairo_scaled_font_extents$MH,"cairo_scaled_font_extents");
-    }
-    /**
-     * {@snippet :
-     * void cairo_scaled_font_extents(cairo_scaled_font_t* scaled_font, cairo_font_extents_t* extents);
-     * }
-     */
-    public static void cairo_scaled_font_extents(MemorySegment scaled_font, MemorySegment extents) {
-        var mh$ = cairo_scaled_font_extents$MH();
-        try {
-            mh$.invokeExact(scaled_font, extents);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle cairo_scaled_font_text_extents$MH() {
-        return RuntimeHelper.requireNonNull(constants$1017.cairo_scaled_font_text_extents$MH,"cairo_scaled_font_text_extents");
-    }
-    /**
-     * {@snippet :
-     * void cairo_scaled_font_text_extents(cairo_scaled_font_t* scaled_font, char* utf8, cairo_text_extents_t* extents);
-     * }
-     */
-    public static void cairo_scaled_font_text_extents(MemorySegment scaled_font, MemorySegment utf8, MemorySegment extents) {
-        var mh$ = cairo_scaled_font_text_extents$MH();
-        try {
-            mh$.invokeExact(scaled_font, utf8, extents);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
     }
 }
 

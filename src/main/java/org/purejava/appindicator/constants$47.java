@@ -3,61 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$47 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$47() {}
-    static final FunctionDescriptor initstate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_byte_array_set_size",
+        constants$21.const$3
     );
-    static final MethodHandle initstate$MH = RuntimeHelper.downcallHandle(
-        "initstate",
-        constants$47.initstate$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_byte_array_remove_index",
+        constants$21.const$3
     );
-    static final FunctionDescriptor setstate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_byte_array_remove_index_fast",
+        constants$21.const$3
     );
-    static final MethodHandle setstate$MH = RuntimeHelper.downcallHandle(
-        "setstate",
-        constants$47.setstate$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_byte_array_remove_range",
+        constants$33.const$5
     );
-    static final FunctionDescriptor random_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle random_r$MH = RuntimeHelper.downcallHandle(
-        "random_r",
-        constants$47.random_r$FUNC
-    );
-    static final FunctionDescriptor srandom_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle srandom_r$MH = RuntimeHelper.downcallHandle(
-        "srandom_r",
-        constants$47.srandom_r$FUNC
-    );
-    static final FunctionDescriptor initstate_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle initstate_r$MH = RuntimeHelper.downcallHandle(
-        "initstate_r",
-        constants$47.initstate_r$FUNC
-    );
-    static final FunctionDescriptor setstate_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle setstate_r$MH = RuntimeHelper.downcallHandle(
-        "setstate_r",
-        constants$47.setstate_r$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_byte_array_sort$compare_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_byte_array_sort",
+        constants$13.const$4
     );
 }
 

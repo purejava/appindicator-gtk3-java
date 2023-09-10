@@ -2,24 +2,27 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
- * void (*GtkBuilderConnectFunc)(struct _GtkBuilder* builder,struct _GObject* object,char* signal_name,char* handler_name,struct _GObject* connect_object,enum  flags,void* user_data);
+ * void (*GtkBuilderConnectFunc)(struct _GtkBuilder* builder,struct _GObject* object,char* signal_name,char* handler_name,struct _GObject* connect_object,enum GConnectFlags flags,void* user_data);
  * }
  */
 public interface GtkBuilderConnectFunc {
 
     void apply(java.lang.foreign.MemorySegment builder, java.lang.foreign.MemorySegment object, java.lang.foreign.MemorySegment signal_name, java.lang.foreign.MemorySegment handler_name, java.lang.foreign.MemorySegment connect_object, int flags, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GtkBuilderConnectFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$1195.GtkBuilderConnectFunc_UP$MH, fi, constants$1195.GtkBuilderConnectFunc$FUNC, scope);
+    static MemorySegment allocate(GtkBuilderConnectFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$1960.const$3, fi, constants$1960.const$2, scope);
     }
-    static GtkBuilderConnectFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GtkBuilderConnectFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _builder, java.lang.foreign.MemorySegment _object, java.lang.foreign.MemorySegment _signal_name, java.lang.foreign.MemorySegment _handler_name, java.lang.foreign.MemorySegment _connect_object, int _flags, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$1195.GtkBuilderConnectFunc_DOWN$MH.invokeExact(symbol, _builder, _object, _signal_name, _handler_name, _connect_object, _flags, _user_data);
+                constants$1960.const$4.invokeExact(symbol, _builder, _object, _signal_name, _handler_name, _connect_object, _flags, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

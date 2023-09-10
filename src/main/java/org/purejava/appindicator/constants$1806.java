@@ -3,50 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1806 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1806() {}
-    static final FunctionDescriptor gtk_separator_tool_item_get_draw$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_event_get_coords",
+        constants$12.const$2
     );
-    static final MethodHandle gtk_separator_tool_item_get_draw$MH = RuntimeHelper.downcallHandle(
-        "gtk_separator_tool_item_get_draw",
-        constants$1806.gtk_separator_tool_item_get_draw$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_event_get_root_coords",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gtk_separator_tool_item_set_draw$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_event_get_button",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_separator_tool_item_set_draw$MH = RuntimeHelper.downcallHandle(
-        "gtk_separator_tool_item_set_draw",
-        constants$1806.gtk_separator_tool_item_set_draw$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_event_get_click_count",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gtk_settings_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_settings_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_settings_get_type",
-        constants$1806.gtk_settings_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_event_get_keyval",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gtk_settings_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_settings_get_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_settings_get_default",
-        constants$1806.gtk_settings_get_default$FUNC
-    );
-    static final FunctionDescriptor gtk_settings_get_for_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_settings_get_for_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_settings_get_for_screen",
-        constants$1806.gtk_settings_get_for_screen$FUNC
-    );
-    static final FunctionDescriptor gtk_settings_install_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_settings_install_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_settings_install_property",
-        constants$1806.gtk_settings_install_property$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_event_get_keycode",
+        constants$9.const$0
     );
 }
 

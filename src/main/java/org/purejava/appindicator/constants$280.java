@@ -3,57 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$280 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$280() {}
-    static final FunctionDescriptor g_queue_peek_tail_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_idle_add$function.class, "apply", constants$10.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_idle_add",
+        constants$9.const$0
     );
-    static final MethodHandle g_queue_peek_tail_link$MH = RuntimeHelper.downcallHandle(
-        "g_queue_peek_tail_link",
-        constants$280.g_queue_peek_tail_link$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_idle_add_full$function.class, "apply", constants$10.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_idle_add_full$notify.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_queue_peek_nth_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_queue_peek_nth_link$MH = RuntimeHelper.downcallHandle(
-        "g_queue_peek_nth_link",
-        constants$280.g_queue_peek_nth_link$FUNC
-    );
-    static final FunctionDescriptor g_queue_link_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_link_index$MH = RuntimeHelper.downcallHandle(
-        "g_queue_link_index",
-        constants$280.g_queue_link_index$FUNC
-    );
-    static final FunctionDescriptor g_queue_unlink$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_unlink$MH = RuntimeHelper.downcallHandle(
-        "g_queue_unlink",
-        constants$280.g_queue_unlink$FUNC
-    );
-    static final FunctionDescriptor g_queue_delete_link$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_delete_link$MH = RuntimeHelper.downcallHandle(
-        "g_queue_delete_link",
-        constants$280.g_queue_delete_link$FUNC
-    );
-    static final FunctionDescriptor g_rand_new_with_seed$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_rand_new_with_seed$MH = RuntimeHelper.downcallHandle(
-        "g_rand_new_with_seed",
-        constants$280.g_rand_new_with_seed$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_idle_add_full",
+        constants$280.const$4
     );
 }
 

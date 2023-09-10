@@ -3,52 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1607 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1607() {}
-    static final FunctionDescriptor gtk_gesture_rotate_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_gesture_rotate_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_rotate_get_type",
-        constants$1607.gtk_gesture_rotate_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_rotate_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_rotate_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_rotate_new",
-        constants$1607.gtk_gesture_rotate_new$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_rotate_get_angle_delta$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_rotate_get_angle_delta$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_rotate_get_angle_delta",
-        constants$1607.gtk_gesture_rotate_get_angle_delta$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_stylus_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_gesture_stylus_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_stylus_get_type",
-        constants$1607.gtk_gesture_stylus_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_stylus_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_stylus_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_stylus_new",
-        constants$1607.gtk_gesture_stylus_new$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_stylus_get_axis$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_stylus_get_axis$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_stylus_get_axis",
-        constants$1607.gtk_gesture_stylus_get_axis$FUNC
-    );
+    static final VarHandle const$0 = constants$1606.const$5.varHandle(MemoryLayout.PathElement.groupElement("script"));
+    static final VarHandle const$1 = constants$1606.const$5.varHandle(MemoryLayout.PathElement.groupElement("langs"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("id"),
+        RuntimeHelper.POINTER.withName("engine_type"),
+        RuntimeHelper.POINTER.withName("render_type"),
+        RuntimeHelper.POINTER.withName("scripts"),
+        JAVA_INT.withName("n_scripts"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_PangoEngineInfo");
+    static final VarHandle const$3 = constants$1607.const$2.varHandle(MemoryLayout.PathElement.groupElement("id"));
+    static final VarHandle const$4 = constants$1607.const$2.varHandle(MemoryLayout.PathElement.groupElement("engine_type"));
+    static final VarHandle const$5 = constants$1607.const$2.varHandle(MemoryLayout.PathElement.groupElement("render_type"));
 }
 
 

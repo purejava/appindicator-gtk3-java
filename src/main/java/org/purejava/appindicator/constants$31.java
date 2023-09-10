@@ -3,62 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$31 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$31() {}
-    static final FunctionDescriptor g_atomic_int_compare_and_exchange$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_array_new_take_zero_terminated",
+        constants$18.const$0
     );
-    static final MethodHandle g_atomic_int_compare_and_exchange$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_int_compare_and_exchange",
-        constants$31.g_atomic_int_compare_and_exchange$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_array_steal",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_atomic_int_compare_and_exchange_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final MethodHandle g_atomic_int_compare_and_exchange_full$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_int_compare_and_exchange_full",
-        constants$31.g_atomic_int_compare_and_exchange_full$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_array_sized_new",
+        constants$31.const$2
     );
-    static final FunctionDescriptor g_atomic_int_exchange$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_array_copy",
+        constants$5.const$2
     );
-    static final MethodHandle g_atomic_int_exchange$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_int_exchange",
-        constants$31.g_atomic_int_exchange$FUNC
-    );
-    static final FunctionDescriptor g_atomic_int_add$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_atomic_int_add$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_int_add",
-        constants$31.g_atomic_int_add$FUNC
-    );
-    static final FunctionDescriptor g_atomic_int_and$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_atomic_int_and$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_int_and",
-        constants$31.g_atomic_int_and$FUNC
-    );
-    static final FunctionDescriptor g_atomic_int_or$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_atomic_int_or$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_int_or",
-        constants$31.g_atomic_int_or$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_array_free",
+        constants$21.const$3
     );
 }
 

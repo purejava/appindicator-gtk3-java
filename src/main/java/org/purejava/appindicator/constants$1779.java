@@ -3,57 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1779 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1779() {}
-    static final FunctionDescriptor gtk_recent_filter_filter$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_filter_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_filter",
-        constants$1779.gtk_recent_filter_filter$FUNC
-    );
-    static final FunctionDescriptor GtkRecentSortFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkRecentSortFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkRecentSortFunc_UP$MH = RuntimeHelper.upcallHandle(GtkRecentSortFunc.class, "apply", constants$1779.GtkRecentSortFunc_UP$FUNC);
-    static final FunctionDescriptor GtkRecentSortFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkRecentSortFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1779.GtkRecentSortFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_recent_chooser_error_quark$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_error_quark",
-        constants$1779.gtk_recent_chooser_error_quark$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_recent_chooser_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_get_type",
-        constants$1779.gtk_recent_chooser_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_set_show_private$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_recent_chooser_set_show_private$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_set_show_private",
-        constants$1779.gtk_recent_chooser_set_show_private$FUNC
-    );
+    static final VarHandle const$0 = constants$1778.const$4.varHandle(MemoryLayout.PathElement.groupElement("window"));
+    static final VarHandle const$1 = constants$1778.const$4.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
+    static final VarHandle const$2 = constants$1778.const$4.varHandle(MemoryLayout.PathElement.groupElement("time"));
+    static final VarHandle const$3 = constants$1778.const$4.varHandle(MemoryLayout.PathElement.groupElement("state"));
+    static final VarHandle const$4 = constants$1778.const$4.varHandle(MemoryLayout.PathElement.groupElement("keyval"));
+    static final VarHandle const$5 = constants$1778.const$4.varHandle(MemoryLayout.PathElement.groupElement("length"));
 }
 
 

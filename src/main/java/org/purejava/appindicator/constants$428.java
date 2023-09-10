@@ -3,56 +3,49 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$428 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$428() {}
-    static final FunctionDescriptor GBoxedFreeFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_scanner_get_next_token",
+        constants$10.const$5
     );
-    static final FunctionDescriptor GBoxedFreeFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_scanner_peek_next_token",
+        constants$10.const$5
     );
-    static final MethodHandle GBoxedFreeFunc_UP$MH = RuntimeHelper.upcallHandle(GBoxedFreeFunc.class, "apply", constants$428.GBoxedFreeFunc_UP$FUNC);
-    static final FunctionDescriptor GBoxedFreeFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_scanner_cur_token",
+        constants$10.const$5
     );
-    static final MethodHandle GBoxedFreeFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$428.GBoxedFreeFunc_DOWN$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(MemoryLayout.unionLayout(
+        RuntimeHelper.POINTER.withName("v_symbol"),
+        RuntimeHelper.POINTER.withName("v_identifier"),
+        JAVA_LONG.withName("v_binary"),
+        JAVA_LONG.withName("v_octal"),
+        JAVA_LONG.withName("v_int"),
+        JAVA_LONG.withName("v_int64"),
+        JAVA_DOUBLE.withName("v_float"),
+        JAVA_LONG.withName("v_hex"),
+        RuntimeHelper.POINTER.withName("v_string"),
+        RuntimeHelper.POINTER.withName("v_comment"),
+        JAVA_BYTE.withName("v_char"),
+        JAVA_INT.withName("v_error")
+    ).withName("_GTokenValue"),
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_boxed_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_scanner_cur_value",
+        constants$428.const$3
     );
-    static final MethodHandle g_boxed_copy$MH = RuntimeHelper.downcallHandle(
-        "g_boxed_copy",
-        constants$428.g_boxed_copy$FUNC
-    );
-    static final FunctionDescriptor g_boxed_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_boxed_free$MH = RuntimeHelper.downcallHandle(
-        "g_boxed_free",
-        constants$428.g_boxed_free$FUNC
-    );
-    static final FunctionDescriptor g_value_set_boxed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_set_boxed$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_boxed",
-        constants$428.g_value_set_boxed$FUNC
-    );
-    static final FunctionDescriptor g_value_set_static_boxed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_set_static_boxed$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_static_boxed",
-        constants$428.g_value_set_static_boxed$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_scanner_cur_line",
+        constants$10.const$5
     );
 }
 

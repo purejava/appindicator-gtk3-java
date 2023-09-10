@@ -3,52 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$912 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$912() {}
-    static final FunctionDescriptor pango_font_metrics_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_font_metrics_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_type",
-        constants$912.pango_font_metrics_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_font_metrics_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_metrics_ref$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_ref",
-        constants$912.pango_font_metrics_ref$FUNC
-    );
-    static final FunctionDescriptor pango_font_metrics_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_metrics_unref$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_unref",
-        constants$912.pango_font_metrics_unref$FUNC
-    );
-    static final FunctionDescriptor pango_font_metrics_get_ascent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_metrics_get_ascent$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_ascent",
-        constants$912.pango_font_metrics_get_ascent$FUNC
-    );
-    static final FunctionDescriptor pango_font_metrics_get_descent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_metrics_get_descent$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_descent",
-        constants$912.pango_font_metrics_get_descent$FUNC
-    );
-    static final FunctionDescriptor pango_font_metrics_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_metrics_get_height$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_height",
-        constants$912.pango_font_metrics_get_height$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDBusObjectManagerIface.get_object_path.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$911.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_object_path"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDBusObjectManagerIface.get_objects.class, "apply", constants$5.const$2);
+    static final VarHandle const$3 = constants$911.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_objects"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDBusObjectManagerIface.get_object.class, "apply", constants$5.const$5);
+    static final VarHandle const$5 = constants$911.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_object"));
 }
 
 

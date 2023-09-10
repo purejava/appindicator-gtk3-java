@@ -3,57 +3,24 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$837 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$837() {}
-    static final FunctionDescriptor hb_unicode_funcs_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDatagramBasedInterface.create_source.class, "apply", constants$196.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$196.const$3
     );
-    static final MethodHandle hb_unicode_funcs_create$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_create",
-        constants$837.hb_unicode_funcs_create$FUNC
+    static final VarHandle const$2 = constants$835.const$5.varHandle(MemoryLayout.PathElement.groupElement("create_source"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDatagramBasedInterface.condition_check.class, "apply", constants$11.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$11.const$4
     );
-    static final FunctionDescriptor hb_unicode_funcs_get_empty$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_unicode_funcs_get_empty$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_get_empty",
-        constants$837.hb_unicode_funcs_get_empty$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_funcs_reference$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_reference",
-        constants$837.hb_unicode_funcs_reference$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_funcs_destroy$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_destroy",
-        constants$837.hb_unicode_funcs_destroy$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_unicode_funcs_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_set_user_data",
-        constants$837.hb_unicode_funcs_set_user_data$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_funcs_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_get_user_data",
-        constants$837.hb_unicode_funcs_get_user_data$FUNC
-    );
+    static final VarHandle const$5 = constants$835.const$5.varHandle(MemoryLayout.PathElement.groupElement("condition_check"));
 }
 
 

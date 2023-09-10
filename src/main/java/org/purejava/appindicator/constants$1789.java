@@ -3,72 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1789 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1789() {}
-    static final FunctionDescriptor gtk_render_handle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_handle$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_handle",
-        constants$1789.gtk_render_handle$FUNC
-    );
-    static final FunctionDescriptor gtk_render_activity$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_activity$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_activity",
-        constants$1789.gtk_render_activity$FUNC
-    );
-    static final FunctionDescriptor gtk_render_icon_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_render_icon_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_icon_pixbuf",
-        constants$1789.gtk_render_icon_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gtk_render_icon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_icon",
-        constants$1789.gtk_render_icon$FUNC
-    );
-    static final FunctionDescriptor gtk_render_icon_surface$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_render_icon_surface$MH = RuntimeHelper.downcallHandle(
-        "gtk_render_icon_surface",
-        constants$1789.gtk_render_icon_surface$FUNC
-    );
-    static final FunctionDescriptor gtk_revealer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_revealer_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_revealer_get_type",
-        constants$1789.gtk_revealer_get_type$FUNC
-    );
+    static final VarHandle const$0 = constants$1787.const$4.varHandle(MemoryLayout.PathElement.groupElement("selection_time"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        MemoryLayout.paddingLayout(3),
+        JAVA_INT.withName("time"),
+        RuntimeHelper.POINTER.withName("device")
+    ).withName("_GdkEventProximity");
+    static final VarHandle const$2 = constants$1789.const$1.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$3 = constants$1789.const$1.varHandle(MemoryLayout.PathElement.groupElement("window"));
+    static final VarHandle const$4 = constants$1789.const$1.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
+    static final VarHandle const$5 = constants$1789.const$1.varHandle(MemoryLayout.PathElement.groupElement("time"));
 }
 
 

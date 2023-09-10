@@ -3,67 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$757 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$757() {}
-    static final FunctionDescriptor g_simple_async_result_run_in_thread$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_async_initable_new_finish",
+        constants$23.const$0
     );
-    static final MethodHandle g_simple_async_result_run_in_thread$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_run_in_thread",
-        constants$757.g_simple_async_result_run_in_thread$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_set_from_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_set_from_error$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_set_from_error",
-        constants$757.g_simple_async_result_set_from_error$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_take_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_take_error$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_take_error",
-        constants$757.g_simple_async_result_take_error$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_propagate_error$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_propagate_error$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_propagate_error",
-        constants$757.g_simple_async_result_propagate_error$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_set_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_set_error$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_simple_async_result_set_error",
-        constants$757.g_simple_async_result_set_error$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_result_set_error_va$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_result_set_error_va$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_set_error_va",
-        constants$757.g_simple_async_result_set_error_va$FUNC
-    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("get_user_data"),
+        RuntimeHelper.POINTER.withName("get_source_object"),
+        RuntimeHelper.POINTER.withName("is_tagged")
+    ).withName("_GAsyncResultIface");
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GAsyncResultIface.get_user_data.class, "apply", constants$5.const$2);
+    static final VarHandle const$3 = constants$757.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_user_data"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GAsyncResultIface.get_source_object.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$757.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_source_object"));
 }
 
 

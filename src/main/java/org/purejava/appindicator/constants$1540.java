@@ -3,52 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1540 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1540() {}
-    static final FunctionDescriptor GtkClipboardClearFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_font_description_set_stretch",
+        constants$40.const$2
     );
-    static final MethodHandle GtkClipboardClearFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1540.GtkClipboardClearFunc_DOWN$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_font_description_get_stretch",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_clipboard_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_clipboard_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_get_type",
-        constants$1540.gtk_clipboard_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_font_description_set_size",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_clipboard_get_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_font_description_get_size",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_clipboard_get_for_display$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_get_for_display",
-        constants$1540.gtk_clipboard_get_for_display$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_font_description_set_absolute_size",
+        constants$689.const$5
     );
-    static final FunctionDescriptor gtk_clipboard_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_get$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_get",
-        constants$1540.gtk_clipboard_get$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_get_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_get_default",
-        constants$1540.gtk_clipboard_get_default$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_get_display$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_get_display",
-        constants$1540.gtk_clipboard_get_display$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_font_description_get_size_is_absolute",
+        constants$10.const$5
     );
 }
 

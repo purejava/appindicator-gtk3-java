@@ -3,56 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1914 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1914() {}
-    static final FunctionDescriptor gtk_action_set_visible_horizontal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_cursor_new_from_pixbuf",
+        constants$415.const$5
     );
-    static final MethodHandle gtk_action_set_visible_horizontal$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_set_visible_horizontal",
-        constants$1914.gtk_action_set_visible_horizontal$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor gtk_action_get_visible_horizontal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_cursor_new_from_surface",
+        constants$1914.const$1
     );
-    static final MethodHandle gtk_action_get_visible_horizontal$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_get_visible_horizontal",
-        constants$1914.gtk_action_get_visible_horizontal$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_cursor_new_from_name",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_action_set_visible_vertical$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_cursor_get_display",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_action_set_visible_vertical$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_set_visible_vertical",
-        constants$1914.gtk_action_set_visible_vertical$FUNC
-    );
-    static final FunctionDescriptor gtk_action_get_visible_vertical$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_get_visible_vertical$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_get_visible_vertical",
-        constants$1914.gtk_action_get_visible_vertical$FUNC
-    );
-    static final FunctionDescriptor gtk_action_set_is_important$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_action_set_is_important$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_set_is_important",
-        constants$1914.gtk_action_set_is_important$FUNC
-    );
-    static final FunctionDescriptor gtk_action_get_is_important$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_get_is_important$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_get_is_important",
-        constants$1914.gtk_action_get_is_important$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_cursor_ref",
+        constants$5.const$2
     );
 }
 

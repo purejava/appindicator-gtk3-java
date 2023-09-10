@@ -3,63 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1655 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1655() {}
-    static final FunctionDescriptor gtk_icon_view_get_margin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_margin",
-        constants$1655.gtk_icon_view_get_margin$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_set_item_padding$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_set_item_padding$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_item_padding",
-        constants$1655.gtk_icon_view_set_item_padding$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_get_item_padding$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_item_padding$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_item_padding",
-        constants$1655.gtk_icon_view_get_item_padding$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_get_path_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_path_at_pos$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_path_at_pos",
-        constants$1655.gtk_icon_view_get_path_at_pos$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_get_item_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_item_at_pos$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_item_at_pos",
-        constants$1655.gtk_icon_view_get_item_at_pos$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_get_visible_range$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_visible_range$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_visible_range",
-        constants$1655.gtk_icon_view_get_visible_range$FUNC
-    );
+    static final VarHandle const$0 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_IO_save_base"));
+    static final VarHandle const$1 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_IO_backup_base"));
+    static final VarHandle const$2 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_IO_save_end"));
+    static final VarHandle const$3 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_markers"));
+    static final VarHandle const$4 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_chain"));
+    static final VarHandle const$5 = constants$1653.const$2.varHandle(MemoryLayout.PathElement.groupElement("_fileno"));
 }
 
 

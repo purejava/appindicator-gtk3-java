@@ -3,70 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$854 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$854() {}
-    static final FunctionDescriptor hb_draw_close_path_func_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_bus_get_finish",
+        constants$5.const$5
     );
-    static final MethodHandle hb_draw_close_path_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$854.hb_draw_close_path_func_t_DOWN$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_bus_get_sync",
+        constants$237.const$5
     );
-    static final FunctionDescriptor hb_draw_funcs_set_move_to_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_dbus_connection_new$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle hb_draw_funcs_set_move_to_func$MH = RuntimeHelper.downcallHandle(
-        "hb_draw_funcs_set_move_to_func",
-        constants$854.hb_draw_funcs_set_move_to_func$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_new",
+        constants$854.const$3
     );
-    static final FunctionDescriptor hb_draw_funcs_set_line_to_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_draw_funcs_set_line_to_func$MH = RuntimeHelper.downcallHandle(
-        "hb_draw_funcs_set_line_to_func",
-        constants$854.hb_draw_funcs_set_line_to_func$FUNC
-    );
-    static final FunctionDescriptor hb_draw_funcs_set_quadratic_to_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_draw_funcs_set_quadratic_to_func$MH = RuntimeHelper.downcallHandle(
-        "hb_draw_funcs_set_quadratic_to_func",
-        constants$854.hb_draw_funcs_set_quadratic_to_func$FUNC
-    );
-    static final FunctionDescriptor hb_draw_funcs_set_cubic_to_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_draw_funcs_set_cubic_to_func$MH = RuntimeHelper.downcallHandle(
-        "hb_draw_funcs_set_cubic_to_func",
-        constants$854.hb_draw_funcs_set_cubic_to_func$FUNC
-    );
-    static final FunctionDescriptor hb_draw_funcs_set_close_path_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_draw_funcs_set_close_path_func$MH = RuntimeHelper.downcallHandle(
-        "hb_draw_funcs_set_close_path_func",
-        constants$854.hb_draw_funcs_set_close_path_func$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_new_finish",
+        constants$5.const$5
     );
 }
 

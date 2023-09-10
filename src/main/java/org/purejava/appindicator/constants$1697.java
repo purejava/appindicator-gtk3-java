@@ -3,58 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1697 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1697() {}
-    static final FunctionDescriptor gtk_tool_item_get_homogeneous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_get_homogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_get_homogeneous",
-        constants$1697.gtk_tool_item_get_homogeneous$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_set_expand$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_set_expand$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_set_expand",
-        constants$1697.gtk_tool_item_set_expand$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_get_expand$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_get_expand$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_get_expand",
-        constants$1697.gtk_tool_item_get_expand$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_set_tooltip_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_set_tooltip_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_set_tooltip_text",
-        constants$1697.gtk_tool_item_set_tooltip_text$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_set_tooltip_markup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_set_tooltip_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_set_tooltip_markup",
-        constants$1697.gtk_tool_item_set_tooltip_markup$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_set_use_drag_window$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_set_use_drag_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_set_use_drag_window",
-        constants$1697.gtk_tool_item_set_use_drag_window$FUNC
-    );
+    static final VarHandle const$0 = constants$1696.const$2.varHandle(MemoryLayout.PathElement.groupElement("height"));
+    static final VarHandle const$1 = constants$1696.const$2.varHandle(MemoryLayout.PathElement.groupElement("x_advance"));
+    static final VarHandle const$2 = constants$1696.const$2.varHandle(MemoryLayout.PathElement.groupElement("y_advance"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_DOUBLE.withName("ascent"),
+        JAVA_DOUBLE.withName("descent"),
+        JAVA_DOUBLE.withName("height"),
+        JAVA_DOUBLE.withName("max_x_advance"),
+        JAVA_DOUBLE.withName("max_y_advance")
+    ).withName("cairo_font_extents_t");
+    static final VarHandle const$4 = constants$1697.const$3.varHandle(MemoryLayout.PathElement.groupElement("ascent"));
+    static final VarHandle const$5 = constants$1697.const$3.varHandle(MemoryLayout.PathElement.groupElement("descent"));
 }
 
 

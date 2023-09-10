@@ -3,56 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1277 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1277() {}
-    static final FunctionDescriptor gtk_widget_reset_style$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_reset_style$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_reset_style",
-        constants$1277.gtk_widget_reset_style$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_create_pango_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_create_pango_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_create_pango_context",
-        constants$1277.gtk_widget_create_pango_context$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_pango_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_pango_context$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_pango_context",
-        constants$1277.gtk_widget_get_pango_context$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_font_options$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_font_options$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_font_options",
-        constants$1277.gtk_widget_set_font_options$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_font_options$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_font_options$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_font_options",
-        constants$1277.gtk_widget_get_font_options$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_create_pango_layout$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_create_pango_layout$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_create_pango_layout",
-        constants$1277.gtk_widget_create_pango_layout$FUNC
-    );
+    static final VarHandle const$0 = constants$1276.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSocketClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1276.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GSocketClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1276.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GSocketClass._g_reserved6.class, "apply", constants$7.const$5);
 }
 
 

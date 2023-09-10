@@ -3,63 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$421 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$421() {}
-    static final FunctionDescriptor g_signal_override_class_handler$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_override_class_handler$MH = RuntimeHelper.downcallHandle(
-        "g_signal_override_class_handler",
-        constants$421.g_signal_override_class_handler$FUNC
-    );
-    static final FunctionDescriptor g_signal_chain_from_overridden$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_chain_from_overridden$MH = RuntimeHelper.downcallHandle(
-        "g_signal_chain_from_overridden",
-        constants$421.g_signal_chain_from_overridden$FUNC
-    );
-    static final FunctionDescriptor g_signal_chain_from_overridden_handler$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_chain_from_overridden_handler$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_signal_chain_from_overridden_handler",
-        constants$421.g_signal_chain_from_overridden_handler$FUNC
-    );
-    static final FunctionDescriptor g_signal_accumulator_true_handled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_accumulator_true_handled$MH = RuntimeHelper.downcallHandle(
-        "g_signal_accumulator_true_handled",
-        constants$421.g_signal_accumulator_true_handled$FUNC
-    );
-    static final FunctionDescriptor g_signal_accumulator_first_wins$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_accumulator_first_wins$MH = RuntimeHelper.downcallHandle(
-        "g_signal_accumulator_first_wins",
-        constants$421.g_signal_accumulator_first_wins$FUNC
-    );
-    static final FunctionDescriptor g_signal_handlers_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_handlers_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_signal_handlers_destroy",
-        constants$421.g_signal_handlers_destroy$FUNC
-    );
+    static final VarHandle const$0 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_binary"));
+    static final VarHandle const$1 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_octal"));
+    static final VarHandle const$2 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_int"));
+    static final VarHandle const$3 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_int64"));
+    static final VarHandle const$4 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_float"));
+    static final VarHandle const$5 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_hex"));
 }
 
 

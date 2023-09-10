@@ -2,30 +2,27 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
- * struct {
+ * struct GWeakRef {
  *     union  priv;
  * };
  * }
  */
 public class GWeakRef {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.unionLayout(
-            Constants$root.C_POINTER$LAYOUT.withName("p")
-        ).withName("priv")
-    );
     public static MemoryLayout $LAYOUT() {
-        return GWeakRef.$struct$LAYOUT;
+        return constants$641.const$4;
     }
     /**
      * {@snippet :
      * union {
-     *     gpointer p;
+     *     void* p;
      * };
      * }
      */
@@ -33,46 +30,42 @@ public class GWeakRef {
 
         // Suppresses default constructor, ensuring non-instantiability.
         private priv() {}
-        static final UnionLayout priv$union$LAYOUT = MemoryLayout.unionLayout(
-            Constants$root.C_POINTER$LAYOUT.withName("p")
-        );
         public static MemoryLayout $LAYOUT() {
-            return priv.priv$union$LAYOUT;
+            return constants$641.const$5;
         }
-        static final VarHandle p$VH = priv$union$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("p"));
         public static VarHandle p$VH() {
-            return priv.p$VH;
+            return constants$642.const$0;
         }
         /**
          * Getter for field:
          * {@snippet :
-         * gpointer p;
+         * void* p;
          * }
          */
         public static MemorySegment p$get(MemorySegment seg) {
-            return (java.lang.foreign.MemorySegment)priv.p$VH.get(seg);
+            return (java.lang.foreign.MemorySegment)constants$642.const$0.get(seg);
         }
         /**
          * Setter for field:
          * {@snippet :
-         * gpointer p;
+         * void* p;
          * }
          */
         public static void p$set(MemorySegment seg, MemorySegment x) {
-            priv.p$VH.set(seg, x);
+            constants$642.const$0.set(seg, x);
         }
         public static MemorySegment p$get(MemorySegment seg, long index) {
-            return (java.lang.foreign.MemorySegment)priv.p$VH.get(seg.asSlice(index*sizeof()));
+            return (java.lang.foreign.MemorySegment)constants$642.const$0.get(seg.asSlice(index*sizeof()));
         }
         public static void p$set(MemorySegment seg, long index, MemorySegment x) {
-            priv.p$VH.set(seg.asSlice(index*sizeof()), x);
+            constants$642.const$0.set(seg.asSlice(index*sizeof()), x);
         }
         public static long sizeof() { return $LAYOUT().byteSize(); }
         public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
         public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
             return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
         }
-        public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+        public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
     }
 
     public static MemorySegment priv$slice(MemorySegment seg) {
@@ -83,7 +76,7 @@ public class GWeakRef {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

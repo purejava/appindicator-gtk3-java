@@ -3,57 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1084 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1084() {}
-    static final FunctionDescriptor gdk_window_merge_child_shapes$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_io_stream_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_window_merge_child_shapes$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_merge_child_shapes",
-        constants$1084.gdk_window_merge_child_shapes$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_io_stream_query_info",
+        constants$39.const$1
     );
-    static final FunctionDescriptor gdk_window_input_shape_combine_region$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_file_io_stream_query_info_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_io_stream_query_info_async",
+        constants$584.const$3
     );
-    static final MethodHandle gdk_window_input_shape_combine_region$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_input_shape_combine_region",
-        constants$1084.gdk_window_input_shape_combine_region$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_io_stream_query_info_finish",
+        constants$23.const$0
     );
-    static final FunctionDescriptor gdk_window_set_child_input_shapes$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_child_input_shapes$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_child_input_shapes",
-        constants$1084.gdk_window_set_child_input_shapes$FUNC
-    );
-    static final FunctionDescriptor gdk_window_merge_child_input_shapes$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_merge_child_input_shapes$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_merge_child_input_shapes",
-        constants$1084.gdk_window_merge_child_input_shapes$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_pass_through$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_pass_through$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_pass_through",
-        constants$1084.gdk_window_set_pass_through$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_pass_through$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_pass_through$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_pass_through",
-        constants$1084.gdk_window_get_pass_through$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_io_stream_get_etag",
+        constants$5.const$2
     );
 }
 

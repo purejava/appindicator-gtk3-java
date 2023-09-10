@@ -3,57 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$882 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$882() {}
-    static final FunctionDescriptor hb_buffer_get_segment_properties$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_get_segment_properties$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_segment_properties",
-        constants$882.hb_buffer_get_segment_properties$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_guess_segment_properties$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_guess_segment_properties$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_guess_segment_properties",
-        constants$882.hb_buffer_guess_segment_properties$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_set_flags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_set_flags$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_flags",
-        constants$882.hb_buffer_set_flags$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_get_flags$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_flags",
-        constants$882.hb_buffer_get_flags$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_set_cluster_level$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_set_cluster_level$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_set_cluster_level",
-        constants$882.hb_buffer_set_cluster_level$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_get_cluster_level$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_buffer_get_cluster_level$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_get_cluster_level",
-        constants$882.hb_buffer_get_cluster_level$FUNC
-    );
+    static final VarHandle const$0 = constants$881.const$3.varHandle(MemoryLayout.PathElement.groupElement("in_args"));
+    static final VarHandle const$1 = constants$881.const$3.varHandle(MemoryLayout.PathElement.groupElement("out_args"));
+    static final VarHandle const$2 = constants$881.const$3.varHandle(MemoryLayout.PathElement.groupElement("annotations"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("ref_count"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("name"),
+        RuntimeHelper.POINTER.withName("args"),
+        RuntimeHelper.POINTER.withName("annotations")
+    ).withName("_GDBusSignalInfo");
+    static final VarHandle const$4 = constants$882.const$3.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
+    static final VarHandle const$5 = constants$882.const$3.varHandle(MemoryLayout.PathElement.groupElement("name"));
 }
 
 

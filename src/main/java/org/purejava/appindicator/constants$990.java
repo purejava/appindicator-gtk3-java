@@ -3,55 +3,33 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$990 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$990() {}
-    static final FunctionDescriptor fileno$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$989.const$4
     );
-    static final MethodHandle fileno$MH = RuntimeHelper.downcallHandle(
-        "fileno",
-        constants$990.fileno$FUNC
+    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("replace"));
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor fileno_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.replace_async.class, "apply", constants$990.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$990.const$2
     );
-    static final MethodHandle fileno_unlocked$MH = RuntimeHelper.downcallHandle(
-        "fileno_unlocked",
-        constants$990.fileno_unlocked$FUNC
-    );
-    static final FunctionDescriptor pclose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pclose$MH = RuntimeHelper.downcallHandle(
-        "pclose",
-        constants$990.pclose$FUNC
-    );
-    static final FunctionDescriptor popen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle popen$MH = RuntimeHelper.downcallHandle(
-        "popen",
-        constants$990.popen$FUNC
-    );
-    static final FunctionDescriptor ctermid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle ctermid$MH = RuntimeHelper.downcallHandle(
-        "ctermid",
-        constants$990.ctermid$FUNC
-    );
-    static final FunctionDescriptor flockfile$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle flockfile$MH = RuntimeHelper.downcallHandle(
-        "flockfile",
-        constants$990.flockfile$FUNC
-    );
+    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("replace_async"));
 }
 
 

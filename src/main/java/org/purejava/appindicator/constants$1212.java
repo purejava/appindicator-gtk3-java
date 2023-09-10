@@ -3,65 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1212 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1212() {}
-    static final FunctionDescriptor atk_component_grab_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_component_grab_focus$MH = RuntimeHelper.downcallHandle(
-        "atk_component_grab_focus",
-        constants$1212.atk_component_grab_focus$FUNC
-    );
-    static final FunctionDescriptor atk_component_remove_focus_handler$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_component_remove_focus_handler$MH = RuntimeHelper.downcallHandle(
-        "atk_component_remove_focus_handler",
-        constants$1212.atk_component_remove_focus_handler$FUNC
-    );
-    static final FunctionDescriptor atk_component_set_extents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_component_set_extents$MH = RuntimeHelper.downcallHandle(
-        "atk_component_set_extents",
-        constants$1212.atk_component_set_extents$FUNC
-    );
-    static final FunctionDescriptor atk_component_set_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_component_set_position$MH = RuntimeHelper.downcallHandle(
-        "atk_component_set_position",
-        constants$1212.atk_component_set_position$FUNC
-    );
-    static final FunctionDescriptor atk_component_set_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_component_set_size$MH = RuntimeHelper.downcallHandle(
-        "atk_component_set_size",
-        constants$1212.atk_component_set_size$FUNC
-    );
-    static final FunctionDescriptor atk_component_get_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_component_get_alpha$MH = RuntimeHelper.downcallHandle(
-        "atk_component_get_alpha",
-        constants$1212.atk_component_get_alpha$FUNC
-    );
+    static final VarHandle const$0 = constants$1211.const$4.varHandle(MemoryLayout.PathElement.groupElement("can_poll"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GPollableOutputStreamInterface.is_writable.class, "apply", constants$10.const$5);
+    static final VarHandle const$2 = constants$1211.const$4.varHandle(MemoryLayout.PathElement.groupElement("is_writable"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GPollableOutputStreamInterface.create_source.class, "apply", constants$5.const$5);
+    static final VarHandle const$4 = constants$1211.const$4.varHandle(MemoryLayout.PathElement.groupElement("create_source"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GPollableOutputStreamInterface.write_nonblocking.class, "apply", constants$20.const$4);
 }
 
 

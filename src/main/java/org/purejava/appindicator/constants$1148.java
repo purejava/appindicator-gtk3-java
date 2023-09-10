@@ -3,43 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1148 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1148() {}
-    static final FunctionDescriptor gdk_pixbuf_loader_get_format$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1145.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_item_link"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_menu_model_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_pixbuf_loader_get_format$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_get_format",
-        constants$1148.gdk_pixbuf_loader_get_format$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_menu_model_is_mutable",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gdk_pixbuf_alpha_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_pixbuf_alpha_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_alpha_mode_get_type",
-        constants$1148.gdk_pixbuf_alpha_mode_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_menu_model_get_n_items",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gdk_colorspace_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_colorspace_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_colorspace_get_type",
-        constants$1148.gdk_colorspace_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_menu_model_iterate_item_attributes",
+        constants$21.const$3
     );
-    static final FunctionDescriptor gdk_pixbuf_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_pixbuf_error_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_error_get_type",
-        constants$1148.gdk_pixbuf_error_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_interp_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_interp_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_interp_type_get_type",
-        constants$1148.gdk_interp_type_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_rotation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_pixbuf_rotation_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_rotation_get_type",
-        constants$1148.gdk_pixbuf_rotation_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_menu_model_get_item_attribute_value",
+        constants$180.const$0
     );
 }
 

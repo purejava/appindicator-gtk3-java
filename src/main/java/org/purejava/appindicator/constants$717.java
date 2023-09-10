@@ -3,54 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$717 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$717() {}
-    static final FunctionDescriptor g_network_service_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_network_service_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_network_service_get_type",
-        constants$717.g_network_service_get_type$FUNC
-    );
-    static final FunctionDescriptor g_network_service_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_network_service_new$MH = RuntimeHelper.downcallHandle(
-        "g_network_service_new",
-        constants$717.g_network_service_new$FUNC
-    );
-    static final FunctionDescriptor g_network_service_get_service$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_network_service_get_service$MH = RuntimeHelper.downcallHandle(
-        "g_network_service_get_service",
-        constants$717.g_network_service_get_service$FUNC
-    );
-    static final FunctionDescriptor g_network_service_get_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_network_service_get_protocol$MH = RuntimeHelper.downcallHandle(
-        "g_network_service_get_protocol",
-        constants$717.g_network_service_get_protocol$FUNC
-    );
-    static final FunctionDescriptor g_network_service_get_domain$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_network_service_get_domain$MH = RuntimeHelper.downcallHandle(
-        "g_network_service_get_domain",
-        constants$717.g_network_service_get_domain$FUNC
-    );
-    static final FunctionDescriptor g_network_service_get_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_network_service_get_scheme$MH = RuntimeHelper.downcallHandle(
-        "g_network_service_get_scheme",
-        constants$717.g_network_service_get_scheme$FUNC
-    );
+    static final VarHandle const$0 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_description"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GAppInfoIface.get_executable.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_executable"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GAppInfoIface.get_icon.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_icon"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GAppInfoIface.launch.class, "apply", constants$34.const$5);
 }
 
 

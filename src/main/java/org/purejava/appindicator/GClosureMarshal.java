@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GClosureMarshal)(struct _GClosure* closure,struct _GValue* return_value,unsigned int n_param_values,struct _GValue* param_values,void* invocation_hint,void* marshal_data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GClosureMarshal {
 
     void apply(java.lang.foreign.MemorySegment font, java.lang.foreign.MemorySegment font_data, int glyph, java.lang.foreign.MemorySegment draw_funcs, java.lang.foreign.MemorySegment draw_data, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GClosureMarshal fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$403.GClosureMarshal_UP$MH, fi, constants$403.GClosureMarshal$FUNC, scope);
+    static MemorySegment allocate(GClosureMarshal fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$584.const$4, fi, constants$584.const$3, scope);
     }
-    static GClosureMarshal ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GClosureMarshal ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _font, java.lang.foreign.MemorySegment _font_data, int _glyph, java.lang.foreign.MemorySegment _draw_funcs, java.lang.foreign.MemorySegment _draw_data, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$403.GClosureMarshal_DOWN$MH.invokeExact(symbol, _font, _font_data, _glyph, _draw_funcs, _draw_data, _user_data);
+                constants$584.const$5.invokeExact(symbol, _font, _font_data, _glyph, _draw_funcs, _draw_data, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

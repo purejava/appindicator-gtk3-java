@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1947 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1947() {}
-    static final FunctionDescriptor _gtk_rc_free_widget_class_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_system",
+        constants$35.const$2
     );
-    static final MethodHandle _gtk_rc_free_widget_class_path$MH = RuntimeHelper.downcallHandle(
-        "_gtk_rc_free_widget_class_path",
-        constants$1947._gtk_rc_free_widget_class_path$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_best",
+        constants$35.const$2
     );
-    static final FunctionDescriptor _gtk_rc_match_widget_class$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_best_with_depth",
+        constants$24.const$0
     );
-    static final MethodHandle _gtk_rc_match_widget_class$MH = RuntimeHelper.downcallHandle(
-        "_gtk_rc_match_widget_class",
-        constants$1947._gtk_rc_match_widget_class$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_best_with_type",
+        constants$24.const$0
     );
-    static final FunctionDescriptor gtk_rc_add_default_file$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_best_with_both",
+        constants$1412.const$2
     );
-    static final MethodHandle gtk_rc_add_default_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_rc_add_default_file",
-        constants$1947.gtk_rc_add_default_file$FUNC
-    );
-    static final FunctionDescriptor gtk_rc_set_default_files$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_rc_set_default_files$MH = RuntimeHelper.downcallHandle(
-        "gtk_rc_set_default_files",
-        constants$1947.gtk_rc_set_default_files$FUNC
-    );
-    static final FunctionDescriptor gtk_rc_get_default_files$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_rc_get_default_files$MH = RuntimeHelper.downcallHandle(
-        "gtk_rc_get_default_files",
-        constants$1947.gtk_rc_get_default_files$FUNC
-    );
-    static final FunctionDescriptor gtk_rc_get_style$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_rc_get_style$MH = RuntimeHelper.downcallHandle(
-        "gtk_rc_get_style",
-        constants$1947.gtk_rc_get_style$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_query_depths",
+        constants$13.const$4
     );
 }
 

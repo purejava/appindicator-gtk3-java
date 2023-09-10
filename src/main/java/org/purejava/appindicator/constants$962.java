@@ -3,55 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$962 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$962() {}
-    static final FunctionDescriptor pango_layout_get_tabs$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_handshake_finish",
+        constants$12.const$2
     );
-    static final MethodHandle pango_layout_get_tabs$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_tabs",
-        constants$962.pango_layout_get_tabs$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_shutdown",
+        constants$956.const$4
     );
-    static final FunctionDescriptor pango_layout_set_single_paragraph_mode$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_dtls_connection_shutdown_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_shutdown_async",
+        constants$957.const$2
     );
-    static final MethodHandle pango_layout_set_single_paragraph_mode$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_single_paragraph_mode",
-        constants$962.pango_layout_set_single_paragraph_mode$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_shutdown_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor pango_layout_get_single_paragraph_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_single_paragraph_mode$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_single_paragraph_mode",
-        constants$962.pango_layout_get_single_paragraph_mode$FUNC
-    );
-    static final FunctionDescriptor pango_layout_set_ellipsize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_ellipsize$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_ellipsize",
-        constants$962.pango_layout_set_ellipsize$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_ellipsize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_ellipsize$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_ellipsize",
-        constants$962.pango_layout_get_ellipsize$FUNC
-    );
-    static final FunctionDescriptor pango_layout_is_ellipsized$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_is_ellipsized$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_is_ellipsized",
-        constants$962.pango_layout_is_ellipsized$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_close",
+        constants$12.const$2
     );
 }
 

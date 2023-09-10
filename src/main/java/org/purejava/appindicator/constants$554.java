@@ -3,101 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$554 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$554() {}
-    static final FunctionDescriptor g_dbus_connection_send_message_with_reply_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_send_message_with_reply_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_send_message_with_reply_sync",
-        constants$554.g_dbus_connection_send_message_with_reply_sync$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_emit_signal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_emit_signal$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_emit_signal",
-        constants$554.g_dbus_connection_emit_signal$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_call$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_call$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_call",
-        constants$554.g_dbus_connection_call$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_call_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_call_finish$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_call_finish",
-        constants$554.g_dbus_connection_call_finish$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_call_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_call_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_call_sync",
-        constants$554.g_dbus_connection_call_sync$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_call_with_unix_fd_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_call_with_unix_fd_list$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_call_with_unix_fd_list",
-        constants$554.g_dbus_connection_call_with_unix_fd_list$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GTypeInfo.base_finalize.class, "apply", constants$13.const$1);
+    static final VarHandle const$1 = constants$553.const$2.varHandle(MemoryLayout.PathElement.groupElement("base_finalize"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GTypeInfo.class_init.class, "apply", constants$13.const$4);
+    static final VarHandle const$3 = constants$553.const$2.varHandle(MemoryLayout.PathElement.groupElement("class_init"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GTypeInfo.class_finalize.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$553.const$2.varHandle(MemoryLayout.PathElement.groupElement("class_finalize"));
 }
 
 

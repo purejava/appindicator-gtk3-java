@@ -3,62 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$15 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$15() {}
-    static final FunctionDescriptor strerror_l$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GCopyFunc.class, "apply", constants$5.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$5.const$5
     );
-    static final MethodHandle strerror_l$MH = RuntimeHelper.downcallHandle(
-        "strerror_l",
-        constants$15.strerror_l$FUNC
-    );
-    static final FunctionDescriptor bcmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle bcmp$MH = RuntimeHelper.downcallHandle(
-        "bcmp",
-        constants$15.bcmp$FUNC
-    );
-    static final FunctionDescriptor bcopy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle bcopy$MH = RuntimeHelper.downcallHandle(
-        "bcopy",
-        constants$15.bcopy$FUNC
-    );
-    static final FunctionDescriptor bzero$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle bzero$MH = RuntimeHelper.downcallHandle(
-        "bzero",
-        constants$15.bzero$FUNC
-    );
-    static final FunctionDescriptor index$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle index$MH = RuntimeHelper.downcallHandle(
-        "index",
-        constants$15.index$FUNC
-    );
-    static final FunctionDescriptor rindex$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle rindex$MH = RuntimeHelper.downcallHandle(
-        "rindex",
-        constants$15.rindex$FUNC
-    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GFreeFunc.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GTranslateFunc.class, "apply", constants$5.const$5);
+    static final UnionLayout const$4 = MemoryLayout.unionLayout(
+        JAVA_FLOAT.withName("v_float"),
+        MemoryLayout.structLayout(
+            MemoryLayout.paddingLayout(4)
+        ).withName("mpn")
+    ).withName("_GFloatIEEE754");
+    static final VarHandle const$5 = constants$15.const$4.varHandle(MemoryLayout.PathElement.groupElement("v_float"));
 }
 
 

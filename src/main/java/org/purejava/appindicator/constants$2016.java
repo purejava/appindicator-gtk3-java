@@ -2,18 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2016 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2016() {}
-    static final MemorySegment G_MENU_ATTRIBUTE_ACTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("action");
-    static final MemorySegment G_MENU_ATTRIBUTE_ACTION_NAMESPACE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("action-namespace");
-    static final MemorySegment G_MENU_ATTRIBUTE_TARGET$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("target");
-    static final MemorySegment G_MENU_ATTRIBUTE_LABEL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("label");
-    static final MemorySegment G_MENU_ATTRIBUTE_ICON$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("icon");
-    static final MemorySegment G_MENU_LINK_SUBMENU$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("submenu");
+    static final VarHandle const$0 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("set_selection"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkTextIface.set_caret_offset.class, "apply", constants$11.const$4);
+    static final VarHandle const$2 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("set_caret_offset"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkTextIface.text_changed.class, "apply", constants$467.const$3);
+    static final VarHandle const$4 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("text_changed"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkTextIface.text_caret_moved.class, "apply", constants$40.const$2);
 }
 
 

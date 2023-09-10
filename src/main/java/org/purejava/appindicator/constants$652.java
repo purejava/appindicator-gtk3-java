@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$652 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$652() {}
-    static final FunctionDescriptor g_file_info_set_modification_date_time$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_flags_to_string",
+        constants$63.const$1
     );
-    static final MethodHandle g_file_info_set_modification_date_time$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_modification_date_time",
-        constants$652.g_file_info_set_modification_date_time$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_value_set_enum",
+        constants$40.const$2
     );
-    static final FunctionDescriptor g_file_info_set_access_date_time$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_value_get_enum",
+        constants$10.const$5
     );
-    static final MethodHandle g_file_info_set_access_date_time$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_access_date_time",
-        constants$652.g_file_info_set_access_date_time$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_value_set_flags",
+        constants$40.const$2
     );
-    static final FunctionDescriptor g_file_info_set_creation_date_time$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_value_get_flags",
+        constants$10.const$5
     );
-    static final MethodHandle g_file_info_set_creation_date_time$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_creation_date_time",
-        constants$652.g_file_info_set_creation_date_time$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_symlink_target$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_symlink_target$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_symlink_target",
-        constants$652.g_file_info_set_symlink_target$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_sort_order$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_sort_order$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_sort_order",
-        constants$652.g_file_info_set_sort_order$FUNC
-    );
-    static final FunctionDescriptor g_file_attribute_matcher_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_attribute_matcher_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_attribute_matcher_get_type",
-        constants$652.g_file_attribute_matcher_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_enum_register_static",
+        constants$22.const$0
     );
 }
 

@@ -3,60 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1242 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1242() {}
-    static final FunctionDescriptor atk_table_is_row_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_resource_ref",
+        constants$5.const$2
     );
-    static final MethodHandle atk_table_is_row_selected$MH = RuntimeHelper.downcallHandle(
-        "atk_table_is_row_selected",
-        constants$1242.atk_table_is_row_selected$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_resource_unref",
+        constants$13.const$1
     );
-    static final FunctionDescriptor atk_table_is_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_resource_load",
+        constants$5.const$5
     );
-    static final MethodHandle atk_table_is_selected$MH = RuntimeHelper.downcallHandle(
-        "atk_table_is_selected",
-        constants$1242.atk_table_is_selected$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_resource_open_stream",
+        constants$482.const$3
     );
-    static final FunctionDescriptor atk_table_add_row_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_resource_lookup_data",
+        constants$482.const$3
     );
-    static final MethodHandle atk_table_add_row_selection$MH = RuntimeHelper.downcallHandle(
-        "atk_table_add_row_selection",
-        constants$1242.atk_table_add_row_selection$FUNC
-    );
-    static final FunctionDescriptor atk_table_remove_row_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_table_remove_row_selection$MH = RuntimeHelper.downcallHandle(
-        "atk_table_remove_row_selection",
-        constants$1242.atk_table_remove_row_selection$FUNC
-    );
-    static final FunctionDescriptor atk_table_add_column_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_table_add_column_selection$MH = RuntimeHelper.downcallHandle(
-        "atk_table_add_column_selection",
-        constants$1242.atk_table_add_column_selection$FUNC
-    );
-    static final FunctionDescriptor atk_table_remove_column_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_table_remove_column_selection$MH = RuntimeHelper.downcallHandle(
-        "atk_table_remove_column_selection",
-        constants$1242.atk_table_remove_column_selection$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_resource_enumerate_children",
+        constants$482.const$3
     );
 }
 

@@ -3,60 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$615 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$615() {}
-    static final FunctionDescriptor g_file_new_tmp_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_type_get_gtype",
+        constants$3.const$5
     );
-    static final MethodHandle g_file_new_tmp_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_new_tmp_finish",
-        constants$615.g_file_new_tmp_finish$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_regex_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor g_file_new_tmp_dir_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_match_info_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_file_new_tmp_dir_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_new_tmp_dir_async",
-        constants$615.g_file_new_tmp_dir_async$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_error_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor g_file_new_tmp_dir_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_date_time_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_file_new_tmp_dir_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_new_tmp_dir_finish",
-        constants$615.g_file_new_tmp_dir_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_parse_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_parse_name$MH = RuntimeHelper.downcallHandle(
-        "g_file_parse_name",
-        constants$615.g_file_parse_name$FUNC
-    );
-    static final FunctionDescriptor g_file_new_build_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_new_build_filename$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_file_new_build_filename",
-        constants$615.g_file_new_build_filename$FUNC
-    );
-    static final FunctionDescriptor g_file_dup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_dup$MH = RuntimeHelper.downcallHandle(
-        "g_file_dup",
-        constants$615.g_file_dup$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_time_zone_get_type",
+        constants$3.const$5
     );
 }
 

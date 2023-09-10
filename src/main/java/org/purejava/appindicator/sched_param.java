@@ -2,9 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct sched_param {
@@ -14,15 +16,11 @@ import java.lang.foreign.*;
  */
 public class sched_param {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("sched_priority")
-    ).withName("sched_param");
     public static MemoryLayout $LAYOUT() {
-        return sched_param.$struct$LAYOUT;
+        return constants$512.const$5;
     }
-    static final VarHandle sched_priority$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("sched_priority"));
     public static VarHandle sched_priority$VH() {
-        return sched_param.sched_priority$VH;
+        return constants$513.const$0;
     }
     /**
      * Getter for field:
@@ -31,7 +29,7 @@ public class sched_param {
      * }
      */
     public static int sched_priority$get(MemorySegment seg) {
-        return (int)sched_param.sched_priority$VH.get(seg);
+        return (int)constants$513.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -40,20 +38,20 @@ public class sched_param {
      * }
      */
     public static void sched_priority$set(MemorySegment seg, int x) {
-        sched_param.sched_priority$VH.set(seg, x);
+        constants$513.const$0.set(seg, x);
     }
     public static int sched_priority$get(MemorySegment seg, long index) {
-        return (int)sched_param.sched_priority$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$513.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void sched_priority$set(MemorySegment seg, long index, int x) {
-        sched_param.sched_priority$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$513.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

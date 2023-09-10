@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1254 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1254() {}
-    static final FunctionDescriptor gtk_widget_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_settings_list_schemas",
+        constants$35.const$2
     );
-    static final MethodHandle gtk_widget_event$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_event",
-        constants$1254.gtk_widget_event$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_settings_list_relocatable_schemas",
+        constants$35.const$2
     );
-    static final FunctionDescriptor gtk_widget_send_expose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_settings_new",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_widget_send_expose$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_send_expose",
-        constants$1254.gtk_widget_send_expose$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_settings_new_with_path",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_widget_send_focus_change$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_settings_new_with_backend",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_widget_send_focus_change$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_send_focus_change",
-        constants$1254.gtk_widget_send_focus_change$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_activate$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_activate",
-        constants$1254.gtk_widget_activate$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_reparent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_reparent$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_reparent",
-        constants$1254.gtk_widget_reparent$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_intersect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_intersect$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_intersect",
-        constants$1254.gtk_widget_intersect$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_settings_new_with_backend_and_path",
+        constants$23.const$0
     );
 }
 

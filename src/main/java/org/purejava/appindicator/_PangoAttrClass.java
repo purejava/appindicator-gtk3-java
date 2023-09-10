@@ -4,87 +4,67 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _PangoAttrClass {
- *     PangoAttrType type;
- *     PangoAttribute* (*copy)(const PangoAttribute*);
- *     void (*destroy)(PangoAttribute*);
- *     gboolean (*equal)(const PangoAttribute*,const PangoAttribute*);
+ *     enum PangoAttrType type;
+ *     struct _PangoAttribute* (*copy)(struct _PangoAttribute*);
+ *     void (*destroy)(struct _PangoAttribute*);
+ *     int (*equal)(struct _PangoAttribute*,struct _PangoAttribute*);
  * };
  * }
  */
 public class _PangoAttrClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("type"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("copy"),
-        Constants$root.C_POINTER$LAYOUT.withName("destroy"),
-        Constants$root.C_POINTER$LAYOUT.withName("equal")
-    ).withName("_PangoAttrClass");
     public static MemoryLayout $LAYOUT() {
-        return _PangoAttrClass.$struct$LAYOUT;
+        return constants$1562.const$1;
     }
-    static final VarHandle type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("type"));
     public static VarHandle type$VH() {
-        return _PangoAttrClass.type$VH;
+        return constants$1562.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * PangoAttrType type;
+     * enum PangoAttrType type;
      * }
      */
     public static int type$get(MemorySegment seg) {
-        return (int)_PangoAttrClass.type$VH.get(seg);
+        return (int)constants$1562.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * PangoAttrType type;
+     * enum PangoAttrType type;
      * }
      */
     public static void type$set(MemorySegment seg, int x) {
-        _PangoAttrClass.type$VH.set(seg, x);
+        constants$1562.const$2.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
-        return (int)_PangoAttrClass.type$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1562.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void type$set(MemorySegment seg, long index, int x) {
-        _PangoAttrClass.type$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1562.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final FunctionDescriptor copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor copy_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle copy_UP$MH = RuntimeHelper.upcallHandle(copy.class, "apply", _PangoAttrClass.copy_UP$FUNC);
-    static final FunctionDescriptor copy_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle copy_DOWN$MH = RuntimeHelper.downcallHandle(
-        _PangoAttrClass.copy_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * PangoAttribute* (*copy)(const PangoAttribute*);
+ * struct _PangoAttribute* (*copy)(struct _PangoAttribute*);
      * }
      */
     public interface copy {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(copy fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_PangoAttrClass.copy_UP$MH, fi, _PangoAttrClass.copy$FUNC, scope);
+        static MemorySegment allocate(copy fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1562.const$3, fi, constants$5.const$2, scope);
         }
-        static copy ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static copy ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_PangoAttrClass.copy_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -92,66 +72,52 @@ public class _PangoAttrClass {
         }
     }
 
-    static final VarHandle copy$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("copy"));
     public static VarHandle copy$VH() {
-        return _PangoAttrClass.copy$VH;
+        return constants$1562.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * PangoAttribute* (*copy)(const PangoAttribute*);
+     * struct _PangoAttribute* (*copy)(struct _PangoAttribute*);
      * }
      */
     public static MemorySegment copy$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_PangoAttrClass.copy$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1562.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * PangoAttribute* (*copy)(const PangoAttribute*);
+     * struct _PangoAttribute* (*copy)(struct _PangoAttribute*);
      * }
      */
     public static void copy$set(MemorySegment seg, MemorySegment x) {
-        _PangoAttrClass.copy$VH.set(seg, x);
+        constants$1562.const$4.set(seg, x);
     }
     public static MemorySegment copy$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_PangoAttrClass.copy$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1562.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void copy$set(MemorySegment seg, long index, MemorySegment x) {
-        _PangoAttrClass.copy$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1562.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static copy copy(MemorySegment segment, SegmentScope scope) {
+    public static copy copy(MemorySegment segment, Arena scope) {
         return copy.ofAddress(copy$get(segment), scope);
     }
-    static final FunctionDescriptor destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor destroy_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle destroy_UP$MH = RuntimeHelper.upcallHandle(destroy.class, "apply", _PangoAttrClass.destroy_UP$FUNC);
-    static final FunctionDescriptor destroy_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle destroy_DOWN$MH = RuntimeHelper.downcallHandle(
-        _PangoAttrClass.destroy_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*destroy)(PangoAttribute*);
+ * void (*destroy)(struct _PangoAttribute*);
      * }
      */
     public interface destroy {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(destroy fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_PangoAttrClass.destroy_UP$MH, fi, _PangoAttrClass.destroy$FUNC, scope);
+        static MemorySegment allocate(destroy fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1562.const$5, fi, constants$13.const$1, scope);
         }
-        static destroy ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static destroy ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _PangoAttrClass.destroy_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -159,69 +125,52 @@ public class _PangoAttrClass {
         }
     }
 
-    static final VarHandle destroy$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("destroy"));
     public static VarHandle destroy$VH() {
-        return _PangoAttrClass.destroy$VH;
+        return constants$1563.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*destroy)(PangoAttribute*);
+     * void (*destroy)(struct _PangoAttribute*);
      * }
      */
     public static MemorySegment destroy$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_PangoAttrClass.destroy$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1563.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*destroy)(PangoAttribute*);
+     * void (*destroy)(struct _PangoAttribute*);
      * }
      */
     public static void destroy$set(MemorySegment seg, MemorySegment x) {
-        _PangoAttrClass.destroy$VH.set(seg, x);
+        constants$1563.const$0.set(seg, x);
     }
     public static MemorySegment destroy$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_PangoAttrClass.destroy$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1563.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void destroy$set(MemorySegment seg, long index, MemorySegment x) {
-        _PangoAttrClass.destroy$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1563.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static destroy destroy(MemorySegment segment, SegmentScope scope) {
+    public static destroy destroy(MemorySegment segment, Arena scope) {
         return destroy.ofAddress(destroy$get(segment), scope);
     }
-    static final FunctionDescriptor equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor equal_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle equal_UP$MH = RuntimeHelper.upcallHandle(equal.class, "apply", _PangoAttrClass.equal_UP$FUNC);
-    static final FunctionDescriptor equal_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle equal_DOWN$MH = RuntimeHelper.downcallHandle(
-        _PangoAttrClass.equal_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*equal)(const PangoAttribute*,const PangoAttribute*);
+ * int (*equal)(struct _PangoAttribute*,struct _PangoAttribute*);
      * }
      */
     public interface equal {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(equal fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_PangoAttrClass.equal_UP$MH, fi, _PangoAttrClass.equal$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(equal fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1563.const$1, fi, constants$9.const$0, scope);
         }
-        static equal ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static equal ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_PangoAttrClass.equal_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -229,35 +178,34 @@ public class _PangoAttrClass {
         }
     }
 
-    static final VarHandle equal$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("equal"));
     public static VarHandle equal$VH() {
-        return _PangoAttrClass.equal$VH;
+        return constants$1563.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*equal)(const PangoAttribute*,const PangoAttribute*);
+     * int (*equal)(struct _PangoAttribute*,struct _PangoAttribute*);
      * }
      */
     public static MemorySegment equal$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_PangoAttrClass.equal$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1563.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*equal)(const PangoAttribute*,const PangoAttribute*);
+     * int (*equal)(struct _PangoAttribute*,struct _PangoAttribute*);
      * }
      */
     public static void equal$set(MemorySegment seg, MemorySegment x) {
-        _PangoAttrClass.equal$VH.set(seg, x);
+        constants$1563.const$2.set(seg, x);
     }
     public static MemorySegment equal$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_PangoAttrClass.equal$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1563.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void equal$set(MemorySegment seg, long index, MemorySegment x) {
-        _PangoAttrClass.equal$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1563.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static equal equal(MemorySegment segment, SegmentScope scope) {
+    public static equal equal(MemorySegment segment, Arena scope) {
         return equal.ofAddress(equal$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -265,7 +213,7 @@ public class _PangoAttrClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

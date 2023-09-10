@@ -3,53 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1777 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1777() {}
-    static final FunctionDescriptor gtk_recent_filter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_recent_filter_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_get_type",
-        constants$1777.gtk_recent_filter_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_filter_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_recent_filter_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_new",
-        constants$1777.gtk_recent_filter_new$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_filter_set_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_filter_set_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_set_name",
-        constants$1777.gtk_recent_filter_set_name$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_filter_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_filter_get_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_get_name",
-        constants$1777.gtk_recent_filter_get_name$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_filter_add_mime_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_filter_add_mime_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_add_mime_type",
-        constants$1777.gtk_recent_filter_add_mime_type$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_filter_add_pattern$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_filter_add_pattern$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_add_pattern",
-        constants$1777.gtk_recent_filter_add_pattern$FUNC
-    );
+    static final VarHandle const$0 = constants$1776.const$2.varHandle(MemoryLayout.PathElement.groupElement("time"));
+    static final VarHandle const$1 = constants$1776.const$2.varHandle(MemoryLayout.PathElement.groupElement("x"));
+    static final VarHandle const$2 = constants$1776.const$2.varHandle(MemoryLayout.PathElement.groupElement("y"));
+    static final VarHandle const$3 = constants$1776.const$2.varHandle(MemoryLayout.PathElement.groupElement("state"));
+    static final VarHandle const$4 = constants$1776.const$2.varHandle(MemoryLayout.PathElement.groupElement("direction"));
+    static final VarHandle const$5 = constants$1776.const$2.varHandle(MemoryLayout.PathElement.groupElement("device"));
 }
 
 

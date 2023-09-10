@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$831 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$831() {}
-    static final FunctionDescriptor hb_direction_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "endusershell",
+        constants$7.const$5
     );
-    static final MethodHandle hb_direction_to_string$MH = RuntimeHelper.downcallHandle(
-        "hb_direction_to_string",
-        constants$831.hb_direction_to_string$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "setusershell",
+        constants$7.const$5
     );
-    static final FunctionDescriptor hb_language_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "daemon",
+        constants$123.const$5
     );
-    static final MethodHandle hb_language_from_string$MH = RuntimeHelper.downcallHandle(
-        "hb_language_from_string",
-        constants$831.hb_language_from_string$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "chroot",
+        constants$10.const$5
     );
-    static final FunctionDescriptor hb_language_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "getpass",
+        constants$5.const$2
     );
-    static final MethodHandle hb_language_to_string$MH = RuntimeHelper.downcallHandle(
-        "hb_language_to_string",
-        constants$831.hb_language_to_string$FUNC
-    );
-    static final FunctionDescriptor hb_language_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_language_get_default$MH = RuntimeHelper.downcallHandle(
-        "hb_language_get_default",
-        constants$831.hb_language_get_default$FUNC
-    );
-    static final FunctionDescriptor hb_language_matches$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_language_matches$MH = RuntimeHelper.downcallHandle(
-        "hb_language_matches",
-        constants$831.hb_language_matches$FUNC
-    );
-    static final FunctionDescriptor hb_script_from_iso15924_tag$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_script_from_iso15924_tag$MH = RuntimeHelper.downcallHandle(
-        "hb_script_from_iso15924_tag",
-        constants$831.hb_script_from_iso15924_tag$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "fsync",
+        constants$8.const$4
     );
 }
 

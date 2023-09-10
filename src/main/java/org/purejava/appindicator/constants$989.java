@@ -3,54 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$989 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$989() {}
-    static final FunctionDescriptor feof$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.create_async.class, "apply", constants$987.const$4);
+    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("create_async"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.create_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("create_finish"));
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle feof$MH = RuntimeHelper.downcallHandle(
-        "feof",
-        constants$989.feof$FUNC
-    );
-    static final FunctionDescriptor ferror$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle ferror$MH = RuntimeHelper.downcallHandle(
-        "ferror",
-        constants$989.ferror$FUNC
-    );
-    static final FunctionDescriptor clearerr_unlocked$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle clearerr_unlocked$MH = RuntimeHelper.downcallHandle(
-        "clearerr_unlocked",
-        constants$989.clearerr_unlocked$FUNC
-    );
-    static final FunctionDescriptor feof_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle feof_unlocked$MH = RuntimeHelper.downcallHandle(
-        "feof_unlocked",
-        constants$989.feof_unlocked$FUNC
-    );
-    static final FunctionDescriptor ferror_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle ferror_unlocked$MH = RuntimeHelper.downcallHandle(
-        "ferror_unlocked",
-        constants$989.ferror_unlocked$FUNC
-    );
-    static final FunctionDescriptor perror$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle perror$MH = RuntimeHelper.downcallHandle(
-        "perror",
-        constants$989.perror$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.replace.class, "apply", constants$989.const$4);
 }
 
 

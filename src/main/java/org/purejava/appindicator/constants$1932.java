@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1932 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1932() {}
-    static final FunctionDescriptor gtk_symbolic_color_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_symbolic_color_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_symbolic_color_get_type",
-        constants$1932.gtk_symbolic_color_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_keyval_from_name",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_symbolic_color_new_literal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_keyval_convert_case",
+        constants$127.const$3
     );
-    static final MethodHandle gtk_symbolic_color_new_literal$MH = RuntimeHelper.downcallHandle(
-        "gtk_symbolic_color_new_literal",
-        constants$1932.gtk_symbolic_color_new_literal$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_keyval_to_upper",
+        constants$8.const$4
     );
-    static final FunctionDescriptor gtk_symbolic_color_new_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_keyval_to_lower",
+        constants$8.const$4
     );
-    static final MethodHandle gtk_symbolic_color_new_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_symbolic_color_new_name",
-        constants$1932.gtk_symbolic_color_new_name$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_keyval_is_upper",
+        constants$8.const$4
     );
-    static final FunctionDescriptor gtk_symbolic_color_new_shade$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_symbolic_color_new_shade$MH = RuntimeHelper.downcallHandle(
-        "gtk_symbolic_color_new_shade",
-        constants$1932.gtk_symbolic_color_new_shade$FUNC
-    );
-    static final FunctionDescriptor gtk_symbolic_color_new_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_symbolic_color_new_alpha$MH = RuntimeHelper.downcallHandle(
-        "gtk_symbolic_color_new_alpha",
-        constants$1932.gtk_symbolic_color_new_alpha$FUNC
-    );
-    static final FunctionDescriptor gtk_symbolic_color_new_mix$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_symbolic_color_new_mix$MH = RuntimeHelper.downcallHandle(
-        "gtk_symbolic_color_new_mix",
-        constants$1932.gtk_symbolic_color_new_mix$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_keyval_is_lower",
+        constants$8.const$4
     );
 }
 

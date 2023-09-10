@@ -2,18 +2,27 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2033 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2033() {}
-    static final MemorySegment GTK_STYLE_CLASS_SCALE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("scale");
-    static final MemorySegment GTK_STYLE_CLASS_SCALE_HAS_MARKS_ABOVE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("scale-has-marks-above");
-    static final MemorySegment GTK_STYLE_CLASS_SCALE_HAS_MARKS_BELOW$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("scale-has-marks-below");
-    static final MemorySegment GTK_STYLE_CLASS_HEADER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("header");
-    static final MemorySegment GTK_STYLE_CLASS_ACCELERATOR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("accelerator");
-    static final MemorySegment GTK_STYLE_CLASS_RAISED$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("raised");
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.link_activated.class, "apply", constants$13.const$1);
+    static final VarHandle const$1 = constants$2030.const$1.varHandle(MemoryLayout.PathElement.groupElement("link_activated"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.pad1.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$2030.const$1.varHandle(MemoryLayout.PathElement.groupElement("pad1"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_hyperlink_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_hyperlink_get_uri",
+        constants$21.const$3
+    );
 }
 
 

@@ -3,68 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$323 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$323() {}
-    static final FunctionDescriptor GTestLogFatalFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_io_channel_get_line_term",
+        constants$5.const$5
     );
-    static final FunctionDescriptor GTestLogFatalFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_io_channel_set_buffered",
+        constants$40.const$2
     );
-    static final MethodHandle GTestLogFatalFunc_UP$MH = RuntimeHelper.upcallHandle(GTestLogFatalFunc.class, "apply", constants$323.GTestLogFatalFunc_UP$FUNC);
-    static final FunctionDescriptor GTestLogFatalFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_io_channel_get_buffered",
+        constants$10.const$5
     );
-    static final MethodHandle GTestLogFatalFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$323.GTestLogFatalFunc_DOWN$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_io_channel_set_encoding",
+        constants$12.const$2
     );
-    static final FunctionDescriptor g_test_log_set_fatal_handler$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_io_channel_get_encoding",
+        constants$5.const$2
     );
-    static final MethodHandle g_test_log_set_fatal_handler$MH = RuntimeHelper.downcallHandle(
-        "g_test_log_set_fatal_handler",
-        constants$323.g_test_log_set_fatal_handler$FUNC
-    );
-    static final FunctionDescriptor g_test_expect_message$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_expect_message$MH = RuntimeHelper.downcallHandle(
-        "g_test_expect_message",
-        constants$323.g_test_expect_message$FUNC
-    );
-    static final FunctionDescriptor g_test_assert_expected_messages_internal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_assert_expected_messages_internal$MH = RuntimeHelper.downcallHandle(
-        "g_test_assert_expected_messages_internal",
-        constants$323.g_test_assert_expected_messages_internal$FUNC
-    );
-    static final FunctionDescriptor g_test_build_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_build_filename$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_test_build_filename",
-        constants$323.g_test_build_filename$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_io_channel_set_close_on_unref",
+        constants$40.const$2
     );
 }
 

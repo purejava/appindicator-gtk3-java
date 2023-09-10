@@ -3,529 +3,1617 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 public class app_indicator_h_20 extends app_indicator_h_19 {
 
     /**
      * {@snippet :
+     * typedef struct _GList* GtkRecentChooser_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentChooser_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkRecentChooser_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentChooser_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkRecentChooser_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentChooser_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkRecentChooserDialog* GtkRecentChooserDialog_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserDialog_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkRecentChooserDialog_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserDialog_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkRecentChooserDialog_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserDialog_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkRecentChooserDialog_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserDialog_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkRecentChooserMenu* GtkRecentChooserMenu_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserMenu_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkRecentChooserMenu_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserMenu_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkRecentChooserMenu_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserMenu_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkRecentChooserMenu_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserMenu_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkRecentChooserWidget* GtkRecentChooserWidget_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserWidget_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkRecentChooserWidget_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserWidget_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkRecentChooserWidget_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserWidget_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkRecentChooserWidget_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentChooserWidget_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkRecentFilter* GtkRecentFilter_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentFilter_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkRecentFilter_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentFilter_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkRecentFilter_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentFilter_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkRecentFilter_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentFilter_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkRecentManager* GtkRecentManager_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentManager_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkRecentManager_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentManager_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkRecentManager_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentManager_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkRecentManager_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRecentManager_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkRevealer* GtkRevealer_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkRevealer_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkRevealer_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRevealer_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkRevealer_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRevealer_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkRevealer_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkRevealer_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkScale* GtkScale_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkScale_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkScale_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkScale_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkScale_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkScale_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkScale_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkScale_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkScaleButton* GtkScaleButton_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkScaleButton_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkScaleButton_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkScaleButton_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkScaleButton_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkScaleButton_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkScaleButton_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkScaleButton_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkScrollable* GtkScrollable_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkScrollable_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkScrollable_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkScrollable_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkScrollable_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkScrollable_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkScrollable_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkScrollable_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkScrollbar* GtkScrollbar_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkScrollbar_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkScrollbar_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkScrollbar_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkScrollbar_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkScrollbar_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkScrollbar_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkScrollbar_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkScrolledWindow* GtkScrolledWindow_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkScrolledWindow_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkScrolledWindow_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkScrolledWindow_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkScrolledWindow_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkScrolledWindow_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkScrolledWindow_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkScrolledWindow_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkSearchBar* GtkSearchBar_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkSearchBar_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkSearchBar_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSearchBar_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkSearchBar_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSearchBar_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkSearchBar_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSearchBar_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkSearchEntry* GtkSearchEntry_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkSearchEntry_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkSearchEntry_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSearchEntry_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkSearchEntry_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSearchEntry_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkSearchEntry_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSearchEntry_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkSeparator* GtkSeparator_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkSeparator_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkSeparator_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSeparator_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkSeparator_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSeparator_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkSeparator_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSeparator_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkSeparatorMenuItem* GtkSeparatorMenuItem_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkSeparatorMenuItem_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkSeparatorMenuItem_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSeparatorMenuItem_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkSeparatorMenuItem_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSeparatorMenuItem_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkSeparatorMenuItem_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSeparatorMenuItem_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkSeparatorToolItem* GtkSeparatorToolItem_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkSeparatorToolItem_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkSeparatorToolItem_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSeparatorToolItem_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkSeparatorToolItem_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSeparatorToolItem_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkSeparatorToolItem_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSeparatorToolItem_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkSettings* GtkSettings_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkSettings_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkSettings_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSettings_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkSettings_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSettings_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkSettings_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSettings_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkStackSidebar* GtkStackSidebar_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkStackSidebar_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkStackSidebar_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStackSidebar_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkStackSidebar_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStackSidebar_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkStackSidebar_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStackSidebar_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkSizeGroup* GtkSizeGroup_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkSizeGroup_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkSizeGroup_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSizeGroup_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkSizeGroup_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSizeGroup_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkSizeGroup_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSizeGroup_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkSpinButton* GtkSpinButton_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkSpinButton_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkSpinButton_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSpinButton_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkSpinButton_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSpinButton_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkSpinButton_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSpinButton_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkSpinner* GtkSpinner_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkSpinner_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkSpinner_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSpinner_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkSpinner_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSpinner_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkSpinner_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSpinner_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkStack* GtkStack_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkStack_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkStack_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStack_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkStack_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStack_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkStack_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStack_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkStackSwitcher* GtkStackSwitcher_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkStackSwitcher_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkStackSwitcher_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStackSwitcher_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkStackSwitcher_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStackSwitcher_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkStackSwitcher_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStackSwitcher_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkStatusbar* GtkStatusbar_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkStatusbar_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkStatusbar_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStatusbar_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkStatusbar_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStatusbar_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkStatusbar_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStatusbar_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkStyle* GtkStyle_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkStyle_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkStyle_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStyle_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkStyle_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStyle_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkStyle_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStyle_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkStyleContext* GtkStyleContext_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkStyleContext_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkStyleContext_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStyleContext_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkStyleContext_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStyleContext_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkStyleContext_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStyleContext_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkStyleProperties* GtkStyleProperties_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkStyleProperties_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkStyleProperties_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStyleProperties_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkStyleProperties_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStyleProperties_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkStyleProperties_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStyleProperties_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkStyleProvider* GtkStyleProvider_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkStyleProvider_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkStyleProvider_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStyleProvider_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkStyleProvider_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStyleProvider_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkStyleProvider_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkStyleProvider_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkSwitch* GtkSwitch_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkSwitch_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkSwitch_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSwitch_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkSwitch_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSwitch_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkSwitch_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkSwitch_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkTextBuffer* GtkTextBuffer_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextBuffer_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkTextBuffer_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextBuffer_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkTextBuffer_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextBuffer_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkTextBuffer_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextBuffer_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkTextChildAnchor* GtkTextChildAnchor_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextChildAnchor_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkTextChildAnchor_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextChildAnchor_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkTextChildAnchor_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextChildAnchor_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkTextChildAnchor_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextChildAnchor_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkTextMark* GtkTextMark_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextMark_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkTextMark_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextMark_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkTextMark_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextMark_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkTextMark_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextMark_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkTextTag* GtkTextTag_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextTag_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkTextTag_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextTag_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkTextTag_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextTag_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkTextTag_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextTag_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkTextTagTable* GtkTextTagTable_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextTagTable_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkTextTagTable_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextTagTable_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkTextTagTable_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextTagTable_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkTextTagTable_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextTagTable_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkTextView* GtkTextView_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextView_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkTextView_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextView_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkTextView_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextView_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkTextView_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTextView_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkToggleButton* GtkToggleButton_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkToggleButton_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkToggleButton_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToggleButton_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkToggleButton_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToggleButton_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkToggleButton_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToggleButton_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkToggleToolButton* GtkToggleToolButton_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkToggleToolButton_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkToggleToolButton_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToggleToolButton_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkToggleToolButton_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToggleToolButton_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkToggleToolButton_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToggleToolButton_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkToolButton* GtkToolButton_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolButton_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkToolButton_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolButton_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkToolButton_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolButton_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkToolButton_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolButton_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkToolItem* GtkToolItem_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolItem_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkToolItem_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolItem_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkToolItem_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolItem_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkToolItem_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolItem_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkToolItemGroup* GtkToolItemGroup_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolItemGroup_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkToolItemGroup_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolItemGroup_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkToolItemGroup_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolItemGroup_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkToolItemGroup_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolItemGroup_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkToolPalette* GtkToolPalette_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolPalette_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkToolPalette_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolPalette_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkToolPalette_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolPalette_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkToolPalette_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolPalette_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkToolShell* GtkToolShell_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolShell_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkToolShell_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolShell_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkToolShell_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolShell_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkToolShell_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolShell_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkToolbar* GtkToolbar_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolbar_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkToolbar_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolbar_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkToolbar_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolbar_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkToolbar_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkToolbar_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkTooltip* GtkTooltip_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkTooltip_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkTooltip_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTooltip_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GSList* GtkTooltip_slistautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTooltip_slistautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GQueue* GtkTooltip_queueautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTooltip_queueautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GtkTreeDragDest* GtkTreeDragDest_autoptr;
+     * }
+     */
+    public static final AddressLayout GtkTreeDragDest_autoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
+     * typedef struct _GList* GtkTreeDragDest_listautoptr;
+     * }
+     */
+    public static final AddressLayout GtkTreeDragDest_listautoptr = RuntimeHelper.POINTER;
+    /**
+     * {@snippet :
      * typedef struct _GSList* GtkTreeDragDest_slistautoptr;
      * }
      */
-    public static final OfAddress GtkTreeDragDest_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeDragDest_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkTreeDragDest_queueautoptr;
      * }
      */
-    public static final OfAddress GtkTreeDragDest_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeDragDest_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkTreeDragSource* GtkTreeDragSource_autoptr;
      * }
      */
-    public static final OfAddress GtkTreeDragSource_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeDragSource_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkTreeDragSource_listautoptr;
      * }
      */
-    public static final OfAddress GtkTreeDragSource_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeDragSource_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkTreeDragSource_slistautoptr;
      * }
      */
-    public static final OfAddress GtkTreeDragSource_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeDragSource_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkTreeDragSource_queueautoptr;
      * }
      */
-    public static final OfAddress GtkTreeDragSource_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeDragSource_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkTreeModel* GtkTreeModel_autoptr;
      * }
      */
-    public static final OfAddress GtkTreeModel_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeModel_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkTreeModel_listautoptr;
      * }
      */
-    public static final OfAddress GtkTreeModel_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeModel_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkTreeModel_slistautoptr;
      * }
      */
-    public static final OfAddress GtkTreeModel_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeModel_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkTreeModel_queueautoptr;
      * }
      */
-    public static final OfAddress GtkTreeModel_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeModel_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkTreeModelFilter* GtkTreeModelFilter_autoptr;
      * }
      */
-    public static final OfAddress GtkTreeModelFilter_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeModelFilter_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkTreeModelFilter_listautoptr;
      * }
      */
-    public static final OfAddress GtkTreeModelFilter_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeModelFilter_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkTreeModelFilter_slistautoptr;
      * }
      */
-    public static final OfAddress GtkTreeModelFilter_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeModelFilter_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkTreeModelFilter_queueautoptr;
      * }
      */
-    public static final OfAddress GtkTreeModelFilter_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeModelFilter_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkTreeModelSort* GtkTreeModelSort_autoptr;
      * }
      */
-    public static final OfAddress GtkTreeModelSort_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeModelSort_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkTreeModelSort_listautoptr;
      * }
      */
-    public static final OfAddress GtkTreeModelSort_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeModelSort_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkTreeModelSort_slistautoptr;
      * }
      */
-    public static final OfAddress GtkTreeModelSort_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeModelSort_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkTreeModelSort_queueautoptr;
      * }
      */
-    public static final OfAddress GtkTreeModelSort_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeModelSort_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkTreeSelection* GtkTreeSelection_autoptr;
      * }
      */
-    public static final OfAddress GtkTreeSelection_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeSelection_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkTreeSelection_listautoptr;
      * }
      */
-    public static final OfAddress GtkTreeSelection_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeSelection_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkTreeSelection_slistautoptr;
      * }
      */
-    public static final OfAddress GtkTreeSelection_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeSelection_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkTreeSelection_queueautoptr;
      * }
      */
-    public static final OfAddress GtkTreeSelection_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeSelection_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkTreeSortable* GtkTreeSortable_autoptr;
      * }
      */
-    public static final OfAddress GtkTreeSortable_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeSortable_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkTreeSortable_listautoptr;
      * }
      */
-    public static final OfAddress GtkTreeSortable_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeSortable_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkTreeSortable_slistautoptr;
      * }
      */
-    public static final OfAddress GtkTreeSortable_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeSortable_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkTreeSortable_queueautoptr;
      * }
      */
-    public static final OfAddress GtkTreeSortable_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeSortable_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkTreeStore* GtkTreeStore_autoptr;
      * }
      */
-    public static final OfAddress GtkTreeStore_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeStore_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkTreeStore_listautoptr;
      * }
      */
-    public static final OfAddress GtkTreeStore_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeStore_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkTreeStore_slistautoptr;
      * }
      */
-    public static final OfAddress GtkTreeStore_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeStore_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkTreeStore_queueautoptr;
      * }
      */
-    public static final OfAddress GtkTreeStore_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeStore_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkTreeView* GtkTreeView_autoptr;
      * }
      */
-    public static final OfAddress GtkTreeView_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeView_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkTreeView_listautoptr;
      * }
      */
-    public static final OfAddress GtkTreeView_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeView_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkTreeView_slistautoptr;
      * }
      */
-    public static final OfAddress GtkTreeView_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeView_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkTreeView_queueautoptr;
      * }
      */
-    public static final OfAddress GtkTreeView_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeView_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkTreeViewColumn* GtkTreeViewColumn_autoptr;
      * }
      */
-    public static final OfAddress GtkTreeViewColumn_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeViewColumn_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkTreeViewColumn_listautoptr;
      * }
      */
-    public static final OfAddress GtkTreeViewColumn_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeViewColumn_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkTreeViewColumn_slistautoptr;
      * }
      */
-    public static final OfAddress GtkTreeViewColumn_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeViewColumn_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkTreeViewColumn_queueautoptr;
      * }
      */
-    public static final OfAddress GtkTreeViewColumn_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeViewColumn_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkViewport* GtkViewport_autoptr;
      * }
      */
-    public static final OfAddress GtkViewport_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkViewport_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkViewport_listautoptr;
      * }
      */
-    public static final OfAddress GtkViewport_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkViewport_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkViewport_slistautoptr;
      * }
      */
-    public static final OfAddress GtkViewport_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkViewport_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkViewport_queueautoptr;
      * }
      */
-    public static final OfAddress GtkViewport_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkViewport_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkVolumeButton* GtkVolumeButton_autoptr;
      * }
      */
-    public static final OfAddress GtkVolumeButton_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkVolumeButton_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkVolumeButton_listautoptr;
      * }
      */
-    public static final OfAddress GtkVolumeButton_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkVolumeButton_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkVolumeButton_slistautoptr;
      * }
      */
-    public static final OfAddress GtkVolumeButton_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkVolumeButton_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkVolumeButton_queueautoptr;
      * }
      */
-    public static final OfAddress GtkVolumeButton_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkVolumeButton_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkPaperSize* GtkPaperSize_autoptr;
      * }
      */
-    public static final OfAddress GtkPaperSize_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkPaperSize_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkPaperSize_listautoptr;
      * }
      */
-    public static final OfAddress GtkPaperSize_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkPaperSize_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkPaperSize_slistautoptr;
      * }
      */
-    public static final OfAddress GtkPaperSize_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkPaperSize_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkPaperSize_queueautoptr;
      * }
      */
-    public static final OfAddress GtkPaperSize_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkPaperSize_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkRecentInfo* GtkRecentInfo_autoptr;
      * }
      */
-    public static final OfAddress GtkRecentInfo_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkRecentInfo_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkRecentInfo_listautoptr;
      * }
      */
-    public static final OfAddress GtkRecentInfo_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkRecentInfo_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkRecentInfo_slistautoptr;
      * }
      */
-    public static final OfAddress GtkRecentInfo_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkRecentInfo_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkRecentInfo_queueautoptr;
      * }
      */
-    public static final OfAddress GtkRecentInfo_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkRecentInfo_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkSelectionData* GtkSelectionData_autoptr;
      * }
      */
-    public static final OfAddress GtkSelectionData_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkSelectionData_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkSelectionData_listautoptr;
      * }
      */
-    public static final OfAddress GtkSelectionData_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkSelectionData_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkSelectionData_slistautoptr;
      * }
      */
-    public static final OfAddress GtkSelectionData_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkSelectionData_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkSelectionData_queueautoptr;
      * }
      */
-    public static final OfAddress GtkSelectionData_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkSelectionData_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkTargetList* GtkTargetList_autoptr;
      * }
      */
-    public static final OfAddress GtkTargetList_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTargetList_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkTargetList_listautoptr;
      * }
      */
-    public static final OfAddress GtkTargetList_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTargetList_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkTargetList_slistautoptr;
      * }
      */
-    public static final OfAddress GtkTargetList_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTargetList_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkTargetList_queueautoptr;
      * }
      */
-    public static final OfAddress GtkTargetList_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTargetList_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkTextAttributes* GtkTextAttributes_autoptr;
      * }
      */
-    public static final OfAddress GtkTextAttributes_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTextAttributes_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkTextAttributes_listautoptr;
      * }
      */
-    public static final OfAddress GtkTextAttributes_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTextAttributes_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkTextAttributes_slistautoptr;
      * }
      */
-    public static final OfAddress GtkTextAttributes_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTextAttributes_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkTextAttributes_queueautoptr;
      * }
      */
-    public static final OfAddress GtkTextAttributes_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTextAttributes_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkTextIter* GtkTextIter_autoptr;
      * }
      */
-    public static final OfAddress GtkTextIter_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTextIter_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkTextIter_listautoptr;
      * }
      */
-    public static final OfAddress GtkTextIter_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTextIter_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkTextIter_slistautoptr;
      * }
      */
-    public static final OfAddress GtkTextIter_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTextIter_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkTextIter_queueautoptr;
      * }
      */
-    public static final OfAddress GtkTextIter_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTextIter_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkTreeIter* GtkTreeIter_autoptr;
      * }
      */
-    public static final OfAddress GtkTreeIter_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeIter_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkTreeIter_listautoptr;
      * }
      */
-    public static final OfAddress GtkTreeIter_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeIter_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkTreeIter_slistautoptr;
      * }
      */
-    public static final OfAddress GtkTreeIter_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeIter_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkTreeIter_queueautoptr;
      * }
      */
-    public static final OfAddress GtkTreeIter_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeIter_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkTreePath* GtkTreePath_autoptr;
      * }
      */
-    public static final OfAddress GtkTreePath_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreePath_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkTreePath_listautoptr;
      * }
      */
-    public static final OfAddress GtkTreePath_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreePath_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkTreePath_slistautoptr;
      * }
      */
-    public static final OfAddress GtkTreePath_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreePath_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkTreePath_queueautoptr;
      * }
      */
-    public static final OfAddress GtkTreePath_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreePath_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkTreeRowReference* GtkTreeRowReference_autoptr;
      * }
      */
-    public static final OfAddress GtkTreeRowReference_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeRowReference_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkTreeRowReference_listautoptr;
      * }
      */
-    public static final OfAddress GtkTreeRowReference_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeRowReference_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkTreeRowReference_slistautoptr;
      * }
      */
-    public static final OfAddress GtkTreeRowReference_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeRowReference_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkTreeRowReference_queueautoptr;
      * }
      */
-    public static final OfAddress GtkTreeRowReference_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkTreeRowReference_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GtkWidgetPath* GtkWidgetPath_autoptr;
      * }
      */
-    public static final OfAddress GtkWidgetPath_autoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkWidgetPath_autoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GList* GtkWidgetPath_listautoptr;
      * }
      */
-    public static final OfAddress GtkWidgetPath_listautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkWidgetPath_listautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GSList* GtkWidgetPath_slistautoptr;
      * }
      */
-    public static final OfAddress GtkWidgetPath_slistautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkWidgetPath_slistautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct _GQueue* GtkWidgetPath_queueautoptr;
      * }
      */
-    public static final OfAddress GtkWidgetPath_queueautoptr = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout GtkWidgetPath_queueautoptr = RuntimeHelper.POINTER;
     /**
      * {@snippet :
-     * enum .APP_INDICATOR_CATEGORY_APPLICATION_STATUS = 0;
+     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_APPLICATION_STATUS = 0;
      * }
      */
     public static int APP_INDICATOR_CATEGORY_APPLICATION_STATUS() {
@@ -533,7 +1621,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * enum .APP_INDICATOR_CATEGORY_COMMUNICATIONS = 1;
+     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_COMMUNICATIONS = 1;
      * }
      */
     public static int APP_INDICATOR_CATEGORY_COMMUNICATIONS() {
@@ -541,7 +1629,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * enum .APP_INDICATOR_CATEGORY_SYSTEM_SERVICES = 2;
+     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_SYSTEM_SERVICES = 2;
      * }
      */
     public static int APP_INDICATOR_CATEGORY_SYSTEM_SERVICES() {
@@ -549,7 +1637,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * enum .APP_INDICATOR_CATEGORY_HARDWARE = 3;
+     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_HARDWARE = 3;
      * }
      */
     public static int APP_INDICATOR_CATEGORY_HARDWARE() {
@@ -557,7 +1645,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * enum .APP_INDICATOR_CATEGORY_OTHER = 4;
+     * enum AppIndicatorCategory.APP_INDICATOR_CATEGORY_OTHER = 4;
      * }
      */
     public static int APP_INDICATOR_CATEGORY_OTHER() {
@@ -565,7 +1653,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * enum .APP_INDICATOR_STATUS_PASSIVE = 0;
+     * enum AppIndicatorStatus.APP_INDICATOR_STATUS_PASSIVE = 0;
      * }
      */
     public static int APP_INDICATOR_STATUS_PASSIVE() {
@@ -573,7 +1661,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * enum .APP_INDICATOR_STATUS_ACTIVE = 1;
+     * enum AppIndicatorStatus.APP_INDICATOR_STATUS_ACTIVE = 1;
      * }
      */
     public static int APP_INDICATOR_STATUS_ACTIVE() {
@@ -581,18 +1669,18 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * enum .APP_INDICATOR_STATUS_ATTENTION = 2;
+     * enum AppIndicatorStatus.APP_INDICATOR_STATUS_ATTENTION = 2;
      * }
      */
     public static int APP_INDICATOR_STATUS_ATTENTION() {
         return (int)2L;
     }
     public static MethodHandle app_indicator_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1979.app_indicator_get_type$MH,"app_indicator_get_type");
+        return RuntimeHelper.requireNonNull(constants$3408.const$3,"app_indicator_get_type");
     }
     /**
      * {@snippet :
-     * GType app_indicator_get_type();
+     * unsigned long app_indicator_get_type();
      * }
      */
     public static long app_indicator_get_type() {
@@ -604,11 +1692,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1979.app_indicator_new$MH,"app_indicator_new");
+        return RuntimeHelper.requireNonNull(constants$3408.const$4,"app_indicator_new");
     }
     /**
      * {@snippet :
-     * AppIndicator* app_indicator_new(const gchar* id, const gchar* icon_name, AppIndicatorCategory category);
+     * struct _AppIndicator* app_indicator_new(char* id, char* icon_name, enum AppIndicatorCategory category);
      * }
      */
     public static MemorySegment app_indicator_new(MemorySegment id, MemorySegment icon_name, int category) {
@@ -620,11 +1708,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_new_with_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1980.app_indicator_new_with_path$MH,"app_indicator_new_with_path");
+        return RuntimeHelper.requireNonNull(constants$3408.const$5,"app_indicator_new_with_path");
     }
     /**
      * {@snippet :
-     * AppIndicator* app_indicator_new_with_path(const gchar* id, const gchar* icon_name, AppIndicatorCategory category, const gchar* icon_theme_path);
+     * struct _AppIndicator* app_indicator_new_with_path(char* id, char* icon_name, enum AppIndicatorCategory category, char* icon_theme_path);
      * }
      */
     public static MemorySegment app_indicator_new_with_path(MemorySegment id, MemorySegment icon_name, int category, MemorySegment icon_theme_path) {
@@ -636,11 +1724,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1980.app_indicator_set_status$MH,"app_indicator_set_status");
+        return RuntimeHelper.requireNonNull(constants$3409.const$0,"app_indicator_set_status");
     }
     /**
      * {@snippet :
-     * void app_indicator_set_status(AppIndicator* self, AppIndicatorStatus status);
+     * void app_indicator_set_status(struct _AppIndicator* self, enum AppIndicatorStatus status);
      * }
      */
     public static void app_indicator_set_status(MemorySegment self, int status) {
@@ -652,11 +1740,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_attention_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$1980.app_indicator_set_attention_icon$MH,"app_indicator_set_attention_icon");
+        return RuntimeHelper.requireNonNull(constants$3409.const$1,"app_indicator_set_attention_icon");
     }
     /**
      * {@snippet :
-     * void app_indicator_set_attention_icon(AppIndicator* self, const gchar* icon_name);
+     * void app_indicator_set_attention_icon(struct _AppIndicator* self, char* icon_name);
      * }
      */
     public static void app_indicator_set_attention_icon(MemorySegment self, MemorySegment icon_name) {
@@ -668,11 +1756,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_attention_icon_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$1980.app_indicator_set_attention_icon_full$MH,"app_indicator_set_attention_icon_full");
+        return RuntimeHelper.requireNonNull(constants$3409.const$2,"app_indicator_set_attention_icon_full");
     }
     /**
      * {@snippet :
-     * void app_indicator_set_attention_icon_full(AppIndicator* self, const gchar* icon_name, const gchar* icon_desc);
+     * void app_indicator_set_attention_icon_full(struct _AppIndicator* self, char* icon_name, char* icon_desc);
      * }
      */
     public static void app_indicator_set_attention_icon_full(MemorySegment self, MemorySegment icon_name, MemorySegment icon_desc) {
@@ -684,11 +1772,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_menu$MH() {
-        return RuntimeHelper.requireNonNull(constants$1980.app_indicator_set_menu$MH,"app_indicator_set_menu");
+        return RuntimeHelper.requireNonNull(constants$3409.const$3,"app_indicator_set_menu");
     }
     /**
      * {@snippet :
-     * void app_indicator_set_menu(AppIndicator* self, GtkMenu* menu);
+     * void app_indicator_set_menu(struct _AppIndicator* self, struct _GtkMenu* menu);
      * }
      */
     public static void app_indicator_set_menu(MemorySegment self, MemorySegment menu) {
@@ -700,11 +1788,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$1980.app_indicator_set_icon$MH,"app_indicator_set_icon");
+        return RuntimeHelper.requireNonNull(constants$3409.const$4,"app_indicator_set_icon");
     }
     /**
      * {@snippet :
-     * void app_indicator_set_icon(AppIndicator* self, const gchar* icon_name);
+     * void app_indicator_set_icon(struct _AppIndicator* self, char* icon_name);
      * }
      */
     public static void app_indicator_set_icon(MemorySegment self, MemorySegment icon_name) {
@@ -716,11 +1804,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_icon_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$1981.app_indicator_set_icon_full$MH,"app_indicator_set_icon_full");
+        return RuntimeHelper.requireNonNull(constants$3409.const$5,"app_indicator_set_icon_full");
     }
     /**
      * {@snippet :
-     * void app_indicator_set_icon_full(AppIndicator* self, const gchar* icon_name, const gchar* icon_desc);
+     * void app_indicator_set_icon_full(struct _AppIndicator* self, char* icon_name, char* icon_desc);
      * }
      */
     public static void app_indicator_set_icon_full(MemorySegment self, MemorySegment icon_name, MemorySegment icon_desc) {
@@ -732,11 +1820,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$1981.app_indicator_set_label$MH,"app_indicator_set_label");
+        return RuntimeHelper.requireNonNull(constants$3410.const$0,"app_indicator_set_label");
     }
     /**
      * {@snippet :
-     * void app_indicator_set_label(AppIndicator* self, const gchar* label, const gchar* guide);
+     * void app_indicator_set_label(struct _AppIndicator* self, char* label, char* guide);
      * }
      */
     public static void app_indicator_set_label(MemorySegment self, MemorySegment label, MemorySegment guide) {
@@ -748,11 +1836,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_icon_theme_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1981.app_indicator_set_icon_theme_path$MH,"app_indicator_set_icon_theme_path");
+        return RuntimeHelper.requireNonNull(constants$3410.const$1,"app_indicator_set_icon_theme_path");
     }
     /**
      * {@snippet :
-     * void app_indicator_set_icon_theme_path(AppIndicator* self, const gchar* icon_theme_path);
+     * void app_indicator_set_icon_theme_path(struct _AppIndicator* self, char* icon_theme_path);
      * }
      */
     public static void app_indicator_set_icon_theme_path(MemorySegment self, MemorySegment icon_theme_path) {
@@ -764,11 +1852,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_ordering_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$1981.app_indicator_set_ordering_index$MH,"app_indicator_set_ordering_index");
+        return RuntimeHelper.requireNonNull(constants$3410.const$2,"app_indicator_set_ordering_index");
     }
     /**
      * {@snippet :
-     * void app_indicator_set_ordering_index(AppIndicator* self, guint32 ordering_index);
+     * void app_indicator_set_ordering_index(struct _AppIndicator* self, unsigned int ordering_index);
      * }
      */
     public static void app_indicator_set_ordering_index(MemorySegment self, int ordering_index) {
@@ -780,11 +1868,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_secondary_activate_target$MH() {
-        return RuntimeHelper.requireNonNull(constants$1981.app_indicator_set_secondary_activate_target$MH,"app_indicator_set_secondary_activate_target");
+        return RuntimeHelper.requireNonNull(constants$3410.const$3,"app_indicator_set_secondary_activate_target");
     }
     /**
      * {@snippet :
-     * void app_indicator_set_secondary_activate_target(AppIndicator* self, GtkWidget* menuitem);
+     * void app_indicator_set_secondary_activate_target(struct _AppIndicator* self, struct _GtkWidget* menuitem);
      * }
      */
     public static void app_indicator_set_secondary_activate_target(MemorySegment self, MemorySegment menuitem) {
@@ -796,11 +1884,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_set_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$1981.app_indicator_set_title$MH,"app_indicator_set_title");
+        return RuntimeHelper.requireNonNull(constants$3410.const$4,"app_indicator_set_title");
     }
     /**
      * {@snippet :
-     * void app_indicator_set_title(AppIndicator* self, const gchar* title);
+     * void app_indicator_set_title(struct _AppIndicator* self, char* title);
      * }
      */
     public static void app_indicator_set_title(MemorySegment self, MemorySegment title) {
@@ -812,11 +1900,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$1982.app_indicator_get_id$MH,"app_indicator_get_id");
+        return RuntimeHelper.requireNonNull(constants$3410.const$5,"app_indicator_get_id");
     }
     /**
      * {@snippet :
-     * const gchar* app_indicator_get_id(AppIndicator* self);
+     * char* app_indicator_get_id(struct _AppIndicator* self);
      * }
      */
     public static MemorySegment app_indicator_get_id(MemorySegment self) {
@@ -828,11 +1916,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_category$MH() {
-        return RuntimeHelper.requireNonNull(constants$1982.app_indicator_get_category$MH,"app_indicator_get_category");
+        return RuntimeHelper.requireNonNull(constants$3411.const$0,"app_indicator_get_category");
     }
     /**
      * {@snippet :
-     * AppIndicatorCategory app_indicator_get_category(AppIndicator* self);
+     * enum AppIndicatorCategory app_indicator_get_category(struct _AppIndicator* self);
      * }
      */
     public static int app_indicator_get_category(MemorySegment self) {
@@ -844,11 +1932,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$1982.app_indicator_get_status$MH,"app_indicator_get_status");
+        return RuntimeHelper.requireNonNull(constants$3411.const$1,"app_indicator_get_status");
     }
     /**
      * {@snippet :
-     * AppIndicatorStatus app_indicator_get_status(AppIndicator* self);
+     * enum AppIndicatorStatus app_indicator_get_status(struct _AppIndicator* self);
      * }
      */
     public static int app_indicator_get_status(MemorySegment self) {
@@ -860,11 +1948,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$1982.app_indicator_get_icon$MH,"app_indicator_get_icon");
+        return RuntimeHelper.requireNonNull(constants$3411.const$2,"app_indicator_get_icon");
     }
     /**
      * {@snippet :
-     * const gchar* app_indicator_get_icon(AppIndicator* self);
+     * char* app_indicator_get_icon(struct _AppIndicator* self);
      * }
      */
     public static MemorySegment app_indicator_get_icon(MemorySegment self) {
@@ -876,11 +1964,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_icon_desc$MH() {
-        return RuntimeHelper.requireNonNull(constants$1982.app_indicator_get_icon_desc$MH,"app_indicator_get_icon_desc");
+        return RuntimeHelper.requireNonNull(constants$3411.const$3,"app_indicator_get_icon_desc");
     }
     /**
      * {@snippet :
-     * const gchar* app_indicator_get_icon_desc(AppIndicator* self);
+     * char* app_indicator_get_icon_desc(struct _AppIndicator* self);
      * }
      */
     public static MemorySegment app_indicator_get_icon_desc(MemorySegment self) {
@@ -892,11 +1980,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_icon_theme_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1982.app_indicator_get_icon_theme_path$MH,"app_indicator_get_icon_theme_path");
+        return RuntimeHelper.requireNonNull(constants$3411.const$4,"app_indicator_get_icon_theme_path");
     }
     /**
      * {@snippet :
-     * const gchar* app_indicator_get_icon_theme_path(AppIndicator* self);
+     * char* app_indicator_get_icon_theme_path(struct _AppIndicator* self);
      * }
      */
     public static MemorySegment app_indicator_get_icon_theme_path(MemorySegment self) {
@@ -908,11 +1996,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_attention_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$1983.app_indicator_get_attention_icon$MH,"app_indicator_get_attention_icon");
+        return RuntimeHelper.requireNonNull(constants$3411.const$5,"app_indicator_get_attention_icon");
     }
     /**
      * {@snippet :
-     * const gchar* app_indicator_get_attention_icon(AppIndicator* self);
+     * char* app_indicator_get_attention_icon(struct _AppIndicator* self);
      * }
      */
     public static MemorySegment app_indicator_get_attention_icon(MemorySegment self) {
@@ -924,11 +2012,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_attention_icon_desc$MH() {
-        return RuntimeHelper.requireNonNull(constants$1983.app_indicator_get_attention_icon_desc$MH,"app_indicator_get_attention_icon_desc");
+        return RuntimeHelper.requireNonNull(constants$3412.const$0,"app_indicator_get_attention_icon_desc");
     }
     /**
      * {@snippet :
-     * const gchar* app_indicator_get_attention_icon_desc(AppIndicator* self);
+     * char* app_indicator_get_attention_icon_desc(struct _AppIndicator* self);
      * }
      */
     public static MemorySegment app_indicator_get_attention_icon_desc(MemorySegment self) {
@@ -940,11 +2028,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$1983.app_indicator_get_title$MH,"app_indicator_get_title");
+        return RuntimeHelper.requireNonNull(constants$3412.const$1,"app_indicator_get_title");
     }
     /**
      * {@snippet :
-     * const gchar* app_indicator_get_title(AppIndicator* self);
+     * char* app_indicator_get_title(struct _AppIndicator* self);
      * }
      */
     public static MemorySegment app_indicator_get_title(MemorySegment self) {
@@ -956,11 +2044,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_menu$MH() {
-        return RuntimeHelper.requireNonNull(constants$1983.app_indicator_get_menu$MH,"app_indicator_get_menu");
+        return RuntimeHelper.requireNonNull(constants$3412.const$2,"app_indicator_get_menu");
     }
     /**
      * {@snippet :
-     * GtkMenu* app_indicator_get_menu(AppIndicator* self);
+     * struct _GtkMenu* app_indicator_get_menu(struct _AppIndicator* self);
      * }
      */
     public static MemorySegment app_indicator_get_menu(MemorySegment self) {
@@ -972,11 +2060,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$1983.app_indicator_get_label$MH,"app_indicator_get_label");
+        return RuntimeHelper.requireNonNull(constants$3412.const$3,"app_indicator_get_label");
     }
     /**
      * {@snippet :
-     * const gchar* app_indicator_get_label(AppIndicator* self);
+     * char* app_indicator_get_label(struct _AppIndicator* self);
      * }
      */
     public static MemorySegment app_indicator_get_label(MemorySegment self) {
@@ -988,11 +2076,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_label_guide$MH() {
-        return RuntimeHelper.requireNonNull(constants$1983.app_indicator_get_label_guide$MH,"app_indicator_get_label_guide");
+        return RuntimeHelper.requireNonNull(constants$3412.const$4,"app_indicator_get_label_guide");
     }
     /**
      * {@snippet :
-     * const gchar* app_indicator_get_label_guide(AppIndicator* self);
+     * char* app_indicator_get_label_guide(struct _AppIndicator* self);
      * }
      */
     public static MemorySegment app_indicator_get_label_guide(MemorySegment self) {
@@ -1004,11 +2092,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_ordering_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$1984.app_indicator_get_ordering_index$MH,"app_indicator_get_ordering_index");
+        return RuntimeHelper.requireNonNull(constants$3412.const$5,"app_indicator_get_ordering_index");
     }
     /**
      * {@snippet :
-     * guint32 app_indicator_get_ordering_index(AppIndicator* self);
+     * unsigned int app_indicator_get_ordering_index(struct _AppIndicator* self);
      * }
      */
     public static int app_indicator_get_ordering_index(MemorySegment self) {
@@ -1020,11 +2108,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_get_secondary_activate_target$MH() {
-        return RuntimeHelper.requireNonNull(constants$1984.app_indicator_get_secondary_activate_target$MH,"app_indicator_get_secondary_activate_target");
+        return RuntimeHelper.requireNonNull(constants$3413.const$0,"app_indicator_get_secondary_activate_target");
     }
     /**
      * {@snippet :
-     * GtkWidget* app_indicator_get_secondary_activate_target(AppIndicator* self);
+     * struct _GtkWidget* app_indicator_get_secondary_activate_target(struct _AppIndicator* self);
      * }
      */
     public static MemorySegment app_indicator_get_secondary_activate_target(MemorySegment self) {
@@ -1036,11 +2124,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
         }
     }
     public static MethodHandle app_indicator_build_menu_from_desktop$MH() {
-        return RuntimeHelper.requireNonNull(constants$1984.app_indicator_build_menu_from_desktop$MH,"app_indicator_build_menu_from_desktop");
+        return RuntimeHelper.requireNonNull(constants$3413.const$1,"app_indicator_build_menu_from_desktop");
     }
     /**
      * {@snippet :
-     * void app_indicator_build_menu_from_desktop(AppIndicator* self, const gchar* desktop_file, const gchar* desktop_profile);
+     * void app_indicator_build_menu_from_desktop(struct _AppIndicator* self, char* desktop_file, char* desktop_profile);
      * }
      */
     public static void app_indicator_build_menu_from_desktop(MemorySegment self, MemorySegment desktop_file, MemorySegment desktop_profile) {
@@ -1057,7 +2145,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment NULL() {
-        return constants$1984.NULL$ADDR;
+        return constants$3413.const$2;
     }
     /**
      * {@snippet :
@@ -1105,7 +2193,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GNUC_FUNCTION() {
-        return constants$1984.G_GNUC_FUNCTION$SEGMENT;
+        return constants$3413.const$3;
     }
     /**
      * {@snippet :
@@ -1113,15 +2201,15 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GNUC_PRETTY_FUNCTION() {
-        return constants$1984.G_GNUC_PRETTY_FUNCTION$SEGMENT;
+        return constants$3413.const$3;
     }
     /**
      * {@snippet :
-     * #define G_STRLOC "/tmp/jextract$10505176010774648845.h:49"
+     * #define G_STRLOC "/tmp/jextract$7831923431972799985.h:49"
      * }
      */
     public static MemorySegment G_STRLOC() {
-        return constants$1985.G_STRLOC$SEGMENT;
+        return constants$3413.const$4;
     }
     /**
      * {@snippet :
@@ -1146,14 +2234,6 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      */
     public static long _POSIX_C_SOURCE() {
         return 200809L;
-    }
-    /**
-     * {@snippet :
-     * #define __TIMESIZE 64
-     * }
-     */
-    public static int __TIMESIZE() {
-        return (int)64L;
     }
     /**
      * {@snippet :
@@ -1389,19 +2469,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * #define CHAR_MIN -128
-     * }
-     */
-    public static int CHAR_MIN() {
-        return (int)-128L;
-    }
-    /**
-     * {@snippet :
-     * #define CHAR_MAX 127
+     * #define CHAR_MAX 255
      * }
      */
     public static int CHAR_MAX() {
-        return (int)127L;
+        return (int)255L;
     }
     /**
      * {@snippet :
@@ -1437,19 +2509,19 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * #define LDBL_MANT_DIG 64
+     * #define LDBL_MANT_DIG 113
      * }
      */
     public static int LDBL_MANT_DIG() {
-        return (int)64L;
+        return (int)113L;
     }
     /**
      * {@snippet :
-     * #define DECIMAL_DIG 21
+     * #define DECIMAL_DIG 36
      * }
      */
     public static int DECIMAL_DIG() {
-        return (int)21L;
+        return (int)36L;
     }
     /**
      * {@snippet :
@@ -1469,11 +2541,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * #define LDBL_DIG 18
+     * #define LDBL_DIG 33
      * }
      */
     public static int LDBL_DIG() {
-        return (int)18L;
+        return (int)33L;
     }
     /**
      * {@snippet :
@@ -1653,11 +2725,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * #define LDBL_DECIMAL_DIG 21
+     * #define LDBL_DECIMAL_DIG 36
      * }
      */
     public static int LDBL_DECIMAL_DIG() {
-        return (int)21L;
+        return (int)36L;
     }
     /**
      * {@snippet :
@@ -1793,7 +2865,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GINT16_MODIFIER() {
-        return constants$1985.G_GINT16_MODIFIER$SEGMENT;
+        return constants$3413.const$5;
     }
     /**
      * {@snippet :
@@ -1801,7 +2873,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GINT16_FORMAT() {
-        return constants$1985.G_GINT16_FORMAT$SEGMENT;
+        return constants$3414.const$0;
     }
     /**
      * {@snippet :
@@ -1809,7 +2881,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GUINT16_FORMAT() {
-        return constants$1985.G_GUINT16_FORMAT$SEGMENT;
+        return constants$3414.const$1;
     }
     /**
      * {@snippet :
@@ -1817,7 +2889,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GINT32_MODIFIER() {
-        return constants$1985.G_GINT32_MODIFIER$SEGMENT;
+        return constants$3413.const$3;
     }
     /**
      * {@snippet :
@@ -1825,7 +2897,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GINT32_FORMAT() {
-        return constants$1985.G_GINT32_FORMAT$SEGMENT;
+        return constants$3414.const$2;
     }
     /**
      * {@snippet :
@@ -1833,7 +2905,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GUINT32_FORMAT() {
-        return constants$1986.G_GUINT32_FORMAT$SEGMENT;
+        return constants$3414.const$3;
     }
     /**
      * {@snippet :
@@ -1841,7 +2913,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GINT64_MODIFIER() {
-        return constants$1986.G_GINT64_MODIFIER$SEGMENT;
+        return constants$3414.const$4;
     }
     /**
      * {@snippet :
@@ -1849,7 +2921,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GINT64_FORMAT() {
-        return constants$1986.G_GINT64_FORMAT$SEGMENT;
+        return constants$3414.const$5;
     }
     /**
      * {@snippet :
@@ -1857,7 +2929,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GUINT64_FORMAT() {
-        return constants$1986.G_GUINT64_FORMAT$SEGMENT;
+        return constants$3415.const$0;
     }
     /**
      * {@snippet :
@@ -1865,7 +2937,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GSIZE_MODIFIER() {
-        return constants$1986.G_GSIZE_MODIFIER$SEGMENT;
+        return constants$3414.const$4;
     }
     /**
      * {@snippet :
@@ -1873,7 +2945,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GSSIZE_MODIFIER() {
-        return constants$1986.G_GSSIZE_MODIFIER$SEGMENT;
+        return constants$3414.const$4;
     }
     /**
      * {@snippet :
@@ -1881,7 +2953,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GSIZE_FORMAT() {
-        return constants$1987.G_GSIZE_FORMAT$SEGMENT;
+        return constants$3415.const$0;
     }
     /**
      * {@snippet :
@@ -1889,7 +2961,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GSSIZE_FORMAT() {
-        return constants$1987.G_GSSIZE_FORMAT$SEGMENT;
+        return constants$3414.const$5;
     }
     /**
      * {@snippet :
@@ -1937,7 +3009,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GOFFSET_MODIFIER() {
-        return constants$1987.G_GOFFSET_MODIFIER$SEGMENT;
+        return constants$3414.const$4;
     }
     /**
      * {@snippet :
@@ -1945,7 +3017,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GOFFSET_FORMAT() {
-        return constants$1987.G_GOFFSET_FORMAT$SEGMENT;
+        return constants$3414.const$5;
     }
     /**
      * {@snippet :
@@ -1953,7 +3025,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_POLLFD_FORMAT() {
-        return constants$1987.G_POLLFD_FORMAT$SEGMENT;
+        return constants$3415.const$1;
     }
     /**
      * {@snippet :
@@ -1961,7 +3033,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GINTPTR_MODIFIER() {
-        return constants$1987.G_GINTPTR_MODIFIER$SEGMENT;
+        return constants$3414.const$4;
     }
     /**
      * {@snippet :
@@ -1969,7 +3041,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GINTPTR_FORMAT() {
-        return constants$1988.G_GINTPTR_FORMAT$SEGMENT;
+        return constants$3414.const$5;
     }
     /**
      * {@snippet :
@@ -1977,7 +3049,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_GUINTPTR_FORMAT() {
-        return constants$1988.G_GUINTPTR_FORMAT$SEGMENT;
+        return constants$3415.const$0;
     }
     /**
      * {@snippet :
@@ -1993,7 +3065,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MODULE_SUFFIX() {
-        return constants$1988.G_MODULE_SUFFIX$SEGMENT;
+        return constants$3415.const$2;
     }
     /**
      * {@snippet :
@@ -2001,7 +3073,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_PID_FORMAT() {
-        return constants$1988.G_PID_FORMAT$SEGMENT;
+        return constants$3414.const$2;
     }
     /**
      * {@snippet :
@@ -2017,7 +3089,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_DIR_SEPARATOR_S() {
-        return constants$1988.G_DIR_SEPARATOR_S$SEGMENT;
+        return constants$3415.const$3;
     }
     /**
      * {@snippet :
@@ -2033,7 +3105,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_SEARCHPATH_SEPARATOR_S() {
-        return constants$1988.G_SEARCHPATH_SEPARATOR_S$SEGMENT;
+        return constants$3415.const$4;
     }
     /**
      * {@snippet :
@@ -2373,6 +3445,14 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
+     * #define __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64 1
+     * }
+     */
+    public static int __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
      * #define CLOCKS_PER_SEC 1000000
      * }
      */
@@ -2577,7 +3657,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_NAME() {
-        return constants$1989.G_OS_INFO_KEY_NAME$SEGMENT;
+        return constants$3415.const$5;
     }
     /**
      * {@snippet :
@@ -2585,7 +3665,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_PRETTY_NAME() {
-        return constants$1989.G_OS_INFO_KEY_PRETTY_NAME$SEGMENT;
+        return constants$3416.const$0;
     }
     /**
      * {@snippet :
@@ -2593,7 +3673,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_VERSION() {
-        return constants$1989.G_OS_INFO_KEY_VERSION$SEGMENT;
+        return constants$3416.const$1;
     }
     /**
      * {@snippet :
@@ -2601,7 +3681,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_VERSION_CODENAME() {
-        return constants$1989.G_OS_INFO_KEY_VERSION_CODENAME$SEGMENT;
+        return constants$3416.const$2;
     }
     /**
      * {@snippet :
@@ -2609,7 +3689,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_VERSION_ID() {
-        return constants$1989.G_OS_INFO_KEY_VERSION_ID$SEGMENT;
+        return constants$3416.const$3;
     }
     /**
      * {@snippet :
@@ -2617,7 +3697,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_ID() {
-        return constants$1989.G_OS_INFO_KEY_ID$SEGMENT;
+        return constants$3416.const$4;
     }
     /**
      * {@snippet :
@@ -2625,7 +3705,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_HOME_URL() {
-        return constants$1990.G_OS_INFO_KEY_HOME_URL$SEGMENT;
+        return constants$3416.const$5;
     }
     /**
      * {@snippet :
@@ -2633,7 +3713,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_DOCUMENTATION_URL() {
-        return constants$1990.G_OS_INFO_KEY_DOCUMENTATION_URL$SEGMENT;
+        return constants$3417.const$0;
     }
     /**
      * {@snippet :
@@ -2641,7 +3721,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_SUPPORT_URL() {
-        return constants$1990.G_OS_INFO_KEY_SUPPORT_URL$SEGMENT;
+        return constants$3417.const$1;
     }
     /**
      * {@snippet :
@@ -2649,7 +3729,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_BUG_REPORT_URL() {
-        return constants$1990.G_OS_INFO_KEY_BUG_REPORT_URL$SEGMENT;
+        return constants$3417.const$2;
     }
     /**
      * {@snippet :
@@ -2657,7 +3737,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OS_INFO_KEY_PRIVACY_POLICY_URL() {
-        return constants$1990.G_OS_INFO_KEY_PRIVACY_POLICY_URL$SEGMENT;
+        return constants$3417.const$3;
     }
     /**
      * {@snippet :
@@ -2666,6 +3746,22 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      */
     public static int __WCLONE() {
         return (int)2147483648L;
+    }
+    /**
+     * {@snippet :
+     * #define __HAVE_FLOAT64X 1
+     * }
+     */
+    public static int __HAVE_FLOAT64X() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * #define __HAVE_FLOAT64X_LONG_DOUBLE 1
+     * }
+     */
+    public static int __HAVE_FLOAT64X_LONG_DOUBLE() {
+        return (int)1L;
     }
     /**
      * {@snippet :
@@ -2757,19 +3853,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * #define __PTHREAD_RWLOCK_ELISION_EXTRA 0
-     * }
-     */
-    public static int __PTHREAD_RWLOCK_ELISION_EXTRA() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
      * #define SIG_ERR -1
      * }
      */
     public static MemorySegment SIG_ERR() {
-        return constants$1990.SIG_ERR$ADDR;
+        return constants$3417.const$4;
     }
     /**
      * {@snippet :
@@ -2777,7 +3865,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment SIG_DFL() {
-        return constants$1991.SIG_DFL$ADDR;
+        return constants$3413.const$2;
     }
     /**
      * {@snippet :
@@ -2785,7 +3873,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment SIG_IGN() {
-        return constants$1991.SIG_IGN$ADDR;
+        return constants$3417.const$5;
     }
     /**
      * {@snippet :
@@ -2877,35 +3965,131 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * #define FP_XSTATE_MAGIC1 1179670611
+     * #define __SVE_VL_MIN 16
      * }
      */
-    public static int FP_XSTATE_MAGIC1() {
-        return (int)1179670611L;
+    public static int __SVE_VL_MIN() {
+        return (int)16L;
     }
     /**
      * {@snippet :
-     * #define FP_XSTATE_MAGIC2 1179670597
+     * #define __SVE_VL_MAX 8192
      * }
      */
-    public static int FP_XSTATE_MAGIC2() {
-        return (int)1179670597L;
+    public static int __SVE_VL_MAX() {
+        return (int)8192L;
     }
     /**
      * {@snippet :
-     * #define FP_XSTATE_MAGIC2_SIZE 4
+     * #define SVE_VQ_BYTES 16
      * }
      */
-    public static long FP_XSTATE_MAGIC2_SIZE() {
-        return 4L;
+    public static int SVE_VQ_BYTES() {
+        return (int)16L;
     }
     /**
      * {@snippet :
-     * #define NGREG 23
+     * #define SVE_VQ_MIN 1
      * }
      */
-    public static int NGREG() {
-        return (int)23L;
+    public static int SVE_VQ_MIN() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * #define SVE_VQ_MAX 512
+     * }
+     */
+    public static int SVE_VQ_MAX() {
+        return (int)512L;
+    }
+    /**
+     * {@snippet :
+     * #define SVE_VL_MIN 16
+     * }
+     */
+    public static int SVE_VL_MIN() {
+        return (int)16L;
+    }
+    /**
+     * {@snippet :
+     * #define SVE_VL_MAX 8192
+     * }
+     */
+    public static int SVE_VL_MAX() {
+        return (int)8192L;
+    }
+    /**
+     * {@snippet :
+     * #define SVE_NUM_ZREGS 32
+     * }
+     */
+    public static int SVE_NUM_ZREGS() {
+        return (int)32L;
+    }
+    /**
+     * {@snippet :
+     * #define SVE_NUM_PREGS 16
+     * }
+     */
+    public static int SVE_NUM_PREGS() {
+        return (int)16L;
+    }
+    /**
+     * {@snippet :
+     * #define SVE_SIG_REGS_OFFSET 16
+     * }
+     */
+    public static long SVE_SIG_REGS_OFFSET() {
+        return 16L;
+    }
+    /**
+     * {@snippet :
+     * #define SVE_SIG_ZREGS_OFFSET 16
+     * }
+     */
+    public static long SVE_SIG_ZREGS_OFFSET() {
+        return 16L;
+    }
+    /**
+     * {@snippet :
+     * #define ZA_SIG_REGS_OFFSET 16
+     * }
+     */
+    public static long ZA_SIG_REGS_OFFSET() {
+        return 16L;
+    }
+    /**
+     * {@snippet :
+     * #define ZT_SIG_REG_BYTES 64
+     * }
+     */
+    public static int ZT_SIG_REG_BYTES() {
+        return (int)64L;
+    }
+    /**
+     * {@snippet :
+     * #define ZT_SIG_REGS_OFFSET 16
+     * }
+     */
+    public static long ZT_SIG_REGS_OFFSET() {
+        return 16L;
+    }
+    /**
+     * {@snippet :
+     * #define ELF_NGREG 34
+     * }
+     */
+    public static long ELF_NGREG() {
+        return 34L;
+    }
+    /**
+     * {@snippet :
+     * #define ELF_PRARGSZ 80
+     * }
+     */
+    public static int ELF_PRARGSZ() {
+        return (int)80L;
     }
     /**
      * {@snippet :
@@ -3033,7 +4217,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_STR_DELIMITERS() {
-        return constants$1991.G_STR_DELIMITERS$SEGMENT;
+        return constants$3418.const$0;
     }
     /**
      * {@snippet :
@@ -3049,7 +4233,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_GROUP() {
-        return constants$1991.G_KEY_FILE_DESKTOP_GROUP$SEGMENT;
+        return constants$3418.const$1;
     }
     /**
      * {@snippet :
@@ -3057,7 +4241,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_TYPE() {
-        return constants$1991.G_KEY_FILE_DESKTOP_KEY_TYPE$SEGMENT;
+        return constants$3418.const$2;
     }
     /**
      * {@snippet :
@@ -3065,7 +4249,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_VERSION() {
-        return constants$1991.G_KEY_FILE_DESKTOP_KEY_VERSION$SEGMENT;
+        return constants$3418.const$3;
     }
     /**
      * {@snippet :
@@ -3073,7 +4257,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_NAME() {
-        return constants$1992.G_KEY_FILE_DESKTOP_KEY_NAME$SEGMENT;
+        return constants$3418.const$4;
     }
     /**
      * {@snippet :
@@ -3081,7 +4265,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME() {
-        return constants$1992.G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME$SEGMENT;
+        return constants$3418.const$5;
     }
     /**
      * {@snippet :
@@ -3089,7 +4273,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY() {
-        return constants$1992.G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY$SEGMENT;
+        return constants$3419.const$0;
     }
     /**
      * {@snippet :
@@ -3097,7 +4281,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_COMMENT() {
-        return constants$1992.G_KEY_FILE_DESKTOP_KEY_COMMENT$SEGMENT;
+        return constants$3419.const$1;
     }
     /**
      * {@snippet :
@@ -3105,7 +4289,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_ICON() {
-        return constants$1992.G_KEY_FILE_DESKTOP_KEY_ICON$SEGMENT;
+        return constants$3419.const$2;
     }
     /**
      * {@snippet :
@@ -3113,7 +4297,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_HIDDEN() {
-        return constants$1992.G_KEY_FILE_DESKTOP_KEY_HIDDEN$SEGMENT;
+        return constants$3419.const$3;
     }
     /**
      * {@snippet :
@@ -3121,7 +4305,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN() {
-        return constants$1993.G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN$SEGMENT;
+        return constants$3419.const$4;
     }
     /**
      * {@snippet :
@@ -3129,7 +4313,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN() {
-        return constants$1993.G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN$SEGMENT;
+        return constants$3419.const$5;
     }
     /**
      * {@snippet :
@@ -3137,7 +4321,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_TRY_EXEC() {
-        return constants$1993.G_KEY_FILE_DESKTOP_KEY_TRY_EXEC$SEGMENT;
+        return constants$3420.const$0;
     }
     /**
      * {@snippet :
@@ -3145,7 +4329,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_EXEC() {
-        return constants$1993.G_KEY_FILE_DESKTOP_KEY_EXEC$SEGMENT;
+        return constants$3420.const$1;
     }
     /**
      * {@snippet :
@@ -3153,7 +4337,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_PATH() {
-        return constants$1993.G_KEY_FILE_DESKTOP_KEY_PATH$SEGMENT;
+        return constants$3420.const$2;
     }
     /**
      * {@snippet :
@@ -3161,7 +4345,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_TERMINAL() {
-        return constants$1993.G_KEY_FILE_DESKTOP_KEY_TERMINAL$SEGMENT;
+        return constants$3420.const$3;
     }
     /**
      * {@snippet :
@@ -3169,7 +4353,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_MIME_TYPE() {
-        return constants$1994.G_KEY_FILE_DESKTOP_KEY_MIME_TYPE$SEGMENT;
+        return constants$3420.const$4;
     }
     /**
      * {@snippet :
@@ -3177,7 +4361,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_CATEGORIES() {
-        return constants$1994.G_KEY_FILE_DESKTOP_KEY_CATEGORIES$SEGMENT;
+        return constants$3420.const$5;
     }
     /**
      * {@snippet :
@@ -3185,7 +4369,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY() {
-        return constants$1994.G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY$SEGMENT;
+        return constants$3421.const$0;
     }
     /**
      * {@snippet :
@@ -3193,7 +4377,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_STARTUP_WM_CLASS() {
-        return constants$1994.G_KEY_FILE_DESKTOP_KEY_STARTUP_WM_CLASS$SEGMENT;
+        return constants$3421.const$1;
     }
     /**
      * {@snippet :
@@ -3201,7 +4385,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_URL() {
-        return constants$1994.G_KEY_FILE_DESKTOP_KEY_URL$SEGMENT;
+        return constants$3421.const$2;
     }
     /**
      * {@snippet :
@@ -3209,7 +4393,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_DBUS_ACTIVATABLE() {
-        return constants$1994.G_KEY_FILE_DESKTOP_KEY_DBUS_ACTIVATABLE$SEGMENT;
+        return constants$3421.const$3;
     }
     /**
      * {@snippet :
@@ -3217,7 +4401,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_KEY_ACTIONS() {
-        return constants$1995.G_KEY_FILE_DESKTOP_KEY_ACTIONS$SEGMENT;
+        return constants$3421.const$4;
     }
     /**
      * {@snippet :
@@ -3225,7 +4409,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_TYPE_APPLICATION() {
-        return constants$1995.G_KEY_FILE_DESKTOP_TYPE_APPLICATION$SEGMENT;
+        return constants$3421.const$5;
     }
     /**
      * {@snippet :
@@ -3233,7 +4417,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_TYPE_LINK() {
-        return constants$1995.G_KEY_FILE_DESKTOP_TYPE_LINK$SEGMENT;
+        return constants$3422.const$0;
     }
     /**
      * {@snippet :
@@ -3241,7 +4425,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_KEY_FILE_DESKTOP_TYPE_DIRECTORY() {
-        return constants$1995.G_KEY_FILE_DESKTOP_TYPE_DIRECTORY$SEGMENT;
+        return constants$3422.const$1;
     }
     /**
      * {@snippet :
@@ -3265,7 +4449,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_LOG_DOMAIN() {
-        return constants$1995.G_LOG_DOMAIN$ADDR;
+        return constants$3413.const$2;
     }
     /**
      * {@snippet :
@@ -3273,7 +4457,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_OPTION_REMAINING() {
-        return constants$1995.G_OPTION_REMAINING$SEGMENT;
+        return constants$3413.const$3;
     }
     /**
      * {@snippet :
@@ -3281,7 +4465,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_CSET_A_2_Z() {
-        return constants$1996.G_CSET_A_2_Z$SEGMENT;
+        return constants$3422.const$2;
     }
     /**
      * {@snippet :
@@ -3289,7 +4473,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_CSET_a_2_z() {
-        return constants$1996.G_CSET_a_2_z$SEGMENT;
+        return constants$3422.const$3;
     }
     /**
      * {@snippet :
@@ -3297,7 +4481,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_CSET_DIGITS() {
-        return constants$1996.G_CSET_DIGITS$SEGMENT;
+        return constants$3422.const$4;
     }
     /**
      * {@snippet :
@@ -3305,7 +4489,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_CSET_LATINC() {
-        return constants$1996.G_CSET_LATINC$SEGMENT;
+        return constants$3422.const$5;
     }
     /**
      * {@snippet :
@@ -3313,7 +4497,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_CSET_LATINS() {
-        return constants$1996.G_CSET_LATINS$SEGMENT;
+        return constants$3423.const$0;
     }
     /**
      * {@snippet :
@@ -3345,7 +4529,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_TEST_OPTION_ISOLATE_DIRS() {
-        return constants$1996.G_TEST_OPTION_ISOLATE_DIRS$SEGMENT;
+        return constants$3423.const$1;
     }
     /**
      * {@snippet :
@@ -3353,7 +4537,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_URI_RESERVED_CHARS_GENERIC_DELIMITERS() {
-        return constants$1997.G_URI_RESERVED_CHARS_GENERIC_DELIMITERS$SEGMENT;
+        return constants$3423.const$2;
     }
     /**
      * {@snippet :
@@ -3361,7 +4545,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS() {
-        return constants$1997.G_URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS$SEGMENT;
+        return constants$3423.const$3;
     }
     /**
      * {@snippet :
@@ -3369,7 +4553,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_URI_RESERVED_CHARS_ALLOWED_IN_PATH_ELEMENT() {
-        return constants$1997.G_URI_RESERVED_CHARS_ALLOWED_IN_PATH_ELEMENT$SEGMENT;
+        return constants$3423.const$4;
     }
     /**
      * {@snippet :
@@ -3377,7 +4561,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_URI_RESERVED_CHARS_ALLOWED_IN_PATH() {
-        return constants$1997.G_URI_RESERVED_CHARS_ALLOWED_IN_PATH$SEGMENT;
+        return constants$3423.const$5;
     }
     /**
      * {@snippet :
@@ -3385,7 +4569,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_URI_RESERVED_CHARS_ALLOWED_IN_USERINFO() {
-        return constants$1997.G_URI_RESERVED_CHARS_ALLOWED_IN_USERINFO$SEGMENT;
+        return constants$3424.const$0;
     }
     /**
      * {@snippet :
@@ -3401,7 +4585,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment PTHREAD_CANCELED() {
-        return constants$1997.PTHREAD_CANCELED$ADDR;
+        return constants$3417.const$4;
     }
     /**
      * {@snippet :
@@ -3429,11 +4613,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * #define GDK_MICRO_VERSION 37
+     * #define GDK_MICRO_VERSION 38
      * }
      */
     public static int GDK_MICRO_VERSION() {
-        return (int)37L;
+        return (int)38L;
     }
     /**
      * {@snippet :
@@ -4261,6 +5445,54 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
+     * #define _POSIX_V7_ILP32_OFF32 -1
+     * }
+     */
+    public static int _POSIX_V7_ILP32_OFF32() {
+        return (int)-1L;
+    }
+    /**
+     * {@snippet :
+     * #define _POSIX_V7_ILP32_OFFBIG -1
+     * }
+     */
+    public static int _POSIX_V7_ILP32_OFFBIG() {
+        return (int)-1L;
+    }
+    /**
+     * {@snippet :
+     * #define _POSIX_V6_ILP32_OFF32 -1
+     * }
+     */
+    public static int _POSIX_V6_ILP32_OFF32() {
+        return (int)-1L;
+    }
+    /**
+     * {@snippet :
+     * #define _POSIX_V6_ILP32_OFFBIG -1
+     * }
+     */
+    public static int _POSIX_V6_ILP32_OFFBIG() {
+        return (int)-1L;
+    }
+    /**
+     * {@snippet :
+     * #define _XBS5_ILP32_OFF32 -1
+     * }
+     */
+    public static int _XBS5_ILP32_OFF32() {
+        return (int)-1L;
+    }
+    /**
+     * {@snippet :
+     * #define _XBS5_ILP32_OFFBIG -1
+     * }
+     */
+    public static int _XBS5_ILP32_OFFBIG() {
+        return (int)-1L;
+    }
+    /**
+     * {@snippet :
      * #define _POSIX_V7_LPBIG_OFFBIG -1
      * }
      */
@@ -4282,54 +5514,6 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      */
     public static int _XBS5_LPBIG_OFFBIG() {
         return (int)-1L;
-    }
-    /**
-     * {@snippet :
-     * #define __ILP32_OFF32_CFLAGS "-m32"
-     * }
-     */
-    public static MemorySegment __ILP32_OFF32_CFLAGS() {
-        return constants$1998.__ILP32_OFF32_CFLAGS$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define __ILP32_OFF32_LDFLAGS "-m32"
-     * }
-     */
-    public static MemorySegment __ILP32_OFF32_LDFLAGS() {
-        return constants$1998.__ILP32_OFF32_LDFLAGS$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define __ILP32_OFFBIG_CFLAGS "-m32 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64"
-     * }
-     */
-    public static MemorySegment __ILP32_OFFBIG_CFLAGS() {
-        return constants$1998.__ILP32_OFFBIG_CFLAGS$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define __ILP32_OFFBIG_LDFLAGS "-m32"
-     * }
-     */
-    public static MemorySegment __ILP32_OFFBIG_LDFLAGS() {
-        return constants$1998.__ILP32_OFFBIG_LDFLAGS$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define __LP64_OFF64_CFLAGS "-m64"
-     * }
-     */
-    public static MemorySegment __LP64_OFF64_CFLAGS() {
-        return constants$1998.__LP64_OFF64_CFLAGS$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define __LP64_OFF64_LDFLAGS "-m64"
-     * }
-     */
-    public static MemorySegment __LP64_OFF64_LDFLAGS() {
-        return constants$1998.__LP64_OFF64_LDFLAGS$SEGMENT;
     }
     /**
      * {@snippet :
@@ -4409,7 +5593,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_DEBUG_CONTROLLER_EXTENSION_POINT_NAME() {
-        return constants$1999.G_DEBUG_CONTROLLER_EXTENSION_POINT_NAME$SEGMENT;
+        return constants$3424.const$1;
     }
     /**
      * {@snippet :
@@ -4417,7 +5601,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_DRIVE_IDENTIFIER_KIND_UNIX_DEVICE() {
-        return constants$1999.G_DRIVE_IDENTIFIER_KIND_UNIX_DEVICE$SEGMENT;
+        return constants$3424.const$2;
     }
     /**
      * {@snippet :
@@ -4425,7 +5609,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_TYPE() {
-        return constants$1999.G_FILE_ATTRIBUTE_STANDARD_TYPE$SEGMENT;
+        return constants$3424.const$3;
     }
     /**
      * {@snippet :
@@ -4433,7 +5617,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN() {
-        return constants$1999.G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN$SEGMENT;
+        return constants$3424.const$4;
     }
     /**
      * {@snippet :
@@ -4441,7 +5625,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP() {
-        return constants$1999.G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP$SEGMENT;
+        return constants$3424.const$5;
     }
     /**
      * {@snippet :
@@ -4449,7 +5633,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK() {
-        return constants$1999.G_FILE_ATTRIBUTE_STANDARD_IS_SYMLINK$SEGMENT;
+        return constants$3425.const$0;
     }
     /**
      * {@snippet :
@@ -4457,7 +5641,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL() {
-        return constants$2000.G_FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL$SEGMENT;
+        return constants$3425.const$1;
     }
     /**
      * {@snippet :
@@ -4465,7 +5649,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VOLATILE() {
-        return constants$2000.G_FILE_ATTRIBUTE_STANDARD_IS_VOLATILE$SEGMENT;
+        return constants$3425.const$2;
     }
     /**
      * {@snippet :
@@ -4473,7 +5657,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_NAME() {
-        return constants$2000.G_FILE_ATTRIBUTE_STANDARD_NAME$SEGMENT;
+        return constants$3425.const$3;
     }
     /**
      * {@snippet :
@@ -4481,7 +5665,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME() {
-        return constants$2000.G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME$SEGMENT;
+        return constants$3425.const$4;
     }
     /**
      * {@snippet :
@@ -4489,7 +5673,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME() {
-        return constants$2000.G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME$SEGMENT;
+        return constants$3425.const$5;
     }
     /**
      * {@snippet :
@@ -4497,7 +5681,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_COPY_NAME() {
-        return constants$2000.G_FILE_ATTRIBUTE_STANDARD_COPY_NAME$SEGMENT;
+        return constants$3426.const$0;
     }
     /**
      * {@snippet :
@@ -4505,7 +5689,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION() {
-        return constants$2001.G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION$SEGMENT;
+        return constants$3426.const$1;
     }
     /**
      * {@snippet :
@@ -4513,7 +5697,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_ICON() {
-        return constants$2001.G_FILE_ATTRIBUTE_STANDARD_ICON$SEGMENT;
+        return constants$3426.const$2;
     }
     /**
      * {@snippet :
@@ -4521,7 +5705,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON() {
-        return constants$2001.G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON$SEGMENT;
+        return constants$3426.const$3;
     }
     /**
      * {@snippet :
@@ -4529,7 +5713,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE() {
-        return constants$2001.G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE$SEGMENT;
+        return constants$3426.const$4;
     }
     /**
      * {@snippet :
@@ -4537,7 +5721,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE() {
-        return constants$2001.G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE$SEGMENT;
+        return constants$3426.const$5;
     }
     /**
      * {@snippet :
@@ -4545,7 +5729,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SIZE() {
-        return constants$2001.G_FILE_ATTRIBUTE_STANDARD_SIZE$SEGMENT;
+        return constants$3427.const$0;
     }
     /**
      * {@snippet :
@@ -4553,7 +5737,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE() {
-        return constants$2002.G_FILE_ATTRIBUTE_STANDARD_ALLOCATED_SIZE$SEGMENT;
+        return constants$3427.const$1;
     }
     /**
      * {@snippet :
@@ -4561,7 +5745,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET() {
-        return constants$2002.G_FILE_ATTRIBUTE_STANDARD_SYMLINK_TARGET$SEGMENT;
+        return constants$3427.const$2;
     }
     /**
      * {@snippet :
@@ -4569,7 +5753,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_TARGET_URI() {
-        return constants$2002.G_FILE_ATTRIBUTE_STANDARD_TARGET_URI$SEGMENT;
+        return constants$3427.const$3;
     }
     /**
      * {@snippet :
@@ -4577,7 +5761,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER() {
-        return constants$2002.G_FILE_ATTRIBUTE_STANDARD_SORT_ORDER$SEGMENT;
+        return constants$3427.const$4;
     }
     /**
      * {@snippet :
@@ -4585,7 +5769,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ETAG_VALUE() {
-        return constants$2002.G_FILE_ATTRIBUTE_ETAG_VALUE$SEGMENT;
+        return constants$3427.const$5;
     }
     /**
      * {@snippet :
@@ -4593,7 +5777,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ID_FILE() {
-        return constants$2002.G_FILE_ATTRIBUTE_ID_FILE$SEGMENT;
+        return constants$3428.const$0;
     }
     /**
      * {@snippet :
@@ -4601,7 +5785,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ID_FILESYSTEM() {
-        return constants$2003.G_FILE_ATTRIBUTE_ID_FILESYSTEM$SEGMENT;
+        return constants$3428.const$1;
     }
     /**
      * {@snippet :
@@ -4609,7 +5793,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_READ() {
-        return constants$2003.G_FILE_ATTRIBUTE_ACCESS_CAN_READ$SEGMENT;
+        return constants$3428.const$2;
     }
     /**
      * {@snippet :
@@ -4617,7 +5801,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE() {
-        return constants$2003.G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE$SEGMENT;
+        return constants$3428.const$3;
     }
     /**
      * {@snippet :
@@ -4625,7 +5809,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE() {
-        return constants$2003.G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE$SEGMENT;
+        return constants$3428.const$4;
     }
     /**
      * {@snippet :
@@ -4633,7 +5817,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE() {
-        return constants$2003.G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE$SEGMENT;
+        return constants$3428.const$5;
     }
     /**
      * {@snippet :
@@ -4641,7 +5825,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH() {
-        return constants$2003.G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH$SEGMENT;
+        return constants$3429.const$0;
     }
     /**
      * {@snippet :
@@ -4649,7 +5833,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME() {
-        return constants$2004.G_FILE_ATTRIBUTE_ACCESS_CAN_RENAME$SEGMENT;
+        return constants$3429.const$1;
     }
     /**
      * {@snippet :
@@ -4657,7 +5841,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT() {
-        return constants$2004.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_MOUNT$SEGMENT;
+        return constants$3429.const$2;
     }
     /**
      * {@snippet :
@@ -4665,7 +5849,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT() {
-        return constants$2004.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_UNMOUNT$SEGMENT;
+        return constants$3429.const$3;
     }
     /**
      * {@snippet :
@@ -4673,7 +5857,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT() {
-        return constants$2004.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_EJECT$SEGMENT;
+        return constants$3429.const$4;
     }
     /**
      * {@snippet :
@@ -4681,7 +5865,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE() {
-        return constants$2004.G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE$SEGMENT;
+        return constants$3429.const$5;
     }
     /**
      * {@snippet :
@@ -4689,7 +5873,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE() {
-        return constants$2004.G_FILE_ATTRIBUTE_MOUNTABLE_UNIX_DEVICE_FILE$SEGMENT;
+        return constants$3430.const$0;
     }
     /**
      * {@snippet :
@@ -4697,7 +5881,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI() {
-        return constants$2005.G_FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI$SEGMENT;
+        return constants$3430.const$1;
     }
     /**
      * {@snippet :
@@ -4705,7 +5889,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START() {
-        return constants$2005.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START$SEGMENT;
+        return constants$3430.const$2;
     }
     /**
      * {@snippet :
@@ -4713,7 +5897,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED() {
-        return constants$2005.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED$SEGMENT;
+        return constants$3430.const$3;
     }
     /**
      * {@snippet :
@@ -4721,7 +5905,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP() {
-        return constants$2005.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP$SEGMENT;
+        return constants$3430.const$4;
     }
     /**
      * {@snippet :
@@ -4729,7 +5913,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE() {
-        return constants$2005.G_FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE$SEGMENT;
+        return constants$3430.const$5;
     }
     /**
      * {@snippet :
@@ -4737,7 +5921,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL() {
-        return constants$2005.G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL$SEGMENT;
+        return constants$3431.const$0;
     }
     /**
      * {@snippet :
@@ -4745,7 +5929,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC() {
-        return constants$2006.G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC$SEGMENT;
+        return constants$3431.const$1;
     }
     /**
      * {@snippet :
@@ -4753,7 +5937,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED() {
-        return constants$2006.G_FILE_ATTRIBUTE_TIME_MODIFIED$SEGMENT;
+        return constants$3431.const$2;
     }
     /**
      * {@snippet :
@@ -4761,7 +5945,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC() {
-        return constants$2006.G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC$SEGMENT;
+        return constants$3431.const$3;
     }
     /**
      * {@snippet :
@@ -4769,7 +5953,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC() {
-        return constants$2006.G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC$SEGMENT;
+        return constants$3431.const$4;
     }
     /**
      * {@snippet :
@@ -4777,7 +5961,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS() {
-        return constants$2006.G_FILE_ATTRIBUTE_TIME_ACCESS$SEGMENT;
+        return constants$3431.const$5;
     }
     /**
      * {@snippet :
@@ -4785,7 +5969,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_USEC() {
-        return constants$2006.G_FILE_ATTRIBUTE_TIME_ACCESS_USEC$SEGMENT;
+        return constants$3432.const$0;
     }
     /**
      * {@snippet :
@@ -4793,7 +5977,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC() {
-        return constants$2007.G_FILE_ATTRIBUTE_TIME_ACCESS_NSEC$SEGMENT;
+        return constants$3432.const$1;
     }
     /**
      * {@snippet :
@@ -4801,7 +5985,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED() {
-        return constants$2007.G_FILE_ATTRIBUTE_TIME_CHANGED$SEGMENT;
+        return constants$3432.const$2;
     }
     /**
      * {@snippet :
@@ -4809,7 +5993,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_USEC() {
-        return constants$2007.G_FILE_ATTRIBUTE_TIME_CHANGED_USEC$SEGMENT;
+        return constants$3432.const$3;
     }
     /**
      * {@snippet :
@@ -4817,7 +6001,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_CHANGED_NSEC() {
-        return constants$2007.G_FILE_ATTRIBUTE_TIME_CHANGED_NSEC$SEGMENT;
+        return constants$3432.const$4;
     }
     /**
      * {@snippet :
@@ -4825,7 +6009,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED() {
-        return constants$2007.G_FILE_ATTRIBUTE_TIME_CREATED$SEGMENT;
+        return constants$3432.const$5;
     }
     /**
      * {@snippet :
@@ -4833,7 +6017,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_USEC() {
-        return constants$2007.G_FILE_ATTRIBUTE_TIME_CREATED_USEC$SEGMENT;
+        return constants$3433.const$0;
     }
     /**
      * {@snippet :
@@ -4841,7 +6025,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TIME_CREATED_NSEC() {
-        return constants$2008.G_FILE_ATTRIBUTE_TIME_CREATED_NSEC$SEGMENT;
+        return constants$3433.const$1;
     }
     /**
      * {@snippet :
@@ -4849,7 +6033,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_DEVICE() {
-        return constants$2008.G_FILE_ATTRIBUTE_UNIX_DEVICE$SEGMENT;
+        return constants$3433.const$2;
     }
     /**
      * {@snippet :
@@ -4857,7 +6041,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_INODE() {
-        return constants$2008.G_FILE_ATTRIBUTE_UNIX_INODE$SEGMENT;
+        return constants$3433.const$3;
     }
     /**
      * {@snippet :
@@ -4865,7 +6049,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_MODE() {
-        return constants$2008.G_FILE_ATTRIBUTE_UNIX_MODE$SEGMENT;
+        return constants$3433.const$4;
     }
     /**
      * {@snippet :
@@ -4873,7 +6057,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_NLINK() {
-        return constants$2008.G_FILE_ATTRIBUTE_UNIX_NLINK$SEGMENT;
+        return constants$3433.const$5;
     }
     /**
      * {@snippet :
@@ -4881,7 +6065,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_UID() {
-        return constants$2008.G_FILE_ATTRIBUTE_UNIX_UID$SEGMENT;
+        return constants$3434.const$0;
     }
     /**
      * {@snippet :
@@ -4889,7 +6073,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_GID() {
-        return constants$2009.G_FILE_ATTRIBUTE_UNIX_GID$SEGMENT;
+        return constants$3434.const$1;
     }
     /**
      * {@snippet :
@@ -4897,7 +6081,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_RDEV() {
-        return constants$2009.G_FILE_ATTRIBUTE_UNIX_RDEV$SEGMENT;
+        return constants$3434.const$2;
     }
     /**
      * {@snippet :
@@ -4905,7 +6089,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCK_SIZE() {
-        return constants$2009.G_FILE_ATTRIBUTE_UNIX_BLOCK_SIZE$SEGMENT;
+        return constants$3434.const$3;
     }
     /**
      * {@snippet :
@@ -4913,7 +6097,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCKS() {
-        return constants$2009.G_FILE_ATTRIBUTE_UNIX_BLOCKS$SEGMENT;
+        return constants$3434.const$4;
     }
     /**
      * {@snippet :
@@ -4921,7 +6105,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT() {
-        return constants$2009.G_FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT$SEGMENT;
+        return constants$3434.const$5;
     }
     /**
      * {@snippet :
@@ -4929,7 +6113,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_DOS_IS_ARCHIVE() {
-        return constants$2009.G_FILE_ATTRIBUTE_DOS_IS_ARCHIVE$SEGMENT;
+        return constants$3435.const$0;
     }
     /**
      * {@snippet :
@@ -4937,7 +6121,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_DOS_IS_SYSTEM() {
-        return constants$2010.G_FILE_ATTRIBUTE_DOS_IS_SYSTEM$SEGMENT;
+        return constants$3435.const$1;
     }
     /**
      * {@snippet :
@@ -4945,7 +6129,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT() {
-        return constants$2010.G_FILE_ATTRIBUTE_DOS_IS_MOUNTPOINT$SEGMENT;
+        return constants$3435.const$2;
     }
     /**
      * {@snippet :
@@ -4953,7 +6137,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG() {
-        return constants$2010.G_FILE_ATTRIBUTE_DOS_REPARSE_POINT_TAG$SEGMENT;
+        return constants$3435.const$3;
     }
     /**
      * {@snippet :
@@ -4961,7 +6145,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_OWNER_USER() {
-        return constants$2010.G_FILE_ATTRIBUTE_OWNER_USER$SEGMENT;
+        return constants$3435.const$4;
     }
     /**
      * {@snippet :
@@ -4969,7 +6153,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_OWNER_USER_REAL() {
-        return constants$2010.G_FILE_ATTRIBUTE_OWNER_USER_REAL$SEGMENT;
+        return constants$3435.const$5;
     }
     /**
      * {@snippet :
@@ -4977,7 +6161,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_OWNER_GROUP() {
-        return constants$2010.G_FILE_ATTRIBUTE_OWNER_GROUP$SEGMENT;
+        return constants$3436.const$0;
     }
     /**
      * {@snippet :
@@ -4985,7 +6169,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH() {
-        return constants$2011.G_FILE_ATTRIBUTE_THUMBNAIL_PATH$SEGMENT;
+        return constants$3436.const$1;
     }
     /**
      * {@snippet :
@@ -4993,7 +6177,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED() {
-        return constants$2011.G_FILE_ATTRIBUTE_THUMBNAILING_FAILED$SEGMENT;
+        return constants$3436.const$2;
     }
     /**
      * {@snippet :
@@ -5001,7 +6185,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID() {
-        return constants$2011.G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID$SEGMENT;
+        return constants$3436.const$3;
     }
     /**
      * {@snippet :
@@ -5009,7 +6193,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL() {
-        return constants$2011.G_FILE_ATTRIBUTE_THUMBNAIL_PATH_NORMAL$SEGMENT;
+        return constants$3436.const$4;
     }
     /**
      * {@snippet :
@@ -5017,7 +6201,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL() {
-        return constants$2011.G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_NORMAL$SEGMENT;
+        return constants$3436.const$5;
     }
     /**
      * {@snippet :
@@ -5025,7 +6209,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL() {
-        return constants$2011.G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_NORMAL$SEGMENT;
+        return constants$3437.const$0;
     }
     /**
      * {@snippet :
@@ -5033,7 +6217,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE() {
-        return constants$2012.G_FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE$SEGMENT;
+        return constants$3437.const$1;
     }
     /**
      * {@snippet :
@@ -5041,7 +6225,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE() {
-        return constants$2012.G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE$SEGMENT;
+        return constants$3437.const$2;
     }
     /**
      * {@snippet :
@@ -5049,7 +6233,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE() {
-        return constants$2012.G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE$SEGMENT;
+        return constants$3437.const$3;
     }
     /**
      * {@snippet :
@@ -5057,7 +6241,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE() {
-        return constants$2012.G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE$SEGMENT;
+        return constants$3437.const$4;
     }
     /**
      * {@snippet :
@@ -5065,7 +6249,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE() {
-        return constants$2012.G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE$SEGMENT;
+        return constants$3437.const$5;
     }
     /**
      * {@snippet :
@@ -5073,7 +6257,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE() {
-        return constants$2012.G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE$SEGMENT;
+        return constants$3438.const$0;
     }
     /**
      * {@snippet :
@@ -5081,7 +6265,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE() {
-        return constants$2013.G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XXLARGE$SEGMENT;
+        return constants$3438.const$1;
     }
     /**
      * {@snippet :
@@ -5089,7 +6273,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE() {
-        return constants$2013.G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XXLARGE$SEGMENT;
+        return constants$3438.const$2;
     }
     /**
      * {@snippet :
@@ -5097,7 +6281,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE() {
-        return constants$2013.G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XXLARGE$SEGMENT;
+        return constants$3438.const$3;
     }
     /**
      * {@snippet :
@@ -5105,7 +6289,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_PREVIEW_ICON() {
-        return constants$2013.G_FILE_ATTRIBUTE_PREVIEW_ICON$SEGMENT;
+        return constants$3438.const$4;
     }
     /**
      * {@snippet :
@@ -5113,7 +6297,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_SIZE() {
-        return constants$2013.G_FILE_ATTRIBUTE_FILESYSTEM_SIZE$SEGMENT;
+        return constants$3438.const$5;
     }
     /**
      * {@snippet :
@@ -5121,7 +6305,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_FREE() {
-        return constants$2013.G_FILE_ATTRIBUTE_FILESYSTEM_FREE$SEGMENT;
+        return constants$3439.const$0;
     }
     /**
      * {@snippet :
@@ -5129,7 +6313,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USED() {
-        return constants$2014.G_FILE_ATTRIBUTE_FILESYSTEM_USED$SEGMENT;
+        return constants$3439.const$1;
     }
     /**
      * {@snippet :
@@ -5137,7 +6321,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_TYPE() {
-        return constants$2014.G_FILE_ATTRIBUTE_FILESYSTEM_TYPE$SEGMENT;
+        return constants$3439.const$2;
     }
     /**
      * {@snippet :
@@ -5145,7 +6329,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_READONLY() {
-        return constants$2014.G_FILE_ATTRIBUTE_FILESYSTEM_READONLY$SEGMENT;
+        return constants$3439.const$3;
     }
     /**
      * {@snippet :
@@ -5153,7 +6337,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW() {
-        return constants$2014.G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW$SEGMENT;
+        return constants$3439.const$4;
     }
     /**
      * {@snippet :
@@ -5161,7 +6345,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_REMOTE() {
-        return constants$2014.G_FILE_ATTRIBUTE_FILESYSTEM_REMOTE$SEGMENT;
+        return constants$3439.const$5;
     }
     /**
      * {@snippet :
@@ -5169,7 +6353,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_GVFS_BACKEND() {
-        return constants$2014.G_FILE_ATTRIBUTE_GVFS_BACKEND$SEGMENT;
+        return constants$3440.const$0;
     }
     /**
      * {@snippet :
@@ -5177,7 +6361,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_SELINUX_CONTEXT() {
-        return constants$2015.G_FILE_ATTRIBUTE_SELINUX_CONTEXT$SEGMENT;
+        return constants$3440.const$1;
     }
     /**
      * {@snippet :
@@ -5185,7 +6369,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT() {
-        return constants$2015.G_FILE_ATTRIBUTE_TRASH_ITEM_COUNT$SEGMENT;
+        return constants$3440.const$2;
     }
     /**
      * {@snippet :
@@ -5193,7 +6377,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TRASH_ORIG_PATH() {
-        return constants$2015.G_FILE_ATTRIBUTE_TRASH_ORIG_PATH$SEGMENT;
+        return constants$3440.const$3;
     }
     /**
      * {@snippet :
@@ -5201,7 +6385,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_TRASH_DELETION_DATE() {
-        return constants$2015.G_FILE_ATTRIBUTE_TRASH_DELETION_DATE$SEGMENT;
+        return constants$3440.const$4;
     }
     /**
      * {@snippet :
@@ -5209,7 +6393,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_FILE_ATTRIBUTE_RECENT_MODIFIED() {
-        return constants$2015.G_FILE_ATTRIBUTE_RECENT_MODIFIED$SEGMENT;
+        return constants$3440.const$5;
     }
     /**
      * {@snippet :
@@ -5217,7 +6401,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MEMORY_MONITOR_EXTENSION_POINT_NAME() {
-        return constants$2015.G_MEMORY_MONITOR_EXTENSION_POINT_NAME$SEGMENT;
+        return constants$3441.const$0;
     }
     /**
      * {@snippet :
@@ -5225,7 +6409,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MENU_ATTRIBUTE_ACTION() {
-        return constants$2016.G_MENU_ATTRIBUTE_ACTION$SEGMENT;
+        return constants$3441.const$1;
     }
     /**
      * {@snippet :
@@ -5233,7 +6417,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MENU_ATTRIBUTE_ACTION_NAMESPACE() {
-        return constants$2016.G_MENU_ATTRIBUTE_ACTION_NAMESPACE$SEGMENT;
+        return constants$3441.const$2;
     }
     /**
      * {@snippet :
@@ -5241,7 +6425,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MENU_ATTRIBUTE_TARGET() {
-        return constants$2016.G_MENU_ATTRIBUTE_TARGET$SEGMENT;
+        return constants$3441.const$3;
     }
     /**
      * {@snippet :
@@ -5249,7 +6433,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MENU_ATTRIBUTE_LABEL() {
-        return constants$2016.G_MENU_ATTRIBUTE_LABEL$SEGMENT;
+        return constants$3441.const$4;
     }
     /**
      * {@snippet :
@@ -5257,7 +6441,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MENU_ATTRIBUTE_ICON() {
-        return constants$2016.G_MENU_ATTRIBUTE_ICON$SEGMENT;
+        return constants$3441.const$5;
     }
     /**
      * {@snippet :
@@ -5265,7 +6449,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MENU_LINK_SUBMENU() {
-        return constants$2016.G_MENU_LINK_SUBMENU$SEGMENT;
+        return constants$3442.const$0;
     }
     /**
      * {@snippet :
@@ -5273,7 +6457,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_MENU_LINK_SECTION() {
-        return constants$2017.G_MENU_LINK_SECTION$SEGMENT;
+        return constants$3442.const$1;
     }
     /**
      * {@snippet :
@@ -5289,7 +6473,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_VOLUME_MONITOR_EXTENSION_POINT_NAME() {
-        return constants$2017.G_VOLUME_MONITOR_EXTENSION_POINT_NAME$SEGMENT;
+        return constants$3442.const$2;
     }
     /**
      * {@snippet :
@@ -5297,7 +6481,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME() {
-        return constants$2017.G_NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME$SEGMENT;
+        return constants$3442.const$3;
     }
     /**
      * {@snippet :
@@ -5305,7 +6489,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_NETWORK_MONITOR_EXTENSION_POINT_NAME() {
-        return constants$2017.G_NETWORK_MONITOR_EXTENSION_POINT_NAME$SEGMENT;
+        return constants$3442.const$4;
     }
     /**
      * {@snippet :
@@ -5313,7 +6497,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME() {
-        return constants$2017.G_POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME$SEGMENT;
+        return constants$3442.const$5;
     }
     /**
      * {@snippet :
@@ -5321,7 +6505,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_PROXY_EXTENSION_POINT_NAME() {
-        return constants$2017.G_PROXY_EXTENSION_POINT_NAME$SEGMENT;
+        return constants$3443.const$0;
     }
     /**
      * {@snippet :
@@ -5329,7 +6513,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_PROXY_RESOLVER_EXTENSION_POINT_NAME() {
-        return constants$2018.G_PROXY_RESOLVER_EXTENSION_POINT_NAME$SEGMENT;
+        return constants$3443.const$1;
     }
     /**
      * {@snippet :
@@ -5337,7 +6521,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_TLS_BACKEND_EXTENSION_POINT_NAME() {
-        return constants$2018.G_TLS_BACKEND_EXTENSION_POINT_NAME$SEGMENT;
+        return constants$3443.const$2;
     }
     /**
      * {@snippet :
@@ -5345,7 +6529,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER() {
-        return constants$2018.G_TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER$SEGMENT;
+        return constants$3443.const$3;
     }
     /**
      * {@snippet :
@@ -5353,7 +6537,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT() {
-        return constants$2018.G_TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT$SEGMENT;
+        return constants$3443.const$4;
     }
     /**
      * {@snippet :
@@ -5361,7 +6545,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_VFS_EXTENSION_POINT_NAME() {
-        return constants$2018.G_VFS_EXTENSION_POINT_NAME$SEGMENT;
+        return constants$3443.const$5;
     }
     /**
      * {@snippet :
@@ -5369,7 +6553,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_VOLUME_IDENTIFIER_KIND_HAL_UDI() {
-        return constants$2018.G_VOLUME_IDENTIFIER_KIND_HAL_UDI$SEGMENT;
+        return constants$3444.const$0;
     }
     /**
      * {@snippet :
@@ -5377,7 +6561,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE() {
-        return constants$2019.G_VOLUME_IDENTIFIER_KIND_UNIX_DEVICE$SEGMENT;
+        return constants$3424.const$2;
     }
     /**
      * {@snippet :
@@ -5385,7 +6569,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_VOLUME_IDENTIFIER_KIND_LABEL() {
-        return constants$2019.G_VOLUME_IDENTIFIER_KIND_LABEL$SEGMENT;
+        return constants$3441.const$4;
     }
     /**
      * {@snippet :
@@ -5393,7 +6577,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_VOLUME_IDENTIFIER_KIND_UUID() {
-        return constants$2019.G_VOLUME_IDENTIFIER_KIND_UUID$SEGMENT;
+        return constants$3444.const$1;
     }
     /**
      * {@snippet :
@@ -5401,7 +6585,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_VOLUME_IDENTIFIER_KIND_NFS_MOUNT() {
-        return constants$2019.G_VOLUME_IDENTIFIER_KIND_NFS_MOUNT$SEGMENT;
+        return constants$3444.const$2;
     }
     /**
      * {@snippet :
@@ -5409,15 +6593,15 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment G_VOLUME_IDENTIFIER_KIND_CLASS() {
-        return constants$2019.G_VOLUME_IDENTIFIER_KIND_CLASS$SEGMENT;
+        return constants$3444.const$3;
     }
     /**
      * {@snippet :
-     * #define PANGO_VERSION_STRING "1.50.12"
+     * #define PANGO_VERSION_STRING "1.50.14"
      * }
      */
     public static MemorySegment PANGO_VERSION_STRING() {
-        return constants$2019.PANGO_VERSION_STRING$SEGMENT;
+        return constants$3444.const$4;
     }
     /**
      * {@snippet :
@@ -5661,19 +6845,19 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * #define __WCHAR_MAX 2147483647
+     * #define __WCHAR_MAX 4294967295
      * }
      */
     public static int __WCHAR_MAX() {
-        return (int)2147483647L;
+        return (int)4294967295L;
     }
     /**
      * {@snippet :
-     * #define __WCHAR_MIN -2147483648
+     * #define __WCHAR_MIN 0
      * }
      */
     public static int __WCHAR_MIN() {
-        return (int)-2147483648L;
+        return (int)0L;
     }
     /**
      * {@snippet :
@@ -6053,19 +7237,19 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * #define WCHAR_MIN -2147483648
+     * #define WCHAR_MIN 0
      * }
      */
     public static int WCHAR_MIN() {
-        return (int)-2147483648L;
+        return (int)0L;
     }
     /**
      * {@snippet :
-     * #define WCHAR_MAX 2147483647
+     * #define WCHAR_MAX 4294967295
      * }
      */
     public static int WCHAR_MAX() {
-        return (int)2147483647L;
+        return (int)4294967295L;
     }
     /**
      * {@snippet :
@@ -6081,6 +7265,14 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static int WINT_MAX() {
+        return (int)4294967295L;
+    }
+    /**
+     * {@snippet :
+     * #define HB_CODEPOINT_INVALID 4294967295
+     * }
+     */
+    public static int HB_CODEPOINT_INVALID() {
         return (int)4294967295L;
     }
     /**
@@ -6113,7 +7305,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment HB_LANGUAGE_INVALID() {
-        return constants$2020.HB_LANGUAGE_INVALID$ADDR;
+        return constants$3413.const$2;
     }
     /**
      * {@snippet :
@@ -6137,6 +7329,46 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static int HB_SET_VALUE_INVALID() {
+        return (int)4294967295L;
+    }
+    /**
+     * {@snippet :
+     * #define HB_MAP_VALUE_INVALID 4294967295
+     * }
+     */
+    public static int HB_MAP_VALUE_INVALID() {
+        return (int)4294967295L;
+    }
+    /**
+     * {@snippet :
+     * #define HB_PAINT_IMAGE_FORMAT_PNG 1886283552
+     * }
+     */
+    public static int HB_PAINT_IMAGE_FORMAT_PNG() {
+        return (int)1886283552L;
+    }
+    /**
+     * {@snippet :
+     * #define HB_PAINT_IMAGE_FORMAT_SVG 1937139488
+     * }
+     */
+    public static int HB_PAINT_IMAGE_FORMAT_SVG() {
+        return (int)1937139488L;
+    }
+    /**
+     * {@snippet :
+     * #define HB_PAINT_IMAGE_FORMAT_BGRA 1111970369
+     * }
+     */
+    public static int HB_PAINT_IMAGE_FORMAT_BGRA() {
+        return (int)1111970369L;
+    }
+    /**
+     * {@snippet :
+     * #define HB_FONT_NO_VAR_NAMED_INSTANCE 4294967295
+     * }
+     */
+    public static int HB_FONT_NO_VAR_NAMED_INSTANCE() {
         return (int)4294967295L;
     }
     /**
@@ -6181,19 +7413,11 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * #define HB_MAP_VALUE_INVALID 4294967295
-     * }
-     */
-    public static int HB_MAP_VALUE_INVALID() {
-        return (int)4294967295L;
-    }
-    /**
-     * {@snippet :
-     * #define HB_VERSION_STRING "6.0.0"
+     * #define HB_VERSION_STRING "8.1.1"
      * }
      */
     public static MemorySegment HB_VERSION_STRING() {
-        return constants$2020.HB_VERSION_STRING$SEGMENT;
+        return constants$3444.const$5;
     }
     /**
      * {@snippet :
@@ -6321,7 +7545,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment PANGO_RENDER_TYPE_NONE() {
-        return constants$2020.PANGO_RENDER_TYPE_NONE$SEGMENT;
+        return constants$3445.const$0;
     }
     /**
      * {@snippet :
@@ -6329,7 +7553,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment PANGO_ENGINE_TYPE_LANG() {
-        return constants$2020.PANGO_ENGINE_TYPE_LANG$SEGMENT;
+        return constants$3445.const$1;
     }
     /**
      * {@snippet :
@@ -6337,7 +7561,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment PANGO_ENGINE_TYPE_SHAPE() {
-        return constants$2020.PANGO_ENGINE_TYPE_SHAPE$SEGMENT;
+        return constants$3445.const$2;
     }
     /**
      * {@snippet :
@@ -6353,15 +7577,15 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment P_tmpdir() {
-        return constants$2020.P_tmpdir$SEGMENT;
+        return constants$3445.const$3;
     }
     /**
      * {@snippet :
-     * #define PANGO_VERSION 15012
+     * #define PANGO_VERSION 15014
      * }
      */
     public static int PANGO_VERSION() {
-        return (int)15012L;
+        return (int)15014L;
     }
     /**
      * {@snippet :
@@ -6373,19 +7597,19 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
     }
     /**
      * {@snippet :
-     * #define CAIRO_VERSION 11600
+     * #define CAIRO_VERSION 11708
      * }
      */
     public static int CAIRO_VERSION() {
-        return (int)11600L;
+        return (int)11708L;
     }
     /**
      * {@snippet :
-     * #define CAIRO_VERSION_STRING "1.16.0"
+     * #define CAIRO_VERSION_STRING "1.17.8"
      * }
      */
     public static MemorySegment CAIRO_VERSION_STRING() {
-        return constants$2021.CAIRO_VERSION_STRING$SEGMENT;
+        return constants$3445.const$4;
     }
     /**
      * {@snippet :
@@ -6393,7 +7617,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment CAIRO_TAG_DEST() {
-        return constants$2021.CAIRO_TAG_DEST$SEGMENT;
+        return constants$3445.const$5;
     }
     /**
      * {@snippet :
@@ -6401,7 +7625,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment CAIRO_TAG_LINK() {
-        return constants$2021.CAIRO_TAG_LINK$SEGMENT;
+        return constants$3422.const$0;
     }
     /**
      * {@snippet :
@@ -6409,7 +7633,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment CAIRO_MIME_TYPE_JPEG() {
-        return constants$2021.CAIRO_MIME_TYPE_JPEG$SEGMENT;
+        return constants$3446.const$0;
     }
     /**
      * {@snippet :
@@ -6417,7 +7641,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment CAIRO_MIME_TYPE_PNG() {
-        return constants$2021.CAIRO_MIME_TYPE_PNG$SEGMENT;
+        return constants$3446.const$1;
     }
     /**
      * {@snippet :
@@ -6425,7 +7649,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment CAIRO_MIME_TYPE_JP2() {
-        return constants$2021.CAIRO_MIME_TYPE_JP2$SEGMENT;
+        return constants$3446.const$2;
     }
     /**
      * {@snippet :
@@ -6433,7 +7657,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment CAIRO_MIME_TYPE_URI() {
-        return constants$2022.CAIRO_MIME_TYPE_URI$SEGMENT;
+        return constants$3446.const$3;
     }
     /**
      * {@snippet :
@@ -6441,7 +7665,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment CAIRO_MIME_TYPE_UNIQUE_ID() {
-        return constants$2022.CAIRO_MIME_TYPE_UNIQUE_ID$SEGMENT;
+        return constants$3446.const$4;
     }
     /**
      * {@snippet :
@@ -6449,7 +7673,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment CAIRO_MIME_TYPE_JBIG2() {
-        return constants$2022.CAIRO_MIME_TYPE_JBIG2$SEGMENT;
+        return constants$3446.const$5;
     }
     /**
      * {@snippet :
@@ -6457,7 +7681,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL() {
-        return constants$2022.CAIRO_MIME_TYPE_JBIG2_GLOBAL$SEGMENT;
+        return constants$3447.const$0;
     }
     /**
      * {@snippet :
@@ -6465,7 +7689,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID() {
-        return constants$2022.CAIRO_MIME_TYPE_JBIG2_GLOBAL_ID$SEGMENT;
+        return constants$3447.const$1;
     }
     /**
      * {@snippet :
@@ -6473,7 +7697,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment CAIRO_MIME_TYPE_CCITT_FAX() {
-        return constants$2022.CAIRO_MIME_TYPE_CCITT_FAX$SEGMENT;
+        return constants$3447.const$2;
     }
     /**
      * {@snippet :
@@ -6481,1591 +7705,7 @@ public class app_indicator_h_20 extends app_indicator_h_19 {
      * }
      */
     public static MemorySegment CAIRO_MIME_TYPE_CCITT_FAX_PARAMS() {
-        return constants$2023.CAIRO_MIME_TYPE_CCITT_FAX_PARAMS$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_EPS "application/postscript"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_EPS() {
-        return constants$2023.CAIRO_MIME_TYPE_EPS$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define CAIRO_MIME_TYPE_EPS_PARAMS "application/x-cairo.eps.params"
-     * }
-     */
-    public static MemorySegment CAIRO_MIME_TYPE_EPS_PARAMS() {
-        return constants$2023.CAIRO_MIME_TYPE_EPS_PARAMS$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_CURRENT_TIME 0
-     * }
-     */
-    public static long GDK_CURRENT_TIME() {
-        return 0L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PARENT_RELATIVE 1
-     * }
-     */
-    public static long GDK_PARENT_RELATIVE() {
-        return 1L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_NONE 0
-     * }
-     */
-    public static MemorySegment GDK_NONE() {
-        return constants$2023.GDK_NONE$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PRIORITY_EVENTS 0
-     * }
-     */
-    public static int GDK_PRIORITY_EVENTS() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PRIORITY_REDRAW 120
-     * }
-     */
-    public static int GDK_PRIORITY_REDRAW() {
-        return (int)120L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_EVENT_PROPAGATE 0
-     * }
-     */
-    public static int GDK_EVENT_PROPAGATE() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_EVENT_STOP 1
-     * }
-     */
-    public static int GDK_EVENT_STOP() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_BUTTON_PRIMARY 1
-     * }
-     */
-    public static int GDK_BUTTON_PRIMARY() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_BUTTON_MIDDLE 2
-     * }
-     */
-    public static int GDK_BUTTON_MIDDLE() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_BUTTON_SECONDARY 3
-     * }
-     */
-    public static int GDK_BUTTON_SECONDARY() {
-        return (int)3L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_MAJOR 2
-     * }
-     */
-    public static int GDK_PIXBUF_MAJOR() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_MINOR 42
-     * }
-     */
-    public static int GDK_PIXBUF_MINOR() {
-        return (int)42L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_MICRO 10
-     * }
-     */
-    public static int GDK_PIXBUF_MICRO() {
-        return (int)10L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION "2.42.10"
-     * }
-     */
-    public static MemorySegment GDK_PIXBUF_VERSION() {
-        return constants$2023.GDK_PIXBUF_VERSION$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_0 131072
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_0() {
-        return (int)131072L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_2 131584
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_2() {
-        return (int)131584L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_4 132096
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_4() {
-        return (int)132096L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_6 132608
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_6() {
-        return (int)132608L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_8 133120
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_8() {
-        return (int)133120L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_10 133632
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_10() {
-        return (int)133632L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_12 134144
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_12() {
-        return (int)134144L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_14 134656
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_14() {
-        return (int)134656L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_16 135168
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_16() {
-        return (int)135168L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_18 135680
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_18() {
-        return (int)135680L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_20 136192
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_20() {
-        return (int)136192L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_22 136704
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_22() {
-        return (int)136704L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_24 137216
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_24() {
-        return (int)137216L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_26 137728
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_26() {
-        return (int)137728L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_28 138240
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_28() {
-        return (int)138240L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_30 138752
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_30() {
-        return (int)138752L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_32 139264
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_32() {
-        return (int)139264L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_34 139776
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_34() {
-        return (int)139776L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_36 140288
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_36() {
-        return (int)140288L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_38 140800
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_38() {
-        return (int)140800L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_2_40 141312
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_2_40() {
-        return (int)141312L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_CUR_STABLE 141824
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_CUR_STABLE() {
-        return (int)141824L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_PREV_STABLE 141312
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_PREV_STABLE() {
-        return (int)141312L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_MIN_REQUIRED 141824
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_MIN_REQUIRED() {
-        return (int)141824L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_PIXBUF_VERSION_MAX_ALLOWED 141824
-     * }
-     */
-    public static int GDK_PIXBUF_VERSION_MAX_ALLOWED() {
-        return (int)141824L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_SELECTION_PRIMARY 1
-     * }
-     */
-    public static MemorySegment GDK_SELECTION_PRIMARY() {
-        return constants$2023.GDK_SELECTION_PRIMARY$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_SELECTION_SECONDARY 2
-     * }
-     */
-    public static MemorySegment GDK_SELECTION_SECONDARY() {
-        return constants$2024.GDK_SELECTION_SECONDARY$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_SELECTION_CLIPBOARD 69
-     * }
-     */
-    public static MemorySegment GDK_SELECTION_CLIPBOARD() {
-        return constants$2024.GDK_SELECTION_CLIPBOARD$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_TARGET_BITMAP 5
-     * }
-     */
-    public static MemorySegment GDK_TARGET_BITMAP() {
-        return constants$2024.GDK_TARGET_BITMAP$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_TARGET_COLORMAP 7
-     * }
-     */
-    public static MemorySegment GDK_TARGET_COLORMAP() {
-        return constants$2024.GDK_TARGET_COLORMAP$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_TARGET_DRAWABLE 17
-     * }
-     */
-    public static MemorySegment GDK_TARGET_DRAWABLE() {
-        return constants$2024.GDK_TARGET_DRAWABLE$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_TARGET_PIXMAP 20
-     * }
-     */
-    public static MemorySegment GDK_TARGET_PIXMAP() {
-        return constants$2024.GDK_TARGET_PIXMAP$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_TARGET_STRING 31
-     * }
-     */
-    public static MemorySegment GDK_TARGET_STRING() {
-        return constants$2025.GDK_TARGET_STRING$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_SELECTION_TYPE_ATOM 4
-     * }
-     */
-    public static MemorySegment GDK_SELECTION_TYPE_ATOM() {
-        return constants$2025.GDK_SELECTION_TYPE_ATOM$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_SELECTION_TYPE_BITMAP 5
-     * }
-     */
-    public static MemorySegment GDK_SELECTION_TYPE_BITMAP() {
-        return constants$2025.GDK_SELECTION_TYPE_BITMAP$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_SELECTION_TYPE_COLORMAP 7
-     * }
-     */
-    public static MemorySegment GDK_SELECTION_TYPE_COLORMAP() {
-        return constants$2025.GDK_SELECTION_TYPE_COLORMAP$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_SELECTION_TYPE_DRAWABLE 17
-     * }
-     */
-    public static MemorySegment GDK_SELECTION_TYPE_DRAWABLE() {
-        return constants$2025.GDK_SELECTION_TYPE_DRAWABLE$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_SELECTION_TYPE_INTEGER 19
-     * }
-     */
-    public static MemorySegment GDK_SELECTION_TYPE_INTEGER() {
-        return constants$2025.GDK_SELECTION_TYPE_INTEGER$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_SELECTION_TYPE_PIXMAP 20
-     * }
-     */
-    public static MemorySegment GDK_SELECTION_TYPE_PIXMAP() {
-        return constants$2026.GDK_SELECTION_TYPE_PIXMAP$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_SELECTION_TYPE_WINDOW 33
-     * }
-     */
-    public static MemorySegment GDK_SELECTION_TYPE_WINDOW() {
-        return constants$2026.GDK_SELECTION_TYPE_WINDOW$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_SELECTION_TYPE_STRING 31
-     * }
-     */
-    public static MemorySegment GDK_SELECTION_TYPE_STRING() {
-        return constants$2026.GDK_SELECTION_TYPE_STRING$ADDR;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_UNIT_PIXEL 0
-     * }
-     */
-    public static int GTK_UNIT_PIXEL() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_MAJOR_VERSION 2
-     * }
-     */
-    public static int ATK_MAJOR_VERSION() {
-        return (int)2L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_MINOR_VERSION 48
-     * }
-     */
-    public static int ATK_MINOR_VERSION() {
-        return (int)48L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_MICRO_VERSION 0
-     * }
-     */
-    public static int ATK_MICRO_VERSION() {
-        return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_BINARY_AGE 24810
-     * }
-     */
-    public static int ATK_BINARY_AGE() {
-        return (int)24810L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_INTERFACE_AGE 1
-     * }
-     */
-    public static int ATK_INTERFACE_AGE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_VERSION_2_2 131584
-     * }
-     */
-    public static int ATK_VERSION_2_2() {
-        return (int)131584L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_VERSION_2_4 132096
-     * }
-     */
-    public static int ATK_VERSION_2_4() {
-        return (int)132096L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_VERSION_2_6 132608
-     * }
-     */
-    public static int ATK_VERSION_2_6() {
-        return (int)132608L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_VERSION_2_8 133120
-     * }
-     */
-    public static int ATK_VERSION_2_8() {
-        return (int)133120L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_VERSION_2_10 133632
-     * }
-     */
-    public static int ATK_VERSION_2_10() {
-        return (int)133632L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_VERSION_2_12 134144
-     * }
-     */
-    public static int ATK_VERSION_2_12() {
-        return (int)134144L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_VERSION_2_14 134656
-     * }
-     */
-    public static int ATK_VERSION_2_14() {
-        return (int)134656L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_VERSION_2_30 138752
-     * }
-     */
-    public static int ATK_VERSION_2_30() {
-        return (int)138752L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_VERSION_2_36 140288
-     * }
-     */
-    public static int ATK_VERSION_2_36() {
-        return (int)140288L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_VERSION_CUR_STABLE 143360
-     * }
-     */
-    public static int ATK_VERSION_CUR_STABLE() {
-        return (int)143360L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_VERSION_PREV_STABLE 142848
-     * }
-     */
-    public static int ATK_VERSION_PREV_STABLE() {
-        return (int)142848L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_VERSION_MIN_REQUIRED 143360
-     * }
-     */
-    public static int ATK_VERSION_MIN_REQUIRED() {
-        return (int)143360L;
-    }
-    /**
-     * {@snippet :
-     * #define ATK_VERSION_MAX_ALLOWED 143360
-     * }
-     */
-    public static int ATK_VERSION_MAX_ALLOWED() {
-        return (int)143360L;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID -1
-     * }
-     */
-    public static int GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID() {
-        return (int)-1L;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID -2
-     * }
-     */
-    public static int GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID() {
-        return (int)-2L;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_ENTRY_BUFFER_MAX_SIZE 65535
-     * }
-     */
-    public static int GTK_ENTRY_BUFFER_MAX_SIZE() {
-        return (int)65535L;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_BACKGROUND_COLOR "background-color"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_PROPERTY_BACKGROUND_COLOR() {
-        return constants$2026.GTK_STYLE_PROPERTY_BACKGROUND_COLOR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_COLOR "color"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_PROPERTY_COLOR() {
-        return constants$2026.GTK_STYLE_PROPERTY_COLOR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_FONT "font"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_PROPERTY_FONT() {
-        return constants$2026.GTK_STYLE_PROPERTY_FONT$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_PADDING "padding"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_PROPERTY_PADDING() {
-        return constants$2027.GTK_STYLE_PROPERTY_PADDING$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_BORDER_WIDTH "border-width"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_PROPERTY_BORDER_WIDTH() {
-        return constants$2027.GTK_STYLE_PROPERTY_BORDER_WIDTH$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_MARGIN "margin"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_PROPERTY_MARGIN() {
-        return constants$2027.GTK_STYLE_PROPERTY_MARGIN$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_BORDER_RADIUS "border-radius"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_PROPERTY_BORDER_RADIUS() {
-        return constants$2027.GTK_STYLE_PROPERTY_BORDER_RADIUS$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_BORDER_STYLE "border-style"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_PROPERTY_BORDER_STYLE() {
-        return constants$2027.GTK_STYLE_PROPERTY_BORDER_STYLE$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_BORDER_COLOR "border-color"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_PROPERTY_BORDER_COLOR() {
-        return constants$2027.GTK_STYLE_PROPERTY_BORDER_COLOR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_PROPERTY_BACKGROUND_IMAGE "background-image"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_PROPERTY_BACKGROUND_IMAGE() {
-        return constants$2028.GTK_STYLE_PROPERTY_BACKGROUND_IMAGE$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_CELL "cell"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_CELL() {
-        return constants$2028.GTK_STYLE_CLASS_CELL$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_DIM_LABEL "dim-label"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_DIM_LABEL() {
-        return constants$2028.GTK_STYLE_CLASS_DIM_LABEL$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_ENTRY "entry"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_ENTRY() {
-        return constants$2028.GTK_STYLE_CLASS_ENTRY$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_LABEL "label"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_LABEL() {
-        return constants$2028.GTK_STYLE_CLASS_LABEL$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_COMBOBOX_ENTRY "combobox-entry"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_COMBOBOX_ENTRY() {
-        return constants$2028.GTK_STYLE_CLASS_COMBOBOX_ENTRY$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_BUTTON "button"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_BUTTON() {
-        return constants$2029.GTK_STYLE_CLASS_BUTTON$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_LIST "list"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_LIST() {
-        return constants$2029.GTK_STYLE_CLASS_LIST$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_LIST_ROW "list-row"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_LIST_ROW() {
-        return constants$2029.GTK_STYLE_CLASS_LIST_ROW$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_CALENDAR "calendar"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_CALENDAR() {
-        return constants$2029.GTK_STYLE_CLASS_CALENDAR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SLIDER "slider"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_SLIDER() {
-        return constants$2029.GTK_STYLE_CLASS_SLIDER$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_BACKGROUND "background"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_BACKGROUND() {
-        return constants$2029.GTK_STYLE_CLASS_BACKGROUND$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_RUBBERBAND "rubberband"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_RUBBERBAND() {
-        return constants$2030.GTK_STYLE_CLASS_RUBBERBAND$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_CSD "csd"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_CSD() {
-        return constants$2030.GTK_STYLE_CLASS_CSD$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_TOOLTIP "tooltip"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_TOOLTIP() {
-        return constants$2030.GTK_STYLE_CLASS_TOOLTIP$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_MENU "menu"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_MENU() {
-        return constants$2030.GTK_STYLE_CLASS_MENU$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_CONTEXT_MENU "context-menu"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_CONTEXT_MENU() {
-        return constants$2030.GTK_STYLE_CLASS_CONTEXT_MENU$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_TOUCH_SELECTION "touch-selection"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_TOUCH_SELECTION() {
-        return constants$2030.GTK_STYLE_CLASS_TOUCH_SELECTION$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_MENUBAR "menubar"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_MENUBAR() {
-        return constants$2031.GTK_STYLE_CLASS_MENUBAR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_MENUITEM "menuitem"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_MENUITEM() {
-        return constants$2031.GTK_STYLE_CLASS_MENUITEM$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_TOOLBAR "toolbar"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_TOOLBAR() {
-        return constants$2031.GTK_STYLE_CLASS_TOOLBAR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_PRIMARY_TOOLBAR "primary-toolbar"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_PRIMARY_TOOLBAR() {
-        return constants$2031.GTK_STYLE_CLASS_PRIMARY_TOOLBAR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_INLINE_TOOLBAR "inline-toolbar"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_INLINE_TOOLBAR() {
-        return constants$2031.GTK_STYLE_CLASS_INLINE_TOOLBAR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_STATUSBAR "statusbar"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_STATUSBAR() {
-        return constants$2031.GTK_STYLE_CLASS_STATUSBAR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_RADIO "radio"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_RADIO() {
-        return constants$2032.GTK_STYLE_CLASS_RADIO$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_CHECK "check"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_CHECK() {
-        return constants$2032.GTK_STYLE_CLASS_CHECK$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_DEFAULT "default"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_DEFAULT() {
-        return constants$2032.GTK_STYLE_CLASS_DEFAULT$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_TROUGH "trough"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_TROUGH() {
-        return constants$2032.GTK_STYLE_CLASS_TROUGH$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SCROLLBAR "scrollbar"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_SCROLLBAR() {
-        return constants$2032.GTK_STYLE_CLASS_SCROLLBAR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SCROLLBARS_JUNCTION "scrollbars-junction"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_SCROLLBARS_JUNCTION() {
-        return constants$2032.GTK_STYLE_CLASS_SCROLLBARS_JUNCTION$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SCALE "scale"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_SCALE() {
-        return constants$2033.GTK_STYLE_CLASS_SCALE$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SCALE_HAS_MARKS_ABOVE "scale-has-marks-above"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_SCALE_HAS_MARKS_ABOVE() {
-        return constants$2033.GTK_STYLE_CLASS_SCALE_HAS_MARKS_ABOVE$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SCALE_HAS_MARKS_BELOW "scale-has-marks-below"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_SCALE_HAS_MARKS_BELOW() {
-        return constants$2033.GTK_STYLE_CLASS_SCALE_HAS_MARKS_BELOW$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_HEADER "header"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_HEADER() {
-        return constants$2033.GTK_STYLE_CLASS_HEADER$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_ACCELERATOR "accelerator"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_ACCELERATOR() {
-        return constants$2033.GTK_STYLE_CLASS_ACCELERATOR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_RAISED "raised"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_RAISED() {
-        return constants$2033.GTK_STYLE_CLASS_RAISED$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_LINKED "linked"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_LINKED() {
-        return constants$2034.GTK_STYLE_CLASS_LINKED$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_GRIP "grip"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_GRIP() {
-        return constants$2034.GTK_STYLE_CLASS_GRIP$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_DOCK "dock"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_DOCK() {
-        return constants$2034.GTK_STYLE_CLASS_DOCK$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_PROGRESSBAR "progressbar"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_PROGRESSBAR() {
-        return constants$2034.GTK_STYLE_CLASS_PROGRESSBAR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SPINNER "spinner"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_SPINNER() {
-        return constants$2034.GTK_STYLE_CLASS_SPINNER$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_MARK "mark"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_MARK() {
-        return constants$2034.GTK_STYLE_CLASS_MARK$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_EXPANDER "expander"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_EXPANDER() {
-        return constants$2035.GTK_STYLE_CLASS_EXPANDER$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SPINBUTTON "spinbutton"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_SPINBUTTON() {
-        return constants$2035.GTK_STYLE_CLASS_SPINBUTTON$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_NOTEBOOK "notebook"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_NOTEBOOK() {
-        return constants$2035.GTK_STYLE_CLASS_NOTEBOOK$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_VIEW "view"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_VIEW() {
-        return constants$2035.GTK_STYLE_CLASS_VIEW$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SIDEBAR "sidebar"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_SIDEBAR() {
-        return constants$2035.GTK_STYLE_CLASS_SIDEBAR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_IMAGE "image"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_IMAGE() {
-        return constants$2035.GTK_STYLE_CLASS_IMAGE$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_HIGHLIGHT "highlight"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_HIGHLIGHT() {
-        return constants$2036.GTK_STYLE_CLASS_HIGHLIGHT$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_FRAME "frame"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_FRAME() {
-        return constants$2036.GTK_STYLE_CLASS_FRAME$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_DND "dnd"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_DND() {
-        return constants$2036.GTK_STYLE_CLASS_DND$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_PANE_SEPARATOR "pane-separator"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_PANE_SEPARATOR() {
-        return constants$2036.GTK_STYLE_CLASS_PANE_SEPARATOR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SEPARATOR "separator"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_SEPARATOR() {
-        return constants$2036.GTK_STYLE_CLASS_SEPARATOR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_INFO "info"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_INFO() {
-        return constants$2036.GTK_STYLE_CLASS_INFO$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_WARNING "warning"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_WARNING() {
-        return constants$2037.GTK_STYLE_CLASS_WARNING$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_QUESTION "question"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_QUESTION() {
-        return constants$2037.GTK_STYLE_CLASS_QUESTION$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_ERROR "error"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_ERROR() {
-        return constants$2037.GTK_STYLE_CLASS_ERROR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_HORIZONTAL "horizontal"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_HORIZONTAL() {
-        return constants$2037.GTK_STYLE_CLASS_HORIZONTAL$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_VERTICAL "vertical"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_VERTICAL() {
-        return constants$2037.GTK_STYLE_CLASS_VERTICAL$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_TOP "top"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_TOP() {
-        return constants$2037.GTK_STYLE_CLASS_TOP$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_BOTTOM "bottom"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_BOTTOM() {
-        return constants$2038.GTK_STYLE_CLASS_BOTTOM$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_LEFT "left"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_LEFT() {
-        return constants$2038.GTK_STYLE_CLASS_LEFT$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_RIGHT "right"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_RIGHT() {
-        return constants$2038.GTK_STYLE_CLASS_RIGHT$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_PULSE "pulse"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_PULSE() {
-        return constants$2038.GTK_STYLE_CLASS_PULSE$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_ARROW "arrow"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_ARROW() {
-        return constants$2038.GTK_STYLE_CLASS_ARROW$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_OSD "osd"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_OSD() {
-        return constants$2038.GTK_STYLE_CLASS_OSD$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_LEVEL_BAR "level-bar"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_LEVEL_BAR() {
-        return constants$2039.GTK_STYLE_CLASS_LEVEL_BAR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_CURSOR_HANDLE "cursor-handle"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_CURSOR_HANDLE() {
-        return constants$2039.GTK_STYLE_CLASS_CURSOR_HANDLE$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_INSERTION_CURSOR "insertion-cursor"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_INSERTION_CURSOR() {
-        return constants$2039.GTK_STYLE_CLASS_INSERTION_CURSOR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_TITLEBAR "titlebar"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_TITLEBAR() {
-        return constants$2039.GTK_STYLE_CLASS_TITLEBAR$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_TITLE "title"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_TITLE() {
-        return constants$2039.GTK_STYLE_CLASS_TITLE$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SUBTITLE "subtitle"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_SUBTITLE() {
-        return constants$2039.GTK_STYLE_CLASS_SUBTITLE$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_NEEDS_ATTENTION "needs-attention"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_NEEDS_ATTENTION() {
-        return constants$2040.GTK_STYLE_CLASS_NEEDS_ATTENTION$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_SUGGESTED_ACTION "suggested-action"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_SUGGESTED_ACTION() {
-        return constants$2040.GTK_STYLE_CLASS_SUGGESTED_ACTION$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_DESTRUCTIVE_ACTION "destructive-action"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_DESTRUCTIVE_ACTION() {
-        return constants$2040.GTK_STYLE_CLASS_DESTRUCTIVE_ACTION$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_POPOVER "popover"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_POPOVER() {
-        return constants$2040.GTK_STYLE_CLASS_POPOVER$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_POPUP "popup"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_POPUP() {
-        return constants$2040.GTK_STYLE_CLASS_POPUP$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_MESSAGE_DIALOG "message-dialog"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_MESSAGE_DIALOG() {
-        return constants$2040.GTK_STYLE_CLASS_MESSAGE_DIALOG$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_FLAT "flat"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_FLAT() {
-        return constants$2041.GTK_STYLE_CLASS_FLAT$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_READ_ONLY "read-only"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_READ_ONLY() {
-        return constants$2041.GTK_STYLE_CLASS_READ_ONLY$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_OVERSHOOT "overshoot"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_OVERSHOOT() {
-        return constants$2041.GTK_STYLE_CLASS_OVERSHOOT$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_UNDERSHOOT "undershoot"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_UNDERSHOOT() {
-        return constants$2041.GTK_STYLE_CLASS_UNDERSHOOT$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_PAPER "paper"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_PAPER() {
-        return constants$2041.GTK_STYLE_CLASS_PAPER$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_MONOSPACE "monospace"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_MONOSPACE() {
-        return constants$2041.GTK_STYLE_CLASS_MONOSPACE$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_CLASS_WIDE "wide"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_CLASS_WIDE() {
-        return constants$2042.GTK_STYLE_CLASS_WIDE$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_REGION_ROW "row"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_REGION_ROW() {
-        return constants$2042.GTK_STYLE_REGION_ROW$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_REGION_COLUMN "column"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_REGION_COLUMN() {
-        return constants$2042.GTK_STYLE_REGION_COLUMN$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_REGION_COLUMN_HEADER "column-header"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_REGION_COLUMN_HEADER() {
-        return constants$2042.GTK_STYLE_REGION_COLUMN_HEADER$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_STYLE_REGION_TAB "tab"
-     * }
-     */
-    public static MemorySegment GTK_STYLE_REGION_TAB() {
-        return constants$2042.GTK_STYLE_REGION_TAB$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_LEVEL_BAR_OFFSET_LOW "low"
-     * }
-     */
-    public static MemorySegment GTK_LEVEL_BAR_OFFSET_LOW() {
-        return constants$2042.GTK_LEVEL_BAR_OFFSET_LOW$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_LEVEL_BAR_OFFSET_HIGH "high"
-     * }
-     */
-    public static MemorySegment GTK_LEVEL_BAR_OFFSET_HIGH() {
-        return constants$2043.GTK_LEVEL_BAR_OFFSET_HIGH$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_LEVEL_BAR_OFFSET_FULL "full"
-     * }
-     */
-    public static MemorySegment GTK_LEVEL_BAR_OFFSET_FULL() {
-        return constants$2043.GTK_LEVEL_BAR_OFFSET_FULL$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PRIORITY_RESIZE 110
-     * }
-     */
-    public static int GTK_PRIORITY_RESIZE() {
-        return (int)110L;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PAPER_NAME_A3 "iso_a3"
-     * }
-     */
-    public static MemorySegment GTK_PAPER_NAME_A3() {
-        return constants$2043.GTK_PAPER_NAME_A3$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PAPER_NAME_A4 "iso_a4"
-     * }
-     */
-    public static MemorySegment GTK_PAPER_NAME_A4() {
-        return constants$2043.GTK_PAPER_NAME_A4$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PAPER_NAME_A5 "iso_a5"
-     * }
-     */
-    public static MemorySegment GTK_PAPER_NAME_A5() {
-        return constants$2043.GTK_PAPER_NAME_A5$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PAPER_NAME_B5 "iso_b5"
-     * }
-     */
-    public static MemorySegment GTK_PAPER_NAME_B5() {
-        return constants$2043.GTK_PAPER_NAME_B5$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PAPER_NAME_LETTER "na_letter"
-     * }
-     */
-    public static MemorySegment GTK_PAPER_NAME_LETTER() {
-        return constants$2044.GTK_PAPER_NAME_LETTER$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PAPER_NAME_EXECUTIVE "na_executive"
-     * }
-     */
-    public static MemorySegment GTK_PAPER_NAME_EXECUTIVE() {
-        return constants$2044.GTK_PAPER_NAME_EXECUTIVE$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PAPER_NAME_LEGAL "na_legal"
-     * }
-     */
-    public static MemorySegment GTK_PAPER_NAME_LEGAL() {
-        return constants$2044.GTK_PAPER_NAME_LEGAL$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_PRINTER "printer"
-     * }
-     */
-    public static MemorySegment GTK_PRINT_SETTINGS_PRINTER() {
-        return constants$2044.GTK_PRINT_SETTINGS_PRINTER$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_ORIENTATION "orientation"
-     * }
-     */
-    public static MemorySegment GTK_PRINT_SETTINGS_ORIENTATION() {
-        return constants$2044.GTK_PRINT_SETTINGS_ORIENTATION$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_PAPER_FORMAT "paper-format"
-     * }
-     */
-    public static MemorySegment GTK_PRINT_SETTINGS_PAPER_FORMAT() {
-        return constants$2044.GTK_PRINT_SETTINGS_PAPER_FORMAT$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_PAPER_WIDTH "paper-width"
-     * }
-     */
-    public static MemorySegment GTK_PRINT_SETTINGS_PAPER_WIDTH() {
-        return constants$2045.GTK_PRINT_SETTINGS_PAPER_WIDTH$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_PAPER_HEIGHT "paper-height"
-     * }
-     */
-    public static MemorySegment GTK_PRINT_SETTINGS_PAPER_HEIGHT() {
-        return constants$2045.GTK_PRINT_SETTINGS_PAPER_HEIGHT$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_N_COPIES "n-copies"
-     * }
-     */
-    public static MemorySegment GTK_PRINT_SETTINGS_N_COPIES() {
-        return constants$2045.GTK_PRINT_SETTINGS_N_COPIES$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_DEFAULT_SOURCE "default-source"
-     * }
-     */
-    public static MemorySegment GTK_PRINT_SETTINGS_DEFAULT_SOURCE() {
-        return constants$2045.GTK_PRINT_SETTINGS_DEFAULT_SOURCE$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_QUALITY "quality"
-     * }
-     */
-    public static MemorySegment GTK_PRINT_SETTINGS_QUALITY() {
-        return constants$2045.GTK_PRINT_SETTINGS_QUALITY$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_RESOLUTION "resolution"
-     * }
-     */
-    public static MemorySegment GTK_PRINT_SETTINGS_RESOLUTION() {
-        return constants$2045.GTK_PRINT_SETTINGS_RESOLUTION$SEGMENT;
-    }
-    /**
-     * {@snippet :
-     * #define GTK_PRINT_SETTINGS_USE_COLOR "use-color"
-     * }
-     */
-    public static MemorySegment GTK_PRINT_SETTINGS_USE_COLOR() {
-        return constants$2046.GTK_PRINT_SETTINGS_USE_COLOR$SEGMENT;
+        return constants$3447.const$3;
     }
 }
 

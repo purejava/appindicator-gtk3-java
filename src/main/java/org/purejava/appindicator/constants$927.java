@@ -3,53 +3,51 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$927 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$927() {}
-    static final FunctionDescriptor pango_attr_show_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle pango_attr_show_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_show_new",
-        constants$927.pango_attr_show_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_dbus_proxy_new$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor pango_attr_line_height_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_new",
+        constants$927.const$2
     );
-    static final MethodHandle pango_attr_line_height_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_line_height_new",
-        constants$927.pango_attr_line_height_new$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_new_finish",
+        constants$5.const$5
     );
-    static final FunctionDescriptor pango_attr_line_height_new_absolute$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle pango_attr_line_height_new_absolute$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_line_height_new_absolute",
-        constants$927.pango_attr_line_height_new_absolute$FUNC
-    );
-    static final FunctionDescriptor pango_attr_text_transform_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_attr_text_transform_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_text_transform_new",
-        constants$927.pango_attr_text_transform_new$FUNC
-    );
-    static final FunctionDescriptor pango_attribute_as_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attribute_as_string$MH = RuntimeHelper.downcallHandle(
-        "pango_attribute_as_string",
-        constants$927.pango_attribute_as_string$FUNC
-    );
-    static final FunctionDescriptor pango_attribute_as_language$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attribute_as_language$MH = RuntimeHelper.downcallHandle(
-        "pango_attribute_as_language",
-        constants$927.pango_attribute_as_language$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_new_sync",
+        constants$927.const$5
     );
 }
 

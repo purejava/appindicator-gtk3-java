@@ -3,54 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$240 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$240() {}
-    static final FunctionDescriptor g_variant_new_take_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_new_take_string$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_take_string",
-        constants$240.g_variant_new_take_string$FUNC
-    );
-    static final FunctionDescriptor g_variant_new_printf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_new_printf$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_variant_new_printf",
-        constants$240.g_variant_new_printf$FUNC
-    );
-    static final FunctionDescriptor g_variant_new_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_new_object_path$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_object_path",
-        constants$240.g_variant_new_object_path$FUNC
-    );
-    static final FunctionDescriptor g_variant_is_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_is_object_path$MH = RuntimeHelper.downcallHandle(
-        "g_variant_is_object_path",
-        constants$240.g_variant_is_object_path$FUNC
-    );
-    static final FunctionDescriptor g_variant_new_signature$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_new_signature$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_signature",
-        constants$240.g_variant_new_signature$FUNC
-    );
-    static final FunctionDescriptor g_variant_is_signature$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_is_signature$MH = RuntimeHelper.downcallHandle(
-        "g_variant_is_signature",
-        constants$240.g_variant_is_signature$FUNC
-    );
+    static final VarHandle const$0 = constants$239.const$1.varHandle(MemoryLayout.PathElement.groupElement("finalize_hook"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("data"),
+        RuntimeHelper.POINTER.withName("next"),
+        RuntimeHelper.POINTER.withName("prev"),
+        JAVA_INT.withName("ref_count"),
+        MemoryLayout.paddingLayout(4),
+        JAVA_LONG.withName("hook_id"),
+        JAVA_INT.withName("flags"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("func"),
+        RuntimeHelper.POINTER.withName("destroy")
+    ).withName("_GHook");
+    static final VarHandle const$2 = constants$240.const$1.varHandle(MemoryLayout.PathElement.groupElement("data"));
+    static final VarHandle const$3 = constants$240.const$1.varHandle(MemoryLayout.PathElement.groupElement("next"));
+    static final VarHandle const$4 = constants$240.const$1.varHandle(MemoryLayout.PathElement.groupElement("prev"));
+    static final VarHandle const$5 = constants$240.const$1.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
 }
 
 

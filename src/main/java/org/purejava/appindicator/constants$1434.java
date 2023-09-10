@@ -3,64 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1434 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1434() {}
-    static final FunctionDescriptor gtk_list_store_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_set_add_range",
+        constants$467.const$3
     );
-    static final MethodHandle gtk_list_store_new$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_list_store_new",
-        constants$1434.gtk_list_store_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_set_add_sorted_array",
+        constants$164.const$5
     );
-    static final FunctionDescriptor gtk_list_store_newv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_set_del",
+        constants$40.const$2
     );
-    static final MethodHandle gtk_list_store_newv$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_newv",
-        constants$1434.gtk_list_store_newv$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_set_del_range",
+        constants$467.const$3
     );
-    static final FunctionDescriptor gtk_list_store_set_column_types$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_set_is_equal",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_list_store_set_column_types$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_set_column_types",
-        constants$1434.gtk_list_store_set_column_types$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_set_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_store_set_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_set_value",
-        constants$1434.gtk_list_store_set_value$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_store_set$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_list_store_set",
-        constants$1434.gtk_list_store_set$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_set_valuesv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_list_store_set_valuesv$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_set_valuesv",
-        constants$1434.gtk_list_store_set_valuesv$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_set_hash",
+        constants$10.const$5
     );
 }
 

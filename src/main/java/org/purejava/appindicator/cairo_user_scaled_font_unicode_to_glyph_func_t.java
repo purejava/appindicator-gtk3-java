@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * enum _cairo_status (*cairo_user_scaled_font_unicode_to_glyph_func_t)(struct _cairo_scaled_font* scaled_font,unsigned long unicode,unsigned long* glyph_index);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface cairo_user_scaled_font_unicode_to_glyph_func_t {
 
     int apply(java.lang.foreign.MemorySegment scaled_font, long unicode, java.lang.foreign.MemorySegment glyph_index);
-    static MemorySegment allocate(cairo_user_scaled_font_unicode_to_glyph_func_t fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$1020.cairo_user_scaled_font_unicode_to_glyph_func_t_UP$MH, fi, constants$1020.cairo_user_scaled_font_unicode_to_glyph_func_t$FUNC, scope);
+    static MemorySegment allocate(cairo_user_scaled_font_unicode_to_glyph_func_t fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$1711.const$5, fi, constants$62.const$2, scope);
     }
-    static cairo_user_scaled_font_unicode_to_glyph_func_t ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static cairo_user_scaled_font_unicode_to_glyph_func_t ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _scaled_font, long _unicode, java.lang.foreign.MemorySegment _glyph_index) -> {
             try {
-                return (int)constants$1020.cairo_user_scaled_font_unicode_to_glyph_func_t_DOWN$MH.invokeExact(symbol, _scaled_font, _unicode, _glyph_index);
+                return (int)constants$693.const$5.invokeExact(symbol, _scaled_font, _unicode, _glyph_index);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

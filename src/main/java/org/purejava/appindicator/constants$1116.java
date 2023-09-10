@@ -3,58 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1116 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1116() {}
-    static final FunctionDescriptor gdk_display_request_selection_notification$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_property_info_flags_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_display_request_selection_notification$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_request_selection_notification",
-        constants$1116.gdk_display_request_selection_notification$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_subtree_flags_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_display_supports_clipboard_persistence$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_server_flags_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_display_supports_clipboard_persistence$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_supports_clipboard_persistence",
-        constants$1116.gdk_display_supports_clipboard_persistence$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_signal_flags_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_display_store_clipboard$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_send_message_flags_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_display_store_clipboard$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_store_clipboard",
-        constants$1116.gdk_display_store_clipboard$FUNC
-    );
-    static final FunctionDescriptor gdk_display_supports_shapes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_supports_shapes$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_supports_shapes",
-        constants$1116.gdk_display_supports_shapes$FUNC
-    );
-    static final FunctionDescriptor gdk_display_supports_input_shapes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_supports_input_shapes$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_supports_input_shapes",
-        constants$1116.gdk_display_supports_input_shapes$FUNC
-    );
-    static final FunctionDescriptor gdk_display_supports_composite$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_supports_composite$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_supports_composite",
-        constants$1116.gdk_display_supports_composite$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_credentials_type_get_type",
+        constants$3.const$5
     );
 }
 

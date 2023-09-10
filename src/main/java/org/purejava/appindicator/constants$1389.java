@@ -3,61 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1389 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1389() {}
-    static final FunctionDescriptor gtk_tree_view_column_new_with_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_unix_fd_list_new_from_array",
+        constants$21.const$3
     );
-    static final MethodHandle gtk_tree_view_column_new_with_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_new_with_area",
-        constants$1389.gtk_tree_view_column_new_with_area$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_unix_fd_list_append",
+        constants$150.const$0
     );
-    static final FunctionDescriptor gtk_tree_view_column_new_with_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_unix_fd_list_get_length",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_tree_view_column_new_with_attributes$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_view_column_new_with_attributes",
-        constants$1389.gtk_tree_view_column_new_with_attributes$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_unix_fd_list_get",
+        constants$150.const$0
     );
-    static final FunctionDescriptor gtk_tree_view_column_pack_start$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_unix_fd_list_peek_fds",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_tree_view_column_pack_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_pack_start",
-        constants$1389.gtk_tree_view_column_pack_start$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_pack_end$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_pack_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_pack_end",
-        constants$1389.gtk_tree_view_column_pack_end$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_clear$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_clear",
-        constants$1389.gtk_tree_view_column_clear$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_add_attribute$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_add_attribute$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_add_attribute",
-        constants$1389.gtk_tree_view_column_add_attribute$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_unix_fd_list_steal_fds",
+        constants$5.const$5
     );
 }
 

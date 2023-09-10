@@ -2,18 +2,87 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2046 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2046() {}
-    static final MemorySegment GTK_PRINT_SETTINGS_USE_COLOR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("use-color");
-    static final MemorySegment GTK_PRINT_SETTINGS_DUPLEX$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("duplex");
-    static final MemorySegment GTK_PRINT_SETTINGS_COLLATE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("collate");
-    static final MemorySegment GTK_PRINT_SETTINGS_REVERSE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("reverse");
-    static final MemorySegment GTK_PRINT_SETTINGS_MEDIA_TYPE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("media-type");
-    static final MemorySegment GTK_PRINT_SETTINGS_DITHER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("dither");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_object_factory_get_accessible_type",
+        constants$4.const$0
+    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    RuntimeHelper.POINTER.withName("g_class")
+                ).withName("g_type_instance"),
+                JAVA_INT.withName("ref_count"),
+                MemoryLayout.paddingLayout(4),
+                RuntimeHelper.POINTER.withName("qdata")
+            ).withName("parent")
+        ).withName("parent")
+    ).withName("_AtkNoOpObjectFactory");
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    JAVA_LONG.withName("g_type")
+                ).withName("g_type_class"),
+                RuntimeHelper.POINTER.withName("construct_properties"),
+                RuntimeHelper.POINTER.withName("constructor"),
+                RuntimeHelper.POINTER.withName("set_property"),
+                RuntimeHelper.POINTER.withName("get_property"),
+                RuntimeHelper.POINTER.withName("dispose"),
+                RuntimeHelper.POINTER.withName("finalize"),
+                RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+                RuntimeHelper.POINTER.withName("notify"),
+                RuntimeHelper.POINTER.withName("constructed"),
+                JAVA_LONG.withName("flags"),
+                JAVA_LONG.withName("n_construct_properties"),
+                RuntimeHelper.POINTER.withName("pspecs"),
+                JAVA_LONG.withName("n_pspecs"),
+                MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+            ).withName("parent_class"),
+            RuntimeHelper.POINTER.withName("create_accessible"),
+            RuntimeHelper.POINTER.withName("invalidate"),
+            RuntimeHelper.POINTER.withName("get_accessible_type"),
+            RuntimeHelper.POINTER.withName("pad1"),
+            RuntimeHelper.POINTER.withName("pad2")
+        ).withName("parent_class")
+    ).withName("_AtkNoOpObjectFactoryClass");
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_no_op_object_factory_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_no_op_object_factory_new",
+        constants$35.const$2
+    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    RuntimeHelper.POINTER.withName("g_class")
+                ).withName("g_type_instance"),
+                JAVA_INT.withName("ref_count"),
+                MemoryLayout.paddingLayout(4),
+                RuntimeHelper.POINTER.withName("qdata")
+            ).withName("parent"),
+            RuntimeHelper.POINTER.withName("description"),
+            RuntimeHelper.POINTER.withName("name"),
+            RuntimeHelper.POINTER.withName("accessible_parent"),
+            JAVA_INT.withName("role"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("relation_set"),
+            JAVA_INT.withName("layer"),
+            MemoryLayout.paddingLayout(4)
+        ).withName("parent")
+    ).withName("_AtkPlug");
 }
 
 

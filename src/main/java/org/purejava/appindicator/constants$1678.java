@@ -3,59 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1678 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1678() {}
-    static final FunctionDescriptor gtk_list_box_unselect_row$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_unselect_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_unselect_row",
-        constants$1678.gtk_list_box_unselect_row$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_select_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_select_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_select_all",
-        constants$1678.gtk_list_box_select_all$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_unselect_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_unselect_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_unselect_all",
-        constants$1678.gtk_list_box_unselect_all$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_set_selection_mode$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_set_selection_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_set_selection_mode",
-        constants$1678.gtk_list_box_set_selection_mode$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_get_selection_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_get_selection_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_get_selection_mode",
-        constants$1678.gtk_list_box_get_selection_mode$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_set_filter_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_set_filter_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_set_filter_func",
-        constants$1678.gtk_list_box_set_filter_func$FUNC
-    );
+    static final VarHandle const$0 = constants$1677.const$1.varHandle(MemoryLayout.PathElement.groupElement("x0"));
+    static final VarHandle const$1 = constants$1677.const$1.varHandle(MemoryLayout.PathElement.groupElement("y0"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(cairo_destroy_func_t.class, "apply", constants$13.const$1);
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("unused")
+    ).withName("_cairo_user_data_key");
+    static final VarHandle const$4 = constants$1678.const$3.varHandle(MemoryLayout.PathElement.groupElement("unused"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(cairo_write_func_t.class, "apply", constants$62.const$0);
 }
 
 

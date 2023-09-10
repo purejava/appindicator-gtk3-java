@@ -3,55 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1077 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1077() {}
-    static final FunctionDescriptor gdk_frame_clock_get_frame_counter$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_io_stream_splice_async",
+        constants$780.const$3
     );
-    static final MethodHandle gdk_frame_clock_get_frame_counter$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_get_frame_counter",
-        constants$1077.gdk_frame_clock_get_frame_counter$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_io_stream_splice_finish",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gdk_frame_clock_get_history_start$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_io_stream_close",
+        constants$12.const$2
     );
-    static final MethodHandle gdk_frame_clock_get_history_start$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_get_history_start",
-        constants$1077.gdk_frame_clock_get_history_start$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_io_stream_close_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_io_stream_close_async",
+        constants$281.const$5
     );
-    static final FunctionDescriptor gdk_frame_clock_get_timings$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle gdk_frame_clock_get_timings$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_get_timings",
-        constants$1077.gdk_frame_clock_get_timings$FUNC
-    );
-    static final FunctionDescriptor gdk_frame_clock_get_current_timings$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_frame_clock_get_current_timings$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_get_current_timings",
-        constants$1077.gdk_frame_clock_get_current_timings$FUNC
-    );
-    static final FunctionDescriptor gdk_frame_clock_get_refresh_info$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_frame_clock_get_refresh_info$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_clock_get_refresh_info",
-        constants$1077.gdk_frame_clock_get_refresh_info$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_window_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_type",
-        constants$1077.gdk_window_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_io_stream_close_finish",
+        constants$12.const$2
     );
 }
 

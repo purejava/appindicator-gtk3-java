@@ -3,41 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$373 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$373() {}
-    static final FunctionDescriptor pthread_setspecific$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_log_set_handler_full$log_func.class, "apply", constants$179.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_log_set_handler_full$destroy.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle pthread_setspecific$MH = RuntimeHelper.downcallHandle(
-        "pthread_setspecific",
-        constants$373.pthread_setspecific$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_log_set_handler_full",
+        constants$373.const$2
     );
-    static final FunctionDescriptor pthread_getcpuclockid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_log_remove_handler",
+        constants$40.const$2
     );
-    static final MethodHandle pthread_getcpuclockid$MH = RuntimeHelper.downcallHandle(
-        "pthread_getcpuclockid",
-        constants$373.pthread_getcpuclockid$FUNC
-    );
-    static final FunctionDescriptor pthread_atfork$__prepare$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor pthread_atfork$__prepare_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle pthread_atfork$__prepare_UP$MH = RuntimeHelper.upcallHandle(pthread_atfork$__prepare.class, "apply", constants$373.pthread_atfork$__prepare_UP$FUNC);
-    static final FunctionDescriptor pthread_atfork$__prepare_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle pthread_atfork$__prepare_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$373.pthread_atfork$__prepare_DOWN$FUNC
-    );
-    static final FunctionDescriptor pthread_atfork$__parent$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor pthread_atfork$__parent_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle pthread_atfork$__parent_UP$MH = RuntimeHelper.upcallHandle(pthread_atfork$__parent.class, "apply", constants$373.pthread_atfork$__parent_UP$FUNC);
-    static final FunctionDescriptor pthread_atfork$__parent_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle pthread_atfork$__parent_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$373.pthread_atfork$__parent_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_log_default_handler",
+        constants$179.const$1
     );
 }
 

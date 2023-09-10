@@ -2,89 +2,84 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _PangoEngineScriptInfo {
- *     PangoScript script;
- *     const gchar* langs;
+ *     enum PangoScript script;
+ *     char* langs;
  * };
  * }
  */
 public class _PangoEngineScriptInfo {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("script"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("langs")
-    ).withName("_PangoEngineScriptInfo");
     public static MemoryLayout $LAYOUT() {
-        return _PangoEngineScriptInfo.$struct$LAYOUT;
+        return constants$1606.const$5;
     }
-    static final VarHandle script$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("script"));
     public static VarHandle script$VH() {
-        return _PangoEngineScriptInfo.script$VH;
+        return constants$1607.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * PangoScript script;
+     * enum PangoScript script;
      * }
      */
     public static int script$get(MemorySegment seg) {
-        return (int)_PangoEngineScriptInfo.script$VH.get(seg);
+        return (int)constants$1607.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * PangoScript script;
+     * enum PangoScript script;
      * }
      */
     public static void script$set(MemorySegment seg, int x) {
-        _PangoEngineScriptInfo.script$VH.set(seg, x);
+        constants$1607.const$0.set(seg, x);
     }
     public static int script$get(MemorySegment seg, long index) {
-        return (int)_PangoEngineScriptInfo.script$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1607.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void script$set(MemorySegment seg, long index, int x) {
-        _PangoEngineScriptInfo.script$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1607.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle langs$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("langs"));
     public static VarHandle langs$VH() {
-        return _PangoEngineScriptInfo.langs$VH;
+        return constants$1607.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const gchar* langs;
+     * char* langs;
      * }
      */
     public static MemorySegment langs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_PangoEngineScriptInfo.langs$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1607.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const gchar* langs;
+     * char* langs;
      * }
      */
     public static void langs$set(MemorySegment seg, MemorySegment x) {
-        _PangoEngineScriptInfo.langs$VH.set(seg, x);
+        constants$1607.const$1.set(seg, x);
     }
     public static MemorySegment langs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_PangoEngineScriptInfo.langs$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1607.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void langs$set(MemorySegment seg, long index, MemorySegment x) {
-        _PangoEngineScriptInfo.langs$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1607.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -3,63 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$171 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$171() {}
-    static final FunctionDescriptor g_main_context_query$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_bytes_unref_to_array",
+        constants$5.const$2
     );
-    static final MethodHandle g_main_context_query$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_query",
-        constants$171.g_main_context_query$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_bytes_hash",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_main_context_check$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_bytes_equal",
+        constants$9.const$0
     );
-    static final MethodHandle g_main_context_check$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_check",
-        constants$171.g_main_context_check$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_bytes_compare",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_main_context_dispatch$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final MethodHandle g_main_context_dispatch$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_dispatch",
-        constants$171.g_main_context_dispatch$FUNC
-    );
-    static final FunctionDescriptor g_main_context_set_poll_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_context_set_poll_func$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_set_poll_func",
-        constants$171.g_main_context_set_poll_func$FUNC
-    );
-    static final FunctionDescriptor g_main_context_get_poll_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_context_get_poll_func$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_get_poll_func",
-        constants$171.g_main_context_get_poll_func$FUNC
-    );
-    static final FunctionDescriptor g_main_context_add_poll$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_main_context_add_poll$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_add_poll",
-        constants$171.g_main_context_add_poll$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_bytes_get_region",
+        constants$171.const$4
     );
 }
 

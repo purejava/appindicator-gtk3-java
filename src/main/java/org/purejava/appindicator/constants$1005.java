@@ -3,56 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1005 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1005() {}
-    static final FunctionDescriptor cairo_stroke_preserve$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_stroke_preserve$MH = RuntimeHelper.downcallHandle(
-        "cairo_stroke_preserve",
-        constants$1005.cairo_stroke_preserve$FUNC
-    );
-    static final FunctionDescriptor cairo_fill$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_fill$MH = RuntimeHelper.downcallHandle(
-        "cairo_fill",
-        constants$1005.cairo_fill$FUNC
-    );
-    static final FunctionDescriptor cairo_fill_preserve$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_fill_preserve$MH = RuntimeHelper.downcallHandle(
-        "cairo_fill_preserve",
-        constants$1005.cairo_fill_preserve$FUNC
-    );
-    static final FunctionDescriptor cairo_copy_page$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_copy_page$MH = RuntimeHelper.downcallHandle(
-        "cairo_copy_page",
-        constants$1005.cairo_copy_page$FUNC
-    );
-    static final FunctionDescriptor cairo_show_page$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_show_page$MH = RuntimeHelper.downcallHandle(
-        "cairo_show_page",
-        constants$1005.cairo_show_page$FUNC
-    );
-    static final FunctionDescriptor cairo_in_stroke$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_in_stroke$MH = RuntimeHelper.downcallHandle(
-        "cairo_in_stroke",
-        constants$1005.cairo_in_stroke$FUNC
-    );
+    static final VarHandle const$0 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("stop_mountable"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.stop_mountable_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$2 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("stop_mountable_finish"));
+    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("supports_thread_contexts"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.unmount_mountable_with_operation.class, "apply", constants$380.const$0);
+    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("unmount_mountable_with_operation"));
 }
 
 

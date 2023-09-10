@@ -3,70 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1045 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1045() {}
-    static final FunctionDescriptor cairo_mesh_pattern_move_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_mesh_pattern_move_to$MH = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_move_to",
-        constants$1045.cairo_mesh_pattern_move_to$FUNC
-    );
-    static final FunctionDescriptor cairo_mesh_pattern_set_control_point$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_mesh_pattern_set_control_point$MH = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_set_control_point",
-        constants$1045.cairo_mesh_pattern_set_control_point$FUNC
-    );
-    static final FunctionDescriptor cairo_mesh_pattern_set_corner_color_rgb$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_mesh_pattern_set_corner_color_rgb$MH = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_set_corner_color_rgb",
-        constants$1045.cairo_mesh_pattern_set_corner_color_rgb$FUNC
-    );
-    static final FunctionDescriptor cairo_mesh_pattern_set_corner_color_rgba$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_mesh_pattern_set_corner_color_rgba$MH = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_set_corner_color_rgba",
-        constants$1045.cairo_mesh_pattern_set_corner_color_rgba$FUNC
-    );
-    static final FunctionDescriptor cairo_pattern_set_matrix$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pattern_set_matrix$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_set_matrix",
-        constants$1045.cairo_pattern_set_matrix$FUNC
-    );
-    static final FunctionDescriptor cairo_pattern_get_matrix$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pattern_get_matrix$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_matrix",
-        constants$1045.cairo_pattern_get_matrix$FUNC
-    );
+    static final VarHandle const$0 = constants$1044.const$0.varHandle(MemoryLayout.PathElement.groupElement("next_files_async"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileEnumeratorClass.next_files_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$2 = constants$1044.const$0.varHandle(MemoryLayout.PathElement.groupElement("next_files_finish"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileEnumeratorClass.close_async.class, "apply", constants$281.const$5);
+    static final VarHandle const$4 = constants$1044.const$0.varHandle(MemoryLayout.PathElement.groupElement("close_async"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileEnumeratorClass.close_finish.class, "apply", constants$12.const$2);
 }
 
 

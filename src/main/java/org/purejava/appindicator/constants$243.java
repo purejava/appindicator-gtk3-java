@@ -3,54 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$243 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$243() {}
-    static final FunctionDescriptor g_variant_get_int64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_hook_destroy_link",
+        constants$13.const$4
     );
-    static final MethodHandle g_variant_get_int64$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_int64",
-        constants$243.g_variant_get_int64$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_hook_prepend",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_variant_get_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_hook_insert_before",
+        constants$14.const$3
     );
-    static final MethodHandle g_variant_get_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_uint64",
-        constants$243.g_variant_get_uint64$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_hook_insert_sorted$func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_hook_insert_sorted",
+        constants$14.const$3
     );
-    static final FunctionDescriptor g_variant_get_handle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_get_handle$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_handle",
-        constants$243.g_variant_get_handle$FUNC
-    );
-    static final FunctionDescriptor g_variant_get_double$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_get_double$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_double",
-        constants$243.g_variant_get_double$FUNC
-    );
-    static final FunctionDescriptor g_variant_get_variant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_get_variant$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_variant",
-        constants$243.g_variant_get_variant$FUNC
-    );
-    static final FunctionDescriptor g_variant_get_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_get_string$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_string",
-        constants$243.g_variant_get_string$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_hook_get",
+        constants$21.const$1
     );
 }
 

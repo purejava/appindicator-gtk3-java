@@ -3,62 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$435 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$435() {}
-    static final FunctionDescriptor g_object_get_valist$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_sequence_insert_sorted",
+        constants$39.const$1
     );
-    static final MethodHandle g_object_get_valist$MH = RuntimeHelper.downcallHandle(
-        "g_object_get_valist",
-        constants$435.g_object_get_valist$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_sequence_insert_sorted_iter$iter_cmp.class, "apply", constants$12.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_sequence_insert_sorted_iter",
+        constants$39.const$1
     );
-    static final FunctionDescriptor g_object_set_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_sequence_sort_changed$cmp_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_sequence_sort_changed",
+        constants$14.const$3
     );
-    static final MethodHandle g_object_set_property$MH = RuntimeHelper.downcallHandle(
-        "g_object_set_property",
-        constants$435.g_object_set_property$FUNC
-    );
-    static final FunctionDescriptor g_object_get_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_get_property$MH = RuntimeHelper.downcallHandle(
-        "g_object_get_property",
-        constants$435.g_object_get_property$FUNC
-    );
-    static final FunctionDescriptor g_object_freeze_notify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_freeze_notify$MH = RuntimeHelper.downcallHandle(
-        "g_object_freeze_notify",
-        constants$435.g_object_freeze_notify$FUNC
-    );
-    static final FunctionDescriptor g_object_notify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_notify$MH = RuntimeHelper.downcallHandle(
-        "g_object_notify",
-        constants$435.g_object_notify$FUNC
-    );
-    static final FunctionDescriptor g_object_notify_by_pspec$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_notify_by_pspec$MH = RuntimeHelper.downcallHandle(
-        "g_object_notify_by_pspec",
-        constants$435.g_object_notify_by_pspec$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_sequence_sort_changed_iter$iter_cmp.class, "apply", constants$12.const$2);
 }
 
 

@@ -3,53 +3,44 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$647 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$647() {}
-    static final FunctionDescriptor g_file_info_get_is_hidden$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_binding_group_bind_full$transform_to.class, "apply", constants$34.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_binding_group_bind_full$transform_from.class, "apply", constants$34.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_binding_group_bind_full$user_data_destroy.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_file_info_get_is_hidden$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_is_hidden",
-        constants$647.g_file_info_get_is_hidden$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_binding_group_bind_full",
+        constants$647.const$3
     );
-    static final FunctionDescriptor g_file_info_get_is_backup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_file_info_get_is_backup$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_is_backup",
-        constants$647.g_file_info_get_is_backup$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_is_symlink$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_is_symlink$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_is_symlink",
-        constants$647.g_file_info_get_is_symlink$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_name",
-        constants$647.g_file_info_get_name$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_display_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_display_name$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_display_name",
-        constants$647.g_file_info_get_display_name$FUNC
-    );
-    static final FunctionDescriptor g_file_info_get_edit_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_get_edit_name$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_get_edit_name",
-        constants$647.g_file_info_get_edit_name$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_binding_group_bind_with_closures",
+        constants$647.const$5
     );
 }
 

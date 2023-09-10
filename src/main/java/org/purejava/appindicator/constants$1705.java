@@ -3,62 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1705 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1705() {}
-    static final FunctionDescriptor gtk_menu_tool_button_set_arrow_tooltip_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_glyph_path",
+        constants$164.const$5
     );
-    static final MethodHandle gtk_menu_tool_button_set_arrow_tooltip_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_tool_button_set_arrow_tooltip_text",
-        constants$1705.gtk_menu_tool_button_set_arrow_tooltip_text$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_text_extents",
+        constants$14.const$3
     );
-    static final FunctionDescriptor gtk_menu_tool_button_set_arrow_tooltip_markup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_glyph_extents",
+        constants$464.const$4
     );
-    static final MethodHandle gtk_menu_tool_button_set_arrow_tooltip_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_tool_button_set_arrow_tooltip_markup",
-        constants$1705.gtk_menu_tool_button_set_arrow_tooltip_markup$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_font_extents",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_message_dialog_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_message_dialog_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_message_dialog_get_type",
-        constants$1705.gtk_message_dialog_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_font_face_reference",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_message_dialog_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_message_dialog_new$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_message_dialog_new",
-        constants$1705.gtk_message_dialog_new$FUNC
-    );
-    static final FunctionDescriptor gtk_message_dialog_new_with_markup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_message_dialog_new_with_markup$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_message_dialog_new_with_markup",
-        constants$1705.gtk_message_dialog_new_with_markup$FUNC
-    );
-    static final FunctionDescriptor gtk_message_dialog_set_image$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_message_dialog_set_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_message_dialog_set_image",
-        constants$1705.gtk_message_dialog_set_image$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_font_face_destroy",
+        constants$13.const$1
     );
 }
 

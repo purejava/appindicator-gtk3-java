@@ -2,81 +2,51 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _AtkPropertyValues {
- *     const gchar* property_name;
- *     GValue old_value;
- *     GValue new_value;
+ *     char* property_name;
+ *     struct _GValue old_value;
+ *     struct _GValue new_value;
  * };
  * }
  */
 public class _AtkPropertyValues {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("property_name"),
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
-            MemoryLayout.sequenceLayout(2, MemoryLayout.unionLayout(
-                Constants$root.C_INT$LAYOUT.withName("v_int"),
-                Constants$root.C_INT$LAYOUT.withName("v_uint"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("v_long"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("v_ulong"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("v_int64"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("v_uint64"),
-                Constants$root.C_FLOAT$LAYOUT.withName("v_float"),
-                Constants$root.C_DOUBLE$LAYOUT.withName("v_double"),
-                Constants$root.C_POINTER$LAYOUT.withName("v_pointer")
-            )).withName("data")
-        ).withName("old_value"),
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
-            MemoryLayout.sequenceLayout(2, MemoryLayout.unionLayout(
-                Constants$root.C_INT$LAYOUT.withName("v_int"),
-                Constants$root.C_INT$LAYOUT.withName("v_uint"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("v_long"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("v_ulong"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("v_int64"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("v_uint64"),
-                Constants$root.C_FLOAT$LAYOUT.withName("v_float"),
-                Constants$root.C_DOUBLE$LAYOUT.withName("v_double"),
-                Constants$root.C_POINTER$LAYOUT.withName("v_pointer")
-            )).withName("data")
-        ).withName("new_value")
-    ).withName("_AtkPropertyValues");
     public static MemoryLayout $LAYOUT() {
-        return _AtkPropertyValues.$struct$LAYOUT;
+        return constants$1964.const$5;
     }
-    static final VarHandle property_name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("property_name"));
     public static VarHandle property_name$VH() {
-        return _AtkPropertyValues.property_name$VH;
+        return constants$1965.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const gchar* property_name;
+     * char* property_name;
      * }
      */
     public static MemorySegment property_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkPropertyValues.property_name$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1965.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const gchar* property_name;
+     * char* property_name;
      * }
      */
     public static void property_name$set(MemorySegment seg, MemorySegment x) {
-        _AtkPropertyValues.property_name$VH.set(seg, x);
+        constants$1965.const$0.set(seg, x);
     }
     public static MemorySegment property_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkPropertyValues.property_name$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1965.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void property_name$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkPropertyValues.property_name$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1965.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment old_value$slice(MemorySegment seg) {
         return seg.asSlice(8, 24);
@@ -89,7 +59,7 @@ public class _AtkPropertyValues {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

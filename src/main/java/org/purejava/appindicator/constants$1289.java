@@ -3,64 +3,46 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1289 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1289() {}
-    static final FunctionDescriptor gtk_application_add_accelerator$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_socket_speaks_ipv4",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_application_add_accelerator$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_add_accelerator",
-        constants$1289.gtk_application_add_accelerator$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_socket_get_credentials",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_application_remove_accelerator$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_socket_receive_with_blocking",
+        constants$1214.const$5
     );
-    static final MethodHandle gtk_application_remove_accelerator$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_remove_accelerator",
-        constants$1289.gtk_application_remove_accelerator$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_send_with_blocking",
+        constants$1214.const$5
     );
-    static final FunctionDescriptor gtk_application_inhibit$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle gtk_application_inhibit$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_inhibit",
-        constants$1289.gtk_application_inhibit$FUNC
-    );
-    static final FunctionDescriptor gtk_application_uninhibit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_application_uninhibit$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_uninhibit",
-        constants$1289.gtk_application_uninhibit$FUNC
-    );
-    static final FunctionDescriptor gtk_application_is_inhibited$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_application_is_inhibited$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_is_inhibited",
-        constants$1289.gtk_application_is_inhibited$FUNC
-    );
-    static final FunctionDescriptor gtk_application_get_window_by_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_application_get_window_by_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_get_window_by_id",
-        constants$1289.gtk_application_get_window_by_id$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_send_message_with_timeout",
+        constants$1289.const$4
     );
 }
 

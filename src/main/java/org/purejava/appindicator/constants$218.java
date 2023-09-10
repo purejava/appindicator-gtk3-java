@@ -3,51 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$218 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$218() {}
-    static final FunctionDescriptor g_io_channel_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_io_channel_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_error_quark",
-        constants$218.g_io_channel_error_quark$FUNC
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("data"),
+        RuntimeHelper.POINTER.withName("next"),
+        RuntimeHelper.POINTER.withName("prev")
+    ).withName("_GList");
+    static final VarHandle const$1 = constants$218.const$0.varHandle(MemoryLayout.PathElement.groupElement("data"));
+    static final VarHandle const$2 = constants$218.const$0.varHandle(MemoryLayout.PathElement.groupElement("next"));
+    static final VarHandle const$3 = constants$218.const$0.varHandle(MemoryLayout.PathElement.groupElement("prev"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_list_alloc",
+        constants$35.const$2
     );
-    static final FunctionDescriptor g_io_channel_error_from_errno$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_io_channel_error_from_errno$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_error_from_errno",
-        constants$218.g_io_channel_error_from_errno$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_unix_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_io_channel_unix_new$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_unix_new",
-        constants$218.g_io_channel_unix_new$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_unix_get_fd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_unix_get_fd$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_unix_get_fd",
-        constants$218.g_io_channel_unix_get_fd$FUNC
-    );
-    static final StructLayout g_io_watch_funcs$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
-        Constants$root.C_POINTER$LAYOUT.withName("check"),
-        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
-        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
-    ).withName("_GSourceFuncs");
-    static final MemorySegment g_io_watch_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_io_watch_funcs", constants$218.g_io_watch_funcs$LAYOUT);
-    static final FunctionDescriptor g_key_file_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_key_file_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_error_quark",
-        constants$218.g_key_file_error_quark$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_list_free",
+        constants$13.const$1
     );
 }
 

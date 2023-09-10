@@ -3,51 +3,51 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1102 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1102() {}
-    static final FunctionDescriptor gdk_window_get_update_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1101.const$5.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class")
+    ).withName("_GInetAddressMaskClass");
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_inet_address_mask_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_window_get_update_area$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_update_area",
-        constants$1102.gdk_window_get_update_area$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_inet_address_mask_new",
+        constants$196.const$3
     );
-    static final FunctionDescriptor gdk_window_freeze_updates$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_inet_address_mask_new_from_string",
+        constants$5.const$5
     );
-    static final MethodHandle gdk_window_freeze_updates$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_freeze_updates",
-        constants$1102.gdk_window_freeze_updates$FUNC
-    );
-    static final FunctionDescriptor gdk_window_thaw_updates$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_thaw_updates$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_thaw_updates",
-        constants$1102.gdk_window_thaw_updates$FUNC
-    );
-    static final FunctionDescriptor gdk_window_freeze_toplevel_updates_libgtk_only$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_freeze_toplevel_updates_libgtk_only$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_freeze_toplevel_updates_libgtk_only",
-        constants$1102.gdk_window_freeze_toplevel_updates_libgtk_only$FUNC
-    );
-    static final FunctionDescriptor gdk_window_thaw_toplevel_updates_libgtk_only$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_thaw_toplevel_updates_libgtk_only$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_thaw_toplevel_updates_libgtk_only",
-        constants$1102.gdk_window_thaw_toplevel_updates_libgtk_only$FUNC
-    );
-    static final FunctionDescriptor gdk_window_process_all_updates$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_window_process_all_updates$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_process_all_updates",
-        constants$1102.gdk_window_process_all_updates$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_inet_address_mask_to_string",
+        constants$5.const$2
     );
 }
 

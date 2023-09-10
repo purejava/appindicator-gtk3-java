@@ -4,72 +4,47 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _AtkTableCellIface {
- *     GTypeInterface parent;
- *     gint (*get_column_span)(AtkTableCell*);
- *     GPtrArray* (*get_column_header_cells)(AtkTableCell*);
- *     gboolean (*get_position)(AtkTableCell*,gint*,gint*);
- *     gint (*get_row_span)(AtkTableCell*);
- *     GPtrArray* (*get_row_header_cells)(AtkTableCell*);
- *     gboolean (*get_row_column_span)(AtkTableCell*,gint*,gint*,gint*,gint*);
- *     AtkObject* (*get_table)(AtkTableCell*);
+ *     struct _GTypeInterface parent;
+ *     int (*get_column_span)(struct _AtkTableCell*);
+ *     struct _GPtrArray* (*get_column_header_cells)(struct _AtkTableCell*);
+ *     int (*get_position)(struct _AtkTableCell*,int*,int*);
+ *     int (*get_row_span)(struct _AtkTableCell*);
+ *     struct _GPtrArray* (*get_row_header_cells)(struct _AtkTableCell*);
+ *     int (*get_row_column_span)(struct _AtkTableCell*,int*,int*,int*,int*);
+ *     struct _AtkObject* (*get_table)(struct _AtkTableCell*);
  * };
  * }
  */
 public class _AtkTableCellIface {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
-        ).withName("parent"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_column_span"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_column_header_cells"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_position"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_row_span"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_row_header_cells"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_row_column_span"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_table")
-    ).withName("_AtkTableCellIface");
     public static MemoryLayout $LAYOUT() {
-        return _AtkTableCellIface.$struct$LAYOUT;
+        return constants$2084.const$3;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
-    static final FunctionDescriptor get_column_span$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_column_span_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_column_span_UP$MH = RuntimeHelper.upcallHandle(get_column_span.class, "apply", _AtkTableCellIface.get_column_span_UP$FUNC);
-    static final FunctionDescriptor get_column_span_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_column_span_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkTableCellIface.get_column_span_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gint (*get_column_span)(AtkTableCell*);
+ * int (*get_column_span)(struct _AtkTableCell*);
      * }
      */
     public interface get_column_span {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(get_column_span fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkTableCellIface.get_column_span_UP$MH, fi, _AtkTableCellIface.get_column_span$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_column_span fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2084.const$4, fi, constants$10.const$5, scope);
         }
-        static get_column_span ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0) -> {
+        static get_column_span ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_AtkTableCellIface.get_column_span_DOWN$MH.invokeExact(symbol, __x0);
+                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -77,66 +52,52 @@ public class _AtkTableCellIface {
         }
     }
 
-    static final VarHandle get_column_span$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_column_span"));
     public static VarHandle get_column_span$VH() {
-        return _AtkTableCellIface.get_column_span$VH;
+        return constants$2084.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint (*get_column_span)(AtkTableCell*);
+     * int (*get_column_span)(struct _AtkTableCell*);
      * }
      */
     public static MemorySegment get_column_span$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_column_span$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2084.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint (*get_column_span)(AtkTableCell*);
+     * int (*get_column_span)(struct _AtkTableCell*);
      * }
      */
     public static void get_column_span$set(MemorySegment seg, MemorySegment x) {
-        _AtkTableCellIface.get_column_span$VH.set(seg, x);
+        constants$2084.const$5.set(seg, x);
     }
     public static MemorySegment get_column_span$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_column_span$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2084.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_column_span$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkTableCellIface.get_column_span$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2084.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_column_span get_column_span(MemorySegment segment, SegmentScope scope) {
+    public static get_column_span get_column_span(MemorySegment segment, Arena scope) {
         return get_column_span.ofAddress(get_column_span$get(segment), scope);
     }
-    static final FunctionDescriptor get_column_header_cells$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_column_header_cells_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_column_header_cells_UP$MH = RuntimeHelper.upcallHandle(get_column_header_cells.class, "apply", _AtkTableCellIface.get_column_header_cells_UP$FUNC);
-    static final FunctionDescriptor get_column_header_cells_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_column_header_cells_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkTableCellIface.get_column_header_cells_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GPtrArray* (*get_column_header_cells)(AtkTableCell*);
+ * struct _GPtrArray* (*get_column_header_cells)(struct _AtkTableCell*);
      * }
      */
     public interface get_column_header_cells {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_column_header_cells fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkTableCellIface.get_column_header_cells_UP$MH, fi, _AtkTableCellIface.get_column_header_cells$FUNC, scope);
+        static MemorySegment allocate(get_column_header_cells fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2085.const$0, fi, constants$5.const$2, scope);
         }
-        static get_column_header_cells ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_column_header_cells ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_column_header_cells_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -144,72 +105,52 @@ public class _AtkTableCellIface {
         }
     }
 
-    static final VarHandle get_column_header_cells$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_column_header_cells"));
     public static VarHandle get_column_header_cells$VH() {
-        return _AtkTableCellIface.get_column_header_cells$VH;
+        return constants$2085.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GPtrArray* (*get_column_header_cells)(AtkTableCell*);
+     * struct _GPtrArray* (*get_column_header_cells)(struct _AtkTableCell*);
      * }
      */
     public static MemorySegment get_column_header_cells$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_column_header_cells$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2085.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GPtrArray* (*get_column_header_cells)(AtkTableCell*);
+     * struct _GPtrArray* (*get_column_header_cells)(struct _AtkTableCell*);
      * }
      */
     public static void get_column_header_cells$set(MemorySegment seg, MemorySegment x) {
-        _AtkTableCellIface.get_column_header_cells$VH.set(seg, x);
+        constants$2085.const$1.set(seg, x);
     }
     public static MemorySegment get_column_header_cells$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_column_header_cells$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2085.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_column_header_cells$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkTableCellIface.get_column_header_cells$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2085.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_column_header_cells get_column_header_cells(MemorySegment segment, SegmentScope scope) {
+    public static get_column_header_cells get_column_header_cells(MemorySegment segment, Arena scope) {
         return get_column_header_cells.ofAddress(get_column_header_cells$get(segment), scope);
     }
-    static final FunctionDescriptor get_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_position_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_position_UP$MH = RuntimeHelper.upcallHandle(get_position.class, "apply", _AtkTableCellIface.get_position_UP$FUNC);
-    static final FunctionDescriptor get_position_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_position_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkTableCellIface.get_position_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*get_position)(AtkTableCell*,gint*,gint*);
+ * int (*get_position)(struct _AtkTableCell*,int*,int*);
      * }
      */
     public interface get_position {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(get_position fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkTableCellIface.get_position_UP$MH, fi, _AtkTableCellIface.get_position$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_position fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2085.const$2, fi, constants$12.const$2, scope);
         }
-        static get_position ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
+        static get_position ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_AtkTableCellIface.get_position_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -217,66 +158,52 @@ public class _AtkTableCellIface {
         }
     }
 
-    static final VarHandle get_position$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_position"));
     public static VarHandle get_position$VH() {
-        return _AtkTableCellIface.get_position$VH;
+        return constants$2085.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*get_position)(AtkTableCell*,gint*,gint*);
+     * int (*get_position)(struct _AtkTableCell*,int*,int*);
      * }
      */
     public static MemorySegment get_position$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_position$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2085.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*get_position)(AtkTableCell*,gint*,gint*);
+     * int (*get_position)(struct _AtkTableCell*,int*,int*);
      * }
      */
     public static void get_position$set(MemorySegment seg, MemorySegment x) {
-        _AtkTableCellIface.get_position$VH.set(seg, x);
+        constants$2085.const$3.set(seg, x);
     }
     public static MemorySegment get_position$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_position$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2085.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_position$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkTableCellIface.get_position$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2085.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_position get_position(MemorySegment segment, SegmentScope scope) {
+    public static get_position get_position(MemorySegment segment, Arena scope) {
         return get_position.ofAddress(get_position$get(segment), scope);
     }
-    static final FunctionDescriptor get_row_span$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_row_span_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_row_span_UP$MH = RuntimeHelper.upcallHandle(get_row_span.class, "apply", _AtkTableCellIface.get_row_span_UP$FUNC);
-    static final FunctionDescriptor get_row_span_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_row_span_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkTableCellIface.get_row_span_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gint (*get_row_span)(AtkTableCell*);
+ * int (*get_row_span)(struct _AtkTableCell*);
      * }
      */
     public interface get_row_span {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(get_row_span fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkTableCellIface.get_row_span_UP$MH, fi, _AtkTableCellIface.get_row_span$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_row_span fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2085.const$4, fi, constants$10.const$5, scope);
         }
-        static get_row_span ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0) -> {
+        static get_row_span ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_AtkTableCellIface.get_row_span_DOWN$MH.invokeExact(symbol, __x0);
+                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -284,66 +211,52 @@ public class _AtkTableCellIface {
         }
     }
 
-    static final VarHandle get_row_span$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_row_span"));
     public static VarHandle get_row_span$VH() {
-        return _AtkTableCellIface.get_row_span$VH;
+        return constants$2085.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint (*get_row_span)(AtkTableCell*);
+     * int (*get_row_span)(struct _AtkTableCell*);
      * }
      */
     public static MemorySegment get_row_span$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_row_span$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2085.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint (*get_row_span)(AtkTableCell*);
+     * int (*get_row_span)(struct _AtkTableCell*);
      * }
      */
     public static void get_row_span$set(MemorySegment seg, MemorySegment x) {
-        _AtkTableCellIface.get_row_span$VH.set(seg, x);
+        constants$2085.const$5.set(seg, x);
     }
     public static MemorySegment get_row_span$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_row_span$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2085.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_row_span$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkTableCellIface.get_row_span$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2085.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_row_span get_row_span(MemorySegment segment, SegmentScope scope) {
+    public static get_row_span get_row_span(MemorySegment segment, Arena scope) {
         return get_row_span.ofAddress(get_row_span$get(segment), scope);
     }
-    static final FunctionDescriptor get_row_header_cells$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_row_header_cells_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_row_header_cells_UP$MH = RuntimeHelper.upcallHandle(get_row_header_cells.class, "apply", _AtkTableCellIface.get_row_header_cells_UP$FUNC);
-    static final FunctionDescriptor get_row_header_cells_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_row_header_cells_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkTableCellIface.get_row_header_cells_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GPtrArray* (*get_row_header_cells)(AtkTableCell*);
+ * struct _GPtrArray* (*get_row_header_cells)(struct _AtkTableCell*);
      * }
      */
     public interface get_row_header_cells {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_row_header_cells fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkTableCellIface.get_row_header_cells_UP$MH, fi, _AtkTableCellIface.get_row_header_cells$FUNC, scope);
+        static MemorySegment allocate(get_row_header_cells fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2086.const$0, fi, constants$5.const$2, scope);
         }
-        static get_row_header_cells ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_row_header_cells ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_row_header_cells_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -351,78 +264,52 @@ public class _AtkTableCellIface {
         }
     }
 
-    static final VarHandle get_row_header_cells$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_row_header_cells"));
     public static VarHandle get_row_header_cells$VH() {
-        return _AtkTableCellIface.get_row_header_cells$VH;
+        return constants$2086.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GPtrArray* (*get_row_header_cells)(AtkTableCell*);
+     * struct _GPtrArray* (*get_row_header_cells)(struct _AtkTableCell*);
      * }
      */
     public static MemorySegment get_row_header_cells$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_row_header_cells$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2086.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GPtrArray* (*get_row_header_cells)(AtkTableCell*);
+     * struct _GPtrArray* (*get_row_header_cells)(struct _AtkTableCell*);
      * }
      */
     public static void get_row_header_cells$set(MemorySegment seg, MemorySegment x) {
-        _AtkTableCellIface.get_row_header_cells$VH.set(seg, x);
+        constants$2086.const$1.set(seg, x);
     }
     public static MemorySegment get_row_header_cells$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_row_header_cells$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2086.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_row_header_cells$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkTableCellIface.get_row_header_cells$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2086.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_row_header_cells get_row_header_cells(MemorySegment segment, SegmentScope scope) {
+    public static get_row_header_cells get_row_header_cells(MemorySegment segment, Arena scope) {
         return get_row_header_cells.ofAddress(get_row_header_cells$get(segment), scope);
     }
-    static final FunctionDescriptor get_row_column_span$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_row_column_span_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_row_column_span_UP$MH = RuntimeHelper.upcallHandle(get_row_column_span.class, "apply", _AtkTableCellIface.get_row_column_span_UP$FUNC);
-    static final FunctionDescriptor get_row_column_span_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_row_column_span_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkTableCellIface.get_row_column_span_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*get_row_column_span)(AtkTableCell*,gint*,gint*,gint*,gint*);
+ * int (*get_row_column_span)(struct _AtkTableCell*,int*,int*,int*,int*);
      * }
      */
     public interface get_row_column_span {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(get_row_column_span fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkTableCellIface.get_row_column_span_UP$MH, fi, _AtkTableCellIface.get_row_column_span$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment tree_view, java.lang.foreign.MemorySegment column, java.lang.foreign.MemorySegment prev_column, java.lang.foreign.MemorySegment next_column, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(get_row_column_span fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2086.const$2, fi, constants$165.const$2, scope);
         }
-        static get_row_column_span ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
+        static get_row_column_span ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _tree_view, java.lang.foreign.MemorySegment _column, java.lang.foreign.MemorySegment _prev_column, java.lang.foreign.MemorySegment _next_column, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    return (int)_AtkTableCellIface.get_row_column_span_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    return (int)constants$2086.const$3.invokeExact(symbol, _tree_view, _column, _prev_column, _next_column, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -430,66 +317,52 @@ public class _AtkTableCellIface {
         }
     }
 
-    static final VarHandle get_row_column_span$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_row_column_span"));
     public static VarHandle get_row_column_span$VH() {
-        return _AtkTableCellIface.get_row_column_span$VH;
+        return constants$2086.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*get_row_column_span)(AtkTableCell*,gint*,gint*,gint*,gint*);
+     * int (*get_row_column_span)(struct _AtkTableCell*,int*,int*,int*,int*);
      * }
      */
     public static MemorySegment get_row_column_span$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_row_column_span$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2086.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*get_row_column_span)(AtkTableCell*,gint*,gint*,gint*,gint*);
+     * int (*get_row_column_span)(struct _AtkTableCell*,int*,int*,int*,int*);
      * }
      */
     public static void get_row_column_span$set(MemorySegment seg, MemorySegment x) {
-        _AtkTableCellIface.get_row_column_span$VH.set(seg, x);
+        constants$2086.const$4.set(seg, x);
     }
     public static MemorySegment get_row_column_span$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_row_column_span$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2086.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_row_column_span$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkTableCellIface.get_row_column_span$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2086.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_row_column_span get_row_column_span(MemorySegment segment, SegmentScope scope) {
+    public static get_row_column_span get_row_column_span(MemorySegment segment, Arena scope) {
         return get_row_column_span.ofAddress(get_row_column_span$get(segment), scope);
     }
-    static final FunctionDescriptor get_table$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_table_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_table_UP$MH = RuntimeHelper.upcallHandle(get_table.class, "apply", _AtkTableCellIface.get_table_UP$FUNC);
-    static final FunctionDescriptor get_table_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_table_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkTableCellIface.get_table_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * AtkObject* (*get_table)(AtkTableCell*);
+ * struct _AtkObject* (*get_table)(struct _AtkTableCell*);
      * }
      */
     public interface get_table {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_table fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkTableCellIface.get_table_UP$MH, fi, _AtkTableCellIface.get_table$FUNC, scope);
+        static MemorySegment allocate(get_table fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2086.const$5, fi, constants$5.const$2, scope);
         }
-        static get_table ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_table ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_table_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -497,35 +370,34 @@ public class _AtkTableCellIface {
         }
     }
 
-    static final VarHandle get_table$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_table"));
     public static VarHandle get_table$VH() {
-        return _AtkTableCellIface.get_table$VH;
+        return constants$2087.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * AtkObject* (*get_table)(AtkTableCell*);
+     * struct _AtkObject* (*get_table)(struct _AtkTableCell*);
      * }
      */
     public static MemorySegment get_table$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_table$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2087.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * AtkObject* (*get_table)(AtkTableCell*);
+     * struct _AtkObject* (*get_table)(struct _AtkTableCell*);
      * }
      */
     public static void get_table$set(MemorySegment seg, MemorySegment x) {
-        _AtkTableCellIface.get_table$VH.set(seg, x);
+        constants$2087.const$0.set(seg, x);
     }
     public static MemorySegment get_table$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkTableCellIface.get_table$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2087.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_table$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkTableCellIface.get_table$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2087.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_table get_table(MemorySegment segment, SegmentScope scope) {
+    public static get_table get_table(MemorySegment segment, Arena scope) {
         return get_table.ofAddress(get_table$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -533,7 +405,7 @@ public class _AtkTableCellIface {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

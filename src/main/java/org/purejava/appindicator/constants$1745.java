@@ -3,56 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1745 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1745() {}
-    static final FunctionDescriptor gtk_print_settings_get_quality$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_mesh_pattern_move_to",
+        constants$1531.const$0
     );
-    static final MethodHandle gtk_print_settings_get_quality$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_quality",
-        constants$1745.gtk_print_settings_get_quality$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor gtk_print_settings_set_quality$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_mesh_pattern_set_control_point",
+        constants$1745.const$1
     );
-    static final MethodHandle gtk_print_settings_set_quality$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_quality",
-        constants$1745.gtk_print_settings_set_quality$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor gtk_print_settings_get_n_copies$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_mesh_pattern_set_corner_color_rgb",
+        constants$1745.const$3
     );
-    static final MethodHandle gtk_print_settings_get_n_copies$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_n_copies",
-        constants$1745.gtk_print_settings_get_n_copies$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_set_n_copies$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_set_n_copies$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_n_copies",
-        constants$1745.gtk_print_settings_set_n_copies$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_get_number_up$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_get_number_up$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_number_up",
-        constants$1745.gtk_print_settings_get_number_up$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_set_number_up$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_set_number_up$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_number_up",
-        constants$1745.gtk_print_settings_set_number_up$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_mesh_pattern_set_corner_color_rgba",
+        constants$1702.const$0
     );
 }
 

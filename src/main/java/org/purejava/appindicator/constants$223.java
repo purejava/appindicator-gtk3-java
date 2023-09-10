@@ -3,71 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$223 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$223() {}
-    static final FunctionDescriptor g_key_file_get_boolean$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_list_find_custom$func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_list_find_custom",
+        constants$23.const$0
     );
-    static final MethodHandle g_key_file_get_boolean$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_boolean",
-        constants$223.g_key_file_get_boolean$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_list_position",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_key_file_set_boolean$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_list_index",
+        constants$9.const$0
     );
-    static final MethodHandle g_key_file_set_boolean$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_boolean",
-        constants$223.g_key_file_set_boolean$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_list_last",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_key_file_get_integer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_get_integer$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_integer",
-        constants$223.g_key_file_get_integer$FUNC
-    );
-    static final FunctionDescriptor g_key_file_set_integer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_key_file_set_integer$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_integer",
-        constants$223.g_key_file_set_integer$FUNC
-    );
-    static final FunctionDescriptor g_key_file_get_int64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_get_int64$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_int64",
-        constants$223.g_key_file_get_int64$FUNC
-    );
-    static final FunctionDescriptor g_key_file_set_int64$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_key_file_set_int64$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_int64",
-        constants$223.g_key_file_set_int64$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_list_first",
+        constants$5.const$2
     );
 }
 

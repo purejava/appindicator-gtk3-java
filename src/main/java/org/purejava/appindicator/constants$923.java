@@ -3,58 +3,60 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$923 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$923() {}
-    static final FunctionDescriptor pango_attr_font_desc_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$922.const$5.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        MemoryLayout.sequenceLayout(8, RuntimeHelper.POINTER).withName("padding")
+    ).withName("_GDBusObjectProxyClass");
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_proxy_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle pango_attr_font_desc_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_font_desc_new",
-        constants$923.pango_attr_font_desc_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_proxy_new",
+        constants$5.const$5
     );
-    static final FunctionDescriptor pango_attr_underline_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_proxy_get_connection",
+        constants$5.const$2
     );
-    static final MethodHandle pango_attr_underline_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_underline_new",
-        constants$923.pango_attr_underline_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_underline_color_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle pango_attr_underline_color_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_underline_color_new",
-        constants$923.pango_attr_underline_color_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_strikethrough_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_attr_strikethrough_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_strikethrough_new",
-        constants$923.pango_attr_strikethrough_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_strikethrough_color_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle pango_attr_strikethrough_color_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_strikethrough_color_new",
-        constants$923.pango_attr_strikethrough_color_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_rise_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_attr_rise_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_rise_new",
-        constants$923.pango_attr_rise_new$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GDBusObjectSkeleton");
 }
 
 

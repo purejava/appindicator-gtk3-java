@@ -3,64 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1951 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1951() {}
-    static final FunctionDescriptor gtk_rc_parse_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$57.const$0
     );
-    static final MethodHandle gtk_rc_parse_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_rc_parse_state",
-        constants$1951.gtk_rc_parse_state$FUNC
-    );
-    static final FunctionDescriptor gtk_rc_parse_priority$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_rc_parse_priority$MH = RuntimeHelper.downcallHandle(
-        "gtk_rc_parse_priority",
-        constants$1951.gtk_rc_parse_priority$FUNC
-    );
-    static final FunctionDescriptor gtk_binding_set_add_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_binding_set_add_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_binding_set_add_path",
-        constants$1951.gtk_binding_set_add_path$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_action_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_recent_action_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_action_get_type",
-        constants$1951.gtk_recent_action_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_action_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_action_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_action_new",
-        constants$1951.gtk_recent_action_new$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_action_new_for_manager$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_action_new_for_manager$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_action_new_for_manager",
-        constants$1951.gtk_recent_action_new_for_manager$FUNC
-    );
+    static final VarHandle const$1 = constants$1950.const$4.varHandle(MemoryLayout.PathElement.groupElement("accel_changed"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GtkAccelGroupClass._gtk_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1950.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GtkAccelGroupClass._gtk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1950.const$4.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
 }
 
 

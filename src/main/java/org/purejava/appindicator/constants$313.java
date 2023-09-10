@@ -3,58 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$313 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$313() {}
-    static final FunctionDescriptor GTestDataFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GTestDataFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$313.GTestDataFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor GTestFixtureFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GTestFixtureFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GTestFixtureFunc_UP$MH = RuntimeHelper.upcallHandle(GTestFixtureFunc.class, "apply", constants$313.GTestFixtureFunc_UP$FUNC);
-    static final FunctionDescriptor GTestFixtureFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GTestFixtureFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$313.GTestFixtureFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_strcmp0$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_strcmp0$MH = RuntimeHelper.downcallHandle(
-        "g_strcmp0",
-        constants$313.g_strcmp0$FUNC
-    );
-    static final FunctionDescriptor g_test_minimized_result$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_minimized_result$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_test_minimized_result",
-        constants$313.g_test_minimized_result$FUNC
-    );
-    static final FunctionDescriptor g_test_maximized_result$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_maximized_result$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_test_maximized_result",
-        constants$313.g_test_maximized_result$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_INT.withName("ref_count"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("funcs"),
+        RuntimeHelper.POINTER.withName("encoding"),
+        RuntimeHelper.POINTER.withName("read_cd"),
+        RuntimeHelper.POINTER.withName("write_cd"),
+        RuntimeHelper.POINTER.withName("line_term"),
+        JAVA_INT.withName("line_term_len"),
+        MemoryLayout.paddingLayout(4),
+        JAVA_LONG.withName("buf_size"),
+        RuntimeHelper.POINTER.withName("read_buf"),
+        RuntimeHelper.POINTER.withName("encoded_read_buf"),
+        RuntimeHelper.POINTER.withName("write_buf"),
+        MemoryLayout.sequenceLayout(6, JAVA_BYTE).withName("partial_write_buf"),
+        MemoryLayout.paddingLayout(2),
+        RuntimeHelper.POINTER.withName("reserved1"),
+        RuntimeHelper.POINTER.withName("reserved2")
+    ).withName("_GIOChannel");
+    static final VarHandle const$1 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
+    static final VarHandle const$2 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("funcs"));
+    static final VarHandle const$3 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("encoding"));
+    static final VarHandle const$4 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("read_cd"));
+    static final VarHandle const$5 = constants$313.const$0.varHandle(MemoryLayout.PathElement.groupElement("write_cd"));
 }
 
 

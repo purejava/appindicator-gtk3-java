@@ -3,68 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1519 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1519() {}
-    static final FunctionDescriptor gtk_cell_area_context_get_preferred_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_eastasian_width_func$func.class, "apply", constants$150.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_eastasian_width_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_set_eastasian_width_func",
+        constants$42.const$1
     );
-    static final MethodHandle gtk_cell_area_context_get_preferred_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_context_get_preferred_width",
-        constants$1519.gtk_cell_area_context_get_preferred_width$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_unicode_eastasian_width",
+        constants$11.const$4
     );
-    static final FunctionDescriptor gtk_cell_area_context_get_preferred_height$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_context_get_preferred_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_context_get_preferred_height",
-        constants$1519.gtk_cell_area_context_get_preferred_height$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_context_get_preferred_height_for_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_context_get_preferred_height_for_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_context_get_preferred_height_for_width",
-        constants$1519.gtk_cell_area_context_get_preferred_height_for_width$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_context_get_preferred_width_for_height$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_context_get_preferred_width_for_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_context_get_preferred_width_for_height",
-        constants$1519.gtk_cell_area_context_get_preferred_width_for_height$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_context_get_allocation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_context_get_allocation$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_context_get_allocation",
-        constants$1519.gtk_cell_area_context_get_allocation$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_context_push_preferred_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_context_push_preferred_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_context_push_preferred_width",
-        constants$1519.gtk_cell_area_context_push_preferred_width$FUNC
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_unicode_decompose_compatibility_func_t.class, "apply", constants$11.const$0);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_decompose_compatibility_func$func.class, "apply", constants$11.const$0);
 }
 
 

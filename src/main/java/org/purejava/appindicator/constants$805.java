@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$805 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$805() {}
-    static final FunctionDescriptor g_tls_certificate_get_issuer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_charset_converter_set_use_fallback",
+        constants$40.const$2
     );
-    static final MethodHandle g_tls_certificate_get_issuer$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_get_issuer",
-        constants$805.g_tls_certificate_get_issuer$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_charset_converter_get_use_fallback",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_tls_certificate_verify$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_charset_converter_get_num_fallbacks",
+        constants$10.const$5
     );
-    static final MethodHandle g_tls_certificate_verify$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_verify",
-        constants$805.g_tls_certificate_verify$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_content_type_equals",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_tls_certificate_is_same$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_content_type_is_a",
+        constants$9.const$0
     );
-    static final MethodHandle g_tls_certificate_is_same$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_is_same",
-        constants$805.g_tls_certificate_is_same$FUNC
-    );
-    static final FunctionDescriptor g_tls_certificate_get_not_valid_before$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_certificate_get_not_valid_before$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_get_not_valid_before",
-        constants$805.g_tls_certificate_get_not_valid_before$FUNC
-    );
-    static final FunctionDescriptor g_tls_certificate_get_not_valid_after$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_certificate_get_not_valid_after$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_get_not_valid_after",
-        constants$805.g_tls_certificate_get_not_valid_after$FUNC
-    );
-    static final FunctionDescriptor g_tls_certificate_get_subject_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_certificate_get_subject_name$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_get_subject_name",
-        constants$805.g_tls_certificate_get_subject_name$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_content_type_is_mime_type",
+        constants$9.const$0
     );
 }
 

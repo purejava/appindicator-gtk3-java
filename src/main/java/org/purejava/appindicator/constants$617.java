@@ -3,58 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$617 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$617() {}
-    static final FunctionDescriptor g_file_get_parse_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_main_context_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_file_get_parse_name$MH = RuntimeHelper.downcallHandle(
-        "g_file_get_parse_name",
-        constants$617.g_file_get_parse_name$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_source_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor g_file_get_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_pollfd_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_file_get_parent$MH = RuntimeHelper.downcallHandle(
-        "g_file_get_parent",
-        constants$617.g_file_get_parent$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_thread_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor g_file_has_parent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_checksum_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_file_has_parent$MH = RuntimeHelper.downcallHandle(
-        "g_file_has_parent",
-        constants$617.g_file_has_parent$FUNC
-    );
-    static final FunctionDescriptor g_file_get_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_get_child$MH = RuntimeHelper.downcallHandle(
-        "g_file_get_child",
-        constants$617.g_file_get_child$FUNC
-    );
-    static final FunctionDescriptor g_file_get_child_for_display_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_get_child_for_display_name$MH = RuntimeHelper.downcallHandle(
-        "g_file_get_child_for_display_name",
-        constants$617.g_file_get_child_for_display_name$FUNC
-    );
-    static final FunctionDescriptor g_file_has_prefix$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_has_prefix$MH = RuntimeHelper.downcallHandle(
-        "g_file_has_prefix",
-        constants$617.g_file_has_prefix$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_markup_parse_context_get_type",
+        constants$3.const$5
     );
 }
 

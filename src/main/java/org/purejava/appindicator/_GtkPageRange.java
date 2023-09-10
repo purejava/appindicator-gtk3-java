@@ -2,88 +2,84 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkPageRange {
- *     gint start;
- *     gint end;
+ *     int start;
+ *     int end;
  * };
  * }
  */
 public class _GtkPageRange {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("start"),
-        Constants$root.C_INT$LAYOUT.withName("end")
-    ).withName("_GtkPageRange");
     public static MemoryLayout $LAYOUT() {
-        return _GtkPageRange.$struct$LAYOUT;
+        return constants$2950.const$3;
     }
-    static final VarHandle start$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("start"));
     public static VarHandle start$VH() {
-        return _GtkPageRange.start$VH;
+        return constants$2950.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint start;
+     * int start;
      * }
      */
     public static int start$get(MemorySegment seg) {
-        return (int)_GtkPageRange.start$VH.get(seg);
+        return (int)constants$2950.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint start;
+     * int start;
      * }
      */
     public static void start$set(MemorySegment seg, int x) {
-        _GtkPageRange.start$VH.set(seg, x);
+        constants$2950.const$4.set(seg, x);
     }
     public static int start$get(MemorySegment seg, long index) {
-        return (int)_GtkPageRange.start$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2950.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void start$set(MemorySegment seg, long index, int x) {
-        _GtkPageRange.start$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2950.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle end$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("end"));
     public static VarHandle end$VH() {
-        return _GtkPageRange.end$VH;
+        return constants$2950.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint end;
+     * int end;
      * }
      */
     public static int end$get(MemorySegment seg) {
-        return (int)_GtkPageRange.end$VH.get(seg);
+        return (int)constants$2950.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint end;
+     * int end;
      * }
      */
     public static void end$set(MemorySegment seg, int x) {
-        _GtkPageRange.end$VH.set(seg, x);
+        constants$2950.const$5.set(seg, x);
     }
     public static int end$get(MemorySegment seg, long index) {
-        return (int)_GtkPageRange.end$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2950.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void end$set(MemorySegment seg, long index, int x) {
-        _GtkPageRange.end$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2950.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

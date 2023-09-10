@@ -3,59 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$492 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$492() {}
-    static final FunctionDescriptor g_application_mark_busy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_list_pop_allocator",
+        constants$7.const$5
     );
-    static final MethodHandle g_application_mark_busy$MH = RuntimeHelper.downcallHandle(
-        "g_application_mark_busy",
-        constants$492.g_application_mark_busy$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_slist_push_allocator",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_application_unmark_busy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_slist_pop_allocator",
+        constants$7.const$5
     );
-    static final MethodHandle g_application_unmark_busy$MH = RuntimeHelper.downcallHandle(
-        "g_application_unmark_busy",
-        constants$492.g_application_unmark_busy$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_node_push_allocator",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_application_get_is_busy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_node_pop_allocator",
+        constants$7.const$5
     );
-    static final MethodHandle g_application_get_is_busy$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_is_busy",
-        constants$492.g_application_get_is_busy$FUNC
-    );
-    static final FunctionDescriptor g_application_send_notification$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_send_notification$MH = RuntimeHelper.downcallHandle(
-        "g_application_send_notification",
-        constants$492.g_application_send_notification$FUNC
-    );
-    static final FunctionDescriptor g_application_withdraw_notification$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_withdraw_notification$MH = RuntimeHelper.downcallHandle(
-        "g_application_withdraw_notification",
-        constants$492.g_application_withdraw_notification$FUNC
-    );
-    static final FunctionDescriptor g_application_bind_busy_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_bind_busy_property$MH = RuntimeHelper.downcallHandle(
-        "g_application_bind_busy_property",
-        constants$492.g_application_bind_busy_property$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GCacheNewFunc.class, "apply", constants$5.const$2);
 }
 
 

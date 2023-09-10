@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$148 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$148() {}
-    static final FunctionDescriptor g_hash_table_find$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_pointer_bit_lock",
+        constants$40.const$2
     );
-    static final MethodHandle g_hash_table_find$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_find",
-        constants$148.g_hash_table_find$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_pointer_bit_trylock",
+        constants$11.const$4
     );
-    static final FunctionDescriptor g_hash_table_foreach_remove$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_pointer_bit_unlock",
+        constants$40.const$2
     );
-    static final MethodHandle g_hash_table_foreach_remove$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_foreach_remove",
-        constants$148.g_hash_table_foreach_remove$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_time_zone_new",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_hash_table_foreach_steal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_time_zone_new_identifier",
+        constants$5.const$2
     );
-    static final MethodHandle g_hash_table_foreach_steal$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_foreach_steal",
-        constants$148.g_hash_table_foreach_steal$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_size$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_size",
-        constants$148.g_hash_table_size$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_get_keys$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_get_keys$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_get_keys",
-        constants$148.g_hash_table_get_keys$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_get_values$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_get_values$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_get_values",
-        constants$148.g_hash_table_get_values$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_time_zone_new_utc",
+        constants$35.const$2
     );
 }
 

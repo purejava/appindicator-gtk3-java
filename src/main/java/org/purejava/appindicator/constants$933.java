@@ -3,51 +3,41 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$933 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$933() {}
-    static final FunctionDescriptor pango_attr_iterator_get_attrs$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_server_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle pango_attr_iterator_get_attrs$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_iterator_get_attrs",
-        constants$933.pango_attr_iterator_get_attrs$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor pango_item_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_item_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_item_get_type",
-        constants$933.pango_item_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_server_new_sync",
+        constants$933.const$1
     );
-    static final FunctionDescriptor pango_item_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_item_new$MH = RuntimeHelper.downcallHandle(
-        "pango_item_new",
-        constants$933.pango_item_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_server_get_client_address",
+        constants$5.const$2
     );
-    static final FunctionDescriptor pango_item_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_server_get_guid",
+        constants$5.const$2
     );
-    static final MethodHandle pango_item_copy$MH = RuntimeHelper.downcallHandle(
-        "pango_item_copy",
-        constants$933.pango_item_copy$FUNC
-    );
-    static final FunctionDescriptor pango_item_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_item_free$MH = RuntimeHelper.downcallHandle(
-        "pango_item_free",
-        constants$933.pango_item_free$FUNC
-    );
-    static final FunctionDescriptor pango_item_split$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_item_split$MH = RuntimeHelper.downcallHandle(
-        "pango_item_split",
-        constants$933.pango_item_split$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_server_get_flags",
+        constants$10.const$5
     );
 }
 

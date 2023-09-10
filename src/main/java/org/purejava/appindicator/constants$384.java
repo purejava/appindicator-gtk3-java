@@ -3,54 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$384 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$384() {}
-    static final FunctionDescriptor g_type_get_instance_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_option_context_new",
+        constants$5.const$2
     );
-    static final MethodHandle g_type_get_instance_count$MH = RuntimeHelper.downcallHandle(
-        "g_type_get_instance_count",
-        constants$384.g_type_get_instance_count$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_option_context_set_summary",
+        constants$13.const$4
     );
-    static final FunctionDescriptor GBaseInitFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_option_context_get_summary",
+        constants$5.const$2
     );
-    static final FunctionDescriptor GBaseInitFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_option_context_set_description",
+        constants$13.const$4
     );
-    static final MethodHandle GBaseInitFunc_UP$MH = RuntimeHelper.upcallHandle(GBaseInitFunc.class, "apply", constants$384.GBaseInitFunc_UP$FUNC);
-    static final FunctionDescriptor GBaseInitFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_option_context_get_description",
+        constants$5.const$2
     );
-    static final MethodHandle GBaseInitFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$384.GBaseInitFunc_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_option_context_free",
+        constants$13.const$1
     );
-    static final FunctionDescriptor GBaseFinalizeFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GBaseFinalizeFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GBaseFinalizeFunc_UP$MH = RuntimeHelper.upcallHandle(GBaseFinalizeFunc.class, "apply", constants$384.GBaseFinalizeFunc_UP$FUNC);
-    static final FunctionDescriptor GBaseFinalizeFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GBaseFinalizeFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$384.GBaseFinalizeFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor GClassInitFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GClassInitFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GClassInitFunc_UP$MH = RuntimeHelper.upcallHandle(GClassInitFunc.class, "apply", constants$384.GClassInitFunc_UP$FUNC);
 }
 
 

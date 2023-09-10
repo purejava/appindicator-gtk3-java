@@ -3,75 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$751 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$751() {}
-    static final FunctionDescriptor GSettingsGetMapping$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_cwd",
+        constants$5.const$2
     );
-    static final FunctionDescriptor GSettingsGetMapping_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_is_remote",
+        constants$10.const$5
     );
-    static final MethodHandle GSettingsGetMapping_UP$MH = RuntimeHelper.upcallHandle(GSettingsGetMapping.class, "apply", constants$751.GSettingsGetMapping_UP$FUNC);
-    static final FunctionDescriptor GSettingsGetMapping_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "g_application_command_line_print",
+        constants$13.const$4
     );
-    static final MethodHandle GSettingsGetMapping_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$751.GSettingsGetMapping_DOWN$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_application_command_line_printerr",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_settings_bind$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_exit_status",
+        constants$10.const$5
     );
-    static final MethodHandle g_settings_bind$MH = RuntimeHelper.downcallHandle(
-        "g_settings_bind",
-        constants$751.g_settings_bind$FUNC
-    );
-    static final FunctionDescriptor g_settings_bind_with_mapping$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_bind_with_mapping$MH = RuntimeHelper.downcallHandle(
-        "g_settings_bind_with_mapping",
-        constants$751.g_settings_bind_with_mapping$FUNC
-    );
-    static final FunctionDescriptor g_settings_bind_writable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_settings_bind_writable$MH = RuntimeHelper.downcallHandle(
-        "g_settings_bind_writable",
-        constants$751.g_settings_bind_writable$FUNC
-    );
-    static final FunctionDescriptor g_settings_unbind$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_unbind$MH = RuntimeHelper.downcallHandle(
-        "g_settings_unbind",
-        constants$751.g_settings_unbind$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_application_command_line_set_exit_status",
+        constants$40.const$2
     );
 }
 

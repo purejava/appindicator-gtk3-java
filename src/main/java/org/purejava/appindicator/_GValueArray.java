@@ -2,120 +2,112 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GValueArray {
- *     guint n_values;
- *     GValue* values;
- *     guint n_prealloced;
+ *     unsigned int n_values;
+ *     struct _GValue* values;
+ *     unsigned int n_prealloced;
  * };
  * }
  */
 public class _GValueArray {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("n_values"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("values"),
-        Constants$root.C_INT$LAYOUT.withName("n_prealloced"),
-        MemoryLayout.paddingLayout(32)
-    ).withName("_GValueArray");
     public static MemoryLayout $LAYOUT() {
-        return _GValueArray.$struct$LAYOUT;
+        return constants$683.const$0;
     }
-    static final VarHandle n_values$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("n_values"));
     public static VarHandle n_values$VH() {
-        return _GValueArray.n_values$VH;
+        return constants$683.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint n_values;
+     * unsigned int n_values;
      * }
      */
     public static int n_values$get(MemorySegment seg) {
-        return (int)_GValueArray.n_values$VH.get(seg);
+        return (int)constants$683.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint n_values;
+     * unsigned int n_values;
      * }
      */
     public static void n_values$set(MemorySegment seg, int x) {
-        _GValueArray.n_values$VH.set(seg, x);
+        constants$683.const$1.set(seg, x);
     }
     public static int n_values$get(MemorySegment seg, long index) {
-        return (int)_GValueArray.n_values$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$683.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void n_values$set(MemorySegment seg, long index, int x) {
-        _GValueArray.n_values$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$683.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle values$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("values"));
     public static VarHandle values$VH() {
-        return _GValueArray.values$VH;
+        return constants$683.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GValue* values;
+     * struct _GValue* values;
      * }
      */
     public static MemorySegment values$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GValueArray.values$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$683.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GValue* values;
+     * struct _GValue* values;
      * }
      */
     public static void values$set(MemorySegment seg, MemorySegment x) {
-        _GValueArray.values$VH.set(seg, x);
+        constants$683.const$2.set(seg, x);
     }
     public static MemorySegment values$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GValueArray.values$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$683.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void values$set(MemorySegment seg, long index, MemorySegment x) {
-        _GValueArray.values$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$683.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle n_prealloced$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("n_prealloced"));
     public static VarHandle n_prealloced$VH() {
-        return _GValueArray.n_prealloced$VH;
+        return constants$683.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint n_prealloced;
+     * unsigned int n_prealloced;
      * }
      */
     public static int n_prealloced$get(MemorySegment seg) {
-        return (int)_GValueArray.n_prealloced$VH.get(seg);
+        return (int)constants$683.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint n_prealloced;
+     * unsigned int n_prealloced;
      * }
      */
     public static void n_prealloced$set(MemorySegment seg, int x) {
-        _GValueArray.n_prealloced$VH.set(seg, x);
+        constants$683.const$3.set(seg, x);
     }
     public static int n_prealloced$get(MemorySegment seg, long index) {
-        return (int)_GValueArray.n_prealloced$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$683.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void n_prealloced$set(MemorySegment seg, long index, int x) {
-        _GValueArray.n_prealloced$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$683.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

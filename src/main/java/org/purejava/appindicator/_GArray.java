@@ -2,89 +2,84 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GArray {
- *     gchar* data;
- *     guint len;
+ *     char* data;
+ *     unsigned int len;
  * };
  * }
  */
 public class _GArray {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("data"),
-        Constants$root.C_INT$LAYOUT.withName("len"),
-        MemoryLayout.paddingLayout(32)
-    ).withName("_GArray");
     public static MemoryLayout $LAYOUT() {
-        return _GArray.$struct$LAYOUT;
+        return constants$28.const$5;
     }
-    static final VarHandle data$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("data"));
     public static VarHandle data$VH() {
-        return _GArray.data$VH;
+        return constants$29.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* data;
+     * char* data;
      * }
      */
     public static MemorySegment data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GArray.data$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$29.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* data;
+     * char* data;
      * }
      */
     public static void data$set(MemorySegment seg, MemorySegment x) {
-        _GArray.data$VH.set(seg, x);
+        constants$29.const$0.set(seg, x);
     }
     public static MemorySegment data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GArray.data$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$29.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void data$set(MemorySegment seg, long index, MemorySegment x) {
-        _GArray.data$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$29.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle len$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("len"));
     public static VarHandle len$VH() {
-        return _GArray.len$VH;
+        return constants$29.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint len;
+     * unsigned int len;
      * }
      */
     public static int len$get(MemorySegment seg) {
-        return (int)_GArray.len$VH.get(seg);
+        return (int)constants$29.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint len;
+     * unsigned int len;
      * }
      */
     public static void len$set(MemorySegment seg, int x) {
-        _GArray.len$VH.set(seg, x);
+        constants$29.const$1.set(seg, x);
     }
     public static int len$get(MemorySegment seg, long index) {
-        return (int)_GArray.len$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$29.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void len$set(MemorySegment seg, long index, int x) {
-        _GArray.len$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$29.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

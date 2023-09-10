@@ -3,58 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$389 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$389() {}
-    static final FunctionDescriptor g_type_instance_get_private$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_option_group_free",
+        constants$13.const$1
     );
-    static final MethodHandle g_type_instance_get_private$MH = RuntimeHelper.downcallHandle(
-        "g_type_instance_get_private",
-        constants$389.g_type_instance_get_private$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_option_group_ref",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_type_class_adjust_private_offset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_option_group_unref",
+        constants$13.const$1
     );
-    static final MethodHandle g_type_class_adjust_private_offset$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_adjust_private_offset",
-        constants$389.g_type_class_adjust_private_offset$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_option_group_add_entries",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_type_add_class_private$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_add_class_private$MH = RuntimeHelper.downcallHandle(
-        "g_type_add_class_private",
-        constants$389.g_type_add_class_private$FUNC
-    );
-    static final FunctionDescriptor g_type_class_get_private$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_class_get_private$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_get_private",
-        constants$389.g_type_class_get_private$FUNC
-    );
-    static final FunctionDescriptor g_type_class_get_instance_private_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_class_get_instance_private_offset$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_get_instance_private_offset",
-        constants$389.g_type_class_get_instance_private_offset$FUNC
-    );
-    static final FunctionDescriptor g_type_ensure$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_ensure$MH = RuntimeHelper.downcallHandle(
-        "g_type_ensure",
-        constants$389.g_type_ensure$FUNC
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_option_group_set_translate_func$func.class, "apply", constants$5.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_option_group_set_translate_func$destroy_notify.class, "apply", constants$13.const$1);
 }
 
 

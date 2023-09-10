@@ -3,58 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1250 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1250() {}
-    static final FunctionDescriptor gtk_widget_queue_draw$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_list_keys",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_widget_queue_draw$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_draw",
-        constants$1250.gtk_widget_queue_draw$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_list_children",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_widget_queue_draw_area$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_key_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_widget_queue_draw_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_draw_area",
-        constants$1250.gtk_widget_queue_draw_area$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_key_ref",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_widget_queue_draw_region$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_key_unref",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_widget_queue_draw_region$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_draw_region",
-        constants$1250.gtk_widget_queue_draw_region$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_queue_resize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_queue_resize$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_resize",
-        constants$1250.gtk_widget_queue_resize$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_queue_resize_no_redraw$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_queue_resize_no_redraw$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_resize_no_redraw",
-        constants$1250.gtk_widget_queue_resize_no_redraw$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_queue_allocate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_queue_allocate$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_queue_allocate",
-        constants$1250.gtk_widget_queue_allocate$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_key_get_value_type",
+        constants$5.const$2
     );
 }
 

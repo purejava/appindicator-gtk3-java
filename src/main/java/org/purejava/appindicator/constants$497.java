@@ -3,66 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$497 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$497() {}
-    static final FunctionDescriptor g_async_initable_newv_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_initable_newv_async$MH = RuntimeHelper.downcallHandle(
-        "g_async_initable_newv_async",
-        constants$497.g_async_initable_newv_async$FUNC
-    );
-    static final FunctionDescriptor g_async_initable_new_valist_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_initable_new_valist_async$MH = RuntimeHelper.downcallHandle(
-        "g_async_initable_new_valist_async",
-        constants$497.g_async_initable_new_valist_async$FUNC
-    );
-    static final FunctionDescriptor g_async_initable_new_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_initable_new_finish$MH = RuntimeHelper.downcallHandle(
-        "g_async_initable_new_finish",
-        constants$497.g_async_initable_new_finish$FUNC
-    );
-    static final FunctionDescriptor g_async_result_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_async_result_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_async_result_get_type",
-        constants$497.g_async_result_get_type$FUNC
-    );
-    static final FunctionDescriptor g_async_result_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_result_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "g_async_result_get_user_data",
-        constants$497.g_async_result_get_user_data$FUNC
-    );
-    static final FunctionDescriptor g_async_result_get_source_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_result_get_source_object$MH = RuntimeHelper.downcallHandle(
-        "g_async_result_get_source_object",
-        constants$497.g_async_result_get_source_object$FUNC
-    );
+    static final VarHandle const$0 = constants$496.const$3.varHandle(MemoryLayout.PathElement.groupElement("func"));
+    static final VarHandle const$1 = constants$496.const$3.varHandle(MemoryLayout.PathElement.groupElement("prefix"));
+    static final VarHandle const$2 = constants$496.const$3.varHandle(MemoryLayout.PathElement.groupElement("cache"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GCompletion.strncmp_func.class, "apply", constants$18.const$2);
+    static final VarHandle const$4 = constants$496.const$3.varHandle(MemoryLayout.PathElement.groupElement("strncmp_func"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_completion_new$func.class, "apply", constants$5.const$2);
 }
 
 

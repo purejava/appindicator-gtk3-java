@@ -3,79 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$406 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$406() {}
-    static final FunctionDescriptor g_closure_invalidate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_random_set_seed",
+        constants$80.const$1
     );
-    static final MethodHandle g_closure_invalidate$MH = RuntimeHelper.downcallHandle(
-        "g_closure_invalidate",
-        constants$406.g_closure_invalidate$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_random_int",
+        constants$83.const$1
     );
-    static final FunctionDescriptor g_closure_invoke$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_random_int_range",
+        constants$123.const$5
     );
-    static final MethodHandle g_closure_invoke$MH = RuntimeHelper.downcallHandle(
-        "g_closure_invoke",
-        constants$406.g_closure_invoke$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_random_double",
+        constants$83.const$5
     );
-    static final FunctionDescriptor g_cclosure_marshal_generic$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final MethodHandle g_cclosure_marshal_generic$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_generic",
-        constants$406.g_cclosure_marshal_generic$FUNC
-    );
-    static final FunctionDescriptor g_cclosure_marshal_generic_va$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cclosure_marshal_generic_va$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_generic_va",
-        constants$406.g_cclosure_marshal_generic_va$FUNC
-    );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__VOID$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cclosure_marshal_VOID__VOID$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__VOID",
-        constants$406.g_cclosure_marshal_VOID__VOID$FUNC
-    );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__VOIDv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cclosure_marshal_VOID__VOIDv$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__VOIDv",
-        constants$406.g_cclosure_marshal_VOID__VOIDv$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_random_double_range",
+        constants$406.const$4
     );
 }
 

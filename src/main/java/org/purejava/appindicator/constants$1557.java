@@ -3,58 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1557 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1557() {}
-    static final FunctionDescriptor gtk_drag_dest_get_track_motion$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_font_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_drag_dest_get_track_motion$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_dest_get_track_motion",
-        constants$1557.gtk_drag_dest_get_track_motion$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_font_describe",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_drag_source_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_font_describe_with_absolute_size",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_drag_source_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_set",
-        constants$1557.gtk_drag_source_set$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_font_get_coverage",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_drag_source_unset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_font_find_shaper",
+        constants$32.const$3
     );
-    static final MethodHandle gtk_drag_source_unset$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_unset",
-        constants$1557.gtk_drag_source_unset$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_source_get_target_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_drag_source_get_target_list$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_get_target_list",
-        constants$1557.gtk_drag_source_get_target_list$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_source_set_target_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_drag_source_set_target_list$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_set_target_list",
-        constants$1557.gtk_drag_source_set_target_list$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_source_add_text_targets$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_drag_source_add_text_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_source_add_text_targets",
-        constants$1557.gtk_drag_source_add_text_targets$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_font_get_metrics",
+        constants$5.const$5
     );
 }
 

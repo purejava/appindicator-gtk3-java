@@ -3,73 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1346 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1346() {}
-    static final FunctionDescriptor gtk_accel_label_set_accel$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_accel_label_set_accel$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_set_accel",
-        constants$1346.gtk_accel_label_set_accel$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_label_get_accel$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_label_get_accel$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_get_accel",
-        constants$1346.gtk_accel_label_get_accel$FUNC
-    );
-    static final FunctionDescriptor _gtk_accel_label_class_get_accelerator_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle _gtk_accel_label_class_get_accelerator_label$MH = RuntimeHelper.downcallHandle(
-        "_gtk_accel_label_class_get_accelerator_label",
-        constants$1346._gtk_accel_label_class_get_accelerator_label$FUNC
-    );
-    static final FunctionDescriptor GtkAccelMapForeach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor GtkAccelMapForeach_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle GtkAccelMapForeach_UP$MH = RuntimeHelper.upcallHandle(GtkAccelMapForeach.class, "apply", constants$1346.GtkAccelMapForeach_UP$FUNC);
-    static final FunctionDescriptor GtkAccelMapForeach_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle GtkAccelMapForeach_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1346.GtkAccelMapForeach_DOWN$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_map_add_entry$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_accel_map_add_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_add_entry",
-        constants$1346.gtk_accel_map_add_entry$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("supports_tls"),
+        RuntimeHelper.POINTER.withName("get_certificate_type"),
+        RuntimeHelper.POINTER.withName("get_client_connection_type"),
+        RuntimeHelper.POINTER.withName("get_server_connection_type"),
+        RuntimeHelper.POINTER.withName("get_file_database_type"),
+        RuntimeHelper.POINTER.withName("get_default_database"),
+        RuntimeHelper.POINTER.withName("supports_dtls"),
+        RuntimeHelper.POINTER.withName("get_dtls_client_connection_type"),
+        RuntimeHelper.POINTER.withName("get_dtls_server_connection_type")
+    ).withName("_GTlsBackendInterface");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GTlsBackendInterface.supports_tls.class, "apply", constants$10.const$5);
+    static final VarHandle const$2 = constants$1346.const$0.varHandle(MemoryLayout.PathElement.groupElement("supports_tls"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GTlsBackendInterface.get_certificate_type.class, "apply", constants$3.const$5);
+    static final VarHandle const$4 = constants$1346.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_certificate_type"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GTlsBackendInterface.get_client_connection_type.class, "apply", constants$3.const$5);
 }
 
 

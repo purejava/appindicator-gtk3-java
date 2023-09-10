@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1113 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1113() {}
-    static final FunctionDescriptor gdk_display_list_devices$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_resource_lookup_flags_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_display_list_devices$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_list_devices",
-        constants$1113.gdk_display_list_devices$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_socket_family_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_display_get_event$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_socket_type_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_display_get_event$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_event",
-        constants$1113.gdk_display_get_event$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_msg_flags_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_display_peek_event$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_protocol_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_display_peek_event$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_peek_event",
-        constants$1113.gdk_display_peek_event$FUNC
-    );
-    static final FunctionDescriptor gdk_display_put_event$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_put_event$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_put_event",
-        constants$1113.gdk_display_put_event$FUNC
-    );
-    static final FunctionDescriptor gdk_display_has_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_has_pending$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_has_pending",
-        constants$1113.gdk_display_has_pending$FUNC
-    );
-    static final FunctionDescriptor gdk_display_set_double_click_time$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_display_set_double_click_time$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_set_double_click_time",
-        constants$1113.gdk_display_set_double_click_time$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_zlib_compressor_format_get_type",
+        constants$3.const$5
     );
 }
 

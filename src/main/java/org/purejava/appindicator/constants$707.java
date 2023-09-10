@@ -3,65 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$707 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$707() {}
-    static final FunctionDescriptor g_mount_remount_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_remount_finish$MH = RuntimeHelper.downcallHandle(
-        "g_mount_remount_finish",
-        constants$707.g_mount_remount_finish$FUNC
-    );
-    static final FunctionDescriptor g_mount_guess_content_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_guess_content_type$MH = RuntimeHelper.downcallHandle(
-        "g_mount_guess_content_type",
-        constants$707.g_mount_guess_content_type$FUNC
-    );
-    static final FunctionDescriptor g_mount_guess_content_type_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_guess_content_type_finish$MH = RuntimeHelper.downcallHandle(
-        "g_mount_guess_content_type_finish",
-        constants$707.g_mount_guess_content_type_finish$FUNC
-    );
-    static final FunctionDescriptor g_mount_guess_content_type_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_guess_content_type_sync$MH = RuntimeHelper.downcallHandle(
-        "g_mount_guess_content_type_sync",
-        constants$707.g_mount_guess_content_type_sync$FUNC
-    );
-    static final FunctionDescriptor g_mount_is_shadowed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_is_shadowed$MH = RuntimeHelper.downcallHandle(
-        "g_mount_is_shadowed",
-        constants$707.g_mount_is_shadowed$FUNC
-    );
-    static final FunctionDescriptor g_mount_shadow$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_shadow$MH = RuntimeHelper.downcallHandle(
-        "g_mount_shadow",
-        constants$707.g_mount_shadow$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GActionGroupInterface.activate_action.class, "apply", constants$14.const$3);
+    static final VarHandle const$1 = constants$704.const$1.varHandle(MemoryLayout.PathElement.groupElement("activate_action"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GActionGroupInterface.action_added.class, "apply", constants$13.const$4);
+    static final VarHandle const$3 = constants$704.const$1.varHandle(MemoryLayout.PathElement.groupElement("action_added"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GActionGroupInterface.action_removed.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$704.const$1.varHandle(MemoryLayout.PathElement.groupElement("action_removed"));
 }
 
 

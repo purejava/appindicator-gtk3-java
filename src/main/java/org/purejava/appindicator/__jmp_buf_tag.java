@@ -2,37 +2,30 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct __jmp_buf_tag {
- *     __jmp_buf __jmpbuf;
+ *     unsigned long long __jmpbuf[22];
  *     int __mask_was_saved;
- *     __sigset_t __saved_mask;
+ *     struct __sigset_t __saved_mask;
  * };
  * }
  */
 public class __jmp_buf_tag {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.sequenceLayout(8, Constants$root.C_LONG_LONG$LAYOUT).withName("__jmpbuf"),
-        Constants$root.C_INT$LAYOUT.withName("__mask_was_saved"),
-        MemoryLayout.paddingLayout(32),
-        MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(16, Constants$root.C_LONG_LONG$LAYOUT).withName("__val")
-        ).withName("__saved_mask")
-    ).withName("__jmp_buf_tag");
     public static MemoryLayout $LAYOUT() {
-        return __jmp_buf_tag.$struct$LAYOUT;
+        return constants$515.const$1;
     }
     public static MemorySegment __jmpbuf$slice(MemorySegment seg) {
-        return seg.asSlice(0, 64);
+        return seg.asSlice(0, 176);
     }
-    static final VarHandle __mask_was_saved$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("__mask_was_saved"));
     public static VarHandle __mask_was_saved$VH() {
-        return __jmp_buf_tag.__mask_was_saved$VH;
+        return constants$515.const$2;
     }
     /**
      * Getter for field:
@@ -41,7 +34,7 @@ public class __jmp_buf_tag {
      * }
      */
     public static int __mask_was_saved$get(MemorySegment seg) {
-        return (int)__jmp_buf_tag.__mask_was_saved$VH.get(seg);
+        return (int)constants$515.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -50,23 +43,23 @@ public class __jmp_buf_tag {
      * }
      */
     public static void __mask_was_saved$set(MemorySegment seg, int x) {
-        __jmp_buf_tag.__mask_was_saved$VH.set(seg, x);
+        constants$515.const$2.set(seg, x);
     }
     public static int __mask_was_saved$get(MemorySegment seg, long index) {
-        return (int)__jmp_buf_tag.__mask_was_saved$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$515.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void __mask_was_saved$set(MemorySegment seg, long index, int x) {
-        __jmp_buf_tag.__mask_was_saved$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$515.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment __saved_mask$slice(MemorySegment seg) {
-        return seg.asSlice(72, 128);
+        return seg.asSlice(184, 128);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

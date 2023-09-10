@@ -3,55 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1680 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1680() {}
-    static final FunctionDescriptor gtk_list_box_get_activate_on_single_click$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_create",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_list_box_get_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_get_activate_on_single_click",
-        constants$1680.gtk_list_box_get_activate_on_single_click$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_reference",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_list_box_drag_unhighlight_row$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_list_box_drag_unhighlight_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_drag_unhighlight_row",
-        constants$1680.gtk_list_box_drag_unhighlight_row$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_get_reference_count",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_list_box_drag_highlight_row$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_get_user_data",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_list_box_drag_highlight_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_drag_highlight_row",
-        constants$1680.gtk_list_box_drag_highlight_row$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_list_box_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_new",
-        constants$1680.gtk_list_box_new$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_bind_model$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_bind_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_bind_model",
-        constants$1680.gtk_list_box_bind_model$FUNC
-    );
-    static final FunctionDescriptor gtk_lock_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_lock_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_lock_button_get_type",
-        constants$1680.gtk_lock_button_get_type$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(cairo_set_user_data$destroy.class, "apply", constants$13.const$1);
 }
 
 

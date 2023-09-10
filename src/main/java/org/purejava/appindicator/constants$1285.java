@@ -3,62 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1285 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1285() {}
-    static final FunctionDescriptor gtk_widget_get_modifier_mask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_socket_leave_multicast_group_ssm",
+        constants$165.const$2
     );
-    static final MethodHandle gtk_widget_get_modifier_mask$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_modifier_mask",
-        constants$1285.gtk_widget_get_modifier_mask$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_socket_connect",
+        constants$34.const$5
     );
-    static final FunctionDescriptor gtk_widget_insert_action_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_socket_check_connect_result",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_widget_insert_action_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_insert_action_group",
-        constants$1285.gtk_widget_insert_action_group$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_get_available_bytes",
+        constants$4.const$0
     );
-    static final FunctionDescriptor gtk_widget_add_tick_callback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_condition_check",
+        constants$11.const$4
     );
-    static final MethodHandle gtk_widget_add_tick_callback$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_add_tick_callback",
-        constants$1285.gtk_widget_add_tick_callback$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_remove_tick_callback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_remove_tick_callback$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_remove_tick_callback",
-        constants$1285.gtk_widget_remove_tick_callback$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_init_template$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_init_template$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_init_template",
-        constants$1285.gtk_widget_init_template$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_template_child$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_template_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_template_child",
-        constants$1285.gtk_widget_get_template_child$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_condition_wait",
+        constants$11.const$0
     );
 }
 

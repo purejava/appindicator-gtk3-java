@@ -2,18 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2014 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2014() {}
-    static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USED$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("filesystem::used");
-    static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_TYPE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("filesystem::type");
-    static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_READONLY$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("filesystem::readonly");
-    static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_USE_PREVIEW$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("filesystem::use-preview");
-    static final MemorySegment G_FILE_ATTRIBUTE_FILESYSTEM_REMOTE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("filesystem::remote");
-    static final MemorySegment G_FILE_ATTRIBUTE_GVFS_BACKEND$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("gvfs::backend");
+    static final VarHandle const$0 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_character_count"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkTextIface.get_offset_at_point.class, "apply", constants$608.const$5);
+    static final VarHandle const$2 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_offset_at_point"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkTextIface.get_n_selections.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_n_selections"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkTextIface.get_selection.class, "apply", constants$180.const$0);
 }
 
 

@@ -3,61 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1729 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1729() {}
-    static final FunctionDescriptor gtk_paned_add2$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_surface_reference",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_paned_add2$MH = RuntimeHelper.downcallHandle(
-        "gtk_paned_add2",
-        constants$1729.gtk_paned_add2$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_surface_finish",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_paned_pack1$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_surface_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_paned_pack1$MH = RuntimeHelper.downcallHandle(
-        "gtk_paned_pack1",
-        constants$1729.gtk_paned_pack1$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_device",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_paned_pack2$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_reference_count",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_paned_pack2$MH = RuntimeHelper.downcallHandle(
-        "gtk_paned_pack2",
-        constants$1729.gtk_paned_pack2$FUNC
-    );
-    static final FunctionDescriptor gtk_paned_get_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_paned_get_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_paned_get_position",
-        constants$1729.gtk_paned_get_position$FUNC
-    );
-    static final FunctionDescriptor gtk_paned_set_position$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_paned_set_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_paned_set_position",
-        constants$1729.gtk_paned_set_position$FUNC
-    );
-    static final FunctionDescriptor gtk_paned_get_child1$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_paned_get_child1$MH = RuntimeHelper.downcallHandle(
-        "gtk_paned_get_child1",
-        constants$1729.gtk_paned_get_child1$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_surface_status",
+        constants$10.const$5
     );
 }
 

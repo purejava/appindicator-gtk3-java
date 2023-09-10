@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$534 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$534() {}
-    static final FunctionDescriptor getdomainname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pthread_barrier_init",
+        constants$62.const$0
     );
-    static final MethodHandle getdomainname$MH = RuntimeHelper.downcallHandle(
-        "getdomainname",
-        constants$534.getdomainname$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pthread_barrier_destroy",
+        constants$10.const$5
     );
-    static final FunctionDescriptor setdomainname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pthread_barrier_wait",
+        constants$10.const$5
     );
-    static final MethodHandle setdomainname$MH = RuntimeHelper.downcallHandle(
-        "setdomainname",
-        constants$534.setdomainname$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pthread_barrierattr_init",
+        constants$10.const$5
     );
-    static final FunctionDescriptor vhangup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle vhangup$MH = RuntimeHelper.downcallHandle(
-        "vhangup",
-        constants$534.vhangup$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pthread_barrierattr_destroy",
+        constants$10.const$5
     );
-    static final FunctionDescriptor revoke$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle revoke$MH = RuntimeHelper.downcallHandle(
-        "revoke",
-        constants$534.revoke$FUNC
-    );
-    static final FunctionDescriptor profil$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle profil$MH = RuntimeHelper.downcallHandle(
-        "profil",
-        constants$534.profil$FUNC
-    );
-    static final FunctionDescriptor acct$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle acct$MH = RuntimeHelper.downcallHandle(
-        "acct",
-        constants$534.acct$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pthread_barrierattr_getpshared",
+        constants$9.const$0
     );
 }
 

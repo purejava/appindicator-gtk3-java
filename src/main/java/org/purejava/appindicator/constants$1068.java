@@ -3,61 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1068 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1068() {}
-    static final FunctionDescriptor gdk_event_get_root_coords$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_get_root_coords$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_root_coords",
-        constants$1068.gdk_event_get_root_coords$FUNC
-    );
-    static final FunctionDescriptor gdk_event_get_button$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_get_button$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_button",
-        constants$1068.gdk_event_get_button$FUNC
-    );
-    static final FunctionDescriptor gdk_event_get_click_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_get_click_count$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_click_count",
-        constants$1068.gdk_event_get_click_count$FUNC
-    );
-    static final FunctionDescriptor gdk_event_get_keyval$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_get_keyval$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_keyval",
-        constants$1068.gdk_event_get_keyval$FUNC
-    );
-    static final FunctionDescriptor gdk_event_get_keycode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_get_keycode$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_keycode",
-        constants$1068.gdk_event_get_keycode$FUNC
-    );
-    static final FunctionDescriptor gdk_event_get_scroll_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_get_scroll_direction$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_scroll_direction",
-        constants$1068.gdk_event_get_scroll_direction$FUNC
-    );
+    static final VarHandle const$0 = constants$1065.const$1.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileInputStreamClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1065.const$1.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileInputStreamClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1065.const$1.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileInputStreamClass._g_reserved4.class, "apply", constants$7.const$5);
 }
 
 

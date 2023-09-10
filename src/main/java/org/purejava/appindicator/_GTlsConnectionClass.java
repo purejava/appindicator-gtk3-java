@@ -4,110 +4,47 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GTlsConnectionClass {
- *     GIOStreamClass parent_class;
- *     gboolean (*accept_certificate)(GTlsConnection*,GTlsCertificate*,GTlsCertificateFlags);
- *     gboolean (*handshake)(GTlsConnection*,GCancellable*,GError**);
- *     void (*handshake_async)(GTlsConnection*,int,GCancellable*,GAsyncReadyCallback,gpointer);
- *     gboolean (*handshake_finish)(GTlsConnection*,GAsyncResult*,GError**);
- *     gboolean (*get_binding_data)(GTlsConnection*,GTlsChannelBindingType,GByteArray*,GError**);
- *     const gchar* (*get_negotiated_protocol)(GTlsConnection*);
- *     gpointer padding[6];
+ *     struct _GIOStreamClass parent_class;
+ *     int (*accept_certificate)(struct _GTlsConnection*,struct _GTlsCertificate*,enum GTlsCertificateFlags);
+ *     int (*handshake)(struct _GTlsConnection*,struct _GCancellable*,struct _GError**);
+ *     void (*handshake_async)(struct _GTlsConnection*,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+ *     int (*handshake_finish)(struct _GTlsConnection*,struct _GAsyncResult*,struct _GError**);
+ *     int (*get_binding_data)(struct _GTlsConnection*,enum GTlsChannelBindingType,struct _GByteArray*,struct _GError**);
+ *     char* (*get_negotiated_protocol)(struct _GTlsConnection*);
+ *     void* padding[6];
  * };
  * }
  */
 public class _GTlsConnectionClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-                ).withName("g_type_class"),
-                Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-                Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-                Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-                MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-            ).withName("parent_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_input_stream"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_output_stream"),
-            Constants$root.C_POINTER$LAYOUT.withName("close_fn"),
-            Constants$root.C_POINTER$LAYOUT.withName("close_async"),
-            Constants$root.C_POINTER$LAYOUT.withName("close_finish"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved1"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved2"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved3"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved4"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved5"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved6"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved7"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved8"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved9"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved10")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("accept_certificate"),
-        Constants$root.C_POINTER$LAYOUT.withName("handshake"),
-        Constants$root.C_POINTER$LAYOUT.withName("handshake_async"),
-        Constants$root.C_POINTER$LAYOUT.withName("handshake_finish"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_binding_data"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_negotiated_protocol"),
-        MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("padding")
-    ).withName("_GTlsConnectionClass");
     public static MemoryLayout $LAYOUT() {
-        return _GTlsConnectionClass.$struct$LAYOUT;
+        return constants$1355.const$1;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 256);
     }
-    static final FunctionDescriptor accept_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor accept_certificate_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle accept_certificate_UP$MH = RuntimeHelper.upcallHandle(accept_certificate.class, "apply", _GTlsConnectionClass.accept_certificate_UP$FUNC);
-    static final FunctionDescriptor accept_certificate_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle accept_certificate_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GTlsConnectionClass.accept_certificate_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*accept_certificate)(GTlsConnection*,GTlsCertificate*,GTlsCertificateFlags);
+ * int (*accept_certificate)(struct _GTlsConnection*,struct _GTlsCertificate*,enum GTlsCertificateFlags);
      * }
      */
     public interface accept_certificate {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
-        static MemorySegment allocate(accept_certificate fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GTlsConnectionClass.accept_certificate_UP$MH, fi, _GTlsConnectionClass.accept_certificate$FUNC, scope);
+        static MemorySegment allocate(accept_certificate fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1355.const$2, fi, constants$62.const$0, scope);
         }
-        static accept_certificate ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static accept_certificate ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    return (int)_GTlsConnectionClass.accept_certificate_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$955.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -115,72 +52,52 @@ public class _GTlsConnectionClass {
         }
     }
 
-    static final VarHandle accept_certificate$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("accept_certificate"));
     public static VarHandle accept_certificate$VH() {
-        return _GTlsConnectionClass.accept_certificate$VH;
+        return constants$1355.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*accept_certificate)(GTlsConnection*,GTlsCertificate*,GTlsCertificateFlags);
+     * int (*accept_certificate)(struct _GTlsConnection*,struct _GTlsCertificate*,enum GTlsCertificateFlags);
      * }
      */
     public static MemorySegment accept_certificate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTlsConnectionClass.accept_certificate$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1355.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*accept_certificate)(GTlsConnection*,GTlsCertificate*,GTlsCertificateFlags);
+     * int (*accept_certificate)(struct _GTlsConnection*,struct _GTlsCertificate*,enum GTlsCertificateFlags);
      * }
      */
     public static void accept_certificate$set(MemorySegment seg, MemorySegment x) {
-        _GTlsConnectionClass.accept_certificate$VH.set(seg, x);
+        constants$1355.const$3.set(seg, x);
     }
     public static MemorySegment accept_certificate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTlsConnectionClass.accept_certificate$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1355.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void accept_certificate$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTlsConnectionClass.accept_certificate$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1355.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static accept_certificate accept_certificate(MemorySegment segment, SegmentScope scope) {
+    public static accept_certificate accept_certificate(MemorySegment segment, Arena scope) {
         return accept_certificate.ofAddress(accept_certificate$get(segment), scope);
     }
-    static final FunctionDescriptor handshake$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor handshake_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle handshake_UP$MH = RuntimeHelper.upcallHandle(handshake.class, "apply", _GTlsConnectionClass.handshake_UP$FUNC);
-    static final FunctionDescriptor handshake_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle handshake_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GTlsConnectionClass.handshake_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*handshake)(GTlsConnection*,GCancellable*,GError**);
+ * int (*handshake)(struct _GTlsConnection*,struct _GCancellable*,struct _GError**);
      * }
      */
     public interface handshake {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(handshake fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GTlsConnectionClass.handshake_UP$MH, fi, _GTlsConnectionClass.handshake$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(handshake fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1355.const$4, fi, constants$12.const$2, scope);
         }
-        static handshake ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
+        static handshake ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GTlsConnectionClass.handshake_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -188,78 +105,52 @@ public class _GTlsConnectionClass {
         }
     }
 
-    static final VarHandle handshake$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("handshake"));
     public static VarHandle handshake$VH() {
-        return _GTlsConnectionClass.handshake$VH;
+        return constants$1355.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*handshake)(GTlsConnection*,GCancellable*,GError**);
+     * int (*handshake)(struct _GTlsConnection*,struct _GCancellable*,struct _GError**);
      * }
      */
     public static MemorySegment handshake$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTlsConnectionClass.handshake$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1355.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*handshake)(GTlsConnection*,GCancellable*,GError**);
+     * int (*handshake)(struct _GTlsConnection*,struct _GCancellable*,struct _GError**);
      * }
      */
     public static void handshake$set(MemorySegment seg, MemorySegment x) {
-        _GTlsConnectionClass.handshake$VH.set(seg, x);
+        constants$1355.const$5.set(seg, x);
     }
     public static MemorySegment handshake$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTlsConnectionClass.handshake$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1355.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void handshake$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTlsConnectionClass.handshake$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1355.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static handshake handshake(MemorySegment segment, SegmentScope scope) {
+    public static handshake handshake(MemorySegment segment, Arena scope) {
         return handshake.ofAddress(handshake$get(segment), scope);
     }
-    static final FunctionDescriptor handshake_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor handshake_async_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle handshake_async_UP$MH = RuntimeHelper.upcallHandle(handshake_async.class, "apply", _GTlsConnectionClass.handshake_async_UP$FUNC);
-    static final FunctionDescriptor handshake_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle handshake_async_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GTlsConnectionClass.handshake_async_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*handshake_async)(GTlsConnection*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+ * void (*handshake_async)(struct _GTlsConnection*,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public interface handshake_async {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(handshake_async fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GTlsConnectionClass.handshake_async_UP$MH, fi, _GTlsConnectionClass.handshake_async$FUNC, scope);
+        static MemorySegment allocate(handshake_async fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1356.const$0, fi, constants$281.const$5, scope);
         }
-        static handshake_async ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static handshake_async ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    _GTlsConnectionClass.handshake_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$754.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -267,72 +158,52 @@ public class _GTlsConnectionClass {
         }
     }
 
-    static final VarHandle handshake_async$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("handshake_async"));
     public static VarHandle handshake_async$VH() {
-        return _GTlsConnectionClass.handshake_async$VH;
+        return constants$1356.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*handshake_async)(GTlsConnection*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*handshake_async)(struct _GTlsConnection*,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static MemorySegment handshake_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTlsConnectionClass.handshake_async$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1356.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*handshake_async)(GTlsConnection*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*handshake_async)(struct _GTlsConnection*,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static void handshake_async$set(MemorySegment seg, MemorySegment x) {
-        _GTlsConnectionClass.handshake_async$VH.set(seg, x);
+        constants$1356.const$1.set(seg, x);
     }
     public static MemorySegment handshake_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTlsConnectionClass.handshake_async$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1356.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void handshake_async$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTlsConnectionClass.handshake_async$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1356.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static handshake_async handshake_async(MemorySegment segment, SegmentScope scope) {
+    public static handshake_async handshake_async(MemorySegment segment, Arena scope) {
         return handshake_async.ofAddress(handshake_async$get(segment), scope);
     }
-    static final FunctionDescriptor handshake_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor handshake_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle handshake_finish_UP$MH = RuntimeHelper.upcallHandle(handshake_finish.class, "apply", _GTlsConnectionClass.handshake_finish_UP$FUNC);
-    static final FunctionDescriptor handshake_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle handshake_finish_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GTlsConnectionClass.handshake_finish_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*handshake_finish)(GTlsConnection*,GAsyncResult*,GError**);
+ * int (*handshake_finish)(struct _GTlsConnection*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public interface handshake_finish {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(handshake_finish fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GTlsConnectionClass.handshake_finish_UP$MH, fi, _GTlsConnectionClass.handshake_finish$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(handshake_finish fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1356.const$2, fi, constants$12.const$2, scope);
         }
-        static handshake_finish ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
+        static handshake_finish ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GTlsConnectionClass.handshake_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -340,75 +211,52 @@ public class _GTlsConnectionClass {
         }
     }
 
-    static final VarHandle handshake_finish$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("handshake_finish"));
     public static VarHandle handshake_finish$VH() {
-        return _GTlsConnectionClass.handshake_finish$VH;
+        return constants$1356.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*handshake_finish)(GTlsConnection*,GAsyncResult*,GError**);
+     * int (*handshake_finish)(struct _GTlsConnection*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static MemorySegment handshake_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTlsConnectionClass.handshake_finish$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1356.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*handshake_finish)(GTlsConnection*,GAsyncResult*,GError**);
+     * int (*handshake_finish)(struct _GTlsConnection*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static void handshake_finish$set(MemorySegment seg, MemorySegment x) {
-        _GTlsConnectionClass.handshake_finish$VH.set(seg, x);
+        constants$1356.const$3.set(seg, x);
     }
     public static MemorySegment handshake_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTlsConnectionClass.handshake_finish$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1356.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void handshake_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTlsConnectionClass.handshake_finish$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1356.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static handshake_finish handshake_finish(MemorySegment segment, SegmentScope scope) {
+    public static handshake_finish handshake_finish(MemorySegment segment, Arena scope) {
         return handshake_finish.ofAddress(handshake_finish$get(segment), scope);
     }
-    static final FunctionDescriptor get_binding_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_binding_data_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_binding_data_UP$MH = RuntimeHelper.upcallHandle(get_binding_data.class, "apply", _GTlsConnectionClass.get_binding_data_UP$FUNC);
-    static final FunctionDescriptor get_binding_data_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_binding_data_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GTlsConnectionClass.get_binding_data_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*get_binding_data)(GTlsConnection*,GTlsChannelBindingType,GByteArray*,GError**);
+ * int (*get_binding_data)(struct _GTlsConnection*,enum GTlsChannelBindingType,struct _GByteArray*,struct _GError**);
      * }
      */
     public interface get_binding_data {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(get_binding_data fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GTlsConnectionClass.get_binding_data_UP$MH, fi, _GTlsConnectionClass.get_binding_data$FUNC, scope);
+        static MemorySegment allocate(get_binding_data fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1356.const$4, fi, constants$11.const$0, scope);
         }
-        static get_binding_data ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_binding_data ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    return (int)_GTlsConnectionClass.get_binding_data_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    return (int)constants$464.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -416,66 +264,52 @@ public class _GTlsConnectionClass {
         }
     }
 
-    static final VarHandle get_binding_data$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_binding_data"));
     public static VarHandle get_binding_data$VH() {
-        return _GTlsConnectionClass.get_binding_data$VH;
+        return constants$1356.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*get_binding_data)(GTlsConnection*,GTlsChannelBindingType,GByteArray*,GError**);
+     * int (*get_binding_data)(struct _GTlsConnection*,enum GTlsChannelBindingType,struct _GByteArray*,struct _GError**);
      * }
      */
     public static MemorySegment get_binding_data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTlsConnectionClass.get_binding_data$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1356.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*get_binding_data)(GTlsConnection*,GTlsChannelBindingType,GByteArray*,GError**);
+     * int (*get_binding_data)(struct _GTlsConnection*,enum GTlsChannelBindingType,struct _GByteArray*,struct _GError**);
      * }
      */
     public static void get_binding_data$set(MemorySegment seg, MemorySegment x) {
-        _GTlsConnectionClass.get_binding_data$VH.set(seg, x);
+        constants$1356.const$5.set(seg, x);
     }
     public static MemorySegment get_binding_data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTlsConnectionClass.get_binding_data$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1356.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_binding_data$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTlsConnectionClass.get_binding_data$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1356.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_binding_data get_binding_data(MemorySegment segment, SegmentScope scope) {
+    public static get_binding_data get_binding_data(MemorySegment segment, Arena scope) {
         return get_binding_data.ofAddress(get_binding_data$get(segment), scope);
     }
-    static final FunctionDescriptor get_negotiated_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_negotiated_protocol_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_negotiated_protocol_UP$MH = RuntimeHelper.upcallHandle(get_negotiated_protocol.class, "apply", _GTlsConnectionClass.get_negotiated_protocol_UP$FUNC);
-    static final FunctionDescriptor get_negotiated_protocol_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_negotiated_protocol_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GTlsConnectionClass.get_negotiated_protocol_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * const gchar* (*get_negotiated_protocol)(GTlsConnection*);
+ * char* (*get_negotiated_protocol)(struct _GTlsConnection*);
      * }
      */
     public interface get_negotiated_protocol {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_negotiated_protocol fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GTlsConnectionClass.get_negotiated_protocol_UP$MH, fi, _GTlsConnectionClass.get_negotiated_protocol$FUNC, scope);
+        static MemorySegment allocate(get_negotiated_protocol fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1357.const$0, fi, constants$5.const$2, scope);
         }
-        static get_negotiated_protocol ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_negotiated_protocol ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GTlsConnectionClass.get_negotiated_protocol_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -483,35 +317,34 @@ public class _GTlsConnectionClass {
         }
     }
 
-    static final VarHandle get_negotiated_protocol$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_negotiated_protocol"));
     public static VarHandle get_negotiated_protocol$VH() {
-        return _GTlsConnectionClass.get_negotiated_protocol$VH;
+        return constants$1357.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const gchar* (*get_negotiated_protocol)(GTlsConnection*);
+     * char* (*get_negotiated_protocol)(struct _GTlsConnection*);
      * }
      */
     public static MemorySegment get_negotiated_protocol$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTlsConnectionClass.get_negotiated_protocol$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1357.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const gchar* (*get_negotiated_protocol)(GTlsConnection*);
+     * char* (*get_negotiated_protocol)(struct _GTlsConnection*);
      * }
      */
     public static void get_negotiated_protocol$set(MemorySegment seg, MemorySegment x) {
-        _GTlsConnectionClass.get_negotiated_protocol$VH.set(seg, x);
+        constants$1357.const$1.set(seg, x);
     }
     public static MemorySegment get_negotiated_protocol$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTlsConnectionClass.get_negotiated_protocol$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1357.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_negotiated_protocol$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTlsConnectionClass.get_negotiated_protocol$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1357.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_negotiated_protocol get_negotiated_protocol(MemorySegment segment, SegmentScope scope) {
+    public static get_negotiated_protocol get_negotiated_protocol(MemorySegment segment, Arena scope) {
         return get_negotiated_protocol.ofAddress(get_negotiated_protocol$get(segment), scope);
     }
     public static MemorySegment padding$slice(MemorySegment seg) {
@@ -522,7 +355,7 @@ public class _GTlsConnectionClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

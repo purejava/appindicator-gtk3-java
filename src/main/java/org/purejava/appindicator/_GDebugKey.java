@@ -2,89 +2,84 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GDebugKey {
- *     const gchar* key;
- *     guint value;
+ *     char* key;
+ *     unsigned int value;
  * };
  * }
  */
 public class _GDebugKey {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("key"),
-        Constants$root.C_INT$LAYOUT.withName("value"),
-        MemoryLayout.paddingLayout(32)
-    ).withName("_GDebugKey");
     public static MemoryLayout $LAYOUT() {
-        return _GDebugKey.$struct$LAYOUT;
+        return constants$61.const$3;
     }
-    static final VarHandle key$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("key"));
     public static VarHandle key$VH() {
-        return _GDebugKey.key$VH;
+        return constants$61.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const gchar* key;
+     * char* key;
      * }
      */
     public static MemorySegment key$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GDebugKey.key$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$61.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const gchar* key;
+     * char* key;
      * }
      */
     public static void key$set(MemorySegment seg, MemorySegment x) {
-        _GDebugKey.key$VH.set(seg, x);
+        constants$61.const$4.set(seg, x);
     }
     public static MemorySegment key$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GDebugKey.key$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$61.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void key$set(MemorySegment seg, long index, MemorySegment x) {
-        _GDebugKey.key$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$61.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle value$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("value"));
     public static VarHandle value$VH() {
-        return _GDebugKey.value$VH;
+        return constants$61.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint value;
+     * unsigned int value;
      * }
      */
     public static int value$get(MemorySegment seg) {
-        return (int)_GDebugKey.value$VH.get(seg);
+        return (int)constants$61.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint value;
+     * unsigned int value;
      * }
      */
     public static void value$set(MemorySegment seg, int x) {
-        _GDebugKey.value$VH.set(seg, x);
+        constants$61.const$5.set(seg, x);
     }
     public static int value$get(MemorySegment seg, long index) {
-        return (int)_GDebugKey.value$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$61.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void value$set(MemorySegment seg, long index, int x) {
-        _GDebugKey.value$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$61.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -2,18 +2,23 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1998 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1998() {}
-    static final MemorySegment __ILP32_OFF32_CFLAGS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("-m32");
-    static final MemorySegment __ILP32_OFF32_LDFLAGS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("-m32");
-    static final MemorySegment __ILP32_OFFBIG_CFLAGS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("-m32 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64");
-    static final MemorySegment __ILP32_OFFBIG_LDFLAGS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("-m32");
-    static final MemorySegment __LP64_OFF64_CFLAGS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("-m64");
-    static final MemorySegment __LP64_OFF64_LDFLAGS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("-m64");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$1942.const$3
+    );
+    static final VarHandle const$1 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("set_extents"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkComponentIface.set_position.class, "apply", constants$608.const$5);
+    static final VarHandle const$3 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("set_position"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkComponentIface.set_size.class, "apply", constants$49.const$0);
+    static final VarHandle const$5 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("set_size"));
 }
 
 

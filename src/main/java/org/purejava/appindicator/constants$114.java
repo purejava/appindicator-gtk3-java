@@ -3,54 +3,84 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$114 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$114() {}
-    static final FunctionDescriptor g_date_get_weekday$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_async_queue_timed_pop_unlocked",
+        constants$5.const$5
     );
-    static final MethodHandle g_date_get_weekday$MH = RuntimeHelper.downcallHandle(
-        "g_date_get_weekday",
-        constants$114.g_date_get_weekday$FUNC
-    );
-    static final FunctionDescriptor g_date_get_month$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_get_month$MH = RuntimeHelper.downcallHandle(
-        "g_date_get_month",
-        constants$114.g_date_get_month$FUNC
-    );
-    static final FunctionDescriptor g_date_get_year$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_get_year$MH = RuntimeHelper.downcallHandle(
-        "g_date_get_year",
-        constants$114.g_date_get_year$FUNC
-    );
-    static final FunctionDescriptor g_date_get_day$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_get_day$MH = RuntimeHelper.downcallHandle(
-        "g_date_get_day",
-        constants$114.g_date_get_day$FUNC
-    );
-    static final FunctionDescriptor g_date_get_julian$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_get_julian$MH = RuntimeHelper.downcallHandle(
-        "g_date_get_julian",
-        constants$114.g_date_get_julian$FUNC
-    );
-    static final FunctionDescriptor g_date_get_day_of_year$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_get_day_of_year$MH = RuntimeHelper.downcallHandle(
-        "g_date_get_day_of_year",
-        constants$114.g_date_get_day_of_year$FUNC
-    );
+    static final UnionLayout const$1 = MemoryLayout.unionLayout(
+        JAVA_INT.withName("sival_int"),
+        RuntimeHelper.POINTER.withName("sival_ptr")
+    ).withName("sigval");
+    static final VarHandle const$2 = constants$114.const$1.varHandle(MemoryLayout.PathElement.groupElement("sival_int"));
+    static final VarHandle const$3 = constants$114.const$1.varHandle(MemoryLayout.PathElement.groupElement("sival_ptr"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("si_signo"),
+        JAVA_INT.withName("si_errno"),
+        JAVA_INT.withName("si_code"),
+        JAVA_INT.withName("__pad0"),
+        MemoryLayout.unionLayout(
+            MemoryLayout.sequenceLayout(28, JAVA_INT).withName("_pad"),
+            MemoryLayout.structLayout(
+                JAVA_INT.withName("si_pid"),
+                JAVA_INT.withName("si_uid")
+            ).withName("_kill"),
+            MemoryLayout.structLayout(
+                JAVA_INT.withName("si_tid"),
+                JAVA_INT.withName("si_overrun"),
+                MemoryLayout.unionLayout(
+                    JAVA_INT.withName("sival_int"),
+                    RuntimeHelper.POINTER.withName("sival_ptr")
+                ).withName("si_sigval")
+            ).withName("_timer"),
+            MemoryLayout.structLayout(
+                JAVA_INT.withName("si_pid"),
+                JAVA_INT.withName("si_uid"),
+                MemoryLayout.unionLayout(
+                    JAVA_INT.withName("sival_int"),
+                    RuntimeHelper.POINTER.withName("sival_ptr")
+                ).withName("si_sigval")
+            ).withName("_rt"),
+            MemoryLayout.structLayout(
+                JAVA_INT.withName("si_pid"),
+                JAVA_INT.withName("si_uid"),
+                JAVA_INT.withName("si_status"),
+                MemoryLayout.paddingLayout(4),
+                JAVA_LONG.withName("si_utime"),
+                JAVA_LONG.withName("si_stime")
+            ).withName("_sigchld"),
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("si_addr"),
+                JAVA_SHORT.withName("si_addr_lsb"),
+                MemoryLayout.paddingLayout(6),
+                MemoryLayout.unionLayout(
+                    MemoryLayout.structLayout(
+                        RuntimeHelper.POINTER.withName("_lower"),
+                        RuntimeHelper.POINTER.withName("_upper")
+                    ).withName("_addr_bnd"),
+                    JAVA_INT.withName("_pkey")
+                ).withName("_bounds")
+            ).withName("_sigfault"),
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("si_band"),
+                JAVA_INT.withName("si_fd"),
+                MemoryLayout.paddingLayout(4)
+            ).withName("_sigpoll"),
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("_call_addr"),
+                JAVA_INT.withName("_syscall"),
+                JAVA_INT.withName("_arch")
+            ).withName("_sigsys")
+        ).withName("_sifields")
+    ).withName("siginfo_t");
+    static final VarHandle const$5 = constants$114.const$4.varHandle(MemoryLayout.PathElement.groupElement("si_signo"));
 }
 
 

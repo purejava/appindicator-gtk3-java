@@ -3,60 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$0 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$0() {}
-    static final FunctionDescriptor clock$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle clock$MH = RuntimeHelper.downcallHandle(
-        "clock",
-        constants$0.clock$FUNC
-    );
-    static final FunctionDescriptor time$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle time$MH = RuntimeHelper.downcallHandle(
-        "time",
-        constants$0.time$FUNC
-    );
-    static final FunctionDescriptor difftime$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle difftime$MH = RuntimeHelper.downcallHandle(
-        "difftime",
-        constants$0.difftime$FUNC
-    );
-    static final FunctionDescriptor mktime$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle mktime$MH = RuntimeHelper.downcallHandle(
-        "mktime",
-        constants$0.mktime$FUNC
-    );
-    static final FunctionDescriptor strftime$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strftime$MH = RuntimeHelper.downcallHandle(
-        "strftime",
-        constants$0.strftime$FUNC
-    );
-    static final FunctionDescriptor strftime_l$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strftime_l$MH = RuntimeHelper.downcallHandle(
-        "strftime_l",
-        constants$0.strftime_l$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("__clang_max_align_nonce1"),
+        MemoryLayout.paddingLayout(8),
+        MemoryLayout.paddingLayout(16).withName("__clang_max_align_nonce2")
+    ).withName("max_align_t");
+    static final VarHandle const$1 = constants$0.const$0.varHandle(MemoryLayout.PathElement.groupElement("__clang_max_align_nonce1"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(2, JAVA_INT).withName("__val")
+    ).withName("__fsid_t");
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("tm_sec"),
+        JAVA_INT.withName("tm_min"),
+        JAVA_INT.withName("tm_hour"),
+        JAVA_INT.withName("tm_mday"),
+        JAVA_INT.withName("tm_mon"),
+        JAVA_INT.withName("tm_year"),
+        JAVA_INT.withName("tm_wday"),
+        JAVA_INT.withName("tm_yday"),
+        JAVA_INT.withName("tm_isdst"),
+        MemoryLayout.paddingLayout(4),
+        JAVA_LONG.withName("tm_gmtoff"),
+        RuntimeHelper.POINTER.withName("tm_zone")
+    ).withName("tm");
+    static final VarHandle const$4 = constants$0.const$3.varHandle(MemoryLayout.PathElement.groupElement("tm_sec"));
+    static final VarHandle const$5 = constants$0.const$3.varHandle(MemoryLayout.PathElement.groupElement("tm_min"));
 }
 
 

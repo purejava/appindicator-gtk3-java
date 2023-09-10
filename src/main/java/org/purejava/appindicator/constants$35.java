@@ -3,57 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$35 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$35() {}
-    static final FunctionDescriptor GErrorInitFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_array_set_clear_func$clear_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_array_set_clear_func",
+        constants$13.const$4
     );
-    static final MethodHandle GErrorInitFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$35.GErrorInitFunc_DOWN$FUNC
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_new",
+        constants$35.const$2
     );
-    static final FunctionDescriptor GErrorCopyFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GErrorCopyFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GErrorCopyFunc_UP$MH = RuntimeHelper.upcallHandle(GErrorCopyFunc.class, "apply", constants$35.GErrorCopyFunc_UP$FUNC);
-    static final FunctionDescriptor GErrorCopyFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GErrorCopyFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$35.GErrorCopyFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor GErrorClearFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GErrorClearFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GErrorClearFunc_UP$MH = RuntimeHelper.upcallHandle(GErrorClearFunc.class, "apply", constants$35.GErrorClearFunc_UP$FUNC);
-    static final FunctionDescriptor GErrorClearFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GErrorClearFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$35.GErrorClearFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_error_domain_register_static$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_error_domain_register_static$MH = RuntimeHelper.downcallHandle(
-        "g_error_domain_register_static",
-        constants$35.g_error_domain_register_static$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_ptr_array_new_with_free_func$element_free_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_new_with_free_func",
+        constants$5.const$2
     );
 }
 

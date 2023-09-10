@@ -3,62 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1147 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1147() {}
-    static final FunctionDescriptor gdk_pixbuf_loader_set_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_loader_set_size$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_set_size",
-        constants$1147.gdk_pixbuf_loader_set_size$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_loader_write$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_loader_write$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_write",
-        constants$1147.gdk_pixbuf_loader_write$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_loader_write_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_loader_write_bytes$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_write_bytes",
-        constants$1147.gdk_pixbuf_loader_write_bytes$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_loader_get_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_loader_get_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_get_pixbuf",
-        constants$1147.gdk_pixbuf_loader_get_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_loader_get_animation$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_loader_get_animation$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_get_animation",
-        constants$1147.gdk_pixbuf_loader_get_animation$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_loader_close$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_loader_close$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_loader_close",
-        constants$1147.gdk_pixbuf_loader_close$FUNC
-    );
+    static final VarHandle const$0 = constants$1145.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_item_attribute_value"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GMenuModelClass.get_item_links.class, "apply", constants$42.const$4);
+    static final VarHandle const$2 = constants$1145.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_item_links"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GMenuModelClass.iterate_item_links.class, "apply", constants$21.const$3);
+    static final VarHandle const$4 = constants$1145.const$2.varHandle(MemoryLayout.PathElement.groupElement("iterate_item_links"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GMenuModelClass.get_item_link.class, "apply", constants$196.const$3);
 }
 
 

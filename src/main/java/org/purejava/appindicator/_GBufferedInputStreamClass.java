@@ -4,15 +4,16 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GBufferedInputStreamClass {
- *     GFilterInputStreamClass parent_class;
- *     gssize (*fill)(GBufferedInputStream*,gssize,GCancellable*,GError**);
- *     void (*fill_async)(GBufferedInputStream*,gssize,int,GCancellable*,GAsyncReadyCallback,gpointer);
- *     gssize (*fill_finish)(GBufferedInputStream*,GAsyncResult*,GError**);
+ *     struct _GFilterInputStreamClass parent_class;
+ *     long (*fill)(struct _GBufferedInputStream*,long,struct _GCancellable*,struct _GError**);
+ *     void (*fill_async)(struct _GBufferedInputStream*,long,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+ *     long (*fill_finish)(struct _GBufferedInputStream*,struct _GAsyncResult*,struct _GError**);
  *     void (*_g_reserved1)();
  *     void (*_g_reserved2)();
  *     void (*_g_reserved3)();
@@ -23,100 +24,28 @@ import java.lang.foreign.*;
  */
 public class _GBufferedInputStreamClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    MemoryLayout.structLayout(
-                        Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-                    ).withName("g_type_class"),
-                    Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-                    Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-                    Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-                    Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-                    Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-                    Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-                    Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-                    Constants$root.C_POINTER$LAYOUT.withName("notify"),
-                    Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-                    Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-                    MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-                ).withName("parent_class"),
-                Constants$root.C_POINTER$LAYOUT.withName("read_fn"),
-                Constants$root.C_POINTER$LAYOUT.withName("skip"),
-                Constants$root.C_POINTER$LAYOUT.withName("close_fn"),
-                Constants$root.C_POINTER$LAYOUT.withName("read_async"),
-                Constants$root.C_POINTER$LAYOUT.withName("read_finish"),
-                Constants$root.C_POINTER$LAYOUT.withName("skip_async"),
-                Constants$root.C_POINTER$LAYOUT.withName("skip_finish"),
-                Constants$root.C_POINTER$LAYOUT.withName("close_async"),
-                Constants$root.C_POINTER$LAYOUT.withName("close_finish"),
-                Constants$root.C_POINTER$LAYOUT.withName("_g_reserved1"),
-                Constants$root.C_POINTER$LAYOUT.withName("_g_reserved2"),
-                Constants$root.C_POINTER$LAYOUT.withName("_g_reserved3"),
-                Constants$root.C_POINTER$LAYOUT.withName("_g_reserved4"),
-                Constants$root.C_POINTER$LAYOUT.withName("_g_reserved5")
-            ).withName("parent_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved1"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved2"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved3")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("fill"),
-        Constants$root.C_POINTER$LAYOUT.withName("fill_async"),
-        Constants$root.C_POINTER$LAYOUT.withName("fill_finish"),
-        Constants$root.C_POINTER$LAYOUT.withName("_g_reserved1"),
-        Constants$root.C_POINTER$LAYOUT.withName("_g_reserved2"),
-        Constants$root.C_POINTER$LAYOUT.withName("_g_reserved3"),
-        Constants$root.C_POINTER$LAYOUT.withName("_g_reserved4"),
-        Constants$root.C_POINTER$LAYOUT.withName("_g_reserved5")
-    ).withName("_GBufferedInputStreamClass");
     public static MemoryLayout $LAYOUT() {
-        return _GBufferedInputStreamClass.$struct$LAYOUT;
+        return constants$772.const$3;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 272);
     }
-    static final FunctionDescriptor fill$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor fill_UP$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle fill_UP$MH = RuntimeHelper.upcallHandle(fill.class, "apply", _GBufferedInputStreamClass.fill_UP$FUNC);
-    static final FunctionDescriptor fill_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle fill_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GBufferedInputStreamClass.fill_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gssize (*fill)(GBufferedInputStream*,gssize,GCancellable*,GError**);
+ * long (*fill)(struct _GBufferedInputStream*,long,struct _GCancellable*,struct _GError**);
      * }
      */
     public interface fill {
 
         long apply(java.lang.foreign.MemorySegment _x0, long _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(fill fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GBufferedInputStreamClass.fill_UP$MH, fi, _GBufferedInputStreamClass.fill$FUNC, scope);
+        static MemorySegment allocate(fill fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$772.const$4, fi, constants$4.const$5, scope);
         }
-        static fill ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static fill ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, long __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    return (long)_GBufferedInputStreamClass.fill_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    return (long)constants$760.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -124,81 +53,52 @@ public class _GBufferedInputStreamClass {
         }
     }
 
-    static final VarHandle fill$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("fill"));
     public static VarHandle fill$VH() {
-        return _GBufferedInputStreamClass.fill$VH;
+        return constants$772.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gssize (*fill)(GBufferedInputStream*,gssize,GCancellable*,GError**);
+     * long (*fill)(struct _GBufferedInputStream*,long,struct _GCancellable*,struct _GError**);
      * }
      */
     public static MemorySegment fill$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GBufferedInputStreamClass.fill$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$772.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gssize (*fill)(GBufferedInputStream*,gssize,GCancellable*,GError**);
+     * long (*fill)(struct _GBufferedInputStream*,long,struct _GCancellable*,struct _GError**);
      * }
      */
     public static void fill$set(MemorySegment seg, MemorySegment x) {
-        _GBufferedInputStreamClass.fill$VH.set(seg, x);
+        constants$772.const$5.set(seg, x);
     }
     public static MemorySegment fill$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GBufferedInputStreamClass.fill$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$772.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void fill$set(MemorySegment seg, long index, MemorySegment x) {
-        _GBufferedInputStreamClass.fill$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$772.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static fill fill(MemorySegment segment, SegmentScope scope) {
+    public static fill fill(MemorySegment segment, Arena scope) {
         return fill.ofAddress(fill$get(segment), scope);
     }
-    static final FunctionDescriptor fill_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor fill_async_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle fill_async_UP$MH = RuntimeHelper.upcallHandle(fill_async.class, "apply", _GBufferedInputStreamClass.fill_async_UP$FUNC);
-    static final FunctionDescriptor fill_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle fill_async_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GBufferedInputStreamClass.fill_async_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*fill_async)(GBufferedInputStream*,gssize,int,GCancellable*,GAsyncReadyCallback,gpointer);
+ * void (*fill_async)(struct _GBufferedInputStream*,long,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public interface fill_async {
 
         void apply(java.lang.foreign.MemorySegment _x0, long _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
-        static MemorySegment allocate(fill_async fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GBufferedInputStreamClass.fill_async_UP$MH, fi, _GBufferedInputStreamClass.fill_async$FUNC, scope);
+        static MemorySegment allocate(fill_async fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$773.const$0, fi, constants$762.const$2, scope);
         }
-        static fill_async ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static fill_async ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, long __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    _GBufferedInputStreamClass.fill_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$762.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -206,72 +106,52 @@ public class _GBufferedInputStreamClass {
         }
     }
 
-    static final VarHandle fill_async$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("fill_async"));
     public static VarHandle fill_async$VH() {
-        return _GBufferedInputStreamClass.fill_async$VH;
+        return constants$773.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*fill_async)(GBufferedInputStream*,gssize,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*fill_async)(struct _GBufferedInputStream*,long,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static MemorySegment fill_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GBufferedInputStreamClass.fill_async$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$773.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*fill_async)(GBufferedInputStream*,gssize,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*fill_async)(struct _GBufferedInputStream*,long,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static void fill_async$set(MemorySegment seg, MemorySegment x) {
-        _GBufferedInputStreamClass.fill_async$VH.set(seg, x);
+        constants$773.const$1.set(seg, x);
     }
     public static MemorySegment fill_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GBufferedInputStreamClass.fill_async$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$773.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void fill_async$set(MemorySegment seg, long index, MemorySegment x) {
-        _GBufferedInputStreamClass.fill_async$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$773.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static fill_async fill_async(MemorySegment segment, SegmentScope scope) {
+    public static fill_async fill_async(MemorySegment segment, Arena scope) {
         return fill_async.ofAddress(fill_async$get(segment), scope);
     }
-    static final FunctionDescriptor fill_finish$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor fill_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle fill_finish_UP$MH = RuntimeHelper.upcallHandle(fill_finish.class, "apply", _GBufferedInputStreamClass.fill_finish_UP$FUNC);
-    static final FunctionDescriptor fill_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle fill_finish_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GBufferedInputStreamClass.fill_finish_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gssize (*fill_finish)(GBufferedInputStream*,GAsyncResult*,GError**);
+ * long (*fill_finish)(struct _GBufferedInputStream*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public interface fill_finish {
 
         long apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(fill_finish fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GBufferedInputStreamClass.fill_finish_UP$MH, fi, _GBufferedInputStreamClass.fill_finish$FUNC, scope);
+        static MemorySegment allocate(fill_finish fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$773.const$2, fi, constants$166.const$0, scope);
         }
-        static fill_finish ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static fill_finish ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (long)_GBufferedInputStreamClass.fill_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (long)constants$762.const$0.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -279,44 +159,36 @@ public class _GBufferedInputStreamClass {
         }
     }
 
-    static final VarHandle fill_finish$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("fill_finish"));
     public static VarHandle fill_finish$VH() {
-        return _GBufferedInputStreamClass.fill_finish$VH;
+        return constants$773.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gssize (*fill_finish)(GBufferedInputStream*,GAsyncResult*,GError**);
+     * long (*fill_finish)(struct _GBufferedInputStream*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static MemorySegment fill_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GBufferedInputStreamClass.fill_finish$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$773.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gssize (*fill_finish)(GBufferedInputStream*,GAsyncResult*,GError**);
+     * long (*fill_finish)(struct _GBufferedInputStream*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static void fill_finish$set(MemorySegment seg, MemorySegment x) {
-        _GBufferedInputStreamClass.fill_finish$VH.set(seg, x);
+        constants$773.const$3.set(seg, x);
     }
     public static MemorySegment fill_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GBufferedInputStreamClass.fill_finish$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$773.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void fill_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        _GBufferedInputStreamClass.fill_finish$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$773.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static fill_finish fill_finish(MemorySegment segment, SegmentScope scope) {
+    public static fill_finish fill_finish(MemorySegment segment, Arena scope) {
         return fill_finish.ofAddress(fill_finish$get(segment), scope);
     }
-    static final FunctionDescriptor _g_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _g_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved1_UP$MH = RuntimeHelper.upcallHandle(_g_reserved1.class, "apply", _GBufferedInputStreamClass._g_reserved1_UP$FUNC);
-    static final FunctionDescriptor _g_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GBufferedInputStreamClass._g_reserved1_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_g_reserved1)();
@@ -325,14 +197,14 @@ public class _GBufferedInputStreamClass {
     public interface _g_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved1 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GBufferedInputStreamClass._g_reserved1_UP$MH, fi, _GBufferedInputStreamClass._g_reserved1$FUNC, scope);
+        static MemorySegment allocate(_g_reserved1 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$773.const$4, fi, constants$7.const$5, scope);
         }
-        static _g_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _g_reserved1 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GBufferedInputStreamClass._g_reserved1_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -340,9 +212,8 @@ public class _GBufferedInputStreamClass {
         }
     }
 
-    static final VarHandle _g_reserved1$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
     public static VarHandle _g_reserved1$VH() {
-        return _GBufferedInputStreamClass._g_reserved1$VH;
+        return constants$773.const$5;
     }
     /**
      * Getter for field:
@@ -351,7 +222,7 @@ public class _GBufferedInputStreamClass {
      * }
      */
     public static MemorySegment _g_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GBufferedInputStreamClass._g_reserved1$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$773.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -360,24 +231,17 @@ public class _GBufferedInputStreamClass {
      * }
      */
     public static void _g_reserved1$set(MemorySegment seg, MemorySegment x) {
-        _GBufferedInputStreamClass._g_reserved1$VH.set(seg, x);
+        constants$773.const$5.set(seg, x);
     }
     public static MemorySegment _g_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GBufferedInputStreamClass._g_reserved1$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$773.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        _GBufferedInputStreamClass._g_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$773.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved1 _g_reserved1(MemorySegment segment, SegmentScope scope) {
+    public static _g_reserved1 _g_reserved1(MemorySegment segment, Arena scope) {
         return _g_reserved1.ofAddress(_g_reserved1$get(segment), scope);
     }
-    static final FunctionDescriptor _g_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _g_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved2_UP$MH = RuntimeHelper.upcallHandle(_g_reserved2.class, "apply", _GBufferedInputStreamClass._g_reserved2_UP$FUNC);
-    static final FunctionDescriptor _g_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GBufferedInputStreamClass._g_reserved2_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_g_reserved2)();
@@ -386,14 +250,14 @@ public class _GBufferedInputStreamClass {
     public interface _g_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved2 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GBufferedInputStreamClass._g_reserved2_UP$MH, fi, _GBufferedInputStreamClass._g_reserved2$FUNC, scope);
+        static MemorySegment allocate(_g_reserved2 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$774.const$0, fi, constants$7.const$5, scope);
         }
-        static _g_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _g_reserved2 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GBufferedInputStreamClass._g_reserved2_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -401,9 +265,8 @@ public class _GBufferedInputStreamClass {
         }
     }
 
-    static final VarHandle _g_reserved2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
     public static VarHandle _g_reserved2$VH() {
-        return _GBufferedInputStreamClass._g_reserved2$VH;
+        return constants$774.const$1;
     }
     /**
      * Getter for field:
@@ -412,7 +275,7 @@ public class _GBufferedInputStreamClass {
      * }
      */
     public static MemorySegment _g_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GBufferedInputStreamClass._g_reserved2$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$774.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -421,24 +284,17 @@ public class _GBufferedInputStreamClass {
      * }
      */
     public static void _g_reserved2$set(MemorySegment seg, MemorySegment x) {
-        _GBufferedInputStreamClass._g_reserved2$VH.set(seg, x);
+        constants$774.const$1.set(seg, x);
     }
     public static MemorySegment _g_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GBufferedInputStreamClass._g_reserved2$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$774.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        _GBufferedInputStreamClass._g_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$774.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved2 _g_reserved2(MemorySegment segment, SegmentScope scope) {
+    public static _g_reserved2 _g_reserved2(MemorySegment segment, Arena scope) {
         return _g_reserved2.ofAddress(_g_reserved2$get(segment), scope);
     }
-    static final FunctionDescriptor _g_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _g_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved3_UP$MH = RuntimeHelper.upcallHandle(_g_reserved3.class, "apply", _GBufferedInputStreamClass._g_reserved3_UP$FUNC);
-    static final FunctionDescriptor _g_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GBufferedInputStreamClass._g_reserved3_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_g_reserved3)();
@@ -447,14 +303,14 @@ public class _GBufferedInputStreamClass {
     public interface _g_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved3 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GBufferedInputStreamClass._g_reserved3_UP$MH, fi, _GBufferedInputStreamClass._g_reserved3$FUNC, scope);
+        static MemorySegment allocate(_g_reserved3 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$774.const$2, fi, constants$7.const$5, scope);
         }
-        static _g_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _g_reserved3 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GBufferedInputStreamClass._g_reserved3_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -462,9 +318,8 @@ public class _GBufferedInputStreamClass {
         }
     }
 
-    static final VarHandle _g_reserved3$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
     public static VarHandle _g_reserved3$VH() {
-        return _GBufferedInputStreamClass._g_reserved3$VH;
+        return constants$774.const$3;
     }
     /**
      * Getter for field:
@@ -473,7 +328,7 @@ public class _GBufferedInputStreamClass {
      * }
      */
     public static MemorySegment _g_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GBufferedInputStreamClass._g_reserved3$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$774.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -482,24 +337,17 @@ public class _GBufferedInputStreamClass {
      * }
      */
     public static void _g_reserved3$set(MemorySegment seg, MemorySegment x) {
-        _GBufferedInputStreamClass._g_reserved3$VH.set(seg, x);
+        constants$774.const$3.set(seg, x);
     }
     public static MemorySegment _g_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GBufferedInputStreamClass._g_reserved3$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$774.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        _GBufferedInputStreamClass._g_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$774.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved3 _g_reserved3(MemorySegment segment, SegmentScope scope) {
+    public static _g_reserved3 _g_reserved3(MemorySegment segment, Arena scope) {
         return _g_reserved3.ofAddress(_g_reserved3$get(segment), scope);
     }
-    static final FunctionDescriptor _g_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _g_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved4_UP$MH = RuntimeHelper.upcallHandle(_g_reserved4.class, "apply", _GBufferedInputStreamClass._g_reserved4_UP$FUNC);
-    static final FunctionDescriptor _g_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GBufferedInputStreamClass._g_reserved4_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_g_reserved4)();
@@ -508,14 +356,14 @@ public class _GBufferedInputStreamClass {
     public interface _g_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved4 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GBufferedInputStreamClass._g_reserved4_UP$MH, fi, _GBufferedInputStreamClass._g_reserved4$FUNC, scope);
+        static MemorySegment allocate(_g_reserved4 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$774.const$4, fi, constants$7.const$5, scope);
         }
-        static _g_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _g_reserved4 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GBufferedInputStreamClass._g_reserved4_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -523,9 +371,8 @@ public class _GBufferedInputStreamClass {
         }
     }
 
-    static final VarHandle _g_reserved4$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
     public static VarHandle _g_reserved4$VH() {
-        return _GBufferedInputStreamClass._g_reserved4$VH;
+        return constants$774.const$5;
     }
     /**
      * Getter for field:
@@ -534,7 +381,7 @@ public class _GBufferedInputStreamClass {
      * }
      */
     public static MemorySegment _g_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GBufferedInputStreamClass._g_reserved4$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$774.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -543,24 +390,17 @@ public class _GBufferedInputStreamClass {
      * }
      */
     public static void _g_reserved4$set(MemorySegment seg, MemorySegment x) {
-        _GBufferedInputStreamClass._g_reserved4$VH.set(seg, x);
+        constants$774.const$5.set(seg, x);
     }
     public static MemorySegment _g_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GBufferedInputStreamClass._g_reserved4$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$774.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        _GBufferedInputStreamClass._g_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$774.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved4 _g_reserved4(MemorySegment segment, SegmentScope scope) {
+    public static _g_reserved4 _g_reserved4(MemorySegment segment, Arena scope) {
         return _g_reserved4.ofAddress(_g_reserved4$get(segment), scope);
     }
-    static final FunctionDescriptor _g_reserved5$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _g_reserved5_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved5_UP$MH = RuntimeHelper.upcallHandle(_g_reserved5.class, "apply", _GBufferedInputStreamClass._g_reserved5_UP$FUNC);
-    static final FunctionDescriptor _g_reserved5_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved5_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GBufferedInputStreamClass._g_reserved5_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_g_reserved5)();
@@ -569,14 +409,14 @@ public class _GBufferedInputStreamClass {
     public interface _g_reserved5 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved5 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GBufferedInputStreamClass._g_reserved5_UP$MH, fi, _GBufferedInputStreamClass._g_reserved5$FUNC, scope);
+        static MemorySegment allocate(_g_reserved5 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$775.const$0, fi, constants$7.const$5, scope);
         }
-        static _g_reserved5 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _g_reserved5 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GBufferedInputStreamClass._g_reserved5_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -584,9 +424,8 @@ public class _GBufferedInputStreamClass {
         }
     }
 
-    static final VarHandle _g_reserved5$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
     public static VarHandle _g_reserved5$VH() {
-        return _GBufferedInputStreamClass._g_reserved5$VH;
+        return constants$775.const$1;
     }
     /**
      * Getter for field:
@@ -595,7 +434,7 @@ public class _GBufferedInputStreamClass {
      * }
      */
     public static MemorySegment _g_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GBufferedInputStreamClass._g_reserved5$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$775.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -604,15 +443,15 @@ public class _GBufferedInputStreamClass {
      * }
      */
     public static void _g_reserved5$set(MemorySegment seg, MemorySegment x) {
-        _GBufferedInputStreamClass._g_reserved5$VH.set(seg, x);
+        constants$775.const$1.set(seg, x);
     }
     public static MemorySegment _g_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GBufferedInputStreamClass._g_reserved5$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$775.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
-        _GBufferedInputStreamClass._g_reserved5$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$775.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved5 _g_reserved5(MemorySegment segment, SegmentScope scope) {
+    public static _g_reserved5 _g_reserved5(MemorySegment segment, Arena scope) {
         return _g_reserved5.ofAddress(_g_reserved5$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -620,7 +459,7 @@ public class _GBufferedInputStreamClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

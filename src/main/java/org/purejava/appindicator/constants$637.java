@@ -3,56 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$637 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$637() {}
-    static final FunctionDescriptor g_file_load_bytes_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_object_set_data_full$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_object_set_data_full",
+        constants$42.const$1
     );
-    static final MethodHandle g_file_load_bytes_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_load_bytes_async",
-        constants$637.g_file_load_bytes_async$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_object_steal_data",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_file_load_bytes_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_object_dup_data$dup_func.class, "apply", constants$5.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_object_dup_data",
+        constants$39.const$1
     );
-    static final MethodHandle g_file_load_bytes_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_load_bytes_finish",
-        constants$637.g_file_load_bytes_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_attribute_info_list_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_attribute_info_list_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_attribute_info_list_get_type",
-        constants$637.g_file_attribute_info_list_get_type$FUNC
-    );
-    static final FunctionDescriptor g_file_attribute_info_list_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_file_attribute_info_list_new$MH = RuntimeHelper.downcallHandle(
-        "g_file_attribute_info_list_new",
-        constants$637.g_file_attribute_info_list_new$FUNC
-    );
-    static final FunctionDescriptor g_file_attribute_info_list_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_attribute_info_list_ref$MH = RuntimeHelper.downcallHandle(
-        "g_file_attribute_info_list_ref",
-        constants$637.g_file_attribute_info_list_ref$FUNC
-    );
-    static final FunctionDescriptor g_file_attribute_info_list_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_attribute_info_list_unref$MH = RuntimeHelper.downcallHandle(
-        "g_file_attribute_info_list_unref",
-        constants$637.g_file_attribute_info_list_unref$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_object_replace_data$destroy.class, "apply", constants$13.const$1);
 }
 
 

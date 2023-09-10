@@ -3,46 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1899 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1899() {}
-    static final FunctionDescriptor gtk_volume_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_volume_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_volume_button_get_type",
-        constants$1899.gtk_volume_button_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_is_scalable",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_volume_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_volume_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_volume_button_new",
-        constants$1899.gtk_volume_button_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_is_disabled",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_widget_path_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_widget_path_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_get_type",
-        constants$1899.gtk_widget_path_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_set_disabled",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_widget_path_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_widget_path_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_new",
-        constants$1899.gtk_widget_path_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_format_get_license",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_widget_path_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_file_info",
+        constants$23.const$0
     );
-    static final MethodHandle gtk_widget_path_copy$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_copy",
-        constants$1899.gtk_widget_path_copy$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_ref$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_ref",
-        constants$1899.gtk_widget_path_ref$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(gdk_pixbuf_get_file_info_async$callback.class, "apply", constants$14.const$3);
 }
 
 

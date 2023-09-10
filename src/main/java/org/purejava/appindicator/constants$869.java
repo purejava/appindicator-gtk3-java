@@ -3,72 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$869 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$869() {}
-    static final FunctionDescriptor hb_font_get_glyph_h_advance$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle hb_font_get_glyph_h_advance$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_h_advance",
-        constants$869.hb_font_get_glyph_h_advance$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_signal_subscribe",
+        constants$869.const$0
     );
-    static final FunctionDescriptor hb_font_get_glyph_v_advance$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_signal_unsubscribe",
+        constants$40.const$2
     );
-    static final MethodHandle hb_font_get_glyph_v_advance$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_v_advance",
-        constants$869.hb_font_get_glyph_v_advance$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GDBusMessageFilterFunction.class, "apply", constants$482.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$482.const$3
     );
-    static final FunctionDescriptor hb_font_get_glyph_h_advances$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_font_get_glyph_h_advances$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_h_advances",
-        constants$869.hb_font_get_glyph_h_advances$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_glyph_v_advances$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_font_get_glyph_v_advances$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_v_advances",
-        constants$869.hb_font_get_glyph_v_advances$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_glyph_h_origin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_glyph_h_origin$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_h_origin",
-        constants$869.hb_font_get_glyph_h_origin$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_glyph_v_origin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_glyph_v_origin$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_glyph_v_origin",
-        constants$869.hb_font_get_glyph_v_origin$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_dbus_connection_add_filter$filter_function.class, "apply", constants$482.const$3);
 }
 
 

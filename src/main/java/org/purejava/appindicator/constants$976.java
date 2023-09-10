@@ -3,59 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$976 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$976() {}
-    static final FunctionDescriptor pango_renderer_get_color$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_renderer_get_color$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_get_color",
-        constants$976.pango_renderer_get_color$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_set_alpha$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT
-    );
-    static final MethodHandle pango_renderer_set_alpha$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_set_alpha",
-        constants$976.pango_renderer_set_alpha$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_get_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_renderer_get_alpha$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_get_alpha",
-        constants$976.pango_renderer_get_alpha$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_set_matrix$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_renderer_set_matrix$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_set_matrix",
-        constants$976.pango_renderer_set_matrix$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_get_matrix$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_renderer_get_matrix$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_get_matrix",
-        constants$976.pango_renderer_get_matrix$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_get_layout$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_renderer_get_layout$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_get_layout",
-        constants$976.pango_renderer_get_layout$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.get_relative_path.class, "apply", constants$5.const$5);
+    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_relative_path"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.resolve_relative_path.class, "apply", constants$5.const$5);
+    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("resolve_relative_path"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.get_child_for_display_name.class, "apply", constants$23.const$0);
+    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_child_for_display_name"));
 }
 
 

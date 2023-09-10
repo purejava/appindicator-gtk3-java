@@ -3,62 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1436 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1436() {}
-    static final FunctionDescriptor gtk_list_store_insert_with_valuesv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_set_get_population",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_list_store_insert_with_valuesv$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_insert_with_valuesv",
-        constants$1436.gtk_list_store_insert_with_valuesv$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_set_get_min",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_list_store_prepend$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_set_get_max",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_list_store_prepend$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_prepend",
-        constants$1436.gtk_list_store_prepend$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_set_next",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gtk_list_store_append$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_set_previous",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_list_store_append$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_append",
-        constants$1436.gtk_list_store_append$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_store_clear$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_clear",
-        constants$1436.gtk_list_store_clear$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_iter_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_store_iter_is_valid$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_iter_is_valid",
-        constants$1436.gtk_list_store_iter_is_valid$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_reorder$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_store_reorder$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_reorder",
-        constants$1436.gtk_list_store_reorder$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_set_next_range",
+        constants$12.const$2
     );
 }
 

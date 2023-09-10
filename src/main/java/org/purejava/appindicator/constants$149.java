@@ -3,57 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$149 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$149() {}
-    static final FunctionDescriptor g_hash_table_get_keys_as_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_time_zone_new_local",
+        constants$35.const$2
     );
-    static final MethodHandle g_hash_table_get_keys_as_array$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_get_keys_as_array",
-        constants$149.g_hash_table_get_keys_as_array$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_time_zone_new_offset",
+        constants$24.const$0
     );
-    static final FunctionDescriptor g_hash_table_get_keys_as_ptr_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_time_zone_ref",
+        constants$5.const$2
     );
-    static final MethodHandle g_hash_table_get_keys_as_ptr_array$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_get_keys_as_ptr_array",
-        constants$149.g_hash_table_get_keys_as_ptr_array$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_time_zone_unref",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_hash_table_get_values_as_ptr_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_LONG
     );
-    static final MethodHandle g_hash_table_get_values_as_ptr_array$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_get_values_as_ptr_array",
-        constants$149.g_hash_table_get_values_as_ptr_array$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_iter_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_iter_init$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_iter_init",
-        constants$149.g_hash_table_iter_init$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_iter_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_iter_next$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_iter_next",
-        constants$149.g_hash_table_iter_next$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_iter_get_hash_table$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_iter_get_hash_table$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_iter_get_hash_table",
-        constants$149.g_hash_table_iter_get_hash_table$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_time_zone_find_interval",
+        constants$149.const$4
     );
 }
 

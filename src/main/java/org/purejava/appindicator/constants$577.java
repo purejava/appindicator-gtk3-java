@@ -3,60 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$577 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$577() {}
-    static final FunctionDescriptor g_dbus_message_set_signature$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_param_spec_get_redirect_target",
+        constants$5.const$2
     );
-    static final MethodHandle g_dbus_message_set_signature$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_signature",
-        constants$577.g_dbus_message_set_signature$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_param_value_set_default",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_dbus_message_get_num_unix_fds$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_param_value_defaults",
+        constants$9.const$0
     );
-    static final MethodHandle g_dbus_message_get_num_unix_fds$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_num_unix_fds",
-        constants$577.g_dbus_message_get_num_unix_fds$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_param_value_validate",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_dbus_message_set_num_unix_fds$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_param_value_is_valid",
+        constants$9.const$0
     );
-    static final MethodHandle g_dbus_message_set_num_unix_fds$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_num_unix_fds",
-        constants$577.g_dbus_message_set_num_unix_fds$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_get_arg0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_get_arg0$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_arg0",
-        constants$577.g_dbus_message_get_arg0$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_new_from_blob$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_new_from_blob$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_new_from_blob",
-        constants$577.g_dbus_message_new_from_blob$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_bytes_needed$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_bytes_needed$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_bytes_needed",
-        constants$577.g_dbus_message_bytes_needed$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_param_value_convert",
+        constants$311.const$0
     );
 }
 

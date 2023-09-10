@@ -3,55 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1581 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1581() {}
-    static final FunctionDescriptor gtk_file_chooser_button_set_title$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_button_set_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_set_title",
-        constants$1581.gtk_file_chooser_button_set_title$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_button_get_width_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_button_get_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_get_width_chars",
-        constants$1581.gtk_file_chooser_button_get_width_chars$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_button_set_width_chars$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_button_set_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_set_width_chars",
-        constants$1581.gtk_file_chooser_button_set_width_chars$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_button_get_focus_on_click$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_button_get_focus_on_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_get_focus_on_click",
-        constants$1581.gtk_file_chooser_button_get_focus_on_click$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_button_set_focus_on_click$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_button_set_focus_on_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_button_set_focus_on_click",
-        constants$1581.gtk_file_chooser_button_set_focus_on_click$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_dialog_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_file_chooser_dialog_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_dialog_get_type",
-        constants$1581.gtk_file_chooser_dialog_get_type$FUNC
-    );
+    static final VarHandle const$0 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("lang_engine"));
+    static final VarHandle const$1 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("font"));
+    static final VarHandle const$2 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("level"));
+    static final VarHandle const$3 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("gravity"));
+    static final VarHandle const$4 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("flags"));
+    static final VarHandle const$5 = constants$1580.const$4.varHandle(MemoryLayout.PathElement.groupElement("script"));
 }
 
 

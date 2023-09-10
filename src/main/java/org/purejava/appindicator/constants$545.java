@@ -3,64 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$545 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$545() {}
-    static final FunctionDescriptor g_data_output_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_cond_free",
+        constants$13.const$1
     );
-    static final MethodHandle g_data_output_stream_new$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_new",
-        constants$545.g_data_output_stream_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_cond_timed_wait",
+        constants$12.const$2
     );
-    static final FunctionDescriptor g_data_output_stream_set_byte_order$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_data_output_stream_set_byte_order$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_set_byte_order",
-        constants$545.g_data_output_stream_set_byte_order$FUNC
-    );
-    static final FunctionDescriptor g_data_output_stream_get_byte_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_output_stream_get_byte_order$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_get_byte_order",
-        constants$545.g_data_output_stream_get_byte_order$FUNC
-    );
-    static final FunctionDescriptor g_data_output_stream_put_byte$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_output_stream_put_byte$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_put_byte",
-        constants$545.g_data_output_stream_put_byte$FUNC
-    );
-    static final FunctionDescriptor g_data_output_stream_put_int16$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_output_stream_put_int16$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_put_int16",
-        constants$545.g_data_output_stream_put_int16$FUNC
-    );
-    static final FunctionDescriptor g_data_output_stream_put_uint16$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_output_stream_put_uint16$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_put_uint16",
-        constants$545.g_data_output_stream_put_uint16$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("g_type")
+    ).withName("_GTypeClass");
+    static final VarHandle const$3 = constants$545.const$2.varHandle(MemoryLayout.PathElement.groupElement("g_type"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("g_class")
+    ).withName("_GTypeInstance");
+    static final VarHandle const$5 = constants$545.const$4.varHandle(MemoryLayout.PathElement.groupElement("g_class"));
 }
 
 

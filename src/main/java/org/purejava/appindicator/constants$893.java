@@ -3,56 +3,45 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$893 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$893() {}
-    static final FunctionDescriptor hb_map_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final MethodHandle hb_map_clear$MH = RuntimeHelper.downcallHandle(
-        "hb_map_clear",
-        constants$893.hb_map_clear$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_new_method_error_valist",
+        constants$893.const$0
     );
-    static final FunctionDescriptor hb_map_is_empty$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_new_method_error_literal",
+        constants$23.const$0
     );
-    static final MethodHandle hb_map_is_empty$MH = RuntimeHelper.downcallHandle(
-        "hb_map_is_empty",
-        constants$893.hb_map_is_empty$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_print",
+        constants$21.const$3
     );
-    static final FunctionDescriptor hb_map_get_population$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_locked",
+        constants$10.const$5
     );
-    static final MethodHandle hb_map_get_population$MH = RuntimeHelper.downcallHandle(
-        "hb_map_get_population",
-        constants$893.hb_map_get_population$FUNC
-    );
-    static final FunctionDescriptor hb_map_is_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_map_is_equal$MH = RuntimeHelper.downcallHandle(
-        "hb_map_is_equal",
-        constants$893.hb_map_is_equal$FUNC
-    );
-    static final FunctionDescriptor hb_map_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_map_hash$MH = RuntimeHelper.downcallHandle(
-        "hb_map_hash",
-        constants$893.hb_map_hash$FUNC
-    );
-    static final FunctionDescriptor hb_map_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_map_set$MH = RuntimeHelper.downcallHandle(
-        "hb_map_set",
-        constants$893.hb_map_set$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_lock",
+        constants$13.const$1
     );
 }
 

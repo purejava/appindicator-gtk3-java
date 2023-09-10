@@ -3,59 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1551 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1551() {}
-    static final FunctionDescriptor gtk_combo_box_text_get_active_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_combo_box_text_get_active_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_text_get_active_text",
-        constants$1551.gtk_combo_box_text_get_active_text$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_text_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_combo_box_text_insert$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_text_insert",
-        constants$1551.gtk_combo_box_text_insert$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_text_append$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_combo_box_text_append$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_text_append",
-        constants$1551.gtk_combo_box_text_append$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_text_prepend$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_combo_box_text_prepend$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_text_prepend",
-        constants$1551.gtk_combo_box_text_prepend$FUNC
-    );
-    static final FunctionDescriptor gtk_css_section_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_css_section_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_section_get_type",
-        constants$1551.gtk_css_section_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_css_section_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_css_section_ref$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_section_ref",
-        constants$1551.gtk_css_section_ref$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_PangoFontFaceClass.describe.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$1550.const$3.varHandle(MemoryLayout.PathElement.groupElement("describe"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_PangoFontFaceClass.list_sizes.class, "apply", constants$14.const$3);
+    static final VarHandle const$3 = constants$1550.const$3.varHandle(MemoryLayout.PathElement.groupElement("list_sizes"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_PangoFontFaceClass.is_synthesized.class, "apply", constants$10.const$5);
+    static final VarHandle const$5 = constants$1550.const$3.varHandle(MemoryLayout.PathElement.groupElement("is_synthesized"));
 }
 
 

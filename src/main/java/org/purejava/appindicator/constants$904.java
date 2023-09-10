@@ -3,57 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$904 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$904() {}
-    static final FunctionDescriptor pango_language_matches$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_language_matches$MH = RuntimeHelper.downcallHandle(
-        "pango_language_matches",
-        constants$904.pango_language_matches$FUNC
-    );
-    static final FunctionDescriptor pango_language_includes_script$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_language_includes_script$MH = RuntimeHelper.downcallHandle(
-        "pango_language_includes_script",
-        constants$904.pango_language_includes_script$FUNC
-    );
-    static final FunctionDescriptor pango_language_get_scripts$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_language_get_scripts$MH = RuntimeHelper.downcallHandle(
-        "pango_language_get_scripts",
-        constants$904.pango_language_get_scripts$FUNC
-    );
-    static final FunctionDescriptor pango_script_get_sample_language$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_script_get_sample_language$MH = RuntimeHelper.downcallHandle(
-        "pango_script_get_sample_language",
-        constants$904.pango_script_get_sample_language$FUNC
-    );
-    static final FunctionDescriptor pango_gravity_to_rotation$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_gravity_to_rotation$MH = RuntimeHelper.downcallHandle(
-        "pango_gravity_to_rotation",
-        constants$904.pango_gravity_to_rotation$FUNC
-    );
-    static final FunctionDescriptor pango_gravity_get_for_matrix$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_gravity_get_for_matrix$MH = RuntimeHelper.downcallHandle(
-        "pango_gravity_get_for_matrix",
-        constants$904.pango_gravity_get_for_matrix$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GBusAcquiredCallback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GBusNameAcquiredCallback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GBusNameLostCallback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_bus_own_name$bus_acquired_handler.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_bus_own_name$name_acquired_handler.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_bus_own_name$name_lost_handler.class, "apply", constants$14.const$3);
 }
 
 

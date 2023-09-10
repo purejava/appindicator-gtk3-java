@@ -3,52 +3,55 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1221 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1221() {}
-    static final FunctionDescriptor atk_editable_text_paste_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_proxy_address_get_uri",
+        constants$5.const$2
     );
-    static final MethodHandle atk_editable_text_paste_text$MH = RuntimeHelper.downcallHandle(
-        "atk_editable_text_paste_text",
-        constants$1221.atk_editable_text_paste_text$FUNC
-    );
-    static final FunctionDescriptor atk_gobject_accessible_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_gobject_accessible_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_gobject_accessible_get_type",
-        constants$1221.atk_gobject_accessible_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_gobject_accessible_for_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_gobject_accessible_for_object$MH = RuntimeHelper.downcallHandle(
-        "atk_gobject_accessible_for_object",
-        constants$1221.atk_gobject_accessible_for_object$FUNC
-    );
-    static final FunctionDescriptor atk_gobject_accessible_get_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_gobject_accessible_get_object$MH = RuntimeHelper.downcallHandle(
-        "atk_gobject_accessible_get_object",
-        constants$1221.atk_gobject_accessible_get_object$FUNC
-    );
-    static final FunctionDescriptor atk_hyperlink_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_hyperlink_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_get_type",
-        constants$1221.atk_hyperlink_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_hyperlink_get_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_hyperlink_get_uri$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_get_uri",
-        constants$1221.atk_hyperlink_get_uri$FUNC
-    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance")
+    ).withName("_GSocketAddressEnumerator");
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("next"),
+        RuntimeHelper.POINTER.withName("next_async"),
+        RuntimeHelper.POINTER.withName("next_finish")
+    ).withName("_GSocketAddressEnumeratorClass");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GSocketAddressEnumeratorClass.next.class, "apply", constants$23.const$0);
+    static final VarHandle const$4 = constants$1221.const$2.varHandle(MemoryLayout.PathElement.groupElement("next"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GSocketAddressEnumeratorClass.next_async.class, "apply", constants$42.const$1);
 }
 
 

@@ -3,57 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$463 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$463() {}
-    static final FunctionDescriptor g_value_set_boolean$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_test_log_buffer_new",
+        constants$35.const$2
     );
-    static final MethodHandle g_value_set_boolean$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_boolean",
-        constants$463.g_value_set_boolean$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_test_log_buffer_free",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_value_get_boolean$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_test_log_buffer_push",
+        constants$42.const$4
     );
-    static final MethodHandle g_value_get_boolean$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_boolean",
-        constants$463.g_value_get_boolean$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_test_log_buffer_pop",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_value_set_int$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_test_log_msg_free",
+        constants$13.const$1
     );
-    static final MethodHandle g_value_set_int$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_int",
-        constants$463.g_value_set_int$FUNC
-    );
-    static final FunctionDescriptor g_value_get_int$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_get_int$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_int",
-        constants$463.g_value_get_int$FUNC
-    );
-    static final FunctionDescriptor g_value_set_uint$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_value_set_uint$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_uint",
-        constants$463.g_value_set_uint$FUNC
-    );
-    static final FunctionDescriptor g_value_get_uint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_get_uint$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_uint",
-        constants$463.g_value_get_uint$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GTestLogFatalFunc.class, "apply", constants$11.const$0);
 }
 
 

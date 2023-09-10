@@ -4,105 +4,56 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GResolverClass {
- *     GObjectClass parent_class;
- *     void (*reload)(GResolver*);
- *     GList* (*lookup_by_name)(GResolver*,const gchar*,GCancellable*,GError**);
- *     void (*lookup_by_name_async)(GResolver*,const gchar*,GCancellable*,GAsyncReadyCallback,gpointer);
- *     GList* (*lookup_by_name_finish)(GResolver*,GAsyncResult*,GError**);
- *     gchar* (*lookup_by_address)(GResolver*,GInetAddress*,GCancellable*,GError**);
- *     void (*lookup_by_address_async)(GResolver*,GInetAddress*,GCancellable*,GAsyncReadyCallback,gpointer);
- *     gchar* (*lookup_by_address_finish)(GResolver*,GAsyncResult*,GError**);
- *     GList* (*lookup_service)(GResolver*,const gchar*,GCancellable*,GError**);
- *     void (*lookup_service_async)(GResolver*,const gchar*,GCancellable*,GAsyncReadyCallback,gpointer);
- *     GList* (*lookup_service_finish)(GResolver*,GAsyncResult*,GError**);
- *     GList* (*lookup_records)(GResolver*,const gchar*,GResolverRecordType,GCancellable*,GError**);
- *     void (*lookup_records_async)(GResolver*,const gchar*,GResolverRecordType,GCancellable*,GAsyncReadyCallback,gpointer);
- *     GList* (*lookup_records_finish)(GResolver*,GAsyncResult*,GError**);
- *     void (*lookup_by_name_with_flags_async)(GResolver*,const gchar*,GResolverNameLookupFlags,GCancellable*,GAsyncReadyCallback,gpointer);
- *     GList* (*lookup_by_name_with_flags_finish)(GResolver*,GAsyncResult*,GError**);
- *     GList* (*lookup_by_name_with_flags)(GResolver*,const gchar*,GResolverNameLookupFlags,GCancellable*,GError**);
+ *     struct _GObjectClass parent_class;
+ *     void (*reload)(struct _GResolver*);
+ *     struct _GList* (*lookup_by_name)(struct _GResolver*,char*,struct _GCancellable*,struct _GError**);
+ *     void (*lookup_by_name_async)(struct _GResolver*,char*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+ *     struct _GList* (*lookup_by_name_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
+ *     char* (*lookup_by_address)(struct _GResolver*,struct _GInetAddress*,struct _GCancellable*,struct _GError**);
+ *     void (*lookup_by_address_async)(struct _GResolver*,struct _GInetAddress*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+ *     char* (*lookup_by_address_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
+ *     struct _GList* (*lookup_service)(struct _GResolver*,char*,struct _GCancellable*,struct _GError**);
+ *     void (*lookup_service_async)(struct _GResolver*,char*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+ *     struct _GList* (*lookup_service_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
+ *     struct _GList* (*lookup_records)(struct _GResolver*,char*,enum GResolverRecordType,struct _GCancellable*,struct _GError**);
+ *     void (*lookup_records_async)(struct _GResolver*,char*,enum GResolverRecordType,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+ *     struct _GList* (*lookup_records_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
+ *     void (*lookup_by_name_with_flags_async)(struct _GResolver*,char*,enum GResolverNameLookupFlags,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+ *     struct _GList* (*lookup_by_name_with_flags_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
+ *     struct _GList* (*lookup_by_name_with_flags)(struct _GResolver*,char*,enum GResolverNameLookupFlags,struct _GCancellable*,struct _GError**);
  * };
  * }
  */
 public class _GResolverClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-            ).withName("g_type_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-            Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("notify"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("reload"),
-        Constants$root.C_POINTER$LAYOUT.withName("lookup_by_name"),
-        Constants$root.C_POINTER$LAYOUT.withName("lookup_by_name_async"),
-        Constants$root.C_POINTER$LAYOUT.withName("lookup_by_name_finish"),
-        Constants$root.C_POINTER$LAYOUT.withName("lookup_by_address"),
-        Constants$root.C_POINTER$LAYOUT.withName("lookup_by_address_async"),
-        Constants$root.C_POINTER$LAYOUT.withName("lookup_by_address_finish"),
-        Constants$root.C_POINTER$LAYOUT.withName("lookup_service"),
-        Constants$root.C_POINTER$LAYOUT.withName("lookup_service_async"),
-        Constants$root.C_POINTER$LAYOUT.withName("lookup_service_finish"),
-        Constants$root.C_POINTER$LAYOUT.withName("lookup_records"),
-        Constants$root.C_POINTER$LAYOUT.withName("lookup_records_async"),
-        Constants$root.C_POINTER$LAYOUT.withName("lookup_records_finish"),
-        Constants$root.C_POINTER$LAYOUT.withName("lookup_by_name_with_flags_async"),
-        Constants$root.C_POINTER$LAYOUT.withName("lookup_by_name_with_flags_finish"),
-        Constants$root.C_POINTER$LAYOUT.withName("lookup_by_name_with_flags")
-    ).withName("_GResolverClass");
     public static MemoryLayout $LAYOUT() {
-        return _GResolverClass.$struct$LAYOUT;
+        return constants$1230.const$4;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
     }
-    static final FunctionDescriptor reload$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor reload_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle reload_UP$MH = RuntimeHelper.upcallHandle(reload.class, "apply", _GResolverClass.reload_UP$FUNC);
-    static final FunctionDescriptor reload_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle reload_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GResolverClass.reload_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*reload)(GResolver*);
+ * void (*reload)(struct _GResolver*);
      * }
      */
     public interface reload {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(reload fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GResolverClass.reload_UP$MH, fi, _GResolverClass.reload$FUNC, scope);
+        static MemorySegment allocate(reload fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1230.const$5, fi, constants$13.const$1, scope);
         }
-        static reload ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static reload ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GResolverClass.reload_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -110,75 +61,52 @@ public class _GResolverClass {
         }
     }
 
-    static final VarHandle reload$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reload"));
     public static VarHandle reload$VH() {
-        return _GResolverClass.reload$VH;
+        return constants$1231.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*reload)(GResolver*);
+     * void (*reload)(struct _GResolver*);
      * }
      */
     public static MemorySegment reload$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.reload$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1231.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*reload)(GResolver*);
+     * void (*reload)(struct _GResolver*);
      * }
      */
     public static void reload$set(MemorySegment seg, MemorySegment x) {
-        _GResolverClass.reload$VH.set(seg, x);
+        constants$1231.const$0.set(seg, x);
     }
     public static MemorySegment reload$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.reload$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1231.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void reload$set(MemorySegment seg, long index, MemorySegment x) {
-        _GResolverClass.reload$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1231.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static reload reload(MemorySegment segment, SegmentScope scope) {
+    public static reload reload(MemorySegment segment, Arena scope) {
         return reload.ofAddress(reload$get(segment), scope);
     }
-    static final FunctionDescriptor lookup_by_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor lookup_by_name_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_name_UP$MH = RuntimeHelper.upcallHandle(lookup_by_name.class, "apply", _GResolverClass.lookup_by_name_UP$FUNC);
-    static final FunctionDescriptor lookup_by_name_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_name_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GResolverClass.lookup_by_name_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GList* (*lookup_by_name)(GResolver*,const gchar*,GCancellable*,GError**);
+ * struct _GList* (*lookup_by_name)(struct _GResolver*,char*,struct _GCancellable*,struct _GError**);
      * }
      */
     public interface lookup_by_name {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data, java.lang.foreign.MemorySegment target, java.lang.foreign.MemorySegment extents);
-        static MemorySegment allocate(lookup_by_name fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GResolverClass.lookup_by_name_UP$MH, fi, _GResolverClass.lookup_by_name$FUNC, scope);
+        static MemorySegment allocate(lookup_by_name fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1231.const$1, fi, constants$39.const$1, scope);
         }
-        static lookup_by_name ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static lookup_by_name ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _pattern, java.lang.foreign.MemorySegment _callback_data, java.lang.foreign.MemorySegment _target, java.lang.foreign.MemorySegment _extents) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_name_DOWN$MH.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
+                    return (java.lang.foreign.MemorySegment)constants$865.const$5.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -186,78 +114,52 @@ public class _GResolverClass {
         }
     }
 
-    static final VarHandle lookup_by_name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name"));
     public static VarHandle lookup_by_name$VH() {
-        return _GResolverClass.lookup_by_name$VH;
+        return constants$1231.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GList* (*lookup_by_name)(GResolver*,const gchar*,GCancellable*,GError**);
+     * struct _GList* (*lookup_by_name)(struct _GResolver*,char*,struct _GCancellable*,struct _GError**);
      * }
      */
     public static MemorySegment lookup_by_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_name$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1231.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GList* (*lookup_by_name)(GResolver*,const gchar*,GCancellable*,GError**);
+     * struct _GList* (*lookup_by_name)(struct _GResolver*,char*,struct _GCancellable*,struct _GError**);
      * }
      */
     public static void lookup_by_name$set(MemorySegment seg, MemorySegment x) {
-        _GResolverClass.lookup_by_name$VH.set(seg, x);
+        constants$1231.const$2.set(seg, x);
     }
     public static MemorySegment lookup_by_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_name$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1231.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_name$set(MemorySegment seg, long index, MemorySegment x) {
-        _GResolverClass.lookup_by_name$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1231.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_by_name lookup_by_name(MemorySegment segment, SegmentScope scope) {
+    public static lookup_by_name lookup_by_name(MemorySegment segment, Arena scope) {
         return lookup_by_name.ofAddress(lookup_by_name$get(segment), scope);
     }
-    static final FunctionDescriptor lookup_by_name_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor lookup_by_name_async_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_name_async_UP$MH = RuntimeHelper.upcallHandle(lookup_by_name_async.class, "apply", _GResolverClass.lookup_by_name_async_UP$FUNC);
-    static final FunctionDescriptor lookup_by_name_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_name_async_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GResolverClass.lookup_by_name_async_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*lookup_by_name_async)(GResolver*,const gchar*,GCancellable*,GAsyncReadyCallback,gpointer);
+ * void (*lookup_by_name_async)(struct _GResolver*,char*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public interface lookup_by_name_async {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(lookup_by_name_async fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GResolverClass.lookup_by_name_async_UP$MH, fi, _GResolverClass.lookup_by_name_async$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(lookup_by_name_async fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1231.const$3, fi, constants$331.const$1, scope);
         }
-        static lookup_by_name_async ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
+        static lookup_by_name_async ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GResolverClass.lookup_by_name_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$916.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -265,72 +167,52 @@ public class _GResolverClass {
         }
     }
 
-    static final VarHandle lookup_by_name_async$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name_async"));
     public static VarHandle lookup_by_name_async$VH() {
-        return _GResolverClass.lookup_by_name_async$VH;
+        return constants$1231.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*lookup_by_name_async)(GResolver*,const gchar*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*lookup_by_name_async)(struct _GResolver*,char*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static MemorySegment lookup_by_name_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_name_async$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1231.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*lookup_by_name_async)(GResolver*,const gchar*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*lookup_by_name_async)(struct _GResolver*,char*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static void lookup_by_name_async$set(MemorySegment seg, MemorySegment x) {
-        _GResolverClass.lookup_by_name_async$VH.set(seg, x);
+        constants$1231.const$4.set(seg, x);
     }
     public static MemorySegment lookup_by_name_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_name_async$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1231.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_name_async$set(MemorySegment seg, long index, MemorySegment x) {
-        _GResolverClass.lookup_by_name_async$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1231.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_by_name_async lookup_by_name_async(MemorySegment segment, SegmentScope scope) {
+    public static lookup_by_name_async lookup_by_name_async(MemorySegment segment, Arena scope) {
         return lookup_by_name_async.ofAddress(lookup_by_name_async$get(segment), scope);
     }
-    static final FunctionDescriptor lookup_by_name_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor lookup_by_name_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_name_finish_UP$MH = RuntimeHelper.upcallHandle(lookup_by_name_finish.class, "apply", _GResolverClass.lookup_by_name_finish_UP$FUNC);
-    static final FunctionDescriptor lookup_by_name_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_name_finish_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GResolverClass.lookup_by_name_finish_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GList* (*lookup_by_name_finish)(GResolver*,GAsyncResult*,GError**);
+ * struct _GList* (*lookup_by_name_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public interface lookup_by_name_finish {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(lookup_by_name_finish fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GResolverClass.lookup_by_name_finish_UP$MH, fi, _GResolverClass.lookup_by_name_finish$FUNC, scope);
+        static MemorySegment allocate(lookup_by_name_finish fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1231.const$5, fi, constants$23.const$0, scope);
         }
-        static lookup_by_name_finish ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static lookup_by_name_finish ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_name_finish_DOWN$MH.invokeExact(symbol, _vfs, _identifier, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -338,75 +220,52 @@ public class _GResolverClass {
         }
     }
 
-    static final VarHandle lookup_by_name_finish$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name_finish"));
     public static VarHandle lookup_by_name_finish$VH() {
-        return _GResolverClass.lookup_by_name_finish$VH;
+        return constants$1232.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GList* (*lookup_by_name_finish)(GResolver*,GAsyncResult*,GError**);
+     * struct _GList* (*lookup_by_name_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static MemorySegment lookup_by_name_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_name_finish$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1232.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GList* (*lookup_by_name_finish)(GResolver*,GAsyncResult*,GError**);
+     * struct _GList* (*lookup_by_name_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static void lookup_by_name_finish$set(MemorySegment seg, MemorySegment x) {
-        _GResolverClass.lookup_by_name_finish$VH.set(seg, x);
+        constants$1232.const$0.set(seg, x);
     }
     public static MemorySegment lookup_by_name_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_name_finish$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1232.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_name_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        _GResolverClass.lookup_by_name_finish$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1232.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_by_name_finish lookup_by_name_finish(MemorySegment segment, SegmentScope scope) {
+    public static lookup_by_name_finish lookup_by_name_finish(MemorySegment segment, Arena scope) {
         return lookup_by_name_finish.ofAddress(lookup_by_name_finish$get(segment), scope);
     }
-    static final FunctionDescriptor lookup_by_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor lookup_by_address_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_address_UP$MH = RuntimeHelper.upcallHandle(lookup_by_address.class, "apply", _GResolverClass.lookup_by_address_UP$FUNC);
-    static final FunctionDescriptor lookup_by_address_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_address_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GResolverClass.lookup_by_address_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gchar* (*lookup_by_address)(GResolver*,GInetAddress*,GCancellable*,GError**);
+ * char* (*lookup_by_address)(struct _GResolver*,struct _GInetAddress*,struct _GCancellable*,struct _GError**);
      * }
      */
     public interface lookup_by_address {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data, java.lang.foreign.MemorySegment target, java.lang.foreign.MemorySegment extents);
-        static MemorySegment allocate(lookup_by_address fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GResolverClass.lookup_by_address_UP$MH, fi, _GResolverClass.lookup_by_address$FUNC, scope);
+        static MemorySegment allocate(lookup_by_address fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1232.const$1, fi, constants$39.const$1, scope);
         }
-        static lookup_by_address ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static lookup_by_address ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _pattern, java.lang.foreign.MemorySegment _callback_data, java.lang.foreign.MemorySegment _target, java.lang.foreign.MemorySegment _extents) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_address_DOWN$MH.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
+                    return (java.lang.foreign.MemorySegment)constants$865.const$5.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -414,78 +273,52 @@ public class _GResolverClass {
         }
     }
 
-    static final VarHandle lookup_by_address$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_address"));
     public static VarHandle lookup_by_address$VH() {
-        return _GResolverClass.lookup_by_address$VH;
+        return constants$1232.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* (*lookup_by_address)(GResolver*,GInetAddress*,GCancellable*,GError**);
+     * char* (*lookup_by_address)(struct _GResolver*,struct _GInetAddress*,struct _GCancellable*,struct _GError**);
      * }
      */
     public static MemorySegment lookup_by_address$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_address$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1232.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* (*lookup_by_address)(GResolver*,GInetAddress*,GCancellable*,GError**);
+     * char* (*lookup_by_address)(struct _GResolver*,struct _GInetAddress*,struct _GCancellable*,struct _GError**);
      * }
      */
     public static void lookup_by_address$set(MemorySegment seg, MemorySegment x) {
-        _GResolverClass.lookup_by_address$VH.set(seg, x);
+        constants$1232.const$2.set(seg, x);
     }
     public static MemorySegment lookup_by_address$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_address$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1232.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_address$set(MemorySegment seg, long index, MemorySegment x) {
-        _GResolverClass.lookup_by_address$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1232.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_by_address lookup_by_address(MemorySegment segment, SegmentScope scope) {
+    public static lookup_by_address lookup_by_address(MemorySegment segment, Arena scope) {
         return lookup_by_address.ofAddress(lookup_by_address$get(segment), scope);
     }
-    static final FunctionDescriptor lookup_by_address_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor lookup_by_address_async_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_address_async_UP$MH = RuntimeHelper.upcallHandle(lookup_by_address_async.class, "apply", _GResolverClass.lookup_by_address_async_UP$FUNC);
-    static final FunctionDescriptor lookup_by_address_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_address_async_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GResolverClass.lookup_by_address_async_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*lookup_by_address_async)(GResolver*,GInetAddress*,GCancellable*,GAsyncReadyCallback,gpointer);
+ * void (*lookup_by_address_async)(struct _GResolver*,struct _GInetAddress*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public interface lookup_by_address_async {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(lookup_by_address_async fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GResolverClass.lookup_by_address_async_UP$MH, fi, _GResolverClass.lookup_by_address_async$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(lookup_by_address_async fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1232.const$3, fi, constants$331.const$1, scope);
         }
-        static lookup_by_address_async ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
+        static lookup_by_address_async ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GResolverClass.lookup_by_address_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$916.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -493,72 +326,52 @@ public class _GResolverClass {
         }
     }
 
-    static final VarHandle lookup_by_address_async$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_address_async"));
     public static VarHandle lookup_by_address_async$VH() {
-        return _GResolverClass.lookup_by_address_async$VH;
+        return constants$1232.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*lookup_by_address_async)(GResolver*,GInetAddress*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*lookup_by_address_async)(struct _GResolver*,struct _GInetAddress*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static MemorySegment lookup_by_address_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_address_async$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1232.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*lookup_by_address_async)(GResolver*,GInetAddress*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*lookup_by_address_async)(struct _GResolver*,struct _GInetAddress*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static void lookup_by_address_async$set(MemorySegment seg, MemorySegment x) {
-        _GResolverClass.lookup_by_address_async$VH.set(seg, x);
+        constants$1232.const$4.set(seg, x);
     }
     public static MemorySegment lookup_by_address_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_address_async$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1232.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_address_async$set(MemorySegment seg, long index, MemorySegment x) {
-        _GResolverClass.lookup_by_address_async$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1232.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_by_address_async lookup_by_address_async(MemorySegment segment, SegmentScope scope) {
+    public static lookup_by_address_async lookup_by_address_async(MemorySegment segment, Arena scope) {
         return lookup_by_address_async.ofAddress(lookup_by_address_async$get(segment), scope);
     }
-    static final FunctionDescriptor lookup_by_address_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor lookup_by_address_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_address_finish_UP$MH = RuntimeHelper.upcallHandle(lookup_by_address_finish.class, "apply", _GResolverClass.lookup_by_address_finish_UP$FUNC);
-    static final FunctionDescriptor lookup_by_address_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_address_finish_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GResolverClass.lookup_by_address_finish_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gchar* (*lookup_by_address_finish)(GResolver*,GAsyncResult*,GError**);
+ * char* (*lookup_by_address_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public interface lookup_by_address_finish {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(lookup_by_address_finish fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GResolverClass.lookup_by_address_finish_UP$MH, fi, _GResolverClass.lookup_by_address_finish$FUNC, scope);
+        static MemorySegment allocate(lookup_by_address_finish fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1232.const$5, fi, constants$23.const$0, scope);
         }
-        static lookup_by_address_finish ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static lookup_by_address_finish ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_address_finish_DOWN$MH.invokeExact(symbol, _vfs, _identifier, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -566,75 +379,52 @@ public class _GResolverClass {
         }
     }
 
-    static final VarHandle lookup_by_address_finish$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_address_finish"));
     public static VarHandle lookup_by_address_finish$VH() {
-        return _GResolverClass.lookup_by_address_finish$VH;
+        return constants$1233.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* (*lookup_by_address_finish)(GResolver*,GAsyncResult*,GError**);
+     * char* (*lookup_by_address_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static MemorySegment lookup_by_address_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_address_finish$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1233.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* (*lookup_by_address_finish)(GResolver*,GAsyncResult*,GError**);
+     * char* (*lookup_by_address_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static void lookup_by_address_finish$set(MemorySegment seg, MemorySegment x) {
-        _GResolverClass.lookup_by_address_finish$VH.set(seg, x);
+        constants$1233.const$0.set(seg, x);
     }
     public static MemorySegment lookup_by_address_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_address_finish$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1233.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_address_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        _GResolverClass.lookup_by_address_finish$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1233.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_by_address_finish lookup_by_address_finish(MemorySegment segment, SegmentScope scope) {
+    public static lookup_by_address_finish lookup_by_address_finish(MemorySegment segment, Arena scope) {
         return lookup_by_address_finish.ofAddress(lookup_by_address_finish$get(segment), scope);
     }
-    static final FunctionDescriptor lookup_service$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor lookup_service_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_service_UP$MH = RuntimeHelper.upcallHandle(lookup_service.class, "apply", _GResolverClass.lookup_service_UP$FUNC);
-    static final FunctionDescriptor lookup_service_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_service_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GResolverClass.lookup_service_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GList* (*lookup_service)(GResolver*,const gchar*,GCancellable*,GError**);
+ * struct _GList* (*lookup_service)(struct _GResolver*,char*,struct _GCancellable*,struct _GError**);
      * }
      */
     public interface lookup_service {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data, java.lang.foreign.MemorySegment target, java.lang.foreign.MemorySegment extents);
-        static MemorySegment allocate(lookup_service fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GResolverClass.lookup_service_UP$MH, fi, _GResolverClass.lookup_service$FUNC, scope);
+        static MemorySegment allocate(lookup_service fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1233.const$1, fi, constants$39.const$1, scope);
         }
-        static lookup_service ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static lookup_service ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _pattern, java.lang.foreign.MemorySegment _callback_data, java.lang.foreign.MemorySegment _target, java.lang.foreign.MemorySegment _extents) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_service_DOWN$MH.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
+                    return (java.lang.foreign.MemorySegment)constants$865.const$5.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -642,78 +432,52 @@ public class _GResolverClass {
         }
     }
 
-    static final VarHandle lookup_service$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("lookup_service"));
     public static VarHandle lookup_service$VH() {
-        return _GResolverClass.lookup_service$VH;
+        return constants$1233.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GList* (*lookup_service)(GResolver*,const gchar*,GCancellable*,GError**);
+     * struct _GList* (*lookup_service)(struct _GResolver*,char*,struct _GCancellable*,struct _GError**);
      * }
      */
     public static MemorySegment lookup_service$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_service$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1233.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GList* (*lookup_service)(GResolver*,const gchar*,GCancellable*,GError**);
+     * struct _GList* (*lookup_service)(struct _GResolver*,char*,struct _GCancellable*,struct _GError**);
      * }
      */
     public static void lookup_service$set(MemorySegment seg, MemorySegment x) {
-        _GResolverClass.lookup_service$VH.set(seg, x);
+        constants$1233.const$2.set(seg, x);
     }
     public static MemorySegment lookup_service$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_service$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1233.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_service$set(MemorySegment seg, long index, MemorySegment x) {
-        _GResolverClass.lookup_service$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1233.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_service lookup_service(MemorySegment segment, SegmentScope scope) {
+    public static lookup_service lookup_service(MemorySegment segment, Arena scope) {
         return lookup_service.ofAddress(lookup_service$get(segment), scope);
     }
-    static final FunctionDescriptor lookup_service_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor lookup_service_async_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_service_async_UP$MH = RuntimeHelper.upcallHandle(lookup_service_async.class, "apply", _GResolverClass.lookup_service_async_UP$FUNC);
-    static final FunctionDescriptor lookup_service_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_service_async_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GResolverClass.lookup_service_async_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*lookup_service_async)(GResolver*,const gchar*,GCancellable*,GAsyncReadyCallback,gpointer);
+ * void (*lookup_service_async)(struct _GResolver*,char*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public interface lookup_service_async {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(lookup_service_async fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GResolverClass.lookup_service_async_UP$MH, fi, _GResolverClass.lookup_service_async$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(lookup_service_async fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1233.const$3, fi, constants$331.const$1, scope);
         }
-        static lookup_service_async ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
+        static lookup_service_async ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GResolverClass.lookup_service_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$916.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -721,72 +485,52 @@ public class _GResolverClass {
         }
     }
 
-    static final VarHandle lookup_service_async$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("lookup_service_async"));
     public static VarHandle lookup_service_async$VH() {
-        return _GResolverClass.lookup_service_async$VH;
+        return constants$1233.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*lookup_service_async)(GResolver*,const gchar*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*lookup_service_async)(struct _GResolver*,char*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static MemorySegment lookup_service_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_service_async$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1233.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*lookup_service_async)(GResolver*,const gchar*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*lookup_service_async)(struct _GResolver*,char*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static void lookup_service_async$set(MemorySegment seg, MemorySegment x) {
-        _GResolverClass.lookup_service_async$VH.set(seg, x);
+        constants$1233.const$4.set(seg, x);
     }
     public static MemorySegment lookup_service_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_service_async$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1233.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_service_async$set(MemorySegment seg, long index, MemorySegment x) {
-        _GResolverClass.lookup_service_async$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1233.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_service_async lookup_service_async(MemorySegment segment, SegmentScope scope) {
+    public static lookup_service_async lookup_service_async(MemorySegment segment, Arena scope) {
         return lookup_service_async.ofAddress(lookup_service_async$get(segment), scope);
     }
-    static final FunctionDescriptor lookup_service_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor lookup_service_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_service_finish_UP$MH = RuntimeHelper.upcallHandle(lookup_service_finish.class, "apply", _GResolverClass.lookup_service_finish_UP$FUNC);
-    static final FunctionDescriptor lookup_service_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_service_finish_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GResolverClass.lookup_service_finish_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GList* (*lookup_service_finish)(GResolver*,GAsyncResult*,GError**);
+ * struct _GList* (*lookup_service_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public interface lookup_service_finish {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(lookup_service_finish fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GResolverClass.lookup_service_finish_UP$MH, fi, _GResolverClass.lookup_service_finish$FUNC, scope);
+        static MemorySegment allocate(lookup_service_finish fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1233.const$5, fi, constants$23.const$0, scope);
         }
-        static lookup_service_finish ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static lookup_service_finish ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_service_finish_DOWN$MH.invokeExact(symbol, _vfs, _identifier, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -794,78 +538,52 @@ public class _GResolverClass {
         }
     }
 
-    static final VarHandle lookup_service_finish$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("lookup_service_finish"));
     public static VarHandle lookup_service_finish$VH() {
-        return _GResolverClass.lookup_service_finish$VH;
+        return constants$1234.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GList* (*lookup_service_finish)(GResolver*,GAsyncResult*,GError**);
+     * struct _GList* (*lookup_service_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static MemorySegment lookup_service_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_service_finish$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1234.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GList* (*lookup_service_finish)(GResolver*,GAsyncResult*,GError**);
+     * struct _GList* (*lookup_service_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static void lookup_service_finish$set(MemorySegment seg, MemorySegment x) {
-        _GResolverClass.lookup_service_finish$VH.set(seg, x);
+        constants$1234.const$0.set(seg, x);
     }
     public static MemorySegment lookup_service_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_service_finish$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1234.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_service_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        _GResolverClass.lookup_service_finish$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1234.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_service_finish lookup_service_finish(MemorySegment segment, SegmentScope scope) {
+    public static lookup_service_finish lookup_service_finish(MemorySegment segment, Arena scope) {
         return lookup_service_finish.ofAddress(lookup_service_finish$get(segment), scope);
     }
-    static final FunctionDescriptor lookup_records$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor lookup_records_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_records_UP$MH = RuntimeHelper.upcallHandle(lookup_records.class, "apply", _GResolverClass.lookup_records_UP$FUNC);
-    static final FunctionDescriptor lookup_records_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_records_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GResolverClass.lookup_records_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GList* (*lookup_records)(GResolver*,const gchar*,GResolverRecordType,GCancellable*,GError**);
+ * struct _GList* (*lookup_records)(struct _GResolver*,char*,enum GResolverRecordType,struct _GCancellable*,struct _GError**);
      * }
      */
     public interface lookup_records {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(lookup_records fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GResolverClass.lookup_records_UP$MH, fi, _GResolverClass.lookup_records$FUNC, scope);
+        static MemorySegment allocate(lookup_records fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1234.const$1, fi, constants$977.const$0, scope);
         }
-        static lookup_records ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static lookup_records ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_records_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    return (java.lang.foreign.MemorySegment)constants$977.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -873,81 +591,52 @@ public class _GResolverClass {
         }
     }
 
-    static final VarHandle lookup_records$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("lookup_records"));
     public static VarHandle lookup_records$VH() {
-        return _GResolverClass.lookup_records$VH;
+        return constants$1234.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GList* (*lookup_records)(GResolver*,const gchar*,GResolverRecordType,GCancellable*,GError**);
+     * struct _GList* (*lookup_records)(struct _GResolver*,char*,enum GResolverRecordType,struct _GCancellable*,struct _GError**);
      * }
      */
     public static MemorySegment lookup_records$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_records$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1234.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GList* (*lookup_records)(GResolver*,const gchar*,GResolverRecordType,GCancellable*,GError**);
+     * struct _GList* (*lookup_records)(struct _GResolver*,char*,enum GResolverRecordType,struct _GCancellable*,struct _GError**);
      * }
      */
     public static void lookup_records$set(MemorySegment seg, MemorySegment x) {
-        _GResolverClass.lookup_records$VH.set(seg, x);
+        constants$1234.const$2.set(seg, x);
     }
     public static MemorySegment lookup_records$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_records$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1234.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_records$set(MemorySegment seg, long index, MemorySegment x) {
-        _GResolverClass.lookup_records$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1234.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_records lookup_records(MemorySegment segment, SegmentScope scope) {
+    public static lookup_records lookup_records(MemorySegment segment, Arena scope) {
         return lookup_records.ofAddress(lookup_records$get(segment), scope);
     }
-    static final FunctionDescriptor lookup_records_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor lookup_records_async_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_records_async_UP$MH = RuntimeHelper.upcallHandle(lookup_records_async.class, "apply", _GResolverClass.lookup_records_async_UP$FUNC);
-    static final FunctionDescriptor lookup_records_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_records_async_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GResolverClass.lookup_records_async_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*lookup_records_async)(GResolver*,const gchar*,GResolverRecordType,GCancellable*,GAsyncReadyCallback,gpointer);
+ * void (*lookup_records_async)(struct _GResolver*,char*,enum GResolverRecordType,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public interface lookup_records_async {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
-        static MemorySegment allocate(lookup_records_async fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GResolverClass.lookup_records_async_UP$MH, fi, _GResolverClass.lookup_records_async$FUNC, scope);
+        static MemorySegment allocate(lookup_records_async fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1234.const$3, fi, constants$584.const$3, scope);
         }
-        static lookup_records_async ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static lookup_records_async ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    _GResolverClass.lookup_records_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$584.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -955,72 +644,52 @@ public class _GResolverClass {
         }
     }
 
-    static final VarHandle lookup_records_async$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("lookup_records_async"));
     public static VarHandle lookup_records_async$VH() {
-        return _GResolverClass.lookup_records_async$VH;
+        return constants$1234.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*lookup_records_async)(GResolver*,const gchar*,GResolverRecordType,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*lookup_records_async)(struct _GResolver*,char*,enum GResolverRecordType,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static MemorySegment lookup_records_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_records_async$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1234.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*lookup_records_async)(GResolver*,const gchar*,GResolverRecordType,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*lookup_records_async)(struct _GResolver*,char*,enum GResolverRecordType,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static void lookup_records_async$set(MemorySegment seg, MemorySegment x) {
-        _GResolverClass.lookup_records_async$VH.set(seg, x);
+        constants$1234.const$4.set(seg, x);
     }
     public static MemorySegment lookup_records_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_records_async$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1234.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_records_async$set(MemorySegment seg, long index, MemorySegment x) {
-        _GResolverClass.lookup_records_async$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1234.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_records_async lookup_records_async(MemorySegment segment, SegmentScope scope) {
+    public static lookup_records_async lookup_records_async(MemorySegment segment, Arena scope) {
         return lookup_records_async.ofAddress(lookup_records_async$get(segment), scope);
     }
-    static final FunctionDescriptor lookup_records_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor lookup_records_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_records_finish_UP$MH = RuntimeHelper.upcallHandle(lookup_records_finish.class, "apply", _GResolverClass.lookup_records_finish_UP$FUNC);
-    static final FunctionDescriptor lookup_records_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_records_finish_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GResolverClass.lookup_records_finish_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GList* (*lookup_records_finish)(GResolver*,GAsyncResult*,GError**);
+ * struct _GList* (*lookup_records_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public interface lookup_records_finish {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(lookup_records_finish fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GResolverClass.lookup_records_finish_UP$MH, fi, _GResolverClass.lookup_records_finish$FUNC, scope);
+        static MemorySegment allocate(lookup_records_finish fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1234.const$5, fi, constants$23.const$0, scope);
         }
-        static lookup_records_finish ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static lookup_records_finish ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_records_finish_DOWN$MH.invokeExact(symbol, _vfs, _identifier, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1028,81 +697,52 @@ public class _GResolverClass {
         }
     }
 
-    static final VarHandle lookup_records_finish$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("lookup_records_finish"));
     public static VarHandle lookup_records_finish$VH() {
-        return _GResolverClass.lookup_records_finish$VH;
+        return constants$1235.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GList* (*lookup_records_finish)(GResolver*,GAsyncResult*,GError**);
+     * struct _GList* (*lookup_records_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static MemorySegment lookup_records_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_records_finish$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1235.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GList* (*lookup_records_finish)(GResolver*,GAsyncResult*,GError**);
+     * struct _GList* (*lookup_records_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static void lookup_records_finish$set(MemorySegment seg, MemorySegment x) {
-        _GResolverClass.lookup_records_finish$VH.set(seg, x);
+        constants$1235.const$0.set(seg, x);
     }
     public static MemorySegment lookup_records_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_records_finish$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1235.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_records_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        _GResolverClass.lookup_records_finish$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1235.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_records_finish lookup_records_finish(MemorySegment segment, SegmentScope scope) {
+    public static lookup_records_finish lookup_records_finish(MemorySegment segment, Arena scope) {
         return lookup_records_finish.ofAddress(lookup_records_finish$get(segment), scope);
     }
-    static final FunctionDescriptor lookup_by_name_with_flags_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor lookup_by_name_with_flags_async_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_name_with_flags_async_UP$MH = RuntimeHelper.upcallHandle(lookup_by_name_with_flags_async.class, "apply", _GResolverClass.lookup_by_name_with_flags_async_UP$FUNC);
-    static final FunctionDescriptor lookup_by_name_with_flags_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_name_with_flags_async_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GResolverClass.lookup_by_name_with_flags_async_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*lookup_by_name_with_flags_async)(GResolver*,const gchar*,GResolverNameLookupFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+ * void (*lookup_by_name_with_flags_async)(struct _GResolver*,char*,enum GResolverNameLookupFlags,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public interface lookup_by_name_with_flags_async {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
-        static MemorySegment allocate(lookup_by_name_with_flags_async fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GResolverClass.lookup_by_name_with_flags_async_UP$MH, fi, _GResolverClass.lookup_by_name_with_flags_async$FUNC, scope);
+        static MemorySegment allocate(lookup_by_name_with_flags_async fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1235.const$1, fi, constants$584.const$3, scope);
         }
-        static lookup_by_name_with_flags_async ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static lookup_by_name_with_flags_async ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    _GResolverClass.lookup_by_name_with_flags_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$584.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1110,72 +750,52 @@ public class _GResolverClass {
         }
     }
 
-    static final VarHandle lookup_by_name_with_flags_async$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name_with_flags_async"));
     public static VarHandle lookup_by_name_with_flags_async$VH() {
-        return _GResolverClass.lookup_by_name_with_flags_async$VH;
+        return constants$1235.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*lookup_by_name_with_flags_async)(GResolver*,const gchar*,GResolverNameLookupFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*lookup_by_name_with_flags_async)(struct _GResolver*,char*,enum GResolverNameLookupFlags,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static MemorySegment lookup_by_name_with_flags_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_name_with_flags_async$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1235.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*lookup_by_name_with_flags_async)(GResolver*,const gchar*,GResolverNameLookupFlags,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*lookup_by_name_with_flags_async)(struct _GResolver*,char*,enum GResolverNameLookupFlags,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static void lookup_by_name_with_flags_async$set(MemorySegment seg, MemorySegment x) {
-        _GResolverClass.lookup_by_name_with_flags_async$VH.set(seg, x);
+        constants$1235.const$2.set(seg, x);
     }
     public static MemorySegment lookup_by_name_with_flags_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_name_with_flags_async$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1235.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_name_with_flags_async$set(MemorySegment seg, long index, MemorySegment x) {
-        _GResolverClass.lookup_by_name_with_flags_async$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1235.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_by_name_with_flags_async lookup_by_name_with_flags_async(MemorySegment segment, SegmentScope scope) {
+    public static lookup_by_name_with_flags_async lookup_by_name_with_flags_async(MemorySegment segment, Arena scope) {
         return lookup_by_name_with_flags_async.ofAddress(lookup_by_name_with_flags_async$get(segment), scope);
     }
-    static final FunctionDescriptor lookup_by_name_with_flags_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor lookup_by_name_with_flags_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_name_with_flags_finish_UP$MH = RuntimeHelper.upcallHandle(lookup_by_name_with_flags_finish.class, "apply", _GResolverClass.lookup_by_name_with_flags_finish_UP$FUNC);
-    static final FunctionDescriptor lookup_by_name_with_flags_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_name_with_flags_finish_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GResolverClass.lookup_by_name_with_flags_finish_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GList* (*lookup_by_name_with_flags_finish)(GResolver*,GAsyncResult*,GError**);
+ * struct _GList* (*lookup_by_name_with_flags_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public interface lookup_by_name_with_flags_finish {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(lookup_by_name_with_flags_finish fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GResolverClass.lookup_by_name_with_flags_finish_UP$MH, fi, _GResolverClass.lookup_by_name_with_flags_finish$FUNC, scope);
+        static MemorySegment allocate(lookup_by_name_with_flags_finish fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1235.const$3, fi, constants$23.const$0, scope);
         }
-        static lookup_by_name_with_flags_finish ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static lookup_by_name_with_flags_finish ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_name_with_flags_finish_DOWN$MH.invokeExact(symbol, _vfs, _identifier, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1183,78 +803,52 @@ public class _GResolverClass {
         }
     }
 
-    static final VarHandle lookup_by_name_with_flags_finish$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name_with_flags_finish"));
     public static VarHandle lookup_by_name_with_flags_finish$VH() {
-        return _GResolverClass.lookup_by_name_with_flags_finish$VH;
+        return constants$1235.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GList* (*lookup_by_name_with_flags_finish)(GResolver*,GAsyncResult*,GError**);
+     * struct _GList* (*lookup_by_name_with_flags_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static MemorySegment lookup_by_name_with_flags_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_name_with_flags_finish$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1235.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GList* (*lookup_by_name_with_flags_finish)(GResolver*,GAsyncResult*,GError**);
+     * struct _GList* (*lookup_by_name_with_flags_finish)(struct _GResolver*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static void lookup_by_name_with_flags_finish$set(MemorySegment seg, MemorySegment x) {
-        _GResolverClass.lookup_by_name_with_flags_finish$VH.set(seg, x);
+        constants$1235.const$4.set(seg, x);
     }
     public static MemorySegment lookup_by_name_with_flags_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_name_with_flags_finish$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1235.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_name_with_flags_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        _GResolverClass.lookup_by_name_with_flags_finish$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1235.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_by_name_with_flags_finish lookup_by_name_with_flags_finish(MemorySegment segment, SegmentScope scope) {
+    public static lookup_by_name_with_flags_finish lookup_by_name_with_flags_finish(MemorySegment segment, Arena scope) {
         return lookup_by_name_with_flags_finish.ofAddress(lookup_by_name_with_flags_finish$get(segment), scope);
     }
-    static final FunctionDescriptor lookup_by_name_with_flags$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor lookup_by_name_with_flags_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_name_with_flags_UP$MH = RuntimeHelper.upcallHandle(lookup_by_name_with_flags.class, "apply", _GResolverClass.lookup_by_name_with_flags_UP$FUNC);
-    static final FunctionDescriptor lookup_by_name_with_flags_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle lookup_by_name_with_flags_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GResolverClass.lookup_by_name_with_flags_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GList* (*lookup_by_name_with_flags)(GResolver*,const gchar*,GResolverNameLookupFlags,GCancellable*,GError**);
+ * struct _GList* (*lookup_by_name_with_flags)(struct _GResolver*,char*,enum GResolverNameLookupFlags,struct _GCancellable*,struct _GError**);
      * }
      */
     public interface lookup_by_name_with_flags {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(lookup_by_name_with_flags fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GResolverClass.lookup_by_name_with_flags_UP$MH, fi, _GResolverClass.lookup_by_name_with_flags$FUNC, scope);
+        static MemorySegment allocate(lookup_by_name_with_flags fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1235.const$5, fi, constants$977.const$0, scope);
         }
-        static lookup_by_name_with_flags ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static lookup_by_name_with_flags ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_name_with_flags_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    return (java.lang.foreign.MemorySegment)constants$977.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1262,35 +856,34 @@ public class _GResolverClass {
         }
     }
 
-    static final VarHandle lookup_by_name_with_flags$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name_with_flags"));
     public static VarHandle lookup_by_name_with_flags$VH() {
-        return _GResolverClass.lookup_by_name_with_flags$VH;
+        return constants$1236.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GList* (*lookup_by_name_with_flags)(GResolver*,const gchar*,GResolverNameLookupFlags,GCancellable*,GError**);
+     * struct _GList* (*lookup_by_name_with_flags)(struct _GResolver*,char*,enum GResolverNameLookupFlags,struct _GCancellable*,struct _GError**);
      * }
      */
     public static MemorySegment lookup_by_name_with_flags$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_name_with_flags$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1236.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GList* (*lookup_by_name_with_flags)(GResolver*,const gchar*,GResolverNameLookupFlags,GCancellable*,GError**);
+     * struct _GList* (*lookup_by_name_with_flags)(struct _GResolver*,char*,enum GResolverNameLookupFlags,struct _GCancellable*,struct _GError**);
      * }
      */
     public static void lookup_by_name_with_flags$set(MemorySegment seg, MemorySegment x) {
-        _GResolverClass.lookup_by_name_with_flags$VH.set(seg, x);
+        constants$1236.const$0.set(seg, x);
     }
     public static MemorySegment lookup_by_name_with_flags$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GResolverClass.lookup_by_name_with_flags$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1236.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void lookup_by_name_with_flags$set(MemorySegment seg, long index, MemorySegment x) {
-        _GResolverClass.lookup_by_name_with_flags$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1236.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static lookup_by_name_with_flags lookup_by_name_with_flags(MemorySegment segment, SegmentScope scope) {
+    public static lookup_by_name_with_flags lookup_by_name_with_flags(MemorySegment segment, Arena scope) {
         return lookup_by_name_with_flags.ofAddress(lookup_by_name_with_flags$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -1298,7 +891,7 @@ public class _GResolverClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

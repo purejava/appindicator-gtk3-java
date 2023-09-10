@@ -3,59 +3,43 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$146 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$146() {}
-    static final FunctionDescriptor g_hash_table_add$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_on_error_stack_trace",
+        constants$13.const$1
     );
-    static final MethodHandle g_hash_table_add$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_add",
-        constants$146.g_hash_table_add$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_hash_table_remove$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_base64_encode_step",
+        constants$146.const$1
     );
-    static final MethodHandle g_hash_table_remove$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_remove",
-        constants$146.g_hash_table_remove$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_hash_table_remove_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_base64_encode_close",
+        constants$146.const$3
     );
-    static final MethodHandle g_hash_table_remove_all$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_remove_all",
-        constants$146.g_hash_table_remove_all$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_steal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_steal$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_steal",
-        constants$146.g_hash_table_steal$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_steal_extended$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_steal_extended$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_steal_extended",
-        constants$146.g_hash_table_steal_extended$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_steal_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_steal_all$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_steal_all",
-        constants$146.g_hash_table_steal_all$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_base64_encode",
+        constants$21.const$1
     );
 }
 

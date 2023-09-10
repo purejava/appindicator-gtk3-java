@@ -3,65 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1396 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1396() {}
-    static final FunctionDescriptor gtk_tree_view_column_set_sort_order$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_set_sort_order$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_sort_order",
-        constants$1396.gtk_tree_view_column_set_sort_order$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_get_sort_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_get_sort_order$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_sort_order",
-        constants$1396.gtk_tree_view_column_get_sort_order$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_cell_set_cell_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_cell_set_cell_data$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_cell_set_cell_data",
-        constants$1396.gtk_tree_view_column_cell_set_cell_data$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_cell_get_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_cell_get_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_cell_get_size",
-        constants$1396.gtk_tree_view_column_cell_get_size$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_cell_is_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_cell_is_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_cell_is_visible",
-        constants$1396.gtk_tree_view_column_cell_is_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_focus_cell$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_focus_cell$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_focus_cell",
-        constants$1396.gtk_tree_view_column_focus_cell$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GVfsClass.local_file_moved.class, "apply", constants$14.const$3);
+    static final VarHandle const$1 = constants$1392.const$2.varHandle(MemoryLayout.PathElement.groupElement("local_file_moved"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GVfsClass.deserialize_icon.class, "apply", constants$5.const$5);
+    static final VarHandle const$3 = constants$1392.const$2.varHandle(MemoryLayout.PathElement.groupElement("deserialize_icon"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GVfsClass._g_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1392.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
 }
 
 

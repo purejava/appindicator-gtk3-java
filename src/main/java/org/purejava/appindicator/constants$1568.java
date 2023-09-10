@@ -3,59 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1568 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1568() {}
-    static final FunctionDescriptor gtk_file_filter_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_attribute_equal",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_file_filter_get_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_get_name",
-        constants$1568.gtk_file_filter_get_name$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_attr_language_new",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_file_filter_add_mime_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_attr_family_new",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_file_filter_add_mime_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_add_mime_type",
-        constants$1568.gtk_file_filter_add_mime_type$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_SHORT,
+        JAVA_SHORT,
+        JAVA_SHORT
     );
-    static final FunctionDescriptor gtk_file_filter_add_pattern$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_attr_foreground_new",
+        constants$1568.const$3
     );
-    static final MethodHandle gtk_file_filter_add_pattern$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_add_pattern",
-        constants$1568.gtk_file_filter_add_pattern$FUNC
-    );
-    static final FunctionDescriptor gtk_file_filter_add_pixbuf_formats$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_filter_add_pixbuf_formats$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_add_pixbuf_formats",
-        constants$1568.gtk_file_filter_add_pixbuf_formats$FUNC
-    );
-    static final FunctionDescriptor gtk_file_filter_add_custom$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_filter_add_custom$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_add_custom",
-        constants$1568.gtk_file_filter_add_custom$FUNC
-    );
-    static final FunctionDescriptor gtk_file_filter_get_needed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_filter_get_needed$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_get_needed",
-        constants$1568.gtk_file_filter_get_needed$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_attr_background_new",
+        constants$1568.const$3
     );
 }
 

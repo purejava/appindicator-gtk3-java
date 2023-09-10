@@ -2,192 +2,172 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GdkEventExpose {
- *     GdkEventType type;
- *     GdkWindow* window;
- *     gint8 send_event;
- *     GdkRectangle area;
- *     cairo_region_t* region;
- *     gint count;
+ *     enum GdkEventType type;
+ *     struct _GdkWindow* window;
+ *     signed char send_event;
+ *     struct _cairo_rectangle_int area;
+ *     struct _cairo_region* region;
+ *     int count;
  * };
  * }
  */
 public class _GdkEventExpose {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("type"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("window"),
-        Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-        MemoryLayout.paddingLayout(24),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("x"),
-            Constants$root.C_INT$LAYOUT.withName("y"),
-            Constants$root.C_INT$LAYOUT.withName("width"),
-            Constants$root.C_INT$LAYOUT.withName("height")
-        ).withName("area"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("region"),
-        Constants$root.C_INT$LAYOUT.withName("count"),
-        MemoryLayout.paddingLayout(32)
-    ).withName("_GdkEventExpose");
     public static MemoryLayout $LAYOUT() {
-        return _GdkEventExpose.$struct$LAYOUT;
+        return constants$1767.const$5;
     }
-    static final VarHandle type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("type"));
     public static VarHandle type$VH() {
-        return _GdkEventExpose.type$VH;
+        return constants$1768.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GdkEventType type;
+     * enum GdkEventType type;
      * }
      */
     public static int type$get(MemorySegment seg) {
-        return (int)_GdkEventExpose.type$VH.get(seg);
+        return (int)constants$1768.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GdkEventType type;
+     * enum GdkEventType type;
      * }
      */
     public static void type$set(MemorySegment seg, int x) {
-        _GdkEventExpose.type$VH.set(seg, x);
+        constants$1768.const$0.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
-        return (int)_GdkEventExpose.type$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1768.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void type$set(MemorySegment seg, long index, int x) {
-        _GdkEventExpose.type$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1768.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle window$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("window"));
     public static VarHandle window$VH() {
-        return _GdkEventExpose.window$VH;
+        return constants$1768.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GdkWindow* window;
+     * struct _GdkWindow* window;
      * }
      */
     public static MemorySegment window$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GdkEventExpose.window$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1768.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GdkWindow* window;
+     * struct _GdkWindow* window;
      * }
      */
     public static void window$set(MemorySegment seg, MemorySegment x) {
-        _GdkEventExpose.window$VH.set(seg, x);
+        constants$1768.const$1.set(seg, x);
     }
     public static MemorySegment window$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GdkEventExpose.window$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1768.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void window$set(MemorySegment seg, long index, MemorySegment x) {
-        _GdkEventExpose.window$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1768.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle send_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
     public static VarHandle send_event$VH() {
-        return _GdkEventExpose.send_event$VH;
+        return constants$1768.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint8 send_event;
+     * signed char send_event;
      * }
      */
     public static byte send_event$get(MemorySegment seg) {
-        return (byte)_GdkEventExpose.send_event$VH.get(seg);
+        return (byte)constants$1768.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint8 send_event;
+     * signed char send_event;
      * }
      */
     public static void send_event$set(MemorySegment seg, byte x) {
-        _GdkEventExpose.send_event$VH.set(seg, x);
+        constants$1768.const$2.set(seg, x);
     }
     public static byte send_event$get(MemorySegment seg, long index) {
-        return (byte)_GdkEventExpose.send_event$VH.get(seg.asSlice(index*sizeof()));
+        return (byte)constants$1768.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void send_event$set(MemorySegment seg, long index, byte x) {
-        _GdkEventExpose.send_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1768.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment area$slice(MemorySegment seg) {
         return seg.asSlice(20, 16);
     }
-    static final VarHandle region$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("region"));
     public static VarHandle region$VH() {
-        return _GdkEventExpose.region$VH;
+        return constants$1768.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * cairo_region_t* region;
+     * struct _cairo_region* region;
      * }
      */
     public static MemorySegment region$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GdkEventExpose.region$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1768.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * cairo_region_t* region;
+     * struct _cairo_region* region;
      * }
      */
     public static void region$set(MemorySegment seg, MemorySegment x) {
-        _GdkEventExpose.region$VH.set(seg, x);
+        constants$1768.const$3.set(seg, x);
     }
     public static MemorySegment region$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GdkEventExpose.region$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1768.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void region$set(MemorySegment seg, long index, MemorySegment x) {
-        _GdkEventExpose.region$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1768.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle count$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("count"));
     public static VarHandle count$VH() {
-        return _GdkEventExpose.count$VH;
+        return constants$1768.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint count;
+     * int count;
      * }
      */
     public static int count$get(MemorySegment seg) {
-        return (int)_GdkEventExpose.count$VH.get(seg);
+        return (int)constants$1768.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint count;
+     * int count;
      * }
      */
     public static void count$set(MemorySegment seg, int x) {
-        _GdkEventExpose.count$VH.set(seg, x);
+        constants$1768.const$4.set(seg, x);
     }
     public static int count$get(MemorySegment seg, long index) {
-        return (int)_GdkEventExpose.count$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1768.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void count$set(MemorySegment seg, long index, int x) {
-        _GdkEventExpose.count$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1768.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

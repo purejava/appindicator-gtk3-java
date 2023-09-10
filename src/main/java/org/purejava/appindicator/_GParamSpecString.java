@@ -2,170 +2,146 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GParamSpecString {
- *     GParamSpec parent_instance;
- *     gchar* default_value;
- *     gchar* cset_first;
- *     gchar* cset_nth;
- *     gchar substitutor;
- *      *     guint null_fold_if_empty;
- *     guint ensure_non_null;
+ *     struct _GParamSpec parent_instance;
+ *     char* default_value;
+ *     char* cset_first;
+ *     char* cset_nth;
+ *     char substitutor;
+ *      *     unsigned int null_fold_if_empty;
+ *     unsigned int ensure_non_null;
  * };
  * }
  */
 public class _GParamSpecString {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_POINTER$LAYOUT.withName("g_class")
-            ).withName("g_type_instance"),
-            Constants$root.C_POINTER$LAYOUT.withName("name"),
-            Constants$root.C_INT$LAYOUT.withName("flags"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("value_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("owner_type"),
-            Constants$root.C_POINTER$LAYOUT.withName("_nick"),
-            Constants$root.C_POINTER$LAYOUT.withName("_blurb"),
-            Constants$root.C_POINTER$LAYOUT.withName("qdata"),
-            Constants$root.C_INT$LAYOUT.withName("ref_count"),
-            Constants$root.C_INT$LAYOUT.withName("param_id")
-        ).withName("parent_instance"),
-        Constants$root.C_POINTER$LAYOUT.withName("default_value"),
-        Constants$root.C_POINTER$LAYOUT.withName("cset_first"),
-        Constants$root.C_POINTER$LAYOUT.withName("cset_nth"),
-        Constants$root.C_CHAR$LAYOUT.withName("substitutor"),
-        MemoryLayout.paddingLayout(56)
-    ).withName("_GParamSpecString");
     public static MemoryLayout $LAYOUT() {
-        return _GParamSpecString.$struct$LAYOUT;
+        return constants$663.const$0;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 72);
     }
-    static final VarHandle default_value$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
     public static VarHandle default_value$VH() {
-        return _GParamSpecString.default_value$VH;
+        return constants$663.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* default_value;
+     * char* default_value;
      * }
      */
     public static MemorySegment default_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecString.default_value$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$663.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* default_value;
+     * char* default_value;
      * }
      */
     public static void default_value$set(MemorySegment seg, MemorySegment x) {
-        _GParamSpecString.default_value$VH.set(seg, x);
+        constants$663.const$1.set(seg, x);
     }
     public static MemorySegment default_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecString.default_value$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$663.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void default_value$set(MemorySegment seg, long index, MemorySegment x) {
-        _GParamSpecString.default_value$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$663.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle cset_first$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("cset_first"));
     public static VarHandle cset_first$VH() {
-        return _GParamSpecString.cset_first$VH;
+        return constants$663.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* cset_first;
+     * char* cset_first;
      * }
      */
     public static MemorySegment cset_first$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecString.cset_first$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$663.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* cset_first;
+     * char* cset_first;
      * }
      */
     public static void cset_first$set(MemorySegment seg, MemorySegment x) {
-        _GParamSpecString.cset_first$VH.set(seg, x);
+        constants$663.const$2.set(seg, x);
     }
     public static MemorySegment cset_first$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecString.cset_first$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$663.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void cset_first$set(MemorySegment seg, long index, MemorySegment x) {
-        _GParamSpecString.cset_first$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$663.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle cset_nth$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("cset_nth"));
     public static VarHandle cset_nth$VH() {
-        return _GParamSpecString.cset_nth$VH;
+        return constants$663.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* cset_nth;
+     * char* cset_nth;
      * }
      */
     public static MemorySegment cset_nth$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecString.cset_nth$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$663.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* cset_nth;
+     * char* cset_nth;
      * }
      */
     public static void cset_nth$set(MemorySegment seg, MemorySegment x) {
-        _GParamSpecString.cset_nth$VH.set(seg, x);
+        constants$663.const$3.set(seg, x);
     }
     public static MemorySegment cset_nth$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecString.cset_nth$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$663.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void cset_nth$set(MemorySegment seg, long index, MemorySegment x) {
-        _GParamSpecString.cset_nth$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$663.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle substitutor$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("substitutor"));
     public static VarHandle substitutor$VH() {
-        return _GParamSpecString.substitutor$VH;
+        return constants$663.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar substitutor;
+     * char substitutor;
      * }
      */
     public static byte substitutor$get(MemorySegment seg) {
-        return (byte)_GParamSpecString.substitutor$VH.get(seg);
+        return (byte)constants$663.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar substitutor;
+     * char substitutor;
      * }
      */
     public static void substitutor$set(MemorySegment seg, byte x) {
-        _GParamSpecString.substitutor$VH.set(seg, x);
+        constants$663.const$4.set(seg, x);
     }
     public static byte substitutor$get(MemorySegment seg, long index) {
-        return (byte)_GParamSpecString.substitutor$VH.get(seg.asSlice(index*sizeof()));
+        return (byte)constants$663.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void substitutor$set(MemorySegment seg, long index, byte x) {
-        _GParamSpecString.substitutor$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$663.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

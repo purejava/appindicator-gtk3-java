@@ -3,58 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$394 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$394() {}
-    static final FunctionDescriptor g_type_name_from_class$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_pattern_spec_match_string",
+        constants$9.const$0
     );
-    static final MethodHandle g_type_name_from_class$MH = RuntimeHelper.downcallHandle(
-        "g_type_name_from_class",
-        constants$394.g_type_name_from_class$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_pattern_match",
+        constants$11.const$0
     );
-    static final FunctionDescriptor GValueTransform$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_pattern_match_string",
+        constants$9.const$0
     );
-    static final FunctionDescriptor GValueTransform_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_pattern_match_simple",
+        constants$9.const$0
     );
-    static final MethodHandle GValueTransform_UP$MH = RuntimeHelper.upcallHandle(GValueTransform.class, "apply", constants$394.GValueTransform_UP$FUNC);
-    static final FunctionDescriptor GValueTransform_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_spaced_primes_closest",
+        constants$8.const$4
     );
-    static final MethodHandle GValueTransform_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$394.GValueTransform_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_value_init$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_value_init$MH = RuntimeHelper.downcallHandle(
-        "g_value_init",
-        constants$394.g_value_init$FUNC
-    );
-    static final FunctionDescriptor g_value_copy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_copy$MH = RuntimeHelper.downcallHandle(
-        "g_value_copy",
-        constants$394.g_value_copy$FUNC
-    );
-    static final FunctionDescriptor g_value_reset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_reset$MH = RuntimeHelper.downcallHandle(
-        "g_value_reset",
-        constants$394.g_value_reset$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_qsort_with_data$compare_func.class, "apply", constants$12.const$2);
 }
 
 

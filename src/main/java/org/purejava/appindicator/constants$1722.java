@@ -3,60 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1722 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1722() {}
-    static final FunctionDescriptor gtk_paper_size_is_ipp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_device_release",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_paper_size_is_ipp$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_is_ipp",
-        constants$1722.gtk_paper_size_is_ipp$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_device_flush",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_paper_size_set_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_device_finish",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_paper_size_set_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_set_size",
-        constants$1722.gtk_paper_size_set_size$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_device_destroy",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_paper_size_get_default_top_margin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_device_get_reference_count",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_paper_size_get_default_top_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_default_top_margin",
-        constants$1722.gtk_paper_size_get_default_top_margin$FUNC
-    );
-    static final FunctionDescriptor gtk_paper_size_get_default_bottom_margin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_paper_size_get_default_bottom_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_default_bottom_margin",
-        constants$1722.gtk_paper_size_get_default_bottom_margin$FUNC
-    );
-    static final FunctionDescriptor gtk_paper_size_get_default_left_margin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_paper_size_get_default_left_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_default_left_margin",
-        constants$1722.gtk_paper_size_get_default_left_margin$FUNC
-    );
-    static final FunctionDescriptor gtk_paper_size_get_default_right_margin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_paper_size_get_default_right_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_paper_size_get_default_right_margin",
-        constants$1722.gtk_paper_size_get_default_right_margin$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_device_get_user_data",
+        constants$5.const$5
     );
 }
 

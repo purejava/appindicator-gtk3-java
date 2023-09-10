@@ -3,54 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1405 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1405() {}
-    static final FunctionDescriptor gtk_text_iter_starts_word$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_starts_word$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_starts_word",
-        constants$1405.gtk_text_iter_starts_word$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_ends_word$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_ends_word$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_ends_word",
-        constants$1405.gtk_text_iter_ends_word$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_inside_word$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_inside_word$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_inside_word",
-        constants$1405.gtk_text_iter_inside_word$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_starts_sentence$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_starts_sentence$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_starts_sentence",
-        constants$1405.gtk_text_iter_starts_sentence$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_ends_sentence$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_ends_sentence$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_ends_sentence",
-        constants$1405.gtk_text_iter_ends_sentence$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_inside_sentence$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_inside_sentence$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_inside_sentence",
-        constants$1405.gtk_text_iter_inside_sentence$FUNC
-    );
+    static final VarHandle const$0 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("eject"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GVolumeIface.eject_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$2 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("eject_finish"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GVolumeIface.get_identifier.class, "apply", constants$5.const$5);
+    static final VarHandle const$4 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_identifier"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GVolumeIface.enumerate_identifiers.class, "apply", constants$5.const$2);
 }
 
 

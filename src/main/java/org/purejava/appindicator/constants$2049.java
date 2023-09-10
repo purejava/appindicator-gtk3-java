@@ -2,18 +2,42 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2049 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2049() {}
-    static final MemorySegment GTK_PRINT_SETTINGS_OUTPUT_BASENAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("output-basename");
-    static final MemorySegment GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("output-file-format");
-    static final MemorySegment GTK_PRINT_SETTINGS_OUTPUT_URI$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("output-uri");
-    static final MemorySegment GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("win32-driver-version");
-    static final MemorySegment GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("win32-driver-extra");
-    static final MemorySegment APP_INDICATOR_SIGNAL_NEW_ICON$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("new-icon");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_range_get_description",
+        constants$5.const$2
+    );
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        RuntimeHelper.POINTER
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_range_new",
+        constants$2049.const$1
+    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent"),
+        RuntimeHelper.POINTER.withName("factory_type_registry"),
+        RuntimeHelper.POINTER.withName("factory_singleton_cache")
+    ).withName("_AtkRegistry");
+    static final VarHandle const$4 = constants$2049.const$3.varHandle(MemoryLayout.PathElement.groupElement("factory_type_registry"));
+    static final VarHandle const$5 = constants$2049.const$3.varHandle(MemoryLayout.PathElement.groupElement("factory_singleton_cache"));
 }
 
 

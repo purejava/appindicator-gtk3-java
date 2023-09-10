@@ -3,54 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1129 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1129() {}
-    static final FunctionDescriptor gdk_pixbuf_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_io_scheduler_job_send_to_mainloop_async",
+        constants$42.const$1
     );
-    static final MethodHandle gdk_pixbuf_ref$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_ref",
-        constants$1129.gdk_pixbuf_ref$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_list_model_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_pixbuf_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_unref$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_unref",
-        constants$1129.gdk_pixbuf_unref$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_get_colorspace$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_get_colorspace$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_colorspace",
-        constants$1129.gdk_pixbuf_get_colorspace$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_get_n_channels$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_get_n_channels$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_n_channels",
-        constants$1129.gdk_pixbuf_get_n_channels$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_get_has_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_get_has_alpha$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_has_alpha",
-        constants$1129.gdk_pixbuf_get_has_alpha$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_get_bits_per_sample$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_get_bits_per_sample$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_bits_per_sample",
-        constants$1129.gdk_pixbuf_get_bits_per_sample$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("get_item_type"),
+        RuntimeHelper.POINTER.withName("get_n_items"),
+        RuntimeHelper.POINTER.withName("get_item")
+    ).withName("_GListModelInterface");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GListModelInterface.get_item_type.class, "apply", constants$4.const$0);
+    static final VarHandle const$4 = constants$1129.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_item_type"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GListModelInterface.get_n_items.class, "apply", constants$10.const$5);
 }
 
 

@@ -3,53 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1098 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1098() {}
-    static final FunctionDescriptor gdk_window_deiconify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1097.const$4.varHandle(MemoryLayout.PathElement.groupElement("to_string"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GInetAddressClass.to_bytes.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$1097.const$4.varHandle(MemoryLayout.PathElement.groupElement("to_bytes"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_window_deiconify$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_deiconify",
-        constants$1098.gdk_window_deiconify$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_inet_address_new_from_string",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gdk_window_stick$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_stick$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_stick",
-        constants$1098.gdk_window_stick$FUNC
-    );
-    static final FunctionDescriptor gdk_window_unstick$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_unstick$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_unstick",
-        constants$1098.gdk_window_unstick$FUNC
-    );
-    static final FunctionDescriptor gdk_window_maximize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_maximize$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_maximize",
-        constants$1098.gdk_window_maximize$FUNC
-    );
-    static final FunctionDescriptor gdk_window_unmaximize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_unmaximize$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_unmaximize",
-        constants$1098.gdk_window_unmaximize$FUNC
-    );
-    static final FunctionDescriptor gdk_window_fullscreen$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_fullscreen$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_fullscreen",
-        constants$1098.gdk_window_fullscreen$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_inet_address_new_from_bytes",
+        constants$21.const$3
     );
 }
 

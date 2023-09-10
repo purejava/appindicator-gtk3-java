@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$174 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$174() {}
-    static final FunctionDescriptor g_main_loop_is_running$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_checksum_update",
+        constants$25.const$1
     );
-    static final MethodHandle g_main_loop_is_running$MH = RuntimeHelper.downcallHandle(
-        "g_main_loop_is_running",
-        constants$174.g_main_loop_is_running$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_checksum_get_string",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_main_loop_get_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_checksum_get_digest",
+        constants$14.const$3
     );
-    static final MethodHandle g_main_loop_get_context$MH = RuntimeHelper.downcallHandle(
-        "g_main_loop_get_context",
-        constants$174.g_main_loop_get_context$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_compute_checksum_for_data",
+        constants$80.const$3
     );
-    static final FunctionDescriptor g_source_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_compute_checksum_for_string",
+        constants$80.const$3
     );
-    static final MethodHandle g_source_new$MH = RuntimeHelper.downcallHandle(
-        "g_source_new",
-        constants$174.g_source_new$FUNC
-    );
-    static final FunctionDescriptor g_source_set_dispose_function$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_set_dispose_function$MH = RuntimeHelper.downcallHandle(
-        "g_source_set_dispose_function",
-        constants$174.g_source_set_dispose_function$FUNC
-    );
-    static final FunctionDescriptor g_source_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_ref$MH = RuntimeHelper.downcallHandle(
-        "g_source_ref",
-        constants$174.g_source_ref$FUNC
-    );
-    static final FunctionDescriptor g_source_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_unref$MH = RuntimeHelper.downcallHandle(
-        "g_source_unref",
-        constants$174.g_source_unref$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_compute_checksum_for_bytes",
+        constants$24.const$4
     );
 }
 

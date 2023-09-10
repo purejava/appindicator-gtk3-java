@@ -4,96 +4,69 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GActionEntry {
- *     const gchar* name;
- *     void (*activate)(GSimpleAction*,GVariant*,gpointer);
- *     const gchar* parameter_type;
- *     const gchar* state;
- *     void (*change_state)(GSimpleAction*,GVariant*,gpointer);
- *     gsize padding[3];
+ *     char* name;
+ *     void (*activate)(struct _GSimpleAction*,struct _GVariant*,void*);
+ *     char* parameter_type;
+ *     char* state;
+ *     void (*change_state)(struct _GSimpleAction*,struct _GVariant*,void*);
+ *     unsigned long padding[3];
  * };
  * }
  */
 public class _GActionEntry {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("name"),
-        Constants$root.C_POINTER$LAYOUT.withName("activate"),
-        Constants$root.C_POINTER$LAYOUT.withName("parameter_type"),
-        Constants$root.C_POINTER$LAYOUT.withName("state"),
-        Constants$root.C_POINTER$LAYOUT.withName("change_state"),
-        MemoryLayout.sequenceLayout(3, Constants$root.C_LONG_LONG$LAYOUT).withName("padding")
-    ).withName("_GActionEntry");
     public static MemoryLayout $LAYOUT() {
-        return _GActionEntry.$struct$LAYOUT;
+        return constants$713.const$1;
     }
-    static final VarHandle name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("name"));
     public static VarHandle name$VH() {
-        return _GActionEntry.name$VH;
+        return constants$713.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const gchar* name;
+     * char* name;
      * }
      */
     public static MemorySegment name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GActionEntry.name$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$713.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const gchar* name;
+     * char* name;
      * }
      */
     public static void name$set(MemorySegment seg, MemorySegment x) {
-        _GActionEntry.name$VH.set(seg, x);
+        constants$713.const$2.set(seg, x);
     }
     public static MemorySegment name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GActionEntry.name$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$713.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void name$set(MemorySegment seg, long index, MemorySegment x) {
-        _GActionEntry.name$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$713.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final FunctionDescriptor activate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor activate_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle activate_UP$MH = RuntimeHelper.upcallHandle(activate.class, "apply", _GActionEntry.activate_UP$FUNC);
-    static final FunctionDescriptor activate_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle activate_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GActionEntry.activate_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*activate)(GSimpleAction*,GVariant*,gpointer);
+ * void (*activate)(struct _GSimpleAction*,struct _GVariant*,void*);
      * }
      */
     public interface activate {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(activate fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GActionEntry.activate_UP$MH, fi, _GActionEntry.activate$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(activate fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$713.const$3, fi, constants$14.const$3, scope);
         }
-        static activate ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
+        static activate ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GActionEntry.activate_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$14.const$5.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -101,128 +74,106 @@ public class _GActionEntry {
         }
     }
 
-    static final VarHandle activate$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("activate"));
     public static VarHandle activate$VH() {
-        return _GActionEntry.activate$VH;
+        return constants$713.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*activate)(GSimpleAction*,GVariant*,gpointer);
+     * void (*activate)(struct _GSimpleAction*,struct _GVariant*,void*);
      * }
      */
     public static MemorySegment activate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GActionEntry.activate$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$713.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*activate)(GSimpleAction*,GVariant*,gpointer);
+     * void (*activate)(struct _GSimpleAction*,struct _GVariant*,void*);
      * }
      */
     public static void activate$set(MemorySegment seg, MemorySegment x) {
-        _GActionEntry.activate$VH.set(seg, x);
+        constants$713.const$4.set(seg, x);
     }
     public static MemorySegment activate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GActionEntry.activate$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$713.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void activate$set(MemorySegment seg, long index, MemorySegment x) {
-        _GActionEntry.activate$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$713.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static activate activate(MemorySegment segment, SegmentScope scope) {
+    public static activate activate(MemorySegment segment, Arena scope) {
         return activate.ofAddress(activate$get(segment), scope);
     }
-    static final VarHandle parameter_type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("parameter_type"));
     public static VarHandle parameter_type$VH() {
-        return _GActionEntry.parameter_type$VH;
+        return constants$713.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const gchar* parameter_type;
+     * char* parameter_type;
      * }
      */
     public static MemorySegment parameter_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GActionEntry.parameter_type$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$713.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const gchar* parameter_type;
+     * char* parameter_type;
      * }
      */
     public static void parameter_type$set(MemorySegment seg, MemorySegment x) {
-        _GActionEntry.parameter_type$VH.set(seg, x);
+        constants$713.const$5.set(seg, x);
     }
     public static MemorySegment parameter_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GActionEntry.parameter_type$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$713.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void parameter_type$set(MemorySegment seg, long index, MemorySegment x) {
-        _GActionEntry.parameter_type$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$713.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle state$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("state"));
     public static VarHandle state$VH() {
-        return _GActionEntry.state$VH;
+        return constants$714.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const gchar* state;
+     * char* state;
      * }
      */
     public static MemorySegment state$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GActionEntry.state$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$714.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const gchar* state;
+     * char* state;
      * }
      */
     public static void state$set(MemorySegment seg, MemorySegment x) {
-        _GActionEntry.state$VH.set(seg, x);
+        constants$714.const$0.set(seg, x);
     }
     public static MemorySegment state$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GActionEntry.state$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$714.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void state$set(MemorySegment seg, long index, MemorySegment x) {
-        _GActionEntry.state$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$714.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final FunctionDescriptor change_state$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor change_state_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle change_state_UP$MH = RuntimeHelper.upcallHandle(change_state.class, "apply", _GActionEntry.change_state_UP$FUNC);
-    static final FunctionDescriptor change_state_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle change_state_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GActionEntry.change_state_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*change_state)(GSimpleAction*,GVariant*,gpointer);
+ * void (*change_state)(struct _GSimpleAction*,struct _GVariant*,void*);
      * }
      */
     public interface change_state {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(change_state fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GActionEntry.change_state_UP$MH, fi, _GActionEntry.change_state$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(change_state fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$714.const$1, fi, constants$14.const$3, scope);
         }
-        static change_state ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
+        static change_state ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GActionEntry.change_state_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$14.const$5.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -230,35 +181,34 @@ public class _GActionEntry {
         }
     }
 
-    static final VarHandle change_state$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("change_state"));
     public static VarHandle change_state$VH() {
-        return _GActionEntry.change_state$VH;
+        return constants$714.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*change_state)(GSimpleAction*,GVariant*,gpointer);
+     * void (*change_state)(struct _GSimpleAction*,struct _GVariant*,void*);
      * }
      */
     public static MemorySegment change_state$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GActionEntry.change_state$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$714.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*change_state)(GSimpleAction*,GVariant*,gpointer);
+     * void (*change_state)(struct _GSimpleAction*,struct _GVariant*,void*);
      * }
      */
     public static void change_state$set(MemorySegment seg, MemorySegment x) {
-        _GActionEntry.change_state$VH.set(seg, x);
+        constants$714.const$2.set(seg, x);
     }
     public static MemorySegment change_state$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GActionEntry.change_state$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$714.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void change_state$set(MemorySegment seg, long index, MemorySegment x) {
-        _GActionEntry.change_state$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$714.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static change_state change_state(MemorySegment segment, SegmentScope scope) {
+    public static change_state change_state(MemorySegment segment, Arena scope) {
         return change_state.ofAddress(change_state$get(segment), scope);
     }
     public static MemorySegment padding$slice(MemorySegment seg) {
@@ -269,7 +219,7 @@ public class _GActionEntry {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

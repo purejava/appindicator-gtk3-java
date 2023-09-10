@@ -3,41 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$673 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$673() {}
-    static final FunctionDescriptor g_resource_lookup_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_resource_lookup_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_resource_lookup_flags_get_type",
-        constants$673.g_resource_lookup_flags_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_signal_group_connect_data$c_handler.class, "apply", constants$7.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_signal_group_connect_data$notify.class, "apply", constants$13.const$4);
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor g_socket_family_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_family_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_family_get_type",
-        constants$673.g_socket_family_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_signal_group_connect_data",
+        constants$673.const$2
     );
-    static final FunctionDescriptor g_socket_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_type_get_type",
-        constants$673.g_socket_type_get_type$FUNC
-    );
-    static final FunctionDescriptor g_socket_msg_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_msg_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_msg_flags_get_type",
-        constants$673.g_socket_msg_flags_get_type$FUNC
-    );
-    static final FunctionDescriptor g_socket_protocol_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_protocol_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_protocol_get_type",
-        constants$673.g_socket_protocol_get_type$FUNC
-    );
-    static final FunctionDescriptor g_zlib_compressor_format_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_zlib_compressor_format_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_zlib_compressor_format_get_type",
-        constants$673.g_zlib_compressor_format_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_signal_group_connect$c_handler.class, "apply", constants$7.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_signal_group_connect",
+        constants$42.const$1
     );
 }
 

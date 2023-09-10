@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1744 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1744() {}
-    static final FunctionDescriptor gtk_print_settings_get_collate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_pattern_add_color_stop_rgb",
+        constants$1682.const$5
     );
-    static final MethodHandle gtk_print_settings_get_collate$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_collate",
-        constants$1744.gtk_print_settings_get_collate$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_pattern_add_color_stop_rgba",
+        constants$1687.const$4
     );
-    static final FunctionDescriptor gtk_print_settings_set_collate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_mesh_pattern_begin_patch",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_print_settings_set_collate$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_collate",
-        constants$1744.gtk_print_settings_set_collate$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_mesh_pattern_end_patch",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_print_settings_get_reverse$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_mesh_pattern_curve_to",
+        constants$1687.const$2
     );
-    static final MethodHandle gtk_print_settings_get_reverse$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_reverse",
-        constants$1744.gtk_print_settings_get_reverse$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_set_reverse$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_set_reverse$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_reverse",
-        constants$1744.gtk_print_settings_set_reverse$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_get_duplex$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_get_duplex$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_get_duplex",
-        constants$1744.gtk_print_settings_get_duplex$FUNC
-    );
-    static final FunctionDescriptor gtk_print_settings_set_duplex$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_print_settings_set_duplex$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_settings_set_duplex",
-        constants$1744.gtk_print_settings_set_duplex$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_mesh_pattern_line_to",
+        constants$1531.const$0
     );
 }
 

@@ -3,61 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$272 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$272() {}
-    static final FunctionDescriptor g_pattern_spec_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_source_set_name",
+        constants$13.const$4
     );
-    static final MethodHandle g_pattern_spec_free$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_free",
-        constants$272.g_pattern_spec_free$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_source_set_static_name",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_pattern_spec_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_source_get_name",
+        constants$5.const$2
     );
-    static final MethodHandle g_pattern_spec_copy$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_copy",
-        constants$272.g_pattern_spec_copy$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_source_set_name_by_id",
+        constants$90.const$2
     );
-    static final FunctionDescriptor g_pattern_spec_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_source_set_ready_time",
+        constants$25.const$3
     );
-    static final MethodHandle g_pattern_spec_equal$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_equal",
-        constants$272.g_pattern_spec_equal$FUNC
-    );
-    static final FunctionDescriptor g_pattern_spec_match$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pattern_spec_match$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_match",
-        constants$272.g_pattern_spec_match$FUNC
-    );
-    static final FunctionDescriptor g_pattern_spec_match_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pattern_spec_match_string$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_spec_match_string",
-        constants$272.g_pattern_spec_match_string$FUNC
-    );
-    static final FunctionDescriptor g_pattern_match$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pattern_match$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_match",
-        constants$272.g_pattern_match$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_source_get_ready_time",
+        constants$4.const$0
     );
 }
 

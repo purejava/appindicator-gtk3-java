@@ -3,54 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$803 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$803() {}
-    static final FunctionDescriptor g_tls_backend_get_server_connection_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_tls_backend_get_server_connection_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_backend_get_server_connection_type",
-        constants$803.g_tls_backend_get_server_connection_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GConverterIface.convert.class, "apply", constants$803.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$803.const$0
     );
-    static final FunctionDescriptor g_tls_backend_get_file_database_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_backend_get_file_database_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_backend_get_file_database_type",
-        constants$803.g_tls_backend_get_file_database_type$FUNC
-    );
-    static final FunctionDescriptor g_tls_backend_get_dtls_client_connection_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_backend_get_dtls_client_connection_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_backend_get_dtls_client_connection_type",
-        constants$803.g_tls_backend_get_dtls_client_connection_type$FUNC
-    );
-    static final FunctionDescriptor g_tls_backend_get_dtls_server_connection_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_backend_get_dtls_server_connection_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_backend_get_dtls_server_connection_type",
-        constants$803.g_tls_backend_get_dtls_server_connection_type$FUNC
-    );
-    static final FunctionDescriptor g_tls_certificate_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_certificate_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_get_type",
-        constants$803.g_tls_certificate_get_type$FUNC
-    );
-    static final FunctionDescriptor g_tls_certificate_new_from_pem$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_certificate_new_from_pem$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_new_from_pem",
-        constants$803.g_tls_certificate_new_from_pem$FUNC
-    );
+    static final VarHandle const$3 = constants$802.const$5.varHandle(MemoryLayout.PathElement.groupElement("convert"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GConverterIface.reset.class, "apply", constants$13.const$1);
+    static final VarHandle const$5 = constants$802.const$5.varHandle(MemoryLayout.PathElement.groupElement("reset"));
 }
 
 

@@ -3,41 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1896 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1896() {}
-    static final FunctionDescriptor gtk_toolbar_space_style_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_toolbar_space_style_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_space_style_get_type",
-        constants$1896.gtk_toolbar_space_style_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_iter_on_currently_loading_frame",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_tool_palette_drag_targets_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tool_palette_drag_targets_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_palette_drag_targets_get_type",
-        constants$1896.gtk_tool_palette_drag_targets_get_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_animation_iter_advance",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gtk_tree_model_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_model_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_flags_get_type",
-        constants$1896.gtk_tree_model_flags_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_simple_anim_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_tree_view_drop_position_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_view_drop_position_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_drop_position_get_type",
-        constants$1896.gtk_tree_view_drop_position_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_simple_anim_iter_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_tree_view_column_sizing_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_view_column_sizing_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_sizing_get_type",
-        constants$1896.gtk_tree_view_column_sizing_get_type$FUNC
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_FLOAT
     );
-    static final FunctionDescriptor gtk_widget_help_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_widget_help_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_help_type_get_type",
-        constants$1896.gtk_widget_help_type_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_simple_anim_new",
+        constants$1896.const$4
     );
 }
 

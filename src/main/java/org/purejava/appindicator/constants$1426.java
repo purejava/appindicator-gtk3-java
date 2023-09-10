@@ -3,67 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1426 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1426() {}
-    static final FunctionDescriptor gtk_drag_cancel$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_is_immutable",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_drag_cancel$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_cancel",
-        constants$1426.gtk_drag_cancel$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_get_parent",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_drag_set_icon_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_drag_set_icon_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_set_icon_widget",
-        constants$1426.gtk_drag_set_icon_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_set_icon_pixbuf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_drag_set_icon_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_set_icon_pixbuf",
-        constants$1426.gtk_drag_set_icon_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_set_icon_stock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_drag_set_icon_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_set_icon_stock",
-        constants$1426.gtk_drag_set_icon_stock$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_set_icon_surface$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_drag_set_icon_surface$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_set_icon_surface",
-        constants$1426.gtk_drag_set_icon_surface$FUNC
-    );
-    static final FunctionDescriptor gtk_drag_set_icon_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_drag_set_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_drag_set_icon_name",
-        constants$1426.gtk_drag_set_icon_name$FUNC
-    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_unicode_combining_class_func_t.class, "apply", constants$150.const$0);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_unicode_general_category_func_t.class, "apply", constants$150.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_unicode_mirroring_func_t.class, "apply", constants$150.const$0);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_unicode_script_func_t.class, "apply", constants$150.const$0);
 }
 
 

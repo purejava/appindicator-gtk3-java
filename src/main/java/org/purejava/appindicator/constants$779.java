@@ -3,67 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$779 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$779() {}
-    static final FunctionDescriptor g_socket_listener_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_socket_listener_new$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_new",
-        constants$779.g_socket_listener_new$FUNC
-    );
-    static final FunctionDescriptor g_socket_listener_set_backlog$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_listener_set_backlog$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_set_backlog",
-        constants$779.g_socket_listener_set_backlog$FUNC
-    );
-    static final FunctionDescriptor g_socket_listener_add_socket$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_listener_add_socket$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_add_socket",
-        constants$779.g_socket_listener_add_socket$FUNC
-    );
-    static final FunctionDescriptor g_socket_listener_add_address$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_listener_add_address$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_add_address",
-        constants$779.g_socket_listener_add_address$FUNC
-    );
-    static final FunctionDescriptor g_socket_listener_add_inet_port$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_listener_add_inet_port$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_add_inet_port",
-        constants$779.g_socket_listener_add_inet_port$FUNC
-    );
-    static final FunctionDescriptor g_socket_listener_add_any_inet_port$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_listener_add_any_inet_port$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_add_any_inet_port",
-        constants$779.g_socket_listener_add_any_inet_port$FUNC
-    );
+    static final VarHandle const$0 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("splice"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GOutputStreamClass.flush.class, "apply", constants$12.const$2);
+    static final VarHandle const$2 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("flush"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GOutputStreamClass.close_fn.class, "apply", constants$12.const$2);
+    static final VarHandle const$4 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("close_fn"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GOutputStreamClass.write_async.class, "apply", constants$761.const$1);
 }
 
 

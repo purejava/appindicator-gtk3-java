@@ -3,59 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$288 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$288() {}
-    static final FunctionDescriptor g_ref_string_length$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_unichar_validate",
+        constants$8.const$4
     );
-    static final MethodHandle g_ref_string_length$MH = RuntimeHelper.downcallHandle(
-        "g_ref_string_length",
-        constants$288.g_ref_string_length$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_regex_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_regex_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_regex_error_quark",
-        constants$288.g_regex_error_quark$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_unichar_compose",
+        constants$288.const$1
     );
-    static final FunctionDescriptor GRegexEvalCallback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_unichar_decompose",
+        constants$10.const$3
     );
-    static final FunctionDescriptor GRegexEvalCallback_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final MethodHandle GRegexEvalCallback_UP$MH = RuntimeHelper.upcallHandle(GRegexEvalCallback.class, "apply", constants$288.GRegexEvalCallback_UP$FUNC);
-    static final FunctionDescriptor GRegexEvalCallback_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GRegexEvalCallback_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$288.GRegexEvalCallback_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_regex_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_new$MH = RuntimeHelper.downcallHandle(
-        "g_regex_new",
-        constants$288.g_regex_new$FUNC
-    );
-    static final FunctionDescriptor g_regex_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_ref$MH = RuntimeHelper.downcallHandle(
-        "g_regex_ref",
-        constants$288.g_regex_ref$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_unichar_fully_decompose",
+        constants$288.const$4
     );
 }
 

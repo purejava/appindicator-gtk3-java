@@ -3,61 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1587 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1587() {}
-    static final FunctionDescriptor gtk_flow_box_bind_model$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_bind_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_bind_model",
-        constants$1587.gtk_flow_box_bind_model$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_set_homogeneous$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_set_homogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_homogeneous",
-        constants$1587.gtk_flow_box_set_homogeneous$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_get_homogeneous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_get_homogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_get_homogeneous",
-        constants$1587.gtk_flow_box_get_homogeneous$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_set_row_spacing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_set_row_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_row_spacing",
-        constants$1587.gtk_flow_box_set_row_spacing$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_get_row_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_get_row_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_get_row_spacing",
-        constants$1587.gtk_flow_box_get_row_spacing$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_set_column_spacing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_set_column_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_column_spacing",
-        constants$1587.gtk_flow_box_set_column_spacing$FUNC
-    );
+    static final VarHandle const$0 = constants$1586.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_metrics"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_PangoFontsetClass.get_language.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$1586.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_language"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_PangoFontsetClass.foreach.class, "apply", constants$14.const$3);
+    static final VarHandle const$4 = constants$1586.const$2.varHandle(MemoryLayout.PathElement.groupElement("foreach"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_PangoFontsetClass._pango_reserved1.class, "apply", constants$7.const$5);
 }
 
 

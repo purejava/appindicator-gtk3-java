@@ -3,57 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$572 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$572() {}
-    static final FunctionDescriptor g_dbus_message_get_byte_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_get_byte_order$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_byte_order",
-        constants$572.g_dbus_message_get_byte_order$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_set_byte_order$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_set_byte_order$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_byte_order",
-        constants$572.g_dbus_message_set_byte_order$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_get_message_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_get_message_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_message_type",
-        constants$572.g_dbus_message_get_message_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_set_message_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_set_message_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_message_type",
-        constants$572.g_dbus_message_set_message_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_get_flags$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_flags",
-        constants$572.g_dbus_message_get_flags$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_set_flags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_set_flags$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_set_flags",
-        constants$572.g_dbus_message_set_flags$FUNC
-    );
+    static final VarHandle const$0 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("value_type"));
+    static final VarHandle const$1 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("owner_type"));
+    static final VarHandle const$2 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("_nick"));
+    static final VarHandle const$3 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("_blurb"));
+    static final VarHandle const$4 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("qdata"));
+    static final VarHandle const$5 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
 }
 
 

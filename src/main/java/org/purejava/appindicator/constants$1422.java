@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1422 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1422() {}
-    static final FunctionDescriptor gtk_selection_data_get_uris$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_blob_create_from_file_or_fail",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_selection_data_get_uris$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_get_uris",
-        constants$1422.gtk_selection_data_get_uris$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_blob_create_sub_blob",
+        constants$33.const$5
     );
-    static final FunctionDescriptor gtk_selection_data_get_targets$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_blob_copy_writable_or_fail",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_selection_data_get_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_get_targets",
-        constants$1422.gtk_selection_data_get_targets$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_blob_get_empty",
+        constants$35.const$2
     );
-    static final FunctionDescriptor gtk_selection_data_targets_include_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_blob_reference",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_selection_data_targets_include_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_targets_include_text",
-        constants$1422.gtk_selection_data_targets_include_text$FUNC
-    );
-    static final FunctionDescriptor gtk_selection_data_targets_include_rich_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_selection_data_targets_include_rich_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_targets_include_rich_text",
-        constants$1422.gtk_selection_data_targets_include_rich_text$FUNC
-    );
-    static final FunctionDescriptor gtk_selection_data_targets_include_image$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_selection_data_targets_include_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_targets_include_image",
-        constants$1422.gtk_selection_data_targets_include_image$FUNC
-    );
-    static final FunctionDescriptor gtk_selection_data_targets_include_uri$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_selection_data_targets_include_uri$MH = RuntimeHelper.downcallHandle(
-        "gtk_selection_data_targets_include_uri",
-        constants$1422.gtk_selection_data_targets_include_uri$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_blob_destroy",
+        constants$13.const$1
     );
 }
 

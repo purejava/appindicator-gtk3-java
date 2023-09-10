@@ -3,67 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$260 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$260() {}
-    static final FunctionDescriptor g_log_writer_format_fields$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_log_writer_format_fields$MH = RuntimeHelper.downcallHandle(
-        "g_log_writer_format_fields",
-        constants$260.g_log_writer_format_fields$FUNC
-    );
-    static final FunctionDescriptor g_log_writer_journald$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_log_writer_journald$MH = RuntimeHelper.downcallHandle(
-        "g_log_writer_journald",
-        constants$260.g_log_writer_journald$FUNC
-    );
-    static final FunctionDescriptor g_log_writer_standard_streams$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_log_writer_standard_streams$MH = RuntimeHelper.downcallHandle(
-        "g_log_writer_standard_streams",
-        constants$260.g_log_writer_standard_streams$FUNC
-    );
-    static final FunctionDescriptor g_log_writer_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_log_writer_default$MH = RuntimeHelper.downcallHandle(
-        "g_log_writer_default",
-        constants$260.g_log_writer_default$FUNC
-    );
-    static final FunctionDescriptor g_log_writer_default_set_use_stderr$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_log_writer_default_set_use_stderr$MH = RuntimeHelper.downcallHandle(
-        "g_log_writer_default_set_use_stderr",
-        constants$260.g_log_writer_default_set_use_stderr$FUNC
-    );
-    static final FunctionDescriptor g_log_writer_default_would_drop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_log_writer_default_would_drop$MH = RuntimeHelper.downcallHandle(
-        "g_log_writer_default_would_drop",
-        constants$260.g_log_writer_default_would_drop$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GSourceDummyMarshal.class, "apply", constants$7.const$5);
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("prepare"),
+        RuntimeHelper.POINTER.withName("check"),
+        RuntimeHelper.POINTER.withName("dispatch"),
+        RuntimeHelper.POINTER.withName("finalize"),
+        RuntimeHelper.POINTER.withName("closure_callback"),
+        RuntimeHelper.POINTER.withName("closure_marshal")
+    ).withName("_GSourceFuncs");
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GSourceFuncs.prepare.class, "apply", constants$9.const$0);
+    static final VarHandle const$3 = constants$260.const$1.varHandle(MemoryLayout.PathElement.groupElement("prepare"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GSourceFuncs.check.class, "apply", constants$10.const$5);
+    static final VarHandle const$5 = constants$260.const$1.varHandle(MemoryLayout.PathElement.groupElement("check"));
 }
 
 

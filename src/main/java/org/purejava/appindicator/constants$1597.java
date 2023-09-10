@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1597 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1597() {}
-    static final FunctionDescriptor gtk_font_chooser_set_font$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_context_get_gravity",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_font_chooser_set_font$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_set_font",
-        constants$1597.gtk_font_chooser_set_font$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_context_set_gravity_hint",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_font_chooser_get_preview_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_context_get_gravity_hint",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_font_chooser_get_preview_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_get_preview_text",
-        constants$1597.gtk_font_chooser_get_preview_text$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_context_set_matrix",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_font_chooser_set_preview_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_context_get_matrix",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_font_chooser_set_preview_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_set_preview_text",
-        constants$1597.gtk_font_chooser_set_preview_text$FUNC
-    );
-    static final FunctionDescriptor gtk_font_chooser_get_show_preview_entry$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_font_chooser_get_show_preview_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_get_show_preview_entry",
-        constants$1597.gtk_font_chooser_get_show_preview_entry$FUNC
-    );
-    static final FunctionDescriptor gtk_font_chooser_set_show_preview_entry$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_font_chooser_set_show_preview_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_set_show_preview_entry",
-        constants$1597.gtk_font_chooser_set_show_preview_entry$FUNC
-    );
-    static final FunctionDescriptor gtk_font_chooser_set_filter_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_font_chooser_set_filter_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_chooser_set_filter_func",
-        constants$1597.gtk_font_chooser_set_filter_func$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_context_set_round_glyph_positions",
+        constants$40.const$2
     );
 }
 

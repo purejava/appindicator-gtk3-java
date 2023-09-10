@@ -3,59 +3,45 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1373 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1373() {}
-    static final FunctionDescriptor gtk_cell_editable_editing_done$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tls_database_lookup_certificates_issued_by_finish",
+        constants$23.const$0
     );
-    static final MethodHandle gtk_cell_editable_editing_done$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_editable_editing_done",
-        constants$1373.gtk_cell_editable_editing_done$FUNC
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        MemoryLayout.sequenceLayout(8, RuntimeHelper.POINTER).withName("padding")
+    ).withName("_GTlsFileDatabaseInterface");
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tls_file_database_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_cell_editable_remove_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tls_file_database_new",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_cell_editable_remove_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_editable_remove_widget",
-        constants$1373.gtk_cell_editable_remove_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_cell_renderer_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_type",
-        constants$1373.gtk_cell_renderer_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_get_request_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_get_request_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_request_mode",
-        constants$1373.gtk_cell_renderer_get_request_mode$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_get_preferred_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_get_preferred_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_preferred_width",
-        constants$1373.gtk_cell_renderer_get_preferred_width$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_get_preferred_height_for_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_get_preferred_height_for_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_preferred_height_for_width",
-        constants$1373.gtk_cell_renderer_get_preferred_height_for_width$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GTlsInteraction");
+    static final VarHandle const$5 = constants$1373.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

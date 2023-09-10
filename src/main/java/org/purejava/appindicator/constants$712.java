@@ -3,53 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$712 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$712() {}
-    static final FunctionDescriptor g_mount_operation_set_is_tcrypt_system_volume$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_mount_operation_set_is_tcrypt_system_volume$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_set_is_tcrypt_system_volume",
-        constants$712.g_mount_operation_set_is_tcrypt_system_volume$FUNC
-    );
-    static final FunctionDescriptor g_mount_operation_get_pim$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_operation_get_pim$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_pim",
-        constants$712.g_mount_operation_get_pim$FUNC
-    );
-    static final FunctionDescriptor g_mount_operation_set_pim$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_mount_operation_set_pim$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_set_pim",
-        constants$712.g_mount_operation_set_pim$FUNC
-    );
-    static final FunctionDescriptor g_native_socket_address_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_native_socket_address_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_native_socket_address_get_type",
-        constants$712.g_native_socket_address_get_type$FUNC
-    );
-    static final FunctionDescriptor g_native_socket_address_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_native_socket_address_new$MH = RuntimeHelper.downcallHandle(
-        "g_native_socket_address_new",
-        constants$712.g_native_socket_address_new$FUNC
-    );
-    static final FunctionDescriptor g_volume_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_volume_monitor_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_volume_monitor_get_type",
-        constants$712.g_volume_monitor_get_type$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("lookup_action"),
+        RuntimeHelper.POINTER.withName("add_action"),
+        RuntimeHelper.POINTER.withName("remove_action")
+    ).withName("_GActionMapInterface");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GActionMapInterface.lookup_action.class, "apply", constants$5.const$5);
+    static final VarHandle const$2 = constants$712.const$0.varHandle(MemoryLayout.PathElement.groupElement("lookup_action"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GActionMapInterface.add_action.class, "apply", constants$13.const$4);
+    static final VarHandle const$4 = constants$712.const$0.varHandle(MemoryLayout.PathElement.groupElement("add_action"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GActionMapInterface.remove_action.class, "apply", constants$13.const$4);
 }
 
 

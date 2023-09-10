@@ -3,58 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1615 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1615() {}
-    static final FunctionDescriptor gtk_grid_set_column_homogeneous$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final VarHandle const$0 = constants$1614.const$1.varHandle(MemoryLayout.PathElement.groupElement("end_x_offset"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_grid_set_column_homogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_set_column_homogeneous",
-        constants$1615.gtk_grid_set_column_homogeneous$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_split",
+        constants$32.const$3
     );
-    static final FunctionDescriptor gtk_grid_get_column_homogeneous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_copy",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_grid_get_column_homogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_get_column_homogeneous",
-        constants$1615.gtk_grid_get_column_homogeneous$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_free",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_grid_set_column_spacing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_grid_set_column_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_set_column_spacing",
-        constants$1615.gtk_grid_set_column_spacing$FUNC
-    );
-    static final FunctionDescriptor gtk_grid_get_column_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_grid_get_column_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_get_column_spacing",
-        constants$1615.gtk_grid_get_column_spacing$FUNC
-    );
-    static final FunctionDescriptor gtk_grid_set_row_baseline_position$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_grid_set_row_baseline_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_set_row_baseline_position",
-        constants$1615.gtk_grid_set_row_baseline_position$FUNC
-    );
-    static final FunctionDescriptor gtk_grid_get_row_baseline_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_grid_get_row_baseline_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_get_row_baseline_position",
-        constants$1615.gtk_grid_get_row_baseline_position$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_apply_attrs",
+        constants$23.const$0
     );
 }
 

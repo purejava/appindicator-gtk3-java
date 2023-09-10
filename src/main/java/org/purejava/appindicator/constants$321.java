@@ -4,80 +4,35 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 final class constants$321 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$321() {}
-    static final FunctionDescriptor g_assertion_message_expr$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_io_add_watch_full$notify.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_assertion_message_expr$MH = RuntimeHelper.downcallHandle(
-        "g_assertion_message_expr",
-        constants$321.g_assertion_message_expr$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_io_add_watch_full",
+        constants$321.const$1
     );
-    static final FunctionDescriptor g_assertion_message_cmpstr$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_io_create_watch",
+        constants$21.const$3
     );
-    static final MethodHandle g_assertion_message_cmpstr$MH = RuntimeHelper.downcallHandle(
-        "g_assertion_message_cmpstr",
-        constants$321.g_assertion_message_cmpstr$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_io_add_watch$func.class, "apply", constants$150.const$0);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_io_add_watch",
+        constants$11.const$0
     );
-    static final FunctionDescriptor g_assertion_message_cmpstrv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_assertion_message_cmpstrv$MH = RuntimeHelper.downcallHandle(
-        "g_assertion_message_cmpstrv",
-        constants$321.g_assertion_message_cmpstrv$FUNC
-    );
-    static final FunctionDescriptor g_assertion_message_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_assertion_message_error$MH = RuntimeHelper.downcallHandle(
-        "g_assertion_message_error",
-        constants$321.g_assertion_message_error$FUNC
-    );
-    static final FunctionDescriptor g_test_add_vtable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_add_vtable$MH = RuntimeHelper.downcallHandle(
-        "g_test_add_vtable",
-        constants$321.g_test_add_vtable$FUNC
-    );
-    static final OfAddress g_test_config_vars$LAYOUT = Constants$root.C_POINTER$LAYOUT;
-    static final VarHandle g_test_config_vars$VH = constants$321.g_test_config_vars$LAYOUT.varHandle();
-    static final MemorySegment g_test_config_vars$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_test_config_vars", constants$321.g_test_config_vars$LAYOUT);
 }
 
 

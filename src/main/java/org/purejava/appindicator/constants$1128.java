@@ -4,44 +4,25 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 final class constants$1128 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1128() {}
-    static final OfInt gdk_pixbuf_micro_version$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle gdk_pixbuf_micro_version$VH = constants$1128.gdk_pixbuf_micro_version$LAYOUT.varHandle();
-    static final MemorySegment gdk_pixbuf_micro_version$SEGMENT = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_micro_version", constants$1128.gdk_pixbuf_micro_version$LAYOUT);
-    static final OfAddress gdk_pixbuf_version$LAYOUT = Constants$root.C_POINTER$LAYOUT;
-    static final VarHandle gdk_pixbuf_version$VH = constants$1128.gdk_pixbuf_version$LAYOUT.varHandle();
-    static final MemorySegment gdk_pixbuf_version$SEGMENT = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_version", constants$1128.gdk_pixbuf_version$LAYOUT);
-    static final FunctionDescriptor GdkPixbufDestroyNotify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_io_scheduler_cancel_all_jobs",
+        constants$7.const$5
     );
-    static final FunctionDescriptor GdkPixbufDestroyNotify_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_io_scheduler_job_send_to_mainloop$func.class, "apply", constants$10.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_io_scheduler_job_send_to_mainloop$notify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_io_scheduler_job_send_to_mainloop",
+        constants$34.const$5
     );
-    static final MethodHandle GdkPixbufDestroyNotify_UP$MH = RuntimeHelper.upcallHandle(GdkPixbufDestroyNotify.class, "apply", constants$1128.GdkPixbufDestroyNotify_UP$FUNC);
-    static final FunctionDescriptor GdkPixbufDestroyNotify_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GdkPixbufDestroyNotify_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1128.GdkPixbufDestroyNotify_DOWN$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_pixbuf_error_quark$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_error_quark",
-        constants$1128.gdk_pixbuf_error_quark$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_pixbuf_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_type",
-        constants$1128.gdk_pixbuf_get_type$FUNC
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_io_scheduler_job_send_to_mainloop_async$func.class, "apply", constants$10.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_io_scheduler_job_send_to_mainloop_async$notify.class, "apply", constants$13.const$1);
 }
 
 

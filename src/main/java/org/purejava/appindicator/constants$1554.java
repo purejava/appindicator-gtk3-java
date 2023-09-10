@@ -3,61 +3,57 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1554 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1554() {}
-    static final FunctionDescriptor gtk_css_provider_load_from_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_css_provider_load_from_data$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_load_from_data",
-        constants$1554.gtk_css_provider_load_from_data$FUNC
-    );
-    static final FunctionDescriptor gtk_css_provider_load_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_css_provider_load_from_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_load_from_file",
-        constants$1554.gtk_css_provider_load_from_file$FUNC
-    );
-    static final FunctionDescriptor gtk_css_provider_load_from_path$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_css_provider_load_from_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_load_from_path",
-        constants$1554.gtk_css_provider_load_from_path$FUNC
-    );
-    static final FunctionDescriptor gtk_css_provider_load_from_resource$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_css_provider_load_from_resource$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_load_from_resource",
-        constants$1554.gtk_css_provider_load_from_resource$FUNC
-    );
-    static final FunctionDescriptor gtk_css_provider_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_css_provider_get_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_get_default",
-        constants$1554.gtk_css_provider_get_default$FUNC
-    );
-    static final FunctionDescriptor gtk_css_provider_get_named$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_css_provider_get_named$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_get_named",
-        constants$1554.gtk_css_provider_get_named$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance")
+    ).withName("_PangoFont");
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("describe"),
+        RuntimeHelper.POINTER.withName("get_coverage"),
+        RuntimeHelper.POINTER.withName("get_glyph_extents"),
+        RuntimeHelper.POINTER.withName("get_metrics"),
+        RuntimeHelper.POINTER.withName("get_font_map"),
+        RuntimeHelper.POINTER.withName("describe_absolute"),
+        RuntimeHelper.POINTER.withName("get_features"),
+        RuntimeHelper.POINTER.withName("create_hb_font")
+    ).withName("_PangoFontClass");
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_PangoFontClass.describe.class, "apply", constants$5.const$2);
+    static final VarHandle const$3 = constants$1554.const$1.varHandle(MemoryLayout.PathElement.groupElement("describe"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_PangoFontClass.get_coverage.class, "apply", constants$5.const$5);
+    static final VarHandle const$5 = constants$1554.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_coverage"));
 }
 
 

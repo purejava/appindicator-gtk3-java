@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * unsigned long (*GDBusProxyTypeFunc)(struct _GDBusObjectManagerClient* manager,char* object_path,char* interface_name,void* data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GDBusProxyTypeFunc {
 
     long apply(java.lang.foreign.MemorySegment manager, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment interface_name, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(GDBusProxyTypeFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$472.GDBusProxyTypeFunc_UP$MH, fi, constants$472.GDBusProxyTypeFunc$FUNC, scope);
+    static MemorySegment allocate(GDBusProxyTypeFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$699.const$0, fi, constants$332.const$2, scope);
     }
-    static GDBusProxyTypeFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GDBusProxyTypeFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _manager, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _interface_name, java.lang.foreign.MemorySegment _data) -> {
             try {
-                return (long)constants$472.GDBusProxyTypeFunc_DOWN$MH.invokeExact(symbol, _manager, _object_path, _interface_name, _data);
+                return (long)constants$699.const$1.invokeExact(symbol, _manager, _object_path, _interface_name, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

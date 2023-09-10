@@ -3,51 +3,44 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$920 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$920() {}
-    static final FunctionDescriptor PangoAttrDataCopyFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle PangoAttrDataCopyFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$920.PangoAttrDataCopyFunc_DOWN$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_client_new_for_bus_sync",
+        constants$920.const$0
     );
-    static final FunctionDescriptor pango_attribute_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_attribute_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_attribute_get_type",
-        constants$920.pango_attribute_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_client_get_connection",
+        constants$5.const$2
     );
-    static final FunctionDescriptor pango_attr_type_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_client_get_flags",
+        constants$10.const$5
     );
-    static final MethodHandle pango_attr_type_register$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_type_register",
-        constants$920.pango_attr_type_register$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_client_get_name",
+        constants$5.const$2
     );
-    static final FunctionDescriptor pango_attr_type_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_attr_type_get_name$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_type_get_name",
-        constants$920.pango_attr_type_get_name$FUNC
-    );
-    static final FunctionDescriptor pango_attribute_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attribute_init$MH = RuntimeHelper.downcallHandle(
-        "pango_attribute_init",
-        constants$920.pango_attribute_init$FUNC
-    );
-    static final FunctionDescriptor pango_attribute_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attribute_copy$MH = RuntimeHelper.downcallHandle(
-        "pango_attribute_copy",
-        constants$920.pango_attribute_copy$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_client_get_name_owner",
+        constants$5.const$2
     );
 }
 

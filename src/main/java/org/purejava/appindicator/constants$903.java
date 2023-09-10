@@ -3,47 +3,46 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$903 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$903() {}
-    static final FunctionDescriptor pango_language_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_language_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_language_get_type",
-        constants$903.pango_language_get_type$FUNC
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final FunctionDescriptor pango_language_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_language_get_default$MH = RuntimeHelper.downcallHandle(
-        "pango_language_get_default",
-        constants$903.pango_language_get_default$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_return_error_valist",
+        constants$903.const$0
     );
-    static final FunctionDescriptor pango_language_get_preferred$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_language_get_preferred$MH = RuntimeHelper.downcallHandle(
-        "pango_language_get_preferred",
-        constants$903.pango_language_get_preferred$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_return_error_literal",
+        constants$57.const$0
     );
-    static final FunctionDescriptor pango_language_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_return_gerror",
+        constants$13.const$4
     );
-    static final MethodHandle pango_language_from_string$MH = RuntimeHelper.downcallHandle(
-        "pango_language_from_string",
-        constants$903.pango_language_from_string$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_take_error",
+        constants$13.const$4
     );
-    static final FunctionDescriptor pango_language_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_language_to_string$MH = RuntimeHelper.downcallHandle(
-        "pango_language_to_string",
-        constants$903.pango_language_to_string$FUNC
-    );
-    static final FunctionDescriptor pango_language_get_sample_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_language_get_sample_string$MH = RuntimeHelper.downcallHandle(
-        "pango_language_get_sample_string",
-        constants$903.pango_language_get_sample_string$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_return_dbus_error",
+        constants$14.const$3
     );
 }
 

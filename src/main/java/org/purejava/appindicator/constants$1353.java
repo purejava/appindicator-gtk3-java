@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1353 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1353() {}
-    static final FunctionDescriptor gtk_adjustment_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_new_from_pkcs11_uris",
+        constants$23.const$0
     );
-    static final MethodHandle gtk_adjustment_get_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_get_value",
-        constants$1353.gtk_adjustment_get_value$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_list_new_from_file",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_adjustment_set_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_get_issuer",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_adjustment_set_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_set_value",
-        constants$1353.gtk_adjustment_set_value$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_verify",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gtk_adjustment_get_lower$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_is_same",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_adjustment_get_lower$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_get_lower",
-        constants$1353.gtk_adjustment_get_lower$FUNC
-    );
-    static final FunctionDescriptor gtk_adjustment_set_lower$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_adjustment_set_lower$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_set_lower",
-        constants$1353.gtk_adjustment_set_lower$FUNC
-    );
-    static final FunctionDescriptor gtk_adjustment_get_upper$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_adjustment_get_upper$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_get_upper",
-        constants$1353.gtk_adjustment_get_upper$FUNC
-    );
-    static final FunctionDescriptor gtk_adjustment_set_upper$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_adjustment_set_upper$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_set_upper",
-        constants$1353.gtk_adjustment_set_upper$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_get_not_valid_before",
+        constants$5.const$2
     );
 }
 

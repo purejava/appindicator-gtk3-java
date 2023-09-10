@@ -3,52 +3,46 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1401 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1401() {}
-    static final FunctionDescriptor gtk_text_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_text_iter_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_type",
-        constants$1401.gtk_text_iter_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_offset$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_offset",
-        constants$1401.gtk_text_iter_get_offset$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_line",
-        constants$1401.gtk_text_iter_get_line$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_line_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_line_offset$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_line_offset",
-        constants$1401.gtk_text_iter_get_line_offset$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_line_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_line_index$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_line_index",
-        constants$1401.gtk_text_iter_get_line_index$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_get_visible_line_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_get_visible_line_offset$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_get_visible_line_offset",
-        constants$1401.gtk_text_iter_get_visible_line_offset$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("changed"),
+        RuntimeHelper.POINTER.withName("removed"),
+        RuntimeHelper.POINTER.withName("get_name"),
+        RuntimeHelper.POINTER.withName("get_icon"),
+        RuntimeHelper.POINTER.withName("get_uuid"),
+        RuntimeHelper.POINTER.withName("get_drive"),
+        RuntimeHelper.POINTER.withName("get_mount"),
+        RuntimeHelper.POINTER.withName("can_mount"),
+        RuntimeHelper.POINTER.withName("can_eject"),
+        RuntimeHelper.POINTER.withName("mount_fn"),
+        RuntimeHelper.POINTER.withName("mount_finish"),
+        RuntimeHelper.POINTER.withName("eject"),
+        RuntimeHelper.POINTER.withName("eject_finish"),
+        RuntimeHelper.POINTER.withName("get_identifier"),
+        RuntimeHelper.POINTER.withName("enumerate_identifiers"),
+        RuntimeHelper.POINTER.withName("should_automount"),
+        RuntimeHelper.POINTER.withName("get_activation_root"),
+        RuntimeHelper.POINTER.withName("eject_with_operation"),
+        RuntimeHelper.POINTER.withName("eject_with_operation_finish"),
+        RuntimeHelper.POINTER.withName("get_sort_key"),
+        RuntimeHelper.POINTER.withName("get_symbolic_icon")
+    ).withName("_GVolumeIface");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GVolumeIface.changed.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("changed"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GVolumeIface.removed.class, "apply", constants$13.const$1);
+    static final VarHandle const$4 = constants$1401.const$0.varHandle(MemoryLayout.PathElement.groupElement("removed"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GVolumeIface.get_name.class, "apply", constants$5.const$2);
 }
 
 

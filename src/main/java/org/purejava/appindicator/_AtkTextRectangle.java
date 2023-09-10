@@ -2,148 +2,140 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _AtkTextRectangle {
- *     gint x;
- *     gint y;
- *     gint width;
- *     gint height;
+ *     int x;
+ *     int y;
+ *     int width;
+ *     int height;
  * };
  * }
  */
 public class _AtkTextRectangle {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("x"),
-        Constants$root.C_INT$LAYOUT.withName("y"),
-        Constants$root.C_INT$LAYOUT.withName("width"),
-        Constants$root.C_INT$LAYOUT.withName("height")
-    ).withName("_AtkTextRectangle");
     public static MemoryLayout $LAYOUT() {
-        return _AtkTextRectangle.$struct$LAYOUT;
+        return constants$2008.const$4;
     }
-    static final VarHandle x$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("x"));
     public static VarHandle x$VH() {
-        return _AtkTextRectangle.x$VH;
+        return constants$2008.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint x;
+     * int x;
      * }
      */
     public static int x$get(MemorySegment seg) {
-        return (int)_AtkTextRectangle.x$VH.get(seg);
+        return (int)constants$2008.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint x;
+     * int x;
      * }
      */
     public static void x$set(MemorySegment seg, int x) {
-        _AtkTextRectangle.x$VH.set(seg, x);
+        constants$2008.const$5.set(seg, x);
     }
     public static int x$get(MemorySegment seg, long index) {
-        return (int)_AtkTextRectangle.x$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2008.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void x$set(MemorySegment seg, long index, int x) {
-        _AtkTextRectangle.x$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2008.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle y$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("y"));
     public static VarHandle y$VH() {
-        return _AtkTextRectangle.y$VH;
+        return constants$2009.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint y;
+     * int y;
      * }
      */
     public static int y$get(MemorySegment seg) {
-        return (int)_AtkTextRectangle.y$VH.get(seg);
+        return (int)constants$2009.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint y;
+     * int y;
      * }
      */
     public static void y$set(MemorySegment seg, int x) {
-        _AtkTextRectangle.y$VH.set(seg, x);
+        constants$2009.const$0.set(seg, x);
     }
     public static int y$get(MemorySegment seg, long index) {
-        return (int)_AtkTextRectangle.y$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2009.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void y$set(MemorySegment seg, long index, int x) {
-        _AtkTextRectangle.y$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2009.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle width$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("width"));
     public static VarHandle width$VH() {
-        return _AtkTextRectangle.width$VH;
+        return constants$2009.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint width;
+     * int width;
      * }
      */
     public static int width$get(MemorySegment seg) {
-        return (int)_AtkTextRectangle.width$VH.get(seg);
+        return (int)constants$2009.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint width;
+     * int width;
      * }
      */
     public static void width$set(MemorySegment seg, int x) {
-        _AtkTextRectangle.width$VH.set(seg, x);
+        constants$2009.const$1.set(seg, x);
     }
     public static int width$get(MemorySegment seg, long index) {
-        return (int)_AtkTextRectangle.width$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2009.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void width$set(MemorySegment seg, long index, int x) {
-        _AtkTextRectangle.width$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2009.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle height$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("height"));
     public static VarHandle height$VH() {
-        return _AtkTextRectangle.height$VH;
+        return constants$2009.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint height;
+     * int height;
      * }
      */
     public static int height$get(MemorySegment seg) {
-        return (int)_AtkTextRectangle.height$VH.get(seg);
+        return (int)constants$2009.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint height;
+     * int height;
      * }
      */
     public static void height$set(MemorySegment seg, int x) {
-        _AtkTextRectangle.height$VH.set(seg, x);
+        constants$2009.const$2.set(seg, x);
     }
     public static int height$get(MemorySegment seg, long index) {
-        return (int)_AtkTextRectangle.height$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2009.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void height$set(MemorySegment seg, long index, int x) {
-        _AtkTextRectangle.height$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2009.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

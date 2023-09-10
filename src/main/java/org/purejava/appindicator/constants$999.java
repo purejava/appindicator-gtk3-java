@@ -3,60 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$999 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$999() {}
-    static final FunctionDescriptor cairo_set_tolerance$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_set_tolerance$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_tolerance",
-        constants$999.cairo_set_tolerance$FUNC
-    );
-    static final FunctionDescriptor cairo_set_antialias$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_set_antialias$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_antialias",
-        constants$999.cairo_set_antialias$FUNC
-    );
-    static final FunctionDescriptor cairo_set_fill_rule$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_set_fill_rule$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_fill_rule",
-        constants$999.cairo_set_fill_rule$FUNC
-    );
-    static final FunctionDescriptor cairo_set_line_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_set_line_width$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_line_width",
-        constants$999.cairo_set_line_width$FUNC
-    );
-    static final FunctionDescriptor cairo_set_line_cap$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_set_line_cap$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_line_cap",
-        constants$999.cairo_set_line_cap$FUNC
-    );
-    static final FunctionDescriptor cairo_set_line_join$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_set_line_join$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_line_join",
-        constants$999.cairo_set_line_join$FUNC
-    );
+    static final VarHandle const$0 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("unmount_mountable_finish"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.eject_mountable.class, "apply", constants$281.const$5);
+    static final VarHandle const$2 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("eject_mountable"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.eject_mountable_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$4 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("eject_mountable_finish"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.mount_enclosing_volume.class, "apply", constants$380.const$0);
 }
 
 

@@ -3,59 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1306 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1306() {}
-    static final FunctionDescriptor gtk_window_set_geometry_hints$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_geometry_hints$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_geometry_hints",
-        constants$1306.gtk_window_set_geometry_hints$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_screen$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_screen",
-        constants$1306.gtk_window_set_screen$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_screen",
-        constants$1306.gtk_window_get_screen$FUNC
-    );
-    static final FunctionDescriptor gtk_window_is_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_is_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_is_active",
-        constants$1306.gtk_window_is_active$FUNC
-    );
-    static final FunctionDescriptor gtk_window_has_toplevel_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_has_toplevel_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_has_toplevel_focus",
-        constants$1306.gtk_window_has_toplevel_focus$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_decorated$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_decorated$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_decorated",
-        constants$1306.gtk_window_set_decorated$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GSocketControlMessageClass.get_size.class, "apply", constants$4.const$0);
+    static final VarHandle const$1 = constants$1305.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_size"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GSocketControlMessageClass.get_level.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$1305.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_level"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GSocketControlMessageClass.get_type.class, "apply", constants$10.const$5);
+    static final VarHandle const$5 = constants$1305.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_type"));
 }
 
 

@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GDBusInterfaceMethodCallFunc)(struct _GDBusConnection* connection,char* sender,char* object_path,char* interface_name,char* method_name,struct _GVariant* parameters,struct _GDBusMethodInvocation* invocation,void* user_data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GDBusInterfaceMethodCallFunc {
 
     void apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment interface_name, java.lang.foreign.MemorySegment method_name, java.lang.foreign.MemorySegment parameters, java.lang.foreign.MemorySegment invocation, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GDBusInterfaceMethodCallFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$555.GDBusInterfaceMethodCallFunc_UP$MH, fi, constants$555.GDBusInterfaceMethodCallFunc$FUNC, scope);
+    static MemorySegment allocate(GDBusInterfaceMethodCallFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$862.const$4, fi, constants$862.const$3, scope);
     }
-    static GDBusInterfaceMethodCallFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GDBusInterfaceMethodCallFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _interface_name, java.lang.foreign.MemorySegment _method_name, java.lang.foreign.MemorySegment _parameters, java.lang.foreign.MemorySegment _invocation, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$555.GDBusInterfaceMethodCallFunc_DOWN$MH.invokeExact(symbol, _connection, _sender, _object_path, _interface_name, _method_name, _parameters, _invocation, _user_data);
+                constants$862.const$5.invokeExact(symbol, _connection, _sender, _object_path, _interface_name, _method_name, _parameters, _invocation, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

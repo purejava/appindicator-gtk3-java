@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1756 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1756() {}
-    static final FunctionDescriptor gtk_print_operation_set_has_selection$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_device_get_has_cursor",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_print_operation_set_has_selection$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_has_selection",
-        constants$1756.gtk_print_operation_set_has_selection$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_device_get_source",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_print_operation_get_has_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_device_get_mode",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_print_operation_get_has_selection$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_get_has_selection",
-        constants$1756.gtk_print_operation_get_has_selection$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_device_set_mode",
+        constants$11.const$4
     );
-    static final FunctionDescriptor gtk_print_operation_set_embed_page_setup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_device_get_n_keys",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_print_operation_set_embed_page_setup$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_embed_page_setup",
-        constants$1756.gtk_print_operation_set_embed_page_setup$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_get_embed_page_setup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_operation_get_embed_page_setup$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_get_embed_page_setup",
-        constants$1756.gtk_print_operation_get_embed_page_setup$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_get_n_pages_to_print$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_operation_get_n_pages_to_print$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_get_n_pages_to_print",
-        constants$1756.gtk_print_operation_get_n_pages_to_print$FUNC
-    );
-    static final FunctionDescriptor gtk_print_run_page_setup_dialog$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_run_page_setup_dialog$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_run_page_setup_dialog",
-        constants$1756.gtk_print_run_page_setup_dialog$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_device_get_key",
+        constants$11.const$0
     );
 }
 

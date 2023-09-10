@@ -3,58 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1096 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1096() {}
-    static final FunctionDescriptor gdk_window_get_source_events$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1091.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_output_stream_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_window_get_source_events$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_source_events",
-        constants$1096.gdk_window_get_source_events$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_output_stream_query_info",
+        constants$39.const$1
     );
-    static final FunctionDescriptor gdk_window_set_icon_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_icon_list$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_icon_list",
-        constants$1096.gdk_window_set_icon_list$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_icon_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_icon_name",
-        constants$1096.gdk_window_set_icon_name$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_group$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_group",
-        constants$1096.gdk_window_set_group$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_group$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_group",
-        constants$1096.gdk_window_get_group$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_decorations$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_decorations$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_decorations",
-        constants$1096.gdk_window_set_decorations$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_file_output_stream_query_info_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_output_stream_query_info_async",
+        constants$584.const$3
     );
 }
 

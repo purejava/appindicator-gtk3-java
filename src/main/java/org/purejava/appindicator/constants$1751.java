@@ -3,49 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1751 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1751() {}
-    static final FunctionDescriptor gtk_print_operation_preview_render_page$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_region_create_rectangle",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_print_operation_preview_render_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_preview_render_page",
-        constants$1751.gtk_print_operation_preview_render_page$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_region_create_rectangles",
+        constants$21.const$3
     );
-    static final FunctionDescriptor gtk_print_operation_preview_end_preview$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_region_copy",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_print_operation_preview_end_preview$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_preview_end_preview",
-        constants$1751.gtk_print_operation_preview_end_preview$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_region_reference",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_print_operation_preview_is_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_region_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_print_operation_preview_is_selected$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_preview_is_selected",
-        constants$1751.gtk_print_operation_preview_is_selected$FUNC
-    );
-    static final FunctionDescriptor gtk_print_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_print_error_quark$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_error_quark",
-        constants$1751.gtk_print_error_quark$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_print_operation_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_get_type",
-        constants$1751.gtk_print_operation_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_print_operation_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_new",
-        constants$1751.gtk_print_operation_new$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_region_equal",
+        constants$9.const$0
     );
 }
 

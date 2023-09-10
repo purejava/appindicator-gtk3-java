@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1333 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1333() {}
-    static final FunctionDescriptor gtk_menu_set_accel_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_task_set_static_name",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_menu_set_accel_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_set_accel_group",
-        constants$1333.gtk_menu_set_accel_group$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_task_get_source_object",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_menu_get_accel_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_task_get_task_data",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_menu_get_accel_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_get_accel_group",
-        constants$1333.gtk_menu_get_accel_group$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_task_get_priority",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_menu_set_accel_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_task_get_context",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_menu_set_accel_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_set_accel_path",
-        constants$1333.gtk_menu_set_accel_path$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_get_accel_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_get_accel_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_get_accel_path",
-        constants$1333.gtk_menu_get_accel_path$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_attach_to_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_attach_to_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_attach_to_widget",
-        constants$1333.gtk_menu_attach_to_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_detach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_detach$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_detach",
-        constants$1333.gtk_menu_detach$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_task_get_cancellable",
+        constants$5.const$2
     );
 }
 

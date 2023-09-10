@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1630 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1630() {}
-    static final FunctionDescriptor gtk_style_context_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_style_context_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_new",
-        constants$1630.gtk_style_context_new$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_layout_get_serial",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_style_context_add_provider_for_screen$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_layout_get_log_attrs",
+        constants$14.const$3
     );
-    static final MethodHandle gtk_style_context_add_provider_for_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_add_provider_for_screen",
-        constants$1630.gtk_style_context_add_provider_for_screen$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_layout_get_log_attrs_readonly",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_style_context_remove_provider_for_screen$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_layout_index_to_pos",
+        constants$42.const$4
     );
-    static final MethodHandle gtk_style_context_remove_provider_for_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_remove_provider_for_screen",
-        constants$1630.gtk_style_context_remove_provider_for_screen$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_layout_index_to_line_x",
+        constants$1494.const$5
     );
-    static final FunctionDescriptor gtk_style_context_add_provider$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_add_provider$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_add_provider",
-        constants$1630.gtk_style_context_add_provider$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_remove_provider$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_remove_provider$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_remove_provider",
-        constants$1630.gtk_style_context_remove_provider$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_save$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_save$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_save",
-        constants$1630.gtk_style_context_save$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_layout_get_cursor_pos",
+        constants$179.const$1
     );
 }
 

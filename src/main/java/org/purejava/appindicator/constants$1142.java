@@ -3,54 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1142 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1142() {}
-    static final FunctionDescriptor gdk_pixbuf_animation_iter_on_currently_loading_frame$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_animation_iter_on_currently_loading_frame$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_iter_on_currently_loading_frame",
-        constants$1142.gdk_pixbuf_animation_iter_on_currently_loading_frame$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_animation_iter_advance$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_animation_iter_advance$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_animation_iter_advance",
-        constants$1142.gdk_pixbuf_animation_iter_advance$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_simple_anim_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_pixbuf_simple_anim_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_get_type",
-        constants$1142.gdk_pixbuf_simple_anim_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_simple_anim_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_pixbuf_simple_anim_iter_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_iter_get_type",
-        constants$1142.gdk_pixbuf_simple_anim_iter_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_simple_anim_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_simple_anim_new$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_new",
-        constants$1142.gdk_pixbuf_simple_anim_new$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_simple_anim_add_frame$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_simple_anim_add_frame$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_add_frame",
-        constants$1142.gdk_pixbuf_simple_anim_add_frame$FUNC
-    );
+    static final VarHandle const$0 = constants$1141.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GMemoryOutputStreamClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1141.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GMemoryOutputStreamClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1141.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GMemoryOutputStreamClass._g_reserved5.class, "apply", constants$7.const$5);
 }
 
 

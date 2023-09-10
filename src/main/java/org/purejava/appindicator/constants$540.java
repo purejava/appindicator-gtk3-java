@@ -3,70 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$540 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$540() {}
-    static final FunctionDescriptor g_datagram_based_receive_messages$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_datagram_based_receive_messages$MH = RuntimeHelper.downcallHandle(
-        "g_datagram_based_receive_messages",
-        constants$540.g_datagram_based_receive_messages$FUNC
-    );
-    static final FunctionDescriptor g_datagram_based_send_messages$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_datagram_based_send_messages$MH = RuntimeHelper.downcallHandle(
-        "g_datagram_based_send_messages",
-        constants$540.g_datagram_based_send_messages$FUNC
-    );
-    static final FunctionDescriptor g_datagram_based_create_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_datagram_based_create_source$MH = RuntimeHelper.downcallHandle(
-        "g_datagram_based_create_source",
-        constants$540.g_datagram_based_create_source$FUNC
-    );
-    static final FunctionDescriptor g_datagram_based_condition_check$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_datagram_based_condition_check$MH = RuntimeHelper.downcallHandle(
-        "g_datagram_based_condition_check",
-        constants$540.g_datagram_based_condition_check$FUNC
-    );
-    static final FunctionDescriptor g_datagram_based_condition_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_datagram_based_condition_wait$MH = RuntimeHelper.downcallHandle(
-        "g_datagram_based_condition_wait",
-        constants$540.g_datagram_based_condition_wait$FUNC
-    );
-    static final FunctionDescriptor g_data_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_data_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_get_type",
-        constants$540.g_data_input_stream_get_type$FUNC
+    static final VarHandle const$0 = constants$539.const$4.varHandle(MemoryLayout.PathElement.groupElement("write_cond"));
+    static final VarHandle const$1 = constants$539.const$4.varHandle(MemoryLayout.PathElement.groupElement("read_counter"));
+    static final VarHandle const$2 = constants$539.const$4.varHandle(MemoryLayout.PathElement.groupElement("have_writer"));
+    static final VarHandle const$3 = constants$539.const$4.varHandle(MemoryLayout.PathElement.groupElement("want_to_read"));
+    static final VarHandle const$4 = constants$539.const$4.varHandle(MemoryLayout.PathElement.groupElement("want_to_write"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_static_rw_lock_init",
+        constants$13.const$1
     );
 }
 

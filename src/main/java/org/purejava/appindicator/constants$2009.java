@@ -2,18 +2,31 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2009 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2009() {}
-    static final MemorySegment G_FILE_ATTRIBUTE_UNIX_GID$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix::gid");
-    static final MemorySegment G_FILE_ATTRIBUTE_UNIX_RDEV$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix::rdev");
-    static final MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCK_SIZE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix::block-size");
-    static final MemorySegment G_FILE_ATTRIBUTE_UNIX_BLOCKS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix::blocks");
-    static final MemorySegment G_FILE_ATTRIBUTE_UNIX_IS_MOUNTPOINT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("unix::is-mountpoint");
-    static final MemorySegment G_FILE_ATTRIBUTE_DOS_IS_ARCHIVE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("dos::is-archive");
+    static final VarHandle const$0 = constants$2008.const$4.varHandle(MemoryLayout.PathElement.groupElement("y"));
+    static final VarHandle const$1 = constants$2008.const$4.varHandle(MemoryLayout.PathElement.groupElement("width"));
+    static final VarHandle const$2 = constants$2008.const$4.varHandle(MemoryLayout.PathElement.groupElement("height"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("x"),
+            JAVA_INT.withName("y"),
+            JAVA_INT.withName("width"),
+            JAVA_INT.withName("height")
+        ).withName("bounds"),
+        JAVA_INT.withName("start_offset"),
+        JAVA_INT.withName("end_offset"),
+        RuntimeHelper.POINTER.withName("content")
+    ).withName("_AtkTextRange");
+    static final VarHandle const$4 = constants$2009.const$3.varHandle(MemoryLayout.PathElement.groupElement("start_offset"));
+    static final VarHandle const$5 = constants$2009.const$3.varHandle(MemoryLayout.PathElement.groupElement("end_offset"));
 }
 
 

@@ -3,59 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$141 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$141() {}
-    static final FunctionDescriptor g_list_concat$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_concat$MH = RuntimeHelper.downcallHandle(
-        "g_list_concat",
-        constants$141.g_list_concat$FUNC
-    );
-    static final FunctionDescriptor g_list_remove$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_remove$MH = RuntimeHelper.downcallHandle(
-        "g_list_remove",
-        constants$141.g_list_remove$FUNC
-    );
-    static final FunctionDescriptor g_list_remove_all$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_remove_all$MH = RuntimeHelper.downcallHandle(
-        "g_list_remove_all",
-        constants$141.g_list_remove_all$FUNC
-    );
-    static final FunctionDescriptor g_list_remove_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_remove_link$MH = RuntimeHelper.downcallHandle(
-        "g_list_remove_link",
-        constants$141.g_list_remove_link$FUNC
-    );
-    static final FunctionDescriptor g_list_delete_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_delete_link$MH = RuntimeHelper.downcallHandle(
-        "g_list_delete_link",
-        constants$141.g_list_delete_link$FUNC
-    );
-    static final FunctionDescriptor g_list_reverse$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_reverse$MH = RuntimeHelper.downcallHandle(
-        "g_list_reverse",
-        constants$141.g_list_reverse$FUNC
-    );
+    static final VarHandle const$0 = constants$140.const$5.varHandle(MemoryLayout.PathElement.groupElement("pr_state"));
+    static final VarHandle const$1 = constants$140.const$5.varHandle(MemoryLayout.PathElement.groupElement("pr_sname"));
+    static final VarHandle const$2 = constants$140.const$5.varHandle(MemoryLayout.PathElement.groupElement("pr_zomb"));
+    static final VarHandle const$3 = constants$140.const$5.varHandle(MemoryLayout.PathElement.groupElement("pr_nice"));
+    static final VarHandle const$4 = constants$140.const$5.varHandle(MemoryLayout.PathElement.groupElement("pr_flag"));
+    static final VarHandle const$5 = constants$140.const$5.varHandle(MemoryLayout.PathElement.groupElement("pr_uid"));
 }
 
 

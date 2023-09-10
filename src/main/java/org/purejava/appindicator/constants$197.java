@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$197 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$197() {}
-    static final FunctionDescriptor g_strcanon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dir_rewind",
+        constants$13.const$1
     );
-    static final MethodHandle g_strcanon$MH = RuntimeHelper.downcallHandle(
-        "g_strcanon",
-        constants$197.g_strcanon$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dir_close",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_strerror$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_getenv",
+        constants$5.const$2
     );
-    static final MethodHandle g_strerror$MH = RuntimeHelper.downcallHandle(
-        "g_strerror",
-        constants$197.g_strerror$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_setenv",
+        constants$62.const$0
     );
-    static final FunctionDescriptor g_strsignal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_unsetenv",
+        constants$13.const$1
     );
-    static final MethodHandle g_strsignal$MH = RuntimeHelper.downcallHandle(
-        "g_strsignal",
-        constants$197.g_strsignal$FUNC
-    );
-    static final FunctionDescriptor g_strreverse$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_strreverse$MH = RuntimeHelper.downcallHandle(
-        "g_strreverse",
-        constants$197.g_strreverse$FUNC
-    );
-    static final FunctionDescriptor g_strlcpy$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_strlcpy$MH = RuntimeHelper.downcallHandle(
-        "g_strlcpy",
-        constants$197.g_strlcpy$FUNC
-    );
-    static final FunctionDescriptor g_strlcat$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_strlcat$MH = RuntimeHelper.downcallHandle(
-        "g_strlcat",
-        constants$197.g_strlcat$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_listenv",
+        constants$35.const$2
     );
 }
 

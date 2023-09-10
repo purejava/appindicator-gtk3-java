@@ -4,89 +4,48 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _PangoFontClass {
- *     GObjectClass parent_class;
- *     PangoFontDescription* (*describe)(PangoFont*);
- *     PangoCoverage* (*get_coverage)(PangoFont*,PangoLanguage*);
- *     void (*get_glyph_extents)(PangoFont*,PangoGlyph,PangoRectangle*,PangoRectangle*);
- *     PangoFontMetrics* (*get_metrics)(PangoFont*,PangoLanguage*);
- *     PangoFontMap* (*get_font_map)(PangoFont*);
- *     PangoFontDescription* (*describe_absolute)(PangoFont*);
- *     void (*get_features)(PangoFont*,hb_feature_t*,guint,guint*);
- *     hb_font_t* (*create_hb_font)(PangoFont*);
+ *     struct _GObjectClass parent_class;
+ *     struct _PangoFontDescription* (*describe)(struct _PangoFont*);
+ *     struct _PangoCoverage* (*get_coverage)(struct _PangoFont*,struct _PangoLanguage*);
+ *     void (*get_glyph_extents)(struct _PangoFont*,unsigned int,struct _PangoRectangle*,struct _PangoRectangle*);
+ *     struct _PangoFontMetrics* (*get_metrics)(struct _PangoFont*,struct _PangoLanguage*);
+ *     struct _PangoFontMap* (*get_font_map)(struct _PangoFont*);
+ *     struct _PangoFontDescription* (*describe_absolute)(struct _PangoFont*);
+ *     void (*get_features)(struct _PangoFont*,struct hb_feature_t*,unsigned int,unsigned int*);
+ *     struct hb_font_t* (*create_hb_font)(struct _PangoFont*);
  * };
  * }
  */
 public class _PangoFontClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-            ).withName("g_type_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-            Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("notify"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("describe"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_coverage"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_glyph_extents"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_metrics"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_font_map"),
-        Constants$root.C_POINTER$LAYOUT.withName("describe_absolute"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_features"),
-        Constants$root.C_POINTER$LAYOUT.withName("create_hb_font")
-    ).withName("_PangoFontClass");
     public static MemoryLayout $LAYOUT() {
-        return _PangoFontClass.$struct$LAYOUT;
+        return constants$1554.const$1;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
     }
-    static final FunctionDescriptor describe$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor describe_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle describe_UP$MH = RuntimeHelper.upcallHandle(describe.class, "apply", _PangoFontClass.describe_UP$FUNC);
-    static final FunctionDescriptor describe_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle describe_DOWN$MH = RuntimeHelper.downcallHandle(
-        _PangoFontClass.describe_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * PangoFontDescription* (*describe)(PangoFont*);
+ * struct _PangoFontDescription* (*describe)(struct _PangoFont*);
      * }
      */
     public interface describe {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(describe fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_PangoFontClass.describe_UP$MH, fi, _PangoFontClass.describe$FUNC, scope);
+        static MemorySegment allocate(describe fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1554.const$2, fi, constants$5.const$2, scope);
         }
-        static describe ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static describe ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_PangoFontClass.describe_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -94,69 +53,52 @@ public class _PangoFontClass {
         }
     }
 
-    static final VarHandle describe$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("describe"));
     public static VarHandle describe$VH() {
-        return _PangoFontClass.describe$VH;
+        return constants$1554.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * PangoFontDescription* (*describe)(PangoFont*);
+     * struct _PangoFontDescription* (*describe)(struct _PangoFont*);
      * }
      */
     public static MemorySegment describe$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_PangoFontClass.describe$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1554.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * PangoFontDescription* (*describe)(PangoFont*);
+     * struct _PangoFontDescription* (*describe)(struct _PangoFont*);
      * }
      */
     public static void describe$set(MemorySegment seg, MemorySegment x) {
-        _PangoFontClass.describe$VH.set(seg, x);
+        constants$1554.const$3.set(seg, x);
     }
     public static MemorySegment describe$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_PangoFontClass.describe$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1554.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void describe$set(MemorySegment seg, long index, MemorySegment x) {
-        _PangoFontClass.describe$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1554.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static describe describe(MemorySegment segment, SegmentScope scope) {
+    public static describe describe(MemorySegment segment, Arena scope) {
         return describe.ofAddress(describe$get(segment), scope);
     }
-    static final FunctionDescriptor get_coverage$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_coverage_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_coverage_UP$MH = RuntimeHelper.upcallHandle(get_coverage.class, "apply", _PangoFontClass.get_coverage_UP$FUNC);
-    static final FunctionDescriptor get_coverage_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_coverage_DOWN$MH = RuntimeHelper.downcallHandle(
-        _PangoFontClass.get_coverage_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * PangoCoverage* (*get_coverage)(PangoFont*,PangoLanguage*);
+ * struct _PangoCoverage* (*get_coverage)(struct _PangoFont*,struct _PangoLanguage*);
      * }
      */
     public interface get_coverage {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
-        static MemorySegment allocate(get_coverage fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_PangoFontClass.get_coverage_UP$MH, fi, _PangoFontClass.get_coverage$FUNC, scope);
+        static MemorySegment allocate(get_coverage fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1554.const$4, fi, constants$5.const$5, scope);
         }
-        static get_coverage ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_coverage ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_PangoFontClass.get_coverage_DOWN$MH.invokeExact(symbol, _path, _func_data);
+                    return (java.lang.foreign.MemorySegment)constants$15.const$1.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -164,75 +106,52 @@ public class _PangoFontClass {
         }
     }
 
-    static final VarHandle get_coverage$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_coverage"));
     public static VarHandle get_coverage$VH() {
-        return _PangoFontClass.get_coverage$VH;
+        return constants$1554.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * PangoCoverage* (*get_coverage)(PangoFont*,PangoLanguage*);
+     * struct _PangoCoverage* (*get_coverage)(struct _PangoFont*,struct _PangoLanguage*);
      * }
      */
     public static MemorySegment get_coverage$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_PangoFontClass.get_coverage$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1554.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * PangoCoverage* (*get_coverage)(PangoFont*,PangoLanguage*);
+     * struct _PangoCoverage* (*get_coverage)(struct _PangoFont*,struct _PangoLanguage*);
      * }
      */
     public static void get_coverage$set(MemorySegment seg, MemorySegment x) {
-        _PangoFontClass.get_coverage$VH.set(seg, x);
+        constants$1554.const$5.set(seg, x);
     }
     public static MemorySegment get_coverage$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_PangoFontClass.get_coverage$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1554.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_coverage$set(MemorySegment seg, long index, MemorySegment x) {
-        _PangoFontClass.get_coverage$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1554.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_coverage get_coverage(MemorySegment segment, SegmentScope scope) {
+    public static get_coverage get_coverage(MemorySegment segment, Arena scope) {
         return get_coverage.ofAddress(get_coverage$get(segment), scope);
     }
-    static final FunctionDescriptor get_glyph_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_glyph_extents_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_glyph_extents_UP$MH = RuntimeHelper.upcallHandle(get_glyph_extents.class, "apply", _PangoFontClass.get_glyph_extents_UP$FUNC);
-    static final FunctionDescriptor get_glyph_extents_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_glyph_extents_DOWN$MH = RuntimeHelper.downcallHandle(
-        _PangoFontClass.get_glyph_extents_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*get_glyph_extents)(PangoFont*,PangoGlyph,PangoRectangle*,PangoRectangle*);
+ * void (*get_glyph_extents)(struct _PangoFont*,unsigned int,struct _PangoRectangle*,struct _PangoRectangle*);
      * }
      */
     public interface get_glyph_extents {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(get_glyph_extents fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_PangoFontClass.get_glyph_extents_UP$MH, fi, _PangoFontClass.get_glyph_extents$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment object, int property_id, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment pspec);
+        static MemorySegment allocate(get_glyph_extents fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1555.const$0, fi, constants$179.const$1, scope);
         }
-        static get_glyph_extents ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
+        static get_glyph_extents ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _object, int _property_id, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _pspec) -> {
                 try {
-                    _PangoFontClass.get_glyph_extents_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$372.const$3.invokeExact(symbol, _object, _property_id, _value, _pspec);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -240,69 +159,52 @@ public class _PangoFontClass {
         }
     }
 
-    static final VarHandle get_glyph_extents$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_glyph_extents"));
     public static VarHandle get_glyph_extents$VH() {
-        return _PangoFontClass.get_glyph_extents$VH;
+        return constants$1555.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*get_glyph_extents)(PangoFont*,PangoGlyph,PangoRectangle*,PangoRectangle*);
+     * void (*get_glyph_extents)(struct _PangoFont*,unsigned int,struct _PangoRectangle*,struct _PangoRectangle*);
      * }
      */
     public static MemorySegment get_glyph_extents$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_PangoFontClass.get_glyph_extents$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1555.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*get_glyph_extents)(PangoFont*,PangoGlyph,PangoRectangle*,PangoRectangle*);
+     * void (*get_glyph_extents)(struct _PangoFont*,unsigned int,struct _PangoRectangle*,struct _PangoRectangle*);
      * }
      */
     public static void get_glyph_extents$set(MemorySegment seg, MemorySegment x) {
-        _PangoFontClass.get_glyph_extents$VH.set(seg, x);
+        constants$1555.const$1.set(seg, x);
     }
     public static MemorySegment get_glyph_extents$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_PangoFontClass.get_glyph_extents$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1555.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_glyph_extents$set(MemorySegment seg, long index, MemorySegment x) {
-        _PangoFontClass.get_glyph_extents$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1555.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_glyph_extents get_glyph_extents(MemorySegment segment, SegmentScope scope) {
+    public static get_glyph_extents get_glyph_extents(MemorySegment segment, Arena scope) {
         return get_glyph_extents.ofAddress(get_glyph_extents$get(segment), scope);
     }
-    static final FunctionDescriptor get_metrics$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_metrics_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_metrics_UP$MH = RuntimeHelper.upcallHandle(get_metrics.class, "apply", _PangoFontClass.get_metrics_UP$FUNC);
-    static final FunctionDescriptor get_metrics_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_metrics_DOWN$MH = RuntimeHelper.downcallHandle(
-        _PangoFontClass.get_metrics_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * PangoFontMetrics* (*get_metrics)(PangoFont*,PangoLanguage*);
+ * struct _PangoFontMetrics* (*get_metrics)(struct _PangoFont*,struct _PangoLanguage*);
      * }
      */
     public interface get_metrics {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
-        static MemorySegment allocate(get_metrics fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_PangoFontClass.get_metrics_UP$MH, fi, _PangoFontClass.get_metrics$FUNC, scope);
+        static MemorySegment allocate(get_metrics fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1555.const$2, fi, constants$5.const$5, scope);
         }
-        static get_metrics ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_metrics ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_PangoFontClass.get_metrics_DOWN$MH.invokeExact(symbol, _path, _func_data);
+                    return (java.lang.foreign.MemorySegment)constants$15.const$1.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -310,66 +212,52 @@ public class _PangoFontClass {
         }
     }
 
-    static final VarHandle get_metrics$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_metrics"));
     public static VarHandle get_metrics$VH() {
-        return _PangoFontClass.get_metrics$VH;
+        return constants$1555.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * PangoFontMetrics* (*get_metrics)(PangoFont*,PangoLanguage*);
+     * struct _PangoFontMetrics* (*get_metrics)(struct _PangoFont*,struct _PangoLanguage*);
      * }
      */
     public static MemorySegment get_metrics$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_PangoFontClass.get_metrics$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1555.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * PangoFontMetrics* (*get_metrics)(PangoFont*,PangoLanguage*);
+     * struct _PangoFontMetrics* (*get_metrics)(struct _PangoFont*,struct _PangoLanguage*);
      * }
      */
     public static void get_metrics$set(MemorySegment seg, MemorySegment x) {
-        _PangoFontClass.get_metrics$VH.set(seg, x);
+        constants$1555.const$3.set(seg, x);
     }
     public static MemorySegment get_metrics$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_PangoFontClass.get_metrics$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1555.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_metrics$set(MemorySegment seg, long index, MemorySegment x) {
-        _PangoFontClass.get_metrics$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1555.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_metrics get_metrics(MemorySegment segment, SegmentScope scope) {
+    public static get_metrics get_metrics(MemorySegment segment, Arena scope) {
         return get_metrics.ofAddress(get_metrics$get(segment), scope);
     }
-    static final FunctionDescriptor get_font_map$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_font_map_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_font_map_UP$MH = RuntimeHelper.upcallHandle(get_font_map.class, "apply", _PangoFontClass.get_font_map_UP$FUNC);
-    static final FunctionDescriptor get_font_map_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_font_map_DOWN$MH = RuntimeHelper.downcallHandle(
-        _PangoFontClass.get_font_map_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * PangoFontMap* (*get_font_map)(PangoFont*);
+ * struct _PangoFontMap* (*get_font_map)(struct _PangoFont*);
      * }
      */
     public interface get_font_map {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_font_map fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_PangoFontClass.get_font_map_UP$MH, fi, _PangoFontClass.get_font_map$FUNC, scope);
+        static MemorySegment allocate(get_font_map fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1555.const$4, fi, constants$5.const$2, scope);
         }
-        static get_font_map ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_font_map ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_PangoFontClass.get_font_map_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -377,66 +265,52 @@ public class _PangoFontClass {
         }
     }
 
-    static final VarHandle get_font_map$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_font_map"));
     public static VarHandle get_font_map$VH() {
-        return _PangoFontClass.get_font_map$VH;
+        return constants$1555.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * PangoFontMap* (*get_font_map)(PangoFont*);
+     * struct _PangoFontMap* (*get_font_map)(struct _PangoFont*);
      * }
      */
     public static MemorySegment get_font_map$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_PangoFontClass.get_font_map$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1555.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * PangoFontMap* (*get_font_map)(PangoFont*);
+     * struct _PangoFontMap* (*get_font_map)(struct _PangoFont*);
      * }
      */
     public static void get_font_map$set(MemorySegment seg, MemorySegment x) {
-        _PangoFontClass.get_font_map$VH.set(seg, x);
+        constants$1555.const$5.set(seg, x);
     }
     public static MemorySegment get_font_map$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_PangoFontClass.get_font_map$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1555.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void get_font_map$set(MemorySegment seg, long index, MemorySegment x) {
-        _PangoFontClass.get_font_map$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1555.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_font_map get_font_map(MemorySegment segment, SegmentScope scope) {
+    public static get_font_map get_font_map(MemorySegment segment, Arena scope) {
         return get_font_map.ofAddress(get_font_map$get(segment), scope);
     }
-    static final FunctionDescriptor describe_absolute$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor describe_absolute_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle describe_absolute_UP$MH = RuntimeHelper.upcallHandle(describe_absolute.class, "apply", _PangoFontClass.describe_absolute_UP$FUNC);
-    static final FunctionDescriptor describe_absolute_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle describe_absolute_DOWN$MH = RuntimeHelper.downcallHandle(
-        _PangoFontClass.describe_absolute_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * PangoFontDescription* (*describe_absolute)(PangoFont*);
+ * struct _PangoFontDescription* (*describe_absolute)(struct _PangoFont*);
      * }
      */
     public interface describe_absolute {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(describe_absolute fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_PangoFontClass.describe_absolute_UP$MH, fi, _PangoFontClass.describe_absolute$FUNC, scope);
+        static MemorySegment allocate(describe_absolute fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1556.const$0, fi, constants$5.const$2, scope);
         }
-        static describe_absolute ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static describe_absolute ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_PangoFontClass.describe_absolute_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -444,75 +318,52 @@ public class _PangoFontClass {
         }
     }
 
-    static final VarHandle describe_absolute$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("describe_absolute"));
     public static VarHandle describe_absolute$VH() {
-        return _PangoFontClass.describe_absolute$VH;
+        return constants$1556.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * PangoFontDescription* (*describe_absolute)(PangoFont*);
+     * struct _PangoFontDescription* (*describe_absolute)(struct _PangoFont*);
      * }
      */
     public static MemorySegment describe_absolute$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_PangoFontClass.describe_absolute$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1556.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * PangoFontDescription* (*describe_absolute)(PangoFont*);
+     * struct _PangoFontDescription* (*describe_absolute)(struct _PangoFont*);
      * }
      */
     public static void describe_absolute$set(MemorySegment seg, MemorySegment x) {
-        _PangoFontClass.describe_absolute$VH.set(seg, x);
+        constants$1556.const$1.set(seg, x);
     }
     public static MemorySegment describe_absolute$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_PangoFontClass.describe_absolute$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1556.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void describe_absolute$set(MemorySegment seg, long index, MemorySegment x) {
-        _PangoFontClass.describe_absolute$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1556.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static describe_absolute describe_absolute(MemorySegment segment, SegmentScope scope) {
+    public static describe_absolute describe_absolute(MemorySegment segment, Arena scope) {
         return describe_absolute.ofAddress(describe_absolute$get(segment), scope);
     }
-    static final FunctionDescriptor get_features$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_features_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_features_UP$MH = RuntimeHelper.upcallHandle(get_features.class, "apply", _PangoFontClass.get_features_UP$FUNC);
-    static final FunctionDescriptor get_features_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_features_DOWN$MH = RuntimeHelper.downcallHandle(
-        _PangoFontClass.get_features_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*get_features)(PangoFont*,hb_feature_t*,guint,guint*);
+ * void (*get_features)(struct _PangoFont*,struct hb_feature_t*,unsigned int,unsigned int*);
      * }
      */
     public interface get_features {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(get_features fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_PangoFontClass.get_features_UP$MH, fi, _PangoFontClass.get_features$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment clipboard, java.lang.foreign.MemorySegment selection_data, int info, java.lang.foreign.MemorySegment user_data_or_owner);
+        static MemorySegment allocate(get_features fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1556.const$2, fi, constants$464.const$4, scope);
         }
-        static get_features ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3) -> {
+        static get_features ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _clipboard, java.lang.foreign.MemorySegment _selection_data, int _info, java.lang.foreign.MemorySegment _user_data_or_owner) -> {
                 try {
-                    _PangoFontClass.get_features_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$737.const$4.invokeExact(symbol, _clipboard, _selection_data, _info, _user_data_or_owner);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -520,66 +371,52 @@ public class _PangoFontClass {
         }
     }
 
-    static final VarHandle get_features$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_features"));
     public static VarHandle get_features$VH() {
-        return _PangoFontClass.get_features$VH;
+        return constants$1556.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*get_features)(PangoFont*,hb_feature_t*,guint,guint*);
+     * void (*get_features)(struct _PangoFont*,struct hb_feature_t*,unsigned int,unsigned int*);
      * }
      */
     public static MemorySegment get_features$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_PangoFontClass.get_features$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1556.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*get_features)(PangoFont*,hb_feature_t*,guint,guint*);
+     * void (*get_features)(struct _PangoFont*,struct hb_feature_t*,unsigned int,unsigned int*);
      * }
      */
     public static void get_features$set(MemorySegment seg, MemorySegment x) {
-        _PangoFontClass.get_features$VH.set(seg, x);
+        constants$1556.const$3.set(seg, x);
     }
     public static MemorySegment get_features$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_PangoFontClass.get_features$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1556.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_features$set(MemorySegment seg, long index, MemorySegment x) {
-        _PangoFontClass.get_features$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1556.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_features get_features(MemorySegment segment, SegmentScope scope) {
+    public static get_features get_features(MemorySegment segment, Arena scope) {
         return get_features.ofAddress(get_features$get(segment), scope);
     }
-    static final FunctionDescriptor create_hb_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor create_hb_font_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle create_hb_font_UP$MH = RuntimeHelper.upcallHandle(create_hb_font.class, "apply", _PangoFontClass.create_hb_font_UP$FUNC);
-    static final FunctionDescriptor create_hb_font_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle create_hb_font_DOWN$MH = RuntimeHelper.downcallHandle(
-        _PangoFontClass.create_hb_font_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * hb_font_t* (*create_hb_font)(PangoFont*);
+ * struct hb_font_t* (*create_hb_font)(struct _PangoFont*);
      * }
      */
     public interface create_hb_font {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(create_hb_font fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_PangoFontClass.create_hb_font_UP$MH, fi, _PangoFontClass.create_hb_font$FUNC, scope);
+        static MemorySegment allocate(create_hb_font fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1556.const$4, fi, constants$5.const$2, scope);
         }
-        static create_hb_font ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static create_hb_font ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_PangoFontClass.create_hb_font_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -587,35 +424,34 @@ public class _PangoFontClass {
         }
     }
 
-    static final VarHandle create_hb_font$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("create_hb_font"));
     public static VarHandle create_hb_font$VH() {
-        return _PangoFontClass.create_hb_font$VH;
+        return constants$1556.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_font_t* (*create_hb_font)(PangoFont*);
+     * struct hb_font_t* (*create_hb_font)(struct _PangoFont*);
      * }
      */
     public static MemorySegment create_hb_font$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_PangoFontClass.create_hb_font$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1556.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_font_t* (*create_hb_font)(PangoFont*);
+     * struct hb_font_t* (*create_hb_font)(struct _PangoFont*);
      * }
      */
     public static void create_hb_font$set(MemorySegment seg, MemorySegment x) {
-        _PangoFontClass.create_hb_font$VH.set(seg, x);
+        constants$1556.const$5.set(seg, x);
     }
     public static MemorySegment create_hb_font$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_PangoFontClass.create_hb_font$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1556.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void create_hb_font$set(MemorySegment seg, long index, MemorySegment x) {
-        _PangoFontClass.create_hb_font$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1556.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static create_hb_font create_hb_font(MemorySegment segment, SegmentScope scope) {
+    public static create_hb_font create_hb_font(MemorySegment segment, Arena scope) {
         return create_hb_font.ofAddress(create_hb_font$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -623,7 +459,7 @@ public class _PangoFontClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

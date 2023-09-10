@@ -3,49 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$810 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$810() {}
-    static final FunctionDescriptor g_tls_connection_get_protocol_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$808.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GConverterInputStreamClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$808.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_converter_input_stream_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_tls_connection_get_protocol_version$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_protocol_version",
-        constants$810.g_tls_connection_get_protocol_version$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_converter_input_stream_new",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_tls_connection_get_ciphersuite_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_connection_get_ciphersuite_name$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_ciphersuite_name",
-        constants$810.g_tls_connection_get_ciphersuite_name$FUNC
-    );
-    static final FunctionDescriptor g_tls_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_tls_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_tls_error_quark",
-        constants$810.g_tls_error_quark$FUNC
-    );
-    static final FunctionDescriptor g_tls_channel_binding_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_tls_channel_binding_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_tls_channel_binding_error_quark",
-        constants$810.g_tls_channel_binding_error_quark$FUNC
-    );
-    static final FunctionDescriptor g_tls_connection_emit_accept_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_tls_connection_emit_accept_certificate$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_emit_accept_certificate",
-        constants$810.g_tls_connection_emit_accept_certificate$FUNC
-    );
-    static final FunctionDescriptor g_tls_client_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_client_connection_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_client_connection_get_type",
-        constants$810.g_tls_client_connection_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_converter_input_stream_get_converter",
+        constants$5.const$2
     );
 }
 

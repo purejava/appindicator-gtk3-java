@@ -3,46 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1066 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1066() {}
-    static final FunctionDescriptor gdk_event_sequence_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_event_sequence_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_sequence_get_type",
-        constants$1066.gdk_event_sequence_get_type$FUNC
+    static final VarHandle const$0 = constants$1065.const$1.varHandle(MemoryLayout.PathElement.groupElement("can_seek"));
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gdk_events_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_events_pending$MH = RuntimeHelper.downcallHandle(
-        "gdk_events_pending",
-        constants$1066.gdk_events_pending$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileInputStreamClass.seek.class, "apply", constants$1066.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$1066.const$1
     );
-    static final FunctionDescriptor gdk_event_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_event_get$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get",
-        constants$1066.gdk_event_get$FUNC
-    );
-    static final FunctionDescriptor gdk_event_peek$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_event_peek$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_peek",
-        constants$1066.gdk_event_peek$FUNC
-    );
-    static final FunctionDescriptor gdk_event_put$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_put$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_put",
-        constants$1066.gdk_event_put$FUNC
-    );
-    static final FunctionDescriptor gdk_event_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_event_new$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_new",
-        constants$1066.gdk_event_new$FUNC
-    );
+    static final VarHandle const$4 = constants$1065.const$1.varHandle(MemoryLayout.PathElement.groupElement("seek"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileInputStreamClass.query_info.class, "apply", constants$39.const$1);
 }
 
 

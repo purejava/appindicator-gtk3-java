@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * unsigned char* (*GtkTextBufferSerializeFunc)(struct _GtkTextBuffer* register_buffer,struct _GtkTextBuffer* content_buffer,struct _GtkTextIter* start,struct _GtkTextIter* end,unsigned long* length,void* user_data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GtkTextBufferSerializeFunc {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment register_buffer, java.lang.foreign.MemorySegment content_buffer, java.lang.foreign.MemorySegment start, java.lang.foreign.MemorySegment end, java.lang.foreign.MemorySegment length, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GtkTextBufferSerializeFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$1836.GtkTextBufferSerializeFunc_UP$MH, fi, constants$1836.GtkTextBufferSerializeFunc$FUNC, scope);
+    static MemorySegment allocate(GtkTextBufferSerializeFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$3140.const$2, fi, constants$334.const$2, scope);
     }
-    static GtkTextBufferSerializeFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GtkTextBufferSerializeFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _register_buffer, java.lang.foreign.MemorySegment _content_buffer, java.lang.foreign.MemorySegment _start, java.lang.foreign.MemorySegment _end, java.lang.foreign.MemorySegment _length, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (java.lang.foreign.MemorySegment)constants$1836.GtkTextBufferSerializeFunc_DOWN$MH.invokeExact(symbol, _register_buffer, _content_buffer, _start, _end, _length, _user_data);
+                return (java.lang.foreign.MemorySegment)constants$3140.const$3.invokeExact(symbol, _register_buffer, _content_buffer, _start, _end, _length, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

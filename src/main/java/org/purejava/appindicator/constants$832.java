@@ -3,55 +3,41 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$832 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$832() {}
-    static final FunctionDescriptor hb_script_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gethostid",
+        constants$3.const$5
     );
-    static final MethodHandle hb_script_from_string$MH = RuntimeHelper.downcallHandle(
-        "hb_script_from_string",
-        constants$832.hb_script_from_string$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "sync",
+        constants$7.const$5
     );
-    static final FunctionDescriptor hb_script_to_iso15924_tag$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "getpagesize",
+        constants$83.const$1
     );
-    static final MethodHandle hb_script_to_iso15924_tag$MH = RuntimeHelper.downcallHandle(
-        "hb_script_to_iso15924_tag",
-        constants$832.hb_script_to_iso15924_tag$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "getdtablesize",
+        constants$83.const$1
     );
-    static final FunctionDescriptor hb_script_get_horizontal_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "truncate",
+        constants$97.const$1
     );
-    static final MethodHandle hb_script_get_horizontal_direction$MH = RuntimeHelper.downcallHandle(
-        "hb_script_get_horizontal_direction",
-        constants$832.hb_script_get_horizontal_direction$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        JAVA_LONG
     );
-    static final FunctionDescriptor hb_destroy_func_t$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor hb_destroy_func_t_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_destroy_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_destroy_func_t.class, "apply", constants$832.hb_destroy_func_t_UP$FUNC);
-    static final FunctionDescriptor hb_destroy_func_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_destroy_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$832.hb_destroy_func_t_DOWN$FUNC
-    );
-    static final FunctionDescriptor hb_feature_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_feature_from_string$MH = RuntimeHelper.downcallHandle(
-        "hb_feature_from_string",
-        constants$832.hb_feature_from_string$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "ftruncate",
+        constants$832.const$5
     );
 }
 

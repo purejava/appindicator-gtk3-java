@@ -3,69 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$944 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$944() {}
-    static final FunctionDescriptor pango_shape$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_shape$MH = RuntimeHelper.downcallHandle(
-        "pango_shape",
-        constants$944.pango_shape$FUNC
-    );
-    static final FunctionDescriptor pango_shape_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_shape_full$MH = RuntimeHelper.downcallHandle(
-        "pango_shape_full",
-        constants$944.pango_shape_full$FUNC
-    );
-    static final FunctionDescriptor pango_shape_with_flags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_shape_with_flags$MH = RuntimeHelper.downcallHandle(
-        "pango_shape_with_flags",
-        constants$944.pango_shape_with_flags$FUNC
-    );
-    static final FunctionDescriptor pango_shape_item$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_shape_item$MH = RuntimeHelper.downcallHandle(
-        "pango_shape_item",
-        constants$944.pango_shape_item$FUNC
-    );
-    static final FunctionDescriptor pango_engine_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_engine_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_engine_get_type",
-        constants$944.pango_engine_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_engine_lang_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_engine_lang_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_engine_lang_get_type",
-        constants$944.pango_engine_lang_get_type$FUNC
-    );
+    static final VarHandle const$0 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_identifier"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDriveIface.enumerate_identifiers.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("enumerate_identifiers"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDriveIface.get_start_stop_type.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_start_stop_type"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GDriveIface.can_start.class, "apply", constants$10.const$5);
 }
 
 

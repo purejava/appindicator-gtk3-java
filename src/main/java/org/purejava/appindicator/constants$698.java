@@ -3,53 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$698 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$698() {}
-    static final FunctionDescriptor g_menu_link_iter_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_link_iter_get_value$MH = RuntimeHelper.downcallHandle(
-        "g_menu_link_iter_get_value",
-        constants$698.g_menu_link_iter_get_value$FUNC
-    );
-    static final FunctionDescriptor g_menu_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_menu_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_menu_get_type",
-        constants$698.g_menu_get_type$FUNC
-    );
-    static final FunctionDescriptor g_menu_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_menu_new$MH = RuntimeHelper.downcallHandle(
-        "g_menu_new",
-        constants$698.g_menu_new$FUNC
-    );
-    static final FunctionDescriptor g_menu_freeze$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_freeze$MH = RuntimeHelper.downcallHandle(
-        "g_menu_freeze",
-        constants$698.g_menu_freeze$FUNC
-    );
-    static final FunctionDescriptor g_menu_insert_item$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_insert_item$MH = RuntimeHelper.downcallHandle(
-        "g_menu_insert_item",
-        constants$698.g_menu_insert_item$FUNC
-    );
-    static final FunctionDescriptor g_menu_prepend_item$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_prepend_item$MH = RuntimeHelper.downcallHandle(
-        "g_menu_prepend_item",
-        constants$698.g_menu_prepend_item$FUNC
-    );
+    static final VarHandle const$0 = constants$697.const$3.varHandle(MemoryLayout.PathElement.groupElement("num_vectors"));
+    static final VarHandle const$1 = constants$697.const$3.varHandle(MemoryLayout.PathElement.groupElement("bytes_sent"));
+    static final VarHandle const$2 = constants$697.const$3.varHandle(MemoryLayout.PathElement.groupElement("control_messages"));
+    static final VarHandle const$3 = constants$697.const$3.varHandle(MemoryLayout.PathElement.groupElement("num_control_messages"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GCancellableSourceFunc.class, "apply", constants$9.const$0);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GPollableSourceFunc.class, "apply", constants$9.const$0);
 }
 
 

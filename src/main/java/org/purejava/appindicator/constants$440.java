@@ -3,65 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$440 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$440() {}
-    static final FunctionDescriptor g_object_dup_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_shell_quote",
+        constants$5.const$2
     );
-    static final MethodHandle g_object_dup_data$MH = RuntimeHelper.downcallHandle(
-        "g_object_dup_data",
-        constants$440.g_object_dup_data$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_shell_unquote",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_object_replace_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_shell_parse_argv",
+        constants$34.const$5
     );
-    static final MethodHandle g_object_replace_data$MH = RuntimeHelper.downcallHandle(
-        "g_object_replace_data",
-        constants$440.g_object_replace_data$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_slice_alloc",
+        constants$63.const$3
     );
-    static final FunctionDescriptor g_object_watch_closure$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_slice_alloc0",
+        constants$63.const$3
     );
-    static final MethodHandle g_object_watch_closure$MH = RuntimeHelper.downcallHandle(
-        "g_object_watch_closure",
-        constants$440.g_object_watch_closure$FUNC
-    );
-    static final FunctionDescriptor g_cclosure_new_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cclosure_new_object$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_new_object",
-        constants$440.g_cclosure_new_object$FUNC
-    );
-    static final FunctionDescriptor g_cclosure_new_object_swap$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cclosure_new_object_swap$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_new_object_swap",
-        constants$440.g_cclosure_new_object_swap$FUNC
-    );
-    static final FunctionDescriptor g_closure_new_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_closure_new_object$MH = RuntimeHelper.downcallHandle(
-        "g_closure_new_object",
-        constants$440.g_closure_new_object$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_slice_copy",
+        constants$407.const$2
     );
 }
 

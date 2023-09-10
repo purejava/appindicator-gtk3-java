@@ -2,18 +2,30 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2036 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2036() {}
-    static final MemorySegment GTK_STYLE_CLASS_HIGHLIGHT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("highlight");
-    static final MemorySegment GTK_STYLE_CLASS_FRAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("frame");
-    static final MemorySegment GTK_STYLE_CLASS_DND$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("dnd");
-    static final MemorySegment GTK_STYLE_CLASS_PANE_SEPARATOR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("pane-separator");
-    static final MemorySegment GTK_STYLE_CLASS_SEPARATOR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("separator");
-    static final MemorySegment GTK_STYLE_CLASS_INFO$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("info");
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("parent"),
+        RuntimeHelper.POINTER.withName("get_link"),
+        RuntimeHelper.POINTER.withName("get_n_links"),
+        RuntimeHelper.POINTER.withName("get_link_index"),
+        RuntimeHelper.POINTER.withName("link_selected")
+    ).withName("_AtkHypertextIface");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkHypertextIface.get_link.class, "apply", constants$21.const$3);
+    static final VarHandle const$2 = constants$2036.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_link"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkHypertextIface.get_n_links.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$2036.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_n_links"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkHypertextIface.get_link_index.class, "apply", constants$11.const$4);
 }
 
 

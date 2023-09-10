@@ -3,58 +3,57 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1290 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1290() {}
-    static final FunctionDescriptor gtk_application_get_active_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_socket_get_option",
+        constants$956.const$4
     );
-    static final MethodHandle gtk_application_get_active_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_get_active_window",
-        constants$1290.gtk_application_get_active_window$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gtk_application_list_action_descriptions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_socket_set_option",
+        constants$1290.const$1
     );
-    static final MethodHandle gtk_application_list_action_descriptions$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_list_action_descriptions",
-        constants$1290.gtk_application_list_action_descriptions$FUNC
-    );
-    static final FunctionDescriptor gtk_application_get_accels_for_action$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_application_get_accels_for_action$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_get_accels_for_action",
-        constants$1290.gtk_application_get_accels_for_action$FUNC
-    );
-    static final FunctionDescriptor gtk_application_get_actions_for_accel$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_application_get_actions_for_accel$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_get_actions_for_accel",
-        constants$1290.gtk_application_get_actions_for_accel$FUNC
-    );
-    static final FunctionDescriptor gtk_application_set_accels_for_action$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_application_set_accels_for_action$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_set_accels_for_action",
-        constants$1290.gtk_application_set_accels_for_action$FUNC
-    );
-    static final FunctionDescriptor gtk_application_prefers_app_menu$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_application_prefers_app_menu$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_prefers_app_menu",
-        constants$1290.gtk_application_prefers_app_menu$FUNC
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("event"),
+        RuntimeHelper.POINTER.withName("_g_reserved1"),
+        RuntimeHelper.POINTER.withName("_g_reserved2"),
+        RuntimeHelper.POINTER.withName("_g_reserved3"),
+        RuntimeHelper.POINTER.withName("_g_reserved4")
+    ).withName("_GSocketClientClass");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GSocketClientClass.event.class, "apply", constants$179.const$1);
+    static final VarHandle const$5 = constants$1290.const$3.varHandle(MemoryLayout.PathElement.groupElement("event"));
 }
 
 

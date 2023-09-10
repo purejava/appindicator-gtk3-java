@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$371 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$371() {}
-    static final FunctionDescriptor pthread_barrier_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_dict_insert_value",
+        constants$14.const$3
     );
-    static final MethodHandle pthread_barrier_init$MH = RuntimeHelper.downcallHandle(
-        "pthread_barrier_init",
-        constants$371.pthread_barrier_init$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_variant_dict_remove",
+        constants$9.const$0
     );
-    static final FunctionDescriptor pthread_barrier_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_variant_dict_clear",
+        constants$13.const$1
     );
-    static final MethodHandle pthread_barrier_destroy$MH = RuntimeHelper.downcallHandle(
-        "pthread_barrier_destroy",
-        constants$371.pthread_barrier_destroy$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_variant_dict_end",
+        constants$5.const$2
     );
-    static final FunctionDescriptor pthread_barrier_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_variant_dict_ref",
+        constants$5.const$2
     );
-    static final MethodHandle pthread_barrier_wait$MH = RuntimeHelper.downcallHandle(
-        "pthread_barrier_wait",
-        constants$371.pthread_barrier_wait$FUNC
-    );
-    static final FunctionDescriptor pthread_barrierattr_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_barrierattr_init$MH = RuntimeHelper.downcallHandle(
-        "pthread_barrierattr_init",
-        constants$371.pthread_barrierattr_init$FUNC
-    );
-    static final FunctionDescriptor pthread_barrierattr_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_barrierattr_destroy$MH = RuntimeHelper.downcallHandle(
-        "pthread_barrierattr_destroy",
-        constants$371.pthread_barrierattr_destroy$FUNC
-    );
-    static final FunctionDescriptor pthread_barrierattr_getpshared$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_barrierattr_getpshared$MH = RuntimeHelper.downcallHandle(
-        "pthread_barrierattr_getpshared",
-        constants$371.pthread_barrierattr_getpshared$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_variant_dict_unref",
+        constants$13.const$1
     );
 }
 

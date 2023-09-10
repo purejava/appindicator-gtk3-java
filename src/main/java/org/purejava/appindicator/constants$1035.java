@@ -3,61 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1035 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1035() {}
-    static final FunctionDescriptor cairo_surface_set_device_offset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_file_measure_disk_usage_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_measure_disk_usage_async",
+        constants$1008.const$2
     );
-    static final MethodHandle cairo_surface_set_device_offset$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_set_device_offset",
-        constants$1035.cairo_surface_set_device_offset$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_measure_disk_usage_finish",
+        constants$638.const$1
     );
-    static final FunctionDescriptor cairo_surface_get_device_offset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_start_mountable$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_start_mountable",
+        constants$380.const$0
     );
-    static final MethodHandle cairo_surface_get_device_offset$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_get_device_offset",
-        constants$1035.cairo_surface_get_device_offset$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_set_fallback_resolution$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_surface_set_fallback_resolution$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_set_fallback_resolution",
-        constants$1035.cairo_surface_set_fallback_resolution$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_get_fallback_resolution$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_get_fallback_resolution$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_get_fallback_resolution",
-        constants$1035.cairo_surface_get_fallback_resolution$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_copy_page$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_copy_page$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_copy_page",
-        constants$1035.cairo_surface_copy_page$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_show_page$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_show_page$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_show_page",
-        constants$1035.cairo_surface_show_page$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_start_mountable_finish",
+        constants$12.const$2
     );
 }
 

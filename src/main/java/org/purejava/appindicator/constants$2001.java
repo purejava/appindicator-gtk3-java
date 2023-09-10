@@ -2,18 +2,33 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2001 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2001() {}
-    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_DESCRIPTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::description");
-    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_ICON$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::icon");
-    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::symbolic-icon");
-    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::content-type");
-    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::fast-content-type");
-    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_SIZE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::size");
+    static final VarHandle const$0 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("scroll_to_point"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_component_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(atk_component_add_focus_handler$handler.class, "apply", constants$40.const$2);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_component_add_focus_handler",
+        constants$9.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_component_contains",
+        constants$608.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_component_ref_accessible_at_point",
+        constants$1723.const$2
+    );
 }
 
 

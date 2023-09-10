@@ -2,126 +2,106 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkRcProperty {
- *     GQuark type_name;
- *     GQuark property_name;
- *     gchar* origin;
- *     GValue value;
+ *     unsigned int type_name;
+ *     unsigned int property_name;
+ *     char* origin;
+ *     struct _GValue value;
  * };
  * }
  */
 public class _GtkRcProperty {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("type_name"),
-        Constants$root.C_INT$LAYOUT.withName("property_name"),
-        Constants$root.C_POINTER$LAYOUT.withName("origin"),
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
-            MemoryLayout.sequenceLayout(2, MemoryLayout.unionLayout(
-                Constants$root.C_INT$LAYOUT.withName("v_int"),
-                Constants$root.C_INT$LAYOUT.withName("v_uint"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("v_long"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("v_ulong"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("v_int64"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("v_uint64"),
-                Constants$root.C_FLOAT$LAYOUT.withName("v_float"),
-                Constants$root.C_DOUBLE$LAYOUT.withName("v_double"),
-                Constants$root.C_POINTER$LAYOUT.withName("v_pointer")
-            )).withName("data")
-        ).withName("value")
-    ).withName("_GtkRcProperty");
     public static MemoryLayout $LAYOUT() {
-        return _GtkRcProperty.$struct$LAYOUT;
+        return constants$3330.const$0;
     }
-    static final VarHandle type_name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("type_name"));
     public static VarHandle type_name$VH() {
-        return _GtkRcProperty.type_name$VH;
+        return constants$3330.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GQuark type_name;
+     * unsigned int type_name;
      * }
      */
     public static int type_name$get(MemorySegment seg) {
-        return (int)_GtkRcProperty.type_name$VH.get(seg);
+        return (int)constants$3330.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GQuark type_name;
+     * unsigned int type_name;
      * }
      */
     public static void type_name$set(MemorySegment seg, int x) {
-        _GtkRcProperty.type_name$VH.set(seg, x);
+        constants$3330.const$1.set(seg, x);
     }
     public static int type_name$get(MemorySegment seg, long index) {
-        return (int)_GtkRcProperty.type_name$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$3330.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void type_name$set(MemorySegment seg, long index, int x) {
-        _GtkRcProperty.type_name$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3330.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle property_name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("property_name"));
     public static VarHandle property_name$VH() {
-        return _GtkRcProperty.property_name$VH;
+        return constants$3330.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GQuark property_name;
+     * unsigned int property_name;
      * }
      */
     public static int property_name$get(MemorySegment seg) {
-        return (int)_GtkRcProperty.property_name$VH.get(seg);
+        return (int)constants$3330.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GQuark property_name;
+     * unsigned int property_name;
      * }
      */
     public static void property_name$set(MemorySegment seg, int x) {
-        _GtkRcProperty.property_name$VH.set(seg, x);
+        constants$3330.const$2.set(seg, x);
     }
     public static int property_name$get(MemorySegment seg, long index) {
-        return (int)_GtkRcProperty.property_name$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$3330.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void property_name$set(MemorySegment seg, long index, int x) {
-        _GtkRcProperty.property_name$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3330.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle origin$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("origin"));
     public static VarHandle origin$VH() {
-        return _GtkRcProperty.origin$VH;
+        return constants$3330.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* origin;
+     * char* origin;
      * }
      */
     public static MemorySegment origin$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkRcProperty.origin$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3330.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* origin;
+     * char* origin;
      * }
      */
     public static void origin$set(MemorySegment seg, MemorySegment x) {
-        _GtkRcProperty.origin$VH.set(seg, x);
+        constants$3330.const$3.set(seg, x);
     }
     public static MemorySegment origin$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkRcProperty.origin$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3330.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void origin$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkRcProperty.origin$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3330.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment value$slice(MemorySegment seg) {
         return seg.asSlice(16, 24);
@@ -131,7 +111,7 @@ public class _GtkRcProperty {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

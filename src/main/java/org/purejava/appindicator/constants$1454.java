@@ -3,55 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1454 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1454() {}
-    static final FunctionDescriptor gtk_entry_get_width_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_create",
+        constants$35.const$2
     );
-    static final MethodHandle gtk_entry_get_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_width_chars",
-        constants$1454.gtk_entry_get_width_chars$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_get_empty",
+        constants$35.const$2
     );
-    static final FunctionDescriptor gtk_entry_set_max_width_chars$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_reference",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_entry_set_max_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_max_width_chars",
-        constants$1454.gtk_entry_set_max_width_chars$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_destroy",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_entry_get_max_width_chars$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_max_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_max_width_chars",
-        constants$1454.gtk_entry_get_max_width_chars$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_text",
-        constants$1454.gtk_entry_set_text$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_text",
-        constants$1454.gtk_entry_get_text$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_layout$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_layout$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_layout",
-        constants$1454.gtk_entry_get_layout$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_user_data$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_set_user_data",
+        constants$1423.const$1
     );
 }
 

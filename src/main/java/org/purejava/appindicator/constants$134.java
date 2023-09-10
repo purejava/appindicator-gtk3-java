@@ -3,56 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$134 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$134() {}
-    static final FunctionDescriptor g_mem_profile$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_mem_profile$MH = RuntimeHelper.downcallHandle(
-        "g_mem_profile",
-        constants$134.g_mem_profile$FUNC
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("magic"),
+            JAVA_INT.withName("size")
+        ).withName("head"),
+        JAVA_SHORT.withName("vl"),
+        MemoryLayout.sequenceLayout(3, JAVA_SHORT).withName("__reserved")
+    ).withName("za_context");
+    static final VarHandle const$1 = constants$134.const$0.varHandle(MemoryLayout.PathElement.groupElement("vl"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("magic"),
+            JAVA_INT.withName("size")
+        ).withName("head"),
+        JAVA_SHORT.withName("nregs"),
+        MemoryLayout.sequenceLayout(3, JAVA_SHORT).withName("__reserved")
+    ).withName("zt_context");
+    static final VarHandle const$3 = constants$134.const$2.varHandle(MemoryLayout.PathElement.groupElement("nregs"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "sigreturn",
+        constants$10.const$5
     );
-    static final FunctionDescriptor GNodeTraverseFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GNodeTraverseFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GNodeTraverseFunc_UP$MH = RuntimeHelper.upcallHandle(GNodeTraverseFunc.class, "apply", constants$134.GNodeTraverseFunc_UP$FUNC);
-    static final FunctionDescriptor GNodeTraverseFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GNodeTraverseFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$134.GNodeTraverseFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor GNodeForeachFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GNodeForeachFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GNodeForeachFunc_UP$MH = RuntimeHelper.upcallHandle(GNodeForeachFunc.class, "apply", constants$134.GNodeForeachFunc_UP$FUNC);
-    static final FunctionDescriptor GNodeForeachFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GNodeForeachFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$134.GNodeForeachFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_node_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_new$MH = RuntimeHelper.downcallHandle(
-        "g_node_new",
-        constants$134.g_node_new$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("ss_sp"),
+        JAVA_INT.withName("ss_flags"),
+        MemoryLayout.paddingLayout(4),
+        JAVA_LONG.withName("ss_size")
+    ).withName("stack_t");
 }
 
 

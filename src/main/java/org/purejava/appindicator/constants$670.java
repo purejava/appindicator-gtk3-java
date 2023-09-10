@@ -3,41 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$670 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$670() {}
-    static final FunctionDescriptor g_drive_start_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_drive_start_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_drive_start_flags_get_type",
-        constants$670.g_drive_start_flags_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_param_spec_boxed",
+        constants$669.const$5
     );
-    static final FunctionDescriptor g_drive_start_stop_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_drive_start_stop_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_drive_start_stop_type_get_type",
-        constants$670.g_drive_start_stop_type_get_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_param_spec_pointer",
+        constants$198.const$2
     );
-    static final FunctionDescriptor g_file_copy_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_copy_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_copy_flags_get_type",
-        constants$670.g_file_copy_flags_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_param_spec_value_array",
+        constants$644.const$4
     );
-    static final FunctionDescriptor g_file_monitor_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_monitor_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_monitor_flags_get_type",
-        constants$670.g_file_monitor_flags_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_param_spec_object",
+        constants$669.const$5
     );
-    static final FunctionDescriptor g_file_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_type_get_type",
-        constants$670.g_file_type_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_param_spec_override",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_filesystem_preview_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_filesystem_preview_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_filesystem_preview_type_get_type",
-        constants$670.g_filesystem_preview_type_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_param_spec_gtype",
+        constants$669.const$5
     );
 }
 

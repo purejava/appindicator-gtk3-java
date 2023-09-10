@@ -2,9 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _cairo_rectangle {
@@ -17,18 +19,11 @@ import java.lang.foreign.*;
  */
 public class _cairo_rectangle {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_DOUBLE$LAYOUT.withName("x"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("y"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("width"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("height")
-    ).withName("_cairo_rectangle");
     public static MemoryLayout $LAYOUT() {
-        return _cairo_rectangle.$struct$LAYOUT;
+        return constants$1692.const$2;
     }
-    static final VarHandle x$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("x"));
     public static VarHandle x$VH() {
-        return _cairo_rectangle.x$VH;
+        return constants$1692.const$3;
     }
     /**
      * Getter for field:
@@ -37,7 +32,7 @@ public class _cairo_rectangle {
      * }
      */
     public static double x$get(MemorySegment seg) {
-        return (double)_cairo_rectangle.x$VH.get(seg);
+        return (double)constants$1692.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -46,17 +41,16 @@ public class _cairo_rectangle {
      * }
      */
     public static void x$set(MemorySegment seg, double x) {
-        _cairo_rectangle.x$VH.set(seg, x);
+        constants$1692.const$3.set(seg, x);
     }
     public static double x$get(MemorySegment seg, long index) {
-        return (double)_cairo_rectangle.x$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1692.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void x$set(MemorySegment seg, long index, double x) {
-        _cairo_rectangle.x$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1692.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle y$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("y"));
     public static VarHandle y$VH() {
-        return _cairo_rectangle.y$VH;
+        return constants$1692.const$4;
     }
     /**
      * Getter for field:
@@ -65,7 +59,7 @@ public class _cairo_rectangle {
      * }
      */
     public static double y$get(MemorySegment seg) {
-        return (double)_cairo_rectangle.y$VH.get(seg);
+        return (double)constants$1692.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -74,17 +68,16 @@ public class _cairo_rectangle {
      * }
      */
     public static void y$set(MemorySegment seg, double x) {
-        _cairo_rectangle.y$VH.set(seg, x);
+        constants$1692.const$4.set(seg, x);
     }
     public static double y$get(MemorySegment seg, long index) {
-        return (double)_cairo_rectangle.y$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1692.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void y$set(MemorySegment seg, long index, double x) {
-        _cairo_rectangle.y$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1692.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle width$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("width"));
     public static VarHandle width$VH() {
-        return _cairo_rectangle.width$VH;
+        return constants$1692.const$5;
     }
     /**
      * Getter for field:
@@ -93,7 +86,7 @@ public class _cairo_rectangle {
      * }
      */
     public static double width$get(MemorySegment seg) {
-        return (double)_cairo_rectangle.width$VH.get(seg);
+        return (double)constants$1692.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -102,17 +95,16 @@ public class _cairo_rectangle {
      * }
      */
     public static void width$set(MemorySegment seg, double x) {
-        _cairo_rectangle.width$VH.set(seg, x);
+        constants$1692.const$5.set(seg, x);
     }
     public static double width$get(MemorySegment seg, long index) {
-        return (double)_cairo_rectangle.width$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1692.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void width$set(MemorySegment seg, long index, double x) {
-        _cairo_rectangle.width$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1692.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle height$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("height"));
     public static VarHandle height$VH() {
-        return _cairo_rectangle.height$VH;
+        return constants$1693.const$0;
     }
     /**
      * Getter for field:
@@ -121,7 +113,7 @@ public class _cairo_rectangle {
      * }
      */
     public static double height$get(MemorySegment seg) {
-        return (double)_cairo_rectangle.height$VH.get(seg);
+        return (double)constants$1693.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -130,20 +122,20 @@ public class _cairo_rectangle {
      * }
      */
     public static void height$set(MemorySegment seg, double x) {
-        _cairo_rectangle.height$VH.set(seg, x);
+        constants$1693.const$0.set(seg, x);
     }
     public static double height$get(MemorySegment seg, long index) {
-        return (double)_cairo_rectangle.height$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1693.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void height$set(MemorySegment seg, long index, double x) {
-        _cairo_rectangle.height$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1693.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

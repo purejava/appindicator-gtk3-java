@@ -3,57 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1652 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1652() {}
-    static final FunctionDescriptor gtk_icon_view_get_text_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_text_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_text_column",
-        constants$1652.gtk_icon_view_get_text_column$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_set_markup_column$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_set_markup_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_markup_column",
-        constants$1652.gtk_icon_view_set_markup_column$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_get_markup_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_markup_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_markup_column",
-        constants$1652.gtk_icon_view_get_markup_column$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_set_pixbuf_column$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_set_pixbuf_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_pixbuf_column",
-        constants$1652.gtk_icon_view_set_pixbuf_column$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_get_pixbuf_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_pixbuf_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_pixbuf_column",
-        constants$1652.gtk_icon_view_get_pixbuf_column$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_set_item_orientation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_set_item_orientation$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_item_orientation",
-        constants$1652.gtk_icon_view_set_item_orientation$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_INT.withName("__count"),
+        MemoryLayout.unionLayout(
+            JAVA_INT.withName("__wch"),
+            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("__wchb")
+        ).withName("__value")
+    ).withName("__mbstate_t");
+    static final VarHandle const$1 = constants$1652.const$0.varHandle(MemoryLayout.PathElement.groupElement("__count"));
+    static final UnionLayout const$2 = MemoryLayout.unionLayout(
+        JAVA_INT.withName("__wch"),
+        MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("__wchb")
+    ).withName("");
+    static final VarHandle const$3 = constants$1652.const$2.varHandle(MemoryLayout.PathElement.groupElement("__wch"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("__pos"),
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("__count"),
+            MemoryLayout.unionLayout(
+                JAVA_INT.withName("__wch"),
+                MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("__wchb")
+            ).withName("__value")
+        ).withName("__state")
+    ).withName("_G_fpos_t");
+    static final VarHandle const$5 = constants$1652.const$4.varHandle(MemoryLayout.PathElement.groupElement("__pos"));
 }
 
 

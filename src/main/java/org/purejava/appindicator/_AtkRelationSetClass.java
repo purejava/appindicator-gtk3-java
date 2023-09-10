@@ -2,117 +2,140 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _AtkRelationSetClass {
- *     GObjectClass parent;
- *     AtkFunction pad1;
- *     AtkFunction pad2;
+ *     struct _GObjectClass parent;
+ *     int (*pad1)(void*);
+ *     int (*pad2)(void*);
  * };
  * }
  */
 public class _AtkRelationSetClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-            ).withName("g_type_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-            Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("notify"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-        ).withName("parent"),
-        Constants$root.C_POINTER$LAYOUT.withName("pad1"),
-        Constants$root.C_POINTER$LAYOUT.withName("pad2")
-    ).withName("_AtkRelationSetClass");
     public static MemoryLayout $LAYOUT() {
-        return _AtkRelationSetClass.$struct$LAYOUT;
+        return constants$2053.const$3;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
     }
-    static final VarHandle pad1$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("pad1"));
+    /**
+     * {@snippet :
+ * int (*pad1)(void*);
+     * }
+     */
+    public interface pad1 {
+
+        int apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(pad1 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2053.const$4, fi, constants$10.const$5, scope);
+        }
+        static pad1 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
+                try {
+                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
+                } catch (Throwable ex$) {
+                    throw new AssertionError("should not reach here", ex$);
+                }
+            };
+        }
+    }
+
     public static VarHandle pad1$VH() {
-        return _AtkRelationSetClass.pad1$VH;
+        return constants$2053.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * AtkFunction pad1;
+     * int (*pad1)(void*);
      * }
      */
     public static MemorySegment pad1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkRelationSetClass.pad1$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2053.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * AtkFunction pad1;
+     * int (*pad1)(void*);
      * }
      */
     public static void pad1$set(MemorySegment seg, MemorySegment x) {
-        _AtkRelationSetClass.pad1$VH.set(seg, x);
+        constants$2053.const$5.set(seg, x);
     }
     public static MemorySegment pad1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkRelationSetClass.pad1$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2053.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void pad1$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkRelationSetClass.pad1$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2053.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static AtkFunction pad1(MemorySegment segment, SegmentScope scope) {
-        return AtkFunction.ofAddress(pad1$get(segment), scope);
+    public static pad1 pad1(MemorySegment segment, Arena scope) {
+        return pad1.ofAddress(pad1$get(segment), scope);
     }
-    static final VarHandle pad2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("pad2"));
+    /**
+     * {@snippet :
+ * int (*pad2)(void*);
+     * }
+     */
+    public interface pad2 {
+
+        int apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(pad2 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2054.const$0, fi, constants$10.const$5, scope);
+        }
+        static pad2 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
+                try {
+                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
+                } catch (Throwable ex$) {
+                    throw new AssertionError("should not reach here", ex$);
+                }
+            };
+        }
+    }
+
     public static VarHandle pad2$VH() {
-        return _AtkRelationSetClass.pad2$VH;
+        return constants$2054.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * AtkFunction pad2;
+     * int (*pad2)(void*);
      * }
      */
     public static MemorySegment pad2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkRelationSetClass.pad2$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2054.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * AtkFunction pad2;
+     * int (*pad2)(void*);
      * }
      */
     public static void pad2$set(MemorySegment seg, MemorySegment x) {
-        _AtkRelationSetClass.pad2$VH.set(seg, x);
+        constants$2054.const$1.set(seg, x);
     }
     public static MemorySegment pad2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkRelationSetClass.pad2$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2054.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void pad2$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkRelationSetClass.pad2$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2054.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static AtkFunction pad2(MemorySegment segment, SegmentScope scope) {
-        return AtkFunction.ofAddress(pad2$get(segment), scope);
+    public static pad2 pad2(MemorySegment segment, Arena scope) {
+        return pad2.ofAddress(pad2$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

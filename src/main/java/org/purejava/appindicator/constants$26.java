@@ -3,62 +3,36 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$26 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$26() {}
-    static final FunctionDescriptor g_ptr_array_extend_and_steal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "rindex",
+        constants$21.const$3
     );
-    static final MethodHandle g_ptr_array_extend_and_steal$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_extend_and_steal",
-        constants$26.g_ptr_array_extend_and_steal$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "ffs",
+        constants$8.const$4
     );
-    static final FunctionDescriptor g_ptr_array_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_LONG
     );
-    static final MethodHandle g_ptr_array_insert$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_insert",
-        constants$26.g_ptr_array_insert$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "ffsl",
+        constants$26.const$2
     );
-    static final FunctionDescriptor g_ptr_array_sort$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "ffsll",
+        constants$26.const$2
     );
-    static final MethodHandle g_ptr_array_sort$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_sort",
-        constants$26.g_ptr_array_sort$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_sort_with_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_sort_with_data$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_sort_with_data",
-        constants$26.g_ptr_array_sort_with_data$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_sort_values$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_sort_values$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_sort_values",
-        constants$26.g_ptr_array_sort_values$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_sort_values_with_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_sort_values_with_data$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_sort_values_with_data",
-        constants$26.g_ptr_array_sort_values_with_data$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "strcasecmp",
+        constants$9.const$0
     );
 }
 

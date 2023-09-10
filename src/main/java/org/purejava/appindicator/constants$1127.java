@@ -4,48 +4,38 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 final class constants$1127 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1127() {}
-    static final FunctionDescriptor gdk_rgba_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_io_module_load",
+        constants$13.const$1
     );
-    static final MethodHandle gdk_rgba_hash$MH = RuntimeHelper.downcallHandle(
-        "gdk_rgba_hash",
-        constants$1127.gdk_rgba_hash$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_io_module_unload",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gdk_rgba_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_io_module_query",
+        constants$35.const$2
     );
-    static final MethodHandle gdk_rgba_equal$MH = RuntimeHelper.downcallHandle(
-        "gdk_rgba_equal",
-        constants$1127.gdk_rgba_equal$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_io_scheduler_push_job$job_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_io_scheduler_push_job$notify.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gdk_rgba_parse$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_io_scheduler_push_job",
+        constants$1127.const$5
     );
-    static final MethodHandle gdk_rgba_parse$MH = RuntimeHelper.downcallHandle(
-        "gdk_rgba_parse",
-        constants$1127.gdk_rgba_parse$FUNC
-    );
-    static final FunctionDescriptor gdk_rgba_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_rgba_to_string$MH = RuntimeHelper.downcallHandle(
-        "gdk_rgba_to_string",
-        constants$1127.gdk_rgba_to_string$FUNC
-    );
-    static final OfInt gdk_pixbuf_major_version$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle gdk_pixbuf_major_version$VH = constants$1127.gdk_pixbuf_major_version$LAYOUT.varHandle();
-    static final MemorySegment gdk_pixbuf_major_version$SEGMENT = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_major_version", constants$1127.gdk_pixbuf_major_version$LAYOUT);
-    static final OfInt gdk_pixbuf_minor_version$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle gdk_pixbuf_minor_version$VH = constants$1127.gdk_pixbuf_minor_version$LAYOUT.varHandle();
-    static final MemorySegment gdk_pixbuf_minor_version$SEGMENT = RuntimeHelper.lookupGlobalVariable("gdk_pixbuf_minor_version", constants$1127.gdk_pixbuf_minor_version$LAYOUT);
 }
 
 

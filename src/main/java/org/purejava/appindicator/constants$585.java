@@ -3,53 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$585 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$585() {}
-    static final FunctionDescriptor g_dbus_object_get_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list"),
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_dbus_object_get_object_path$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_get_object_path",
-        constants$585.g_dbus_object_get_object_path$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GVaClosureMarshal.class, "apply", constants$585.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$585.const$0
     );
-    static final FunctionDescriptor g_dbus_object_get_interfaces$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_get_interfaces$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_get_interfaces",
-        constants$585.g_dbus_object_get_interfaces$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_get_interface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_get_interface$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_get_interface",
-        constants$585.g_dbus_object_get_interface$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_object_manager_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_get_type",
-        constants$585.g_dbus_object_manager_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_get_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_manager_get_object_path$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_get_object_path",
-        constants$585.g_dbus_object_manager_get_object_path$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_get_objects$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_manager_get_objects$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_get_objects",
-        constants$585.g_dbus_object_manager_get_objects$FUNC
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("data"),
+        RuntimeHelper.POINTER.withName("notify")
+    ).withName("_GClosureNotifyData");
+    static final VarHandle const$4 = constants$585.const$3.varHandle(MemoryLayout.PathElement.groupElement("data"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GClosureNotifyData.notify.class, "apply", constants$13.const$4);
 }
 
 

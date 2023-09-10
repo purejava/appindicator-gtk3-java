@@ -3,59 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$241 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$241() {}
-    static final FunctionDescriptor g_variant_new_variant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_new_variant$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_variant",
-        constants$241.g_variant_new_variant$FUNC
-    );
-    static final FunctionDescriptor g_variant_new_strv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_variant_new_strv$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_strv",
-        constants$241.g_variant_new_strv$FUNC
-    );
-    static final FunctionDescriptor g_variant_new_objv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_variant_new_objv$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_objv",
-        constants$241.g_variant_new_objv$FUNC
-    );
-    static final FunctionDescriptor g_variant_new_bytestring$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_new_bytestring$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_bytestring",
-        constants$241.g_variant_new_bytestring$FUNC
-    );
-    static final FunctionDescriptor g_variant_new_bytestring_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_variant_new_bytestring_array$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_bytestring_array",
-        constants$241.g_variant_new_bytestring_array$FUNC
-    );
-    static final FunctionDescriptor g_variant_new_fixed_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_variant_new_fixed_array$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_fixed_array",
-        constants$241.g_variant_new_fixed_array$FUNC
+    static final VarHandle const$0 = constants$240.const$1.varHandle(MemoryLayout.PathElement.groupElement("hook_id"));
+    static final VarHandle const$1 = constants$240.const$1.varHandle(MemoryLayout.PathElement.groupElement("flags"));
+    static final VarHandle const$2 = constants$240.const$1.varHandle(MemoryLayout.PathElement.groupElement("func"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GHook.destroy.class, "apply", constants$13.const$1);
+    static final VarHandle const$4 = constants$240.const$1.varHandle(MemoryLayout.PathElement.groupElement("destroy"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_hook_list_init",
+        constants$40.const$2
     );
 }
 

@@ -3,42 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1164 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1164() {}
-    static final FunctionDescriptor gdk_subpixel_layout_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_subpixel_layout_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_subpixel_layout_get_type",
-        constants$1164.gdk_subpixel_layout_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_prop_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_prop_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_prop_mode_get_type",
-        constants$1164.gdk_prop_mode_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_seat_capabilities_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_seat_capabilities_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_seat_capabilities_get_type",
-        constants$1164.gdk_seat_capabilities_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_byte_order_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_byte_order_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_byte_order_get_type",
-        constants$1164.gdk_byte_order_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_modifier_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_modifier_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_modifier_type_get_type",
-        constants$1164.gdk_modifier_type_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_modifier_intent_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_modifier_intent_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_modifier_intent_get_type",
-        constants$1164.gdk_modifier_intent_get_type$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GMountIface.remount.class, "apply", constants$380.const$0);
+    static final VarHandle const$1 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("remount"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GMountIface.remount_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$3 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("remount_finish"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GMountIface.guess_content_type.class, "apply", constants$281.const$5);
+    static final VarHandle const$5 = constants$1159.const$1.varHandle(MemoryLayout.PathElement.groupElement("guess_content_type"));
 }
 
 

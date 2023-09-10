@@ -3,56 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1955 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1955() {}
-    static final FunctionDescriptor gtk_status_icon_get_gicon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final MethodHandle gtk_status_icon_get_gicon$MH = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_get_gicon",
-        constants$1955.gtk_status_icon_get_gicon$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_activate",
+        constants$1955.const$0
     );
-    static final FunctionDescriptor gtk_status_icon_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "_gtk_accel_group_attach",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_status_icon_get_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_get_size",
-        constants$1955.gtk_status_icon_get_size$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "_gtk_accel_group_detach",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_status_icon_set_screen$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_accel_groups_activate",
+        constants$49.const$0
     );
-    static final MethodHandle gtk_status_icon_set_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_set_screen",
-        constants$1955.gtk_status_icon_set_screen$FUNC
-    );
-    static final FunctionDescriptor gtk_status_icon_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_status_icon_get_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_get_screen",
-        constants$1955.gtk_status_icon_get_screen$FUNC
-    );
-    static final FunctionDescriptor gtk_status_icon_set_has_tooltip$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_status_icon_set_has_tooltip$MH = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_set_has_tooltip",
-        constants$1955.gtk_status_icon_set_has_tooltip$FUNC
-    );
-    static final FunctionDescriptor gtk_status_icon_set_tooltip_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_status_icon_set_tooltip_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_set_tooltip_text",
-        constants$1955.gtk_status_icon_set_tooltip_text$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_accel_groups_from_object",
+        constants$5.const$2
     );
 }
 

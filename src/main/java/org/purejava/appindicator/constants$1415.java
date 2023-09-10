@@ -3,70 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1415 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1415() {}
-    static final FunctionDescriptor gtk_text_iter_backward_find_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_tag_to_string",
+        constants$90.const$2
     );
-    static final MethodHandle gtk_text_iter_backward_find_char$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_find_char",
-        constants$1415.gtk_text_iter_backward_find_char$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_direction_from_string",
+        constants$11.const$4
     );
-    static final FunctionDescriptor gtk_text_iter_forward_search$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_direction_to_string",
+        constants$24.const$0
     );
-    static final MethodHandle gtk_text_iter_forward_search$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_search",
-        constants$1415.gtk_text_iter_forward_search$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_language_from_string",
+        constants$21.const$3
     );
-    static final FunctionDescriptor gtk_text_iter_backward_search$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_language_to_string",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_text_iter_backward_search$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_search",
-        constants$1415.gtk_text_iter_backward_search$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_equal$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_equal",
-        constants$1415.gtk_text_iter_equal$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_compare$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_compare",
-        constants$1415.gtk_text_iter_compare$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_in_range$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_in_range$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_in_range",
-        constants$1415.gtk_text_iter_in_range$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_language_get_default",
+        constants$35.const$2
     );
 }
 

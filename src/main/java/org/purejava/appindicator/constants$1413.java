@@ -3,58 +3,56 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1413 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1413() {}
-    static final FunctionDescriptor gtk_text_iter_set_line$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class")
+    ).withName("_GZlibDecompressorClass");
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_zlib_decompressor_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_text_iter_set_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_set_line",
-        constants$1413.gtk_text_iter_set_line$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_zlib_decompressor_new",
+        constants$24.const$0
     );
-    static final FunctionDescriptor gtk_text_iter_set_line_offset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_zlib_decompressor_get_file_info",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_text_iter_set_line_offset$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_set_line_offset",
-        constants$1413.gtk_text_iter_set_line_offset$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_set_line_index$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_set_line_index$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_set_line_index",
-        constants$1413.gtk_text_iter_set_line_index$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_forward_to_end$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_forward_to_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_to_end",
-        constants$1413.gtk_text_iter_forward_to_end$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_forward_to_line_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_forward_to_line_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_to_line_end",
-        constants$1413.gtk_text_iter_forward_to_line_end$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_set_visible_line_offset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_set_visible_line_offset$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_set_visible_line_offset",
-        constants$1413.gtk_text_iter_set_visible_line_offset$FUNC
-    );
+    static final UnionLayout const$4 = MemoryLayout.unionLayout(
+        JAVA_INT.withName("u32"),
+        JAVA_INT.withName("i32"),
+        MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("u16"),
+        MemoryLayout.sequenceLayout(2, JAVA_SHORT).withName("i16"),
+        MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("u8"),
+        MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("i8")
+    ).withName("_hb_var_int_t");
+    static final VarHandle const$5 = constants$1413.const$4.varHandle(MemoryLayout.PathElement.groupElement("u32"));
 }
 
 

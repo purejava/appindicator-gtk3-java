@@ -3,56 +3,48 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1584 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1584() {}
-    static final FunctionDescriptor gtk_native_dialog_run$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_reorder_items",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_native_dialog_run$MH = RuntimeHelper.downcallHandle(
-        "gtk_native_dialog_run",
-        constants$1584.gtk_native_dialog_run$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_itemize",
+        constants$989.const$4
     );
-    static final FunctionDescriptor gtk_file_chooser_native_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_file_chooser_native_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_native_get_type",
-        constants$1584.gtk_file_chooser_native_get_type$FUNC
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gtk_file_chooser_native_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_itemize_with_base_dir",
+        constants$1584.const$2
     );
-    static final MethodHandle gtk_file_chooser_native_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_native_new",
-        constants$1584.gtk_file_chooser_native_new$FUNC
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.paddingLayout(4)
+    ).withName("_PangoLogAttr");
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor gtk_file_chooser_native_get_accept_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_native_get_accept_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_native_get_accept_label",
-        constants$1584.gtk_file_chooser_native_get_accept_label$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_native_set_accept_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_native_set_accept_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_native_set_accept_label",
-        constants$1584.gtk_file_chooser_native_set_accept_label$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_native_get_cancel_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_native_get_cancel_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_native_get_cancel_label",
-        constants$1584.gtk_file_chooser_native_get_cancel_label$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "pango_break",
+        constants$1584.const$5
     );
 }
 

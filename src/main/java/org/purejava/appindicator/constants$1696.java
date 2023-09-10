@@ -3,53 +3,33 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1696 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1696() {}
-    static final FunctionDescriptor gtk_size_group_add_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_text_cluster_allocate",
+        constants$24.const$0
     );
-    static final MethodHandle gtk_size_group_add_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_add_widget",
-        constants$1696.gtk_size_group_add_widget$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_text_cluster_free",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_size_group_remove_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_size_group_remove_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_remove_widget",
-        constants$1696.gtk_size_group_remove_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_size_group_get_widgets$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_size_group_get_widgets$MH = RuntimeHelper.downcallHandle(
-        "gtk_size_group_get_widgets",
-        constants$1696.gtk_size_group_get_widgets$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tool_item_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_get_type",
-        constants$1696.gtk_tool_item_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_tool_item_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_new",
-        constants$1696.gtk_tool_item_new$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_set_homogeneous$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_set_homogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_set_homogeneous",
-        constants$1696.gtk_tool_item_set_homogeneous$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_DOUBLE.withName("x_bearing"),
+        JAVA_DOUBLE.withName("y_bearing"),
+        JAVA_DOUBLE.withName("width"),
+        JAVA_DOUBLE.withName("height"),
+        JAVA_DOUBLE.withName("x_advance"),
+        JAVA_DOUBLE.withName("y_advance")
+    ).withName("cairo_text_extents_t");
+    static final VarHandle const$3 = constants$1696.const$2.varHandle(MemoryLayout.PathElement.groupElement("x_bearing"));
+    static final VarHandle const$4 = constants$1696.const$2.varHandle(MemoryLayout.PathElement.groupElement("y_bearing"));
+    static final VarHandle const$5 = constants$1696.const$2.varHandle(MemoryLayout.PathElement.groupElement("width"));
 }
 
 

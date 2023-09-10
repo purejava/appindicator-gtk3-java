@@ -2,422 +2,392 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GdkEventTouch {
- *     GdkEventType type;
- *     GdkWindow* window;
- *     gint8 send_event;
- *     guint32 time;
- *     gdouble x;
- *     gdouble y;
- *     gdouble* axes;
- *     guint state;
- *     GdkEventSequence* sequence;
- *     gboolean emulating_pointer;
- *     GdkDevice* device;
- *     gdouble x_root;
- *     gdouble y_root;
+ *     enum GdkEventType type;
+ *     struct _GdkWindow* window;
+ *     signed char send_event;
+ *     unsigned int time;
+ *     double x;
+ *     double y;
+ *     double* axes;
+ *     unsigned int state;
+ *     struct _GdkEventSequence* sequence;
+ *     int emulating_pointer;
+ *     struct _GdkDevice* device;
+ *     double x_root;
+ *     double y_root;
  * };
  * }
  */
 public class _GdkEventTouch {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("type"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("window"),
-        Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-        MemoryLayout.paddingLayout(24),
-        Constants$root.C_INT$LAYOUT.withName("time"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("x"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("y"),
-        Constants$root.C_POINTER$LAYOUT.withName("axes"),
-        Constants$root.C_INT$LAYOUT.withName("state"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("sequence"),
-        Constants$root.C_INT$LAYOUT.withName("emulating_pointer"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("device"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("x_root"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("y_root")
-    ).withName("_GdkEventTouch");
     public static MemoryLayout $LAYOUT() {
-        return _GdkEventTouch.$struct$LAYOUT;
+        return constants$1774.const$0;
     }
-    static final VarHandle type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("type"));
     public static VarHandle type$VH() {
-        return _GdkEventTouch.type$VH;
+        return constants$1774.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GdkEventType type;
+     * enum GdkEventType type;
      * }
      */
     public static int type$get(MemorySegment seg) {
-        return (int)_GdkEventTouch.type$VH.get(seg);
+        return (int)constants$1774.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GdkEventType type;
+     * enum GdkEventType type;
      * }
      */
     public static void type$set(MemorySegment seg, int x) {
-        _GdkEventTouch.type$VH.set(seg, x);
+        constants$1774.const$1.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
-        return (int)_GdkEventTouch.type$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1774.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void type$set(MemorySegment seg, long index, int x) {
-        _GdkEventTouch.type$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1774.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle window$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("window"));
     public static VarHandle window$VH() {
-        return _GdkEventTouch.window$VH;
+        return constants$1774.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GdkWindow* window;
+     * struct _GdkWindow* window;
      * }
      */
     public static MemorySegment window$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GdkEventTouch.window$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1774.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GdkWindow* window;
+     * struct _GdkWindow* window;
      * }
      */
     public static void window$set(MemorySegment seg, MemorySegment x) {
-        _GdkEventTouch.window$VH.set(seg, x);
+        constants$1774.const$2.set(seg, x);
     }
     public static MemorySegment window$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GdkEventTouch.window$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1774.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void window$set(MemorySegment seg, long index, MemorySegment x) {
-        _GdkEventTouch.window$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1774.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle send_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
     public static VarHandle send_event$VH() {
-        return _GdkEventTouch.send_event$VH;
+        return constants$1774.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint8 send_event;
+     * signed char send_event;
      * }
      */
     public static byte send_event$get(MemorySegment seg) {
-        return (byte)_GdkEventTouch.send_event$VH.get(seg);
+        return (byte)constants$1774.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint8 send_event;
+     * signed char send_event;
      * }
      */
     public static void send_event$set(MemorySegment seg, byte x) {
-        _GdkEventTouch.send_event$VH.set(seg, x);
+        constants$1774.const$3.set(seg, x);
     }
     public static byte send_event$get(MemorySegment seg, long index) {
-        return (byte)_GdkEventTouch.send_event$VH.get(seg.asSlice(index*sizeof()));
+        return (byte)constants$1774.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void send_event$set(MemorySegment seg, long index, byte x) {
-        _GdkEventTouch.send_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1774.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle time$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("time"));
     public static VarHandle time$VH() {
-        return _GdkEventTouch.time$VH;
+        return constants$1774.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint32 time;
+     * unsigned int time;
      * }
      */
     public static int time$get(MemorySegment seg) {
-        return (int)_GdkEventTouch.time$VH.get(seg);
+        return (int)constants$1774.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint32 time;
+     * unsigned int time;
      * }
      */
     public static void time$set(MemorySegment seg, int x) {
-        _GdkEventTouch.time$VH.set(seg, x);
+        constants$1774.const$4.set(seg, x);
     }
     public static int time$get(MemorySegment seg, long index) {
-        return (int)_GdkEventTouch.time$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1774.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void time$set(MemorySegment seg, long index, int x) {
-        _GdkEventTouch.time$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1774.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle x$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("x"));
     public static VarHandle x$VH() {
-        return _GdkEventTouch.x$VH;
+        return constants$1774.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gdouble x;
+     * double x;
      * }
      */
     public static double x$get(MemorySegment seg) {
-        return (double)_GdkEventTouch.x$VH.get(seg);
+        return (double)constants$1774.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gdouble x;
+     * double x;
      * }
      */
     public static void x$set(MemorySegment seg, double x) {
-        _GdkEventTouch.x$VH.set(seg, x);
+        constants$1774.const$5.set(seg, x);
     }
     public static double x$get(MemorySegment seg, long index) {
-        return (double)_GdkEventTouch.x$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1774.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void x$set(MemorySegment seg, long index, double x) {
-        _GdkEventTouch.x$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1774.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle y$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("y"));
     public static VarHandle y$VH() {
-        return _GdkEventTouch.y$VH;
+        return constants$1775.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gdouble y;
+     * double y;
      * }
      */
     public static double y$get(MemorySegment seg) {
-        return (double)_GdkEventTouch.y$VH.get(seg);
+        return (double)constants$1775.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gdouble y;
+     * double y;
      * }
      */
     public static void y$set(MemorySegment seg, double x) {
-        _GdkEventTouch.y$VH.set(seg, x);
+        constants$1775.const$0.set(seg, x);
     }
     public static double y$get(MemorySegment seg, long index) {
-        return (double)_GdkEventTouch.y$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1775.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void y$set(MemorySegment seg, long index, double x) {
-        _GdkEventTouch.y$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1775.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle axes$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("axes"));
     public static VarHandle axes$VH() {
-        return _GdkEventTouch.axes$VH;
+        return constants$1775.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gdouble* axes;
+     * double* axes;
      * }
      */
     public static MemorySegment axes$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GdkEventTouch.axes$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1775.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gdouble* axes;
+     * double* axes;
      * }
      */
     public static void axes$set(MemorySegment seg, MemorySegment x) {
-        _GdkEventTouch.axes$VH.set(seg, x);
+        constants$1775.const$1.set(seg, x);
     }
     public static MemorySegment axes$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GdkEventTouch.axes$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1775.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void axes$set(MemorySegment seg, long index, MemorySegment x) {
-        _GdkEventTouch.axes$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1775.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle state$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("state"));
     public static VarHandle state$VH() {
-        return _GdkEventTouch.state$VH;
+        return constants$1775.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint state;
+     * unsigned int state;
      * }
      */
     public static int state$get(MemorySegment seg) {
-        return (int)_GdkEventTouch.state$VH.get(seg);
+        return (int)constants$1775.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint state;
+     * unsigned int state;
      * }
      */
     public static void state$set(MemorySegment seg, int x) {
-        _GdkEventTouch.state$VH.set(seg, x);
+        constants$1775.const$2.set(seg, x);
     }
     public static int state$get(MemorySegment seg, long index) {
-        return (int)_GdkEventTouch.state$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1775.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void state$set(MemorySegment seg, long index, int x) {
-        _GdkEventTouch.state$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1775.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle sequence$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("sequence"));
     public static VarHandle sequence$VH() {
-        return _GdkEventTouch.sequence$VH;
+        return constants$1775.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GdkEventSequence* sequence;
+     * struct _GdkEventSequence* sequence;
      * }
      */
     public static MemorySegment sequence$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GdkEventTouch.sequence$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1775.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GdkEventSequence* sequence;
+     * struct _GdkEventSequence* sequence;
      * }
      */
     public static void sequence$set(MemorySegment seg, MemorySegment x) {
-        _GdkEventTouch.sequence$VH.set(seg, x);
+        constants$1775.const$3.set(seg, x);
     }
     public static MemorySegment sequence$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GdkEventTouch.sequence$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1775.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void sequence$set(MemorySegment seg, long index, MemorySegment x) {
-        _GdkEventTouch.sequence$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1775.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle emulating_pointer$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("emulating_pointer"));
     public static VarHandle emulating_pointer$VH() {
-        return _GdkEventTouch.emulating_pointer$VH;
+        return constants$1775.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean emulating_pointer;
+     * int emulating_pointer;
      * }
      */
     public static int emulating_pointer$get(MemorySegment seg) {
-        return (int)_GdkEventTouch.emulating_pointer$VH.get(seg);
+        return (int)constants$1775.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean emulating_pointer;
+     * int emulating_pointer;
      * }
      */
     public static void emulating_pointer$set(MemorySegment seg, int x) {
-        _GdkEventTouch.emulating_pointer$VH.set(seg, x);
+        constants$1775.const$4.set(seg, x);
     }
     public static int emulating_pointer$get(MemorySegment seg, long index) {
-        return (int)_GdkEventTouch.emulating_pointer$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1775.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void emulating_pointer$set(MemorySegment seg, long index, int x) {
-        _GdkEventTouch.emulating_pointer$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1775.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle device$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("device"));
     public static VarHandle device$VH() {
-        return _GdkEventTouch.device$VH;
+        return constants$1775.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GdkDevice* device;
+     * struct _GdkDevice* device;
      * }
      */
     public static MemorySegment device$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GdkEventTouch.device$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1775.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GdkDevice* device;
+     * struct _GdkDevice* device;
      * }
      */
     public static void device$set(MemorySegment seg, MemorySegment x) {
-        _GdkEventTouch.device$VH.set(seg, x);
+        constants$1775.const$5.set(seg, x);
     }
     public static MemorySegment device$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GdkEventTouch.device$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1775.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void device$set(MemorySegment seg, long index, MemorySegment x) {
-        _GdkEventTouch.device$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1775.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle x_root$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("x_root"));
     public static VarHandle x_root$VH() {
-        return _GdkEventTouch.x_root$VH;
+        return constants$1776.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gdouble x_root;
+     * double x_root;
      * }
      */
     public static double x_root$get(MemorySegment seg) {
-        return (double)_GdkEventTouch.x_root$VH.get(seg);
+        return (double)constants$1776.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gdouble x_root;
+     * double x_root;
      * }
      */
     public static void x_root$set(MemorySegment seg, double x) {
-        _GdkEventTouch.x_root$VH.set(seg, x);
+        constants$1776.const$0.set(seg, x);
     }
     public static double x_root$get(MemorySegment seg, long index) {
-        return (double)_GdkEventTouch.x_root$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1776.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void x_root$set(MemorySegment seg, long index, double x) {
-        _GdkEventTouch.x_root$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1776.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle y_root$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("y_root"));
     public static VarHandle y_root$VH() {
-        return _GdkEventTouch.y_root$VH;
+        return constants$1776.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gdouble y_root;
+     * double y_root;
      * }
      */
     public static double y_root$get(MemorySegment seg) {
-        return (double)_GdkEventTouch.y_root$VH.get(seg);
+        return (double)constants$1776.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gdouble y_root;
+     * double y_root;
      * }
      */
     public static void y_root$set(MemorySegment seg, double x) {
-        _GdkEventTouch.y_root$VH.set(seg, x);
+        constants$1776.const$1.set(seg, x);
     }
     public static double y_root$get(MemorySegment seg, long index) {
-        return (double)_GdkEventTouch.y_root$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1776.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void y_root$set(MemorySegment seg, long index, double x) {
-        _GdkEventTouch.y_root$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1776.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

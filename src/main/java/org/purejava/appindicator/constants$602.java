@@ -3,61 +3,33 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$602 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$602() {}
-    static final FunctionDescriptor g_drive_eject_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$601.const$0.varHandle(MemoryLayout.PathElement.groupElement("n_params"));
+    static final VarHandle const$1 = constants$601.const$0.varHandle(MemoryLayout.PathElement.groupElement("param_types"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_signal_newv$accumulator.class, "apply", constants$34.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_signal_newv$c_marshaller.class, "apply", constants$584.const$3);
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_drive_eject_finish$MH = RuntimeHelper.downcallHandle(
-        "g_drive_eject_finish",
-        constants$602.g_drive_eject_finish$FUNC
-    );
-    static final FunctionDescriptor g_drive_poll_for_media$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_poll_for_media$MH = RuntimeHelper.downcallHandle(
-        "g_drive_poll_for_media",
-        constants$602.g_drive_poll_for_media$FUNC
-    );
-    static final FunctionDescriptor g_drive_poll_for_media_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_poll_for_media_finish$MH = RuntimeHelper.downcallHandle(
-        "g_drive_poll_for_media_finish",
-        constants$602.g_drive_poll_for_media_finish$FUNC
-    );
-    static final FunctionDescriptor g_drive_get_identifier$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_get_identifier$MH = RuntimeHelper.downcallHandle(
-        "g_drive_get_identifier",
-        constants$602.g_drive_get_identifier$FUNC
-    );
-    static final FunctionDescriptor g_drive_enumerate_identifiers$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_enumerate_identifiers$MH = RuntimeHelper.downcallHandle(
-        "g_drive_enumerate_identifiers",
-        constants$602.g_drive_enumerate_identifiers$FUNC
-    );
-    static final FunctionDescriptor g_drive_get_start_stop_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_get_start_stop_type$MH = RuntimeHelper.downcallHandle(
-        "g_drive_get_start_stop_type",
-        constants$602.g_drive_get_start_stop_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_signal_newv",
+        constants$602.const$4
     );
 }
 

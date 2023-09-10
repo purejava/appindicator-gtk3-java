@@ -3,81 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$420 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$420() {}
-    static final FunctionDescriptor g_signal_handler_find$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_match_info_fetch_all",
+        constants$5.const$2
     );
-    static final MethodHandle g_signal_handler_find$MH = RuntimeHelper.downcallHandle(
-        "g_signal_handler_find",
-        constants$420.g_signal_handler_find$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GScannerMsgFunc.class, "apply", constants$164.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$164.const$5
     );
-    static final FunctionDescriptor g_signal_handlers_block_matched$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_handlers_block_matched$MH = RuntimeHelper.downcallHandle(
-        "g_signal_handlers_block_matched",
-        constants$420.g_signal_handlers_block_matched$FUNC
-    );
-    static final FunctionDescriptor g_signal_handlers_unblock_matched$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_handlers_unblock_matched$MH = RuntimeHelper.downcallHandle(
-        "g_signal_handlers_unblock_matched",
-        constants$420.g_signal_handlers_unblock_matched$FUNC
-    );
-    static final FunctionDescriptor g_signal_handlers_disconnect_matched$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_handlers_disconnect_matched$MH = RuntimeHelper.downcallHandle(
-        "g_signal_handlers_disconnect_matched",
-        constants$420.g_signal_handlers_disconnect_matched$FUNC
-    );
-    static final FunctionDescriptor g_clear_signal_handler$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_clear_signal_handler$MH = RuntimeHelper.downcallHandle(
-        "g_clear_signal_handler",
-        constants$420.g_clear_signal_handler$FUNC
-    );
-    static final FunctionDescriptor g_signal_override_class_closure$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_override_class_closure$MH = RuntimeHelper.downcallHandle(
-        "g_signal_override_class_closure",
-        constants$420.g_signal_override_class_closure$FUNC
-    );
+    static final UnionLayout const$3 = MemoryLayout.unionLayout(
+        RuntimeHelper.POINTER.withName("v_symbol"),
+        RuntimeHelper.POINTER.withName("v_identifier"),
+        JAVA_LONG.withName("v_binary"),
+        JAVA_LONG.withName("v_octal"),
+        JAVA_LONG.withName("v_int"),
+        JAVA_LONG.withName("v_int64"),
+        JAVA_DOUBLE.withName("v_float"),
+        JAVA_LONG.withName("v_hex"),
+        RuntimeHelper.POINTER.withName("v_string"),
+        RuntimeHelper.POINTER.withName("v_comment"),
+        JAVA_BYTE.withName("v_char"),
+        JAVA_INT.withName("v_error")
+    ).withName("_GTokenValue");
+    static final VarHandle const$4 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_symbol"));
+    static final VarHandle const$5 = constants$420.const$3.varHandle(MemoryLayout.PathElement.groupElement("v_identifier"));
 }
 
 

@@ -3,58 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$559 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$559() {}
-    static final FunctionDescriptor GDBusMessageFilterFunction_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GTypeValueTable.collect_value.class, "apply", constants$33.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$33.const$0
     );
-    static final MethodHandle GDBusMessageFilterFunction_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$559.GDBusMessageFilterFunction_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_add_filter$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_add_filter$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_add_filter",
-        constants$559.g_dbus_connection_add_filter$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_remove_filter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_remove_filter$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_remove_filter",
-        constants$559.g_dbus_connection_remove_filter$FUNC
-    );
-    static final FunctionDescriptor g_dbus_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_dbus_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_error_quark",
-        constants$559.g_dbus_error_quark$FUNC
-    );
-    static final FunctionDescriptor g_dbus_error_is_remote_error$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_error_is_remote_error$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_error_is_remote_error",
-        constants$559.g_dbus_error_is_remote_error$FUNC
-    );
-    static final FunctionDescriptor g_dbus_error_get_remote_error$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_error_get_remote_error$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_error_get_remote_error",
-        constants$559.g_dbus_error_get_remote_error$FUNC
-    );
+    static final VarHandle const$2 = constants$557.const$2.varHandle(MemoryLayout.PathElement.groupElement("collect_value"));
+    static final VarHandle const$3 = constants$557.const$2.varHandle(MemoryLayout.PathElement.groupElement("lcopy_format"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GTypeValueTable.lcopy_value.class, "apply", constants$33.const$0);
+    static final VarHandle const$5 = constants$557.const$2.varHandle(MemoryLayout.PathElement.groupElement("lcopy_value"));
 }
 
 

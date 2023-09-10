@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1144 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1144() {}
-    static final FunctionDescriptor gdk_pixbuf_format_get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_memory_output_stream_new_resizable",
+        constants$35.const$2
     );
-    static final MethodHandle gdk_pixbuf_format_get_description$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_get_description",
-        constants$1144.gdk_pixbuf_format_get_description$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_memory_output_stream_get_data",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gdk_pixbuf_format_get_mime_types$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_memory_output_stream_get_size",
+        constants$4.const$0
     );
-    static final MethodHandle gdk_pixbuf_format_get_mime_types$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_get_mime_types",
-        constants$1144.gdk_pixbuf_format_get_mime_types$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_memory_output_stream_get_data_size",
+        constants$4.const$0
     );
-    static final FunctionDescriptor gdk_pixbuf_format_get_extensions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_memory_output_stream_steal_data",
+        constants$5.const$2
     );
-    static final MethodHandle gdk_pixbuf_format_get_extensions$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_get_extensions",
-        constants$1144.gdk_pixbuf_format_get_extensions$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_format_is_save_option_supported$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_format_is_save_option_supported$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_is_save_option_supported",
-        constants$1144.gdk_pixbuf_format_is_save_option_supported$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_format_is_writable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_format_is_writable$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_is_writable",
-        constants$1144.gdk_pixbuf_format_is_writable$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_format_is_scalable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_format_is_scalable$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_is_scalable",
-        constants$1144.gdk_pixbuf_format_is_scalable$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_memory_output_stream_steal_as_bytes",
+        constants$5.const$2
     );
 }
 

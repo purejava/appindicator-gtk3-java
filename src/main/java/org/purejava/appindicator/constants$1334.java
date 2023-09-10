@@ -3,58 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1334 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1334() {}
-    static final FunctionDescriptor gtk_menu_get_attach_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_task_get_check_cancellable",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_menu_get_attach_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_get_attach_widget",
-        constants$1334.gtk_menu_get_attach_widget$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_task_get_source_tag",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_menu_set_tearoff_state$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_task_get_name",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_menu_set_tearoff_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_set_tearoff_state",
-        constants$1334.gtk_menu_set_tearoff_state$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_task_is_valid",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gtk_menu_get_tearoff_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_get_tearoff_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_get_tearoff_state",
-        constants$1334.gtk_menu_get_tearoff_state$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_set_title$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_set_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_set_title",
-        constants$1334.gtk_menu_set_title$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_get_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_get_title",
-        constants$1334.gtk_menu_get_title$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_reorder_child$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_menu_reorder_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_reorder_child",
-        constants$1334.gtk_menu_reorder_child$FUNC
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GTaskThreadFunc.class, "apply", constants$42.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_task_run_in_thread$task_func.class, "apply", constants$42.const$1);
 }
 
 

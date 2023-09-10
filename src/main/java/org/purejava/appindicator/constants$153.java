@@ -3,65 +3,41 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$153 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$153() {}
-    static final FunctionDescriptor g_hmac_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_DOUBLE
     );
-    static final MethodHandle g_hmac_unref$MH = RuntimeHelper.downcallHandle(
-        "g_hmac_unref",
-        constants$153.g_hmac_unref$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_date_time_new_local",
+        constants$153.const$0
     );
-    static final FunctionDescriptor g_hmac_update$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_date_time_new_utc",
+        constants$153.const$0
     );
-    static final MethodHandle g_hmac_update$MH = RuntimeHelper.downcallHandle(
-        "g_hmac_update",
-        constants$153.g_hmac_update$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_date_time_add",
+        constants$21.const$1
     );
-    static final FunctionDescriptor g_hmac_get_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_date_time_add_years",
+        constants$21.const$3
     );
-    static final MethodHandle g_hmac_get_string$MH = RuntimeHelper.downcallHandle(
-        "g_hmac_get_string",
-        constants$153.g_hmac_get_string$FUNC
-    );
-    static final FunctionDescriptor g_hmac_get_digest$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hmac_get_digest$MH = RuntimeHelper.downcallHandle(
-        "g_hmac_get_digest",
-        constants$153.g_hmac_get_digest$FUNC
-    );
-    static final FunctionDescriptor g_compute_hmac_for_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_compute_hmac_for_data$MH = RuntimeHelper.downcallHandle(
-        "g_compute_hmac_for_data",
-        constants$153.g_compute_hmac_for_data$FUNC
-    );
-    static final FunctionDescriptor g_compute_hmac_for_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_compute_hmac_for_string$MH = RuntimeHelper.downcallHandle(
-        "g_compute_hmac_for_string",
-        constants$153.g_compute_hmac_for_string$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_date_time_add_months",
+        constants$21.const$3
     );
 }
 

@@ -3,57 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1318 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1318() {}
-    static final FunctionDescriptor gtk_window_set_interactive_debugging$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_interactive_debugging$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_interactive_debugging",
-        constants$1318.gtk_window_set_interactive_debugging$FUNC
-    );
-    static final FunctionDescriptor gtk_dialog_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_dialog_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_dialog_get_type",
-        constants$1318.gtk_dialog_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_dialog_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_dialog_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_dialog_new",
-        constants$1318.gtk_dialog_new$FUNC
-    );
-    static final FunctionDescriptor gtk_dialog_new_with_buttons$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_dialog_new_with_buttons$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_dialog_new_with_buttons",
-        constants$1318.gtk_dialog_new_with_buttons$FUNC
-    );
-    static final FunctionDescriptor gtk_dialog_add_action_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_dialog_add_action_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_dialog_add_action_widget",
-        constants$1318.gtk_dialog_add_action_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_dialog_add_button$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_dialog_add_button$MH = RuntimeHelper.downcallHandle(
-        "gtk_dialog_add_button",
-        constants$1318.gtk_dialog_add_button$FUNC
-    );
+    static final VarHandle const$0 = constants$1316.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSocketServiceClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1316.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GSocketServiceClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1316.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GSocketServiceClass._g_reserved6.class, "apply", constants$7.const$5);
 }
 
 

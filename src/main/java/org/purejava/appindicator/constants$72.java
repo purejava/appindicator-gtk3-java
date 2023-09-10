@@ -3,60 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$72 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$72() {}
-    static final FunctionDescriptor g_async_queue_remove$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_queue_remove$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_remove",
-        constants$72.g_async_queue_remove$FUNC
-    );
-    static final FunctionDescriptor g_async_queue_remove_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_queue_remove_unlocked$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_remove_unlocked",
-        constants$72.g_async_queue_remove_unlocked$FUNC
-    );
-    static final FunctionDescriptor g_async_queue_push_front$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_queue_push_front$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_push_front",
-        constants$72.g_async_queue_push_front$FUNC
-    );
-    static final FunctionDescriptor g_async_queue_push_front_unlocked$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_queue_push_front_unlocked$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_push_front_unlocked",
-        constants$72.g_async_queue_push_front_unlocked$FUNC
-    );
-    static final FunctionDescriptor g_async_queue_timed_pop$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_queue_timed_pop$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_timed_pop",
-        constants$72.g_async_queue_timed_pop$FUNC
-    );
-    static final FunctionDescriptor g_async_queue_timed_pop_unlocked$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_queue_timed_pop_unlocked$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_timed_pop_unlocked",
-        constants$72.g_async_queue_timed_pop_unlocked$FUNC
-    );
+    static final VarHandle const$0 = constants$71.const$4.varHandle(MemoryLayout.PathElement.groupElement("__high"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("__prev"),
+        RuntimeHelper.POINTER.withName("__next")
+    ).withName("__pthread_internal_list");
+    static final VarHandle const$2 = constants$72.const$1.varHandle(MemoryLayout.PathElement.groupElement("__prev"));
+    static final VarHandle const$3 = constants$72.const$1.varHandle(MemoryLayout.PathElement.groupElement("__next"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("__next")
+    ).withName("__pthread_internal_slist");
+    static final VarHandle const$5 = constants$72.const$4.varHandle(MemoryLayout.PathElement.groupElement("__next"));
 }
 
 

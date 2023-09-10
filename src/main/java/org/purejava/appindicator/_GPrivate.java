@@ -2,86 +2,104 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GPrivate {
- *     gpointer p;
- *     GDestroyNotify notify;
- *     gpointer future[2];
+ *     void* p;
+ *     void (*notify)(void*);
+ *     void* future[2];
  * };
  * }
  */
 public class _GPrivate {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("p"),
-        Constants$root.C_POINTER$LAYOUT.withName("notify"),
-        MemoryLayout.sequenceLayout(2, Constants$root.C_POINTER$LAYOUT).withName("future")
-    ).withName("_GPrivate");
     public static MemoryLayout $LAYOUT() {
-        return _GPrivate.$struct$LAYOUT;
+        return constants$100.const$3;
     }
-    static final VarHandle p$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("p"));
     public static VarHandle p$VH() {
-        return _GPrivate.p$VH;
+        return constants$100.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gpointer p;
+     * void* p;
      * }
      */
     public static MemorySegment p$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GPrivate.p$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$100.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gpointer p;
+     * void* p;
      * }
      */
     public static void p$set(MemorySegment seg, MemorySegment x) {
-        _GPrivate.p$VH.set(seg, x);
+        constants$100.const$4.set(seg, x);
     }
     public static MemorySegment p$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GPrivate.p$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$100.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void p$set(MemorySegment seg, long index, MemorySegment x) {
-        _GPrivate.p$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$100.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle notify$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("notify"));
+    /**
+     * {@snippet :
+ * void (*notify)(void*);
+     * }
+     */
+    public interface notify {
+
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(notify fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$100.const$5, fi, constants$13.const$1, scope);
+        }
+        static notify ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _display) -> {
+                try {
+                    constants$13.const$3.invokeExact(symbol, _display);
+                } catch (Throwable ex$) {
+                    throw new AssertionError("should not reach here", ex$);
+                }
+            };
+        }
+    }
+
     public static VarHandle notify$VH() {
-        return _GPrivate.notify$VH;
+        return constants$101.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GDestroyNotify notify;
+     * void (*notify)(void*);
      * }
      */
     public static MemorySegment notify$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GPrivate.notify$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$101.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GDestroyNotify notify;
+     * void (*notify)(void*);
      * }
      */
     public static void notify$set(MemorySegment seg, MemorySegment x) {
-        _GPrivate.notify$VH.set(seg, x);
+        constants$101.const$0.set(seg, x);
     }
     public static MemorySegment notify$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GPrivate.notify$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$101.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void notify$set(MemorySegment seg, long index, MemorySegment x) {
-        _GPrivate.notify$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$101.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GDestroyNotify notify(MemorySegment segment, SegmentScope scope) {
-        return GDestroyNotify.ofAddress(notify$get(segment), scope);
+    public static notify notify(MemorySegment segment, Arena scope) {
+        return notify.ofAddress(notify$get(segment), scope);
     }
     public static MemorySegment future$slice(MemorySegment seg) {
         return seg.asSlice(16, 16);
@@ -91,7 +109,7 @@ public class _GPrivate {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

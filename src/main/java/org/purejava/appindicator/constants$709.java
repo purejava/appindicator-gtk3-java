@@ -3,51 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$709 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$709() {}
-    static final FunctionDescriptor g_mount_operation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_mount_operation_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_type",
-        constants$709.g_mount_operation_get_type$FUNC
+    static final VarHandle const$0 = constants$704.const$1.varHandle(MemoryLayout.PathElement.groupElement("query_action"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_action_group_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor g_mount_operation_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_mount_operation_new$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_new",
-        constants$709.g_mount_operation_new$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_action_group_has_action",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_mount_operation_get_username$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_action_group_list_actions",
+        constants$5.const$2
     );
-    static final MethodHandle g_mount_operation_get_username$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_username",
-        constants$709.g_mount_operation_get_username$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_action_group_get_action_parameter_type",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_mount_operation_set_username$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_operation_set_username$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_set_username",
-        constants$709.g_mount_operation_set_username$FUNC
-    );
-    static final FunctionDescriptor g_mount_operation_get_password$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_operation_get_password$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_get_password",
-        constants$709.g_mount_operation_get_password$FUNC
-    );
-    static final FunctionDescriptor g_mount_operation_set_password$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_operation_set_password$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_set_password",
-        constants$709.g_mount_operation_set_password$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_action_group_get_action_state_type",
+        constants$5.const$5
     );
 }
 

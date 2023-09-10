@@ -3,66 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$140 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$140() {}
-    static final FunctionDescriptor g_list_prepend$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_prepend$MH = RuntimeHelper.downcallHandle(
-        "g_list_prepend",
-        constants$140.g_list_prepend$FUNC
-    );
-    static final FunctionDescriptor g_list_insert$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_list_insert$MH = RuntimeHelper.downcallHandle(
-        "g_list_insert",
-        constants$140.g_list_insert$FUNC
-    );
-    static final FunctionDescriptor g_list_insert_sorted$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_insert_sorted$MH = RuntimeHelper.downcallHandle(
-        "g_list_insert_sorted",
-        constants$140.g_list_insert_sorted$FUNC
-    );
-    static final FunctionDescriptor g_list_insert_sorted_with_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_insert_sorted_with_data$MH = RuntimeHelper.downcallHandle(
-        "g_list_insert_sorted_with_data",
-        constants$140.g_list_insert_sorted_with_data$FUNC
-    );
-    static final FunctionDescriptor g_list_insert_before$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_insert_before$MH = RuntimeHelper.downcallHandle(
-        "g_list_insert_before",
-        constants$140.g_list_insert_before$FUNC
-    );
-    static final FunctionDescriptor g_list_insert_before_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_insert_before_link$MH = RuntimeHelper.downcallHandle(
-        "g_list_insert_before_link",
-        constants$140.g_list_insert_before_link$FUNC
-    );
+    static final VarHandle const$0 = constants$139.const$2.varHandle(MemoryLayout.PathElement.groupElement("pr_pid"));
+    static final VarHandle const$1 = constants$139.const$2.varHandle(MemoryLayout.PathElement.groupElement("pr_ppid"));
+    static final VarHandle const$2 = constants$139.const$2.varHandle(MemoryLayout.PathElement.groupElement("pr_pgrp"));
+    static final VarHandle const$3 = constants$139.const$2.varHandle(MemoryLayout.PathElement.groupElement("pr_sid"));
+    static final VarHandle const$4 = constants$139.const$2.varHandle(MemoryLayout.PathElement.groupElement("pr_fpvalid"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_BYTE.withName("pr_state"),
+        JAVA_BYTE.withName("pr_sname"),
+        JAVA_BYTE.withName("pr_zomb"),
+        JAVA_BYTE.withName("pr_nice"),
+        MemoryLayout.paddingLayout(4),
+        JAVA_LONG.withName("pr_flag"),
+        JAVA_INT.withName("pr_uid"),
+        JAVA_INT.withName("pr_gid"),
+        JAVA_INT.withName("pr_pid"),
+        JAVA_INT.withName("pr_ppid"),
+        JAVA_INT.withName("pr_pgrp"),
+        JAVA_INT.withName("pr_sid"),
+        MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("pr_fname"),
+        MemoryLayout.sequenceLayout(80, JAVA_BYTE).withName("pr_psargs")
+    ).withName("elf_prpsinfo");
 }
 
 

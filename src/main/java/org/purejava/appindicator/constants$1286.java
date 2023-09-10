@@ -3,64 +3,41 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1286 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1286() {}
-    static final FunctionDescriptor gtk_widget_class_set_template$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_socket_condition_timed_wait",
+        constants$838.const$0
     );
-    static final MethodHandle gtk_widget_class_set_template$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_set_template",
-        constants$1286.gtk_widget_class_set_template$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_socket_accept",
+        constants$23.const$0
     );
-    static final FunctionDescriptor gtk_widget_class_set_template_from_resource$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_socket_listen",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_widget_class_set_template_from_resource$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_set_template_from_resource",
-        constants$1286.gtk_widget_class_set_template_from_resource$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_receive",
+        constants$759.const$4
     );
-    static final FunctionDescriptor gtk_widget_class_bind_template_callback_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle gtk_widget_class_bind_template_callback_full$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_bind_template_callback_full",
-        constants$1286.gtk_widget_class_bind_template_callback_full$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_class_set_connect_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_class_set_connect_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_set_connect_func",
-        constants$1286.gtk_widget_class_set_connect_func$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_class_bind_template_child_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle gtk_widget_class_bind_template_child_full$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_bind_template_child_full",
-        constants$1286.gtk_widget_class_bind_template_child_full$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_action_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_action_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_action_group",
-        constants$1286.gtk_widget_get_action_group$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_receive_from",
+        constants$1286.const$4
     );
 }
 

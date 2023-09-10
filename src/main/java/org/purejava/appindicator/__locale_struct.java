@@ -2,9 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct __locale_struct {
@@ -18,22 +20,14 @@ import java.lang.foreign.*;
  */
 public class __locale_struct {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.sequenceLayout(13, Constants$root.C_POINTER$LAYOUT).withName("__locales"),
-        Constants$root.C_POINTER$LAYOUT.withName("__ctype_b"),
-        Constants$root.C_POINTER$LAYOUT.withName("__ctype_tolower"),
-        Constants$root.C_POINTER$LAYOUT.withName("__ctype_toupper"),
-        MemoryLayout.sequenceLayout(13, Constants$root.C_POINTER$LAYOUT).withName("__names")
-    ).withName("__locale_struct");
     public static MemoryLayout $LAYOUT() {
-        return __locale_struct.$struct$LAYOUT;
+        return constants$3.const$1;
     }
     public static MemorySegment __locales$slice(MemorySegment seg) {
         return seg.asSlice(0, 104);
     }
-    static final VarHandle __ctype_b$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("__ctype_b"));
     public static VarHandle __ctype_b$VH() {
-        return __locale_struct.__ctype_b$VH;
+        return constants$3.const$2;
     }
     /**
      * Getter for field:
@@ -42,7 +36,7 @@ public class __locale_struct {
      * }
      */
     public static MemorySegment __ctype_b$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)__locale_struct.__ctype_b$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -51,17 +45,16 @@ public class __locale_struct {
      * }
      */
     public static void __ctype_b$set(MemorySegment seg, MemorySegment x) {
-        __locale_struct.__ctype_b$VH.set(seg, x);
+        constants$3.const$2.set(seg, x);
     }
     public static MemorySegment __ctype_b$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)__locale_struct.__ctype_b$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void __ctype_b$set(MemorySegment seg, long index, MemorySegment x) {
-        __locale_struct.__ctype_b$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle __ctype_tolower$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("__ctype_tolower"));
     public static VarHandle __ctype_tolower$VH() {
-        return __locale_struct.__ctype_tolower$VH;
+        return constants$3.const$3;
     }
     /**
      * Getter for field:
@@ -70,7 +63,7 @@ public class __locale_struct {
      * }
      */
     public static MemorySegment __ctype_tolower$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)__locale_struct.__ctype_tolower$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -79,17 +72,16 @@ public class __locale_struct {
      * }
      */
     public static void __ctype_tolower$set(MemorySegment seg, MemorySegment x) {
-        __locale_struct.__ctype_tolower$VH.set(seg, x);
+        constants$3.const$3.set(seg, x);
     }
     public static MemorySegment __ctype_tolower$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)__locale_struct.__ctype_tolower$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void __ctype_tolower$set(MemorySegment seg, long index, MemorySegment x) {
-        __locale_struct.__ctype_tolower$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle __ctype_toupper$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("__ctype_toupper"));
     public static VarHandle __ctype_toupper$VH() {
-        return __locale_struct.__ctype_toupper$VH;
+        return constants$3.const$4;
     }
     /**
      * Getter for field:
@@ -98,7 +90,7 @@ public class __locale_struct {
      * }
      */
     public static MemorySegment __ctype_toupper$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)__locale_struct.__ctype_toupper$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -107,13 +99,13 @@ public class __locale_struct {
      * }
      */
     public static void __ctype_toupper$set(MemorySegment seg, MemorySegment x) {
-        __locale_struct.__ctype_toupper$VH.set(seg, x);
+        constants$3.const$4.set(seg, x);
     }
     public static MemorySegment __ctype_toupper$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)__locale_struct.__ctype_toupper$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void __ctype_toupper$set(MemorySegment seg, long index, MemorySegment x) {
-        __locale_struct.__ctype_toupper$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment __names$slice(MemorySegment seg) {
         return seg.asSlice(128, 104);
@@ -123,7 +115,7 @@ public class __locale_struct {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

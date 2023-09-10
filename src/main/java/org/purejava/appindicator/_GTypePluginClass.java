@@ -2,168 +2,248 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GTypePluginClass {
- *     GTypeInterface base_iface;
- *     GTypePluginUse use_plugin;
- *     GTypePluginUnuse unuse_plugin;
- *     GTypePluginCompleteTypeInfo complete_type_info;
- *     GTypePluginCompleteInterfaceInfo complete_interface_info;
+ *     struct _GTypeInterface base_iface;
+ *     void (*use_plugin)(struct _GTypePlugin*);
+ *     void (*unuse_plugin)(struct _GTypePlugin*);
+ *     void (*complete_type_info)(struct _GTypePlugin*,unsigned long,struct _GTypeInfo*,struct _GTypeValueTable*);
+ *     void (*complete_interface_info)(struct _GTypePlugin*,unsigned long,unsigned long,struct _GInterfaceInfo*);
  * };
  * }
  */
 public class _GTypePluginClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
-        ).withName("base_iface"),
-        Constants$root.C_POINTER$LAYOUT.withName("use_plugin"),
-        Constants$root.C_POINTER$LAYOUT.withName("unuse_plugin"),
-        Constants$root.C_POINTER$LAYOUT.withName("complete_type_info"),
-        Constants$root.C_POINTER$LAYOUT.withName("complete_interface_info")
-    ).withName("_GTypePluginClass");
     public static MemoryLayout $LAYOUT() {
-        return _GTypePluginClass.$struct$LAYOUT;
+        return constants$680.const$4;
     }
     public static MemorySegment base_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
-    static final VarHandle use_plugin$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("use_plugin"));
+    /**
+     * {@snippet :
+ * void (*use_plugin)(struct _GTypePlugin*);
+     * }
+     */
+    public interface use_plugin {
+
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(use_plugin fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$680.const$5, fi, constants$13.const$1, scope);
+        }
+        static use_plugin ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _display) -> {
+                try {
+                    constants$13.const$3.invokeExact(symbol, _display);
+                } catch (Throwable ex$) {
+                    throw new AssertionError("should not reach here", ex$);
+                }
+            };
+        }
+    }
+
     public static VarHandle use_plugin$VH() {
-        return _GTypePluginClass.use_plugin$VH;
+        return constants$681.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GTypePluginUse use_plugin;
+     * void (*use_plugin)(struct _GTypePlugin*);
      * }
      */
     public static MemorySegment use_plugin$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTypePluginClass.use_plugin$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$681.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GTypePluginUse use_plugin;
+     * void (*use_plugin)(struct _GTypePlugin*);
      * }
      */
     public static void use_plugin$set(MemorySegment seg, MemorySegment x) {
-        _GTypePluginClass.use_plugin$VH.set(seg, x);
+        constants$681.const$0.set(seg, x);
     }
     public static MemorySegment use_plugin$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTypePluginClass.use_plugin$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$681.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void use_plugin$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTypePluginClass.use_plugin$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$681.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GTypePluginUse use_plugin(MemorySegment segment, SegmentScope scope) {
-        return GTypePluginUse.ofAddress(use_plugin$get(segment), scope);
+    public static use_plugin use_plugin(MemorySegment segment, Arena scope) {
+        return use_plugin.ofAddress(use_plugin$get(segment), scope);
     }
-    static final VarHandle unuse_plugin$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("unuse_plugin"));
+    /**
+     * {@snippet :
+ * void (*unuse_plugin)(struct _GTypePlugin*);
+     * }
+     */
+    public interface unuse_plugin {
+
+        void apply(java.lang.foreign.MemorySegment display);
+        static MemorySegment allocate(unuse_plugin fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$681.const$1, fi, constants$13.const$1, scope);
+        }
+        static unuse_plugin ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _display) -> {
+                try {
+                    constants$13.const$3.invokeExact(symbol, _display);
+                } catch (Throwable ex$) {
+                    throw new AssertionError("should not reach here", ex$);
+                }
+            };
+        }
+    }
+
     public static VarHandle unuse_plugin$VH() {
-        return _GTypePluginClass.unuse_plugin$VH;
+        return constants$681.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GTypePluginUnuse unuse_plugin;
+     * void (*unuse_plugin)(struct _GTypePlugin*);
      * }
      */
     public static MemorySegment unuse_plugin$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTypePluginClass.unuse_plugin$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$681.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GTypePluginUnuse unuse_plugin;
+     * void (*unuse_plugin)(struct _GTypePlugin*);
      * }
      */
     public static void unuse_plugin$set(MemorySegment seg, MemorySegment x) {
-        _GTypePluginClass.unuse_plugin$VH.set(seg, x);
+        constants$681.const$2.set(seg, x);
     }
     public static MemorySegment unuse_plugin$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTypePluginClass.unuse_plugin$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$681.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void unuse_plugin$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTypePluginClass.unuse_plugin$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$681.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GTypePluginUnuse unuse_plugin(MemorySegment segment, SegmentScope scope) {
-        return GTypePluginUnuse.ofAddress(unuse_plugin$get(segment), scope);
+    public static unuse_plugin unuse_plugin(MemorySegment segment, Arena scope) {
+        return unuse_plugin.ofAddress(unuse_plugin$get(segment), scope);
     }
-    static final VarHandle complete_type_info$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("complete_type_info"));
+    /**
+     * {@snippet :
+ * void (*complete_type_info)(struct _GTypePlugin*,unsigned long,struct _GTypeInfo*,struct _GTypeValueTable*);
+     * }
+     */
+    public interface complete_type_info {
+
+        void apply(java.lang.foreign.MemorySegment plugin, long g_type, java.lang.foreign.MemorySegment info, java.lang.foreign.MemorySegment value_table);
+        static MemorySegment allocate(complete_type_info fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$681.const$3, fi, constants$679.const$5, scope);
+        }
+        static complete_type_info ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _plugin, long _g_type, java.lang.foreign.MemorySegment _info, java.lang.foreign.MemorySegment _value_table) -> {
+                try {
+                    constants$680.const$1.invokeExact(symbol, _plugin, _g_type, _info, _value_table);
+                } catch (Throwable ex$) {
+                    throw new AssertionError("should not reach here", ex$);
+                }
+            };
+        }
+    }
+
     public static VarHandle complete_type_info$VH() {
-        return _GTypePluginClass.complete_type_info$VH;
+        return constants$681.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GTypePluginCompleteTypeInfo complete_type_info;
+     * void (*complete_type_info)(struct _GTypePlugin*,unsigned long,struct _GTypeInfo*,struct _GTypeValueTable*);
      * }
      */
     public static MemorySegment complete_type_info$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTypePluginClass.complete_type_info$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$681.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GTypePluginCompleteTypeInfo complete_type_info;
+     * void (*complete_type_info)(struct _GTypePlugin*,unsigned long,struct _GTypeInfo*,struct _GTypeValueTable*);
      * }
      */
     public static void complete_type_info$set(MemorySegment seg, MemorySegment x) {
-        _GTypePluginClass.complete_type_info$VH.set(seg, x);
+        constants$681.const$4.set(seg, x);
     }
     public static MemorySegment complete_type_info$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTypePluginClass.complete_type_info$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$681.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void complete_type_info$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTypePluginClass.complete_type_info$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$681.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GTypePluginCompleteTypeInfo complete_type_info(MemorySegment segment, SegmentScope scope) {
-        return GTypePluginCompleteTypeInfo.ofAddress(complete_type_info$get(segment), scope);
+    public static complete_type_info complete_type_info(MemorySegment segment, Arena scope) {
+        return complete_type_info.ofAddress(complete_type_info$get(segment), scope);
     }
-    static final VarHandle complete_interface_info$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("complete_interface_info"));
+    /**
+     * {@snippet :
+ * void (*complete_interface_info)(struct _GTypePlugin*,unsigned long,unsigned long,struct _GInterfaceInfo*);
+     * }
+     */
+    public interface complete_interface_info {
+
+        void apply(java.lang.foreign.MemorySegment plugin, long instance_type, long interface_type, java.lang.foreign.MemorySegment info);
+        static MemorySegment allocate(complete_interface_info fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$681.const$5, fi, constants$94.const$1, scope);
+        }
+        static complete_interface_info ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _plugin, long _instance_type, long _interface_type, java.lang.foreign.MemorySegment _info) -> {
+                try {
+                    constants$680.const$3.invokeExact(symbol, _plugin, _instance_type, _interface_type, _info);
+                } catch (Throwable ex$) {
+                    throw new AssertionError("should not reach here", ex$);
+                }
+            };
+        }
+    }
+
     public static VarHandle complete_interface_info$VH() {
-        return _GTypePluginClass.complete_interface_info$VH;
+        return constants$682.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GTypePluginCompleteInterfaceInfo complete_interface_info;
+     * void (*complete_interface_info)(struct _GTypePlugin*,unsigned long,unsigned long,struct _GInterfaceInfo*);
      * }
      */
     public static MemorySegment complete_interface_info$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTypePluginClass.complete_interface_info$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$682.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GTypePluginCompleteInterfaceInfo complete_interface_info;
+     * void (*complete_interface_info)(struct _GTypePlugin*,unsigned long,unsigned long,struct _GInterfaceInfo*);
      * }
      */
     public static void complete_interface_info$set(MemorySegment seg, MemorySegment x) {
-        _GTypePluginClass.complete_interface_info$VH.set(seg, x);
+        constants$682.const$0.set(seg, x);
     }
     public static MemorySegment complete_interface_info$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTypePluginClass.complete_interface_info$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$682.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void complete_interface_info$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTypePluginClass.complete_interface_info$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$682.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GTypePluginCompleteInterfaceInfo complete_interface_info(MemorySegment segment, SegmentScope scope) {
-        return GTypePluginCompleteInterfaceInfo.ofAddress(complete_interface_info$get(segment), scope);
+    public static complete_interface_info complete_interface_info(MemorySegment segment, Arena scope) {
+        return complete_interface_info.ofAddress(complete_interface_info$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

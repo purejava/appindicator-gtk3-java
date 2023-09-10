@@ -2,128 +2,116 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _AtkTextRange {
- *     AtkTextRectangle bounds;
- *     gint start_offset;
- *     gint end_offset;
- *     gchar* content;
+ *     struct _AtkTextRectangle bounds;
+ *     int start_offset;
+ *     int end_offset;
+ *     char* content;
  * };
  * }
  */
 public class _AtkTextRange {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("x"),
-            Constants$root.C_INT$LAYOUT.withName("y"),
-            Constants$root.C_INT$LAYOUT.withName("width"),
-            Constants$root.C_INT$LAYOUT.withName("height")
-        ).withName("bounds"),
-        Constants$root.C_INT$LAYOUT.withName("start_offset"),
-        Constants$root.C_INT$LAYOUT.withName("end_offset"),
-        Constants$root.C_POINTER$LAYOUT.withName("content")
-    ).withName("_AtkTextRange");
     public static MemoryLayout $LAYOUT() {
-        return _AtkTextRange.$struct$LAYOUT;
+        return constants$2009.const$3;
     }
     public static MemorySegment bounds$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
-    static final VarHandle start_offset$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("start_offset"));
     public static VarHandle start_offset$VH() {
-        return _AtkTextRange.start_offset$VH;
+        return constants$2009.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint start_offset;
+     * int start_offset;
      * }
      */
     public static int start_offset$get(MemorySegment seg) {
-        return (int)_AtkTextRange.start_offset$VH.get(seg);
+        return (int)constants$2009.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint start_offset;
+     * int start_offset;
      * }
      */
     public static void start_offset$set(MemorySegment seg, int x) {
-        _AtkTextRange.start_offset$VH.set(seg, x);
+        constants$2009.const$4.set(seg, x);
     }
     public static int start_offset$get(MemorySegment seg, long index) {
-        return (int)_AtkTextRange.start_offset$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2009.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void start_offset$set(MemorySegment seg, long index, int x) {
-        _AtkTextRange.start_offset$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2009.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle end_offset$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("end_offset"));
     public static VarHandle end_offset$VH() {
-        return _AtkTextRange.end_offset$VH;
+        return constants$2009.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint end_offset;
+     * int end_offset;
      * }
      */
     public static int end_offset$get(MemorySegment seg) {
-        return (int)_AtkTextRange.end_offset$VH.get(seg);
+        return (int)constants$2009.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint end_offset;
+     * int end_offset;
      * }
      */
     public static void end_offset$set(MemorySegment seg, int x) {
-        _AtkTextRange.end_offset$VH.set(seg, x);
+        constants$2009.const$5.set(seg, x);
     }
     public static int end_offset$get(MemorySegment seg, long index) {
-        return (int)_AtkTextRange.end_offset$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2009.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void end_offset$set(MemorySegment seg, long index, int x) {
-        _AtkTextRange.end_offset$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2009.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle content$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("content"));
     public static VarHandle content$VH() {
-        return _AtkTextRange.content$VH;
+        return constants$2010.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* content;
+     * char* content;
      * }
      */
     public static MemorySegment content$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkTextRange.content$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2010.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* content;
+     * char* content;
      * }
      */
     public static void content$set(MemorySegment seg, MemorySegment x) {
-        _AtkTextRange.content$VH.set(seg, x);
+        constants$2010.const$0.set(seg, x);
     }
     public static MemorySegment content$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkTextRange.content$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2010.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void content$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkTextRange.content$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2010.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

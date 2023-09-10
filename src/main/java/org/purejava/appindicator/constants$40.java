@@ -3,41 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$40 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$40() {}
-    static final FunctionDescriptor g_reload_user_special_dirs_cache$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_reload_user_special_dirs_cache$MH = RuntimeHelper.downcallHandle(
-        "g_reload_user_special_dirs_cache",
-        constants$40.g_reload_user_special_dirs_cache$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_ptr_array_set_free_func$element_free_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_set_free_func",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_get_user_data_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_get_user_data_dir$MH = RuntimeHelper.downcallHandle(
-        "g_get_user_data_dir",
-        constants$40.g_get_user_data_dir$FUNC
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor g_get_user_config_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_get_user_config_dir$MH = RuntimeHelper.downcallHandle(
-        "g_get_user_config_dir",
-        constants$40.g_get_user_config_dir$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_set_size",
+        constants$40.const$2
     );
-    static final FunctionDescriptor g_get_user_cache_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_get_user_cache_dir$MH = RuntimeHelper.downcallHandle(
-        "g_get_user_cache_dir",
-        constants$40.g_get_user_cache_dir$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_remove_index",
+        constants$21.const$3
     );
-    static final FunctionDescriptor g_get_user_state_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_get_user_state_dir$MH = RuntimeHelper.downcallHandle(
-        "g_get_user_state_dir",
-        constants$40.g_get_user_state_dir$FUNC
-    );
-    static final FunctionDescriptor g_get_system_data_dirs$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_get_system_data_dirs$MH = RuntimeHelper.downcallHandle(
-        "g_get_system_data_dirs",
-        constants$40.g_get_system_data_dirs$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_remove_index_fast",
+        constants$21.const$3
     );
 }
 

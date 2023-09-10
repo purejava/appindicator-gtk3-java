@@ -3,57 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1175 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1175() {}
-    static final FunctionDescriptor gdk_keyval_is_lower$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_keyval_is_lower$MH = RuntimeHelper.downcallHandle(
-        "gdk_keyval_is_lower",
-        constants$1175.gdk_keyval_is_lower$FUNC
-    );
-    static final FunctionDescriptor gdk_keyval_to_unicode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_keyval_to_unicode$MH = RuntimeHelper.downcallHandle(
-        "gdk_keyval_to_unicode",
-        constants$1175.gdk_keyval_to_unicode$FUNC
-    );
-    static final FunctionDescriptor gdk_unicode_to_keyval$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_unicode_to_keyval$MH = RuntimeHelper.downcallHandle(
-        "gdk_unicode_to_keyval",
-        constants$1175.gdk_unicode_to_keyval$FUNC
-    );
-    static final FunctionDescriptor gdk_parse_args$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_parse_args$MH = RuntimeHelper.downcallHandle(
-        "gdk_parse_args",
-        constants$1175.gdk_parse_args$FUNC
-    );
-    static final FunctionDescriptor gdk_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_init$MH = RuntimeHelper.downcallHandle(
-        "gdk_init",
-        constants$1175.gdk_init$FUNC
-    );
-    static final FunctionDescriptor gdk_init_check$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_init_check$MH = RuntimeHelper.downcallHandle(
-        "gdk_init_check",
-        constants$1175.gdk_init_check$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GMountOperationClass.ask_question.class, "apply", constants$14.const$3);
+    static final VarHandle const$1 = constants$1174.const$2.varHandle(MemoryLayout.PathElement.groupElement("ask_question"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GMountOperationClass.reply.class, "apply", constants$40.const$2);
+    static final VarHandle const$3 = constants$1174.const$2.varHandle(MemoryLayout.PathElement.groupElement("reply"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GMountOperationClass.aborted.class, "apply", constants$13.const$1);
+    static final VarHandle const$5 = constants$1174.const$2.varHandle(MemoryLayout.PathElement.groupElement("aborted"));
 }
 
 

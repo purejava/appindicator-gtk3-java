@@ -3,56 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1173 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1173() {}
-    static final FunctionDescriptor gdk_keymap_get_num_lock_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_mount_unmount_with_operation",
+        constants$380.const$0
     );
-    static final MethodHandle gdk_keymap_get_num_lock_state$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_get_num_lock_state",
-        constants$1173.gdk_keymap_get_num_lock_state$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_mount_unmount_with_operation_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gdk_keymap_get_scroll_lock_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_mount_eject_with_operation$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_mount_eject_with_operation",
+        constants$380.const$0
     );
-    static final MethodHandle gdk_keymap_get_scroll_lock_state$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_get_scroll_lock_state",
-        constants$1173.gdk_keymap_get_scroll_lock_state$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_mount_eject_with_operation_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gdk_keymap_get_modifier_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_keymap_get_modifier_state$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_get_modifier_state",
-        constants$1173.gdk_keymap_get_modifier_state$FUNC
-    );
-    static final FunctionDescriptor gdk_keymap_add_virtual_modifiers$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_keymap_add_virtual_modifiers$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_add_virtual_modifiers",
-        constants$1173.gdk_keymap_add_virtual_modifiers$FUNC
-    );
-    static final FunctionDescriptor gdk_keymap_map_virtual_modifiers$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_keymap_map_virtual_modifiers$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_map_virtual_modifiers",
-        constants$1173.gdk_keymap_map_virtual_modifiers$FUNC
-    );
-    static final FunctionDescriptor gdk_keymap_get_modifier_mask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_keymap_get_modifier_mask$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_get_modifier_mask",
-        constants$1173.gdk_keymap_get_modifier_mask$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_mount_get_sort_key",
+        constants$5.const$2
     );
 }
 

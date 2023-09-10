@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$598 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$598() {}
-    static final FunctionDescriptor g_dbus_gvariant_to_gvalue$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__VARIANT",
+        constants$584.const$3
     );
-    static final MethodHandle g_dbus_gvariant_to_gvalue$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_gvariant_to_gvalue",
-        constants$598.g_dbus_gvariant_to_gvalue$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__VARIANTv",
+        constants$585.const$0
     );
-    static final FunctionDescriptor g_dbus_gvalue_to_gvariant$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__UINT_POINTER",
+        constants$584.const$3
     );
-    static final MethodHandle g_dbus_gvalue_to_gvariant$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_gvalue_to_gvariant",
-        constants$598.g_dbus_gvalue_to_gvariant$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__UINT_POINTERv",
+        constants$585.const$0
     );
-    static final FunctionDescriptor g_dbus_escape_object_path_bytestring$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_BOOLEAN__FLAGS",
+        constants$584.const$3
     );
-    static final MethodHandle g_dbus_escape_object_path_bytestring$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_escape_object_path_bytestring",
-        constants$598.g_dbus_escape_object_path_bytestring$FUNC
-    );
-    static final FunctionDescriptor g_dbus_escape_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_escape_object_path$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_escape_object_path",
-        constants$598.g_dbus_escape_object_path$FUNC
-    );
-    static final FunctionDescriptor g_dbus_unescape_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_unescape_object_path$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_unescape_object_path",
-        constants$598.g_dbus_unescape_object_path$FUNC
-    );
-    static final FunctionDescriptor g_debug_controller_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_debug_controller_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_debug_controller_get_type",
-        constants$598.g_debug_controller_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_BOOLEAN__FLAGSv",
+        constants$585.const$0
     );
 }
 

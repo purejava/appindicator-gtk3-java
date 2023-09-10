@@ -3,79 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$787 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$787() {}
-    static final FunctionDescriptor g_subprocess_communicate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_output_stream_write_bytes",
+        constants$332.const$2
     );
-    static final MethodHandle g_subprocess_communicate$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_communicate",
-        constants$787.g_subprocess_communicate$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_output_stream_splice",
+        constants$778.const$3
     );
-    static final FunctionDescriptor g_subprocess_communicate_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_output_stream_flush",
+        constants$12.const$2
     );
-    static final MethodHandle g_subprocess_communicate_async$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_communicate_async",
-        constants$787.g_subprocess_communicate_async$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_output_stream_close",
+        constants$12.const$2
     );
-    static final FunctionDescriptor g_subprocess_communicate_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_communicate_finish$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_communicate_finish",
-        constants$787.g_subprocess_communicate_finish$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_communicate_utf8$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_communicate_utf8$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_communicate_utf8",
-        constants$787.g_subprocess_communicate_utf8$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_communicate_utf8_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_communicate_utf8_async$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_communicate_utf8_async",
-        constants$787.g_subprocess_communicate_utf8_async$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_communicate_utf8_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_communicate_utf8_finish$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_communicate_utf8_finish",
-        constants$787.g_subprocess_communicate_utf8_finish$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_output_stream_write_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_output_stream_write_async",
+        constants$761.const$1
     );
 }
 

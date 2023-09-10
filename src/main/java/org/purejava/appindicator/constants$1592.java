@@ -3,64 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1592 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1592() {}
-    static final FunctionDescriptor gtk_flow_box_set_filter_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_PangoFontMapClass.get_family.class, "apply", constants$5.const$5);
+    static final VarHandle const$1 = constants$1590.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_family"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_PangoFontMapClass.get_face.class, "apply", constants$5.const$5);
+    static final VarHandle const$3 = constants$1590.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_face"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_font_map_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_flow_box_set_filter_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_filter_func",
-        constants$1592.gtk_flow_box_set_filter_func$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_invalidate_filter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_invalidate_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_invalidate_filter",
-        constants$1592.gtk_flow_box_invalidate_filter$FUNC
-    );
-    static final FunctionDescriptor GtkFlowBoxSortFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkFlowBoxSortFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkFlowBoxSortFunc_UP$MH = RuntimeHelper.upcallHandle(GtkFlowBoxSortFunc.class, "apply", constants$1592.GtkFlowBoxSortFunc_UP$FUNC);
-    static final FunctionDescriptor GtkFlowBoxSortFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkFlowBoxSortFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1592.GtkFlowBoxSortFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_set_sort_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_set_sort_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_sort_func",
-        constants$1592.gtk_flow_box_set_sort_func$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_invalidate_sort$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_invalidate_sort$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_invalidate_sort",
-        constants$1592.gtk_flow_box_invalidate_sort$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_font_map_create_context",
+        constants$5.const$2
     );
 }
 

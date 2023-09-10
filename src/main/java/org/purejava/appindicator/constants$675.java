@@ -3,42 +3,60 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$675 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$675() {}
-    static final FunctionDescriptor g_dbus_connection_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_connection_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_flags_get_type",
-        constants$675.g_dbus_connection_flags_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_capability_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_capability_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_capability_flags_get_type",
-        constants$675.g_dbus_capability_flags_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_call_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_call_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_call_flags_get_type",
-        constants$675.g_dbus_call_flags_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_message_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_type_get_type",
-        constants$675.g_dbus_message_type_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_message_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_flags_get_type",
-        constants$675.g_dbus_message_flags_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_header_field_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_message_header_field_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_header_field_get_type",
-        constants$675.g_dbus_message_header_field_get_type$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        JAVA_INT.withName("use_count"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("type_infos"),
+        RuntimeHelper.POINTER.withName("interface_infos"),
+        RuntimeHelper.POINTER.withName("name")
+    ).withName("_GTypeModule");
+    static final VarHandle const$1 = constants$675.const$0.varHandle(MemoryLayout.PathElement.groupElement("use_count"));
+    static final VarHandle const$2 = constants$675.const$0.varHandle(MemoryLayout.PathElement.groupElement("type_infos"));
+    static final VarHandle const$3 = constants$675.const$0.varHandle(MemoryLayout.PathElement.groupElement("interface_infos"));
+    static final VarHandle const$4 = constants$675.const$0.varHandle(MemoryLayout.PathElement.groupElement("name"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("load"),
+        RuntimeHelper.POINTER.withName("unload"),
+        RuntimeHelper.POINTER.withName("reserved1"),
+        RuntimeHelper.POINTER.withName("reserved2"),
+        RuntimeHelper.POINTER.withName("reserved3"),
+        RuntimeHelper.POINTER.withName("reserved4")
+    ).withName("_GTypeModuleClass");
 }
 
 

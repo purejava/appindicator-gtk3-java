@@ -3,59 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1089 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1089() {}
-    static final FunctionDescriptor gdk_window_begin_draw_frame$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_begin_draw_frame$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_begin_draw_frame",
-        constants$1089.gdk_window_begin_draw_frame$FUNC
-    );
-    static final FunctionDescriptor gdk_window_end_draw_frame$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_end_draw_frame$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_end_draw_frame",
-        constants$1089.gdk_window_end_draw_frame$FUNC
-    );
-    static final FunctionDescriptor gdk_window_flush$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_flush$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_flush",
-        constants$1089.gdk_window_flush$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_title$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_title$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_title",
-        constants$1089.gdk_window_set_title$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_role$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_role$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_role",
-        constants$1089.gdk_window_set_role$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_startup_id$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_startup_id$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_startup_id",
-        constants$1089.gdk_window_set_startup_id$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFilenameCompleterClass.got_completion_data.class, "apply", constants$13.const$1);
+    static final VarHandle const$1 = constants$1088.const$5.varHandle(MemoryLayout.PathElement.groupElement("got_completion_data"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFilenameCompleterClass._g_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1088.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFilenameCompleterClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1088.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
 }
 
 

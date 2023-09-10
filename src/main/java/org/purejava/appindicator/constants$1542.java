@@ -3,67 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1542 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1542() {}
-    static final FunctionDescriptor gtk_clipboard_request_contents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_font_description_unset_fields",
+        constants$40.const$2
     );
-    static final MethodHandle gtk_clipboard_request_contents$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_request_contents",
-        constants$1542.gtk_clipboard_request_contents$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_font_description_merge",
+        constants$164.const$5
     );
-    static final FunctionDescriptor gtk_clipboard_request_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_font_description_merge_static",
+        constants$164.const$5
     );
-    static final MethodHandle gtk_clipboard_request_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_request_text",
-        constants$1542.gtk_clipboard_request_text$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_font_description_better_match",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gtk_clipboard_request_rich_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_font_description_from_string",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_clipboard_request_rich_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_request_rich_text",
-        constants$1542.gtk_clipboard_request_rich_text$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_request_image$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_request_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_request_image",
-        constants$1542.gtk_clipboard_request_image$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_request_uris$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_request_uris$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_request_uris",
-        constants$1542.gtk_clipboard_request_uris$FUNC
-    );
-    static final FunctionDescriptor gtk_clipboard_request_targets$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_clipboard_request_targets$MH = RuntimeHelper.downcallHandle(
-        "gtk_clipboard_request_targets",
-        constants$1542.gtk_clipboard_request_targets$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_font_description_to_string",
+        constants$5.const$2
     );
 }
 

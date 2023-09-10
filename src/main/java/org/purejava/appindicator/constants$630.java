@@ -3,77 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$630 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$630() {}
-    static final FunctionDescriptor g_file_set_attribute_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
+        "g_object_set",
+        constants$13.const$4
     );
-    static final MethodHandle g_file_set_attribute_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_uint64",
-        constants$630.g_file_set_attribute_uint64$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_object_get",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_file_set_attribute_int64$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "g_object_connect",
+        constants$5.const$5
     );
-    static final MethodHandle g_file_set_attribute_int64$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_int64",
-        constants$630.g_file_set_attribute_int64$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_object_disconnect",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_file_mount_enclosing_volume$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_object_setv",
+        constants$179.const$1
     );
-    static final MethodHandle g_file_mount_enclosing_volume$MH = RuntimeHelper.downcallHandle(
-        "g_file_mount_enclosing_volume",
-        constants$630.g_file_mount_enclosing_volume$FUNC
-    );
-    static final FunctionDescriptor g_file_mount_enclosing_volume_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_mount_enclosing_volume_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_mount_enclosing_volume_finish",
-        constants$630.g_file_mount_enclosing_volume_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_mount_mountable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_mount_mountable$MH = RuntimeHelper.downcallHandle(
-        "g_file_mount_mountable",
-        constants$630.g_file_mount_mountable$FUNC
-    );
-    static final FunctionDescriptor g_file_mount_mountable_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_mount_mountable_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_mount_mountable_finish",
-        constants$630.g_file_mount_mountable_finish$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_object_set_valist",
+        constants$311.const$4
     );
 }
 

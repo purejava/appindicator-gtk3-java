@@ -3,73 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1828 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1828() {}
-    static final FunctionDescriptor gtk_text_buffer_insert_range_interactive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_window_move",
+        constants$467.const$3
     );
-    static final MethodHandle gtk_text_buffer_insert_range_interactive$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_insert_range_interactive",
-        constants$1828.gtk_text_buffer_insert_range_interactive$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_window_resize",
+        constants$467.const$3
     );
-    static final FunctionDescriptor gtk_text_buffer_insert_with_tags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_window_move_resize",
+        constants$1643.const$1
     );
-    static final MethodHandle gtk_text_buffer_insert_with_tags$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_text_buffer_insert_with_tags",
-        constants$1828.gtk_text_buffer_insert_with_tags$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final FunctionDescriptor gtk_text_buffer_insert_with_tags_by_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_window_move_to_rect",
+        constants$1828.const$3
     );
-    static final MethodHandle gtk_text_buffer_insert_with_tags_by_name$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_text_buffer_insert_with_tags_by_name",
-        constants$1828.gtk_text_buffer_insert_with_tags_by_name$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_insert_markup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_insert_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_insert_markup",
-        constants$1828.gtk_text_buffer_insert_markup$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_delete$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_delete$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_delete",
-        constants$1828.gtk_text_buffer_delete$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_delete_interactive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_delete_interactive$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_delete_interactive",
-        constants$1828.gtk_text_buffer_delete_interactive$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_window_reparent",
+        constants$1043.const$2
     );
 }
 

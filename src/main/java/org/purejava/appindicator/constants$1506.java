@@ -3,60 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1506 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1506() {}
-    static final FunctionDescriptor gtk_builder_new_from_resource$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1505.const$2.varHandle(MemoryLayout.PathElement.groupElement("reserved1"));
+    static final VarHandle const$1 = constants$1505.const$2.varHandle(MemoryLayout.PathElement.groupElement("reserved2"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_segment_properties_equal",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_builder_new_from_resource$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_new_from_resource",
-        constants$1506.gtk_builder_new_from_resource$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_segment_properties_hash",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_builder_new_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_segment_properties_overlay",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_builder_new_from_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_new_from_string",
-        constants$1506.gtk_builder_new_from_string$FUNC
-    );
-    static final FunctionDescriptor gtk_builder_add_callback_symbol$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_builder_add_callback_symbol$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_add_callback_symbol",
-        constants$1506.gtk_builder_add_callback_symbol$FUNC
-    );
-    static final FunctionDescriptor gtk_builder_add_callback_symbols$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_builder_add_callback_symbols$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_builder_add_callback_symbols",
-        constants$1506.gtk_builder_add_callback_symbols$FUNC
-    );
-    static final FunctionDescriptor gtk_builder_lookup_callback_symbol$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_builder_lookup_callback_symbol$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_lookup_callback_symbol",
-        constants$1506.gtk_builder_lookup_callback_symbol$FUNC
-    );
-    static final FunctionDescriptor gtk_builder_set_application$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_builder_set_application$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_set_application",
-        constants$1506.gtk_builder_set_application$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_buffer_create",
+        constants$35.const$2
     );
 }
 

@@ -3,65 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$261 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$261() {}
-    static final FunctionDescriptor g_log_get_debug_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_log_get_debug_enabled$MH = RuntimeHelper.downcallHandle(
-        "g_log_get_debug_enabled",
-        constants$261.g_log_get_debug_enabled$FUNC
-    );
-    static final FunctionDescriptor g_log_set_debug_enabled$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_log_set_debug_enabled$MH = RuntimeHelper.downcallHandle(
-        "g_log_set_debug_enabled",
-        constants$261.g_log_set_debug_enabled$FUNC
-    );
-    static final FunctionDescriptor _g_log_fallback_handler$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle _g_log_fallback_handler$MH = RuntimeHelper.downcallHandle(
-        "_g_log_fallback_handler",
-        constants$261._g_log_fallback_handler$FUNC
-    );
-    static final FunctionDescriptor g_return_if_fail_warning$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_return_if_fail_warning$MH = RuntimeHelper.downcallHandle(
-        "g_return_if_fail_warning",
-        constants$261.g_return_if_fail_warning$FUNC
-    );
-    static final FunctionDescriptor g_warn_message$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_warn_message$MH = RuntimeHelper.downcallHandle(
-        "g_warn_message",
-        constants$261.g_warn_message$FUNC
-    );
-    static final FunctionDescriptor g_assert_warning$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_assert_warning$MH = RuntimeHelper.downcallHandle(
-        "g_assert_warning",
-        constants$261.g_assert_warning$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GSourceFuncs.dispatch.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$260.const$1.varHandle(MemoryLayout.PathElement.groupElement("dispatch"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GSourceFuncs.finalize.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$260.const$1.varHandle(MemoryLayout.PathElement.groupElement("finalize"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GSourceFuncs.closure_callback.class, "apply", constants$10.const$5);
+    static final VarHandle const$5 = constants$260.const$1.varHandle(MemoryLayout.PathElement.groupElement("closure_callback"));
 }
 
 

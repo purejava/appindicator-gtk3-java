@@ -3,59 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$777 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$777() {}
-    static final FunctionDescriptor g_socket_connection_get_local_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_buffered_input_stream_fill_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_fill_async",
+        constants$762.const$2
     );
-    static final MethodHandle g_socket_connection_get_local_address$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_get_local_address",
-        constants$777.g_socket_connection_get_local_address$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_fill_finish",
+        constants$166.const$0
     );
-    static final FunctionDescriptor g_socket_connection_get_remote_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_buffered_input_stream_read_byte",
+        constants$12.const$2
     );
-    static final MethodHandle g_socket_connection_get_remote_address$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_get_remote_address",
-        constants$777.g_socket_connection_get_remote_address$FUNC
-    );
-    static final FunctionDescriptor g_socket_connection_factory_register_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_connection_factory_register_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_factory_register_type",
-        constants$777.g_socket_connection_factory_register_type$FUNC
-    );
-    static final FunctionDescriptor g_socket_connection_factory_lookup_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_connection_factory_lookup_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_factory_lookup_type",
-        constants$777.g_socket_connection_factory_lookup_type$FUNC
-    );
-    static final FunctionDescriptor g_socket_connection_factory_create_connection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_connection_factory_create_connection$MH = RuntimeHelper.downcallHandle(
-        "g_socket_connection_factory_create_connection",
-        constants$777.g_socket_connection_factory_create_connection$FUNC
-    );
-    static final FunctionDescriptor g_socket_control_message_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_control_message_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_control_message_get_type",
-        constants$777.g_socket_control_message_get_type$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GOutputStream");
+    static final VarHandle const$5 = constants$777.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

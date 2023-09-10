@@ -3,51 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1226 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1226() {}
-    static final FunctionDescriptor atk_no_op_object_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_no_op_object_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_no_op_object_get_type",
-        constants$1226.atk_no_op_object_get_type$FUNC
+    static final VarHandle const$0 = constants$1223.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved7"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_proxy_address_enumerator_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor atk_no_op_object_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_no_op_object_new$MH = RuntimeHelper.downcallHandle(
-        "atk_no_op_object_new",
-        constants$1226.atk_no_op_object_new$FUNC
-    );
-    static final FunctionDescriptor atk_object_factory_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_object_factory_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_object_factory_get_type",
-        constants$1226.atk_object_factory_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_object_factory_create_accessible$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_factory_create_accessible$MH = RuntimeHelper.downcallHandle(
-        "atk_object_factory_create_accessible",
-        constants$1226.atk_object_factory_create_accessible$FUNC
-    );
-    static final FunctionDescriptor atk_object_factory_invalidate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_factory_invalidate$MH = RuntimeHelper.downcallHandle(
-        "atk_object_factory_invalidate",
-        constants$1226.atk_object_factory_invalidate$FUNC
-    );
-    static final FunctionDescriptor atk_object_factory_get_accessible_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_factory_get_accessible_type$MH = RuntimeHelper.downcallHandle(
-        "atk_object_factory_get_accessible_type",
-        constants$1226.atk_object_factory_get_accessible_type$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("is_supported"),
+        RuntimeHelper.POINTER.withName("lookup"),
+        RuntimeHelper.POINTER.withName("lookup_async"),
+        RuntimeHelper.POINTER.withName("lookup_finish")
+    ).withName("_GProxyResolverInterface");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GProxyResolverInterface.is_supported.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$1226.const$2.varHandle(MemoryLayout.PathElement.groupElement("is_supported"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GProxyResolverInterface.lookup.class, "apply", constants$39.const$1);
 }
 
 

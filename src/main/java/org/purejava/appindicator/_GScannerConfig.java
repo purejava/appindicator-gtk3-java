@@ -2,201 +2,190 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GScannerConfig {
- *     gchar* cset_skip_characters;
- *     gchar* cset_identifier_first;
- *     gchar* cset_identifier_nth;
- *     gchar* cpair_comment_single;
- *      *     guint case_sensitive;
- *     guint skip_comment_multi;
- *     guint skip_comment_single;
- *     guint scan_comment_multi;
- *     guint scan_identifier;
- *     guint scan_identifier_1char;
- *     guint scan_identifier_NULL;
- *     guint scan_symbols;
- *     guint scan_binary;
- *     guint scan_octal;
- *     guint scan_float;
- *     guint scan_hex;
- *     guint scan_hex_dollar;
- *     guint scan_string_sq;
- *     guint scan_string_dq;
- *     guint numbers_2_int;
- *     guint int_2_float;
- *     guint identifier_2_string;
- *     guint char_2_token;
- *     guint symbol_2_token;
- *     guint scope_0_fallback;
- *     guint store_int64;
- *     guint padding_dummy;
+ *     char* cset_skip_characters;
+ *     char* cset_identifier_first;
+ *     char* cset_identifier_nth;
+ *     char* cpair_comment_single;
+ *      *     unsigned int case_sensitive;
+ *     unsigned int skip_comment_multi;
+ *     unsigned int skip_comment_single;
+ *     unsigned int scan_comment_multi;
+ *     unsigned int scan_identifier;
+ *     unsigned int scan_identifier_1char;
+ *     unsigned int scan_identifier_NULL;
+ *     unsigned int scan_symbols;
+ *     unsigned int scan_binary;
+ *     unsigned int scan_octal;
+ *     unsigned int scan_float;
+ *     unsigned int scan_hex;
+ *     unsigned int scan_hex_dollar;
+ *     unsigned int scan_string_sq;
+ *     unsigned int scan_string_dq;
+ *     unsigned int numbers_2_int;
+ *     unsigned int int_2_float;
+ *     unsigned int identifier_2_string;
+ *     unsigned int char_2_token;
+ *     unsigned int symbol_2_token;
+ *     unsigned int scope_0_fallback;
+ *     unsigned int store_int64;
+ *     unsigned int padding_dummy;
  * };
  * }
  */
 public class _GScannerConfig {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("cset_skip_characters"),
-        Constants$root.C_POINTER$LAYOUT.withName("cset_identifier_first"),
-        Constants$root.C_POINTER$LAYOUT.withName("cset_identifier_nth"),
-        Constants$root.C_POINTER$LAYOUT.withName("cpair_comment_single"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_INT$LAYOUT.withName("padding_dummy")
-    ).withName("_GScannerConfig");
     public static MemoryLayout $LAYOUT() {
-        return _GScannerConfig.$struct$LAYOUT;
+        return constants$422.const$4;
     }
-    static final VarHandle cset_skip_characters$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("cset_skip_characters"));
     public static VarHandle cset_skip_characters$VH() {
-        return _GScannerConfig.cset_skip_characters$VH;
+        return constants$422.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* cset_skip_characters;
+     * char* cset_skip_characters;
      * }
      */
     public static MemorySegment cset_skip_characters$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GScannerConfig.cset_skip_characters$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$422.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* cset_skip_characters;
+     * char* cset_skip_characters;
      * }
      */
     public static void cset_skip_characters$set(MemorySegment seg, MemorySegment x) {
-        _GScannerConfig.cset_skip_characters$VH.set(seg, x);
+        constants$422.const$5.set(seg, x);
     }
     public static MemorySegment cset_skip_characters$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GScannerConfig.cset_skip_characters$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$422.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void cset_skip_characters$set(MemorySegment seg, long index, MemorySegment x) {
-        _GScannerConfig.cset_skip_characters$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$422.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle cset_identifier_first$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("cset_identifier_first"));
     public static VarHandle cset_identifier_first$VH() {
-        return _GScannerConfig.cset_identifier_first$VH;
+        return constants$423.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* cset_identifier_first;
+     * char* cset_identifier_first;
      * }
      */
     public static MemorySegment cset_identifier_first$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GScannerConfig.cset_identifier_first$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$423.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* cset_identifier_first;
+     * char* cset_identifier_first;
      * }
      */
     public static void cset_identifier_first$set(MemorySegment seg, MemorySegment x) {
-        _GScannerConfig.cset_identifier_first$VH.set(seg, x);
+        constants$423.const$0.set(seg, x);
     }
     public static MemorySegment cset_identifier_first$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GScannerConfig.cset_identifier_first$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$423.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void cset_identifier_first$set(MemorySegment seg, long index, MemorySegment x) {
-        _GScannerConfig.cset_identifier_first$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$423.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle cset_identifier_nth$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("cset_identifier_nth"));
     public static VarHandle cset_identifier_nth$VH() {
-        return _GScannerConfig.cset_identifier_nth$VH;
+        return constants$423.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* cset_identifier_nth;
+     * char* cset_identifier_nth;
      * }
      */
     public static MemorySegment cset_identifier_nth$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GScannerConfig.cset_identifier_nth$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$423.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* cset_identifier_nth;
+     * char* cset_identifier_nth;
      * }
      */
     public static void cset_identifier_nth$set(MemorySegment seg, MemorySegment x) {
-        _GScannerConfig.cset_identifier_nth$VH.set(seg, x);
+        constants$423.const$1.set(seg, x);
     }
     public static MemorySegment cset_identifier_nth$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GScannerConfig.cset_identifier_nth$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$423.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void cset_identifier_nth$set(MemorySegment seg, long index, MemorySegment x) {
-        _GScannerConfig.cset_identifier_nth$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$423.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle cpair_comment_single$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("cpair_comment_single"));
     public static VarHandle cpair_comment_single$VH() {
-        return _GScannerConfig.cpair_comment_single$VH;
+        return constants$423.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* cpair_comment_single;
+     * char* cpair_comment_single;
      * }
      */
     public static MemorySegment cpair_comment_single$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GScannerConfig.cpair_comment_single$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$423.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* cpair_comment_single;
+     * char* cpair_comment_single;
      * }
      */
     public static void cpair_comment_single$set(MemorySegment seg, MemorySegment x) {
-        _GScannerConfig.cpair_comment_single$VH.set(seg, x);
+        constants$423.const$2.set(seg, x);
     }
     public static MemorySegment cpair_comment_single$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GScannerConfig.cpair_comment_single$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$423.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void cpair_comment_single$set(MemorySegment seg, long index, MemorySegment x) {
-        _GScannerConfig.cpair_comment_single$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$423.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle padding_dummy$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("padding_dummy"));
     public static VarHandle padding_dummy$VH() {
-        return _GScannerConfig.padding_dummy$VH;
+        return constants$423.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint padding_dummy;
+     * unsigned int padding_dummy;
      * }
      */
     public static int padding_dummy$get(MemorySegment seg) {
-        return (int)_GScannerConfig.padding_dummy$VH.get(seg);
+        return (int)constants$423.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint padding_dummy;
+     * unsigned int padding_dummy;
      * }
      */
     public static void padding_dummy$set(MemorySegment seg, int x) {
-        _GScannerConfig.padding_dummy$VH.set(seg, x);
+        constants$423.const$3.set(seg, x);
     }
     public static int padding_dummy$get(MemorySegment seg, long index) {
-        return (int)_GScannerConfig.padding_dummy$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$423.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void padding_dummy$set(MemorySegment seg, long index, int x) {
-        _GScannerConfig.padding_dummy$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$423.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

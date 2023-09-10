@@ -3,80 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1643 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1643() {}
-    static final FunctionDescriptor gtk_icon_theme_choose_icon_for_scale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final VarHandle const$0 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("draw_rectangle"));
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final MethodHandle gtk_icon_theme_choose_icon_for_scale$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_choose_icon_for_scale",
-        constants$1643.gtk_icon_theme_choose_icon_for_scale$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_PangoRendererClass.draw_error_underline.class, "apply", constants$1643.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$1643.const$1
     );
-    static final FunctionDescriptor gtk_icon_theme_load_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_load_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_load_icon",
-        constants$1643.gtk_icon_theme_load_icon$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_load_icon_for_scale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_load_icon_for_scale$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_load_icon_for_scale",
-        constants$1643.gtk_icon_theme_load_icon_for_scale$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_load_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_load_surface$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_load_surface",
-        constants$1643.gtk_icon_theme_load_surface$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_lookup_by_gicon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_lookup_by_gicon$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_lookup_by_gicon",
-        constants$1643.gtk_icon_theme_lookup_by_gicon$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_lookup_by_gicon_for_scale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_lookup_by_gicon_for_scale$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_lookup_by_gicon_for_scale",
-        constants$1643.gtk_icon_theme_lookup_by_gicon_for_scale$FUNC
-    );
+    static final VarHandle const$4 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("draw_error_underline"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_PangoRendererClass.draw_shape.class, "apply", constants$1043.const$2);
 }
 
 

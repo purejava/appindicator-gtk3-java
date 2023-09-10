@@ -3,61 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$877 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$877() {}
-    static final FunctionDescriptor hb_font_get_synthetic_slant$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$875.const$4.varHandle(MemoryLayout.PathElement.groupElement("flush"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDBusInterfaceSkeletonClass.g_authorize_method.class, "apply", constants$9.const$0);
+    static final VarHandle const$2 = constants$875.const$4.varHandle(MemoryLayout.PathElement.groupElement("g_authorize_method"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle hb_font_get_synthetic_slant$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_synthetic_slant",
-        constants$877.hb_font_get_synthetic_slant$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_get_flags",
+        constants$10.const$5
     );
-    static final FunctionDescriptor hb_font_set_variations$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_font_set_variations$MH = RuntimeHelper.downcallHandle(
-        "hb_font_set_variations",
-        constants$877.hb_font_set_variations$FUNC
-    );
-    static final FunctionDescriptor hb_font_set_var_coords_design$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_font_set_var_coords_design$MH = RuntimeHelper.downcallHandle(
-        "hb_font_set_var_coords_design",
-        constants$877.hb_font_set_var_coords_design$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_var_coords_design$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_var_coords_design$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_var_coords_design",
-        constants$877.hb_font_get_var_coords_design$FUNC
-    );
-    static final FunctionDescriptor hb_font_set_var_coords_normalized$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_font_set_var_coords_normalized$MH = RuntimeHelper.downcallHandle(
-        "hb_font_set_var_coords_normalized",
-        constants$877.hb_font_set_var_coords_normalized$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_var_coords_normalized$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_var_coords_normalized$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_var_coords_normalized",
-        constants$877.hb_font_get_var_coords_normalized$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_interface_skeleton_set_flags",
+        constants$40.const$2
     );
 }
 

@@ -3,48 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1176 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1176() {}
-    static final FunctionDescriptor gdk_add_option_entries_libgtk_only$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GMountOperationClass.show_processes.class, "apply", constants$42.const$1);
+    static final VarHandle const$1 = constants$1174.const$2.varHandle(MemoryLayout.PathElement.groupElement("show_processes"));
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final MethodHandle gdk_add_option_entries_libgtk_only$MH = RuntimeHelper.downcallHandle(
-        "gdk_add_option_entries_libgtk_only",
-        constants$1176.gdk_add_option_entries_libgtk_only$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GMountOperationClass.show_unmount_progress.class, "apply", constants$1176.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$1176.const$2
     );
-    static final FunctionDescriptor gdk_pre_parse_libgtk_only$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_pre_parse_libgtk_only$MH = RuntimeHelper.downcallHandle(
-        "gdk_pre_parse_libgtk_only",
-        constants$1176.gdk_pre_parse_libgtk_only$FUNC
-    );
-    static final FunctionDescriptor gdk_get_program_class$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_get_program_class$MH = RuntimeHelper.downcallHandle(
-        "gdk_get_program_class",
-        constants$1176.gdk_get_program_class$FUNC
-    );
-    static final FunctionDescriptor gdk_set_program_class$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_set_program_class$MH = RuntimeHelper.downcallHandle(
-        "gdk_set_program_class",
-        constants$1176.gdk_set_program_class$FUNC
-    );
-    static final FunctionDescriptor gdk_notify_startup_complete$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_notify_startup_complete$MH = RuntimeHelper.downcallHandle(
-        "gdk_notify_startup_complete",
-        constants$1176.gdk_notify_startup_complete$FUNC
-    );
-    static final FunctionDescriptor gdk_notify_startup_complete_with_id$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_notify_startup_complete_with_id$MH = RuntimeHelper.downcallHandle(
-        "gdk_notify_startup_complete_with_id",
-        constants$1176.gdk_notify_startup_complete_with_id$FUNC
-    );
+    static final VarHandle const$5 = constants$1174.const$2.varHandle(MemoryLayout.PathElement.groupElement("show_unmount_progress"));
 }
 
 

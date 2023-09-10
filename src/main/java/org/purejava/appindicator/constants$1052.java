@@ -3,61 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1052 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1052() {}
-    static final FunctionDescriptor cairo_region_get_rectangle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_info_copy_into",
+        constants$13.const$4
     );
-    static final MethodHandle cairo_region_get_rectangle$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_get_rectangle",
-        constants$1052.cairo_region_get_rectangle$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_info_has_attribute",
+        constants$9.const$0
     );
-    static final FunctionDescriptor cairo_region_is_empty$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_info_has_namespace",
+        constants$9.const$0
     );
-    static final MethodHandle cairo_region_is_empty$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_is_empty",
-        constants$1052.cairo_region_is_empty$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_info_list_attributes",
+        constants$5.const$5
     );
-    static final FunctionDescriptor cairo_region_contains_rectangle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_info_get_attribute_data",
+        constants$165.const$2
     );
-    static final MethodHandle cairo_region_contains_rectangle$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_contains_rectangle",
-        constants$1052.cairo_region_contains_rectangle$FUNC
-    );
-    static final FunctionDescriptor cairo_region_contains_point$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_region_contains_point$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_contains_point",
-        constants$1052.cairo_region_contains_point$FUNC
-    );
-    static final FunctionDescriptor cairo_region_translate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_region_translate$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_translate",
-        constants$1052.cairo_region_translate$FUNC
-    );
-    static final FunctionDescriptor cairo_region_subtract$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_region_subtract$MH = RuntimeHelper.downcallHandle(
-        "cairo_region_subtract",
-        constants$1052.cairo_region_subtract$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_info_get_attribute_type",
+        constants$9.const$0
     );
 }
 

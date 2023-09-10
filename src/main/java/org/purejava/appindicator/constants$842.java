@@ -3,56 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$842 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$842() {}
-    static final FunctionDescriptor hb_unicode_script$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_new",
+        constants$5.const$2
     );
-    static final MethodHandle hb_unicode_script$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_script",
-        constants$842.hb_unicode_script$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_set_byte_order",
+        constants$40.const$2
     );
-    static final FunctionDescriptor hb_unicode_compose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_get_byte_order",
+        constants$10.const$5
     );
-    static final MethodHandle hb_unicode_compose$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_compose",
-        constants$842.hb_unicode_compose$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_set_newline_type",
+        constants$40.const$2
     );
-    static final FunctionDescriptor hb_unicode_decompose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_get_newline_type",
+        constants$10.const$5
     );
-    static final MethodHandle hb_unicode_decompose$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_decompose",
-        constants$842.hb_unicode_decompose$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_BYTE,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor hb_set_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_set_create$MH = RuntimeHelper.downcallHandle(
-        "hb_set_create",
-        constants$842.hb_set_create$FUNC
-    );
-    static final FunctionDescriptor hb_set_get_empty$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_set_get_empty$MH = RuntimeHelper.downcallHandle(
-        "hb_set_get_empty",
-        constants$842.hb_set_get_empty$FUNC
-    );
-    static final FunctionDescriptor hb_set_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_reference$MH = RuntimeHelper.downcallHandle(
-        "hb_set_reference",
-        constants$842.hb_set_reference$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_byte",
+        constants$842.const$5
     );
 }
 

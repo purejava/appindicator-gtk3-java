@@ -3,66 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$828 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$828() {}
-    static final FunctionDescriptor g_volume_eject$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "getlogin_r",
+        constants$97.const$1
     );
-    static final MethodHandle g_volume_eject$MH = RuntimeHelper.downcallHandle(
-        "g_volume_eject",
-        constants$828.g_volume_eject$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "setlogin",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_volume_eject_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_volume_eject_finish$MH = RuntimeHelper.downcallHandle(
-        "g_volume_eject_finish",
-        constants$828.g_volume_eject_finish$FUNC
-    );
-    static final FunctionDescriptor g_volume_get_identifier$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_volume_get_identifier$MH = RuntimeHelper.downcallHandle(
-        "g_volume_get_identifier",
-        constants$828.g_volume_get_identifier$FUNC
-    );
-    static final FunctionDescriptor g_volume_enumerate_identifiers$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_volume_enumerate_identifiers$MH = RuntimeHelper.downcallHandle(
-        "g_volume_enumerate_identifiers",
-        constants$828.g_volume_enumerate_identifiers$FUNC
-    );
-    static final FunctionDescriptor g_volume_get_activation_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_volume_get_activation_root$MH = RuntimeHelper.downcallHandle(
-        "g_volume_get_activation_root",
-        constants$828.g_volume_get_activation_root$FUNC
-    );
-    static final FunctionDescriptor g_volume_eject_with_operation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_volume_eject_with_operation$MH = RuntimeHelper.downcallHandle(
-        "g_volume_eject_with_operation",
-        constants$828.g_volume_eject_with_operation$FUNC
-    );
+    static final MemorySegment const$2 = RuntimeHelper.lookupGlobalVariable("optarg", RuntimeHelper.POINTER);
+    static final MemorySegment const$3 = RuntimeHelper.lookupGlobalVariable("optind", JAVA_INT);
+    static final MemorySegment const$4 = RuntimeHelper.lookupGlobalVariable("opterr", JAVA_INT);
+    static final MemorySegment const$5 = RuntimeHelper.lookupGlobalVariable("optopt", JAVA_INT);
 }
 
 

@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1691 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1691() {}
-    static final FunctionDescriptor gtk_popover_get_modal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_in_fill",
+        constants$1690.const$5
     );
-    static final MethodHandle gtk_popover_get_modal$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_get_modal",
-        constants$1691.gtk_popover_get_modal$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_in_clip",
+        constants$1690.const$5
     );
-    static final FunctionDescriptor gtk_popover_bind_model$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_stroke_extents",
+        constants$331.const$1
     );
-    static final MethodHandle gtk_popover_bind_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_bind_model",
-        constants$1691.gtk_popover_bind_model$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_fill_extents",
+        constants$331.const$1
     );
-    static final FunctionDescriptor gtk_popover_set_transitions_enabled$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_reset_clip",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_popover_set_transitions_enabled$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_set_transitions_enabled",
-        constants$1691.gtk_popover_set_transitions_enabled$FUNC
-    );
-    static final FunctionDescriptor gtk_popover_get_transitions_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_popover_get_transitions_enabled$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_get_transitions_enabled",
-        constants$1691.gtk_popover_get_transitions_enabled$FUNC
-    );
-    static final FunctionDescriptor gtk_popover_set_default_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_popover_set_default_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_set_default_widget",
-        constants$1691.gtk_popover_set_default_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_popover_get_default_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_popover_get_default_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_get_default_widget",
-        constants$1691.gtk_popover_get_default_widget$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_clip",
+        constants$13.const$1
     );
 }
 

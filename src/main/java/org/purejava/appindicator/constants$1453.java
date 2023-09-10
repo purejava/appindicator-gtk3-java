@@ -3,56 +3,49 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1453 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1453() {}
-    static final FunctionDescriptor gtk_entry_set_max_length$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_draw_line_to",
+        constants$1452.const$5
     );
-    static final MethodHandle gtk_entry_set_max_length$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_max_length",
-        constants$1453.gtk_entry_set_max_length$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT
     );
-    static final FunctionDescriptor gtk_entry_get_max_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_draw_quadratic_to",
+        constants$1453.const$1
     );
-    static final MethodHandle gtk_entry_get_max_length$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_max_length",
-        constants$1453.gtk_entry_get_max_length$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT
     );
-    static final FunctionDescriptor gtk_entry_get_text_length$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_draw_cubic_to",
+        constants$1453.const$3
     );
-    static final MethodHandle gtk_entry_get_text_length$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_text_length",
-        constants$1453.gtk_entry_get_text_length$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_activates_default$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_activates_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_activates_default",
-        constants$1453.gtk_entry_set_activates_default$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_activates_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_activates_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_activates_default",
-        constants$1453.gtk_entry_get_activates_default$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_width_chars$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_width_chars$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_width_chars",
-        constants$1453.gtk_entry_set_width_chars$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_draw_close_path",
+        constants$14.const$3
     );
 }
 

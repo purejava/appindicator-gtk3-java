@@ -2,18 +2,30 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1986 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1986() {}
-    static final MemorySegment G_GUINT32_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("u");
-    static final MemorySegment G_GINT64_MODIFIER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("l");
-    static final MemorySegment G_GINT64_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("li");
-    static final MemorySegment G_GUINT64_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("lu");
-    static final MemorySegment G_GSIZE_MODIFIER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("l");
-    static final MemorySegment G_GSSIZE_MODIFIER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("l");
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(AtkEventListenerInit.class, "apply", constants$7.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(AtkKeySnoopFunc.class, "apply", constants$9.const$0);
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        JAVA_INT.withName("state"),
+        JAVA_INT.withName("keyval"),
+        JAVA_INT.withName("length"),
+        RuntimeHelper.POINTER.withName("string"),
+        JAVA_SHORT.withName("keycode"),
+        MemoryLayout.paddingLayout(2),
+        JAVA_INT.withName("timestamp")
+    ).withName("_AtkKeyEventStruct");
+    static final VarHandle const$3 = constants$1986.const$2.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$4 = constants$1986.const$2.varHandle(MemoryLayout.PathElement.groupElement("state"));
+    static final VarHandle const$5 = constants$1986.const$2.varHandle(MemoryLayout.PathElement.groupElement("keyval"));
 }
 
 

@@ -3,56 +3,45 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1078 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1078() {}
-    static final FunctionDescriptor gdk_window_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_io_stream_is_closed",
+        constants$10.const$5
     );
-    static final MethodHandle gdk_window_new$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_new",
-        constants$1078.gdk_window_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_io_stream_has_pending",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gdk_window_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_io_stream_set_pending",
+        constants$9.const$0
     );
-    static final MethodHandle gdk_window_destroy$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_destroy",
-        constants$1078.gdk_window_destroy$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_io_stream_clear_pending",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gdk_window_get_window_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_window_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_window_type",
-        constants$1078.gdk_window_get_window_type$FUNC
-    );
-    static final FunctionDescriptor gdk_window_is_destroyed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_is_destroyed$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_is_destroyed",
-        constants$1078.gdk_window_is_destroyed$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_visual$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_visual$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_visual",
-        constants$1078.gdk_window_get_visual$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_screen$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_screen",
-        constants$1078.gdk_window_get_screen$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    RuntimeHelper.POINTER.withName("g_class")
+                ).withName("g_type_instance"),
+                JAVA_INT.withName("ref_count"),
+                MemoryLayout.paddingLayout(4),
+                RuntimeHelper.POINTER.withName("qdata")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GFileIOStream");
+    static final VarHandle const$5 = constants$1078.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

@@ -3,66 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1006 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1006() {}
-    static final FunctionDescriptor cairo_in_fill$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_in_fill$MH = RuntimeHelper.downcallHandle(
-        "cairo_in_fill",
-        constants$1006.cairo_in_fill$FUNC
-    );
-    static final FunctionDescriptor cairo_in_clip$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_in_clip$MH = RuntimeHelper.downcallHandle(
-        "cairo_in_clip",
-        constants$1006.cairo_in_clip$FUNC
-    );
-    static final FunctionDescriptor cairo_stroke_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_stroke_extents$MH = RuntimeHelper.downcallHandle(
-        "cairo_stroke_extents",
-        constants$1006.cairo_stroke_extents$FUNC
-    );
-    static final FunctionDescriptor cairo_fill_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_fill_extents$MH = RuntimeHelper.downcallHandle(
-        "cairo_fill_extents",
-        constants$1006.cairo_fill_extents$FUNC
-    );
-    static final FunctionDescriptor cairo_reset_clip$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_reset_clip$MH = RuntimeHelper.downcallHandle(
-        "cairo_reset_clip",
-        constants$1006.cairo_reset_clip$FUNC
-    );
-    static final FunctionDescriptor cairo_clip$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_clip$MH = RuntimeHelper.downcallHandle(
-        "cairo_clip",
-        constants$1006.cairo_clip$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.unmount_mountable_with_operation_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("unmount_mountable_with_operation_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.eject_mountable_with_operation.class, "apply", constants$380.const$0);
+    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("eject_mountable_with_operation"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.eject_mountable_with_operation_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("eject_mountable_with_operation_finish"));
 }
 
 

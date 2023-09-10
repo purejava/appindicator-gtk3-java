@@ -3,61 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1240 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1240() {}
-    static final FunctionDescriptor atk_table_get_row_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_records_finish",
+        constants$23.const$0
     );
-    static final MethodHandle atk_table_get_row_description$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_row_description",
-        constants$1240.atk_table_get_row_description$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_resolver_free_targets",
+        constants$13.const$1
     );
-    static final FunctionDescriptor atk_table_get_row_header$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_resolver_error_quark",
+        constants$83.const$1
     );
-    static final MethodHandle atk_table_get_row_header$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_row_header",
-        constants$1240.atk_table_get_row_header$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_resource_error_quark",
+        constants$83.const$1
     );
-    static final FunctionDescriptor atk_table_get_summary$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_table_get_summary$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_summary",
-        constants$1240.atk_table_get_summary$FUNC
-    );
-    static final FunctionDescriptor atk_table_set_caption$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_table_set_caption$MH = RuntimeHelper.downcallHandle(
-        "atk_table_set_caption",
-        constants$1240.atk_table_set_caption$FUNC
-    );
-    static final FunctionDescriptor atk_table_set_column_description$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_table_set_column_description$MH = RuntimeHelper.downcallHandle(
-        "atk_table_set_column_description",
-        constants$1240.atk_table_set_column_description$FUNC
-    );
-    static final FunctionDescriptor atk_table_set_column_header$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_table_set_column_header$MH = RuntimeHelper.downcallHandle(
-        "atk_table_set_column_header",
-        constants$1240.atk_table_set_column_header$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("data"),
+        JAVA_LONG.withName("data_len"),
+        RuntimeHelper.POINTER.withName("resource"),
+        RuntimeHelper.POINTER.withName("next"),
+        RuntimeHelper.POINTER.withName("padding")
+    ).withName("_GStaticResource");
+    static final VarHandle const$5 = constants$1240.const$4.varHandle(MemoryLayout.PathElement.groupElement("data"));
 }
 
 

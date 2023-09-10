@@ -3,54 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$914 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$914() {}
-    static final FunctionDescriptor pango_font_family_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_font_family_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_font_family_get_type",
-        constants$914.pango_font_family_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDBusObjectManagerIface.interface_added.class, "apply", constants$14.const$3);
+    static final VarHandle const$1 = constants$911.const$5.varHandle(MemoryLayout.PathElement.groupElement("interface_added"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDBusObjectManagerIface.interface_removed.class, "apply", constants$14.const$3);
+    static final VarHandle const$3 = constants$911.const$5.varHandle(MemoryLayout.PathElement.groupElement("interface_removed"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor pango_font_family_list_faces$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_family_list_faces$MH = RuntimeHelper.downcallHandle(
-        "pango_font_family_list_faces",
-        constants$914.pango_font_family_list_faces$FUNC
-    );
-    static final FunctionDescriptor pango_font_family_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_family_get_name$MH = RuntimeHelper.downcallHandle(
-        "pango_font_family_get_name",
-        constants$914.pango_font_family_get_name$FUNC
-    );
-    static final FunctionDescriptor pango_font_family_is_monospace$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_family_is_monospace$MH = RuntimeHelper.downcallHandle(
-        "pango_font_family_is_monospace",
-        constants$914.pango_font_family_is_monospace$FUNC
-    );
-    static final FunctionDescriptor pango_font_family_is_variable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_family_is_variable$MH = RuntimeHelper.downcallHandle(
-        "pango_font_family_is_variable",
-        constants$914.pango_font_family_is_variable$FUNC
-    );
-    static final FunctionDescriptor pango_font_family_get_face$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_family_get_face$MH = RuntimeHelper.downcallHandle(
-        "pango_font_family_get_face",
-        constants$914.pango_font_family_get_face$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_get_object_path",
+        constants$5.const$2
     );
 }
 

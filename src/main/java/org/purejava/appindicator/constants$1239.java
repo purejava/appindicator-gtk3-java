@@ -3,59 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1239 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1239() {}
-    static final FunctionDescriptor atk_table_get_n_rows$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_resolver_lookup_service_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_service_async",
+        constants$868.const$1
     );
-    static final MethodHandle atk_table_get_n_rows$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_n_rows",
-        constants$1239.atk_table_get_n_rows$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_service_finish",
+        constants$23.const$0
     );
-    static final FunctionDescriptor atk_table_get_column_extent_at$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_records",
+        constants$977.const$0
     );
-    static final MethodHandle atk_table_get_column_extent_at$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_column_extent_at",
-        constants$1239.atk_table_get_column_extent_at$FUNC
-    );
-    static final FunctionDescriptor atk_table_get_row_extent_at$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_table_get_row_extent_at$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_row_extent_at",
-        constants$1239.atk_table_get_row_extent_at$FUNC
-    );
-    static final FunctionDescriptor atk_table_get_caption$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_table_get_caption$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_caption",
-        constants$1239.atk_table_get_caption$FUNC
-    );
-    static final FunctionDescriptor atk_table_get_column_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_table_get_column_description$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_column_description",
-        constants$1239.atk_table_get_column_description$FUNC
-    );
-    static final FunctionDescriptor atk_table_get_column_header$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_table_get_column_header$MH = RuntimeHelper.downcallHandle(
-        "atk_table_get_column_header",
-        constants$1239.atk_table_get_column_header$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_resolver_lookup_records_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_resolver_lookup_records_async",
+        constants$584.const$3
     );
 }
 

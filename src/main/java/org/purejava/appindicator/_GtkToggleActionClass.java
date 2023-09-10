@@ -4,13 +4,14 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkToggleActionClass {
- *     GtkActionClass parent_class;
- *     void (*toggled)(GtkToggleAction*);
+ *     struct _GtkActionClass parent_class;
+ *     void (*toggled)(struct _GtkToggleAction*);
  *     void (*_gtk_reserved1)();
  *     void (*_gtk_reserved2)();
  *     void (*_gtk_reserved3)();
@@ -20,81 +21,28 @@ import java.lang.foreign.*;
  */
 public class _GtkToggleActionClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-                ).withName("g_type_class"),
-                Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-                Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-                Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-                MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-            ).withName("parent_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("activate"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("menu_item_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("toolbar_item_type"),
-            Constants$root.C_POINTER$LAYOUT.withName("create_menu_item"),
-            Constants$root.C_POINTER$LAYOUT.withName("create_tool_item"),
-            Constants$root.C_POINTER$LAYOUT.withName("connect_proxy"),
-            Constants$root.C_POINTER$LAYOUT.withName("disconnect_proxy"),
-            Constants$root.C_POINTER$LAYOUT.withName("create_menu"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved4")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("toggled"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved4")
-    ).withName("_GtkToggleActionClass");
     public static MemoryLayout $LAYOUT() {
-        return _GtkToggleActionClass.$struct$LAYOUT;
+        return constants$3314.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 232);
     }
-    static final FunctionDescriptor toggled$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor toggled_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle toggled_UP$MH = RuntimeHelper.upcallHandle(toggled.class, "apply", _GtkToggleActionClass.toggled_UP$FUNC);
-    static final FunctionDescriptor toggled_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle toggled_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkToggleActionClass.toggled_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*toggled)(GtkToggleAction*);
+ * void (*toggled)(struct _GtkToggleAction*);
      * }
      */
     public interface toggled {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(toggled fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkToggleActionClass.toggled_UP$MH, fi, _GtkToggleActionClass.toggled$FUNC, scope);
+        static MemorySegment allocate(toggled fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3315.const$0, fi, constants$13.const$1, scope);
         }
-        static toggled ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static toggled ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkToggleActionClass.toggled_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -102,44 +50,36 @@ public class _GtkToggleActionClass {
         }
     }
 
-    static final VarHandle toggled$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("toggled"));
     public static VarHandle toggled$VH() {
-        return _GtkToggleActionClass.toggled$VH;
+        return constants$3315.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*toggled)(GtkToggleAction*);
+     * void (*toggled)(struct _GtkToggleAction*);
      * }
      */
     public static MemorySegment toggled$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkToggleActionClass.toggled$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3315.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*toggled)(GtkToggleAction*);
+     * void (*toggled)(struct _GtkToggleAction*);
      * }
      */
     public static void toggled$set(MemorySegment seg, MemorySegment x) {
-        _GtkToggleActionClass.toggled$VH.set(seg, x);
+        constants$3315.const$1.set(seg, x);
     }
     public static MemorySegment toggled$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkToggleActionClass.toggled$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3315.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void toggled$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkToggleActionClass.toggled$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3315.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static toggled toggled(MemorySegment segment, SegmentScope scope) {
+    public static toggled toggled(MemorySegment segment, Arena scope) {
         return toggled.ofAddress(toggled$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkToggleActionClass._gtk_reserved1_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkToggleActionClass._gtk_reserved1_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved1)();
@@ -148,14 +88,14 @@ public class _GtkToggleActionClass {
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkToggleActionClass._gtk_reserved1_UP$MH, fi, _GtkToggleActionClass._gtk_reserved1$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved1 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3315.const$2, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkToggleActionClass._gtk_reserved1_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -163,9 +103,8 @@ public class _GtkToggleActionClass {
         }
     }
 
-    static final VarHandle _gtk_reserved1$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
     public static VarHandle _gtk_reserved1$VH() {
-        return _GtkToggleActionClass._gtk_reserved1$VH;
+        return constants$3315.const$3;
     }
     /**
      * Getter for field:
@@ -174,7 +113,7 @@ public class _GtkToggleActionClass {
      * }
      */
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkToggleActionClass._gtk_reserved1$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3315.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -183,24 +122,17 @@ public class _GtkToggleActionClass {
      * }
      */
     public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        _GtkToggleActionClass._gtk_reserved1$VH.set(seg, x);
+        constants$3315.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkToggleActionClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3315.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkToggleActionClass._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3315.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, Arena scope) {
         return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkToggleActionClass._gtk_reserved2_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkToggleActionClass._gtk_reserved2_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved2)();
@@ -209,14 +141,14 @@ public class _GtkToggleActionClass {
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkToggleActionClass._gtk_reserved2_UP$MH, fi, _GtkToggleActionClass._gtk_reserved2$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved2 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3315.const$4, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkToggleActionClass._gtk_reserved2_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -224,9 +156,8 @@ public class _GtkToggleActionClass {
         }
     }
 
-    static final VarHandle _gtk_reserved2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
     public static VarHandle _gtk_reserved2$VH() {
-        return _GtkToggleActionClass._gtk_reserved2$VH;
+        return constants$3315.const$5;
     }
     /**
      * Getter for field:
@@ -235,7 +166,7 @@ public class _GtkToggleActionClass {
      * }
      */
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkToggleActionClass._gtk_reserved2$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3315.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -244,24 +175,17 @@ public class _GtkToggleActionClass {
      * }
      */
     public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        _GtkToggleActionClass._gtk_reserved2$VH.set(seg, x);
+        constants$3315.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkToggleActionClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3315.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkToggleActionClass._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3315.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, Arena scope) {
         return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkToggleActionClass._gtk_reserved3_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkToggleActionClass._gtk_reserved3_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved3)();
@@ -270,14 +194,14 @@ public class _GtkToggleActionClass {
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkToggleActionClass._gtk_reserved3_UP$MH, fi, _GtkToggleActionClass._gtk_reserved3$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved3 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3316.const$0, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkToggleActionClass._gtk_reserved3_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -285,9 +209,8 @@ public class _GtkToggleActionClass {
         }
     }
 
-    static final VarHandle _gtk_reserved3$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
     public static VarHandle _gtk_reserved3$VH() {
-        return _GtkToggleActionClass._gtk_reserved3$VH;
+        return constants$3316.const$1;
     }
     /**
      * Getter for field:
@@ -296,7 +219,7 @@ public class _GtkToggleActionClass {
      * }
      */
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkToggleActionClass._gtk_reserved3$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3316.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -305,24 +228,17 @@ public class _GtkToggleActionClass {
      * }
      */
     public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        _GtkToggleActionClass._gtk_reserved3$VH.set(seg, x);
+        constants$3316.const$1.set(seg, x);
     }
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkToggleActionClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3316.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkToggleActionClass._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3316.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, Arena scope) {
         return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved4.class, "apply", _GtkToggleActionClass._gtk_reserved4_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkToggleActionClass._gtk_reserved4_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved4)();
@@ -331,14 +247,14 @@ public class _GtkToggleActionClass {
     public interface _gtk_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved4 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkToggleActionClass._gtk_reserved4_UP$MH, fi, _GtkToggleActionClass._gtk_reserved4$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved4 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3316.const$2, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkToggleActionClass._gtk_reserved4_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -346,9 +262,8 @@ public class _GtkToggleActionClass {
         }
     }
 
-    static final VarHandle _gtk_reserved4$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
     public static VarHandle _gtk_reserved4$VH() {
-        return _GtkToggleActionClass._gtk_reserved4$VH;
+        return constants$3316.const$3;
     }
     /**
      * Getter for field:
@@ -357,7 +272,7 @@ public class _GtkToggleActionClass {
      * }
      */
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkToggleActionClass._gtk_reserved4$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3316.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -366,15 +281,15 @@ public class _GtkToggleActionClass {
      * }
      */
     public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        _GtkToggleActionClass._gtk_reserved4$VH.set(seg, x);
+        constants$3316.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkToggleActionClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3316.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkToggleActionClass._gtk_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3316.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, Arena scope) {
         return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -382,7 +297,7 @@ public class _GtkToggleActionClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

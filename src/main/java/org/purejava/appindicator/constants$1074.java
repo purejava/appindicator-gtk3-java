@@ -3,52 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1074 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1074() {}
-    static final FunctionDescriptor gdk_drawing_context_get_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_drawing_context_get_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_drawing_context_get_window",
-        constants$1074.gdk_drawing_context_get_window$FUNC
-    );
-    static final FunctionDescriptor gdk_drawing_context_get_clip$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_drawing_context_get_clip$MH = RuntimeHelper.downcallHandle(
-        "gdk_drawing_context_get_clip",
-        constants$1074.gdk_drawing_context_get_clip$FUNC
-    );
-    static final FunctionDescriptor gdk_drawing_context_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_drawing_context_is_valid$MH = RuntimeHelper.downcallHandle(
-        "gdk_drawing_context_is_valid",
-        constants$1074.gdk_drawing_context_is_valid$FUNC
-    );
-    static final FunctionDescriptor gdk_drawing_context_get_cairo_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_drawing_context_get_cairo_context$MH = RuntimeHelper.downcallHandle(
-        "gdk_drawing_context_get_cairo_context",
-        constants$1074.gdk_drawing_context_get_cairo_context$FUNC
-    );
-    static final FunctionDescriptor gdk_frame_timings_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_frame_timings_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_timings_get_type",
-        constants$1074.gdk_frame_timings_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_frame_timings_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_frame_timings_ref$MH = RuntimeHelper.downcallHandle(
-        "gdk_frame_timings_ref",
-        constants$1074.gdk_frame_timings_ref$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GIOStreamClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1071.const$1.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GIOStreamClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1071.const$1.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GIOStreamClass._g_reserved6.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1071.const$1.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved6"));
 }
 
 

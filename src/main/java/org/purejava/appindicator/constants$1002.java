@@ -3,69 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1002 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1002() {}
-    static final FunctionDescriptor cairo_new_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_new_path$MH = RuntimeHelper.downcallHandle(
-        "cairo_new_path",
-        constants$1002.cairo_new_path$FUNC
-    );
-    static final FunctionDescriptor cairo_move_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_move_to$MH = RuntimeHelper.downcallHandle(
-        "cairo_move_to",
-        constants$1002.cairo_move_to$FUNC
-    );
-    static final FunctionDescriptor cairo_new_sub_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_new_sub_path$MH = RuntimeHelper.downcallHandle(
-        "cairo_new_sub_path",
-        constants$1002.cairo_new_sub_path$FUNC
-    );
-    static final FunctionDescriptor cairo_line_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_line_to$MH = RuntimeHelper.downcallHandle(
-        "cairo_line_to",
-        constants$1002.cairo_line_to$FUNC
-    );
-    static final FunctionDescriptor cairo_curve_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_curve_to$MH = RuntimeHelper.downcallHandle(
-        "cairo_curve_to",
-        constants$1002.cairo_curve_to$FUNC
-    );
-    static final FunctionDescriptor cairo_arc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_arc$MH = RuntimeHelper.downcallHandle(
-        "cairo_arc",
-        constants$1002.cairo_arc$FUNC
-    );
+    static final VarHandle const$0 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("open_readwrite_finish"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.create_readwrite.class, "apply", constants$180.const$0);
+    static final VarHandle const$2 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("create_readwrite"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.create_readwrite_async.class, "apply", constants$987.const$4);
+    static final VarHandle const$4 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("create_readwrite_async"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.create_readwrite_finish.class, "apply", constants$23.const$0);
 }
 
 

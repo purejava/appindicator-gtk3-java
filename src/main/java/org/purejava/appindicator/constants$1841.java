@@ -3,60 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1841 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1841() {}
-    static final FunctionDescriptor gtk_text_view_get_visible_rect$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_root_coords",
+        constants$1494.const$5
     );
-    static final MethodHandle gtk_text_view_get_visible_rect$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_visible_rect",
-        constants$1841.gtk_text_view_get_visible_rect$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_window_coords_to_parent",
+        constants$1821.const$4
     );
-    static final FunctionDescriptor gtk_text_view_set_cursor_visible$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_window_coords_from_parent",
+        constants$1821.const$4
     );
-    static final MethodHandle gtk_text_view_set_cursor_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_cursor_visible",
-        constants$1841.gtk_text_view_set_cursor_visible$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_root_origin",
+        constants$14.const$3
     );
-    static final FunctionDescriptor gtk_text_view_get_cursor_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_frame_extents",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_text_view_get_cursor_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_cursor_visible",
-        constants$1841.gtk_text_view_get_cursor_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_reset_cursor_blink$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_reset_cursor_blink$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_reset_cursor_blink",
-        constants$1841.gtk_text_view_reset_cursor_blink$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_cursor_locations$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_cursor_locations$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_cursor_locations",
-        constants$1841.gtk_text_view_get_cursor_locations$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_iter_location$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_iter_location$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_iter_location",
-        constants$1841.gtk_text_view_get_iter_location$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_scale_factor",
+        constants$10.const$5
     );
 }
 

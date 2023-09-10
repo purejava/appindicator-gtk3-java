@@ -4,173 +4,44 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkGLAreaClass {
- *     GtkWidgetClass parent_class;
- *     gboolean (*render)(GtkGLArea*,GdkGLContext*);
- *     void (*resize)(GtkGLArea*,int,int);
- *     GdkGLContext* (*create_context)(GtkGLArea*);
- *     gpointer _padding[6];
+ *     struct _GtkWidgetClass parent_class;
+ *     int (*render)(struct _GtkGLArea*,struct _GdkGLContext*);
+ *     void (*resize)(struct _GtkGLArea*,int,int);
+ *     struct _GdkGLContext* (*create_context)(struct _GtkGLArea*);
+ *     void* _padding[6];
  * };
  * }
  */
 public class _GtkGLAreaClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-                ).withName("g_type_class"),
-                Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-                Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-                Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-                MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-            ).withName("parent_class"),
-            Constants$root.C_INT$LAYOUT.withName("activate_signal"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("dispatch_child_properties_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("destroy"),
-            Constants$root.C_POINTER$LAYOUT.withName("show"),
-            Constants$root.C_POINTER$LAYOUT.withName("show_all"),
-            Constants$root.C_POINTER$LAYOUT.withName("hide"),
-            Constants$root.C_POINTER$LAYOUT.withName("map"),
-            Constants$root.C_POINTER$LAYOUT.withName("unmap"),
-            Constants$root.C_POINTER$LAYOUT.withName("realize"),
-            Constants$root.C_POINTER$LAYOUT.withName("unrealize"),
-            Constants$root.C_POINTER$LAYOUT.withName("size_allocate"),
-            Constants$root.C_POINTER$LAYOUT.withName("state_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("state_flags_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("parent_set"),
-            Constants$root.C_POINTER$LAYOUT.withName("hierarchy_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("style_set"),
-            Constants$root.C_POINTER$LAYOUT.withName("direction_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("grab_notify"),
-            Constants$root.C_POINTER$LAYOUT.withName("child_notify"),
-            Constants$root.C_POINTER$LAYOUT.withName("draw"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_request_mode"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_preferred_width_for_height"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_preferred_width"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height_for_width"),
-            Constants$root.C_POINTER$LAYOUT.withName("mnemonic_activate"),
-            Constants$root.C_POINTER$LAYOUT.withName("grab_focus"),
-            Constants$root.C_POINTER$LAYOUT.withName("focus"),
-            Constants$root.C_POINTER$LAYOUT.withName("move_focus"),
-            Constants$root.C_POINTER$LAYOUT.withName("keynav_failed"),
-            Constants$root.C_POINTER$LAYOUT.withName("event"),
-            Constants$root.C_POINTER$LAYOUT.withName("button_press_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("button_release_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("scroll_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("motion_notify_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("delete_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("destroy_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("key_press_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("key_release_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("enter_notify_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("leave_notify_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("configure_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("focus_in_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("focus_out_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("map_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("unmap_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("property_notify_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("selection_clear_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("selection_request_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("selection_notify_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("proximity_in_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("proximity_out_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("visibility_notify_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("window_state_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("damage_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("grab_broken_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("selection_get"),
-            Constants$root.C_POINTER$LAYOUT.withName("selection_received"),
-            Constants$root.C_POINTER$LAYOUT.withName("drag_begin"),
-            Constants$root.C_POINTER$LAYOUT.withName("drag_end"),
-            Constants$root.C_POINTER$LAYOUT.withName("drag_data_get"),
-            Constants$root.C_POINTER$LAYOUT.withName("drag_data_delete"),
-            Constants$root.C_POINTER$LAYOUT.withName("drag_leave"),
-            Constants$root.C_POINTER$LAYOUT.withName("drag_motion"),
-            Constants$root.C_POINTER$LAYOUT.withName("drag_drop"),
-            Constants$root.C_POINTER$LAYOUT.withName("drag_data_received"),
-            Constants$root.C_POINTER$LAYOUT.withName("drag_failed"),
-            Constants$root.C_POINTER$LAYOUT.withName("popup_menu"),
-            Constants$root.C_POINTER$LAYOUT.withName("show_help"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_accessible"),
-            Constants$root.C_POINTER$LAYOUT.withName("screen_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("can_activate_accel"),
-            Constants$root.C_POINTER$LAYOUT.withName("composited_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("query_tooltip"),
-            Constants$root.C_POINTER$LAYOUT.withName("compute_expand"),
-            Constants$root.C_POINTER$LAYOUT.withName("adjust_size_request"),
-            Constants$root.C_POINTER$LAYOUT.withName("adjust_size_allocation"),
-            Constants$root.C_POINTER$LAYOUT.withName("style_updated"),
-            Constants$root.C_POINTER$LAYOUT.withName("touch_event"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height_and_baseline_for_width"),
-            Constants$root.C_POINTER$LAYOUT.withName("adjust_baseline_request"),
-            Constants$root.C_POINTER$LAYOUT.withName("adjust_baseline_allocation"),
-            Constants$root.C_POINTER$LAYOUT.withName("queue_draw_region"),
-            Constants$root.C_POINTER$LAYOUT.withName("priv"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved6"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved7")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("render"),
-        Constants$root.C_POINTER$LAYOUT.withName("resize"),
-        Constants$root.C_POINTER$LAYOUT.withName("create_context"),
-        MemoryLayout.sequenceLayout(6, Constants$root.C_POINTER$LAYOUT).withName("_padding")
-    ).withName("_GtkGLAreaClass");
     public static MemoryLayout $LAYOUT() {
-        return _GtkGLAreaClass.$struct$LAYOUT;
+        return constants$2743.const$4;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 824);
     }
-    static final FunctionDescriptor render$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor render_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle render_UP$MH = RuntimeHelper.upcallHandle(render.class, "apply", _GtkGLAreaClass.render_UP$FUNC);
-    static final FunctionDescriptor render_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle render_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkGLAreaClass.render_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*render)(GtkGLArea*,GdkGLContext*);
+ * int (*render)(struct _GtkGLArea*,struct _GdkGLContext*);
      * }
      */
     public interface render {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(render fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkGLAreaClass.render_UP$MH, fi, _GtkGLAreaClass.render$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(render fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2743.const$5, fi, constants$9.const$0, scope);
         }
-        static render ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static render ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkGLAreaClass.render_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -178,72 +49,52 @@ public class _GtkGLAreaClass {
         }
     }
 
-    static final VarHandle render$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("render"));
     public static VarHandle render$VH() {
-        return _GtkGLAreaClass.render$VH;
+        return constants$2744.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*render)(GtkGLArea*,GdkGLContext*);
+     * int (*render)(struct _GtkGLArea*,struct _GdkGLContext*);
      * }
      */
     public static MemorySegment render$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkGLAreaClass.render$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2744.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*render)(GtkGLArea*,GdkGLContext*);
+     * int (*render)(struct _GtkGLArea*,struct _GdkGLContext*);
      * }
      */
     public static void render$set(MemorySegment seg, MemorySegment x) {
-        _GtkGLAreaClass.render$VH.set(seg, x);
+        constants$2744.const$0.set(seg, x);
     }
     public static MemorySegment render$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkGLAreaClass.render$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2744.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void render$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkGLAreaClass.render$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2744.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static render render(MemorySegment segment, SegmentScope scope) {
+    public static render render(MemorySegment segment, Arena scope) {
         return render.ofAddress(render$get(segment), scope);
     }
-    static final FunctionDescriptor resize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor resize_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle resize_UP$MH = RuntimeHelper.upcallHandle(resize.class, "apply", _GtkGLAreaClass.resize_UP$FUNC);
-    static final FunctionDescriptor resize_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle resize_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkGLAreaClass.resize_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*resize)(GtkGLArea*,int,int);
+ * void (*resize)(struct _GtkGLArea*,int,int);
      * }
      */
     public interface resize {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2);
-        static MemorySegment allocate(resize fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkGLAreaClass.resize_UP$MH, fi, _GtkGLAreaClass.resize$FUNC, scope);
+        static MemorySegment allocate(resize fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2744.const$1, fi, constants$467.const$3, scope);
         }
-        static resize ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static resize ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2) -> {
                 try {
-                    _GtkGLAreaClass.resize_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$1901.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -251,66 +102,52 @@ public class _GtkGLAreaClass {
         }
     }
 
-    static final VarHandle resize$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("resize"));
     public static VarHandle resize$VH() {
-        return _GtkGLAreaClass.resize$VH;
+        return constants$2744.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*resize)(GtkGLArea*,int,int);
+     * void (*resize)(struct _GtkGLArea*,int,int);
      * }
      */
     public static MemorySegment resize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkGLAreaClass.resize$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2744.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*resize)(GtkGLArea*,int,int);
+     * void (*resize)(struct _GtkGLArea*,int,int);
      * }
      */
     public static void resize$set(MemorySegment seg, MemorySegment x) {
-        _GtkGLAreaClass.resize$VH.set(seg, x);
+        constants$2744.const$2.set(seg, x);
     }
     public static MemorySegment resize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkGLAreaClass.resize$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2744.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void resize$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkGLAreaClass.resize$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2744.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static resize resize(MemorySegment segment, SegmentScope scope) {
+    public static resize resize(MemorySegment segment, Arena scope) {
         return resize.ofAddress(resize$get(segment), scope);
     }
-    static final FunctionDescriptor create_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor create_context_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle create_context_UP$MH = RuntimeHelper.upcallHandle(create_context.class, "apply", _GtkGLAreaClass.create_context_UP$FUNC);
-    static final FunctionDescriptor create_context_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle create_context_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkGLAreaClass.create_context_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GdkGLContext* (*create_context)(GtkGLArea*);
+ * struct _GdkGLContext* (*create_context)(struct _GtkGLArea*);
      * }
      */
     public interface create_context {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(create_context fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkGLAreaClass.create_context_UP$MH, fi, _GtkGLAreaClass.create_context$FUNC, scope);
+        static MemorySegment allocate(create_context fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2744.const$3, fi, constants$5.const$2, scope);
         }
-        static create_context ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static create_context ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GtkGLAreaClass.create_context_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -318,35 +155,34 @@ public class _GtkGLAreaClass {
         }
     }
 
-    static final VarHandle create_context$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("create_context"));
     public static VarHandle create_context$VH() {
-        return _GtkGLAreaClass.create_context$VH;
+        return constants$2744.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GdkGLContext* (*create_context)(GtkGLArea*);
+     * struct _GdkGLContext* (*create_context)(struct _GtkGLArea*);
      * }
      */
     public static MemorySegment create_context$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkGLAreaClass.create_context$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2744.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GdkGLContext* (*create_context)(GtkGLArea*);
+     * struct _GdkGLContext* (*create_context)(struct _GtkGLArea*);
      * }
      */
     public static void create_context$set(MemorySegment seg, MemorySegment x) {
-        _GtkGLAreaClass.create_context$VH.set(seg, x);
+        constants$2744.const$4.set(seg, x);
     }
     public static MemorySegment create_context$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkGLAreaClass.create_context$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2744.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void create_context$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkGLAreaClass.create_context$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2744.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static create_context create_context(MemorySegment segment, SegmentScope scope) {
+    public static create_context create_context(MemorySegment segment, Arena scope) {
         return create_context.ofAddress(create_context$get(segment), scope);
     }
     public static MemorySegment _padding$slice(MemorySegment seg) {
@@ -357,7 +193,7 @@ public class _GtkGLAreaClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -3,47 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1553 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1553() {}
-    static final FunctionDescriptor gtk_css_section_get_end_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_font_face_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_css_section_get_end_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_section_get_end_line",
-        constants$1553.gtk_css_section_get_end_line$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_font_face_describe",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_css_section_get_end_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_font_face_get_face_name",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_css_section_get_end_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_section_get_end_position",
-        constants$1553.gtk_css_section_get_end_position$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_font_face_list_sizes",
+        constants$14.const$3
     );
-    static final FunctionDescriptor gtk_css_provider_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_css_provider_error_quark$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_error_quark",
-        constants$1553.gtk_css_provider_error_quark$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_font_face_is_synthesized",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_css_provider_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_css_provider_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_get_type",
-        constants$1553.gtk_css_provider_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_css_provider_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_css_provider_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_new",
-        constants$1553.gtk_css_provider_new$FUNC
-    );
-    static final FunctionDescriptor gtk_css_provider_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_css_provider_to_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_provider_to_string",
-        constants$1553.gtk_css_provider_to_string$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_font_face_get_family",
+        constants$5.const$2
     );
 }
 

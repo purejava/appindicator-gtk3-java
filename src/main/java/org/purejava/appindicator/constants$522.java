@@ -3,63 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$522 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$522() {}
-    static final FunctionDescriptor chown$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(pthread_once$__init_routine.class, "apply", constants$7.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pthread_once",
+        constants$9.const$0
     );
-    static final MethodHandle chown$MH = RuntimeHelper.downcallHandle(
-        "chown",
-        constants$522.chown$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pthread_setcancelstate",
+        constants$9.const$2
     );
-    static final FunctionDescriptor fchown$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pthread_setcanceltype",
+        constants$9.const$2
     );
-    static final MethodHandle fchown$MH = RuntimeHelper.downcallHandle(
-        "fchown",
-        constants$522.fchown$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pthread_cancel",
+        constants$26.const$2
     );
-    static final FunctionDescriptor lchown$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle lchown$MH = RuntimeHelper.downcallHandle(
-        "lchown",
-        constants$522.lchown$FUNC
-    );
-    static final FunctionDescriptor fchownat$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle fchownat$MH = RuntimeHelper.downcallHandle(
-        "fchownat",
-        constants$522.fchownat$FUNC
-    );
-    static final FunctionDescriptor chdir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle chdir$MH = RuntimeHelper.downcallHandle(
-        "chdir",
-        constants$522.chdir$FUNC
-    );
-    static final FunctionDescriptor fchdir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle fchdir$MH = RuntimeHelper.downcallHandle(
-        "fchdir",
-        constants$522.fchdir$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pthread_testcancel",
+        constants$7.const$5
     );
 }
 

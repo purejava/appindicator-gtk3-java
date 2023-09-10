@@ -4,43 +4,37 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 final class constants$3 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3() {}
-    static final FunctionDescriptor tzset$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle tzset$MH = RuntimeHelper.downcallHandle(
-        "tzset",
-        constants$3.tzset$FUNC
-    );
-    static final OfInt daylight$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle daylight$VH = constants$3.daylight$LAYOUT.varHandle();
-    static final MemorySegment daylight$SEGMENT = RuntimeHelper.lookupGlobalVariable("daylight", constants$3.daylight$LAYOUT);
-    static final OfLong timezone$LAYOUT = Constants$root.C_LONG_LONG$LAYOUT;
-    static final VarHandle timezone$VH = constants$3.timezone$LAYOUT.varHandle();
-    static final MemorySegment timezone$SEGMENT = RuntimeHelper.lookupGlobalVariable("timezone", constants$3.timezone$LAYOUT);
-    static final FunctionDescriptor timegm$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle timegm$MH = RuntimeHelper.downcallHandle(
-        "timegm",
-        constants$3.timegm$FUNC
-    );
-    static final FunctionDescriptor timelocal$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle timelocal$MH = RuntimeHelper.downcallHandle(
-        "timelocal",
-        constants$3.timelocal$FUNC
-    );
-    static final FunctionDescriptor dysize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle dysize$MH = RuntimeHelper.downcallHandle(
-        "dysize",
-        constants$3.dysize$FUNC
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("tv_sec"),
+            JAVA_LONG.withName("tv_nsec")
+        ).withName("it_interval"),
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("tv_sec"),
+            JAVA_LONG.withName("tv_nsec")
+        ).withName("it_value")
+    ).withName("itimerspec");
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(13, RuntimeHelper.POINTER).withName("__locales"),
+        RuntimeHelper.POINTER.withName("__ctype_b"),
+        RuntimeHelper.POINTER.withName("__ctype_tolower"),
+        RuntimeHelper.POINTER.withName("__ctype_toupper"),
+        MemoryLayout.sequenceLayout(13, RuntimeHelper.POINTER).withName("__names")
+    ).withName("__locale_struct");
+    static final VarHandle const$2 = constants$3.const$1.varHandle(MemoryLayout.PathElement.groupElement("__ctype_b"));
+    static final VarHandle const$3 = constants$3.const$1.varHandle(MemoryLayout.PathElement.groupElement("__ctype_tolower"));
+    static final VarHandle const$4 = constants$3.const$1.varHandle(MemoryLayout.PathElement.groupElement("__ctype_toupper"));
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_LONG);
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "clock",
+        constants$3.const$5
     );
 }
 

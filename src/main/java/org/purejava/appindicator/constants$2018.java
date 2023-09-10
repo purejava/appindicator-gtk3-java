@@ -2,18 +2,31 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2018 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2018() {}
-    static final MemorySegment G_PROXY_RESOLVER_EXTENSION_POINT_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("gio-proxy-resolver");
-    static final MemorySegment G_TLS_BACKEND_EXTENSION_POINT_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("gio-tls-backend");
-    static final MemorySegment G_TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("1.3.6.1.5.5.7.3.1");
-    static final MemorySegment G_TLS_DATABASE_PURPOSE_AUTHENTICATE_CLIENT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("1.3.6.1.5.5.7.3.2");
-    static final MemorySegment G_VFS_EXTENSION_POINT_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("gio-vfs");
-    static final MemorySegment G_VOLUME_IDENTIFIER_KIND_HAL_UDI$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("hal-udi");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$1954.const$1
+    );
+    static final VarHandle const$1 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_range_extents"));
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
+    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkTextIface.get_bounded_ranges.class, "apply", constants$2018.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$2018.const$2
+    );
+    static final VarHandle const$5 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_bounded_ranges"));
 }
 
 

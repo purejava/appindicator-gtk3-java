@@ -3,53 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1235 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1235() {}
-    static final FunctionDescriptor atk_socket_is_occupied$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_socket_is_occupied$MH = RuntimeHelper.downcallHandle(
-        "atk_socket_is_occupied",
-        constants$1235.atk_socket_is_occupied$FUNC
-    );
-    static final FunctionDescriptor atk_state_set_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_state_set_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_state_set_get_type",
-        constants$1235.atk_state_set_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_state_set_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle atk_state_set_new$MH = RuntimeHelper.downcallHandle(
-        "atk_state_set_new",
-        constants$1235.atk_state_set_new$FUNC
-    );
-    static final FunctionDescriptor atk_state_set_is_empty$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_state_set_is_empty$MH = RuntimeHelper.downcallHandle(
-        "atk_state_set_is_empty",
-        constants$1235.atk_state_set_is_empty$FUNC
-    );
-    static final FunctionDescriptor atk_state_set_add_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_state_set_add_state$MH = RuntimeHelper.downcallHandle(
-        "atk_state_set_add_state",
-        constants$1235.atk_state_set_add_state$FUNC
-    );
-    static final FunctionDescriptor atk_state_set_add_states$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_state_set_add_states$MH = RuntimeHelper.downcallHandle(
-        "atk_state_set_add_states",
-        constants$1235.atk_state_set_add_states$FUNC
-    );
+    static final VarHandle const$0 = constants$1230.const$4.varHandle(MemoryLayout.PathElement.groupElement("lookup_records_finish"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_by_name_with_flags_async.class, "apply", constants$584.const$3);
+    static final VarHandle const$2 = constants$1230.const$4.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name_with_flags_async"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_by_name_with_flags_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$4 = constants$1230.const$4.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_name_with_flags_finish"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_by_name_with_flags.class, "apply", constants$977.const$0);
 }
 
 

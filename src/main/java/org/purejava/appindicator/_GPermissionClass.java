@@ -4,93 +4,47 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GPermissionClass {
- *     GObjectClass parent_class;
- *     gboolean (*acquire)(GPermission*,GCancellable*,GError**);
- *     void (*acquire_async)(GPermission*,GCancellable*,GAsyncReadyCallback,gpointer);
- *     gboolean (*acquire_finish)(GPermission*,GAsyncResult*,GError**);
- *     gboolean (*release)(GPermission*,GCancellable*,GError**);
- *     void (*release_async)(GPermission*,GCancellable*,GAsyncReadyCallback,gpointer);
- *     gboolean (*release_finish)(GPermission*,GAsyncResult*,GError**);
- *     gpointer reserved[16];
+ *     struct _GObjectClass parent_class;
+ *     int (*acquire)(struct _GPermission*,struct _GCancellable*,struct _GError**);
+ *     void (*acquire_async)(struct _GPermission*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+ *     int (*acquire_finish)(struct _GPermission*,struct _GAsyncResult*,struct _GError**);
+ *     int (*release)(struct _GPermission*,struct _GCancellable*,struct _GError**);
+ *     void (*release_async)(struct _GPermission*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+ *     int (*release_finish)(struct _GPermission*,struct _GAsyncResult*,struct _GError**);
+ *     void* reserved[16];
  * };
  * }
  */
 public class _GPermissionClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-            ).withName("g_type_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-            Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("notify"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("acquire"),
-        Constants$root.C_POINTER$LAYOUT.withName("acquire_async"),
-        Constants$root.C_POINTER$LAYOUT.withName("acquire_finish"),
-        Constants$root.C_POINTER$LAYOUT.withName("release"),
-        Constants$root.C_POINTER$LAYOUT.withName("release_async"),
-        Constants$root.C_POINTER$LAYOUT.withName("release_finish"),
-        MemoryLayout.sequenceLayout(16, Constants$root.C_POINTER$LAYOUT).withName("reserved")
-    ).withName("_GPermissionClass");
     public static MemoryLayout $LAYOUT() {
-        return _GPermissionClass.$struct$LAYOUT;
+        return constants$1204.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
     }
-    static final FunctionDescriptor acquire$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor acquire_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle acquire_UP$MH = RuntimeHelper.upcallHandle(acquire.class, "apply", _GPermissionClass.acquire_UP$FUNC);
-    static final FunctionDescriptor acquire_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle acquire_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GPermissionClass.acquire_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*acquire)(GPermission*,GCancellable*,GError**);
+ * int (*acquire)(struct _GPermission*,struct _GCancellable*,struct _GError**);
      * }
      */
     public interface acquire {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(acquire fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GPermissionClass.acquire_UP$MH, fi, _GPermissionClass.acquire$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(acquire fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1205.const$0, fi, constants$12.const$2, scope);
         }
-        static acquire ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
+        static acquire ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GPermissionClass.acquire_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -98,75 +52,52 @@ public class _GPermissionClass {
         }
     }
 
-    static final VarHandle acquire$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("acquire"));
     public static VarHandle acquire$VH() {
-        return _GPermissionClass.acquire$VH;
+        return constants$1205.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*acquire)(GPermission*,GCancellable*,GError**);
+     * int (*acquire)(struct _GPermission*,struct _GCancellable*,struct _GError**);
      * }
      */
     public static MemorySegment acquire$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GPermissionClass.acquire$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1205.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*acquire)(GPermission*,GCancellable*,GError**);
+     * int (*acquire)(struct _GPermission*,struct _GCancellable*,struct _GError**);
      * }
      */
     public static void acquire$set(MemorySegment seg, MemorySegment x) {
-        _GPermissionClass.acquire$VH.set(seg, x);
+        constants$1205.const$1.set(seg, x);
     }
     public static MemorySegment acquire$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GPermissionClass.acquire$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1205.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void acquire$set(MemorySegment seg, long index, MemorySegment x) {
-        _GPermissionClass.acquire$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1205.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static acquire acquire(MemorySegment segment, SegmentScope scope) {
+    public static acquire acquire(MemorySegment segment, Arena scope) {
         return acquire.ofAddress(acquire$get(segment), scope);
     }
-    static final FunctionDescriptor acquire_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor acquire_async_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle acquire_async_UP$MH = RuntimeHelper.upcallHandle(acquire_async.class, "apply", _GPermissionClass.acquire_async_UP$FUNC);
-    static final FunctionDescriptor acquire_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle acquire_async_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GPermissionClass.acquire_async_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*acquire_async)(GPermission*,GCancellable*,GAsyncReadyCallback,gpointer);
+ * void (*acquire_async)(struct _GPermission*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public interface acquire_async {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(acquire_async fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GPermissionClass.acquire_async_UP$MH, fi, _GPermissionClass.acquire_async$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(acquire_async fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1205.const$2, fi, constants$42.const$1, scope);
         }
-        static acquire_async ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
+        static acquire_async ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GPermissionClass.acquire_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$259.const$4.invokeExact(symbol, _model, _path, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -174,72 +105,52 @@ public class _GPermissionClass {
         }
     }
 
-    static final VarHandle acquire_async$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("acquire_async"));
     public static VarHandle acquire_async$VH() {
-        return _GPermissionClass.acquire_async$VH;
+        return constants$1205.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*acquire_async)(GPermission*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*acquire_async)(struct _GPermission*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static MemorySegment acquire_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GPermissionClass.acquire_async$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1205.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*acquire_async)(GPermission*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*acquire_async)(struct _GPermission*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static void acquire_async$set(MemorySegment seg, MemorySegment x) {
-        _GPermissionClass.acquire_async$VH.set(seg, x);
+        constants$1205.const$3.set(seg, x);
     }
     public static MemorySegment acquire_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GPermissionClass.acquire_async$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1205.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void acquire_async$set(MemorySegment seg, long index, MemorySegment x) {
-        _GPermissionClass.acquire_async$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1205.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static acquire_async acquire_async(MemorySegment segment, SegmentScope scope) {
+    public static acquire_async acquire_async(MemorySegment segment, Arena scope) {
         return acquire_async.ofAddress(acquire_async$get(segment), scope);
     }
-    static final FunctionDescriptor acquire_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor acquire_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle acquire_finish_UP$MH = RuntimeHelper.upcallHandle(acquire_finish.class, "apply", _GPermissionClass.acquire_finish_UP$FUNC);
-    static final FunctionDescriptor acquire_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle acquire_finish_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GPermissionClass.acquire_finish_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*acquire_finish)(GPermission*,GAsyncResult*,GError**);
+ * int (*acquire_finish)(struct _GPermission*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public interface acquire_finish {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(acquire_finish fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GPermissionClass.acquire_finish_UP$MH, fi, _GPermissionClass.acquire_finish$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(acquire_finish fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1205.const$4, fi, constants$12.const$2, scope);
         }
-        static acquire_finish ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
+        static acquire_finish ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GPermissionClass.acquire_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -247,72 +158,52 @@ public class _GPermissionClass {
         }
     }
 
-    static final VarHandle acquire_finish$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("acquire_finish"));
     public static VarHandle acquire_finish$VH() {
-        return _GPermissionClass.acquire_finish$VH;
+        return constants$1205.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*acquire_finish)(GPermission*,GAsyncResult*,GError**);
+     * int (*acquire_finish)(struct _GPermission*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static MemorySegment acquire_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GPermissionClass.acquire_finish$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1205.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*acquire_finish)(GPermission*,GAsyncResult*,GError**);
+     * int (*acquire_finish)(struct _GPermission*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static void acquire_finish$set(MemorySegment seg, MemorySegment x) {
-        _GPermissionClass.acquire_finish$VH.set(seg, x);
+        constants$1205.const$5.set(seg, x);
     }
     public static MemorySegment acquire_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GPermissionClass.acquire_finish$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1205.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void acquire_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        _GPermissionClass.acquire_finish$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1205.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static acquire_finish acquire_finish(MemorySegment segment, SegmentScope scope) {
+    public static acquire_finish acquire_finish(MemorySegment segment, Arena scope) {
         return acquire_finish.ofAddress(acquire_finish$get(segment), scope);
     }
-    static final FunctionDescriptor release$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor release_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle release_UP$MH = RuntimeHelper.upcallHandle(release.class, "apply", _GPermissionClass.release_UP$FUNC);
-    static final FunctionDescriptor release_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle release_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GPermissionClass.release_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*release)(GPermission*,GCancellable*,GError**);
+ * int (*release)(struct _GPermission*,struct _GCancellable*,struct _GError**);
      * }
      */
     public interface release {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(release fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GPermissionClass.release_UP$MH, fi, _GPermissionClass.release$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(release fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1206.const$0, fi, constants$12.const$2, scope);
         }
-        static release ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
+        static release ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GPermissionClass.release_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -320,75 +211,52 @@ public class _GPermissionClass {
         }
     }
 
-    static final VarHandle release$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("release"));
     public static VarHandle release$VH() {
-        return _GPermissionClass.release$VH;
+        return constants$1206.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*release)(GPermission*,GCancellable*,GError**);
+     * int (*release)(struct _GPermission*,struct _GCancellable*,struct _GError**);
      * }
      */
     public static MemorySegment release$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GPermissionClass.release$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1206.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*release)(GPermission*,GCancellable*,GError**);
+     * int (*release)(struct _GPermission*,struct _GCancellable*,struct _GError**);
      * }
      */
     public static void release$set(MemorySegment seg, MemorySegment x) {
-        _GPermissionClass.release$VH.set(seg, x);
+        constants$1206.const$1.set(seg, x);
     }
     public static MemorySegment release$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GPermissionClass.release$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1206.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void release$set(MemorySegment seg, long index, MemorySegment x) {
-        _GPermissionClass.release$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1206.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static release release(MemorySegment segment, SegmentScope scope) {
+    public static release release(MemorySegment segment, Arena scope) {
         return release.ofAddress(release$get(segment), scope);
     }
-    static final FunctionDescriptor release_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor release_async_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle release_async_UP$MH = RuntimeHelper.upcallHandle(release_async.class, "apply", _GPermissionClass.release_async_UP$FUNC);
-    static final FunctionDescriptor release_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle release_async_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GPermissionClass.release_async_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*release_async)(GPermission*,GCancellable*,GAsyncReadyCallback,gpointer);
+ * void (*release_async)(struct _GPermission*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public interface release_async {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(release_async fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GPermissionClass.release_async_UP$MH, fi, _GPermissionClass.release_async$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(release_async fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1206.const$2, fi, constants$42.const$1, scope);
         }
-        static release_async ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
+        static release_async ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GPermissionClass.release_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$259.const$4.invokeExact(symbol, _model, _path, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -396,72 +264,52 @@ public class _GPermissionClass {
         }
     }
 
-    static final VarHandle release_async$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("release_async"));
     public static VarHandle release_async$VH() {
-        return _GPermissionClass.release_async$VH;
+        return constants$1206.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*release_async)(GPermission*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*release_async)(struct _GPermission*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static MemorySegment release_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GPermissionClass.release_async$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1206.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*release_async)(GPermission*,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*release_async)(struct _GPermission*,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static void release_async$set(MemorySegment seg, MemorySegment x) {
-        _GPermissionClass.release_async$VH.set(seg, x);
+        constants$1206.const$3.set(seg, x);
     }
     public static MemorySegment release_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GPermissionClass.release_async$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1206.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void release_async$set(MemorySegment seg, long index, MemorySegment x) {
-        _GPermissionClass.release_async$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1206.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static release_async release_async(MemorySegment segment, SegmentScope scope) {
+    public static release_async release_async(MemorySegment segment, Arena scope) {
         return release_async.ofAddress(release_async$get(segment), scope);
     }
-    static final FunctionDescriptor release_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor release_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle release_finish_UP$MH = RuntimeHelper.upcallHandle(release_finish.class, "apply", _GPermissionClass.release_finish_UP$FUNC);
-    static final FunctionDescriptor release_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle release_finish_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GPermissionClass.release_finish_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*release_finish)(GPermission*,GAsyncResult*,GError**);
+ * int (*release_finish)(struct _GPermission*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public interface release_finish {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(release_finish fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GPermissionClass.release_finish_UP$MH, fi, _GPermissionClass.release_finish$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(release_finish fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1206.const$4, fi, constants$12.const$2, scope);
         }
-        static release_finish ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
+        static release_finish ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GPermissionClass.release_finish_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -469,35 +317,34 @@ public class _GPermissionClass {
         }
     }
 
-    static final VarHandle release_finish$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("release_finish"));
     public static VarHandle release_finish$VH() {
-        return _GPermissionClass.release_finish$VH;
+        return constants$1206.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*release_finish)(GPermission*,GAsyncResult*,GError**);
+     * int (*release_finish)(struct _GPermission*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static MemorySegment release_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GPermissionClass.release_finish$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1206.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*release_finish)(GPermission*,GAsyncResult*,GError**);
+     * int (*release_finish)(struct _GPermission*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static void release_finish$set(MemorySegment seg, MemorySegment x) {
-        _GPermissionClass.release_finish$VH.set(seg, x);
+        constants$1206.const$5.set(seg, x);
     }
     public static MemorySegment release_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GPermissionClass.release_finish$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1206.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void release_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        _GPermissionClass.release_finish$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1206.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static release_finish release_finish(MemorySegment segment, SegmentScope scope) {
+    public static release_finish release_finish(MemorySegment segment, Arena scope) {
         return release_finish.ofAddress(release_finish$get(segment), scope);
     }
     public static MemorySegment reserved$slice(MemorySegment seg) {
@@ -508,7 +355,7 @@ public class _GPermissionClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -3,57 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$465 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$465() {}
-    static final FunctionDescriptor g_value_set_uint64$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
+        "g_test_build_filename",
+        constants$24.const$4
     );
-    static final MethodHandle g_value_set_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_uint64",
-        constants$465.g_value_set_uint64$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_test_get_dir",
+        constants$24.const$0
     );
-    static final FunctionDescriptor g_value_get_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "g_test_get_filename",
+        constants$24.const$4
     );
-    static final MethodHandle g_value_get_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_uint64",
-        constants$465.g_value_get_uint64$FUNC
-    );
-    static final FunctionDescriptor g_value_set_float$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle g_value_set_float$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_float",
-        constants$465.g_value_set_float$FUNC
-    );
-    static final FunctionDescriptor g_value_get_float$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_get_float$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_float",
-        constants$465.g_value_get_float$FUNC
-    );
-    static final FunctionDescriptor g_value_set_double$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle g_value_set_double$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_double",
-        constants$465.g_value_set_double$FUNC
-    );
-    static final FunctionDescriptor g_value_get_double$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_get_double$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_double",
-        constants$465.g_value_get_double$FUNC
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("func"),
+        RuntimeHelper.POINTER.withName("user_data"),
+        JAVA_INT.withName("exclusive"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GThreadPool");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GThreadPool.func.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$465.const$3.varHandle(MemoryLayout.PathElement.groupElement("func"));
 }
 
 

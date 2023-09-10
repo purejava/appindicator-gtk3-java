@@ -3,57 +3,36 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$909 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$909() {}
-    static final FunctionDescriptor pango_font_description_get_stretch$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_bus_watch_name_on_connection_with_closures",
+        constants$859.const$1
     );
-    static final MethodHandle pango_font_description_get_stretch$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_get_stretch",
-        constants$909.pango_font_description_get_stretch$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_bus_unwatch_name",
+        constants$80.const$1
     );
-    static final FunctionDescriptor pango_font_description_set_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_font_description_set_size$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_set_size",
-        constants$909.pango_font_description_set_size$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_description_get_size$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_get_size",
-        constants$909.pango_font_description_get_size$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_set_absolute_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle pango_font_description_set_absolute_size$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_set_absolute_size",
-        constants$909.pango_font_description_set_absolute_size$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_get_size_is_absolute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_description_get_size_is_absolute$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_get_size_is_absolute",
-        constants$909.pango_font_description_get_size_is_absolute$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_set_gravity$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_font_description_set_gravity$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_set_gravity",
-        constants$909.pango_font_description_set_gravity$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("parent_iface"),
+        RuntimeHelper.POINTER.withName("get_object_path"),
+        RuntimeHelper.POINTER.withName("get_interfaces"),
+        RuntimeHelper.POINTER.withName("get_interface"),
+        RuntimeHelper.POINTER.withName("interface_added"),
+        RuntimeHelper.POINTER.withName("interface_removed")
+    ).withName("_GDBusObjectIface");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDBusObjectIface.get_object_path.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$909.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_object_path"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GDBusObjectIface.get_interfaces.class, "apply", constants$5.const$2);
 }
 
 

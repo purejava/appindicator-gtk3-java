@@ -3,51 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1826 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1826() {}
-    static final FunctionDescriptor gtk_text_mark_get_left_gravity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_window_new",
+        constants$32.const$3
     );
-    static final MethodHandle gtk_text_mark_get_left_gravity$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_mark_get_left_gravity",
-        constants$1826.gtk_text_mark_get_left_gravity$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_window_destroy",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_text_buffer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_text_buffer_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_type",
-        constants$1826.gtk_text_buffer_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_window_type",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_text_buffer_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_window_is_destroyed",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_text_buffer_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_new",
-        constants$1826.gtk_text_buffer_new$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_visual",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_text_buffer_get_line_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_line_count$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_line_count",
-        constants$1826.gtk_text_buffer_get_line_count$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_char_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_char_count$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_char_count",
-        constants$1826.gtk_text_buffer_get_char_count$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_tag_table$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_tag_table$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_tag_table",
-        constants$1826.gtk_text_buffer_get_tag_table$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_screen",
+        constants$5.const$2
     );
 }
 

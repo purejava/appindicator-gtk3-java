@@ -3,59 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1614 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1614() {}
-    static final FunctionDescriptor gtk_grid_remove_column$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_fontset_simple_size",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_grid_remove_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_remove_column",
-        constants$1614.gtk_grid_remove_column$FUNC
-    );
-    static final FunctionDescriptor gtk_grid_insert_next_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_grid_insert_next_to$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_insert_next_to",
-        constants$1614.gtk_grid_insert_next_to$FUNC
-    );
-    static final FunctionDescriptor gtk_grid_set_row_homogeneous$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_grid_set_row_homogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_set_row_homogeneous",
-        constants$1614.gtk_grid_set_row_homogeneous$FUNC
-    );
-    static final FunctionDescriptor gtk_grid_get_row_homogeneous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_grid_get_row_homogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_get_row_homogeneous",
-        constants$1614.gtk_grid_get_row_homogeneous$FUNC
-    );
-    static final FunctionDescriptor gtk_grid_set_row_spacing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_grid_set_row_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_set_row_spacing",
-        constants$1614.gtk_grid_set_row_spacing$FUNC
-    );
-    static final FunctionDescriptor gtk_grid_get_row_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_grid_get_row_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_grid_get_row_spacing",
-        constants$1614.gtk_grid_get_row_spacing$FUNC
-    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("item"),
+        RuntimeHelper.POINTER.withName("glyphs"),
+        JAVA_INT.withName("y_offset"),
+        JAVA_INT.withName("start_x_offset"),
+        JAVA_INT.withName("end_x_offset"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_PangoGlyphItem");
+    static final VarHandle const$2 = constants$1614.const$1.varHandle(MemoryLayout.PathElement.groupElement("item"));
+    static final VarHandle const$3 = constants$1614.const$1.varHandle(MemoryLayout.PathElement.groupElement("glyphs"));
+    static final VarHandle const$4 = constants$1614.const$1.varHandle(MemoryLayout.PathElement.groupElement("y_offset"));
+    static final VarHandle const$5 = constants$1614.const$1.varHandle(MemoryLayout.PathElement.groupElement("start_x_offset"));
 }
 
 

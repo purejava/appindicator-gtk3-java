@@ -3,60 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$162 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$162() {}
-    static final FunctionDescriptor g_slist_free_1$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_set_mime_type",
+        constants$14.const$3
     );
-    static final MethodHandle g_slist_free_1$MH = RuntimeHelper.downcallHandle(
-        "g_slist_free_1",
-        constants$162.g_slist_free_1$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_get_mime_type",
+        constants$23.const$0
     );
-    static final FunctionDescriptor g_slist_free_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final MethodHandle g_slist_free_full$MH = RuntimeHelper.downcallHandle(
-        "g_slist_free_full",
-        constants$162.g_slist_free_full$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_set_groups",
+        constants$162.const$2
     );
-    static final FunctionDescriptor g_slist_append$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_add_group",
+        constants$14.const$3
     );
-    static final MethodHandle g_slist_append$MH = RuntimeHelper.downcallHandle(
-        "g_slist_append",
-        constants$162.g_slist_append$FUNC
-    );
-    static final FunctionDescriptor g_slist_prepend$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_slist_prepend$MH = RuntimeHelper.downcallHandle(
-        "g_slist_prepend",
-        constants$162.g_slist_prepend$FUNC
-    );
-    static final FunctionDescriptor g_slist_insert$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_slist_insert$MH = RuntimeHelper.downcallHandle(
-        "g_slist_insert",
-        constants$162.g_slist_insert$FUNC
-    );
-    static final FunctionDescriptor g_slist_insert_sorted$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_slist_insert_sorted$MH = RuntimeHelper.downcallHandle(
-        "g_slist_insert_sorted",
-        constants$162.g_slist_insert_sorted$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_has_group",
+        constants$34.const$5
     );
 }
 

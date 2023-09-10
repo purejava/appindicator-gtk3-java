@@ -2,62 +2,57 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * union _GFloatIEEE754 {
- *     gfloat v_float;
+ *     float v_float;
  *     struct  mpn;
  * };
  * }
  */
 public class _GFloatIEEE754 {
 
-    static final UnionLayout $union$LAYOUT = MemoryLayout.unionLayout(
-        Constants$root.C_FLOAT$LAYOUT.withName("v_float"),
-        MemoryLayout.structLayout(
-            MemoryLayout.paddingLayout(32)
-        ).withName("mpn")
-    ).withName("_GFloatIEEE754");
     public static MemoryLayout $LAYOUT() {
-        return _GFloatIEEE754.$union$LAYOUT;
+        return constants$15.const$4;
     }
-    static final VarHandle v_float$VH = $union$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("v_float"));
     public static VarHandle v_float$VH() {
-        return _GFloatIEEE754.v_float$VH;
+        return constants$15.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gfloat v_float;
+     * float v_float;
      * }
      */
     public static float v_float$get(MemorySegment seg) {
-        return (float)_GFloatIEEE754.v_float$VH.get(seg);
+        return (float)constants$15.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gfloat v_float;
+     * float v_float;
      * }
      */
     public static void v_float$set(MemorySegment seg, float x) {
-        _GFloatIEEE754.v_float$VH.set(seg, x);
+        constants$15.const$5.set(seg, x);
     }
     public static float v_float$get(MemorySegment seg, long index) {
-        return (float)_GFloatIEEE754.v_float$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$15.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void v_float$set(MemorySegment seg, long index, float x) {
-        _GFloatIEEE754.v_float$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$15.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
      * struct {
-     *          *     guint mantissa;
-     *     guint biased_exponent;
-     *     guint sign;
+     *          *     unsigned int mantissa;
+     *     unsigned int biased_exponent;
+     *     unsigned int sign;
      * };
      * }
      */
@@ -65,18 +60,15 @@ public class _GFloatIEEE754 {
 
         // Suppresses default constructor, ensuring non-instantiability.
         private mpn() {}
-        static final StructLayout mpn$struct$LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.paddingLayout(32)
-        );
         public static MemoryLayout $LAYOUT() {
-            return mpn.mpn$struct$LAYOUT;
+            return constants$16.const$0;
         }
         public static long sizeof() { return $LAYOUT().byteSize(); }
         public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
         public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
             return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
         }
-        public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+        public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
     }
 
     public static MemorySegment mpn$slice(MemorySegment seg) {
@@ -87,7 +79,7 @@ public class _GFloatIEEE754 {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -3,46 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1227 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1227() {}
-    static final FunctionDescriptor atk_no_op_object_factory_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_no_op_object_factory_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_no_op_object_factory_get_type",
-        constants$1227.atk_no_op_object_factory_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_no_op_object_factory_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle atk_no_op_object_factory_new$MH = RuntimeHelper.downcallHandle(
-        "atk_no_op_object_factory_new",
-        constants$1227.atk_no_op_object_factory_new$FUNC
-    );
-    static final FunctionDescriptor atk_plug_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_plug_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_plug_get_type",
-        constants$1227.atk_plug_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_plug_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle atk_plug_new$MH = RuntimeHelper.downcallHandle(
-        "atk_plug_new",
-        constants$1227.atk_plug_new$FUNC
-    );
-    static final FunctionDescriptor atk_plug_set_child$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_plug_set_child$MH = RuntimeHelper.downcallHandle(
-        "atk_plug_set_child",
-        constants$1227.atk_plug_set_child$FUNC
-    );
-    static final FunctionDescriptor atk_plug_get_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_plug_get_id$MH = RuntimeHelper.downcallHandle(
-        "atk_plug_get_id",
-        constants$1227.atk_plug_get_id$FUNC
+    static final VarHandle const$0 = constants$1226.const$2.varHandle(MemoryLayout.PathElement.groupElement("lookup"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GProxyResolverInterface.lookup_async.class, "apply", constants$331.const$1);
+    static final VarHandle const$2 = constants$1226.const$2.varHandle(MemoryLayout.PathElement.groupElement("lookup_async"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GProxyResolverInterface.lookup_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$4 = constants$1226.const$2.varHandle(MemoryLayout.PathElement.groupElement("lookup_finish"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_proxy_resolver_get_type",
+        constants$3.const$5
     );
 }
 

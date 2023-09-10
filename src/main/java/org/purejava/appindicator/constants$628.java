@@ -3,74 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$628 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$628() {}
-    static final FunctionDescriptor g_file_make_symbolic_link_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_object_class_list_properties",
+        constants$5.const$5
     );
-    static final MethodHandle g_file_make_symbolic_link_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_make_symbolic_link_async",
-        constants$628.g_file_make_symbolic_link_async$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_object_class_override_property",
+        constants$42.const$4
     );
-    static final FunctionDescriptor g_file_make_symbolic_link_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_object_class_install_properties",
+        constants$42.const$4
     );
-    static final MethodHandle g_file_make_symbolic_link_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_make_symbolic_link_finish",
-        constants$628.g_file_make_symbolic_link_finish$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_object_interface_install_property",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_file_query_settable_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_object_interface_find_property",
+        constants$5.const$5
     );
-    static final MethodHandle g_file_query_settable_attributes$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_settable_attributes",
-        constants$628.g_file_query_settable_attributes$FUNC
-    );
-    static final FunctionDescriptor g_file_query_writable_namespaces$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_writable_namespaces$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_writable_namespaces",
-        constants$628.g_file_query_writable_namespaces$FUNC
-    );
-    static final FunctionDescriptor g_file_set_attribute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_set_attribute$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute",
-        constants$628.g_file_set_attribute$FUNC
-    );
-    static final FunctionDescriptor g_file_set_attributes_from_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_set_attributes_from_info$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attributes_from_info",
-        constants$628.g_file_set_attributes_from_info$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_object_interface_list_properties",
+        constants$5.const$5
     );
 }
 

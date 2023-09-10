@@ -3,70 +3,45 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1473 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1473() {}
-    static final FunctionDescriptor gtk_tree_view_get_visible_rect$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_font_funcs_set_user_data$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_set_user_data",
+        constants$1423.const$1
     );
-    static final MethodHandle gtk_tree_view_get_visible_rect$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_visible_rect",
-        constants$1473.gtk_tree_view_get_visible_rect$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_get_user_data",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_tree_view_get_visible_range$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_make_immutable",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_tree_view_get_visible_range$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_visible_range",
-        constants$1473.gtk_tree_view_get_visible_range$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_is_immutable",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_tree_view_is_blank_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_is_blank_at_pos$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_is_blank_at_pos",
-        constants$1473.gtk_tree_view_is_blank_at_pos$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_enable_model_drag_source$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_enable_model_drag_source$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_enable_model_drag_source",
-        constants$1473.gtk_tree_view_enable_model_drag_source$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_enable_model_drag_dest$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_enable_model_drag_dest$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_enable_model_drag_dest",
-        constants$1473.gtk_tree_view_enable_model_drag_dest$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_unset_rows_drag_source$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_unset_rows_drag_source$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_unset_rows_drag_source",
-        constants$1473.gtk_tree_view_unset_rows_drag_source$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_INT.withName("ascender"),
+        JAVA_INT.withName("descender"),
+        JAVA_INT.withName("line_gap"),
+        JAVA_INT.withName("reserved9"),
+        JAVA_INT.withName("reserved8"),
+        JAVA_INT.withName("reserved7"),
+        JAVA_INT.withName("reserved6"),
+        JAVA_INT.withName("reserved5"),
+        JAVA_INT.withName("reserved4"),
+        JAVA_INT.withName("reserved3"),
+        JAVA_INT.withName("reserved2"),
+        JAVA_INT.withName("reserved1")
+    ).withName("hb_font_extents_t");
 }
 
 

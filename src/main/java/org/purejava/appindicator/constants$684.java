@@ -3,52 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$684 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$684() {}
-    static final FunctionDescriptor g_io_module_scope_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_value_array_new",
+        constants$24.const$0
     );
-    static final MethodHandle g_io_module_scope_free$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_scope_free",
-        constants$684.g_io_module_scope_free$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_value_array_free",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_io_module_scope_block$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_value_array_copy",
+        constants$5.const$2
     );
-    static final MethodHandle g_io_module_scope_block$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_scope_block",
-        constants$684.g_io_module_scope_block$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_value_array_prepend",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_io_module_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_io_module_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_get_type",
-        constants$684.g_io_module_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_value_array_append",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_io_module_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_module_new$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_new",
-        constants$684.g_io_module_new$FUNC
-    );
-    static final FunctionDescriptor g_io_modules_scan_all_in_directory$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_modules_scan_all_in_directory$MH = RuntimeHelper.downcallHandle(
-        "g_io_modules_scan_all_in_directory",
-        constants$684.g_io_modules_scan_all_in_directory$FUNC
-    );
-    static final FunctionDescriptor g_io_modules_load_all_in_directory$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_modules_load_all_in_directory$MH = RuntimeHelper.downcallHandle(
-        "g_io_modules_load_all_in_directory",
-        constants$684.g_io_modules_load_all_in_directory$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_value_array_insert",
+        constants$196.const$3
     );
 }
 

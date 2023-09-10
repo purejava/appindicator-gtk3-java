@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1248 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1248() {}
-    static final FunctionDescriptor gtk_widget_unparent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_ref",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_widget_unparent$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_unparent",
-        constants$1248.gtk_widget_unparent$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_unref",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_widget_show$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_new_from_directory",
+        constants$482.const$3
     );
-    static final MethodHandle gtk_widget_show$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_show",
-        constants$1248.gtk_widget_show$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_lookup",
+        constants$32.const$3
     );
-    static final FunctionDescriptor gtk_widget_hide$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_source_list_schemas",
+        constants$179.const$1
     );
-    static final MethodHandle gtk_widget_hide$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_hide",
-        constants$1248.gtk_widget_hide$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_show_now$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_show_now$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_show_now",
-        constants$1248.gtk_widget_show_now$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_show_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_show_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_show_all",
-        constants$1248.gtk_widget_show_all$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_no_show_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_no_show_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_no_show_all",
-        constants$1248.gtk_widget_set_no_show_all$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_get_type",
+        constants$3.const$5
     );
 }
 

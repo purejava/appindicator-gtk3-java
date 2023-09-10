@@ -3,56 +3,43 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1104 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1104() {}
-    static final FunctionDescriptor gdk_offscreen_window_get_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_offscreen_window_get_surface$MH = RuntimeHelper.downcallHandle(
-        "gdk_offscreen_window_get_surface",
-        constants$1104.gdk_offscreen_window_get_surface$FUNC
-    );
-    static final FunctionDescriptor gdk_offscreen_window_set_embedder$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_offscreen_window_set_embedder$MH = RuntimeHelper.downcallHandle(
-        "gdk_offscreen_window_set_embedder",
-        constants$1104.gdk_offscreen_window_set_embedder$FUNC
-    );
-    static final FunctionDescriptor gdk_offscreen_window_get_embedder$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_offscreen_window_get_embedder$MH = RuntimeHelper.downcallHandle(
-        "gdk_offscreen_window_get_embedder",
-        constants$1104.gdk_offscreen_window_get_embedder$FUNC
-    );
-    static final FunctionDescriptor gdk_window_geometry_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_geometry_changed$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_geometry_changed",
-        constants$1104.gdk_window_geometry_changed$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_support_multidevice$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_support_multidevice$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_support_multidevice",
-        constants$1104.gdk_window_set_support_multidevice$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_support_multidevice$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_support_multidevice$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_support_multidevice",
-        constants$1104.gdk_window_get_support_multidevice$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("get_family"),
+        RuntimeHelper.POINTER.withName("get_native_size"),
+        RuntimeHelper.POINTER.withName("to_native")
+    ).withName("_GSocketAddressClass");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSocketAddressClass.get_family.class, "apply", constants$10.const$5);
+    static final VarHandle const$2 = constants$1104.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_family"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GSocketAddressClass.get_native_size.class, "apply", constants$4.const$0);
+    static final VarHandle const$4 = constants$1104.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_native_size"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GSocketAddressClass.to_native.class, "apply", constants$27.const$2);
 }
 
 

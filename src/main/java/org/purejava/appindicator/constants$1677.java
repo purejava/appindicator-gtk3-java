@@ -3,62 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1677 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1677() {}
-    static final FunctionDescriptor gtk_list_box_set_adjustment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_version_string",
+        constants$35.const$2
     );
-    static final MethodHandle gtk_list_box_set_adjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_set_adjustment",
-        constants$1677.gtk_list_box_set_adjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_get_adjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_get_adjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_get_adjustment",
-        constants$1677.gtk_list_box_get_adjustment$FUNC
-    );
-    static final FunctionDescriptor GtkListBoxForeachFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkListBoxForeachFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkListBoxForeachFunc_UP$MH = RuntimeHelper.upcallHandle(GtkListBoxForeachFunc.class, "apply", constants$1677.GtkListBoxForeachFunc_UP$FUNC);
-    static final FunctionDescriptor GtkListBoxForeachFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkListBoxForeachFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1677.GtkListBoxForeachFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_selected_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_selected_foreach$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_selected_foreach",
-        constants$1677.gtk_list_box_selected_foreach$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_get_selected_rows$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_get_selected_rows$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_get_selected_rows",
-        constants$1677.gtk_list_box_get_selected_rows$FUNC
-    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_DOUBLE.withName("xx"),
+        JAVA_DOUBLE.withName("yx"),
+        JAVA_DOUBLE.withName("xy"),
+        JAVA_DOUBLE.withName("yy"),
+        JAVA_DOUBLE.withName("x0"),
+        JAVA_DOUBLE.withName("y0")
+    ).withName("_cairo_matrix");
+    static final VarHandle const$2 = constants$1677.const$1.varHandle(MemoryLayout.PathElement.groupElement("xx"));
+    static final VarHandle const$3 = constants$1677.const$1.varHandle(MemoryLayout.PathElement.groupElement("yx"));
+    static final VarHandle const$4 = constants$1677.const$1.varHandle(MemoryLayout.PathElement.groupElement("xy"));
+    static final VarHandle const$5 = constants$1677.const$1.varHandle(MemoryLayout.PathElement.groupElement("yy"));
 }
 
 

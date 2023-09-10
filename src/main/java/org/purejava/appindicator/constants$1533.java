@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1533 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1533() {}
-    static final FunctionDescriptor gtk_menu_item_get_submenu$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_script_for_unichar",
+        constants$8.const$4
     );
-    static final MethodHandle gtk_menu_item_get_submenu$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_get_submenu",
-        constants$1533.gtk_menu_item_get_submenu$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_script_iter_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_menu_item_select$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_script_iter_new",
+        constants$21.const$3
     );
-    static final MethodHandle gtk_menu_item_select$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_select",
-        constants$1533.gtk_menu_item_select$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_script_iter_get_range",
+        constants$42.const$1
     );
-    static final FunctionDescriptor gtk_menu_item_deselect$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_script_iter_next",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_menu_item_deselect$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_deselect",
-        constants$1533.gtk_menu_item_deselect$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_item_activate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_item_activate$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_activate",
-        constants$1533.gtk_menu_item_activate$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_item_toggle_size_request$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_item_toggle_size_request$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_toggle_size_request",
-        constants$1533.gtk_menu_item_toggle_size_request$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_item_toggle_size_allocate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_menu_item_toggle_size_allocate$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_toggle_size_allocate",
-        constants$1533.gtk_menu_item_toggle_size_allocate$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_script_iter_free",
+        constants$13.const$1
     );
 }
 

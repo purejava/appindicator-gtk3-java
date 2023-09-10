@@ -3,53 +3,41 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$188 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$188() {}
-    static final FunctionDescriptor g_unichar_toupper$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_date_set_parse",
+        constants$13.const$4
     );
-    static final MethodHandle g_unichar_toupper$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_toupper",
-        constants$188.g_unichar_toupper$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_date_set_time_t",
+        constants$25.const$3
     );
-    static final FunctionDescriptor g_unichar_tolower$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_date_set_time_val",
+        constants$13.const$4
     );
-    static final MethodHandle g_unichar_tolower$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_tolower",
-        constants$188.g_unichar_tolower$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_date_set_time",
+        constants$40.const$2
     );
-    static final FunctionDescriptor g_unichar_totitle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_date_set_month",
+        constants$40.const$2
     );
-    static final MethodHandle g_unichar_totitle$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_totitle",
-        constants$188.g_unichar_totitle$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_BYTE
     );
-    static final FunctionDescriptor g_unichar_digit_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_unichar_digit_value$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_digit_value",
-        constants$188.g_unichar_digit_value$FUNC
-    );
-    static final FunctionDescriptor g_unichar_xdigit_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_unichar_xdigit_value$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_xdigit_value",
-        constants$188.g_unichar_xdigit_value$FUNC
-    );
-    static final FunctionDescriptor g_unichar_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_unichar_type$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_type",
-        constants$188.g_unichar_type$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_date_set_day",
+        constants$188.const$5
     );
 }
 

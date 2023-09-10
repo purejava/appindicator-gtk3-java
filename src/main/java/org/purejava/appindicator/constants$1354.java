@@ -3,57 +3,48 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1354 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1354() {}
-    static final FunctionDescriptor gtk_adjustment_get_step_increment$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_get_not_valid_after",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_adjustment_get_step_increment$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_get_step_increment",
-        constants$1354.gtk_adjustment_get_step_increment$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_get_subject_name",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_adjustment_set_step_increment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_get_issuer_name",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_adjustment_set_step_increment$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_set_step_increment",
-        constants$1354.gtk_adjustment_set_step_increment$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_get_dns_names",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_adjustment_get_page_increment$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_get_ip_addresses",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_adjustment_get_page_increment$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_get_page_increment",
-        constants$1354.gtk_adjustment_get_page_increment$FUNC
-    );
-    static final FunctionDescriptor gtk_adjustment_set_page_increment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_adjustment_set_page_increment$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_set_page_increment",
-        constants$1354.gtk_adjustment_set_page_increment$FUNC
-    );
-    static final FunctionDescriptor gtk_adjustment_get_page_size$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_adjustment_get_page_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_get_page_size",
-        constants$1354.gtk_adjustment_get_page_size$FUNC
-    );
-    static final FunctionDescriptor gtk_adjustment_set_page_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_adjustment_set_page_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_adjustment_set_page_size",
-        constants$1354.gtk_adjustment_set_page_size$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    RuntimeHelper.POINTER.withName("g_class")
+                ).withName("g_type_instance"),
+                JAVA_INT.withName("ref_count"),
+                MemoryLayout.paddingLayout(4),
+                RuntimeHelper.POINTER.withName("qdata")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GTlsConnection");
 }
 
 

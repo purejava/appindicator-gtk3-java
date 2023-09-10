@@ -3,60 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$147 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$147() {}
-    static final FunctionDescriptor g_hash_table_steal_all_keys$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_base64_decode_step",
+        constants$5.const$0
     );
-    static final MethodHandle g_hash_table_steal_all_keys$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_steal_all_keys",
-        constants$147.g_hash_table_steal_all_keys$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_base64_decode",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_hash_table_steal_all_values$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_base64_decode_inplace",
+        constants$5.const$5
     );
-    static final MethodHandle g_hash_table_steal_all_values$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_steal_all_values",
-        constants$147.g_hash_table_steal_all_values$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_bit_lock",
+        constants$40.const$2
     );
-    static final FunctionDescriptor g_hash_table_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_bit_trylock",
+        constants$11.const$4
     );
-    static final MethodHandle g_hash_table_lookup$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_lookup",
-        constants$147.g_hash_table_lookup$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_contains$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_contains$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_contains",
-        constants$147.g_hash_table_contains$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_lookup_extended$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_lookup_extended$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_lookup_extended",
-        constants$147.g_hash_table_lookup_extended$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_foreach$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_foreach",
-        constants$147.g_hash_table_foreach$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_bit_unlock",
+        constants$40.const$2
     );
 }
 

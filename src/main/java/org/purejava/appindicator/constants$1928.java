@@ -3,50 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1928 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1928() {}
-    static final FunctionDescriptor gtk_color_selection_dialog_get_color_selection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_gl_context_get_current",
+        constants$35.const$2
     );
-    static final MethodHandle gtk_color_selection_dialog_get_color_selection$MH = RuntimeHelper.downcallHandle(
-        "gtk_color_selection_dialog_get_color_selection",
-        constants$1928.gtk_color_selection_dialog_get_color_selection$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_gl_context_clear_current",
+        constants$7.const$5
     );
-    static final FunctionDescriptor gtk_font_selection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_font_selection_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_selection_get_type",
-        constants$1928.gtk_font_selection_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_font_selection_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_font_selection_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_selection_new",
-        constants$1928.gtk_font_selection_new$FUNC
-    );
-    static final FunctionDescriptor gtk_font_selection_get_family_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_font_selection_get_family_list$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_selection_get_family_list",
-        constants$1928.gtk_font_selection_get_family_list$FUNC
-    );
-    static final FunctionDescriptor gtk_font_selection_get_face_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_font_selection_get_face_list$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_selection_get_face_list",
-        constants$1928.gtk_font_selection_get_face_list$FUNC
-    );
-    static final FunctionDescriptor gtk_font_selection_get_size_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_font_selection_get_size_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_font_selection_get_size_entry",
-        constants$1928.gtk_font_selection_get_size_entry$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("keycode"),
+        JAVA_INT.withName("group"),
+        JAVA_INT.withName("level")
+    ).withName("_GdkKeymapKey");
+    static final VarHandle const$3 = constants$1928.const$2.varHandle(MemoryLayout.PathElement.groupElement("keycode"));
+    static final VarHandle const$4 = constants$1928.const$2.varHandle(MemoryLayout.PathElement.groupElement("group"));
+    static final VarHandle const$5 = constants$1928.const$2.varHandle(MemoryLayout.PathElement.groupElement("level"));
 }
 
 

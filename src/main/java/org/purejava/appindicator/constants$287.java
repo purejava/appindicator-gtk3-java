@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$287 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$287() {}
-    static final FunctionDescriptor g_atomic_ref_count_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_unichar_xdigit_value",
+        constants$8.const$4
     );
-    static final MethodHandle g_atomic_ref_count_compare$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_ref_count_compare",
-        constants$287.g_atomic_ref_count_compare$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_unichar_type",
+        constants$8.const$4
     );
-    static final FunctionDescriptor g_ref_string_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_unichar_break_type",
+        constants$8.const$4
     );
-    static final MethodHandle g_ref_string_new$MH = RuntimeHelper.downcallHandle(
-        "g_ref_string_new",
-        constants$287.g_ref_string_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_unichar_combining_class",
+        constants$8.const$4
     );
-    static final FunctionDescriptor g_ref_string_new_len$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_unichar_get_mirror_char",
+        constants$9.const$2
     );
-    static final MethodHandle g_ref_string_new_len$MH = RuntimeHelper.downcallHandle(
-        "g_ref_string_new_len",
-        constants$287.g_ref_string_new_len$FUNC
-    );
-    static final FunctionDescriptor g_ref_string_new_intern$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ref_string_new_intern$MH = RuntimeHelper.downcallHandle(
-        "g_ref_string_new_intern",
-        constants$287.g_ref_string_new_intern$FUNC
-    );
-    static final FunctionDescriptor g_ref_string_acquire$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ref_string_acquire$MH = RuntimeHelper.downcallHandle(
-        "g_ref_string_acquire",
-        constants$287.g_ref_string_acquire$FUNC
-    );
-    static final FunctionDescriptor g_ref_string_release$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ref_string_release$MH = RuntimeHelper.downcallHandle(
-        "g_ref_string_release",
-        constants$287.g_ref_string_release$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_unichar_get_script",
+        constants$8.const$4
     );
 }
 

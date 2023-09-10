@@ -3,58 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$466 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$466() {}
-    static final FunctionDescriptor g_value_set_string$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$465.const$3.varHandle(MemoryLayout.PathElement.groupElement("user_data"));
+    static final VarHandle const$1 = constants$465.const$3.varHandle(MemoryLayout.PathElement.groupElement("exclusive"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_thread_pool_new$func.class, "apply", constants$13.const$4);
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_value_set_string$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_string",
-        constants$466.g_value_set_string$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_thread_pool_new",
+        constants$466.const$3
     );
-    static final FunctionDescriptor g_value_set_static_string$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_set_static_string$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_static_string",
-        constants$466.g_value_set_static_string$FUNC
-    );
-    static final FunctionDescriptor g_value_set_interned_string$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_set_interned_string$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_interned_string",
-        constants$466.g_value_set_interned_string$FUNC
-    );
-    static final FunctionDescriptor g_value_get_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_get_string$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_string",
-        constants$466.g_value_get_string$FUNC
-    );
-    static final FunctionDescriptor g_value_dup_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_dup_string$MH = RuntimeHelper.downcallHandle(
-        "g_value_dup_string",
-        constants$466.g_value_dup_string$FUNC
-    );
-    static final FunctionDescriptor g_value_set_pointer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_set_pointer$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_pointer",
-        constants$466.g_value_set_pointer$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_thread_pool_new_full$func.class, "apply", constants$13.const$4);
 }
 
 

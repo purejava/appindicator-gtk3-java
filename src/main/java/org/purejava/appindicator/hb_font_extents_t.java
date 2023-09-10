@@ -2,388 +2,364 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct hb_font_extents_t {
- *     hb_position_t ascender;
- *     hb_position_t descender;
- *     hb_position_t line_gap;
- *     hb_position_t reserved9;
- *     hb_position_t reserved8;
- *     hb_position_t reserved7;
- *     hb_position_t reserved6;
- *     hb_position_t reserved5;
- *     hb_position_t reserved4;
- *     hb_position_t reserved3;
- *     hb_position_t reserved2;
- *     hb_position_t reserved1;
+ *     int ascender;
+ *     int descender;
+ *     int line_gap;
+ *     int reserved9;
+ *     int reserved8;
+ *     int reserved7;
+ *     int reserved6;
+ *     int reserved5;
+ *     int reserved4;
+ *     int reserved3;
+ *     int reserved2;
+ *     int reserved1;
  * };
  * }
  */
 public class hb_font_extents_t {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("ascender"),
-        Constants$root.C_INT$LAYOUT.withName("descender"),
-        Constants$root.C_INT$LAYOUT.withName("line_gap"),
-        Constants$root.C_INT$LAYOUT.withName("reserved9"),
-        Constants$root.C_INT$LAYOUT.withName("reserved8"),
-        Constants$root.C_INT$LAYOUT.withName("reserved7"),
-        Constants$root.C_INT$LAYOUT.withName("reserved6"),
-        Constants$root.C_INT$LAYOUT.withName("reserved5"),
-        Constants$root.C_INT$LAYOUT.withName("reserved4"),
-        Constants$root.C_INT$LAYOUT.withName("reserved3"),
-        Constants$root.C_INT$LAYOUT.withName("reserved2"),
-        Constants$root.C_INT$LAYOUT.withName("reserved1")
-    ).withName("hb_font_extents_t");
     public static MemoryLayout $LAYOUT() {
-        return hb_font_extents_t.$struct$LAYOUT;
+        return constants$1473.const$5;
     }
-    static final VarHandle ascender$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("ascender"));
     public static VarHandle ascender$VH() {
-        return hb_font_extents_t.ascender$VH;
+        return constants$1474.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_position_t ascender;
+     * int ascender;
      * }
      */
     public static int ascender$get(MemorySegment seg) {
-        return (int)hb_font_extents_t.ascender$VH.get(seg);
+        return (int)constants$1474.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_position_t ascender;
+     * int ascender;
      * }
      */
     public static void ascender$set(MemorySegment seg, int x) {
-        hb_font_extents_t.ascender$VH.set(seg, x);
+        constants$1474.const$0.set(seg, x);
     }
     public static int ascender$get(MemorySegment seg, long index) {
-        return (int)hb_font_extents_t.ascender$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1474.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void ascender$set(MemorySegment seg, long index, int x) {
-        hb_font_extents_t.ascender$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1474.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle descender$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("descender"));
     public static VarHandle descender$VH() {
-        return hb_font_extents_t.descender$VH;
+        return constants$1474.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_position_t descender;
+     * int descender;
      * }
      */
     public static int descender$get(MemorySegment seg) {
-        return (int)hb_font_extents_t.descender$VH.get(seg);
+        return (int)constants$1474.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_position_t descender;
+     * int descender;
      * }
      */
     public static void descender$set(MemorySegment seg, int x) {
-        hb_font_extents_t.descender$VH.set(seg, x);
+        constants$1474.const$1.set(seg, x);
     }
     public static int descender$get(MemorySegment seg, long index) {
-        return (int)hb_font_extents_t.descender$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1474.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void descender$set(MemorySegment seg, long index, int x) {
-        hb_font_extents_t.descender$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1474.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle line_gap$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("line_gap"));
     public static VarHandle line_gap$VH() {
-        return hb_font_extents_t.line_gap$VH;
+        return constants$1474.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_position_t line_gap;
+     * int line_gap;
      * }
      */
     public static int line_gap$get(MemorySegment seg) {
-        return (int)hb_font_extents_t.line_gap$VH.get(seg);
+        return (int)constants$1474.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_position_t line_gap;
+     * int line_gap;
      * }
      */
     public static void line_gap$set(MemorySegment seg, int x) {
-        hb_font_extents_t.line_gap$VH.set(seg, x);
+        constants$1474.const$2.set(seg, x);
     }
     public static int line_gap$get(MemorySegment seg, long index) {
-        return (int)hb_font_extents_t.line_gap$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1474.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void line_gap$set(MemorySegment seg, long index, int x) {
-        hb_font_extents_t.line_gap$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1474.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle reserved9$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reserved9"));
     public static VarHandle reserved9$VH() {
-        return hb_font_extents_t.reserved9$VH;
+        return constants$1474.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_position_t reserved9;
+     * int reserved9;
      * }
      */
     public static int reserved9$get(MemorySegment seg) {
-        return (int)hb_font_extents_t.reserved9$VH.get(seg);
+        return (int)constants$1474.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_position_t reserved9;
+     * int reserved9;
      * }
      */
     public static void reserved9$set(MemorySegment seg, int x) {
-        hb_font_extents_t.reserved9$VH.set(seg, x);
+        constants$1474.const$3.set(seg, x);
     }
     public static int reserved9$get(MemorySegment seg, long index) {
-        return (int)hb_font_extents_t.reserved9$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1474.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved9$set(MemorySegment seg, long index, int x) {
-        hb_font_extents_t.reserved9$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1474.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle reserved8$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reserved8"));
     public static VarHandle reserved8$VH() {
-        return hb_font_extents_t.reserved8$VH;
+        return constants$1474.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_position_t reserved8;
+     * int reserved8;
      * }
      */
     public static int reserved8$get(MemorySegment seg) {
-        return (int)hb_font_extents_t.reserved8$VH.get(seg);
+        return (int)constants$1474.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_position_t reserved8;
+     * int reserved8;
      * }
      */
     public static void reserved8$set(MemorySegment seg, int x) {
-        hb_font_extents_t.reserved8$VH.set(seg, x);
+        constants$1474.const$4.set(seg, x);
     }
     public static int reserved8$get(MemorySegment seg, long index) {
-        return (int)hb_font_extents_t.reserved8$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1474.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved8$set(MemorySegment seg, long index, int x) {
-        hb_font_extents_t.reserved8$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1474.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle reserved7$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reserved7"));
     public static VarHandle reserved7$VH() {
-        return hb_font_extents_t.reserved7$VH;
+        return constants$1474.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_position_t reserved7;
+     * int reserved7;
      * }
      */
     public static int reserved7$get(MemorySegment seg) {
-        return (int)hb_font_extents_t.reserved7$VH.get(seg);
+        return (int)constants$1474.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_position_t reserved7;
+     * int reserved7;
      * }
      */
     public static void reserved7$set(MemorySegment seg, int x) {
-        hb_font_extents_t.reserved7$VH.set(seg, x);
+        constants$1474.const$5.set(seg, x);
     }
     public static int reserved7$get(MemorySegment seg, long index) {
-        return (int)hb_font_extents_t.reserved7$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1474.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved7$set(MemorySegment seg, long index, int x) {
-        hb_font_extents_t.reserved7$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1474.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle reserved6$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reserved6"));
     public static VarHandle reserved6$VH() {
-        return hb_font_extents_t.reserved6$VH;
+        return constants$1475.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_position_t reserved6;
+     * int reserved6;
      * }
      */
     public static int reserved6$get(MemorySegment seg) {
-        return (int)hb_font_extents_t.reserved6$VH.get(seg);
+        return (int)constants$1475.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_position_t reserved6;
+     * int reserved6;
      * }
      */
     public static void reserved6$set(MemorySegment seg, int x) {
-        hb_font_extents_t.reserved6$VH.set(seg, x);
+        constants$1475.const$0.set(seg, x);
     }
     public static int reserved6$get(MemorySegment seg, long index) {
-        return (int)hb_font_extents_t.reserved6$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1475.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved6$set(MemorySegment seg, long index, int x) {
-        hb_font_extents_t.reserved6$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1475.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle reserved5$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reserved5"));
     public static VarHandle reserved5$VH() {
-        return hb_font_extents_t.reserved5$VH;
+        return constants$1475.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_position_t reserved5;
+     * int reserved5;
      * }
      */
     public static int reserved5$get(MemorySegment seg) {
-        return (int)hb_font_extents_t.reserved5$VH.get(seg);
+        return (int)constants$1475.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_position_t reserved5;
+     * int reserved5;
      * }
      */
     public static void reserved5$set(MemorySegment seg, int x) {
-        hb_font_extents_t.reserved5$VH.set(seg, x);
+        constants$1475.const$1.set(seg, x);
     }
     public static int reserved5$get(MemorySegment seg, long index) {
-        return (int)hb_font_extents_t.reserved5$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1475.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved5$set(MemorySegment seg, long index, int x) {
-        hb_font_extents_t.reserved5$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1475.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle reserved4$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reserved4"));
     public static VarHandle reserved4$VH() {
-        return hb_font_extents_t.reserved4$VH;
+        return constants$1475.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_position_t reserved4;
+     * int reserved4;
      * }
      */
     public static int reserved4$get(MemorySegment seg) {
-        return (int)hb_font_extents_t.reserved4$VH.get(seg);
+        return (int)constants$1475.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_position_t reserved4;
+     * int reserved4;
      * }
      */
     public static void reserved4$set(MemorySegment seg, int x) {
-        hb_font_extents_t.reserved4$VH.set(seg, x);
+        constants$1475.const$2.set(seg, x);
     }
     public static int reserved4$get(MemorySegment seg, long index) {
-        return (int)hb_font_extents_t.reserved4$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1475.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved4$set(MemorySegment seg, long index, int x) {
-        hb_font_extents_t.reserved4$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1475.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle reserved3$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reserved3"));
     public static VarHandle reserved3$VH() {
-        return hb_font_extents_t.reserved3$VH;
+        return constants$1475.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_position_t reserved3;
+     * int reserved3;
      * }
      */
     public static int reserved3$get(MemorySegment seg) {
-        return (int)hb_font_extents_t.reserved3$VH.get(seg);
+        return (int)constants$1475.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_position_t reserved3;
+     * int reserved3;
      * }
      */
     public static void reserved3$set(MemorySegment seg, int x) {
-        hb_font_extents_t.reserved3$VH.set(seg, x);
+        constants$1475.const$3.set(seg, x);
     }
     public static int reserved3$get(MemorySegment seg, long index) {
-        return (int)hb_font_extents_t.reserved3$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1475.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved3$set(MemorySegment seg, long index, int x) {
-        hb_font_extents_t.reserved3$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1475.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle reserved2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reserved2"));
     public static VarHandle reserved2$VH() {
-        return hb_font_extents_t.reserved2$VH;
+        return constants$1475.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_position_t reserved2;
+     * int reserved2;
      * }
      */
     public static int reserved2$get(MemorySegment seg) {
-        return (int)hb_font_extents_t.reserved2$VH.get(seg);
+        return (int)constants$1475.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_position_t reserved2;
+     * int reserved2;
      * }
      */
     public static void reserved2$set(MemorySegment seg, int x) {
-        hb_font_extents_t.reserved2$VH.set(seg, x);
+        constants$1475.const$4.set(seg, x);
     }
     public static int reserved2$get(MemorySegment seg, long index) {
-        return (int)hb_font_extents_t.reserved2$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1475.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved2$set(MemorySegment seg, long index, int x) {
-        hb_font_extents_t.reserved2$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1475.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle reserved1$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reserved1"));
     public static VarHandle reserved1$VH() {
-        return hb_font_extents_t.reserved1$VH;
+        return constants$1475.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_position_t reserved1;
+     * int reserved1;
      * }
      */
     public static int reserved1$get(MemorySegment seg) {
-        return (int)hb_font_extents_t.reserved1$VH.get(seg);
+        return (int)constants$1475.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_position_t reserved1;
+     * int reserved1;
      * }
      */
     public static void reserved1$set(MemorySegment seg, int x) {
-        hb_font_extents_t.reserved1$VH.set(seg, x);
+        constants$1475.const$5.set(seg, x);
     }
     public static int reserved1$get(MemorySegment seg, long index) {
-        return (int)hb_font_extents_t.reserved1$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1475.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved1$set(MemorySegment seg, long index, int x) {
-        hb_font_extents_t.reserved1$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1475.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

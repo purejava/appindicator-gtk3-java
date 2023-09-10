@@ -2,31 +2,27 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GFileAttributeInfo {
  *     char* name;
- *     GFileAttributeType type;
- *     GFileAttributeInfoFlags flags;
+ *     enum GFileAttributeType type;
+ *     enum GFileAttributeInfoFlags flags;
  * };
  * }
  */
 public class _GFileAttributeInfo {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("name"),
-        Constants$root.C_INT$LAYOUT.withName("type"),
-        Constants$root.C_INT$LAYOUT.withName("flags")
-    ).withName("_GFileAttributeInfo");
     public static MemoryLayout $LAYOUT() {
-        return _GFileAttributeInfo.$struct$LAYOUT;
+        return constants$1041.const$1;
     }
-    static final VarHandle name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("name"));
     public static VarHandle name$VH() {
-        return _GFileAttributeInfo.name$VH;
+        return constants$1041.const$2;
     }
     /**
      * Getter for field:
@@ -35,7 +31,7 @@ public class _GFileAttributeInfo {
      * }
      */
     public static MemorySegment name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GFileAttributeInfo.name$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1041.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -44,76 +40,74 @@ public class _GFileAttributeInfo {
      * }
      */
     public static void name$set(MemorySegment seg, MemorySegment x) {
-        _GFileAttributeInfo.name$VH.set(seg, x);
+        constants$1041.const$2.set(seg, x);
     }
     public static MemorySegment name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GFileAttributeInfo.name$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1041.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void name$set(MemorySegment seg, long index, MemorySegment x) {
-        _GFileAttributeInfo.name$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1041.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("type"));
     public static VarHandle type$VH() {
-        return _GFileAttributeInfo.type$VH;
+        return constants$1041.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GFileAttributeType type;
+     * enum GFileAttributeType type;
      * }
      */
     public static int type$get(MemorySegment seg) {
-        return (int)_GFileAttributeInfo.type$VH.get(seg);
+        return (int)constants$1041.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GFileAttributeType type;
+     * enum GFileAttributeType type;
      * }
      */
     public static void type$set(MemorySegment seg, int x) {
-        _GFileAttributeInfo.type$VH.set(seg, x);
+        constants$1041.const$3.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
-        return (int)_GFileAttributeInfo.type$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1041.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void type$set(MemorySegment seg, long index, int x) {
-        _GFileAttributeInfo.type$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1041.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle flags$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("flags"));
     public static VarHandle flags$VH() {
-        return _GFileAttributeInfo.flags$VH;
+        return constants$1041.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GFileAttributeInfoFlags flags;
+     * enum GFileAttributeInfoFlags flags;
      * }
      */
     public static int flags$get(MemorySegment seg) {
-        return (int)_GFileAttributeInfo.flags$VH.get(seg);
+        return (int)constants$1041.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GFileAttributeInfoFlags flags;
+     * enum GFileAttributeInfoFlags flags;
      * }
      */
     public static void flags$set(MemorySegment seg, int x) {
-        _GFileAttributeInfo.flags$VH.set(seg, x);
+        constants$1041.const$4.set(seg, x);
     }
     public static int flags$get(MemorySegment seg, long index) {
-        return (int)_GFileAttributeInfo.flags$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1041.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void flags$set(MemorySegment seg, long index, int x) {
-        _GFileAttributeInfo.flags$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1041.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

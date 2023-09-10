@@ -3,55 +3,46 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1602 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1602() {}
-    static final FunctionDescriptor gtk_gesture_is_recognized$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle gtk_gesture_is_recognized$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_is_recognized",
-        constants$1602.gtk_gesture_is_recognized$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_glyph_string_x_to_index",
+        constants$1602.const$0
     );
-    static final FunctionDescriptor gtk_gesture_get_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_glyph_string_index_to_x_full",
+        constants$1481.const$3
     );
-    static final MethodHandle gtk_gesture_get_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_get_window",
-        constants$1602.gtk_gesture_get_window$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_shape",
+        constants$179.const$1
     );
-    static final FunctionDescriptor gtk_gesture_set_window$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle gtk_gesture_set_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_set_window",
-        constants$1602.gtk_gesture_set_window$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_group",
-        constants$1602.gtk_gesture_group$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_ungroup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_ungroup$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_ungroup",
-        constants$1602.gtk_gesture_ungroup$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_get_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_get_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_get_group",
-        constants$1602.gtk_gesture_get_group$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_shape_full",
+        constants$1602.const$4
     );
 }
 

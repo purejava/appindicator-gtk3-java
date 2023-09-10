@@ -3,57 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1409 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1409() {}
-    static final FunctionDescriptor gtk_text_iter_backward_word_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_volume_get_drive",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_text_iter_backward_word_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_word_start",
-        constants$1409.gtk_text_iter_backward_word_start$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_volume_get_mount",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_text_iter_forward_word_ends$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_volume_can_mount",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_text_iter_forward_word_ends$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_word_ends",
-        constants$1409.gtk_text_iter_forward_word_ends$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_volume_can_eject",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_text_iter_backward_word_starts$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_volume_should_automount",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_text_iter_backward_word_starts$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_word_starts",
-        constants$1409.gtk_text_iter_backward_word_starts$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_forward_visible_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_forward_visible_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_visible_line",
-        constants$1409.gtk_text_iter_forward_visible_line$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_backward_visible_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_backward_visible_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_backward_visible_line",
-        constants$1409.gtk_text_iter_backward_visible_line$FUNC
-    );
-    static final FunctionDescriptor gtk_text_iter_forward_visible_lines$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_iter_forward_visible_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_iter_forward_visible_lines",
-        constants$1409.gtk_text_iter_forward_visible_lines$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_volume_mount$callback.class, "apply", constants$14.const$3);
 }
 
 

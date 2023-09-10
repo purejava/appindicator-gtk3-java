@@ -3,60 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1754 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1754() {}
-    static final FunctionDescriptor gtk_print_operation_set_allow_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_region_union",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_print_operation_set_allow_async$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_allow_async",
-        constants$1754.gtk_print_operation_set_allow_async$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_region_union_rectangle",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gtk_print_operation_set_custom_tab_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_region_xor",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_print_operation_set_custom_tab_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_set_custom_tab_label",
-        constants$1754.gtk_print_operation_set_custom_tab_label$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_region_xor_rectangle",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gtk_print_operation_run$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_debug_reset_static_data",
+        constants$7.const$5
     );
-    static final MethodHandle gtk_print_operation_run$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_run",
-        constants$1754.gtk_print_operation_run$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_get_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_operation_get_error$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_get_error",
-        constants$1754.gtk_print_operation_get_error$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_get_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_operation_get_status$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_get_status",
-        constants$1754.gtk_print_operation_get_status$FUNC
-    );
-    static final FunctionDescriptor gtk_print_operation_get_status_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_operation_get_status_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_operation_get_status_string",
-        constants$1754.gtk_print_operation_get_status_string$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_INT.withName("x"),
+        JAVA_INT.withName("y")
+    ).withName("_GdkPoint");
 }
 
 

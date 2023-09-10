@@ -3,52 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$538 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$538() {}
-    static final FunctionDescriptor crypt$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final UnionLayout const$0 = MemoryLayout.unionLayout(
+        JAVA_LONG.withName("owner"),
+        JAVA_DOUBLE.withName("dummy")
+    ).withName("");
+    static final VarHandle const$1 = constants$538.const$0.varHandle(MemoryLayout.PathElement.groupElement("owner"));
+    static final VarHandle const$2 = constants$538.const$0.varHandle(MemoryLayout.PathElement.groupElement("dummy"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_static_rec_mutex_init",
+        constants$13.const$1
     );
-    static final MethodHandle crypt$MH = RuntimeHelper.downcallHandle(
-        "crypt",
-        constants$538.crypt$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_static_rec_mutex_lock",
+        constants$13.const$1
     );
-    static final FunctionDescriptor getentropy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle getentropy$MH = RuntimeHelper.downcallHandle(
-        "getentropy",
-        constants$538.getentropy$FUNC
-    );
-    static final FunctionDescriptor g_credentials_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_credentials_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_credentials_get_type",
-        constants$538.g_credentials_get_type$FUNC
-    );
-    static final FunctionDescriptor g_credentials_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_credentials_new$MH = RuntimeHelper.downcallHandle(
-        "g_credentials_new",
-        constants$538.g_credentials_new$FUNC
-    );
-    static final FunctionDescriptor g_credentials_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_credentials_to_string$MH = RuntimeHelper.downcallHandle(
-        "g_credentials_to_string",
-        constants$538.g_credentials_to_string$FUNC
-    );
-    static final FunctionDescriptor g_credentials_get_native$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_credentials_get_native$MH = RuntimeHelper.downcallHandle(
-        "g_credentials_get_native",
-        constants$538.g_credentials_get_native$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_static_rec_mutex_trylock",
+        constants$10.const$5
     );
 }
 

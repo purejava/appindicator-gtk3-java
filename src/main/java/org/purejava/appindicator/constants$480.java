@@ -3,64 +3,45 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$480 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$480() {}
-    static final FunctionDescriptor g_app_info_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tree_height",
+        constants$10.const$5
     );
-    static final MethodHandle g_app_info_get_icon$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_get_icon",
-        constants$480.g_app_info_get_icon$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_tree_nnodes",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_app_info_launch$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_uri_ref",
+        constants$5.const$2
     );
-    static final MethodHandle g_app_info_launch$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_launch",
-        constants$480.g_app_info_launch$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_uri_unref",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_app_info_supports_uris$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_app_info_supports_uris$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_supports_uris",
-        constants$480.g_app_info_supports_uris$FUNC
-    );
-    static final FunctionDescriptor g_app_info_supports_files$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_info_supports_files$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_supports_files",
-        constants$480.g_app_info_supports_files$FUNC
-    );
-    static final FunctionDescriptor g_app_info_launch_uris$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_info_launch_uris$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_launch_uris",
-        constants$480.g_app_info_launch_uris$FUNC
-    );
-    static final FunctionDescriptor g_app_info_launch_uris_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_info_launch_uris_async$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_launch_uris_async",
-        constants$480.g_app_info_launch_uris_async$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_uri_split",
+        constants$480.const$4
     );
 }
 

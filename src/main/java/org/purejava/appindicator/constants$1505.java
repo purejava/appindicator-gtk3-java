@@ -3,64 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1505 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1505() {}
-    static final FunctionDescriptor gtk_builder_set_translation_domain$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_builder_set_translation_domain$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_set_translation_domain",
-        constants$1505.gtk_builder_set_translation_domain$FUNC
-    );
-    static final FunctionDescriptor gtk_builder_get_translation_domain$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_builder_get_translation_domain$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_get_translation_domain",
-        constants$1505.gtk_builder_get_translation_domain$FUNC
-    );
-    static final FunctionDescriptor gtk_builder_get_type_from_name$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_builder_get_type_from_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_get_type_from_name",
-        constants$1505.gtk_builder_get_type_from_name$FUNC
-    );
-    static final FunctionDescriptor gtk_builder_value_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_builder_value_from_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_value_from_string",
-        constants$1505.gtk_builder_value_from_string$FUNC
-    );
-    static final FunctionDescriptor gtk_builder_value_from_string_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_builder_value_from_string_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_value_from_string_type",
-        constants$1505.gtk_builder_value_from_string_type$FUNC
-    );
-    static final FunctionDescriptor gtk_builder_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_builder_new_from_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_builder_new_from_file",
-        constants$1505.gtk_builder_new_from_file$FUNC
-    );
+    static final VarHandle const$0 = constants$1504.const$3.varHandle(MemoryLayout.PathElement.groupElement("x_offset"));
+    static final VarHandle const$1 = constants$1504.const$3.varHandle(MemoryLayout.PathElement.groupElement("y_offset"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_INT.withName("direction"),
+        JAVA_INT.withName("script"),
+        RuntimeHelper.POINTER.withName("language"),
+        RuntimeHelper.POINTER.withName("reserved1"),
+        RuntimeHelper.POINTER.withName("reserved2")
+    ).withName("hb_segment_properties_t");
+    static final VarHandle const$3 = constants$1505.const$2.varHandle(MemoryLayout.PathElement.groupElement("direction"));
+    static final VarHandle const$4 = constants$1505.const$2.varHandle(MemoryLayout.PathElement.groupElement("script"));
+    static final VarHandle const$5 = constants$1505.const$2.varHandle(MemoryLayout.PathElement.groupElement("language"));
 }
 
 

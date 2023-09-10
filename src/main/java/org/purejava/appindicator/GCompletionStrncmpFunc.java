@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * int (*GCompletionStrncmpFunc)(char* s1,char* s2,unsigned long n);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GCompletionStrncmpFunc {
 
     int apply(java.lang.foreign.MemorySegment s1, java.lang.foreign.MemorySegment s2, long n);
-    static MemorySegment allocate(GCompletionStrncmpFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$348.GCompletionStrncmpFunc_UP$MH, fi, constants$348.GCompletionStrncmpFunc$FUNC, scope);
+    static MemorySegment allocate(GCompletionStrncmpFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$496.const$1, fi, constants$18.const$2, scope);
     }
-    static GCompletionStrncmpFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GCompletionStrncmpFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _s1, java.lang.foreign.MemorySegment _s2, long _n) -> {
             try {
-                return (int)constants$348.GCompletionStrncmpFunc_DOWN$MH.invokeExact(symbol, _s1, _s2, _n);
+                return (int)constants$496.const$2.invokeExact(symbol, _s1, _s2, _n);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

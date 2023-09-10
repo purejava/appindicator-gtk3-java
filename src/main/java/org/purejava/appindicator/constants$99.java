@@ -3,64 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$99 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$99() {}
-    static final FunctionDescriptor g_bookmark_file_has_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$5.const$2
     );
-    static final MethodHandle g_bookmark_file_has_item$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_has_item",
-        constants$99.g_bookmark_file_has_item$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_get_size$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_get_size",
-        constants$99.g_bookmark_file_get_size$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_get_uris$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_get_uris$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_get_uris",
-        constants$99.g_bookmark_file_get_uris$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_remove_group$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_remove_group$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_remove_group",
-        constants$99.g_bookmark_file_remove_group$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_remove_application$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_remove_application$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_remove_application",
-        constants$99.g_bookmark_file_remove_application$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_remove_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_remove_item$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_remove_item",
-        constants$99.g_bookmark_file_remove_item$FUNC
-    );
+    static final UnionLayout const$1 = MemoryLayout.unionLayout(
+        RuntimeHelper.POINTER.withName("p"),
+        MemoryLayout.sequenceLayout(2, JAVA_INT).withName("i")
+    ).withName("_GMutex");
+    static final VarHandle const$2 = constants$99.const$1.varHandle(MemoryLayout.PathElement.groupElement("p"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("p"),
+        MemoryLayout.sequenceLayout(2, JAVA_INT).withName("i")
+    ).withName("_GRWLock");
+    static final VarHandle const$4 = constants$99.const$3.varHandle(MemoryLayout.PathElement.groupElement("p"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("p"),
+        MemoryLayout.sequenceLayout(2, JAVA_INT).withName("i")
+    ).withName("_GCond");
 }
 
 

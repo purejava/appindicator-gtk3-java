@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$233 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$233() {}
-    static final FunctionDescriptor g_variant_type_is_basic$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_hash_table_get_values_as_ptr_array",
+        constants$5.const$2
     );
-    static final MethodHandle g_variant_type_is_basic$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_is_basic",
-        constants$233.g_variant_type_is_basic$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_hash_table_iter_init",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_variant_type_is_maybe$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_hash_table_iter_next",
+        constants$12.const$2
     );
-    static final MethodHandle g_variant_type_is_maybe$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_is_maybe",
-        constants$233.g_variant_type_is_maybe$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_hash_table_iter_get_hash_table",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_variant_type_is_array$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_hash_table_iter_remove",
+        constants$13.const$1
     );
-    static final MethodHandle g_variant_type_is_array$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_is_array",
-        constants$233.g_variant_type_is_array$FUNC
-    );
-    static final FunctionDescriptor g_variant_type_is_tuple$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_type_is_tuple$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_is_tuple",
-        constants$233.g_variant_type_is_tuple$FUNC
-    );
-    static final FunctionDescriptor g_variant_type_is_dict_entry$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_type_is_dict_entry$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_is_dict_entry",
-        constants$233.g_variant_type_is_dict_entry$FUNC
-    );
-    static final FunctionDescriptor g_variant_type_is_variant$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_type_is_variant$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_is_variant",
-        constants$233.g_variant_type_is_variant$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_hash_table_iter_replace",
+        constants$13.const$4
     );
 }
 

@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$201 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$201() {}
-    static final FunctionDescriptor g_strcasecmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dir_make_tmp",
+        constants$5.const$5
     );
-    static final MethodHandle g_strcasecmp$MH = RuntimeHelper.downcallHandle(
-        "g_strcasecmp",
-        constants$201.g_strcasecmp$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_build_path",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_strncasecmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_build_pathv",
+        constants$5.const$5
     );
-    static final MethodHandle g_strncasecmp$MH = RuntimeHelper.downcallHandle(
-        "g_strncasecmp",
-        constants$201.g_strncasecmp$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_build_filename",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_strdown$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_build_filenamev",
+        constants$5.const$2
     );
-    static final MethodHandle g_strdown$MH = RuntimeHelper.downcallHandle(
-        "g_strdown",
-        constants$201.g_strdown$FUNC
-    );
-    static final FunctionDescriptor g_strup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_strup$MH = RuntimeHelper.downcallHandle(
-        "g_strup",
-        constants$201.g_strup$FUNC
-    );
-    static final FunctionDescriptor g_strdup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_strdup$MH = RuntimeHelper.downcallHandle(
-        "g_strdup",
-        constants$201.g_strdup$FUNC
-    );
-    static final FunctionDescriptor g_strdup_printf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_strdup_printf$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_strdup_printf",
-        constants$201.g_strdup_printf$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_build_filename_valist",
+        constants$5.const$5
     );
 }
 

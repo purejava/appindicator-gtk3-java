@@ -4,76 +4,43 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GLoadableIconIface {
- *     GTypeInterface g_iface;
- *     GInputStream* (*load)(GLoadableIcon*,int,char**,GCancellable*,GError**);
- *     void (*load_async)(GLoadableIcon*,int,GCancellable*,GAsyncReadyCallback,gpointer);
- *     GInputStream* (*load_finish)(GLoadableIcon*,GAsyncResult*,char**,GError**);
+ *     struct _GTypeInterface g_iface;
+ *     struct _GInputStream* (*load)(struct _GLoadableIcon*,int,char**,struct _GCancellable*,struct _GError**);
+ *     void (*load_async)(struct _GLoadableIcon*,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+ *     struct _GInputStream* (*load_finish)(struct _GLoadableIcon*,struct _GAsyncResult*,char**,struct _GError**);
  * };
  * }
  */
 public class _GLoadableIconIface {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
-        ).withName("g_iface"),
-        Constants$root.C_POINTER$LAYOUT.withName("load"),
-        Constants$root.C_POINTER$LAYOUT.withName("load_async"),
-        Constants$root.C_POINTER$LAYOUT.withName("load_finish")
-    ).withName("_GLoadableIconIface");
     public static MemoryLayout $LAYOUT() {
-        return _GLoadableIconIface.$struct$LAYOUT;
+        return constants$1134.const$3;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
-    static final FunctionDescriptor load$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor load_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle load_UP$MH = RuntimeHelper.upcallHandle(load.class, "apply", _GLoadableIconIface.load_UP$FUNC);
-    static final FunctionDescriptor load_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle load_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GLoadableIconIface.load_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GInputStream* (*load)(GLoadableIcon*,int,char**,GCancellable*,GError**);
+ * struct _GInputStream* (*load)(struct _GLoadableIcon*,int,char**,struct _GCancellable*,struct _GError**);
      * }
      */
     public interface load {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(load fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GLoadableIconIface.load_UP$MH, fi, _GLoadableIconIface.load$FUNC, scope);
+        static MemorySegment allocate(load fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1134.const$4, fi, constants$855.const$5, scope);
         }
-        static load ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static load ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GLoadableIconIface.load_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    return (java.lang.foreign.MemorySegment)constants$1134.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -81,78 +48,52 @@ public class _GLoadableIconIface {
         }
     }
 
-    static final VarHandle load$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("load"));
     public static VarHandle load$VH() {
-        return _GLoadableIconIface.load$VH;
+        return constants$1135.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GInputStream* (*load)(GLoadableIcon*,int,char**,GCancellable*,GError**);
+     * struct _GInputStream* (*load)(struct _GLoadableIcon*,int,char**,struct _GCancellable*,struct _GError**);
      * }
      */
     public static MemorySegment load$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GLoadableIconIface.load$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1135.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GInputStream* (*load)(GLoadableIcon*,int,char**,GCancellable*,GError**);
+     * struct _GInputStream* (*load)(struct _GLoadableIcon*,int,char**,struct _GCancellable*,struct _GError**);
      * }
      */
     public static void load$set(MemorySegment seg, MemorySegment x) {
-        _GLoadableIconIface.load$VH.set(seg, x);
+        constants$1135.const$0.set(seg, x);
     }
     public static MemorySegment load$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GLoadableIconIface.load$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1135.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void load$set(MemorySegment seg, long index, MemorySegment x) {
-        _GLoadableIconIface.load$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1135.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static load load(MemorySegment segment, SegmentScope scope) {
+    public static load load(MemorySegment segment, Arena scope) {
         return load.ofAddress(load$get(segment), scope);
     }
-    static final FunctionDescriptor load_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor load_async_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle load_async_UP$MH = RuntimeHelper.upcallHandle(load_async.class, "apply", _GLoadableIconIface.load_async_UP$FUNC);
-    static final FunctionDescriptor load_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle load_async_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GLoadableIconIface.load_async_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*load_async)(GLoadableIcon*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+ * void (*load_async)(struct _GLoadableIcon*,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public interface load_async {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(load_async fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GLoadableIconIface.load_async_UP$MH, fi, _GLoadableIconIface.load_async$FUNC, scope);
+        static MemorySegment allocate(load_async fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1135.const$1, fi, constants$281.const$5, scope);
         }
-        static load_async ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static load_async ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    _GLoadableIconIface.load_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$754.const$2.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -160,75 +101,52 @@ public class _GLoadableIconIface {
         }
     }
 
-    static final VarHandle load_async$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("load_async"));
     public static VarHandle load_async$VH() {
-        return _GLoadableIconIface.load_async$VH;
+        return constants$1135.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*load_async)(GLoadableIcon*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*load_async)(struct _GLoadableIcon*,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static MemorySegment load_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GLoadableIconIface.load_async$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1135.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*load_async)(GLoadableIcon*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*load_async)(struct _GLoadableIcon*,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static void load_async$set(MemorySegment seg, MemorySegment x) {
-        _GLoadableIconIface.load_async$VH.set(seg, x);
+        constants$1135.const$2.set(seg, x);
     }
     public static MemorySegment load_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GLoadableIconIface.load_async$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1135.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void load_async$set(MemorySegment seg, long index, MemorySegment x) {
-        _GLoadableIconIface.load_async$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1135.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static load_async load_async(MemorySegment segment, SegmentScope scope) {
+    public static load_async load_async(MemorySegment segment, Arena scope) {
         return load_async.ofAddress(load_async$get(segment), scope);
     }
-    static final FunctionDescriptor load_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor load_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle load_finish_UP$MH = RuntimeHelper.upcallHandle(load_finish.class, "apply", _GLoadableIconIface.load_finish_UP$FUNC);
-    static final FunctionDescriptor load_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle load_finish_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GLoadableIconIface.load_finish_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GInputStream* (*load_finish)(GLoadableIcon*,GAsyncResult*,char**,GError**);
+ * struct _GInputStream* (*load_finish)(struct _GLoadableIcon*,struct _GAsyncResult*,char**,struct _GError**);
      * }
      */
     public interface load_finish {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data, java.lang.foreign.MemorySegment target, java.lang.foreign.MemorySegment extents);
-        static MemorySegment allocate(load_finish fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GLoadableIconIface.load_finish_UP$MH, fi, _GLoadableIconIface.load_finish$FUNC, scope);
+        static MemorySegment allocate(load_finish fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1135.const$3, fi, constants$39.const$1, scope);
         }
-        static load_finish ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static load_finish ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _pattern, java.lang.foreign.MemorySegment _callback_data, java.lang.foreign.MemorySegment _target, java.lang.foreign.MemorySegment _extents) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GLoadableIconIface.load_finish_DOWN$MH.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
+                    return (java.lang.foreign.MemorySegment)constants$865.const$5.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -236,35 +154,34 @@ public class _GLoadableIconIface {
         }
     }
 
-    static final VarHandle load_finish$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("load_finish"));
     public static VarHandle load_finish$VH() {
-        return _GLoadableIconIface.load_finish$VH;
+        return constants$1135.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GInputStream* (*load_finish)(GLoadableIcon*,GAsyncResult*,char**,GError**);
+     * struct _GInputStream* (*load_finish)(struct _GLoadableIcon*,struct _GAsyncResult*,char**,struct _GError**);
      * }
      */
     public static MemorySegment load_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GLoadableIconIface.load_finish$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1135.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GInputStream* (*load_finish)(GLoadableIcon*,GAsyncResult*,char**,GError**);
+     * struct _GInputStream* (*load_finish)(struct _GLoadableIcon*,struct _GAsyncResult*,char**,struct _GError**);
      * }
      */
     public static void load_finish$set(MemorySegment seg, MemorySegment x) {
-        _GLoadableIconIface.load_finish$VH.set(seg, x);
+        constants$1135.const$4.set(seg, x);
     }
     public static MemorySegment load_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GLoadableIconIface.load_finish$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1135.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void load_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        _GLoadableIconIface.load_finish$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1135.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static load_finish load_finish(MemorySegment segment, SegmentScope scope) {
+    public static load_finish load_finish(MemorySegment segment, Arena scope) {
         return load_finish.ofAddress(load_finish$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -272,7 +189,7 @@ public class _GLoadableIconIface {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

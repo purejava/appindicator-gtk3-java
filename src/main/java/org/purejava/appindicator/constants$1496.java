@@ -3,63 +3,43 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1496 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1496() {}
-    static final FunctionDescriptor gtk_assistant_prepend_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_extents_for_origin",
+        constants$49.const$2
     );
-    static final MethodHandle gtk_assistant_prepend_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_prepend_page",
-        constants$1496.gtk_assistant_prepend_page$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gtk_assistant_append_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_font_get_glyph_contour_point_for_origin",
+        constants$1496.const$1
     );
-    static final MethodHandle gtk_assistant_append_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_append_page",
-        constants$1496.gtk_assistant_append_page$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor gtk_assistant_insert_page$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_font_glyph_to_string",
+        constants$1496.const$3
     );
-    static final MethodHandle gtk_assistant_insert_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_insert_page",
-        constants$1496.gtk_assistant_insert_page$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_remove_page$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_remove_page$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_remove_page",
-        constants$1496.gtk_assistant_remove_page$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_set_forward_page_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_set_forward_page_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_set_forward_page_func",
-        constants$1496.gtk_assistant_set_forward_page_func$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_set_page_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_set_page_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_set_page_type",
-        constants$1496.gtk_assistant_set_page_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_font_glyph_from_string",
+        constants$327.const$4
     );
 }
 

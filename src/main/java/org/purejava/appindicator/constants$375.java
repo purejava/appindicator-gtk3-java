@@ -3,55 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$375 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$375() {}
-    static final FunctionDescriptor g_static_rec_mutex_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_log_set_fatal_mask",
+        constants$11.const$4
     );
-    static final MethodHandle g_static_rec_mutex_init$MH = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_init",
-        constants$375.g_static_rec_mutex_init$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_log_set_always_fatal",
+        constants$8.const$4
     );
-    static final FunctionDescriptor g_static_rec_mutex_lock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_rec_mutex_lock$MH = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_lock",
-        constants$375.g_static_rec_mutex_lock$FUNC
-    );
-    static final FunctionDescriptor g_static_rec_mutex_trylock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_rec_mutex_trylock$MH = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_trylock",
-        constants$375.g_static_rec_mutex_trylock$FUNC
-    );
-    static final FunctionDescriptor g_static_rec_mutex_unlock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_rec_mutex_unlock$MH = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_unlock",
-        constants$375.g_static_rec_mutex_unlock$FUNC
-    );
-    static final FunctionDescriptor g_static_rec_mutex_lock_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_static_rec_mutex_lock_full$MH = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_lock_full",
-        constants$375.g_static_rec_mutex_lock_full$FUNC
-    );
-    static final FunctionDescriptor g_static_rec_mutex_unlock_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_rec_mutex_unlock_full$MH = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_unlock_full",
-        constants$375.g_static_rec_mutex_unlock_full$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("key"),
+        RuntimeHelper.POINTER.withName("value"),
+        JAVA_LONG.withName("length")
+    ).withName("_GLogField");
+    static final VarHandle const$3 = constants$375.const$2.varHandle(MemoryLayout.PathElement.groupElement("key"));
+    static final VarHandle const$4 = constants$375.const$2.varHandle(MemoryLayout.PathElement.groupElement("value"));
+    static final VarHandle const$5 = constants$375.const$2.varHandle(MemoryLayout.PathElement.groupElement("length"));
 }
 
 

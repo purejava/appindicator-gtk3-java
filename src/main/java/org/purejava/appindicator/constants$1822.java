@@ -3,51 +3,23 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1822 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1822() {}
-    static final FunctionDescriptor gtk_statusbar_remove_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$1821.const$4
     );
-    static final MethodHandle gtk_statusbar_remove_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_statusbar_remove_all",
-        constants$1822.gtk_statusbar_remove_all$FUNC
-    );
-    static final FunctionDescriptor gtk_statusbar_get_message_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_statusbar_get_message_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_statusbar_get_message_area",
-        constants$1822.gtk_statusbar_get_message_area$FUNC
-    );
-    static final FunctionDescriptor gtk_switch_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_switch_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_switch_get_type",
-        constants$1822.gtk_switch_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_switch_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_switch_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_switch_new",
-        constants$1822.gtk_switch_new$FUNC
-    );
-    static final FunctionDescriptor gtk_switch_set_active$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_switch_set_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_switch_set_active",
-        constants$1822.gtk_switch_set_active$FUNC
-    );
-    static final FunctionDescriptor gtk_switch_get_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_switch_get_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_switch_get_active",
-        constants$1822.gtk_switch_get_active$FUNC
+    static final VarHandle const$1 = constants$1820.const$5.varHandle(MemoryLayout.PathElement.groupElement("to_embedder"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GdkWindowClass.from_embedder.class, "apply", constants$1821.const$4);
+    static final VarHandle const$3 = constants$1820.const$5.varHandle(MemoryLayout.PathElement.groupElement("from_embedder"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GdkWindowClass.create_surface.class, "apply", constants$33.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$33.const$5
     );
 }
 

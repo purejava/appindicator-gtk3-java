@@ -3,68 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$550 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$550() {}
-    static final FunctionDescriptor g_dbus_connection_new_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_type_interface_peek_parent",
+        constants$5.const$2
     );
-    static final MethodHandle g_dbus_connection_new_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_new_sync",
-        constants$550.g_dbus_connection_new_sync$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_type_default_interface_ref",
+        constants$63.const$3
     );
-    static final FunctionDescriptor g_dbus_connection_new_for_address$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_type_default_interface_peek",
+        constants$63.const$3
     );
-    static final MethodHandle g_dbus_connection_new_for_address$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_new_for_address",
-        constants$550.g_dbus_connection_new_for_address$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_type_default_interface_unref",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_dbus_connection_new_for_address_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_type_children",
+        constants$407.const$2
     );
-    static final MethodHandle g_dbus_connection_new_for_address_finish$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_new_for_address_finish",
-        constants$550.g_dbus_connection_new_for_address_finish$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_new_for_address_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_new_for_address_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_new_for_address_sync",
-        constants$550.g_dbus_connection_new_for_address_sync$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_start_message_processing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_start_message_processing$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_start_message_processing",
-        constants$550.g_dbus_connection_start_message_processing$FUNC
-    );
-    static final FunctionDescriptor g_dbus_connection_is_closed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_connection_is_closed$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_connection_is_closed",
-        constants$550.g_dbus_connection_is_closed$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_type_interfaces",
+        constants$407.const$2
     );
 }
 

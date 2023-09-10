@@ -3,45 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$326 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$326() {}
-    static final FunctionDescriptor g_thread_pool_set_max_unused_threads$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_io_channel_error_from_errno",
+        constants$8.const$4
     );
-    static final MethodHandle g_thread_pool_set_max_unused_threads$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_set_max_unused_threads",
-        constants$326.g_thread_pool_set_max_unused_threads$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_io_channel_unix_new",
+        constants$24.const$0
     );
-    static final FunctionDescriptor g_thread_pool_get_max_unused_threads$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_thread_pool_get_max_unused_threads$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_get_max_unused_threads",
-        constants$326.g_thread_pool_get_max_unused_threads$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_io_channel_unix_get_fd",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_thread_pool_get_num_unused_threads$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_thread_pool_get_num_unused_threads$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_get_num_unused_threads",
-        constants$326.g_thread_pool_get_num_unused_threads$FUNC
+    static final MemorySegment const$3 = RuntimeHelper.lookupGlobalVariable("g_io_watch_funcs", constants$260.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_key_file_error_quark",
+        constants$83.const$1
     );
-    static final FunctionDescriptor g_thread_pool_stop_unused_threads$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_thread_pool_stop_unused_threads$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_stop_unused_threads",
-        constants$326.g_thread_pool_stop_unused_threads$FUNC
-    );
-    static final FunctionDescriptor g_thread_pool_set_max_idle_time$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_thread_pool_set_max_idle_time$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_set_max_idle_time",
-        constants$326.g_thread_pool_set_max_idle_time$FUNC
-    );
-    static final FunctionDescriptor g_thread_pool_get_max_idle_time$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_thread_pool_get_max_idle_time$MH = RuntimeHelper.downcallHandle(
-        "g_thread_pool_get_max_idle_time",
-        constants$326.g_thread_pool_get_max_idle_time$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_key_file_new",
+        constants$35.const$2
     );
 }
 

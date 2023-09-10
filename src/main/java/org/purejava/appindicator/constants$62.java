@@ -3,56 +3,47 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$62 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$62() {}
-    static final FunctionDescriptor g_thread_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final MethodHandle g_thread_unref$MH = RuntimeHelper.downcallHandle(
-        "g_thread_unref",
-        constants$62.g_thread_unref$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_parse_debug_string",
+        constants$62.const$0
     );
-    static final FunctionDescriptor g_thread_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_thread_new$MH = RuntimeHelper.downcallHandle(
-        "g_thread_new",
-        constants$62.g_thread_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_snprintf",
+        constants$62.const$2
     );
-    static final FunctionDescriptor g_thread_try_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final MethodHandle g_thread_try_new$MH = RuntimeHelper.downcallHandle(
-        "g_thread_try_new",
-        constants$62.g_thread_try_new$FUNC
-    );
-    static final FunctionDescriptor g_thread_self$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_thread_self$MH = RuntimeHelper.downcallHandle(
-        "g_thread_self",
-        constants$62.g_thread_self$FUNC
-    );
-    static final FunctionDescriptor g_thread_exit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_thread_exit$MH = RuntimeHelper.downcallHandle(
-        "g_thread_exit",
-        constants$62.g_thread_exit$FUNC
-    );
-    static final FunctionDescriptor g_thread_join$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_thread_join$MH = RuntimeHelper.downcallHandle(
-        "g_thread_join",
-        constants$62.g_thread_join$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_vsnprintf",
+        constants$62.const$4
     );
 }
 

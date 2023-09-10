@@ -3,55 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1208 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1208() {}
-    static final FunctionDescriptor atk_remove_focus_tracker$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_permission_release_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_permission_release_async",
+        constants$42.const$1
     );
-    static final MethodHandle atk_remove_focus_tracker$MH = RuntimeHelper.downcallHandle(
-        "atk_remove_focus_tracker",
-        constants$1208.atk_remove_focus_tracker$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_permission_release_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor atk_focus_tracker_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_permission_get_allowed",
+        constants$10.const$5
     );
-    static final MethodHandle atk_focus_tracker_init$MH = RuntimeHelper.downcallHandle(
-        "atk_focus_tracker_init",
-        constants$1208.atk_focus_tracker_init$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_permission_get_can_acquire",
+        constants$10.const$5
     );
-    static final FunctionDescriptor atk_focus_tracker_notify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_focus_tracker_notify$MH = RuntimeHelper.downcallHandle(
-        "atk_focus_tracker_notify",
-        constants$1208.atk_focus_tracker_notify$FUNC
-    );
-    static final FunctionDescriptor atk_add_global_event_listener$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_add_global_event_listener$MH = RuntimeHelper.downcallHandle(
-        "atk_add_global_event_listener",
-        constants$1208.atk_add_global_event_listener$FUNC
-    );
-    static final FunctionDescriptor atk_remove_global_event_listener$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_remove_global_event_listener$MH = RuntimeHelper.downcallHandle(
-        "atk_remove_global_event_listener",
-        constants$1208.atk_remove_global_event_listener$FUNC
-    );
-    static final FunctionDescriptor atk_add_key_event_listener$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_add_key_event_listener$MH = RuntimeHelper.downcallHandle(
-        "atk_add_key_event_listener",
-        constants$1208.atk_add_key_event_listener$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_permission_get_can_release",
+        constants$10.const$5
     );
 }
 

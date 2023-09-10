@@ -3,57 +3,59 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1088 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1088() {}
-    static final FunctionDescriptor gdk_window_get_clip_region$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_monitor_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_window_get_clip_region$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_clip_region",
-        constants$1088.gdk_window_get_clip_region$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_monitor_cancel",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gdk_window_get_visible_region$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_monitor_is_cancelled",
+        constants$10.const$5
     );
-    static final MethodHandle gdk_window_get_visible_region$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_visible_region",
-        constants$1088.gdk_window_get_visible_region$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_monitor_set_rate_limit",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gdk_window_begin_paint_rect$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_monitor_emit_event",
+        constants$331.const$4
     );
-    static final MethodHandle gdk_window_begin_paint_rect$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_begin_paint_rect",
-        constants$1088.gdk_window_begin_paint_rect$FUNC
-    );
-    static final FunctionDescriptor gdk_window_mark_paint_from_clip$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_mark_paint_from_clip$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_mark_paint_from_clip",
-        constants$1088.gdk_window_mark_paint_from_clip$FUNC
-    );
-    static final FunctionDescriptor gdk_window_begin_paint_region$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_begin_paint_region$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_begin_paint_region",
-        constants$1088.gdk_window_begin_paint_region$FUNC
-    );
-    static final FunctionDescriptor gdk_window_end_paint$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_end_paint$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_end_paint",
-        constants$1088.gdk_window_end_paint$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("got_completion_data"),
+        RuntimeHelper.POINTER.withName("_g_reserved1"),
+        RuntimeHelper.POINTER.withName("_g_reserved2"),
+        RuntimeHelper.POINTER.withName("_g_reserved3")
+    ).withName("_GFilenameCompleterClass");
 }
 
 

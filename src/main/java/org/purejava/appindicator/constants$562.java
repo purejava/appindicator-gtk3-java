@@ -3,52 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$562 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$562() {}
-    static final FunctionDescriptor g_dbus_interface_dup_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final MethodHandle g_dbus_interface_dup_object$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_dup_object",
-        constants$562.g_dbus_interface_dup_object$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_type_interface_add_prerequisite",
+        constants$562.const$0
     );
-    static final FunctionDescriptor g_dbus_interface_skeleton_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_interface_skeleton_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_get_type",
-        constants$562.g_dbus_interface_skeleton_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_type_interface_prerequisites",
+        constants$407.const$2
     );
-    static final FunctionDescriptor g_dbus_interface_skeleton_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_type_interface_instantiatable_prerequisite",
+        constants$94.const$4
     );
-    static final MethodHandle g_dbus_interface_skeleton_get_flags$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_get_flags",
-        constants$562.g_dbus_interface_skeleton_get_flags$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_type_class_add_private",
+        constants$25.const$3
     );
-    static final FunctionDescriptor g_dbus_interface_skeleton_set_flags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_interface_skeleton_set_flags$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_set_flags",
-        constants$562.g_dbus_interface_skeleton_set_flags$FUNC
-    );
-    static final FunctionDescriptor g_dbus_interface_skeleton_get_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_interface_skeleton_get_info$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_get_info",
-        constants$562.g_dbus_interface_skeleton_get_info$FUNC
-    );
-    static final FunctionDescriptor g_dbus_interface_skeleton_get_vtable$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_interface_skeleton_get_vtable$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_skeleton_get_vtable",
-        constants$562.g_dbus_interface_skeleton_get_vtable$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_type_add_instance_private",
+        constants$517.const$3
     );
 }
 

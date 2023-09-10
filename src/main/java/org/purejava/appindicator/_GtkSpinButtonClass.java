@@ -4,17 +4,18 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkSpinButtonClass {
- *     GtkEntryClass parent_class;
- *     gint (*input)(GtkSpinButton*,gdouble*);
- *     gint (*output)(GtkSpinButton*);
- *     void (*value_changed)(GtkSpinButton*);
- *     void (*change_value)(GtkSpinButton*,GtkScrollType);
- *     void (*wrapped)(GtkSpinButton*);
+ *     struct _GtkEntryClass parent_class;
+ *     int (*input)(struct _GtkSpinButton*,double*);
+ *     int (*output)(struct _GtkSpinButton*);
+ *     void (*value_changed)(struct _GtkSpinButton*);
+ *     void (*change_value)(struct _GtkSpinButton*,enum GtkScrollType);
+ *     void (*wrapped)(struct _GtkSpinButton*);
  *     void (*_gtk_reserved1)();
  *     void (*_gtk_reserved2)();
  *     void (*_gtk_reserved3)();
@@ -24,184 +25,28 @@ import java.lang.foreign.*;
  */
 public class _GtkSpinButtonClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    MemoryLayout.structLayout(
-                        Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-                    ).withName("g_type_class"),
-                    Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-                    Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-                    Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-                    Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-                    Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-                    Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-                    Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-                    Constants$root.C_POINTER$LAYOUT.withName("notify"),
-                    Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-                    Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-                    MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-                ).withName("parent_class"),
-                Constants$root.C_INT$LAYOUT.withName("activate_signal"),
-                MemoryLayout.paddingLayout(32),
-                Constants$root.C_POINTER$LAYOUT.withName("dispatch_child_properties_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("destroy"),
-                Constants$root.C_POINTER$LAYOUT.withName("show"),
-                Constants$root.C_POINTER$LAYOUT.withName("show_all"),
-                Constants$root.C_POINTER$LAYOUT.withName("hide"),
-                Constants$root.C_POINTER$LAYOUT.withName("map"),
-                Constants$root.C_POINTER$LAYOUT.withName("unmap"),
-                Constants$root.C_POINTER$LAYOUT.withName("realize"),
-                Constants$root.C_POINTER$LAYOUT.withName("unrealize"),
-                Constants$root.C_POINTER$LAYOUT.withName("size_allocate"),
-                Constants$root.C_POINTER$LAYOUT.withName("state_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("state_flags_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("parent_set"),
-                Constants$root.C_POINTER$LAYOUT.withName("hierarchy_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("style_set"),
-                Constants$root.C_POINTER$LAYOUT.withName("direction_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("grab_notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("child_notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("draw"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_request_mode"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_width_for_height"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_width"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height_for_width"),
-                Constants$root.C_POINTER$LAYOUT.withName("mnemonic_activate"),
-                Constants$root.C_POINTER$LAYOUT.withName("grab_focus"),
-                Constants$root.C_POINTER$LAYOUT.withName("focus"),
-                Constants$root.C_POINTER$LAYOUT.withName("move_focus"),
-                Constants$root.C_POINTER$LAYOUT.withName("keynav_failed"),
-                Constants$root.C_POINTER$LAYOUT.withName("event"),
-                Constants$root.C_POINTER$LAYOUT.withName("button_press_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("button_release_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("scroll_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("motion_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("delete_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("destroy_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("key_press_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("key_release_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("enter_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("leave_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("configure_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("focus_in_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("focus_out_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("map_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("unmap_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("property_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_clear_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_request_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("proximity_in_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("proximity_out_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("visibility_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("window_state_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("damage_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("grab_broken_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_get"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_received"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_begin"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_end"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_data_get"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_data_delete"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_leave"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_motion"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_drop"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_data_received"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_failed"),
-                Constants$root.C_POINTER$LAYOUT.withName("popup_menu"),
-                Constants$root.C_POINTER$LAYOUT.withName("show_help"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_accessible"),
-                Constants$root.C_POINTER$LAYOUT.withName("screen_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("can_activate_accel"),
-                Constants$root.C_POINTER$LAYOUT.withName("composited_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("query_tooltip"),
-                Constants$root.C_POINTER$LAYOUT.withName("compute_expand"),
-                Constants$root.C_POINTER$LAYOUT.withName("adjust_size_request"),
-                Constants$root.C_POINTER$LAYOUT.withName("adjust_size_allocation"),
-                Constants$root.C_POINTER$LAYOUT.withName("style_updated"),
-                Constants$root.C_POINTER$LAYOUT.withName("touch_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height_and_baseline_for_width"),
-                Constants$root.C_POINTER$LAYOUT.withName("adjust_baseline_request"),
-                Constants$root.C_POINTER$LAYOUT.withName("adjust_baseline_allocation"),
-                Constants$root.C_POINTER$LAYOUT.withName("queue_draw_region"),
-                Constants$root.C_POINTER$LAYOUT.withName("priv"),
-                Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved6"),
-                Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved7")
-            ).withName("parent_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("populate_popup"),
-            Constants$root.C_POINTER$LAYOUT.withName("activate"),
-            Constants$root.C_POINTER$LAYOUT.withName("move_cursor"),
-            Constants$root.C_POINTER$LAYOUT.withName("insert_at_cursor"),
-            Constants$root.C_POINTER$LAYOUT.withName("delete_from_cursor"),
-            Constants$root.C_POINTER$LAYOUT.withName("backspace"),
-            Constants$root.C_POINTER$LAYOUT.withName("cut_clipboard"),
-            Constants$root.C_POINTER$LAYOUT.withName("copy_clipboard"),
-            Constants$root.C_POINTER$LAYOUT.withName("paste_clipboard"),
-            Constants$root.C_POINTER$LAYOUT.withName("toggle_overwrite"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_text_area_size"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_frame_size"),
-            Constants$root.C_POINTER$LAYOUT.withName("insert_emoji"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved4"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved5"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved6")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("input"),
-        Constants$root.C_POINTER$LAYOUT.withName("output"),
-        Constants$root.C_POINTER$LAYOUT.withName("value_changed"),
-        Constants$root.C_POINTER$LAYOUT.withName("change_value"),
-        Constants$root.C_POINTER$LAYOUT.withName("wrapped"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved4")
-    ).withName("_GtkSpinButtonClass");
     public static MemoryLayout $LAYOUT() {
-        return _GtkSpinButtonClass.$struct$LAYOUT;
+        return constants$3095.const$4;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 976);
     }
-    static final FunctionDescriptor input$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor input_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle input_UP$MH = RuntimeHelper.upcallHandle(input.class, "apply", _GtkSpinButtonClass.input_UP$FUNC);
-    static final FunctionDescriptor input_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle input_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkSpinButtonClass.input_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gint (*input)(GtkSpinButton*,gdouble*);
+ * int (*input)(struct _GtkSpinButton*,double*);
      * }
      */
     public interface input {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(input fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkSpinButtonClass.input_UP$MH, fi, _GtkSpinButtonClass.input$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(input fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3095.const$5, fi, constants$9.const$0, scope);
         }
-        static input ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static input ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkSpinButtonClass.input_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -209,66 +54,52 @@ public class _GtkSpinButtonClass {
         }
     }
 
-    static final VarHandle input$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("input"));
     public static VarHandle input$VH() {
-        return _GtkSpinButtonClass.input$VH;
+        return constants$3096.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint (*input)(GtkSpinButton*,gdouble*);
+     * int (*input)(struct _GtkSpinButton*,double*);
      * }
      */
     public static MemorySegment input$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass.input$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3096.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint (*input)(GtkSpinButton*,gdouble*);
+     * int (*input)(struct _GtkSpinButton*,double*);
      * }
      */
     public static void input$set(MemorySegment seg, MemorySegment x) {
-        _GtkSpinButtonClass.input$VH.set(seg, x);
+        constants$3096.const$0.set(seg, x);
     }
     public static MemorySegment input$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass.input$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3096.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void input$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkSpinButtonClass.input$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3096.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static input input(MemorySegment segment, SegmentScope scope) {
+    public static input input(MemorySegment segment, Arena scope) {
         return input.ofAddress(input$get(segment), scope);
     }
-    static final FunctionDescriptor output$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor output_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle output_UP$MH = RuntimeHelper.upcallHandle(output.class, "apply", _GtkSpinButtonClass.output_UP$FUNC);
-    static final FunctionDescriptor output_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle output_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkSpinButtonClass.output_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gint (*output)(GtkSpinButton*);
+ * int (*output)(struct _GtkSpinButton*);
      * }
      */
     public interface output {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(output fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkSpinButtonClass.output_UP$MH, fi, _GtkSpinButtonClass.output$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(output fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3096.const$1, fi, constants$10.const$5, scope);
         }
-        static output ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0) -> {
+        static output ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkSpinButtonClass.output_DOWN$MH.invokeExact(symbol, __x0);
+                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -276,66 +107,52 @@ public class _GtkSpinButtonClass {
         }
     }
 
-    static final VarHandle output$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("output"));
     public static VarHandle output$VH() {
-        return _GtkSpinButtonClass.output$VH;
+        return constants$3096.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint (*output)(GtkSpinButton*);
+     * int (*output)(struct _GtkSpinButton*);
      * }
      */
     public static MemorySegment output$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass.output$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3096.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint (*output)(GtkSpinButton*);
+     * int (*output)(struct _GtkSpinButton*);
      * }
      */
     public static void output$set(MemorySegment seg, MemorySegment x) {
-        _GtkSpinButtonClass.output$VH.set(seg, x);
+        constants$3096.const$2.set(seg, x);
     }
     public static MemorySegment output$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass.output$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3096.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void output$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkSpinButtonClass.output$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3096.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static output output(MemorySegment segment, SegmentScope scope) {
+    public static output output(MemorySegment segment, Arena scope) {
         return output.ofAddress(output$get(segment), scope);
     }
-    static final FunctionDescriptor value_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor value_changed_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle value_changed_UP$MH = RuntimeHelper.upcallHandle(value_changed.class, "apply", _GtkSpinButtonClass.value_changed_UP$FUNC);
-    static final FunctionDescriptor value_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle value_changed_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkSpinButtonClass.value_changed_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*value_changed)(GtkSpinButton*);
+ * void (*value_changed)(struct _GtkSpinButton*);
      * }
      */
     public interface value_changed {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(value_changed fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkSpinButtonClass.value_changed_UP$MH, fi, _GtkSpinButtonClass.value_changed$FUNC, scope);
+        static MemorySegment allocate(value_changed fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3096.const$3, fi, constants$13.const$1, scope);
         }
-        static value_changed ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static value_changed ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkSpinButtonClass.value_changed_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -343,69 +160,52 @@ public class _GtkSpinButtonClass {
         }
     }
 
-    static final VarHandle value_changed$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("value_changed"));
     public static VarHandle value_changed$VH() {
-        return _GtkSpinButtonClass.value_changed$VH;
+        return constants$3096.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*value_changed)(GtkSpinButton*);
+     * void (*value_changed)(struct _GtkSpinButton*);
      * }
      */
     public static MemorySegment value_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass.value_changed$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3096.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*value_changed)(GtkSpinButton*);
+     * void (*value_changed)(struct _GtkSpinButton*);
      * }
      */
     public static void value_changed$set(MemorySegment seg, MemorySegment x) {
-        _GtkSpinButtonClass.value_changed$VH.set(seg, x);
+        constants$3096.const$4.set(seg, x);
     }
     public static MemorySegment value_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass.value_changed$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3096.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void value_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkSpinButtonClass.value_changed$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3096.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static value_changed value_changed(MemorySegment segment, SegmentScope scope) {
+    public static value_changed value_changed(MemorySegment segment, Arena scope) {
         return value_changed.ofAddress(value_changed$get(segment), scope);
     }
-    static final FunctionDescriptor change_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor change_value_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle change_value_UP$MH = RuntimeHelper.upcallHandle(change_value.class, "apply", _GtkSpinButtonClass.change_value_UP$FUNC);
-    static final FunctionDescriptor change_value_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle change_value_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkSpinButtonClass.change_value_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*change_value)(GtkSpinButton*,GtkScrollType);
+ * void (*change_value)(struct _GtkSpinButton*,enum GtkScrollType);
      * }
      */
     public interface change_value {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(change_value fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkSpinButtonClass.change_value_UP$MH, fi, _GtkSpinButtonClass.change_value$FUNC, scope);
+        static MemorySegment allocate(change_value fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3096.const$5, fi, constants$40.const$2, scope);
         }
-        static change_value ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static change_value ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    _GtkSpinButtonClass.change_value_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    constants$509.const$5.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -413,66 +213,52 @@ public class _GtkSpinButtonClass {
         }
     }
 
-    static final VarHandle change_value$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("change_value"));
     public static VarHandle change_value$VH() {
-        return _GtkSpinButtonClass.change_value$VH;
+        return constants$3097.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*change_value)(GtkSpinButton*,GtkScrollType);
+     * void (*change_value)(struct _GtkSpinButton*,enum GtkScrollType);
      * }
      */
     public static MemorySegment change_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass.change_value$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3097.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*change_value)(GtkSpinButton*,GtkScrollType);
+     * void (*change_value)(struct _GtkSpinButton*,enum GtkScrollType);
      * }
      */
     public static void change_value$set(MemorySegment seg, MemorySegment x) {
-        _GtkSpinButtonClass.change_value$VH.set(seg, x);
+        constants$3097.const$0.set(seg, x);
     }
     public static MemorySegment change_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass.change_value$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3097.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void change_value$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkSpinButtonClass.change_value$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3097.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static change_value change_value(MemorySegment segment, SegmentScope scope) {
+    public static change_value change_value(MemorySegment segment, Arena scope) {
         return change_value.ofAddress(change_value$get(segment), scope);
     }
-    static final FunctionDescriptor wrapped$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor wrapped_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle wrapped_UP$MH = RuntimeHelper.upcallHandle(wrapped.class, "apply", _GtkSpinButtonClass.wrapped_UP$FUNC);
-    static final FunctionDescriptor wrapped_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle wrapped_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkSpinButtonClass.wrapped_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*wrapped)(GtkSpinButton*);
+ * void (*wrapped)(struct _GtkSpinButton*);
      * }
      */
     public interface wrapped {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(wrapped fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkSpinButtonClass.wrapped_UP$MH, fi, _GtkSpinButtonClass.wrapped$FUNC, scope);
+        static MemorySegment allocate(wrapped fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3097.const$1, fi, constants$13.const$1, scope);
         }
-        static wrapped ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static wrapped ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkSpinButtonClass.wrapped_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -480,44 +266,36 @@ public class _GtkSpinButtonClass {
         }
     }
 
-    static final VarHandle wrapped$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("wrapped"));
     public static VarHandle wrapped$VH() {
-        return _GtkSpinButtonClass.wrapped$VH;
+        return constants$3097.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*wrapped)(GtkSpinButton*);
+     * void (*wrapped)(struct _GtkSpinButton*);
      * }
      */
     public static MemorySegment wrapped$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass.wrapped$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3097.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*wrapped)(GtkSpinButton*);
+     * void (*wrapped)(struct _GtkSpinButton*);
      * }
      */
     public static void wrapped$set(MemorySegment seg, MemorySegment x) {
-        _GtkSpinButtonClass.wrapped$VH.set(seg, x);
+        constants$3097.const$2.set(seg, x);
     }
     public static MemorySegment wrapped$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass.wrapped$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3097.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void wrapped$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkSpinButtonClass.wrapped$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3097.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static wrapped wrapped(MemorySegment segment, SegmentScope scope) {
+    public static wrapped wrapped(MemorySegment segment, Arena scope) {
         return wrapped.ofAddress(wrapped$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkSpinButtonClass._gtk_reserved1_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkSpinButtonClass._gtk_reserved1_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved1)();
@@ -526,14 +304,14 @@ public class _GtkSpinButtonClass {
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkSpinButtonClass._gtk_reserved1_UP$MH, fi, _GtkSpinButtonClass._gtk_reserved1$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved1 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3097.const$3, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkSpinButtonClass._gtk_reserved1_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -541,9 +319,8 @@ public class _GtkSpinButtonClass {
         }
     }
 
-    static final VarHandle _gtk_reserved1$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
     public static VarHandle _gtk_reserved1$VH() {
-        return _GtkSpinButtonClass._gtk_reserved1$VH;
+        return constants$3097.const$4;
     }
     /**
      * Getter for field:
@@ -552,7 +329,7 @@ public class _GtkSpinButtonClass {
      * }
      */
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass._gtk_reserved1$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3097.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -561,24 +338,17 @@ public class _GtkSpinButtonClass {
      * }
      */
     public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        _GtkSpinButtonClass._gtk_reserved1$VH.set(seg, x);
+        constants$3097.const$4.set(seg, x);
     }
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3097.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkSpinButtonClass._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3097.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, Arena scope) {
         return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkSpinButtonClass._gtk_reserved2_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkSpinButtonClass._gtk_reserved2_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved2)();
@@ -587,14 +357,14 @@ public class _GtkSpinButtonClass {
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkSpinButtonClass._gtk_reserved2_UP$MH, fi, _GtkSpinButtonClass._gtk_reserved2$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved2 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3097.const$5, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkSpinButtonClass._gtk_reserved2_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -602,9 +372,8 @@ public class _GtkSpinButtonClass {
         }
     }
 
-    static final VarHandle _gtk_reserved2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
     public static VarHandle _gtk_reserved2$VH() {
-        return _GtkSpinButtonClass._gtk_reserved2$VH;
+        return constants$3098.const$0;
     }
     /**
      * Getter for field:
@@ -613,7 +382,7 @@ public class _GtkSpinButtonClass {
      * }
      */
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass._gtk_reserved2$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3098.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -622,24 +391,17 @@ public class _GtkSpinButtonClass {
      * }
      */
     public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        _GtkSpinButtonClass._gtk_reserved2$VH.set(seg, x);
+        constants$3098.const$0.set(seg, x);
     }
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3098.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkSpinButtonClass._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3098.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, Arena scope) {
         return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkSpinButtonClass._gtk_reserved3_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkSpinButtonClass._gtk_reserved3_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved3)();
@@ -648,14 +410,14 @@ public class _GtkSpinButtonClass {
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkSpinButtonClass._gtk_reserved3_UP$MH, fi, _GtkSpinButtonClass._gtk_reserved3$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved3 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3098.const$1, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkSpinButtonClass._gtk_reserved3_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -663,9 +425,8 @@ public class _GtkSpinButtonClass {
         }
     }
 
-    static final VarHandle _gtk_reserved3$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
     public static VarHandle _gtk_reserved3$VH() {
-        return _GtkSpinButtonClass._gtk_reserved3$VH;
+        return constants$3098.const$2;
     }
     /**
      * Getter for field:
@@ -674,7 +435,7 @@ public class _GtkSpinButtonClass {
      * }
      */
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass._gtk_reserved3$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3098.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -683,24 +444,17 @@ public class _GtkSpinButtonClass {
      * }
      */
     public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        _GtkSpinButtonClass._gtk_reserved3$VH.set(seg, x);
+        constants$3098.const$2.set(seg, x);
     }
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3098.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkSpinButtonClass._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3098.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, Arena scope) {
         return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved4.class, "apply", _GtkSpinButtonClass._gtk_reserved4_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkSpinButtonClass._gtk_reserved4_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved4)();
@@ -709,14 +463,14 @@ public class _GtkSpinButtonClass {
     public interface _gtk_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved4 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkSpinButtonClass._gtk_reserved4_UP$MH, fi, _GtkSpinButtonClass._gtk_reserved4$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved4 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3098.const$3, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkSpinButtonClass._gtk_reserved4_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -724,9 +478,8 @@ public class _GtkSpinButtonClass {
         }
     }
 
-    static final VarHandle _gtk_reserved4$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
     public static VarHandle _gtk_reserved4$VH() {
-        return _GtkSpinButtonClass._gtk_reserved4$VH;
+        return constants$3098.const$4;
     }
     /**
      * Getter for field:
@@ -735,7 +488,7 @@ public class _GtkSpinButtonClass {
      * }
      */
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass._gtk_reserved4$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3098.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -744,15 +497,15 @@ public class _GtkSpinButtonClass {
      * }
      */
     public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        _GtkSpinButtonClass._gtk_reserved4$VH.set(seg, x);
+        constants$3098.const$4.set(seg, x);
     }
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkSpinButtonClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3098.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkSpinButtonClass._gtk_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3098.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, Arena scope) {
         return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -760,7 +513,7 @@ public class _GtkSpinButtonClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

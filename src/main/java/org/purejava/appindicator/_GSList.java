@@ -2,88 +2,84 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GSList {
- *     gpointer data;
- *     GSList* next;
+ *     void* data;
+ *     struct _GSList* next;
  * };
  * }
  */
 public class _GSList {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("data"),
-        Constants$root.C_POINTER$LAYOUT.withName("next")
-    ).withName("_GSList");
     public static MemoryLayout $LAYOUT() {
-        return _GSList.$struct$LAYOUT;
+        return constants$248.const$2;
     }
-    static final VarHandle data$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("data"));
     public static VarHandle data$VH() {
-        return _GSList.data$VH;
+        return constants$248.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gpointer data;
+     * void* data;
      * }
      */
     public static MemorySegment data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GSList.data$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$248.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gpointer data;
+     * void* data;
      * }
      */
     public static void data$set(MemorySegment seg, MemorySegment x) {
-        _GSList.data$VH.set(seg, x);
+        constants$248.const$3.set(seg, x);
     }
     public static MemorySegment data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GSList.data$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$248.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void data$set(MemorySegment seg, long index, MemorySegment x) {
-        _GSList.data$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$248.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle next$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("next"));
     public static VarHandle next$VH() {
-        return _GSList.next$VH;
+        return constants$248.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GSList* next;
+     * struct _GSList* next;
      * }
      */
     public static MemorySegment next$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GSList.next$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$248.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GSList* next;
+     * struct _GSList* next;
      * }
      */
     public static void next$set(MemorySegment seg, MemorySegment x) {
-        _GSList.next$VH.set(seg, x);
+        constants$248.const$4.set(seg, x);
     }
     public static MemorySegment next$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GSList.next$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$248.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void next$set(MemorySegment seg, long index, MemorySegment x) {
-        _GSList.next$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$248.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

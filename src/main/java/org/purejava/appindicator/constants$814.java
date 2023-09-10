@@ -3,72 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$814 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$814() {}
-    static final FunctionDescriptor g_tls_database_lookup_certificate_issuer_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_INT,
+        JAVA_LONG,
+        JAVA_INT
     );
-    static final MethodHandle g_tls_database_lookup_certificate_issuer_async$MH = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificate_issuer_async",
-        constants$814.g_tls_database_lookup_certificate_issuer_async$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "lseek",
+        constants$814.const$0
     );
-    static final FunctionDescriptor g_tls_database_lookup_certificate_issuer_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "close",
+        constants$8.const$4
     );
-    static final MethodHandle g_tls_database_lookup_certificate_issuer_finish$MH = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificate_issuer_finish",
-        constants$814.g_tls_database_lookup_certificate_issuer_finish$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "closefrom",
+        constants$80.const$1
     );
-    static final FunctionDescriptor g_tls_database_lookup_certificates_issued_by$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final MethodHandle g_tls_database_lookup_certificates_issued_by$MH = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificates_issued_by",
-        constants$814.g_tls_database_lookup_certificates_issued_by$FUNC
-    );
-    static final FunctionDescriptor g_tls_database_lookup_certificates_issued_by_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_database_lookup_certificates_issued_by_async$MH = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificates_issued_by_async",
-        constants$814.g_tls_database_lookup_certificates_issued_by_async$FUNC
-    );
-    static final FunctionDescriptor g_tls_database_lookup_certificates_issued_by_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_database_lookup_certificates_issued_by_finish$MH = RuntimeHelper.downcallHandle(
-        "g_tls_database_lookup_certificates_issued_by_finish",
-        constants$814.g_tls_database_lookup_certificates_issued_by_finish$FUNC
-    );
-    static final FunctionDescriptor g_tls_file_database_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_file_database_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_file_database_get_type",
-        constants$814.g_tls_file_database_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "read",
+        constants$814.const$4
     );
 }
 

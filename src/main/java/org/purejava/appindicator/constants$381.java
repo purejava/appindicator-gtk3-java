@@ -3,56 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$381 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$381() {}
-    static final FunctionDescriptor g_type_depth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_set_print_handler",
+        constants$5.const$2
     );
-    static final MethodHandle g_type_depth$MH = RuntimeHelper.downcallHandle(
-        "g_type_depth",
-        constants$381.g_type_depth$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_printerr",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_type_next_base$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_set_printerr_handler$func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_set_printerr_handler$return.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_set_printerr_handler",
+        constants$5.const$2
     );
-    static final MethodHandle g_type_next_base$MH = RuntimeHelper.downcallHandle(
-        "g_type_next_base",
-        constants$381.g_type_next_base$FUNC
-    );
-    static final FunctionDescriptor g_type_is_a$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_is_a$MH = RuntimeHelper.downcallHandle(
-        "g_type_is_a",
-        constants$381.g_type_is_a$FUNC
-    );
-    static final FunctionDescriptor g_type_class_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_class_ref$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_ref",
-        constants$381.g_type_class_ref$FUNC
-    );
-    static final FunctionDescriptor g_type_class_peek$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_class_peek$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_peek",
-        constants$381.g_type_class_peek$FUNC
-    );
-    static final FunctionDescriptor g_type_class_peek_static$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_class_peek_static$MH = RuntimeHelper.downcallHandle(
-        "g_type_class_peek_static",
-        constants$381.g_type_class_peek_static$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GOptionArgFunc.class, "apply", constants$34.const$5);
 }
 
 

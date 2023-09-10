@@ -3,58 +3,24 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$760 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$760() {}
-    static final FunctionDescriptor g_simple_proxy_resolver_set_uri_proxy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$759.const$4
     );
-    static final MethodHandle g_simple_proxy_resolver_set_uri_proxy$MH = RuntimeHelper.downcallHandle(
-        "g_simple_proxy_resolver_set_uri_proxy",
-        constants$760.g_simple_proxy_resolver_set_uri_proxy$FUNC
+    static final VarHandle const$1 = constants$759.const$3.varHandle(MemoryLayout.PathElement.groupElement("read_fn"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GInputStreamClass.skip.class, "apply", constants$4.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$4.const$5
     );
-    static final FunctionDescriptor g_socket_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_type",
-        constants$760.g_socket_get_type$FUNC
-    );
-    static final FunctionDescriptor g_socket_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_new$MH = RuntimeHelper.downcallHandle(
-        "g_socket_new",
-        constants$760.g_socket_new$FUNC
-    );
-    static final FunctionDescriptor g_socket_new_from_fd$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_new_from_fd$MH = RuntimeHelper.downcallHandle(
-        "g_socket_new_from_fd",
-        constants$760.g_socket_new_from_fd$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_fd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_fd$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_fd",
-        constants$760.g_socket_get_fd$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_family$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_family$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_family",
-        constants$760.g_socket_get_family$FUNC
-    );
+    static final VarHandle const$4 = constants$759.const$3.varHandle(MemoryLayout.PathElement.groupElement("skip"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GInputStreamClass.close_fn.class, "apply", constants$12.const$2);
 }
 
 

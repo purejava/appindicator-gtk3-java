@@ -3,54 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1909 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1909() {}
-    static final FunctionDescriptor gtk_action_activate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(pango_cairo_context_get_shape_renderer$return.class, "apply", constants$464.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_cairo_context_get_shape_renderer",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_action_activate$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_activate",
-        constants$1909.gtk_action_activate$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_cairo_create_context",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_action_create_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_cairo_create_layout",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_action_create_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_create_icon",
-        constants$1909.gtk_action_create_icon$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_cairo_update_layout",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_action_create_menu_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_create_menu_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_create_menu_item",
-        constants$1909.gtk_action_create_menu_item$FUNC
-    );
-    static final FunctionDescriptor gtk_action_create_tool_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_create_tool_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_create_tool_item",
-        constants$1909.gtk_action_create_tool_item$FUNC
-    );
-    static final FunctionDescriptor gtk_action_create_menu$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_create_menu$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_create_menu",
-        constants$1909.gtk_action_create_menu$FUNC
-    );
-    static final FunctionDescriptor gtk_action_get_proxies$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_get_proxies$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_get_proxies",
-        constants$1909.gtk_action_get_proxies$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_cairo_show_glyph_string",
+        constants$14.const$3
     );
 }
 

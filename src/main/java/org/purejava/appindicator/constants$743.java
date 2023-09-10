@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$743 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$743() {}
-    static final FunctionDescriptor g_settings_list_relocatable_schemas$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_settings_list_relocatable_schemas$MH = RuntimeHelper.downcallHandle(
-        "g_settings_list_relocatable_schemas",
-        constants$743.g_settings_list_relocatable_schemas$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_application_get_dbus_object_path",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_settings_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_application_get_inactivity_timeout",
+        constants$10.const$5
     );
-    static final MethodHandle g_settings_new$MH = RuntimeHelper.downcallHandle(
-        "g_settings_new",
-        constants$743.g_settings_new$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_application_set_inactivity_timeout",
+        constants$40.const$2
     );
-    static final FunctionDescriptor g_settings_new_with_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_application_get_flags",
+        constants$10.const$5
     );
-    static final MethodHandle g_settings_new_with_path$MH = RuntimeHelper.downcallHandle(
-        "g_settings_new_with_path",
-        constants$743.g_settings_new_with_path$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_application_set_flags",
+        constants$40.const$2
     );
-    static final FunctionDescriptor g_settings_new_with_backend$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_new_with_backend$MH = RuntimeHelper.downcallHandle(
-        "g_settings_new_with_backend",
-        constants$743.g_settings_new_with_backend$FUNC
-    );
-    static final FunctionDescriptor g_settings_new_with_backend_and_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_new_with_backend_and_path$MH = RuntimeHelper.downcallHandle(
-        "g_settings_new_with_backend_and_path",
-        constants$743.g_settings_new_with_backend_and_path$FUNC
-    );
-    static final FunctionDescriptor g_settings_new_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_new_full$MH = RuntimeHelper.downcallHandle(
-        "g_settings_new_full",
-        constants$743.g_settings_new_full$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_application_get_resource_base_path",
+        constants$5.const$2
     );
 }
 

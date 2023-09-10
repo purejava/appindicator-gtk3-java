@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1915 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1915() {}
-    static final FunctionDescriptor gtk_action_set_always_show_image$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_cursor_unref",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_action_set_always_show_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_set_always_show_image",
-        constants$1915.gtk_action_set_always_show_image$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_cursor_get_image",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_action_get_always_show_image$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_cursor_get_surface",
+        constants$23.const$0
     );
-    static final MethodHandle gtk_action_get_always_show_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_get_always_show_image",
-        constants$1915.gtk_action_get_always_show_image$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_cursor_get_cursor_type",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_activatable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_activatable_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_activatable_get_type",
-        constants$1915.gtk_activatable_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_device_pad_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_activatable_sync_action_properties$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_activatable_sync_action_properties$MH = RuntimeHelper.downcallHandle(
-        "gtk_activatable_sync_action_properties",
-        constants$1915.gtk_activatable_sync_action_properties$FUNC
-    );
-    static final FunctionDescriptor gtk_activatable_set_related_action$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_activatable_set_related_action$MH = RuntimeHelper.downcallHandle(
-        "gtk_activatable_set_related_action",
-        constants$1915.gtk_activatable_set_related_action$FUNC
-    );
-    static final FunctionDescriptor gtk_activatable_get_related_action$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_activatable_get_related_action$MH = RuntimeHelper.downcallHandle(
-        "gtk_activatable_get_related_action",
-        constants$1915.gtk_activatable_get_related_action$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_device_pad_get_n_groups",
+        constants$10.const$5
     );
 }
 

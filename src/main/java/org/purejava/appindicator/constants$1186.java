@@ -3,46 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1186 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1186() {}
-    static final FunctionDescriptor gdk_visual_get_best_depth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_visual_get_best_depth$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_best_depth",
-        constants$1186.gdk_visual_get_best_depth$FUNC
-    );
-    static final FunctionDescriptor gdk_visual_get_best_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_visual_get_best_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_best_type",
-        constants$1186.gdk_visual_get_best_type$FUNC
-    );
-    static final FunctionDescriptor gdk_visual_get_system$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_visual_get_system$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_system",
-        constants$1186.gdk_visual_get_system$FUNC
-    );
-    static final FunctionDescriptor gdk_visual_get_best$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_visual_get_best$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_best",
-        constants$1186.gdk_visual_get_best$FUNC
-    );
-    static final FunctionDescriptor gdk_visual_get_best_with_depth$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_visual_get_best_with_depth$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_best_with_depth",
-        constants$1186.gdk_visual_get_best_with_depth$FUNC
-    );
-    static final FunctionDescriptor gdk_visual_get_best_with_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_visual_get_best_with_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_visual_get_best_with_type",
-        constants$1186.gdk_visual_get_best_with_type$FUNC
-    );
+    static final VarHandle const$0 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("mount_added"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.mount_removed.class, "apply", constants$13.const$4);
+    static final VarHandle const$2 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("mount_removed"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.mount_pre_unmount.class, "apply", constants$13.const$4);
+    static final VarHandle const$4 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("mount_pre_unmount"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.mount_changed.class, "apply", constants$13.const$4);
 }
 
 

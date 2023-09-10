@@ -3,56 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$783 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$783() {}
-    static final FunctionDescriptor g_srv_target_get_priority$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$766.const$0
     );
-    static final MethodHandle g_srv_target_get_priority$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_get_priority",
-        constants$783.g_srv_target_get_priority$FUNC
-    );
-    static final FunctionDescriptor g_srv_target_get_weight$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_srv_target_get_weight$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_get_weight",
-        constants$783.g_srv_target_get_weight$FUNC
-    );
-    static final FunctionDescriptor g_srv_target_list_sort$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_srv_target_list_sort$MH = RuntimeHelper.downcallHandle(
-        "g_srv_target_list_sort",
-        constants$783.g_srv_target_list_sort$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_subprocess_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_get_type",
-        constants$783.g_subprocess_get_type$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_new$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_subprocess_new",
-        constants$783.g_subprocess_new$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_newv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_newv$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_newv",
-        constants$783.g_subprocess_newv$FUNC
-    );
+    static final VarHandle const$1 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("writev_fn"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GOutputStreamClass.writev_async.class, "apply", constants$761.const$1);
+    static final VarHandle const$3 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("writev_async"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GOutputStreamClass.writev_finish.class, "apply", constants$34.const$5);
+    static final VarHandle const$5 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("writev_finish"));
 }
 
 

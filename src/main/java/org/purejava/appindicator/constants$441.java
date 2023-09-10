@@ -3,58 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$441 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$441() {}
-    static final FunctionDescriptor g_value_set_object$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_value_set_object$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_object",
-        constants$441.g_value_set_object$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_slice_free1",
+        constants$441.const$0
     );
-    static final FunctionDescriptor g_value_get_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final MethodHandle g_value_get_object$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_object",
-        constants$441.g_value_get_object$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_slice_free_chain_with_offset",
+        constants$441.const$2
     );
-    static final FunctionDescriptor g_value_dup_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        JAVA_INT,
+        JAVA_LONG
     );
-    static final MethodHandle g_value_dup_object$MH = RuntimeHelper.downcallHandle(
-        "g_value_dup_object",
-        constants$441.g_value_dup_object$FUNC
-    );
-    static final FunctionDescriptor g_signal_connect_object$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_signal_connect_object$MH = RuntimeHelper.downcallHandle(
-        "g_signal_connect_object",
-        constants$441.g_signal_connect_object$FUNC
-    );
-    static final FunctionDescriptor g_object_force_floating$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_force_floating$MH = RuntimeHelper.downcallHandle(
-        "g_object_force_floating",
-        constants$441.g_object_force_floating$FUNC
-    );
-    static final FunctionDescriptor g_object_run_dispose$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_run_dispose$MH = RuntimeHelper.downcallHandle(
-        "g_object_run_dispose",
-        constants$441.g_object_run_dispose$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_slice_set_config",
+        constants$441.const$4
     );
 }
 

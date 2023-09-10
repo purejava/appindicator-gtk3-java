@@ -3,56 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1263 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1263() {}
-    static final FunctionDescriptor gtk_widget_set_parent_window$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_settings_bind_writable",
+        constants$646.const$4
     );
-    static final MethodHandle gtk_widget_set_parent_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_parent_window",
-        constants$1263.gtk_widget_set_parent_window$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_settings_unbind",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_widget_get_parent_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_settings_create_action",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_widget_get_parent_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_parent_window",
-        constants$1263.gtk_widget_get_parent_window$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_settings_get_mapped$mapping.class, "apply", constants$12.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_settings_get_mapped",
+        constants$39.const$1
     );
-    static final FunctionDescriptor gtk_widget_set_child_visible$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_child_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_child_visible",
-        constants$1263.gtk_widget_set_child_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_child_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_child_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_child_visible",
-        constants$1263.gtk_widget_get_child_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_window$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_window",
-        constants$1263.gtk_widget_set_window$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_window",
-        constants$1263.gtk_widget_get_window$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_simple_action_get_type",
+        constants$3.const$5
     );
 }
 

@@ -3,53 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1026 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1026() {}
-    static final FunctionDescriptor cairo_device_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_file_move_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_move_async",
+        constants$995.const$5
     );
-    static final MethodHandle cairo_device_status$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_status",
-        constants$1026.cairo_device_status$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_move_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor cairo_device_acquire$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_make_directory",
+        constants$12.const$2
     );
-    static final MethodHandle cairo_device_acquire$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_acquire",
-        constants$1026.cairo_device_acquire$FUNC
-    );
-    static final FunctionDescriptor cairo_device_release$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_device_release$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_release",
-        constants$1026.cairo_device_release$FUNC
-    );
-    static final FunctionDescriptor cairo_device_flush$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_device_flush$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_flush",
-        constants$1026.cairo_device_flush$FUNC
-    );
-    static final FunctionDescriptor cairo_device_finish$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_device_finish$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_finish",
-        constants$1026.cairo_device_finish$FUNC
-    );
-    static final FunctionDescriptor cairo_device_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_device_destroy$MH = RuntimeHelper.downcallHandle(
-        "cairo_device_destroy",
-        constants$1026.cairo_device_destroy$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_file_make_directory_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_make_directory_async",
+        constants$281.const$5
     );
 }
 

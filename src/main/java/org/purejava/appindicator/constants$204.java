@@ -3,57 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$204 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$204() {}
-    static final FunctionDescriptor g_strfreev$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dpgettext",
+        constants$17.const$1
     );
-    static final MethodHandle g_strfreev$MH = RuntimeHelper.downcallHandle(
-        "g_strfreev",
-        constants$204.g_strfreev$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dpgettext2",
+        constants$23.const$0
     );
-    static final FunctionDescriptor g_strdupv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_free",
+        constants$13.const$1
     );
-    static final MethodHandle g_strdupv$MH = RuntimeHelper.downcallHandle(
-        "g_strdupv",
-        constants$204.g_strdupv$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_free_sized",
+        constants$25.const$3
     );
-    static final FunctionDescriptor g_strv_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_strv_length$MH = RuntimeHelper.downcallHandle(
-        "g_strv_length",
-        constants$204.g_strv_length$FUNC
-    );
-    static final FunctionDescriptor g_stpcpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_stpcpy$MH = RuntimeHelper.downcallHandle(
-        "g_stpcpy",
-        constants$204.g_stpcpy$FUNC
-    );
-    static final FunctionDescriptor g_str_to_ascii$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_str_to_ascii$MH = RuntimeHelper.downcallHandle(
-        "g_str_to_ascii",
-        constants$204.g_str_to_ascii$FUNC
-    );
-    static final FunctionDescriptor g_str_tokenize_and_fold$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_str_tokenize_and_fold$MH = RuntimeHelper.downcallHandle(
-        "g_str_tokenize_and_fold",
-        constants$204.g_str_tokenize_and_fold$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_clear_pointer$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_clear_pointer",
+        constants$13.const$4
     );
 }
 

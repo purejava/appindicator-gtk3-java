@@ -3,56 +3,88 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$808 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$808() {}
-    static final FunctionDescriptor g_tls_connection_get_peer_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_content_type_get_mime_dirs",
+        constants$35.const$2
     );
-    static final MethodHandle g_tls_connection_get_peer_certificate$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_peer_certificate",
-        constants$808.g_tls_connection_get_peer_certificate$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_content_type_set_mime_dirs",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_tls_connection_get_peer_certificate_errors$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_connection_get_peer_certificate_errors$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_peer_certificate_errors",
-        constants$808.g_tls_connection_get_peer_certificate_errors$FUNC
-    );
-    static final FunctionDescriptor g_tls_connection_set_require_close_notify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_tls_connection_set_require_close_notify$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_set_require_close_notify",
-        constants$808.g_tls_connection_set_require_close_notify$FUNC
-    );
-    static final FunctionDescriptor g_tls_connection_get_require_close_notify$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_connection_get_require_close_notify$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_require_close_notify",
-        constants$808.g_tls_connection_get_require_close_notify$FUNC
-    );
-    static final FunctionDescriptor g_tls_connection_set_rehandshake_mode$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_tls_connection_set_rehandshake_mode$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_set_rehandshake_mode",
-        constants$808.g_tls_connection_set_rehandshake_mode$FUNC
-    );
-    static final FunctionDescriptor g_tls_connection_get_rehandshake_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_connection_get_rehandshake_mode$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_rehandshake_mode",
-        constants$808.g_tls_connection_get_rehandshake_mode$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        RuntimeHelper.POINTER.withName("g_class")
+                    ).withName("g_type_instance"),
+                    JAVA_INT.withName("ref_count"),
+                    MemoryLayout.paddingLayout(4),
+                    RuntimeHelper.POINTER.withName("qdata")
+                ).withName("parent_instance"),
+                RuntimeHelper.POINTER.withName("priv")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("base_stream")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GConverterInputStream");
+    static final VarHandle const$3 = constants$808.const$2.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        JAVA_LONG.withName("g_type")
+                    ).withName("g_type_class"),
+                    RuntimeHelper.POINTER.withName("construct_properties"),
+                    RuntimeHelper.POINTER.withName("constructor"),
+                    RuntimeHelper.POINTER.withName("set_property"),
+                    RuntimeHelper.POINTER.withName("get_property"),
+                    RuntimeHelper.POINTER.withName("dispose"),
+                    RuntimeHelper.POINTER.withName("finalize"),
+                    RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+                    RuntimeHelper.POINTER.withName("notify"),
+                    RuntimeHelper.POINTER.withName("constructed"),
+                    JAVA_LONG.withName("flags"),
+                    JAVA_LONG.withName("n_construct_properties"),
+                    RuntimeHelper.POINTER.withName("pspecs"),
+                    JAVA_LONG.withName("n_pspecs"),
+                    MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+                ).withName("parent_class"),
+                RuntimeHelper.POINTER.withName("read_fn"),
+                RuntimeHelper.POINTER.withName("skip"),
+                RuntimeHelper.POINTER.withName("close_fn"),
+                RuntimeHelper.POINTER.withName("read_async"),
+                RuntimeHelper.POINTER.withName("read_finish"),
+                RuntimeHelper.POINTER.withName("skip_async"),
+                RuntimeHelper.POINTER.withName("skip_finish"),
+                RuntimeHelper.POINTER.withName("close_async"),
+                RuntimeHelper.POINTER.withName("close_finish"),
+                RuntimeHelper.POINTER.withName("_g_reserved1"),
+                RuntimeHelper.POINTER.withName("_g_reserved2"),
+                RuntimeHelper.POINTER.withName("_g_reserved3"),
+                RuntimeHelper.POINTER.withName("_g_reserved4"),
+                RuntimeHelper.POINTER.withName("_g_reserved5")
+            ).withName("parent_class"),
+            RuntimeHelper.POINTER.withName("_g_reserved1"),
+            RuntimeHelper.POINTER.withName("_g_reserved2"),
+            RuntimeHelper.POINTER.withName("_g_reserved3")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("_g_reserved1"),
+        RuntimeHelper.POINTER.withName("_g_reserved2"),
+        RuntimeHelper.POINTER.withName("_g_reserved3"),
+        RuntimeHelper.POINTER.withName("_g_reserved4"),
+        RuntimeHelper.POINTER.withName("_g_reserved5")
+    ).withName("_GConverterInputStreamClass");
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GConverterInputStreamClass._g_reserved1.class, "apply", constants$7.const$5);
 }
 
 

@@ -3,47 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$681 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$681() {}
-    static final FunctionDescriptor g_memory_monitor_warning_level_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_memory_monitor_warning_level_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_memory_monitor_warning_level_get_type",
-        constants$681.g_memory_monitor_warning_level_get_type$FUNC
-    );
-    static final FunctionDescriptor g_resolver_name_lookup_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_resolver_name_lookup_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_name_lookup_flags_get_type",
-        constants$681.g_resolver_name_lookup_flags_get_type$FUNC
-    );
-    static final FunctionDescriptor g_settings_bind_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_settings_bind_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_settings_bind_flags_get_type",
-        constants$681.g_settings_bind_flags_get_type$FUNC
-    );
-    static final FunctionDescriptor GModuleCheckInit$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GModuleCheckInit_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GModuleCheckInit_UP$MH = RuntimeHelper.upcallHandle(GModuleCheckInit.class, "apply", constants$681.GModuleCheckInit_UP$FUNC);
-    static final FunctionDescriptor GModuleCheckInit_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GModuleCheckInit_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$681.GModuleCheckInit_DOWN$FUNC
-    );
-    static final FunctionDescriptor GModuleUnload$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GModuleUnload_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GModuleUnload_UP$MH = RuntimeHelper.upcallHandle(GModuleUnload.class, "apply", constants$681.GModuleUnload_UP$FUNC);
+    static final VarHandle const$0 = constants$680.const$4.varHandle(MemoryLayout.PathElement.groupElement("use_plugin"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GTypePluginClass.unuse_plugin.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$680.const$4.varHandle(MemoryLayout.PathElement.groupElement("unuse_plugin"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GTypePluginClass.complete_type_info.class, "apply", constants$679.const$5);
+    static final VarHandle const$4 = constants$680.const$4.varHandle(MemoryLayout.PathElement.groupElement("complete_type_info"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GTypePluginClass.complete_interface_info.class, "apply", constants$94.const$1);
 }
 
 

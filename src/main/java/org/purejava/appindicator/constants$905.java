@@ -3,61 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$905 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$905() {}
-    static final FunctionDescriptor pango_gravity_get_for_script$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_bus_own_name$user_data_free_func.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle pango_gravity_get_for_script$MH = RuntimeHelper.downcallHandle(
-        "pango_gravity_get_for_script",
-        constants$905.pango_gravity_get_for_script$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_bus_own_name",
+        constants$905.const$1
     );
-    static final FunctionDescriptor pango_gravity_get_for_script_and_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_gravity_get_for_script_and_width$MH = RuntimeHelper.downcallHandle(
-        "pango_gravity_get_for_script_and_width",
-        constants$905.pango_gravity_get_for_script_and_width$FUNC
-    );
-    static final FunctionDescriptor pango_bidi_type_for_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_bidi_type_for_unichar$MH = RuntimeHelper.downcallHandle(
-        "pango_bidi_type_for_unichar",
-        constants$905.pango_bidi_type_for_unichar$FUNC
-    );
-    static final FunctionDescriptor pango_unichar_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_unichar_direction$MH = RuntimeHelper.downcallHandle(
-        "pango_unichar_direction",
-        constants$905.pango_unichar_direction$FUNC
-    );
-    static final FunctionDescriptor pango_find_base_dir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_find_base_dir$MH = RuntimeHelper.downcallHandle(
-        "pango_find_base_dir",
-        constants$905.pango_find_base_dir$FUNC
-    );
-    static final FunctionDescriptor pango_get_mirror_char$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_get_mirror_char$MH = RuntimeHelper.downcallHandle(
-        "pango_get_mirror_char",
-        constants$905.pango_get_mirror_char$FUNC
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_bus_own_name_on_connection$name_acquired_handler.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_bus_own_name_on_connection$name_lost_handler.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_bus_own_name_on_connection$user_data_free_func.class, "apply", constants$13.const$1);
 }
 
 

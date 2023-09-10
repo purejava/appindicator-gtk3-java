@@ -3,67 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$819 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$819() {}
-    static final FunctionDescriptor g_unix_connection_send_fd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "execv",
+        constants$9.const$0
     );
-    static final MethodHandle g_unix_connection_send_fd$MH = RuntimeHelper.downcallHandle(
-        "g_unix_connection_send_fd",
-        constants$819.g_unix_connection_send_fd$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "execle",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_unix_connection_receive_fd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "execl",
+        constants$9.const$0
     );
-    static final MethodHandle g_unix_connection_receive_fd$MH = RuntimeHelper.downcallHandle(
-        "g_unix_connection_receive_fd",
-        constants$819.g_unix_connection_receive_fd$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "execvp",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_unix_connection_send_credentials$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "execlp",
+        constants$9.const$0
     );
-    static final MethodHandle g_unix_connection_send_credentials$MH = RuntimeHelper.downcallHandle(
-        "g_unix_connection_send_credentials",
-        constants$819.g_unix_connection_send_credentials$FUNC
-    );
-    static final FunctionDescriptor g_unix_connection_send_credentials_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_unix_connection_send_credentials_async$MH = RuntimeHelper.downcallHandle(
-        "g_unix_connection_send_credentials_async",
-        constants$819.g_unix_connection_send_credentials_async$FUNC
-    );
-    static final FunctionDescriptor g_unix_connection_send_credentials_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_unix_connection_send_credentials_finish$MH = RuntimeHelper.downcallHandle(
-        "g_unix_connection_send_credentials_finish",
-        constants$819.g_unix_connection_send_credentials_finish$FUNC
-    );
-    static final FunctionDescriptor g_unix_connection_receive_credentials$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_unix_connection_receive_credentials$MH = RuntimeHelper.downcallHandle(
-        "g_unix_connection_receive_credentials",
-        constants$819.g_unix_connection_receive_credentials$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "nice",
+        constants$8.const$4
     );
 }
 

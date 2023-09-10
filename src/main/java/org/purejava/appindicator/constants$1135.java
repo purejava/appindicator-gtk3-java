@@ -3,74 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1135 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1135() {}
-    static final FunctionDescriptor gdk_pixbuf_new_from_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_stream$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_stream",
-        constants$1135.gdk_pixbuf_new_from_stream$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_new_from_stream_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_stream_async$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_stream_async",
-        constants$1135.gdk_pixbuf_new_from_stream_async$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_new_from_stream_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_stream_finish$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_stream_finish",
-        constants$1135.gdk_pixbuf_new_from_stream_finish$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_new_from_stream_at_scale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_stream_at_scale$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_stream_at_scale",
-        constants$1135.gdk_pixbuf_new_from_stream_at_scale$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_new_from_stream_at_scale_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_stream_at_scale_async$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_stream_at_scale_async",
-        constants$1135.gdk_pixbuf_new_from_stream_at_scale_async$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_save_to_stream$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_save_to_stream$MH = RuntimeHelper.downcallHandleVariadic(
-        "gdk_pixbuf_save_to_stream",
-        constants$1135.gdk_pixbuf_save_to_stream$FUNC
+    static final VarHandle const$0 = constants$1134.const$3.varHandle(MemoryLayout.PathElement.groupElement("load"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GLoadableIconIface.load_async.class, "apply", constants$281.const$5);
+    static final VarHandle const$2 = constants$1134.const$3.varHandle(MemoryLayout.PathElement.groupElement("load_async"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GLoadableIconIface.load_finish.class, "apply", constants$39.const$1);
+    static final VarHandle const$4 = constants$1134.const$3.varHandle(MemoryLayout.PathElement.groupElement("load_finish"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_loadable_icon_get_type",
+        constants$3.const$5
     );
 }
 

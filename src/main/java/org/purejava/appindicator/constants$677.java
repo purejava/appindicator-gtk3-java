@@ -3,42 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$677 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$677() {}
-    static final FunctionDescriptor g_dbus_message_byte_order_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_message_byte_order_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_byte_order_get_type",
-        constants$677.g_dbus_message_byte_order_get_type$FUNC
-    );
-    static final FunctionDescriptor g_application_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_application_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_application_flags_get_type",
-        constants$677.g_application_flags_get_type$FUNC
-    );
-    static final FunctionDescriptor g_tls_error_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_error_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_error_get_type",
-        constants$677.g_tls_error_get_type$FUNC
-    );
-    static final FunctionDescriptor g_tls_certificate_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_certificate_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_certificate_flags_get_type",
-        constants$677.g_tls_certificate_flags_get_type$FUNC
-    );
-    static final FunctionDescriptor g_tls_authentication_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_authentication_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_authentication_mode_get_type",
-        constants$677.g_tls_authentication_mode_get_type$FUNC
-    );
-    static final FunctionDescriptor g_tls_channel_binding_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tls_channel_binding_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tls_channel_binding_type_get_type",
-        constants$677.g_tls_channel_binding_type_get_type$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GTypeModuleClass.reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$675.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved2"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GTypeModuleClass.reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$675.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved3"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GTypeModuleClass.reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$675.const$5.varHandle(MemoryLayout.PathElement.groupElement("reserved4"));
 }
 
 

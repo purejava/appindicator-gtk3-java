@@ -3,64 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1387 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1387() {}
-    static final FunctionDescriptor gtk_cell_area_get_focus_from_sibling$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_get_focus_from_sibling$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_get_focus_from_sibling",
-        constants$1387.gtk_cell_area_get_focus_from_sibling$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_get_edited_cell$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_get_edited_cell$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_get_edited_cell",
-        constants$1387.gtk_cell_area_get_edited_cell$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_get_edit_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_get_edit_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_get_edit_widget",
-        constants$1387.gtk_cell_area_get_edit_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_activate_cell$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_activate_cell$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_activate_cell",
-        constants$1387.gtk_cell_area_activate_cell$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_stop_editing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_stop_editing$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_stop_editing",
-        constants$1387.gtk_cell_area_stop_editing$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_inner_cell_area$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_inner_cell_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_inner_cell_area",
-        constants$1387.gtk_cell_area_inner_cell_area$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GUnixFDListClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1386.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GUnixFDListClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1386.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GUnixFDListClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1386.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
 }
 
 

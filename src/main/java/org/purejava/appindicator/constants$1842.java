@@ -3,76 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1842 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1842() {}
-    static final FunctionDescriptor gtk_text_view_get_iter_at_location$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_pointer",
+        constants$39.const$1
     );
-    static final MethodHandle gtk_text_view_get_iter_at_location$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_iter_at_location",
-        constants$1842.gtk_text_view_get_iter_at_location$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_device_position",
+        constants$330.const$5
     );
-    static final FunctionDescriptor gtk_text_view_get_iter_at_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_device_position_double",
+        constants$330.const$5
     );
-    static final MethodHandle gtk_text_view_get_iter_at_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_iter_at_position",
-        constants$1842.gtk_text_view_get_iter_at_position$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_parent",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_text_view_get_line_yrange$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_toplevel",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_text_view_get_line_yrange$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_line_yrange",
-        constants$1842.gtk_text_view_get_line_yrange$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_line_at_y$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_line_at_y$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_line_at_y",
-        constants$1842.gtk_text_view_get_line_at_y$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_buffer_to_window_coords$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_buffer_to_window_coords$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_buffer_to_window_coords",
-        constants$1842.gtk_text_view_buffer_to_window_coords$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_window_to_buffer_coords$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_window_to_buffer_coords$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_window_to_buffer_coords",
-        constants$1842.gtk_text_view_window_to_buffer_coords$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_effective_parent",
+        constants$5.const$2
     );
 }
 

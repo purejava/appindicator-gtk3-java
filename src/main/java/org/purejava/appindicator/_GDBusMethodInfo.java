@@ -2,179 +2,168 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GDBusMethodInfo {
- *     gint ref_count;
- *     gchar* name;
- *     GDBusArgInfo** in_args;
- *     GDBusArgInfo** out_args;
- *     GDBusAnnotationInfo** annotations;
+ *     int ref_count;
+ *     char* name;
+ *     struct _GDBusArgInfo** in_args;
+ *     struct _GDBusArgInfo** out_args;
+ *     struct _GDBusAnnotationInfo** annotations;
  * };
  * }
  */
 public class _GDBusMethodInfo {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("ref_count"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("name"),
-        Constants$root.C_POINTER$LAYOUT.withName("in_args"),
-        Constants$root.C_POINTER$LAYOUT.withName("out_args"),
-        Constants$root.C_POINTER$LAYOUT.withName("annotations")
-    ).withName("_GDBusMethodInfo");
     public static MemoryLayout $LAYOUT() {
-        return _GDBusMethodInfo.$struct$LAYOUT;
+        return constants$881.const$3;
     }
-    static final VarHandle ref_count$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
     public static VarHandle ref_count$VH() {
-        return _GDBusMethodInfo.ref_count$VH;
+        return constants$881.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint ref_count;
+     * int ref_count;
      * }
      */
     public static int ref_count$get(MemorySegment seg) {
-        return (int)_GDBusMethodInfo.ref_count$VH.get(seg);
+        return (int)constants$881.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint ref_count;
+     * int ref_count;
      * }
      */
     public static void ref_count$set(MemorySegment seg, int x) {
-        _GDBusMethodInfo.ref_count$VH.set(seg, x);
+        constants$881.const$4.set(seg, x);
     }
     public static int ref_count$get(MemorySegment seg, long index) {
-        return (int)_GDBusMethodInfo.ref_count$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$881.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void ref_count$set(MemorySegment seg, long index, int x) {
-        _GDBusMethodInfo.ref_count$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$881.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("name"));
     public static VarHandle name$VH() {
-        return _GDBusMethodInfo.name$VH;
+        return constants$881.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* name;
+     * char* name;
      * }
      */
     public static MemorySegment name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GDBusMethodInfo.name$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$881.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* name;
+     * char* name;
      * }
      */
     public static void name$set(MemorySegment seg, MemorySegment x) {
-        _GDBusMethodInfo.name$VH.set(seg, x);
+        constants$881.const$5.set(seg, x);
     }
     public static MemorySegment name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GDBusMethodInfo.name$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$881.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void name$set(MemorySegment seg, long index, MemorySegment x) {
-        _GDBusMethodInfo.name$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$881.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle in_args$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("in_args"));
     public static VarHandle in_args$VH() {
-        return _GDBusMethodInfo.in_args$VH;
+        return constants$882.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GDBusArgInfo** in_args;
+     * struct _GDBusArgInfo** in_args;
      * }
      */
     public static MemorySegment in_args$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GDBusMethodInfo.in_args$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$882.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GDBusArgInfo** in_args;
+     * struct _GDBusArgInfo** in_args;
      * }
      */
     public static void in_args$set(MemorySegment seg, MemorySegment x) {
-        _GDBusMethodInfo.in_args$VH.set(seg, x);
+        constants$882.const$0.set(seg, x);
     }
     public static MemorySegment in_args$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GDBusMethodInfo.in_args$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$882.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void in_args$set(MemorySegment seg, long index, MemorySegment x) {
-        _GDBusMethodInfo.in_args$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$882.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle out_args$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("out_args"));
     public static VarHandle out_args$VH() {
-        return _GDBusMethodInfo.out_args$VH;
+        return constants$882.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GDBusArgInfo** out_args;
+     * struct _GDBusArgInfo** out_args;
      * }
      */
     public static MemorySegment out_args$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GDBusMethodInfo.out_args$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$882.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GDBusArgInfo** out_args;
+     * struct _GDBusArgInfo** out_args;
      * }
      */
     public static void out_args$set(MemorySegment seg, MemorySegment x) {
-        _GDBusMethodInfo.out_args$VH.set(seg, x);
+        constants$882.const$1.set(seg, x);
     }
     public static MemorySegment out_args$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GDBusMethodInfo.out_args$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$882.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void out_args$set(MemorySegment seg, long index, MemorySegment x) {
-        _GDBusMethodInfo.out_args$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$882.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle annotations$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("annotations"));
     public static VarHandle annotations$VH() {
-        return _GDBusMethodInfo.annotations$VH;
+        return constants$882.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GDBusAnnotationInfo** annotations;
+     * struct _GDBusAnnotationInfo** annotations;
      * }
      */
     public static MemorySegment annotations$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GDBusMethodInfo.annotations$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$882.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GDBusAnnotationInfo** annotations;
+     * struct _GDBusAnnotationInfo** annotations;
      * }
      */
     public static void annotations$set(MemorySegment seg, MemorySegment x) {
-        _GDBusMethodInfo.annotations$VH.set(seg, x);
+        constants$882.const$2.set(seg, x);
     }
     public static MemorySegment annotations$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GDBusMethodInfo.annotations$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$882.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void annotations$set(MemorySegment seg, long index, MemorySegment x) {
-        _GDBusMethodInfo.annotations$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$882.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

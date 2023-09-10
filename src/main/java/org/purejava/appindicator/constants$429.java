@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$429 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$429() {}
-    static final FunctionDescriptor g_value_take_boxed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_scanner_cur_position",
+        constants$10.const$5
     );
-    static final MethodHandle g_value_take_boxed$MH = RuntimeHelper.downcallHandle(
-        "g_value_take_boxed",
-        constants$429.g_value_take_boxed$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_scanner_eof",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_value_set_boxed_take_ownership$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_scanner_set_scope",
+        constants$11.const$4
     );
-    static final MethodHandle g_value_set_boxed_take_ownership$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_boxed_take_ownership",
-        constants$429.g_value_set_boxed_take_ownership$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_scanner_scope_add_symbol",
+        constants$179.const$1
     );
-    static final FunctionDescriptor g_value_get_boxed$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_scanner_scope_remove_symbol",
+        constants$42.const$4
     );
-    static final MethodHandle g_value_get_boxed$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_boxed",
-        constants$429.g_value_get_boxed$FUNC
-    );
-    static final FunctionDescriptor g_value_dup_boxed$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_dup_boxed$MH = RuntimeHelper.downcallHandle(
-        "g_value_dup_boxed",
-        constants$429.g_value_dup_boxed$FUNC
-    );
-    static final FunctionDescriptor g_boxed_type_register_static$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_boxed_type_register_static$MH = RuntimeHelper.downcallHandle(
-        "g_boxed_type_register_static",
-        constants$429.g_boxed_type_register_static$FUNC
-    );
-    static final FunctionDescriptor g_closure_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_closure_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_closure_get_type",
-        constants$429.g_closure_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_scanner_scope_lookup_symbol",
+        constants$196.const$3
     );
 }
 

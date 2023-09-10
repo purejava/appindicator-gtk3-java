@@ -3,79 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$309 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$309() {}
-    static final FunctionDescriptor g_spawn_async_with_fds$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_string_append_unichar",
+        constants$21.const$3
     );
-    static final MethodHandle g_spawn_async_with_fds$MH = RuntimeHelper.downcallHandle(
-        "g_spawn_async_with_fds",
-        constants$309.g_spawn_async_with_fds$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_string_prepend",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_spawn_sync$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_string_prepend_c",
+        constants$308.const$5
     );
-    static final MethodHandle g_spawn_sync$MH = RuntimeHelper.downcallHandle(
-        "g_spawn_sync",
-        constants$309.g_spawn_sync$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_string_prepend_unichar",
+        constants$21.const$3
     );
-    static final FunctionDescriptor g_spawn_command_line_sync$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_string_prepend_len",
+        constants$17.const$1
     );
-    static final MethodHandle g_spawn_command_line_sync$MH = RuntimeHelper.downcallHandle(
-        "g_spawn_command_line_sync",
-        constants$309.g_spawn_command_line_sync$FUNC
-    );
-    static final FunctionDescriptor g_spawn_command_line_async$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_spawn_command_line_async$MH = RuntimeHelper.downcallHandle(
-        "g_spawn_command_line_async",
-        constants$309.g_spawn_command_line_async$FUNC
-    );
-    static final FunctionDescriptor g_spawn_check_wait_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_spawn_check_wait_status$MH = RuntimeHelper.downcallHandle(
-        "g_spawn_check_wait_status",
-        constants$309.g_spawn_check_wait_status$FUNC
-    );
-    static final FunctionDescriptor g_spawn_check_exit_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_spawn_check_exit_status$MH = RuntimeHelper.downcallHandle(
-        "g_spawn_check_exit_status",
-        constants$309.g_spawn_check_exit_status$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_string_insert",
+        constants$36.const$1
     );
 }
 

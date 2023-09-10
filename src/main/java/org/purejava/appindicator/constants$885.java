@@ -3,76 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$885 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$885() {}
-    static final FunctionDescriptor hb_buffer_add$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_add$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_add",
-        constants$885.hb_buffer_add$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_add_utf8$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_add_utf8$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_add_utf8",
-        constants$885.hb_buffer_add_utf8$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_add_utf16$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_add_utf16$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_add_utf16",
-        constants$885.hb_buffer_add_utf16$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_add_utf32$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_add_utf32$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_add_utf32",
-        constants$885.hb_buffer_add_utf32$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_add_latin1$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_add_latin1$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_add_latin1",
-        constants$885.hb_buffer_add_latin1$FUNC
-    );
-    static final FunctionDescriptor hb_buffer_add_codepoints$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_buffer_add_codepoints$MH = RuntimeHelper.downcallHandle(
-        "hb_buffer_add_codepoints",
-        constants$885.hb_buffer_add_codepoints$FUNC
-    );
+    static final VarHandle const$0 = constants$884.const$2.varHandle(MemoryLayout.PathElement.groupElement("signals"));
+    static final VarHandle const$1 = constants$884.const$2.varHandle(MemoryLayout.PathElement.groupElement("properties"));
+    static final VarHandle const$2 = constants$884.const$2.varHandle(MemoryLayout.PathElement.groupElement("annotations"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("ref_count"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("path"),
+        RuntimeHelper.POINTER.withName("interfaces"),
+        RuntimeHelper.POINTER.withName("nodes"),
+        RuntimeHelper.POINTER.withName("annotations")
+    ).withName("_GDBusNodeInfo");
+    static final VarHandle const$4 = constants$885.const$3.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
+    static final VarHandle const$5 = constants$885.const$3.varHandle(MemoryLayout.PathElement.groupElement("path"));
 }
 
 

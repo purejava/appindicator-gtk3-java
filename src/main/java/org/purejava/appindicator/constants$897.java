@@ -3,51 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$897 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$897() {}
-    static final FunctionDescriptor hb_version$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_interface",
+        constants$5.const$2
     );
-    static final MethodHandle hb_version$MH = RuntimeHelper.downcallHandle(
-        "hb_version",
-        constants$897.hb_version$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_interface",
+        constants$13.const$4
     );
-    static final FunctionDescriptor hb_version_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_version_string$MH = RuntimeHelper.downcallHandle(
-        "hb_version_string",
-        constants$897.hb_version_string$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_member",
+        constants$5.const$2
     );
-    static final FunctionDescriptor hb_version_atleast$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_member",
+        constants$13.const$4
     );
-    static final MethodHandle hb_version_atleast$MH = RuntimeHelper.downcallHandle(
-        "hb_version_atleast",
-        constants$897.hb_version_atleast$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_path",
+        constants$5.const$2
     );
-    static final FunctionDescriptor pango_coverage_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_coverage_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_coverage_get_type",
-        constants$897.pango_coverage_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_coverage_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_coverage_new$MH = RuntimeHelper.downcallHandle(
-        "pango_coverage_new",
-        constants$897.pango_coverage_new$FUNC
-    );
-    static final FunctionDescriptor pango_coverage_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_coverage_ref$MH = RuntimeHelper.downcallHandle(
-        "pango_coverage_ref",
-        constants$897.pango_coverage_ref$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_path",
+        constants$13.const$4
     );
 }
 

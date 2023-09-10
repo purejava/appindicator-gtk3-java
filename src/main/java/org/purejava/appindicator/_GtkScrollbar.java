@@ -2,35 +2,22 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkScrollbar {
- *     GtkRange range;
+ *     struct _GtkRange range;
  * };
  * }
  */
 public class _GtkScrollbar {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    MemoryLayout.structLayout(
-                        Constants$root.C_POINTER$LAYOUT.withName("g_class")
-                    ).withName("g_type_instance"),
-                    Constants$root.C_INT$LAYOUT.withName("ref_count"),
-                    MemoryLayout.paddingLayout(32),
-                    Constants$root.C_POINTER$LAYOUT.withName("qdata")
-                ).withName("parent_instance"),
-                Constants$root.C_POINTER$LAYOUT.withName("priv")
-            ).withName("widget"),
-            Constants$root.C_POINTER$LAYOUT.withName("priv")
-        ).withName("range")
-    ).withName("_GtkScrollbar");
     public static MemoryLayout $LAYOUT() {
-        return _GtkScrollbar.$struct$LAYOUT;
+        return constants$3059.const$0;
     }
     public static MemorySegment range$slice(MemorySegment seg) {
         return seg.asSlice(0, 40);
@@ -40,7 +27,7 @@ public class _GtkScrollbar {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

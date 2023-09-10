@@ -3,51 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1143 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1143() {}
-    static final FunctionDescriptor gdk_pixbuf_simple_anim_set_loop$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final VarHandle const$0 = constants$1141.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GReallocFunc.class, "apply", constants$21.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_memory_output_stream_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_pixbuf_simple_anim_set_loop$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_set_loop",
-        constants$1143.gdk_pixbuf_simple_anim_set_loop$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_simple_anim_get_loop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_simple_anim_get_loop$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_simple_anim_get_loop",
-        constants$1143.gdk_pixbuf_simple_anim_get_loop$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_init_modules$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_init_modules$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_init_modules",
-        constants$1143.gdk_pixbuf_init_modules$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_format_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_pixbuf_format_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_get_type",
-        constants$1143.gdk_pixbuf_format_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_get_formats$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_pixbuf_get_formats$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_formats",
-        constants$1143.gdk_pixbuf_get_formats$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_format_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_format_get_name$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_get_name",
-        constants$1143.gdk_pixbuf_format_get_name$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_memory_output_stream_new$realloc_function.class, "apply", constants$21.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_memory_output_stream_new$destroy_function.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_memory_output_stream_new",
+        constants$169.const$4
     );
 }
 

@@ -3,73 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1047 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1047() {}
-    static final FunctionDescriptor cairo_pattern_get_color_stop_rgba$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pattern_get_color_stop_rgba$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_color_stop_rgba",
-        constants$1047.cairo_pattern_get_color_stop_rgba$FUNC
-    );
-    static final FunctionDescriptor cairo_pattern_get_color_stop_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pattern_get_color_stop_count$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_color_stop_count",
-        constants$1047.cairo_pattern_get_color_stop_count$FUNC
-    );
-    static final FunctionDescriptor cairo_pattern_get_linear_points$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pattern_get_linear_points$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_linear_points",
-        constants$1047.cairo_pattern_get_linear_points$FUNC
-    );
-    static final FunctionDescriptor cairo_pattern_get_radial_circles$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pattern_get_radial_circles$MH = RuntimeHelper.downcallHandle(
-        "cairo_pattern_get_radial_circles",
-        constants$1047.cairo_pattern_get_radial_circles$FUNC
-    );
-    static final FunctionDescriptor cairo_mesh_pattern_get_patch_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_mesh_pattern_get_patch_count$MH = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_get_patch_count",
-        constants$1047.cairo_mesh_pattern_get_patch_count$FUNC
-    );
-    static final FunctionDescriptor cairo_mesh_pattern_get_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_mesh_pattern_get_path$MH = RuntimeHelper.downcallHandle(
-        "cairo_mesh_pattern_get_path",
-        constants$1047.cairo_mesh_pattern_get_path$FUNC
-    );
+    static final VarHandle const$0 = constants$1044.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileEnumeratorClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1044.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileEnumeratorClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1044.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileEnumeratorClass._g_reserved6.class, "apply", constants$7.const$5);
 }
 
 

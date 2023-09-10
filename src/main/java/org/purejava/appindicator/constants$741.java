@@ -3,52 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$741 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$741() {}
-    static final FunctionDescriptor g_settings_schema_key_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_settings_schema_key_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_get_type",
-        constants$741.g_settings_schema_key_get_type$FUNC
-    );
-    static final FunctionDescriptor g_settings_schema_key_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_schema_key_ref$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_ref",
-        constants$741.g_settings_schema_key_ref$FUNC
-    );
-    static final FunctionDescriptor g_settings_schema_key_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_schema_key_unref$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_unref",
-        constants$741.g_settings_schema_key_unref$FUNC
-    );
-    static final FunctionDescriptor g_settings_schema_key_get_value_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_schema_key_get_value_type$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_get_value_type",
-        constants$741.g_settings_schema_key_get_value_type$FUNC
-    );
-    static final FunctionDescriptor g_settings_schema_key_get_default_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_schema_key_get_default_value$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_get_default_value",
-        constants$741.g_settings_schema_key_get_default_value$FUNC
-    );
-    static final FunctionDescriptor g_settings_schema_key_get_range$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_schema_key_get_range$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_get_range",
-        constants$741.g_settings_schema_key_get_range$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GApplicationClass.dbus_unregister.class, "apply", constants$14.const$3);
+    static final VarHandle const$1 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("dbus_unregister"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GApplicationClass.handle_local_options.class, "apply", constants$9.const$0);
+    static final VarHandle const$3 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("handle_local_options"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GApplicationClass.name_lost.class, "apply", constants$10.const$5);
+    static final VarHandle const$5 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("name_lost"));
 }
 
 

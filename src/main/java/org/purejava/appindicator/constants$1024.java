@@ -3,57 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1024 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1024() {}
-    static final FunctionDescriptor cairo_get_dash$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_file_trash_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_trash_async",
+        constants$281.const$5
     );
-    static final MethodHandle cairo_get_dash$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_dash",
-        constants$1024.cairo_get_dash$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_trash_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor cairo_get_matrix$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_copy$progress_callback.class, "apply", constants$561.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_copy",
+        constants$906.const$0
     );
-    static final MethodHandle cairo_get_matrix$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_matrix",
-        constants$1024.cairo_get_matrix$FUNC
-    );
-    static final FunctionDescriptor cairo_get_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_get_target$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_target",
-        constants$1024.cairo_get_target$FUNC
-    );
-    static final FunctionDescriptor cairo_get_group_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_get_group_target$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_group_target",
-        constants$1024.cairo_get_group_target$FUNC
-    );
-    static final FunctionDescriptor cairo_copy_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_copy_path$MH = RuntimeHelper.downcallHandle(
-        "cairo_copy_path",
-        constants$1024.cairo_copy_path$FUNC
-    );
-    static final FunctionDescriptor cairo_copy_path_flat$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_copy_path_flat$MH = RuntimeHelper.downcallHandle(
-        "cairo_copy_path_flat",
-        constants$1024.cairo_copy_path_flat$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_file_copy_async$progress_callback.class, "apply", constants$561.const$3);
 }
 
 

@@ -3,51 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$128 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$128() {}
-    static final FunctionDescriptor g_path_is_absolute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$127.const$0.varHandle(MemoryLayout.PathElement.groupElement("sa_sigaction"));
+    static final VarHandle const$1 = constants$126.const$5.varHandle(MemoryLayout.PathElement.groupElement("sa_flags"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(sigaction.sa_restorer.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$126.const$5.varHandle(MemoryLayout.PathElement.groupElement("sa_restorer"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "sigprocmask",
+        constants$10.const$3
     );
-    static final MethodHandle g_path_is_absolute$MH = RuntimeHelper.downcallHandle(
-        "g_path_is_absolute",
-        constants$128.g_path_is_absolute$FUNC
-    );
-    static final FunctionDescriptor g_path_skip_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_path_skip_root$MH = RuntimeHelper.downcallHandle(
-        "g_path_skip_root",
-        constants$128.g_path_skip_root$FUNC
-    );
-    static final FunctionDescriptor g_basename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_basename$MH = RuntimeHelper.downcallHandle(
-        "g_basename",
-        constants$128.g_basename$FUNC
-    );
-    static final FunctionDescriptor g_get_current_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_get_current_dir$MH = RuntimeHelper.downcallHandle(
-        "g_get_current_dir",
-        constants$128.g_get_current_dir$FUNC
-    );
-    static final FunctionDescriptor g_path_get_basename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_path_get_basename$MH = RuntimeHelper.downcallHandle(
-        "g_path_get_basename",
-        constants$128.g_path_get_basename$FUNC
-    );
-    static final FunctionDescriptor g_path_get_dirname$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_path_get_dirname$MH = RuntimeHelper.downcallHandle(
-        "g_path_get_dirname",
-        constants$128.g_path_get_dirname$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "sigsuspend",
+        constants$10.const$5
     );
 }
 

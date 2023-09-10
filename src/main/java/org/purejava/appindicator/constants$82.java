@@ -3,55 +3,33 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$82 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$82() {}
-    static final FunctionDescriptor g_time_zone_new_local$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_time_zone_new_local$MH = RuntimeHelper.downcallHandle(
-        "g_time_zone_new_local",
-        constants$82.g_time_zone_new_local$FUNC
+    static final VarHandle const$0 = constants$81.const$0.varHandle(MemoryLayout.PathElement.groupElement("rand_sep"));
+    static final VarHandle const$1 = constants$81.const$0.varHandle(MemoryLayout.PathElement.groupElement("end_ptr"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "random_r",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_time_zone_new_offset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "srandom_r",
+        constants$9.const$2
     );
-    static final MethodHandle g_time_zone_new_offset$MH = RuntimeHelper.downcallHandle(
-        "g_time_zone_new_offset",
-        constants$82.g_time_zone_new_offset$FUNC
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_time_zone_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_time_zone_ref$MH = RuntimeHelper.downcallHandle(
-        "g_time_zone_ref",
-        constants$82.g_time_zone_ref$FUNC
-    );
-    static final FunctionDescriptor g_time_zone_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_time_zone_unref$MH = RuntimeHelper.downcallHandle(
-        "g_time_zone_unref",
-        constants$82.g_time_zone_unref$FUNC
-    );
-    static final FunctionDescriptor g_time_zone_find_interval$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_time_zone_find_interval$MH = RuntimeHelper.downcallHandle(
-        "g_time_zone_find_interval",
-        constants$82.g_time_zone_find_interval$FUNC
-    );
-    static final FunctionDescriptor g_time_zone_adjust_time$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_time_zone_adjust_time$MH = RuntimeHelper.downcallHandle(
-        "g_time_zone_adjust_time",
-        constants$82.g_time_zone_adjust_time$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "initstate_r",
+        constants$82.const$4
     );
 }
 

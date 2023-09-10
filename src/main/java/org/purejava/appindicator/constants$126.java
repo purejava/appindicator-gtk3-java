@@ -3,60 +3,46 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$126 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$126() {}
-    static final FunctionDescriptor g_mkdtemp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "sigemptyset",
+        constants$10.const$5
     );
-    static final MethodHandle g_mkdtemp$MH = RuntimeHelper.downcallHandle(
-        "g_mkdtemp",
-        constants$126.g_mkdtemp$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "sigfillset",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_mkdtemp_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "sigaddset",
+        constants$11.const$4
     );
-    static final MethodHandle g_mkdtemp_full$MH = RuntimeHelper.downcallHandle(
-        "g_mkdtemp_full",
-        constants$126.g_mkdtemp_full$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "sigdelset",
+        constants$11.const$4
     );
-    static final FunctionDescriptor g_mkstemp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "sigismember",
+        constants$11.const$4
     );
-    static final MethodHandle g_mkstemp$MH = RuntimeHelper.downcallHandle(
-        "g_mkstemp",
-        constants$126.g_mkstemp$FUNC
-    );
-    static final FunctionDescriptor g_mkstemp_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_mkstemp_full$MH = RuntimeHelper.downcallHandle(
-        "g_mkstemp_full",
-        constants$126.g_mkstemp_full$FUNC
-    );
-    static final FunctionDescriptor g_file_open_tmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_open_tmp$MH = RuntimeHelper.downcallHandle(
-        "g_file_open_tmp",
-        constants$126.g_file_open_tmp$FUNC
-    );
-    static final FunctionDescriptor g_dir_make_tmp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dir_make_tmp$MH = RuntimeHelper.downcallHandle(
-        "g_dir_make_tmp",
-        constants$126.g_dir_make_tmp$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.unionLayout(
+            RuntimeHelper.POINTER.withName("sa_handler"),
+            RuntimeHelper.POINTER.withName("sa_sigaction")
+        ).withName("__sigaction_handler"),
+        MemoryLayout.structLayout(
+            MemoryLayout.sequenceLayout(16, JAVA_LONG).withName("__val")
+        ).withName("sa_mask"),
+        JAVA_INT.withName("sa_flags"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("sa_restorer")
+    ).withName("sigaction");
 }
 
 

@@ -3,55 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1850 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1850() {}
-    static final FunctionDescriptor gtk_text_view_get_indent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_window_invalidate_rect",
+        constants$164.const$5
     );
-    static final MethodHandle gtk_text_view_get_indent$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_indent",
-        constants$1850.gtk_text_view_get_indent$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_window_invalidate_region",
+        constants$164.const$5
     );
-    static final FunctionDescriptor gtk_text_view_set_tabs$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GdkWindowChildFunc.class, "apply", constants$9.const$0);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gdk_window_invalidate_maybe_recurse$child_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_window_invalidate_maybe_recurse",
+        constants$42.const$1
     );
-    static final MethodHandle gtk_text_view_set_tabs$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_tabs",
-        constants$1850.gtk_text_view_set_tabs$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_tabs$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_tabs$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_tabs",
-        constants$1850.gtk_text_view_get_tabs$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_default_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_default_attributes$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_default_attributes",
-        constants$1850.gtk_text_view_get_default_attributes$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_set_input_purpose$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_set_input_purpose$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_input_purpose",
-        constants$1850.gtk_text_view_set_input_purpose$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_input_purpose$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_input_purpose$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_input_purpose",
-        constants$1850.gtk_text_view_get_input_purpose$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_update_area",
+        constants$5.const$2
     );
 }
 

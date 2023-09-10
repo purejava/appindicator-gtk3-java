@@ -3,59 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$845 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$845() {}
-    static final FunctionDescriptor hb_set_del$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_line_finish_utf8",
+        constants$39.const$1
     );
-    static final MethodHandle hb_set_del$MH = RuntimeHelper.downcallHandle(
-        "hb_set_del",
-        constants$845.hb_set_del$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_until",
+        constants$330.const$5
     );
-    static final FunctionDescriptor hb_set_del_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_data_input_stream_read_until_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_until_async",
+        constants$584.const$3
     );
-    static final MethodHandle hb_set_del_range$MH = RuntimeHelper.downcallHandle(
-        "hb_set_del_range",
-        constants$845.hb_set_del_range$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_until_finish",
+        constants$39.const$1
     );
-    static final FunctionDescriptor hb_set_is_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle hb_set_is_equal$MH = RuntimeHelper.downcallHandle(
-        "hb_set_is_equal",
-        constants$845.hb_set_is_equal$FUNC
-    );
-    static final FunctionDescriptor hb_set_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_hash$MH = RuntimeHelper.downcallHandle(
-        "hb_set_hash",
-        constants$845.hb_set_hash$FUNC
-    );
-    static final FunctionDescriptor hb_set_is_subset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_is_subset$MH = RuntimeHelper.downcallHandle(
-        "hb_set_is_subset",
-        constants$845.hb_set_is_subset$FUNC
-    );
-    static final FunctionDescriptor hb_set_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_set$MH = RuntimeHelper.downcallHandle(
-        "hb_set_set",
-        constants$845.hb_set_set$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_upto",
+        constants$845.const$5
     );
 }
 

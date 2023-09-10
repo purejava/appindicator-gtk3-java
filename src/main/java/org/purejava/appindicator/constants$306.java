@@ -3,58 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$306 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$306() {}
-    static final FunctionDescriptor g_shell_quote$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$305.const$4.varHandle(MemoryLayout.PathElement.groupElement("len"));
+    static final VarHandle const$1 = constants$305.const$4.varHandle(MemoryLayout.PathElement.groupElement("allocated_len"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_string_new",
+        constants$5.const$2
     );
-    static final MethodHandle g_shell_quote$MH = RuntimeHelper.downcallHandle(
-        "g_shell_quote",
-        constants$306.g_shell_quote$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_string_new_len",
+        constants$21.const$1
     );
-    static final FunctionDescriptor g_shell_unquote$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_string_sized_new",
+        constants$63.const$3
     );
-    static final MethodHandle g_shell_unquote$MH = RuntimeHelper.downcallHandle(
-        "g_shell_unquote",
-        constants$306.g_shell_unquote$FUNC
-    );
-    static final FunctionDescriptor g_shell_parse_argv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_shell_parse_argv$MH = RuntimeHelper.downcallHandle(
-        "g_shell_parse_argv",
-        constants$306.g_shell_parse_argv$FUNC
-    );
-    static final FunctionDescriptor g_slice_alloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_slice_alloc$MH = RuntimeHelper.downcallHandle(
-        "g_slice_alloc",
-        constants$306.g_slice_alloc$FUNC
-    );
-    static final FunctionDescriptor g_slice_alloc0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_slice_alloc0$MH = RuntimeHelper.downcallHandle(
-        "g_slice_alloc0",
-        constants$306.g_slice_alloc0$FUNC
-    );
-    static final FunctionDescriptor g_slice_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_slice_copy$MH = RuntimeHelper.downcallHandle(
-        "g_slice_copy",
-        constants$306.g_slice_copy$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_string_free",
+        constants$21.const$3
     );
 }
 

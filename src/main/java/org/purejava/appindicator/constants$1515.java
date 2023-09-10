@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1515 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1515() {}
-    static final FunctionDescriptor gtk_calendar_select_day$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_glyph_positions",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_calendar_select_day$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_select_day",
-        constants$1515.gtk_calendar_select_day$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_buffer_has_positions",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_calendar_mark_day$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_buffer_normalize_glyphs",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_calendar_mark_day$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_mark_day",
-        constants$1515.gtk_calendar_mark_day$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_buffer_serialize_format_from_string",
+        constants$11.const$4
     );
-    static final FunctionDescriptor gtk_calendar_unmark_day$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_buffer_serialize_format_to_string",
+        constants$24.const$0
     );
-    static final MethodHandle gtk_calendar_unmark_day$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_unmark_day",
-        constants$1515.gtk_calendar_unmark_day$FUNC
-    );
-    static final FunctionDescriptor gtk_calendar_clear_marks$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_calendar_clear_marks$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_clear_marks",
-        constants$1515.gtk_calendar_clear_marks$FUNC
-    );
-    static final FunctionDescriptor gtk_calendar_set_display_options$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_calendar_set_display_options$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_set_display_options",
-        constants$1515.gtk_calendar_set_display_options$FUNC
-    );
-    static final FunctionDescriptor gtk_calendar_get_display_options$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_calendar_get_display_options$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_get_display_options",
-        constants$1515.gtk_calendar_get_display_options$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_buffer_serialize_list_formats",
+        constants$35.const$2
     );
 }
 

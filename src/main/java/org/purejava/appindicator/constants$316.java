@@ -3,49 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$316 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$316() {}
-    static final FunctionDescriptor g_test_skip_printf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GIOFuncs.io_read.class, "apply", constants$315.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$315.const$5
     );
-    static final MethodHandle g_test_skip_printf$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_test_skip_printf",
-        constants$316.g_test_skip_printf$FUNC
-    );
-    static final FunctionDescriptor g_test_failed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_test_failed$MH = RuntimeHelper.downcallHandle(
-        "g_test_failed",
-        constants$316.g_test_failed$FUNC
-    );
-    static final FunctionDescriptor g_test_set_nonfatal_assertions$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_test_set_nonfatal_assertions$MH = RuntimeHelper.downcallHandle(
-        "g_test_set_nonfatal_assertions",
-        constants$316.g_test_set_nonfatal_assertions$FUNC
-    );
-    static final FunctionDescriptor g_test_message$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_message$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_test_message",
-        constants$316.g_test_message$FUNC
-    );
-    static final FunctionDescriptor g_test_bug_base$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_bug_base$MH = RuntimeHelper.downcallHandle(
-        "g_test_bug_base",
-        constants$316.g_test_bug_base$FUNC
-    );
-    static final FunctionDescriptor g_test_bug$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_test_bug$MH = RuntimeHelper.downcallHandle(
-        "g_test_bug",
-        constants$316.g_test_bug$FUNC
+    static final VarHandle const$2 = constants$315.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_read"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GIOFuncs.io_write.class, "apply", constants$315.const$5);
+    static final VarHandle const$4 = constants$315.const$4.varHandle(MemoryLayout.PathElement.groupElement("io_write"));
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
 }
 

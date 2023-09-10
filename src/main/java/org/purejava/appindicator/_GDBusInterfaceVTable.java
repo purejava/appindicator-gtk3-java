@@ -2,122 +2,184 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GDBusInterfaceVTable {
- *     GDBusInterfaceMethodCallFunc method_call;
- *     GDBusInterfaceGetPropertyFunc get_property;
- *     GDBusInterfaceSetPropertyFunc set_property;
- *     gpointer padding[8];
+ *     void (*method_call)(struct _GDBusConnection*,char*,char*,char*,char*,struct _GVariant*,struct _GDBusMethodInvocation*,void*);
+ *     struct _GVariant* (*get_property)(struct _GDBusConnection*,char*,char*,char*,char*,struct _GError**,void*);
+ *     int (*set_property)(struct _GDBusConnection*,char*,char*,char*,char*,struct _GVariant*,struct _GError**,void*);
+ *     void* padding[8];
  * };
  * }
  */
 public class _GDBusInterfaceVTable {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("method_call"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-        Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-        MemoryLayout.sequenceLayout(8, Constants$root.C_POINTER$LAYOUT).withName("padding")
-    ).withName("_GDBusInterfaceVTable");
     public static MemoryLayout $LAYOUT() {
-        return _GDBusInterfaceVTable.$struct$LAYOUT;
+        return constants$863.const$5;
     }
-    static final VarHandle method_call$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("method_call"));
+    /**
+     * {@snippet :
+ * void (*method_call)(struct _GDBusConnection*,char*,char*,char*,char*,struct _GVariant*,struct _GDBusMethodInvocation*,void*);
+     * }
+     */
+    public interface method_call {
+
+        void apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment interface_name, java.lang.foreign.MemorySegment method_name, java.lang.foreign.MemorySegment parameters, java.lang.foreign.MemorySegment invocation, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(method_call fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$864.const$0, fi, constants$862.const$3, scope);
+        }
+        static method_call ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _interface_name, java.lang.foreign.MemorySegment _method_name, java.lang.foreign.MemorySegment _parameters, java.lang.foreign.MemorySegment _invocation, java.lang.foreign.MemorySegment _user_data) -> {
+                try {
+                    constants$862.const$5.invokeExact(symbol, _connection, _sender, _object_path, _interface_name, _method_name, _parameters, _invocation, _user_data);
+                } catch (Throwable ex$) {
+                    throw new AssertionError("should not reach here", ex$);
+                }
+            };
+        }
+    }
+
     public static VarHandle method_call$VH() {
-        return _GDBusInterfaceVTable.method_call$VH;
+        return constants$864.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GDBusInterfaceMethodCallFunc method_call;
+     * void (*method_call)(struct _GDBusConnection*,char*,char*,char*,char*,struct _GVariant*,struct _GDBusMethodInvocation*,void*);
      * }
      */
     public static MemorySegment method_call$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GDBusInterfaceVTable.method_call$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$864.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GDBusInterfaceMethodCallFunc method_call;
+     * void (*method_call)(struct _GDBusConnection*,char*,char*,char*,char*,struct _GVariant*,struct _GDBusMethodInvocation*,void*);
      * }
      */
     public static void method_call$set(MemorySegment seg, MemorySegment x) {
-        _GDBusInterfaceVTable.method_call$VH.set(seg, x);
+        constants$864.const$1.set(seg, x);
     }
     public static MemorySegment method_call$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GDBusInterfaceVTable.method_call$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$864.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void method_call$set(MemorySegment seg, long index, MemorySegment x) {
-        _GDBusInterfaceVTable.method_call$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$864.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GDBusInterfaceMethodCallFunc method_call(MemorySegment segment, SegmentScope scope) {
-        return GDBusInterfaceMethodCallFunc.ofAddress(method_call$get(segment), scope);
+    public static method_call method_call(MemorySegment segment, Arena scope) {
+        return method_call.ofAddress(method_call$get(segment), scope);
     }
-    static final VarHandle get_property$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_property"));
+    /**
+     * {@snippet :
+ * struct _GVariant* (*get_property)(struct _GDBusConnection*,char*,char*,char*,char*,struct _GError**,void*);
+     * }
+     */
+    public interface get_property {
+
+        java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment interface_name, java.lang.foreign.MemorySegment node, java.lang.foreign.MemorySegment out_user_data, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_property fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$864.const$2, fi, constants$494.const$3, scope);
+        }
+        static get_property ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _interface_name, java.lang.foreign.MemorySegment _node, java.lang.foreign.MemorySegment _out_user_data, java.lang.foreign.MemorySegment _user_data) -> {
+                try {
+                    return (java.lang.foreign.MemorySegment)constants$863.const$1.invokeExact(symbol, _connection, _sender, _object_path, _interface_name, _node, _out_user_data, _user_data);
+                } catch (Throwable ex$) {
+                    throw new AssertionError("should not reach here", ex$);
+                }
+            };
+        }
+    }
+
     public static VarHandle get_property$VH() {
-        return _GDBusInterfaceVTable.get_property$VH;
+        return constants$864.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GDBusInterfaceGetPropertyFunc get_property;
+     * struct _GVariant* (*get_property)(struct _GDBusConnection*,char*,char*,char*,char*,struct _GError**,void*);
      * }
      */
     public static MemorySegment get_property$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GDBusInterfaceVTable.get_property$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$864.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GDBusInterfaceGetPropertyFunc get_property;
+     * struct _GVariant* (*get_property)(struct _GDBusConnection*,char*,char*,char*,char*,struct _GError**,void*);
      * }
      */
     public static void get_property$set(MemorySegment seg, MemorySegment x) {
-        _GDBusInterfaceVTable.get_property$VH.set(seg, x);
+        constants$864.const$3.set(seg, x);
     }
     public static MemorySegment get_property$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GDBusInterfaceVTable.get_property$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$864.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_property$set(MemorySegment seg, long index, MemorySegment x) {
-        _GDBusInterfaceVTable.get_property$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$864.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GDBusInterfaceGetPropertyFunc get_property(MemorySegment segment, SegmentScope scope) {
-        return GDBusInterfaceGetPropertyFunc.ofAddress(get_property$get(segment), scope);
+    public static get_property get_property(MemorySegment segment, Arena scope) {
+        return get_property.ofAddress(get_property$get(segment), scope);
     }
-    static final VarHandle set_property$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("set_property"));
+    /**
+     * {@snippet :
+ * int (*set_property)(struct _GDBusConnection*,char*,char*,char*,char*,struct _GVariant*,struct _GError**,void*);
+     * }
+     */
+    public interface set_property {
+
+        int apply(java.lang.foreign.MemorySegment connection, java.lang.foreign.MemorySegment sender, java.lang.foreign.MemorySegment object_path, java.lang.foreign.MemorySegment interface_name, java.lang.foreign.MemorySegment property_name, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment error, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(set_property fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$864.const$4, fi, constants$863.const$2, scope);
+        }
+        static set_property ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _connection, java.lang.foreign.MemorySegment _sender, java.lang.foreign.MemorySegment _object_path, java.lang.foreign.MemorySegment _interface_name, java.lang.foreign.MemorySegment _property_name, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _error, java.lang.foreign.MemorySegment _user_data) -> {
+                try {
+                    return (int)constants$863.const$4.invokeExact(symbol, _connection, _sender, _object_path, _interface_name, _property_name, _value, _error, _user_data);
+                } catch (Throwable ex$) {
+                    throw new AssertionError("should not reach here", ex$);
+                }
+            };
+        }
+    }
+
     public static VarHandle set_property$VH() {
-        return _GDBusInterfaceVTable.set_property$VH;
+        return constants$864.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GDBusInterfaceSetPropertyFunc set_property;
+     * int (*set_property)(struct _GDBusConnection*,char*,char*,char*,char*,struct _GVariant*,struct _GError**,void*);
      * }
      */
     public static MemorySegment set_property$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GDBusInterfaceVTable.set_property$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$864.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GDBusInterfaceSetPropertyFunc set_property;
+     * int (*set_property)(struct _GDBusConnection*,char*,char*,char*,char*,struct _GVariant*,struct _GError**,void*);
      * }
      */
     public static void set_property$set(MemorySegment seg, MemorySegment x) {
-        _GDBusInterfaceVTable.set_property$VH.set(seg, x);
+        constants$864.const$5.set(seg, x);
     }
     public static MemorySegment set_property$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GDBusInterfaceVTable.set_property$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$864.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void set_property$set(MemorySegment seg, long index, MemorySegment x) {
-        _GDBusInterfaceVTable.set_property$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$864.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static GDBusInterfaceSetPropertyFunc set_property(MemorySegment segment, SegmentScope scope) {
-        return GDBusInterfaceSetPropertyFunc.ofAddress(set_property$get(segment), scope);
+    public static set_property set_property(MemorySegment segment, Arena scope) {
+        return set_property.ofAddress(set_property$get(segment), scope);
     }
     public static MemorySegment padding$slice(MemorySegment seg) {
         return seg.asSlice(24, 64);
@@ -127,7 +189,7 @@ public class _GDBusInterfaceVTable {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

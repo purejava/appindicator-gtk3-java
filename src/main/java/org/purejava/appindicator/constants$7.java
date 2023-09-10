@@ -3,59 +3,23 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$7 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$7() {}
-    static final FunctionDescriptor GEqualFuncFull$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GEqualFuncFull_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GEqualFuncFull_UP$MH = RuntimeHelper.upcallHandle(GEqualFuncFull.class, "apply", constants$7.GEqualFuncFull_UP$FUNC);
-    static final FunctionDescriptor GEqualFuncFull_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GEqualFuncFull_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$7.GEqualFuncFull_DOWN$FUNC
-    );
-    static final FunctionDescriptor GDestroyNotify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GDestroyNotify_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GDestroyNotify_UP$MH = RuntimeHelper.upcallHandle(GDestroyNotify.class, "apply", constants$7.GDestroyNotify_UP$FUNC);
-    static final FunctionDescriptor GDestroyNotify_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GDestroyNotify_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$7.GDestroyNotify_DOWN$FUNC
-    );
-    static final FunctionDescriptor GFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GFunc_UP$MH = RuntimeHelper.upcallHandle(GFunc.class, "apply", constants$7.GFunc_UP$FUNC);
-    static final FunctionDescriptor GFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$7.GFunc_DOWN$FUNC
+    static final VarHandle const$0 = JAVA_INT.varHandle();
+    static final MemorySegment const$1 = RuntimeHelper.lookupGlobalVariable("__daylight", JAVA_INT);
+    static final VarHandle const$2 = JAVA_LONG.varHandle();
+    static final MemorySegment const$3 = RuntimeHelper.lookupGlobalVariable("__timezone", JAVA_LONG);
+    static final MemorySegment const$4 = RuntimeHelper.lookupGlobalVariable("tzname", constants$6.const$5);
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid();
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "tzset",
+        constants$7.const$5
     );
 }
 

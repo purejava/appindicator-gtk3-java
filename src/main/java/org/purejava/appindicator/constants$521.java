@@ -3,52 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$521 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$521() {}
-    static final FunctionDescriptor pipe$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pthread_attr_setstack",
+        constants$18.const$2
     );
-    static final MethodHandle pipe$MH = RuntimeHelper.downcallHandle(
-        "pipe",
-        constants$521.pipe$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor alarm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pthread_setschedparam",
+        constants$521.const$1
     );
-    static final MethodHandle alarm$MH = RuntimeHelper.downcallHandle(
-        "alarm",
-        constants$521.alarm$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor sleep$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pthread_getschedparam",
+        constants$521.const$3
     );
-    static final MethodHandle sleep$MH = RuntimeHelper.downcallHandle(
-        "sleep",
-        constants$521.sleep$FUNC
-    );
-    static final FunctionDescriptor ualarm$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle ualarm$MH = RuntimeHelper.downcallHandle(
-        "ualarm",
-        constants$521.ualarm$FUNC
-    );
-    static final FunctionDescriptor usleep$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle usleep$MH = RuntimeHelper.downcallHandle(
-        "usleep",
-        constants$521.usleep$FUNC
-    );
-    static final FunctionDescriptor pause$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle pause$MH = RuntimeHelper.downcallHandle(
-        "pause",
-        constants$521.pause$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pthread_setschedprio",
+        constants$64.const$5
     );
 }
 

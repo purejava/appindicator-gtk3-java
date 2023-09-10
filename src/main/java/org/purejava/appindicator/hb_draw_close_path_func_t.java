@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*hb_draw_close_path_func_t)(struct hb_draw_funcs_t* dfuncs,void* draw_data,struct hb_draw_state_t* st,void* user_data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface hb_draw_close_path_func_t {
 
     void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(hb_draw_close_path_func_t fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$853.hb_draw_close_path_func_t_UP$MH, fi, constants$853.hb_draw_close_path_func_t$FUNC, scope);
+    static MemorySegment allocate(hb_draw_close_path_func_t fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$1448.const$4, fi, constants$42.const$1, scope);
     }
-    static hb_draw_close_path_func_t ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static hb_draw_close_path_func_t ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$854.hb_draw_close_path_func_t_DOWN$MH.invokeExact(symbol, _model, _path, _iter, _data);
+                constants$259.const$4.invokeExact(symbol, _model, _path, _iter, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

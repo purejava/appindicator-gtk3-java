@@ -3,51 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1851 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1851() {}
-    static final FunctionDescriptor gtk_text_view_set_input_hints$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_window_freeze_updates",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_text_view_set_input_hints$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_input_hints",
-        constants$1851.gtk_text_view_set_input_hints$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_window_thaw_updates",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_text_view_get_input_hints$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_window_freeze_toplevel_updates_libgtk_only",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_text_view_get_input_hints$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_input_hints",
-        constants$1851.gtk_text_view_get_input_hints$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_window_thaw_toplevel_updates_libgtk_only",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_text_view_set_monospace$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_window_process_all_updates",
+        constants$7.const$5
     );
-    static final MethodHandle gtk_text_view_set_monospace$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_set_monospace",
-        constants$1851.gtk_text_view_set_monospace$FUNC
-    );
-    static final FunctionDescriptor gtk_text_view_get_monospace$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_view_get_monospace$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_view_get_monospace",
-        constants$1851.gtk_text_view_get_monospace$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_toolbar_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_get_type",
-        constants$1851.gtk_toolbar_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_toolbar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_new",
-        constants$1851.gtk_toolbar_new$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_window_process_updates",
+        constants$40.const$2
     );
 }
 

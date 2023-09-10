@@ -3,56 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$771 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$771() {}
-    static final FunctionDescriptor g_socket_client_set_protocol$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final VarHandle const$0 = constants$770.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFilterInputStreamClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$770.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_filter_input_stream_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_socket_client_set_protocol$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_set_protocol",
-        constants$771.g_socket_client_set_protocol$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_filter_input_stream_get_base_stream",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_socket_client_get_local_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_get_local_address$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_local_address",
-        constants$771.g_socket_client_get_local_address$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_set_local_address$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_set_local_address$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_set_local_address",
-        constants$771.g_socket_client_set_local_address$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_get_timeout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_get_timeout$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_timeout",
-        constants$771.g_socket_client_get_timeout$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_set_timeout$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_client_set_timeout$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_set_timeout",
-        constants$771.g_socket_client_set_timeout$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_get_enable_proxy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_get_enable_proxy$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_enable_proxy",
-        constants$771.g_socket_client_get_enable_proxy$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_filter_input_stream_get_close_base_stream",
+        constants$10.const$5
     );
 }
 

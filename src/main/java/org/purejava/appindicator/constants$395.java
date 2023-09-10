@@ -3,57 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$395 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$395() {}
-    static final FunctionDescriptor g_value_unset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_value_unset$MH = RuntimeHelper.downcallHandle(
-        "g_value_unset",
-        constants$395.g_value_unset$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_qsort_with_data",
+        constants$395.const$0
     );
-    static final FunctionDescriptor g_value_set_instance$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_set_instance$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_instance",
-        constants$395.g_value_set_instance$FUNC
-    );
-    static final FunctionDescriptor g_value_init_from_instance$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_init_from_instance$MH = RuntimeHelper.downcallHandle(
-        "g_value_init_from_instance",
-        constants$395.g_value_init_from_instance$FUNC
-    );
-    static final FunctionDescriptor g_value_fits_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_fits_pointer$MH = RuntimeHelper.downcallHandle(
-        "g_value_fits_pointer",
-        constants$395.g_value_fits_pointer$FUNC
-    );
-    static final FunctionDescriptor g_value_peek_pointer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_peek_pointer$MH = RuntimeHelper.downcallHandle(
-        "g_value_peek_pointer",
-        constants$395.g_value_peek_pointer$FUNC
-    );
-    static final FunctionDescriptor g_value_type_compatible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_value_type_compatible$MH = RuntimeHelper.downcallHandle(
-        "g_value_type_compatible",
-        constants$395.g_value_type_compatible$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("head"),
+        RuntimeHelper.POINTER.withName("tail"),
+        JAVA_INT.withName("length"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GQueue");
+    static final VarHandle const$3 = constants$395.const$2.varHandle(MemoryLayout.PathElement.groupElement("head"));
+    static final VarHandle const$4 = constants$395.const$2.varHandle(MemoryLayout.PathElement.groupElement("tail"));
+    static final VarHandle const$5 = constants$395.const$2.varHandle(MemoryLayout.PathElement.groupElement("length"));
 }
 
 

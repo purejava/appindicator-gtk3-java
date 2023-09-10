@@ -3,62 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1082 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1082() {}
-    static final FunctionDescriptor gdk_window_set_accept_focus$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_accept_focus$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_accept_focus",
-        constants$1082.gdk_window_set_accept_focus$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_focus_on_map$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_focus_on_map$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_focus_on_map",
-        constants$1082.gdk_window_get_focus_on_map$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_focus_on_map$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_focus_on_map$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_focus_on_map",
-        constants$1082.gdk_window_set_focus_on_map$FUNC
-    );
-    static final FunctionDescriptor gdk_window_add_filter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_add_filter$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_add_filter",
-        constants$1082.gdk_window_add_filter$FUNC
-    );
-    static final FunctionDescriptor gdk_window_remove_filter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_remove_filter$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_remove_filter",
-        constants$1082.gdk_window_remove_filter$FUNC
-    );
-    static final FunctionDescriptor gdk_window_scroll$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_scroll$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_scroll",
-        constants$1082.gdk_window_scroll$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIOStreamClass.get_etag.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$1079.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_etag"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIOStreamClass._g_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1079.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIOStreamClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1079.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
 }
 
 

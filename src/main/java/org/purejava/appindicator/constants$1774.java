@@ -3,63 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1774 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1774() {}
-    static final FunctionDescriptor gtk_recent_info_get_application_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_info_get_application_info$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_application_info",
-        constants$1774.gtk_recent_info_get_application_info$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_info_create_app_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_info_create_app_info$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_create_app_info",
-        constants$1774.gtk_recent_info_create_app_info$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_info_get_applications$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_info_get_applications$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_applications",
-        constants$1774.gtk_recent_info_get_applications$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_info_last_application$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_info_last_application$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_last_application",
-        constants$1774.gtk_recent_info_last_application$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_info_has_application$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_info_has_application$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_has_application",
-        constants$1774.gtk_recent_info_has_application$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_info_get_groups$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_info_get_groups$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_info_get_groups",
-        constants$1774.gtk_recent_info_get_groups$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        MemoryLayout.paddingLayout(3),
+        JAVA_INT.withName("time"),
+        JAVA_DOUBLE.withName("x"),
+        JAVA_DOUBLE.withName("y"),
+        RuntimeHelper.POINTER.withName("axes"),
+        JAVA_INT.withName("state"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("sequence"),
+        JAVA_INT.withName("emulating_pointer"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("device"),
+        JAVA_DOUBLE.withName("x_root"),
+        JAVA_DOUBLE.withName("y_root")
+    ).withName("_GdkEventTouch");
+    static final VarHandle const$1 = constants$1774.const$0.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$2 = constants$1774.const$0.varHandle(MemoryLayout.PathElement.groupElement("window"));
+    static final VarHandle const$3 = constants$1774.const$0.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
+    static final VarHandle const$4 = constants$1774.const$0.varHandle(MemoryLayout.PathElement.groupElement("time"));
+    static final VarHandle const$5 = constants$1774.const$0.varHandle(MemoryLayout.PathElement.groupElement("x"));
 }
 
 

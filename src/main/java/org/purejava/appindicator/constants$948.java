@@ -3,42 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$948 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$948() {}
-    static final FunctionDescriptor pango_stretch_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_stretch_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_stretch_get_type",
-        constants$948.pango_stretch_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_font_mask_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_font_mask_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_font_mask_get_type",
-        constants$948.pango_font_mask_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_shape_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_shape_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_shape_flags_get_type",
-        constants$948.pango_shape_flags_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_gravity_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_gravity_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_gravity_get_type",
-        constants$948.pango_gravity_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_gravity_hint_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_gravity_hint_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_gravity_hint_get_type",
-        constants$948.pango_gravity_hint_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_alignment_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_alignment_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_alignment_get_type",
-        constants$948.pango_alignment_get_type$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDriveIface.eject_with_operation_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("eject_with_operation_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDriveIface.get_sort_key.class, "apply", constants$5.const$2);
+    static final VarHandle const$3 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_sort_key"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDriveIface.get_symbolic_icon.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_symbolic_icon"));
 }
 
 

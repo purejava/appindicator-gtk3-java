@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$490 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$490() {}
-    static final FunctionDescriptor g_application_set_option_context_description$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle g_application_set_option_context_description$MH = RuntimeHelper.downcallHandle(
-        "g_application_set_option_context_description",
-        constants$490.g_application_set_option_context_description$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_alloc",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_application_get_is_registered$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_alloc0",
+        constants$5.const$2
     );
-    static final MethodHandle g_application_get_is_registered$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_is_registered",
-        constants$490.g_application_get_is_registered$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_free",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_application_get_is_remote$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_clean",
+        constants$13.const$1
     );
-    static final MethodHandle g_application_get_is_remote$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_is_remote",
-        constants$490.g_application_get_is_remote$FUNC
-    );
-    static final FunctionDescriptor g_application_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_register$MH = RuntimeHelper.downcallHandle(
-        "g_application_register",
-        constants$490.g_application_register$FUNC
-    );
-    static final FunctionDescriptor g_application_hold$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_hold$MH = RuntimeHelper.downcallHandle(
-        "g_application_hold",
-        constants$490.g_application_hold$FUNC
-    );
-    static final FunctionDescriptor g_application_release$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_release$MH = RuntimeHelper.downcallHandle(
-        "g_application_release",
-        constants$490.g_application_release$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_reset",
+        constants$13.const$1
     );
 }
 

@@ -4,96 +4,97 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkWidgetClass {
- *     GInitiallyUnownedClass parent_class;
- *     guint activate_signal;
- *     void (*dispatch_child_properties_changed)(GtkWidget*,guint,GParamSpec**);
- *     void (*destroy)(GtkWidget*);
- *     void (*show)(GtkWidget*);
- *     void (*show_all)(GtkWidget*);
- *     void (*hide)(GtkWidget*);
- *     void (*map)(GtkWidget*);
- *     void (*unmap)(GtkWidget*);
- *     void (*realize)(GtkWidget*);
- *     void (*unrealize)(GtkWidget*);
- *     void (*size_allocate)(GtkWidget*,GtkAllocation*);
- *     void (*state_changed)(GtkWidget*,GtkStateType);
- *     void (*state_flags_changed)(GtkWidget*,GtkStateFlags);
- *     void (*parent_set)(GtkWidget*,GtkWidget*);
- *     void (*hierarchy_changed)(GtkWidget*,GtkWidget*);
- *     void (*style_set)(GtkWidget*,GtkStyle*);
- *     void (*direction_changed)(GtkWidget*,GtkTextDirection);
- *     void (*grab_notify)(GtkWidget*,gboolean);
- *     void (*child_notify)(GtkWidget*,GParamSpec*);
- *     gboolean (*draw)(GtkWidget*,cairo_t*);
- *     GtkSizeRequestMode (*get_request_mode)(GtkWidget*);
- *     void (*get_preferred_height)(GtkWidget*,gint*,gint*);
- *     void (*get_preferred_width_for_height)(GtkWidget*,gint,gint*,gint*);
- *     void (*get_preferred_width)(GtkWidget*,gint*,gint*);
- *     void (*get_preferred_height_for_width)(GtkWidget*,gint,gint*,gint*);
- *     gboolean (*mnemonic_activate)(GtkWidget*,gboolean);
- *     void (*grab_focus)(GtkWidget*);
- *     gboolean (*focus)(GtkWidget*,GtkDirectionType);
- *     void (*move_focus)(GtkWidget*,GtkDirectionType);
- *     gboolean (*keynav_failed)(GtkWidget*,GtkDirectionType);
- *     gboolean (*event)(GtkWidget*,GdkEvent*);
- *     gboolean (*button_press_event)(GtkWidget*,GdkEventButton*);
- *     gboolean (*button_release_event)(GtkWidget*,GdkEventButton*);
- *     gboolean (*scroll_event)(GtkWidget*,GdkEventScroll*);
- *     gboolean (*motion_notify_event)(GtkWidget*,GdkEventMotion*);
- *     gboolean (*delete_event)(GtkWidget*,GdkEventAny*);
- *     gboolean (*destroy_event)(GtkWidget*,GdkEventAny*);
- *     gboolean (*key_press_event)(GtkWidget*,GdkEventKey*);
- *     gboolean (*key_release_event)(GtkWidget*,GdkEventKey*);
- *     gboolean (*enter_notify_event)(GtkWidget*,GdkEventCrossing*);
- *     gboolean (*leave_notify_event)(GtkWidget*,GdkEventCrossing*);
- *     gboolean (*configure_event)(GtkWidget*,GdkEventConfigure*);
- *     gboolean (*focus_in_event)(GtkWidget*,GdkEventFocus*);
- *     gboolean (*focus_out_event)(GtkWidget*,GdkEventFocus*);
- *     gboolean (*map_event)(GtkWidget*,GdkEventAny*);
- *     gboolean (*unmap_event)(GtkWidget*,GdkEventAny*);
- *     gboolean (*property_notify_event)(GtkWidget*,GdkEventProperty*);
- *     gboolean (*selection_clear_event)(GtkWidget*,GdkEventSelection*);
- *     gboolean (*selection_request_event)(GtkWidget*,GdkEventSelection*);
- *     gboolean (*selection_notify_event)(GtkWidget*,GdkEventSelection*);
- *     gboolean (*proximity_in_event)(GtkWidget*,GdkEventProximity*);
- *     gboolean (*proximity_out_event)(GtkWidget*,GdkEventProximity*);
- *     gboolean (*visibility_notify_event)(GtkWidget*,GdkEventVisibility*);
- *     gboolean (*window_state_event)(GtkWidget*,GdkEventWindowState*);
- *     gboolean (*damage_event)(GtkWidget*,GdkEventExpose*);
- *     gboolean (*grab_broken_event)(GtkWidget*,GdkEventGrabBroken*);
- *     void (*selection_get)(GtkWidget*,GtkSelectionData*,guint,guint);
- *     void (*selection_received)(GtkWidget*,GtkSelectionData*,guint);
- *     void (*drag_begin)(GtkWidget*,GdkDragContext*);
- *     void (*drag_end)(GtkWidget*,GdkDragContext*);
- *     void (*drag_data_get)(GtkWidget*,GdkDragContext*,GtkSelectionData*,guint,guint);
- *     void (*drag_data_delete)(GtkWidget*,GdkDragContext*);
- *     void (*drag_leave)(GtkWidget*,GdkDragContext*,guint);
- *     gboolean (*drag_motion)(GtkWidget*,GdkDragContext*,gint,gint,guint);
- *     gboolean (*drag_drop)(GtkWidget*,GdkDragContext*,gint,gint,guint);
- *     void (*drag_data_received)(GtkWidget*,GdkDragContext*,gint,gint,GtkSelectionData*,guint,guint);
- *     gboolean (*drag_failed)(GtkWidget*,GdkDragContext*,GtkDragResult);
- *     gboolean (*popup_menu)(GtkWidget*);
- *     gboolean (*show_help)(GtkWidget*,GtkWidgetHelpType);
- *     AtkObject* (*get_accessible)(GtkWidget*);
- *     void (*screen_changed)(GtkWidget*,GdkScreen*);
- *     gboolean (*can_activate_accel)(GtkWidget*,guint);
- *     void (*composited_changed)(GtkWidget*);
- *     gboolean (*query_tooltip)(GtkWidget*,gint,gint,gboolean,GtkTooltip*);
- *     void (*compute_expand)(GtkWidget*,gboolean*,gboolean*);
- *     void (*adjust_size_request)(GtkWidget*,GtkOrientation,gint*,gint*);
- *     void (*adjust_size_allocation)(GtkWidget*,GtkOrientation,gint*,gint*,gint*,gint*);
- *     void (*style_updated)(GtkWidget*);
- *     gboolean (*touch_event)(GtkWidget*,GdkEventTouch*);
- *     void (*get_preferred_height_and_baseline_for_width)(GtkWidget*,gint,gint*,gint*,gint*,gint*);
- *     void (*adjust_baseline_request)(GtkWidget*,gint*,gint*);
- *     void (*adjust_baseline_allocation)(GtkWidget*,gint*);
- *     void (*queue_draw_region)(GtkWidget*,const cairo_region_t*);
- *     GtkWidgetClassPrivate* priv;
+ *     struct _GObjectClass parent_class;
+ *     unsigned int activate_signal;
+ *     void (*dispatch_child_properties_changed)(struct _GtkWidget*,unsigned int,struct _GParamSpec**);
+ *     void (*destroy)(struct _GtkWidget*);
+ *     void (*show)(struct _GtkWidget*);
+ *     void (*show_all)(struct _GtkWidget*);
+ *     void (*hide)(struct _GtkWidget*);
+ *     void (*map)(struct _GtkWidget*);
+ *     void (*unmap)(struct _GtkWidget*);
+ *     void (*realize)(struct _GtkWidget*);
+ *     void (*unrealize)(struct _GtkWidget*);
+ *     void (*size_allocate)(struct _GtkWidget*,struct _cairo_rectangle_int*);
+ *     void (*state_changed)(struct _GtkWidget*,enum GtkStateType);
+ *     void (*state_flags_changed)(struct _GtkWidget*,enum GtkStateFlags);
+ *     void (*parent_set)(struct _GtkWidget*,struct _GtkWidget*);
+ *     void (*hierarchy_changed)(struct _GtkWidget*,struct _GtkWidget*);
+ *     void (*style_set)(struct _GtkWidget*,struct _GtkStyle*);
+ *     void (*direction_changed)(struct _GtkWidget*,enum GtkTextDirection);
+ *     void (*grab_notify)(struct _GtkWidget*,int);
+ *     void (*child_notify)(struct _GtkWidget*,struct _GParamSpec*);
+ *     int (*draw)(struct _GtkWidget*,struct _cairo*);
+ *     enum GtkSizeRequestMode (*get_request_mode)(struct _GtkWidget*);
+ *     void (*get_preferred_height)(struct _GtkWidget*,int*,int*);
+ *     void (*get_preferred_width_for_height)(struct _GtkWidget*,int,int*,int*);
+ *     void (*get_preferred_width)(struct _GtkWidget*,int*,int*);
+ *     void (*get_preferred_height_for_width)(struct _GtkWidget*,int,int*,int*);
+ *     int (*mnemonic_activate)(struct _GtkWidget*,int);
+ *     void (*grab_focus)(struct _GtkWidget*);
+ *     int (*focus)(struct _GtkWidget*,enum GtkDirectionType);
+ *     void (*move_focus)(struct _GtkWidget*,enum GtkDirectionType);
+ *     int (*keynav_failed)(struct _GtkWidget*,enum GtkDirectionType);
+ *     int (*event)(struct _GtkWidget*,union _GdkEvent*);
+ *     int (*button_press_event)(struct _GtkWidget*,struct _GdkEventButton*);
+ *     int (*button_release_event)(struct _GtkWidget*,struct _GdkEventButton*);
+ *     int (*scroll_event)(struct _GtkWidget*,struct _GdkEventScroll*);
+ *     int (*motion_notify_event)(struct _GtkWidget*,struct _GdkEventMotion*);
+ *     int (*delete_event)(struct _GtkWidget*,struct _GdkEventAny*);
+ *     int (*destroy_event)(struct _GtkWidget*,struct _GdkEventAny*);
+ *     int (*key_press_event)(struct _GtkWidget*,struct _GdkEventKey*);
+ *     int (*key_release_event)(struct _GtkWidget*,struct _GdkEventKey*);
+ *     int (*enter_notify_event)(struct _GtkWidget*,struct _GdkEventCrossing*);
+ *     int (*leave_notify_event)(struct _GtkWidget*,struct _GdkEventCrossing*);
+ *     int (*configure_event)(struct _GtkWidget*,struct _GdkEventConfigure*);
+ *     int (*focus_in_event)(struct _GtkWidget*,struct _GdkEventFocus*);
+ *     int (*focus_out_event)(struct _GtkWidget*,struct _GdkEventFocus*);
+ *     int (*map_event)(struct _GtkWidget*,struct _GdkEventAny*);
+ *     int (*unmap_event)(struct _GtkWidget*,struct _GdkEventAny*);
+ *     int (*property_notify_event)(struct _GtkWidget*,struct _GdkEventProperty*);
+ *     int (*selection_clear_event)(struct _GtkWidget*,struct _GdkEventSelection*);
+ *     int (*selection_request_event)(struct _GtkWidget*,struct _GdkEventSelection*);
+ *     int (*selection_notify_event)(struct _GtkWidget*,struct _GdkEventSelection*);
+ *     int (*proximity_in_event)(struct _GtkWidget*,struct _GdkEventProximity*);
+ *     int (*proximity_out_event)(struct _GtkWidget*,struct _GdkEventProximity*);
+ *     int (*visibility_notify_event)(struct _GtkWidget*,struct _GdkEventVisibility*);
+ *     int (*window_state_event)(struct _GtkWidget*,struct _GdkEventWindowState*);
+ *     int (*damage_event)(struct _GtkWidget*,struct _GdkEventExpose*);
+ *     int (*grab_broken_event)(struct _GtkWidget*,struct _GdkEventGrabBroken*);
+ *     void (*selection_get)(struct _GtkWidget*,struct _GtkSelectionData*,unsigned int,unsigned int);
+ *     void (*selection_received)(struct _GtkWidget*,struct _GtkSelectionData*,unsigned int);
+ *     void (*drag_begin)(struct _GtkWidget*,struct _GdkDragContext*);
+ *     void (*drag_end)(struct _GtkWidget*,struct _GdkDragContext*);
+ *     void (*drag_data_get)(struct _GtkWidget*,struct _GdkDragContext*,struct _GtkSelectionData*,unsigned int,unsigned int);
+ *     void (*drag_data_delete)(struct _GtkWidget*,struct _GdkDragContext*);
+ *     void (*drag_leave)(struct _GtkWidget*,struct _GdkDragContext*,unsigned int);
+ *     int (*drag_motion)(struct _GtkWidget*,struct _GdkDragContext*,int,int,unsigned int);
+ *     int (*drag_drop)(struct _GtkWidget*,struct _GdkDragContext*,int,int,unsigned int);
+ *     void (*drag_data_received)(struct _GtkWidget*,struct _GdkDragContext*,int,int,struct _GtkSelectionData*,unsigned int,unsigned int);
+ *     int (*drag_failed)(struct _GtkWidget*,struct _GdkDragContext*,enum GtkDragResult);
+ *     int (*popup_menu)(struct _GtkWidget*);
+ *     int (*show_help)(struct _GtkWidget*,enum GtkWidgetHelpType);
+ *     struct _AtkObject* (*get_accessible)(struct _GtkWidget*);
+ *     void (*screen_changed)(struct _GtkWidget*,struct _GdkScreen*);
+ *     int (*can_activate_accel)(struct _GtkWidget*,unsigned int);
+ *     void (*composited_changed)(struct _GtkWidget*);
+ *     int (*query_tooltip)(struct _GtkWidget*,int,int,int,struct _GtkTooltip*);
+ *     void (*compute_expand)(struct _GtkWidget*,int*,int*);
+ *     void (*adjust_size_request)(struct _GtkWidget*,enum GtkOrientation,int*,int*);
+ *     void (*adjust_size_allocation)(struct _GtkWidget*,enum GtkOrientation,int*,int*,int*,int*);
+ *     void (*style_updated)(struct _GtkWidget*);
+ *     int (*touch_event)(struct _GtkWidget*,struct _GdkEventTouch*);
+ *     void (*get_preferred_height_and_baseline_for_width)(struct _GtkWidget*,int,int*,int*,int*,int*);
+ *     void (*adjust_baseline_request)(struct _GtkWidget*,int*,int*);
+ *     void (*adjust_baseline_allocation)(struct _GtkWidget*,int*);
+ *     void (*queue_draw_region)(struct _GtkWidget*,struct _cairo_region*);
+ *     struct _GtkWidgetClassPrivate* priv;
  *     void (*_gtk_reserved6)();
  *     void (*_gtk_reserved7)();
  * };
@@ -101,183 +102,55 @@ import java.lang.foreign.*;
  */
 public class _GtkWidgetClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-            ).withName("g_type_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-            Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("notify"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-        ).withName("parent_class"),
-        Constants$root.C_INT$LAYOUT.withName("activate_signal"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("dispatch_child_properties_changed"),
-        Constants$root.C_POINTER$LAYOUT.withName("destroy"),
-        Constants$root.C_POINTER$LAYOUT.withName("show"),
-        Constants$root.C_POINTER$LAYOUT.withName("show_all"),
-        Constants$root.C_POINTER$LAYOUT.withName("hide"),
-        Constants$root.C_POINTER$LAYOUT.withName("map"),
-        Constants$root.C_POINTER$LAYOUT.withName("unmap"),
-        Constants$root.C_POINTER$LAYOUT.withName("realize"),
-        Constants$root.C_POINTER$LAYOUT.withName("unrealize"),
-        Constants$root.C_POINTER$LAYOUT.withName("size_allocate"),
-        Constants$root.C_POINTER$LAYOUT.withName("state_changed"),
-        Constants$root.C_POINTER$LAYOUT.withName("state_flags_changed"),
-        Constants$root.C_POINTER$LAYOUT.withName("parent_set"),
-        Constants$root.C_POINTER$LAYOUT.withName("hierarchy_changed"),
-        Constants$root.C_POINTER$LAYOUT.withName("style_set"),
-        Constants$root.C_POINTER$LAYOUT.withName("direction_changed"),
-        Constants$root.C_POINTER$LAYOUT.withName("grab_notify"),
-        Constants$root.C_POINTER$LAYOUT.withName("child_notify"),
-        Constants$root.C_POINTER$LAYOUT.withName("draw"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_request_mode"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_preferred_width_for_height"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_preferred_width"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height_for_width"),
-        Constants$root.C_POINTER$LAYOUT.withName("mnemonic_activate"),
-        Constants$root.C_POINTER$LAYOUT.withName("grab_focus"),
-        Constants$root.C_POINTER$LAYOUT.withName("focus"),
-        Constants$root.C_POINTER$LAYOUT.withName("move_focus"),
-        Constants$root.C_POINTER$LAYOUT.withName("keynav_failed"),
-        Constants$root.C_POINTER$LAYOUT.withName("event"),
-        Constants$root.C_POINTER$LAYOUT.withName("button_press_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("button_release_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("scroll_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("motion_notify_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("delete_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("destroy_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("key_press_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("key_release_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("enter_notify_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("leave_notify_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("configure_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("focus_in_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("focus_out_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("map_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("unmap_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("property_notify_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("selection_clear_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("selection_request_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("selection_notify_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("proximity_in_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("proximity_out_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("visibility_notify_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("window_state_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("damage_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("grab_broken_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("selection_get"),
-        Constants$root.C_POINTER$LAYOUT.withName("selection_received"),
-        Constants$root.C_POINTER$LAYOUT.withName("drag_begin"),
-        Constants$root.C_POINTER$LAYOUT.withName("drag_end"),
-        Constants$root.C_POINTER$LAYOUT.withName("drag_data_get"),
-        Constants$root.C_POINTER$LAYOUT.withName("drag_data_delete"),
-        Constants$root.C_POINTER$LAYOUT.withName("drag_leave"),
-        Constants$root.C_POINTER$LAYOUT.withName("drag_motion"),
-        Constants$root.C_POINTER$LAYOUT.withName("drag_drop"),
-        Constants$root.C_POINTER$LAYOUT.withName("drag_data_received"),
-        Constants$root.C_POINTER$LAYOUT.withName("drag_failed"),
-        Constants$root.C_POINTER$LAYOUT.withName("popup_menu"),
-        Constants$root.C_POINTER$LAYOUT.withName("show_help"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_accessible"),
-        Constants$root.C_POINTER$LAYOUT.withName("screen_changed"),
-        Constants$root.C_POINTER$LAYOUT.withName("can_activate_accel"),
-        Constants$root.C_POINTER$LAYOUT.withName("composited_changed"),
-        Constants$root.C_POINTER$LAYOUT.withName("query_tooltip"),
-        Constants$root.C_POINTER$LAYOUT.withName("compute_expand"),
-        Constants$root.C_POINTER$LAYOUT.withName("adjust_size_request"),
-        Constants$root.C_POINTER$LAYOUT.withName("adjust_size_allocation"),
-        Constants$root.C_POINTER$LAYOUT.withName("style_updated"),
-        Constants$root.C_POINTER$LAYOUT.withName("touch_event"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height_and_baseline_for_width"),
-        Constants$root.C_POINTER$LAYOUT.withName("adjust_baseline_request"),
-        Constants$root.C_POINTER$LAYOUT.withName("adjust_baseline_allocation"),
-        Constants$root.C_POINTER$LAYOUT.withName("queue_draw_region"),
-        Constants$root.C_POINTER$LAYOUT.withName("priv"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved6"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved7")
-    ).withName("_GtkWidgetClass");
     public static MemoryLayout $LAYOUT() {
-        return _GtkWidgetClass.$struct$LAYOUT;
+        return constants$2095.const$5;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
     }
-    static final VarHandle activate_signal$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("activate_signal"));
     public static VarHandle activate_signal$VH() {
-        return _GtkWidgetClass.activate_signal$VH;
+        return constants$2096.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint activate_signal;
+     * unsigned int activate_signal;
      * }
      */
     public static int activate_signal$get(MemorySegment seg) {
-        return (int)_GtkWidgetClass.activate_signal$VH.get(seg);
+        return (int)constants$2096.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint activate_signal;
+     * unsigned int activate_signal;
      * }
      */
     public static void activate_signal$set(MemorySegment seg, int x) {
-        _GtkWidgetClass.activate_signal$VH.set(seg, x);
+        constants$2096.const$0.set(seg, x);
     }
     public static int activate_signal$get(MemorySegment seg, long index) {
-        return (int)_GtkWidgetClass.activate_signal$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2096.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void activate_signal$set(MemorySegment seg, long index, int x) {
-        _GtkWidgetClass.activate_signal$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2096.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final FunctionDescriptor dispatch_child_properties_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor dispatch_child_properties_changed_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle dispatch_child_properties_changed_UP$MH = RuntimeHelper.upcallHandle(dispatch_child_properties_changed.class, "apply", _GtkWidgetClass.dispatch_child_properties_changed_UP$FUNC);
-    static final FunctionDescriptor dispatch_child_properties_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle dispatch_child_properties_changed_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.dispatch_child_properties_changed_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*dispatch_child_properties_changed)(GtkWidget*,guint,GParamSpec**);
+ * void (*dispatch_child_properties_changed)(struct _GtkWidget*,unsigned int,struct _GParamSpec**);
      * }
      */
     public interface dispatch_child_properties_changed {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(dispatch_child_properties_changed fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.dispatch_child_properties_changed_UP$MH, fi, _GtkWidgetClass.dispatch_child_properties_changed$FUNC, scope);
+        static MemorySegment allocate(dispatch_child_properties_changed fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2096.const$1, fi, constants$42.const$4, scope);
         }
-        static dispatch_child_properties_changed ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static dispatch_child_properties_changed ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    _GtkWidgetClass.dispatch_child_properties_changed_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$625.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -285,66 +158,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle dispatch_child_properties_changed$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("dispatch_child_properties_changed"));
     public static VarHandle dispatch_child_properties_changed$VH() {
-        return _GtkWidgetClass.dispatch_child_properties_changed$VH;
+        return constants$2096.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*dispatch_child_properties_changed)(GtkWidget*,guint,GParamSpec**);
+     * void (*dispatch_child_properties_changed)(struct _GtkWidget*,unsigned int,struct _GParamSpec**);
      * }
      */
     public static MemorySegment dispatch_child_properties_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.dispatch_child_properties_changed$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2096.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*dispatch_child_properties_changed)(GtkWidget*,guint,GParamSpec**);
+     * void (*dispatch_child_properties_changed)(struct _GtkWidget*,unsigned int,struct _GParamSpec**);
      * }
      */
     public static void dispatch_child_properties_changed$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.dispatch_child_properties_changed$VH.set(seg, x);
+        constants$2096.const$2.set(seg, x);
     }
     public static MemorySegment dispatch_child_properties_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.dispatch_child_properties_changed$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2096.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void dispatch_child_properties_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.dispatch_child_properties_changed$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2096.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static dispatch_child_properties_changed dispatch_child_properties_changed(MemorySegment segment, SegmentScope scope) {
+    public static dispatch_child_properties_changed dispatch_child_properties_changed(MemorySegment segment, Arena scope) {
         return dispatch_child_properties_changed.ofAddress(dispatch_child_properties_changed$get(segment), scope);
     }
-    static final FunctionDescriptor destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor destroy_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle destroy_UP$MH = RuntimeHelper.upcallHandle(destroy.class, "apply", _GtkWidgetClass.destroy_UP$FUNC);
-    static final FunctionDescriptor destroy_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle destroy_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.destroy_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*destroy)(GtkWidget*);
+ * void (*destroy)(struct _GtkWidget*);
      * }
      */
     public interface destroy {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(destroy fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.destroy_UP$MH, fi, _GtkWidgetClass.destroy$FUNC, scope);
+        static MemorySegment allocate(destroy fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2096.const$3, fi, constants$13.const$1, scope);
         }
-        static destroy ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static destroy ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkWidgetClass.destroy_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -352,66 +211,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle destroy$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("destroy"));
     public static VarHandle destroy$VH() {
-        return _GtkWidgetClass.destroy$VH;
+        return constants$2096.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*destroy)(GtkWidget*);
+     * void (*destroy)(struct _GtkWidget*);
      * }
      */
     public static MemorySegment destroy$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.destroy$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2096.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*destroy)(GtkWidget*);
+     * void (*destroy)(struct _GtkWidget*);
      * }
      */
     public static void destroy$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.destroy$VH.set(seg, x);
+        constants$2096.const$4.set(seg, x);
     }
     public static MemorySegment destroy$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.destroy$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2096.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void destroy$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.destroy$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2096.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static destroy destroy(MemorySegment segment, SegmentScope scope) {
+    public static destroy destroy(MemorySegment segment, Arena scope) {
         return destroy.ofAddress(destroy$get(segment), scope);
     }
-    static final FunctionDescriptor show$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor show_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle show_UP$MH = RuntimeHelper.upcallHandle(show.class, "apply", _GtkWidgetClass.show_UP$FUNC);
-    static final FunctionDescriptor show_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle show_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.show_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*show)(GtkWidget*);
+ * void (*show)(struct _GtkWidget*);
      * }
      */
     public interface show {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(show fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.show_UP$MH, fi, _GtkWidgetClass.show$FUNC, scope);
+        static MemorySegment allocate(show fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2096.const$5, fi, constants$13.const$1, scope);
         }
-        static show ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static show ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkWidgetClass.show_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -419,66 +264,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle show$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("show"));
     public static VarHandle show$VH() {
-        return _GtkWidgetClass.show$VH;
+        return constants$2097.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*show)(GtkWidget*);
+     * void (*show)(struct _GtkWidget*);
      * }
      */
     public static MemorySegment show$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.show$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2097.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*show)(GtkWidget*);
+     * void (*show)(struct _GtkWidget*);
      * }
      */
     public static void show$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.show$VH.set(seg, x);
+        constants$2097.const$0.set(seg, x);
     }
     public static MemorySegment show$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.show$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2097.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void show$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.show$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2097.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static show show(MemorySegment segment, SegmentScope scope) {
+    public static show show(MemorySegment segment, Arena scope) {
         return show.ofAddress(show$get(segment), scope);
     }
-    static final FunctionDescriptor show_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor show_all_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle show_all_UP$MH = RuntimeHelper.upcallHandle(show_all.class, "apply", _GtkWidgetClass.show_all_UP$FUNC);
-    static final FunctionDescriptor show_all_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle show_all_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.show_all_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*show_all)(GtkWidget*);
+ * void (*show_all)(struct _GtkWidget*);
      * }
      */
     public interface show_all {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(show_all fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.show_all_UP$MH, fi, _GtkWidgetClass.show_all$FUNC, scope);
+        static MemorySegment allocate(show_all fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2097.const$1, fi, constants$13.const$1, scope);
         }
-        static show_all ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static show_all ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkWidgetClass.show_all_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -486,66 +317,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle show_all$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("show_all"));
     public static VarHandle show_all$VH() {
-        return _GtkWidgetClass.show_all$VH;
+        return constants$2097.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*show_all)(GtkWidget*);
+     * void (*show_all)(struct _GtkWidget*);
      * }
      */
     public static MemorySegment show_all$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.show_all$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2097.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*show_all)(GtkWidget*);
+     * void (*show_all)(struct _GtkWidget*);
      * }
      */
     public static void show_all$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.show_all$VH.set(seg, x);
+        constants$2097.const$2.set(seg, x);
     }
     public static MemorySegment show_all$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.show_all$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2097.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void show_all$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.show_all$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2097.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static show_all show_all(MemorySegment segment, SegmentScope scope) {
+    public static show_all show_all(MemorySegment segment, Arena scope) {
         return show_all.ofAddress(show_all$get(segment), scope);
     }
-    static final FunctionDescriptor hide$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor hide_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hide_UP$MH = RuntimeHelper.upcallHandle(hide.class, "apply", _GtkWidgetClass.hide_UP$FUNC);
-    static final FunctionDescriptor hide_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hide_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.hide_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*hide)(GtkWidget*);
+ * void (*hide)(struct _GtkWidget*);
      * }
      */
     public interface hide {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(hide fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.hide_UP$MH, fi, _GtkWidgetClass.hide$FUNC, scope);
+        static MemorySegment allocate(hide fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2097.const$3, fi, constants$13.const$1, scope);
         }
-        static hide ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static hide ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkWidgetClass.hide_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -553,66 +370,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle hide$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("hide"));
     public static VarHandle hide$VH() {
-        return _GtkWidgetClass.hide$VH;
+        return constants$2097.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*hide)(GtkWidget*);
+     * void (*hide)(struct _GtkWidget*);
      * }
      */
     public static MemorySegment hide$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.hide$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2097.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*hide)(GtkWidget*);
+     * void (*hide)(struct _GtkWidget*);
      * }
      */
     public static void hide$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.hide$VH.set(seg, x);
+        constants$2097.const$4.set(seg, x);
     }
     public static MemorySegment hide$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.hide$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2097.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void hide$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.hide$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2097.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static hide hide(MemorySegment segment, SegmentScope scope) {
+    public static hide hide(MemorySegment segment, Arena scope) {
         return hide.ofAddress(hide$get(segment), scope);
     }
-    static final FunctionDescriptor map$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor map_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle map_UP$MH = RuntimeHelper.upcallHandle(map.class, "apply", _GtkWidgetClass.map_UP$FUNC);
-    static final FunctionDescriptor map_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle map_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.map_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*map)(GtkWidget*);
+ * void (*map)(struct _GtkWidget*);
      * }
      */
     public interface map {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(map fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.map_UP$MH, fi, _GtkWidgetClass.map$FUNC, scope);
+        static MemorySegment allocate(map fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2097.const$5, fi, constants$13.const$1, scope);
         }
-        static map ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static map ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkWidgetClass.map_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -620,66 +423,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle map$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("map"));
     public static VarHandle map$VH() {
-        return _GtkWidgetClass.map$VH;
+        return constants$2098.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*map)(GtkWidget*);
+     * void (*map)(struct _GtkWidget*);
      * }
      */
     public static MemorySegment map$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.map$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2098.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*map)(GtkWidget*);
+     * void (*map)(struct _GtkWidget*);
      * }
      */
     public static void map$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.map$VH.set(seg, x);
+        constants$2098.const$0.set(seg, x);
     }
     public static MemorySegment map$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.map$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2098.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void map$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.map$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2098.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static map map(MemorySegment segment, SegmentScope scope) {
+    public static map map(MemorySegment segment, Arena scope) {
         return map.ofAddress(map$get(segment), scope);
     }
-    static final FunctionDescriptor unmap$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor unmap_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle unmap_UP$MH = RuntimeHelper.upcallHandle(unmap.class, "apply", _GtkWidgetClass.unmap_UP$FUNC);
-    static final FunctionDescriptor unmap_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle unmap_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.unmap_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*unmap)(GtkWidget*);
+ * void (*unmap)(struct _GtkWidget*);
      * }
      */
     public interface unmap {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(unmap fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.unmap_UP$MH, fi, _GtkWidgetClass.unmap$FUNC, scope);
+        static MemorySegment allocate(unmap fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2098.const$1, fi, constants$13.const$1, scope);
         }
-        static unmap ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static unmap ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkWidgetClass.unmap_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -687,66 +476,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle unmap$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("unmap"));
     public static VarHandle unmap$VH() {
-        return _GtkWidgetClass.unmap$VH;
+        return constants$2098.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*unmap)(GtkWidget*);
+     * void (*unmap)(struct _GtkWidget*);
      * }
      */
     public static MemorySegment unmap$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.unmap$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2098.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*unmap)(GtkWidget*);
+     * void (*unmap)(struct _GtkWidget*);
      * }
      */
     public static void unmap$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.unmap$VH.set(seg, x);
+        constants$2098.const$2.set(seg, x);
     }
     public static MemorySegment unmap$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.unmap$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2098.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void unmap$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.unmap$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2098.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static unmap unmap(MemorySegment segment, SegmentScope scope) {
+    public static unmap unmap(MemorySegment segment, Arena scope) {
         return unmap.ofAddress(unmap$get(segment), scope);
     }
-    static final FunctionDescriptor realize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor realize_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle realize_UP$MH = RuntimeHelper.upcallHandle(realize.class, "apply", _GtkWidgetClass.realize_UP$FUNC);
-    static final FunctionDescriptor realize_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle realize_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.realize_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*realize)(GtkWidget*);
+ * void (*realize)(struct _GtkWidget*);
      * }
      */
     public interface realize {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(realize fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.realize_UP$MH, fi, _GtkWidgetClass.realize$FUNC, scope);
+        static MemorySegment allocate(realize fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2098.const$3, fi, constants$13.const$1, scope);
         }
-        static realize ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static realize ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkWidgetClass.realize_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -754,66 +529,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle realize$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("realize"));
     public static VarHandle realize$VH() {
-        return _GtkWidgetClass.realize$VH;
+        return constants$2098.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*realize)(GtkWidget*);
+     * void (*realize)(struct _GtkWidget*);
      * }
      */
     public static MemorySegment realize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.realize$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2098.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*realize)(GtkWidget*);
+     * void (*realize)(struct _GtkWidget*);
      * }
      */
     public static void realize$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.realize$VH.set(seg, x);
+        constants$2098.const$4.set(seg, x);
     }
     public static MemorySegment realize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.realize$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2098.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void realize$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.realize$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2098.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static realize realize(MemorySegment segment, SegmentScope scope) {
+    public static realize realize(MemorySegment segment, Arena scope) {
         return realize.ofAddress(realize$get(segment), scope);
     }
-    static final FunctionDescriptor unrealize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor unrealize_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle unrealize_UP$MH = RuntimeHelper.upcallHandle(unrealize.class, "apply", _GtkWidgetClass.unrealize_UP$FUNC);
-    static final FunctionDescriptor unrealize_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle unrealize_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.unrealize_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*unrealize)(GtkWidget*);
+ * void (*unrealize)(struct _GtkWidget*);
      * }
      */
     public interface unrealize {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(unrealize fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.unrealize_UP$MH, fi, _GtkWidgetClass.unrealize$FUNC, scope);
+        static MemorySegment allocate(unrealize fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2098.const$5, fi, constants$13.const$1, scope);
         }
-        static unrealize ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static unrealize ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkWidgetClass.unrealize_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -821,69 +582,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle unrealize$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("unrealize"));
     public static VarHandle unrealize$VH() {
-        return _GtkWidgetClass.unrealize$VH;
+        return constants$2099.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*unrealize)(GtkWidget*);
+     * void (*unrealize)(struct _GtkWidget*);
      * }
      */
     public static MemorySegment unrealize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.unrealize$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2099.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*unrealize)(GtkWidget*);
+     * void (*unrealize)(struct _GtkWidget*);
      * }
      */
     public static void unrealize$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.unrealize$VH.set(seg, x);
+        constants$2099.const$0.set(seg, x);
     }
     public static MemorySegment unrealize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.unrealize$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2099.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void unrealize$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.unrealize$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2099.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static unrealize unrealize(MemorySegment segment, SegmentScope scope) {
+    public static unrealize unrealize(MemorySegment segment, Arena scope) {
         return unrealize.ofAddress(unrealize$get(segment), scope);
     }
-    static final FunctionDescriptor size_allocate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor size_allocate_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle size_allocate_UP$MH = RuntimeHelper.upcallHandle(size_allocate.class, "apply", _GtkWidgetClass.size_allocate_UP$FUNC);
-    static final FunctionDescriptor size_allocate_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle size_allocate_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.size_allocate_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*size_allocate)(GtkWidget*,GtkAllocation*);
+ * void (*size_allocate)(struct _GtkWidget*,struct _cairo_rectangle_int*);
      * }
      */
     public interface size_allocate {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(size_allocate fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.size_allocate_UP$MH, fi, _GtkWidgetClass.size_allocate$FUNC, scope);
+        static MemorySegment allocate(size_allocate fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2099.const$1, fi, constants$13.const$4, scope);
         }
-        static size_allocate ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static size_allocate ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkWidgetClass.size_allocate_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -891,69 +635,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle size_allocate$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("size_allocate"));
     public static VarHandle size_allocate$VH() {
-        return _GtkWidgetClass.size_allocate$VH;
+        return constants$2099.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*size_allocate)(GtkWidget*,GtkAllocation*);
+     * void (*size_allocate)(struct _GtkWidget*,struct _cairo_rectangle_int*);
      * }
      */
     public static MemorySegment size_allocate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.size_allocate$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2099.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*size_allocate)(GtkWidget*,GtkAllocation*);
+     * void (*size_allocate)(struct _GtkWidget*,struct _cairo_rectangle_int*);
      * }
      */
     public static void size_allocate$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.size_allocate$VH.set(seg, x);
+        constants$2099.const$2.set(seg, x);
     }
     public static MemorySegment size_allocate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.size_allocate$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2099.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void size_allocate$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.size_allocate$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2099.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static size_allocate size_allocate(MemorySegment segment, SegmentScope scope) {
+    public static size_allocate size_allocate(MemorySegment segment, Arena scope) {
         return size_allocate.ofAddress(size_allocate$get(segment), scope);
     }
-    static final FunctionDescriptor state_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor state_changed_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle state_changed_UP$MH = RuntimeHelper.upcallHandle(state_changed.class, "apply", _GtkWidgetClass.state_changed_UP$FUNC);
-    static final FunctionDescriptor state_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle state_changed_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.state_changed_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*state_changed)(GtkWidget*,GtkStateType);
+ * void (*state_changed)(struct _GtkWidget*,enum GtkStateType);
      * }
      */
     public interface state_changed {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(state_changed fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.state_changed_UP$MH, fi, _GtkWidgetClass.state_changed$FUNC, scope);
+        static MemorySegment allocate(state_changed fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2099.const$3, fi, constants$40.const$2, scope);
         }
-        static state_changed ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static state_changed ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    _GtkWidgetClass.state_changed_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    constants$509.const$5.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -961,69 +688,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle state_changed$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("state_changed"));
     public static VarHandle state_changed$VH() {
-        return _GtkWidgetClass.state_changed$VH;
+        return constants$2099.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*state_changed)(GtkWidget*,GtkStateType);
+     * void (*state_changed)(struct _GtkWidget*,enum GtkStateType);
      * }
      */
     public static MemorySegment state_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.state_changed$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2099.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*state_changed)(GtkWidget*,GtkStateType);
+     * void (*state_changed)(struct _GtkWidget*,enum GtkStateType);
      * }
      */
     public static void state_changed$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.state_changed$VH.set(seg, x);
+        constants$2099.const$4.set(seg, x);
     }
     public static MemorySegment state_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.state_changed$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2099.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void state_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.state_changed$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2099.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static state_changed state_changed(MemorySegment segment, SegmentScope scope) {
+    public static state_changed state_changed(MemorySegment segment, Arena scope) {
         return state_changed.ofAddress(state_changed$get(segment), scope);
     }
-    static final FunctionDescriptor state_flags_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor state_flags_changed_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle state_flags_changed_UP$MH = RuntimeHelper.upcallHandle(state_flags_changed.class, "apply", _GtkWidgetClass.state_flags_changed_UP$FUNC);
-    static final FunctionDescriptor state_flags_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle state_flags_changed_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.state_flags_changed_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*state_flags_changed)(GtkWidget*,GtkStateFlags);
+ * void (*state_flags_changed)(struct _GtkWidget*,enum GtkStateFlags);
      * }
      */
     public interface state_flags_changed {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(state_flags_changed fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.state_flags_changed_UP$MH, fi, _GtkWidgetClass.state_flags_changed$FUNC, scope);
+        static MemorySegment allocate(state_flags_changed fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2099.const$5, fi, constants$40.const$2, scope);
         }
-        static state_flags_changed ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static state_flags_changed ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    _GtkWidgetClass.state_flags_changed_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    constants$509.const$5.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1031,69 +741,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle state_flags_changed$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("state_flags_changed"));
     public static VarHandle state_flags_changed$VH() {
-        return _GtkWidgetClass.state_flags_changed$VH;
+        return constants$2100.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*state_flags_changed)(GtkWidget*,GtkStateFlags);
+     * void (*state_flags_changed)(struct _GtkWidget*,enum GtkStateFlags);
      * }
      */
     public static MemorySegment state_flags_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.state_flags_changed$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2100.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*state_flags_changed)(GtkWidget*,GtkStateFlags);
+     * void (*state_flags_changed)(struct _GtkWidget*,enum GtkStateFlags);
      * }
      */
     public static void state_flags_changed$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.state_flags_changed$VH.set(seg, x);
+        constants$2100.const$0.set(seg, x);
     }
     public static MemorySegment state_flags_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.state_flags_changed$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2100.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void state_flags_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.state_flags_changed$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2100.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static state_flags_changed state_flags_changed(MemorySegment segment, SegmentScope scope) {
+    public static state_flags_changed state_flags_changed(MemorySegment segment, Arena scope) {
         return state_flags_changed.ofAddress(state_flags_changed$get(segment), scope);
     }
-    static final FunctionDescriptor parent_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor parent_set_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle parent_set_UP$MH = RuntimeHelper.upcallHandle(parent_set.class, "apply", _GtkWidgetClass.parent_set_UP$FUNC);
-    static final FunctionDescriptor parent_set_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle parent_set_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.parent_set_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*parent_set)(GtkWidget*,GtkWidget*);
+ * void (*parent_set)(struct _GtkWidget*,struct _GtkWidget*);
      * }
      */
     public interface parent_set {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(parent_set fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.parent_set_UP$MH, fi, _GtkWidgetClass.parent_set$FUNC, scope);
+        static MemorySegment allocate(parent_set fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2100.const$1, fi, constants$13.const$4, scope);
         }
-        static parent_set ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static parent_set ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkWidgetClass.parent_set_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1101,69 +794,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle parent_set$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("parent_set"));
     public static VarHandle parent_set$VH() {
-        return _GtkWidgetClass.parent_set$VH;
+        return constants$2100.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*parent_set)(GtkWidget*,GtkWidget*);
+     * void (*parent_set)(struct _GtkWidget*,struct _GtkWidget*);
      * }
      */
     public static MemorySegment parent_set$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.parent_set$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2100.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*parent_set)(GtkWidget*,GtkWidget*);
+     * void (*parent_set)(struct _GtkWidget*,struct _GtkWidget*);
      * }
      */
     public static void parent_set$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.parent_set$VH.set(seg, x);
+        constants$2100.const$2.set(seg, x);
     }
     public static MemorySegment parent_set$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.parent_set$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2100.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void parent_set$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.parent_set$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2100.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static parent_set parent_set(MemorySegment segment, SegmentScope scope) {
+    public static parent_set parent_set(MemorySegment segment, Arena scope) {
         return parent_set.ofAddress(parent_set$get(segment), scope);
     }
-    static final FunctionDescriptor hierarchy_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor hierarchy_changed_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hierarchy_changed_UP$MH = RuntimeHelper.upcallHandle(hierarchy_changed.class, "apply", _GtkWidgetClass.hierarchy_changed_UP$FUNC);
-    static final FunctionDescriptor hierarchy_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hierarchy_changed_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.hierarchy_changed_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*hierarchy_changed)(GtkWidget*,GtkWidget*);
+ * void (*hierarchy_changed)(struct _GtkWidget*,struct _GtkWidget*);
      * }
      */
     public interface hierarchy_changed {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(hierarchy_changed fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.hierarchy_changed_UP$MH, fi, _GtkWidgetClass.hierarchy_changed$FUNC, scope);
+        static MemorySegment allocate(hierarchy_changed fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2100.const$3, fi, constants$13.const$4, scope);
         }
-        static hierarchy_changed ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static hierarchy_changed ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkWidgetClass.hierarchy_changed_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1171,69 +847,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle hierarchy_changed$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("hierarchy_changed"));
     public static VarHandle hierarchy_changed$VH() {
-        return _GtkWidgetClass.hierarchy_changed$VH;
+        return constants$2100.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*hierarchy_changed)(GtkWidget*,GtkWidget*);
+     * void (*hierarchy_changed)(struct _GtkWidget*,struct _GtkWidget*);
      * }
      */
     public static MemorySegment hierarchy_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.hierarchy_changed$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2100.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*hierarchy_changed)(GtkWidget*,GtkWidget*);
+     * void (*hierarchy_changed)(struct _GtkWidget*,struct _GtkWidget*);
      * }
      */
     public static void hierarchy_changed$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.hierarchy_changed$VH.set(seg, x);
+        constants$2100.const$4.set(seg, x);
     }
     public static MemorySegment hierarchy_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.hierarchy_changed$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2100.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void hierarchy_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.hierarchy_changed$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2100.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static hierarchy_changed hierarchy_changed(MemorySegment segment, SegmentScope scope) {
+    public static hierarchy_changed hierarchy_changed(MemorySegment segment, Arena scope) {
         return hierarchy_changed.ofAddress(hierarchy_changed$get(segment), scope);
     }
-    static final FunctionDescriptor style_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor style_set_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle style_set_UP$MH = RuntimeHelper.upcallHandle(style_set.class, "apply", _GtkWidgetClass.style_set_UP$FUNC);
-    static final FunctionDescriptor style_set_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle style_set_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.style_set_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*style_set)(GtkWidget*,GtkStyle*);
+ * void (*style_set)(struct _GtkWidget*,struct _GtkStyle*);
      * }
      */
     public interface style_set {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(style_set fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.style_set_UP$MH, fi, _GtkWidgetClass.style_set$FUNC, scope);
+        static MemorySegment allocate(style_set fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2100.const$5, fi, constants$13.const$4, scope);
         }
-        static style_set ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static style_set ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkWidgetClass.style_set_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1241,69 +900,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle style_set$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("style_set"));
     public static VarHandle style_set$VH() {
-        return _GtkWidgetClass.style_set$VH;
+        return constants$2101.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*style_set)(GtkWidget*,GtkStyle*);
+     * void (*style_set)(struct _GtkWidget*,struct _GtkStyle*);
      * }
      */
     public static MemorySegment style_set$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.style_set$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2101.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*style_set)(GtkWidget*,GtkStyle*);
+     * void (*style_set)(struct _GtkWidget*,struct _GtkStyle*);
      * }
      */
     public static void style_set$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.style_set$VH.set(seg, x);
+        constants$2101.const$0.set(seg, x);
     }
     public static MemorySegment style_set$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.style_set$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2101.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void style_set$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.style_set$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2101.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static style_set style_set(MemorySegment segment, SegmentScope scope) {
+    public static style_set style_set(MemorySegment segment, Arena scope) {
         return style_set.ofAddress(style_set$get(segment), scope);
     }
-    static final FunctionDescriptor direction_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor direction_changed_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle direction_changed_UP$MH = RuntimeHelper.upcallHandle(direction_changed.class, "apply", _GtkWidgetClass.direction_changed_UP$FUNC);
-    static final FunctionDescriptor direction_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle direction_changed_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.direction_changed_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*direction_changed)(GtkWidget*,GtkTextDirection);
+ * void (*direction_changed)(struct _GtkWidget*,enum GtkTextDirection);
      * }
      */
     public interface direction_changed {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(direction_changed fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.direction_changed_UP$MH, fi, _GtkWidgetClass.direction_changed$FUNC, scope);
+        static MemorySegment allocate(direction_changed fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2101.const$1, fi, constants$40.const$2, scope);
         }
-        static direction_changed ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static direction_changed ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    _GtkWidgetClass.direction_changed_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    constants$509.const$5.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1311,69 +953,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle direction_changed$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("direction_changed"));
     public static VarHandle direction_changed$VH() {
-        return _GtkWidgetClass.direction_changed$VH;
+        return constants$2101.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*direction_changed)(GtkWidget*,GtkTextDirection);
+     * void (*direction_changed)(struct _GtkWidget*,enum GtkTextDirection);
      * }
      */
     public static MemorySegment direction_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.direction_changed$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2101.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*direction_changed)(GtkWidget*,GtkTextDirection);
+     * void (*direction_changed)(struct _GtkWidget*,enum GtkTextDirection);
      * }
      */
     public static void direction_changed$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.direction_changed$VH.set(seg, x);
+        constants$2101.const$2.set(seg, x);
     }
     public static MemorySegment direction_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.direction_changed$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2101.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void direction_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.direction_changed$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2101.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static direction_changed direction_changed(MemorySegment segment, SegmentScope scope) {
+    public static direction_changed direction_changed(MemorySegment segment, Arena scope) {
         return direction_changed.ofAddress(direction_changed$get(segment), scope);
     }
-    static final FunctionDescriptor grab_notify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor grab_notify_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle grab_notify_UP$MH = RuntimeHelper.upcallHandle(grab_notify.class, "apply", _GtkWidgetClass.grab_notify_UP$FUNC);
-    static final FunctionDescriptor grab_notify_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle grab_notify_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.grab_notify_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*grab_notify)(GtkWidget*,gboolean);
+ * void (*grab_notify)(struct _GtkWidget*,int);
      * }
      */
     public interface grab_notify {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(grab_notify fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.grab_notify_UP$MH, fi, _GtkWidgetClass.grab_notify$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment colors, int n_colors);
+        static MemorySegment allocate(grab_notify fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2101.const$3, fi, constants$40.const$2, scope);
         }
-        static grab_notify ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
+        static grab_notify ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
                 try {
-                    _GtkWidgetClass.grab_notify_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    constants$509.const$5.invokeExact(symbol, _colors, _n_colors);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1381,69 +1006,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle grab_notify$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("grab_notify"));
     public static VarHandle grab_notify$VH() {
-        return _GtkWidgetClass.grab_notify$VH;
+        return constants$2101.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*grab_notify)(GtkWidget*,gboolean);
+     * void (*grab_notify)(struct _GtkWidget*,int);
      * }
      */
     public static MemorySegment grab_notify$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.grab_notify$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2101.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*grab_notify)(GtkWidget*,gboolean);
+     * void (*grab_notify)(struct _GtkWidget*,int);
      * }
      */
     public static void grab_notify$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.grab_notify$VH.set(seg, x);
+        constants$2101.const$4.set(seg, x);
     }
     public static MemorySegment grab_notify$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.grab_notify$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2101.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void grab_notify$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.grab_notify$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2101.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static grab_notify grab_notify(MemorySegment segment, SegmentScope scope) {
+    public static grab_notify grab_notify(MemorySegment segment, Arena scope) {
         return grab_notify.ofAddress(grab_notify$get(segment), scope);
     }
-    static final FunctionDescriptor child_notify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor child_notify_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle child_notify_UP$MH = RuntimeHelper.upcallHandle(child_notify.class, "apply", _GtkWidgetClass.child_notify_UP$FUNC);
-    static final FunctionDescriptor child_notify_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle child_notify_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.child_notify_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*child_notify)(GtkWidget*,GParamSpec*);
+ * void (*child_notify)(struct _GtkWidget*,struct _GParamSpec*);
      * }
      */
     public interface child_notify {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(child_notify fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.child_notify_UP$MH, fi, _GtkWidgetClass.child_notify$FUNC, scope);
+        static MemorySegment allocate(child_notify fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2101.const$5, fi, constants$13.const$4, scope);
         }
-        static child_notify ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static child_notify ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkWidgetClass.child_notify_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1451,69 +1059,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle child_notify$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("child_notify"));
     public static VarHandle child_notify$VH() {
-        return _GtkWidgetClass.child_notify$VH;
+        return constants$2102.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*child_notify)(GtkWidget*,GParamSpec*);
+     * void (*child_notify)(struct _GtkWidget*,struct _GParamSpec*);
      * }
      */
     public static MemorySegment child_notify$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.child_notify$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2102.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*child_notify)(GtkWidget*,GParamSpec*);
+     * void (*child_notify)(struct _GtkWidget*,struct _GParamSpec*);
      * }
      */
     public static void child_notify$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.child_notify$VH.set(seg, x);
+        constants$2102.const$0.set(seg, x);
     }
     public static MemorySegment child_notify$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.child_notify$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2102.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void child_notify$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.child_notify$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2102.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static child_notify child_notify(MemorySegment segment, SegmentScope scope) {
+    public static child_notify child_notify(MemorySegment segment, Arena scope) {
         return child_notify.ofAddress(child_notify$get(segment), scope);
     }
-    static final FunctionDescriptor draw$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor draw_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle draw_UP$MH = RuntimeHelper.upcallHandle(draw.class, "apply", _GtkWidgetClass.draw_UP$FUNC);
-    static final FunctionDescriptor draw_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle draw_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.draw_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*draw)(GtkWidget*,cairo_t*);
+ * int (*draw)(struct _GtkWidget*,struct _cairo*);
      * }
      */
     public interface draw {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(draw fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.draw_UP$MH, fi, _GtkWidgetClass.draw$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(draw fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2102.const$1, fi, constants$9.const$0, scope);
         }
-        static draw ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static draw ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.draw_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1521,66 +1112,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle draw$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("draw"));
     public static VarHandle draw$VH() {
-        return _GtkWidgetClass.draw$VH;
+        return constants$2102.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*draw)(GtkWidget*,cairo_t*);
+     * int (*draw)(struct _GtkWidget*,struct _cairo*);
      * }
      */
     public static MemorySegment draw$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.draw$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2102.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*draw)(GtkWidget*,cairo_t*);
+     * int (*draw)(struct _GtkWidget*,struct _cairo*);
      * }
      */
     public static void draw$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.draw$VH.set(seg, x);
+        constants$2102.const$2.set(seg, x);
     }
     public static MemorySegment draw$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.draw$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2102.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void draw$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.draw$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2102.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static draw draw(MemorySegment segment, SegmentScope scope) {
+    public static draw draw(MemorySegment segment, Arena scope) {
         return draw.ofAddress(draw$get(segment), scope);
     }
-    static final FunctionDescriptor get_request_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_request_mode_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_request_mode_UP$MH = RuntimeHelper.upcallHandle(get_request_mode.class, "apply", _GtkWidgetClass.get_request_mode_UP$FUNC);
-    static final FunctionDescriptor get_request_mode_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_request_mode_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.get_request_mode_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GtkSizeRequestMode (*get_request_mode)(GtkWidget*);
+ * enum GtkSizeRequestMode (*get_request_mode)(struct _GtkWidget*);
      * }
      */
     public interface get_request_mode {
 
         int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(get_request_mode fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.get_request_mode_UP$MH, fi, _GtkWidgetClass.get_request_mode$FUNC, scope);
+        static MemorySegment allocate(get_request_mode fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2102.const$3, fi, constants$10.const$5, scope);
         }
-        static get_request_mode ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_request_mode ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (int)_GtkWidgetClass.get_request_mode_DOWN$MH.invokeExact(symbol, __x0);
+                    return (int)constants$14.const$2.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1588,72 +1165,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle get_request_mode$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_request_mode"));
     public static VarHandle get_request_mode$VH() {
-        return _GtkWidgetClass.get_request_mode$VH;
+        return constants$2102.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GtkSizeRequestMode (*get_request_mode)(GtkWidget*);
+     * enum GtkSizeRequestMode (*get_request_mode)(struct _GtkWidget*);
      * }
      */
     public static MemorySegment get_request_mode$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.get_request_mode$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2102.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GtkSizeRequestMode (*get_request_mode)(GtkWidget*);
+     * enum GtkSizeRequestMode (*get_request_mode)(struct _GtkWidget*);
      * }
      */
     public static void get_request_mode$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.get_request_mode$VH.set(seg, x);
+        constants$2102.const$4.set(seg, x);
     }
     public static MemorySegment get_request_mode$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.get_request_mode$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2102.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_request_mode$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.get_request_mode$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2102.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_request_mode get_request_mode(MemorySegment segment, SegmentScope scope) {
+    public static get_request_mode get_request_mode(MemorySegment segment, Arena scope) {
         return get_request_mode.ofAddress(get_request_mode$get(segment), scope);
     }
-    static final FunctionDescriptor get_preferred_height$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_preferred_height_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_preferred_height_UP$MH = RuntimeHelper.upcallHandle(get_preferred_height.class, "apply", _GtkWidgetClass.get_preferred_height_UP$FUNC);
-    static final FunctionDescriptor get_preferred_height_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_preferred_height_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.get_preferred_height_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*get_preferred_height)(GtkWidget*,gint*,gint*);
+ * void (*get_preferred_height)(struct _GtkWidget*,int*,int*);
      * }
      */
     public interface get_preferred_height {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_preferred_height fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.get_preferred_height_UP$MH, fi, _GtkWidgetClass.get_preferred_height$FUNC, scope);
+        static MemorySegment allocate(get_preferred_height fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2102.const$5, fi, constants$14.const$3, scope);
         }
-        static get_preferred_height ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_preferred_height ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GtkWidgetClass.get_preferred_height_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
+                    constants$14.const$5.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1661,75 +1218,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle get_preferred_height$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_preferred_height"));
     public static VarHandle get_preferred_height$VH() {
-        return _GtkWidgetClass.get_preferred_height$VH;
+        return constants$2103.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*get_preferred_height)(GtkWidget*,gint*,gint*);
+     * void (*get_preferred_height)(struct _GtkWidget*,int*,int*);
      * }
      */
     public static MemorySegment get_preferred_height$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.get_preferred_height$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2103.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*get_preferred_height)(GtkWidget*,gint*,gint*);
+     * void (*get_preferred_height)(struct _GtkWidget*,int*,int*);
      * }
      */
     public static void get_preferred_height$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.get_preferred_height$VH.set(seg, x);
+        constants$2103.const$0.set(seg, x);
     }
     public static MemorySegment get_preferred_height$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.get_preferred_height$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2103.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_preferred_height$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.get_preferred_height$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2103.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_preferred_height get_preferred_height(MemorySegment segment, SegmentScope scope) {
+    public static get_preferred_height get_preferred_height(MemorySegment segment, Arena scope) {
         return get_preferred_height.ofAddress(get_preferred_height$get(segment), scope);
     }
-    static final FunctionDescriptor get_preferred_width_for_height$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_preferred_width_for_height_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_preferred_width_for_height_UP$MH = RuntimeHelper.upcallHandle(get_preferred_width_for_height.class, "apply", _GtkWidgetClass.get_preferred_width_for_height_UP$FUNC);
-    static final FunctionDescriptor get_preferred_width_for_height_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_preferred_width_for_height_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.get_preferred_width_for_height_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*get_preferred_width_for_height)(GtkWidget*,gint,gint*,gint*);
+ * void (*get_preferred_width_for_height)(struct _GtkWidget*,int,int*,int*);
      * }
      */
     public interface get_preferred_width_for_height {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(get_preferred_width_for_height fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.get_preferred_width_for_height_UP$MH, fi, _GtkWidgetClass.get_preferred_width_for_height$FUNC, scope);
+        static MemorySegment allocate(get_preferred_width_for_height fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2103.const$1, fi, constants$179.const$1, scope);
         }
-        static get_preferred_width_for_height ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_preferred_width_for_height ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    _GtkWidgetClass.get_preferred_width_for_height_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$372.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1737,72 +1271,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle get_preferred_width_for_height$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_preferred_width_for_height"));
     public static VarHandle get_preferred_width_for_height$VH() {
-        return _GtkWidgetClass.get_preferred_width_for_height$VH;
+        return constants$2103.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*get_preferred_width_for_height)(GtkWidget*,gint,gint*,gint*);
+     * void (*get_preferred_width_for_height)(struct _GtkWidget*,int,int*,int*);
      * }
      */
     public static MemorySegment get_preferred_width_for_height$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.get_preferred_width_for_height$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2103.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*get_preferred_width_for_height)(GtkWidget*,gint,gint*,gint*);
+     * void (*get_preferred_width_for_height)(struct _GtkWidget*,int,int*,int*);
      * }
      */
     public static void get_preferred_width_for_height$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.get_preferred_width_for_height$VH.set(seg, x);
+        constants$2103.const$2.set(seg, x);
     }
     public static MemorySegment get_preferred_width_for_height$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.get_preferred_width_for_height$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2103.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_preferred_width_for_height$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.get_preferred_width_for_height$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2103.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_preferred_width_for_height get_preferred_width_for_height(MemorySegment segment, SegmentScope scope) {
+    public static get_preferred_width_for_height get_preferred_width_for_height(MemorySegment segment, Arena scope) {
         return get_preferred_width_for_height.ofAddress(get_preferred_width_for_height$get(segment), scope);
     }
-    static final FunctionDescriptor get_preferred_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_preferred_width_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_preferred_width_UP$MH = RuntimeHelper.upcallHandle(get_preferred_width.class, "apply", _GtkWidgetClass.get_preferred_width_UP$FUNC);
-    static final FunctionDescriptor get_preferred_width_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_preferred_width_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.get_preferred_width_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*get_preferred_width)(GtkWidget*,gint*,gint*);
+ * void (*get_preferred_width)(struct _GtkWidget*,int*,int*);
      * }
      */
     public interface get_preferred_width {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_preferred_width fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.get_preferred_width_UP$MH, fi, _GtkWidgetClass.get_preferred_width$FUNC, scope);
+        static MemorySegment allocate(get_preferred_width fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2103.const$3, fi, constants$14.const$3, scope);
         }
-        static get_preferred_width ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_preferred_width ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GtkWidgetClass.get_preferred_width_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
+                    constants$14.const$5.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1810,75 +1324,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle get_preferred_width$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_preferred_width"));
     public static VarHandle get_preferred_width$VH() {
-        return _GtkWidgetClass.get_preferred_width$VH;
+        return constants$2103.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*get_preferred_width)(GtkWidget*,gint*,gint*);
+     * void (*get_preferred_width)(struct _GtkWidget*,int*,int*);
      * }
      */
     public static MemorySegment get_preferred_width$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.get_preferred_width$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2103.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*get_preferred_width)(GtkWidget*,gint*,gint*);
+     * void (*get_preferred_width)(struct _GtkWidget*,int*,int*);
      * }
      */
     public static void get_preferred_width$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.get_preferred_width$VH.set(seg, x);
+        constants$2103.const$4.set(seg, x);
     }
     public static MemorySegment get_preferred_width$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.get_preferred_width$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2103.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_preferred_width$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.get_preferred_width$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2103.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_preferred_width get_preferred_width(MemorySegment segment, SegmentScope scope) {
+    public static get_preferred_width get_preferred_width(MemorySegment segment, Arena scope) {
         return get_preferred_width.ofAddress(get_preferred_width$get(segment), scope);
     }
-    static final FunctionDescriptor get_preferred_height_for_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_preferred_height_for_width_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_preferred_height_for_width_UP$MH = RuntimeHelper.upcallHandle(get_preferred_height_for_width.class, "apply", _GtkWidgetClass.get_preferred_height_for_width_UP$FUNC);
-    static final FunctionDescriptor get_preferred_height_for_width_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_preferred_height_for_width_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.get_preferred_height_for_width_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*get_preferred_height_for_width)(GtkWidget*,gint,gint*,gint*);
+ * void (*get_preferred_height_for_width)(struct _GtkWidget*,int,int*,int*);
      * }
      */
     public interface get_preferred_height_for_width {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(get_preferred_height_for_width fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.get_preferred_height_for_width_UP$MH, fi, _GtkWidgetClass.get_preferred_height_for_width$FUNC, scope);
+        static MemorySegment allocate(get_preferred_height_for_width fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2103.const$5, fi, constants$179.const$1, scope);
         }
-        static get_preferred_height_for_width ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_preferred_height_for_width ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    _GtkWidgetClass.get_preferred_height_for_width_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$372.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1886,69 +1377,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle get_preferred_height_for_width$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_preferred_height_for_width"));
     public static VarHandle get_preferred_height_for_width$VH() {
-        return _GtkWidgetClass.get_preferred_height_for_width$VH;
+        return constants$2104.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*get_preferred_height_for_width)(GtkWidget*,gint,gint*,gint*);
+     * void (*get_preferred_height_for_width)(struct _GtkWidget*,int,int*,int*);
      * }
      */
     public static MemorySegment get_preferred_height_for_width$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.get_preferred_height_for_width$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2104.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*get_preferred_height_for_width)(GtkWidget*,gint,gint*,gint*);
+     * void (*get_preferred_height_for_width)(struct _GtkWidget*,int,int*,int*);
      * }
      */
     public static void get_preferred_height_for_width$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.get_preferred_height_for_width$VH.set(seg, x);
+        constants$2104.const$0.set(seg, x);
     }
     public static MemorySegment get_preferred_height_for_width$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.get_preferred_height_for_width$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2104.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_preferred_height_for_width$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.get_preferred_height_for_width$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2104.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_preferred_height_for_width get_preferred_height_for_width(MemorySegment segment, SegmentScope scope) {
+    public static get_preferred_height_for_width get_preferred_height_for_width(MemorySegment segment, Arena scope) {
         return get_preferred_height_for_width.ofAddress(get_preferred_height_for_width$get(segment), scope);
     }
-    static final FunctionDescriptor mnemonic_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor mnemonic_activate_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle mnemonic_activate_UP$MH = RuntimeHelper.upcallHandle(mnemonic_activate.class, "apply", _GtkWidgetClass.mnemonic_activate_UP$FUNC);
-    static final FunctionDescriptor mnemonic_activate_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle mnemonic_activate_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.mnemonic_activate_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*mnemonic_activate)(GtkWidget*,gboolean);
+ * int (*mnemonic_activate)(struct _GtkWidget*,int);
      * }
      */
     public interface mnemonic_activate {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(mnemonic_activate fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.mnemonic_activate_UP$MH, fi, _GtkWidgetClass.mnemonic_activate$FUNC, scope);
+        static MemorySegment allocate(mnemonic_activate fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2104.const$1, fi, constants$11.const$4, scope);
         }
-        static mnemonic_activate ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static mnemonic_activate ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_GtkWidgetClass.mnemonic_activate_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$837.const$4.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1956,66 +1430,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle mnemonic_activate$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("mnemonic_activate"));
     public static VarHandle mnemonic_activate$VH() {
-        return _GtkWidgetClass.mnemonic_activate$VH;
+        return constants$2104.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*mnemonic_activate)(GtkWidget*,gboolean);
+     * int (*mnemonic_activate)(struct _GtkWidget*,int);
      * }
      */
     public static MemorySegment mnemonic_activate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.mnemonic_activate$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2104.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*mnemonic_activate)(GtkWidget*,gboolean);
+     * int (*mnemonic_activate)(struct _GtkWidget*,int);
      * }
      */
     public static void mnemonic_activate$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.mnemonic_activate$VH.set(seg, x);
+        constants$2104.const$2.set(seg, x);
     }
     public static MemorySegment mnemonic_activate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.mnemonic_activate$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2104.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void mnemonic_activate$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.mnemonic_activate$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2104.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static mnemonic_activate mnemonic_activate(MemorySegment segment, SegmentScope scope) {
+    public static mnemonic_activate mnemonic_activate(MemorySegment segment, Arena scope) {
         return mnemonic_activate.ofAddress(mnemonic_activate$get(segment), scope);
     }
-    static final FunctionDescriptor grab_focus$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor grab_focus_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle grab_focus_UP$MH = RuntimeHelper.upcallHandle(grab_focus.class, "apply", _GtkWidgetClass.grab_focus_UP$FUNC);
-    static final FunctionDescriptor grab_focus_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle grab_focus_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.grab_focus_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*grab_focus)(GtkWidget*);
+ * void (*grab_focus)(struct _GtkWidget*);
      * }
      */
     public interface grab_focus {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(grab_focus fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.grab_focus_UP$MH, fi, _GtkWidgetClass.grab_focus$FUNC, scope);
+        static MemorySegment allocate(grab_focus fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2104.const$3, fi, constants$13.const$1, scope);
         }
-        static grab_focus ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static grab_focus ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkWidgetClass.grab_focus_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -2023,69 +1483,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle grab_focus$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("grab_focus"));
     public static VarHandle grab_focus$VH() {
-        return _GtkWidgetClass.grab_focus$VH;
+        return constants$2104.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*grab_focus)(GtkWidget*);
+     * void (*grab_focus)(struct _GtkWidget*);
      * }
      */
     public static MemorySegment grab_focus$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.grab_focus$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2104.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*grab_focus)(GtkWidget*);
+     * void (*grab_focus)(struct _GtkWidget*);
      * }
      */
     public static void grab_focus$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.grab_focus$VH.set(seg, x);
+        constants$2104.const$4.set(seg, x);
     }
     public static MemorySegment grab_focus$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.grab_focus$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2104.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void grab_focus$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.grab_focus$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2104.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static grab_focus grab_focus(MemorySegment segment, SegmentScope scope) {
+    public static grab_focus grab_focus(MemorySegment segment, Arena scope) {
         return grab_focus.ofAddress(grab_focus$get(segment), scope);
     }
-    static final FunctionDescriptor focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor focus_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle focus_UP$MH = RuntimeHelper.upcallHandle(focus.class, "apply", _GtkWidgetClass.focus_UP$FUNC);
-    static final FunctionDescriptor focus_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle focus_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.focus_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*focus)(GtkWidget*,GtkDirectionType);
+ * int (*focus)(struct _GtkWidget*,enum GtkDirectionType);
      * }
      */
     public interface focus {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(focus fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.focus_UP$MH, fi, _GtkWidgetClass.focus$FUNC, scope);
+        static MemorySegment allocate(focus fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2104.const$5, fi, constants$11.const$4, scope);
         }
-        static focus ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static focus ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_GtkWidgetClass.focus_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$837.const$4.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -2093,69 +1536,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle focus$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("focus"));
     public static VarHandle focus$VH() {
-        return _GtkWidgetClass.focus$VH;
+        return constants$2105.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*focus)(GtkWidget*,GtkDirectionType);
+     * int (*focus)(struct _GtkWidget*,enum GtkDirectionType);
      * }
      */
     public static MemorySegment focus$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.focus$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2105.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*focus)(GtkWidget*,GtkDirectionType);
+     * int (*focus)(struct _GtkWidget*,enum GtkDirectionType);
      * }
      */
     public static void focus$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.focus$VH.set(seg, x);
+        constants$2105.const$0.set(seg, x);
     }
     public static MemorySegment focus$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.focus$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2105.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void focus$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.focus$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2105.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static focus focus(MemorySegment segment, SegmentScope scope) {
+    public static focus focus(MemorySegment segment, Arena scope) {
         return focus.ofAddress(focus$get(segment), scope);
     }
-    static final FunctionDescriptor move_focus$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor move_focus_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle move_focus_UP$MH = RuntimeHelper.upcallHandle(move_focus.class, "apply", _GtkWidgetClass.move_focus_UP$FUNC);
-    static final FunctionDescriptor move_focus_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle move_focus_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.move_focus_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*move_focus)(GtkWidget*,GtkDirectionType);
+ * void (*move_focus)(struct _GtkWidget*,enum GtkDirectionType);
      * }
      */
     public interface move_focus {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(move_focus fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.move_focus_UP$MH, fi, _GtkWidgetClass.move_focus$FUNC, scope);
+        static MemorySegment allocate(move_focus fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2105.const$1, fi, constants$40.const$2, scope);
         }
-        static move_focus ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static move_focus ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    _GtkWidgetClass.move_focus_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    constants$509.const$5.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -2163,69 +1589,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle move_focus$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("move_focus"));
     public static VarHandle move_focus$VH() {
-        return _GtkWidgetClass.move_focus$VH;
+        return constants$2105.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*move_focus)(GtkWidget*,GtkDirectionType);
+     * void (*move_focus)(struct _GtkWidget*,enum GtkDirectionType);
      * }
      */
     public static MemorySegment move_focus$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.move_focus$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2105.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*move_focus)(GtkWidget*,GtkDirectionType);
+     * void (*move_focus)(struct _GtkWidget*,enum GtkDirectionType);
      * }
      */
     public static void move_focus$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.move_focus$VH.set(seg, x);
+        constants$2105.const$2.set(seg, x);
     }
     public static MemorySegment move_focus$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.move_focus$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2105.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void move_focus$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.move_focus$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2105.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static move_focus move_focus(MemorySegment segment, SegmentScope scope) {
+    public static move_focus move_focus(MemorySegment segment, Arena scope) {
         return move_focus.ofAddress(move_focus$get(segment), scope);
     }
-    static final FunctionDescriptor keynav_failed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor keynav_failed_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle keynav_failed_UP$MH = RuntimeHelper.upcallHandle(keynav_failed.class, "apply", _GtkWidgetClass.keynav_failed_UP$FUNC);
-    static final FunctionDescriptor keynav_failed_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle keynav_failed_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.keynav_failed_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*keynav_failed)(GtkWidget*,GtkDirectionType);
+ * int (*keynav_failed)(struct _GtkWidget*,enum GtkDirectionType);
      * }
      */
     public interface keynav_failed {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(keynav_failed fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.keynav_failed_UP$MH, fi, _GtkWidgetClass.keynav_failed$FUNC, scope);
+        static MemorySegment allocate(keynav_failed fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2105.const$3, fi, constants$11.const$4, scope);
         }
-        static keynav_failed ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static keynav_failed ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_GtkWidgetClass.keynav_failed_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$837.const$4.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -2233,69 +1642,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle keynav_failed$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("keynav_failed"));
     public static VarHandle keynav_failed$VH() {
-        return _GtkWidgetClass.keynav_failed$VH;
+        return constants$2105.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*keynav_failed)(GtkWidget*,GtkDirectionType);
+     * int (*keynav_failed)(struct _GtkWidget*,enum GtkDirectionType);
      * }
      */
     public static MemorySegment keynav_failed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.keynav_failed$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2105.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*keynav_failed)(GtkWidget*,GtkDirectionType);
+     * int (*keynav_failed)(struct _GtkWidget*,enum GtkDirectionType);
      * }
      */
     public static void keynav_failed$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.keynav_failed$VH.set(seg, x);
+        constants$2105.const$4.set(seg, x);
     }
     public static MemorySegment keynav_failed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.keynav_failed$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2105.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void keynav_failed$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.keynav_failed$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2105.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static keynav_failed keynav_failed(MemorySegment segment, SegmentScope scope) {
+    public static keynav_failed keynav_failed(MemorySegment segment, Arena scope) {
         return keynav_failed.ofAddress(keynav_failed$get(segment), scope);
     }
-    static final FunctionDescriptor event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle event_UP$MH = RuntimeHelper.upcallHandle(event.class, "apply", _GtkWidgetClass.event_UP$FUNC);
-    static final FunctionDescriptor event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*event)(GtkWidget*,GdkEvent*);
+ * int (*event)(struct _GtkWidget*,union _GdkEvent*);
      * }
      */
     public interface event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.event_UP$MH, fi, _GtkWidgetClass.event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2105.const$5, fi, constants$9.const$0, scope);
         }
-        static event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -2303,69 +1695,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("event"));
     public static VarHandle event$VH() {
-        return _GtkWidgetClass.event$VH;
+        return constants$2106.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*event)(GtkWidget*,GdkEvent*);
+     * int (*event)(struct _GtkWidget*,union _GdkEvent*);
      * }
      */
     public static MemorySegment event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2106.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*event)(GtkWidget*,GdkEvent*);
+     * int (*event)(struct _GtkWidget*,union _GdkEvent*);
      * }
      */
     public static void event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.event$VH.set(seg, x);
+        constants$2106.const$0.set(seg, x);
     }
     public static MemorySegment event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2106.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2106.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static event event(MemorySegment segment, SegmentScope scope) {
+    public static event event(MemorySegment segment, Arena scope) {
         return event.ofAddress(event$get(segment), scope);
     }
-    static final FunctionDescriptor button_press_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor button_press_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle button_press_event_UP$MH = RuntimeHelper.upcallHandle(button_press_event.class, "apply", _GtkWidgetClass.button_press_event_UP$FUNC);
-    static final FunctionDescriptor button_press_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle button_press_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.button_press_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*button_press_event)(GtkWidget*,GdkEventButton*);
+ * int (*button_press_event)(struct _GtkWidget*,struct _GdkEventButton*);
      * }
      */
     public interface button_press_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(button_press_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.button_press_event_UP$MH, fi, _GtkWidgetClass.button_press_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(button_press_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2106.const$1, fi, constants$9.const$0, scope);
         }
-        static button_press_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static button_press_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.button_press_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -2373,69 +1748,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle button_press_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("button_press_event"));
     public static VarHandle button_press_event$VH() {
-        return _GtkWidgetClass.button_press_event$VH;
+        return constants$2106.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*button_press_event)(GtkWidget*,GdkEventButton*);
+     * int (*button_press_event)(struct _GtkWidget*,struct _GdkEventButton*);
      * }
      */
     public static MemorySegment button_press_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.button_press_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2106.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*button_press_event)(GtkWidget*,GdkEventButton*);
+     * int (*button_press_event)(struct _GtkWidget*,struct _GdkEventButton*);
      * }
      */
     public static void button_press_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.button_press_event$VH.set(seg, x);
+        constants$2106.const$2.set(seg, x);
     }
     public static MemorySegment button_press_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.button_press_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2106.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void button_press_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.button_press_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2106.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static button_press_event button_press_event(MemorySegment segment, SegmentScope scope) {
+    public static button_press_event button_press_event(MemorySegment segment, Arena scope) {
         return button_press_event.ofAddress(button_press_event$get(segment), scope);
     }
-    static final FunctionDescriptor button_release_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor button_release_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle button_release_event_UP$MH = RuntimeHelper.upcallHandle(button_release_event.class, "apply", _GtkWidgetClass.button_release_event_UP$FUNC);
-    static final FunctionDescriptor button_release_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle button_release_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.button_release_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*button_release_event)(GtkWidget*,GdkEventButton*);
+ * int (*button_release_event)(struct _GtkWidget*,struct _GdkEventButton*);
      * }
      */
     public interface button_release_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(button_release_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.button_release_event_UP$MH, fi, _GtkWidgetClass.button_release_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(button_release_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2106.const$3, fi, constants$9.const$0, scope);
         }
-        static button_release_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static button_release_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.button_release_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -2443,69 +1801,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle button_release_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("button_release_event"));
     public static VarHandle button_release_event$VH() {
-        return _GtkWidgetClass.button_release_event$VH;
+        return constants$2106.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*button_release_event)(GtkWidget*,GdkEventButton*);
+     * int (*button_release_event)(struct _GtkWidget*,struct _GdkEventButton*);
      * }
      */
     public static MemorySegment button_release_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.button_release_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2106.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*button_release_event)(GtkWidget*,GdkEventButton*);
+     * int (*button_release_event)(struct _GtkWidget*,struct _GdkEventButton*);
      * }
      */
     public static void button_release_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.button_release_event$VH.set(seg, x);
+        constants$2106.const$4.set(seg, x);
     }
     public static MemorySegment button_release_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.button_release_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2106.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void button_release_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.button_release_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2106.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static button_release_event button_release_event(MemorySegment segment, SegmentScope scope) {
+    public static button_release_event button_release_event(MemorySegment segment, Arena scope) {
         return button_release_event.ofAddress(button_release_event$get(segment), scope);
     }
-    static final FunctionDescriptor scroll_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor scroll_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle scroll_event_UP$MH = RuntimeHelper.upcallHandle(scroll_event.class, "apply", _GtkWidgetClass.scroll_event_UP$FUNC);
-    static final FunctionDescriptor scroll_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle scroll_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.scroll_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*scroll_event)(GtkWidget*,GdkEventScroll*);
+ * int (*scroll_event)(struct _GtkWidget*,struct _GdkEventScroll*);
      * }
      */
     public interface scroll_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(scroll_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.scroll_event_UP$MH, fi, _GtkWidgetClass.scroll_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(scroll_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2106.const$5, fi, constants$9.const$0, scope);
         }
-        static scroll_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static scroll_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.scroll_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -2513,69 +1854,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle scroll_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("scroll_event"));
     public static VarHandle scroll_event$VH() {
-        return _GtkWidgetClass.scroll_event$VH;
+        return constants$2107.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*scroll_event)(GtkWidget*,GdkEventScroll*);
+     * int (*scroll_event)(struct _GtkWidget*,struct _GdkEventScroll*);
      * }
      */
     public static MemorySegment scroll_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.scroll_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2107.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*scroll_event)(GtkWidget*,GdkEventScroll*);
+     * int (*scroll_event)(struct _GtkWidget*,struct _GdkEventScroll*);
      * }
      */
     public static void scroll_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.scroll_event$VH.set(seg, x);
+        constants$2107.const$0.set(seg, x);
     }
     public static MemorySegment scroll_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.scroll_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2107.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void scroll_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.scroll_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2107.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static scroll_event scroll_event(MemorySegment segment, SegmentScope scope) {
+    public static scroll_event scroll_event(MemorySegment segment, Arena scope) {
         return scroll_event.ofAddress(scroll_event$get(segment), scope);
     }
-    static final FunctionDescriptor motion_notify_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor motion_notify_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle motion_notify_event_UP$MH = RuntimeHelper.upcallHandle(motion_notify_event.class, "apply", _GtkWidgetClass.motion_notify_event_UP$FUNC);
-    static final FunctionDescriptor motion_notify_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle motion_notify_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.motion_notify_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*motion_notify_event)(GtkWidget*,GdkEventMotion*);
+ * int (*motion_notify_event)(struct _GtkWidget*,struct _GdkEventMotion*);
      * }
      */
     public interface motion_notify_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(motion_notify_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.motion_notify_event_UP$MH, fi, _GtkWidgetClass.motion_notify_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(motion_notify_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2107.const$1, fi, constants$9.const$0, scope);
         }
-        static motion_notify_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static motion_notify_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.motion_notify_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -2583,69 +1907,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle motion_notify_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("motion_notify_event"));
     public static VarHandle motion_notify_event$VH() {
-        return _GtkWidgetClass.motion_notify_event$VH;
+        return constants$2107.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*motion_notify_event)(GtkWidget*,GdkEventMotion*);
+     * int (*motion_notify_event)(struct _GtkWidget*,struct _GdkEventMotion*);
      * }
      */
     public static MemorySegment motion_notify_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.motion_notify_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2107.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*motion_notify_event)(GtkWidget*,GdkEventMotion*);
+     * int (*motion_notify_event)(struct _GtkWidget*,struct _GdkEventMotion*);
      * }
      */
     public static void motion_notify_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.motion_notify_event$VH.set(seg, x);
+        constants$2107.const$2.set(seg, x);
     }
     public static MemorySegment motion_notify_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.motion_notify_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2107.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void motion_notify_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.motion_notify_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2107.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static motion_notify_event motion_notify_event(MemorySegment segment, SegmentScope scope) {
+    public static motion_notify_event motion_notify_event(MemorySegment segment, Arena scope) {
         return motion_notify_event.ofAddress(motion_notify_event$get(segment), scope);
     }
-    static final FunctionDescriptor delete_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor delete_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle delete_event_UP$MH = RuntimeHelper.upcallHandle(delete_event.class, "apply", _GtkWidgetClass.delete_event_UP$FUNC);
-    static final FunctionDescriptor delete_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle delete_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.delete_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*delete_event)(GtkWidget*,GdkEventAny*);
+ * int (*delete_event)(struct _GtkWidget*,struct _GdkEventAny*);
      * }
      */
     public interface delete_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(delete_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.delete_event_UP$MH, fi, _GtkWidgetClass.delete_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(delete_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2107.const$3, fi, constants$9.const$0, scope);
         }
-        static delete_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static delete_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.delete_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -2653,69 +1960,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle delete_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("delete_event"));
     public static VarHandle delete_event$VH() {
-        return _GtkWidgetClass.delete_event$VH;
+        return constants$2107.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*delete_event)(GtkWidget*,GdkEventAny*);
+     * int (*delete_event)(struct _GtkWidget*,struct _GdkEventAny*);
      * }
      */
     public static MemorySegment delete_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.delete_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2107.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*delete_event)(GtkWidget*,GdkEventAny*);
+     * int (*delete_event)(struct _GtkWidget*,struct _GdkEventAny*);
      * }
      */
     public static void delete_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.delete_event$VH.set(seg, x);
+        constants$2107.const$4.set(seg, x);
     }
     public static MemorySegment delete_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.delete_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2107.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void delete_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.delete_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2107.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static delete_event delete_event(MemorySegment segment, SegmentScope scope) {
+    public static delete_event delete_event(MemorySegment segment, Arena scope) {
         return delete_event.ofAddress(delete_event$get(segment), scope);
     }
-    static final FunctionDescriptor destroy_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor destroy_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle destroy_event_UP$MH = RuntimeHelper.upcallHandle(destroy_event.class, "apply", _GtkWidgetClass.destroy_event_UP$FUNC);
-    static final FunctionDescriptor destroy_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle destroy_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.destroy_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*destroy_event)(GtkWidget*,GdkEventAny*);
+ * int (*destroy_event)(struct _GtkWidget*,struct _GdkEventAny*);
      * }
      */
     public interface destroy_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(destroy_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.destroy_event_UP$MH, fi, _GtkWidgetClass.destroy_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(destroy_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2107.const$5, fi, constants$9.const$0, scope);
         }
-        static destroy_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static destroy_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.destroy_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -2723,69 +2013,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle destroy_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("destroy_event"));
     public static VarHandle destroy_event$VH() {
-        return _GtkWidgetClass.destroy_event$VH;
+        return constants$2108.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*destroy_event)(GtkWidget*,GdkEventAny*);
+     * int (*destroy_event)(struct _GtkWidget*,struct _GdkEventAny*);
      * }
      */
     public static MemorySegment destroy_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.destroy_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2108.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*destroy_event)(GtkWidget*,GdkEventAny*);
+     * int (*destroy_event)(struct _GtkWidget*,struct _GdkEventAny*);
      * }
      */
     public static void destroy_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.destroy_event$VH.set(seg, x);
+        constants$2108.const$0.set(seg, x);
     }
     public static MemorySegment destroy_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.destroy_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2108.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void destroy_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.destroy_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2108.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static destroy_event destroy_event(MemorySegment segment, SegmentScope scope) {
+    public static destroy_event destroy_event(MemorySegment segment, Arena scope) {
         return destroy_event.ofAddress(destroy_event$get(segment), scope);
     }
-    static final FunctionDescriptor key_press_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor key_press_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle key_press_event_UP$MH = RuntimeHelper.upcallHandle(key_press_event.class, "apply", _GtkWidgetClass.key_press_event_UP$FUNC);
-    static final FunctionDescriptor key_press_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle key_press_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.key_press_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*key_press_event)(GtkWidget*,GdkEventKey*);
+ * int (*key_press_event)(struct _GtkWidget*,struct _GdkEventKey*);
      * }
      */
     public interface key_press_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(key_press_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.key_press_event_UP$MH, fi, _GtkWidgetClass.key_press_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(key_press_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2108.const$1, fi, constants$9.const$0, scope);
         }
-        static key_press_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static key_press_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.key_press_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -2793,69 +2066,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle key_press_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("key_press_event"));
     public static VarHandle key_press_event$VH() {
-        return _GtkWidgetClass.key_press_event$VH;
+        return constants$2108.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*key_press_event)(GtkWidget*,GdkEventKey*);
+     * int (*key_press_event)(struct _GtkWidget*,struct _GdkEventKey*);
      * }
      */
     public static MemorySegment key_press_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.key_press_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2108.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*key_press_event)(GtkWidget*,GdkEventKey*);
+     * int (*key_press_event)(struct _GtkWidget*,struct _GdkEventKey*);
      * }
      */
     public static void key_press_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.key_press_event$VH.set(seg, x);
+        constants$2108.const$2.set(seg, x);
     }
     public static MemorySegment key_press_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.key_press_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2108.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void key_press_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.key_press_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2108.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static key_press_event key_press_event(MemorySegment segment, SegmentScope scope) {
+    public static key_press_event key_press_event(MemorySegment segment, Arena scope) {
         return key_press_event.ofAddress(key_press_event$get(segment), scope);
     }
-    static final FunctionDescriptor key_release_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor key_release_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle key_release_event_UP$MH = RuntimeHelper.upcallHandle(key_release_event.class, "apply", _GtkWidgetClass.key_release_event_UP$FUNC);
-    static final FunctionDescriptor key_release_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle key_release_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.key_release_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*key_release_event)(GtkWidget*,GdkEventKey*);
+ * int (*key_release_event)(struct _GtkWidget*,struct _GdkEventKey*);
      * }
      */
     public interface key_release_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(key_release_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.key_release_event_UP$MH, fi, _GtkWidgetClass.key_release_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(key_release_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2108.const$3, fi, constants$9.const$0, scope);
         }
-        static key_release_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static key_release_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.key_release_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -2863,69 +2119,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle key_release_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("key_release_event"));
     public static VarHandle key_release_event$VH() {
-        return _GtkWidgetClass.key_release_event$VH;
+        return constants$2108.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*key_release_event)(GtkWidget*,GdkEventKey*);
+     * int (*key_release_event)(struct _GtkWidget*,struct _GdkEventKey*);
      * }
      */
     public static MemorySegment key_release_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.key_release_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2108.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*key_release_event)(GtkWidget*,GdkEventKey*);
+     * int (*key_release_event)(struct _GtkWidget*,struct _GdkEventKey*);
      * }
      */
     public static void key_release_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.key_release_event$VH.set(seg, x);
+        constants$2108.const$4.set(seg, x);
     }
     public static MemorySegment key_release_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.key_release_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2108.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void key_release_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.key_release_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2108.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static key_release_event key_release_event(MemorySegment segment, SegmentScope scope) {
+    public static key_release_event key_release_event(MemorySegment segment, Arena scope) {
         return key_release_event.ofAddress(key_release_event$get(segment), scope);
     }
-    static final FunctionDescriptor enter_notify_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor enter_notify_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle enter_notify_event_UP$MH = RuntimeHelper.upcallHandle(enter_notify_event.class, "apply", _GtkWidgetClass.enter_notify_event_UP$FUNC);
-    static final FunctionDescriptor enter_notify_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle enter_notify_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.enter_notify_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*enter_notify_event)(GtkWidget*,GdkEventCrossing*);
+ * int (*enter_notify_event)(struct _GtkWidget*,struct _GdkEventCrossing*);
      * }
      */
     public interface enter_notify_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(enter_notify_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.enter_notify_event_UP$MH, fi, _GtkWidgetClass.enter_notify_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(enter_notify_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2108.const$5, fi, constants$9.const$0, scope);
         }
-        static enter_notify_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static enter_notify_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.enter_notify_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -2933,69 +2172,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle enter_notify_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("enter_notify_event"));
     public static VarHandle enter_notify_event$VH() {
-        return _GtkWidgetClass.enter_notify_event$VH;
+        return constants$2109.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*enter_notify_event)(GtkWidget*,GdkEventCrossing*);
+     * int (*enter_notify_event)(struct _GtkWidget*,struct _GdkEventCrossing*);
      * }
      */
     public static MemorySegment enter_notify_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.enter_notify_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2109.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*enter_notify_event)(GtkWidget*,GdkEventCrossing*);
+     * int (*enter_notify_event)(struct _GtkWidget*,struct _GdkEventCrossing*);
      * }
      */
     public static void enter_notify_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.enter_notify_event$VH.set(seg, x);
+        constants$2109.const$0.set(seg, x);
     }
     public static MemorySegment enter_notify_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.enter_notify_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2109.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void enter_notify_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.enter_notify_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2109.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static enter_notify_event enter_notify_event(MemorySegment segment, SegmentScope scope) {
+    public static enter_notify_event enter_notify_event(MemorySegment segment, Arena scope) {
         return enter_notify_event.ofAddress(enter_notify_event$get(segment), scope);
     }
-    static final FunctionDescriptor leave_notify_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor leave_notify_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle leave_notify_event_UP$MH = RuntimeHelper.upcallHandle(leave_notify_event.class, "apply", _GtkWidgetClass.leave_notify_event_UP$FUNC);
-    static final FunctionDescriptor leave_notify_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle leave_notify_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.leave_notify_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*leave_notify_event)(GtkWidget*,GdkEventCrossing*);
+ * int (*leave_notify_event)(struct _GtkWidget*,struct _GdkEventCrossing*);
      * }
      */
     public interface leave_notify_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(leave_notify_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.leave_notify_event_UP$MH, fi, _GtkWidgetClass.leave_notify_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(leave_notify_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2109.const$1, fi, constants$9.const$0, scope);
         }
-        static leave_notify_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static leave_notify_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.leave_notify_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -3003,69 +2225,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle leave_notify_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("leave_notify_event"));
     public static VarHandle leave_notify_event$VH() {
-        return _GtkWidgetClass.leave_notify_event$VH;
+        return constants$2109.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*leave_notify_event)(GtkWidget*,GdkEventCrossing*);
+     * int (*leave_notify_event)(struct _GtkWidget*,struct _GdkEventCrossing*);
      * }
      */
     public static MemorySegment leave_notify_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.leave_notify_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2109.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*leave_notify_event)(GtkWidget*,GdkEventCrossing*);
+     * int (*leave_notify_event)(struct _GtkWidget*,struct _GdkEventCrossing*);
      * }
      */
     public static void leave_notify_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.leave_notify_event$VH.set(seg, x);
+        constants$2109.const$2.set(seg, x);
     }
     public static MemorySegment leave_notify_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.leave_notify_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2109.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void leave_notify_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.leave_notify_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2109.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static leave_notify_event leave_notify_event(MemorySegment segment, SegmentScope scope) {
+    public static leave_notify_event leave_notify_event(MemorySegment segment, Arena scope) {
         return leave_notify_event.ofAddress(leave_notify_event$get(segment), scope);
     }
-    static final FunctionDescriptor configure_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor configure_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle configure_event_UP$MH = RuntimeHelper.upcallHandle(configure_event.class, "apply", _GtkWidgetClass.configure_event_UP$FUNC);
-    static final FunctionDescriptor configure_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle configure_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.configure_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*configure_event)(GtkWidget*,GdkEventConfigure*);
+ * int (*configure_event)(struct _GtkWidget*,struct _GdkEventConfigure*);
      * }
      */
     public interface configure_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(configure_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.configure_event_UP$MH, fi, _GtkWidgetClass.configure_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(configure_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2109.const$3, fi, constants$9.const$0, scope);
         }
-        static configure_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static configure_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.configure_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -3073,69 +2278,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle configure_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("configure_event"));
     public static VarHandle configure_event$VH() {
-        return _GtkWidgetClass.configure_event$VH;
+        return constants$2109.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*configure_event)(GtkWidget*,GdkEventConfigure*);
+     * int (*configure_event)(struct _GtkWidget*,struct _GdkEventConfigure*);
      * }
      */
     public static MemorySegment configure_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.configure_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2109.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*configure_event)(GtkWidget*,GdkEventConfigure*);
+     * int (*configure_event)(struct _GtkWidget*,struct _GdkEventConfigure*);
      * }
      */
     public static void configure_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.configure_event$VH.set(seg, x);
+        constants$2109.const$4.set(seg, x);
     }
     public static MemorySegment configure_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.configure_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2109.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void configure_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.configure_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2109.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static configure_event configure_event(MemorySegment segment, SegmentScope scope) {
+    public static configure_event configure_event(MemorySegment segment, Arena scope) {
         return configure_event.ofAddress(configure_event$get(segment), scope);
     }
-    static final FunctionDescriptor focus_in_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor focus_in_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle focus_in_event_UP$MH = RuntimeHelper.upcallHandle(focus_in_event.class, "apply", _GtkWidgetClass.focus_in_event_UP$FUNC);
-    static final FunctionDescriptor focus_in_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle focus_in_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.focus_in_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*focus_in_event)(GtkWidget*,GdkEventFocus*);
+ * int (*focus_in_event)(struct _GtkWidget*,struct _GdkEventFocus*);
      * }
      */
     public interface focus_in_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(focus_in_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.focus_in_event_UP$MH, fi, _GtkWidgetClass.focus_in_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(focus_in_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2109.const$5, fi, constants$9.const$0, scope);
         }
-        static focus_in_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static focus_in_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.focus_in_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -3143,69 +2331,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle focus_in_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("focus_in_event"));
     public static VarHandle focus_in_event$VH() {
-        return _GtkWidgetClass.focus_in_event$VH;
+        return constants$2110.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*focus_in_event)(GtkWidget*,GdkEventFocus*);
+     * int (*focus_in_event)(struct _GtkWidget*,struct _GdkEventFocus*);
      * }
      */
     public static MemorySegment focus_in_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.focus_in_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2110.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*focus_in_event)(GtkWidget*,GdkEventFocus*);
+     * int (*focus_in_event)(struct _GtkWidget*,struct _GdkEventFocus*);
      * }
      */
     public static void focus_in_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.focus_in_event$VH.set(seg, x);
+        constants$2110.const$0.set(seg, x);
     }
     public static MemorySegment focus_in_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.focus_in_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2110.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void focus_in_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.focus_in_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2110.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static focus_in_event focus_in_event(MemorySegment segment, SegmentScope scope) {
+    public static focus_in_event focus_in_event(MemorySegment segment, Arena scope) {
         return focus_in_event.ofAddress(focus_in_event$get(segment), scope);
     }
-    static final FunctionDescriptor focus_out_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor focus_out_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle focus_out_event_UP$MH = RuntimeHelper.upcallHandle(focus_out_event.class, "apply", _GtkWidgetClass.focus_out_event_UP$FUNC);
-    static final FunctionDescriptor focus_out_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle focus_out_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.focus_out_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*focus_out_event)(GtkWidget*,GdkEventFocus*);
+ * int (*focus_out_event)(struct _GtkWidget*,struct _GdkEventFocus*);
      * }
      */
     public interface focus_out_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(focus_out_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.focus_out_event_UP$MH, fi, _GtkWidgetClass.focus_out_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(focus_out_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2110.const$1, fi, constants$9.const$0, scope);
         }
-        static focus_out_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static focus_out_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.focus_out_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -3213,69 +2384,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle focus_out_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("focus_out_event"));
     public static VarHandle focus_out_event$VH() {
-        return _GtkWidgetClass.focus_out_event$VH;
+        return constants$2110.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*focus_out_event)(GtkWidget*,GdkEventFocus*);
+     * int (*focus_out_event)(struct _GtkWidget*,struct _GdkEventFocus*);
      * }
      */
     public static MemorySegment focus_out_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.focus_out_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2110.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*focus_out_event)(GtkWidget*,GdkEventFocus*);
+     * int (*focus_out_event)(struct _GtkWidget*,struct _GdkEventFocus*);
      * }
      */
     public static void focus_out_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.focus_out_event$VH.set(seg, x);
+        constants$2110.const$2.set(seg, x);
     }
     public static MemorySegment focus_out_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.focus_out_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2110.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void focus_out_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.focus_out_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2110.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static focus_out_event focus_out_event(MemorySegment segment, SegmentScope scope) {
+    public static focus_out_event focus_out_event(MemorySegment segment, Arena scope) {
         return focus_out_event.ofAddress(focus_out_event$get(segment), scope);
     }
-    static final FunctionDescriptor map_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor map_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle map_event_UP$MH = RuntimeHelper.upcallHandle(map_event.class, "apply", _GtkWidgetClass.map_event_UP$FUNC);
-    static final FunctionDescriptor map_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle map_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.map_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*map_event)(GtkWidget*,GdkEventAny*);
+ * int (*map_event)(struct _GtkWidget*,struct _GdkEventAny*);
      * }
      */
     public interface map_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(map_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.map_event_UP$MH, fi, _GtkWidgetClass.map_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(map_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2110.const$3, fi, constants$9.const$0, scope);
         }
-        static map_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static map_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.map_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -3283,69 +2437,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle map_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("map_event"));
     public static VarHandle map_event$VH() {
-        return _GtkWidgetClass.map_event$VH;
+        return constants$2110.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*map_event)(GtkWidget*,GdkEventAny*);
+     * int (*map_event)(struct _GtkWidget*,struct _GdkEventAny*);
      * }
      */
     public static MemorySegment map_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.map_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2110.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*map_event)(GtkWidget*,GdkEventAny*);
+     * int (*map_event)(struct _GtkWidget*,struct _GdkEventAny*);
      * }
      */
     public static void map_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.map_event$VH.set(seg, x);
+        constants$2110.const$4.set(seg, x);
     }
     public static MemorySegment map_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.map_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2110.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void map_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.map_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2110.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static map_event map_event(MemorySegment segment, SegmentScope scope) {
+    public static map_event map_event(MemorySegment segment, Arena scope) {
         return map_event.ofAddress(map_event$get(segment), scope);
     }
-    static final FunctionDescriptor unmap_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor unmap_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle unmap_event_UP$MH = RuntimeHelper.upcallHandle(unmap_event.class, "apply", _GtkWidgetClass.unmap_event_UP$FUNC);
-    static final FunctionDescriptor unmap_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle unmap_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.unmap_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*unmap_event)(GtkWidget*,GdkEventAny*);
+ * int (*unmap_event)(struct _GtkWidget*,struct _GdkEventAny*);
      * }
      */
     public interface unmap_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(unmap_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.unmap_event_UP$MH, fi, _GtkWidgetClass.unmap_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(unmap_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2110.const$5, fi, constants$9.const$0, scope);
         }
-        static unmap_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static unmap_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.unmap_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -3353,69 +2490,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle unmap_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("unmap_event"));
     public static VarHandle unmap_event$VH() {
-        return _GtkWidgetClass.unmap_event$VH;
+        return constants$2111.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*unmap_event)(GtkWidget*,GdkEventAny*);
+     * int (*unmap_event)(struct _GtkWidget*,struct _GdkEventAny*);
      * }
      */
     public static MemorySegment unmap_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.unmap_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2111.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*unmap_event)(GtkWidget*,GdkEventAny*);
+     * int (*unmap_event)(struct _GtkWidget*,struct _GdkEventAny*);
      * }
      */
     public static void unmap_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.unmap_event$VH.set(seg, x);
+        constants$2111.const$0.set(seg, x);
     }
     public static MemorySegment unmap_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.unmap_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2111.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void unmap_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.unmap_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2111.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static unmap_event unmap_event(MemorySegment segment, SegmentScope scope) {
+    public static unmap_event unmap_event(MemorySegment segment, Arena scope) {
         return unmap_event.ofAddress(unmap_event$get(segment), scope);
     }
-    static final FunctionDescriptor property_notify_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor property_notify_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle property_notify_event_UP$MH = RuntimeHelper.upcallHandle(property_notify_event.class, "apply", _GtkWidgetClass.property_notify_event_UP$FUNC);
-    static final FunctionDescriptor property_notify_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle property_notify_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.property_notify_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*property_notify_event)(GtkWidget*,GdkEventProperty*);
+ * int (*property_notify_event)(struct _GtkWidget*,struct _GdkEventProperty*);
      * }
      */
     public interface property_notify_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(property_notify_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.property_notify_event_UP$MH, fi, _GtkWidgetClass.property_notify_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(property_notify_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2111.const$1, fi, constants$9.const$0, scope);
         }
-        static property_notify_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static property_notify_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.property_notify_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -3423,69 +2543,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle property_notify_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("property_notify_event"));
     public static VarHandle property_notify_event$VH() {
-        return _GtkWidgetClass.property_notify_event$VH;
+        return constants$2111.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*property_notify_event)(GtkWidget*,GdkEventProperty*);
+     * int (*property_notify_event)(struct _GtkWidget*,struct _GdkEventProperty*);
      * }
      */
     public static MemorySegment property_notify_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.property_notify_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2111.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*property_notify_event)(GtkWidget*,GdkEventProperty*);
+     * int (*property_notify_event)(struct _GtkWidget*,struct _GdkEventProperty*);
      * }
      */
     public static void property_notify_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.property_notify_event$VH.set(seg, x);
+        constants$2111.const$2.set(seg, x);
     }
     public static MemorySegment property_notify_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.property_notify_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2111.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void property_notify_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.property_notify_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2111.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static property_notify_event property_notify_event(MemorySegment segment, SegmentScope scope) {
+    public static property_notify_event property_notify_event(MemorySegment segment, Arena scope) {
         return property_notify_event.ofAddress(property_notify_event$get(segment), scope);
     }
-    static final FunctionDescriptor selection_clear_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor selection_clear_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle selection_clear_event_UP$MH = RuntimeHelper.upcallHandle(selection_clear_event.class, "apply", _GtkWidgetClass.selection_clear_event_UP$FUNC);
-    static final FunctionDescriptor selection_clear_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle selection_clear_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.selection_clear_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*selection_clear_event)(GtkWidget*,GdkEventSelection*);
+ * int (*selection_clear_event)(struct _GtkWidget*,struct _GdkEventSelection*);
      * }
      */
     public interface selection_clear_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(selection_clear_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.selection_clear_event_UP$MH, fi, _GtkWidgetClass.selection_clear_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(selection_clear_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2111.const$3, fi, constants$9.const$0, scope);
         }
-        static selection_clear_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static selection_clear_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.selection_clear_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -3493,69 +2596,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle selection_clear_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("selection_clear_event"));
     public static VarHandle selection_clear_event$VH() {
-        return _GtkWidgetClass.selection_clear_event$VH;
+        return constants$2111.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*selection_clear_event)(GtkWidget*,GdkEventSelection*);
+     * int (*selection_clear_event)(struct _GtkWidget*,struct _GdkEventSelection*);
      * }
      */
     public static MemorySegment selection_clear_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.selection_clear_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2111.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*selection_clear_event)(GtkWidget*,GdkEventSelection*);
+     * int (*selection_clear_event)(struct _GtkWidget*,struct _GdkEventSelection*);
      * }
      */
     public static void selection_clear_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.selection_clear_event$VH.set(seg, x);
+        constants$2111.const$4.set(seg, x);
     }
     public static MemorySegment selection_clear_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.selection_clear_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2111.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void selection_clear_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.selection_clear_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2111.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static selection_clear_event selection_clear_event(MemorySegment segment, SegmentScope scope) {
+    public static selection_clear_event selection_clear_event(MemorySegment segment, Arena scope) {
         return selection_clear_event.ofAddress(selection_clear_event$get(segment), scope);
     }
-    static final FunctionDescriptor selection_request_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor selection_request_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle selection_request_event_UP$MH = RuntimeHelper.upcallHandle(selection_request_event.class, "apply", _GtkWidgetClass.selection_request_event_UP$FUNC);
-    static final FunctionDescriptor selection_request_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle selection_request_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.selection_request_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*selection_request_event)(GtkWidget*,GdkEventSelection*);
+ * int (*selection_request_event)(struct _GtkWidget*,struct _GdkEventSelection*);
      * }
      */
     public interface selection_request_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(selection_request_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.selection_request_event_UP$MH, fi, _GtkWidgetClass.selection_request_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(selection_request_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2111.const$5, fi, constants$9.const$0, scope);
         }
-        static selection_request_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static selection_request_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.selection_request_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -3563,69 +2649,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle selection_request_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("selection_request_event"));
     public static VarHandle selection_request_event$VH() {
-        return _GtkWidgetClass.selection_request_event$VH;
+        return constants$2112.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*selection_request_event)(GtkWidget*,GdkEventSelection*);
+     * int (*selection_request_event)(struct _GtkWidget*,struct _GdkEventSelection*);
      * }
      */
     public static MemorySegment selection_request_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.selection_request_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2112.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*selection_request_event)(GtkWidget*,GdkEventSelection*);
+     * int (*selection_request_event)(struct _GtkWidget*,struct _GdkEventSelection*);
      * }
      */
     public static void selection_request_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.selection_request_event$VH.set(seg, x);
+        constants$2112.const$0.set(seg, x);
     }
     public static MemorySegment selection_request_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.selection_request_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2112.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void selection_request_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.selection_request_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2112.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static selection_request_event selection_request_event(MemorySegment segment, SegmentScope scope) {
+    public static selection_request_event selection_request_event(MemorySegment segment, Arena scope) {
         return selection_request_event.ofAddress(selection_request_event$get(segment), scope);
     }
-    static final FunctionDescriptor selection_notify_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor selection_notify_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle selection_notify_event_UP$MH = RuntimeHelper.upcallHandle(selection_notify_event.class, "apply", _GtkWidgetClass.selection_notify_event_UP$FUNC);
-    static final FunctionDescriptor selection_notify_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle selection_notify_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.selection_notify_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*selection_notify_event)(GtkWidget*,GdkEventSelection*);
+ * int (*selection_notify_event)(struct _GtkWidget*,struct _GdkEventSelection*);
      * }
      */
     public interface selection_notify_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(selection_notify_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.selection_notify_event_UP$MH, fi, _GtkWidgetClass.selection_notify_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(selection_notify_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2112.const$1, fi, constants$9.const$0, scope);
         }
-        static selection_notify_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static selection_notify_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.selection_notify_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -3633,69 +2702,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle selection_notify_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("selection_notify_event"));
     public static VarHandle selection_notify_event$VH() {
-        return _GtkWidgetClass.selection_notify_event$VH;
+        return constants$2112.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*selection_notify_event)(GtkWidget*,GdkEventSelection*);
+     * int (*selection_notify_event)(struct _GtkWidget*,struct _GdkEventSelection*);
      * }
      */
     public static MemorySegment selection_notify_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.selection_notify_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2112.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*selection_notify_event)(GtkWidget*,GdkEventSelection*);
+     * int (*selection_notify_event)(struct _GtkWidget*,struct _GdkEventSelection*);
      * }
      */
     public static void selection_notify_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.selection_notify_event$VH.set(seg, x);
+        constants$2112.const$2.set(seg, x);
     }
     public static MemorySegment selection_notify_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.selection_notify_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2112.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void selection_notify_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.selection_notify_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2112.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static selection_notify_event selection_notify_event(MemorySegment segment, SegmentScope scope) {
+    public static selection_notify_event selection_notify_event(MemorySegment segment, Arena scope) {
         return selection_notify_event.ofAddress(selection_notify_event$get(segment), scope);
     }
-    static final FunctionDescriptor proximity_in_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor proximity_in_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle proximity_in_event_UP$MH = RuntimeHelper.upcallHandle(proximity_in_event.class, "apply", _GtkWidgetClass.proximity_in_event_UP$FUNC);
-    static final FunctionDescriptor proximity_in_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle proximity_in_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.proximity_in_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*proximity_in_event)(GtkWidget*,GdkEventProximity*);
+ * int (*proximity_in_event)(struct _GtkWidget*,struct _GdkEventProximity*);
      * }
      */
     public interface proximity_in_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(proximity_in_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.proximity_in_event_UP$MH, fi, _GtkWidgetClass.proximity_in_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(proximity_in_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2112.const$3, fi, constants$9.const$0, scope);
         }
-        static proximity_in_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static proximity_in_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.proximity_in_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -3703,69 +2755,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle proximity_in_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("proximity_in_event"));
     public static VarHandle proximity_in_event$VH() {
-        return _GtkWidgetClass.proximity_in_event$VH;
+        return constants$2112.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*proximity_in_event)(GtkWidget*,GdkEventProximity*);
+     * int (*proximity_in_event)(struct _GtkWidget*,struct _GdkEventProximity*);
      * }
      */
     public static MemorySegment proximity_in_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.proximity_in_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2112.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*proximity_in_event)(GtkWidget*,GdkEventProximity*);
+     * int (*proximity_in_event)(struct _GtkWidget*,struct _GdkEventProximity*);
      * }
      */
     public static void proximity_in_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.proximity_in_event$VH.set(seg, x);
+        constants$2112.const$4.set(seg, x);
     }
     public static MemorySegment proximity_in_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.proximity_in_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2112.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void proximity_in_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.proximity_in_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2112.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static proximity_in_event proximity_in_event(MemorySegment segment, SegmentScope scope) {
+    public static proximity_in_event proximity_in_event(MemorySegment segment, Arena scope) {
         return proximity_in_event.ofAddress(proximity_in_event$get(segment), scope);
     }
-    static final FunctionDescriptor proximity_out_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor proximity_out_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle proximity_out_event_UP$MH = RuntimeHelper.upcallHandle(proximity_out_event.class, "apply", _GtkWidgetClass.proximity_out_event_UP$FUNC);
-    static final FunctionDescriptor proximity_out_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle proximity_out_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.proximity_out_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*proximity_out_event)(GtkWidget*,GdkEventProximity*);
+ * int (*proximity_out_event)(struct _GtkWidget*,struct _GdkEventProximity*);
      * }
      */
     public interface proximity_out_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(proximity_out_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.proximity_out_event_UP$MH, fi, _GtkWidgetClass.proximity_out_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(proximity_out_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2112.const$5, fi, constants$9.const$0, scope);
         }
-        static proximity_out_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static proximity_out_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.proximity_out_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -3773,69 +2808,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle proximity_out_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("proximity_out_event"));
     public static VarHandle proximity_out_event$VH() {
-        return _GtkWidgetClass.proximity_out_event$VH;
+        return constants$2113.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*proximity_out_event)(GtkWidget*,GdkEventProximity*);
+     * int (*proximity_out_event)(struct _GtkWidget*,struct _GdkEventProximity*);
      * }
      */
     public static MemorySegment proximity_out_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.proximity_out_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2113.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*proximity_out_event)(GtkWidget*,GdkEventProximity*);
+     * int (*proximity_out_event)(struct _GtkWidget*,struct _GdkEventProximity*);
      * }
      */
     public static void proximity_out_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.proximity_out_event$VH.set(seg, x);
+        constants$2113.const$0.set(seg, x);
     }
     public static MemorySegment proximity_out_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.proximity_out_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2113.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void proximity_out_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.proximity_out_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2113.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static proximity_out_event proximity_out_event(MemorySegment segment, SegmentScope scope) {
+    public static proximity_out_event proximity_out_event(MemorySegment segment, Arena scope) {
         return proximity_out_event.ofAddress(proximity_out_event$get(segment), scope);
     }
-    static final FunctionDescriptor visibility_notify_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor visibility_notify_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle visibility_notify_event_UP$MH = RuntimeHelper.upcallHandle(visibility_notify_event.class, "apply", _GtkWidgetClass.visibility_notify_event_UP$FUNC);
-    static final FunctionDescriptor visibility_notify_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle visibility_notify_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.visibility_notify_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*visibility_notify_event)(GtkWidget*,GdkEventVisibility*);
+ * int (*visibility_notify_event)(struct _GtkWidget*,struct _GdkEventVisibility*);
      * }
      */
     public interface visibility_notify_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(visibility_notify_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.visibility_notify_event_UP$MH, fi, _GtkWidgetClass.visibility_notify_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(visibility_notify_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2113.const$1, fi, constants$9.const$0, scope);
         }
-        static visibility_notify_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static visibility_notify_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.visibility_notify_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -3843,69 +2861,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle visibility_notify_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("visibility_notify_event"));
     public static VarHandle visibility_notify_event$VH() {
-        return _GtkWidgetClass.visibility_notify_event$VH;
+        return constants$2113.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*visibility_notify_event)(GtkWidget*,GdkEventVisibility*);
+     * int (*visibility_notify_event)(struct _GtkWidget*,struct _GdkEventVisibility*);
      * }
      */
     public static MemorySegment visibility_notify_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.visibility_notify_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2113.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*visibility_notify_event)(GtkWidget*,GdkEventVisibility*);
+     * int (*visibility_notify_event)(struct _GtkWidget*,struct _GdkEventVisibility*);
      * }
      */
     public static void visibility_notify_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.visibility_notify_event$VH.set(seg, x);
+        constants$2113.const$2.set(seg, x);
     }
     public static MemorySegment visibility_notify_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.visibility_notify_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2113.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void visibility_notify_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.visibility_notify_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2113.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static visibility_notify_event visibility_notify_event(MemorySegment segment, SegmentScope scope) {
+    public static visibility_notify_event visibility_notify_event(MemorySegment segment, Arena scope) {
         return visibility_notify_event.ofAddress(visibility_notify_event$get(segment), scope);
     }
-    static final FunctionDescriptor window_state_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor window_state_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle window_state_event_UP$MH = RuntimeHelper.upcallHandle(window_state_event.class, "apply", _GtkWidgetClass.window_state_event_UP$FUNC);
-    static final FunctionDescriptor window_state_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle window_state_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.window_state_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*window_state_event)(GtkWidget*,GdkEventWindowState*);
+ * int (*window_state_event)(struct _GtkWidget*,struct _GdkEventWindowState*);
      * }
      */
     public interface window_state_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(window_state_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.window_state_event_UP$MH, fi, _GtkWidgetClass.window_state_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(window_state_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2113.const$3, fi, constants$9.const$0, scope);
         }
-        static window_state_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static window_state_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.window_state_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -3913,69 +2914,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle window_state_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("window_state_event"));
     public static VarHandle window_state_event$VH() {
-        return _GtkWidgetClass.window_state_event$VH;
+        return constants$2113.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*window_state_event)(GtkWidget*,GdkEventWindowState*);
+     * int (*window_state_event)(struct _GtkWidget*,struct _GdkEventWindowState*);
      * }
      */
     public static MemorySegment window_state_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.window_state_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2113.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*window_state_event)(GtkWidget*,GdkEventWindowState*);
+     * int (*window_state_event)(struct _GtkWidget*,struct _GdkEventWindowState*);
      * }
      */
     public static void window_state_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.window_state_event$VH.set(seg, x);
+        constants$2113.const$4.set(seg, x);
     }
     public static MemorySegment window_state_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.window_state_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2113.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void window_state_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.window_state_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2113.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static window_state_event window_state_event(MemorySegment segment, SegmentScope scope) {
+    public static window_state_event window_state_event(MemorySegment segment, Arena scope) {
         return window_state_event.ofAddress(window_state_event$get(segment), scope);
     }
-    static final FunctionDescriptor damage_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor damage_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle damage_event_UP$MH = RuntimeHelper.upcallHandle(damage_event.class, "apply", _GtkWidgetClass.damage_event_UP$FUNC);
-    static final FunctionDescriptor damage_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle damage_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.damage_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*damage_event)(GtkWidget*,GdkEventExpose*);
+ * int (*damage_event)(struct _GtkWidget*,struct _GdkEventExpose*);
      * }
      */
     public interface damage_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(damage_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.damage_event_UP$MH, fi, _GtkWidgetClass.damage_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(damage_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2113.const$5, fi, constants$9.const$0, scope);
         }
-        static damage_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static damage_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.damage_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -3983,69 +2967,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle damage_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("damage_event"));
     public static VarHandle damage_event$VH() {
-        return _GtkWidgetClass.damage_event$VH;
+        return constants$2114.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*damage_event)(GtkWidget*,GdkEventExpose*);
+     * int (*damage_event)(struct _GtkWidget*,struct _GdkEventExpose*);
      * }
      */
     public static MemorySegment damage_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.damage_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2114.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*damage_event)(GtkWidget*,GdkEventExpose*);
+     * int (*damage_event)(struct _GtkWidget*,struct _GdkEventExpose*);
      * }
      */
     public static void damage_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.damage_event$VH.set(seg, x);
+        constants$2114.const$0.set(seg, x);
     }
     public static MemorySegment damage_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.damage_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2114.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void damage_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.damage_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2114.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static damage_event damage_event(MemorySegment segment, SegmentScope scope) {
+    public static damage_event damage_event(MemorySegment segment, Arena scope) {
         return damage_event.ofAddress(damage_event$get(segment), scope);
     }
-    static final FunctionDescriptor grab_broken_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor grab_broken_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle grab_broken_event_UP$MH = RuntimeHelper.upcallHandle(grab_broken_event.class, "apply", _GtkWidgetClass.grab_broken_event_UP$FUNC);
-    static final FunctionDescriptor grab_broken_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle grab_broken_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.grab_broken_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*grab_broken_event)(GtkWidget*,GdkEventGrabBroken*);
+ * int (*grab_broken_event)(struct _GtkWidget*,struct _GdkEventGrabBroken*);
      * }
      */
     public interface grab_broken_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(grab_broken_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.grab_broken_event_UP$MH, fi, _GtkWidgetClass.grab_broken_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(grab_broken_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2114.const$1, fi, constants$9.const$0, scope);
         }
-        static grab_broken_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static grab_broken_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.grab_broken_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -4053,75 +3020,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle grab_broken_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("grab_broken_event"));
     public static VarHandle grab_broken_event$VH() {
-        return _GtkWidgetClass.grab_broken_event$VH;
+        return constants$2114.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*grab_broken_event)(GtkWidget*,GdkEventGrabBroken*);
+     * int (*grab_broken_event)(struct _GtkWidget*,struct _GdkEventGrabBroken*);
      * }
      */
     public static MemorySegment grab_broken_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.grab_broken_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2114.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*grab_broken_event)(GtkWidget*,GdkEventGrabBroken*);
+     * int (*grab_broken_event)(struct _GtkWidget*,struct _GdkEventGrabBroken*);
      * }
      */
     public static void grab_broken_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.grab_broken_event$VH.set(seg, x);
+        constants$2114.const$2.set(seg, x);
     }
     public static MemorySegment grab_broken_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.grab_broken_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2114.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void grab_broken_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.grab_broken_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2114.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static grab_broken_event grab_broken_event(MemorySegment segment, SegmentScope scope) {
+    public static grab_broken_event grab_broken_event(MemorySegment segment, Arena scope) {
         return grab_broken_event.ofAddress(grab_broken_event$get(segment), scope);
     }
-    static final FunctionDescriptor selection_get$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor selection_get_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle selection_get_UP$MH = RuntimeHelper.upcallHandle(selection_get.class, "apply", _GtkWidgetClass.selection_get_UP$FUNC);
-    static final FunctionDescriptor selection_get_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle selection_get_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.selection_get_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*selection_get)(GtkWidget*,GtkSelectionData*,guint,guint);
+ * void (*selection_get)(struct _GtkWidget*,struct _GtkSelectionData*,unsigned int,unsigned int);
      * }
      */
     public interface selection_get {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3);
-        static MemorySegment allocate(selection_get fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.selection_get_UP$MH, fi, _GtkWidgetClass.selection_get$FUNC, scope);
+        static MemorySegment allocate(selection_get fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2114.const$3, fi, constants$1043.const$2, scope);
         }
-        static selection_get ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static selection_get ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3) -> {
                 try {
-                    _GtkWidgetClass.selection_get_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$1644.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -4129,72 +3073,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle selection_get$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("selection_get"));
     public static VarHandle selection_get$VH() {
-        return _GtkWidgetClass.selection_get$VH;
+        return constants$2114.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*selection_get)(GtkWidget*,GtkSelectionData*,guint,guint);
+     * void (*selection_get)(struct _GtkWidget*,struct _GtkSelectionData*,unsigned int,unsigned int);
      * }
      */
     public static MemorySegment selection_get$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.selection_get$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2114.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*selection_get)(GtkWidget*,GtkSelectionData*,guint,guint);
+     * void (*selection_get)(struct _GtkWidget*,struct _GtkSelectionData*,unsigned int,unsigned int);
      * }
      */
     public static void selection_get$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.selection_get$VH.set(seg, x);
+        constants$2114.const$4.set(seg, x);
     }
     public static MemorySegment selection_get$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.selection_get$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2114.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void selection_get$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.selection_get$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2114.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static selection_get selection_get(MemorySegment segment, SegmentScope scope) {
+    public static selection_get selection_get(MemorySegment segment, Arena scope) {
         return selection_get.ofAddress(selection_get$get(segment), scope);
     }
-    static final FunctionDescriptor selection_received$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor selection_received_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle selection_received_UP$MH = RuntimeHelper.upcallHandle(selection_received.class, "apply", _GtkWidgetClass.selection_received_UP$FUNC);
-    static final FunctionDescriptor selection_received_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle selection_received_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.selection_received_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*selection_received)(GtkWidget*,GtkSelectionData*,guint);
+ * void (*selection_received)(struct _GtkWidget*,struct _GtkSelectionData*,unsigned int);
      * }
      */
     public interface selection_received {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
-        static MemorySegment allocate(selection_received fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.selection_received_UP$MH, fi, _GtkWidgetClass.selection_received$FUNC, scope);
+        static MemorySegment allocate(selection_received fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2114.const$5, fi, constants$164.const$5, scope);
         }
-        static selection_received ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static selection_received ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    _GtkWidgetClass.selection_received_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$420.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -4202,69 +3126,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle selection_received$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("selection_received"));
     public static VarHandle selection_received$VH() {
-        return _GtkWidgetClass.selection_received$VH;
+        return constants$2115.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*selection_received)(GtkWidget*,GtkSelectionData*,guint);
+     * void (*selection_received)(struct _GtkWidget*,struct _GtkSelectionData*,unsigned int);
      * }
      */
     public static MemorySegment selection_received$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.selection_received$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2115.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*selection_received)(GtkWidget*,GtkSelectionData*,guint);
+     * void (*selection_received)(struct _GtkWidget*,struct _GtkSelectionData*,unsigned int);
      * }
      */
     public static void selection_received$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.selection_received$VH.set(seg, x);
+        constants$2115.const$0.set(seg, x);
     }
     public static MemorySegment selection_received$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.selection_received$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2115.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void selection_received$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.selection_received$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2115.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static selection_received selection_received(MemorySegment segment, SegmentScope scope) {
+    public static selection_received selection_received(MemorySegment segment, Arena scope) {
         return selection_received.ofAddress(selection_received$get(segment), scope);
     }
-    static final FunctionDescriptor drag_begin$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor drag_begin_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle drag_begin_UP$MH = RuntimeHelper.upcallHandle(drag_begin.class, "apply", _GtkWidgetClass.drag_begin_UP$FUNC);
-    static final FunctionDescriptor drag_begin_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle drag_begin_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.drag_begin_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*drag_begin)(GtkWidget*,GdkDragContext*);
+ * void (*drag_begin)(struct _GtkWidget*,struct _GdkDragContext*);
      * }
      */
     public interface drag_begin {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(drag_begin fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.drag_begin_UP$MH, fi, _GtkWidgetClass.drag_begin$FUNC, scope);
+        static MemorySegment allocate(drag_begin fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2115.const$1, fi, constants$13.const$4, scope);
         }
-        static drag_begin ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static drag_begin ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkWidgetClass.drag_begin_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -4272,69 +3179,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle drag_begin$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("drag_begin"));
     public static VarHandle drag_begin$VH() {
-        return _GtkWidgetClass.drag_begin$VH;
+        return constants$2115.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*drag_begin)(GtkWidget*,GdkDragContext*);
+     * void (*drag_begin)(struct _GtkWidget*,struct _GdkDragContext*);
      * }
      */
     public static MemorySegment drag_begin$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_begin$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2115.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*drag_begin)(GtkWidget*,GdkDragContext*);
+     * void (*drag_begin)(struct _GtkWidget*,struct _GdkDragContext*);
      * }
      */
     public static void drag_begin$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.drag_begin$VH.set(seg, x);
+        constants$2115.const$2.set(seg, x);
     }
     public static MemorySegment drag_begin$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_begin$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2115.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void drag_begin$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.drag_begin$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2115.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drag_begin drag_begin(MemorySegment segment, SegmentScope scope) {
+    public static drag_begin drag_begin(MemorySegment segment, Arena scope) {
         return drag_begin.ofAddress(drag_begin$get(segment), scope);
     }
-    static final FunctionDescriptor drag_end$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor drag_end_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle drag_end_UP$MH = RuntimeHelper.upcallHandle(drag_end.class, "apply", _GtkWidgetClass.drag_end_UP$FUNC);
-    static final FunctionDescriptor drag_end_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle drag_end_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.drag_end_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*drag_end)(GtkWidget*,GdkDragContext*);
+ * void (*drag_end)(struct _GtkWidget*,struct _GdkDragContext*);
      * }
      */
     public interface drag_end {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(drag_end fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.drag_end_UP$MH, fi, _GtkWidgetClass.drag_end$FUNC, scope);
+        static MemorySegment allocate(drag_end fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2115.const$3, fi, constants$13.const$4, scope);
         }
-        static drag_end ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static drag_end ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkWidgetClass.drag_end_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -4342,78 +3232,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle drag_end$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("drag_end"));
     public static VarHandle drag_end$VH() {
-        return _GtkWidgetClass.drag_end$VH;
+        return constants$2115.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*drag_end)(GtkWidget*,GdkDragContext*);
+     * void (*drag_end)(struct _GtkWidget*,struct _GdkDragContext*);
      * }
      */
     public static MemorySegment drag_end$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_end$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2115.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*drag_end)(GtkWidget*,GdkDragContext*);
+     * void (*drag_end)(struct _GtkWidget*,struct _GdkDragContext*);
      * }
      */
     public static void drag_end$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.drag_end$VH.set(seg, x);
+        constants$2115.const$4.set(seg, x);
     }
     public static MemorySegment drag_end$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_end$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2115.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void drag_end$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.drag_end$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2115.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drag_end drag_end(MemorySegment segment, SegmentScope scope) {
+    public static drag_end drag_end(MemorySegment segment, Arena scope) {
         return drag_end.ofAddress(drag_end$get(segment), scope);
     }
-    static final FunctionDescriptor drag_data_get$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor drag_data_get_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle drag_data_get_UP$MH = RuntimeHelper.upcallHandle(drag_data_get.class, "apply", _GtkWidgetClass.drag_data_get_UP$FUNC);
-    static final FunctionDescriptor drag_data_get_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle drag_data_get_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.drag_data_get_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*drag_data_get)(GtkWidget*,GdkDragContext*,GtkSelectionData*,guint,guint);
+ * void (*drag_data_get)(struct _GtkWidget*,struct _GdkDragContext*,struct _GtkSelectionData*,unsigned int,unsigned int);
      * }
      */
     public interface drag_data_get {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, int _x3, int _x4);
-        static MemorySegment allocate(drag_data_get fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.drag_data_get_UP$MH, fi, _GtkWidgetClass.drag_data_get$FUNC, scope);
+        static MemorySegment allocate(drag_data_get fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2115.const$5, fi, constants$1641.const$5, scope);
         }
-        static drag_data_get ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static drag_data_get ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, int __x3, int __x4) -> {
                 try {
-                    _GtkWidgetClass.drag_data_get_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$1642.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -4421,69 +3285,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle drag_data_get$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("drag_data_get"));
     public static VarHandle drag_data_get$VH() {
-        return _GtkWidgetClass.drag_data_get$VH;
+        return constants$2116.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*drag_data_get)(GtkWidget*,GdkDragContext*,GtkSelectionData*,guint,guint);
+     * void (*drag_data_get)(struct _GtkWidget*,struct _GdkDragContext*,struct _GtkSelectionData*,unsigned int,unsigned int);
      * }
      */
     public static MemorySegment drag_data_get$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_data_get$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2116.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*drag_data_get)(GtkWidget*,GdkDragContext*,GtkSelectionData*,guint,guint);
+     * void (*drag_data_get)(struct _GtkWidget*,struct _GdkDragContext*,struct _GtkSelectionData*,unsigned int,unsigned int);
      * }
      */
     public static void drag_data_get$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.drag_data_get$VH.set(seg, x);
+        constants$2116.const$0.set(seg, x);
     }
     public static MemorySegment drag_data_get$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_data_get$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2116.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void drag_data_get$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.drag_data_get$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2116.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drag_data_get drag_data_get(MemorySegment segment, SegmentScope scope) {
+    public static drag_data_get drag_data_get(MemorySegment segment, Arena scope) {
         return drag_data_get.ofAddress(drag_data_get$get(segment), scope);
     }
-    static final FunctionDescriptor drag_data_delete$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor drag_data_delete_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle drag_data_delete_UP$MH = RuntimeHelper.upcallHandle(drag_data_delete.class, "apply", _GtkWidgetClass.drag_data_delete_UP$FUNC);
-    static final FunctionDescriptor drag_data_delete_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle drag_data_delete_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.drag_data_delete_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*drag_data_delete)(GtkWidget*,GdkDragContext*);
+ * void (*drag_data_delete)(struct _GtkWidget*,struct _GdkDragContext*);
      * }
      */
     public interface drag_data_delete {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(drag_data_delete fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.drag_data_delete_UP$MH, fi, _GtkWidgetClass.drag_data_delete$FUNC, scope);
+        static MemorySegment allocate(drag_data_delete fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2116.const$1, fi, constants$13.const$4, scope);
         }
-        static drag_data_delete ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static drag_data_delete ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkWidgetClass.drag_data_delete_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -4491,72 +3338,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle drag_data_delete$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("drag_data_delete"));
     public static VarHandle drag_data_delete$VH() {
-        return _GtkWidgetClass.drag_data_delete$VH;
+        return constants$2116.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*drag_data_delete)(GtkWidget*,GdkDragContext*);
+     * void (*drag_data_delete)(struct _GtkWidget*,struct _GdkDragContext*);
      * }
      */
     public static MemorySegment drag_data_delete$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_data_delete$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2116.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*drag_data_delete)(GtkWidget*,GdkDragContext*);
+     * void (*drag_data_delete)(struct _GtkWidget*,struct _GdkDragContext*);
      * }
      */
     public static void drag_data_delete$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.drag_data_delete$VH.set(seg, x);
+        constants$2116.const$2.set(seg, x);
     }
     public static MemorySegment drag_data_delete$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_data_delete$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2116.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void drag_data_delete$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.drag_data_delete$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2116.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drag_data_delete drag_data_delete(MemorySegment segment, SegmentScope scope) {
+    public static drag_data_delete drag_data_delete(MemorySegment segment, Arena scope) {
         return drag_data_delete.ofAddress(drag_data_delete$get(segment), scope);
     }
-    static final FunctionDescriptor drag_leave$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor drag_leave_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle drag_leave_UP$MH = RuntimeHelper.upcallHandle(drag_leave.class, "apply", _GtkWidgetClass.drag_leave_UP$FUNC);
-    static final FunctionDescriptor drag_leave_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle drag_leave_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.drag_leave_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*drag_leave)(GtkWidget*,GdkDragContext*,guint);
+ * void (*drag_leave)(struct _GtkWidget*,struct _GdkDragContext*,unsigned int);
      * }
      */
     public interface drag_leave {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
-        static MemorySegment allocate(drag_leave fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.drag_leave_UP$MH, fi, _GtkWidgetClass.drag_leave$FUNC, scope);
+        static MemorySegment allocate(drag_leave fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2116.const$3, fi, constants$164.const$5, scope);
         }
-        static drag_leave ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static drag_leave ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    _GtkWidgetClass.drag_leave_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$420.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -4564,78 +3391,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle drag_leave$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("drag_leave"));
     public static VarHandle drag_leave$VH() {
-        return _GtkWidgetClass.drag_leave$VH;
+        return constants$2116.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*drag_leave)(GtkWidget*,GdkDragContext*,guint);
+     * void (*drag_leave)(struct _GtkWidget*,struct _GdkDragContext*,unsigned int);
      * }
      */
     public static MemorySegment drag_leave$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_leave$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2116.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*drag_leave)(GtkWidget*,GdkDragContext*,guint);
+     * void (*drag_leave)(struct _GtkWidget*,struct _GdkDragContext*,unsigned int);
      * }
      */
     public static void drag_leave$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.drag_leave$VH.set(seg, x);
+        constants$2116.const$4.set(seg, x);
     }
     public static MemorySegment drag_leave$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_leave$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2116.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void drag_leave$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.drag_leave$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2116.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drag_leave drag_leave(MemorySegment segment, SegmentScope scope) {
+    public static drag_leave drag_leave(MemorySegment segment, Arena scope) {
         return drag_leave.ofAddress(drag_leave$get(segment), scope);
     }
-    static final FunctionDescriptor drag_motion$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor drag_motion_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle drag_motion_UP$MH = RuntimeHelper.upcallHandle(drag_motion.class, "apply", _GtkWidgetClass.drag_motion_UP$FUNC);
-    static final FunctionDescriptor drag_motion_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle drag_motion_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.drag_motion_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*drag_motion)(GtkWidget*,GdkDragContext*,gint,gint,guint);
+ * int (*drag_motion)(struct _GtkWidget*,struct _GdkDragContext*,int,int,unsigned int);
      * }
      */
     public interface drag_motion {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, int _x4);
-        static MemorySegment allocate(drag_motion fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.drag_motion_UP$MH, fi, _GtkWidgetClass.drag_motion$FUNC, scope);
+        static MemorySegment allocate(drag_motion fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2117.const$0, fi, constants$2116.const$5, scope);
         }
-        static drag_motion ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static drag_motion ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, int __x4) -> {
                 try {
-                    return (int)_GtkWidgetClass.drag_motion_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    return (int)constants$2117.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -4643,78 +3444,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle drag_motion$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("drag_motion"));
     public static VarHandle drag_motion$VH() {
-        return _GtkWidgetClass.drag_motion$VH;
+        return constants$2117.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*drag_motion)(GtkWidget*,GdkDragContext*,gint,gint,guint);
+     * int (*drag_motion)(struct _GtkWidget*,struct _GdkDragContext*,int,int,unsigned int);
      * }
      */
     public static MemorySegment drag_motion$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_motion$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2117.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*drag_motion)(GtkWidget*,GdkDragContext*,gint,gint,guint);
+     * int (*drag_motion)(struct _GtkWidget*,struct _GdkDragContext*,int,int,unsigned int);
      * }
      */
     public static void drag_motion$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.drag_motion$VH.set(seg, x);
+        constants$2117.const$2.set(seg, x);
     }
     public static MemorySegment drag_motion$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_motion$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2117.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void drag_motion$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.drag_motion$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2117.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drag_motion drag_motion(MemorySegment segment, SegmentScope scope) {
+    public static drag_motion drag_motion(MemorySegment segment, Arena scope) {
         return drag_motion.ofAddress(drag_motion$get(segment), scope);
     }
-    static final FunctionDescriptor drag_drop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor drag_drop_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle drag_drop_UP$MH = RuntimeHelper.upcallHandle(drag_drop.class, "apply", _GtkWidgetClass.drag_drop_UP$FUNC);
-    static final FunctionDescriptor drag_drop_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle drag_drop_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.drag_drop_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*drag_drop)(GtkWidget*,GdkDragContext*,gint,gint,guint);
+ * int (*drag_drop)(struct _GtkWidget*,struct _GdkDragContext*,int,int,unsigned int);
      * }
      */
     public interface drag_drop {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, int _x4);
-        static MemorySegment allocate(drag_drop fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.drag_drop_UP$MH, fi, _GtkWidgetClass.drag_drop$FUNC, scope);
+        static MemorySegment allocate(drag_drop fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2117.const$3, fi, constants$2116.const$5, scope);
         }
-        static drag_drop ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static drag_drop ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, int __x4) -> {
                 try {
-                    return (int)_GtkWidgetClass.drag_drop_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    return (int)constants$2117.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -4722,84 +3497,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle drag_drop$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("drag_drop"));
     public static VarHandle drag_drop$VH() {
-        return _GtkWidgetClass.drag_drop$VH;
+        return constants$2117.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*drag_drop)(GtkWidget*,GdkDragContext*,gint,gint,guint);
+     * int (*drag_drop)(struct _GtkWidget*,struct _GdkDragContext*,int,int,unsigned int);
      * }
      */
     public static MemorySegment drag_drop$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_drop$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2117.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*drag_drop)(GtkWidget*,GdkDragContext*,gint,gint,guint);
+     * int (*drag_drop)(struct _GtkWidget*,struct _GdkDragContext*,int,int,unsigned int);
      * }
      */
     public static void drag_drop$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.drag_drop$VH.set(seg, x);
+        constants$2117.const$4.set(seg, x);
     }
     public static MemorySegment drag_drop$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_drop$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2117.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void drag_drop$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.drag_drop$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2117.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drag_drop drag_drop(MemorySegment segment, SegmentScope scope) {
+    public static drag_drop drag_drop(MemorySegment segment, Arena scope) {
         return drag_drop.ofAddress(drag_drop$get(segment), scope);
     }
-    static final FunctionDescriptor drag_data_received$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor drag_data_received_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle drag_data_received_UP$MH = RuntimeHelper.upcallHandle(drag_data_received.class, "apply", _GtkWidgetClass.drag_data_received_UP$FUNC);
-    static final FunctionDescriptor drag_data_received_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle drag_data_received_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.drag_data_received_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*drag_data_received)(GtkWidget*,GdkDragContext*,gint,gint,GtkSelectionData*,guint,guint);
+ * void (*drag_data_received)(struct _GtkWidget*,struct _GdkDragContext*,int,int,struct _GtkSelectionData*,unsigned int,unsigned int);
      * }
      */
     public interface drag_data_received {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4, int _x5, int _x6);
-        static MemorySegment allocate(drag_data_received fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.drag_data_received_UP$MH, fi, _GtkWidgetClass.drag_data_received$FUNC, scope);
+        static MemorySegment allocate(drag_data_received fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2118.const$0, fi, constants$2117.const$5, scope);
         }
-        static drag_data_received ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static drag_data_received ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4, int __x5, int __x6) -> {
                 try {
-                    _GtkWidgetClass.drag_data_received_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
+                    constants$2118.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5, __x6);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -4807,72 +3550,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle drag_data_received$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("drag_data_received"));
     public static VarHandle drag_data_received$VH() {
-        return _GtkWidgetClass.drag_data_received$VH;
+        return constants$2118.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*drag_data_received)(GtkWidget*,GdkDragContext*,gint,gint,GtkSelectionData*,guint,guint);
+     * void (*drag_data_received)(struct _GtkWidget*,struct _GdkDragContext*,int,int,struct _GtkSelectionData*,unsigned int,unsigned int);
      * }
      */
     public static MemorySegment drag_data_received$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_data_received$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2118.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*drag_data_received)(GtkWidget*,GdkDragContext*,gint,gint,GtkSelectionData*,guint,guint);
+     * void (*drag_data_received)(struct _GtkWidget*,struct _GdkDragContext*,int,int,struct _GtkSelectionData*,unsigned int,unsigned int);
      * }
      */
     public static void drag_data_received$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.drag_data_received$VH.set(seg, x);
+        constants$2118.const$2.set(seg, x);
     }
     public static MemorySegment drag_data_received$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_data_received$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2118.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void drag_data_received$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.drag_data_received$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2118.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drag_data_received drag_data_received(MemorySegment segment, SegmentScope scope) {
+    public static drag_data_received drag_data_received(MemorySegment segment, Arena scope) {
         return drag_data_received.ofAddress(drag_data_received$get(segment), scope);
     }
-    static final FunctionDescriptor drag_failed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor drag_failed_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle drag_failed_UP$MH = RuntimeHelper.upcallHandle(drag_failed.class, "apply", _GtkWidgetClass.drag_failed_UP$FUNC);
-    static final FunctionDescriptor drag_failed_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle drag_failed_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.drag_failed_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*drag_failed)(GtkWidget*,GdkDragContext*,GtkDragResult);
+ * int (*drag_failed)(struct _GtkWidget*,struct _GdkDragContext*,enum GtkDragResult);
      * }
      */
     public interface drag_failed {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2);
-        static MemorySegment allocate(drag_failed fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.drag_failed_UP$MH, fi, _GtkWidgetClass.drag_failed$FUNC, scope);
+        static MemorySegment allocate(drag_failed fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2118.const$3, fi, constants$62.const$0, scope);
         }
-        static drag_failed ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static drag_failed ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2) -> {
                 try {
-                    return (int)_GtkWidgetClass.drag_failed_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$955.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -4880,66 +3603,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle drag_failed$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("drag_failed"));
     public static VarHandle drag_failed$VH() {
-        return _GtkWidgetClass.drag_failed$VH;
+        return constants$2118.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*drag_failed)(GtkWidget*,GdkDragContext*,GtkDragResult);
+     * int (*drag_failed)(struct _GtkWidget*,struct _GdkDragContext*,enum GtkDragResult);
      * }
      */
     public static MemorySegment drag_failed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_failed$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2118.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*drag_failed)(GtkWidget*,GdkDragContext*,GtkDragResult);
+     * int (*drag_failed)(struct _GtkWidget*,struct _GdkDragContext*,enum GtkDragResult);
      * }
      */
     public static void drag_failed$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.drag_failed$VH.set(seg, x);
+        constants$2118.const$4.set(seg, x);
     }
     public static MemorySegment drag_failed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.drag_failed$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2118.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void drag_failed$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.drag_failed$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2118.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drag_failed drag_failed(MemorySegment segment, SegmentScope scope) {
+    public static drag_failed drag_failed(MemorySegment segment, Arena scope) {
         return drag_failed.ofAddress(drag_failed$get(segment), scope);
     }
-    static final FunctionDescriptor popup_menu$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor popup_menu_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle popup_menu_UP$MH = RuntimeHelper.upcallHandle(popup_menu.class, "apply", _GtkWidgetClass.popup_menu_UP$FUNC);
-    static final FunctionDescriptor popup_menu_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle popup_menu_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.popup_menu_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*popup_menu)(GtkWidget*);
+ * int (*popup_menu)(struct _GtkWidget*);
      * }
      */
     public interface popup_menu {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(popup_menu fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.popup_menu_UP$MH, fi, _GtkWidgetClass.popup_menu$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(popup_menu fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2118.const$5, fi, constants$10.const$5, scope);
         }
-        static popup_menu ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0) -> {
+        static popup_menu ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.popup_menu_DOWN$MH.invokeExact(symbol, __x0);
+                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -4947,69 +3656,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle popup_menu$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("popup_menu"));
     public static VarHandle popup_menu$VH() {
-        return _GtkWidgetClass.popup_menu$VH;
+        return constants$2119.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*popup_menu)(GtkWidget*);
+     * int (*popup_menu)(struct _GtkWidget*);
      * }
      */
     public static MemorySegment popup_menu$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.popup_menu$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2119.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*popup_menu)(GtkWidget*);
+     * int (*popup_menu)(struct _GtkWidget*);
      * }
      */
     public static void popup_menu$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.popup_menu$VH.set(seg, x);
+        constants$2119.const$0.set(seg, x);
     }
     public static MemorySegment popup_menu$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.popup_menu$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2119.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void popup_menu$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.popup_menu$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2119.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static popup_menu popup_menu(MemorySegment segment, SegmentScope scope) {
+    public static popup_menu popup_menu(MemorySegment segment, Arena scope) {
         return popup_menu.ofAddress(popup_menu$get(segment), scope);
     }
-    static final FunctionDescriptor show_help$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor show_help_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle show_help_UP$MH = RuntimeHelper.upcallHandle(show_help.class, "apply", _GtkWidgetClass.show_help_UP$FUNC);
-    static final FunctionDescriptor show_help_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle show_help_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.show_help_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*show_help)(GtkWidget*,GtkWidgetHelpType);
+ * int (*show_help)(struct _GtkWidget*,enum GtkWidgetHelpType);
      * }
      */
     public interface show_help {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(show_help fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.show_help_UP$MH, fi, _GtkWidgetClass.show_help$FUNC, scope);
+        static MemorySegment allocate(show_help fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2119.const$1, fi, constants$11.const$4, scope);
         }
-        static show_help ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static show_help ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_GtkWidgetClass.show_help_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$837.const$4.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -5017,66 +3709,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle show_help$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("show_help"));
     public static VarHandle show_help$VH() {
-        return _GtkWidgetClass.show_help$VH;
+        return constants$2119.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*show_help)(GtkWidget*,GtkWidgetHelpType);
+     * int (*show_help)(struct _GtkWidget*,enum GtkWidgetHelpType);
      * }
      */
     public static MemorySegment show_help$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.show_help$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2119.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*show_help)(GtkWidget*,GtkWidgetHelpType);
+     * int (*show_help)(struct _GtkWidget*,enum GtkWidgetHelpType);
      * }
      */
     public static void show_help$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.show_help$VH.set(seg, x);
+        constants$2119.const$2.set(seg, x);
     }
     public static MemorySegment show_help$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.show_help$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2119.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void show_help$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.show_help$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2119.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static show_help show_help(MemorySegment segment, SegmentScope scope) {
+    public static show_help show_help(MemorySegment segment, Arena scope) {
         return show_help.ofAddress(show_help$get(segment), scope);
     }
-    static final FunctionDescriptor get_accessible$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_accessible_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_accessible_UP$MH = RuntimeHelper.upcallHandle(get_accessible.class, "apply", _GtkWidgetClass.get_accessible_UP$FUNC);
-    static final FunctionDescriptor get_accessible_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_accessible_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.get_accessible_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * AtkObject* (*get_accessible)(GtkWidget*);
+ * struct _AtkObject* (*get_accessible)(struct _GtkWidget*);
      * }
      */
     public interface get_accessible {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_accessible fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.get_accessible_UP$MH, fi, _GtkWidgetClass.get_accessible$FUNC, scope);
+        static MemorySegment allocate(get_accessible fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2119.const$3, fi, constants$5.const$2, scope);
         }
-        static get_accessible ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_accessible ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GtkWidgetClass.get_accessible_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -5084,69 +3762,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle get_accessible$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_accessible"));
     public static VarHandle get_accessible$VH() {
-        return _GtkWidgetClass.get_accessible$VH;
+        return constants$2119.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * AtkObject* (*get_accessible)(GtkWidget*);
+     * struct _AtkObject* (*get_accessible)(struct _GtkWidget*);
      * }
      */
     public static MemorySegment get_accessible$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.get_accessible$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2119.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * AtkObject* (*get_accessible)(GtkWidget*);
+     * struct _AtkObject* (*get_accessible)(struct _GtkWidget*);
      * }
      */
     public static void get_accessible$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.get_accessible$VH.set(seg, x);
+        constants$2119.const$4.set(seg, x);
     }
     public static MemorySegment get_accessible$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.get_accessible$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2119.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_accessible$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.get_accessible$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2119.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_accessible get_accessible(MemorySegment segment, SegmentScope scope) {
+    public static get_accessible get_accessible(MemorySegment segment, Arena scope) {
         return get_accessible.ofAddress(get_accessible$get(segment), scope);
     }
-    static final FunctionDescriptor screen_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor screen_changed_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle screen_changed_UP$MH = RuntimeHelper.upcallHandle(screen_changed.class, "apply", _GtkWidgetClass.screen_changed_UP$FUNC);
-    static final FunctionDescriptor screen_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle screen_changed_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.screen_changed_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*screen_changed)(GtkWidget*,GdkScreen*);
+ * void (*screen_changed)(struct _GtkWidget*,struct _GdkScreen*);
      * }
      */
     public interface screen_changed {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(screen_changed fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.screen_changed_UP$MH, fi, _GtkWidgetClass.screen_changed$FUNC, scope);
+        static MemorySegment allocate(screen_changed fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2119.const$5, fi, constants$13.const$4, scope);
         }
-        static screen_changed ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static screen_changed ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkWidgetClass.screen_changed_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -5154,69 +3815,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle screen_changed$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("screen_changed"));
     public static VarHandle screen_changed$VH() {
-        return _GtkWidgetClass.screen_changed$VH;
+        return constants$2120.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*screen_changed)(GtkWidget*,GdkScreen*);
+     * void (*screen_changed)(struct _GtkWidget*,struct _GdkScreen*);
      * }
      */
     public static MemorySegment screen_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.screen_changed$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2120.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*screen_changed)(GtkWidget*,GdkScreen*);
+     * void (*screen_changed)(struct _GtkWidget*,struct _GdkScreen*);
      * }
      */
     public static void screen_changed$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.screen_changed$VH.set(seg, x);
+        constants$2120.const$0.set(seg, x);
     }
     public static MemorySegment screen_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.screen_changed$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2120.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void screen_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.screen_changed$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2120.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static screen_changed screen_changed(MemorySegment segment, SegmentScope scope) {
+    public static screen_changed screen_changed(MemorySegment segment, Arena scope) {
         return screen_changed.ofAddress(screen_changed$get(segment), scope);
     }
-    static final FunctionDescriptor can_activate_accel$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor can_activate_accel_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle can_activate_accel_UP$MH = RuntimeHelper.upcallHandle(can_activate_accel.class, "apply", _GtkWidgetClass.can_activate_accel_UP$FUNC);
-    static final FunctionDescriptor can_activate_accel_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle can_activate_accel_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.can_activate_accel_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*can_activate_accel)(GtkWidget*,guint);
+ * int (*can_activate_accel)(struct _GtkWidget*,unsigned int);
      * }
      */
     public interface can_activate_accel {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(can_activate_accel fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.can_activate_accel_UP$MH, fi, _GtkWidgetClass.can_activate_accel$FUNC, scope);
+        static MemorySegment allocate(can_activate_accel fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2120.const$1, fi, constants$11.const$4, scope);
         }
-        static can_activate_accel ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static can_activate_accel ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_GtkWidgetClass.can_activate_accel_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$837.const$4.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -5224,66 +3868,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle can_activate_accel$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("can_activate_accel"));
     public static VarHandle can_activate_accel$VH() {
-        return _GtkWidgetClass.can_activate_accel$VH;
+        return constants$2120.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*can_activate_accel)(GtkWidget*,guint);
+     * int (*can_activate_accel)(struct _GtkWidget*,unsigned int);
      * }
      */
     public static MemorySegment can_activate_accel$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.can_activate_accel$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2120.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*can_activate_accel)(GtkWidget*,guint);
+     * int (*can_activate_accel)(struct _GtkWidget*,unsigned int);
      * }
      */
     public static void can_activate_accel$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.can_activate_accel$VH.set(seg, x);
+        constants$2120.const$2.set(seg, x);
     }
     public static MemorySegment can_activate_accel$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.can_activate_accel$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2120.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void can_activate_accel$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.can_activate_accel$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2120.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static can_activate_accel can_activate_accel(MemorySegment segment, SegmentScope scope) {
+    public static can_activate_accel can_activate_accel(MemorySegment segment, Arena scope) {
         return can_activate_accel.ofAddress(can_activate_accel$get(segment), scope);
     }
-    static final FunctionDescriptor composited_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor composited_changed_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle composited_changed_UP$MH = RuntimeHelper.upcallHandle(composited_changed.class, "apply", _GtkWidgetClass.composited_changed_UP$FUNC);
-    static final FunctionDescriptor composited_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle composited_changed_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.composited_changed_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*composited_changed)(GtkWidget*);
+ * void (*composited_changed)(struct _GtkWidget*);
      * }
      */
     public interface composited_changed {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(composited_changed fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.composited_changed_UP$MH, fi, _GtkWidgetClass.composited_changed$FUNC, scope);
+        static MemorySegment allocate(composited_changed fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2120.const$3, fi, constants$13.const$1, scope);
         }
-        static composited_changed ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static composited_changed ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkWidgetClass.composited_changed_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -5291,78 +3921,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle composited_changed$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("composited_changed"));
     public static VarHandle composited_changed$VH() {
-        return _GtkWidgetClass.composited_changed$VH;
+        return constants$2120.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*composited_changed)(GtkWidget*);
+     * void (*composited_changed)(struct _GtkWidget*);
      * }
      */
     public static MemorySegment composited_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.composited_changed$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2120.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*composited_changed)(GtkWidget*);
+     * void (*composited_changed)(struct _GtkWidget*);
      * }
      */
     public static void composited_changed$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.composited_changed$VH.set(seg, x);
+        constants$2120.const$4.set(seg, x);
     }
     public static MemorySegment composited_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.composited_changed$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2120.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void composited_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.composited_changed$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2120.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static composited_changed composited_changed(MemorySegment segment, SegmentScope scope) {
+    public static composited_changed composited_changed(MemorySegment segment, Arena scope) {
         return composited_changed.ofAddress(composited_changed$get(segment), scope);
     }
-    static final FunctionDescriptor query_tooltip$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor query_tooltip_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle query_tooltip_UP$MH = RuntimeHelper.upcallHandle(query_tooltip.class, "apply", _GtkWidgetClass.query_tooltip_UP$FUNC);
-    static final FunctionDescriptor query_tooltip_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle query_tooltip_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.query_tooltip_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*query_tooltip)(GtkWidget*,gint,gint,gboolean,GtkTooltip*);
+ * int (*query_tooltip)(struct _GtkWidget*,int,int,int,struct _GtkTooltip*);
      * }
      */
     public interface query_tooltip {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, int _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(query_tooltip fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.query_tooltip_UP$MH, fi, _GtkWidgetClass.query_tooltip$FUNC, scope);
+        static MemorySegment allocate(query_tooltip fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2120.const$5, fi, constants$1290.const$1, scope);
         }
-        static query_tooltip ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static query_tooltip ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, int __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (int)_GtkWidgetClass.query_tooltip_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    return (int)constants$2121.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -5370,72 +3974,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle query_tooltip$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("query_tooltip"));
     public static VarHandle query_tooltip$VH() {
-        return _GtkWidgetClass.query_tooltip$VH;
+        return constants$2121.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*query_tooltip)(GtkWidget*,gint,gint,gboolean,GtkTooltip*);
+     * int (*query_tooltip)(struct _GtkWidget*,int,int,int,struct _GtkTooltip*);
      * }
      */
     public static MemorySegment query_tooltip$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.query_tooltip$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2121.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*query_tooltip)(GtkWidget*,gint,gint,gboolean,GtkTooltip*);
+     * int (*query_tooltip)(struct _GtkWidget*,int,int,int,struct _GtkTooltip*);
      * }
      */
     public static void query_tooltip$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.query_tooltip$VH.set(seg, x);
+        constants$2121.const$1.set(seg, x);
     }
     public static MemorySegment query_tooltip$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.query_tooltip$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2121.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void query_tooltip$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.query_tooltip$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2121.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static query_tooltip query_tooltip(MemorySegment segment, SegmentScope scope) {
+    public static query_tooltip query_tooltip(MemorySegment segment, Arena scope) {
         return query_tooltip.ofAddress(query_tooltip$get(segment), scope);
     }
-    static final FunctionDescriptor compute_expand$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor compute_expand_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle compute_expand_UP$MH = RuntimeHelper.upcallHandle(compute_expand.class, "apply", _GtkWidgetClass.compute_expand_UP$FUNC);
-    static final FunctionDescriptor compute_expand_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle compute_expand_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.compute_expand_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*compute_expand)(GtkWidget*,gboolean*,gboolean*);
+ * void (*compute_expand)(struct _GtkWidget*,int*,int*);
      * }
      */
     public interface compute_expand {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(compute_expand fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.compute_expand_UP$MH, fi, _GtkWidgetClass.compute_expand$FUNC, scope);
+        static MemorySegment allocate(compute_expand fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2121.const$2, fi, constants$14.const$3, scope);
         }
-        static compute_expand ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static compute_expand ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GtkWidgetClass.compute_expand_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
+                    constants$14.const$5.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -5443,75 +4027,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle compute_expand$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("compute_expand"));
     public static VarHandle compute_expand$VH() {
-        return _GtkWidgetClass.compute_expand$VH;
+        return constants$2121.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*compute_expand)(GtkWidget*,gboolean*,gboolean*);
+     * void (*compute_expand)(struct _GtkWidget*,int*,int*);
      * }
      */
     public static MemorySegment compute_expand$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.compute_expand$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2121.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*compute_expand)(GtkWidget*,gboolean*,gboolean*);
+     * void (*compute_expand)(struct _GtkWidget*,int*,int*);
      * }
      */
     public static void compute_expand$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.compute_expand$VH.set(seg, x);
+        constants$2121.const$3.set(seg, x);
     }
     public static MemorySegment compute_expand$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.compute_expand$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2121.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void compute_expand$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.compute_expand$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2121.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static compute_expand compute_expand(MemorySegment segment, SegmentScope scope) {
+    public static compute_expand compute_expand(MemorySegment segment, Arena scope) {
         return compute_expand.ofAddress(compute_expand$get(segment), scope);
     }
-    static final FunctionDescriptor adjust_size_request$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor adjust_size_request_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle adjust_size_request_UP$MH = RuntimeHelper.upcallHandle(adjust_size_request.class, "apply", _GtkWidgetClass.adjust_size_request_UP$FUNC);
-    static final FunctionDescriptor adjust_size_request_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle adjust_size_request_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.adjust_size_request_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*adjust_size_request)(GtkWidget*,GtkOrientation,gint*,gint*);
+ * void (*adjust_size_request)(struct _GtkWidget*,enum GtkOrientation,int*,int*);
      * }
      */
     public interface adjust_size_request {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(adjust_size_request fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.adjust_size_request_UP$MH, fi, _GtkWidgetClass.adjust_size_request$FUNC, scope);
+        static MemorySegment allocate(adjust_size_request fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2121.const$4, fi, constants$179.const$1, scope);
         }
-        static adjust_size_request ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static adjust_size_request ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    _GtkWidgetClass.adjust_size_request_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$372.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -5519,81 +4080,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle adjust_size_request$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("adjust_size_request"));
     public static VarHandle adjust_size_request$VH() {
-        return _GtkWidgetClass.adjust_size_request$VH;
+        return constants$2121.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*adjust_size_request)(GtkWidget*,GtkOrientation,gint*,gint*);
+     * void (*adjust_size_request)(struct _GtkWidget*,enum GtkOrientation,int*,int*);
      * }
      */
     public static MemorySegment adjust_size_request$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.adjust_size_request$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2121.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*adjust_size_request)(GtkWidget*,GtkOrientation,gint*,gint*);
+     * void (*adjust_size_request)(struct _GtkWidget*,enum GtkOrientation,int*,int*);
      * }
      */
     public static void adjust_size_request$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.adjust_size_request$VH.set(seg, x);
+        constants$2121.const$5.set(seg, x);
     }
     public static MemorySegment adjust_size_request$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.adjust_size_request$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2121.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void adjust_size_request$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.adjust_size_request$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2121.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static adjust_size_request adjust_size_request(MemorySegment segment, SegmentScope scope) {
+    public static adjust_size_request adjust_size_request(MemorySegment segment, Arena scope) {
         return adjust_size_request.ofAddress(adjust_size_request$get(segment), scope);
     }
-    static final FunctionDescriptor adjust_size_allocation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor adjust_size_allocation_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle adjust_size_allocation_UP$MH = RuntimeHelper.upcallHandle(adjust_size_allocation.class, "apply", _GtkWidgetClass.adjust_size_allocation_UP$FUNC);
-    static final FunctionDescriptor adjust_size_allocation_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle adjust_size_allocation_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.adjust_size_allocation_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*adjust_size_allocation)(GtkWidget*,GtkOrientation,gint*,gint*,gint*,gint*);
+ * void (*adjust_size_allocation)(struct _GtkWidget*,enum GtkOrientation,int*,int*,int*,int*);
      * }
      */
     public interface adjust_size_allocation {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
-        static MemorySegment allocate(adjust_size_allocation fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.adjust_size_allocation_UP$MH, fi, _GtkWidgetClass.adjust_size_allocation$FUNC, scope);
+        static MemorySegment allocate(adjust_size_allocation fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2122.const$0, fi, constants$380.const$0, scope);
         }
-        static adjust_size_allocation ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static adjust_size_allocation ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    _GtkWidgetClass.adjust_size_allocation_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$945.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -5601,66 +4133,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle adjust_size_allocation$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("adjust_size_allocation"));
     public static VarHandle adjust_size_allocation$VH() {
-        return _GtkWidgetClass.adjust_size_allocation$VH;
+        return constants$2122.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*adjust_size_allocation)(GtkWidget*,GtkOrientation,gint*,gint*,gint*,gint*);
+     * void (*adjust_size_allocation)(struct _GtkWidget*,enum GtkOrientation,int*,int*,int*,int*);
      * }
      */
     public static MemorySegment adjust_size_allocation$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.adjust_size_allocation$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2122.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*adjust_size_allocation)(GtkWidget*,GtkOrientation,gint*,gint*,gint*,gint*);
+     * void (*adjust_size_allocation)(struct _GtkWidget*,enum GtkOrientation,int*,int*,int*,int*);
      * }
      */
     public static void adjust_size_allocation$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.adjust_size_allocation$VH.set(seg, x);
+        constants$2122.const$1.set(seg, x);
     }
     public static MemorySegment adjust_size_allocation$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.adjust_size_allocation$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2122.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void adjust_size_allocation$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.adjust_size_allocation$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2122.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static adjust_size_allocation adjust_size_allocation(MemorySegment segment, SegmentScope scope) {
+    public static adjust_size_allocation adjust_size_allocation(MemorySegment segment, Arena scope) {
         return adjust_size_allocation.ofAddress(adjust_size_allocation$get(segment), scope);
     }
-    static final FunctionDescriptor style_updated$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor style_updated_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle style_updated_UP$MH = RuntimeHelper.upcallHandle(style_updated.class, "apply", _GtkWidgetClass.style_updated_UP$FUNC);
-    static final FunctionDescriptor style_updated_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle style_updated_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.style_updated_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*style_updated)(GtkWidget*);
+ * void (*style_updated)(struct _GtkWidget*);
      * }
      */
     public interface style_updated {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(style_updated fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.style_updated_UP$MH, fi, _GtkWidgetClass.style_updated$FUNC, scope);
+        static MemorySegment allocate(style_updated fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2122.const$2, fi, constants$13.const$1, scope);
         }
-        static style_updated ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static style_updated ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkWidgetClass.style_updated_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -5668,69 +4186,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle style_updated$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("style_updated"));
     public static VarHandle style_updated$VH() {
-        return _GtkWidgetClass.style_updated$VH;
+        return constants$2122.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*style_updated)(GtkWidget*);
+     * void (*style_updated)(struct _GtkWidget*);
      * }
      */
     public static MemorySegment style_updated$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.style_updated$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2122.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*style_updated)(GtkWidget*);
+     * void (*style_updated)(struct _GtkWidget*);
      * }
      */
     public static void style_updated$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.style_updated$VH.set(seg, x);
+        constants$2122.const$3.set(seg, x);
     }
     public static MemorySegment style_updated$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.style_updated$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2122.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void style_updated$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.style_updated$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2122.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static style_updated style_updated(MemorySegment segment, SegmentScope scope) {
+    public static style_updated style_updated(MemorySegment segment, Arena scope) {
         return style_updated.ofAddress(style_updated$get(segment), scope);
     }
-    static final FunctionDescriptor touch_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor touch_event_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle touch_event_UP$MH = RuntimeHelper.upcallHandle(touch_event.class, "apply", _GtkWidgetClass.touch_event_UP$FUNC);
-    static final FunctionDescriptor touch_event_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle touch_event_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.touch_event_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*touch_event)(GtkWidget*,GdkEventTouch*);
+ * int (*touch_event)(struct _GtkWidget*,struct _GdkEventTouch*);
      * }
      */
     public interface touch_event {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(touch_event fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.touch_event_UP$MH, fi, _GtkWidgetClass.touch_event$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(touch_event fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2122.const$4, fi, constants$9.const$0, scope);
         }
-        static touch_event ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static touch_event ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkWidgetClass.touch_event_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -5738,81 +4239,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle touch_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("touch_event"));
     public static VarHandle touch_event$VH() {
-        return _GtkWidgetClass.touch_event$VH;
+        return constants$2122.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*touch_event)(GtkWidget*,GdkEventTouch*);
+     * int (*touch_event)(struct _GtkWidget*,struct _GdkEventTouch*);
      * }
      */
     public static MemorySegment touch_event$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.touch_event$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2122.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*touch_event)(GtkWidget*,GdkEventTouch*);
+     * int (*touch_event)(struct _GtkWidget*,struct _GdkEventTouch*);
      * }
      */
     public static void touch_event$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.touch_event$VH.set(seg, x);
+        constants$2122.const$5.set(seg, x);
     }
     public static MemorySegment touch_event$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.touch_event$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2122.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void touch_event$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.touch_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2122.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static touch_event touch_event(MemorySegment segment, SegmentScope scope) {
+    public static touch_event touch_event(MemorySegment segment, Arena scope) {
         return touch_event.ofAddress(touch_event$get(segment), scope);
     }
-    static final FunctionDescriptor get_preferred_height_and_baseline_for_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_preferred_height_and_baseline_for_width_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_preferred_height_and_baseline_for_width_UP$MH = RuntimeHelper.upcallHandle(get_preferred_height_and_baseline_for_width.class, "apply", _GtkWidgetClass.get_preferred_height_and_baseline_for_width_UP$FUNC);
-    static final FunctionDescriptor get_preferred_height_and_baseline_for_width_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_preferred_height_and_baseline_for_width_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.get_preferred_height_and_baseline_for_width_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*get_preferred_height_and_baseline_for_width)(GtkWidget*,gint,gint*,gint*,gint*,gint*);
+ * void (*get_preferred_height_and_baseline_for_width)(struct _GtkWidget*,int,int*,int*,int*,int*);
      * }
      */
     public interface get_preferred_height_and_baseline_for_width {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
-        static MemorySegment allocate(get_preferred_height_and_baseline_for_width fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.get_preferred_height_and_baseline_for_width_UP$MH, fi, _GtkWidgetClass.get_preferred_height_and_baseline_for_width$FUNC, scope);
+        static MemorySegment allocate(get_preferred_height_and_baseline_for_width fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2123.const$0, fi, constants$380.const$0, scope);
         }
-        static get_preferred_height_and_baseline_for_width ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_preferred_height_and_baseline_for_width ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    _GtkWidgetClass.get_preferred_height_and_baseline_for_width_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$945.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -5820,72 +4292,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle get_preferred_height_and_baseline_for_width$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_preferred_height_and_baseline_for_width"));
     public static VarHandle get_preferred_height_and_baseline_for_width$VH() {
-        return _GtkWidgetClass.get_preferred_height_and_baseline_for_width$VH;
+        return constants$2123.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*get_preferred_height_and_baseline_for_width)(GtkWidget*,gint,gint*,gint*,gint*,gint*);
+     * void (*get_preferred_height_and_baseline_for_width)(struct _GtkWidget*,int,int*,int*,int*,int*);
      * }
      */
     public static MemorySegment get_preferred_height_and_baseline_for_width$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.get_preferred_height_and_baseline_for_width$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2123.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*get_preferred_height_and_baseline_for_width)(GtkWidget*,gint,gint*,gint*,gint*,gint*);
+     * void (*get_preferred_height_and_baseline_for_width)(struct _GtkWidget*,int,int*,int*,int*,int*);
      * }
      */
     public static void get_preferred_height_and_baseline_for_width$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.get_preferred_height_and_baseline_for_width$VH.set(seg, x);
+        constants$2123.const$1.set(seg, x);
     }
     public static MemorySegment get_preferred_height_and_baseline_for_width$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.get_preferred_height_and_baseline_for_width$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2123.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_preferred_height_and_baseline_for_width$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.get_preferred_height_and_baseline_for_width$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2123.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_preferred_height_and_baseline_for_width get_preferred_height_and_baseline_for_width(MemorySegment segment, SegmentScope scope) {
+    public static get_preferred_height_and_baseline_for_width get_preferred_height_and_baseline_for_width(MemorySegment segment, Arena scope) {
         return get_preferred_height_and_baseline_for_width.ofAddress(get_preferred_height_and_baseline_for_width$get(segment), scope);
     }
-    static final FunctionDescriptor adjust_baseline_request$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor adjust_baseline_request_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle adjust_baseline_request_UP$MH = RuntimeHelper.upcallHandle(adjust_baseline_request.class, "apply", _GtkWidgetClass.adjust_baseline_request_UP$FUNC);
-    static final FunctionDescriptor adjust_baseline_request_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle adjust_baseline_request_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.adjust_baseline_request_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*adjust_baseline_request)(GtkWidget*,gint*,gint*);
+ * void (*adjust_baseline_request)(struct _GtkWidget*,int*,int*);
      * }
      */
     public interface adjust_baseline_request {
 
         void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(adjust_baseline_request fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.adjust_baseline_request_UP$MH, fi, _GtkWidgetClass.adjust_baseline_request$FUNC, scope);
+        static MemorySegment allocate(adjust_baseline_request fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2123.const$2, fi, constants$14.const$3, scope);
         }
-        static adjust_baseline_request ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static adjust_baseline_request ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GtkWidgetClass.adjust_baseline_request_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
+                    constants$14.const$5.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -5893,69 +4345,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle adjust_baseline_request$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("adjust_baseline_request"));
     public static VarHandle adjust_baseline_request$VH() {
-        return _GtkWidgetClass.adjust_baseline_request$VH;
+        return constants$2123.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*adjust_baseline_request)(GtkWidget*,gint*,gint*);
+     * void (*adjust_baseline_request)(struct _GtkWidget*,int*,int*);
      * }
      */
     public static MemorySegment adjust_baseline_request$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.adjust_baseline_request$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2123.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*adjust_baseline_request)(GtkWidget*,gint*,gint*);
+     * void (*adjust_baseline_request)(struct _GtkWidget*,int*,int*);
      * }
      */
     public static void adjust_baseline_request$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.adjust_baseline_request$VH.set(seg, x);
+        constants$2123.const$3.set(seg, x);
     }
     public static MemorySegment adjust_baseline_request$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.adjust_baseline_request$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2123.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void adjust_baseline_request$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.adjust_baseline_request$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2123.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static adjust_baseline_request adjust_baseline_request(MemorySegment segment, SegmentScope scope) {
+    public static adjust_baseline_request adjust_baseline_request(MemorySegment segment, Arena scope) {
         return adjust_baseline_request.ofAddress(adjust_baseline_request$get(segment), scope);
     }
-    static final FunctionDescriptor adjust_baseline_allocation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor adjust_baseline_allocation_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle adjust_baseline_allocation_UP$MH = RuntimeHelper.upcallHandle(adjust_baseline_allocation.class, "apply", _GtkWidgetClass.adjust_baseline_allocation_UP$FUNC);
-    static final FunctionDescriptor adjust_baseline_allocation_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle adjust_baseline_allocation_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.adjust_baseline_allocation_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*adjust_baseline_allocation)(GtkWidget*,gint*);
+ * void (*adjust_baseline_allocation)(struct _GtkWidget*,int*);
      * }
      */
     public interface adjust_baseline_allocation {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(adjust_baseline_allocation fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.adjust_baseline_allocation_UP$MH, fi, _GtkWidgetClass.adjust_baseline_allocation$FUNC, scope);
+        static MemorySegment allocate(adjust_baseline_allocation fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2123.const$4, fi, constants$13.const$4, scope);
         }
-        static adjust_baseline_allocation ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static adjust_baseline_allocation ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkWidgetClass.adjust_baseline_allocation_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -5963,69 +4398,52 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle adjust_baseline_allocation$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("adjust_baseline_allocation"));
     public static VarHandle adjust_baseline_allocation$VH() {
-        return _GtkWidgetClass.adjust_baseline_allocation$VH;
+        return constants$2123.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*adjust_baseline_allocation)(GtkWidget*,gint*);
+     * void (*adjust_baseline_allocation)(struct _GtkWidget*,int*);
      * }
      */
     public static MemorySegment adjust_baseline_allocation$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.adjust_baseline_allocation$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2123.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*adjust_baseline_allocation)(GtkWidget*,gint*);
+     * void (*adjust_baseline_allocation)(struct _GtkWidget*,int*);
      * }
      */
     public static void adjust_baseline_allocation$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.adjust_baseline_allocation$VH.set(seg, x);
+        constants$2123.const$5.set(seg, x);
     }
     public static MemorySegment adjust_baseline_allocation$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.adjust_baseline_allocation$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2123.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void adjust_baseline_allocation$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.adjust_baseline_allocation$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2123.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static adjust_baseline_allocation adjust_baseline_allocation(MemorySegment segment, SegmentScope scope) {
+    public static adjust_baseline_allocation adjust_baseline_allocation(MemorySegment segment, Arena scope) {
         return adjust_baseline_allocation.ofAddress(adjust_baseline_allocation$get(segment), scope);
     }
-    static final FunctionDescriptor queue_draw_region$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor queue_draw_region_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle queue_draw_region_UP$MH = RuntimeHelper.upcallHandle(queue_draw_region.class, "apply", _GtkWidgetClass.queue_draw_region_UP$FUNC);
-    static final FunctionDescriptor queue_draw_region_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle queue_draw_region_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass.queue_draw_region_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*queue_draw_region)(GtkWidget*,const cairo_region_t*);
+ * void (*queue_draw_region)(struct _GtkWidget*,struct _cairo_region*);
      * }
      */
     public interface queue_draw_region {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(queue_draw_region fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass.queue_draw_region_UP$MH, fi, _GtkWidgetClass.queue_draw_region$FUNC, scope);
+        static MemorySegment allocate(queue_draw_region fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2124.const$0, fi, constants$13.const$4, scope);
         }
-        static queue_draw_region ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static queue_draw_region ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkWidgetClass.queue_draw_region_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -6033,72 +4451,63 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle queue_draw_region$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("queue_draw_region"));
     public static VarHandle queue_draw_region$VH() {
-        return _GtkWidgetClass.queue_draw_region$VH;
+        return constants$2124.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*queue_draw_region)(GtkWidget*,const cairo_region_t*);
+     * void (*queue_draw_region)(struct _GtkWidget*,struct _cairo_region*);
      * }
      */
     public static MemorySegment queue_draw_region$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.queue_draw_region$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2124.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*queue_draw_region)(GtkWidget*,const cairo_region_t*);
+     * void (*queue_draw_region)(struct _GtkWidget*,struct _cairo_region*);
      * }
      */
     public static void queue_draw_region$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.queue_draw_region$VH.set(seg, x);
+        constants$2124.const$1.set(seg, x);
     }
     public static MemorySegment queue_draw_region$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.queue_draw_region$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2124.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void queue_draw_region$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.queue_draw_region$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2124.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static queue_draw_region queue_draw_region(MemorySegment segment, SegmentScope scope) {
+    public static queue_draw_region queue_draw_region(MemorySegment segment, Arena scope) {
         return queue_draw_region.ofAddress(queue_draw_region$get(segment), scope);
     }
-    static final VarHandle priv$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("priv"));
     public static VarHandle priv$VH() {
-        return _GtkWidgetClass.priv$VH;
+        return constants$2124.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GtkWidgetClassPrivate* priv;
+     * struct _GtkWidgetClassPrivate* priv;
      * }
      */
     public static MemorySegment priv$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.priv$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2124.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GtkWidgetClassPrivate* priv;
+     * struct _GtkWidgetClassPrivate* priv;
      * }
      */
     public static void priv$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass.priv$VH.set(seg, x);
+        constants$2124.const$2.set(seg, x);
     }
     public static MemorySegment priv$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass.priv$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2124.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void priv$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass.priv$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2124.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final FunctionDescriptor _gtk_reserved6$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved6_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved6_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved6.class, "apply", _GtkWidgetClass._gtk_reserved6_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved6_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved6_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass._gtk_reserved6_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved6)();
@@ -6107,14 +4516,14 @@ public class _GtkWidgetClass {
     public interface _gtk_reserved6 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved6 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass._gtk_reserved6_UP$MH, fi, _GtkWidgetClass._gtk_reserved6$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved6 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2124.const$3, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved6 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved6 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkWidgetClass._gtk_reserved6_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -6122,9 +4531,8 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle _gtk_reserved6$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved6"));
     public static VarHandle _gtk_reserved6$VH() {
-        return _GtkWidgetClass._gtk_reserved6$VH;
+        return constants$2124.const$4;
     }
     /**
      * Getter for field:
@@ -6133,7 +4541,7 @@ public class _GtkWidgetClass {
      * }
      */
     public static MemorySegment _gtk_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass._gtk_reserved6$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2124.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -6142,24 +4550,17 @@ public class _GtkWidgetClass {
      * }
      */
     public static void _gtk_reserved6$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass._gtk_reserved6$VH.set(seg, x);
+        constants$2124.const$4.set(seg, x);
     }
     public static MemorySegment _gtk_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass._gtk_reserved6$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2124.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass._gtk_reserved6$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2124.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved6 _gtk_reserved6(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved6 _gtk_reserved6(MemorySegment segment, Arena scope) {
         return _gtk_reserved6.ofAddress(_gtk_reserved6$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved7$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved7_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved7_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved7.class, "apply", _GtkWidgetClass._gtk_reserved7_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved7_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved7_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkWidgetClass._gtk_reserved7_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved7)();
@@ -6168,14 +4569,14 @@ public class _GtkWidgetClass {
     public interface _gtk_reserved7 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved7 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkWidgetClass._gtk_reserved7_UP$MH, fi, _GtkWidgetClass._gtk_reserved7$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved7 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2124.const$5, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved7 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved7 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkWidgetClass._gtk_reserved7_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -6183,9 +4584,8 @@ public class _GtkWidgetClass {
         }
     }
 
-    static final VarHandle _gtk_reserved7$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved7"));
     public static VarHandle _gtk_reserved7$VH() {
-        return _GtkWidgetClass._gtk_reserved7$VH;
+        return constants$2125.const$0;
     }
     /**
      * Getter for field:
@@ -6194,7 +4594,7 @@ public class _GtkWidgetClass {
      * }
      */
     public static MemorySegment _gtk_reserved7$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass._gtk_reserved7$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2125.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -6203,15 +4603,15 @@ public class _GtkWidgetClass {
      * }
      */
     public static void _gtk_reserved7$set(MemorySegment seg, MemorySegment x) {
-        _GtkWidgetClass._gtk_reserved7$VH.set(seg, x);
+        constants$2125.const$0.set(seg, x);
     }
     public static MemorySegment _gtk_reserved7$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkWidgetClass._gtk_reserved7$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2125.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved7$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkWidgetClass._gtk_reserved7$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2125.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved7 _gtk_reserved7(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved7 _gtk_reserved7(MemorySegment segment, Arena scope) {
         return _gtk_reserved7.ofAddress(_gtk_reserved7$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -6219,7 +4619,7 @@ public class _GtkWidgetClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

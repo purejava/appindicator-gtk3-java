@@ -3,53 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1490 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1490() {}
-    static final FunctionDescriptor gtk_app_chooser_button_get_show_dialog_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_font_funcs_set_draw_glyph_func$func.class, "apply", constants$584.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_funcs_set_draw_glyph_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_set_draw_glyph_func",
+        constants$42.const$1
     );
-    static final MethodHandle gtk_app_chooser_button_get_show_dialog_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_get_show_dialog_item",
-        constants$1490.gtk_app_chooser_button_get_show_dialog_item$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_button_set_heading$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_app_chooser_button_set_heading$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_set_heading",
-        constants$1490.gtk_app_chooser_button_set_heading$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_button_get_heading$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_app_chooser_button_get_heading$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_get_heading",
-        constants$1490.gtk_app_chooser_button_get_heading$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_button_set_show_default_item$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_app_chooser_button_set_show_default_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_set_show_default_item",
-        constants$1490.gtk_app_chooser_button_set_show_default_item$FUNC
-    );
-    static final FunctionDescriptor gtk_app_chooser_button_get_show_default_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_app_chooser_button_get_show_default_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_app_chooser_button_get_show_default_item",
-        constants$1490.gtk_app_chooser_button_get_show_default_item$FUNC
-    );
-    static final FunctionDescriptor gtk_shortcuts_window_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_shortcuts_window_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_shortcuts_window_get_type",
-        constants$1490.gtk_shortcuts_window_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_font_funcs_set_paint_glyph_func$func.class, "apply", constants$1481.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_funcs_set_paint_glyph_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_set_paint_glyph_func",
+        constants$42.const$1
     );
 }
 

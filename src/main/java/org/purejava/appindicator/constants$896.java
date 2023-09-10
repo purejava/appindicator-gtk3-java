@@ -3,63 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$896 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$896() {}
-    static final FunctionDescriptor hb_shape_plan_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_body",
+        constants$5.const$2
     );
-    static final MethodHandle hb_shape_plan_destroy$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_destroy",
-        constants$896.hb_shape_plan_destroy$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_body",
+        constants$13.const$4
     );
-    static final FunctionDescriptor hb_shape_plan_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_unix_fd_list",
+        constants$5.const$2
     );
-    static final MethodHandle hb_shape_plan_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_set_user_data",
-        constants$896.hb_shape_plan_set_user_data$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_unix_fd_list",
+        constants$13.const$4
     );
-    static final FunctionDescriptor hb_shape_plan_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_reply_serial",
+        constants$10.const$5
     );
-    static final MethodHandle hb_shape_plan_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_get_user_data",
-        constants$896.hb_shape_plan_get_user_data$FUNC
-    );
-    static final FunctionDescriptor hb_shape_plan_execute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_shape_plan_execute$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_execute",
-        constants$896.hb_shape_plan_execute$FUNC
-    );
-    static final FunctionDescriptor hb_shape_plan_get_shaper$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_shape_plan_get_shaper$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_get_shaper",
-        constants$896.hb_shape_plan_get_shaper$FUNC
-    );
-    static final FunctionDescriptor hb_style_get_value$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_style_get_value$MH = RuntimeHelper.downcallHandle(
-        "hb_style_get_value",
-        constants$896.hb_style_get_value$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_reply_serial",
+        constants$40.const$2
     );
 }
 

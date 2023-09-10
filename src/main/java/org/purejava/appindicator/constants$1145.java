@@ -3,63 +3,58 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1145 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1145() {}
-    static final FunctionDescriptor gdk_pixbuf_format_is_disabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_format_is_disabled$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_is_disabled",
-        constants$1145.gdk_pixbuf_format_is_disabled$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_format_set_disabled$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_format_set_disabled$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_set_disabled",
-        constants$1145.gdk_pixbuf_format_set_disabled$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_format_get_license$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_format_get_license$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_format_get_license",
-        constants$1145.gdk_pixbuf_format_get_license$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_get_file_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_get_file_info$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_file_info",
-        constants$1145.gdk_pixbuf_get_file_info$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_get_file_info_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_get_file_info_async$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_file_info_async",
-        constants$1145.gdk_pixbuf_get_file_info_async$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_get_file_info_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_get_file_info_finish$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_file_info_finish",
-        constants$1145.gdk_pixbuf_get_file_info_finish$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GMenuModel");
+    static final VarHandle const$1 = constants$1145.const$0.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("is_mutable"),
+        RuntimeHelper.POINTER.withName("get_n_items"),
+        RuntimeHelper.POINTER.withName("get_item_attributes"),
+        RuntimeHelper.POINTER.withName("iterate_item_attributes"),
+        RuntimeHelper.POINTER.withName("get_item_attribute_value"),
+        RuntimeHelper.POINTER.withName("get_item_links"),
+        RuntimeHelper.POINTER.withName("iterate_item_links"),
+        RuntimeHelper.POINTER.withName("get_item_link")
+    ).withName("_GMenuModelClass");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GMenuModelClass.is_mutable.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$1145.const$2.varHandle(MemoryLayout.PathElement.groupElement("is_mutable"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GMenuModelClass.get_n_items.class, "apply", constants$10.const$5);
 }
 
 

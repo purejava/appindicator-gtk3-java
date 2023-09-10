@@ -3,57 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$30 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$30() {}
-    static final FunctionDescriptor g_byte_array_sort$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$29.const$5.varHandle(MemoryLayout.PathElement.groupElement("pdata"));
+    static final VarHandle const$1 = constants$29.const$5.varHandle(MemoryLayout.PathElement.groupElement("len"));
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final MethodHandle g_byte_array_sort$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_sort",
-        constants$30.g_byte_array_sort$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_array_new",
+        constants$30.const$2
     );
-    static final FunctionDescriptor g_byte_array_sort_with_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        JAVA_LONG
     );
-    static final MethodHandle g_byte_array_sort_with_data$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_sort_with_data",
-        constants$30.g_byte_array_sort_with_data$FUNC
-    );
-    static final FunctionDescriptor g_atomic_int_get$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_atomic_int_get$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_int_get",
-        constants$30.g_atomic_int_get$FUNC
-    );
-    static final FunctionDescriptor g_atomic_int_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_atomic_int_set$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_int_set",
-        constants$30.g_atomic_int_set$FUNC
-    );
-    static final FunctionDescriptor g_atomic_int_inc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_atomic_int_inc$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_int_inc",
-        constants$30.g_atomic_int_inc$FUNC
-    );
-    static final FunctionDescriptor g_atomic_int_dec_and_test$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_atomic_int_dec_and_test$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_int_dec_and_test",
-        constants$30.g_atomic_int_dec_and_test$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_array_new_take",
+        constants$30.const$4
     );
 }
 

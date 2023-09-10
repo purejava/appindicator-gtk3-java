@@ -3,41 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1888 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1888() {}
-    static final FunctionDescriptor gtk_region_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_region_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_region_flags_get_type",
-        constants$1888.gtk_region_flags_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gdk_pixbuf_new_from_stream_at_scale_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_new_from_stream_at_scale_async",
+        constants$957.const$2
     );
-    static final FunctionDescriptor gtk_junction_sides_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_junction_sides_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_junction_sides_get_type",
-        constants$1888.gtk_junction_sides_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "gdk_pixbuf_save_to_stream",
+        constants$165.const$2
     );
-    static final FunctionDescriptor gtk_border_style_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_border_style_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_border_style_get_type",
-        constants$1888.gtk_border_style_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gdk_pixbuf_save_to_stream_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "gdk_pixbuf_save_to_stream_async",
+        constants$338.const$3
     );
-    static final FunctionDescriptor gtk_level_bar_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_level_bar_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_level_bar_mode_get_type",
-        constants$1888.gtk_level_bar_mode_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_input_purpose_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_input_purpose_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_input_purpose_get_type",
-        constants$1888.gtk_input_purpose_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_input_hints_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_input_hints_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_input_hints_get_type",
-        constants$1888.gtk_input_hints_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_save_to_stream_finish",
+        constants$9.const$0
     );
 }
 

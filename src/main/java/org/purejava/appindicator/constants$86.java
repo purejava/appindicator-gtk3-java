@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$86 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$86() {}
-    static final FunctionDescriptor g_date_time_add_years$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "drand48_r",
+        constants$9.const$0
     );
-    static final MethodHandle g_date_time_add_years$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_add_years",
-        constants$86.g_date_time_add_years$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "erand48_r",
+        constants$12.const$2
     );
-    static final FunctionDescriptor g_date_time_add_months$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "lrand48_r",
+        constants$9.const$0
     );
-    static final MethodHandle g_date_time_add_months$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_add_months",
-        constants$86.g_date_time_add_months$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "nrand48_r",
+        constants$12.const$2
     );
-    static final FunctionDescriptor g_date_time_add_weeks$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "mrand48_r",
+        constants$9.const$0
     );
-    static final MethodHandle g_date_time_add_weeks$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_add_weeks",
-        constants$86.g_date_time_add_weeks$FUNC
-    );
-    static final FunctionDescriptor g_date_time_add_days$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_date_time_add_days$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_add_days",
-        constants$86.g_date_time_add_days$FUNC
-    );
-    static final FunctionDescriptor g_date_time_add_hours$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_date_time_add_hours$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_add_hours",
-        constants$86.g_date_time_add_hours$FUNC
-    );
-    static final FunctionDescriptor g_date_time_add_minutes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_date_time_add_minutes$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_add_minutes",
-        constants$86.g_date_time_add_minutes$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "jrand48_r",
+        constants$12.const$2
     );
 }
 

@@ -3,51 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$75 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$75() {}
-    static final FunctionDescriptor sigsetmask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle sigsetmask$MH = RuntimeHelper.downcallHandle(
-        "sigsetmask",
-        constants$75.sigsetmask$FUNC
-    );
-    static final FunctionDescriptor siggetmask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle siggetmask$MH = RuntimeHelper.downcallHandle(
-        "siggetmask",
-        constants$75.siggetmask$FUNC
-    );
-    static final FunctionDescriptor sig_t$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor sig_t_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle sig_t_UP$MH = RuntimeHelper.upcallHandle(sig_t.class, "apply", constants$75.sig_t_UP$FUNC);
-    static final FunctionDescriptor sig_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle sig_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$75.sig_t_DOWN$FUNC
-    );
-    static final FunctionDescriptor sigemptyset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle sigemptyset$MH = RuntimeHelper.downcallHandle(
-        "sigemptyset",
-        constants$75.sigemptyset$FUNC
-    );
-    static final FunctionDescriptor sigfillset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle sigfillset$MH = RuntimeHelper.downcallHandle(
-        "sigfillset",
-        constants$75.sigfillset$FUNC
-    );
+    static final VarHandle const$0 = constants$74.const$1.varHandle(MemoryLayout.PathElement.groupElement("__pad3"));
+    static final VarHandle const$1 = constants$74.const$1.varHandle(MemoryLayout.PathElement.groupElement("__pad4"));
+    static final VarHandle const$2 = constants$74.const$1.varHandle(MemoryLayout.PathElement.groupElement("__cur_writer"));
+    static final VarHandle const$3 = constants$74.const$1.varHandle(MemoryLayout.PathElement.groupElement("__shared"));
+    static final VarHandle const$4 = constants$74.const$1.varHandle(MemoryLayout.PathElement.groupElement("__pad1"));
+    static final VarHandle const$5 = constants$74.const$1.varHandle(MemoryLayout.PathElement.groupElement("__pad2"));
 }
 
 

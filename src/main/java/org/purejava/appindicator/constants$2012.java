@@ -2,18 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2012 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2012() {}
-    static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_LARGE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("thumbnail::path-large");
-    static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_LARGE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("thumbnail::failed-large");
-    static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_LARGE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("thumbnail::is-valid-large");
-    static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_PATH_XLARGE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("thumbnail::path-xlarge");
-    static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAILING_FAILED_XLARGE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("thumbnail::failed-xlarge");
-    static final MemorySegment G_FILE_ATTRIBUTE_THUMBNAIL_IS_VALID_XLARGE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("thumbnail::is-valid-xlarge");
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkTextIface.get_text_before_offset.class, "apply", constants$1421.const$1);
+    static final VarHandle const$1 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_text_before_offset"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkTextIface.get_caret_offset.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_caret_offset"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkTextIface.get_run_attributes.class, "apply", constants$180.const$0);
+    static final VarHandle const$5 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_run_attributes"));
 }
 
 

@@ -3,56 +3,51 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$328 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$328() {}
-    static final FunctionDescriptor g_timer_elapsed$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_timer_elapsed$MH = RuntimeHelper.downcallHandle(
-        "g_timer_elapsed",
-        constants$328.g_timer_elapsed$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_key_file_load_from_data",
+        constants$328.const$0
     );
-    static final FunctionDescriptor g_timer_is_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_key_file_load_from_bytes",
+        constants$327.const$4
     );
-    static final MethodHandle g_timer_is_active$MH = RuntimeHelper.downcallHandle(
-        "g_timer_is_active",
-        constants$328.g_timer_is_active$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_usleep$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_key_file_load_from_dirs",
+        constants$328.const$3
     );
-    static final MethodHandle g_usleep$MH = RuntimeHelper.downcallHandle(
-        "g_usleep",
-        constants$328.g_usleep$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_time_val_add$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_time_val_add$MH = RuntimeHelper.downcallHandle(
-        "g_time_val_add",
-        constants$328.g_time_val_add$FUNC
-    );
-    static final FunctionDescriptor g_time_val_from_iso8601$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_time_val_from_iso8601$MH = RuntimeHelper.downcallHandle(
-        "g_time_val_from_iso8601",
-        constants$328.g_time_val_from_iso8601$FUNC
-    );
-    static final FunctionDescriptor g_time_val_to_iso8601$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_time_val_to_iso8601$MH = RuntimeHelper.downcallHandle(
-        "g_time_val_to_iso8601",
-        constants$328.g_time_val_to_iso8601$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_key_file_load_from_data_dirs",
+        constants$328.const$5
     );
 }
 

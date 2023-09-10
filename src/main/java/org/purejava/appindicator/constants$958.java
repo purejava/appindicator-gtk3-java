@@ -3,57 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$958 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$958() {}
-    static final FunctionDescriptor pango_layout_set_font_description$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_font_description$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_font_description",
-        constants$958.pango_layout_set_font_description$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_font_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_font_description$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_font_description",
-        constants$958.pango_layout_get_font_description$FUNC
-    );
-    static final FunctionDescriptor pango_layout_set_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_width$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_width",
-        constants$958.pango_layout_set_width$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_width$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_width",
-        constants$958.pango_layout_get_width$FUNC
-    );
-    static final FunctionDescriptor pango_layout_set_height$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_height$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_height",
-        constants$958.pango_layout_set_height$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_height$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_height",
-        constants$958.pango_layout_get_height$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDtlsConnectionInterface.shutdown_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$955.const$0.varHandle(MemoryLayout.PathElement.groupElement("shutdown_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDtlsConnectionInterface.set_advertised_protocols.class, "apply", constants$13.const$4);
+    static final VarHandle const$3 = constants$955.const$0.varHandle(MemoryLayout.PathElement.groupElement("set_advertised_protocols"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDtlsConnectionInterface.get_negotiated_protocol.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$955.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_negotiated_protocol"));
 }
 
 

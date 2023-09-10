@@ -3,47 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1482 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1482() {}
-    static final FunctionDescriptor gtk_combo_box_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_combo_box_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_get_type",
-        constants$1482.gtk_combo_box_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_font_funcs_set_font_h_extents_func$func.class, "apply", constants$34.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_funcs_set_font_h_extents_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_set_font_h_extents_func",
+        constants$42.const$1
     );
-    static final FunctionDescriptor gtk_combo_box_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_combo_box_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_new",
-        constants$1482.gtk_combo_box_new$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_new_with_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_combo_box_new_with_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_new_with_area",
-        constants$1482.gtk_combo_box_new_with_area$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_new_with_area_and_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_combo_box_new_with_area_and_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_new_with_area_and_entry",
-        constants$1482.gtk_combo_box_new_with_area_and_entry$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_new_with_entry$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_combo_box_new_with_entry$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_new_with_entry",
-        constants$1482.gtk_combo_box_new_with_entry$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_new_with_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_combo_box_new_with_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_new_with_model",
-        constants$1482.gtk_combo_box_new_with_model$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_font_funcs_set_font_v_extents_func$func.class, "apply", constants$34.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_funcs_set_font_v_extents_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_set_font_v_extents_func",
+        constants$42.const$1
     );
 }
 

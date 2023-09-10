@@ -3,59 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$120 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$120() {}
-    static final FunctionDescriptor g_date_strftime$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_strftime$MH = RuntimeHelper.downcallHandle(
-        "g_date_strftime",
-        constants$120.g_date_strftime$FUNC
-    );
-    static final FunctionDescriptor closedir$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle closedir$MH = RuntimeHelper.downcallHandle(
-        "closedir",
-        constants$120.closedir$FUNC
-    );
-    static final FunctionDescriptor opendir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle opendir$MH = RuntimeHelper.downcallHandle(
-        "opendir",
-        constants$120.opendir$FUNC
-    );
-    static final FunctionDescriptor fdopendir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle fdopendir$MH = RuntimeHelper.downcallHandle(
-        "fdopendir",
-        constants$120.fdopendir$FUNC
-    );
-    static final FunctionDescriptor readdir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle readdir$MH = RuntimeHelper.downcallHandle(
-        "readdir",
-        constants$120.readdir$FUNC
-    );
-    static final FunctionDescriptor readdir_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle readdir_r$MH = RuntimeHelper.downcallHandle(
-        "readdir_r",
-        constants$120.readdir_r$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("_call_addr"),
+        JAVA_INT.withName("_syscall"),
+        JAVA_INT.withName("_arch")
+    ).withName("");
+    static final VarHandle const$1 = constants$120.const$0.varHandle(MemoryLayout.PathElement.groupElement("_call_addr"));
+    static final VarHandle const$2 = constants$120.const$0.varHandle(MemoryLayout.PathElement.groupElement("_syscall"));
+    static final VarHandle const$3 = constants$120.const$0.varHandle(MemoryLayout.PathElement.groupElement("_arch"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.unionLayout(
+            JAVA_INT.withName("sival_int"),
+            RuntimeHelper.POINTER.withName("sival_ptr")
+        ).withName("sigev_value"),
+        JAVA_INT.withName("sigev_signo"),
+        JAVA_INT.withName("sigev_notify"),
+        MemoryLayout.unionLayout(
+            MemoryLayout.sequenceLayout(12, JAVA_INT).withName("_pad"),
+            JAVA_INT.withName("_tid"),
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("_function"),
+                RuntimeHelper.POINTER.withName("_attribute")
+            ).withName("_sigev_thread")
+        ).withName("_sigev_un")
+    ).withName("sigevent");
+    static final VarHandle const$5 = constants$120.const$4.varHandle(MemoryLayout.PathElement.groupElement("sigev_signo"));
 }
 
 

@@ -3,69 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1063 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1063() {}
-    static final FunctionDescriptor gdk_drag_find_window_for_screen$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_info_set_sort_order",
+        constants$40.const$2
     );
-    static final MethodHandle gdk_drag_find_window_for_screen$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_find_window_for_screen",
-        constants$1063.gdk_drag_find_window_for_screen$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_drag_motion$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_new",
+        constants$5.const$2
     );
-    static final MethodHandle gdk_drag_motion$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_motion",
-        constants$1063.gdk_drag_motion$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_ref",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gdk_drag_drop$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_unref",
+        constants$13.const$1
     );
-    static final MethodHandle gdk_drag_drop$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_drop",
-        constants$1063.gdk_drag_drop$FUNC
-    );
-    static final FunctionDescriptor gdk_drag_abort$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_drag_abort$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_abort",
-        constants$1063.gdk_drag_abort$FUNC
-    );
-    static final FunctionDescriptor gdk_drag_drop_succeeded$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_drag_drop_succeeded$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_drop_succeeded",
-        constants$1063.gdk_drag_drop_succeeded$FUNC
-    );
-    static final FunctionDescriptor gdk_drag_drop_done$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_drag_drop_done$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_drop_done",
-        constants$1063.gdk_drag_drop_done$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_subtract",
+        constants$5.const$5
     );
 }
 

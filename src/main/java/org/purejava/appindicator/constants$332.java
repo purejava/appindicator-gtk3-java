@@ -3,62 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$332 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$332() {}
-    static final FunctionDescriptor g_tree_insert_node$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_key_file_get_integer",
+        constants$34.const$5
     );
-    static final MethodHandle g_tree_insert_node$MH = RuntimeHelper.downcallHandle(
-        "g_tree_insert_node",
-        constants$332.g_tree_insert_node$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_key_file_set_integer",
+        constants$331.const$4
     );
-    static final FunctionDescriptor g_tree_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_tree_insert$MH = RuntimeHelper.downcallHandle(
-        "g_tree_insert",
-        constants$332.g_tree_insert$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_key_file_get_int64",
+        constants$332.const$2
     );
-    static final FunctionDescriptor g_tree_replace_node$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_key_file_set_int64",
+        constants$162.const$2
     );
-    static final MethodHandle g_tree_replace_node$MH = RuntimeHelper.downcallHandle(
-        "g_tree_replace_node",
-        constants$332.g_tree_replace_node$FUNC
-    );
-    static final FunctionDescriptor g_tree_replace$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tree_replace$MH = RuntimeHelper.downcallHandle(
-        "g_tree_replace",
-        constants$332.g_tree_replace$FUNC
-    );
-    static final FunctionDescriptor g_tree_remove$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tree_remove$MH = RuntimeHelper.downcallHandle(
-        "g_tree_remove",
-        constants$332.g_tree_remove$FUNC
-    );
-    static final FunctionDescriptor g_tree_remove_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tree_remove_all$MH = RuntimeHelper.downcallHandle(
-        "g_tree_remove_all",
-        constants$332.g_tree_remove_all$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_key_file_get_uint64",
+        constants$332.const$2
     );
 }
 

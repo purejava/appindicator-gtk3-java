@@ -3,60 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1157 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1157() {}
-    static final FunctionDescriptor gdk_cursor_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_menu_item_get_link",
+        constants$5.const$5
     );
-    static final MethodHandle gdk_cursor_new$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_new",
-        constants$1157.gdk_cursor_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_menu_item_set_attribute_value",
+        constants$14.const$3
     );
-    static final FunctionDescriptor gdk_cursor_new_from_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "g_menu_item_set_attribute",
+        constants$14.const$3
     );
-    static final MethodHandle gdk_cursor_new_from_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_new_from_pixbuf",
-        constants$1157.gdk_cursor_new_from_pixbuf$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_menu_item_set_link",
+        constants$14.const$3
     );
-    static final FunctionDescriptor gdk_cursor_new_from_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_menu_item_set_label",
+        constants$13.const$4
     );
-    static final MethodHandle gdk_cursor_new_from_surface$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_new_from_surface",
-        constants$1157.gdk_cursor_new_from_surface$FUNC
-    );
-    static final FunctionDescriptor gdk_cursor_new_from_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_cursor_new_from_name$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_new_from_name",
-        constants$1157.gdk_cursor_new_from_name$FUNC
-    );
-    static final FunctionDescriptor gdk_cursor_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_cursor_get_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_get_display",
-        constants$1157.gdk_cursor_get_display$FUNC
-    );
-    static final FunctionDescriptor gdk_cursor_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_cursor_ref$MH = RuntimeHelper.downcallHandle(
-        "gdk_cursor_ref",
-        constants$1157.gdk_cursor_ref$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_menu_item_set_submenu",
+        constants$13.const$4
     );
 }
 

@@ -3,67 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1468 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1468() {}
-    static final FunctionDescriptor gtk_tree_view_remove_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_sweep_gradient_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_set_sweep_gradient_func",
+        constants$42.const$1
     );
-    static final MethodHandle gtk_tree_view_remove_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_remove_column",
-        constants$1468.gtk_tree_view_remove_column$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_push_group_func$func.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_push_group_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_set_push_group_func",
+        constants$42.const$1
     );
-    static final FunctionDescriptor gtk_tree_view_insert_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_insert_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_insert_column",
-        constants$1468.gtk_tree_view_insert_column$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_insert_column_with_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_insert_column_with_attributes$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_view_insert_column_with_attributes",
-        constants$1468.gtk_tree_view_insert_column_with_attributes$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_insert_column_with_data_func$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_insert_column_with_data_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_insert_column_with_data_func",
-        constants$1468.gtk_tree_view_insert_column_with_data_func$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_n_columns$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_n_columns$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_n_columns",
-        constants$1468.gtk_tree_view_get_n_columns$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_column$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_column",
-        constants$1468.gtk_tree_view_get_column$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_pop_group_func$func.class, "apply", constants$464.const$4);
 }
 
 

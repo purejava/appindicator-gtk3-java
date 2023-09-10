@@ -2,18 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2005 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2005() {}
-    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_HAL_UDI$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::hal-udi");
-    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::can-start");
-    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_START_DEGRADED$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::can-start-degraded");
-    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_STOP$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::can-stop");
-    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_START_STOP_TYPE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::start-stop-type");
-    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_CAN_POLL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::can-poll");
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkDocumentIface.get_document_locale.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$2004.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_document_locale"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkDocumentIface.get_document_attributes.class, "apply", constants$5.const$2);
+    static final VarHandle const$3 = constants$2004.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_document_attributes"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkDocumentIface.get_document_attribute_value.class, "apply", constants$5.const$5);
+    static final VarHandle const$5 = constants$2004.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_document_attribute_value"));
 }
 
 

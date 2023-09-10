@@ -3,55 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1326 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1326() {}
-    static final FunctionDescriptor gtk_about_dialog_get_logo$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_subprocess_communicate_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_subprocess_communicate_async",
+        constants$331.const$1
     );
-    static final MethodHandle gtk_about_dialog_get_logo$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_logo",
-        constants$1326.gtk_about_dialog_get_logo$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_subprocess_communicate_finish",
+        constants$165.const$2
     );
-    static final FunctionDescriptor gtk_about_dialog_set_logo$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_subprocess_communicate_utf8",
+        constants$638.const$1
     );
-    static final MethodHandle gtk_about_dialog_set_logo$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_logo",
-        constants$1326.gtk_about_dialog_set_logo$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_get_logo_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_get_logo_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_logo_icon_name",
-        constants$1326.gtk_about_dialog_get_logo_icon_name$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_set_logo_icon_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_set_logo_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_logo_icon_name",
-        constants$1326.gtk_about_dialog_set_logo_icon_name$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_add_credit_section$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_add_credit_section$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_add_credit_section",
-        constants$1326.gtk_about_dialog_add_credit_section$FUNC
-    );
-    static final FunctionDescriptor gtk_misc_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_misc_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_misc_get_type",
-        constants$1326.gtk_misc_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_subprocess_communicate_utf8_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_subprocess_communicate_utf8_async",
+        constants$331.const$1
     );
 }
 

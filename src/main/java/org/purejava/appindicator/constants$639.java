@@ -3,66 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$639 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$639() {}
-    static final FunctionDescriptor g_file_enumerator_next_files_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_cclosure_new_object_swap$callback_func.class, "apply", constants$7.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_cclosure_new_object_swap",
+        constants$5.const$5
     );
-    static final MethodHandle g_file_enumerator_next_files_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerator_next_files_async",
-        constants$639.g_file_enumerator_next_files_async$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_closure_new_object",
+        constants$24.const$4
     );
-    static final FunctionDescriptor g_file_enumerator_next_files_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_value_set_object",
+        constants$13.const$4
     );
-    static final MethodHandle g_file_enumerator_next_files_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerator_next_files_finish",
-        constants$639.g_file_enumerator_next_files_finish$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_value_get_object",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_file_enumerator_close_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_enumerator_close_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerator_close_async",
-        constants$639.g_file_enumerator_close_async$FUNC
-    );
-    static final FunctionDescriptor g_file_enumerator_close_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_enumerator_close_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerator_close_finish",
-        constants$639.g_file_enumerator_close_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_enumerator_is_closed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_enumerator_is_closed$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerator_is_closed",
-        constants$639.g_file_enumerator_is_closed$FUNC
-    );
-    static final FunctionDescriptor g_file_enumerator_has_pending$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_enumerator_has_pending$MH = RuntimeHelper.downcallHandle(
-        "g_file_enumerator_has_pending",
-        constants$639.g_file_enumerator_has_pending$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_value_dup_object",
+        constants$5.const$2
     );
 }
 

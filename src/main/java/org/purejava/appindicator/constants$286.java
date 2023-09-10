@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$286 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$286() {}
-    static final FunctionDescriptor g_ref_count_inc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_unichar_iszerowidth",
+        constants$8.const$4
     );
-    static final MethodHandle g_ref_count_inc$MH = RuntimeHelper.downcallHandle(
-        "g_ref_count_inc",
-        constants$286.g_ref_count_inc$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_unichar_ismark",
+        constants$8.const$4
     );
-    static final FunctionDescriptor g_ref_count_dec$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_unichar_toupper",
+        constants$8.const$4
     );
-    static final MethodHandle g_ref_count_dec$MH = RuntimeHelper.downcallHandle(
-        "g_ref_count_dec",
-        constants$286.g_ref_count_dec$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_unichar_tolower",
+        constants$8.const$4
     );
-    static final FunctionDescriptor g_ref_count_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_unichar_totitle",
+        constants$8.const$4
     );
-    static final MethodHandle g_ref_count_compare$MH = RuntimeHelper.downcallHandle(
-        "g_ref_count_compare",
-        constants$286.g_ref_count_compare$FUNC
-    );
-    static final FunctionDescriptor g_atomic_ref_count_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_atomic_ref_count_init$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_ref_count_init",
-        constants$286.g_atomic_ref_count_init$FUNC
-    );
-    static final FunctionDescriptor g_atomic_ref_count_inc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_atomic_ref_count_inc$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_ref_count_inc",
-        constants$286.g_atomic_ref_count_inc$FUNC
-    );
-    static final FunctionDescriptor g_atomic_ref_count_dec$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_atomic_ref_count_dec$MH = RuntimeHelper.downcallHandle(
-        "g_atomic_ref_count_dec",
-        constants$286.g_atomic_ref_count_dec$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_unichar_digit_value",
+        constants$8.const$4
     );
 }
 

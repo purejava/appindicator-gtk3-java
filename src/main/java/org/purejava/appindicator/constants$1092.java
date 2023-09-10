@@ -3,70 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1092 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1092() {}
-    static final FunctionDescriptor gdk_window_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_height$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_height",
-        constants$1092.gdk_window_get_height$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_position$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_position$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_position",
-        constants$1092.gdk_window_get_position$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_origin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_origin$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_origin",
-        constants$1092.gdk_window_get_origin$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_root_coords$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_root_coords$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_root_coords",
-        constants$1092.gdk_window_get_root_coords$FUNC
-    );
-    static final FunctionDescriptor gdk_window_coords_to_parent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_coords_to_parent$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_coords_to_parent",
-        constants$1092.gdk_window_coords_to_parent$FUNC
-    );
-    static final FunctionDescriptor gdk_window_coords_from_parent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_coords_from_parent$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_coords_from_parent",
-        constants$1092.gdk_window_coords_from_parent$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass.can_seek.class, "apply", constants$10.const$5);
+    static final VarHandle const$1 = constants$1091.const$3.varHandle(MemoryLayout.PathElement.groupElement("can_seek"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass.seek.class, "apply", constants$1066.const$1);
+    static final VarHandle const$3 = constants$1091.const$3.varHandle(MemoryLayout.PathElement.groupElement("seek"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileOutputStreamClass.can_truncate.class, "apply", constants$10.const$5);
+    static final VarHandle const$5 = constants$1091.const$3.varHandle(MemoryLayout.PathElement.groupElement("can_truncate"));
 }
 
 

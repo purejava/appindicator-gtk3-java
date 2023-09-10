@@ -3,57 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$763 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$763() {}
-    static final FunctionDescriptor g_socket_get_ttl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_ttl$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_ttl",
-        constants$763.g_socket_get_ttl$FUNC
-    );
-    static final FunctionDescriptor g_socket_set_ttl$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_set_ttl$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_ttl",
-        constants$763.g_socket_set_ttl$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_broadcast$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_broadcast$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_broadcast",
-        constants$763.g_socket_get_broadcast$FUNC
-    );
-    static final FunctionDescriptor g_socket_set_broadcast$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_set_broadcast$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_broadcast",
-        constants$763.g_socket_set_broadcast$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_multicast_loopback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_multicast_loopback$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_multicast_loopback",
-        constants$763.g_socket_get_multicast_loopback$FUNC
-    );
-    static final FunctionDescriptor g_socket_set_multicast_loopback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_set_multicast_loopback$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_multicast_loopback",
-        constants$763.g_socket_set_multicast_loopback$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GInputStreamClass.skip_finish.class, "apply", constants$166.const$0);
+    static final VarHandle const$1 = constants$759.const$3.varHandle(MemoryLayout.PathElement.groupElement("skip_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GInputStreamClass.close_async.class, "apply", constants$281.const$5);
+    static final VarHandle const$3 = constants$759.const$3.varHandle(MemoryLayout.PathElement.groupElement("close_async"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GInputStreamClass.close_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$5 = constants$759.const$3.varHandle(MemoryLayout.PathElement.groupElement("close_finish"));
 }
 
 

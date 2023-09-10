@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GtkTreeCellDataFunc)(struct _GtkTreeViewColumn* tree_column,struct _GtkCellRenderer* cell,struct _GtkTreeModel* tree_model,struct _GtkTreeIter* iter,void* data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GtkTreeCellDataFunc {
 
     void apply(java.lang.foreign.MemorySegment cell_layout, java.lang.foreign.MemorySegment cell, java.lang.foreign.MemorySegment tree_model, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(GtkTreeCellDataFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$1388.GtkTreeCellDataFunc_UP$MH, fi, constants$1388.GtkTreeCellDataFunc$FUNC, scope);
+    static MemorySegment allocate(GtkTreeCellDataFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$2343.const$2, fi, constants$331.const$1, scope);
     }
-    static GtkTreeCellDataFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GtkTreeCellDataFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _cell_layout, java.lang.foreign.MemorySegment _cell, java.lang.foreign.MemorySegment _tree_model, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$1388.GtkTreeCellDataFunc_DOWN$MH.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
+                constants$916.const$3.invokeExact(symbol, _cell_layout, _cell, _tree_model, _iter, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -3,58 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1090 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1090() {}
-    static final FunctionDescriptor gdk_window_set_transient_for$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFilenameCompleterClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1088.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_filename_completer_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_window_set_transient_for$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_transient_for",
-        constants$1090.gdk_window_set_transient_for$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_filename_completer_new",
+        constants$35.const$2
     );
-    static final FunctionDescriptor gdk_window_set_background$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_filename_completer_get_completion_suffix",
+        constants$5.const$5
     );
-    static final MethodHandle gdk_window_set_background$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_background",
-        constants$1090.gdk_window_set_background$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_background_rgba$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_background_rgba$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_background_rgba",
-        constants$1090.gdk_window_set_background_rgba$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_background_pattern$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_background_pattern$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_background_pattern",
-        constants$1090.gdk_window_set_background_pattern$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_background_pattern$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_background_pattern$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_background_pattern",
-        constants$1090.gdk_window_get_background_pattern$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_cursor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_cursor$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_cursor",
-        constants$1090.gdk_window_set_cursor$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_filename_completer_get_completions",
+        constants$5.const$5
     );
 }
 

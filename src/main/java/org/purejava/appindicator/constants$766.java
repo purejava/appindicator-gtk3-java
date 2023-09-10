@@ -3,73 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$766 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$766() {}
-    static final FunctionDescriptor g_socket_condition_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_socket_condition_wait$MH = RuntimeHelper.downcallHandle(
-        "g_socket_condition_wait",
-        constants$766.g_socket_condition_wait$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_input_stream_read_all",
+        constants$766.const$0
     );
-    static final FunctionDescriptor g_socket_condition_timed_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_input_stream_read_bytes",
+        constants$169.const$4
     );
-    static final MethodHandle g_socket_condition_timed_wait$MH = RuntimeHelper.downcallHandle(
-        "g_socket_condition_timed_wait",
-        constants$766.g_socket_condition_timed_wait$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_input_stream_skip",
+        constants$4.const$5
     );
-    static final FunctionDescriptor g_socket_accept$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_input_stream_close",
+        constants$12.const$2
     );
-    static final MethodHandle g_socket_accept$MH = RuntimeHelper.downcallHandle(
-        "g_socket_accept",
-        constants$766.g_socket_accept$FUNC
-    );
-    static final FunctionDescriptor g_socket_listen$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_listen$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listen",
-        constants$766.g_socket_listen$FUNC
-    );
-    static final FunctionDescriptor g_socket_receive$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_receive$MH = RuntimeHelper.downcallHandle(
-        "g_socket_receive",
-        constants$766.g_socket_receive$FUNC
-    );
-    static final FunctionDescriptor g_socket_receive_from$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_receive_from$MH = RuntimeHelper.downcallHandle(
-        "g_socket_receive_from",
-        constants$766.g_socket_receive_from$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_input_stream_read_async$callback.class, "apply", constants$14.const$3);
 }
 
 

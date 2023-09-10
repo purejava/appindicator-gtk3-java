@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*hb_font_get_glyph_shape_func_t)(struct hb_font_t* font,void* font_data,unsigned int glyph,struct hb_draw_funcs_t* draw_funcs,void* draw_data,void* user_data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface hb_font_get_glyph_shape_func_t {
 
     void apply(java.lang.foreign.MemorySegment font, java.lang.foreign.MemorySegment font_data, int glyph, java.lang.foreign.MemorySegment draw_funcs, java.lang.foreign.MemorySegment draw_data, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(hb_font_get_glyph_shape_func_t fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$865.hb_font_get_glyph_shape_func_t_UP$MH, fi, constants$865.hb_font_get_glyph_shape_func_t$FUNC, scope);
+    static MemorySegment allocate(hb_font_get_glyph_shape_func_t fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$1521.const$2, fi, constants$584.const$3, scope);
     }
-    static hb_font_get_glyph_shape_func_t ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static hb_font_get_glyph_shape_func_t ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _font, java.lang.foreign.MemorySegment _font_data, int _glyph, java.lang.foreign.MemorySegment _draw_funcs, java.lang.foreign.MemorySegment _draw_data, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$865.hb_font_get_glyph_shape_func_t_DOWN$MH.invokeExact(symbol, _font, _font_data, _glyph, _draw_funcs, _draw_data, _user_data);
+                constants$584.const$5.invokeExact(symbol, _font, _font_data, _glyph, _draw_funcs, _draw_data, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

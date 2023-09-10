@@ -2,148 +2,137 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
- * struct {
- *     GTestLogType log_type;
- *     guint n_strings;
- *     gchar** strings;
- *     guint n_nums;
+ * struct GTestLogMsg {
+ *     enum GTestLogType log_type;
+ *     unsigned int n_strings;
+ *     char** strings;
+ *     unsigned int n_nums;
  *     long double* nums;
  * };
  * }
  */
 public class GTestLogMsg {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("log_type"),
-        Constants$root.C_INT$LAYOUT.withName("n_strings"),
-        Constants$root.C_POINTER$LAYOUT.withName("strings"),
-        Constants$root.C_INT$LAYOUT.withName("n_nums"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("nums")
-    );
     public static MemoryLayout $LAYOUT() {
-        return GTestLogMsg.$struct$LAYOUT;
+        return constants$461.const$2;
     }
-    static final VarHandle log_type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("log_type"));
     public static VarHandle log_type$VH() {
-        return GTestLogMsg.log_type$VH;
+        return constants$461.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GTestLogType log_type;
+     * enum GTestLogType log_type;
      * }
      */
     public static int log_type$get(MemorySegment seg) {
-        return (int)GTestLogMsg.log_type$VH.get(seg);
+        return (int)constants$461.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GTestLogType log_type;
+     * enum GTestLogType log_type;
      * }
      */
     public static void log_type$set(MemorySegment seg, int x) {
-        GTestLogMsg.log_type$VH.set(seg, x);
+        constants$461.const$3.set(seg, x);
     }
     public static int log_type$get(MemorySegment seg, long index) {
-        return (int)GTestLogMsg.log_type$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$461.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void log_type$set(MemorySegment seg, long index, int x) {
-        GTestLogMsg.log_type$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$461.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle n_strings$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("n_strings"));
     public static VarHandle n_strings$VH() {
-        return GTestLogMsg.n_strings$VH;
+        return constants$461.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint n_strings;
+     * unsigned int n_strings;
      * }
      */
     public static int n_strings$get(MemorySegment seg) {
-        return (int)GTestLogMsg.n_strings$VH.get(seg);
+        return (int)constants$461.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint n_strings;
+     * unsigned int n_strings;
      * }
      */
     public static void n_strings$set(MemorySegment seg, int x) {
-        GTestLogMsg.n_strings$VH.set(seg, x);
+        constants$461.const$4.set(seg, x);
     }
     public static int n_strings$get(MemorySegment seg, long index) {
-        return (int)GTestLogMsg.n_strings$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$461.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void n_strings$set(MemorySegment seg, long index, int x) {
-        GTestLogMsg.n_strings$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$461.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle strings$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("strings"));
     public static VarHandle strings$VH() {
-        return GTestLogMsg.strings$VH;
+        return constants$461.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar** strings;
+     * char** strings;
      * }
      */
     public static MemorySegment strings$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)GTestLogMsg.strings$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$461.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar** strings;
+     * char** strings;
      * }
      */
     public static void strings$set(MemorySegment seg, MemorySegment x) {
-        GTestLogMsg.strings$VH.set(seg, x);
+        constants$461.const$5.set(seg, x);
     }
     public static MemorySegment strings$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)GTestLogMsg.strings$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$461.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void strings$set(MemorySegment seg, long index, MemorySegment x) {
-        GTestLogMsg.strings$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$461.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle n_nums$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("n_nums"));
     public static VarHandle n_nums$VH() {
-        return GTestLogMsg.n_nums$VH;
+        return constants$462.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint n_nums;
+     * unsigned int n_nums;
      * }
      */
     public static int n_nums$get(MemorySegment seg) {
-        return (int)GTestLogMsg.n_nums$VH.get(seg);
+        return (int)constants$462.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint n_nums;
+     * unsigned int n_nums;
      * }
      */
     public static void n_nums$set(MemorySegment seg, int x) {
-        GTestLogMsg.n_nums$VH.set(seg, x);
+        constants$462.const$0.set(seg, x);
     }
     public static int n_nums$get(MemorySegment seg, long index) {
-        return (int)GTestLogMsg.n_nums$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$462.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void n_nums$set(MemorySegment seg, long index, int x) {
-        GTestLogMsg.n_nums$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$462.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle nums$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("nums"));
     public static VarHandle nums$VH() {
-        return GTestLogMsg.nums$VH;
+        return constants$462.const$1;
     }
     /**
      * Getter for field:
@@ -152,7 +141,7 @@ public class GTestLogMsg {
      * }
      */
     public static MemorySegment nums$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)GTestLogMsg.nums$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$462.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -161,20 +150,20 @@ public class GTestLogMsg {
      * }
      */
     public static void nums$set(MemorySegment seg, MemorySegment x) {
-        GTestLogMsg.nums$VH.set(seg, x);
+        constants$462.const$1.set(seg, x);
     }
     public static MemorySegment nums$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)GTestLogMsg.nums$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$462.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void nums$set(MemorySegment seg, long index, MemorySegment x) {
-        GTestLogMsg.nums$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$462.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

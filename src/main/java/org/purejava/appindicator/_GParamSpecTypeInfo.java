@@ -4,123 +4,98 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GParamSpecTypeInfo {
- *     guint16 instance_size;
- *     guint16 n_preallocs;
- *     void (*instance_init)(GParamSpec*);
- *     GType value_type;
- *     void (*finalize)(GParamSpec*);
- *     void (*value_set_default)(GParamSpec*,GValue*);
- *     gboolean (*value_validate)(GParamSpec*,GValue*);
- *     gint (*values_cmp)(GParamSpec*,const GValue*,const GValue*);
+ *     unsigned short instance_size;
+ *     unsigned short n_preallocs;
+ *     void (*instance_init)(struct _GParamSpec*);
+ *     unsigned long value_type;
+ *     void (*finalize)(struct _GParamSpec*);
+ *     void (*value_set_default)(struct _GParamSpec*,struct _GValue*);
+ *     int (*value_validate)(struct _GParamSpec*,struct _GValue*);
+ *     int (*values_cmp)(struct _GParamSpec*,struct _GValue*,struct _GValue*);
  * };
  * }
  */
 public class _GParamSpecTypeInfo {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_SHORT$LAYOUT.withName("instance_size"),
-        Constants$root.C_SHORT$LAYOUT.withName("n_preallocs"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("instance_init"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("value_type"),
-        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-        Constants$root.C_POINTER$LAYOUT.withName("value_set_default"),
-        Constants$root.C_POINTER$LAYOUT.withName("value_validate"),
-        Constants$root.C_POINTER$LAYOUT.withName("values_cmp")
-    ).withName("_GParamSpecTypeInfo");
     public static MemoryLayout $LAYOUT() {
-        return _GParamSpecTypeInfo.$struct$LAYOUT;
+        return constants$579.const$5;
     }
-    static final VarHandle instance_size$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("instance_size"));
     public static VarHandle instance_size$VH() {
-        return _GParamSpecTypeInfo.instance_size$VH;
+        return constants$580.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint16 instance_size;
+     * unsigned short instance_size;
      * }
      */
     public static short instance_size$get(MemorySegment seg) {
-        return (short)_GParamSpecTypeInfo.instance_size$VH.get(seg);
+        return (short)constants$580.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint16 instance_size;
+     * unsigned short instance_size;
      * }
      */
     public static void instance_size$set(MemorySegment seg, short x) {
-        _GParamSpecTypeInfo.instance_size$VH.set(seg, x);
+        constants$580.const$0.set(seg, x);
     }
     public static short instance_size$get(MemorySegment seg, long index) {
-        return (short)_GParamSpecTypeInfo.instance_size$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$580.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void instance_size$set(MemorySegment seg, long index, short x) {
-        _GParamSpecTypeInfo.instance_size$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$580.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle n_preallocs$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("n_preallocs"));
     public static VarHandle n_preallocs$VH() {
-        return _GParamSpecTypeInfo.n_preallocs$VH;
+        return constants$580.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint16 n_preallocs;
+     * unsigned short n_preallocs;
      * }
      */
     public static short n_preallocs$get(MemorySegment seg) {
-        return (short)_GParamSpecTypeInfo.n_preallocs$VH.get(seg);
+        return (short)constants$580.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint16 n_preallocs;
+     * unsigned short n_preallocs;
      * }
      */
     public static void n_preallocs$set(MemorySegment seg, short x) {
-        _GParamSpecTypeInfo.n_preallocs$VH.set(seg, x);
+        constants$580.const$1.set(seg, x);
     }
     public static short n_preallocs$get(MemorySegment seg, long index) {
-        return (short)_GParamSpecTypeInfo.n_preallocs$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$580.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void n_preallocs$set(MemorySegment seg, long index, short x) {
-        _GParamSpecTypeInfo.n_preallocs$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$580.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final FunctionDescriptor instance_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor instance_init_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle instance_init_UP$MH = RuntimeHelper.upcallHandle(instance_init.class, "apply", _GParamSpecTypeInfo.instance_init_UP$FUNC);
-    static final FunctionDescriptor instance_init_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle instance_init_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GParamSpecTypeInfo.instance_init_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*instance_init)(GParamSpec*);
+ * void (*instance_init)(struct _GParamSpec*);
      * }
      */
     public interface instance_init {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(instance_init fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GParamSpecTypeInfo.instance_init_UP$MH, fi, _GParamSpecTypeInfo.instance_init$FUNC, scope);
+        static MemorySegment allocate(instance_init fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$580.const$2, fi, constants$13.const$1, scope);
         }
-        static instance_init ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static instance_init ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GParamSpecTypeInfo.instance_init_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -128,94 +103,79 @@ public class _GParamSpecTypeInfo {
         }
     }
 
-    static final VarHandle instance_init$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("instance_init"));
     public static VarHandle instance_init$VH() {
-        return _GParamSpecTypeInfo.instance_init$VH;
+        return constants$580.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*instance_init)(GParamSpec*);
+     * void (*instance_init)(struct _GParamSpec*);
      * }
      */
     public static MemorySegment instance_init$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecTypeInfo.instance_init$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$580.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*instance_init)(GParamSpec*);
+     * void (*instance_init)(struct _GParamSpec*);
      * }
      */
     public static void instance_init$set(MemorySegment seg, MemorySegment x) {
-        _GParamSpecTypeInfo.instance_init$VH.set(seg, x);
+        constants$580.const$3.set(seg, x);
     }
     public static MemorySegment instance_init$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecTypeInfo.instance_init$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$580.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void instance_init$set(MemorySegment seg, long index, MemorySegment x) {
-        _GParamSpecTypeInfo.instance_init$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$580.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static instance_init instance_init(MemorySegment segment, SegmentScope scope) {
+    public static instance_init instance_init(MemorySegment segment, Arena scope) {
         return instance_init.ofAddress(instance_init$get(segment), scope);
     }
-    static final VarHandle value_type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("value_type"));
     public static VarHandle value_type$VH() {
-        return _GParamSpecTypeInfo.value_type$VH;
+        return constants$580.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GType value_type;
+     * unsigned long value_type;
      * }
      */
     public static long value_type$get(MemorySegment seg) {
-        return (long)_GParamSpecTypeInfo.value_type$VH.get(seg);
+        return (long)constants$580.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GType value_type;
+     * unsigned long value_type;
      * }
      */
     public static void value_type$set(MemorySegment seg, long x) {
-        _GParamSpecTypeInfo.value_type$VH.set(seg, x);
+        constants$580.const$4.set(seg, x);
     }
     public static long value_type$get(MemorySegment seg, long index) {
-        return (long)_GParamSpecTypeInfo.value_type$VH.get(seg.asSlice(index*sizeof()));
+        return (long)constants$580.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void value_type$set(MemorySegment seg, long index, long x) {
-        _GParamSpecTypeInfo.value_type$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$580.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final FunctionDescriptor finalize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor finalize_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle finalize_UP$MH = RuntimeHelper.upcallHandle(finalize.class, "apply", _GParamSpecTypeInfo.finalize_UP$FUNC);
-    static final FunctionDescriptor finalize_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle finalize_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GParamSpecTypeInfo.finalize_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*finalize)(GParamSpec*);
+ * void (*finalize)(struct _GParamSpec*);
      * }
      */
     public interface finalize {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(finalize fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GParamSpecTypeInfo.finalize_UP$MH, fi, _GParamSpecTypeInfo.finalize$FUNC, scope);
+        static MemorySegment allocate(finalize fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$580.const$5, fi, constants$13.const$1, scope);
         }
-        static finalize ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static finalize ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GParamSpecTypeInfo.finalize_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -223,69 +183,52 @@ public class _GParamSpecTypeInfo {
         }
     }
 
-    static final VarHandle finalize$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("finalize"));
     public static VarHandle finalize$VH() {
-        return _GParamSpecTypeInfo.finalize$VH;
+        return constants$581.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*finalize)(GParamSpec*);
+     * void (*finalize)(struct _GParamSpec*);
      * }
      */
     public static MemorySegment finalize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecTypeInfo.finalize$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$581.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*finalize)(GParamSpec*);
+     * void (*finalize)(struct _GParamSpec*);
      * }
      */
     public static void finalize$set(MemorySegment seg, MemorySegment x) {
-        _GParamSpecTypeInfo.finalize$VH.set(seg, x);
+        constants$581.const$0.set(seg, x);
     }
     public static MemorySegment finalize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecTypeInfo.finalize$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$581.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void finalize$set(MemorySegment seg, long index, MemorySegment x) {
-        _GParamSpecTypeInfo.finalize$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$581.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static finalize finalize(MemorySegment segment, SegmentScope scope) {
+    public static finalize finalize(MemorySegment segment, Arena scope) {
         return finalize.ofAddress(finalize$get(segment), scope);
     }
-    static final FunctionDescriptor value_set_default$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor value_set_default_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle value_set_default_UP$MH = RuntimeHelper.upcallHandle(value_set_default.class, "apply", _GParamSpecTypeInfo.value_set_default_UP$FUNC);
-    static final FunctionDescriptor value_set_default_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle value_set_default_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GParamSpecTypeInfo.value_set_default_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*value_set_default)(GParamSpec*,GValue*);
+ * void (*value_set_default)(struct _GParamSpec*,struct _GValue*);
      * }
      */
     public interface value_set_default {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(value_set_default fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GParamSpecTypeInfo.value_set_default_UP$MH, fi, _GParamSpecTypeInfo.value_set_default$FUNC, scope);
+        static MemorySegment allocate(value_set_default fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$581.const$1, fi, constants$13.const$4, scope);
         }
-        static value_set_default ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static value_set_default ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GParamSpecTypeInfo.value_set_default_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -293,69 +236,52 @@ public class _GParamSpecTypeInfo {
         }
     }
 
-    static final VarHandle value_set_default$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("value_set_default"));
     public static VarHandle value_set_default$VH() {
-        return _GParamSpecTypeInfo.value_set_default$VH;
+        return constants$581.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*value_set_default)(GParamSpec*,GValue*);
+     * void (*value_set_default)(struct _GParamSpec*,struct _GValue*);
      * }
      */
     public static MemorySegment value_set_default$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecTypeInfo.value_set_default$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$581.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*value_set_default)(GParamSpec*,GValue*);
+     * void (*value_set_default)(struct _GParamSpec*,struct _GValue*);
      * }
      */
     public static void value_set_default$set(MemorySegment seg, MemorySegment x) {
-        _GParamSpecTypeInfo.value_set_default$VH.set(seg, x);
+        constants$581.const$2.set(seg, x);
     }
     public static MemorySegment value_set_default$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecTypeInfo.value_set_default$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$581.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void value_set_default$set(MemorySegment seg, long index, MemorySegment x) {
-        _GParamSpecTypeInfo.value_set_default$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$581.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static value_set_default value_set_default(MemorySegment segment, SegmentScope scope) {
+    public static value_set_default value_set_default(MemorySegment segment, Arena scope) {
         return value_set_default.ofAddress(value_set_default$get(segment), scope);
     }
-    static final FunctionDescriptor value_validate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor value_validate_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle value_validate_UP$MH = RuntimeHelper.upcallHandle(value_validate.class, "apply", _GParamSpecTypeInfo.value_validate_UP$FUNC);
-    static final FunctionDescriptor value_validate_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle value_validate_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GParamSpecTypeInfo.value_validate_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*value_validate)(GParamSpec*,GValue*);
+ * int (*value_validate)(struct _GParamSpec*,struct _GValue*);
      * }
      */
     public interface value_validate {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(value_validate fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GParamSpecTypeInfo.value_validate_UP$MH, fi, _GParamSpecTypeInfo.value_validate$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(value_validate fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$581.const$3, fi, constants$9.const$0, scope);
         }
-        static value_validate ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static value_validate ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GParamSpecTypeInfo.value_validate_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -363,72 +289,52 @@ public class _GParamSpecTypeInfo {
         }
     }
 
-    static final VarHandle value_validate$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("value_validate"));
     public static VarHandle value_validate$VH() {
-        return _GParamSpecTypeInfo.value_validate$VH;
+        return constants$581.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*value_validate)(GParamSpec*,GValue*);
+     * int (*value_validate)(struct _GParamSpec*,struct _GValue*);
      * }
      */
     public static MemorySegment value_validate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecTypeInfo.value_validate$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$581.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*value_validate)(GParamSpec*,GValue*);
+     * int (*value_validate)(struct _GParamSpec*,struct _GValue*);
      * }
      */
     public static void value_validate$set(MemorySegment seg, MemorySegment x) {
-        _GParamSpecTypeInfo.value_validate$VH.set(seg, x);
+        constants$581.const$4.set(seg, x);
     }
     public static MemorySegment value_validate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecTypeInfo.value_validate$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$581.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void value_validate$set(MemorySegment seg, long index, MemorySegment x) {
-        _GParamSpecTypeInfo.value_validate$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$581.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static value_validate value_validate(MemorySegment segment, SegmentScope scope) {
+    public static value_validate value_validate(MemorySegment segment, Arena scope) {
         return value_validate.ofAddress(value_validate$get(segment), scope);
     }
-    static final FunctionDescriptor values_cmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor values_cmp_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle values_cmp_UP$MH = RuntimeHelper.upcallHandle(values_cmp.class, "apply", _GParamSpecTypeInfo.values_cmp_UP$FUNC);
-    static final FunctionDescriptor values_cmp_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle values_cmp_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GParamSpecTypeInfo.values_cmp_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gint (*values_cmp)(GParamSpec*,const GValue*,const GValue*);
+ * int (*values_cmp)(struct _GParamSpec*,struct _GValue*,struct _GValue*);
      * }
      */
     public interface values_cmp {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(values_cmp fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GParamSpecTypeInfo.values_cmp_UP$MH, fi, _GParamSpecTypeInfo.values_cmp$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(values_cmp fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$581.const$5, fi, constants$12.const$2, scope);
         }
-        static values_cmp ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
+        static values_cmp ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GParamSpecTypeInfo.values_cmp_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -436,35 +342,34 @@ public class _GParamSpecTypeInfo {
         }
     }
 
-    static final VarHandle values_cmp$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("values_cmp"));
     public static VarHandle values_cmp$VH() {
-        return _GParamSpecTypeInfo.values_cmp$VH;
+        return constants$582.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint (*values_cmp)(GParamSpec*,const GValue*,const GValue*);
+     * int (*values_cmp)(struct _GParamSpec*,struct _GValue*,struct _GValue*);
      * }
      */
     public static MemorySegment values_cmp$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecTypeInfo.values_cmp$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$582.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint (*values_cmp)(GParamSpec*,const GValue*,const GValue*);
+     * int (*values_cmp)(struct _GParamSpec*,struct _GValue*,struct _GValue*);
      * }
      */
     public static void values_cmp$set(MemorySegment seg, MemorySegment x) {
-        _GParamSpecTypeInfo.values_cmp$VH.set(seg, x);
+        constants$582.const$0.set(seg, x);
     }
     public static MemorySegment values_cmp$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecTypeInfo.values_cmp$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$582.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void values_cmp$set(MemorySegment seg, long index, MemorySegment x) {
-        _GParamSpecTypeInfo.values_cmp$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$582.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static values_cmp values_cmp(MemorySegment segment, SegmentScope scope) {
+    public static values_cmp values_cmp(MemorySegment segment, Arena scope) {
         return values_cmp.ofAddress(values_cmp$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -472,7 +377,7 @@ public class _GParamSpecTypeInfo {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

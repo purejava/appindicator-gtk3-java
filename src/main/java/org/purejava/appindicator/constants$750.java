@@ -3,61 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$750 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$750() {}
-    static final FunctionDescriptor g_settings_get_has_unapplied$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_settings_get_has_unapplied$MH = RuntimeHelper.downcallHandle(
-        "g_settings_get_has_unapplied",
-        constants$750.g_settings_get_has_unapplied$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_arguments",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_settings_sync$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_settings_sync$MH = RuntimeHelper.downcallHandle(
-        "g_settings_sync",
-        constants$750.g_settings_sync$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_options_dict",
+        constants$5.const$2
     );
-    static final FunctionDescriptor GSettingsBindSetMapping$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_stdin",
+        constants$5.const$2
     );
-    static final FunctionDescriptor GSettingsBindSetMapping_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_application_command_line_get_environ",
+        constants$5.const$2
     );
-    static final MethodHandle GSettingsBindSetMapping_UP$MH = RuntimeHelper.upcallHandle(GSettingsBindSetMapping.class, "apply", constants$750.GSettingsBindSetMapping_UP$FUNC);
-    static final FunctionDescriptor GSettingsBindSetMapping_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GSettingsBindSetMapping_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$750.GSettingsBindSetMapping_DOWN$FUNC
-    );
-    static final FunctionDescriptor GSettingsBindGetMapping$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GSettingsBindGetMapping_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GSettingsBindGetMapping_UP$MH = RuntimeHelper.upcallHandle(GSettingsBindGetMapping.class, "apply", constants$750.GSettingsBindGetMapping_UP$FUNC);
-    static final FunctionDescriptor GSettingsBindGetMapping_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GSettingsBindGetMapping_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$750.GSettingsBindGetMapping_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_application_command_line_getenv",
+        constants$5.const$5
     );
 }
 

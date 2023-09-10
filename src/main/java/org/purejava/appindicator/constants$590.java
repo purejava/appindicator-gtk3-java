@@ -3,54 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$590 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$590() {}
-    static final FunctionDescriptor g_dbus_object_skeleton_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_object_skeleton_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_get_type",
-        constants$590.g_dbus_object_skeleton_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_closure_add_invalidate_notifier",
+        constants$14.const$3
     );
-    static final FunctionDescriptor g_dbus_object_skeleton_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_closure_remove_invalidate_notifier$notify_func.class, "apply", constants$13.const$4);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_closure_remove_invalidate_notifier",
+        constants$14.const$3
     );
-    static final MethodHandle g_dbus_object_skeleton_new$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_new",
-        constants$590.g_dbus_object_skeleton_new$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_skeleton_flush$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_skeleton_flush$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_flush",
-        constants$590.g_dbus_object_skeleton_flush$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_skeleton_add_interface$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_skeleton_add_interface$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_add_interface",
-        constants$590.g_dbus_object_skeleton_add_interface$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_skeleton_remove_interface$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_skeleton_remove_interface$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_remove_interface",
-        constants$590.g_dbus_object_skeleton_remove_interface$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_skeleton_remove_interface_by_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_skeleton_remove_interface_by_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_remove_interface_by_name",
-        constants$590.g_dbus_object_skeleton_remove_interface_by_name$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_closure_add_marshal_guards$pre_marshal_notify.class, "apply", constants$13.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_closure_add_marshal_guards$post_marshal_notify.class, "apply", constants$13.const$4);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_closure_add_marshal_guards",
+        constants$331.const$1
     );
 }
 

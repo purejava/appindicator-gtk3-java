@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$901 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$901() {}
-    static final FunctionDescriptor pango_matrix_transform_distance$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_object_path",
+        constants$5.const$2
     );
-    static final MethodHandle pango_matrix_transform_distance$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_transform_distance",
-        constants$901.pango_matrix_transform_distance$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_interface_name",
+        constants$5.const$2
     );
-    static final FunctionDescriptor pango_matrix_transform_rectangle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_method_name",
+        constants$5.const$2
     );
-    static final MethodHandle pango_matrix_transform_rectangle$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_transform_rectangle",
-        constants$901.pango_matrix_transform_rectangle$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_method_info",
+        constants$5.const$2
     );
-    static final FunctionDescriptor pango_matrix_transform_pixel_rectangle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_property_info",
+        constants$5.const$2
     );
-    static final MethodHandle pango_matrix_transform_pixel_rectangle$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_transform_pixel_rectangle",
-        constants$901.pango_matrix_transform_pixel_rectangle$FUNC
-    );
-    static final FunctionDescriptor pango_matrix_get_font_scale_factor$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_matrix_get_font_scale_factor$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_get_font_scale_factor",
-        constants$901.pango_matrix_get_font_scale_factor$FUNC
-    );
-    static final FunctionDescriptor pango_matrix_get_font_scale_factors$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_matrix_get_font_scale_factors$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_get_font_scale_factors",
-        constants$901.pango_matrix_get_font_scale_factors$FUNC
-    );
-    static final FunctionDescriptor pango_matrix_get_slant_ratio$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_matrix_get_slant_ratio$MH = RuntimeHelper.downcallHandle(
-        "pango_matrix_get_slant_ratio",
-        constants$901.pango_matrix_get_slant_ratio$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_connection",
+        constants$5.const$2
     );
 }
 

@@ -3,43 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$527 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$527() {}
-    static final FunctionDescriptor setpgrp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle setpgrp$MH = RuntimeHelper.downcallHandle(
-        "setpgrp",
-        constants$527.setpgrp$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pthread_mutexattr_getpshared",
+        constants$9.const$0
     );
-    static final FunctionDescriptor setsid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle setsid$MH = RuntimeHelper.downcallHandle(
-        "setsid",
-        constants$527.setsid$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pthread_mutexattr_setpshared",
+        constants$11.const$4
     );
-    static final FunctionDescriptor getsid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pthread_mutexattr_gettype",
+        constants$9.const$0
     );
-    static final MethodHandle getsid$MH = RuntimeHelper.downcallHandle(
-        "getsid",
-        constants$527.getsid$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pthread_mutexattr_settype",
+        constants$11.const$4
     );
-    static final FunctionDescriptor getuid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle getuid$MH = RuntimeHelper.downcallHandle(
-        "getuid",
-        constants$527.getuid$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pthread_mutexattr_getprotocol",
+        constants$9.const$0
     );
-    static final FunctionDescriptor geteuid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle geteuid$MH = RuntimeHelper.downcallHandle(
-        "geteuid",
-        constants$527.geteuid$FUNC
-    );
-    static final FunctionDescriptor getgid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle getgid$MH = RuntimeHelper.downcallHandle(
-        "getgid",
-        constants$527.getgid$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pthread_mutexattr_setprotocol",
+        constants$11.const$4
     );
 }
 

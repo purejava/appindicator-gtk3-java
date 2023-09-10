@@ -3,54 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1499 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1499() {}
-    static final FunctionDescriptor gtk_assistant_commit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_font_set_parent",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_assistant_commit$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_commit",
-        constants$1499.gtk_assistant_commit$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_font_get_parent",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_assistant_set_page_has_padding$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_font_set_face",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_assistant_set_page_has_padding$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_set_page_has_padding",
-        constants$1499.gtk_assistant_set_page_has_padding$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_font_get_face",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_assistant_get_page_has_padding$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_get_page_has_padding$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_get_page_has_padding",
-        constants$1499.gtk_assistant_get_page_has_padding$FUNC
-    );
-    static final FunctionDescriptor gtk_button_box_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_button_box_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_box_get_type",
-        constants$1499.gtk_button_box_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_button_box_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_button_box_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_box_new",
-        constants$1499.gtk_button_box_new$FUNC
-    );
-    static final FunctionDescriptor gtk_button_box_get_layout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_button_box_get_layout$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_box_get_layout",
-        constants$1499.gtk_button_box_get_layout$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_set_funcs$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_font_set_funcs",
+        constants$42.const$1
     );
 }
 

@@ -3,63 +3,46 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1039 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1039() {}
-    static final FunctionDescriptor cairo_raster_source_snapshot_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor cairo_raster_source_snapshot_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_replace_contents",
+        constants$1039.const$0
     );
-    static final MethodHandle cairo_raster_source_snapshot_func_t_UP$MH = RuntimeHelper.upcallHandle(cairo_raster_source_snapshot_func_t.class, "apply", constants$1039.cairo_raster_source_snapshot_func_t_UP$FUNC);
-    static final FunctionDescriptor cairo_raster_source_snapshot_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_file_replace_contents_async$callback.class, "apply", constants$14.const$3);
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle cairo_raster_source_snapshot_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1039.cairo_raster_source_snapshot_func_t_DOWN$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_replace_contents_async",
+        constants$1039.const$3
     );
-    static final FunctionDescriptor cairo_raster_source_copy_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor cairo_raster_source_copy_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_raster_source_copy_func_t_UP$MH = RuntimeHelper.upcallHandle(cairo_raster_source_copy_func_t.class, "apply", constants$1039.cairo_raster_source_copy_func_t_UP$FUNC);
-    static final FunctionDescriptor cairo_raster_source_copy_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_raster_source_copy_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1039.cairo_raster_source_copy_func_t_DOWN$FUNC
-    );
-    static final FunctionDescriptor cairo_raster_source_finish_func_t$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor cairo_raster_source_finish_func_t_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_raster_source_finish_func_t_UP$MH = RuntimeHelper.upcallHandle(cairo_raster_source_finish_func_t.class, "apply", constants$1039.cairo_raster_source_finish_func_t_UP$FUNC);
-    static final FunctionDescriptor cairo_raster_source_finish_func_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_raster_source_finish_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1039.cairo_raster_source_finish_func_t_DOWN$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_file_replace_contents_bytes_async$callback.class, "apply", constants$14.const$3);
 }
 
 

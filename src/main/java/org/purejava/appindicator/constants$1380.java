@@ -3,58 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1380 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1380() {}
-    static final FunctionDescriptor GtkCellAllocCallback_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tls_password_get_value",
+        constants$5.const$5
     );
-    static final MethodHandle GtkCellAllocCallback_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1380.GtkCellAllocCallback_DOWN$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_tls_password_set_value",
+        constants$25.const$1
     );
-    static final FunctionDescriptor gtk_cell_area_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_cell_area_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_get_type",
-        constants$1380.gtk_cell_area_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_tls_password_set_value_full$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tls_password_set_value_full",
+        constants$1139.const$5
     );
-    static final FunctionDescriptor gtk_cell_area_add$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tls_password_get_flags",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_cell_area_add$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_add",
-        constants$1380.gtk_cell_area_add$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_remove$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_remove$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_remove",
-        constants$1380.gtk_cell_area_remove$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_has_renderer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_has_renderer$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_has_renderer",
-        constants$1380.gtk_cell_area_has_renderer$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_foreach$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_foreach",
-        constants$1380.gtk_cell_area_foreach$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tls_password_set_flags",
+        constants$40.const$2
     );
 }
 

@@ -3,56 +3,23 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$282 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$282() {}
-    static final FunctionDescriptor g_rand_int$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_main_context_invoke$function.class, "apply", constants$10.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_main_context_invoke",
+        constants$14.const$3
     );
-    static final MethodHandle g_rand_int$MH = RuntimeHelper.downcallHandle(
-        "g_rand_int",
-        constants$282.g_rand_int$FUNC
-    );
-    static final FunctionDescriptor g_rand_int_range$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_rand_int_range$MH = RuntimeHelper.downcallHandle(
-        "g_rand_int_range",
-        constants$282.g_rand_int_range$FUNC
-    );
-    static final FunctionDescriptor g_rand_double$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_rand_double$MH = RuntimeHelper.downcallHandle(
-        "g_rand_double",
-        constants$282.g_rand_double$FUNC
-    );
-    static final FunctionDescriptor g_rand_double_range$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle g_rand_double_range$MH = RuntimeHelper.downcallHandle(
-        "g_rand_double_range",
-        constants$282.g_rand_double_range$FUNC
-    );
-    static final FunctionDescriptor g_random_set_seed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_random_set_seed$MH = RuntimeHelper.downcallHandle(
-        "g_random_set_seed",
-        constants$282.g_random_set_seed$FUNC
-    );
-    static final FunctionDescriptor g_random_int$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_random_int$MH = RuntimeHelper.downcallHandle(
-        "g_random_int",
-        constants$282.g_random_int$FUNC
-    );
+    static final MemorySegment const$2 = RuntimeHelper.lookupGlobalVariable("g_timeout_funcs", constants$260.const$1);
+    static final MemorySegment const$3 = RuntimeHelper.lookupGlobalVariable("g_child_watch_funcs", constants$260.const$1);
+    static final MemorySegment const$4 = RuntimeHelper.lookupGlobalVariable("g_idle_funcs", constants$260.const$1);
+    static final MemorySegment const$5 = RuntimeHelper.lookupGlobalVariable("g_unix_signal_funcs", constants$260.const$1);
 }
 
 

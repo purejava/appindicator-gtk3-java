@@ -3,65 +3,45 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$457 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$457() {}
-    static final FunctionDescriptor g_type_module_unuse$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_test_suite_add",
+        constants$13.const$4
     );
-    static final MethodHandle g_type_module_unuse$MH = RuntimeHelper.downcallHandle(
-        "g_type_module_unuse",
-        constants$457.g_type_module_unuse$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_test_suite_add_suite",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_type_module_set_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_test_run_suite",
+        constants$10.const$5
     );
-    static final MethodHandle g_type_module_set_name$MH = RuntimeHelper.downcallHandle(
-        "g_type_module_set_name",
-        constants$457.g_type_module_set_name$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_test_case_free",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_type_module_register_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_test_suite_free",
+        constants$13.const$1
     );
-    static final MethodHandle g_type_module_register_type$MH = RuntimeHelper.downcallHandle(
-        "g_type_module_register_type",
-        constants$457.g_type_module_register_type$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_type_module_add_interface$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_module_add_interface$MH = RuntimeHelper.downcallHandle(
-        "g_type_module_add_interface",
-        constants$457.g_type_module_add_interface$FUNC
-    );
-    static final FunctionDescriptor g_type_module_register_enum$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_module_register_enum$MH = RuntimeHelper.downcallHandle(
-        "g_type_module_register_enum",
-        constants$457.g_type_module_register_enum$FUNC
-    );
-    static final FunctionDescriptor g_type_module_register_flags$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_module_register_flags$MH = RuntimeHelper.downcallHandle(
-        "g_type_module_register_flags",
-        constants$457.g_type_module_register_flags$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_test_trap_assertions",
+        constants$457.const$5
     );
 }
 

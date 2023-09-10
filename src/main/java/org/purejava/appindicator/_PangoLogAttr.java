@@ -2,44 +2,44 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _PangoLogAttr {
- *      *     guint is_line_break;
- *     guint is_mandatory_break;
- *     guint is_char_break;
- *     guint is_white;
- *     guint is_cursor_position;
- *     guint is_word_start;
- *     guint is_word_end;
- *     guint is_sentence_boundary;
- *     guint is_sentence_start;
- *     guint is_sentence_end;
- *     guint backspace_deletes_character;
- *     guint is_expandable_space;
- *     guint is_word_boundary;
- *     guint break_inserts_hyphen;
- *     guint break_removes_preceding;
- *     guint reserved;
+ *      *     unsigned int is_line_break;
+ *     unsigned int is_mandatory_break;
+ *     unsigned int is_char_break;
+ *     unsigned int is_white;
+ *     unsigned int is_cursor_position;
+ *     unsigned int is_word_start;
+ *     unsigned int is_word_end;
+ *     unsigned int is_sentence_boundary;
+ *     unsigned int is_sentence_start;
+ *     unsigned int is_sentence_end;
+ *     unsigned int backspace_deletes_character;
+ *     unsigned int is_expandable_space;
+ *     unsigned int is_word_boundary;
+ *     unsigned int break_inserts_hyphen;
+ *     unsigned int break_removes_preceding;
+ *     unsigned int reserved;
  * };
  * }
  */
 public class _PangoLogAttr {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.paddingLayout(32)
-    ).withName("_PangoLogAttr");
     public static MemoryLayout $LAYOUT() {
-        return _PangoLogAttr.$struct$LAYOUT;
+        return constants$1584.const$4;
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

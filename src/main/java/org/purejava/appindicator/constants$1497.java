@@ -3,63 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1497 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1497() {}
-    static final FunctionDescriptor gtk_assistant_get_page_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_font_create",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_assistant_get_page_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_get_page_type",
-        constants$1497.gtk_assistant_get_page_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_font_create_sub_font",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_assistant_set_page_title$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_font_get_empty",
+        constants$35.const$2
     );
-    static final MethodHandle gtk_assistant_set_page_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_set_page_title",
-        constants$1497.gtk_assistant_set_page_title$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_font_reference",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_assistant_get_page_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_font_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_assistant_get_page_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_get_page_title",
-        constants$1497.gtk_assistant_get_page_title$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_set_page_header_image$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_set_page_header_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_set_page_header_image",
-        constants$1497.gtk_assistant_set_page_header_image$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_get_page_header_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_get_page_header_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_get_page_header_image",
-        constants$1497.gtk_assistant_get_page_header_image$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_set_page_side_image$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_set_page_side_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_set_page_side_image",
-        constants$1497.gtk_assistant_set_page_side_image$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_font_set_user_data$destroy.class, "apply", constants$13.const$1);
 }
 
 

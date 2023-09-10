@@ -4,18 +4,19 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkPanedClass {
- *     GtkContainerClass parent_class;
- *     gboolean (*cycle_child_focus)(GtkPaned*,gboolean);
- *     gboolean (*toggle_handle_focus)(GtkPaned*);
- *     gboolean (*move_handle)(GtkPaned*,GtkScrollType);
- *     gboolean (*cycle_handle_focus)(GtkPaned*,gboolean);
- *     gboolean (*accept_position)(GtkPaned*);
- *     gboolean (*cancel_position)(GtkPaned*);
+ *     struct _GtkContainerClass parent_class;
+ *     int (*cycle_child_focus)(struct _GtkPaned*,int);
+ *     int (*toggle_handle_focus)(struct _GtkPaned*);
+ *     int (*move_handle)(struct _GtkPaned*,enum GtkScrollType);
+ *     int (*cycle_handle_focus)(struct _GtkPaned*,int);
+ *     int (*accept_position)(struct _GtkPaned*);
+ *     int (*cancel_position)(struct _GtkPaned*);
  *     void (*_gtk_reserved1)();
  *     void (*_gtk_reserved2)();
  *     void (*_gtk_reserved3)();
@@ -25,185 +26,28 @@ import java.lang.foreign.*;
  */
 public class _GtkPanedClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    MemoryLayout.structLayout(
-                        Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-                    ).withName("g_type_class"),
-                    Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-                    Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-                    Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-                    Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-                    Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-                    Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-                    Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-                    Constants$root.C_POINTER$LAYOUT.withName("notify"),
-                    Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-                    Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-                    MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-                ).withName("parent_class"),
-                Constants$root.C_INT$LAYOUT.withName("activate_signal"),
-                MemoryLayout.paddingLayout(32),
-                Constants$root.C_POINTER$LAYOUT.withName("dispatch_child_properties_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("destroy"),
-                Constants$root.C_POINTER$LAYOUT.withName("show"),
-                Constants$root.C_POINTER$LAYOUT.withName("show_all"),
-                Constants$root.C_POINTER$LAYOUT.withName("hide"),
-                Constants$root.C_POINTER$LAYOUT.withName("map"),
-                Constants$root.C_POINTER$LAYOUT.withName("unmap"),
-                Constants$root.C_POINTER$LAYOUT.withName("realize"),
-                Constants$root.C_POINTER$LAYOUT.withName("unrealize"),
-                Constants$root.C_POINTER$LAYOUT.withName("size_allocate"),
-                Constants$root.C_POINTER$LAYOUT.withName("state_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("state_flags_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("parent_set"),
-                Constants$root.C_POINTER$LAYOUT.withName("hierarchy_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("style_set"),
-                Constants$root.C_POINTER$LAYOUT.withName("direction_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("grab_notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("child_notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("draw"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_request_mode"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_width_for_height"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_width"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height_for_width"),
-                Constants$root.C_POINTER$LAYOUT.withName("mnemonic_activate"),
-                Constants$root.C_POINTER$LAYOUT.withName("grab_focus"),
-                Constants$root.C_POINTER$LAYOUT.withName("focus"),
-                Constants$root.C_POINTER$LAYOUT.withName("move_focus"),
-                Constants$root.C_POINTER$LAYOUT.withName("keynav_failed"),
-                Constants$root.C_POINTER$LAYOUT.withName("event"),
-                Constants$root.C_POINTER$LAYOUT.withName("button_press_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("button_release_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("scroll_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("motion_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("delete_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("destroy_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("key_press_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("key_release_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("enter_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("leave_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("configure_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("focus_in_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("focus_out_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("map_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("unmap_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("property_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_clear_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_request_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("proximity_in_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("proximity_out_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("visibility_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("window_state_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("damage_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("grab_broken_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_get"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_received"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_begin"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_end"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_data_get"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_data_delete"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_leave"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_motion"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_drop"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_data_received"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_failed"),
-                Constants$root.C_POINTER$LAYOUT.withName("popup_menu"),
-                Constants$root.C_POINTER$LAYOUT.withName("show_help"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_accessible"),
-                Constants$root.C_POINTER$LAYOUT.withName("screen_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("can_activate_accel"),
-                Constants$root.C_POINTER$LAYOUT.withName("composited_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("query_tooltip"),
-                Constants$root.C_POINTER$LAYOUT.withName("compute_expand"),
-                Constants$root.C_POINTER$LAYOUT.withName("adjust_size_request"),
-                Constants$root.C_POINTER$LAYOUT.withName("adjust_size_allocation"),
-                Constants$root.C_POINTER$LAYOUT.withName("style_updated"),
-                Constants$root.C_POINTER$LAYOUT.withName("touch_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height_and_baseline_for_width"),
-                Constants$root.C_POINTER$LAYOUT.withName("adjust_baseline_request"),
-                Constants$root.C_POINTER$LAYOUT.withName("adjust_baseline_allocation"),
-                Constants$root.C_POINTER$LAYOUT.withName("queue_draw_region"),
-                Constants$root.C_POINTER$LAYOUT.withName("priv"),
-                Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved6"),
-                Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved7")
-            ).withName("parent_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("add"),
-            Constants$root.C_POINTER$LAYOUT.withName("remove"),
-            Constants$root.C_POINTER$LAYOUT.withName("check_resize"),
-            Constants$root.C_POINTER$LAYOUT.withName("forall"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_focus_child"),
-            Constants$root.C_POINTER$LAYOUT.withName("child_type"),
-            Constants$root.C_POINTER$LAYOUT.withName("composite_name"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_child_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_child_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_path_for_child"),
-            MemoryLayout.paddingLayout(64),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved4"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved5"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved6"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved7"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved8")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("cycle_child_focus"),
-        Constants$root.C_POINTER$LAYOUT.withName("toggle_handle_focus"),
-        Constants$root.C_POINTER$LAYOUT.withName("move_handle"),
-        Constants$root.C_POINTER$LAYOUT.withName("cycle_handle_focus"),
-        Constants$root.C_POINTER$LAYOUT.withName("accept_position"),
-        Constants$root.C_POINTER$LAYOUT.withName("cancel_position"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved4")
-    ).withName("_GtkPanedClass");
     public static MemoryLayout $LAYOUT() {
-        return _GtkPanedClass.$struct$LAYOUT;
+        return constants$2937.const$3;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 976);
     }
-    static final FunctionDescriptor cycle_child_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor cycle_child_focus_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cycle_child_focus_UP$MH = RuntimeHelper.upcallHandle(cycle_child_focus.class, "apply", _GtkPanedClass.cycle_child_focus_UP$FUNC);
-    static final FunctionDescriptor cycle_child_focus_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cycle_child_focus_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkPanedClass.cycle_child_focus_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*cycle_child_focus)(GtkPaned*,gboolean);
+ * int (*cycle_child_focus)(struct _GtkPaned*,int);
      * }
      */
     public interface cycle_child_focus {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(cycle_child_focus fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkPanedClass.cycle_child_focus_UP$MH, fi, _GtkPanedClass.cycle_child_focus$FUNC, scope);
+        static MemorySegment allocate(cycle_child_focus fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2937.const$4, fi, constants$11.const$4, scope);
         }
-        static cycle_child_focus ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static cycle_child_focus ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_GtkPanedClass.cycle_child_focus_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$837.const$4.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -211,66 +55,52 @@ public class _GtkPanedClass {
         }
     }
 
-    static final VarHandle cycle_child_focus$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("cycle_child_focus"));
     public static VarHandle cycle_child_focus$VH() {
-        return _GtkPanedClass.cycle_child_focus$VH;
+        return constants$2937.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*cycle_child_focus)(GtkPaned*,gboolean);
+     * int (*cycle_child_focus)(struct _GtkPaned*,int);
      * }
      */
     public static MemorySegment cycle_child_focus$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass.cycle_child_focus$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2937.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*cycle_child_focus)(GtkPaned*,gboolean);
+     * int (*cycle_child_focus)(struct _GtkPaned*,int);
      * }
      */
     public static void cycle_child_focus$set(MemorySegment seg, MemorySegment x) {
-        _GtkPanedClass.cycle_child_focus$VH.set(seg, x);
+        constants$2937.const$5.set(seg, x);
     }
     public static MemorySegment cycle_child_focus$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass.cycle_child_focus$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2937.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void cycle_child_focus$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkPanedClass.cycle_child_focus$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2937.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static cycle_child_focus cycle_child_focus(MemorySegment segment, SegmentScope scope) {
+    public static cycle_child_focus cycle_child_focus(MemorySegment segment, Arena scope) {
         return cycle_child_focus.ofAddress(cycle_child_focus$get(segment), scope);
     }
-    static final FunctionDescriptor toggle_handle_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor toggle_handle_focus_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle toggle_handle_focus_UP$MH = RuntimeHelper.upcallHandle(toggle_handle_focus.class, "apply", _GtkPanedClass.toggle_handle_focus_UP$FUNC);
-    static final FunctionDescriptor toggle_handle_focus_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle toggle_handle_focus_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkPanedClass.toggle_handle_focus_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*toggle_handle_focus)(GtkPaned*);
+ * int (*toggle_handle_focus)(struct _GtkPaned*);
      * }
      */
     public interface toggle_handle_focus {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(toggle_handle_focus fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkPanedClass.toggle_handle_focus_UP$MH, fi, _GtkPanedClass.toggle_handle_focus$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(toggle_handle_focus fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2938.const$0, fi, constants$10.const$5, scope);
         }
-        static toggle_handle_focus ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0) -> {
+        static toggle_handle_focus ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkPanedClass.toggle_handle_focus_DOWN$MH.invokeExact(symbol, __x0);
+                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -278,69 +108,52 @@ public class _GtkPanedClass {
         }
     }
 
-    static final VarHandle toggle_handle_focus$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("toggle_handle_focus"));
     public static VarHandle toggle_handle_focus$VH() {
-        return _GtkPanedClass.toggle_handle_focus$VH;
+        return constants$2938.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*toggle_handle_focus)(GtkPaned*);
+     * int (*toggle_handle_focus)(struct _GtkPaned*);
      * }
      */
     public static MemorySegment toggle_handle_focus$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass.toggle_handle_focus$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2938.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*toggle_handle_focus)(GtkPaned*);
+     * int (*toggle_handle_focus)(struct _GtkPaned*);
      * }
      */
     public static void toggle_handle_focus$set(MemorySegment seg, MemorySegment x) {
-        _GtkPanedClass.toggle_handle_focus$VH.set(seg, x);
+        constants$2938.const$1.set(seg, x);
     }
     public static MemorySegment toggle_handle_focus$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass.toggle_handle_focus$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2938.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void toggle_handle_focus$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkPanedClass.toggle_handle_focus$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2938.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static toggle_handle_focus toggle_handle_focus(MemorySegment segment, SegmentScope scope) {
+    public static toggle_handle_focus toggle_handle_focus(MemorySegment segment, Arena scope) {
         return toggle_handle_focus.ofAddress(toggle_handle_focus$get(segment), scope);
     }
-    static final FunctionDescriptor move_handle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor move_handle_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle move_handle_UP$MH = RuntimeHelper.upcallHandle(move_handle.class, "apply", _GtkPanedClass.move_handle_UP$FUNC);
-    static final FunctionDescriptor move_handle_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle move_handle_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkPanedClass.move_handle_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*move_handle)(GtkPaned*,GtkScrollType);
+ * int (*move_handle)(struct _GtkPaned*,enum GtkScrollType);
      * }
      */
     public interface move_handle {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(move_handle fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkPanedClass.move_handle_UP$MH, fi, _GtkPanedClass.move_handle$FUNC, scope);
+        static MemorySegment allocate(move_handle fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2938.const$2, fi, constants$11.const$4, scope);
         }
-        static move_handle ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static move_handle ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_GtkPanedClass.move_handle_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$837.const$4.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -348,69 +161,52 @@ public class _GtkPanedClass {
         }
     }
 
-    static final VarHandle move_handle$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("move_handle"));
     public static VarHandle move_handle$VH() {
-        return _GtkPanedClass.move_handle$VH;
+        return constants$2938.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*move_handle)(GtkPaned*,GtkScrollType);
+     * int (*move_handle)(struct _GtkPaned*,enum GtkScrollType);
      * }
      */
     public static MemorySegment move_handle$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass.move_handle$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2938.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*move_handle)(GtkPaned*,GtkScrollType);
+     * int (*move_handle)(struct _GtkPaned*,enum GtkScrollType);
      * }
      */
     public static void move_handle$set(MemorySegment seg, MemorySegment x) {
-        _GtkPanedClass.move_handle$VH.set(seg, x);
+        constants$2938.const$3.set(seg, x);
     }
     public static MemorySegment move_handle$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass.move_handle$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2938.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void move_handle$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkPanedClass.move_handle$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2938.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static move_handle move_handle(MemorySegment segment, SegmentScope scope) {
+    public static move_handle move_handle(MemorySegment segment, Arena scope) {
         return move_handle.ofAddress(move_handle$get(segment), scope);
     }
-    static final FunctionDescriptor cycle_handle_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor cycle_handle_focus_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cycle_handle_focus_UP$MH = RuntimeHelper.upcallHandle(cycle_handle_focus.class, "apply", _GtkPanedClass.cycle_handle_focus_UP$FUNC);
-    static final FunctionDescriptor cycle_handle_focus_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cycle_handle_focus_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkPanedClass.cycle_handle_focus_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*cycle_handle_focus)(GtkPaned*,gboolean);
+ * int (*cycle_handle_focus)(struct _GtkPaned*,int);
      * }
      */
     public interface cycle_handle_focus {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(cycle_handle_focus fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkPanedClass.cycle_handle_focus_UP$MH, fi, _GtkPanedClass.cycle_handle_focus$FUNC, scope);
+        static MemorySegment allocate(cycle_handle_focus fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2938.const$4, fi, constants$11.const$4, scope);
         }
-        static cycle_handle_focus ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static cycle_handle_focus ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_GtkPanedClass.cycle_handle_focus_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$837.const$4.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -418,66 +214,52 @@ public class _GtkPanedClass {
         }
     }
 
-    static final VarHandle cycle_handle_focus$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("cycle_handle_focus"));
     public static VarHandle cycle_handle_focus$VH() {
-        return _GtkPanedClass.cycle_handle_focus$VH;
+        return constants$2938.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*cycle_handle_focus)(GtkPaned*,gboolean);
+     * int (*cycle_handle_focus)(struct _GtkPaned*,int);
      * }
      */
     public static MemorySegment cycle_handle_focus$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass.cycle_handle_focus$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2938.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*cycle_handle_focus)(GtkPaned*,gboolean);
+     * int (*cycle_handle_focus)(struct _GtkPaned*,int);
      * }
      */
     public static void cycle_handle_focus$set(MemorySegment seg, MemorySegment x) {
-        _GtkPanedClass.cycle_handle_focus$VH.set(seg, x);
+        constants$2938.const$5.set(seg, x);
     }
     public static MemorySegment cycle_handle_focus$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass.cycle_handle_focus$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2938.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void cycle_handle_focus$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkPanedClass.cycle_handle_focus$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2938.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static cycle_handle_focus cycle_handle_focus(MemorySegment segment, SegmentScope scope) {
+    public static cycle_handle_focus cycle_handle_focus(MemorySegment segment, Arena scope) {
         return cycle_handle_focus.ofAddress(cycle_handle_focus$get(segment), scope);
     }
-    static final FunctionDescriptor accept_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor accept_position_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle accept_position_UP$MH = RuntimeHelper.upcallHandle(accept_position.class, "apply", _GtkPanedClass.accept_position_UP$FUNC);
-    static final FunctionDescriptor accept_position_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle accept_position_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkPanedClass.accept_position_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*accept_position)(GtkPaned*);
+ * int (*accept_position)(struct _GtkPaned*);
      * }
      */
     public interface accept_position {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(accept_position fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkPanedClass.accept_position_UP$MH, fi, _GtkPanedClass.accept_position$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(accept_position fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2939.const$0, fi, constants$10.const$5, scope);
         }
-        static accept_position ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0) -> {
+        static accept_position ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkPanedClass.accept_position_DOWN$MH.invokeExact(symbol, __x0);
+                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -485,66 +267,52 @@ public class _GtkPanedClass {
         }
     }
 
-    static final VarHandle accept_position$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("accept_position"));
     public static VarHandle accept_position$VH() {
-        return _GtkPanedClass.accept_position$VH;
+        return constants$2939.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*accept_position)(GtkPaned*);
+     * int (*accept_position)(struct _GtkPaned*);
      * }
      */
     public static MemorySegment accept_position$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass.accept_position$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2939.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*accept_position)(GtkPaned*);
+     * int (*accept_position)(struct _GtkPaned*);
      * }
      */
     public static void accept_position$set(MemorySegment seg, MemorySegment x) {
-        _GtkPanedClass.accept_position$VH.set(seg, x);
+        constants$2939.const$1.set(seg, x);
     }
     public static MemorySegment accept_position$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass.accept_position$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2939.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void accept_position$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkPanedClass.accept_position$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2939.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static accept_position accept_position(MemorySegment segment, SegmentScope scope) {
+    public static accept_position accept_position(MemorySegment segment, Arena scope) {
         return accept_position.ofAddress(accept_position$get(segment), scope);
     }
-    static final FunctionDescriptor cancel_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor cancel_position_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cancel_position_UP$MH = RuntimeHelper.upcallHandle(cancel_position.class, "apply", _GtkPanedClass.cancel_position_UP$FUNC);
-    static final FunctionDescriptor cancel_position_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cancel_position_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkPanedClass.cancel_position_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*cancel_position)(GtkPaned*);
+ * int (*cancel_position)(struct _GtkPaned*);
      * }
      */
     public interface cancel_position {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(cancel_position fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkPanedClass.cancel_position_UP$MH, fi, _GtkPanedClass.cancel_position$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(cancel_position fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2939.const$2, fi, constants$10.const$5, scope);
         }
-        static cancel_position ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0) -> {
+        static cancel_position ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkPanedClass.cancel_position_DOWN$MH.invokeExact(symbol, __x0);
+                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -552,44 +320,36 @@ public class _GtkPanedClass {
         }
     }
 
-    static final VarHandle cancel_position$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("cancel_position"));
     public static VarHandle cancel_position$VH() {
-        return _GtkPanedClass.cancel_position$VH;
+        return constants$2939.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*cancel_position)(GtkPaned*);
+     * int (*cancel_position)(struct _GtkPaned*);
      * }
      */
     public static MemorySegment cancel_position$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass.cancel_position$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2939.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*cancel_position)(GtkPaned*);
+     * int (*cancel_position)(struct _GtkPaned*);
      * }
      */
     public static void cancel_position$set(MemorySegment seg, MemorySegment x) {
-        _GtkPanedClass.cancel_position$VH.set(seg, x);
+        constants$2939.const$3.set(seg, x);
     }
     public static MemorySegment cancel_position$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass.cancel_position$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2939.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void cancel_position$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkPanedClass.cancel_position$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2939.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static cancel_position cancel_position(MemorySegment segment, SegmentScope scope) {
+    public static cancel_position cancel_position(MemorySegment segment, Arena scope) {
         return cancel_position.ofAddress(cancel_position$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkPanedClass._gtk_reserved1_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkPanedClass._gtk_reserved1_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved1)();
@@ -598,14 +358,14 @@ public class _GtkPanedClass {
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkPanedClass._gtk_reserved1_UP$MH, fi, _GtkPanedClass._gtk_reserved1$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved1 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2939.const$4, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkPanedClass._gtk_reserved1_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -613,9 +373,8 @@ public class _GtkPanedClass {
         }
     }
 
-    static final VarHandle _gtk_reserved1$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
     public static VarHandle _gtk_reserved1$VH() {
-        return _GtkPanedClass._gtk_reserved1$VH;
+        return constants$2939.const$5;
     }
     /**
      * Getter for field:
@@ -624,7 +383,7 @@ public class _GtkPanedClass {
      * }
      */
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass._gtk_reserved1$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2939.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -633,24 +392,17 @@ public class _GtkPanedClass {
      * }
      */
     public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        _GtkPanedClass._gtk_reserved1$VH.set(seg, x);
+        constants$2939.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2939.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkPanedClass._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2939.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, Arena scope) {
         return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkPanedClass._gtk_reserved2_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkPanedClass._gtk_reserved2_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved2)();
@@ -659,14 +411,14 @@ public class _GtkPanedClass {
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkPanedClass._gtk_reserved2_UP$MH, fi, _GtkPanedClass._gtk_reserved2$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved2 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2940.const$0, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkPanedClass._gtk_reserved2_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -674,9 +426,8 @@ public class _GtkPanedClass {
         }
     }
 
-    static final VarHandle _gtk_reserved2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
     public static VarHandle _gtk_reserved2$VH() {
-        return _GtkPanedClass._gtk_reserved2$VH;
+        return constants$2940.const$1;
     }
     /**
      * Getter for field:
@@ -685,7 +436,7 @@ public class _GtkPanedClass {
      * }
      */
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass._gtk_reserved2$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2940.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -694,24 +445,17 @@ public class _GtkPanedClass {
      * }
      */
     public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        _GtkPanedClass._gtk_reserved2$VH.set(seg, x);
+        constants$2940.const$1.set(seg, x);
     }
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2940.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkPanedClass._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2940.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, Arena scope) {
         return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkPanedClass._gtk_reserved3_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkPanedClass._gtk_reserved3_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved3)();
@@ -720,14 +464,14 @@ public class _GtkPanedClass {
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkPanedClass._gtk_reserved3_UP$MH, fi, _GtkPanedClass._gtk_reserved3$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved3 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2940.const$2, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkPanedClass._gtk_reserved3_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -735,9 +479,8 @@ public class _GtkPanedClass {
         }
     }
 
-    static final VarHandle _gtk_reserved3$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
     public static VarHandle _gtk_reserved3$VH() {
-        return _GtkPanedClass._gtk_reserved3$VH;
+        return constants$2940.const$3;
     }
     /**
      * Getter for field:
@@ -746,7 +489,7 @@ public class _GtkPanedClass {
      * }
      */
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass._gtk_reserved3$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2940.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -755,24 +498,17 @@ public class _GtkPanedClass {
      * }
      */
     public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        _GtkPanedClass._gtk_reserved3$VH.set(seg, x);
+        constants$2940.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2940.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkPanedClass._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2940.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, Arena scope) {
         return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved4.class, "apply", _GtkPanedClass._gtk_reserved4_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkPanedClass._gtk_reserved4_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved4)();
@@ -781,14 +517,14 @@ public class _GtkPanedClass {
     public interface _gtk_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved4 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkPanedClass._gtk_reserved4_UP$MH, fi, _GtkPanedClass._gtk_reserved4$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved4 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2940.const$4, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkPanedClass._gtk_reserved4_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -796,9 +532,8 @@ public class _GtkPanedClass {
         }
     }
 
-    static final VarHandle _gtk_reserved4$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
     public static VarHandle _gtk_reserved4$VH() {
-        return _GtkPanedClass._gtk_reserved4$VH;
+        return constants$2940.const$5;
     }
     /**
      * Getter for field:
@@ -807,7 +542,7 @@ public class _GtkPanedClass {
      * }
      */
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass._gtk_reserved4$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2940.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -816,15 +551,15 @@ public class _GtkPanedClass {
      * }
      */
     public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        _GtkPanedClass._gtk_reserved4$VH.set(seg, x);
+        constants$2940.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkPanedClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2940.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkPanedClass._gtk_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2940.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, Arena scope) {
         return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -832,7 +567,7 @@ public class _GtkPanedClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

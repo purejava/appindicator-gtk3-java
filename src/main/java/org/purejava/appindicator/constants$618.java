@@ -3,58 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$618 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$618() {}
-    static final FunctionDescriptor g_file_get_relative_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_mapped_file_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_file_get_relative_path$MH = RuntimeHelper.downcallHandle(
-        "g_file_get_relative_path",
-        constants$618.g_file_get_relative_path$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_option_group_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor g_file_resolve_relative_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_uri_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_file_resolve_relative_path$MH = RuntimeHelper.downcallHandle(
-        "g_file_resolve_relative_path",
-        constants$618.g_file_resolve_relative_path$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tree_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor g_file_is_native$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_pattern_spec_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_file_is_native$MH = RuntimeHelper.downcallHandle(
-        "g_file_is_native",
-        constants$618.g_file_is_native$FUNC
-    );
-    static final FunctionDescriptor g_file_has_uri_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_has_uri_scheme$MH = RuntimeHelper.downcallHandle(
-        "g_file_has_uri_scheme",
-        constants$618.g_file_has_uri_scheme$FUNC
-    );
-    static final FunctionDescriptor g_file_get_uri_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_get_uri_scheme$MH = RuntimeHelper.downcallHandle(
-        "g_file_get_uri_scheme",
-        constants$618.g_file_get_uri_scheme$FUNC
-    );
-    static final FunctionDescriptor g_file_read$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_read$MH = RuntimeHelper.downcallHandle(
-        "g_file_read",
-        constants$618.g_file_read$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_get_type",
+        constants$3.const$5
     );
 }
 

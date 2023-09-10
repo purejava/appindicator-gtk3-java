@@ -3,59 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1834 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1834() {}
-    static final FunctionDescriptor gtk_text_buffer_get_iter_at_mark$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_window_is_shaped",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_text_buffer_get_iter_at_mark$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_iter_at_mark",
-        constants$1834.gtk_text_buffer_get_iter_at_mark$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_window_get_state",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_text_buffer_get_iter_at_child_anchor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_window_set_static_gravities",
+        constants$11.const$4
     );
-    static final MethodHandle gtk_text_buffer_get_iter_at_child_anchor$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_iter_at_child_anchor",
-        constants$1834.gtk_text_buffer_get_iter_at_child_anchor$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_modified$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_modified$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_modified",
-        constants$1834.gtk_text_buffer_get_modified$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_set_modified$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_set_modified$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_set_modified",
-        constants$1834.gtk_text_buffer_set_modified$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_get_has_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_get_has_selection$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_get_has_selection",
-        constants$1834.gtk_text_buffer_get_has_selection$FUNC
-    );
-    static final FunctionDescriptor gtk_text_buffer_add_selection_clipboard$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_text_buffer_add_selection_clipboard$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_buffer_add_selection_clipboard",
-        constants$1834.gtk_text_buffer_add_selection_clipboard$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GdkWindowInvalidateHandlerFunc.class, "apply", constants$13.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gdk_window_set_invalidate_handler$handler.class, "apply", constants$13.const$4);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_window_set_invalidate_handler",
+        constants$13.const$4
     );
 }
 

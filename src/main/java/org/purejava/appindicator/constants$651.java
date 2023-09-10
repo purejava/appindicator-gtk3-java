@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$651 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$651() {}
-    static final FunctionDescriptor g_file_info_set_edit_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_enum_get_value_by_name",
+        constants$5.const$5
     );
-    static final MethodHandle g_file_info_set_edit_name$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_edit_name",
-        constants$651.g_file_info_set_edit_name$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_enum_get_value_by_nick",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_file_info_set_icon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_flags_get_first_value",
+        constants$21.const$3
     );
-    static final MethodHandle g_file_info_set_icon$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_icon",
-        constants$651.g_file_info_set_icon$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_flags_get_value_by_name",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_file_info_set_symbolic_icon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_flags_get_value_by_nick",
+        constants$5.const$5
     );
-    static final MethodHandle g_file_info_set_symbolic_icon$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_symbolic_icon",
-        constants$651.g_file_info_set_symbolic_icon$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_content_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_content_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_content_type",
-        constants$651.g_file_info_set_content_type$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_size$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_size",
-        constants$651.g_file_info_set_size$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_modification_time$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_modification_time$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_modification_time",
-        constants$651.g_file_info_set_modification_time$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_enum_to_string",
+        constants$63.const$1
     );
 }
 

@@ -3,41 +3,54 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$669 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$669() {}
-    static final FunctionDescriptor g_file_attribute_status_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_attribute_status_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_attribute_status_get_type",
-        constants$669.g_file_attribute_status_get_type$FUNC
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_INT
     );
-    static final FunctionDescriptor g_file_query_info_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_query_info_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_info_flags_get_type",
-        constants$669.g_file_query_info_flags_get_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_param_spec_float",
+        constants$669.const$0
     );
-    static final FunctionDescriptor g_file_create_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_create_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_create_flags_get_type",
-        constants$669.g_file_create_flags_get_type$FUNC
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_INT
     );
-    static final FunctionDescriptor g_file_measure_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_measure_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_measure_flags_get_type",
-        constants$669.g_file_measure_flags_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_param_spec_double",
+        constants$669.const$2
     );
-    static final FunctionDescriptor g_mount_mount_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_mount_mount_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_mount_mount_flags_get_type",
-        constants$669.g_mount_mount_flags_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_param_spec_string",
+        constants$644.const$4
     );
-    static final FunctionDescriptor g_mount_unmount_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_mount_unmount_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_mount_unmount_flags_get_type",
-        constants$669.g_mount_unmount_flags_get_type$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT
+    );
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_param_spec_param",
+        constants$669.const$5
     );
 }
 

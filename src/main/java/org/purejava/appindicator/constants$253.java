@@ -3,66 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$253 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$253() {}
-    static final FunctionDescriptor g_variant_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_slist_find_custom",
+        constants$23.const$0
     );
-    static final MethodHandle g_variant_new$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_variant_new",
-        constants$253.g_variant_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_slist_position",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_variant_get$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_slist_index",
+        constants$9.const$0
     );
-    static final MethodHandle g_variant_get$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_variant_get",
-        constants$253.g_variant_get$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_slist_last",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_variant_new_va$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_slist_length",
+        constants$10.const$5
     );
-    static final MethodHandle g_variant_new_va$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_va",
-        constants$253.g_variant_new_va$FUNC
-    );
-    static final FunctionDescriptor g_variant_get_va$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_get_va$MH = RuntimeHelper.downcallHandle(
-        "g_variant_get_va",
-        constants$253.g_variant_get_va$FUNC
-    );
-    static final FunctionDescriptor g_variant_check_format_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_variant_check_format_string$MH = RuntimeHelper.downcallHandle(
-        "g_variant_check_format_string",
-        constants$253.g_variant_check_format_string$FUNC
-    );
-    static final FunctionDescriptor g_variant_parse$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_parse$MH = RuntimeHelper.downcallHandle(
-        "g_variant_parse",
-        constants$253.g_variant_parse$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_slist_foreach$func.class, "apply", constants$13.const$4);
 }
 
 

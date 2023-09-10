@@ -3,65 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1218 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1218() {}
-    static final FunctionDescriptor atk_text_set_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_proxy_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle atk_text_set_selection$MH = RuntimeHelper.downcallHandle(
-        "atk_text_set_selection",
-        constants$1218.atk_text_set_selection$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_proxy_get_default_for_protocol",
+        constants$5.const$2
     );
-    static final FunctionDescriptor atk_text_set_caret_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_proxy_connect",
+        constants$330.const$5
     );
-    static final MethodHandle atk_text_set_caret_offset$MH = RuntimeHelper.downcallHandle(
-        "atk_text_set_caret_offset",
-        constants$1218.atk_text_set_caret_offset$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_proxy_connect_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_proxy_connect_async",
+        constants$338.const$3
     );
-    static final FunctionDescriptor atk_text_get_range_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_text_get_range_extents$MH = RuntimeHelper.downcallHandle(
-        "atk_text_get_range_extents",
-        constants$1218.atk_text_get_range_extents$FUNC
-    );
-    static final FunctionDescriptor atk_text_get_bounded_ranges$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_text_get_bounded_ranges$MH = RuntimeHelper.downcallHandle(
-        "atk_text_get_bounded_ranges",
-        constants$1218.atk_text_get_bounded_ranges$FUNC
-    );
-    static final FunctionDescriptor atk_text_free_ranges$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_text_free_ranges$MH = RuntimeHelper.downcallHandle(
-        "atk_text_free_ranges",
-        constants$1218.atk_text_free_ranges$FUNC
-    );
-    static final FunctionDescriptor atk_attribute_set_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_attribute_set_free$MH = RuntimeHelper.downcallHandle(
-        "atk_attribute_set_free",
-        constants$1218.atk_attribute_set_free$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_proxy_connect_finish",
+        constants$23.const$0
     );
 }
 

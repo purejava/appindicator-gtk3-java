@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$400 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$400() {}
-    static final FunctionDescriptor g_value_take_param$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_queue_pop_nth",
+        constants$21.const$3
     );
-    static final MethodHandle g_value_take_param$MH = RuntimeHelper.downcallHandle(
-        "g_value_take_param",
-        constants$400.g_value_take_param$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_queue_peek_head",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_value_set_param_take_ownership$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_queue_peek_tail",
+        constants$5.const$2
     );
-    static final MethodHandle g_value_set_param_take_ownership$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_param_take_ownership",
-        constants$400.g_value_set_param_take_ownership$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_queue_peek_nth",
+        constants$21.const$3
     );
-    static final FunctionDescriptor g_param_spec_get_default_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_queue_index",
+        constants$9.const$0
     );
-    static final MethodHandle g_param_spec_get_default_value$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_default_value",
-        constants$400.g_param_spec_get_default_value$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_get_name_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_param_spec_get_name_quark$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_name_quark",
-        constants$400.g_param_spec_get_name_quark$FUNC
-    );
-    static final FunctionDescriptor g_param_type_register_static$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_param_type_register_static$MH = RuntimeHelper.downcallHandle(
-        "g_param_type_register_static",
-        constants$400.g_param_type_register_static$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_is_valid_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_param_spec_is_valid_name$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_is_valid_name",
-        constants$400.g_param_spec_is_valid_name$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_queue_remove",
+        constants$9.const$0
     );
 }
 

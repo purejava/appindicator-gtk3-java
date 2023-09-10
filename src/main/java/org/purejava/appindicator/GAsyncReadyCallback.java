@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GAsyncReadyCallback)(struct _GObject* source_object,struct _GAsyncResult* res,void* data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GAsyncReadyCallback {
 
     void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GAsyncReadyCallback fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$469.GAsyncReadyCallback_UP$MH, fi, constants$469.GAsyncReadyCallback$FUNC, scope);
+    static MemorySegment allocate(GAsyncReadyCallback fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$693.const$1, fi, constants$14.const$3, scope);
     }
-    static GAsyncReadyCallback ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GAsyncReadyCallback ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$469.GAsyncReadyCallback_DOWN$MH.invokeExact(symbol, _key, _value, _user_data);
+                constants$14.const$5.invokeExact(symbol, _key, _value, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

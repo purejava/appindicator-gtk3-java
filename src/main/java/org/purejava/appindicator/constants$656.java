@@ -3,69 +3,60 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$656 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$656() {}
-    static final FunctionDescriptor g_io_stream_get_output_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_stream_get_output_stream$MH = RuntimeHelper.downcallHandle(
-        "g_io_stream_get_output_stream",
-        constants$656.g_io_stream_get_output_stream$FUNC
-    );
-    static final FunctionDescriptor g_io_stream_splice_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_stream_splice_async$MH = RuntimeHelper.downcallHandle(
-        "g_io_stream_splice_async",
-        constants$656.g_io_stream_splice_async$FUNC
-    );
-    static final FunctionDescriptor g_io_stream_splice_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_stream_splice_finish$MH = RuntimeHelper.downcallHandle(
-        "g_io_stream_splice_finish",
-        constants$656.g_io_stream_splice_finish$FUNC
-    );
-    static final FunctionDescriptor g_io_stream_close$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_stream_close$MH = RuntimeHelper.downcallHandle(
-        "g_io_stream_close",
-        constants$656.g_io_stream_close$FUNC
-    );
-    static final FunctionDescriptor g_io_stream_close_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_stream_close_async$MH = RuntimeHelper.downcallHandle(
-        "g_io_stream_close_async",
-        constants$656.g_io_stream_close_async$FUNC
-    );
-    static final FunctionDescriptor g_io_stream_close_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_stream_close_finish$MH = RuntimeHelper.downcallHandle(
-        "g_io_stream_close_finish",
-        constants$656.g_io_stream_close_finish$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            RuntimeHelper.POINTER.withName("name"),
+            JAVA_INT.withName("flags"),
+            MemoryLayout.paddingLayout(4),
+            JAVA_LONG.withName("value_type"),
+            JAVA_LONG.withName("owner_type"),
+            RuntimeHelper.POINTER.withName("_nick"),
+            RuntimeHelper.POINTER.withName("_blurb"),
+            RuntimeHelper.POINTER.withName("qdata"),
+            JAVA_INT.withName("ref_count"),
+            JAVA_INT.withName("param_id")
+        ).withName("parent_instance"),
+        JAVA_INT.withName("minimum"),
+        JAVA_INT.withName("maximum"),
+        JAVA_INT.withName("default_value"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GParamSpecInt");
+    static final VarHandle const$1 = constants$656.const$0.varHandle(MemoryLayout.PathElement.groupElement("minimum"));
+    static final VarHandle const$2 = constants$656.const$0.varHandle(MemoryLayout.PathElement.groupElement("maximum"));
+    static final VarHandle const$3 = constants$656.const$0.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            RuntimeHelper.POINTER.withName("name"),
+            JAVA_INT.withName("flags"),
+            MemoryLayout.paddingLayout(4),
+            JAVA_LONG.withName("value_type"),
+            JAVA_LONG.withName("owner_type"),
+            RuntimeHelper.POINTER.withName("_nick"),
+            RuntimeHelper.POINTER.withName("_blurb"),
+            RuntimeHelper.POINTER.withName("qdata"),
+            JAVA_INT.withName("ref_count"),
+            JAVA_INT.withName("param_id")
+        ).withName("parent_instance"),
+        JAVA_INT.withName("minimum"),
+        JAVA_INT.withName("maximum"),
+        JAVA_INT.withName("default_value"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GParamSpecUInt");
+    static final VarHandle const$5 = constants$656.const$4.varHandle(MemoryLayout.PathElement.groupElement("minimum"));
 }
 
 

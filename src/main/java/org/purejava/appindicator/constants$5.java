@@ -3,60 +3,43 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$5 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$5() {}
-    static final FunctionDescriptor timer_create$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle timer_create$MH = RuntimeHelper.downcallHandle(
-        "timer_create",
-        constants$5.timer_create$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "strftime_l",
+        constants$5.const$0
     );
-    static final FunctionDescriptor timer_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle timer_delete$MH = RuntimeHelper.downcallHandle(
-        "timer_delete",
-        constants$5.timer_delete$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gmtime",
+        constants$5.const$2
     );
-    static final FunctionDescriptor timer_settime$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "localtime",
+        constants$5.const$2
     );
-    static final MethodHandle timer_settime$MH = RuntimeHelper.downcallHandle(
-        "timer_settime",
-        constants$5.timer_settime$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor timer_gettime$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle timer_gettime$MH = RuntimeHelper.downcallHandle(
-        "timer_gettime",
-        constants$5.timer_gettime$FUNC
-    );
-    static final FunctionDescriptor timer_getoverrun$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle timer_getoverrun$MH = RuntimeHelper.downcallHandle(
-        "timer_getoverrun",
-        constants$5.timer_getoverrun$FUNC
-    );
-    static final FunctionDescriptor timespec_get$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle timespec_get$MH = RuntimeHelper.downcallHandle(
-        "timespec_get",
-        constants$5.timespec_get$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "gmtime_r",
+        constants$5.const$5
     );
 }
 

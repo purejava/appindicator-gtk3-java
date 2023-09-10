@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$355 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$355() {}
-    static final FunctionDescriptor sched_rr_get_interval$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_get_boolean",
+        constants$10.const$5
     );
-    static final MethodHandle sched_rr_get_interval$MH = RuntimeHelper.downcallHandle(
-        "sched_rr_get_interval",
-        constants$355.sched_rr_get_interval$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_variant_get_byte",
+        constants$186.const$4
     );
-    static final FunctionDescriptor pthread_create$__start_routine$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_variant_get_int16",
+        constants$186.const$2
     );
-    static final FunctionDescriptor pthread_create$__start_routine_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_variant_get_uint16",
+        constants$186.const$2
     );
-    static final MethodHandle pthread_create$__start_routine_UP$MH = RuntimeHelper.upcallHandle(pthread_create$__start_routine.class, "apply", constants$355.pthread_create$__start_routine_UP$FUNC);
-    static final FunctionDescriptor pthread_create$__start_routine_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_variant_get_int32",
+        constants$10.const$5
     );
-    static final MethodHandle pthread_create$__start_routine_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$355.pthread_create$__start_routine_DOWN$FUNC
-    );
-    static final FunctionDescriptor pthread_create$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_create$MH = RuntimeHelper.downcallHandle(
-        "pthread_create",
-        constants$355.pthread_create$FUNC
-    );
-    static final FunctionDescriptor pthread_exit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_exit$MH = RuntimeHelper.downcallHandle(
-        "pthread_exit",
-        constants$355.pthread_exit$FUNC
-    );
-    static final FunctionDescriptor pthread_join$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_join$MH = RuntimeHelper.downcallHandle(
-        "pthread_join",
-        constants$355.pthread_join$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_variant_get_uint32",
+        constants$10.const$5
     );
 }
 

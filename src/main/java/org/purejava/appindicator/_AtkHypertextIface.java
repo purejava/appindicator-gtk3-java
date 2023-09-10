@@ -4,69 +4,44 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _AtkHypertextIface {
- *     GTypeInterface parent;
- *     AtkHyperlink* (*get_link)(AtkHypertext*,gint);
- *     gint (*get_n_links)(AtkHypertext*);
- *     gint (*get_link_index)(AtkHypertext*,gint);
- *     void (*link_selected)(AtkHypertext*,gint);
+ *     struct _GTypeInterface parent;
+ *     struct _AtkHyperlink* (*get_link)(struct _AtkHypertext*,int);
+ *     int (*get_n_links)(struct _AtkHypertext*);
+ *     int (*get_link_index)(struct _AtkHypertext*,int);
+ *     void (*link_selected)(struct _AtkHypertext*,int);
  * };
  * }
  */
 public class _AtkHypertextIface {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
-        ).withName("parent"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_link"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_n_links"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_link_index"),
-        Constants$root.C_POINTER$LAYOUT.withName("link_selected")
-    ).withName("_AtkHypertextIface");
     public static MemoryLayout $LAYOUT() {
-        return _AtkHypertextIface.$struct$LAYOUT;
+        return constants$2036.const$0;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
-    static final FunctionDescriptor get_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor get_link_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle get_link_UP$MH = RuntimeHelper.upcallHandle(get_link.class, "apply", _AtkHypertextIface.get_link_UP$FUNC);
-    static final FunctionDescriptor get_link_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle get_link_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkHypertextIface.get_link_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * AtkHyperlink* (*get_link)(AtkHypertext*,gint);
+ * struct _AtkHyperlink* (*get_link)(struct _AtkHypertext*,int);
      * }
      */
     public interface get_link {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(get_link fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkHypertextIface.get_link_UP$MH, fi, _AtkHypertextIface.get_link$FUNC, scope);
+        static MemorySegment allocate(get_link fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2036.const$1, fi, constants$21.const$3, scope);
         }
-        static get_link ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_link ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_AtkHypertextIface.get_link_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (java.lang.foreign.MemorySegment)constants$318.const$0.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -74,66 +49,52 @@ public class _AtkHypertextIface {
         }
     }
 
-    static final VarHandle get_link$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_link"));
     public static VarHandle get_link$VH() {
-        return _AtkHypertextIface.get_link$VH;
+        return constants$2036.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * AtkHyperlink* (*get_link)(AtkHypertext*,gint);
+     * struct _AtkHyperlink* (*get_link)(struct _AtkHypertext*,int);
      * }
      */
     public static MemorySegment get_link$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkHypertextIface.get_link$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2036.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * AtkHyperlink* (*get_link)(AtkHypertext*,gint);
+     * struct _AtkHyperlink* (*get_link)(struct _AtkHypertext*,int);
      * }
      */
     public static void get_link$set(MemorySegment seg, MemorySegment x) {
-        _AtkHypertextIface.get_link$VH.set(seg, x);
+        constants$2036.const$2.set(seg, x);
     }
     public static MemorySegment get_link$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkHypertextIface.get_link$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2036.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_link$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkHypertextIface.get_link$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2036.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_link get_link(MemorySegment segment, SegmentScope scope) {
+    public static get_link get_link(MemorySegment segment, Arena scope) {
         return get_link.ofAddress(get_link$get(segment), scope);
     }
-    static final FunctionDescriptor get_n_links$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_n_links_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_n_links_UP$MH = RuntimeHelper.upcallHandle(get_n_links.class, "apply", _AtkHypertextIface.get_n_links_UP$FUNC);
-    static final FunctionDescriptor get_n_links_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_n_links_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkHypertextIface.get_n_links_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gint (*get_n_links)(AtkHypertext*);
+ * int (*get_n_links)(struct _AtkHypertext*);
      * }
      */
     public interface get_n_links {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(get_n_links fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkHypertextIface.get_n_links_UP$MH, fi, _AtkHypertextIface.get_n_links$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_n_links fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2036.const$3, fi, constants$10.const$5, scope);
         }
-        static get_n_links ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0) -> {
+        static get_n_links ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_AtkHypertextIface.get_n_links_DOWN$MH.invokeExact(symbol, __x0);
+                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -141,69 +102,52 @@ public class _AtkHypertextIface {
         }
     }
 
-    static final VarHandle get_n_links$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_n_links"));
     public static VarHandle get_n_links$VH() {
-        return _AtkHypertextIface.get_n_links$VH;
+        return constants$2036.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint (*get_n_links)(AtkHypertext*);
+     * int (*get_n_links)(struct _AtkHypertext*);
      * }
      */
     public static MemorySegment get_n_links$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkHypertextIface.get_n_links$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2036.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint (*get_n_links)(AtkHypertext*);
+     * int (*get_n_links)(struct _AtkHypertext*);
      * }
      */
     public static void get_n_links$set(MemorySegment seg, MemorySegment x) {
-        _AtkHypertextIface.get_n_links$VH.set(seg, x);
+        constants$2036.const$4.set(seg, x);
     }
     public static MemorySegment get_n_links$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkHypertextIface.get_n_links$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2036.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_n_links$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkHypertextIface.get_n_links$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2036.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_n_links get_n_links(MemorySegment segment, SegmentScope scope) {
+    public static get_n_links get_n_links(MemorySegment segment, Arena scope) {
         return get_n_links.ofAddress(get_n_links$get(segment), scope);
     }
-    static final FunctionDescriptor get_link_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor get_link_index_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle get_link_index_UP$MH = RuntimeHelper.upcallHandle(get_link_index.class, "apply", _AtkHypertextIface.get_link_index_UP$FUNC);
-    static final FunctionDescriptor get_link_index_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle get_link_index_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkHypertextIface.get_link_index_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gint (*get_link_index)(AtkHypertext*,gint);
+ * int (*get_link_index)(struct _AtkHypertext*,int);
      * }
      */
     public interface get_link_index {
 
         int apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(get_link_index fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkHypertextIface.get_link_index_UP$MH, fi, _AtkHypertextIface.get_link_index$FUNC, scope);
+        static MemorySegment allocate(get_link_index fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2036.const$5, fi, constants$11.const$4, scope);
         }
-        static get_link_index ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_link_index ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (int)_AtkHypertextIface.get_link_index_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$837.const$4.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -211,69 +155,52 @@ public class _AtkHypertextIface {
         }
     }
 
-    static final VarHandle get_link_index$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_link_index"));
     public static VarHandle get_link_index$VH() {
-        return _AtkHypertextIface.get_link_index$VH;
+        return constants$2037.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint (*get_link_index)(AtkHypertext*,gint);
+     * int (*get_link_index)(struct _AtkHypertext*,int);
      * }
      */
     public static MemorySegment get_link_index$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkHypertextIface.get_link_index$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2037.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint (*get_link_index)(AtkHypertext*,gint);
+     * int (*get_link_index)(struct _AtkHypertext*,int);
      * }
      */
     public static void get_link_index$set(MemorySegment seg, MemorySegment x) {
-        _AtkHypertextIface.get_link_index$VH.set(seg, x);
+        constants$2037.const$0.set(seg, x);
     }
     public static MemorySegment get_link_index$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkHypertextIface.get_link_index$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2037.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_link_index$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkHypertextIface.get_link_index$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2037.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_link_index get_link_index(MemorySegment segment, SegmentScope scope) {
+    public static get_link_index get_link_index(MemorySegment segment, Arena scope) {
         return get_link_index.ofAddress(get_link_index$get(segment), scope);
     }
-    static final FunctionDescriptor link_selected$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor link_selected_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle link_selected_UP$MH = RuntimeHelper.upcallHandle(link_selected.class, "apply", _AtkHypertextIface.link_selected_UP$FUNC);
-    static final FunctionDescriptor link_selected_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle link_selected_DOWN$MH = RuntimeHelper.downcallHandle(
-        _AtkHypertextIface.link_selected_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*link_selected)(AtkHypertext*,gint);
+ * void (*link_selected)(struct _AtkHypertext*,int);
      * }
      */
     public interface link_selected {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(link_selected fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_AtkHypertextIface.link_selected_UP$MH, fi, _AtkHypertextIface.link_selected$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment colors, int n_colors);
+        static MemorySegment allocate(link_selected fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2037.const$1, fi, constants$40.const$2, scope);
         }
-        static link_selected ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
+        static link_selected ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _colors, int _n_colors) -> {
                 try {
-                    _AtkHypertextIface.link_selected_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    constants$509.const$5.invokeExact(symbol, _colors, _n_colors);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -281,35 +208,34 @@ public class _AtkHypertextIface {
         }
     }
 
-    static final VarHandle link_selected$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("link_selected"));
     public static VarHandle link_selected$VH() {
-        return _AtkHypertextIface.link_selected$VH;
+        return constants$2037.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*link_selected)(AtkHypertext*,gint);
+     * void (*link_selected)(struct _AtkHypertext*,int);
      * }
      */
     public static MemorySegment link_selected$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_AtkHypertextIface.link_selected$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2037.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*link_selected)(AtkHypertext*,gint);
+     * void (*link_selected)(struct _AtkHypertext*,int);
      * }
      */
     public static void link_selected$set(MemorySegment seg, MemorySegment x) {
-        _AtkHypertextIface.link_selected$VH.set(seg, x);
+        constants$2037.const$2.set(seg, x);
     }
     public static MemorySegment link_selected$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_AtkHypertextIface.link_selected$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2037.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void link_selected$set(MemorySegment seg, long index, MemorySegment x) {
-        _AtkHypertextIface.link_selected$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2037.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static link_selected link_selected(MemorySegment segment, SegmentScope scope) {
+    public static link_selected link_selected(MemorySegment segment, Arena scope) {
         return link_selected.ofAddress(link_selected$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -317,7 +243,7 @@ public class _AtkHypertextIface {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$686 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$686() {}
-    static final FunctionDescriptor g_io_extension_point_get_extensions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_value_get_char",
+        constants$186.const$4
     );
-    static final MethodHandle g_io_extension_point_get_extensions$MH = RuntimeHelper.downcallHandle(
-        "g_io_extension_point_get_extensions",
-        constants$686.g_io_extension_point_get_extensions$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_value_set_schar",
+        constants$188.const$5
     );
-    static final FunctionDescriptor g_io_extension_point_get_extension_by_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_value_get_schar",
+        constants$186.const$4
     );
-    static final MethodHandle g_io_extension_point_get_extension_by_name$MH = RuntimeHelper.downcallHandle(
-        "g_io_extension_point_get_extension_by_name",
-        constants$686.g_io_extension_point_get_extension_by_name$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_value_set_uchar",
+        constants$188.const$5
     );
-    static final FunctionDescriptor g_io_extension_point_implement$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_value_get_uchar",
+        constants$186.const$4
     );
-    static final MethodHandle g_io_extension_point_implement$MH = RuntimeHelper.downcallHandle(
-        "g_io_extension_point_implement",
-        constants$686.g_io_extension_point_implement$FUNC
-    );
-    static final FunctionDescriptor g_io_extension_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_extension_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_io_extension_get_type",
-        constants$686.g_io_extension_get_type$FUNC
-    );
-    static final FunctionDescriptor g_io_extension_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_extension_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_io_extension_get_name",
-        constants$686.g_io_extension_get_name$FUNC
-    );
-    static final FunctionDescriptor g_io_extension_get_priority$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_extension_get_priority$MH = RuntimeHelper.downcallHandle(
-        "g_io_extension_get_priority",
-        constants$686.g_io_extension_get_priority$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_value_set_boolean",
+        constants$40.const$2
     );
 }
 

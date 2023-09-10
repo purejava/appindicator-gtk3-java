@@ -2,39 +2,22 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _AtkPlug {
- *     AtkObject parent;
+ *     struct _AtkObject parent;
  * };
  * }
  */
 public class _AtkPlug {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    Constants$root.C_POINTER$LAYOUT.withName("g_class")
-                ).withName("g_type_instance"),
-                Constants$root.C_INT$LAYOUT.withName("ref_count"),
-                MemoryLayout.paddingLayout(32),
-                Constants$root.C_POINTER$LAYOUT.withName("qdata")
-            ).withName("parent"),
-            Constants$root.C_POINTER$LAYOUT.withName("description"),
-            Constants$root.C_POINTER$LAYOUT.withName("name"),
-            Constants$root.C_POINTER$LAYOUT.withName("accessible_parent"),
-            Constants$root.C_INT$LAYOUT.withName("role"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("relation_set"),
-            Constants$root.C_INT$LAYOUT.withName("layer"),
-            MemoryLayout.paddingLayout(32)
-        ).withName("parent")
-    ).withName("_AtkPlug");
     public static MemoryLayout $LAYOUT() {
-        return _AtkPlug.$struct$LAYOUT;
+        return constants$2046.const$5;
     }
     public static MemorySegment parent$slice(MemorySegment seg) {
         return seg.asSlice(0, 72);
@@ -44,7 +27,7 @@ public class _AtkPlug {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

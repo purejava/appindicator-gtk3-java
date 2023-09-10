@@ -3,56 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$460 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$460() {}
-    static final FunctionDescriptor g_type_plugin_complete_interface_info$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_plugin_complete_interface_info$MH = RuntimeHelper.downcallHandle(
-        "g_type_plugin_complete_interface_info",
-        constants$460.g_type_plugin_complete_interface_info$FUNC
-    );
-    static final FunctionDescriptor g_value_array_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_value_array_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_value_array_get_type",
-        constants$460.g_value_array_get_type$FUNC
-    );
-    static final FunctionDescriptor g_value_array_get_nth$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_value_array_get_nth$MH = RuntimeHelper.downcallHandle(
-        "g_value_array_get_nth",
-        constants$460.g_value_array_get_nth$FUNC
-    );
-    static final FunctionDescriptor g_value_array_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_value_array_new$MH = RuntimeHelper.downcallHandle(
-        "g_value_array_new",
-        constants$460.g_value_array_new$FUNC
-    );
-    static final FunctionDescriptor g_value_array_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_array_free$MH = RuntimeHelper.downcallHandle(
-        "g_value_array_free",
-        constants$460.g_value_array_free$FUNC
-    );
-    static final FunctionDescriptor g_value_array_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_array_copy$MH = RuntimeHelper.downcallHandle(
-        "g_value_array_copy",
-        constants$460.g_value_array_copy$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_INT.withName("test_initialized"),
+        JAVA_INT.withName("test_quick"),
+        JAVA_INT.withName("test_perf"),
+        JAVA_INT.withName("test_verbose"),
+        JAVA_INT.withName("test_quiet"),
+        JAVA_INT.withName("test_undefined")
+    ).withName("GTestConfig");
+    static final VarHandle const$1 = constants$460.const$0.varHandle(MemoryLayout.PathElement.groupElement("test_initialized"));
+    static final VarHandle const$2 = constants$460.const$0.varHandle(MemoryLayout.PathElement.groupElement("test_quick"));
+    static final VarHandle const$3 = constants$460.const$0.varHandle(MemoryLayout.PathElement.groupElement("test_perf"));
+    static final VarHandle const$4 = constants$460.const$0.varHandle(MemoryLayout.PathElement.groupElement("test_verbose"));
+    static final VarHandle const$5 = constants$460.const$0.varHandle(MemoryLayout.PathElement.groupElement("test_quiet"));
 }
 
 

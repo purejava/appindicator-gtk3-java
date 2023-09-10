@@ -3,63 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1377 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1377() {}
-    static final FunctionDescriptor gtk_cell_renderer_is_activatable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tls_interaction_ask_password_finish",
+        constants$12.const$2
     );
-    static final MethodHandle gtk_cell_renderer_is_activatable$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_is_activatable",
-        constants$1377.gtk_cell_renderer_is_activatable$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_tls_interaction_invoke_request_certificate",
+        constants$859.const$1
     );
-    static final FunctionDescriptor gtk_cell_renderer_stop_editing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tls_interaction_request_certificate",
+        constants$859.const$1
     );
-    static final MethodHandle gtk_cell_renderer_stop_editing$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_stop_editing",
-        constants$1377.gtk_cell_renderer_stop_editing$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_tls_interaction_request_certificate_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tls_interaction_request_certificate_async",
+        constants$584.const$3
     );
-    static final FunctionDescriptor _gtk_cell_renderer_calc_offset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle _gtk_cell_renderer_calc_offset$MH = RuntimeHelper.downcallHandle(
-        "_gtk_cell_renderer_calc_offset",
-        constants$1377._gtk_cell_renderer_calc_offset$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_get_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_get_state",
-        constants$1377.gtk_cell_renderer_get_state$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_renderer_class_set_accessible_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle gtk_cell_renderer_class_set_accessible_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_renderer_class_set_accessible_type",
-        constants$1377.gtk_cell_renderer_class_set_accessible_type$FUNC
-    );
-    static final FunctionDescriptor _gtk_cell_renderer_get_accessible_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle _gtk_cell_renderer_get_accessible_type$MH = RuntimeHelper.downcallHandle(
-        "_gtk_cell_renderer_get_accessible_type",
-        constants$1377._gtk_cell_renderer_get_accessible_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tls_interaction_request_certificate_finish",
+        constants$12.const$2
     );
 }
 

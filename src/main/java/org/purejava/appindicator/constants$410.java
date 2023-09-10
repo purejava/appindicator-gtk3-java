@@ -3,86 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$410 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$410() {}
-    static final FunctionDescriptor g_cclosure_marshal_VOID__FLOAT$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_ref_count_inc",
+        constants$13.const$1
     );
-    static final MethodHandle g_cclosure_marshal_VOID__FLOAT$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__FLOAT",
-        constants$410.g_cclosure_marshal_VOID__FLOAT$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_ref_count_dec",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__FLOATv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_ref_count_compare",
+        constants$11.const$4
     );
-    static final MethodHandle g_cclosure_marshal_VOID__FLOATv$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__FLOATv",
-        constants$410.g_cclosure_marshal_VOID__FLOATv$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_atomic_ref_count_init",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__DOUBLE$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_atomic_ref_count_inc",
+        constants$13.const$1
     );
-    static final MethodHandle g_cclosure_marshal_VOID__DOUBLE$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__DOUBLE",
-        constants$410.g_cclosure_marshal_VOID__DOUBLE$FUNC
-    );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__DOUBLEv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cclosure_marshal_VOID__DOUBLEv$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__DOUBLEv",
-        constants$410.g_cclosure_marshal_VOID__DOUBLEv$FUNC
-    );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__STRING$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cclosure_marshal_VOID__STRING$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__STRING",
-        constants$410.g_cclosure_marshal_VOID__STRING$FUNC
-    );
-    static final FunctionDescriptor g_cclosure_marshal_VOID__STRINGv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_cclosure_marshal_VOID__STRINGv$MH = RuntimeHelper.downcallHandle(
-        "g_cclosure_marshal_VOID__STRINGv",
-        constants$410.g_cclosure_marshal_VOID__STRINGv$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_atomic_ref_count_dec",
+        constants$10.const$5
     );
 }
 

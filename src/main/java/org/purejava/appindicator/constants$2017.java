@@ -2,18 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2017 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2017() {}
-    static final MemorySegment G_MENU_LINK_SECTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("section");
-    static final MemorySegment G_VOLUME_MONITOR_EXTENSION_POINT_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("gio-volume-monitor");
-    static final MemorySegment G_NATIVE_VOLUME_MONITOR_EXTENSION_POINT_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("gio-native-volume-monitor");
-    static final MemorySegment G_NETWORK_MONITOR_EXTENSION_POINT_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("gio-network-monitor");
-    static final MemorySegment G_POWER_PROFILE_MONITOR_EXTENSION_POINT_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("gio-power-profile-monitor");
-    static final MemorySegment G_PROXY_EXTENSION_POINT_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("gio-proxy");
+    static final VarHandle const$0 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("text_caret_moved"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkTextIface.text_selection_changed.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("text_selection_changed"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkTextIface.text_attributes_changed.class, "apply", constants$13.const$1);
+    static final VarHandle const$4 = constants$2010.const$2.varHandle(MemoryLayout.PathElement.groupElement("text_attributes_changed"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkTextIface.get_range_extents.class, "apply", constants$1954.const$1);
 }
 
 

@@ -3,54 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$34 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$34() {}
-    static final FunctionDescriptor g_quark_from_static_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_array_sort$compare_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_array_sort",
+        constants$13.const$4
     );
-    static final MethodHandle g_quark_from_static_string$MH = RuntimeHelper.downcallHandle(
-        "g_quark_from_static_string",
-        constants$34.g_quark_from_static_string$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_array_sort_with_data$compare_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_array_sort_with_data",
+        constants$14.const$3
     );
-    static final FunctionDescriptor g_quark_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_array_binary_search$compare_func.class, "apply", constants$9.const$0);
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_quark_from_string$MH = RuntimeHelper.downcallHandle(
-        "g_quark_from_string",
-        constants$34.g_quark_from_string$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_array_binary_search",
+        constants$34.const$5
     );
-    static final FunctionDescriptor g_quark_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_quark_to_string$MH = RuntimeHelper.downcallHandle(
-        "g_quark_to_string",
-        constants$34.g_quark_to_string$FUNC
-    );
-    static final FunctionDescriptor g_intern_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_intern_string$MH = RuntimeHelper.downcallHandle(
-        "g_intern_string",
-        constants$34.g_intern_string$FUNC
-    );
-    static final FunctionDescriptor g_intern_static_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_intern_static_string$MH = RuntimeHelper.downcallHandle(
-        "g_intern_static_string",
-        constants$34.g_intern_static_string$FUNC
-    );
-    static final FunctionDescriptor GErrorInitFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GErrorInitFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GErrorInitFunc_UP$MH = RuntimeHelper.upcallHandle(GErrorInitFunc.class, "apply", constants$34.GErrorInitFunc_UP$FUNC);
 }
 
 

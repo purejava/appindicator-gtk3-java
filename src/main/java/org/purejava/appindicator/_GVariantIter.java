@@ -2,22 +2,22 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GVariantIter {
- *     gsize x[16];
+ *     unsigned long x[16];
  * };
  * }
  */
 public class _GVariantIter {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.sequenceLayout(16, Constants$root.C_LONG_LONG$LAYOUT).withName("x")
-    ).withName("_GVariantIter");
     public static MemoryLayout $LAYOUT() {
-        return _GVariantIter.$struct$LAYOUT;
+        return constants$363.const$0;
     }
     public static MemorySegment x$slice(MemorySegment seg) {
         return seg.asSlice(0, 128);
@@ -27,7 +27,7 @@ public class _GVariantIter {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

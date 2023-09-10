@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1759 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1759() {}
-    static final FunctionDescriptor gtk_progress_bar_get_pulse_step$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_device_get_axis_value",
+        constants$34.const$5
     );
-    static final MethodHandle gtk_progress_bar_get_pulse_step$MH = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_get_pulse_step",
-        constants$1759.gtk_progress_bar_get_pulse_step$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_device_get_axis",
+        constants$327.const$4
     );
-    static final FunctionDescriptor gtk_progress_bar_get_inverted$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_device_get_display",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_progress_bar_get_inverted$MH = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_get_inverted",
-        constants$1759.gtk_progress_bar_get_inverted$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_device_get_associated_device",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_progress_bar_set_ellipsize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_device_list_slave_devices",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_progress_bar_set_ellipsize$MH = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_set_ellipsize",
-        constants$1759.gtk_progress_bar_set_ellipsize$FUNC
-    );
-    static final FunctionDescriptor gtk_progress_bar_get_ellipsize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_progress_bar_get_ellipsize$MH = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_get_ellipsize",
-        constants$1759.gtk_progress_bar_get_ellipsize$FUNC
-    );
-    static final FunctionDescriptor gtk_progress_bar_set_show_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_progress_bar_set_show_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_set_show_text",
-        constants$1759.gtk_progress_bar_set_show_text$FUNC
-    );
-    static final FunctionDescriptor gtk_progress_bar_get_show_text$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_progress_bar_get_show_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_progress_bar_get_show_text",
-        constants$1759.gtk_progress_bar_get_show_text$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_device_get_device_type",
+        constants$10.const$5
     );
 }
 

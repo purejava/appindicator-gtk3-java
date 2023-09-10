@@ -3,73 +3,51 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$839 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$839() {}
-    static final FunctionDescriptor hb_unicode_general_category_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_datagram_based_send_messages",
+        constants$836.const$0
     );
-    static final MethodHandle hb_unicode_general_category_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$839.hb_unicode_general_category_func_t_DOWN$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_datagram_based_create_source",
+        constants$196.const$3
     );
-    static final FunctionDescriptor hb_unicode_mirroring_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_datagram_based_condition_check",
+        constants$11.const$4
     );
-    static final FunctionDescriptor hb_unicode_mirroring_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_datagram_based_condition_wait",
+        constants$838.const$0
     );
-    static final MethodHandle hb_unicode_mirroring_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_unicode_mirroring_func_t.class, "apply", constants$839.hb_unicode_mirroring_func_t_UP$FUNC);
-    static final FunctionDescriptor hb_unicode_mirroring_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_mirroring_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$839.hb_unicode_mirroring_func_t_DOWN$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_script_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor hb_unicode_script_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_script_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_unicode_script_func_t.class, "apply", constants$839.hb_unicode_script_func_t_UP$FUNC);
-    static final FunctionDescriptor hb_unicode_script_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_script_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$839.hb_unicode_script_func_t_DOWN$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_compose_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor hb_unicode_compose_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_compose_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_unicode_compose_func_t.class, "apply", constants$839.hb_unicode_compose_func_t_UP$FUNC);
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        MemoryLayout.structLayout(
+                            RuntimeHelper.POINTER.withName("g_class")
+                        ).withName("g_type_instance"),
+                        JAVA_INT.withName("ref_count"),
+                        MemoryLayout.paddingLayout(4),
+                        RuntimeHelper.POINTER.withName("qdata")
+                    ).withName("parent_instance"),
+                    RuntimeHelper.POINTER.withName("priv")
+                ).withName("parent_instance"),
+                RuntimeHelper.POINTER.withName("base_stream")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GDataInputStream");
+    static final VarHandle const$5 = constants$839.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

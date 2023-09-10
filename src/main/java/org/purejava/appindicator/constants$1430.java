@@ -3,58 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1430 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1430() {}
-    static final FunctionDescriptor gtk_im_context_set_client_window$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_decompose_func$func.class, "apply", constants$373.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_decompose_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_set_decompose_func",
+        constants$42.const$1
     );
-    static final MethodHandle gtk_im_context_set_client_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_set_client_window",
-        constants$1430.gtk_im_context_set_client_window$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_unicode_combining_class",
+        constants$11.const$4
     );
-    static final FunctionDescriptor gtk_im_context_get_preedit_string$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_unicode_general_category",
+        constants$11.const$4
     );
-    static final MethodHandle gtk_im_context_get_preedit_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_get_preedit_string",
-        constants$1430.gtk_im_context_get_preedit_string$FUNC
-    );
-    static final FunctionDescriptor gtk_im_context_filter_keypress$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_im_context_filter_keypress$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_filter_keypress",
-        constants$1430.gtk_im_context_filter_keypress$FUNC
-    );
-    static final FunctionDescriptor gtk_im_context_focus_in$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_im_context_focus_in$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_focus_in",
-        constants$1430.gtk_im_context_focus_in$FUNC
-    );
-    static final FunctionDescriptor gtk_im_context_focus_out$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_im_context_focus_out$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_focus_out",
-        constants$1430.gtk_im_context_focus_out$FUNC
-    );
-    static final FunctionDescriptor gtk_im_context_reset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_im_context_reset$MH = RuntimeHelper.downcallHandle(
-        "gtk_im_context_reset",
-        constants$1430.gtk_im_context_reset$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_unicode_mirroring",
+        constants$11.const$4
     );
 }
 

@@ -3,60 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$307 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$307() {}
-    static final FunctionDescriptor g_slice_free1$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_string_free_and_steal",
+        constants$5.const$2
     );
-    static final MethodHandle g_slice_free1$MH = RuntimeHelper.downcallHandle(
-        "g_slice_free1",
-        constants$307.g_slice_free1$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_string_free_to_bytes",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_slice_free_chain_with_offset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_string_equal",
+        constants$9.const$0
     );
-    static final MethodHandle g_slice_free_chain_with_offset$MH = RuntimeHelper.downcallHandle(
-        "g_slice_free_chain_with_offset",
-        constants$307.g_slice_free_chain_with_offset$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_string_hash",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_slice_set_config$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_string_assign",
+        constants$5.const$5
     );
-    static final MethodHandle g_slice_set_config$MH = RuntimeHelper.downcallHandle(
-        "g_slice_set_config",
-        constants$307.g_slice_set_config$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_string_truncate",
+        constants$21.const$1
     );
-    static final FunctionDescriptor g_slice_get_config$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_slice_get_config$MH = RuntimeHelper.downcallHandle(
-        "g_slice_get_config",
-        constants$307.g_slice_get_config$FUNC
-    );
-    static final FunctionDescriptor g_slice_get_config_state$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_slice_get_config_state$MH = RuntimeHelper.downcallHandle(
-        "g_slice_get_config_state",
-        constants$307.g_slice_get_config_state$FUNC
-    );
-    static final FunctionDescriptor GSpawnChildSetupFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GSpawnChildSetupFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GSpawnChildSetupFunc_UP$MH = RuntimeHelper.upcallHandle(GSpawnChildSetupFunc.class, "apply", constants$307.GSpawnChildSetupFunc_UP$FUNC);
 }
 
 

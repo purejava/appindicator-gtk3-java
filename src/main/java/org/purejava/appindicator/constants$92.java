@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$92 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$92() {}
-    static final FunctionDescriptor g_bookmark_file_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_bookmark_file_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_error_quark",
-        constants$92.g_bookmark_file_error_quark$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "unsetenv",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_bookmark_file_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_bookmark_file_new$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_new",
-        constants$92.g_bookmark_file_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "clearenv",
+        constants$83.const$1
     );
-    static final FunctionDescriptor g_bookmark_file_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "mktemp",
+        constants$5.const$2
     );
-    static final MethodHandle g_bookmark_file_free$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_free",
-        constants$92.g_bookmark_file_free$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "mkstemp",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_bookmark_file_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "mkstemps",
+        constants$11.const$4
     );
-    static final MethodHandle g_bookmark_file_copy$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_copy",
-        constants$92.g_bookmark_file_copy$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_load_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_load_from_file$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_load_from_file",
-        constants$92.g_bookmark_file_load_from_file$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_load_from_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_load_from_data$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_load_from_data",
-        constants$92.g_bookmark_file_load_from_data$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "mkdtemp",
+        constants$5.const$2
     );
 }
 

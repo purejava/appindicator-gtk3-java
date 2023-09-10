@@ -3,54 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1130 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1130() {}
-    static final FunctionDescriptor gdk_pixbuf_get_pixels$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1129.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_n_items"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GListModelInterface.get_item.class, "apply", constants$21.const$3);
+    static final VarHandle const$2 = constants$1129.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_item"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_list_model_get_item_type",
+        constants$4.const$0
     );
-    static final MethodHandle gdk_pixbuf_get_pixels$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_pixels",
-        constants$1130.gdk_pixbuf_get_pixels$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_list_model_get_n_items",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gdk_pixbuf_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_get_width$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_width",
-        constants$1130.gdk_pixbuf_get_width$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_get_height$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_height",
-        constants$1130.gdk_pixbuf_get_height$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_get_rowstride$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_get_rowstride$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_rowstride",
-        constants$1130.gdk_pixbuf_get_rowstride$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_get_byte_length$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_get_byte_length$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_byte_length",
-        constants$1130.gdk_pixbuf_get_byte_length$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_get_pixels_with_length$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_get_pixels_with_length$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_get_pixels_with_length",
-        constants$1130.gdk_pixbuf_get_pixels_with_length$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_list_model_get_item",
+        constants$21.const$3
     );
 }
 

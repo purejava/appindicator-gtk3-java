@@ -3,60 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$524 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$524() {}
-    static final FunctionDescriptor fexecve$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$523.const$3.varHandle(MemoryLayout.PathElement.groupElement("__cancel_arg"));
+    static final VarHandle const$1 = constants$523.const$3.varHandle(MemoryLayout.PathElement.groupElement("__do_it"));
+    static final VarHandle const$2 = constants$523.const$3.varHandle(MemoryLayout.PathElement.groupElement("__cancel_type"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "__pthread_register_cancel",
+        constants$13.const$1
     );
-    static final MethodHandle fexecve$MH = RuntimeHelper.downcallHandle(
-        "fexecve",
-        constants$524.fexecve$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__pthread_unregister_cancel",
+        constants$13.const$1
     );
-    static final FunctionDescriptor execv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle execv$MH = RuntimeHelper.downcallHandle(
-        "execv",
-        constants$524.execv$FUNC
-    );
-    static final FunctionDescriptor execle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle execle$MH = RuntimeHelper.downcallHandleVariadic(
-        "execle",
-        constants$524.execle$FUNC
-    );
-    static final FunctionDescriptor execl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle execl$MH = RuntimeHelper.downcallHandleVariadic(
-        "execl",
-        constants$524.execl$FUNC
-    );
-    static final FunctionDescriptor execvp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle execvp$MH = RuntimeHelper.downcallHandle(
-        "execvp",
-        constants$524.execvp$FUNC
-    );
-    static final FunctionDescriptor execlp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle execlp$MH = RuntimeHelper.downcallHandleVariadic(
-        "execlp",
-        constants$524.execlp$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "__pthread_unwind_next",
+        constants$13.const$1
     );
 }
 

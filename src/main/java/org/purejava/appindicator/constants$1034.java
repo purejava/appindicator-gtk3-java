@@ -3,63 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1034 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1034() {}
-    static final FunctionDescriptor cairo_surface_get_font_options$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_monitor_directory",
+        constants$180.const$0
     );
-    static final MethodHandle cairo_surface_get_font_options$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_get_font_options",
-        constants$1034.cairo_surface_get_font_options$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_monitor_file",
+        constants$180.const$0
     );
-    static final FunctionDescriptor cairo_surface_flush$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_monitor",
+        constants$180.const$0
     );
-    static final MethodHandle cairo_surface_flush$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_flush",
-        constants$1034.cairo_surface_flush$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_measure_disk_usage$progress_callback.class, "apply", constants$694.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_measure_disk_usage",
+        constants$1007.const$4
     );
-    static final FunctionDescriptor cairo_surface_mark_dirty$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_mark_dirty$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_mark_dirty",
-        constants$1034.cairo_surface_mark_dirty$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_mark_dirty_rectangle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_surface_mark_dirty_rectangle$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_mark_dirty_rectangle",
-        constants$1034.cairo_surface_mark_dirty_rectangle$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_set_device_scale$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle cairo_surface_set_device_scale$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_set_device_scale",
-        constants$1034.cairo_surface_set_device_scale$FUNC
-    );
-    static final FunctionDescriptor cairo_surface_get_device_scale$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_surface_get_device_scale$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_get_device_scale",
-        constants$1034.cairo_surface_get_device_scale$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_file_measure_disk_usage_async$progress_callback.class, "apply", constants$694.const$0);
 }
 
 

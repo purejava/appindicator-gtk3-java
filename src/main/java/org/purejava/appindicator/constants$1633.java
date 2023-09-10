@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1633 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1633() {}
-    static final FunctionDescriptor gtk_style_context_set_parent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_layout_get_lines",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_style_context_set_parent$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_set_parent",
-        constants$1633.gtk_style_context_set_parent$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_layout_get_lines_readonly",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_style_context_get_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_layout_serialize",
+        constants$21.const$3
     );
-    static final MethodHandle gtk_style_context_get_parent$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_get_parent",
-        constants$1633.gtk_style_context_get_parent$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_layout_write_to_file",
+        constants$11.const$0
     );
-    static final FunctionDescriptor gtk_style_context_list_classes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_layout_deserialize_error_quark",
+        constants$83.const$1
     );
-    static final MethodHandle gtk_style_context_list_classes$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_list_classes",
-        constants$1633.gtk_style_context_list_classes$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_add_class$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_add_class$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_add_class",
-        constants$1633.gtk_style_context_add_class$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_remove_class$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_remove_class$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_remove_class",
-        constants$1633.gtk_style_context_remove_class$FUNC
-    );
-    static final FunctionDescriptor gtk_style_context_has_class$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_context_has_class$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_has_class",
-        constants$1633.gtk_style_context_has_class$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_layout_deserialize",
+        constants$482.const$3
     );
 }
 

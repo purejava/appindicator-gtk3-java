@@ -4,43 +4,27 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 final class constants$977 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$977() {}
-    static final FunctionDescriptor pango_renderer_get_layout_line$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle pango_renderer_get_layout_line$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_get_layout_line",
-        constants$977.pango_renderer_get_layout_line$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.enumerate_children.class, "apply", constants$977.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$977.const$0
     );
-    static final OfAddress stdin$LAYOUT = Constants$root.C_POINTER$LAYOUT;
-    static final VarHandle stdin$VH = constants$977.stdin$LAYOUT.varHandle();
-    static final MemorySegment stdin$SEGMENT = RuntimeHelper.lookupGlobalVariable("stdin", constants$977.stdin$LAYOUT);
-    static final OfAddress stdout$LAYOUT = Constants$root.C_POINTER$LAYOUT;
-    static final VarHandle stdout$VH = constants$977.stdout$LAYOUT.varHandle();
-    static final MemorySegment stdout$SEGMENT = RuntimeHelper.lookupGlobalVariable("stdout", constants$977.stdout$LAYOUT);
-    static final OfAddress stderr$LAYOUT = Constants$root.C_POINTER$LAYOUT;
-    static final VarHandle stderr$VH = constants$977.stderr$LAYOUT.varHandle();
-    static final MemorySegment stderr$SEGMENT = RuntimeHelper.lookupGlobalVariable("stderr", constants$977.stderr$LAYOUT);
-    static final FunctionDescriptor remove$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle remove$MH = RuntimeHelper.downcallHandle(
-        "remove",
-        constants$977.remove$FUNC
-    );
-    static final FunctionDescriptor rename$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle rename$MH = RuntimeHelper.downcallHandle(
-        "rename",
-        constants$977.rename$FUNC
-    );
+    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("enumerate_children"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.enumerate_children_async.class, "apply", constants$780.const$3);
+    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("enumerate_children_async"));
 }
 
 

@@ -3,75 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$226 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$226() {}
-    static final FunctionDescriptor g_key_file_get_double_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_get_double_list$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_double_list",
-        constants$226.g_key_file_get_double_list$FUNC
-    );
-    static final FunctionDescriptor g_key_file_set_integer_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_key_file_set_integer_list$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_integer_list",
-        constants$226.g_key_file_set_integer_list$FUNC
-    );
-    static final FunctionDescriptor g_key_file_set_comment$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_set_comment$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_comment",
-        constants$226.g_key_file_set_comment$FUNC
-    );
-    static final FunctionDescriptor g_key_file_get_comment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_get_comment$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_comment",
-        constants$226.g_key_file_get_comment$FUNC
-    );
-    static final FunctionDescriptor g_key_file_remove_comment$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_remove_comment$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_remove_comment",
-        constants$226.g_key_file_remove_comment$FUNC
-    );
-    static final FunctionDescriptor g_key_file_remove_key$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_remove_key$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_remove_key",
-        constants$226.g_key_file_remove_key$FUNC
-    );
+    static final VarHandle const$0 = constants$225.const$5.varHandle(MemoryLayout.PathElement.groupElement("dummy1"));
+    static final VarHandle const$1 = constants$225.const$5.varHandle(MemoryLayout.PathElement.groupElement("dummy2"));
+    static final VarHandle const$2 = constants$225.const$5.varHandle(MemoryLayout.PathElement.groupElement("dummy3"));
+    static final VarHandle const$3 = constants$225.const$5.varHandle(MemoryLayout.PathElement.groupElement("dummy4"));
+    static final VarHandle const$4 = constants$225.const$5.varHandle(MemoryLayout.PathElement.groupElement("dummy5"));
+    static final VarHandle const$5 = constants$225.const$5.varHandle(MemoryLayout.PathElement.groupElement("dummy6"));
 }
 
 

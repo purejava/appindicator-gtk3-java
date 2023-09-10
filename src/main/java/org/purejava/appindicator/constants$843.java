@@ -3,58 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$843 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$843() {}
-    static final FunctionDescriptor hb_set_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_SHORT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle hb_set_destroy$MH = RuntimeHelper.downcallHandle(
-        "hb_set_destroy",
-        constants$843.hb_set_destroy$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_int16",
+        constants$843.const$0
     );
-    static final FunctionDescriptor hb_set_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_uint16",
+        constants$843.const$0
     );
-    static final MethodHandle hb_set_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_set_set_user_data",
-        constants$843.hb_set_set_user_data$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_int32",
+        constants$12.const$2
     );
-    static final FunctionDescriptor hb_set_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_uint32",
+        constants$12.const$2
     );
-    static final MethodHandle hb_set_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_set_get_user_data",
-        constants$843.hb_set_get_user_data$FUNC
-    );
-    static final FunctionDescriptor hb_set_allocation_successful$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_allocation_successful$MH = RuntimeHelper.downcallHandle(
-        "hb_set_allocation_successful",
-        constants$843.hb_set_allocation_successful$FUNC
-    );
-    static final FunctionDescriptor hb_set_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_copy$MH = RuntimeHelper.downcallHandle(
-        "hb_set_copy",
-        constants$843.hb_set_copy$FUNC
-    );
-    static final FunctionDescriptor hb_set_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_set_clear$MH = RuntimeHelper.downcallHandle(
-        "hb_set_clear",
-        constants$843.hb_set_clear$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_read_int64",
+        constants$166.const$0
     );
 }
 

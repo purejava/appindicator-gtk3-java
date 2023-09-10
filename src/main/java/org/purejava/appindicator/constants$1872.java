@@ -3,58 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1872 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1872() {}
-    static final FunctionDescriptor gtk_tree_selection_unselect_iter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_default",
+        constants$35.const$2
     );
-    static final MethodHandle gtk_tree_selection_unselect_iter$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_unselect_iter",
-        constants$1872.gtk_tree_selection_unselect_iter$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_setting",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gtk_tree_selection_path_is_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_screen_set_font_options",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_tree_selection_path_is_selected$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_path_is_selected",
-        constants$1872.gtk_tree_selection_path_is_selected$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_font_options",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_tree_selection_iter_is_selected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_screen_set_resolution",
+        constants$689.const$5
     );
-    static final MethodHandle gtk_tree_selection_iter_is_selected$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_iter_is_selected",
-        constants$1872.gtk_tree_selection_iter_is_selected$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_selection_select_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_selection_select_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_select_all",
-        constants$1872.gtk_tree_selection_select_all$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_selection_unselect_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_selection_unselect_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_unselect_all",
-        constants$1872.gtk_tree_selection_unselect_all$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_selection_select_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_selection_select_range$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_selection_select_range",
-        constants$1872.gtk_tree_selection_select_range$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_screen_get_resolution",
+        constants$67.const$0
     );
 }
 

@@ -3,58 +3,47 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$176 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$176() {}
-    static final FunctionDescriptor g_source_get_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_source_get_id$MH = RuntimeHelper.downcallHandle(
-        "g_source_get_id",
-        constants$176.g_source_get_id$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_convert_with_iconv",
+        constants$176.const$0
     );
-    static final FunctionDescriptor g_source_get_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_source_get_context$MH = RuntimeHelper.downcallHandle(
-        "g_source_get_context",
-        constants$176.g_source_get_context$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_convert_with_fallback",
+        constants$176.const$2
     );
-    static final FunctionDescriptor g_source_set_callback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_locale_to_utf8",
+        constants$36.const$5
     );
-    static final MethodHandle g_source_set_callback$MH = RuntimeHelper.downcallHandle(
-        "g_source_set_callback",
-        constants$176.g_source_set_callback$FUNC
-    );
-    static final FunctionDescriptor g_source_set_funcs$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_set_funcs$MH = RuntimeHelper.downcallHandle(
-        "g_source_set_funcs",
-        constants$176.g_source_set_funcs$FUNC
-    );
-    static final FunctionDescriptor g_source_is_destroyed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_is_destroyed$MH = RuntimeHelper.downcallHandle(
-        "g_source_is_destroyed",
-        constants$176.g_source_is_destroyed$FUNC
-    );
-    static final FunctionDescriptor g_source_set_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_source_set_name$MH = RuntimeHelper.downcallHandle(
-        "g_source_set_name",
-        constants$176.g_source_set_name$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_locale_from_utf8",
+        constants$36.const$5
     );
 }
 

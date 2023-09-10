@@ -3,60 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$397 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$397() {}
-    static final FunctionDescriptor g_param_spec_ref_sink$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_queue_is_empty",
+        constants$10.const$5
     );
-    static final MethodHandle g_param_spec_ref_sink$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_ref_sink",
-        constants$397.g_param_spec_ref_sink$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_queue_clear_full$free_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_queue_clear_full",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_param_spec_get_qdata$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_queue_get_length",
+        constants$10.const$5
     );
-    static final MethodHandle g_param_spec_get_qdata$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_qdata",
-        constants$397.g_param_spec_get_qdata$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_queue_reverse",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_param_spec_set_qdata$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_param_spec_set_qdata$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_set_qdata",
-        constants$397.g_param_spec_set_qdata$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_set_qdata_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_param_spec_set_qdata_full$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_set_qdata_full",
-        constants$397.g_param_spec_set_qdata_full$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_steal_qdata$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_spec_steal_qdata$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_steal_qdata",
-        constants$397.g_param_spec_steal_qdata$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_get_redirect_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_param_spec_get_redirect_target$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_get_redirect_target",
-        constants$397.g_param_spec_get_redirect_target$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_queue_copy",
+        constants$5.const$2
     );
 }
 

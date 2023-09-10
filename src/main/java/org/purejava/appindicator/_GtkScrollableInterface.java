@@ -4,63 +4,41 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkScrollableInterface {
- *     GTypeInterface base_iface;
- *     gboolean (*get_border)(GtkScrollable*,GtkBorder*);
+ *     struct _GTypeInterface base_iface;
+ *     int (*get_border)(struct _GtkScrollable*,struct _GtkBorder*);
  * };
  * }
  */
 public class _GtkScrollableInterface {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
-        ).withName("base_iface"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_border")
-    ).withName("_GtkScrollableInterface");
     public static MemoryLayout $LAYOUT() {
-        return _GtkScrollableInterface.$struct$LAYOUT;
+        return constants$3056.const$5;
     }
     public static MemorySegment base_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
-    static final FunctionDescriptor get_border$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_border_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_border_UP$MH = RuntimeHelper.upcallHandle(get_border.class, "apply", _GtkScrollableInterface.get_border_UP$FUNC);
-    static final FunctionDescriptor get_border_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_border_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkScrollableInterface.get_border_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*get_border)(GtkScrollable*,GtkBorder*);
+ * int (*get_border)(struct _GtkScrollable*,struct _GtkBorder*);
      * }
      */
     public interface get_border {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(get_border fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkScrollableInterface.get_border_UP$MH, fi, _GtkScrollableInterface.get_border$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_border fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3057.const$0, fi, constants$9.const$0, scope);
         }
-        static get_border ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static get_border ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkScrollableInterface.get_border_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -68,35 +46,34 @@ public class _GtkScrollableInterface {
         }
     }
 
-    static final VarHandle get_border$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_border"));
     public static VarHandle get_border$VH() {
-        return _GtkScrollableInterface.get_border$VH;
+        return constants$3057.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*get_border)(GtkScrollable*,GtkBorder*);
+     * int (*get_border)(struct _GtkScrollable*,struct _GtkBorder*);
      * }
      */
     public static MemorySegment get_border$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkScrollableInterface.get_border$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3057.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*get_border)(GtkScrollable*,GtkBorder*);
+     * int (*get_border)(struct _GtkScrollable*,struct _GtkBorder*);
      * }
      */
     public static void get_border$set(MemorySegment seg, MemorySegment x) {
-        _GtkScrollableInterface.get_border$VH.set(seg, x);
+        constants$3057.const$1.set(seg, x);
     }
     public static MemorySegment get_border$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkScrollableInterface.get_border$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3057.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void get_border$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkScrollableInterface.get_border$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3057.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_border get_border(MemorySegment segment, SegmentScope scope) {
+    public static get_border get_border(MemorySegment segment, Arena scope) {
         return get_border.ofAddress(get_border$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -104,7 +81,7 @@ public class _GtkScrollableInterface {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

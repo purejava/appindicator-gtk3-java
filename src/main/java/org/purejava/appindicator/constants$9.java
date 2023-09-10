@@ -3,58 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$9 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$9() {}
-    static final FunctionDescriptor GFreeFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor GFreeFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "nanosleep",
+        constants$9.const$0
     );
-    static final MethodHandle GFreeFunc_UP$MH = RuntimeHelper.upcallHandle(GFreeFunc.class, "apply", constants$9.GFreeFunc_UP$FUNC);
-    static final FunctionDescriptor GFreeFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle GFreeFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$9.GFreeFunc_DOWN$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "clock_getres",
+        constants$9.const$2
     );
-    static final FunctionDescriptor GTranslateFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "clock_gettime",
+        constants$9.const$2
     );
-    static final FunctionDescriptor GTranslateFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GTranslateFunc_UP$MH = RuntimeHelper.upcallHandle(GTranslateFunc.class, "apply", constants$9.GTranslateFunc_UP$FUNC);
-    static final FunctionDescriptor GTranslateFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GTranslateFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$9.GTranslateFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor memcpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle memcpy$MH = RuntimeHelper.downcallHandle(
-        "memcpy",
-        constants$9.memcpy$FUNC
-    );
-    static final FunctionDescriptor memmove$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle memmove$MH = RuntimeHelper.downcallHandle(
-        "memmove",
-        constants$9.memmove$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "clock_settime",
+        constants$9.const$2
     );
 }
 

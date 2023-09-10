@@ -3,54 +3,44 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$485 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$485() {}
-    static final FunctionDescriptor g_app_info_launch_default_for_uri_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_uri_get_query",
+        constants$5.const$2
     );
-    static final MethodHandle g_app_info_launch_default_for_uri_finish$MH = RuntimeHelper.downcallHandle(
-        "g_app_info_launch_default_for_uri_finish",
-        constants$485.g_app_info_launch_default_for_uri_finish$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_uri_get_fragment",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_app_launch_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_app_launch_context_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_get_type",
-        constants$485.g_app_launch_context_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_uri_get_flags",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_app_launch_context_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_app_launch_context_new$MH = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_new",
-        constants$485.g_app_launch_context_new$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_app_launch_context_setenv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_uri_parse_params",
+        constants$485.const$3
     );
-    static final MethodHandle g_app_launch_context_setenv$MH = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_setenv",
-        constants$485.g_app_launch_context_setenv$FUNC
-    );
-    static final FunctionDescriptor g_app_launch_context_unsetenv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_launch_context_unsetenv$MH = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_unsetenv",
-        constants$485.g_app_launch_context_unsetenv$FUNC
-    );
-    static final FunctionDescriptor g_app_launch_context_get_environment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_app_launch_context_get_environment$MH = RuntimeHelper.downcallHandle(
-        "g_app_launch_context_get_environment",
-        constants$485.g_app_launch_context_get_environment$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_INT.withName("dummy0"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("dummy1"),
+        RuntimeHelper.POINTER.withName("dummy2"),
+        MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("dummy3")
+    ).withName("_GUriParamsIter");
 }
 
 

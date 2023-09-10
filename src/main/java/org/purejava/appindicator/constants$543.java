@@ -3,73 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$543 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$543() {}
-    static final FunctionDescriptor g_data_input_stream_read_line$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_static_private_get",
+        constants$5.const$2
     );
-    static final MethodHandle g_data_input_stream_read_line$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_line",
-        constants$543.g_data_input_stream_read_line$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_static_private_set$notify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_static_private_set",
+        constants$14.const$3
     );
-    static final FunctionDescriptor g_data_input_stream_read_line_utf8$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_static_private_free",
+        constants$13.const$1
     );
-    static final MethodHandle g_data_input_stream_read_line_utf8$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_line_utf8",
-        constants$543.g_data_input_stream_read_line_utf8$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_once_init_enter_impl",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_data_input_stream_read_line_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_input_stream_read_line_async$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_line_async",
-        constants$543.g_data_input_stream_read_line_async$FUNC
-    );
-    static final FunctionDescriptor g_data_input_stream_read_line_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_input_stream_read_line_finish$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_line_finish",
-        constants$543.g_data_input_stream_read_line_finish$FUNC
-    );
-    static final FunctionDescriptor g_data_input_stream_read_line_finish_utf8$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_input_stream_read_line_finish_utf8$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_line_finish_utf8",
-        constants$543.g_data_input_stream_read_line_finish_utf8$FUNC
-    );
-    static final FunctionDescriptor g_data_input_stream_read_until$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_input_stream_read_until$MH = RuntimeHelper.downcallHandle(
-        "g_data_input_stream_read_until",
-        constants$543.g_data_input_stream_read_until$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_thread_init",
+        constants$13.const$1
     );
 }
 

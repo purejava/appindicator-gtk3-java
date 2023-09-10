@@ -3,55 +3,87 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$664 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$664() {}
-    static final FunctionDescriptor g_inet_address_get_is_mc_org_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_get_is_mc_org_local$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_mc_org_local",
-        constants$664.g_inet_address_get_is_mc_org_local$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_get_is_mc_site_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_get_is_mc_site_local$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_mc_site_local",
-        constants$664.g_inet_address_get_is_mc_site_local$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_mask_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_inet_address_mask_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_get_type",
-        constants$664.g_inet_address_mask_get_type$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_mask_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_mask_new$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_new",
-        constants$664.g_inet_address_mask_new$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_mask_new_from_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_mask_new_from_string$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_new_from_string",
-        constants$664.g_inet_address_mask_new_from_string$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_mask_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_mask_to_string$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_mask_to_string",
-        constants$664.g_inet_address_mask_to_string$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            RuntimeHelper.POINTER.withName("name"),
+            JAVA_INT.withName("flags"),
+            MemoryLayout.paddingLayout(4),
+            JAVA_LONG.withName("value_type"),
+            JAVA_LONG.withName("owner_type"),
+            RuntimeHelper.POINTER.withName("_nick"),
+            RuntimeHelper.POINTER.withName("_blurb"),
+            RuntimeHelper.POINTER.withName("qdata"),
+            JAVA_INT.withName("ref_count"),
+            JAVA_INT.withName("param_id")
+        ).withName("parent_instance")
+    ).withName("_GParamSpecBoxed");
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            RuntimeHelper.POINTER.withName("name"),
+            JAVA_INT.withName("flags"),
+            MemoryLayout.paddingLayout(4),
+            JAVA_LONG.withName("value_type"),
+            JAVA_LONG.withName("owner_type"),
+            RuntimeHelper.POINTER.withName("_nick"),
+            RuntimeHelper.POINTER.withName("_blurb"),
+            RuntimeHelper.POINTER.withName("qdata"),
+            JAVA_INT.withName("ref_count"),
+            JAVA_INT.withName("param_id")
+        ).withName("parent_instance")
+    ).withName("_GParamSpecPointer");
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            RuntimeHelper.POINTER.withName("name"),
+            JAVA_INT.withName("flags"),
+            MemoryLayout.paddingLayout(4),
+            JAVA_LONG.withName("value_type"),
+            JAVA_LONG.withName("owner_type"),
+            RuntimeHelper.POINTER.withName("_nick"),
+            RuntimeHelper.POINTER.withName("_blurb"),
+            RuntimeHelper.POINTER.withName("qdata"),
+            JAVA_INT.withName("ref_count"),
+            JAVA_INT.withName("param_id")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("element_spec"),
+        JAVA_INT.withName("fixed_n_elements"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GParamSpecValueArray");
+    static final VarHandle const$3 = constants$664.const$2.varHandle(MemoryLayout.PathElement.groupElement("element_spec"));
+    static final VarHandle const$4 = constants$664.const$2.varHandle(MemoryLayout.PathElement.groupElement("fixed_n_elements"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            RuntimeHelper.POINTER.withName("name"),
+            JAVA_INT.withName("flags"),
+            MemoryLayout.paddingLayout(4),
+            JAVA_LONG.withName("value_type"),
+            JAVA_LONG.withName("owner_type"),
+            RuntimeHelper.POINTER.withName("_nick"),
+            RuntimeHelper.POINTER.withName("_blurb"),
+            RuntimeHelper.POINTER.withName("qdata"),
+            JAVA_INT.withName("ref_count"),
+            JAVA_INT.withName("param_id")
+        ).withName("parent_instance")
+    ).withName("_GParamSpecObject");
 }
 
 

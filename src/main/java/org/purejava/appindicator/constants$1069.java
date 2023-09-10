@@ -3,60 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1069 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1069() {}
-    static final FunctionDescriptor gdk_event_get_scroll_deltas$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1065.const$1.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileInputStreamClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1065.const$1.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_input_stream_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_event_get_scroll_deltas$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_scroll_deltas",
-        constants$1069.gdk_event_get_scroll_deltas$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_input_stream_query_info",
+        constants$39.const$1
     );
-    static final FunctionDescriptor gdk_event_is_scroll_stop_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_is_scroll_stop_event$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_is_scroll_stop_event",
-        constants$1069.gdk_event_is_scroll_stop_event$FUNC
-    );
-    static final FunctionDescriptor gdk_event_get_axis$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_get_axis$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_axis",
-        constants$1069.gdk_event_get_axis$FUNC
-    );
-    static final FunctionDescriptor gdk_event_set_device$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_set_device$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_set_device",
-        constants$1069.gdk_event_set_device$FUNC
-    );
-    static final FunctionDescriptor gdk_event_get_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_get_device$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_device",
-        constants$1069.gdk_event_get_device$FUNC
-    );
-    static final FunctionDescriptor gdk_event_set_source_device$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_event_set_source_device$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_set_source_device",
-        constants$1069.gdk_event_set_source_device$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_file_input_stream_query_info_async$callback.class, "apply", constants$14.const$3);
 }
 
 

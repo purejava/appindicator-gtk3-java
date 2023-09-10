@@ -2,88 +2,84 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GInputVector {
- *     gpointer buffer;
- *     gsize size;
+ *     void* buffer;
+ *     unsigned long size;
  * };
  * }
  */
 public class _GInputVector {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("buffer"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("size")
-    ).withName("_GInputVector");
     public static MemoryLayout $LAYOUT() {
-        return _GInputVector.$struct$LAYOUT;
+        return constants$695.const$1;
     }
-    static final VarHandle buffer$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("buffer"));
     public static VarHandle buffer$VH() {
-        return _GInputVector.buffer$VH;
+        return constants$695.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gpointer buffer;
+     * void* buffer;
      * }
      */
     public static MemorySegment buffer$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GInputVector.buffer$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$695.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gpointer buffer;
+     * void* buffer;
      * }
      */
     public static void buffer$set(MemorySegment seg, MemorySegment x) {
-        _GInputVector.buffer$VH.set(seg, x);
+        constants$695.const$2.set(seg, x);
     }
     public static MemorySegment buffer$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GInputVector.buffer$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$695.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void buffer$set(MemorySegment seg, long index, MemorySegment x) {
-        _GInputVector.buffer$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$695.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle size$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("size"));
     public static VarHandle size$VH() {
-        return _GInputVector.size$VH;
+        return constants$695.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gsize size;
+     * unsigned long size;
      * }
      */
     public static long size$get(MemorySegment seg) {
-        return (long)_GInputVector.size$VH.get(seg);
+        return (long)constants$695.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gsize size;
+     * unsigned long size;
      * }
      */
     public static void size$set(MemorySegment seg, long x) {
-        _GInputVector.size$VH.set(seg, x);
+        constants$695.const$3.set(seg, x);
     }
     public static long size$get(MemorySegment seg, long index) {
-        return (long)_GInputVector.size$VH.get(seg.asSlice(index*sizeof()));
+        return (long)constants$695.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void size$set(MemorySegment seg, long index, long x) {
-        _GInputVector.size$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$695.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

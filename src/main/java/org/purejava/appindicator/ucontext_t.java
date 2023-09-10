@@ -2,68 +2,29 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct ucontext_t {
  *     unsigned long uc_flags;
  *     struct ucontext_t* uc_link;
- *     stack_t uc_stack;
- *     mcontext_t uc_mcontext;
- *     sigset_t uc_sigmask;
- *     struct _libc_fpstate __fpregs_mem;
- *     unsigned long long __ssp[4];
+ *     struct stack_t uc_stack;
+ *     struct __sigset_t uc_sigmask;
+ *     struct mcontext_t uc_mcontext;
  * };
  * }
  */
 public class ucontext_t {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_LONG_LONG$LAYOUT.withName("uc_flags"),
-        Constants$root.C_POINTER$LAYOUT.withName("uc_link"),
-        MemoryLayout.structLayout(
-            Constants$root.C_POINTER$LAYOUT.withName("ss_sp"),
-            Constants$root.C_INT$LAYOUT.withName("ss_flags"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("ss_size")
-        ).withName("uc_stack"),
-        MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(23, Constants$root.C_LONG_LONG$LAYOUT).withName("gregs"),
-            Constants$root.C_POINTER$LAYOUT.withName("fpregs"),
-            MemoryLayout.sequenceLayout(8, Constants$root.C_LONG_LONG$LAYOUT).withName("__reserved1")
-        ).withName("uc_mcontext"),
-        MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(16, Constants$root.C_LONG_LONG$LAYOUT).withName("__val")
-        ).withName("uc_sigmask"),
-        MemoryLayout.structLayout(
-            Constants$root.C_SHORT$LAYOUT.withName("cwd"),
-            Constants$root.C_SHORT$LAYOUT.withName("swd"),
-            Constants$root.C_SHORT$LAYOUT.withName("ftw"),
-            Constants$root.C_SHORT$LAYOUT.withName("fop"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("rip"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("rdp"),
-            Constants$root.C_INT$LAYOUT.withName("mxcsr"),
-            Constants$root.C_INT$LAYOUT.withName("mxcr_mask"),
-            MemoryLayout.sequenceLayout(8, MemoryLayout.structLayout(
-                MemoryLayout.sequenceLayout(4, Constants$root.C_SHORT$LAYOUT).withName("significand"),
-                Constants$root.C_SHORT$LAYOUT.withName("exponent"),
-                MemoryLayout.sequenceLayout(3, Constants$root.C_SHORT$LAYOUT).withName("__glibc_reserved1")
-            ).withName("_libc_fpxreg")).withName("_st"),
-            MemoryLayout.sequenceLayout(16, MemoryLayout.structLayout(
-                MemoryLayout.sequenceLayout(4, Constants$root.C_INT$LAYOUT).withName("element")
-            ).withName("_libc_xmmreg")).withName("_xmm"),
-            MemoryLayout.sequenceLayout(24, Constants$root.C_INT$LAYOUT).withName("__glibc_reserved1")
-        ).withName("__fpregs_mem"),
-        MemoryLayout.sequenceLayout(4, Constants$root.C_LONG_LONG$LAYOUT).withName("__ssp")
-    ).withName("ucontext_t");
     public static MemoryLayout $LAYOUT() {
-        return ucontext_t.$struct$LAYOUT;
+        return constants$143.const$4;
     }
-    static final VarHandle uc_flags$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("uc_flags"));
     public static VarHandle uc_flags$VH() {
-        return ucontext_t.uc_flags$VH;
+        return constants$143.const$5;
     }
     /**
      * Getter for field:
@@ -72,7 +33,7 @@ public class ucontext_t {
      * }
      */
     public static long uc_flags$get(MemorySegment seg) {
-        return (long)ucontext_t.uc_flags$VH.get(seg);
+        return (long)constants$143.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -81,17 +42,16 @@ public class ucontext_t {
      * }
      */
     public static void uc_flags$set(MemorySegment seg, long x) {
-        ucontext_t.uc_flags$VH.set(seg, x);
+        constants$143.const$5.set(seg, x);
     }
     public static long uc_flags$get(MemorySegment seg, long index) {
-        return (long)ucontext_t.uc_flags$VH.get(seg.asSlice(index*sizeof()));
+        return (long)constants$143.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void uc_flags$set(MemorySegment seg, long index, long x) {
-        ucontext_t.uc_flags$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$143.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle uc_link$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("uc_link"));
     public static VarHandle uc_link$VH() {
-        return ucontext_t.uc_link$VH;
+        return constants$144.const$0;
     }
     /**
      * Getter for field:
@@ -100,7 +60,7 @@ public class ucontext_t {
      * }
      */
     public static MemorySegment uc_link$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)ucontext_t.uc_link$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$144.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -109,35 +69,29 @@ public class ucontext_t {
      * }
      */
     public static void uc_link$set(MemorySegment seg, MemorySegment x) {
-        ucontext_t.uc_link$VH.set(seg, x);
+        constants$144.const$0.set(seg, x);
     }
     public static MemorySegment uc_link$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)ucontext_t.uc_link$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$144.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void uc_link$set(MemorySegment seg, long index, MemorySegment x) {
-        ucontext_t.uc_link$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$144.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment uc_stack$slice(MemorySegment seg) {
         return seg.asSlice(16, 24);
     }
-    public static MemorySegment uc_mcontext$slice(MemorySegment seg) {
-        return seg.asSlice(40, 256);
-    }
     public static MemorySegment uc_sigmask$slice(MemorySegment seg) {
-        return seg.asSlice(296, 128);
+        return seg.asSlice(40, 128);
     }
-    public static MemorySegment __fpregs_mem$slice(MemorySegment seg) {
-        return seg.asSlice(424, 512);
-    }
-    public static MemorySegment __ssp$slice(MemorySegment seg) {
-        return seg.asSlice(936, 32);
+    public static MemorySegment uc_mcontext$slice(MemorySegment seg) {
+        return seg.asSlice(176, 4384);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

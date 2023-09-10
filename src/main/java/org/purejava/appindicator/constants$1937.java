@@ -3,44 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1937 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1937() {}
-    static final FunctionDescriptor gtk_hbutton_box_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_hbutton_box_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_hbutton_box_new",
-        constants$1937.gtk_hbutton_box_new$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_screen_width_mm",
+        constants$83.const$1
     );
-    static final FunctionDescriptor gtk_hbox_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_hbox_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_hbox_get_type",
-        constants$1937.gtk_hbox_get_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_screen_height_mm",
+        constants$83.const$1
     );
-    static final FunctionDescriptor gtk_hbox_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_set_double_click_time",
+        constants$80.const$1
     );
-    static final MethodHandle gtk_hbox_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_hbox_new",
-        constants$1937.gtk_hbox_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_beep",
+        constants$7.const$5
     );
-    static final FunctionDescriptor gtk_hpaned_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_hpaned_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_hpaned_get_type",
-        constants$1937.gtk_hpaned_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_flush",
+        constants$7.const$5
     );
-    static final FunctionDescriptor gtk_hpaned_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_hpaned_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_hpaned_new",
-        constants$1937.gtk_hpaned_new$FUNC
-    );
-    static final FunctionDescriptor gtk_hsv_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_hsv_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_hsv_get_type",
-        constants$1937.gtk_hsv_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_disable_multidevice",
+        constants$7.const$5
     );
 }
 

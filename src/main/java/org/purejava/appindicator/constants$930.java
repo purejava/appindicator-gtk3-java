@@ -3,64 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$930 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$930() {}
-    static final FunctionDescriptor pango_attr_list_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_get_default_timeout",
+        constants$10.const$5
     );
-    static final MethodHandle pango_attr_list_insert$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_insert",
-        constants$930.pango_attr_list_insert$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_set_default_timeout",
+        constants$40.const$2
     );
-    static final FunctionDescriptor pango_attr_list_insert_before$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_get_interface_info",
+        constants$5.const$2
     );
-    static final MethodHandle pango_attr_list_insert_before$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_insert_before",
-        constants$930.pango_attr_list_insert_before$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_set_interface_info",
+        constants$13.const$4
     );
-    static final FunctionDescriptor pango_attr_list_change$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_get_cached_property",
+        constants$5.const$5
     );
-    static final MethodHandle pango_attr_list_change$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_change",
-        constants$930.pango_attr_list_change$FUNC
-    );
-    static final FunctionDescriptor pango_attr_list_splice$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_attr_list_splice$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_splice",
-        constants$930.pango_attr_list_splice$FUNC
-    );
-    static final FunctionDescriptor pango_attr_list_update$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_attr_list_update$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_update",
-        constants$930.pango_attr_list_update$FUNC
-    );
-    static final FunctionDescriptor pango_attr_list_filter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_attr_list_filter$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_list_filter",
-        constants$930.pango_attr_list_filter$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_proxy_set_cached_property",
+        constants$14.const$3
     );
 }
 

@@ -3,82 +3,50 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$629 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$629() {}
-    static final FunctionDescriptor g_file_set_attributes_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_object_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_file_set_attributes_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attributes_async",
-        constants$629.g_file_set_attributes_async$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_object_new",
+        constants$407.const$2
     );
-    static final FunctionDescriptor g_file_set_attributes_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_file_set_attributes_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attributes_finish",
-        constants$629.g_file_set_attributes_finish$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_object_new_with_properties",
+        constants$629.const$2
     );
-    static final FunctionDescriptor g_file_set_attribute_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_object_newv",
+        constants$623.const$1
     );
-    static final MethodHandle g_file_set_attribute_string$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_string",
-        constants$629.g_file_set_attribute_string$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final FunctionDescriptor g_file_set_attribute_byte_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_set_attribute_byte_string$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_byte_string",
-        constants$629.g_file_set_attribute_byte_string$FUNC
-    );
-    static final FunctionDescriptor g_file_set_attribute_uint32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_set_attribute_uint32$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_uint32",
-        constants$629.g_file_set_attribute_uint32$FUNC
-    );
-    static final FunctionDescriptor g_file_set_attribute_int32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_set_attribute_int32$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_attribute_int32",
-        constants$629.g_file_set_attribute_int32$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_object_new_valist",
+        constants$629.const$5
     );
 }
 

@@ -3,61 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$142 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$142() {}
-    static final FunctionDescriptor g_list_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_copy$MH = RuntimeHelper.downcallHandle(
-        "g_list_copy",
-        constants$142.g_list_copy$FUNC
-    );
-    static final FunctionDescriptor g_list_copy_deep$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_copy_deep$MH = RuntimeHelper.downcallHandle(
-        "g_list_copy_deep",
-        constants$142.g_list_copy_deep$FUNC
-    );
-    static final FunctionDescriptor g_list_nth$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_list_nth$MH = RuntimeHelper.downcallHandle(
-        "g_list_nth",
-        constants$142.g_list_nth$FUNC
-    );
-    static final FunctionDescriptor g_list_nth_prev$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_list_nth_prev$MH = RuntimeHelper.downcallHandle(
-        "g_list_nth_prev",
-        constants$142.g_list_nth_prev$FUNC
-    );
-    static final FunctionDescriptor g_list_find$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_find$MH = RuntimeHelper.downcallHandle(
-        "g_list_find",
-        constants$142.g_list_find$FUNC
-    );
-    static final FunctionDescriptor g_list_find_custom$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_list_find_custom$MH = RuntimeHelper.downcallHandle(
-        "g_list_find_custom",
-        constants$142.g_list_find_custom$FUNC
-    );
+    static final VarHandle const$0 = constants$140.const$5.varHandle(MemoryLayout.PathElement.groupElement("pr_gid"));
+    static final VarHandle const$1 = constants$140.const$5.varHandle(MemoryLayout.PathElement.groupElement("pr_pid"));
+    static final VarHandle const$2 = constants$140.const$5.varHandle(MemoryLayout.PathElement.groupElement("pr_ppid"));
+    static final VarHandle const$3 = constants$140.const$5.varHandle(MemoryLayout.PathElement.groupElement("pr_pgrp"));
+    static final VarHandle const$4 = constants$140.const$5.varHandle(MemoryLayout.PathElement.groupElement("pr_sid"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("fault_address"),
+        MemoryLayout.sequenceLayout(31, JAVA_LONG).withName("regs"),
+        JAVA_LONG.withName("sp"),
+        JAVA_LONG.withName("pc"),
+        JAVA_LONG.withName("pstate"),
+        MemoryLayout.paddingLayout(8),
+        MemoryLayout.sequenceLayout(4096, JAVA_BYTE).withName("__reserved")
+    ).withName("mcontext_t");
 }
 
 

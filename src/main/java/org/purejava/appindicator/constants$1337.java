@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1337 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1337() {}
-    static final FunctionDescriptor gtk_label_get_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandleVariadic(
+        "g_task_return_new_error",
+        constants$57.const$0
     );
-    static final MethodHandle gtk_label_get_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_text",
-        constants$1337.gtk_label_get_text$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_task_return_value",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_label_set_attributes$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_task_return_error_if_cancelled",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_label_set_attributes$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_attributes",
-        constants$1337.gtk_label_set_attributes$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_task_propagate_pointer",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_label_get_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_task_propagate_boolean",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_label_get_attributes$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_attributes",
-        constants$1337.gtk_label_get_attributes$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_label",
-        constants$1337.gtk_label_set_label$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_label",
-        constants$1337.gtk_label_get_label$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_markup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_markup",
-        constants$1337.gtk_label_set_markup$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_task_propagate_int",
+        constants$22.const$0
     );
 }
 

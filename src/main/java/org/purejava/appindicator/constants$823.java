@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$823 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$823() {}
-    static final FunctionDescriptor g_unix_socket_address_new_with_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "getgid",
+        constants$83.const$1
     );
-    static final MethodHandle g_unix_socket_address_new_with_type$MH = RuntimeHelper.downcallHandle(
-        "g_unix_socket_address_new_with_type",
-        constants$823.g_unix_socket_address_new_with_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "getegid",
+        constants$83.const$1
     );
-    static final FunctionDescriptor g_unix_socket_address_get_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "getgroups",
+        constants$9.const$2
     );
-    static final MethodHandle g_unix_socket_address_get_path$MH = RuntimeHelper.downcallHandle(
-        "g_unix_socket_address_get_path",
-        constants$823.g_unix_socket_address_get_path$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "setuid",
+        constants$8.const$4
     );
-    static final FunctionDescriptor g_unix_socket_address_get_path_len$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "setreuid",
+        constants$123.const$5
     );
-    static final MethodHandle g_unix_socket_address_get_path_len$MH = RuntimeHelper.downcallHandle(
-        "g_unix_socket_address_get_path_len",
-        constants$823.g_unix_socket_address_get_path_len$FUNC
-    );
-    static final FunctionDescriptor g_unix_socket_address_get_address_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_unix_socket_address_get_address_type$MH = RuntimeHelper.downcallHandle(
-        "g_unix_socket_address_get_address_type",
-        constants$823.g_unix_socket_address_get_address_type$FUNC
-    );
-    static final FunctionDescriptor g_unix_socket_address_get_is_abstract$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_unix_socket_address_get_is_abstract$MH = RuntimeHelper.downcallHandle(
-        "g_unix_socket_address_get_is_abstract",
-        constants$823.g_unix_socket_address_get_is_abstract$FUNC
-    );
-    static final FunctionDescriptor g_unix_socket_address_abstract_names_supported$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_unix_socket_address_abstract_names_supported$MH = RuntimeHelper.downcallHandle(
-        "g_unix_socket_address_abstract_names_supported",
-        constants$823.g_unix_socket_address_abstract_names_supported$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "seteuid",
+        constants$8.const$4
     );
 }
 

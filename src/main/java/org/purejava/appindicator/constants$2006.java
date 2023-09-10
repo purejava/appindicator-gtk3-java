@@ -2,18 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2006 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2006() {}
-    static final MemorySegment G_FILE_ATTRIBUTE_MOUNTABLE_IS_MEDIA_CHECK_AUTOMATIC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("mountable::is-media-check-automatic");
-    static final MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::modified");
-    static final MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_USEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::modified-usec");
-    static final MemorySegment G_FILE_ATTRIBUTE_TIME_MODIFIED_NSEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::modified-nsec");
-    static final MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::access");
-    static final MemorySegment G_FILE_ATTRIBUTE_TIME_ACCESS_USEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("time::access-usec");
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkDocumentIface.set_document_attribute.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$2004.const$1.varHandle(MemoryLayout.PathElement.groupElement("set_document_attribute"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkDocumentIface.get_current_page_number.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$2004.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_current_page_number"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkDocumentIface.get_page_count.class, "apply", constants$10.const$5);
+    static final VarHandle const$5 = constants$2004.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_page_count"));
 }
 
 

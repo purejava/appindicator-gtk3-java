@@ -2,102 +2,82 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GParamSpecVariant {
- *     GParamSpec parent_instance;
- *     GVariantType* type;
- *     GVariant* default_value;
- *     gpointer padding[4];
+ *     struct _GParamSpec parent_instance;
+ *     struct _GVariantType* type;
+ *     struct _GVariant* default_value;
+ *     void* padding[4];
  * };
  * }
  */
 public class _GParamSpecVariant {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_POINTER$LAYOUT.withName("g_class")
-            ).withName("g_type_instance"),
-            Constants$root.C_POINTER$LAYOUT.withName("name"),
-            Constants$root.C_INT$LAYOUT.withName("flags"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("value_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("owner_type"),
-            Constants$root.C_POINTER$LAYOUT.withName("_nick"),
-            Constants$root.C_POINTER$LAYOUT.withName("_blurb"),
-            Constants$root.C_POINTER$LAYOUT.withName("qdata"),
-            Constants$root.C_INT$LAYOUT.withName("ref_count"),
-            Constants$root.C_INT$LAYOUT.withName("param_id")
-        ).withName("parent_instance"),
-        Constants$root.C_POINTER$LAYOUT.withName("type"),
-        Constants$root.C_POINTER$LAYOUT.withName("default_value"),
-        MemoryLayout.sequenceLayout(4, Constants$root.C_POINTER$LAYOUT).withName("padding")
-    ).withName("_GParamSpecVariant");
     public static MemoryLayout $LAYOUT() {
-        return _GParamSpecVariant.$struct$LAYOUT;
+        return constants$665.const$4;
     }
     public static MemorySegment parent_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 72);
     }
-    static final VarHandle type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("type"));
     public static VarHandle type$VH() {
-        return _GParamSpecVariant.type$VH;
+        return constants$665.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GVariantType* type;
+     * struct _GVariantType* type;
      * }
      */
     public static MemorySegment type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecVariant.type$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$665.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GVariantType* type;
+     * struct _GVariantType* type;
      * }
      */
     public static void type$set(MemorySegment seg, MemorySegment x) {
-        _GParamSpecVariant.type$VH.set(seg, x);
+        constants$665.const$5.set(seg, x);
     }
     public static MemorySegment type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecVariant.type$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$665.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void type$set(MemorySegment seg, long index, MemorySegment x) {
-        _GParamSpecVariant.type$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$665.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle default_value$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
     public static VarHandle default_value$VH() {
-        return _GParamSpecVariant.default_value$VH;
+        return constants$666.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GVariant* default_value;
+     * struct _GVariant* default_value;
      * }
      */
     public static MemorySegment default_value$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecVariant.default_value$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$666.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GVariant* default_value;
+     * struct _GVariant* default_value;
      * }
      */
     public static void default_value$set(MemorySegment seg, MemorySegment x) {
-        _GParamSpecVariant.default_value$VH.set(seg, x);
+        constants$666.const$0.set(seg, x);
     }
     public static MemorySegment default_value$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GParamSpecVariant.default_value$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$666.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void default_value$set(MemorySegment seg, long index, MemorySegment x) {
-        _GParamSpecVariant.default_value$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$666.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment padding$slice(MemorySegment seg) {
         return seg.asSlice(88, 32);
@@ -107,7 +87,7 @@ public class _GParamSpecVariant {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

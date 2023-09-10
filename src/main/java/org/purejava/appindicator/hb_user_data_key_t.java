@@ -2,9 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct hb_user_data_key_t {
@@ -14,15 +16,11 @@ import java.lang.foreign.*;
  */
 public class hb_user_data_key_t {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_CHAR$LAYOUT.withName("unused")
-    ).withName("hb_user_data_key_t");
     public static MemoryLayout $LAYOUT() {
-        return hb_user_data_key_t.$struct$LAYOUT;
+        return constants$1416.const$5;
     }
-    static final VarHandle unused$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("unused"));
     public static VarHandle unused$VH() {
-        return hb_user_data_key_t.unused$VH;
+        return constants$1417.const$0;
     }
     /**
      * Getter for field:
@@ -31,7 +29,7 @@ public class hb_user_data_key_t {
      * }
      */
     public static byte unused$get(MemorySegment seg) {
-        return (byte)hb_user_data_key_t.unused$VH.get(seg);
+        return (byte)constants$1417.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -40,20 +38,20 @@ public class hb_user_data_key_t {
      * }
      */
     public static void unused$set(MemorySegment seg, byte x) {
-        hb_user_data_key_t.unused$VH.set(seg, x);
+        constants$1417.const$0.set(seg, x);
     }
     public static byte unused$get(MemorySegment seg, long index) {
-        return (byte)hb_user_data_key_t.unused$VH.get(seg.asSlice(index*sizeof()));
+        return (byte)constants$1417.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void unused$set(MemorySegment seg, long index, byte x) {
-        hb_user_data_key_t.unused$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1417.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

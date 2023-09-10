@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$51 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$51() {}
-    static final FunctionDescriptor srand48_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_atomic_pointer_compare_and_exchange_full",
+        constants$34.const$5
     );
-    static final MethodHandle srand48_r$MH = RuntimeHelper.downcallHandle(
-        "srand48_r",
-        constants$51.srand48_r$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_atomic_pointer_exchange",
+        constants$5.const$5
     );
-    static final FunctionDescriptor seed48_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_atomic_pointer_add",
+        constants$23.const$4
     );
-    static final MethodHandle seed48_r$MH = RuntimeHelper.downcallHandle(
-        "seed48_r",
-        constants$51.seed48_r$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_atomic_pointer_and",
+        constants$23.const$4
     );
-    static final FunctionDescriptor lcong48_r$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_atomic_pointer_or",
+        constants$23.const$4
     );
-    static final MethodHandle lcong48_r$MH = RuntimeHelper.downcallHandle(
-        "lcong48_r",
-        constants$51.lcong48_r$FUNC
-    );
-    static final FunctionDescriptor arc4random$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle arc4random$MH = RuntimeHelper.downcallHandle(
-        "arc4random",
-        constants$51.arc4random$FUNC
-    );
-    static final FunctionDescriptor arc4random_buf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle arc4random_buf$MH = RuntimeHelper.downcallHandle(
-        "arc4random_buf",
-        constants$51.arc4random_buf$FUNC
-    );
-    static final FunctionDescriptor arc4random_uniform$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle arc4random_uniform$MH = RuntimeHelper.downcallHandle(
-        "arc4random_uniform",
-        constants$51.arc4random_uniform$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_atomic_pointer_xor",
+        constants$23.const$4
     );
 }
 

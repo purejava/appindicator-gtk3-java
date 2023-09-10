@@ -3,74 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$470 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$470() {}
-    static final FunctionDescriptor GFileMeasureProgressCallback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_thread_pool_get_max_idle_time",
+        constants$83.const$1
     );
-    static final FunctionDescriptor GFileMeasureProgressCallback_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_timer_new",
+        constants$35.const$2
     );
-    static final MethodHandle GFileMeasureProgressCallback_UP$MH = RuntimeHelper.upcallHandle(GFileMeasureProgressCallback.class, "apply", constants$470.GFileMeasureProgressCallback_UP$FUNC);
-    static final FunctionDescriptor GFileMeasureProgressCallback_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_timer_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle GFileMeasureProgressCallback_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$470.GFileMeasureProgressCallback_DOWN$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_timer_start",
+        constants$13.const$1
     );
-    static final FunctionDescriptor GIOSchedulerJobFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_timer_stop",
+        constants$13.const$1
     );
-    static final FunctionDescriptor GIOSchedulerJobFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GIOSchedulerJobFunc_UP$MH = RuntimeHelper.upcallHandle(GIOSchedulerJobFunc.class, "apply", constants$470.GIOSchedulerJobFunc_UP$FUNC);
-    static final FunctionDescriptor GIOSchedulerJobFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GIOSchedulerJobFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$470.GIOSchedulerJobFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor GSimpleAsyncThreadFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GSimpleAsyncThreadFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GSimpleAsyncThreadFunc_UP$MH = RuntimeHelper.upcallHandle(GSimpleAsyncThreadFunc.class, "apply", constants$470.GSimpleAsyncThreadFunc_UP$FUNC);
-    static final FunctionDescriptor GSimpleAsyncThreadFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GSimpleAsyncThreadFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$470.GSimpleAsyncThreadFunc_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_timer_reset",
+        constants$13.const$1
     );
 }
 

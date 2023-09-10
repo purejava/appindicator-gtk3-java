@@ -3,61 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1357 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1357() {}
-    static final FunctionDescriptor gtk_box_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_box_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_box_get_type",
-        constants$1357.gtk_box_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GTlsConnectionClass.get_negotiated_protocol.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$1355.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_negotiated_protocol"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tls_connection_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_box_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tls_connection_set_use_system_certdb",
+        constants$40.const$2
     );
-    static final MethodHandle gtk_box_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_box_new",
-        constants$1357.gtk_box_new$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tls_connection_get_use_system_certdb",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_box_pack_start$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_box_pack_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_box_pack_start",
-        constants$1357.gtk_box_pack_start$FUNC
-    );
-    static final FunctionDescriptor gtk_box_pack_end$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_box_pack_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_box_pack_end",
-        constants$1357.gtk_box_pack_end$FUNC
-    );
-    static final FunctionDescriptor gtk_box_set_homogeneous$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_box_set_homogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_box_set_homogeneous",
-        constants$1357.gtk_box_set_homogeneous$FUNC
-    );
-    static final FunctionDescriptor gtk_box_get_homogeneous$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_box_get_homogeneous$MH = RuntimeHelper.downcallHandle(
-        "gtk_box_get_homogeneous",
-        constants$1357.gtk_box_get_homogeneous$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tls_connection_set_database",
+        constants$13.const$4
     );
 }
 

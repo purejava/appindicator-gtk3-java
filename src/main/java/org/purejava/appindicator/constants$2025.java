@@ -2,18 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2025 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2025() {}
-    static final MemorySegment GDK_TARGET_STRING$ADDR = MemorySegment.ofAddress(31L);
-    static final MemorySegment GDK_SELECTION_TYPE_ATOM$ADDR = MemorySegment.ofAddress(4L);
-    static final MemorySegment GDK_SELECTION_TYPE_BITMAP$ADDR = MemorySegment.ofAddress(5L);
-    static final MemorySegment GDK_SELECTION_TYPE_COLORMAP$ADDR = MemorySegment.ofAddress(7L);
-    static final MemorySegment GDK_SELECTION_TYPE_DRAWABLE$ADDR = MemorySegment.ofAddress(17L);
-    static final MemorySegment GDK_SELECTION_TYPE_INTEGER$ADDR = MemorySegment.ofAddress(19L);
+    static final VarHandle const$0 = constants$2024.const$4.varHandle(MemoryLayout.PathElement.groupElement("set_run_attributes"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.set_text_contents.class, "apply", constants$13.const$4);
+    static final VarHandle const$2 = constants$2024.const$4.varHandle(MemoryLayout.PathElement.groupElement("set_text_contents"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.insert_text.class, "apply", constants$464.const$4);
+    static final VarHandle const$4 = constants$2024.const$4.varHandle(MemoryLayout.PathElement.groupElement("insert_text"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.copy_text.class, "apply", constants$467.const$3);
 }
 
 

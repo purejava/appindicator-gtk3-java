@@ -4,10 +4,131 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 public class app_indicator_h_2 extends app_indicator_h_1 {
 
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_EU 3793
+     * }
+     */
+    public static int GDK_KEY_Hangul_EU() {
+        return (int)3793L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_YI 3794
+     * }
+     */
+    public static int GDK_KEY_Hangul_YI() {
+        return (int)3794L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_I 3795
+     * }
+     */
+    public static int GDK_KEY_Hangul_I() {
+        return (int)3795L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_Kiyeog 3796
+     * }
+     */
+    public static int GDK_KEY_Hangul_J_Kiyeog() {
+        return (int)3796L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_SsangKiyeog 3797
+     * }
+     */
+    public static int GDK_KEY_Hangul_J_SsangKiyeog() {
+        return (int)3797L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_KiyeogSios 3798
+     * }
+     */
+    public static int GDK_KEY_Hangul_J_KiyeogSios() {
+        return (int)3798L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_Nieun 3799
+     * }
+     */
+    public static int GDK_KEY_Hangul_J_Nieun() {
+        return (int)3799L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_NieunJieuj 3800
+     * }
+     */
+    public static int GDK_KEY_Hangul_J_NieunJieuj() {
+        return (int)3800L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_NieunHieuh 3801
+     * }
+     */
+    public static int GDK_KEY_Hangul_J_NieunHieuh() {
+        return (int)3801L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_Dikeud 3802
+     * }
+     */
+    public static int GDK_KEY_Hangul_J_Dikeud() {
+        return (int)3802L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_Rieul 3803
+     * }
+     */
+    public static int GDK_KEY_Hangul_J_Rieul() {
+        return (int)3803L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_RieulKiyeog 3804
+     * }
+     */
+    public static int GDK_KEY_Hangul_J_RieulKiyeog() {
+        return (int)3804L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_RieulMieum 3805
+     * }
+     */
+    public static int GDK_KEY_Hangul_J_RieulMieum() {
+        return (int)3805L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_RieulPieub 3806
+     * }
+     */
+    public static int GDK_KEY_Hangul_J_RieulPieub() {
+        return (int)3806L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_Hangul_J_RieulSios 3807
+     * }
+     */
+    public static int GDK_KEY_Hangul_J_RieulSios() {
+        return (int)3807L;
+    }
     /**
      * {@snippet :
      * #define GDK_KEY_Hangul_J_RieulTieut 3808
@@ -6765,523 +6886,523 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
      * typedef long ptrdiff_t;
      * }
      */
-    public static final OfLong ptrdiff_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong ptrdiff_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long size_t;
      * }
      */
-    public static final OfLong size_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong size_t = JAVA_LONG;
     /**
      * {@snippet :
-     * typedef int wchar_t;
+     * typedef unsigned int wchar_t;
      * }
      */
-    public static final OfInt wchar_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt wchar_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef signed char gint8;
      * }
      */
-    public static final OfByte gint8 = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte gint8 = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned char guint8;
      * }
      */
-    public static final OfByte guint8 = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte guint8 = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef short gint16;
      * }
      */
-    public static final OfShort gint16 = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort gint16 = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned short guint16;
      * }
      */
-    public static final OfShort guint16 = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort guint16 = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef int gint32;
      * }
      */
-    public static final OfInt gint32 = Constants$root.C_INT$LAYOUT;
+    public static final OfInt gint32 = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned int guint32;
      * }
      */
-    public static final OfInt guint32 = Constants$root.C_INT$LAYOUT;
+    public static final OfInt guint32 = JAVA_INT;
     /**
      * {@snippet :
      * typedef long gint64;
      * }
      */
-    public static final OfLong gint64 = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong gint64 = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long guint64;
      * }
      */
-    public static final OfLong guint64 = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong guint64 = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long gssize;
      * }
      */
-    public static final OfLong gssize = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong gssize = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long gsize;
      * }
      */
-    public static final OfLong gsize = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong gsize = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long goffset;
      * }
      */
-    public static final OfLong goffset = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong goffset = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long gintptr;
      * }
      */
-    public static final OfLong gintptr = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong gintptr = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long guintptr;
      * }
      */
-    public static final OfLong guintptr = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong guintptr = JAVA_LONG;
     /**
      * {@snippet :
      * typedef int GPid;
      * }
      */
-    public static final OfInt GPid = Constants$root.C_INT$LAYOUT;
+    public static final OfInt GPid = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned char __u_char;
      * }
      */
-    public static final OfByte __u_char = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte __u_char = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned short __u_short;
      * }
      */
-    public static final OfShort __u_short = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort __u_short = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned int __u_int;
      * }
      */
-    public static final OfInt __u_int = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __u_int = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned long __u_long;
      * }
      */
-    public static final OfLong __u_long = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __u_long = JAVA_LONG;
     /**
      * {@snippet :
      * typedef signed char __int8_t;
      * }
      */
-    public static final OfByte __int8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte __int8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned char __uint8_t;
      * }
      */
-    public static final OfByte __uint8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte __uint8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef short __int16_t;
      * }
      */
-    public static final OfShort __int16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort __int16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned short __uint16_t;
      * }
      */
-    public static final OfShort __uint16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort __uint16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef int __int32_t;
      * }
      */
-    public static final OfInt __int32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __int32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned int __uint32_t;
      * }
      */
-    public static final OfInt __uint32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __uint32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long __int64_t;
      * }
      */
-    public static final OfLong __int64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __int64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __uint64_t;
      * }
      */
-    public static final OfLong __uint64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __uint64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef signed char __int_least8_t;
      * }
      */
-    public static final OfByte __int_least8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte __int_least8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned char __uint_least8_t;
      * }
      */
-    public static final OfByte __uint_least8_t = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte __uint_least8_t = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef short __int_least16_t;
      * }
      */
-    public static final OfShort __int_least16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort __int_least16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned short __uint_least16_t;
      * }
      */
-    public static final OfShort __uint_least16_t = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort __uint_least16_t = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef int __int_least32_t;
      * }
      */
-    public static final OfInt __int_least32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __int_least32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned int __uint_least32_t;
      * }
      */
-    public static final OfInt __uint_least32_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __uint_least32_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long __int_least64_t;
      * }
      */
-    public static final OfLong __int_least64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __int_least64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __uint_least64_t;
      * }
      */
-    public static final OfLong __uint_least64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __uint_least64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __quad_t;
      * }
      */
-    public static final OfLong __quad_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __quad_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __u_quad_t;
      * }
      */
-    public static final OfLong __u_quad_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __u_quad_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __intmax_t;
      * }
      */
-    public static final OfLong __intmax_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __intmax_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __uintmax_t;
      * }
      */
-    public static final OfLong __uintmax_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __uintmax_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __dev_t;
      * }
      */
-    public static final OfLong __dev_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __dev_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int __uid_t;
      * }
      */
-    public static final OfInt __uid_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __uid_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned int __gid_t;
      * }
      */
-    public static final OfInt __gid_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __gid_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned long __ino_t;
      * }
      */
-    public static final OfLong __ino_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __ino_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __ino64_t;
      * }
      */
-    public static final OfLong __ino64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __ino64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int __mode_t;
      * }
      */
-    public static final OfInt __mode_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __mode_t = JAVA_INT;
     /**
      * {@snippet :
-     * typedef unsigned long __nlink_t;
+     * typedef unsigned int __nlink_t;
      * }
      */
-    public static final OfLong __nlink_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfInt __nlink_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long __off_t;
      * }
      */
-    public static final OfLong __off_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __off_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __off64_t;
      * }
      */
-    public static final OfLong __off64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __off64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef int __pid_t;
      * }
      */
-    public static final OfInt __pid_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __pid_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long __clock_t;
      * }
      */
-    public static final OfLong __clock_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __clock_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __rlim_t;
      * }
      */
-    public static final OfLong __rlim_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __rlim_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __rlim64_t;
      * }
      */
-    public static final OfLong __rlim64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __rlim64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int __id_t;
      * }
      */
-    public static final OfInt __id_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __id_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long __time_t;
      * }
      */
-    public static final OfLong __time_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __time_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int __useconds_t;
      * }
      */
-    public static final OfInt __useconds_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __useconds_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long __suseconds_t;
      * }
      */
-    public static final OfLong __suseconds_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __suseconds_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __suseconds64_t;
      * }
      */
-    public static final OfLong __suseconds64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __suseconds64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef int __daddr_t;
      * }
      */
-    public static final OfInt __daddr_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __daddr_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef int __key_t;
      * }
      */
-    public static final OfInt __key_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __key_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef int __clockid_t;
      * }
      */
-    public static final OfInt __clockid_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __clockid_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef void* __timer_t;
      * }
      */
-    public static final OfAddress __timer_t = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout __timer_t = RuntimeHelper.POINTER;
     /**
      * {@snippet :
-     * typedef long __blksize_t;
+     * typedef int __blksize_t;
      * }
      */
-    public static final OfLong __blksize_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfInt __blksize_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long __blkcnt_t;
      * }
      */
-    public static final OfLong __blkcnt_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __blkcnt_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __blkcnt64_t;
      * }
      */
-    public static final OfLong __blkcnt64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __blkcnt64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __fsblkcnt_t;
      * }
      */
-    public static final OfLong __fsblkcnt_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __fsblkcnt_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __fsblkcnt64_t;
      * }
      */
-    public static final OfLong __fsblkcnt64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __fsblkcnt64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __fsfilcnt_t;
      * }
      */
-    public static final OfLong __fsfilcnt_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __fsfilcnt_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __fsfilcnt64_t;
      * }
      */
-    public static final OfLong __fsfilcnt64_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __fsfilcnt64_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __fsword_t;
      * }
      */
-    public static final OfLong __fsword_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __fsword_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __ssize_t;
      * }
      */
-    public static final OfLong __ssize_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __ssize_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __syscall_slong_t;
      * }
      */
-    public static final OfLong __syscall_slong_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __syscall_slong_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned long __syscall_ulong_t;
      * }
      */
-    public static final OfLong __syscall_ulong_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __syscall_ulong_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long __loff_t;
      * }
      */
-    public static final OfLong __loff_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __loff_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef char* __caddr_t;
      * }
      */
-    public static final OfAddress __caddr_t = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout __caddr_t = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef long __intptr_t;
      * }
      */
-    public static final OfLong __intptr_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong __intptr_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int __socklen_t;
      * }
      */
-    public static final OfInt __socklen_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __socklen_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef int __sig_atomic_t;
      * }
      */
-    public static final OfInt __sig_atomic_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt __sig_atomic_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef long clock_t;
      * }
      */
-    public static final OfLong clock_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong clock_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef long time_t;
      * }
      */
-    public static final OfLong time_t = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong time_t = JAVA_LONG;
     /**
      * {@snippet :
      * typedef int clockid_t;
      * }
      */
-    public static final OfInt clockid_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt clockid_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef void* timer_t;
      * }
      */
-    public static final OfAddress timer_t = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout timer_t = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef int pid_t;
      * }
      */
-    public static final OfInt pid_t = Constants$root.C_INT$LAYOUT;
+    public static final OfInt pid_t = JAVA_INT;
     /**
      * {@snippet :
      * typedef struct __locale_struct* __locale_t;
      * }
      */
-    public static final OfAddress __locale_t = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout __locale_t = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef struct __locale_struct* locale_t;
      * }
      */
-    public static final OfAddress locale_t = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout locale_t = RuntimeHelper.POINTER;
     public static MethodHandle clock$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.clock$MH,"clock");
+        return RuntimeHelper.requireNonNull(constants$3.const$6,"clock");
     }
     /**
      * {@snippet :
-     * clock_t clock();
+     * long clock();
      * }
      */
     public static long clock() {
@@ -7293,11 +7414,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle time$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.time$MH,"time");
+        return RuntimeHelper.requireNonNull(constants$4.const$1,"time");
     }
     /**
      * {@snippet :
-     * time_t time(time_t* __timer);
+     * long time(long* __timer);
      * }
      */
     public static long time(MemorySegment __timer) {
@@ -7309,11 +7430,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle difftime$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.difftime$MH,"difftime");
+        return RuntimeHelper.requireNonNull(constants$4.const$3,"difftime");
     }
     /**
      * {@snippet :
-     * double difftime(time_t __time1, time_t __time0);
+     * double difftime(long __time1, long __time0);
      * }
      */
     public static double difftime(long __time1, long __time0) {
@@ -7325,11 +7446,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle mktime$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.mktime$MH,"mktime");
+        return RuntimeHelper.requireNonNull(constants$4.const$4,"mktime");
     }
     /**
      * {@snippet :
-     * time_t mktime(struct tm* __tp);
+     * long mktime(struct tm* __tp);
      * }
      */
     public static long mktime(MemorySegment __tp) {
@@ -7341,11 +7462,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle strftime$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.strftime$MH,"strftime");
+        return RuntimeHelper.requireNonNull(constants$4.const$6,"strftime");
     }
     /**
      * {@snippet :
-     * size_t strftime(char* __s, size_t __maxsize, char* __format, struct tm* __tp);
+     * unsigned long strftime(char* __s, unsigned long __maxsize, char* __format, struct tm* __tp);
      * }
      */
     public static long strftime(MemorySegment __s, long __maxsize, MemorySegment __format, MemorySegment __tp) {
@@ -7357,11 +7478,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle strftime_l$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.strftime_l$MH,"strftime_l");
+        return RuntimeHelper.requireNonNull(constants$5.const$1,"strftime_l");
     }
     /**
      * {@snippet :
-     * size_t strftime_l(char* __s, size_t __maxsize, char* __format, struct tm* __tp, locale_t __loc);
+     * unsigned long strftime_l(char* __s, unsigned long __maxsize, char* __format, struct tm* __tp, struct __locale_struct* __loc);
      * }
      */
     public static long strftime_l(MemorySegment __s, long __maxsize, MemorySegment __format, MemorySegment __tp, MemorySegment __loc) {
@@ -7373,11 +7494,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle gmtime$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.gmtime$MH,"gmtime");
+        return RuntimeHelper.requireNonNull(constants$5.const$3,"gmtime");
     }
     /**
      * {@snippet :
-     * struct tm* gmtime(const time_t* __timer);
+     * struct tm* gmtime(long* __timer);
      * }
      */
     public static MemorySegment gmtime(MemorySegment __timer) {
@@ -7389,11 +7510,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle localtime$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.localtime$MH,"localtime");
+        return RuntimeHelper.requireNonNull(constants$5.const$4,"localtime");
     }
     /**
      * {@snippet :
-     * struct tm* localtime(const time_t* __timer);
+     * struct tm* localtime(long* __timer);
      * }
      */
     public static MemorySegment localtime(MemorySegment __timer) {
@@ -7405,11 +7526,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle gmtime_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.gmtime_r$MH,"gmtime_r");
+        return RuntimeHelper.requireNonNull(constants$5.const$6,"gmtime_r");
     }
     /**
      * {@snippet :
-     * struct tm* gmtime_r(const time_t* __timer, struct tm* __tp);
+     * struct tm* gmtime_r(long* __timer, struct tm* __tp);
      * }
      */
     public static MemorySegment gmtime_r(MemorySegment __timer, MemorySegment __tp) {
@@ -7421,11 +7542,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle localtime_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.localtime_r$MH,"localtime_r");
+        return RuntimeHelper.requireNonNull(constants$6.const$0,"localtime_r");
     }
     /**
      * {@snippet :
-     * struct tm* localtime_r(const time_t* __timer, struct tm* __tp);
+     * struct tm* localtime_r(long* __timer, struct tm* __tp);
      * }
      */
     public static MemorySegment localtime_r(MemorySegment __timer, MemorySegment __tp) {
@@ -7437,7 +7558,7 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle asctime$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.asctime$MH,"asctime");
+        return RuntimeHelper.requireNonNull(constants$6.const$1,"asctime");
     }
     /**
      * {@snippet :
@@ -7453,11 +7574,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle ctime$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.ctime$MH,"ctime");
+        return RuntimeHelper.requireNonNull(constants$6.const$2,"ctime");
     }
     /**
      * {@snippet :
-     * char* ctime(const time_t* __timer);
+     * char* ctime(long* __timer);
      * }
      */
     public static MemorySegment ctime(MemorySegment __timer) {
@@ -7469,7 +7590,7 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle asctime_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.asctime_r$MH,"asctime_r");
+        return RuntimeHelper.requireNonNull(constants$6.const$3,"asctime_r");
     }
     /**
      * {@snippet :
@@ -7485,11 +7606,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle ctime_r$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.ctime_r$MH,"ctime_r");
+        return RuntimeHelper.requireNonNull(constants$6.const$4,"ctime_r");
     }
     /**
      * {@snippet :
-     * char* ctime_r(const time_t* __timer, char* __buf);
+     * char* ctime_r(long* __timer, char* __buf);
      * }
      */
     public static MemorySegment ctime_r(MemorySegment __timer, MemorySegment __buf) {
@@ -7506,16 +7627,16 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
      * }
      */
     public static MemorySegment __tzname$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$2.__tzname$SEGMENT,"__tzname");
+        return RuntimeHelper.requireNonNull(constants$6.const$6,"__tzname");
     }
     public static MemoryLayout __daylight$LAYOUT() {
-        return constants$2.__daylight$LAYOUT;
+        return JAVA_INT;
     }
     public static VarHandle __daylight$VH() {
-        return constants$2.__daylight$VH;
+        return constants$7.const$0;
     }
     public static MemorySegment __daylight$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$2.__daylight$SEGMENT,"__daylight");
+        return RuntimeHelper.requireNonNull(constants$7.const$1,"__daylight");
     }
     /**
      * Getter for variable:
@@ -7524,7 +7645,7 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
      * }
      */
     public static int __daylight$get() {
-        return (int) constants$2.__daylight$VH.get(RuntimeHelper.requireNonNull(constants$2.__daylight$SEGMENT, "__daylight"));
+        return (int) constants$7.const$0.get(RuntimeHelper.requireNonNull(constants$7.const$1, "__daylight"));
     }
     /**
      * Setter for variable:
@@ -7533,16 +7654,16 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
      * }
      */
     public static void __daylight$set(int x) {
-        constants$2.__daylight$VH.set(RuntimeHelper.requireNonNull(constants$2.__daylight$SEGMENT, "__daylight"), x);
+        constants$7.const$0.set(RuntimeHelper.requireNonNull(constants$7.const$1, "__daylight"), x);
     }
     public static MemoryLayout __timezone$LAYOUT() {
-        return constants$2.__timezone$LAYOUT;
+        return JAVA_LONG;
     }
     public static VarHandle __timezone$VH() {
-        return constants$2.__timezone$VH;
+        return constants$7.const$2;
     }
     public static MemorySegment __timezone$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$2.__timezone$SEGMENT,"__timezone");
+        return RuntimeHelper.requireNonNull(constants$7.const$3,"__timezone");
     }
     /**
      * Getter for variable:
@@ -7551,7 +7672,7 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
      * }
      */
     public static long __timezone$get() {
-        return (long) constants$2.__timezone$VH.get(RuntimeHelper.requireNonNull(constants$2.__timezone$SEGMENT, "__timezone"));
+        return (long) constants$7.const$2.get(RuntimeHelper.requireNonNull(constants$7.const$3, "__timezone"));
     }
     /**
      * Setter for variable:
@@ -7560,7 +7681,7 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
      * }
      */
     public static void __timezone$set(long x) {
-        constants$2.__timezone$VH.set(RuntimeHelper.requireNonNull(constants$2.__timezone$SEGMENT, "__timezone"), x);
+        constants$7.const$2.set(RuntimeHelper.requireNonNull(constants$7.const$3, "__timezone"), x);
     }
     /**
      * {@snippet :
@@ -7568,10 +7689,10 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
      * }
      */
     public static MemorySegment tzname$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$2.tzname$SEGMENT,"tzname");
+        return RuntimeHelper.requireNonNull(constants$7.const$4,"tzname");
     }
     public static MethodHandle tzset$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.tzset$MH,"tzset");
+        return RuntimeHelper.requireNonNull(constants$7.const$6,"tzset");
     }
     /**
      * {@snippet :
@@ -7587,13 +7708,13 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MemoryLayout daylight$LAYOUT() {
-        return constants$3.daylight$LAYOUT;
+        return JAVA_INT;
     }
     public static VarHandle daylight$VH() {
-        return constants$3.daylight$VH;
+        return constants$7.const$0;
     }
     public static MemorySegment daylight$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$3.daylight$SEGMENT,"daylight");
+        return RuntimeHelper.requireNonNull(constants$8.const$0,"daylight");
     }
     /**
      * Getter for variable:
@@ -7602,7 +7723,7 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
      * }
      */
     public static int daylight$get() {
-        return (int) constants$3.daylight$VH.get(RuntimeHelper.requireNonNull(constants$3.daylight$SEGMENT, "daylight"));
+        return (int) constants$7.const$0.get(RuntimeHelper.requireNonNull(constants$8.const$0, "daylight"));
     }
     /**
      * Setter for variable:
@@ -7611,16 +7732,16 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
      * }
      */
     public static void daylight$set(int x) {
-        constants$3.daylight$VH.set(RuntimeHelper.requireNonNull(constants$3.daylight$SEGMENT, "daylight"), x);
+        constants$7.const$0.set(RuntimeHelper.requireNonNull(constants$8.const$0, "daylight"), x);
     }
     public static MemoryLayout timezone$LAYOUT() {
-        return constants$3.timezone$LAYOUT;
+        return JAVA_LONG;
     }
     public static VarHandle timezone$VH() {
-        return constants$3.timezone$VH;
+        return constants$7.const$2;
     }
     public static MemorySegment timezone$SEGMENT() {
-        return RuntimeHelper.requireNonNull(constants$3.timezone$SEGMENT,"timezone");
+        return RuntimeHelper.requireNonNull(constants$8.const$1,"timezone");
     }
     /**
      * Getter for variable:
@@ -7629,7 +7750,7 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
      * }
      */
     public static long timezone$get() {
-        return (long) constants$3.timezone$VH.get(RuntimeHelper.requireNonNull(constants$3.timezone$SEGMENT, "timezone"));
+        return (long) constants$7.const$2.get(RuntimeHelper.requireNonNull(constants$8.const$1, "timezone"));
     }
     /**
      * Setter for variable:
@@ -7638,14 +7759,14 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
      * }
      */
     public static void timezone$set(long x) {
-        constants$3.timezone$VH.set(RuntimeHelper.requireNonNull(constants$3.timezone$SEGMENT, "timezone"), x);
+        constants$7.const$2.set(RuntimeHelper.requireNonNull(constants$8.const$1, "timezone"), x);
     }
     public static MethodHandle timegm$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.timegm$MH,"timegm");
+        return RuntimeHelper.requireNonNull(constants$8.const$2,"timegm");
     }
     /**
      * {@snippet :
-     * time_t timegm(struct tm* __tp);
+     * long timegm(struct tm* __tp);
      * }
      */
     public static long timegm(MemorySegment __tp) {
@@ -7657,11 +7778,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle timelocal$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.timelocal$MH,"timelocal");
+        return RuntimeHelper.requireNonNull(constants$8.const$3,"timelocal");
     }
     /**
      * {@snippet :
-     * time_t timelocal(struct tm* __tp);
+     * long timelocal(struct tm* __tp);
      * }
      */
     public static long timelocal(MemorySegment __tp) {
@@ -7673,7 +7794,7 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle dysize$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.dysize$MH,"dysize");
+        return RuntimeHelper.requireNonNull(constants$8.const$5,"dysize");
     }
     /**
      * {@snippet :
@@ -7689,7 +7810,7 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle nanosleep$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.nanosleep$MH,"nanosleep");
+        return RuntimeHelper.requireNonNull(constants$9.const$1,"nanosleep");
     }
     /**
      * {@snippet :
@@ -7705,11 +7826,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle clock_getres$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.clock_getres$MH,"clock_getres");
+        return RuntimeHelper.requireNonNull(constants$9.const$3,"clock_getres");
     }
     /**
      * {@snippet :
-     * int clock_getres(clockid_t __clock_id, struct timespec* __res);
+     * int clock_getres(int __clock_id, struct timespec* __res);
      * }
      */
     public static int clock_getres(int __clock_id, MemorySegment __res) {
@@ -7721,11 +7842,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle clock_gettime$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.clock_gettime$MH,"clock_gettime");
+        return RuntimeHelper.requireNonNull(constants$9.const$4,"clock_gettime");
     }
     /**
      * {@snippet :
-     * int clock_gettime(clockid_t __clock_id, struct timespec* __tp);
+     * int clock_gettime(int __clock_id, struct timespec* __tp);
      * }
      */
     public static int clock_gettime(int __clock_id, MemorySegment __tp) {
@@ -7737,11 +7858,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle clock_settime$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.clock_settime$MH,"clock_settime");
+        return RuntimeHelper.requireNonNull(constants$9.const$5,"clock_settime");
     }
     /**
      * {@snippet :
-     * int clock_settime(clockid_t __clock_id, struct timespec* __tp);
+     * int clock_settime(int __clock_id, struct timespec* __tp);
      * }
      */
     public static int clock_settime(int __clock_id, MemorySegment __tp) {
@@ -7753,11 +7874,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle clock_nanosleep$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.clock_nanosleep$MH,"clock_nanosleep");
+        return RuntimeHelper.requireNonNull(constants$10.const$1,"clock_nanosleep");
     }
     /**
      * {@snippet :
-     * int clock_nanosleep(clockid_t __clock_id, int __flags, struct timespec* __req, struct timespec* __rem);
+     * int clock_nanosleep(int __clock_id, int __flags, struct timespec* __req, struct timespec* __rem);
      * }
      */
     public static int clock_nanosleep(int __clock_id, int __flags, MemorySegment __req, MemorySegment __rem) {
@@ -7769,11 +7890,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle clock_getcpuclockid$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.clock_getcpuclockid$MH,"clock_getcpuclockid");
+        return RuntimeHelper.requireNonNull(constants$10.const$2,"clock_getcpuclockid");
     }
     /**
      * {@snippet :
-     * int clock_getcpuclockid(pid_t __pid, clockid_t* __clock_id);
+     * int clock_getcpuclockid(int __pid, int* __clock_id);
      * }
      */
     public static int clock_getcpuclockid(int __pid, MemorySegment __clock_id) {
@@ -7785,11 +7906,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle timer_create$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.timer_create$MH,"timer_create");
+        return RuntimeHelper.requireNonNull(constants$10.const$4,"timer_create");
     }
     /**
      * {@snippet :
-     * int timer_create(clockid_t __clock_id, struct sigevent* __evp, timer_t* __timerid);
+     * int timer_create(int __clock_id, struct sigevent* __evp, void** __timerid);
      * }
      */
     public static int timer_create(int __clock_id, MemorySegment __evp, MemorySegment __timerid) {
@@ -7801,11 +7922,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle timer_delete$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.timer_delete$MH,"timer_delete");
+        return RuntimeHelper.requireNonNull(constants$10.const$6,"timer_delete");
     }
     /**
      * {@snippet :
-     * int timer_delete(timer_t __timerid);
+     * int timer_delete(void* __timerid);
      * }
      */
     public static int timer_delete(MemorySegment __timerid) {
@@ -7817,11 +7938,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle timer_settime$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.timer_settime$MH,"timer_settime");
+        return RuntimeHelper.requireNonNull(constants$11.const$1,"timer_settime");
     }
     /**
      * {@snippet :
-     * int timer_settime(timer_t __timerid, int __flags, struct itimerspec* __value, struct itimerspec* __ovalue);
+     * int timer_settime(void* __timerid, int __flags, struct itimerspec* __value, struct itimerspec* __ovalue);
      * }
      */
     public static int timer_settime(MemorySegment __timerid, int __flags, MemorySegment __value, MemorySegment __ovalue) {
@@ -7833,11 +7954,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle timer_gettime$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.timer_gettime$MH,"timer_gettime");
+        return RuntimeHelper.requireNonNull(constants$11.const$2,"timer_gettime");
     }
     /**
      * {@snippet :
-     * int timer_gettime(timer_t __timerid, struct itimerspec* __value);
+     * int timer_gettime(void* __timerid, struct itimerspec* __value);
      * }
      */
     public static int timer_gettime(MemorySegment __timerid, MemorySegment __value) {
@@ -7849,11 +7970,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle timer_getoverrun$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.timer_getoverrun$MH,"timer_getoverrun");
+        return RuntimeHelper.requireNonNull(constants$11.const$3,"timer_getoverrun");
     }
     /**
      * {@snippet :
-     * int timer_getoverrun(timer_t __timerid);
+     * int timer_getoverrun(void* __timerid);
      * }
      */
     public static int timer_getoverrun(MemorySegment __timerid) {
@@ -7865,7 +7986,7 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle timespec_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$5.timespec_get$MH,"timespec_get");
+        return RuntimeHelper.requireNonNull(constants$11.const$5,"timespec_get");
     }
     /**
      * {@snippet :
@@ -7885,97 +8006,97 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
      * typedef char gchar;
      * }
      */
-    public static final OfByte gchar = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte gchar = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef short gshort;
      * }
      */
-    public static final OfShort gshort = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort gshort = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef long glong;
      * }
      */
-    public static final OfLong glong = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong glong = JAVA_LONG;
     /**
      * {@snippet :
      * typedef int gint;
      * }
      */
-    public static final OfInt gint = Constants$root.C_INT$LAYOUT;
+    public static final OfInt gint = JAVA_INT;
     /**
      * {@snippet :
      * typedef int gboolean;
      * }
      */
-    public static final OfInt gboolean = Constants$root.C_INT$LAYOUT;
+    public static final OfInt gboolean = JAVA_INT;
     /**
      * {@snippet :
      * typedef unsigned char guchar;
      * }
      */
-    public static final OfByte guchar = Constants$root.C_CHAR$LAYOUT;
+    public static final OfByte guchar = JAVA_BYTE;
     /**
      * {@snippet :
      * typedef unsigned short gushort;
      * }
      */
-    public static final OfShort gushort = Constants$root.C_SHORT$LAYOUT;
+    public static final OfShort gushort = JAVA_SHORT;
     /**
      * {@snippet :
      * typedef unsigned long gulong;
      * }
      */
-    public static final OfLong gulong = Constants$root.C_LONG_LONG$LAYOUT;
+    public static final OfLong gulong = JAVA_LONG;
     /**
      * {@snippet :
      * typedef unsigned int guint;
      * }
      */
-    public static final OfInt guint = Constants$root.C_INT$LAYOUT;
+    public static final OfInt guint = JAVA_INT;
     /**
      * {@snippet :
      * typedef float gfloat;
      * }
      */
-    public static final OfFloat gfloat = Constants$root.C_FLOAT$LAYOUT;
+    public static final OfFloat gfloat = JAVA_FLOAT;
     /**
      * {@snippet :
      * typedef double gdouble;
      * }
      */
-    public static final OfDouble gdouble = Constants$root.C_DOUBLE$LAYOUT;
+    public static final OfDouble gdouble = JAVA_DOUBLE;
     /**
      * {@snippet :
      * typedef void* gpointer;
      * }
      */
-    public static final OfAddress gpointer = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout gpointer = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef void* gconstpointer;
      * }
      */
-    public static final OfAddress gconstpointer = Constants$root.C_POINTER$LAYOUT;
+    public static final AddressLayout gconstpointer = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * typedef int grefcount;
      * }
      */
-    public static final OfInt grefcount = Constants$root.C_INT$LAYOUT;
+    public static final OfInt grefcount = JAVA_INT;
     /**
      * {@snippet :
      * typedef int gatomicrefcount;
      * }
      */
-    public static final OfInt gatomicrefcount = Constants$root.C_INT$LAYOUT;
+    public static final OfInt gatomicrefcount = JAVA_INT;
     public static MethodHandle memcpy$MH() {
-        return RuntimeHelper.requireNonNull(constants$9.memcpy$MH,"memcpy");
+        return RuntimeHelper.requireNonNull(constants$17.const$2,"memcpy");
     }
     /**
      * {@snippet :
-     * void* memcpy(void* __dest, void* __src, size_t __n);
+     * void* memcpy(void* __dest, void* __src, unsigned long __n);
      * }
      */
     public static MemorySegment memcpy(MemorySegment __dest, MemorySegment __src, long __n) {
@@ -7987,11 +8108,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle memmove$MH() {
-        return RuntimeHelper.requireNonNull(constants$9.memmove$MH,"memmove");
+        return RuntimeHelper.requireNonNull(constants$17.const$3,"memmove");
     }
     /**
      * {@snippet :
-     * void* memmove(void* __dest, void* __src, size_t __n);
+     * void* memmove(void* __dest, void* __src, unsigned long __n);
      * }
      */
     public static MemorySegment memmove(MemorySegment __dest, MemorySegment __src, long __n) {
@@ -8003,11 +8124,11 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle memccpy$MH() {
-        return RuntimeHelper.requireNonNull(constants$10.memccpy$MH,"memccpy");
+        return RuntimeHelper.requireNonNull(constants$17.const$5,"memccpy");
     }
     /**
      * {@snippet :
-     * void* memccpy(void* __dest, void* __src, int __c, size_t __n);
+     * void* memccpy(void* __dest, void* __src, int __c, unsigned long __n);
      * }
      */
     public static MemorySegment memccpy(MemorySegment __dest, MemorySegment __src, int __c, long __n) {
@@ -8019,257 +8140,17 @@ public class app_indicator_h_2 extends app_indicator_h_1 {
         }
     }
     public static MethodHandle memset$MH() {
-        return RuntimeHelper.requireNonNull(constants$10.memset$MH,"memset");
+        return RuntimeHelper.requireNonNull(constants$18.const$1,"memset");
     }
     /**
      * {@snippet :
-     * void* memset(void* __s, int __c, size_t __n);
+     * void* memset(void* __s, int __c, unsigned long __n);
      * }
      */
     public static MemorySegment memset(MemorySegment __s, int __c, long __n) {
         var mh$ = memset$MH();
         try {
             return (java.lang.foreign.MemorySegment)mh$.invokeExact(__s, __c, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle memcmp$MH() {
-        return RuntimeHelper.requireNonNull(constants$10.memcmp$MH,"memcmp");
-    }
-    /**
-     * {@snippet :
-     * int memcmp(void* __s1, void* __s2, size_t __n);
-     * }
-     */
-    public static int memcmp(MemorySegment __s1, MemorySegment __s2, long __n) {
-        var mh$ = memcmp$MH();
-        try {
-            return (int)mh$.invokeExact(__s1, __s2, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle __memcmpeq$MH() {
-        return RuntimeHelper.requireNonNull(constants$10.__memcmpeq$MH,"__memcmpeq");
-    }
-    /**
-     * {@snippet :
-     * int __memcmpeq(void* __s1, void* __s2, size_t __n);
-     * }
-     */
-    public static int __memcmpeq(MemorySegment __s1, MemorySegment __s2, long __n) {
-        var mh$ = __memcmpeq$MH();
-        try {
-            return (int)mh$.invokeExact(__s1, __s2, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle memchr$MH() {
-        return RuntimeHelper.requireNonNull(constants$10.memchr$MH,"memchr");
-    }
-    /**
-     * {@snippet :
-     * void* memchr(void* __s, int __c, size_t __n);
-     * }
-     */
-    public static MemorySegment memchr(MemorySegment __s, int __c, long __n) {
-        var mh$ = memchr$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__s, __c, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strcpy$MH() {
-        return RuntimeHelper.requireNonNull(constants$10.strcpy$MH,"strcpy");
-    }
-    /**
-     * {@snippet :
-     * char* strcpy(char* __dest, char* __src);
-     * }
-     */
-    public static MemorySegment strcpy(MemorySegment __dest, MemorySegment __src) {
-        var mh$ = strcpy$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dest, __src);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strncpy$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.strncpy$MH,"strncpy");
-    }
-    /**
-     * {@snippet :
-     * char* strncpy(char* __dest, char* __src, size_t __n);
-     * }
-     */
-    public static MemorySegment strncpy(MemorySegment __dest, MemorySegment __src, long __n) {
-        var mh$ = strncpy$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dest, __src, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strcat$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.strcat$MH,"strcat");
-    }
-    /**
-     * {@snippet :
-     * char* strcat(char* __dest, char* __src);
-     * }
-     */
-    public static MemorySegment strcat(MemorySegment __dest, MemorySegment __src) {
-        var mh$ = strcat$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dest, __src);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strncat$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.strncat$MH,"strncat");
-    }
-    /**
-     * {@snippet :
-     * char* strncat(char* __dest, char* __src, size_t __n);
-     * }
-     */
-    public static MemorySegment strncat(MemorySegment __dest, MemorySegment __src, long __n) {
-        var mh$ = strncat$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__dest, __src, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strcmp$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.strcmp$MH,"strcmp");
-    }
-    /**
-     * {@snippet :
-     * int strcmp(char* __s1, char* __s2);
-     * }
-     */
-    public static int strcmp(MemorySegment __s1, MemorySegment __s2) {
-        var mh$ = strcmp$MH();
-        try {
-            return (int)mh$.invokeExact(__s1, __s2);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strncmp$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.strncmp$MH,"strncmp");
-    }
-    /**
-     * {@snippet :
-     * int strncmp(char* __s1, char* __s2, size_t __n);
-     * }
-     */
-    public static int strncmp(MemorySegment __s1, MemorySegment __s2, long __n) {
-        var mh$ = strncmp$MH();
-        try {
-            return (int)mh$.invokeExact(__s1, __s2, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strcoll$MH() {
-        return RuntimeHelper.requireNonNull(constants$11.strcoll$MH,"strcoll");
-    }
-    /**
-     * {@snippet :
-     * int strcoll(char* __s1, char* __s2);
-     * }
-     */
-    public static int strcoll(MemorySegment __s1, MemorySegment __s2) {
-        var mh$ = strcoll$MH();
-        try {
-            return (int)mh$.invokeExact(__s1, __s2);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strxfrm$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.strxfrm$MH,"strxfrm");
-    }
-    /**
-     * {@snippet :
-     * unsigned long strxfrm(char* __dest, char* __src, size_t __n);
-     * }
-     */
-    public static long strxfrm(MemorySegment __dest, MemorySegment __src, long __n) {
-        var mh$ = strxfrm$MH();
-        try {
-            return (long)mh$.invokeExact(__dest, __src, __n);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strcoll_l$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.strcoll_l$MH,"strcoll_l");
-    }
-    /**
-     * {@snippet :
-     * int strcoll_l(char* __s1, char* __s2, locale_t __l);
-     * }
-     */
-    public static int strcoll_l(MemorySegment __s1, MemorySegment __s2, MemorySegment __l) {
-        var mh$ = strcoll_l$MH();
-        try {
-            return (int)mh$.invokeExact(__s1, __s2, __l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strxfrm_l$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.strxfrm_l$MH,"strxfrm_l");
-    }
-    /**
-     * {@snippet :
-     * size_t strxfrm_l(char* __dest, char* __src, size_t __n, locale_t __l);
-     * }
-     */
-    public static long strxfrm_l(MemorySegment __dest, MemorySegment __src, long __n, MemorySegment __l) {
-        var mh$ = strxfrm_l$MH();
-        try {
-            return (long)mh$.invokeExact(__dest, __src, __n, __l);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strdup$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.strdup$MH,"strdup");
-    }
-    /**
-     * {@snippet :
-     * char* strdup(char* __s);
-     * }
-     */
-    public static MemorySegment strdup(MemorySegment __s) {
-        var mh$ = strdup$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__s);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle strndup$MH() {
-        return RuntimeHelper.requireNonNull(constants$12.strndup$MH,"strndup");
-    }
-    /**
-     * {@snippet :
-     * char* strndup(char* __string, size_t __n);
-     * }
-     */
-    public static MemorySegment strndup(MemorySegment __string, long __n) {
-        var mh$ = strndup$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(__string, __n);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

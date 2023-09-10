@@ -3,61 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1083 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1083() {}
-    static final FunctionDescriptor gdk_window_move_region$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_move_region$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_move_region",
-        constants$1083.gdk_window_move_region$FUNC
-    );
-    static final FunctionDescriptor gdk_window_ensure_native$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_ensure_native$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_ensure_native",
-        constants$1083.gdk_window_ensure_native$FUNC
-    );
-    static final FunctionDescriptor gdk_window_shape_combine_region$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_shape_combine_region$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_shape_combine_region",
-        constants$1083.gdk_window_shape_combine_region$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_child_shapes$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_child_shapes$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_child_shapes",
-        constants$1083.gdk_window_set_child_shapes$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_composited$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_composited$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_composited",
-        constants$1083.gdk_window_get_composited$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_composited$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_composited$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_composited",
-        constants$1083.gdk_window_set_composited$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIOStreamClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1079.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIOStreamClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1079.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIOStreamClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1079.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
 }
 
 

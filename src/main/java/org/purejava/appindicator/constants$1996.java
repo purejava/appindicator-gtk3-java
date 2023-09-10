@@ -2,18 +2,23 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1996 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1996() {}
-    static final MemorySegment G_CSET_A_2_Z$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-    static final MemorySegment G_CSET_a_2_z$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("abcdefghijklmnopqrstuvwxyz");
-    static final MemorySegment G_CSET_DIGITS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("0123456789");
-    static final MemorySegment G_CSET_LATINC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd");
-    static final MemorySegment G_CSET_LATINS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd");
-    static final MemorySegment G_TEST_OPTION_ISOLATE_DIRS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("isolate_dirs");
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkComponentIface.get_extents.class, "apply", constants$673.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$673.const$2
+    );
+    static final VarHandle const$2 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_extents"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkComponentIface.get_position.class, "apply", constants$331.const$4);
+    static final VarHandle const$4 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_position"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkComponentIface.get_size.class, "apply", constants$14.const$3);
 }
 
 

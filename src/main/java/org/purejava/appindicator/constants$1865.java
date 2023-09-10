@@ -3,56 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1865 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1865() {}
-    static final FunctionDescriptor gtk_test_widget_send_key$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_display_supports_selection_notification",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_test_widget_send_key$MH = RuntimeHelper.downcallHandle(
-        "gtk_test_widget_send_key",
-        constants$1865.gtk_test_widget_send_key$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_display_request_selection_notification",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gtk_test_text_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_display_supports_clipboard_persistence",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_test_text_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_test_text_set",
-        constants$1865.gtk_test_text_set$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor gtk_test_text_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_display_store_clipboard",
+        constants$1865.const$3
     );
-    static final MethodHandle gtk_test_text_get$MH = RuntimeHelper.downcallHandle(
-        "gtk_test_text_get",
-        constants$1865.gtk_test_text_get$FUNC
-    );
-    static final FunctionDescriptor gtk_test_find_sibling$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle gtk_test_find_sibling$MH = RuntimeHelper.downcallHandle(
-        "gtk_test_find_sibling",
-        constants$1865.gtk_test_find_sibling$FUNC
-    );
-    static final FunctionDescriptor gtk_test_find_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_test_find_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_test_find_label",
-        constants$1865.gtk_test_find_label$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_drag_source_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_drag_source_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_drag_source_get_type",
-        constants$1865.gtk_tree_drag_source_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_display_supports_shapes",
+        constants$10.const$5
     );
 }
 

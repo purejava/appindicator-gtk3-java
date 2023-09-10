@@ -3,69 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1379 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1379() {}
-    static final FunctionDescriptor gtk_tree_sortable_set_sort_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$1139.const$5
     );
-    static final MethodHandle gtk_tree_sortable_set_sort_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_sortable_set_sort_func",
-        constants$1379.gtk_tree_sortable_set_sort_func$FUNC
+    static final VarHandle const$1 = constants$1378.const$2.varHandle(MemoryLayout.PathElement.groupElement("set_value"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GTlsPasswordClass.get_default_warning.class, "apply", constants$5.const$2);
+    static final VarHandle const$3 = constants$1378.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_default_warning"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tls_password_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_tree_sortable_set_default_sort_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tls_password_new",
+        constants$24.const$4
     );
-    static final MethodHandle gtk_tree_sortable_set_default_sort_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_sortable_set_default_sort_func",
-        constants$1379.gtk_tree_sortable_set_default_sort_func$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_sortable_has_default_sort_func$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_sortable_has_default_sort_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_sortable_has_default_sort_func",
-        constants$1379.gtk_tree_sortable_has_default_sort_func$FUNC
-    );
-    static final FunctionDescriptor GtkCellCallback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkCellCallback_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkCellCallback_UP$MH = RuntimeHelper.upcallHandle(GtkCellCallback.class, "apply", constants$1379.GtkCellCallback_UP$FUNC);
-    static final FunctionDescriptor GtkCellCallback_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkCellCallback_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1379.GtkCellCallback_DOWN$FUNC
-    );
-    static final FunctionDescriptor GtkCellAllocCallback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkCellAllocCallback_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkCellAllocCallback_UP$MH = RuntimeHelper.upcallHandle(GtkCellAllocCallback.class, "apply", constants$1379.GtkCellAllocCallback_UP$FUNC);
 }
 
 

@@ -3,53 +3,43 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1704 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1704() {}
-    static final FunctionDescriptor _gtk_tool_button_get_button$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_get_scaled_font",
+        constants$5.const$2
     );
-    static final MethodHandle _gtk_tool_button_get_button$MH = RuntimeHelper.downcallHandle(
-        "_gtk_tool_button_get_button",
-        constants$1704._gtk_tool_button_get_button$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_show_text",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_menu_tool_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_menu_tool_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_tool_button_get_type",
-        constants$1704.gtk_menu_tool_button_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_show_glyphs",
+        constants$164.const$5
     );
-    static final FunctionDescriptor gtk_menu_tool_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final MethodHandle gtk_menu_tool_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_tool_button_new",
-        constants$1704.gtk_menu_tool_button_new$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_show_text_glyphs",
+        constants$1704.const$3
     );
-    static final FunctionDescriptor gtk_menu_tool_button_new_from_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_tool_button_new_from_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_tool_button_new_from_stock",
-        constants$1704.gtk_menu_tool_button_new_from_stock$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_tool_button_set_menu$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_tool_button_set_menu$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_tool_button_set_menu",
-        constants$1704.gtk_menu_tool_button_set_menu$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_tool_button_get_menu$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_tool_button_get_menu$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_tool_button_get_menu",
-        constants$1704.gtk_menu_tool_button_get_menu$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_text_path",
+        constants$13.const$4
     );
 }
 

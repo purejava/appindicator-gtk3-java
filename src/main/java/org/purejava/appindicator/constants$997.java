@@ -3,58 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$997 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$997() {}
-    static final FunctionDescriptor cairo_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_set_user_data",
-        constants$997.cairo_set_user_data$FUNC
-    );
-    static final FunctionDescriptor cairo_save$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_save$MH = RuntimeHelper.downcallHandle(
-        "cairo_save",
-        constants$997.cairo_save$FUNC
-    );
-    static final FunctionDescriptor cairo_restore$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_restore$MH = RuntimeHelper.downcallHandle(
-        "cairo_restore",
-        constants$997.cairo_restore$FUNC
-    );
-    static final FunctionDescriptor cairo_push_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_push_group$MH = RuntimeHelper.downcallHandle(
-        "cairo_push_group",
-        constants$997.cairo_push_group$FUNC
-    );
-    static final FunctionDescriptor cairo_push_group_with_content$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_push_group_with_content$MH = RuntimeHelper.downcallHandle(
-        "cairo_push_group_with_content",
-        constants$997.cairo_push_group_with_content$FUNC
-    );
-    static final FunctionDescriptor cairo_pop_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_pop_group$MH = RuntimeHelper.downcallHandle(
-        "cairo_pop_group",
-        constants$997.cairo_pop_group$FUNC
-    );
+    static final VarHandle const$0 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("move"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GFileIface.move_async.class, "apply", constants$995.const$5);
+    static final VarHandle const$2 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("move_async"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.move_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$4 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("move_finish"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.mount_mountable.class, "apply", constants$380.const$0);
 }
 
 

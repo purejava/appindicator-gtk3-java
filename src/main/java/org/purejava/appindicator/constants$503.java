@@ -3,67 +3,44 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$503 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$503() {}
-    static final FunctionDescriptor g_buffered_input_stream_set_buffer_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("mutex_new"),
+        RuntimeHelper.POINTER.withName("mutex_lock"),
+        RuntimeHelper.POINTER.withName("mutex_trylock"),
+        RuntimeHelper.POINTER.withName("mutex_unlock"),
+        RuntimeHelper.POINTER.withName("mutex_free"),
+        RuntimeHelper.POINTER.withName("cond_new"),
+        RuntimeHelper.POINTER.withName("cond_signal"),
+        RuntimeHelper.POINTER.withName("cond_broadcast"),
+        RuntimeHelper.POINTER.withName("cond_wait"),
+        RuntimeHelper.POINTER.withName("cond_timed_wait"),
+        RuntimeHelper.POINTER.withName("cond_free"),
+        RuntimeHelper.POINTER.withName("private_new"),
+        RuntimeHelper.POINTER.withName("private_get"),
+        RuntimeHelper.POINTER.withName("private_set"),
+        RuntimeHelper.POINTER.withName("thread_create"),
+        RuntimeHelper.POINTER.withName("thread_yield"),
+        RuntimeHelper.POINTER.withName("thread_join"),
+        RuntimeHelper.POINTER.withName("thread_exit"),
+        RuntimeHelper.POINTER.withName("thread_set_priority"),
+        RuntimeHelper.POINTER.withName("thread_self"),
+        RuntimeHelper.POINTER.withName("thread_equal")
+    ).withName("_GThreadFunctions");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GThreadFunctions.mutex_new.class, "apply", constants$35.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$35.const$2
     );
-    static final MethodHandle g_buffered_input_stream_set_buffer_size$MH = RuntimeHelper.downcallHandle(
-        "g_buffered_input_stream_set_buffer_size",
-        constants$503.g_buffered_input_stream_set_buffer_size$FUNC
-    );
-    static final FunctionDescriptor g_buffered_input_stream_get_available$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_buffered_input_stream_get_available$MH = RuntimeHelper.downcallHandle(
-        "g_buffered_input_stream_get_available",
-        constants$503.g_buffered_input_stream_get_available$FUNC
-    );
-    static final FunctionDescriptor g_buffered_input_stream_peek$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_buffered_input_stream_peek$MH = RuntimeHelper.downcallHandle(
-        "g_buffered_input_stream_peek",
-        constants$503.g_buffered_input_stream_peek$FUNC
-    );
-    static final FunctionDescriptor g_buffered_input_stream_peek_buffer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_buffered_input_stream_peek_buffer$MH = RuntimeHelper.downcallHandle(
-        "g_buffered_input_stream_peek_buffer",
-        constants$503.g_buffered_input_stream_peek_buffer$FUNC
-    );
-    static final FunctionDescriptor g_buffered_input_stream_fill$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_buffered_input_stream_fill$MH = RuntimeHelper.downcallHandle(
-        "g_buffered_input_stream_fill",
-        constants$503.g_buffered_input_stream_fill$FUNC
-    );
-    static final FunctionDescriptor g_buffered_input_stream_fill_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_buffered_input_stream_fill_async$MH = RuntimeHelper.downcallHandle(
-        "g_buffered_input_stream_fill_async",
-        constants$503.g_buffered_input_stream_fill_async$FUNC
-    );
+    static final VarHandle const$3 = constants$503.const$0.varHandle(MemoryLayout.PathElement.groupElement("mutex_new"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GThreadFunctions.mutex_lock.class, "apply", constants$13.const$1);
+    static final VarHandle const$5 = constants$503.const$0.varHandle(MemoryLayout.PathElement.groupElement("mutex_lock"));
 }
 
 

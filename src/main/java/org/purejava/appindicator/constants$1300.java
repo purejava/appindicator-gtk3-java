@@ -3,55 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1300 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1300() {}
-    static final FunctionDescriptor gtk_window_activate_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GSocketConnectableIface.to_string.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$1299.const$1.varHandle(MemoryLayout.PathElement.groupElement("to_string"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_socket_connectable_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_window_activate_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_activate_focus",
-        constants$1300.gtk_window_activate_focus$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_connectable_enumerate",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_window_set_focus$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_connectable_proxy_enumerate",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_window_set_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_focus",
-        constants$1300.gtk_window_set_focus$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_focus$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_focus",
-        constants$1300.gtk_window_get_focus$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_default$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_default",
-        constants$1300.gtk_window_set_default$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_default_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_default_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_default_widget",
-        constants$1300.gtk_window_get_default_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_window_activate_default$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_activate_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_activate_default",
-        constants$1300.gtk_window_activate_default$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_connectable_to_string",
+        constants$5.const$2
     );
 }
 

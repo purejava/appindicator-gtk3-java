@@ -3,46 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1171 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1171() {}
-    static final FunctionDescriptor gdk_gl_context_get_current$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_gl_context_get_current$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_current",
-        constants$1171.gdk_gl_context_get_current$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_mount_eject_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gdk_gl_context_clear_current$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gdk_gl_context_clear_current$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_clear_current",
-        constants$1171.gdk_gl_context_clear_current$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_mount_remount$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_mount_remount",
+        constants$380.const$0
     );
-    static final FunctionDescriptor gdk_keymap_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_keymap_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_get_type",
-        constants$1171.gdk_keymap_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_mount_remount_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gdk_keymap_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_keymap_get_default$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_get_default",
-        constants$1171.gdk_keymap_get_default$FUNC
-    );
-    static final FunctionDescriptor gdk_keymap_get_for_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_keymap_get_for_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_get_for_display",
-        constants$1171.gdk_keymap_get_for_display$FUNC
-    );
-    static final FunctionDescriptor gdk_keymap_lookup_key$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_keymap_lookup_key$MH = RuntimeHelper.downcallHandle(
-        "gdk_keymap_lookup_key",
-        constants$1171.gdk_keymap_lookup_key$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_mount_guess_content_type$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_mount_guess_content_type",
+        constants$281.const$5
     );
 }
 

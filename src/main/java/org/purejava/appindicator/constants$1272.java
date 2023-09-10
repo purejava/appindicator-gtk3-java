@@ -3,55 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1272 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1272() {}
-    static final FunctionDescriptor gtk_widget_class_set_accessible_role$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_simple_async_report_take_gerror_in_idle$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_simple_async_report_take_gerror_in_idle",
+        constants$42.const$1
     );
-    static final MethodHandle gtk_widget_class_set_accessible_role$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_set_accessible_role",
-        constants$1272.gtk_widget_class_set_accessible_role$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_simple_io_stream_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_widget_get_accessible$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_simple_io_stream_new",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_widget_get_accessible$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_accessible",
-        constants$1272.gtk_widget_get_accessible$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_simple_permission_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_widget_get_halign$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_halign$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_halign",
-        constants$1272.gtk_widget_get_halign$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_halign$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_halign$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_halign",
-        constants$1272.gtk_widget_set_halign$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_valign$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_valign$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_valign",
-        constants$1272.gtk_widget_get_valign$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_valign_with_baseline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_valign_with_baseline$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_valign_with_baseline",
-        constants$1272.gtk_widget_get_valign_with_baseline$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_simple_permission_new",
+        constants$24.const$0
     );
 }
 

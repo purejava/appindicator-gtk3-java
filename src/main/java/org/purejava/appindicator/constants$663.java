@@ -3,54 +3,57 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$663 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$663() {}
-    static final FunctionDescriptor g_inet_address_get_is_link_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_get_is_link_local$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_link_local",
-        constants$663.g_inet_address_get_is_link_local$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_get_is_site_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_get_is_site_local$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_site_local",
-        constants$663.g_inet_address_get_is_site_local$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_get_is_multicast$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_get_is_multicast$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_multicast",
-        constants$663.g_inet_address_get_is_multicast$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_get_is_mc_global$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_get_is_mc_global$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_mc_global",
-        constants$663.g_inet_address_get_is_mc_global$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_get_is_mc_link_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_get_is_mc_link_local$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_mc_link_local",
-        constants$663.g_inet_address_get_is_mc_link_local$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_get_is_mc_node_local$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_get_is_mc_node_local$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_mc_node_local",
-        constants$663.g_inet_address_get_is_mc_node_local$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            RuntimeHelper.POINTER.withName("name"),
+            JAVA_INT.withName("flags"),
+            MemoryLayout.paddingLayout(4),
+            JAVA_LONG.withName("value_type"),
+            JAVA_LONG.withName("owner_type"),
+            RuntimeHelper.POINTER.withName("_nick"),
+            RuntimeHelper.POINTER.withName("_blurb"),
+            RuntimeHelper.POINTER.withName("qdata"),
+            JAVA_INT.withName("ref_count"),
+            JAVA_INT.withName("param_id")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("default_value"),
+        RuntimeHelper.POINTER.withName("cset_first"),
+        RuntimeHelper.POINTER.withName("cset_nth"),
+        JAVA_BYTE.withName("substitutor"),
+        MemoryLayout.paddingLayout(7)
+    ).withName("_GParamSpecString");
+    static final VarHandle const$1 = constants$663.const$0.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
+    static final VarHandle const$2 = constants$663.const$0.varHandle(MemoryLayout.PathElement.groupElement("cset_first"));
+    static final VarHandle const$3 = constants$663.const$0.varHandle(MemoryLayout.PathElement.groupElement("cset_nth"));
+    static final VarHandle const$4 = constants$663.const$0.varHandle(MemoryLayout.PathElement.groupElement("substitutor"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            RuntimeHelper.POINTER.withName("name"),
+            JAVA_INT.withName("flags"),
+            MemoryLayout.paddingLayout(4),
+            JAVA_LONG.withName("value_type"),
+            JAVA_LONG.withName("owner_type"),
+            RuntimeHelper.POINTER.withName("_nick"),
+            RuntimeHelper.POINTER.withName("_blurb"),
+            RuntimeHelper.POINTER.withName("qdata"),
+            JAVA_INT.withName("ref_count"),
+            JAVA_INT.withName("param_id")
+        ).withName("parent_instance")
+    ).withName("_GParamSpecParam");
 }
 
 

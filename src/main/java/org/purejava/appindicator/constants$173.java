@@ -3,52 +3,36 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$173 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$173() {}
-    static final FunctionDescriptor g_main_context_ref_thread_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_main_context_ref_thread_default$MH = RuntimeHelper.downcallHandle(
-        "g_main_context_ref_thread_default",
-        constants$173.g_main_context_ref_thread_default$FUNC
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_INT
     );
-    static final FunctionDescriptor g_main_loop_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_checksum_type_get_length",
+        constants$173.const$0
     );
-    static final MethodHandle g_main_loop_new$MH = RuntimeHelper.downcallHandle(
-        "g_main_loop_new",
-        constants$173.g_main_loop_new$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_checksum_new",
+        constants$24.const$0
     );
-    static final FunctionDescriptor g_main_loop_run$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_checksum_reset",
+        constants$13.const$1
     );
-    static final MethodHandle g_main_loop_run$MH = RuntimeHelper.downcallHandle(
-        "g_main_loop_run",
-        constants$173.g_main_loop_run$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_checksum_copy",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_main_loop_quit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_loop_quit$MH = RuntimeHelper.downcallHandle(
-        "g_main_loop_quit",
-        constants$173.g_main_loop_quit$FUNC
-    );
-    static final FunctionDescriptor g_main_loop_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_loop_ref$MH = RuntimeHelper.downcallHandle(
-        "g_main_loop_ref",
-        constants$173.g_main_loop_ref$FUNC
-    );
-    static final FunctionDescriptor g_main_loop_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_main_loop_unref$MH = RuntimeHelper.downcallHandle(
-        "g_main_loop_unref",
-        constants$173.g_main_loop_unref$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_checksum_free",
+        constants$13.const$1
     );
 }
 

@@ -3,59 +3,41 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1319 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1319() {}
-    static final FunctionDescriptor gtk_dialog_add_buttons$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1316.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved6"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    RuntimeHelper.POINTER.withName("g_class")
+                ).withName("g_type_instance"),
+                JAVA_INT.withName("ref_count"),
+                MemoryLayout.paddingLayout(4),
+                RuntimeHelper.POINTER.withName("qdata")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GSocketService");
+    static final VarHandle const$2 = constants$1319.const$1.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_service_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_dialog_add_buttons$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_dialog_add_buttons",
-        constants$1319.gtk_dialog_add_buttons$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_service_new",
+        constants$35.const$2
     );
-    static final FunctionDescriptor gtk_dialog_set_response_sensitive$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_dialog_set_response_sensitive$MH = RuntimeHelper.downcallHandle(
-        "gtk_dialog_set_response_sensitive",
-        constants$1319.gtk_dialog_set_response_sensitive$FUNC
-    );
-    static final FunctionDescriptor gtk_dialog_set_default_response$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_dialog_set_default_response$MH = RuntimeHelper.downcallHandle(
-        "gtk_dialog_set_default_response",
-        constants$1319.gtk_dialog_set_default_response$FUNC
-    );
-    static final FunctionDescriptor gtk_dialog_get_widget_for_response$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_dialog_get_widget_for_response$MH = RuntimeHelper.downcallHandle(
-        "gtk_dialog_get_widget_for_response",
-        constants$1319.gtk_dialog_get_widget_for_response$FUNC
-    );
-    static final FunctionDescriptor gtk_dialog_get_response_for_widget$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_dialog_get_response_for_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_dialog_get_response_for_widget",
-        constants$1319.gtk_dialog_get_response_for_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_alternative_dialog_button_order$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_alternative_dialog_button_order$MH = RuntimeHelper.downcallHandle(
-        "gtk_alternative_dialog_button_order",
-        constants$1319.gtk_alternative_dialog_button_order$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_service_start",
+        constants$13.const$1
     );
 }
 

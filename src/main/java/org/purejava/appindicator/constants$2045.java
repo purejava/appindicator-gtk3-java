@@ -2,18 +2,30 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2045 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2045() {}
-    static final MemorySegment GTK_PRINT_SETTINGS_PAPER_WIDTH$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("paper-width");
-    static final MemorySegment GTK_PRINT_SETTINGS_PAPER_HEIGHT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("paper-height");
-    static final MemorySegment GTK_PRINT_SETTINGS_N_COPIES$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("n-copies");
-    static final MemorySegment GTK_PRINT_SETTINGS_DEFAULT_SOURCE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("default-source");
-    static final MemorySegment GTK_PRINT_SETTINGS_QUALITY$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("quality");
-    static final MemorySegment GTK_PRINT_SETTINGS_RESOLUTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("resolution");
+    static final VarHandle const$0 = constants$2043.const$4.varHandle(MemoryLayout.PathElement.groupElement("pad1"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkObjectFactoryClass.pad2.class, "apply", constants$10.const$5);
+    static final VarHandle const$2 = constants$2043.const$4.varHandle(MemoryLayout.PathElement.groupElement("pad2"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_object_factory_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_object_factory_create_accessible",
+        constants$5.const$5
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_object_factory_invalidate",
+        constants$13.const$1
+    );
 }
 
 

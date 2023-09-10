@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$902 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$902() {}
-    static final FunctionDescriptor pango_script_for_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_message",
+        constants$5.const$2
     );
-    static final MethodHandle pango_script_for_unichar$MH = RuntimeHelper.downcallHandle(
-        "pango_script_for_unichar",
-        constants$902.pango_script_for_unichar$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_parameters",
+        constants$5.const$2
     );
-    static final FunctionDescriptor pango_script_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_script_iter_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_script_iter_get_type",
-        constants$902.pango_script_iter_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_get_user_data",
+        constants$5.const$2
     );
-    static final FunctionDescriptor pango_script_iter_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_return_value",
+        constants$13.const$4
     );
-    static final MethodHandle pango_script_iter_new$MH = RuntimeHelper.downcallHandle(
-        "pango_script_iter_new",
-        constants$902.pango_script_iter_new$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_method_invocation_return_value_with_unix_fd_list",
+        constants$14.const$3
     );
-    static final FunctionDescriptor pango_script_iter_get_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_script_iter_get_range$MH = RuntimeHelper.downcallHandle(
-        "pango_script_iter_get_range",
-        constants$902.pango_script_iter_get_range$FUNC
-    );
-    static final FunctionDescriptor pango_script_iter_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_script_iter_next$MH = RuntimeHelper.downcallHandle(
-        "pango_script_iter_next",
-        constants$902.pango_script_iter_next$FUNC
-    );
-    static final FunctionDescriptor pango_script_iter_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_script_iter_free$MH = RuntimeHelper.downcallHandle(
-        "pango_script_iter_free",
-        constants$902.pango_script_iter_free$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "g_dbus_method_invocation_return_error",
+        constants$57.const$0
     );
 }
 

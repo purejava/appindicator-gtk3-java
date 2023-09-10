@@ -3,60 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1169 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1169() {}
-    static final FunctionDescriptor gdk_gl_context_get_version$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_mount_get_icon",
+        constants$5.const$2
     );
-    static final MethodHandle gdk_gl_context_get_version$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_version",
-        constants$1169.gdk_gl_context_get_version$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_mount_get_symbolic_icon",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gdk_gl_context_is_legacy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_mount_get_uuid",
+        constants$5.const$2
     );
-    static final MethodHandle gdk_gl_context_is_legacy$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_is_legacy",
-        constants$1169.gdk_gl_context_is_legacy$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_mount_get_volume",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gdk_gl_context_set_required_version$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_mount_get_drive",
+        constants$5.const$2
     );
-    static final MethodHandle gdk_gl_context_set_required_version$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_set_required_version",
-        constants$1169.gdk_gl_context_set_required_version$FUNC
-    );
-    static final FunctionDescriptor gdk_gl_context_get_required_version$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_gl_context_get_required_version$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_required_version",
-        constants$1169.gdk_gl_context_get_required_version$FUNC
-    );
-    static final FunctionDescriptor gdk_gl_context_set_debug_enabled$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_gl_context_set_debug_enabled$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_set_debug_enabled",
-        constants$1169.gdk_gl_context_set_debug_enabled$FUNC
-    );
-    static final FunctionDescriptor gdk_gl_context_get_debug_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_gl_context_get_debug_enabled$MH = RuntimeHelper.downcallHandle(
-        "gdk_gl_context_get_debug_enabled",
-        constants$1169.gdk_gl_context_get_debug_enabled$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_mount_can_unmount",
+        constants$10.const$5
     );
 }
 

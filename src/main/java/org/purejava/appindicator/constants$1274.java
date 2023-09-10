@@ -3,57 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1274 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1274() {}
-    static final FunctionDescriptor gtk_widget_set_margin_start$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_margin_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_margin_start",
-        constants$1274.gtk_widget_set_margin_start$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_margin_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_margin_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_margin_end",
-        constants$1274.gtk_widget_get_margin_end$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_margin_end$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_margin_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_margin_end",
-        constants$1274.gtk_widget_set_margin_end$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_margin_top$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_margin_top$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_margin_top",
-        constants$1274.gtk_widget_get_margin_top$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_margin_top$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_margin_top$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_margin_top",
-        constants$1274.gtk_widget_set_margin_top$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_margin_bottom$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_margin_bottom$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_margin_bottom",
-        constants$1274.gtk_widget_get_margin_bottom$FUNC
-    );
+    static final VarHandle const$0 = constants$1273.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSimpleProxyResolverClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1273.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GSimpleProxyResolverClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1273.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GSimpleProxyResolverClass._g_reserved5.class, "apply", constants$7.const$5);
 }
 
 

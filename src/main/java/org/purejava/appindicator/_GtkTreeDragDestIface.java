@@ -4,68 +4,42 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkTreeDragDestIface {
- *     GTypeInterface g_iface;
- *     gboolean (*drag_data_received)(GtkTreeDragDest*,GtkTreePath*,GtkSelectionData*);
- *     gboolean (*row_drop_possible)(GtkTreeDragDest*,GtkTreePath*,GtkSelectionData*);
+ *     struct _GTypeInterface g_iface;
+ *     int (*drag_data_received)(struct _GtkTreeDragDest*,struct _GtkTreePath*,struct _GtkSelectionData*);
+ *     int (*row_drop_possible)(struct _GtkTreeDragDest*,struct _GtkTreePath*,struct _GtkSelectionData*);
  * };
  * }
  */
 public class _GtkTreeDragDestIface {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
-        ).withName("g_iface"),
-        Constants$root.C_POINTER$LAYOUT.withName("drag_data_received"),
-        Constants$root.C_POINTER$LAYOUT.withName("row_drop_possible")
-    ).withName("_GtkTreeDragDestIface");
     public static MemoryLayout $LAYOUT() {
-        return _GtkTreeDragDestIface.$struct$LAYOUT;
+        return constants$3189.const$0;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
-    static final FunctionDescriptor drag_data_received$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor drag_data_received_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle drag_data_received_UP$MH = RuntimeHelper.upcallHandle(drag_data_received.class, "apply", _GtkTreeDragDestIface.drag_data_received_UP$FUNC);
-    static final FunctionDescriptor drag_data_received_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle drag_data_received_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeDragDestIface.drag_data_received_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*drag_data_received)(GtkTreeDragDest*,GtkTreePath*,GtkSelectionData*);
+ * int (*drag_data_received)(struct _GtkTreeDragDest*,struct _GtkTreePath*,struct _GtkSelectionData*);
      * }
      */
     public interface drag_data_received {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(drag_data_received fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTreeDragDestIface.drag_data_received_UP$MH, fi, _GtkTreeDragDestIface.drag_data_received$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(drag_data_received fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3189.const$1, fi, constants$12.const$2, scope);
         }
-        static drag_data_received ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
+        static drag_data_received ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkTreeDragDestIface.drag_data_received_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -73,72 +47,52 @@ public class _GtkTreeDragDestIface {
         }
     }
 
-    static final VarHandle drag_data_received$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("drag_data_received"));
     public static VarHandle drag_data_received$VH() {
-        return _GtkTreeDragDestIface.drag_data_received$VH;
+        return constants$3189.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*drag_data_received)(GtkTreeDragDest*,GtkTreePath*,GtkSelectionData*);
+     * int (*drag_data_received)(struct _GtkTreeDragDest*,struct _GtkTreePath*,struct _GtkSelectionData*);
      * }
      */
     public static MemorySegment drag_data_received$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTreeDragDestIface.drag_data_received$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3189.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*drag_data_received)(GtkTreeDragDest*,GtkTreePath*,GtkSelectionData*);
+     * int (*drag_data_received)(struct _GtkTreeDragDest*,struct _GtkTreePath*,struct _GtkSelectionData*);
      * }
      */
     public static void drag_data_received$set(MemorySegment seg, MemorySegment x) {
-        _GtkTreeDragDestIface.drag_data_received$VH.set(seg, x);
+        constants$3189.const$2.set(seg, x);
     }
     public static MemorySegment drag_data_received$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTreeDragDestIface.drag_data_received$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3189.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void drag_data_received$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTreeDragDestIface.drag_data_received$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3189.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static drag_data_received drag_data_received(MemorySegment segment, SegmentScope scope) {
+    public static drag_data_received drag_data_received(MemorySegment segment, Arena scope) {
         return drag_data_received.ofAddress(drag_data_received$get(segment), scope);
     }
-    static final FunctionDescriptor row_drop_possible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor row_drop_possible_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle row_drop_possible_UP$MH = RuntimeHelper.upcallHandle(row_drop_possible.class, "apply", _GtkTreeDragDestIface.row_drop_possible_UP$FUNC);
-    static final FunctionDescriptor row_drop_possible_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle row_drop_possible_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkTreeDragDestIface.row_drop_possible_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*row_drop_possible)(GtkTreeDragDest*,GtkTreePath*,GtkSelectionData*);
+ * int (*row_drop_possible)(struct _GtkTreeDragDest*,struct _GtkTreePath*,struct _GtkSelectionData*);
      * }
      */
     public interface row_drop_possible {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(row_drop_possible fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkTreeDragDestIface.row_drop_possible_UP$MH, fi, _GtkTreeDragDestIface.row_drop_possible$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(row_drop_possible fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$3189.const$3, fi, constants$12.const$2, scope);
         }
-        static row_drop_possible ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
+        static row_drop_possible ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkTreeDragDestIface.row_drop_possible_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -146,35 +100,34 @@ public class _GtkTreeDragDestIface {
         }
     }
 
-    static final VarHandle row_drop_possible$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("row_drop_possible"));
     public static VarHandle row_drop_possible$VH() {
-        return _GtkTreeDragDestIface.row_drop_possible$VH;
+        return constants$3189.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*row_drop_possible)(GtkTreeDragDest*,GtkTreePath*,GtkSelectionData*);
+     * int (*row_drop_possible)(struct _GtkTreeDragDest*,struct _GtkTreePath*,struct _GtkSelectionData*);
      * }
      */
     public static MemorySegment row_drop_possible$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTreeDragDestIface.row_drop_possible$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3189.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*row_drop_possible)(GtkTreeDragDest*,GtkTreePath*,GtkSelectionData*);
+     * int (*row_drop_possible)(struct _GtkTreeDragDest*,struct _GtkTreePath*,struct _GtkSelectionData*);
      * }
      */
     public static void row_drop_possible$set(MemorySegment seg, MemorySegment x) {
-        _GtkTreeDragDestIface.row_drop_possible$VH.set(seg, x);
+        constants$3189.const$4.set(seg, x);
     }
     public static MemorySegment row_drop_possible$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTreeDragDestIface.row_drop_possible$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3189.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void row_drop_possible$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTreeDragDestIface.row_drop_possible$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3189.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static row_drop_possible row_drop_possible(MemorySegment segment, SegmentScope scope) {
+    public static row_drop_possible row_drop_possible(MemorySegment segment, Arena scope) {
         return row_drop_possible.ofAddress(row_drop_possible$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -182,7 +135,7 @@ public class _GtkTreeDragDestIface {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

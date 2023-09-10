@@ -3,78 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1959 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1959() {}
-    static final FunctionDescriptor gtk_style_set_background$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final VarHandle const$0 = constants$1958.const$4.varHandle(MemoryLayout.PathElement.groupElement("right"));
+    static final VarHandle const$1 = constants$1958.const$4.varHandle(MemoryLayout.PathElement.groupElement("top"));
+    static final VarHandle const$2 = constants$1958.const$4.varHandle(MemoryLayout.PathElement.groupElement("bottom"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_border_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_style_set_background$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_set_background",
-        constants$1959.gtk_style_set_background$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_border_new",
+        constants$35.const$2
     );
-    static final FunctionDescriptor gtk_style_apply_default_background$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_style_apply_default_background$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_apply_default_background",
-        constants$1959.gtk_style_apply_default_background$FUNC
-    );
-    static final FunctionDescriptor gtk_style_lookup_icon_set$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_lookup_icon_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_lookup_icon_set",
-        constants$1959.gtk_style_lookup_icon_set$FUNC
-    );
-    static final FunctionDescriptor gtk_style_lookup_color$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_lookup_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_lookup_color",
-        constants$1959.gtk_style_lookup_color$FUNC
-    );
-    static final FunctionDescriptor gtk_style_render_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_render_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_render_icon",
-        constants$1959.gtk_style_render_icon$FUNC
-    );
-    static final FunctionDescriptor gtk_paint_hline$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_paint_hline$MH = RuntimeHelper.downcallHandle(
-        "gtk_paint_hline",
-        constants$1959.gtk_paint_hline$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_border_copy",
+        constants$5.const$2
     );
 }
 

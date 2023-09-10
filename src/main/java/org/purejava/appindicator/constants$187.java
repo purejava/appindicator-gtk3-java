@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$187 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$187() {}
-    static final FunctionDescriptor g_unichar_istitle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_date_get_julian",
+        constants$10.const$5
     );
-    static final MethodHandle g_unichar_istitle$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_istitle",
-        constants$187.g_unichar_istitle$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_date_get_day_of_year",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_unichar_isdefined$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_date_get_monday_week_of_year",
+        constants$10.const$5
     );
-    static final MethodHandle g_unichar_isdefined$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_isdefined",
-        constants$187.g_unichar_isdefined$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_date_get_sunday_week_of_year",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_unichar_iswide$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_date_get_iso8601_week_of_year",
+        constants$10.const$5
     );
-    static final MethodHandle g_unichar_iswide$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_iswide",
-        constants$187.g_unichar_iswide$FUNC
-    );
-    static final FunctionDescriptor g_unichar_iswide_cjk$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_unichar_iswide_cjk$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_iswide_cjk",
-        constants$187.g_unichar_iswide_cjk$FUNC
-    );
-    static final FunctionDescriptor g_unichar_iszerowidth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_unichar_iszerowidth$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_iszerowidth",
-        constants$187.g_unichar_iszerowidth$FUNC
-    );
-    static final FunctionDescriptor g_unichar_ismark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_unichar_ismark$MH = RuntimeHelper.downcallHandle(
-        "g_unichar_ismark",
-        constants$187.g_unichar_ismark$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_date_clear",
+        constants$40.const$2
     );
 }
 

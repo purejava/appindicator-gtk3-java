@@ -3,66 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$603 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$603() {}
-    static final FunctionDescriptor g_drive_can_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_signal_new_valist$accumulator.class, "apply", constants$34.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_signal_new_valist$c_marshaller.class, "apply", constants$584.const$3);
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final MethodHandle g_drive_can_start$MH = RuntimeHelper.downcallHandle(
-        "g_drive_can_start",
-        constants$603.g_drive_can_start$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_signal_new_valist",
+        constants$603.const$2
     );
-    static final FunctionDescriptor g_drive_can_start_degraded$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_can_start_degraded$MH = RuntimeHelper.downcallHandle(
-        "g_drive_can_start_degraded",
-        constants$603.g_drive_can_start_degraded$FUNC
-    );
-    static final FunctionDescriptor g_drive_start$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_start$MH = RuntimeHelper.downcallHandle(
-        "g_drive_start",
-        constants$603.g_drive_start$FUNC
-    );
-    static final FunctionDescriptor g_drive_start_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_start_finish$MH = RuntimeHelper.downcallHandle(
-        "g_drive_start_finish",
-        constants$603.g_drive_start_finish$FUNC
-    );
-    static final FunctionDescriptor g_drive_can_stop$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_can_stop$MH = RuntimeHelper.downcallHandle(
-        "g_drive_can_stop",
-        constants$603.g_drive_can_stop$FUNC
-    );
-    static final FunctionDescriptor g_drive_stop$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_drive_stop$MH = RuntimeHelper.downcallHandle(
-        "g_drive_stop",
-        constants$603.g_drive_stop$FUNC
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_signal_new$accumulator.class, "apply", constants$34.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_signal_new$c_marshaller.class, "apply", constants$584.const$3);
 }
 
 

@@ -3,62 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$154 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$154() {}
-    static final FunctionDescriptor g_compute_hmac_for_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_date_time_add_weeks",
+        constants$21.const$3
     );
-    static final MethodHandle g_compute_hmac_for_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_compute_hmac_for_bytes",
-        constants$154.g_compute_hmac_for_bytes$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_date_time_add_days",
+        constants$21.const$3
     );
-    static final FunctionDescriptor GHookCompareFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_date_time_add_hours",
+        constants$21.const$3
     );
-    static final FunctionDescriptor GHookCompareFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_date_time_add_minutes",
+        constants$21.const$3
     );
-    static final MethodHandle GHookCompareFunc_UP$MH = RuntimeHelper.upcallHandle(GHookCompareFunc.class, "apply", constants$154.GHookCompareFunc_UP$FUNC);
-    static final FunctionDescriptor GHookCompareFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE
     );
-    static final MethodHandle GHookCompareFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$154.GHookCompareFunc_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_date_time_add_seconds",
+        constants$154.const$4
     );
-    static final FunctionDescriptor GHookFindFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GHookFindFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GHookFindFunc_UP$MH = RuntimeHelper.upcallHandle(GHookFindFunc.class, "apply", constants$154.GHookFindFunc_UP$FUNC);
-    static final FunctionDescriptor GHookFindFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GHookFindFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$154.GHookFindFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor GHookMarshaller$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GHookMarshaller_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GHookMarshaller_UP$MH = RuntimeHelper.upcallHandle(GHookMarshaller.class, "apply", constants$154.GHookMarshaller_UP$FUNC);
 }
 
 

@@ -3,61 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1938 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1938() {}
-    static final FunctionDescriptor gtk_hsv_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_hsv_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_hsv_new",
-        constants$1938.gtk_hsv_new$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_set_allowed_backends",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_hsv_set_color$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_pango_context_get_for_screen",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_hsv_set_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_hsv_set_color",
-        constants$1938.gtk_hsv_set_color$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_pango_context_get_for_display",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_hsv_get_color$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_pango_context_get",
+        constants$35.const$2
     );
-    static final MethodHandle gtk_hsv_get_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_hsv_get_color",
-        constants$1938.gtk_hsv_get_color$FUNC
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor gtk_hsv_set_metrics$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_hsv_set_metrics$MH = RuntimeHelper.downcallHandle(
-        "gtk_hsv_set_metrics",
-        constants$1938.gtk_hsv_set_metrics$FUNC
-    );
-    static final FunctionDescriptor gtk_hsv_get_metrics$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_hsv_get_metrics$MH = RuntimeHelper.downcallHandle(
-        "gtk_hsv_get_metrics",
-        constants$1938.gtk_hsv_get_metrics$FUNC
-    );
-    static final FunctionDescriptor gtk_hsv_is_adjusting$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_hsv_is_adjusting$MH = RuntimeHelper.downcallHandle(
-        "gtk_hsv_is_adjusting",
-        constants$1938.gtk_hsv_is_adjusting$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_pango_layout_line_get_clip_region",
+        constants$1938.const$4
     );
 }
 

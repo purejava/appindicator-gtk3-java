@@ -3,53 +3,55 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$444 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$444() {}
-    static final FunctionDescriptor g_binding_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_spawn_async_with_pipes_and_fds$child_setup.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_binding_get_flags$MH = RuntimeHelper.downcallHandle(
-        "g_binding_get_flags",
-        constants$444.g_binding_get_flags$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_spawn_async_with_pipes_and_fds",
+        constants$444.const$1
     );
-    static final FunctionDescriptor g_binding_get_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_spawn_async_with_fds$child_setup.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_binding_get_source$MH = RuntimeHelper.downcallHandle(
-        "g_binding_get_source",
-        constants$444.g_binding_get_source$FUNC
-    );
-    static final FunctionDescriptor g_binding_dup_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_binding_dup_source$MH = RuntimeHelper.downcallHandle(
-        "g_binding_dup_source",
-        constants$444.g_binding_dup_source$FUNC
-    );
-    static final FunctionDescriptor g_binding_get_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_binding_get_target$MH = RuntimeHelper.downcallHandle(
-        "g_binding_get_target",
-        constants$444.g_binding_get_target$FUNC
-    );
-    static final FunctionDescriptor g_binding_dup_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_binding_dup_target$MH = RuntimeHelper.downcallHandle(
-        "g_binding_dup_target",
-        constants$444.g_binding_dup_target$FUNC
-    );
-    static final FunctionDescriptor g_binding_get_source_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_binding_get_source_property$MH = RuntimeHelper.downcallHandle(
-        "g_binding_get_source_property",
-        constants$444.g_binding_get_source_property$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_spawn_async_with_fds",
+        constants$444.const$4
     );
 }
 

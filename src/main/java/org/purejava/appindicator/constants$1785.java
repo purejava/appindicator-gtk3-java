@@ -3,53 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1785 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1785() {}
-    static final FunctionDescriptor gtk_recent_chooser_dialog_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_recent_chooser_dialog_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_dialog_get_type",
-        constants$1785.gtk_recent_chooser_dialog_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_dialog_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_chooser_dialog_new$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_recent_chooser_dialog_new",
-        constants$1785.gtk_recent_chooser_dialog_new$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_dialog_new_for_manager$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_chooser_dialog_new_for_manager$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_recent_chooser_dialog_new_for_manager",
-        constants$1785.gtk_recent_chooser_dialog_new_for_manager$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_menu_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_recent_chooser_menu_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_menu_get_type",
-        constants$1785.gtk_recent_chooser_menu_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_menu_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_recent_chooser_menu_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_menu_new",
-        constants$1785.gtk_recent_chooser_menu_new$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_chooser_menu_new_for_manager$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_chooser_menu_new_for_manager$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_chooser_menu_new_for_manager",
-        constants$1785.gtk_recent_chooser_menu_new_for_manager$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        MemoryLayout.paddingLayout(7),
+        RuntimeHelper.POINTER.withName("atom"),
+        JAVA_INT.withName("time"),
+        JAVA_INT.withName("state")
+    ).withName("_GdkEventProperty");
+    static final VarHandle const$1 = constants$1785.const$0.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$2 = constants$1785.const$0.varHandle(MemoryLayout.PathElement.groupElement("window"));
+    static final VarHandle const$3 = constants$1785.const$0.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
+    static final VarHandle const$4 = constants$1785.const$0.varHandle(MemoryLayout.PathElement.groupElement("atom"));
+    static final VarHandle const$5 = constants$1785.const$0.varHandle(MemoryLayout.PathElement.groupElement("time"));
 }
 
 

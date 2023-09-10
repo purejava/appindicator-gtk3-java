@@ -3,61 +3,45 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1070 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1070() {}
-    static final FunctionDescriptor gdk_event_get_source_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_input_stream_query_info_async",
+        constants$584.const$3
     );
-    static final MethodHandle gdk_event_get_source_device$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_get_source_device",
-        constants$1070.gdk_event_get_source_device$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_input_stream_query_info_finish",
+        constants$23.const$0
     );
-    static final FunctionDescriptor gdk_event_request_motions$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_io_error_quark",
+        constants$83.const$1
     );
-    static final MethodHandle gdk_event_request_motions$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_request_motions",
-        constants$1070.gdk_event_request_motions$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_io_error_from_errno",
+        constants$8.const$4
     );
-    static final FunctionDescriptor gdk_event_triggers_context_menu$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_io_error_from_file_error",
+        constants$8.const$4
     );
-    static final MethodHandle gdk_event_triggers_context_menu$MH = RuntimeHelper.downcallHandle(
-        "gdk_event_triggers_context_menu",
-        constants$1070.gdk_event_triggers_context_menu$FUNC
-    );
-    static final FunctionDescriptor gdk_events_get_distance$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_events_get_distance$MH = RuntimeHelper.downcallHandle(
-        "gdk_events_get_distance",
-        constants$1070.gdk_events_get_distance$FUNC
-    );
-    static final FunctionDescriptor gdk_events_get_angle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_events_get_angle$MH = RuntimeHelper.downcallHandle(
-        "gdk_events_get_angle",
-        constants$1070.gdk_events_get_angle$FUNC
-    );
-    static final FunctionDescriptor gdk_events_get_center$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_events_get_center$MH = RuntimeHelper.downcallHandle(
-        "gdk_events_get_center",
-        constants$1070.gdk_events_get_center$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GIOStream");
 }
 
 

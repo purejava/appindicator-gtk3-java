@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GTaskThreadFunc)(struct _GTask* task,void* source_object,void* task_data,struct _GCancellable* cancellable);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GTaskThreadFunc {
 
     void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(GTaskThreadFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$794.GTaskThreadFunc_UP$MH, fi, constants$794.GTaskThreadFunc$FUNC, scope);
+    static MemorySegment allocate(GTaskThreadFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$1334.const$4, fi, constants$42.const$1, scope);
     }
-    static GTaskThreadFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GTaskThreadFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$794.GTaskThreadFunc_DOWN$MH.invokeExact(symbol, _model, _path, _iter, _data);
+                constants$259.const$4.invokeExact(symbol, _model, _path, _iter, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

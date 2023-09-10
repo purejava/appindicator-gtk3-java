@@ -3,63 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1370 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1370() {}
-    static final FunctionDescriptor gtk_tree_model_iter_children$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1364.const$2.varHandle(MemoryLayout.PathElement.groupElement("lookup_certificates_issued_by_finish"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_tls_database_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_tree_model_iter_children$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_iter_children",
-        constants$1370.gtk_tree_model_iter_children$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tls_database_verify_chain",
+        constants$1364.const$3
     );
-    static final FunctionDescriptor gtk_tree_model_iter_has_child$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_tls_database_verify_chain_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tls_database_verify_chain_async",
+        constants$1365.const$1
     );
-    static final MethodHandle gtk_tree_model_iter_has_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_iter_has_child",
-        constants$1370.gtk_tree_model_iter_has_child$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_iter_n_children$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_iter_n_children$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_iter_n_children",
-        constants$1370.gtk_tree_model_iter_n_children$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_iter_nth_child$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_iter_nth_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_iter_nth_child",
-        constants$1370.gtk_tree_model_iter_nth_child$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_iter_parent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_iter_parent$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_iter_parent",
-        constants$1370.gtk_tree_model_iter_parent$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_ref_node$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_ref_node$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_ref_node",
-        constants$1370.gtk_tree_model_ref_node$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tls_database_verify_chain_finish",
+        constants$12.const$2
     );
 }
 

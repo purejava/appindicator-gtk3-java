@@ -3,58 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1018 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1018() {}
-    static final FunctionDescriptor cairo_scaled_font_get_ctm$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_open_readwrite_finish",
+        constants$23.const$0
     );
-    static final MethodHandle cairo_scaled_font_get_ctm$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_ctm",
-        constants$1018.cairo_scaled_font_get_ctm$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_create_readwrite",
+        constants$180.const$0
     );
-    static final FunctionDescriptor cairo_scaled_font_get_scale_matrix$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_file_create_readwrite_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_create_readwrite_async",
+        constants$987.const$4
     );
-    static final MethodHandle cairo_scaled_font_get_scale_matrix$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_scale_matrix",
-        constants$1018.cairo_scaled_font_get_scale_matrix$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_create_readwrite_finish",
+        constants$23.const$0
     );
-    static final FunctionDescriptor cairo_scaled_font_get_font_options$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_scaled_font_get_font_options$MH = RuntimeHelper.downcallHandle(
-        "cairo_scaled_font_get_font_options",
-        constants$1018.cairo_scaled_font_get_font_options$FUNC
-    );
-    static final FunctionDescriptor cairo_toy_font_face_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_toy_font_face_create$MH = RuntimeHelper.downcallHandle(
-        "cairo_toy_font_face_create",
-        constants$1018.cairo_toy_font_face_create$FUNC
-    );
-    static final FunctionDescriptor cairo_toy_font_face_get_family$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_toy_font_face_get_family$MH = RuntimeHelper.downcallHandle(
-        "cairo_toy_font_face_get_family",
-        constants$1018.cairo_toy_font_face_get_family$FUNC
-    );
-    static final FunctionDescriptor cairo_toy_font_face_get_slant$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_toy_font_face_get_slant$MH = RuntimeHelper.downcallHandle(
-        "cairo_toy_font_face_get_slant",
-        constants$1018.cairo_toy_font_face_get_slant$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_replace_readwrite",
+        constants$989.const$4
     );
 }
 

@@ -3,56 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1953 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1953() {}
-    static final FunctionDescriptor gtk_status_icon_new_from_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1952.const$4.varHandle(MemoryLayout.PathElement.groupElement("accel_mods"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_status_icon_new_from_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_new_from_stock",
-        constants$1953.gtk_status_icon_new_from_stock$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_new",
+        constants$35.const$2
     );
-    static final FunctionDescriptor gtk_status_icon_new_from_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_get_is_locked",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_status_icon_new_from_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_new_from_icon_name",
-        constants$1953.gtk_status_icon_new_from_icon_name$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_get_modifier_mask",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_status_icon_new_from_gicon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_status_icon_new_from_gicon$MH = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_new_from_gicon",
-        constants$1953.gtk_status_icon_new_from_gicon$FUNC
-    );
-    static final FunctionDescriptor gtk_status_icon_set_from_pixbuf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_status_icon_set_from_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_set_from_pixbuf",
-        constants$1953.gtk_status_icon_set_from_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gtk_status_icon_set_from_file$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_status_icon_set_from_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_set_from_file",
-        constants$1953.gtk_status_icon_set_from_file$FUNC
-    );
-    static final FunctionDescriptor gtk_status_icon_set_from_stock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_status_icon_set_from_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_set_from_stock",
-        constants$1953.gtk_status_icon_set_from_stock$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_lock",
+        constants$13.const$1
     );
 }
 

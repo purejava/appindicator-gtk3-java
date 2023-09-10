@@ -3,62 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$340 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$340() {}
-    static final FunctionDescriptor g_uri_params_iter_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_uri_params_iter_init$MH = RuntimeHelper.downcallHandle(
-        "g_uri_params_iter_init",
-        constants$340.g_uri_params_iter_init$FUNC
-    );
-    static final FunctionDescriptor g_uri_params_iter_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uri_params_iter_next$MH = RuntimeHelper.downcallHandle(
-        "g_uri_params_iter_next",
-        constants$340.g_uri_params_iter_next$FUNC
-    );
-    static final FunctionDescriptor g_uri_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_uri_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_uri_error_quark",
-        constants$340.g_uri_error_quark$FUNC
-    );
-    static final FunctionDescriptor g_uri_unescape_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uri_unescape_string$MH = RuntimeHelper.downcallHandle(
-        "g_uri_unescape_string",
-        constants$340.g_uri_unescape_string$FUNC
-    );
-    static final FunctionDescriptor g_uri_unescape_segment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uri_unescape_segment$MH = RuntimeHelper.downcallHandle(
-        "g_uri_unescape_segment",
-        constants$340.g_uri_unescape_segment$FUNC
-    );
-    static final FunctionDescriptor g_uri_parse_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uri_parse_scheme$MH = RuntimeHelper.downcallHandle(
-        "g_uri_parse_scheme",
-        constants$340.g_uri_parse_scheme$FUNC
-    );
+    static final VarHandle const$0 = constants$338.const$2.varHandle(MemoryLayout.PathElement.groupElement("text"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GMarkupParser.passthrough.class, "apply", constants$339.const$3);
+    static final VarHandle const$2 = constants$338.const$2.varHandle(MemoryLayout.PathElement.groupElement("passthrough"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GMarkupParser.error.class, "apply", constants$14.const$3);
+    static final VarHandle const$4 = constants$338.const$2.varHandle(MemoryLayout.PathElement.groupElement("error"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_markup_parse_context_new$user_data_dnotify.class, "apply", constants$13.const$1);
 }
 
 

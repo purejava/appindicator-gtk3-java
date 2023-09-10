@@ -3,56 +3,41 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1452 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1452() {}
-    static final FunctionDescriptor gtk_entry_set_has_frame$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_user_data$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_draw_funcs_set_user_data",
+        constants$1423.const$1
     );
-    static final MethodHandle gtk_entry_set_has_frame$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_has_frame",
-        constants$1452.gtk_entry_set_has_frame$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_draw_funcs_get_user_data",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_entry_get_has_frame$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_draw_funcs_make_immutable",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_entry_get_has_frame$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_has_frame",
-        constants$1452.gtk_entry_get_has_frame$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_draw_funcs_is_immutable",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_entry_set_inner_border$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT
     );
-    static final MethodHandle gtk_entry_set_inner_border$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_inner_border",
-        constants$1452.gtk_entry_set_inner_border$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_inner_border$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_inner_border$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_inner_border",
-        constants$1452.gtk_entry_get_inner_border$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_overwrite_mode$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_overwrite_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_overwrite_mode",
-        constants$1452.gtk_entry_set_overwrite_mode$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_overwrite_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_overwrite_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_overwrite_mode",
-        constants$1452.gtk_entry_get_overwrite_mode$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "hb_draw_move_to",
+        constants$1452.const$5
     );
 }
 

@@ -3,54 +3,46 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$311 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$311() {}
-    static final FunctionDescriptor g_string_chunk_insert_const$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final MethodHandle g_string_chunk_insert_const$MH = RuntimeHelper.downcallHandle(
-        "g_string_chunk_insert_const",
-        constants$311.g_string_chunk_insert_const$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_string_replace",
+        constants$311.const$0
     );
-    static final FunctionDescriptor g_strv_builder_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_strv_builder_new$MH = RuntimeHelper.downcallHandle(
-        "g_strv_builder_new",
-        constants$311.g_strv_builder_new$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_string_ascii_down",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_strv_builder_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_string_ascii_up",
+        constants$5.const$2
     );
-    static final MethodHandle g_strv_builder_unref$MH = RuntimeHelper.downcallHandle(
-        "g_strv_builder_unref",
-        constants$311.g_strv_builder_unref$FUNC
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final FunctionDescriptor g_strv_builder_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_strv_builder_ref$MH = RuntimeHelper.downcallHandle(
-        "g_strv_builder_ref",
-        constants$311.g_strv_builder_ref$FUNC
-    );
-    static final FunctionDescriptor g_strv_builder_add$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_strv_builder_add$MH = RuntimeHelper.downcallHandle(
-        "g_strv_builder_add",
-        constants$311.g_strv_builder_add$FUNC
-    );
-    static final FunctionDescriptor g_strv_builder_addv$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_strv_builder_addv$MH = RuntimeHelper.downcallHandle(
-        "g_strv_builder_addv",
-        constants$311.g_strv_builder_addv$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_string_vprintf",
+        constants$311.const$4
     );
 }
 

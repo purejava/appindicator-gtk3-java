@@ -3,53 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$43 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$43() {}
-    static final FunctionDescriptor g_atexit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_ptr_array_sort$compare_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_sort",
+        constants$13.const$4
     );
-    static final MethodHandle g_atexit$MH = RuntimeHelper.downcallHandle(
-        "g_atexit",
-        constants$43.g_atexit$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_ptr_array_sort_with_data$compare_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_sort_with_data",
+        constants$14.const$3
     );
-    static final FunctionDescriptor g_find_program_in_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_find_program_in_path$MH = RuntimeHelper.downcallHandle(
-        "g_find_program_in_path",
-        constants$43.g_find_program_in_path$FUNC
-    );
-    static final FunctionDescriptor g_bit_nth_lsf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_bit_nth_lsf$MH = RuntimeHelper.downcallHandle(
-        "g_bit_nth_lsf",
-        constants$43.g_bit_nth_lsf$FUNC
-    );
-    static final FunctionDescriptor g_bit_nth_msf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_bit_nth_msf$MH = RuntimeHelper.downcallHandle(
-        "g_bit_nth_msf",
-        constants$43.g_bit_nth_msf$FUNC
-    );
-    static final FunctionDescriptor g_bit_storage$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_bit_storage$MH = RuntimeHelper.downcallHandle(
-        "g_bit_storage",
-        constants$43.g_bit_storage$FUNC
-    );
-    static final FunctionDescriptor __ctype_get_mb_cur_max$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle __ctype_get_mb_cur_max$MH = RuntimeHelper.downcallHandle(
-        "__ctype_get_mb_cur_max",
-        constants$43.__ctype_get_mb_cur_max$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_ptr_array_sort_values$compare_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_sort_values",
+        constants$13.const$4
     );
 }
 

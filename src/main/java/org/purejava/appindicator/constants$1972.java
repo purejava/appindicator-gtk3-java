@@ -3,60 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1972 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1972() {}
-    static final FunctionDescriptor gtk_theming_engine_has_region$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_has_region$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_has_region",
-        constants$1972.gtk_theming_engine_has_region$FUNC
-    );
-    static final FunctionDescriptor gtk_theming_engine_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_get_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_state",
-        constants$1972.gtk_theming_engine_get_state$FUNC
-    );
-    static final FunctionDescriptor gtk_theming_engine_state_is_running$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_state_is_running$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_state_is_running",
-        constants$1972.gtk_theming_engine_state_is_running$FUNC
-    );
-    static final FunctionDescriptor gtk_theming_engine_get_direction$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_get_direction$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_direction",
-        constants$1972.gtk_theming_engine_get_direction$FUNC
-    );
-    static final FunctionDescriptor gtk_theming_engine_get_junction_sides$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_get_junction_sides$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_junction_sides",
-        constants$1972.gtk_theming_engine_get_junction_sides$FUNC
-    );
-    static final FunctionDescriptor gtk_theming_engine_get_color$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_get_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_color",
-        constants$1972.gtk_theming_engine_get_color$FUNC
-    );
+    static final VarHandle const$0 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("connect_property_change_handler"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkObjectClass.remove_property_change_handler.class, "apply", constants$40.const$2);
+    static final VarHandle const$2 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("remove_property_change_handler"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkObjectClass.initialize.class, "apply", constants$13.const$4);
+    static final VarHandle const$4 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("initialize"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkObjectClass.children_changed.class, "apply", constants$42.const$4);
 }
 
 

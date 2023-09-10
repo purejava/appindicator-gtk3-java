@@ -3,57 +3,90 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1338 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1338() {}
-    static final FunctionDescriptor gtk_label_set_use_markup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_task_propagate_value",
+        constants$12.const$2
     );
-    static final MethodHandle gtk_label_set_use_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_use_markup",
-        constants$1338.gtk_label_set_use_markup$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_task_had_error",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_label_get_use_markup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_task_get_completed",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_label_get_use_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_use_markup",
-        constants$1338.gtk_label_get_use_markup$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_use_underline$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_use_underline$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_use_underline",
-        constants$1338.gtk_label_set_use_underline$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_use_underline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_use_underline$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_use_underline",
-        constants$1338.gtk_label_get_use_underline$FUNC
-    );
-    static final FunctionDescriptor gtk_label_set_markup_with_mnemonic$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_set_markup_with_mnemonic$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_markup_with_mnemonic",
-        constants$1338.gtk_label_set_markup_with_mnemonic$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_mnemonic_keyval$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_mnemonic_keyval$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_mnemonic_keyval",
-        constants$1338.gtk_label_get_mnemonic_keyval$FUNC
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        JAVA_LONG.withName("g_type")
+                    ).withName("g_type_class"),
+                    RuntimeHelper.POINTER.withName("construct_properties"),
+                    RuntimeHelper.POINTER.withName("constructor"),
+                    RuntimeHelper.POINTER.withName("set_property"),
+                    RuntimeHelper.POINTER.withName("get_property"),
+                    RuntimeHelper.POINTER.withName("dispose"),
+                    RuntimeHelper.POINTER.withName("finalize"),
+                    RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+                    RuntimeHelper.POINTER.withName("notify"),
+                    RuntimeHelper.POINTER.withName("constructed"),
+                    JAVA_LONG.withName("flags"),
+                    JAVA_LONG.withName("n_construct_properties"),
+                    RuntimeHelper.POINTER.withName("pspecs"),
+                    JAVA_LONG.withName("n_pspecs"),
+                    MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+                ).withName("parent_class"),
+                RuntimeHelper.POINTER.withName("get_input_stream"),
+                RuntimeHelper.POINTER.withName("get_output_stream"),
+                RuntimeHelper.POINTER.withName("close_fn"),
+                RuntimeHelper.POINTER.withName("close_async"),
+                RuntimeHelper.POINTER.withName("close_finish"),
+                RuntimeHelper.POINTER.withName("_g_reserved1"),
+                RuntimeHelper.POINTER.withName("_g_reserved2"),
+                RuntimeHelper.POINTER.withName("_g_reserved3"),
+                RuntimeHelper.POINTER.withName("_g_reserved4"),
+                RuntimeHelper.POINTER.withName("_g_reserved5"),
+                RuntimeHelper.POINTER.withName("_g_reserved6"),
+                RuntimeHelper.POINTER.withName("_g_reserved7"),
+                RuntimeHelper.POINTER.withName("_g_reserved8"),
+                RuntimeHelper.POINTER.withName("_g_reserved9"),
+                RuntimeHelper.POINTER.withName("_g_reserved10")
+            ).withName("parent_class"),
+            RuntimeHelper.POINTER.withName("_g_reserved1"),
+            RuntimeHelper.POINTER.withName("_g_reserved2"),
+            RuntimeHelper.POINTER.withName("_g_reserved3"),
+            RuntimeHelper.POINTER.withName("_g_reserved4"),
+            RuntimeHelper.POINTER.withName("_g_reserved5"),
+            RuntimeHelper.POINTER.withName("_g_reserved6")
+        ).withName("parent_class")
+    ).withName("_GTcpConnectionClass");
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        RuntimeHelper.POINTER.withName("g_class")
+                    ).withName("g_type_instance"),
+                    JAVA_INT.withName("ref_count"),
+                    MemoryLayout.paddingLayout(4),
+                    RuntimeHelper.POINTER.withName("qdata")
+                ).withName("parent_instance"),
+                RuntimeHelper.POINTER.withName("priv")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GTcpConnection");
+    static final VarHandle const$5 = constants$1338.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

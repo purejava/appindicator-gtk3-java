@@ -3,55 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1645 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1645() {}
-    static final FunctionDescriptor gtk_icon_info_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final MethodHandle gtk_icon_info_copy$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_copy",
-        constants$1645.gtk_icon_info_copy$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_PangoRendererClass.draw_glyph.class, "apply", constants$1645.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$1645.const$0
     );
-    static final FunctionDescriptor gtk_icon_info_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_free$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_free",
-        constants$1645.gtk_icon_info_free$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_new_for_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_new_for_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_new_for_pixbuf",
-        constants$1645.gtk_icon_info_new_for_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_get_base_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_get_base_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_get_base_size",
-        constants$1645.gtk_icon_info_get_base_size$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_get_base_scale$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_get_base_scale$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_get_base_scale",
-        constants$1645.gtk_icon_info_get_base_scale$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_get_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_info_get_filename$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_get_filename",
-        constants$1645.gtk_icon_info_get_filename$FUNC
-    );
+    static final VarHandle const$3 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("draw_glyph"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_PangoRendererClass.part_changed.class, "apply", constants$40.const$2);
+    static final VarHandle const$5 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("part_changed"));
 }
 
 

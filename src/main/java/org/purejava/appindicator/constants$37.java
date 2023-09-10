@@ -3,63 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$37 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$37() {}
-    static final FunctionDescriptor g_error_matches$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_steal",
+        constants$5.const$5
     );
-    static final MethodHandle g_error_matches$MH = RuntimeHelper.downcallHandle(
-        "g_error_matches",
-        constants$37.g_error_matches$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_ptr_array_copy$func.class, "apply", constants$5.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_copy",
+        constants$23.const$0
     );
-    static final FunctionDescriptor g_set_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_sized_new",
+        constants$24.const$0
     );
-    static final MethodHandle g_set_error$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_set_error",
-        constants$37.g_set_error$FUNC
-    );
-    static final FunctionDescriptor g_set_error_literal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_set_error_literal$MH = RuntimeHelper.downcallHandle(
-        "g_set_error_literal",
-        constants$37.g_set_error_literal$FUNC
-    );
-    static final FunctionDescriptor g_propagate_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_propagate_error$MH = RuntimeHelper.downcallHandle(
-        "g_propagate_error",
-        constants$37.g_propagate_error$FUNC
-    );
-    static final FunctionDescriptor g_clear_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_clear_error$MH = RuntimeHelper.downcallHandle(
-        "g_clear_error",
-        constants$37.g_clear_error$FUNC
-    );
-    static final FunctionDescriptor g_prefix_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_prefix_error$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_prefix_error",
-        constants$37.g_prefix_error$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_ptr_array_new_full$element_free_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_new_full",
+        constants$24.const$4
     );
 }
 

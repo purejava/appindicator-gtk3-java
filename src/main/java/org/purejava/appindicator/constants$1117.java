@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1117 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1117() {}
-    static final FunctionDescriptor gdk_display_notify_startup_complete$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_byte_order_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_display_notify_startup_complete$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_notify_startup_complete",
-        constants$1117.gdk_display_notify_startup_complete$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_application_flags_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_display_get_device_manager$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tls_error_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_display_get_device_manager$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_device_manager",
-        constants$1117.gdk_display_get_device_manager$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_flags_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_display_get_app_launch_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tls_authentication_mode_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_display_get_app_launch_context$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_app_launch_context",
-        constants$1117.gdk_display_get_app_launch_context$FUNC
-    );
-    static final FunctionDescriptor gdk_display_get_default_seat$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_get_default_seat$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_default_seat",
-        constants$1117.gdk_display_get_default_seat$FUNC
-    );
-    static final FunctionDescriptor gdk_display_list_seats$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_list_seats$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_list_seats",
-        constants$1117.gdk_display_list_seats$FUNC
-    );
-    static final FunctionDescriptor gdk_display_get_n_monitors$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_get_n_monitors$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_n_monitors",
-        constants$1117.gdk_display_get_n_monitors$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tls_channel_binding_type_get_type",
+        constants$3.const$5
     );
 }
 

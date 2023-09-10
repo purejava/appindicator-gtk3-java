@@ -3,65 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1973 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1973() {}
-    static final FunctionDescriptor gtk_theming_engine_get_background_color$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_get_background_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_background_color",
-        constants$1973.gtk_theming_engine_get_background_color$FUNC
-    );
-    static final FunctionDescriptor gtk_theming_engine_get_border_color$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_get_border_color$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_border_color",
-        constants$1973.gtk_theming_engine_get_border_color$FUNC
-    );
-    static final FunctionDescriptor gtk_theming_engine_get_border$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_get_border$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_border",
-        constants$1973.gtk_theming_engine_get_border$FUNC
-    );
-    static final FunctionDescriptor gtk_theming_engine_get_padding$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_get_padding$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_padding",
-        constants$1973.gtk_theming_engine_get_padding$FUNC
-    );
-    static final FunctionDescriptor gtk_theming_engine_get_margin$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_get_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_margin",
-        constants$1973.gtk_theming_engine_get_margin$FUNC
-    );
-    static final FunctionDescriptor gtk_theming_engine_get_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_theming_engine_get_font$MH = RuntimeHelper.downcallHandle(
-        "gtk_theming_engine_get_font",
-        constants$1973.gtk_theming_engine_get_font$FUNC
-    );
+    static final VarHandle const$0 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("children_changed"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkObjectClass.focus_event.class, "apply", constants$40.const$2);
+    static final VarHandle const$2 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("focus_event"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkObjectClass.property_change.class, "apply", constants$13.const$4);
+    static final VarHandle const$4 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("property_change"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkObjectClass.state_change.class, "apply", constants$164.const$5);
 }
 
 

@@ -3,66 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1220 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1220() {}
-    static final FunctionDescriptor atk_editable_text_set_run_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_proxy_address_get_protocol",
+        constants$5.const$2
     );
-    static final MethodHandle atk_editable_text_set_run_attributes$MH = RuntimeHelper.downcallHandle(
-        "atk_editable_text_set_run_attributes",
-        constants$1220.atk_editable_text_set_run_attributes$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_proxy_address_get_destination_protocol",
+        constants$5.const$2
     );
-    static final FunctionDescriptor atk_editable_text_set_text_contents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_proxy_address_get_destination_hostname",
+        constants$5.const$2
     );
-    static final MethodHandle atk_editable_text_set_text_contents$MH = RuntimeHelper.downcallHandle(
-        "atk_editable_text_set_text_contents",
-        constants$1220.atk_editable_text_set_text_contents$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_proxy_address_get_destination_port",
+        constants$186.const$2
     );
-    static final FunctionDescriptor atk_editable_text_insert_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_proxy_address_get_username",
+        constants$5.const$2
     );
-    static final MethodHandle atk_editable_text_insert_text$MH = RuntimeHelper.downcallHandle(
-        "atk_editable_text_insert_text",
-        constants$1220.atk_editable_text_insert_text$FUNC
-    );
-    static final FunctionDescriptor atk_editable_text_copy_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_editable_text_copy_text$MH = RuntimeHelper.downcallHandle(
-        "atk_editable_text_copy_text",
-        constants$1220.atk_editable_text_copy_text$FUNC
-    );
-    static final FunctionDescriptor atk_editable_text_cut_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_editable_text_cut_text$MH = RuntimeHelper.downcallHandle(
-        "atk_editable_text_cut_text",
-        constants$1220.atk_editable_text_cut_text$FUNC
-    );
-    static final FunctionDescriptor atk_editable_text_delete_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_editable_text_delete_text$MH = RuntimeHelper.downcallHandle(
-        "atk_editable_text_delete_text",
-        constants$1220.atk_editable_text_delete_text$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_proxy_address_get_password",
+        constants$5.const$2
     );
 }
 

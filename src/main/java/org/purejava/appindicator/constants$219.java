@@ -3,55 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$219 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$219() {}
-    static final FunctionDescriptor g_key_file_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_key_file_new$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_new",
-        constants$219.g_key_file_new$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_list_free_1",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_key_file_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_list_free_full$free_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_list_free_full",
+        constants$13.const$4
     );
-    static final MethodHandle g_key_file_ref$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_ref",
-        constants$219.g_key_file_ref$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_list_append",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_key_file_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_list_prepend",
+        constants$5.const$5
     );
-    static final MethodHandle g_key_file_unref$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_unref",
-        constants$219.g_key_file_unref$FUNC
-    );
-    static final FunctionDescriptor g_key_file_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_free$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_free",
-        constants$219.g_key_file_free$FUNC
-    );
-    static final FunctionDescriptor g_key_file_set_list_separator$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
-    );
-    static final MethodHandle g_key_file_set_list_separator$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_list_separator",
-        constants$219.g_key_file_set_list_separator$FUNC
-    );
-    static final FunctionDescriptor g_key_file_load_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_load_from_file$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_load_from_file",
-        constants$219.g_key_file_load_from_file$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_list_insert",
+        constants$32.const$3
     );
 }
 

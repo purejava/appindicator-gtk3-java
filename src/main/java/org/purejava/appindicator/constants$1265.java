@@ -3,59 +3,52 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1265 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1265() {}
-    static final FunctionDescriptor gtk_widget_get_allocation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1264.const$5.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        MemoryLayout.sequenceLayout(12, RuntimeHelper.POINTER).withName("padding")
+    ).withName("_GSimpleActionGroupClass");
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_simple_action_group_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_widget_get_allocation$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_allocation",
-        constants$1265.gtk_widget_get_allocation$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_simple_action_group_new",
+        constants$35.const$2
     );
-    static final FunctionDescriptor gtk_widget_set_allocation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_simple_action_group_lookup",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_widget_set_allocation$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_allocation",
-        constants$1265.gtk_widget_set_allocation$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_clip$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_clip$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_clip",
-        constants$1265.gtk_widget_set_clip$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_clip$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_clip$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_clip",
-        constants$1265.gtk_widget_get_clip$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_requisition$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_requisition$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_requisition",
-        constants$1265.gtk_widget_get_requisition$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_child_focus$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_child_focus$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_child_focus",
-        constants$1265.gtk_widget_child_focus$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_simple_action_group_insert",
+        constants$13.const$4
     );
 }
 

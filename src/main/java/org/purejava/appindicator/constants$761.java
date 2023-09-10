@@ -3,57 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$761 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$761() {}
-    static final FunctionDescriptor g_socket_get_socket_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$759.const$3.varHandle(MemoryLayout.PathElement.groupElement("close_fn"));
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_socket_get_socket_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_socket_type",
-        constants$761.g_socket_get_socket_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GInputStreamClass.read_async.class, "apply", constants$761.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$761.const$1
     );
-    static final FunctionDescriptor g_socket_get_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_protocol$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_protocol",
-        constants$761.g_socket_get_protocol$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_local_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_local_address$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_local_address",
-        constants$761.g_socket_get_local_address$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_remote_address$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_remote_address$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_remote_address",
-        constants$761.g_socket_get_remote_address$FUNC
-    );
-    static final FunctionDescriptor g_socket_set_blocking$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_set_blocking$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_blocking",
-        constants$761.g_socket_set_blocking$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_blocking$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_blocking$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_blocking",
-        constants$761.g_socket_get_blocking$FUNC
-    );
+    static final VarHandle const$4 = constants$759.const$3.varHandle(MemoryLayout.PathElement.groupElement("read_async"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GInputStreamClass.read_finish.class, "apply", constants$166.const$0);
 }
 
 

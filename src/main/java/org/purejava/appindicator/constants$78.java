@@ -3,58 +3,76 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$78 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$78() {}
-    static final FunctionDescriptor siginterrupt$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle siginterrupt$MH = RuntimeHelper.downcallHandle(
-        "siginterrupt",
-        constants$78.siginterrupt$FUNC
-    );
-    static final FunctionDescriptor sigaltstack$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle sigaltstack$MH = RuntimeHelper.downcallHandle(
-        "sigaltstack",
-        constants$78.sigaltstack$FUNC
-    );
-    static final FunctionDescriptor sigstack$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle sigstack$MH = RuntimeHelper.downcallHandle(
-        "sigstack",
-        constants$78.sigstack$FUNC
-    );
-    static final FunctionDescriptor pthread_sigmask$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_sigmask$MH = RuntimeHelper.downcallHandle(
-        "pthread_sigmask",
-        constants$78.pthread_sigmask$FUNC
-    );
-    static final FunctionDescriptor pthread_kill$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pthread_kill$MH = RuntimeHelper.downcallHandle(
-        "pthread_kill",
-        constants$78.pthread_kill$FUNC
-    );
-    static final FunctionDescriptor __libc_current_sigrtmin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle __libc_current_sigrtmin$MH = RuntimeHelper.downcallHandle(
-        "__libc_current_sigrtmin",
-        constants$78.__libc_current_sigrtmin$FUNC
-    );
+    static final UnionLayout const$0 = MemoryLayout.unionLayout(
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("__lock"),
+            JAVA_INT.withName("__count"),
+            JAVA_INT.withName("__owner"),
+            JAVA_INT.withName("__nusers"),
+            JAVA_INT.withName("__kind"),
+            JAVA_INT.withName("__spins"),
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("__prev"),
+                RuntimeHelper.POINTER.withName("__next")
+            ).withName("__list")
+        ).withName("__data"),
+        MemoryLayout.sequenceLayout(48, JAVA_BYTE).withName("__size"),
+        JAVA_LONG.withName("__align")
+    ).withName("pthread_mutex_t");
+    static final VarHandle const$1 = constants$78.const$0.varHandle(MemoryLayout.PathElement.groupElement("__align"));
+    static final UnionLayout const$2 = MemoryLayout.unionLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.unionLayout(
+                JAVA_LONG.withName("__value64"),
+                MemoryLayout.structLayout(
+                    JAVA_INT.withName("__low"),
+                    JAVA_INT.withName("__high")
+                ).withName("__value32")
+            ).withName("__wseq"),
+            MemoryLayout.unionLayout(
+                JAVA_LONG.withName("__value64"),
+                MemoryLayout.structLayout(
+                    JAVA_INT.withName("__low"),
+                    JAVA_INT.withName("__high")
+                ).withName("__value32")
+            ).withName("__g1_start"),
+            MemoryLayout.sequenceLayout(2, JAVA_INT).withName("__g_refs"),
+            MemoryLayout.sequenceLayout(2, JAVA_INT).withName("__g_size"),
+            JAVA_INT.withName("__g1_orig_size"),
+            JAVA_INT.withName("__wrefs"),
+            MemoryLayout.sequenceLayout(2, JAVA_INT).withName("__g_signals")
+        ).withName("__data"),
+        MemoryLayout.sequenceLayout(48, JAVA_BYTE).withName("__size"),
+        JAVA_LONG.withName("__align")
+    ).withName("pthread_cond_t");
+    static final VarHandle const$3 = constants$78.const$2.varHandle(MemoryLayout.PathElement.groupElement("__align"));
+    static final UnionLayout const$4 = MemoryLayout.unionLayout(
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("__readers"),
+            JAVA_INT.withName("__writers"),
+            JAVA_INT.withName("__wrphase_futex"),
+            JAVA_INT.withName("__writers_futex"),
+            JAVA_INT.withName("__pad3"),
+            JAVA_INT.withName("__pad4"),
+            JAVA_INT.withName("__cur_writer"),
+            JAVA_INT.withName("__shared"),
+            JAVA_LONG.withName("__pad1"),
+            JAVA_LONG.withName("__pad2"),
+            JAVA_INT.withName("__flags"),
+            MemoryLayout.paddingLayout(4)
+        ).withName("__data"),
+        MemoryLayout.sequenceLayout(56, JAVA_BYTE).withName("__size"),
+        JAVA_LONG.withName("__align")
+    ).withName("pthread_rwlock_t");
+    static final VarHandle const$5 = constants$78.const$4.varHandle(MemoryLayout.PathElement.groupElement("__align"));
 }
 
 

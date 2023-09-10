@@ -4,83 +4,42 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GTlsCertificateClass {
- *     GObjectClass parent_class;
- *     GTlsCertificateFlags (*verify)(GTlsCertificate*,GSocketConnectable*,GTlsCertificate*);
- *     gpointer padding[8];
+ *     struct _GObjectClass parent_class;
+ *     enum GTlsCertificateFlags (*verify)(struct _GTlsCertificate*,struct _GSocketConnectable*,struct _GTlsCertificate*);
+ *     void* padding[8];
  * };
  * }
  */
 public class _GTlsCertificateClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-            ).withName("g_type_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-            Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("notify"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("verify"),
-        MemoryLayout.sequenceLayout(8, Constants$root.C_POINTER$LAYOUT).withName("padding")
-    ).withName("_GTlsCertificateClass");
     public static MemoryLayout $LAYOUT() {
-        return _GTlsCertificateClass.$struct$LAYOUT;
+        return constants$1351.const$3;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
     }
-    static final FunctionDescriptor verify$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor verify_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle verify_UP$MH = RuntimeHelper.upcallHandle(verify.class, "apply", _GTlsCertificateClass.verify_UP$FUNC);
-    static final FunctionDescriptor verify_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle verify_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GTlsCertificateClass.verify_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GTlsCertificateFlags (*verify)(GTlsCertificate*,GSocketConnectable*,GTlsCertificate*);
+ * enum GTlsCertificateFlags (*verify)(struct _GTlsCertificate*,struct _GSocketConnectable*,struct _GTlsCertificate*);
      * }
      */
     public interface verify {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(verify fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GTlsCertificateClass.verify_UP$MH, fi, _GTlsCertificateClass.verify$FUNC, scope);
+        static MemorySegment allocate(verify fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1351.const$4, fi, constants$12.const$2, scope);
         }
-        static verify ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static verify ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (int)_GTlsCertificateClass.verify_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$12.const$4.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -88,35 +47,34 @@ public class _GTlsCertificateClass {
         }
     }
 
-    static final VarHandle verify$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("verify"));
     public static VarHandle verify$VH() {
-        return _GTlsCertificateClass.verify$VH;
+        return constants$1351.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GTlsCertificateFlags (*verify)(GTlsCertificate*,GSocketConnectable*,GTlsCertificate*);
+     * enum GTlsCertificateFlags (*verify)(struct _GTlsCertificate*,struct _GSocketConnectable*,struct _GTlsCertificate*);
      * }
      */
     public static MemorySegment verify$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GTlsCertificateClass.verify$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1351.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GTlsCertificateFlags (*verify)(GTlsCertificate*,GSocketConnectable*,GTlsCertificate*);
+     * enum GTlsCertificateFlags (*verify)(struct _GTlsCertificate*,struct _GSocketConnectable*,struct _GTlsCertificate*);
      * }
      */
     public static void verify$set(MemorySegment seg, MemorySegment x) {
-        _GTlsCertificateClass.verify$VH.set(seg, x);
+        constants$1351.const$5.set(seg, x);
     }
     public static MemorySegment verify$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GTlsCertificateClass.verify$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1351.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void verify$set(MemorySegment seg, long index, MemorySegment x) {
-        _GTlsCertificateClass.verify$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1351.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static verify verify(MemorySegment segment, SegmentScope scope) {
+    public static verify verify(MemorySegment segment, Arena scope) {
         return verify.ofAddress(verify$get(segment), scope);
     }
     public static MemorySegment padding$slice(MemorySegment seg) {
@@ -127,7 +85,7 @@ public class _GTlsCertificateClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

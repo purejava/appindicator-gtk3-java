@@ -3,63 +3,46 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1901 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1901() {}
-    static final FunctionDescriptor gtk_widget_path_append_with_siblings$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("size_prepared"),
+        RuntimeHelper.POINTER.withName("area_prepared"),
+        RuntimeHelper.POINTER.withName("area_updated"),
+        RuntimeHelper.POINTER.withName("closed")
+    ).withName("_GdkPixbufLoaderClass");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GdkPixbufLoaderClass.size_prepared.class, "apply", constants$467.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$467.const$3
     );
-    static final MethodHandle gtk_widget_path_append_with_siblings$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_append_with_siblings",
-        constants$1901.gtk_widget_path_append_with_siblings$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_append_for_widget$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_append_for_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_append_for_widget",
-        constants$1901.gtk_widget_path_append_for_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_iter_get_object_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_iter_get_object_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_get_object_type",
-        constants$1901.gtk_widget_path_iter_get_object_type$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_iter_set_object_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_iter_set_object_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_set_object_type",
-        constants$1901.gtk_widget_path_iter_set_object_type$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_iter_get_object_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_iter_get_object_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_get_object_name",
-        constants$1901.gtk_widget_path_iter_get_object_name$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_iter_set_object_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_iter_set_object_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_set_object_name",
-        constants$1901.gtk_widget_path_iter_set_object_name$FUNC
-    );
+    static final VarHandle const$3 = constants$1901.const$0.varHandle(MemoryLayout.PathElement.groupElement("size_prepared"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GdkPixbufLoaderClass.area_prepared.class, "apply", constants$13.const$1);
+    static final VarHandle const$5 = constants$1901.const$0.varHandle(MemoryLayout.PathElement.groupElement("area_prepared"));
 }
 
 

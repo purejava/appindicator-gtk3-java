@@ -2,18 +2,25 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1995 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1995() {}
-    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_ACTIONS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Actions");
-    static final MemorySegment G_KEY_FILE_DESKTOP_TYPE_APPLICATION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Application");
-    static final MemorySegment G_KEY_FILE_DESKTOP_TYPE_LINK$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Link");
-    static final MemorySegment G_KEY_FILE_DESKTOP_TYPE_DIRECTORY$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Directory");
-    static final MemorySegment G_LOG_DOMAIN$ADDR = MemorySegment.ofAddress(0L);
-    static final MemorySegment G_OPTION_REMAINING$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("");
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkComponentIface.contains.class, "apply", constants$608.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$608.const$5
+    );
+    static final VarHandle const$2 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("contains"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkComponentIface.ref_accessible_at_point.class, "apply", constants$1723.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$1723.const$2
+    );
+    static final VarHandle const$5 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("ref_accessible_at_point"));
 }
 
 

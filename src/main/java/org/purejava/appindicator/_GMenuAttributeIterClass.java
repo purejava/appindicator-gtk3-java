@@ -4,81 +4,41 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GMenuAttributeIterClass {
- *     GObjectClass parent_class;
- *     gboolean (*get_next)(GMenuAttributeIter*,const gchar**,GVariant**);
+ *     struct _GObjectClass parent_class;
+ *     int (*get_next)(struct _GMenuAttributeIter*,char**,struct _GVariant**);
  * };
  * }
  */
 public class _GMenuAttributeIterClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-            ).withName("g_type_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-            Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-            Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-            Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-            Constants$root.C_POINTER$LAYOUT.withName("notify"),
-            Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-            Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-            MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_next")
-    ).withName("_GMenuAttributeIterClass");
     public static MemoryLayout $LAYOUT() {
-        return _GMenuAttributeIterClass.$struct$LAYOUT;
+        return constants$1150.const$0;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 136);
     }
-    static final FunctionDescriptor get_next$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_next_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_next_UP$MH = RuntimeHelper.upcallHandle(get_next.class, "apply", _GMenuAttributeIterClass.get_next_UP$FUNC);
-    static final FunctionDescriptor get_next_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_next_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GMenuAttributeIterClass.get_next_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*get_next)(GMenuAttributeIter*,const gchar**,GVariant**);
+ * int (*get_next)(struct _GMenuAttributeIter*,char**,struct _GVariant**);
      * }
      */
     public interface get_next {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(get_next fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GMenuAttributeIterClass.get_next_UP$MH, fi, _GMenuAttributeIterClass.get_next$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(get_next fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1150.const$1, fi, constants$12.const$2, scope);
         }
-        static get_next ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
+        static get_next ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GMenuAttributeIterClass.get_next_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -86,35 +46,34 @@ public class _GMenuAttributeIterClass {
         }
     }
 
-    static final VarHandle get_next$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_next"));
     public static VarHandle get_next$VH() {
-        return _GMenuAttributeIterClass.get_next$VH;
+        return constants$1150.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*get_next)(GMenuAttributeIter*,const gchar**,GVariant**);
+     * int (*get_next)(struct _GMenuAttributeIter*,char**,struct _GVariant**);
      * }
      */
     public static MemorySegment get_next$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GMenuAttributeIterClass.get_next$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1150.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*get_next)(GMenuAttributeIter*,const gchar**,GVariant**);
+     * int (*get_next)(struct _GMenuAttributeIter*,char**,struct _GVariant**);
      * }
      */
     public static void get_next$set(MemorySegment seg, MemorySegment x) {
-        _GMenuAttributeIterClass.get_next$VH.set(seg, x);
+        constants$1150.const$2.set(seg, x);
     }
     public static MemorySegment get_next$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GMenuAttributeIterClass.get_next$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1150.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_next$set(MemorySegment seg, long index, MemorySegment x) {
-        _GMenuAttributeIterClass.get_next$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1150.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_next get_next(MemorySegment segment, SegmentScope scope) {
+    public static get_next get_next(MemorySegment segment, Arena scope) {
         return get_next.ofAddress(get_next$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -122,7 +81,7 @@ public class _GMenuAttributeIterClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

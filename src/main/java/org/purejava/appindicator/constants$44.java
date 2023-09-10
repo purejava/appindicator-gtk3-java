@@ -3,56 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$44 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$44() {}
-    static final FunctionDescriptor atof$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_ptr_array_sort_values_with_data$compare_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_sort_values_with_data",
+        constants$14.const$3
     );
-    static final MethodHandle atof$MH = RuntimeHelper.downcallHandle(
-        "atof",
-        constants$44.atof$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_ptr_array_foreach$func.class, "apply", constants$13.const$4);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_foreach",
+        constants$14.const$3
     );
-    static final FunctionDescriptor atoi$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_ptr_array_find",
+        constants$12.const$2
     );
-    static final MethodHandle atoi$MH = RuntimeHelper.downcallHandle(
-        "atoi",
-        constants$44.atoi$FUNC
-    );
-    static final FunctionDescriptor atol$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atol$MH = RuntimeHelper.downcallHandle(
-        "atol",
-        constants$44.atol$FUNC
-    );
-    static final FunctionDescriptor atoll$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atoll$MH = RuntimeHelper.downcallHandle(
-        "atoll",
-        constants$44.atoll$FUNC
-    );
-    static final FunctionDescriptor strtod$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strtod$MH = RuntimeHelper.downcallHandle(
-        "strtod",
-        constants$44.strtod$FUNC
-    );
-    static final FunctionDescriptor strtof$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strtof$MH = RuntimeHelper.downcallHandle(
-        "strtof",
-        constants$44.strtof$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_ptr_array_find_with_equal_func$equal_func.class, "apply", constants$9.const$0);
 }
 
 

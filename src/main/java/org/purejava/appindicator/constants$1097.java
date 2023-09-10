@@ -3,63 +3,58 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1097 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1097() {}
-    static final FunctionDescriptor gdk_window_get_decorations$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_output_stream_query_info_finish",
+        constants$23.const$0
     );
-    static final MethodHandle gdk_window_get_decorations$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_decorations",
-        constants$1097.gdk_window_get_decorations$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_output_stream_get_etag",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gdk_window_set_functions$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_functions$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_functions",
-        constants$1097.gdk_window_set_functions$FUNC
-    );
-    static final FunctionDescriptor gdk_window_create_similar_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_create_similar_surface$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_create_similar_surface",
-        constants$1097.gdk_window_create_similar_surface$FUNC
-    );
-    static final FunctionDescriptor gdk_window_create_similar_image_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_create_similar_image_surface$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_create_similar_image_surface",
-        constants$1097.gdk_window_create_similar_image_surface$FUNC
-    );
-    static final FunctionDescriptor gdk_window_beep$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_beep$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_beep",
-        constants$1097.gdk_window_beep$FUNC
-    );
-    static final FunctionDescriptor gdk_window_iconify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_iconify$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_iconify",
-        constants$1097.gdk_window_iconify$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GInetAddress");
+    static final VarHandle const$3 = constants$1097.const$2.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("to_string"),
+        RuntimeHelper.POINTER.withName("to_bytes")
+    ).withName("_GInetAddressClass");
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GInetAddressClass.to_string.class, "apply", constants$5.const$2);
 }
 
 

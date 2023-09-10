@@ -3,59 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$165 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$165() {}
-    static final FunctionDescriptor g_slist_find_custom$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_get_is_private",
+        constants$12.const$2
     );
-    static final MethodHandle g_slist_find_custom$MH = RuntimeHelper.downcallHandle(
-        "g_slist_find_custom",
-        constants$165.g_slist_find_custom$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_set_icon",
+        constants$42.const$1
     );
-    static final FunctionDescriptor g_slist_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_slist_position$MH = RuntimeHelper.downcallHandle(
-        "g_slist_position",
-        constants$165.g_slist_position$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_get_icon",
+        constants$165.const$2
     );
-    static final FunctionDescriptor g_slist_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_set_added",
+        constants$25.const$1
     );
-    static final MethodHandle g_slist_index$MH = RuntimeHelper.downcallHandle(
-        "g_slist_index",
-        constants$165.g_slist_index$FUNC
-    );
-    static final FunctionDescriptor g_slist_last$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_slist_last$MH = RuntimeHelper.downcallHandle(
-        "g_slist_last",
-        constants$165.g_slist_last$FUNC
-    );
-    static final FunctionDescriptor g_slist_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_slist_length$MH = RuntimeHelper.downcallHandle(
-        "g_slist_length",
-        constants$165.g_slist_length$FUNC
-    );
-    static final FunctionDescriptor g_slist_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_slist_foreach$MH = RuntimeHelper.downcallHandle(
-        "g_slist_foreach",
-        constants$165.g_slist_foreach$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_bookmark_file_set_added_date_time",
+        constants$14.const$3
     );
 }
 

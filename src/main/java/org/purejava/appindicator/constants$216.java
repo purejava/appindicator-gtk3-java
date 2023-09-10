@@ -3,65 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$216 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$216() {}
-    static final FunctionDescriptor g_io_channel_set_close_on_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_node_max_height",
+        constants$10.const$5
     );
-    static final MethodHandle g_io_channel_set_close_on_unref$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_set_close_on_unref",
-        constants$216.g_io_channel_set_close_on_unref$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_node_children_foreach$func.class, "apply", constants$13.const$4);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_node_children_foreach",
+        constants$179.const$1
     );
-    static final FunctionDescriptor g_io_channel_get_close_on_unref$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_node_reverse_children",
+        constants$13.const$1
     );
-    static final MethodHandle g_io_channel_get_close_on_unref$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_close_on_unref",
-        constants$216.g_io_channel_get_close_on_unref$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_node_n_children",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_io_channel_flush$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_flush$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_flush",
-        constants$216.g_io_channel_flush$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_read_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_read_line$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_read_line",
-        constants$216.g_io_channel_read_line$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_read_line_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_read_line_string$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_read_line_string",
-        constants$216.g_io_channel_read_line_string$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_read_to_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_read_to_end$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_read_to_end",
-        constants$216.g_io_channel_read_to_end$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_node_nth_child",
+        constants$21.const$3
     );
 }
 

@@ -4,21 +4,22 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GFileOutputStreamClass {
- *     GOutputStreamClass parent_class;
- *     goffset (*tell)(GFileOutputStream*);
- *     gboolean (*can_seek)(GFileOutputStream*);
- *     gboolean (*seek)(GFileOutputStream*,goffset,GSeekType,GCancellable*,GError**);
- *     gboolean (*can_truncate)(GFileOutputStream*);
- *     gboolean (*truncate_fn)(GFileOutputStream*,goffset,GCancellable*,GError**);
- *     GFileInfo* (*query_info)(GFileOutputStream*,char*,GCancellable*,GError**);
- *     void (*query_info_async)(GFileOutputStream*,char*,int,GCancellable*,GAsyncReadyCallback,gpointer);
- *     GFileInfo* (*query_info_finish)(GFileOutputStream*,GAsyncResult*,GError**);
- *     char* (*get_etag)(GFileOutputStream*);
+ *     struct _GOutputStreamClass parent_class;
+ *     long (*tell)(struct _GFileOutputStream*);
+ *     int (*can_seek)(struct _GFileOutputStream*);
+ *     int (*seek)(struct _GFileOutputStream*,long,enum GSeekType,struct _GCancellable*,struct _GError**);
+ *     int (*can_truncate)(struct _GFileOutputStream*);
+ *     int (*truncate_fn)(struct _GFileOutputStream*,long,struct _GCancellable*,struct _GError**);
+ *     struct _GFileInfo* (*query_info)(struct _GFileOutputStream*,char*,struct _GCancellable*,struct _GError**);
+ *     void (*query_info_async)(struct _GFileOutputStream*,char*,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
+ *     struct _GFileInfo* (*query_info_finish)(struct _GFileOutputStream*,struct _GAsyncResult*,struct _GError**);
+ *     char* (*get_etag)(struct _GFileOutputStream*);
  *     void (*_g_reserved1)();
  *     void (*_g_reserved2)();
  *     void (*_g_reserved3)();
@@ -29,98 +30,28 @@ import java.lang.foreign.*;
  */
 public class _GFileOutputStreamClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-                ).withName("g_type_class"),
-                Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-                Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-                Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-                Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-                Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-                MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-            ).withName("parent_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("write_fn"),
-            Constants$root.C_POINTER$LAYOUT.withName("splice"),
-            Constants$root.C_POINTER$LAYOUT.withName("flush"),
-            Constants$root.C_POINTER$LAYOUT.withName("close_fn"),
-            Constants$root.C_POINTER$LAYOUT.withName("write_async"),
-            Constants$root.C_POINTER$LAYOUT.withName("write_finish"),
-            Constants$root.C_POINTER$LAYOUT.withName("splice_async"),
-            Constants$root.C_POINTER$LAYOUT.withName("splice_finish"),
-            Constants$root.C_POINTER$LAYOUT.withName("flush_async"),
-            Constants$root.C_POINTER$LAYOUT.withName("flush_finish"),
-            Constants$root.C_POINTER$LAYOUT.withName("close_async"),
-            Constants$root.C_POINTER$LAYOUT.withName("close_finish"),
-            Constants$root.C_POINTER$LAYOUT.withName("writev_fn"),
-            Constants$root.C_POINTER$LAYOUT.withName("writev_async"),
-            Constants$root.C_POINTER$LAYOUT.withName("writev_finish"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved4"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved5"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved6"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved7"),
-            Constants$root.C_POINTER$LAYOUT.withName("_g_reserved8")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("tell"),
-        Constants$root.C_POINTER$LAYOUT.withName("can_seek"),
-        Constants$root.C_POINTER$LAYOUT.withName("seek"),
-        Constants$root.C_POINTER$LAYOUT.withName("can_truncate"),
-        Constants$root.C_POINTER$LAYOUT.withName("truncate_fn"),
-        Constants$root.C_POINTER$LAYOUT.withName("query_info"),
-        Constants$root.C_POINTER$LAYOUT.withName("query_info_async"),
-        Constants$root.C_POINTER$LAYOUT.withName("query_info_finish"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_etag"),
-        Constants$root.C_POINTER$LAYOUT.withName("_g_reserved1"),
-        Constants$root.C_POINTER$LAYOUT.withName("_g_reserved2"),
-        Constants$root.C_POINTER$LAYOUT.withName("_g_reserved3"),
-        Constants$root.C_POINTER$LAYOUT.withName("_g_reserved4"),
-        Constants$root.C_POINTER$LAYOUT.withName("_g_reserved5")
-    ).withName("_GFileOutputStreamClass");
     public static MemoryLayout $LAYOUT() {
-        return _GFileOutputStreamClass.$struct$LAYOUT;
+        return constants$1091.const$3;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 296);
     }
-    static final FunctionDescriptor tell$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor tell_UP$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle tell_UP$MH = RuntimeHelper.upcallHandle(tell.class, "apply", _GFileOutputStreamClass.tell_UP$FUNC);
-    static final FunctionDescriptor tell_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle tell_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GFileOutputStreamClass.tell_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * goffset (*tell)(GFileOutputStream*);
+ * long (*tell)(struct _GFileOutputStream*);
      * }
      */
     public interface tell {
 
         long apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(tell fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GFileOutputStreamClass.tell_UP$MH, fi, _GFileOutputStreamClass.tell$FUNC, scope);
+        static MemorySegment allocate(tell fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1091.const$4, fi, constants$4.const$0, scope);
         }
-        static tell ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static tell ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (long)_GFileOutputStreamClass.tell_DOWN$MH.invokeExact(symbol, __x0);
+                    return (long)constants$1065.const$3.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -128,66 +59,52 @@ public class _GFileOutputStreamClass {
         }
     }
 
-    static final VarHandle tell$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("tell"));
     public static VarHandle tell$VH() {
-        return _GFileOutputStreamClass.tell$VH;
+        return constants$1091.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * goffset (*tell)(GFileOutputStream*);
+     * long (*tell)(struct _GFileOutputStream*);
      * }
      */
     public static MemorySegment tell$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.tell$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1091.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * goffset (*tell)(GFileOutputStream*);
+     * long (*tell)(struct _GFileOutputStream*);
      * }
      */
     public static void tell$set(MemorySegment seg, MemorySegment x) {
-        _GFileOutputStreamClass.tell$VH.set(seg, x);
+        constants$1091.const$5.set(seg, x);
     }
     public static MemorySegment tell$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.tell$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1091.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void tell$set(MemorySegment seg, long index, MemorySegment x) {
-        _GFileOutputStreamClass.tell$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1091.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static tell tell(MemorySegment segment, SegmentScope scope) {
+    public static tell tell(MemorySegment segment, Arena scope) {
         return tell.ofAddress(tell$get(segment), scope);
     }
-    static final FunctionDescriptor can_seek$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor can_seek_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle can_seek_UP$MH = RuntimeHelper.upcallHandle(can_seek.class, "apply", _GFileOutputStreamClass.can_seek_UP$FUNC);
-    static final FunctionDescriptor can_seek_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle can_seek_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GFileOutputStreamClass.can_seek_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*can_seek)(GFileOutputStream*);
+ * int (*can_seek)(struct _GFileOutputStream*);
      * }
      */
     public interface can_seek {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(can_seek fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GFileOutputStreamClass.can_seek_UP$MH, fi, _GFileOutputStreamClass.can_seek$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(can_seek fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1092.const$0, fi, constants$10.const$5, scope);
         }
-        static can_seek ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0) -> {
+        static can_seek ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GFileOutputStreamClass.can_seek_DOWN$MH.invokeExact(symbol, __x0);
+                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -195,78 +112,52 @@ public class _GFileOutputStreamClass {
         }
     }
 
-    static final VarHandle can_seek$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("can_seek"));
     public static VarHandle can_seek$VH() {
-        return _GFileOutputStreamClass.can_seek$VH;
+        return constants$1092.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*can_seek)(GFileOutputStream*);
+     * int (*can_seek)(struct _GFileOutputStream*);
      * }
      */
     public static MemorySegment can_seek$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.can_seek$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1092.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*can_seek)(GFileOutputStream*);
+     * int (*can_seek)(struct _GFileOutputStream*);
      * }
      */
     public static void can_seek$set(MemorySegment seg, MemorySegment x) {
-        _GFileOutputStreamClass.can_seek$VH.set(seg, x);
+        constants$1092.const$1.set(seg, x);
     }
     public static MemorySegment can_seek$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.can_seek$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1092.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void can_seek$set(MemorySegment seg, long index, MemorySegment x) {
-        _GFileOutputStreamClass.can_seek$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1092.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static can_seek can_seek(MemorySegment segment, SegmentScope scope) {
+    public static can_seek can_seek(MemorySegment segment, Arena scope) {
         return can_seek.ofAddress(can_seek$get(segment), scope);
     }
-    static final FunctionDescriptor seek$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor seek_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle seek_UP$MH = RuntimeHelper.upcallHandle(seek.class, "apply", _GFileOutputStreamClass.seek_UP$FUNC);
-    static final FunctionDescriptor seek_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle seek_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GFileOutputStreamClass.seek_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*seek)(GFileOutputStream*,goffset,GSeekType,GCancellable*,GError**);
+ * int (*seek)(struct _GFileOutputStream*,long,enum GSeekType,struct _GCancellable*,struct _GError**);
      * }
      */
     public interface seek {
 
         int apply(java.lang.foreign.MemorySegment _x0, long _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(seek fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GFileOutputStreamClass.seek_UP$MH, fi, _GFileOutputStreamClass.seek$FUNC, scope);
+        static MemorySegment allocate(seek fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1092.const$2, fi, constants$1066.const$1, scope);
         }
-        static seek ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static seek ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, long __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (int)_GFileOutputStreamClass.seek_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    return (int)constants$1066.const$3.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -274,66 +165,52 @@ public class _GFileOutputStreamClass {
         }
     }
 
-    static final VarHandle seek$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("seek"));
     public static VarHandle seek$VH() {
-        return _GFileOutputStreamClass.seek$VH;
+        return constants$1092.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*seek)(GFileOutputStream*,goffset,GSeekType,GCancellable*,GError**);
+     * int (*seek)(struct _GFileOutputStream*,long,enum GSeekType,struct _GCancellable*,struct _GError**);
      * }
      */
     public static MemorySegment seek$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.seek$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1092.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*seek)(GFileOutputStream*,goffset,GSeekType,GCancellable*,GError**);
+     * int (*seek)(struct _GFileOutputStream*,long,enum GSeekType,struct _GCancellable*,struct _GError**);
      * }
      */
     public static void seek$set(MemorySegment seg, MemorySegment x) {
-        _GFileOutputStreamClass.seek$VH.set(seg, x);
+        constants$1092.const$3.set(seg, x);
     }
     public static MemorySegment seek$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.seek$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1092.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void seek$set(MemorySegment seg, long index, MemorySegment x) {
-        _GFileOutputStreamClass.seek$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1092.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static seek seek(MemorySegment segment, SegmentScope scope) {
+    public static seek seek(MemorySegment segment, Arena scope) {
         return seek.ofAddress(seek$get(segment), scope);
     }
-    static final FunctionDescriptor can_truncate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor can_truncate_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle can_truncate_UP$MH = RuntimeHelper.upcallHandle(can_truncate.class, "apply", _GFileOutputStreamClass.can_truncate_UP$FUNC);
-    static final FunctionDescriptor can_truncate_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle can_truncate_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GFileOutputStreamClass.can_truncate_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*can_truncate)(GFileOutputStream*);
+ * int (*can_truncate)(struct _GFileOutputStream*);
      * }
      */
     public interface can_truncate {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(can_truncate fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GFileOutputStreamClass.can_truncate_UP$MH, fi, _GFileOutputStreamClass.can_truncate$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(can_truncate fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1092.const$4, fi, constants$10.const$5, scope);
         }
-        static can_truncate ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0) -> {
+        static can_truncate ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GFileOutputStreamClass.can_truncate_DOWN$MH.invokeExact(symbol, __x0);
+                    return (int)constants$14.const$2.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -341,75 +218,52 @@ public class _GFileOutputStreamClass {
         }
     }
 
-    static final VarHandle can_truncate$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("can_truncate"));
     public static VarHandle can_truncate$VH() {
-        return _GFileOutputStreamClass.can_truncate$VH;
+        return constants$1092.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*can_truncate)(GFileOutputStream*);
+     * int (*can_truncate)(struct _GFileOutputStream*);
      * }
      */
     public static MemorySegment can_truncate$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.can_truncate$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1092.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*can_truncate)(GFileOutputStream*);
+     * int (*can_truncate)(struct _GFileOutputStream*);
      * }
      */
     public static void can_truncate$set(MemorySegment seg, MemorySegment x) {
-        _GFileOutputStreamClass.can_truncate$VH.set(seg, x);
+        constants$1092.const$5.set(seg, x);
     }
     public static MemorySegment can_truncate$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.can_truncate$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1092.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void can_truncate$set(MemorySegment seg, long index, MemorySegment x) {
-        _GFileOutputStreamClass.can_truncate$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1092.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static can_truncate can_truncate(MemorySegment segment, SegmentScope scope) {
+    public static can_truncate can_truncate(MemorySegment segment, Arena scope) {
         return can_truncate.ofAddress(can_truncate$get(segment), scope);
     }
-    static final FunctionDescriptor truncate_fn$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor truncate_fn_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle truncate_fn_UP$MH = RuntimeHelper.upcallHandle(truncate_fn.class, "apply", _GFileOutputStreamClass.truncate_fn_UP$FUNC);
-    static final FunctionDescriptor truncate_fn_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle truncate_fn_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GFileOutputStreamClass.truncate_fn_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*truncate_fn)(GFileOutputStream*,goffset,GCancellable*,GError**);
+ * int (*truncate_fn)(struct _GFileOutputStream*,long,struct _GCancellable*,struct _GError**);
      * }
      */
     public interface truncate_fn {
 
         int apply(java.lang.foreign.MemorySegment _x0, long _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(truncate_fn fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GFileOutputStreamClass.truncate_fn_UP$MH, fi, _GFileOutputStreamClass.truncate_fn$FUNC, scope);
+        static MemorySegment allocate(truncate_fn fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1093.const$0, fi, constants$393.const$4, scope);
         }
-        static truncate_fn ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static truncate_fn ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, long __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
                 try {
-                    return (int)_GFileOutputStreamClass.truncate_fn_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    return (int)constants$1080.const$4.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -417,75 +271,52 @@ public class _GFileOutputStreamClass {
         }
     }
 
-    static final VarHandle truncate_fn$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("truncate_fn"));
     public static VarHandle truncate_fn$VH() {
-        return _GFileOutputStreamClass.truncate_fn$VH;
+        return constants$1093.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*truncate_fn)(GFileOutputStream*,goffset,GCancellable*,GError**);
+     * int (*truncate_fn)(struct _GFileOutputStream*,long,struct _GCancellable*,struct _GError**);
      * }
      */
     public static MemorySegment truncate_fn$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.truncate_fn$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1093.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*truncate_fn)(GFileOutputStream*,goffset,GCancellable*,GError**);
+     * int (*truncate_fn)(struct _GFileOutputStream*,long,struct _GCancellable*,struct _GError**);
      * }
      */
     public static void truncate_fn$set(MemorySegment seg, MemorySegment x) {
-        _GFileOutputStreamClass.truncate_fn$VH.set(seg, x);
+        constants$1093.const$1.set(seg, x);
     }
     public static MemorySegment truncate_fn$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.truncate_fn$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1093.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void truncate_fn$set(MemorySegment seg, long index, MemorySegment x) {
-        _GFileOutputStreamClass.truncate_fn$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1093.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static truncate_fn truncate_fn(MemorySegment segment, SegmentScope scope) {
+    public static truncate_fn truncate_fn(MemorySegment segment, Arena scope) {
         return truncate_fn.ofAddress(truncate_fn$get(segment), scope);
     }
-    static final FunctionDescriptor query_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor query_info_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle query_info_UP$MH = RuntimeHelper.upcallHandle(query_info.class, "apply", _GFileOutputStreamClass.query_info_UP$FUNC);
-    static final FunctionDescriptor query_info_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle query_info_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GFileOutputStreamClass.query_info_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GFileInfo* (*query_info)(GFileOutputStream*,char*,GCancellable*,GError**);
+ * struct _GFileInfo* (*query_info)(struct _GFileOutputStream*,char*,struct _GCancellable*,struct _GError**);
      * }
      */
     public interface query_info {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment pattern, java.lang.foreign.MemorySegment callback_data, java.lang.foreign.MemorySegment target, java.lang.foreign.MemorySegment extents);
-        static MemorySegment allocate(query_info fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GFileOutputStreamClass.query_info_UP$MH, fi, _GFileOutputStreamClass.query_info$FUNC, scope);
+        static MemorySegment allocate(query_info fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1093.const$2, fi, constants$39.const$1, scope);
         }
-        static query_info ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static query_info ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _pattern, java.lang.foreign.MemorySegment _callback_data, java.lang.foreign.MemorySegment _target, java.lang.foreign.MemorySegment _extents) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.query_info_DOWN$MH.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
+                    return (java.lang.foreign.MemorySegment)constants$865.const$5.invokeExact(symbol, _pattern, _callback_data, _target, _extents);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -493,81 +324,52 @@ public class _GFileOutputStreamClass {
         }
     }
 
-    static final VarHandle query_info$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("query_info"));
     public static VarHandle query_info$VH() {
-        return _GFileOutputStreamClass.query_info$VH;
+        return constants$1093.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GFileInfo* (*query_info)(GFileOutputStream*,char*,GCancellable*,GError**);
+     * struct _GFileInfo* (*query_info)(struct _GFileOutputStream*,char*,struct _GCancellable*,struct _GError**);
      * }
      */
     public static MemorySegment query_info$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.query_info$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1093.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GFileInfo* (*query_info)(GFileOutputStream*,char*,GCancellable*,GError**);
+     * struct _GFileInfo* (*query_info)(struct _GFileOutputStream*,char*,struct _GCancellable*,struct _GError**);
      * }
      */
     public static void query_info$set(MemorySegment seg, MemorySegment x) {
-        _GFileOutputStreamClass.query_info$VH.set(seg, x);
+        constants$1093.const$3.set(seg, x);
     }
     public static MemorySegment query_info$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.query_info$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1093.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void query_info$set(MemorySegment seg, long index, MemorySegment x) {
-        _GFileOutputStreamClass.query_info$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1093.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static query_info query_info(MemorySegment segment, SegmentScope scope) {
+    public static query_info query_info(MemorySegment segment, Arena scope) {
         return query_info.ofAddress(query_info$get(segment), scope);
     }
-    static final FunctionDescriptor query_info_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor query_info_async_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle query_info_async_UP$MH = RuntimeHelper.upcallHandle(query_info_async.class, "apply", _GFileOutputStreamClass.query_info_async_UP$FUNC);
-    static final FunctionDescriptor query_info_async_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle query_info_async_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GFileOutputStreamClass.query_info_async_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*query_info_async)(GFileOutputStream*,char*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+ * void (*query_info_async)(struct _GFileOutputStream*,char*,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public interface query_info_async {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
-        static MemorySegment allocate(query_info_async fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GFileOutputStreamClass.query_info_async_UP$MH, fi, _GFileOutputStreamClass.query_info_async$FUNC, scope);
+        static MemorySegment allocate(query_info_async fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1093.const$4, fi, constants$584.const$3, scope);
         }
-        static query_info_async ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static query_info_async ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    _GFileOutputStreamClass.query_info_async_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$584.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -575,72 +377,52 @@ public class _GFileOutputStreamClass {
         }
     }
 
-    static final VarHandle query_info_async$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("query_info_async"));
     public static VarHandle query_info_async$VH() {
-        return _GFileOutputStreamClass.query_info_async$VH;
+        return constants$1093.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*query_info_async)(GFileOutputStream*,char*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*query_info_async)(struct _GFileOutputStream*,char*,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static MemorySegment query_info_async$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.query_info_async$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1093.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*query_info_async)(GFileOutputStream*,char*,int,GCancellable*,GAsyncReadyCallback,gpointer);
+     * void (*query_info_async)(struct _GFileOutputStream*,char*,int,struct _GCancellable*,void (*)(struct _GObject*,struct _GAsyncResult*,void*),void*);
      * }
      */
     public static void query_info_async$set(MemorySegment seg, MemorySegment x) {
-        _GFileOutputStreamClass.query_info_async$VH.set(seg, x);
+        constants$1093.const$5.set(seg, x);
     }
     public static MemorySegment query_info_async$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.query_info_async$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1093.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void query_info_async$set(MemorySegment seg, long index, MemorySegment x) {
-        _GFileOutputStreamClass.query_info_async$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1093.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static query_info_async query_info_async(MemorySegment segment, SegmentScope scope) {
+    public static query_info_async query_info_async(MemorySegment segment, Arena scope) {
         return query_info_async.ofAddress(query_info_async$get(segment), scope);
     }
-    static final FunctionDescriptor query_info_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor query_info_finish_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle query_info_finish_UP$MH = RuntimeHelper.upcallHandle(query_info_finish.class, "apply", _GFileOutputStreamClass.query_info_finish_UP$FUNC);
-    static final FunctionDescriptor query_info_finish_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle query_info_finish_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GFileOutputStreamClass.query_info_finish_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GFileInfo* (*query_info_finish)(GFileOutputStream*,GAsyncResult*,GError**);
+ * struct _GFileInfo* (*query_info_finish)(struct _GFileOutputStream*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public interface query_info_finish {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment vfs, java.lang.foreign.MemorySegment identifier, java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(query_info_finish fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GFileOutputStreamClass.query_info_finish_UP$MH, fi, _GFileOutputStreamClass.query_info_finish$FUNC, scope);
+        static MemorySegment allocate(query_info_finish fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1094.const$0, fi, constants$23.const$0, scope);
         }
-        static query_info_finish ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static query_info_finish ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _vfs, java.lang.foreign.MemorySegment _identifier, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.query_info_finish_DOWN$MH.invokeExact(symbol, _vfs, _identifier, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$732.const$0.invokeExact(symbol, _vfs, _identifier, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -648,66 +430,52 @@ public class _GFileOutputStreamClass {
         }
     }
 
-    static final VarHandle query_info_finish$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("query_info_finish"));
     public static VarHandle query_info_finish$VH() {
-        return _GFileOutputStreamClass.query_info_finish$VH;
+        return constants$1094.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GFileInfo* (*query_info_finish)(GFileOutputStream*,GAsyncResult*,GError**);
+     * struct _GFileInfo* (*query_info_finish)(struct _GFileOutputStream*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static MemorySegment query_info_finish$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.query_info_finish$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1094.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GFileInfo* (*query_info_finish)(GFileOutputStream*,GAsyncResult*,GError**);
+     * struct _GFileInfo* (*query_info_finish)(struct _GFileOutputStream*,struct _GAsyncResult*,struct _GError**);
      * }
      */
     public static void query_info_finish$set(MemorySegment seg, MemorySegment x) {
-        _GFileOutputStreamClass.query_info_finish$VH.set(seg, x);
+        constants$1094.const$1.set(seg, x);
     }
     public static MemorySegment query_info_finish$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.query_info_finish$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1094.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void query_info_finish$set(MemorySegment seg, long index, MemorySegment x) {
-        _GFileOutputStreamClass.query_info_finish$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1094.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static query_info_finish query_info_finish(MemorySegment segment, SegmentScope scope) {
+    public static query_info_finish query_info_finish(MemorySegment segment, Arena scope) {
         return query_info_finish.ofAddress(query_info_finish$get(segment), scope);
     }
-    static final FunctionDescriptor get_etag$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_etag_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_etag_UP$MH = RuntimeHelper.upcallHandle(get_etag.class, "apply", _GFileOutputStreamClass.get_etag_UP$FUNC);
-    static final FunctionDescriptor get_etag_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_etag_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GFileOutputStreamClass.get_etag_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * char* (*get_etag)(GFileOutputStream*);
+ * char* (*get_etag)(struct _GFileOutputStream*);
      * }
      */
     public interface get_etag {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-        static MemorySegment allocate(get_etag fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GFileOutputStreamClass.get_etag_UP$MH, fi, _GFileOutputStreamClass.get_etag$FUNC, scope);
+        static MemorySegment allocate(get_etag fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1094.const$2, fi, constants$5.const$2, scope);
         }
-        static get_etag ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_etag ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.get_etag_DOWN$MH.invokeExact(symbol, _user_data);
+                    return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -715,44 +483,36 @@ public class _GFileOutputStreamClass {
         }
     }
 
-    static final VarHandle get_etag$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_etag"));
     public static VarHandle get_etag$VH() {
-        return _GFileOutputStreamClass.get_etag$VH;
+        return constants$1094.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * char* (*get_etag)(GFileOutputStream*);
+     * char* (*get_etag)(struct _GFileOutputStream*);
      * }
      */
     public static MemorySegment get_etag$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.get_etag$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1094.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * char* (*get_etag)(GFileOutputStream*);
+     * char* (*get_etag)(struct _GFileOutputStream*);
      * }
      */
     public static void get_etag$set(MemorySegment seg, MemorySegment x) {
-        _GFileOutputStreamClass.get_etag$VH.set(seg, x);
+        constants$1094.const$3.set(seg, x);
     }
     public static MemorySegment get_etag$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass.get_etag$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1094.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void get_etag$set(MemorySegment seg, long index, MemorySegment x) {
-        _GFileOutputStreamClass.get_etag$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1094.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_etag get_etag(MemorySegment segment, SegmentScope scope) {
+    public static get_etag get_etag(MemorySegment segment, Arena scope) {
         return get_etag.ofAddress(get_etag$get(segment), scope);
     }
-    static final FunctionDescriptor _g_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _g_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved1_UP$MH = RuntimeHelper.upcallHandle(_g_reserved1.class, "apply", _GFileOutputStreamClass._g_reserved1_UP$FUNC);
-    static final FunctionDescriptor _g_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GFileOutputStreamClass._g_reserved1_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_g_reserved1)();
@@ -761,14 +521,14 @@ public class _GFileOutputStreamClass {
     public interface _g_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved1 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GFileOutputStreamClass._g_reserved1_UP$MH, fi, _GFileOutputStreamClass._g_reserved1$FUNC, scope);
+        static MemorySegment allocate(_g_reserved1 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1094.const$4, fi, constants$7.const$5, scope);
         }
-        static _g_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _g_reserved1 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GFileOutputStreamClass._g_reserved1_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -776,9 +536,8 @@ public class _GFileOutputStreamClass {
         }
     }
 
-    static final VarHandle _g_reserved1$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
     public static VarHandle _g_reserved1$VH() {
-        return _GFileOutputStreamClass._g_reserved1$VH;
+        return constants$1094.const$5;
     }
     /**
      * Getter for field:
@@ -787,7 +546,7 @@ public class _GFileOutputStreamClass {
      * }
      */
     public static MemorySegment _g_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass._g_reserved1$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1094.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -796,24 +555,17 @@ public class _GFileOutputStreamClass {
      * }
      */
     public static void _g_reserved1$set(MemorySegment seg, MemorySegment x) {
-        _GFileOutputStreamClass._g_reserved1$VH.set(seg, x);
+        constants$1094.const$5.set(seg, x);
     }
     public static MemorySegment _g_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass._g_reserved1$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1094.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        _GFileOutputStreamClass._g_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1094.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved1 _g_reserved1(MemorySegment segment, SegmentScope scope) {
+    public static _g_reserved1 _g_reserved1(MemorySegment segment, Arena scope) {
         return _g_reserved1.ofAddress(_g_reserved1$get(segment), scope);
     }
-    static final FunctionDescriptor _g_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _g_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved2_UP$MH = RuntimeHelper.upcallHandle(_g_reserved2.class, "apply", _GFileOutputStreamClass._g_reserved2_UP$FUNC);
-    static final FunctionDescriptor _g_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GFileOutputStreamClass._g_reserved2_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_g_reserved2)();
@@ -822,14 +574,14 @@ public class _GFileOutputStreamClass {
     public interface _g_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved2 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GFileOutputStreamClass._g_reserved2_UP$MH, fi, _GFileOutputStreamClass._g_reserved2$FUNC, scope);
+        static MemorySegment allocate(_g_reserved2 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1095.const$0, fi, constants$7.const$5, scope);
         }
-        static _g_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _g_reserved2 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GFileOutputStreamClass._g_reserved2_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -837,9 +589,8 @@ public class _GFileOutputStreamClass {
         }
     }
 
-    static final VarHandle _g_reserved2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
     public static VarHandle _g_reserved2$VH() {
-        return _GFileOutputStreamClass._g_reserved2$VH;
+        return constants$1095.const$1;
     }
     /**
      * Getter for field:
@@ -848,7 +599,7 @@ public class _GFileOutputStreamClass {
      * }
      */
     public static MemorySegment _g_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass._g_reserved2$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1095.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -857,24 +608,17 @@ public class _GFileOutputStreamClass {
      * }
      */
     public static void _g_reserved2$set(MemorySegment seg, MemorySegment x) {
-        _GFileOutputStreamClass._g_reserved2$VH.set(seg, x);
+        constants$1095.const$1.set(seg, x);
     }
     public static MemorySegment _g_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass._g_reserved2$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1095.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        _GFileOutputStreamClass._g_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1095.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved2 _g_reserved2(MemorySegment segment, SegmentScope scope) {
+    public static _g_reserved2 _g_reserved2(MemorySegment segment, Arena scope) {
         return _g_reserved2.ofAddress(_g_reserved2$get(segment), scope);
     }
-    static final FunctionDescriptor _g_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _g_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved3_UP$MH = RuntimeHelper.upcallHandle(_g_reserved3.class, "apply", _GFileOutputStreamClass._g_reserved3_UP$FUNC);
-    static final FunctionDescriptor _g_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GFileOutputStreamClass._g_reserved3_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_g_reserved3)();
@@ -883,14 +627,14 @@ public class _GFileOutputStreamClass {
     public interface _g_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved3 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GFileOutputStreamClass._g_reserved3_UP$MH, fi, _GFileOutputStreamClass._g_reserved3$FUNC, scope);
+        static MemorySegment allocate(_g_reserved3 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1095.const$2, fi, constants$7.const$5, scope);
         }
-        static _g_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _g_reserved3 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GFileOutputStreamClass._g_reserved3_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -898,9 +642,8 @@ public class _GFileOutputStreamClass {
         }
     }
 
-    static final VarHandle _g_reserved3$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
     public static VarHandle _g_reserved3$VH() {
-        return _GFileOutputStreamClass._g_reserved3$VH;
+        return constants$1095.const$3;
     }
     /**
      * Getter for field:
@@ -909,7 +652,7 @@ public class _GFileOutputStreamClass {
      * }
      */
     public static MemorySegment _g_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass._g_reserved3$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1095.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -918,24 +661,17 @@ public class _GFileOutputStreamClass {
      * }
      */
     public static void _g_reserved3$set(MemorySegment seg, MemorySegment x) {
-        _GFileOutputStreamClass._g_reserved3$VH.set(seg, x);
+        constants$1095.const$3.set(seg, x);
     }
     public static MemorySegment _g_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass._g_reserved3$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1095.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        _GFileOutputStreamClass._g_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1095.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved3 _g_reserved3(MemorySegment segment, SegmentScope scope) {
+    public static _g_reserved3 _g_reserved3(MemorySegment segment, Arena scope) {
         return _g_reserved3.ofAddress(_g_reserved3$get(segment), scope);
     }
-    static final FunctionDescriptor _g_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _g_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved4_UP$MH = RuntimeHelper.upcallHandle(_g_reserved4.class, "apply", _GFileOutputStreamClass._g_reserved4_UP$FUNC);
-    static final FunctionDescriptor _g_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GFileOutputStreamClass._g_reserved4_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_g_reserved4)();
@@ -944,14 +680,14 @@ public class _GFileOutputStreamClass {
     public interface _g_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved4 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GFileOutputStreamClass._g_reserved4_UP$MH, fi, _GFileOutputStreamClass._g_reserved4$FUNC, scope);
+        static MemorySegment allocate(_g_reserved4 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1095.const$4, fi, constants$7.const$5, scope);
         }
-        static _g_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _g_reserved4 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GFileOutputStreamClass._g_reserved4_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -959,9 +695,8 @@ public class _GFileOutputStreamClass {
         }
     }
 
-    static final VarHandle _g_reserved4$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
     public static VarHandle _g_reserved4$VH() {
-        return _GFileOutputStreamClass._g_reserved4$VH;
+        return constants$1095.const$5;
     }
     /**
      * Getter for field:
@@ -970,7 +705,7 @@ public class _GFileOutputStreamClass {
      * }
      */
     public static MemorySegment _g_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass._g_reserved4$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1095.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -979,24 +714,17 @@ public class _GFileOutputStreamClass {
      * }
      */
     public static void _g_reserved4$set(MemorySegment seg, MemorySegment x) {
-        _GFileOutputStreamClass._g_reserved4$VH.set(seg, x);
+        constants$1095.const$5.set(seg, x);
     }
     public static MemorySegment _g_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass._g_reserved4$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1095.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        _GFileOutputStreamClass._g_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1095.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved4 _g_reserved4(MemorySegment segment, SegmentScope scope) {
+    public static _g_reserved4 _g_reserved4(MemorySegment segment, Arena scope) {
         return _g_reserved4.ofAddress(_g_reserved4$get(segment), scope);
     }
-    static final FunctionDescriptor _g_reserved5$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _g_reserved5_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved5_UP$MH = RuntimeHelper.upcallHandle(_g_reserved5.class, "apply", _GFileOutputStreamClass._g_reserved5_UP$FUNC);
-    static final FunctionDescriptor _g_reserved5_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _g_reserved5_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GFileOutputStreamClass._g_reserved5_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_g_reserved5)();
@@ -1005,14 +733,14 @@ public class _GFileOutputStreamClass {
     public interface _g_reserved5 {
 
         void apply();
-        static MemorySegment allocate(_g_reserved5 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GFileOutputStreamClass._g_reserved5_UP$MH, fi, _GFileOutputStreamClass._g_reserved5$FUNC, scope);
+        static MemorySegment allocate(_g_reserved5 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1096.const$0, fi, constants$7.const$5, scope);
         }
-        static _g_reserved5 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _g_reserved5 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GFileOutputStreamClass._g_reserved5_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -1020,9 +748,8 @@ public class _GFileOutputStreamClass {
         }
     }
 
-    static final VarHandle _g_reserved5$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
     public static VarHandle _g_reserved5$VH() {
-        return _GFileOutputStreamClass._g_reserved5$VH;
+        return constants$1096.const$1;
     }
     /**
      * Getter for field:
@@ -1031,7 +758,7 @@ public class _GFileOutputStreamClass {
      * }
      */
     public static MemorySegment _g_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass._g_reserved5$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1096.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -1040,15 +767,15 @@ public class _GFileOutputStreamClass {
      * }
      */
     public static void _g_reserved5$set(MemorySegment seg, MemorySegment x) {
-        _GFileOutputStreamClass._g_reserved5$VH.set(seg, x);
+        constants$1096.const$1.set(seg, x);
     }
     public static MemorySegment _g_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GFileOutputStreamClass._g_reserved5$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1096.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _g_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
-        _GFileOutputStreamClass._g_reserved5$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1096.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _g_reserved5 _g_reserved5(MemorySegment segment, SegmentScope scope) {
+    public static _g_reserved5 _g_reserved5(MemorySegment segment, Arena scope) {
         return _g_reserved5.ofAddress(_g_reserved5$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -1056,7 +783,7 @@ public class _GFileOutputStreamClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -3,58 +3,47 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1311 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1311() {}
-    static final FunctionDescriptor gtk_window_set_mnemonic_modifier$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_mnemonic_modifier$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_mnemonic_modifier",
-        constants$1311.gtk_window_set_mnemonic_modifier$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_mnemonic_modifier$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_mnemonic_modifier$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_mnemonic_modifier",
-        constants$1311.gtk_window_get_mnemonic_modifier$FUNC
-    );
-    static final FunctionDescriptor gtk_window_activate_key$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_activate_key$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_activate_key",
-        constants$1311.gtk_window_activate_key$FUNC
-    );
-    static final FunctionDescriptor gtk_window_propagate_key_event$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_propagate_key_event$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_propagate_key_event",
-        constants$1311.gtk_window_propagate_key_event$FUNC
-    );
-    static final FunctionDescriptor gtk_window_present$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_present$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_present",
-        constants$1311.gtk_window_present$FUNC
-    );
-    static final FunctionDescriptor gtk_window_present_with_time$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_window_present_with_time$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_present_with_time",
-        constants$1311.gtk_window_present_with_time$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("changed"),
+        RuntimeHelper.POINTER.withName("event"),
+        RuntimeHelper.POINTER.withName("_g_reserved2"),
+        RuntimeHelper.POINTER.withName("_g_reserved3"),
+        RuntimeHelper.POINTER.withName("_g_reserved4"),
+        RuntimeHelper.POINTER.withName("_g_reserved5"),
+        RuntimeHelper.POINTER.withName("_g_reserved6")
+    ).withName("_GSocketListenerClass");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSocketListenerClass.changed.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$1311.const$0.varHandle(MemoryLayout.PathElement.groupElement("changed"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GSocketListenerClass.event.class, "apply", constants$42.const$4);
+    static final VarHandle const$4 = constants$1311.const$0.varHandle(MemoryLayout.PathElement.groupElement("event"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GSocketListenerClass._g_reserved2.class, "apply", constants$7.const$5);
 }
 
 

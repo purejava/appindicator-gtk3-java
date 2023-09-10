@@ -3,57 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$73 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$73() {}
-    static final FunctionDescriptor __sighandler_t$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor __sighandler_t_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle __sighandler_t_UP$MH = RuntimeHelper.upcallHandle(__sighandler_t.class, "apply", constants$73.__sighandler_t_UP$FUNC);
-    static final FunctionDescriptor __sighandler_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle __sighandler_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$73.__sighandler_t_DOWN$FUNC
-    );
-    static final FunctionDescriptor __sysv_signal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle __sysv_signal$MH = RuntimeHelper.downcallHandle(
-        "__sysv_signal",
-        constants$73.__sysv_signal$FUNC
-    );
-    static final FunctionDescriptor signal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle signal$MH = RuntimeHelper.downcallHandle(
-        "signal",
-        constants$73.signal$FUNC
-    );
-    static final FunctionDescriptor kill$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle kill$MH = RuntimeHelper.downcallHandle(
-        "kill",
-        constants$73.kill$FUNC
-    );
-    static final FunctionDescriptor killpg$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle killpg$MH = RuntimeHelper.downcallHandle(
-        "killpg",
-        constants$73.killpg$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_INT.withName("__lock"),
+        JAVA_INT.withName("__count"),
+        JAVA_INT.withName("__owner"),
+        JAVA_INT.withName("__nusers"),
+        JAVA_INT.withName("__kind"),
+        JAVA_INT.withName("__spins"),
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__prev"),
+            RuntimeHelper.POINTER.withName("__next")
+        ).withName("__list")
+    ).withName("__pthread_mutex_s");
+    static final VarHandle const$1 = constants$73.const$0.varHandle(MemoryLayout.PathElement.groupElement("__lock"));
+    static final VarHandle const$2 = constants$73.const$0.varHandle(MemoryLayout.PathElement.groupElement("__count"));
+    static final VarHandle const$3 = constants$73.const$0.varHandle(MemoryLayout.PathElement.groupElement("__owner"));
+    static final VarHandle const$4 = constants$73.const$0.varHandle(MemoryLayout.PathElement.groupElement("__nusers"));
+    static final VarHandle const$5 = constants$73.const$0.varHandle(MemoryLayout.PathElement.groupElement("__kind"));
 }
 
 

@@ -3,62 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1579 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1579() {}
-    static final FunctionDescriptor gtk_file_chooser_list_shortcut_folders$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_from_string",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_file_chooser_list_shortcut_folders$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_list_shortcut_folders",
-        constants$1579.gtk_file_chooser_list_shortcut_folders$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_attr_iterator_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gtk_file_chooser_add_shortcut_folder_uri$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_get_iterator",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_file_chooser_add_shortcut_folder_uri$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_add_shortcut_folder_uri",
-        constants$1579.gtk_file_chooser_add_shortcut_folder_uri$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_attr_iterator_range",
+        constants$14.const$3
     );
-    static final FunctionDescriptor gtk_file_chooser_remove_shortcut_folder_uri$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_attr_iterator_next",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_file_chooser_remove_shortcut_folder_uri$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_remove_shortcut_folder_uri",
-        constants$1579.gtk_file_chooser_remove_shortcut_folder_uri$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_list_shortcut_folder_uris$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_list_shortcut_folder_uris$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_list_shortcut_folder_uris",
-        constants$1579.gtk_file_chooser_list_shortcut_folder_uris$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_add_choice$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_add_choice$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_add_choice",
-        constants$1579.gtk_file_chooser_add_choice$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_remove_choice$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_remove_choice$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_remove_choice",
-        constants$1579.gtk_file_chooser_remove_choice$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_attr_iterator_copy",
+        constants$5.const$2
     );
 }
 

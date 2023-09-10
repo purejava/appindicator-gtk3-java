@@ -2,179 +2,168 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkFileFilterInfo {
- *     GtkFileFilterFlags contains;
- *     const gchar* filename;
- *     const gchar* uri;
- *     const gchar* display_name;
- *     const gchar* mime_type;
+ *     enum GtkFileFilterFlags contains;
+ *     char* filename;
+ *     char* uri;
+ *     char* display_name;
+ *     char* mime_type;
  * };
  * }
  */
 public class _GtkFileFilterInfo {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("contains"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("filename"),
-        Constants$root.C_POINTER$LAYOUT.withName("uri"),
-        Constants$root.C_POINTER$LAYOUT.withName("display_name"),
-        Constants$root.C_POINTER$LAYOUT.withName("mime_type")
-    ).withName("_GtkFileFilterInfo");
     public static MemoryLayout $LAYOUT() {
-        return _GtkFileFilterInfo.$struct$LAYOUT;
+        return constants$2675.const$2;
     }
-    static final VarHandle contains$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("contains"));
     public static VarHandle contains$VH() {
-        return _GtkFileFilterInfo.contains$VH;
+        return constants$2675.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GtkFileFilterFlags contains;
+     * enum GtkFileFilterFlags contains;
      * }
      */
     public static int contains$get(MemorySegment seg) {
-        return (int)_GtkFileFilterInfo.contains$VH.get(seg);
+        return (int)constants$2675.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GtkFileFilterFlags contains;
+     * enum GtkFileFilterFlags contains;
      * }
      */
     public static void contains$set(MemorySegment seg, int x) {
-        _GtkFileFilterInfo.contains$VH.set(seg, x);
+        constants$2675.const$3.set(seg, x);
     }
     public static int contains$get(MemorySegment seg, long index) {
-        return (int)_GtkFileFilterInfo.contains$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2675.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void contains$set(MemorySegment seg, long index, int x) {
-        _GtkFileFilterInfo.contains$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2675.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle filename$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("filename"));
     public static VarHandle filename$VH() {
-        return _GtkFileFilterInfo.filename$VH;
+        return constants$2675.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const gchar* filename;
+     * char* filename;
      * }
      */
     public static MemorySegment filename$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkFileFilterInfo.filename$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2675.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const gchar* filename;
+     * char* filename;
      * }
      */
     public static void filename$set(MemorySegment seg, MemorySegment x) {
-        _GtkFileFilterInfo.filename$VH.set(seg, x);
+        constants$2675.const$4.set(seg, x);
     }
     public static MemorySegment filename$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkFileFilterInfo.filename$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2675.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void filename$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkFileFilterInfo.filename$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2675.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle uri$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("uri"));
     public static VarHandle uri$VH() {
-        return _GtkFileFilterInfo.uri$VH;
+        return constants$2675.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const gchar* uri;
+     * char* uri;
      * }
      */
     public static MemorySegment uri$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkFileFilterInfo.uri$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2675.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const gchar* uri;
+     * char* uri;
      * }
      */
     public static void uri$set(MemorySegment seg, MemorySegment x) {
-        _GtkFileFilterInfo.uri$VH.set(seg, x);
+        constants$2675.const$5.set(seg, x);
     }
     public static MemorySegment uri$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkFileFilterInfo.uri$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2675.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void uri$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkFileFilterInfo.uri$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2675.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle display_name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("display_name"));
     public static VarHandle display_name$VH() {
-        return _GtkFileFilterInfo.display_name$VH;
+        return constants$2676.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const gchar* display_name;
+     * char* display_name;
      * }
      */
     public static MemorySegment display_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkFileFilterInfo.display_name$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2676.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const gchar* display_name;
+     * char* display_name;
      * }
      */
     public static void display_name$set(MemorySegment seg, MemorySegment x) {
-        _GtkFileFilterInfo.display_name$VH.set(seg, x);
+        constants$2676.const$0.set(seg, x);
     }
     public static MemorySegment display_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkFileFilterInfo.display_name$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2676.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void display_name$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkFileFilterInfo.display_name$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2676.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle mime_type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("mime_type"));
     public static VarHandle mime_type$VH() {
-        return _GtkFileFilterInfo.mime_type$VH;
+        return constants$2676.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * const gchar* mime_type;
+     * char* mime_type;
      * }
      */
     public static MemorySegment mime_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkFileFilterInfo.mime_type$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2676.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * const gchar* mime_type;
+     * char* mime_type;
      * }
      */
     public static void mime_type$set(MemorySegment seg, MemorySegment x) {
-        _GtkFileFilterInfo.mime_type$VH.set(seg, x);
+        constants$2676.const$1.set(seg, x);
     }
     public static MemorySegment mime_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkFileFilterInfo.mime_type$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2676.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void mime_type$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkFileFilterInfo.mime_type$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2676.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

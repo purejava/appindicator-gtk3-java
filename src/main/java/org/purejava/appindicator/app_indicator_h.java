@@ -2,17 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
+import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 public class app_indicator_h extends app_indicator_h_21 {
 
-    public static final OfByte C_CHAR = Constants$root.C_CHAR$LAYOUT;
-    public static final OfShort C_SHORT = Constants$root.C_SHORT$LAYOUT;
-    public static final OfInt C_INT = Constants$root.C_INT$LAYOUT;
-    public static final OfLong C_LONG = Constants$root.C_LONG_LONG$LAYOUT;
-    public static final OfLong C_LONG_LONG = Constants$root.C_LONG_LONG$LAYOUT;
-    public static final OfFloat C_FLOAT = Constants$root.C_FLOAT$LAYOUT;
-    public static final OfDouble C_DOUBLE = Constants$root.C_DOUBLE$LAYOUT;
-    public static final OfAddress C_POINTER = Constants$root.C_POINTER$LAYOUT;
+    public static final OfByte C_CHAR = JAVA_BYTE;
+    public static final OfShort C_SHORT = JAVA_SHORT;
+    public static final OfInt C_INT = JAVA_INT;
+    public static final OfLong C_LONG = JAVA_LONG;
+    public static final OfLong C_LONG_LONG = JAVA_LONG;
+    public static final OfFloat C_FLOAT = JAVA_FLOAT;
+    public static final OfDouble C_DOUBLE = JAVA_DOUBLE;
+    public static final AddressLayout C_POINTER = RuntimeHelper.POINTER;
     /**
      * {@snippet :
      * #define G_ANALYZER_ANALYZING 0
@@ -167,18 +171,18 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define __WORDSIZE_TIME64_COMPAT32 1
+     * #define __WORDSIZE_TIME64_COMPAT32 0
      * }
      */
     public static int __WORDSIZE_TIME64_COMPAT32() {
-        return (int)1L;
+        return (int)0L;
     }
     /**
      * {@snippet :
-     * #define __SYSCALL_WORDSIZE 64
+     * #define __TIMESIZE 64
      * }
      */
-    public static int __SYSCALL_WORDSIZE() {
+    public static int __TIMESIZE() {
         return (int)64L;
     }
     /**
@@ -263,11 +267,11 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define __GLIBC_MINOR__ 37
+     * #define __GLIBC_MINOR__ 35
      * }
      */
     public static int __GLIBC_MINOR__() {
-        return (int)37L;
+        return (int)35L;
     }
     /**
      * {@snippet :
@@ -759,11 +763,11 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define PTHREAD_STACK_MIN 16384
+     * #define PTHREAD_STACK_MIN 131072
      * }
      */
     public static int PTHREAD_STACK_MIN() {
-        return (int)16384L;
+        return (int)131072L;
     }
     /**
      * {@snippet :
@@ -903,6 +907,14 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
+     * #define CHAR_MIN 0
+     * }
+     */
+    public static int CHAR_MIN() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
      * #define G_HAVE_GINT64 1
      * }
      */
@@ -959,19 +971,11 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define GLIB_MICRO_VERSION 1
+     * #define GLIB_MICRO_VERSION 4
      * }
      */
     public static int GLIB_MICRO_VERSION() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define G_VA_COPY_AS_ARRAY 1
-     * }
-     */
-    public static int G_VA_COPY_AS_ARRAY() {
-        return (int)1L;
+        return (int)4L;
     }
     /**
      * {@snippet :
@@ -1107,14 +1111,6 @@ public class app_indicator_h extends app_indicator_h_21 {
      * }
      */
     public static int __STATFS_MATCHES_STATFS64() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64 1
-     * }
-     */
-    public static int __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64() {
         return (int)1L;
     }
     /**
@@ -1391,14 +1387,6 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define __GNUC_VA_LIST 1
-     * }
-     */
-    public static int __GNUC_VA_LIST() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
      * #define _STDLIB_H 1
      * }
      */
@@ -1487,11 +1475,11 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define __HAVE_FLOAT128 0
+     * #define __HAVE_FLOAT128 1
      * }
      */
     public static int __HAVE_FLOAT128() {
-        return (int)0L;
+        return (int)1L;
     }
     /**
      * {@snippet :
@@ -1500,22 +1488,6 @@ public class app_indicator_h extends app_indicator_h_21 {
      */
     public static int __HAVE_DISTINCT_FLOAT128() {
         return (int)0L;
-    }
-    /**
-     * {@snippet :
-     * #define __HAVE_FLOAT64X 1
-     * }
-     */
-    public static int __HAVE_FLOAT64X() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
-     * #define __HAVE_FLOAT64X_LONG_DOUBLE 1
-     * }
-     */
-    public static int __HAVE_FLOAT64X_LONG_DOUBLE() {
-        return (int)1L;
     }
     /**
      * {@snippet :
@@ -1735,19 +1707,35 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define __SIZEOF_PTHREAD_MUTEX_T 40
-     * }
-     */
-    public static int __SIZEOF_PTHREAD_MUTEX_T() {
-        return (int)40L;
-    }
-    /**
-     * {@snippet :
-     * #define __SIZEOF_PTHREAD_ATTR_T 56
+     * #define __SIZEOF_PTHREAD_ATTR_T 64
      * }
      */
     public static int __SIZEOF_PTHREAD_ATTR_T() {
-        return (int)56L;
+        return (int)64L;
+    }
+    /**
+     * {@snippet :
+     * #define __SIZEOF_PTHREAD_MUTEX_T 48
+     * }
+     */
+    public static int __SIZEOF_PTHREAD_MUTEX_T() {
+        return (int)48L;
+    }
+    /**
+     * {@snippet :
+     * #define __SIZEOF_PTHREAD_MUTEXATTR_T 8
+     * }
+     */
+    public static int __SIZEOF_PTHREAD_MUTEXATTR_T() {
+        return (int)8L;
+    }
+    /**
+     * {@snippet :
+     * #define __SIZEOF_PTHREAD_CONDATTR_T 8
+     * }
+     */
+    public static int __SIZEOF_PTHREAD_CONDATTR_T() {
+        return (int)8L;
     }
     /**
      * {@snippet :
@@ -1767,11 +1755,11 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define __SIZEOF_PTHREAD_MUTEXATTR_T 4
+     * #define __SIZEOF_PTHREAD_BARRIERATTR_T 8
      * }
      */
-    public static int __SIZEOF_PTHREAD_MUTEXATTR_T() {
-        return (int)4L;
+    public static int __SIZEOF_PTHREAD_BARRIERATTR_T() {
+        return (int)8L;
     }
     /**
      * {@snippet :
@@ -1783,27 +1771,11 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define __SIZEOF_PTHREAD_CONDATTR_T 4
-     * }
-     */
-    public static int __SIZEOF_PTHREAD_CONDATTR_T() {
-        return (int)4L;
-    }
-    /**
-     * {@snippet :
      * #define __SIZEOF_PTHREAD_RWLOCKATTR_T 8
      * }
      */
     public static int __SIZEOF_PTHREAD_RWLOCKATTR_T() {
         return (int)8L;
-    }
-    /**
-     * {@snippet :
-     * #define __SIZEOF_PTHREAD_BARRIERATTR_T 4
-     * }
-     */
-    public static int __SIZEOF_PTHREAD_BARRIERATTR_T() {
-        return (int)4L;
     }
     /**
      * {@snippet :
@@ -2303,6 +2275,134 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
+     * #define __BITS_PER_LONG 64
+     * }
+     */
+    public static int __BITS_PER_LONG() {
+        return (int)64L;
+    }
+    /**
+     * {@snippet :
+     * #define FPSIMD_MAGIC 1179680769
+     * }
+     */
+    public static int FPSIMD_MAGIC() {
+        return (int)1179680769L;
+    }
+    /**
+     * {@snippet :
+     * #define ESR_MAGIC 1163088385
+     * }
+     */
+    public static int ESR_MAGIC() {
+        return (int)1163088385L;
+    }
+    /**
+     * {@snippet :
+     * #define EXTRA_MAGIC 1163416577
+     * }
+     */
+    public static int EXTRA_MAGIC() {
+        return (int)1163416577L;
+    }
+    /**
+     * {@snippet :
+     * #define SVE_MAGIC 1398162689
+     * }
+     */
+    public static int SVE_MAGIC() {
+        return (int)1398162689L;
+    }
+    /**
+     * {@snippet :
+     * #define SVE_SIG_FLAG_SM 1
+     * }
+     */
+    public static int SVE_SIG_FLAG_SM() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * #define TPIDR2_MAGIC 1414547714
+     * }
+     */
+    public static int TPIDR2_MAGIC() {
+        return (int)1414547714L;
+    }
+    /**
+     * {@snippet :
+     * #define ZA_MAGIC 1412850501
+     * }
+     */
+    public static int ZA_MAGIC() {
+        return (int)1412850501L;
+    }
+    /**
+     * {@snippet :
+     * #define ZT_MAGIC 1515474433
+     * }
+     */
+    public static int ZT_MAGIC() {
+        return (int)1515474433L;
+    }
+    /**
+     * {@snippet :
+     * #define __SVE_VQ_BYTES 16
+     * }
+     */
+    public static int __SVE_VQ_BYTES() {
+        return (int)16L;
+    }
+    /**
+     * {@snippet :
+     * #define __SVE_VQ_MIN 1
+     * }
+     */
+    public static int __SVE_VQ_MIN() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * #define __SVE_VQ_MAX 512
+     * }
+     */
+    public static int __SVE_VQ_MAX() {
+        return (int)512L;
+    }
+    /**
+     * {@snippet :
+     * #define __SVE_NUM_ZREGS 32
+     * }
+     */
+    public static int __SVE_NUM_ZREGS() {
+        return (int)32L;
+    }
+    /**
+     * {@snippet :
+     * #define __SVE_NUM_PREGS 16
+     * }
+     */
+    public static int __SVE_NUM_PREGS() {
+        return (int)16L;
+    }
+    /**
+     * {@snippet :
+     * #define __SVE_ZREGS_OFFSET 0
+     * }
+     */
+    public static int __SVE_ZREGS_OFFSET() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * #define ZT_SIG_REG_SIZE 512
+     * }
+     */
+    public static int ZT_SIG_REG_SIZE() {
+        return (int)512L;
+    }
+    /**
+     * {@snippet :
      * #define __stack_t_defined 1
      * }
      */
@@ -2319,11 +2419,27 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define __NGREG 23
+     * #define _SYS_PROCFS_H 1
      * }
      */
-    public static int __NGREG() {
-        return (int)23L;
+    public static int _SYS_PROCFS_H() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * #define _SYS_TIME_H 1
+     * }
+     */
+    public static int _SYS_TIME_H() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * #define _SYS_USER_H 1
+     * }
+     */
+    public static int _SYS_USER_H() {
+        return (int)1L;
     }
     /**
      * {@snippet :
@@ -2335,19 +2451,19 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define MINSIGSTKSZ 2048
+     * #define MINSIGSTKSZ 5120
      * }
      */
     public static int MINSIGSTKSZ() {
-        return (int)2048L;
+        return (int)5120L;
     }
     /**
      * {@snippet :
-     * #define SIGSTKSZ 8192
+     * #define SIGSTKSZ 16384
      * }
      */
     public static int SIGSTKSZ() {
-        return (int)8192L;
+        return (int)16384L;
     }
     /**
      * {@snippet :
@@ -4063,11 +4179,11 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define PANGO_VERSION_MICRO 12
+     * #define PANGO_VERSION_MICRO 14
      * }
      */
     public static int PANGO_VERSION_MICRO() {
-        return (int)12L;
+        return (int)14L;
     }
     /**
      * {@snippet :
@@ -4103,27 +4219,35 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define HB_VERSION_MAJOR 6
+     * #define HB_UNICODE_COMBINING_CLASS_CCC133 133
+     * }
+     */
+    public static int HB_UNICODE_COMBINING_CLASS_CCC133() {
+        return (int)133L;
+    }
+    /**
+     * {@snippet :
+     * #define HB_VERSION_MAJOR 8
      * }
      */
     public static int HB_VERSION_MAJOR() {
-        return (int)6L;
+        return (int)8L;
     }
     /**
      * {@snippet :
-     * #define HB_VERSION_MINOR 0
+     * #define HB_VERSION_MINOR 1
      * }
      */
     public static int HB_VERSION_MINOR() {
-        return (int)0L;
+        return (int)1L;
     }
     /**
      * {@snippet :
-     * #define HB_VERSION_MICRO 0
+     * #define HB_VERSION_MICRO 1
      * }
      */
     public static int HB_VERSION_MICRO() {
-        return (int)0L;
+        return (int)1L;
     }
     /**
      * {@snippet :
@@ -4319,19 +4443,19 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define CAIRO_VERSION_MINOR 16
+     * #define CAIRO_VERSION_MINOR 17
      * }
      */
     public static int CAIRO_VERSION_MINOR() {
-        return (int)16L;
+        return (int)17L;
     }
     /**
      * {@snippet :
-     * #define CAIRO_VERSION_MICRO 0
+     * #define CAIRO_VERSION_MICRO 8
      * }
      */
     public static int CAIRO_VERSION_MICRO() {
-        return (int)0L;
+        return (int)8L;
     }
     /**
      * {@snippet :
@@ -4431,14 +4555,6 @@ public class app_indicator_h extends app_indicator_h_21 {
     }
     /**
      * {@snippet :
-     * #define CAIRO_HAS_TEE_SURFACE 1
-     * }
-     */
-    public static int CAIRO_HAS_TEE_SURFACE() {
-        return (int)1L;
-    }
-    /**
-     * {@snippet :
      * #define CAIRO_HAS_USER_FONT 1
      * }
      */
@@ -4476,6 +4592,14 @@ public class app_indicator_h extends app_indicator_h_21 {
      */
     public static int CAIRO_HAS_XLIB_XRENDER_SURFACE() {
         return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_COLOR_PALETTE_DEFAULT 0
+     * }
+     */
+    public static int CAIRO_COLOR_PALETTE_DEFAULT() {
+        return (int)0L;
     }
     /**
      * {@snippet :
@@ -7892,126 +8016,6 @@ public class app_indicator_h extends app_indicator_h_21 {
      */
     public static int GDK_KEY_m() {
         return (int)109L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_n 110
-     * }
-     */
-    public static int GDK_KEY_n() {
-        return (int)110L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_o 111
-     * }
-     */
-    public static int GDK_KEY_o() {
-        return (int)111L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_p 112
-     * }
-     */
-    public static int GDK_KEY_p() {
-        return (int)112L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_q 113
-     * }
-     */
-    public static int GDK_KEY_q() {
-        return (int)113L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_r 114
-     * }
-     */
-    public static int GDK_KEY_r() {
-        return (int)114L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_s 115
-     * }
-     */
-    public static int GDK_KEY_s() {
-        return (int)115L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_t 116
-     * }
-     */
-    public static int GDK_KEY_t() {
-        return (int)116L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_u 117
-     * }
-     */
-    public static int GDK_KEY_u() {
-        return (int)117L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_v 118
-     * }
-     */
-    public static int GDK_KEY_v() {
-        return (int)118L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_w 119
-     * }
-     */
-    public static int GDK_KEY_w() {
-        return (int)119L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_x 120
-     * }
-     */
-    public static int GDK_KEY_x() {
-        return (int)120L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_y 121
-     * }
-     */
-    public static int GDK_KEY_y() {
-        return (int)121L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_z 122
-     * }
-     */
-    public static int GDK_KEY_z() {
-        return (int)122L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_braceleft 123
-     * }
-     */
-    public static int GDK_KEY_braceleft() {
-        return (int)123L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_bar 124
-     * }
-     */
-    public static int GDK_KEY_bar() {
-        return (int)124L;
     }
 }
 

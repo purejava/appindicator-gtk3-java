@@ -3,57 +3,88 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$772 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$772() {}
-    static final FunctionDescriptor g_socket_client_set_enable_proxy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_filter_input_stream_set_close_base_stream",
+        constants$40.const$2
     );
-    static final MethodHandle g_socket_client_set_enable_proxy$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_set_enable_proxy",
-        constants$772.g_socket_client_set_enable_proxy$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_get_tls$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_get_tls$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_tls",
-        constants$772.g_socket_client_get_tls$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_set_tls$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_client_set_tls$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_set_tls",
-        constants$772.g_socket_client_set_tls$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_get_tls_validation_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_get_tls_validation_flags$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_tls_validation_flags",
-        constants$772.g_socket_client_get_tls_validation_flags$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_set_tls_validation_flags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_client_set_tls_validation_flags$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_set_tls_validation_flags",
-        constants$772.g_socket_client_set_tls_validation_flags$FUNC
-    );
-    static final FunctionDescriptor g_socket_client_get_proxy_resolver$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_client_get_proxy_resolver$MH = RuntimeHelper.downcallHandle(
-        "g_socket_client_get_proxy_resolver",
-        constants$772.g_socket_client_get_proxy_resolver$FUNC
-    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        RuntimeHelper.POINTER.withName("g_class")
+                    ).withName("g_type_instance"),
+                    JAVA_INT.withName("ref_count"),
+                    MemoryLayout.paddingLayout(4),
+                    RuntimeHelper.POINTER.withName("qdata")
+                ).withName("parent_instance"),
+                RuntimeHelper.POINTER.withName("priv")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("base_stream")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GBufferedInputStream");
+    static final VarHandle const$2 = constants$772.const$1.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        JAVA_LONG.withName("g_type")
+                    ).withName("g_type_class"),
+                    RuntimeHelper.POINTER.withName("construct_properties"),
+                    RuntimeHelper.POINTER.withName("constructor"),
+                    RuntimeHelper.POINTER.withName("set_property"),
+                    RuntimeHelper.POINTER.withName("get_property"),
+                    RuntimeHelper.POINTER.withName("dispose"),
+                    RuntimeHelper.POINTER.withName("finalize"),
+                    RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+                    RuntimeHelper.POINTER.withName("notify"),
+                    RuntimeHelper.POINTER.withName("constructed"),
+                    JAVA_LONG.withName("flags"),
+                    JAVA_LONG.withName("n_construct_properties"),
+                    RuntimeHelper.POINTER.withName("pspecs"),
+                    JAVA_LONG.withName("n_pspecs"),
+                    MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+                ).withName("parent_class"),
+                RuntimeHelper.POINTER.withName("read_fn"),
+                RuntimeHelper.POINTER.withName("skip"),
+                RuntimeHelper.POINTER.withName("close_fn"),
+                RuntimeHelper.POINTER.withName("read_async"),
+                RuntimeHelper.POINTER.withName("read_finish"),
+                RuntimeHelper.POINTER.withName("skip_async"),
+                RuntimeHelper.POINTER.withName("skip_finish"),
+                RuntimeHelper.POINTER.withName("close_async"),
+                RuntimeHelper.POINTER.withName("close_finish"),
+                RuntimeHelper.POINTER.withName("_g_reserved1"),
+                RuntimeHelper.POINTER.withName("_g_reserved2"),
+                RuntimeHelper.POINTER.withName("_g_reserved3"),
+                RuntimeHelper.POINTER.withName("_g_reserved4"),
+                RuntimeHelper.POINTER.withName("_g_reserved5")
+            ).withName("parent_class"),
+            RuntimeHelper.POINTER.withName("_g_reserved1"),
+            RuntimeHelper.POINTER.withName("_g_reserved2"),
+            RuntimeHelper.POINTER.withName("_g_reserved3")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("fill"),
+        RuntimeHelper.POINTER.withName("fill_async"),
+        RuntimeHelper.POINTER.withName("fill_finish"),
+        RuntimeHelper.POINTER.withName("_g_reserved1"),
+        RuntimeHelper.POINTER.withName("_g_reserved2"),
+        RuntimeHelper.POINTER.withName("_g_reserved3"),
+        RuntimeHelper.POINTER.withName("_g_reserved4"),
+        RuntimeHelper.POINTER.withName("_g_reserved5")
+    ).withName("_GBufferedInputStreamClass");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GBufferedInputStreamClass.fill.class, "apply", constants$4.const$5);
+    static final VarHandle const$5 = constants$772.const$3.varHandle(MemoryLayout.PathElement.groupElement("fill"));
 }
 
 

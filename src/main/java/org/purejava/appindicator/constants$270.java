@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$270 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$270() {}
-    static final FunctionDescriptor g_path_buf_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_source_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle g_path_buf_clear$MH = RuntimeHelper.downcallHandle(
-        "g_path_buf_clear",
-        constants$270.g_path_buf_clear$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_source_set_priority",
+        constants$40.const$2
     );
-    static final FunctionDescriptor g_path_buf_clear_to_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_source_get_priority",
+        constants$10.const$5
     );
-    static final MethodHandle g_path_buf_clear_to_path$MH = RuntimeHelper.downcallHandle(
-        "g_path_buf_clear_to_path",
-        constants$270.g_path_buf_clear_to_path$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_source_set_can_recurse",
+        constants$40.const$2
     );
-    static final FunctionDescriptor g_path_buf_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_source_get_can_recurse",
+        constants$10.const$5
     );
-    static final MethodHandle g_path_buf_free$MH = RuntimeHelper.downcallHandle(
-        "g_path_buf_free",
-        constants$270.g_path_buf_free$FUNC
-    );
-    static final FunctionDescriptor g_path_buf_free_to_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_path_buf_free_to_path$MH = RuntimeHelper.downcallHandle(
-        "g_path_buf_free_to_path",
-        constants$270.g_path_buf_free_to_path$FUNC
-    );
-    static final FunctionDescriptor g_path_buf_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_path_buf_copy$MH = RuntimeHelper.downcallHandle(
-        "g_path_buf_copy",
-        constants$270.g_path_buf_copy$FUNC
-    );
-    static final FunctionDescriptor g_path_buf_push$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_path_buf_push$MH = RuntimeHelper.downcallHandle(
-        "g_path_buf_push",
-        constants$270.g_path_buf_push$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_source_get_id",
+        constants$10.const$5
     );
 }
 

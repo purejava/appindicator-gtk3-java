@@ -3,57 +3,55 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1273 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1273() {}
-    static final FunctionDescriptor gtk_widget_set_valign$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_valign$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_valign",
-        constants$1273.gtk_widget_set_valign$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_margin_left$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_margin_left$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_margin_left",
-        constants$1273.gtk_widget_get_margin_left$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_margin_left$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_margin_left$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_margin_left",
-        constants$1273.gtk_widget_set_margin_left$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_margin_right$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_margin_right$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_margin_right",
-        constants$1273.gtk_widget_get_margin_right$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_margin_right$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_margin_right$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_margin_right",
-        constants$1273.gtk_widget_set_margin_right$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_margin_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_margin_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_margin_start",
-        constants$1273.gtk_widget_get_margin_start$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GSimpleProxyResolver");
+    static final VarHandle const$1 = constants$1273.const$0.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("_g_reserved1"),
+        RuntimeHelper.POINTER.withName("_g_reserved2"),
+        RuntimeHelper.POINTER.withName("_g_reserved3"),
+        RuntimeHelper.POINTER.withName("_g_reserved4"),
+        RuntimeHelper.POINTER.withName("_g_reserved5")
+    ).withName("_GSimpleProxyResolverClass");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GSimpleProxyResolverClass._g_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1273.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GSimpleProxyResolverClass._g_reserved2.class, "apply", constants$7.const$5);
 }
 
 

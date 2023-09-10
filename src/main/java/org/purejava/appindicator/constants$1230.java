@@ -3,54 +3,72 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1230 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1230() {}
-    static final FunctionDescriptor atk_relation_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_relation_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_get_type",
-        constants$1230.atk_relation_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_remote_action_group_activate_action_full",
+        constants$42.const$1
     );
-    static final FunctionDescriptor atk_relation_type_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_remote_action_group_change_action_state_full",
+        constants$42.const$1
     );
-    static final MethodHandle atk_relation_type_register$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_type_register",
-        constants$1230.atk_relation_type_register$FUNC
-    );
-    static final FunctionDescriptor atk_relation_type_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_relation_type_get_name$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_type_get_name",
-        constants$1230.atk_relation_type_get_name$FUNC
-    );
-    static final FunctionDescriptor atk_relation_type_for_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_relation_type_for_name$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_type_for_name",
-        constants$1230.atk_relation_type_for_name$FUNC
-    );
-    static final FunctionDescriptor atk_relation_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_relation_new$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_new",
-        constants$1230.atk_relation_new$FUNC
-    );
-    static final FunctionDescriptor atk_relation_get_relation_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_relation_get_relation_type$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_get_relation_type",
-        constants$1230.atk_relation_get_relation_type$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GResolver");
+    static final VarHandle const$3 = constants$1230.const$2.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("reload"),
+        RuntimeHelper.POINTER.withName("lookup_by_name"),
+        RuntimeHelper.POINTER.withName("lookup_by_name_async"),
+        RuntimeHelper.POINTER.withName("lookup_by_name_finish"),
+        RuntimeHelper.POINTER.withName("lookup_by_address"),
+        RuntimeHelper.POINTER.withName("lookup_by_address_async"),
+        RuntimeHelper.POINTER.withName("lookup_by_address_finish"),
+        RuntimeHelper.POINTER.withName("lookup_service"),
+        RuntimeHelper.POINTER.withName("lookup_service_async"),
+        RuntimeHelper.POINTER.withName("lookup_service_finish"),
+        RuntimeHelper.POINTER.withName("lookup_records"),
+        RuntimeHelper.POINTER.withName("lookup_records_async"),
+        RuntimeHelper.POINTER.withName("lookup_records_finish"),
+        RuntimeHelper.POINTER.withName("lookup_by_name_with_flags_async"),
+        RuntimeHelper.POINTER.withName("lookup_by_name_with_flags_finish"),
+        RuntimeHelper.POINTER.withName("lookup_by_name_with_flags")
+    ).withName("_GResolverClass");
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GResolverClass.reload.class, "apply", constants$13.const$1);
 }
 
 

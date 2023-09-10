@@ -3,62 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$22 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$22() {}
-    static final FunctionDescriptor g_ptr_array_new_with_free_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_ptr_array_new_with_free_func$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_new_with_free_func",
-        constants$22.g_ptr_array_new_with_free_func$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "strcspn",
+        constants$22.const$0
     );
-    static final FunctionDescriptor g_ptr_array_new_take$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "strspn",
+        constants$22.const$0
     );
-    static final MethodHandle g_ptr_array_new_take$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_new_take",
-        constants$22.g_ptr_array_new_take$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "strpbrk",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_ptr_array_new_from_array$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "strstr",
+        constants$5.const$5
     );
-    static final MethodHandle g_ptr_array_new_from_array$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_new_from_array",
-        constants$22.g_ptr_array_new_from_array$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_steal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_steal$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_steal",
-        constants$22.g_ptr_array_steal$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_copy$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_copy",
-        constants$22.g_ptr_array_copy$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_sized_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_sized_new$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_sized_new",
-        constants$22.g_ptr_array_sized_new$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "strtok",
+        constants$5.const$5
     );
 }
 

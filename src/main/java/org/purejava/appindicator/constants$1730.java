@@ -3,50 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1730 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1730() {}
-    static final FunctionDescriptor gtk_paned_get_child2$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_type",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_paned_get_child2$MH = RuntimeHelper.downcallHandle(
-        "gtk_paned_get_child2",
-        constants$1730.gtk_paned_get_child2$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_content",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_paned_get_handle_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_surface_write_to_png",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_paned_get_handle_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_paned_get_handle_window",
-        constants$1730.gtk_paned_get_handle_window$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(cairo_surface_write_to_png_stream$write_func.class, "apply", constants$62.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_surface_write_to_png_stream",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gtk_paned_set_wide_handle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_paned_set_wide_handle$MH = RuntimeHelper.downcallHandle(
-        "gtk_paned_set_wide_handle",
-        constants$1730.gtk_paned_set_wide_handle$FUNC
-    );
-    static final FunctionDescriptor gtk_paned_get_wide_handle$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_paned_get_wide_handle$MH = RuntimeHelper.downcallHandle(
-        "gtk_paned_get_wide_handle",
-        constants$1730.gtk_paned_get_wide_handle$FUNC
-    );
-    static final FunctionDescriptor gtk_places_sidebar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_places_sidebar_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_places_sidebar_get_type",
-        constants$1730.gtk_places_sidebar_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_places_sidebar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_places_sidebar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_places_sidebar_new",
-        constants$1730.gtk_places_sidebar_new$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_surface_get_user_data",
+        constants$5.const$5
     );
 }
 

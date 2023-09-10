@@ -2,57 +2,53 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct hb_variation_t {
- *     hb_tag_t tag;
+ *     unsigned int tag;
  *     float value;
  * };
  * }
  */
 public class hb_variation_t {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("tag"),
-        Constants$root.C_FLOAT$LAYOUT.withName("value")
-    ).withName("hb_variation_t");
     public static MemoryLayout $LAYOUT() {
-        return hb_variation_t.$struct$LAYOUT;
+        return constants$1418.const$3;
     }
-    static final VarHandle tag$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("tag"));
     public static VarHandle tag$VH() {
-        return hb_variation_t.tag$VH;
+        return constants$1418.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_tag_t tag;
+     * unsigned int tag;
      * }
      */
     public static int tag$get(MemorySegment seg) {
-        return (int)hb_variation_t.tag$VH.get(seg);
+        return (int)constants$1418.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_tag_t tag;
+     * unsigned int tag;
      * }
      */
     public static void tag$set(MemorySegment seg, int x) {
-        hb_variation_t.tag$VH.set(seg, x);
+        constants$1418.const$4.set(seg, x);
     }
     public static int tag$get(MemorySegment seg, long index) {
-        return (int)hb_variation_t.tag$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1418.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void tag$set(MemorySegment seg, long index, int x) {
-        hb_variation_t.tag$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1418.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle value$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("value"));
     public static VarHandle value$VH() {
-        return hb_variation_t.value$VH;
+        return constants$1418.const$5;
     }
     /**
      * Getter for field:
@@ -61,7 +57,7 @@ public class hb_variation_t {
      * }
      */
     public static float value$get(MemorySegment seg) {
-        return (float)hb_variation_t.value$VH.get(seg);
+        return (float)constants$1418.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -70,20 +66,20 @@ public class hb_variation_t {
      * }
      */
     public static void value$set(MemorySegment seg, float x) {
-        hb_variation_t.value$VH.set(seg, x);
+        constants$1418.const$5.set(seg, x);
     }
     public static float value$get(MemorySegment seg, long index) {
-        return (float)hb_variation_t.value$VH.get(seg.asSlice(index*sizeof()));
+        return (float)constants$1418.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void value$set(MemorySegment seg, long index, float x) {
-        hb_variation_t.value$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1418.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

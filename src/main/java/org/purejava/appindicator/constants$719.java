@@ -3,65 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$719 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$719() {}
-    static final FunctionDescriptor g_notification_set_urgent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_notification_set_urgent$MH = RuntimeHelper.downcallHandle(
-        "g_notification_set_urgent",
-        constants$719.g_notification_set_urgent$FUNC
-    );
-    static final FunctionDescriptor g_notification_set_priority$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_notification_set_priority$MH = RuntimeHelper.downcallHandle(
-        "g_notification_set_priority",
-        constants$719.g_notification_set_priority$FUNC
-    );
-    static final FunctionDescriptor g_notification_set_category$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_notification_set_category$MH = RuntimeHelper.downcallHandle(
-        "g_notification_set_category",
-        constants$719.g_notification_set_category$FUNC
-    );
-    static final FunctionDescriptor g_notification_add_button$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_notification_add_button$MH = RuntimeHelper.downcallHandle(
-        "g_notification_add_button",
-        constants$719.g_notification_add_button$FUNC
-    );
-    static final FunctionDescriptor g_notification_add_button_with_target$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_notification_add_button_with_target$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_notification_add_button_with_target",
-        constants$719.g_notification_add_button_with_target$FUNC
-    );
-    static final FunctionDescriptor g_notification_add_button_with_target_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_notification_add_button_with_target_value$MH = RuntimeHelper.downcallHandle(
-        "g_notification_add_button_with_target_value",
-        constants$719.g_notification_add_button_with_target_value$FUNC
-    );
+    static final VarHandle const$0 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("launch_uris"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GAppInfoIface.should_show.class, "apply", constants$10.const$5);
+    static final VarHandle const$2 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("should_show"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GAppInfoIface.set_as_default_for_type.class, "apply", constants$12.const$2);
+    static final VarHandle const$4 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("set_as_default_for_type"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GAppInfoIface.set_as_default_for_extension.class, "apply", constants$12.const$2);
 }
 
 

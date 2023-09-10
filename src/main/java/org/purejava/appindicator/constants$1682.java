@@ -3,48 +3,46 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1682 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1682() {}
-    static final FunctionDescriptor gtk_get_minor_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_get_minor_version$MH = RuntimeHelper.downcallHandle(
-        "gtk_get_minor_version",
-        constants$1682.gtk_get_minor_version$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_pop_group_to_source",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_get_micro_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_get_micro_version$MH = RuntimeHelper.downcallHandle(
-        "gtk_get_micro_version",
-        constants$1682.gtk_get_micro_version$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_set_operator",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_get_binary_age$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_get_binary_age$MH = RuntimeHelper.downcallHandle(
-        "gtk_get_binary_age",
-        constants$1682.gtk_get_binary_age$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_set_source",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_get_interface_age$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_get_interface_age$MH = RuntimeHelper.downcallHandle(
-        "gtk_get_interface_age",
-        constants$1682.gtk_get_interface_age$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor gtk_check_version$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_set_source_rgb",
+        constants$1682.const$3
     );
-    static final MethodHandle gtk_check_version$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_version",
-        constants$1682.gtk_check_version$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor gtk_parse_args$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_parse_args$MH = RuntimeHelper.downcallHandle(
-        "gtk_parse_args",
-        constants$1682.gtk_parse_args$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "cairo_set_source_rgba",
+        constants$1682.const$5
     );
 }
 

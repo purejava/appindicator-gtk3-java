@@ -2,118 +2,112 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GError {
- *     GQuark domain;
- *     gint code;
- *     gchar* message;
+ *     unsigned int domain;
+ *     int code;
+ *     char* message;
  * };
  * }
  */
 public class _GError {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("domain"),
-        Constants$root.C_INT$LAYOUT.withName("code"),
-        Constants$root.C_POINTER$LAYOUT.withName("message")
-    ).withName("_GError");
     public static MemoryLayout $LAYOUT() {
-        return _GError.$struct$LAYOUT;
+        return constants$53.const$1;
     }
-    static final VarHandle domain$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("domain"));
     public static VarHandle domain$VH() {
-        return _GError.domain$VH;
+        return constants$53.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GQuark domain;
+     * unsigned int domain;
      * }
      */
     public static int domain$get(MemorySegment seg) {
-        return (int)_GError.domain$VH.get(seg);
+        return (int)constants$53.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GQuark domain;
+     * unsigned int domain;
      * }
      */
     public static void domain$set(MemorySegment seg, int x) {
-        _GError.domain$VH.set(seg, x);
+        constants$53.const$2.set(seg, x);
     }
     public static int domain$get(MemorySegment seg, long index) {
-        return (int)_GError.domain$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$53.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void domain$set(MemorySegment seg, long index, int x) {
-        _GError.domain$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$53.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle code$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("code"));
     public static VarHandle code$VH() {
-        return _GError.code$VH;
+        return constants$53.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint code;
+     * int code;
      * }
      */
     public static int code$get(MemorySegment seg) {
-        return (int)_GError.code$VH.get(seg);
+        return (int)constants$53.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint code;
+     * int code;
      * }
      */
     public static void code$set(MemorySegment seg, int x) {
-        _GError.code$VH.set(seg, x);
+        constants$53.const$3.set(seg, x);
     }
     public static int code$get(MemorySegment seg, long index) {
-        return (int)_GError.code$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$53.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void code$set(MemorySegment seg, long index, int x) {
-        _GError.code$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$53.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle message$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("message"));
     public static VarHandle message$VH() {
-        return _GError.message$VH;
+        return constants$53.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* message;
+     * char* message;
      * }
      */
     public static MemorySegment message$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GError.message$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$53.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* message;
+     * char* message;
      * }
      */
     public static void message$set(MemorySegment seg, MemorySegment x) {
-        _GError.message$VH.set(seg, x);
+        constants$53.const$4.set(seg, x);
     }
     public static MemorySegment message$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GError.message$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$53.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void message$set(MemorySegment seg, long index, MemorySegment x) {
-        _GError.message$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$53.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

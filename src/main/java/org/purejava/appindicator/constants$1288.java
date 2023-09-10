@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1288 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1288() {}
-    static final FunctionDescriptor gtk_application_remove_window$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_socket_receive_messages",
+        constants$1029.const$4
     );
-    static final MethodHandle gtk_application_remove_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_remove_window",
-        constants$1288.gtk_application_remove_window$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_socket_send_messages",
+        constants$1029.const$4
     );
-    static final FunctionDescriptor gtk_application_get_windows$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_socket_close",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_application_get_windows$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_get_windows",
-        constants$1288.gtk_application_get_windows$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_shutdown",
+        constants$49.const$2
     );
-    static final FunctionDescriptor gtk_application_get_app_menu$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_is_closed",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_application_get_app_menu$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_get_app_menu",
-        constants$1288.gtk_application_get_app_menu$FUNC
-    );
-    static final FunctionDescriptor gtk_application_set_app_menu$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_application_set_app_menu$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_set_app_menu",
-        constants$1288.gtk_application_set_app_menu$FUNC
-    );
-    static final FunctionDescriptor gtk_application_get_menubar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_application_get_menubar$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_get_menubar",
-        constants$1288.gtk_application_get_menubar$FUNC
-    );
-    static final FunctionDescriptor gtk_application_set_menubar$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_application_set_menubar$MH = RuntimeHelper.downcallHandle(
-        "gtk_application_set_menubar",
-        constants$1288.gtk_application_set_menubar$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_create_source",
+        constants$196.const$3
     );
 }
 

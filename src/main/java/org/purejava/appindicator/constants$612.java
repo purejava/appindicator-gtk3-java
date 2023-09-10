@@ -3,50 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$612 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$612() {}
-    static final FunctionDescriptor g_emblem_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_emblem_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_emblem_get_type",
-        constants$612.g_emblem_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_clear_signal_handler",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_emblem_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_signal_override_class_closure",
+        constants$605.const$1
     );
-    static final MethodHandle g_emblem_new$MH = RuntimeHelper.downcallHandle(
-        "g_emblem_new",
-        constants$612.g_emblem_new$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_signal_override_class_handler$class_handler.class, "apply", constants$7.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_signal_override_class_handler",
+        constants$359.const$3
     );
-    static final FunctionDescriptor g_emblem_new_with_origin$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_signal_chain_from_overridden",
+        constants$13.const$4
     );
-    static final MethodHandle g_emblem_new_with_origin$MH = RuntimeHelper.downcallHandle(
-        "g_emblem_new_with_origin",
-        constants$612.g_emblem_new_with_origin$FUNC
-    );
-    static final FunctionDescriptor g_emblem_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_emblem_get_icon$MH = RuntimeHelper.downcallHandle(
-        "g_emblem_get_icon",
-        constants$612.g_emblem_get_icon$FUNC
-    );
-    static final FunctionDescriptor g_emblem_get_origin$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_emblem_get_origin$MH = RuntimeHelper.downcallHandle(
-        "g_emblem_get_origin",
-        constants$612.g_emblem_get_origin$FUNC
-    );
-    static final FunctionDescriptor g_emblemed_icon_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_emblemed_icon_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_emblemed_icon_get_type",
-        constants$612.g_emblemed_icon_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "g_signal_chain_from_overridden_handler",
+        constants$13.const$1
     );
 }
 

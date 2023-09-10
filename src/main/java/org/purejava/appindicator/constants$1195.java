@@ -3,72 +3,53 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1195 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1195() {}
-    static final FunctionDescriptor GtkRcPropertyParser$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GNativeVolumeMonitorClass.get_mount_for_mount_path.class, "apply", constants$5.const$5);
+    static final VarHandle const$1 = constants$1194.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_mount_for_mount_path"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_native_volume_monitor_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor GtkRcPropertyParser_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkRcPropertyParser_UP$MH = RuntimeHelper.upcallHandle(GtkRcPropertyParser.class, "apply", constants$1195.GtkRcPropertyParser_UP$FUNC);
-    static final FunctionDescriptor GtkRcPropertyParser_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkRcPropertyParser_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1195.GtkRcPropertyParser_DOWN$FUNC
-    );
-    static final FunctionDescriptor GtkBuilderConnectFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkBuilderConnectFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkBuilderConnectFunc_UP$MH = RuntimeHelper.upcallHandle(GtkBuilderConnectFunc.class, "apply", constants$1195.GtkBuilderConnectFunc_UP$FUNC);
-    static final FunctionDescriptor GtkBuilderConnectFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkBuilderConnectFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1195.GtkBuilderConnectFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor atk_get_major_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle atk_get_major_version$MH = RuntimeHelper.downcallHandle(
-        "atk_get_major_version",
-        constants$1195.atk_get_major_version$FUNC
-    );
-    static final FunctionDescriptor atk_get_minor_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle atk_get_minor_version$MH = RuntimeHelper.downcallHandle(
-        "atk_get_minor_version",
-        constants$1195.atk_get_minor_version$FUNC
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GNetworkAddress");
+    static final VarHandle const$4 = constants$1195.const$3.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class")
+    ).withName("_GNetworkAddressClass");
 }
 
 

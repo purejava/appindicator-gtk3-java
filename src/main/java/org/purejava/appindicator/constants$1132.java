@@ -3,74 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1132 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1132() {}
-    static final FunctionDescriptor gdk_pixbuf_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_list_store_insert",
+        constants$42.const$4
     );
-    static final MethodHandle gdk_pixbuf_new_from_file$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_file",
-        constants$1132.gdk_pixbuf_new_from_file$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_list_store_insert_sorted$compare_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_list_store_insert_sorted",
+        constants$34.const$5
     );
-    static final FunctionDescriptor gdk_pixbuf_new_from_file_at_size$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_list_store_sort$compare_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_list_store_sort",
+        constants$14.const$3
     );
-    static final MethodHandle gdk_pixbuf_new_from_file_at_size$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_file_at_size",
-        constants$1132.gdk_pixbuf_new_from_file_at_size$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_new_from_file_at_scale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_file_at_scale$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_file_at_scale",
-        constants$1132.gdk_pixbuf_new_from_file_at_scale$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_new_from_resource$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_resource$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_resource",
-        constants$1132.gdk_pixbuf_new_from_resource$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_new_from_resource_at_scale$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_resource_at_scale$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_resource_at_scale",
-        constants$1132.gdk_pixbuf_new_from_resource_at_scale$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_new_from_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_new_from_data$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_new_from_data",
-        constants$1132.gdk_pixbuf_new_from_data$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_list_store_append",
+        constants$13.const$4
     );
 }
 

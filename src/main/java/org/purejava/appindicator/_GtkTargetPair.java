@@ -2,118 +2,112 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkTargetPair {
- *     GdkAtom target;
- *     guint flags;
- *     guint info;
+ *     struct _GdkAtom* target;
+ *     unsigned int flags;
+ *     unsigned int info;
  * };
  * }
  */
 public class _GtkTargetPair {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("target"),
-        Constants$root.C_INT$LAYOUT.withName("flags"),
-        Constants$root.C_INT$LAYOUT.withName("info")
-    ).withName("_GtkTargetPair");
     public static MemoryLayout $LAYOUT() {
-        return _GtkTargetPair.$struct$LAYOUT;
+        return constants$2383.const$5;
     }
-    static final VarHandle target$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("target"));
     public static VarHandle target$VH() {
-        return _GtkTargetPair.target$VH;
+        return constants$2384.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GdkAtom target;
+     * struct _GdkAtom* target;
      * }
      */
     public static MemorySegment target$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTargetPair.target$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2384.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GdkAtom target;
+     * struct _GdkAtom* target;
      * }
      */
     public static void target$set(MemorySegment seg, MemorySegment x) {
-        _GtkTargetPair.target$VH.set(seg, x);
+        constants$2384.const$0.set(seg, x);
     }
     public static MemorySegment target$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTargetPair.target$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2384.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void target$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTargetPair.target$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2384.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle flags$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("flags"));
     public static VarHandle flags$VH() {
-        return _GtkTargetPair.flags$VH;
+        return constants$2384.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint flags;
+     * unsigned int flags;
      * }
      */
     public static int flags$get(MemorySegment seg) {
-        return (int)_GtkTargetPair.flags$VH.get(seg);
+        return (int)constants$2384.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint flags;
+     * unsigned int flags;
      * }
      */
     public static void flags$set(MemorySegment seg, int x) {
-        _GtkTargetPair.flags$VH.set(seg, x);
+        constants$2384.const$1.set(seg, x);
     }
     public static int flags$get(MemorySegment seg, long index) {
-        return (int)_GtkTargetPair.flags$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2384.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void flags$set(MemorySegment seg, long index, int x) {
-        _GtkTargetPair.flags$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2384.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle info$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("info"));
     public static VarHandle info$VH() {
-        return _GtkTargetPair.info$VH;
+        return constants$2384.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint info;
+     * unsigned int info;
      * }
      */
     public static int info$get(MemorySegment seg) {
-        return (int)_GtkTargetPair.info$VH.get(seg);
+        return (int)constants$2384.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint info;
+     * unsigned int info;
      * }
      */
     public static void info$set(MemorySegment seg, int x) {
-        _GtkTargetPair.info$VH.set(seg, x);
+        constants$2384.const$2.set(seg, x);
     }
     public static int info$get(MemorySegment seg, long index) {
-        return (int)_GtkTargetPair.info$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2384.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void info$set(MemorySegment seg, long index, int x) {
-        _GtkTargetPair.info$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2384.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

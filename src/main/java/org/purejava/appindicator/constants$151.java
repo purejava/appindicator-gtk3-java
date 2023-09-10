@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$151 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$151() {}
-    static final FunctionDescriptor g_str_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_date_time_unref",
+        constants$13.const$1
     );
-    static final MethodHandle g_str_hash$MH = RuntimeHelper.downcallHandle(
-        "g_str_hash",
-        constants$151.g_str_hash$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_date_time_ref",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_int_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_date_time_new_now",
+        constants$5.const$2
     );
-    static final MethodHandle g_int_equal$MH = RuntimeHelper.downcallHandle(
-        "g_int_equal",
-        constants$151.g_int_equal$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_date_time_new_now_local",
+        constants$35.const$2
     );
-    static final FunctionDescriptor g_int_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_date_time_new_now_utc",
+        constants$35.const$2
     );
-    static final MethodHandle g_int_hash$MH = RuntimeHelper.downcallHandle(
-        "g_int_hash",
-        constants$151.g_int_hash$FUNC
-    );
-    static final FunctionDescriptor g_int64_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_int64_equal$MH = RuntimeHelper.downcallHandle(
-        "g_int64_equal",
-        constants$151.g_int64_equal$FUNC
-    );
-    static final FunctionDescriptor g_int64_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_int64_hash$MH = RuntimeHelper.downcallHandle(
-        "g_int64_hash",
-        constants$151.g_int64_hash$FUNC
-    );
-    static final FunctionDescriptor g_double_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_double_equal$MH = RuntimeHelper.downcallHandle(
-        "g_double_equal",
-        constants$151.g_double_equal$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_date_time_new_from_unix_local",
+        constants$63.const$3
     );
 }
 

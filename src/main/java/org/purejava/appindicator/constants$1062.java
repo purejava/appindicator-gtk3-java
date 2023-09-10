@@ -3,64 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1062 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1062() {}
-    static final FunctionDescriptor gdk_drop_reply$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_info_set_size",
+        constants$25.const$3
     );
-    static final MethodHandle gdk_drop_reply$MH = RuntimeHelper.downcallHandle(
-        "gdk_drop_reply",
-        constants$1062.gdk_drop_reply$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_info_set_modification_time",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gdk_drop_finish$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_info_set_modification_date_time",
+        constants$13.const$4
     );
-    static final MethodHandle gdk_drop_finish$MH = RuntimeHelper.downcallHandle(
-        "gdk_drop_finish",
-        constants$1062.gdk_drop_finish$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_info_set_access_date_time",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gdk_drag_get_selection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_info_set_creation_date_time",
+        constants$13.const$4
     );
-    static final MethodHandle gdk_drag_get_selection$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_get_selection",
-        constants$1062.gdk_drag_get_selection$FUNC
-    );
-    static final FunctionDescriptor gdk_drag_begin$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_drag_begin$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_begin",
-        constants$1062.gdk_drag_begin$FUNC
-    );
-    static final FunctionDescriptor gdk_drag_begin_for_device$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_drag_begin_for_device$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_begin_for_device",
-        constants$1062.gdk_drag_begin_for_device$FUNC
-    );
-    static final FunctionDescriptor gdk_drag_begin_from_point$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_drag_begin_from_point$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_begin_from_point",
-        constants$1062.gdk_drag_begin_from_point$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_info_set_symlink_target",
+        constants$13.const$4
     );
 }
 

@@ -3,52 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1701 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1701() {}
-    static final FunctionDescriptor gtk_tool_item_rebuild_menu$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_font_options_get_variations",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_tool_item_rebuild_menu$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_rebuild_menu",
-        constants$1701.gtk_tool_item_rebuild_menu$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_font_options_set_variations",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_tool_item_toolbar_reconfigured$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_font_options_set_color_mode",
+        constants$40.const$2
     );
-    static final MethodHandle gtk_tool_item_toolbar_reconfigured$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_toolbar_reconfigured",
-        constants$1701.gtk_tool_item_toolbar_reconfigured$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_font_options_get_color_mode",
+        constants$10.const$5
     );
-    static final FunctionDescriptor _gtk_tool_item_create_menu_proxy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_font_options_get_color_palette",
+        constants$10.const$5
     );
-    static final MethodHandle _gtk_tool_item_create_menu_proxy$MH = RuntimeHelper.downcallHandle(
-        "_gtk_tool_item_create_menu_proxy",
-        constants$1701._gtk_tool_item_create_menu_proxy$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tool_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_button_get_type",
-        constants$1701.gtk_tool_button_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_button_new",
-        constants$1701.gtk_tool_button_new$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_button_new_from_stock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_button_new_from_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_button_new_from_stock",
-        constants$1701.gtk_tool_button_new_from_stock$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_font_options_set_color_palette",
+        constants$40.const$2
     );
 }
 

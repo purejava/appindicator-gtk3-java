@@ -3,47 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1977 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1977() {}
-    static final FunctionDescriptor gtk_ui_manager_get_ui$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_object_get_description",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_ui_manager_get_ui$MH = RuntimeHelper.downcallHandle(
-        "gtk_ui_manager_get_ui",
-        constants$1977.gtk_ui_manager_get_ui$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_object_get_parent",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_ui_manager_ensure_update$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_object_peek_parent",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_ui_manager_ensure_update$MH = RuntimeHelper.downcallHandle(
-        "gtk_ui_manager_ensure_update",
-        constants$1977.gtk_ui_manager_ensure_update$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_object_get_n_accessible_children",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_ui_manager_new_merge_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_object_ref_accessible_child",
+        constants$21.const$3
     );
-    static final MethodHandle gtk_ui_manager_new_merge_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_ui_manager_new_merge_id",
-        constants$1977.gtk_ui_manager_new_merge_id$FUNC
-    );
-    static final FunctionDescriptor gtk_vbutton_box_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_vbutton_box_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_vbutton_box_get_type",
-        constants$1977.gtk_vbutton_box_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_vbutton_box_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_vbutton_box_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_vbutton_box_new",
-        constants$1977.gtk_vbutton_box_new$FUNC
-    );
-    static final FunctionDescriptor gtk_vbox_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_vbox_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_vbox_get_type",
-        constants$1977.gtk_vbox_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_object_ref_relation_set",
+        constants$5.const$2
     );
 }
 

@@ -3,53 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$64 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$64() {}
-    static final FunctionDescriptor g_rw_lock_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GVoidFunc.class, "apply", constants$7.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$7.const$5
     );
-    static final MethodHandle g_rw_lock_init$MH = RuntimeHelper.downcallHandle(
-        "g_rw_lock_init",
-        constants$64.g_rw_lock_init$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_atexit$func.class, "apply", constants$7.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_atexit",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_rw_lock_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_find_program_in_path",
+        constants$5.const$2
     );
-    static final MethodHandle g_rw_lock_clear$MH = RuntimeHelper.downcallHandle(
-        "g_rw_lock_clear",
-        constants$64.g_rw_lock_clear$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_LONG,
+        JAVA_INT
     );
-    static final FunctionDescriptor g_rw_lock_writer_lock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_rw_lock_writer_lock$MH = RuntimeHelper.downcallHandle(
-        "g_rw_lock_writer_lock",
-        constants$64.g_rw_lock_writer_lock$FUNC
-    );
-    static final FunctionDescriptor g_rw_lock_writer_trylock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_rw_lock_writer_trylock$MH = RuntimeHelper.downcallHandle(
-        "g_rw_lock_writer_trylock",
-        constants$64.g_rw_lock_writer_trylock$FUNC
-    );
-    static final FunctionDescriptor g_rw_lock_writer_unlock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_rw_lock_writer_unlock$MH = RuntimeHelper.downcallHandle(
-        "g_rw_lock_writer_unlock",
-        constants$64.g_rw_lock_writer_unlock$FUNC
-    );
-    static final FunctionDescriptor g_rw_lock_reader_lock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_rw_lock_reader_lock$MH = RuntimeHelper.downcallHandle(
-        "g_rw_lock_reader_lock",
-        constants$64.g_rw_lock_reader_lock$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_bit_nth_lsf",
+        constants$64.const$5
     );
 }
 

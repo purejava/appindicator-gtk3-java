@@ -3,48 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$374 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$374() {}
-    static final FunctionDescriptor pthread_atfork$__child$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor pthread_atfork$__child_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle pthread_atfork$__child_UP$MH = RuntimeHelper.upcallHandle(pthread_atfork$__child.class, "apply", constants$374.pthread_atfork$__child_UP$FUNC);
-    static final FunctionDescriptor pthread_atfork$__child_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle pthread_atfork$__child_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$374.pthread_atfork$__child_DOWN$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_log_set_default_handler$log_func.class, "apply", constants$179.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_log_set_default_handler$return.class, "apply", constants$179.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_log_set_default_handler",
+        constants$5.const$5
     );
-    static final FunctionDescriptor pthread_atfork$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_log",
+        constants$42.const$4
     );
-    static final MethodHandle pthread_atfork$MH = RuntimeHelper.downcallHandle(
-        "pthread_atfork",
-        constants$374.pthread_atfork$FUNC
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final FunctionDescriptor g_static_mutex_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_mutex_init$MH = RuntimeHelper.downcallHandle(
-        "g_static_mutex_init",
-        constants$374.g_static_mutex_init$FUNC
-    );
-    static final FunctionDescriptor g_static_mutex_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_mutex_free$MH = RuntimeHelper.downcallHandle(
-        "g_static_mutex_free",
-        constants$374.g_static_mutex_free$FUNC
-    );
-    static final FunctionDescriptor g_static_mutex_get_mutex_impl$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_mutex_get_mutex_impl$MH = RuntimeHelper.downcallHandle(
-        "g_static_mutex_get_mutex_impl",
-        constants$374.g_static_mutex_get_mutex_impl$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_logv",
+        constants$374.const$4
     );
 }
 

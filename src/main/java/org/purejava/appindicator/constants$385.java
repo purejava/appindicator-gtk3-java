@@ -3,60 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$385 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$385() {}
-    static final FunctionDescriptor GClassInitFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_option_context_set_help_enabled",
+        constants$40.const$2
     );
-    static final MethodHandle GClassInitFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$385.GClassInitFunc_DOWN$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_option_context_get_help_enabled",
+        constants$10.const$5
     );
-    static final FunctionDescriptor GClassFinalizeFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_option_context_set_ignore_unknown_options",
+        constants$40.const$2
     );
-    static final FunctionDescriptor GClassFinalizeFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_option_context_get_ignore_unknown_options",
+        constants$10.const$5
     );
-    static final MethodHandle GClassFinalizeFunc_UP$MH = RuntimeHelper.upcallHandle(GClassFinalizeFunc.class, "apply", constants$385.GClassFinalizeFunc_UP$FUNC);
-    static final FunctionDescriptor GClassFinalizeFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_option_context_set_strict_posix",
+        constants$40.const$2
     );
-    static final MethodHandle GClassFinalizeFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$385.GClassFinalizeFunc_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_option_context_get_strict_posix",
+        constants$10.const$5
     );
-    static final FunctionDescriptor GInstanceInitFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GInstanceInitFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GInstanceInitFunc_UP$MH = RuntimeHelper.upcallHandle(GInstanceInitFunc.class, "apply", constants$385.GInstanceInitFunc_UP$FUNC);
-    static final FunctionDescriptor GInstanceInitFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GInstanceInitFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$385.GInstanceInitFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor GInterfaceInitFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GInterfaceInitFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GInterfaceInitFunc_UP$MH = RuntimeHelper.upcallHandle(GInterfaceInitFunc.class, "apply", constants$385.GInterfaceInitFunc_UP$FUNC);
 }
 
 

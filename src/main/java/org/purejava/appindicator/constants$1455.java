@@ -3,58 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1455 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1455() {}
-    static final FunctionDescriptor gtk_entry_get_layout_offsets$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_get_user_data",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_entry_get_layout_offsets$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_layout_offsets",
-        constants$1455.gtk_entry_get_layout_offsets$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_make_immutable",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_entry_set_alignment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_is_immutable",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_entry_set_alignment$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_alignment",
-        constants$1455.gtk_entry_set_alignment$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gtk_entry_get_alignment$FUNC = FunctionDescriptor.of(Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_alignment$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_alignment",
-        constants$1455.gtk_entry_get_alignment$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_completion$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_completion$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_completion",
-        constants$1455.gtk_entry_set_completion$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_completion$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_completion$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_completion",
-        constants$1455.gtk_entry_get_completion$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_layout_index_to_text_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_layout_index_to_text_index$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_layout_index_to_text_index",
-        constants$1455.gtk_entry_layout_index_to_text_index$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_paint_push_transform_func_t.class, "apply", constants$1455.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$1455.const$3
     );
 }
 

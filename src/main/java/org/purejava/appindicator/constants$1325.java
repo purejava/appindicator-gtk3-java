@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1325 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1325() {}
-    static final FunctionDescriptor gtk_about_dialog_get_documenters$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_successful",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_about_dialog_get_documenters$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_documenters",
-        constants$1325.gtk_about_dialog_get_documenters$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_if_exited",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_about_dialog_set_documenters$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_exit_status",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_about_dialog_set_documenters$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_documenters",
-        constants$1325.gtk_about_dialog_set_documenters$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_if_signaled",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_about_dialog_get_artists$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_term_sig",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_about_dialog_get_artists$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_artists",
-        constants$1325.gtk_about_dialog_get_artists$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_set_artists$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_set_artists$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_artists",
-        constants$1325.gtk_about_dialog_set_artists$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_get_translator_credits$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_get_translator_credits$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_translator_credits",
-        constants$1325.gtk_about_dialog_get_translator_credits$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_set_translator_credits$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_set_translator_credits$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_translator_credits",
-        constants$1325.gtk_about_dialog_set_translator_credits$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_subprocess_communicate",
+        constants$638.const$1
     );
 }
 

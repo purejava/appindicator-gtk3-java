@@ -3,77 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$582 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$582() {}
-    static final FunctionDescriptor GBusNameAcquiredCallback_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$579.const$5.varHandle(MemoryLayout.PathElement.groupElement("values_cmp"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_param_type_register_static",
+        constants$22.const$0
     );
-    static final MethodHandle GBusNameAcquiredCallback_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$582.GBusNameAcquiredCallback_DOWN$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_param_spec_is_valid_name",
+        constants$10.const$5
     );
-    static final FunctionDescriptor GBusNameLostCallback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "_g_param_type_register_static_constant",
+        constants$20.const$1
     );
-    static final FunctionDescriptor GBusNameLostCallback_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final MethodHandle GBusNameLostCallback_UP$MH = RuntimeHelper.upcallHandle(GBusNameLostCallback.class, "apply", constants$582.GBusNameLostCallback_UP$FUNC);
-    static final FunctionDescriptor GBusNameLostCallback_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GBusNameLostCallback_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$582.GBusNameLostCallback_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_bus_own_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bus_own_name$MH = RuntimeHelper.downcallHandle(
-        "g_bus_own_name",
-        constants$582.g_bus_own_name$FUNC
-    );
-    static final FunctionDescriptor g_bus_own_name_on_connection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bus_own_name_on_connection$MH = RuntimeHelper.downcallHandle(
-        "g_bus_own_name_on_connection",
-        constants$582.g_bus_own_name_on_connection$FUNC
-    );
-    static final FunctionDescriptor g_bus_own_name_with_closures$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bus_own_name_with_closures$MH = RuntimeHelper.downcallHandle(
-        "g_bus_own_name_with_closures",
-        constants$582.g_bus_own_name_with_closures$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_param_spec_internal",
+        constants$582.const$4
     );
 }
 

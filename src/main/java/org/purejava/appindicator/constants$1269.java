@@ -3,55 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1269 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1269() {}
-    static final FunctionDescriptor gtk_widget_get_scale_factor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_set_check_cancellable",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_widget_get_scale_factor$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_scale_factor",
-        constants$1269.gtk_widget_get_scale_factor$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_get_source_tag",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_widget_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_set_handle_cancellation",
+        constants$40.const$2
     );
-    static final MethodHandle gtk_widget_get_display$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_display",
-        constants$1269.gtk_widget_get_display$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_complete",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_widget_get_root_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_simple_async_result_complete_in_idle",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_widget_get_root_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_root_window",
-        constants$1269.gtk_widget_get_root_window$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_settings$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_settings$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_settings",
-        constants$1269.gtk_widget_get_settings$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_clipboard$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_clipboard$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_clipboard",
-        constants$1269.gtk_widget_get_clipboard$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_hexpand$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_hexpand$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_hexpand",
-        constants$1269.gtk_widget_get_hexpand$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_simple_async_result_run_in_thread$func.class, "apply", constants$14.const$3);
 }
 
 

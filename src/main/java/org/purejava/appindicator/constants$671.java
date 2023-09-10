@@ -3,41 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$671 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$671() {}
-    static final FunctionDescriptor g_file_monitor_event_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_monitor_event_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_monitor_event_get_type",
-        constants$671.g_file_monitor_event_get_type$FUNC
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor g_io_error_enum_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_io_error_enum_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_io_error_enum_get_type",
-        constants$671.g_io_error_enum_get_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_param_spec_variant",
+        constants$671.const$0
     );
-    static final FunctionDescriptor g_ask_password_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_ask_password_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_ask_password_flags_get_type",
-        constants$671.g_ask_password_flags_get_type$FUNC
+    static final MemorySegment const$2 = RuntimeHelper.lookupGlobalVariable("g_param_spec_types", RuntimeHelper.POINTER);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_signal_group_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor g_password_save_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_password_save_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_password_save_get_type",
-        constants$671.g_password_save_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_signal_group_new",
+        constants$63.const$3
     );
-    static final FunctionDescriptor g_mount_operation_result_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_mount_operation_result_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_mount_operation_result_get_type",
-        constants$671.g_mount_operation_result_get_type$FUNC
-    );
-    static final FunctionDescriptor g_output_stream_splice_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_output_stream_splice_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_output_stream_splice_flags_get_type",
-        constants$671.g_output_stream_splice_flags_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_signal_group_set_target",
+        constants$13.const$4
     );
 }
 

@@ -3,61 +3,23 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$211 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$211() {}
-    static final FunctionDescriptor g_string_printf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MemorySegment const$0 = RuntimeHelper.lookupGlobalVariable("g_mem_gc_friendly", JAVA_INT);
+    static final VarHandle const$1 = RuntimeHelper.POINTER.varHandle();
+    static final MemorySegment const$2 = RuntimeHelper.lookupGlobalVariable("glib_mem_profiler_table", RuntimeHelper.POINTER);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_mem_profile",
+        constants$7.const$5
     );
-    static final MethodHandle g_string_printf$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_string_printf",
-        constants$211.g_string_printf$FUNC
-    );
-    static final FunctionDescriptor g_string_append_vprintf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_append_vprintf$MH = RuntimeHelper.downcallHandle(
-        "g_string_append_vprintf",
-        constants$211.g_string_append_vprintf$FUNC
-    );
-    static final FunctionDescriptor g_string_append_printf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_append_printf$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_string_append_printf",
-        constants$211.g_string_append_printf$FUNC
-    );
-    static final FunctionDescriptor g_string_append_uri_escaped$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_string_append_uri_escaped$MH = RuntimeHelper.downcallHandle(
-        "g_string_append_uri_escaped",
-        constants$211.g_string_append_uri_escaped$FUNC
-    );
-    static final FunctionDescriptor g_string_down$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_down$MH = RuntimeHelper.downcallHandle(
-        "g_string_down",
-        constants$211.g_string_down$FUNC
-    );
-    static final FunctionDescriptor g_string_up$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_up$MH = RuntimeHelper.downcallHandle(
-        "g_string_up",
-        constants$211.g_string_up$FUNC
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GNodeTraverseFunc.class, "apply", constants$9.const$0);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GNodeForeachFunc.class, "apply", constants$13.const$4);
 }
 
 

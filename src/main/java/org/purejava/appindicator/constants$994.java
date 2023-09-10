@@ -3,53 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$994 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$994() {}
-    static final FunctionDescriptor pango_is_zero_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_is_zero_width$MH = RuntimeHelper.downcallHandle(
-        "pango_is_zero_width",
-        constants$994.pango_is_zero_width$FUNC
-    );
-    static final FunctionDescriptor pango_find_paragraph_boundary$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_find_paragraph_boundary$MH = RuntimeHelper.downcallHandle(
-        "pango_find_paragraph_boundary",
-        constants$994.pango_find_paragraph_boundary$FUNC
-    );
-    static final FunctionDescriptor pango_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle pango_version$MH = RuntimeHelper.downcallHandle(
-        "pango_version",
-        constants$994.pango_version$FUNC
-    );
-    static final FunctionDescriptor pango_version_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle pango_version_string$MH = RuntimeHelper.downcallHandle(
-        "pango_version_string",
-        constants$994.pango_version_string$FUNC
-    );
-    static final FunctionDescriptor pango_version_check$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_version_check$MH = RuntimeHelper.downcallHandle(
-        "pango_version_check",
-        constants$994.pango_version_check$FUNC
-    );
-    static final FunctionDescriptor cairo_version$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle cairo_version$MH = RuntimeHelper.downcallHandle(
-        "cairo_version",
-        constants$994.cairo_version$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.make_directory_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("make_directory_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.make_symbolic_link.class, "apply", constants$34.const$5);
+    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("make_symbolic_link"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.make_symbolic_link_async.class, "apply", constants$584.const$3);
+    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("make_symbolic_link_async"));
 }
 
 

@@ -3,57 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1617 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1617() {}
-    static final FunctionDescriptor gtk_header_bar_set_subtitle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_header_bar_set_subtitle$MH = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_set_subtitle",
-        constants$1617.gtk_header_bar_set_subtitle$FUNC
-    );
-    static final FunctionDescriptor gtk_header_bar_get_subtitle$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_header_bar_get_subtitle$MH = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_get_subtitle",
-        constants$1617.gtk_header_bar_get_subtitle$FUNC
-    );
-    static final FunctionDescriptor gtk_header_bar_set_custom_title$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_header_bar_set_custom_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_set_custom_title",
-        constants$1617.gtk_header_bar_set_custom_title$FUNC
-    );
-    static final FunctionDescriptor gtk_header_bar_get_custom_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_header_bar_get_custom_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_get_custom_title",
-        constants$1617.gtk_header_bar_get_custom_title$FUNC
-    );
-    static final FunctionDescriptor gtk_header_bar_pack_start$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_header_bar_pack_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_pack_start",
-        constants$1617.gtk_header_bar_pack_start$FUNC
-    );
-    static final FunctionDescriptor gtk_header_bar_pack_end$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_header_bar_pack_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_header_bar_pack_end",
-        constants$1617.gtk_header_bar_pack_end$FUNC
+    static final VarHandle const$0 = constants$1616.const$2.varHandle(MemoryLayout.PathElement.groupElement("start_index"));
+    static final VarHandle const$1 = constants$1616.const$2.varHandle(MemoryLayout.PathElement.groupElement("start_char"));
+    static final VarHandle const$2 = constants$1616.const$2.varHandle(MemoryLayout.PathElement.groupElement("end_glyph"));
+    static final VarHandle const$3 = constants$1616.const$2.varHandle(MemoryLayout.PathElement.groupElement("end_index"));
+    static final VarHandle const$4 = constants$1616.const$2.varHandle(MemoryLayout.PathElement.groupElement("end_char"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_glyph_item_iter_get_type",
+        constants$3.const$5
     );
 }
 

@@ -2,18 +2,23 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2000 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2000() {}
-    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VIRTUAL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::is-virtual");
-    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_IS_VOLATILE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::is-volatile");
-    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::name");
-    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::display-name");
-    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_EDIT_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::edit-name");
-    static final MemorySegment G_FILE_ATTRIBUTE_STANDARD_COPY_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("standard::copy-name");
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkComponentIface.get_alpha.class, "apply", constants$67.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$67.const$0
+    );
+    static final VarHandle const$2 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_alpha"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkComponentIface.scroll_to.class, "apply", constants$11.const$4);
+    static final VarHandle const$4 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("scroll_to"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkComponentIface.scroll_to_point.class, "apply", constants$608.const$5);
 }
 
 

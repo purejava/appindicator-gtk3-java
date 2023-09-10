@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1061 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1061() {}
-    static final FunctionDescriptor gdk_drag_context_get_suggested_action$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_info_set_name",
+        constants$13.const$4
     );
-    static final MethodHandle gdk_drag_context_get_suggested_action$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_suggested_action",
-        constants$1061.gdk_drag_context_get_suggested_action$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_info_set_display_name",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gdk_drag_context_get_selected_action$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_info_set_edit_name",
+        constants$13.const$4
     );
-    static final MethodHandle gdk_drag_context_get_selected_action$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_selected_action",
-        constants$1061.gdk_drag_context_get_selected_action$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_info_set_icon",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gdk_drag_context_get_source_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_info_set_symbolic_icon",
+        constants$13.const$4
     );
-    static final MethodHandle gdk_drag_context_get_source_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_source_window",
-        constants$1061.gdk_drag_context_get_source_window$FUNC
-    );
-    static final FunctionDescriptor gdk_drag_context_get_dest_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_drag_context_get_dest_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_dest_window",
-        constants$1061.gdk_drag_context_get_dest_window$FUNC
-    );
-    static final FunctionDescriptor gdk_drag_context_get_protocol$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_drag_context_get_protocol$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_protocol",
-        constants$1061.gdk_drag_context_get_protocol$FUNC
-    );
-    static final FunctionDescriptor gdk_drag_status$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_drag_status$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_status",
-        constants$1061.gdk_drag_status$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_info_set_content_type",
+        constants$13.const$4
     );
 }
 

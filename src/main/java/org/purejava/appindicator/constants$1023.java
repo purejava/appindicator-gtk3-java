@@ -3,53 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1023 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1023() {}
-    static final FunctionDescriptor cairo_get_fill_rule$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_set_display_name_finish",
+        constants$23.const$0
     );
-    static final MethodHandle cairo_get_fill_rule$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_fill_rule",
-        constants$1023.cairo_get_fill_rule$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_delete",
+        constants$12.const$2
     );
-    static final FunctionDescriptor cairo_get_line_width$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_file_delete_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_delete_async",
+        constants$281.const$5
     );
-    static final MethodHandle cairo_get_line_width$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_line_width",
-        constants$1023.cairo_get_line_width$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_delete_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor cairo_get_line_cap$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_get_line_cap$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_line_cap",
-        constants$1023.cairo_get_line_cap$FUNC
-    );
-    static final FunctionDescriptor cairo_get_line_join$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_get_line_join$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_line_join",
-        constants$1023.cairo_get_line_join$FUNC
-    );
-    static final FunctionDescriptor cairo_get_miter_limit$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_get_miter_limit$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_miter_limit",
-        constants$1023.cairo_get_miter_limit$FUNC
-    );
-    static final FunctionDescriptor cairo_get_dash_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_get_dash_count$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_dash_count",
-        constants$1023.cairo_get_dash_count$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_trash",
+        constants$12.const$2
     );
 }
 

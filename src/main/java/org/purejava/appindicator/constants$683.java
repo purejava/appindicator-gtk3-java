@@ -3,54 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$683 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$683() {}
-    static final FunctionDescriptor g_module_make_resident$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_INT.withName("n_values"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("values"),
+        JAVA_INT.withName("n_prealloced"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GValueArray");
+    static final VarHandle const$1 = constants$683.const$0.varHandle(MemoryLayout.PathElement.groupElement("n_values"));
+    static final VarHandle const$2 = constants$683.const$0.varHandle(MemoryLayout.PathElement.groupElement("values"));
+    static final VarHandle const$3 = constants$683.const$0.varHandle(MemoryLayout.PathElement.groupElement("n_prealloced"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_value_array_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_module_make_resident$MH = RuntimeHelper.downcallHandle(
-        "g_module_make_resident",
-        constants$683.g_module_make_resident$FUNC
-    );
-    static final FunctionDescriptor g_module_error$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_module_error$MH = RuntimeHelper.downcallHandle(
-        "g_module_error",
-        constants$683.g_module_error$FUNC
-    );
-    static final FunctionDescriptor g_module_symbol$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_module_symbol$MH = RuntimeHelper.downcallHandle(
-        "g_module_symbol",
-        constants$683.g_module_symbol$FUNC
-    );
-    static final FunctionDescriptor g_module_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_module_name$MH = RuntimeHelper.downcallHandle(
-        "g_module_name",
-        constants$683.g_module_name$FUNC
-    );
-    static final FunctionDescriptor g_module_build_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_module_build_path$MH = RuntimeHelper.downcallHandle(
-        "g_module_build_path",
-        constants$683.g_module_build_path$FUNC
-    );
-    static final FunctionDescriptor g_io_module_scope_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_io_module_scope_new$MH = RuntimeHelper.downcallHandle(
-        "g_io_module_scope_new",
-        constants$683.g_io_module_scope_new$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_value_array_get_nth",
+        constants$21.const$3
     );
 }
 

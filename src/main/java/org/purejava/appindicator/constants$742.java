@@ -3,50 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$742 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$742() {}
-    static final FunctionDescriptor g_settings_schema_key_range_check$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_application_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_settings_schema_key_range_check$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_range_check",
-        constants$742.g_settings_schema_key_range_check$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_application_id_is_valid",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_settings_schema_key_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_application_new",
+        constants$21.const$3
     );
-    static final MethodHandle g_settings_schema_key_get_name$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_get_name",
-        constants$742.g_settings_schema_key_get_name$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_application_get_application_id",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_settings_schema_key_get_summary$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_application_set_application_id",
+        constants$13.const$4
     );
-    static final MethodHandle g_settings_schema_key_get_summary$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_get_summary",
-        constants$742.g_settings_schema_key_get_summary$FUNC
-    );
-    static final FunctionDescriptor g_settings_schema_key_get_description$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_schema_key_get_description$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_key_get_description",
-        constants$742.g_settings_schema_key_get_description$FUNC
-    );
-    static final FunctionDescriptor g_settings_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_settings_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_settings_get_type",
-        constants$742.g_settings_get_type$FUNC
-    );
-    static final FunctionDescriptor g_settings_list_schemas$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_settings_list_schemas$MH = RuntimeHelper.downcallHandle(
-        "g_settings_list_schemas",
-        constants$742.g_settings_list_schemas$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_application_get_dbus_connection",
+        constants$5.const$2
     );
 }
 

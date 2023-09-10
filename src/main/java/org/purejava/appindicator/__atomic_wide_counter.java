@@ -2,12 +2,14 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
- * union {
+ * union __atomic_wide_counter {
  *     unsigned long long __value64;
  *     struct  __value32;
  * };
@@ -15,19 +17,11 @@ import java.lang.foreign.*;
  */
 public class __atomic_wide_counter {
 
-    static final UnionLayout $union$LAYOUT = MemoryLayout.unionLayout(
-        Constants$root.C_LONG_LONG$LAYOUT.withName("__value64"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("__low"),
-            Constants$root.C_INT$LAYOUT.withName("__high")
-        ).withName("__value32")
-    );
     public static MemoryLayout $LAYOUT() {
-        return __atomic_wide_counter.$union$LAYOUT;
+        return constants$71.const$2;
     }
-    static final VarHandle __value64$VH = $union$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("__value64"));
     public static VarHandle __value64$VH() {
-        return __atomic_wide_counter.__value64$VH;
+        return constants$71.const$3;
     }
     /**
      * Getter for field:
@@ -36,7 +30,7 @@ public class __atomic_wide_counter {
      * }
      */
     public static long __value64$get(MemorySegment seg) {
-        return (long)__atomic_wide_counter.__value64$VH.get(seg);
+        return (long)constants$71.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -45,13 +39,13 @@ public class __atomic_wide_counter {
      * }
      */
     public static void __value64$set(MemorySegment seg, long x) {
-        __atomic_wide_counter.__value64$VH.set(seg, x);
+        constants$71.const$3.set(seg, x);
     }
     public static long __value64$get(MemorySegment seg, long index) {
-        return (long)__atomic_wide_counter.__value64$VH.get(seg.asSlice(index*sizeof()));
+        return (long)constants$71.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void __value64$set(MemorySegment seg, long index, long x) {
-        __atomic_wide_counter.__value64$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$71.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     /**
      * {@snippet :
@@ -65,16 +59,11 @@ public class __atomic_wide_counter {
 
         // Suppresses default constructor, ensuring non-instantiability.
         private __value32() {}
-        static final StructLayout __value32$struct$LAYOUT = MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("__low"),
-            Constants$root.C_INT$LAYOUT.withName("__high")
-        );
         public static MemoryLayout $LAYOUT() {
-            return __value32.__value32$struct$LAYOUT;
+            return constants$71.const$4;
         }
-        static final VarHandle __low$VH = __value32$struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("__low"));
         public static VarHandle __low$VH() {
-            return __value32.__low$VH;
+            return constants$71.const$5;
         }
         /**
          * Getter for field:
@@ -83,7 +72,7 @@ public class __atomic_wide_counter {
          * }
          */
         public static int __low$get(MemorySegment seg) {
-            return (int)__value32.__low$VH.get(seg);
+            return (int)constants$71.const$5.get(seg);
         }
         /**
          * Setter for field:
@@ -92,17 +81,16 @@ public class __atomic_wide_counter {
          * }
          */
         public static void __low$set(MemorySegment seg, int x) {
-            __value32.__low$VH.set(seg, x);
+            constants$71.const$5.set(seg, x);
         }
         public static int __low$get(MemorySegment seg, long index) {
-            return (int)__value32.__low$VH.get(seg.asSlice(index*sizeof()));
+            return (int)constants$71.const$5.get(seg.asSlice(index*sizeof()));
         }
         public static void __low$set(MemorySegment seg, long index, int x) {
-            __value32.__low$VH.set(seg.asSlice(index*sizeof()), x);
+            constants$71.const$5.set(seg.asSlice(index*sizeof()), x);
         }
-        static final VarHandle __high$VH = __value32$struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("__high"));
         public static VarHandle __high$VH() {
-            return __value32.__high$VH;
+            return constants$72.const$0;
         }
         /**
          * Getter for field:
@@ -111,7 +99,7 @@ public class __atomic_wide_counter {
          * }
          */
         public static int __high$get(MemorySegment seg) {
-            return (int)__value32.__high$VH.get(seg);
+            return (int)constants$72.const$0.get(seg);
         }
         /**
          * Setter for field:
@@ -120,20 +108,20 @@ public class __atomic_wide_counter {
          * }
          */
         public static void __high$set(MemorySegment seg, int x) {
-            __value32.__high$VH.set(seg, x);
+            constants$72.const$0.set(seg, x);
         }
         public static int __high$get(MemorySegment seg, long index) {
-            return (int)__value32.__high$VH.get(seg.asSlice(index*sizeof()));
+            return (int)constants$72.const$0.get(seg.asSlice(index*sizeof()));
         }
         public static void __high$set(MemorySegment seg, long index, int x) {
-            __value32.__high$VH.set(seg.asSlice(index*sizeof()), x);
+            constants$72.const$0.set(seg.asSlice(index*sizeof()), x);
         }
         public static long sizeof() { return $LAYOUT().byteSize(); }
         public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
         public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
             return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
         }
-        public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+        public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
     }
 
     public static MemorySegment __value32$slice(MemorySegment seg) {
@@ -144,7 +132,7 @@ public class __atomic_wide_counter {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

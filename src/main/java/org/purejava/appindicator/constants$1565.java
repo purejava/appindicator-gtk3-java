@@ -3,57 +3,49 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1565 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1565() {}
-    static final FunctionDescriptor gtk_expander_get_use_underline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_expander_get_use_underline$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_get_use_underline",
-        constants$1565.gtk_expander_get_use_underline$FUNC
-    );
-    static final FunctionDescriptor gtk_expander_set_use_markup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_expander_set_use_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_set_use_markup",
-        constants$1565.gtk_expander_set_use_markup$FUNC
-    );
-    static final FunctionDescriptor gtk_expander_get_use_markup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_expander_get_use_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_get_use_markup",
-        constants$1565.gtk_expander_get_use_markup$FUNC
-    );
-    static final FunctionDescriptor gtk_expander_set_label_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_expander_set_label_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_set_label_widget",
-        constants$1565.gtk_expander_set_label_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_expander_get_label_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_expander_get_label_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_get_label_widget",
-        constants$1565.gtk_expander_get_label_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_expander_set_label_fill$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_expander_set_label_fill$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_set_label_fill",
-        constants$1565.gtk_expander_set_label_fill$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("klass"),
+            JAVA_INT.withName("start_index"),
+            JAVA_INT.withName("end_index")
+        ).withName("attr"),
+        JAVA_INT.withName("size"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_PangoAttrSize");
+    static final VarHandle const$1 = constants$1565.const$0.varHandle(MemoryLayout.PathElement.groupElement("size"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("klass"),
+            JAVA_INT.withName("start_index"),
+            JAVA_INT.withName("end_index")
+        ).withName("attr"),
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("x"),
+            JAVA_INT.withName("y"),
+            JAVA_INT.withName("width"),
+            JAVA_INT.withName("height")
+        ).withName("ink_rect"),
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("x"),
+            JAVA_INT.withName("y"),
+            JAVA_INT.withName("width"),
+            JAVA_INT.withName("height")
+        ).withName("logical_rect"),
+        RuntimeHelper.POINTER.withName("data"),
+        RuntimeHelper.POINTER.withName("copy_func"),
+        RuntimeHelper.POINTER.withName("destroy_func")
+    ).withName("_PangoAttrShape");
+    static final VarHandle const$3 = constants$1565.const$2.varHandle(MemoryLayout.PathElement.groupElement("data"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_PangoAttrShape.copy_func.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$1565.const$2.varHandle(MemoryLayout.PathElement.groupElement("copy_func"));
 }
 
 

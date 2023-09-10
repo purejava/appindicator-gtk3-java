@@ -3,56 +3,48 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1064 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1064() {}
-    static final FunctionDescriptor gdk_drag_context_get_drag_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_matches",
+        constants$9.const$0
     );
-    static final MethodHandle gdk_drag_context_get_drag_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_get_drag_window",
-        constants$1064.gdk_drag_context_get_drag_window$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_matches_only",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gdk_drag_context_set_hotspot$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_enumerate_namespace",
+        constants$9.const$0
     );
-    static final MethodHandle gdk_drag_context_set_hotspot$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_set_hotspot",
-        constants$1064.gdk_drag_context_set_hotspot$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_enumerate_next",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gdk_drag_context_manage_dnd$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_attribute_matcher_to_string",
+        constants$5.const$2
     );
-    static final MethodHandle gdk_drag_context_manage_dnd$MH = RuntimeHelper.downcallHandle(
-        "gdk_drag_context_manage_dnd",
-        constants$1064.gdk_drag_context_manage_dnd$FUNC
-    );
-    static final FunctionDescriptor gdk_device_tool_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_device_tool_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_tool_get_type",
-        constants$1064.gdk_device_tool_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_device_tool_get_serial$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_device_tool_get_serial$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_tool_get_serial",
-        constants$1064.gdk_device_tool_get_serial$FUNC
-    );
-    static final FunctionDescriptor gdk_device_tool_get_hardware_id$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_device_tool_get_hardware_id$MH = RuntimeHelper.downcallHandle(
-        "gdk_device_tool_get_hardware_id",
-        constants$1064.gdk_device_tool_get_hardware_id$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    RuntimeHelper.POINTER.withName("g_class")
+                ).withName("g_type_instance"),
+                JAVA_INT.withName("ref_count"),
+                MemoryLayout.paddingLayout(4),
+                RuntimeHelper.POINTER.withName("qdata")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GFileInputStream");
 }
 
 

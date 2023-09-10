@@ -3,56 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$959 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$959() {}
-    static final FunctionDescriptor pango_layout_set_wrap$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDtlsConnectionInterface.get_binding_data.class, "apply", constants$11.const$0);
+    static final VarHandle const$1 = constants$955.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_binding_data"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle pango_layout_set_wrap$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_wrap",
-        constants$959.pango_layout_set_wrap$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_set_database",
+        constants$13.const$4
     );
-    static final FunctionDescriptor pango_layout_get_wrap$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_get_database",
+        constants$5.const$2
     );
-    static final MethodHandle pango_layout_get_wrap$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_wrap",
-        constants$959.pango_layout_get_wrap$FUNC
-    );
-    static final FunctionDescriptor pango_layout_is_wrapped$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_is_wrapped$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_is_wrapped",
-        constants$959.pango_layout_is_wrapped$FUNC
-    );
-    static final FunctionDescriptor pango_layout_set_indent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_indent$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_indent",
-        constants$959.pango_layout_set_indent$FUNC
-    );
-    static final FunctionDescriptor pango_layout_get_indent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_layout_get_indent$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_get_indent",
-        constants$959.pango_layout_get_indent$FUNC
-    );
-    static final FunctionDescriptor pango_layout_set_spacing$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_layout_set_spacing$MH = RuntimeHelper.downcallHandle(
-        "pango_layout_set_spacing",
-        constants$959.pango_layout_set_spacing$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dtls_connection_set_certificate",
+        constants$13.const$4
     );
 }
 

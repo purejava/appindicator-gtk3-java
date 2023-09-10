@@ -2,118 +2,112 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GString {
- *     gchar* str;
- *     gsize len;
- *     gsize allocated_len;
+ *     char* str;
+ *     unsigned long len;
+ *     unsigned long allocated_len;
  * };
  * }
  */
 public class _GString {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("str"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("len"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("allocated_len")
-    ).withName("_GString");
     public static MemoryLayout $LAYOUT() {
-        return _GString.$struct$LAYOUT;
+        return constants$305.const$4;
     }
-    static final VarHandle str$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("str"));
     public static VarHandle str$VH() {
-        return _GString.str$VH;
+        return constants$305.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* str;
+     * char* str;
      * }
      */
     public static MemorySegment str$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GString.str$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$305.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* str;
+     * char* str;
      * }
      */
     public static void str$set(MemorySegment seg, MemorySegment x) {
-        _GString.str$VH.set(seg, x);
+        constants$305.const$5.set(seg, x);
     }
     public static MemorySegment str$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GString.str$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$305.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void str$set(MemorySegment seg, long index, MemorySegment x) {
-        _GString.str$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$305.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle len$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("len"));
     public static VarHandle len$VH() {
-        return _GString.len$VH;
+        return constants$306.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gsize len;
+     * unsigned long len;
      * }
      */
     public static long len$get(MemorySegment seg) {
-        return (long)_GString.len$VH.get(seg);
+        return (long)constants$306.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gsize len;
+     * unsigned long len;
      * }
      */
     public static void len$set(MemorySegment seg, long x) {
-        _GString.len$VH.set(seg, x);
+        constants$306.const$0.set(seg, x);
     }
     public static long len$get(MemorySegment seg, long index) {
-        return (long)_GString.len$VH.get(seg.asSlice(index*sizeof()));
+        return (long)constants$306.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void len$set(MemorySegment seg, long index, long x) {
-        _GString.len$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$306.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle allocated_len$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("allocated_len"));
     public static VarHandle allocated_len$VH() {
-        return _GString.allocated_len$VH;
+        return constants$306.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gsize allocated_len;
+     * unsigned long allocated_len;
      * }
      */
     public static long allocated_len$get(MemorySegment seg) {
-        return (long)_GString.allocated_len$VH.get(seg);
+        return (long)constants$306.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gsize allocated_len;
+     * unsigned long allocated_len;
      * }
      */
     public static void allocated_len$set(MemorySegment seg, long x) {
-        _GString.allocated_len$VH.set(seg, x);
+        constants$306.const$1.set(seg, x);
     }
     public static long allocated_len$get(MemorySegment seg, long index) {
-        return (long)_GString.allocated_len$VH.get(seg.asSlice(index*sizeof()));
+        return (long)constants$306.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void allocated_len$set(MemorySegment seg, long index, long x) {
-        _GString.allocated_len$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$306.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

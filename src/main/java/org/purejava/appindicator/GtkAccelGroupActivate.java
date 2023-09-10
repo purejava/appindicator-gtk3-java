@@ -2,24 +2,27 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
- * int (*GtkAccelGroupActivate)(struct _GtkAccelGroup* accel_group,struct _GObject* acceleratable,unsigned int keyval,enum  modifier);
+ * int (*GtkAccelGroupActivate)(struct _GtkAccelGroup* accel_group,struct _GObject* acceleratable,unsigned int keyval,enum GdkModifierType modifier);
  * }
  */
 public interface GtkAccelGroupActivate {
 
     int apply(java.lang.foreign.MemorySegment accel_group, java.lang.foreign.MemorySegment acceleratable, int keyval, int modifier);
-    static MemorySegment allocate(GtkAccelGroupActivate fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$1189.GtkAccelGroupActivate_UP$MH, fi, constants$1189.GtkAccelGroupActivate$FUNC, scope);
+    static MemorySegment allocate(GtkAccelGroupActivate fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$1949.const$5, fi, constants$414.const$4, scope);
     }
-    static GtkAccelGroupActivate ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GtkAccelGroupActivate ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _accel_group, java.lang.foreign.MemorySegment _acceleratable, int _keyval, int _modifier) -> {
             try {
-                return (int)constants$1189.GtkAccelGroupActivate_DOWN$MH.invokeExact(symbol, _accel_group, _acceleratable, _keyval, _modifier);
+                return (int)constants$1950.const$0.invokeExact(symbol, _accel_group, _acceleratable, _keyval, _modifier);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

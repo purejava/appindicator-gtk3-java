@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$491 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$491() {}
-    static final FunctionDescriptor g_application_activate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_print",
+        constants$13.const$1
     );
-    static final MethodHandle g_application_activate$MH = RuntimeHelper.downcallHandle(
-        "g_application_activate",
-        constants$491.g_application_activate$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_mem_chunk_info",
+        constants$7.const$5
     );
-    static final FunctionDescriptor g_application_open$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_blow_chunks",
+        constants$7.const$5
     );
-    static final MethodHandle g_application_open$MH = RuntimeHelper.downcallHandle(
-        "g_application_open",
-        constants$491.g_application_open$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_allocator_new",
+        constants$21.const$3
     );
-    static final FunctionDescriptor g_application_run$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_allocator_free",
+        constants$13.const$1
     );
-    static final MethodHandle g_application_run$MH = RuntimeHelper.downcallHandle(
-        "g_application_run",
-        constants$491.g_application_run$FUNC
-    );
-    static final FunctionDescriptor g_application_quit$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_quit$MH = RuntimeHelper.downcallHandle(
-        "g_application_quit",
-        constants$491.g_application_quit$FUNC
-    );
-    static final FunctionDescriptor g_application_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_application_get_default$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_default",
-        constants$491.g_application_get_default$FUNC
-    );
-    static final FunctionDescriptor g_application_set_default$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_set_default$MH = RuntimeHelper.downcallHandle(
-        "g_application_set_default",
-        constants$491.g_application_set_default$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_list_push_allocator",
+        constants$13.const$1
     );
 }
 

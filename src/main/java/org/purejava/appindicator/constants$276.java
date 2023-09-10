@@ -3,58 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$276 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$276() {}
-    static final FunctionDescriptor g_queue_push_head$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_source_remove",
+        constants$8.const$4
     );
-    static final MethodHandle g_queue_push_head$MH = RuntimeHelper.downcallHandle(
-        "g_queue_push_head",
-        constants$276.g_queue_push_head$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_source_remove_by_user_data",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_queue_push_tail$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_source_remove_by_funcs_user_data",
+        constants$9.const$0
     );
-    static final MethodHandle g_queue_push_tail$MH = RuntimeHelper.downcallHandle(
-        "g_queue_push_tail",
-        constants$276.g_queue_push_tail$FUNC
-    );
-    static final FunctionDescriptor g_queue_push_nth$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_queue_push_nth$MH = RuntimeHelper.downcallHandle(
-        "g_queue_push_nth",
-        constants$276.g_queue_push_nth$FUNC
-    );
-    static final FunctionDescriptor g_queue_pop_head$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_pop_head$MH = RuntimeHelper.downcallHandle(
-        "g_queue_pop_head",
-        constants$276.g_queue_pop_head$FUNC
-    );
-    static final FunctionDescriptor g_queue_pop_tail$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_pop_tail$MH = RuntimeHelper.downcallHandle(
-        "g_queue_pop_tail",
-        constants$276.g_queue_pop_tail$FUNC
-    );
-    static final FunctionDescriptor g_queue_pop_nth$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_queue_pop_nth$MH = RuntimeHelper.downcallHandle(
-        "g_queue_pop_nth",
-        constants$276.g_queue_pop_nth$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GClearHandleFunc.class, "apply", constants$80.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_clear_handle_id$clear_func.class, "apply", constants$80.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_clear_handle_id",
+        constants$13.const$4
     );
 }
 

@@ -3,52 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$694 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$694() {}
-    static final FunctionDescriptor g_memory_output_stream_new_resizable$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_memory_output_stream_new_resizable$MH = RuntimeHelper.downcallHandle(
-        "g_memory_output_stream_new_resizable",
-        constants$694.g_memory_output_stream_new_resizable$FUNC
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        JAVA_INT,
+        JAVA_LONG,
+        JAVA_LONG,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_memory_output_stream_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GFileMeasureProgressCallback.class, "apply", constants$694.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$694.const$0
     );
-    static final MethodHandle g_memory_output_stream_get_data$MH = RuntimeHelper.downcallHandle(
-        "g_memory_output_stream_get_data",
-        constants$694.g_memory_output_stream_get_data$FUNC
-    );
-    static final FunctionDescriptor g_memory_output_stream_get_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_memory_output_stream_get_size$MH = RuntimeHelper.downcallHandle(
-        "g_memory_output_stream_get_size",
-        constants$694.g_memory_output_stream_get_size$FUNC
-    );
-    static final FunctionDescriptor g_memory_output_stream_get_data_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_memory_output_stream_get_data_size$MH = RuntimeHelper.downcallHandle(
-        "g_memory_output_stream_get_data_size",
-        constants$694.g_memory_output_stream_get_data_size$FUNC
-    );
-    static final FunctionDescriptor g_memory_output_stream_steal_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_memory_output_stream_steal_data$MH = RuntimeHelper.downcallHandle(
-        "g_memory_output_stream_steal_data",
-        constants$694.g_memory_output_stream_steal_data$FUNC
-    );
-    static final FunctionDescriptor g_memory_output_stream_steal_as_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_memory_output_stream_steal_as_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_memory_output_stream_steal_as_bytes",
-        constants$694.g_memory_output_stream_steal_as_bytes$FUNC
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GIOSchedulerJobFunc.class, "apply", constants$12.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GSimpleAsyncThreadFunc.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GSocketSourceFunc.class, "apply", constants$150.const$0);
 }
 
 

@@ -3,68 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$469 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$469() {}
-    static final FunctionDescriptor GAsyncReadyCallback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_thread_pool_get_num_threads",
+        constants$10.const$5
     );
-    static final FunctionDescriptor GAsyncReadyCallback_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_thread_pool_set_max_unused_threads",
+        constants$80.const$1
     );
-    static final MethodHandle GAsyncReadyCallback_UP$MH = RuntimeHelper.upcallHandle(GAsyncReadyCallback.class, "apply", constants$469.GAsyncReadyCallback_UP$FUNC);
-    static final FunctionDescriptor GAsyncReadyCallback_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_thread_pool_get_max_unused_threads",
+        constants$83.const$1
     );
-    static final MethodHandle GAsyncReadyCallback_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$469.GAsyncReadyCallback_DOWN$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_thread_pool_get_num_unused_threads",
+        constants$83.const$1
     );
-    static final FunctionDescriptor GFileProgressCallback$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_thread_pool_stop_unused_threads",
+        constants$7.const$5
     );
-    static final FunctionDescriptor GFileProgressCallback_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GFileProgressCallback_UP$MH = RuntimeHelper.upcallHandle(GFileProgressCallback.class, "apply", constants$469.GFileProgressCallback_UP$FUNC);
-    static final FunctionDescriptor GFileProgressCallback_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GFileProgressCallback_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$469.GFileProgressCallback_DOWN$FUNC
-    );
-    static final FunctionDescriptor GFileReadMoreCallback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GFileReadMoreCallback_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GFileReadMoreCallback_UP$MH = RuntimeHelper.upcallHandle(GFileReadMoreCallback.class, "apply", constants$469.GFileReadMoreCallback_UP$FUNC);
-    static final FunctionDescriptor GFileReadMoreCallback_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GFileReadMoreCallback_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$469.GFileReadMoreCallback_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_thread_pool_set_max_idle_time",
+        constants$80.const$1
     );
 }
 

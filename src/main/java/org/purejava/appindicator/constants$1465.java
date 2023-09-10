@@ -3,56 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1465 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1465() {}
-    static final FunctionDescriptor gtk_tree_view_new_with_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_push_clip_rectangle_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_set_push_clip_rectangle_func",
+        constants$42.const$1
     );
-    static final MethodHandle gtk_tree_view_new_with_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_new_with_model",
-        constants$1465.gtk_tree_view_new_with_model$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_pop_clip_func$func.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_pop_clip_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_paint_funcs_set_pop_clip_func",
+        constants$42.const$1
     );
-    static final FunctionDescriptor gtk_tree_view_get_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_model",
-        constants$1465.gtk_tree_view_get_model$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_model$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_model",
-        constants$1465.gtk_tree_view_set_model$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_selection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_selection$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_selection",
-        constants$1465.gtk_tree_view_get_selection$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_hadjustment$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_hadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_hadjustment",
-        constants$1465.gtk_tree_view_get_hadjustment$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_hadjustment$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_hadjustment$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_hadjustment",
-        constants$1465.gtk_tree_view_set_hadjustment$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_paint_funcs_set_color_func$func.class, "apply", constants$1457.const$1);
 }
 
 

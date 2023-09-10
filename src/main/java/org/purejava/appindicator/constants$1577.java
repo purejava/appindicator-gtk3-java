@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1577 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1577() {}
-    static final FunctionDescriptor gtk_file_chooser_get_preview_filename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_unref",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_file_chooser_get_preview_filename$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_preview_filename",
-        constants$1577.gtk_file_chooser_get_preview_filename$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_copy",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_file_chooser_get_preview_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_insert",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_file_chooser_get_preview_uri$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_preview_uri",
-        constants$1577.gtk_file_chooser_get_preview_uri$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_insert_before",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_file_chooser_get_preview_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_change",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_file_chooser_get_preview_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_preview_file",
-        constants$1577.gtk_file_chooser_get_preview_file$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_set_extra_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_set_extra_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_set_extra_widget",
-        constants$1577.gtk_file_chooser_set_extra_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_get_extra_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_get_extra_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_get_extra_widget",
-        constants$1577.gtk_file_chooser_get_extra_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_file_chooser_add_filter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_chooser_add_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_add_filter",
-        constants$1577.gtk_file_chooser_add_filter$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_attr_list_splice",
+        constants$1043.const$2
     );
 }
 

@@ -3,51 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1692 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1692() {}
-    static final FunctionDescriptor gtk_popover_set_constrain_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_clip_preserve",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_popover_set_constrain_to$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_set_constrain_to",
-        constants$1692.gtk_popover_set_constrain_to$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_clip_extents",
+        constants$331.const$1
     );
-    static final FunctionDescriptor gtk_popover_get_constrain_to$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_popover_get_constrain_to$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_get_constrain_to",
-        constants$1692.gtk_popover_get_constrain_to$FUNC
-    );
-    static final FunctionDescriptor gtk_popover_popup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_popover_popup$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_popup",
-        constants$1692.gtk_popover_popup$FUNC
-    );
-    static final FunctionDescriptor gtk_popover_popdown$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_popover_popdown$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_popdown",
-        constants$1692.gtk_popover_popdown$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_menu_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_button_get_type",
-        constants$1692.gtk_menu_button_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_button_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_menu_button_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_button_new",
-        constants$1692.gtk_menu_button_new$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        JAVA_DOUBLE.withName("x"),
+        JAVA_DOUBLE.withName("y"),
+        JAVA_DOUBLE.withName("width"),
+        JAVA_DOUBLE.withName("height")
+    ).withName("_cairo_rectangle");
+    static final VarHandle const$3 = constants$1692.const$2.varHandle(MemoryLayout.PathElement.groupElement("x"));
+    static final VarHandle const$4 = constants$1692.const$2.varHandle(MemoryLayout.PathElement.groupElement("y"));
+    static final VarHandle const$5 = constants$1692.const$2.varHandle(MemoryLayout.PathElement.groupElement("width"));
 }
 
 

@@ -4,16 +4,17 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkLabelClass {
- *     GtkMiscClass parent_class;
- *     void (*move_cursor)(GtkLabel*,GtkMovementStep,gint,gboolean);
- *     void (*copy_clipboard)(GtkLabel*);
- *     void (*populate_popup)(GtkLabel*,GtkMenu*);
- *     gboolean (*activate_link)(GtkLabel*,const gchar*);
+ *     struct _GtkMiscClass parent_class;
+ *     void (*move_cursor)(struct _GtkLabel*,enum GtkMovementStep,int,int);
+ *     void (*copy_clipboard)(struct _GtkLabel*);
+ *     void (*populate_popup)(struct _GtkLabel*,struct _GtkMenu*);
+ *     int (*activate_link)(struct _GtkLabel*,char*);
  *     void (*_gtk_reserved1)();
  *     void (*_gtk_reserved2)();
  *     void (*_gtk_reserved3)();
@@ -27,178 +28,28 @@ import java.lang.foreign.*;
  */
 public class _GtkLabelClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            MemoryLayout.structLayout(
-                MemoryLayout.structLayout(
-                    MemoryLayout.structLayout(
-                        Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-                    ).withName("g_type_class"),
-                    Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-                    Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-                    Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-                    Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-                    Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-                    Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-                    Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-                    Constants$root.C_POINTER$LAYOUT.withName("notify"),
-                    Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-                    Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-                    Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-                    MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-                ).withName("parent_class"),
-                Constants$root.C_INT$LAYOUT.withName("activate_signal"),
-                MemoryLayout.paddingLayout(32),
-                Constants$root.C_POINTER$LAYOUT.withName("dispatch_child_properties_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("destroy"),
-                Constants$root.C_POINTER$LAYOUT.withName("show"),
-                Constants$root.C_POINTER$LAYOUT.withName("show_all"),
-                Constants$root.C_POINTER$LAYOUT.withName("hide"),
-                Constants$root.C_POINTER$LAYOUT.withName("map"),
-                Constants$root.C_POINTER$LAYOUT.withName("unmap"),
-                Constants$root.C_POINTER$LAYOUT.withName("realize"),
-                Constants$root.C_POINTER$LAYOUT.withName("unrealize"),
-                Constants$root.C_POINTER$LAYOUT.withName("size_allocate"),
-                Constants$root.C_POINTER$LAYOUT.withName("state_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("state_flags_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("parent_set"),
-                Constants$root.C_POINTER$LAYOUT.withName("hierarchy_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("style_set"),
-                Constants$root.C_POINTER$LAYOUT.withName("direction_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("grab_notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("child_notify"),
-                Constants$root.C_POINTER$LAYOUT.withName("draw"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_request_mode"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_width_for_height"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_width"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height_for_width"),
-                Constants$root.C_POINTER$LAYOUT.withName("mnemonic_activate"),
-                Constants$root.C_POINTER$LAYOUT.withName("grab_focus"),
-                Constants$root.C_POINTER$LAYOUT.withName("focus"),
-                Constants$root.C_POINTER$LAYOUT.withName("move_focus"),
-                Constants$root.C_POINTER$LAYOUT.withName("keynav_failed"),
-                Constants$root.C_POINTER$LAYOUT.withName("event"),
-                Constants$root.C_POINTER$LAYOUT.withName("button_press_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("button_release_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("scroll_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("motion_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("delete_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("destroy_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("key_press_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("key_release_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("enter_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("leave_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("configure_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("focus_in_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("focus_out_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("map_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("unmap_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("property_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_clear_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_request_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("proximity_in_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("proximity_out_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("visibility_notify_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("window_state_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("damage_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("grab_broken_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_get"),
-                Constants$root.C_POINTER$LAYOUT.withName("selection_received"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_begin"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_end"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_data_get"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_data_delete"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_leave"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_motion"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_drop"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_data_received"),
-                Constants$root.C_POINTER$LAYOUT.withName("drag_failed"),
-                Constants$root.C_POINTER$LAYOUT.withName("popup_menu"),
-                Constants$root.C_POINTER$LAYOUT.withName("show_help"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_accessible"),
-                Constants$root.C_POINTER$LAYOUT.withName("screen_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("can_activate_accel"),
-                Constants$root.C_POINTER$LAYOUT.withName("composited_changed"),
-                Constants$root.C_POINTER$LAYOUT.withName("query_tooltip"),
-                Constants$root.C_POINTER$LAYOUT.withName("compute_expand"),
-                Constants$root.C_POINTER$LAYOUT.withName("adjust_size_request"),
-                Constants$root.C_POINTER$LAYOUT.withName("adjust_size_allocation"),
-                Constants$root.C_POINTER$LAYOUT.withName("style_updated"),
-                Constants$root.C_POINTER$LAYOUT.withName("touch_event"),
-                Constants$root.C_POINTER$LAYOUT.withName("get_preferred_height_and_baseline_for_width"),
-                Constants$root.C_POINTER$LAYOUT.withName("adjust_baseline_request"),
-                Constants$root.C_POINTER$LAYOUT.withName("adjust_baseline_allocation"),
-                Constants$root.C_POINTER$LAYOUT.withName("queue_draw_region"),
-                Constants$root.C_POINTER$LAYOUT.withName("priv"),
-                Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved6"),
-                Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved7")
-            ).withName("parent_class"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
-            Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved4")
-        ).withName("parent_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("move_cursor"),
-        Constants$root.C_POINTER$LAYOUT.withName("copy_clipboard"),
-        Constants$root.C_POINTER$LAYOUT.withName("populate_popup"),
-        Constants$root.C_POINTER$LAYOUT.withName("activate_link"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved1"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved2"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved3"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved4"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved5"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved6"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved7"),
-        Constants$root.C_POINTER$LAYOUT.withName("_gtk_reserved8")
-    ).withName("_GtkLabelClass");
     public static MemoryLayout $LAYOUT() {
-        return _GtkLabelClass.$struct$LAYOUT;
+        return constants$2242.const$4;
     }
     public static MemorySegment parent_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 856);
     }
-    static final FunctionDescriptor move_cursor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor move_cursor_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle move_cursor_UP$MH = RuntimeHelper.upcallHandle(move_cursor.class, "apply", _GtkLabelClass.move_cursor_UP$FUNC);
-    static final FunctionDescriptor move_cursor_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle move_cursor_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkLabelClass.move_cursor_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*move_cursor)(GtkLabel*,GtkMovementStep,gint,gboolean);
+ * void (*move_cursor)(struct _GtkLabel*,enum GtkMovementStep,int,int);
      * }
      */
     public interface move_cursor {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, int _x2, int _x3);
-        static MemorySegment allocate(move_cursor fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkLabelClass.move_cursor_UP$MH, fi, _GtkLabelClass.move_cursor$FUNC, scope);
+        static MemorySegment allocate(move_cursor fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2242.const$5, fi, constants$1131.const$1, scope);
         }
-        static move_cursor ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static move_cursor ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, int __x2, int __x3) -> {
                 try {
-                    _GtkLabelClass.move_cursor_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$2243.const$0.invokeExact(symbol, __x0, __x1, __x2, __x3);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -206,66 +57,52 @@ public class _GtkLabelClass {
         }
     }
 
-    static final VarHandle move_cursor$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("move_cursor"));
     public static VarHandle move_cursor$VH() {
-        return _GtkLabelClass.move_cursor$VH;
+        return constants$2243.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*move_cursor)(GtkLabel*,GtkMovementStep,gint,gboolean);
+     * void (*move_cursor)(struct _GtkLabel*,enum GtkMovementStep,int,int);
      * }
      */
     public static MemorySegment move_cursor$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass.move_cursor$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2243.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*move_cursor)(GtkLabel*,GtkMovementStep,gint,gboolean);
+     * void (*move_cursor)(struct _GtkLabel*,enum GtkMovementStep,int,int);
      * }
      */
     public static void move_cursor$set(MemorySegment seg, MemorySegment x) {
-        _GtkLabelClass.move_cursor$VH.set(seg, x);
+        constants$2243.const$1.set(seg, x);
     }
     public static MemorySegment move_cursor$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass.move_cursor$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2243.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void move_cursor$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkLabelClass.move_cursor$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2243.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static move_cursor move_cursor(MemorySegment segment, SegmentScope scope) {
+    public static move_cursor move_cursor(MemorySegment segment, Arena scope) {
         return move_cursor.ofAddress(move_cursor$get(segment), scope);
     }
-    static final FunctionDescriptor copy_clipboard$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor copy_clipboard_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle copy_clipboard_UP$MH = RuntimeHelper.upcallHandle(copy_clipboard.class, "apply", _GtkLabelClass.copy_clipboard_UP$FUNC);
-    static final FunctionDescriptor copy_clipboard_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle copy_clipboard_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkLabelClass.copy_clipboard_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*copy_clipboard)(GtkLabel*);
+ * void (*copy_clipboard)(struct _GtkLabel*);
      * }
      */
     public interface copy_clipboard {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(copy_clipboard fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkLabelClass.copy_clipboard_UP$MH, fi, _GtkLabelClass.copy_clipboard$FUNC, scope);
+        static MemorySegment allocate(copy_clipboard fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2243.const$2, fi, constants$13.const$1, scope);
         }
-        static copy_clipboard ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static copy_clipboard ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GtkLabelClass.copy_clipboard_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -273,69 +110,52 @@ public class _GtkLabelClass {
         }
     }
 
-    static final VarHandle copy_clipboard$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("copy_clipboard"));
     public static VarHandle copy_clipboard$VH() {
-        return _GtkLabelClass.copy_clipboard$VH;
+        return constants$2243.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*copy_clipboard)(GtkLabel*);
+     * void (*copy_clipboard)(struct _GtkLabel*);
      * }
      */
     public static MemorySegment copy_clipboard$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass.copy_clipboard$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2243.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*copy_clipboard)(GtkLabel*);
+     * void (*copy_clipboard)(struct _GtkLabel*);
      * }
      */
     public static void copy_clipboard$set(MemorySegment seg, MemorySegment x) {
-        _GtkLabelClass.copy_clipboard$VH.set(seg, x);
+        constants$2243.const$3.set(seg, x);
     }
     public static MemorySegment copy_clipboard$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass.copy_clipboard$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2243.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void copy_clipboard$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkLabelClass.copy_clipboard$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2243.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static copy_clipboard copy_clipboard(MemorySegment segment, SegmentScope scope) {
+    public static copy_clipboard copy_clipboard(MemorySegment segment, Arena scope) {
         return copy_clipboard.ofAddress(copy_clipboard$get(segment), scope);
     }
-    static final FunctionDescriptor populate_popup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor populate_popup_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle populate_popup_UP$MH = RuntimeHelper.upcallHandle(populate_popup.class, "apply", _GtkLabelClass.populate_popup_UP$FUNC);
-    static final FunctionDescriptor populate_popup_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle populate_popup_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkLabelClass.populate_popup_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*populate_popup)(GtkLabel*,GtkMenu*);
+ * void (*populate_popup)(struct _GtkLabel*,struct _GtkMenu*);
      * }
      */
     public interface populate_popup {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(populate_popup fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkLabelClass.populate_popup_UP$MH, fi, _GtkLabelClass.populate_popup$FUNC, scope);
+        static MemorySegment allocate(populate_popup fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2243.const$4, fi, constants$13.const$4, scope);
         }
-        static populate_popup ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static populate_popup ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GtkLabelClass.populate_popup_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -343,69 +163,52 @@ public class _GtkLabelClass {
         }
     }
 
-    static final VarHandle populate_popup$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("populate_popup"));
     public static VarHandle populate_popup$VH() {
-        return _GtkLabelClass.populate_popup$VH;
+        return constants$2243.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*populate_popup)(GtkLabel*,GtkMenu*);
+     * void (*populate_popup)(struct _GtkLabel*,struct _GtkMenu*);
      * }
      */
     public static MemorySegment populate_popup$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass.populate_popup$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2243.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*populate_popup)(GtkLabel*,GtkMenu*);
+     * void (*populate_popup)(struct _GtkLabel*,struct _GtkMenu*);
      * }
      */
     public static void populate_popup$set(MemorySegment seg, MemorySegment x) {
-        _GtkLabelClass.populate_popup$VH.set(seg, x);
+        constants$2243.const$5.set(seg, x);
     }
     public static MemorySegment populate_popup$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass.populate_popup$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2243.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void populate_popup$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkLabelClass.populate_popup$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2243.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static populate_popup populate_popup(MemorySegment segment, SegmentScope scope) {
+    public static populate_popup populate_popup(MemorySegment segment, Arena scope) {
         return populate_popup.ofAddress(populate_popup$get(segment), scope);
     }
-    static final FunctionDescriptor activate_link$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor activate_link_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle activate_link_UP$MH = RuntimeHelper.upcallHandle(activate_link.class, "apply", _GtkLabelClass.activate_link_UP$FUNC);
-    static final FunctionDescriptor activate_link_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle activate_link_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkLabelClass.activate_link_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*activate_link)(GtkLabel*,const gchar*);
+ * int (*activate_link)(struct _GtkLabel*,char*);
      * }
      */
     public interface activate_link {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1);
-        static MemorySegment allocate(activate_link fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkLabelClass.activate_link_UP$MH, fi, _GtkLabelClass.activate_link$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment filter_info, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(activate_link fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2244.const$0, fi, constants$9.const$0, scope);
         }
-        static activate_link ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1) -> {
+        static activate_link ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _filter_info, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GtkLabelClass.activate_link_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (int)constants$12.const$1.invokeExact(symbol, _filter_info, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -413,44 +216,36 @@ public class _GtkLabelClass {
         }
     }
 
-    static final VarHandle activate_link$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("activate_link"));
     public static VarHandle activate_link$VH() {
-        return _GtkLabelClass.activate_link$VH;
+        return constants$2244.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*activate_link)(GtkLabel*,const gchar*);
+     * int (*activate_link)(struct _GtkLabel*,char*);
      * }
      */
     public static MemorySegment activate_link$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass.activate_link$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2244.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*activate_link)(GtkLabel*,const gchar*);
+     * int (*activate_link)(struct _GtkLabel*,char*);
      * }
      */
     public static void activate_link$set(MemorySegment seg, MemorySegment x) {
-        _GtkLabelClass.activate_link$VH.set(seg, x);
+        constants$2244.const$1.set(seg, x);
     }
     public static MemorySegment activate_link$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass.activate_link$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2244.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void activate_link$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkLabelClass.activate_link$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2244.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static activate_link activate_link(MemorySegment segment, SegmentScope scope) {
+    public static activate_link activate_link(MemorySegment segment, Arena scope) {
         return activate_link.ofAddress(activate_link$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved1$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved1_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved1.class, "apply", _GtkLabelClass._gtk_reserved1_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved1_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved1_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkLabelClass._gtk_reserved1_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved1)();
@@ -459,14 +254,14 @@ public class _GtkLabelClass {
     public interface _gtk_reserved1 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved1 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkLabelClass._gtk_reserved1_UP$MH, fi, _GtkLabelClass._gtk_reserved1$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved1 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2244.const$2, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved1 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved1 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkLabelClass._gtk_reserved1_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -474,9 +269,8 @@ public class _GtkLabelClass {
         }
     }
 
-    static final VarHandle _gtk_reserved1$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved1"));
     public static VarHandle _gtk_reserved1$VH() {
-        return _GtkLabelClass._gtk_reserved1$VH;
+        return constants$2244.const$3;
     }
     /**
      * Getter for field:
@@ -485,7 +279,7 @@ public class _GtkLabelClass {
      * }
      */
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass._gtk_reserved1$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2244.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -494,24 +288,17 @@ public class _GtkLabelClass {
      * }
      */
     public static void _gtk_reserved1$set(MemorySegment seg, MemorySegment x) {
-        _GtkLabelClass._gtk_reserved1$VH.set(seg, x);
+        constants$2244.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass._gtk_reserved1$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2244.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkLabelClass._gtk_reserved1$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2244.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved1 _gtk_reserved1(MemorySegment segment, Arena scope) {
         return _gtk_reserved1.ofAddress(_gtk_reserved1$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved2$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved2_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved2.class, "apply", _GtkLabelClass._gtk_reserved2_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved2_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved2_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkLabelClass._gtk_reserved2_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved2)();
@@ -520,14 +307,14 @@ public class _GtkLabelClass {
     public interface _gtk_reserved2 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved2 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkLabelClass._gtk_reserved2_UP$MH, fi, _GtkLabelClass._gtk_reserved2$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved2 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2244.const$4, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved2 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved2 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkLabelClass._gtk_reserved2_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -535,9 +322,8 @@ public class _GtkLabelClass {
         }
     }
 
-    static final VarHandle _gtk_reserved2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved2"));
     public static VarHandle _gtk_reserved2$VH() {
-        return _GtkLabelClass._gtk_reserved2$VH;
+        return constants$2244.const$5;
     }
     /**
      * Getter for field:
@@ -546,7 +332,7 @@ public class _GtkLabelClass {
      * }
      */
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass._gtk_reserved2$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2244.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -555,24 +341,17 @@ public class _GtkLabelClass {
      * }
      */
     public static void _gtk_reserved2$set(MemorySegment seg, MemorySegment x) {
-        _GtkLabelClass._gtk_reserved2$VH.set(seg, x);
+        constants$2244.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass._gtk_reserved2$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2244.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkLabelClass._gtk_reserved2$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2244.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved2 _gtk_reserved2(MemorySegment segment, Arena scope) {
         return _gtk_reserved2.ofAddress(_gtk_reserved2$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved3$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved3_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved3.class, "apply", _GtkLabelClass._gtk_reserved3_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved3_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved3_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkLabelClass._gtk_reserved3_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved3)();
@@ -581,14 +360,14 @@ public class _GtkLabelClass {
     public interface _gtk_reserved3 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved3 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkLabelClass._gtk_reserved3_UP$MH, fi, _GtkLabelClass._gtk_reserved3$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved3 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2245.const$0, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved3 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved3 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkLabelClass._gtk_reserved3_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -596,9 +375,8 @@ public class _GtkLabelClass {
         }
     }
 
-    static final VarHandle _gtk_reserved3$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved3"));
     public static VarHandle _gtk_reserved3$VH() {
-        return _GtkLabelClass._gtk_reserved3$VH;
+        return constants$2245.const$1;
     }
     /**
      * Getter for field:
@@ -607,7 +385,7 @@ public class _GtkLabelClass {
      * }
      */
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass._gtk_reserved3$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2245.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -616,24 +394,17 @@ public class _GtkLabelClass {
      * }
      */
     public static void _gtk_reserved3$set(MemorySegment seg, MemorySegment x) {
-        _GtkLabelClass._gtk_reserved3$VH.set(seg, x);
+        constants$2245.const$1.set(seg, x);
     }
     public static MemorySegment _gtk_reserved3$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass._gtk_reserved3$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2245.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved3$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkLabelClass._gtk_reserved3$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2245.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved3 _gtk_reserved3(MemorySegment segment, Arena scope) {
         return _gtk_reserved3.ofAddress(_gtk_reserved3$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved4$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved4_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved4.class, "apply", _GtkLabelClass._gtk_reserved4_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved4_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved4_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkLabelClass._gtk_reserved4_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved4)();
@@ -642,14 +413,14 @@ public class _GtkLabelClass {
     public interface _gtk_reserved4 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved4 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkLabelClass._gtk_reserved4_UP$MH, fi, _GtkLabelClass._gtk_reserved4$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved4 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2245.const$2, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved4 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved4 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkLabelClass._gtk_reserved4_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -657,9 +428,8 @@ public class _GtkLabelClass {
         }
     }
 
-    static final VarHandle _gtk_reserved4$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved4"));
     public static VarHandle _gtk_reserved4$VH() {
-        return _GtkLabelClass._gtk_reserved4$VH;
+        return constants$2245.const$3;
     }
     /**
      * Getter for field:
@@ -668,7 +438,7 @@ public class _GtkLabelClass {
      * }
      */
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass._gtk_reserved4$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2245.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -677,24 +447,17 @@ public class _GtkLabelClass {
      * }
      */
     public static void _gtk_reserved4$set(MemorySegment seg, MemorySegment x) {
-        _GtkLabelClass._gtk_reserved4$VH.set(seg, x);
+        constants$2245.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_reserved4$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass._gtk_reserved4$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2245.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved4$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkLabelClass._gtk_reserved4$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2245.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved4 _gtk_reserved4(MemorySegment segment, Arena scope) {
         return _gtk_reserved4.ofAddress(_gtk_reserved4$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved5$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved5_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved5_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved5.class, "apply", _GtkLabelClass._gtk_reserved5_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved5_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved5_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkLabelClass._gtk_reserved5_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved5)();
@@ -703,14 +466,14 @@ public class _GtkLabelClass {
     public interface _gtk_reserved5 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved5 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkLabelClass._gtk_reserved5_UP$MH, fi, _GtkLabelClass._gtk_reserved5$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved5 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2245.const$4, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved5 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved5 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkLabelClass._gtk_reserved5_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -718,9 +481,8 @@ public class _GtkLabelClass {
         }
     }
 
-    static final VarHandle _gtk_reserved5$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved5"));
     public static VarHandle _gtk_reserved5$VH() {
-        return _GtkLabelClass._gtk_reserved5$VH;
+        return constants$2245.const$5;
     }
     /**
      * Getter for field:
@@ -729,7 +491,7 @@ public class _GtkLabelClass {
      * }
      */
     public static MemorySegment _gtk_reserved5$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass._gtk_reserved5$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2245.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -738,24 +500,17 @@ public class _GtkLabelClass {
      * }
      */
     public static void _gtk_reserved5$set(MemorySegment seg, MemorySegment x) {
-        _GtkLabelClass._gtk_reserved5$VH.set(seg, x);
+        constants$2245.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_reserved5$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass._gtk_reserved5$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2245.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved5$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkLabelClass._gtk_reserved5$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2245.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved5 _gtk_reserved5(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved5 _gtk_reserved5(MemorySegment segment, Arena scope) {
         return _gtk_reserved5.ofAddress(_gtk_reserved5$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved6$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved6_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved6_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved6.class, "apply", _GtkLabelClass._gtk_reserved6_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved6_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved6_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkLabelClass._gtk_reserved6_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved6)();
@@ -764,14 +519,14 @@ public class _GtkLabelClass {
     public interface _gtk_reserved6 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved6 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkLabelClass._gtk_reserved6_UP$MH, fi, _GtkLabelClass._gtk_reserved6$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved6 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2246.const$0, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved6 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved6 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkLabelClass._gtk_reserved6_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -779,9 +534,8 @@ public class _GtkLabelClass {
         }
     }
 
-    static final VarHandle _gtk_reserved6$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved6"));
     public static VarHandle _gtk_reserved6$VH() {
-        return _GtkLabelClass._gtk_reserved6$VH;
+        return constants$2246.const$1;
     }
     /**
      * Getter for field:
@@ -790,7 +544,7 @@ public class _GtkLabelClass {
      * }
      */
     public static MemorySegment _gtk_reserved6$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass._gtk_reserved6$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2246.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -799,24 +553,17 @@ public class _GtkLabelClass {
      * }
      */
     public static void _gtk_reserved6$set(MemorySegment seg, MemorySegment x) {
-        _GtkLabelClass._gtk_reserved6$VH.set(seg, x);
+        constants$2246.const$1.set(seg, x);
     }
     public static MemorySegment _gtk_reserved6$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass._gtk_reserved6$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2246.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved6$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkLabelClass._gtk_reserved6$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2246.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved6 _gtk_reserved6(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved6 _gtk_reserved6(MemorySegment segment, Arena scope) {
         return _gtk_reserved6.ofAddress(_gtk_reserved6$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved7$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved7_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved7_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved7.class, "apply", _GtkLabelClass._gtk_reserved7_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved7_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved7_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkLabelClass._gtk_reserved7_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved7)();
@@ -825,14 +572,14 @@ public class _GtkLabelClass {
     public interface _gtk_reserved7 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved7 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkLabelClass._gtk_reserved7_UP$MH, fi, _GtkLabelClass._gtk_reserved7$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved7 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2246.const$2, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved7 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved7 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkLabelClass._gtk_reserved7_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -840,9 +587,8 @@ public class _GtkLabelClass {
         }
     }
 
-    static final VarHandle _gtk_reserved7$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved7"));
     public static VarHandle _gtk_reserved7$VH() {
-        return _GtkLabelClass._gtk_reserved7$VH;
+        return constants$2246.const$3;
     }
     /**
      * Getter for field:
@@ -851,7 +597,7 @@ public class _GtkLabelClass {
      * }
      */
     public static MemorySegment _gtk_reserved7$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass._gtk_reserved7$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2246.const$3.get(seg);
     }
     /**
      * Setter for field:
@@ -860,24 +606,17 @@ public class _GtkLabelClass {
      * }
      */
     public static void _gtk_reserved7$set(MemorySegment seg, MemorySegment x) {
-        _GtkLabelClass._gtk_reserved7$VH.set(seg, x);
+        constants$2246.const$3.set(seg, x);
     }
     public static MemorySegment _gtk_reserved7$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass._gtk_reserved7$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2246.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved7$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkLabelClass._gtk_reserved7$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2246.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved7 _gtk_reserved7(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved7 _gtk_reserved7(MemorySegment segment, Arena scope) {
         return _gtk_reserved7.ofAddress(_gtk_reserved7$get(segment), scope);
     }
-    static final FunctionDescriptor _gtk_reserved8$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor _gtk_reserved8_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved8_UP$MH = RuntimeHelper.upcallHandle(_gtk_reserved8.class, "apply", _GtkLabelClass._gtk_reserved8_UP$FUNC);
-    static final FunctionDescriptor _gtk_reserved8_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle _gtk_reserved8_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkLabelClass._gtk_reserved8_DOWN$FUNC
-    );
     /**
      * {@snippet :
  * void (*_gtk_reserved8)();
@@ -886,14 +625,14 @@ public class _GtkLabelClass {
     public interface _gtk_reserved8 {
 
         void apply();
-        static MemorySegment allocate(_gtk_reserved8 fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkLabelClass._gtk_reserved8_UP$MH, fi, _GtkLabelClass._gtk_reserved8$FUNC, scope);
+        static MemorySegment allocate(_gtk_reserved8 fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2246.const$4, fi, constants$7.const$5, scope);
         }
-        static _gtk_reserved8 ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static _gtk_reserved8 ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return () -> {
                 try {
-                    _GtkLabelClass._gtk_reserved8_DOWN$MH.invokeExact(symbol);
+                    constants$64.const$1.invokeExact(symbol);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -901,9 +640,8 @@ public class _GtkLabelClass {
         }
     }
 
-    static final VarHandle _gtk_reserved8$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("_gtk_reserved8"));
     public static VarHandle _gtk_reserved8$VH() {
-        return _GtkLabelClass._gtk_reserved8$VH;
+        return constants$2246.const$5;
     }
     /**
      * Getter for field:
@@ -912,7 +650,7 @@ public class _GtkLabelClass {
      * }
      */
     public static MemorySegment _gtk_reserved8$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass._gtk_reserved8$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2246.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -921,15 +659,15 @@ public class _GtkLabelClass {
      * }
      */
     public static void _gtk_reserved8$set(MemorySegment seg, MemorySegment x) {
-        _GtkLabelClass._gtk_reserved8$VH.set(seg, x);
+        constants$2246.const$5.set(seg, x);
     }
     public static MemorySegment _gtk_reserved8$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkLabelClass._gtk_reserved8$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2246.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void _gtk_reserved8$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkLabelClass._gtk_reserved8$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2246.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static _gtk_reserved8 _gtk_reserved8(MemorySegment segment, SegmentScope scope) {
+    public static _gtk_reserved8 _gtk_reserved8(MemorySegment segment, Arena scope) {
         return _gtk_reserved8.ofAddress(_gtk_reserved8$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -937,7 +675,7 @@ public class _GtkLabelClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -3,58 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$825 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$825() {}
-    static final FunctionDescriptor g_vfs_get_supported_uri_schemes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "ttyname_r",
+        constants$24.const$2
     );
-    static final MethodHandle g_vfs_get_supported_uri_schemes$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_get_supported_uri_schemes",
-        constants$825.g_vfs_get_supported_uri_schemes$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "isatty",
+        constants$8.const$4
     );
-    static final FunctionDescriptor g_vfs_parse_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "ttyslot",
+        constants$83.const$1
     );
-    static final MethodHandle g_vfs_parse_name$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_parse_name",
-        constants$825.g_vfs_parse_name$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "link",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_vfs_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_vfs_get_default$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_get_default",
-        constants$825.g_vfs_get_default$FUNC
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor g_vfs_get_local$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_vfs_get_local$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_get_local",
-        constants$825.g_vfs_get_local$FUNC
-    );
-    static final FunctionDescriptor g_vfs_register_uri_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_vfs_register_uri_scheme$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_register_uri_scheme",
-        constants$825.g_vfs_register_uri_scheme$FUNC
-    );
-    static final FunctionDescriptor g_vfs_unregister_uri_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_vfs_unregister_uri_scheme$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_unregister_uri_scheme",
-        constants$825.g_vfs_unregister_uri_scheme$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "linkat",
+        constants$825.const$4
     );
 }
 

@@ -3,80 +3,36 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$225 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$225() {}
-    static final FunctionDescriptor g_key_file_get_locale_string_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_list_sort_with_data",
+        constants$23.const$0
     );
-    static final MethodHandle g_key_file_get_locale_string_list$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_locale_string_list",
-        constants$225.g_key_file_get_locale_string_list$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_list_nth_data",
+        constants$21.const$3
     );
-    static final FunctionDescriptor g_key_file_set_locale_string_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_clear_list$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_clear_list",
+        constants$13.const$4
     );
-    static final MethodHandle g_key_file_set_locale_string_list$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_locale_string_list",
-        constants$225.g_key_file_set_locale_string_list$FUNC
-    );
-    static final FunctionDescriptor g_key_file_get_boolean_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_get_boolean_list$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_boolean_list",
-        constants$225.g_key_file_get_boolean_list$FUNC
-    );
-    static final FunctionDescriptor g_key_file_set_boolean_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_key_file_set_boolean_list$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_boolean_list",
-        constants$225.g_key_file_set_boolean_list$FUNC
-    );
-    static final FunctionDescriptor g_key_file_get_integer_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_key_file_get_integer_list$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_get_integer_list",
-        constants$225.g_key_file_get_integer_list$FUNC
-    );
-    static final FunctionDescriptor g_key_file_set_double_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_key_file_set_double_list$MH = RuntimeHelper.downcallHandle(
-        "g_key_file_set_double_list",
-        constants$225.g_key_file_set_double_list$FUNC
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GHRFunc.class, "apply", constants$12.const$2);
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("dummy1"),
+        RuntimeHelper.POINTER.withName("dummy2"),
+        RuntimeHelper.POINTER.withName("dummy3"),
+        JAVA_INT.withName("dummy4"),
+        JAVA_INT.withName("dummy5"),
+        RuntimeHelper.POINTER.withName("dummy6")
+    ).withName("_GHashTableIter");
 }
 
 

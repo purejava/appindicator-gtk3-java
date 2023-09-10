@@ -2,18 +2,39 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2020 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2020() {}
-    static final MemorySegment HB_LANGUAGE_INVALID$ADDR = MemorySegment.ofAddress(0L);
-    static final MemorySegment HB_VERSION_STRING$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("6.0.0");
-    static final MemorySegment PANGO_RENDER_TYPE_NONE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("PangoRenderNone");
-    static final MemorySegment PANGO_ENGINE_TYPE_LANG$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("PangoEngineLang");
-    static final MemorySegment PANGO_ENGINE_TYPE_SHAPE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("PangoEngineShape");
-    static final MemorySegment P_tmpdir$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("/tmp");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_text_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_text_get_text",
+        constants$33.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_text_get_character_at_offset",
+        constants$11.const$4
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_text_get_text_after_offset",
+        constants$1421.const$1
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_text_get_text_at_offset",
+        constants$1421.const$1
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_text_get_text_before_offset",
+        constants$1421.const$1
+    );
 }
 
 

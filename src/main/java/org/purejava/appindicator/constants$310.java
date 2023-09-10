@@ -3,56 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$310 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$310() {}
-    static final FunctionDescriptor g_spawn_close_pid$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_BYTE
     );
-    static final MethodHandle g_spawn_close_pid$MH = RuntimeHelper.downcallHandle(
-        "g_spawn_close_pid",
-        constants$310.g_spawn_close_pid$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_string_insert_c",
+        constants$310.const$0
     );
-    static final FunctionDescriptor g_string_chunk_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_string_insert_unichar",
+        constants$291.const$1
     );
-    static final MethodHandle g_string_chunk_new$MH = RuntimeHelper.downcallHandle(
-        "g_string_chunk_new",
-        constants$310.g_string_chunk_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_string_overwrite",
+        constants$36.const$1
     );
-    static final FunctionDescriptor g_string_chunk_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_string_overwrite_len",
+        constants$308.const$1
     );
-    static final MethodHandle g_string_chunk_free$MH = RuntimeHelper.downcallHandle(
-        "g_string_chunk_free",
-        constants$310.g_string_chunk_free$FUNC
-    );
-    static final FunctionDescriptor g_string_chunk_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_chunk_clear$MH = RuntimeHelper.downcallHandle(
-        "g_string_chunk_clear",
-        constants$310.g_string_chunk_clear$FUNC
-    );
-    static final FunctionDescriptor g_string_chunk_insert$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_chunk_insert$MH = RuntimeHelper.downcallHandle(
-        "g_string_chunk_insert",
-        constants$310.g_string_chunk_insert$FUNC
-    );
-    static final FunctionDescriptor g_string_chunk_insert_len$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_string_chunk_insert_len$MH = RuntimeHelper.downcallHandle(
-        "g_string_chunk_insert_len",
-        constants$310.g_string_chunk_insert_len$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_string_erase",
+        constants$88.const$2
     );
 }
 

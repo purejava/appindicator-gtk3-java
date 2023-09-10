@@ -3,69 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$791 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$791() {}
-    static final FunctionDescriptor g_subprocess_launcher_set_child_setup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_output_stream_flush_finish",
+        constants$12.const$2
     );
-    static final MethodHandle g_subprocess_launcher_set_child_setup$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_launcher_set_child_setup",
-        constants$791.g_subprocess_launcher_set_child_setup$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_output_stream_close_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_output_stream_close_async",
+        constants$281.const$5
     );
-    static final FunctionDescriptor g_task_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_task_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_task_get_type",
-        constants$791.g_task_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_output_stream_close_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor g_task_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_output_stream_is_closed",
+        constants$10.const$5
     );
-    static final MethodHandle g_task_new$MH = RuntimeHelper.downcallHandle(
-        "g_task_new",
-        constants$791.g_task_new$FUNC
-    );
-    static final FunctionDescriptor g_task_report_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_task_report_error$MH = RuntimeHelper.downcallHandle(
-        "g_task_report_error",
-        constants$791.g_task_report_error$FUNC
-    );
-    static final FunctionDescriptor g_task_report_new_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_task_report_new_error$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_task_report_new_error",
-        constants$791.g_task_report_new_error$FUNC
-    );
-    static final FunctionDescriptor g_task_set_task_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_task_set_task_data$MH = RuntimeHelper.downcallHandle(
-        "g_task_set_task_data",
-        constants$791.g_task_set_task_data$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_output_stream_is_closing",
+        constants$10.const$5
     );
 }
 

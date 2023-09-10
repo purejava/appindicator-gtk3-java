@@ -3,56 +3,41 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$561 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$561() {}
-    static final FunctionDescriptor g_dbus_error_set_dbus_error_valist$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_type_register_dynamic",
+        constants$560.const$0
     );
-    static final MethodHandle g_dbus_error_set_dbus_error_valist$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_error_set_dbus_error_valist",
-        constants$561.g_dbus_error_set_dbus_error_valist$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT
     );
-    static final FunctionDescriptor g_dbus_error_encode_gerror$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_type_register_fundamental",
+        constants$561.const$1
     );
-    static final MethodHandle g_dbus_error_encode_gerror$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_error_encode_gerror",
-        constants$561.g_dbus_error_encode_gerror$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        JAVA_LONG,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_dbus_interface_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_interface_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_get_type",
-        constants$561.g_dbus_interface_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_type_add_interface_static",
+        constants$561.const$3
     );
-    static final FunctionDescriptor g_dbus_interface_get_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_interface_get_info$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_get_info",
-        constants$561.g_dbus_interface_get_info$FUNC
-    );
-    static final FunctionDescriptor g_dbus_interface_get_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_interface_get_object$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_get_object",
-        constants$561.g_dbus_interface_get_object$FUNC
-    );
-    static final FunctionDescriptor g_dbus_interface_set_object$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_interface_set_object$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_interface_set_object",
-        constants$561.g_dbus_interface_set_object$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_type_add_interface_dynamic",
+        constants$561.const$3
     );
 }
 

@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$616 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$616() {}
-    static final FunctionDescriptor g_file_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_io_channel_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_file_hash$MH = RuntimeHelper.downcallHandle(
-        "g_file_hash",
-        constants$616.g_file_hash$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_io_condition_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor g_file_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_variant_builder_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_file_equal$MH = RuntimeHelper.downcallHandle(
-        "g_file_equal",
-        constants$616.g_file_equal$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_variant_dict_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor g_file_get_basename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_key_file_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_file_get_basename$MH = RuntimeHelper.downcallHandle(
-        "g_file_get_basename",
-        constants$616.g_file_get_basename$FUNC
-    );
-    static final FunctionDescriptor g_file_get_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_get_path$MH = RuntimeHelper.downcallHandle(
-        "g_file_get_path",
-        constants$616.g_file_get_path$FUNC
-    );
-    static final FunctionDescriptor g_file_peek_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_peek_path$MH = RuntimeHelper.downcallHandle(
-        "g_file_peek_path",
-        constants$616.g_file_peek_path$FUNC
-    );
-    static final FunctionDescriptor g_file_get_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_get_uri$MH = RuntimeHelper.downcallHandle(
-        "g_file_get_uri",
-        constants$616.g_file_get_uri$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_main_loop_get_type",
+        constants$3.const$5
     );
 }
 

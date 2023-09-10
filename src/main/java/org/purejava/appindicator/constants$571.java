@@ -3,61 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$571 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$571() {}
-    static final FunctionDescriptor g_dbus_message_new_method_error_valist$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_value_transform",
+        constants$9.const$0
     );
-    static final MethodHandle g_dbus_message_new_method_error_valist$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_new_method_error_valist",
-        constants$571.g_dbus_message_new_method_error_valist$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_value_register_transform_func$transform_func.class, "apply", constants$13.const$4);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_value_register_transform_func",
+        constants$561.const$3
     );
-    static final FunctionDescriptor g_dbus_message_new_method_error_literal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_new_method_error_literal$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_new_method_error_literal",
-        constants$571.g_dbus_message_new_method_error_literal$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_print$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_print$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_print",
-        constants$571.g_dbus_message_print$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_get_locked$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_get_locked$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_locked",
-        constants$571.g_dbus_message_get_locked$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_lock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_lock$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_lock",
-        constants$571.g_dbus_message_lock$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_copy$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_copy",
-        constants$571.g_dbus_message_copy$FUNC
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("g_class")
+        ).withName("g_type_instance"),
+        RuntimeHelper.POINTER.withName("name"),
+        JAVA_INT.withName("flags"),
+        MemoryLayout.paddingLayout(4),
+        JAVA_LONG.withName("value_type"),
+        JAVA_LONG.withName("owner_type"),
+        RuntimeHelper.POINTER.withName("_nick"),
+        RuntimeHelper.POINTER.withName("_blurb"),
+        RuntimeHelper.POINTER.withName("qdata"),
+        JAVA_INT.withName("ref_count"),
+        JAVA_INT.withName("param_id")
+    ).withName("_GParamSpec");
+    static final VarHandle const$4 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("name"));
+    static final VarHandle const$5 = constants$571.const$3.varHandle(MemoryLayout.PathElement.groupElement("flags"));
 }
 
 

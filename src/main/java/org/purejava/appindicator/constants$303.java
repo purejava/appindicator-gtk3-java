@@ -3,68 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$303 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$303() {}
-    static final FunctionDescriptor g_sequence_remove_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_strsplit",
+        constants$32.const$3
     );
-    static final MethodHandle g_sequence_remove_range$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_remove_range",
-        constants$303.g_sequence_remove_range$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_strsplit_set",
+        constants$32.const$3
     );
-    static final FunctionDescriptor g_sequence_move_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_strjoinv",
+        constants$5.const$5
     );
-    static final MethodHandle g_sequence_move_range$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_move_range",
-        constants$303.g_sequence_move_range$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_strfreev",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_sequence_search$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_strdupv",
+        constants$5.const$2
     );
-    static final MethodHandle g_sequence_search$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_search",
-        constants$303.g_sequence_search$FUNC
-    );
-    static final FunctionDescriptor g_sequence_search_iter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_search_iter$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_search_iter",
-        constants$303.g_sequence_search_iter$FUNC
-    );
-    static final FunctionDescriptor g_sequence_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_lookup$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_lookup",
-        constants$303.g_sequence_lookup$FUNC
-    );
-    static final FunctionDescriptor g_sequence_lookup_iter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_lookup_iter$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_lookup_iter",
-        constants$303.g_sequence_lookup_iter$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_strv_length",
+        constants$10.const$5
     );
 }
 

@@ -2,18 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2026 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2026() {}
-    static final MemorySegment GDK_SELECTION_TYPE_PIXMAP$ADDR = MemorySegment.ofAddress(20L);
-    static final MemorySegment GDK_SELECTION_TYPE_WINDOW$ADDR = MemorySegment.ofAddress(33L);
-    static final MemorySegment GDK_SELECTION_TYPE_STRING$ADDR = MemorySegment.ofAddress(31L);
-    static final MemorySegment GTK_STYLE_PROPERTY_BACKGROUND_COLOR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("background-color");
-    static final MemorySegment GTK_STYLE_PROPERTY_COLOR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("color");
-    static final MemorySegment GTK_STYLE_PROPERTY_FONT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("font");
+    static final VarHandle const$0 = constants$2024.const$4.varHandle(MemoryLayout.PathElement.groupElement("copy_text"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.cut_text.class, "apply", constants$467.const$3);
+    static final VarHandle const$2 = constants$2024.const$4.varHandle(MemoryLayout.PathElement.groupElement("cut_text"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.delete_text.class, "apply", constants$467.const$3);
+    static final VarHandle const$4 = constants$2024.const$4.varHandle(MemoryLayout.PathElement.groupElement("delete_text"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.paste_text.class, "apply", constants$40.const$2);
 }
 
 

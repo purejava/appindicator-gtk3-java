@@ -3,63 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$398 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$398() {}
-    static final FunctionDescriptor g_param_value_set_default$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_queue_foreach$func.class, "apply", constants$13.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_queue_foreach",
+        constants$14.const$3
     );
-    static final MethodHandle g_param_value_set_default$MH = RuntimeHelper.downcallHandle(
-        "g_param_value_set_default",
-        constants$398.g_param_value_set_default$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_queue_find",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_param_value_defaults$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_queue_find_custom$func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_queue_find_custom",
+        constants$23.const$0
     );
-    static final MethodHandle g_param_value_defaults$MH = RuntimeHelper.downcallHandle(
-        "g_param_value_defaults",
-        constants$398.g_param_value_defaults$FUNC
-    );
-    static final FunctionDescriptor g_param_value_validate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_param_value_validate$MH = RuntimeHelper.downcallHandle(
-        "g_param_value_validate",
-        constants$398.g_param_value_validate$FUNC
-    );
-    static final FunctionDescriptor g_param_value_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_param_value_is_valid$MH = RuntimeHelper.downcallHandle(
-        "g_param_value_is_valid",
-        constants$398.g_param_value_is_valid$FUNC
-    );
-    static final FunctionDescriptor g_param_value_convert$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_value_convert$MH = RuntimeHelper.downcallHandle(
-        "g_param_value_convert",
-        constants$398.g_param_value_convert$FUNC
-    );
-    static final FunctionDescriptor g_param_values_cmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_param_values_cmp$MH = RuntimeHelper.downcallHandle(
-        "g_param_values_cmp",
-        constants$398.g_param_values_cmp$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_queue_sort$compare_func.class, "apply", constants$12.const$2);
 }
 
 

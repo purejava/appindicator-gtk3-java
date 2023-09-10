@@ -3,55 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1222 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1222() {}
-    static final FunctionDescriptor atk_hyperlink_get_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final VarHandle const$0 = constants$1221.const$2.varHandle(MemoryLayout.PathElement.groupElement("next_async"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSocketAddressEnumeratorClass.next_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$2 = constants$1221.const$2.varHandle(MemoryLayout.PathElement.groupElement("next_finish"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_address_enumerator_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle atk_hyperlink_get_object$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_get_object",
-        constants$1222.atk_hyperlink_get_object$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_address_enumerator_next",
+        constants$23.const$0
     );
-    static final FunctionDescriptor atk_hyperlink_get_end_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_hyperlink_get_end_index$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_get_end_index",
-        constants$1222.atk_hyperlink_get_end_index$FUNC
-    );
-    static final FunctionDescriptor atk_hyperlink_get_start_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_hyperlink_get_start_index$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_get_start_index",
-        constants$1222.atk_hyperlink_get_start_index$FUNC
-    );
-    static final FunctionDescriptor atk_hyperlink_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_hyperlink_is_valid$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_is_valid",
-        constants$1222.atk_hyperlink_is_valid$FUNC
-    );
-    static final FunctionDescriptor atk_hyperlink_is_inline$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_hyperlink_is_inline$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_is_inline",
-        constants$1222.atk_hyperlink_is_inline$FUNC
-    );
-    static final FunctionDescriptor atk_hyperlink_get_n_anchors$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_hyperlink_get_n_anchors$MH = RuntimeHelper.downcallHandle(
-        "atk_hyperlink_get_n_anchors",
-        constants$1222.atk_hyperlink_get_n_anchors$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_socket_address_enumerator_next_async$callback.class, "apply", constants$14.const$3);
 }
 
 

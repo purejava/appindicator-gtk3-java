@@ -3,82 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$636 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$636() {}
-    static final FunctionDescriptor g_file_replace_contents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_object_dup_qdata",
+        constants$180.const$0
     );
-    static final MethodHandle g_file_replace_contents$MH = RuntimeHelper.downcallHandle(
-        "g_file_replace_contents",
-        constants$636.g_file_replace_contents$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_object_replace_qdata$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_object_replace_qdata$old_destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_object_replace_qdata",
+        constants$180.const$4
     );
-    static final FunctionDescriptor g_file_replace_contents_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_object_get_data",
+        constants$5.const$5
     );
-    static final MethodHandle g_file_replace_contents_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_replace_contents_async",
-        constants$636.g_file_replace_contents_async$FUNC
-    );
-    static final FunctionDescriptor g_file_replace_contents_bytes_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_replace_contents_bytes_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_replace_contents_bytes_async",
-        constants$636.g_file_replace_contents_bytes_async$FUNC
-    );
-    static final FunctionDescriptor g_file_replace_contents_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_replace_contents_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_replace_contents_finish",
-        constants$636.g_file_replace_contents_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_supports_thread_contexts$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_supports_thread_contexts$MH = RuntimeHelper.downcallHandle(
-        "g_file_supports_thread_contexts",
-        constants$636.g_file_supports_thread_contexts$FUNC
-    );
-    static final FunctionDescriptor g_file_load_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_load_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_file_load_bytes",
-        constants$636.g_file_load_bytes$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_object_set_data",
+        constants$14.const$3
     );
 }
 

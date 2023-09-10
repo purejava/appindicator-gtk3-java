@@ -3,51 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$402 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$402() {}
-    static final FunctionDescriptor g_param_spec_pool_list_owned$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_queue_insert_sorted",
+        constants$42.const$1
     );
-    static final MethodHandle g_param_spec_pool_list_owned$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_pool_list_owned",
-        constants$402.g_param_spec_pool_list_owned$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_queue_push_head_link",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_param_spec_pool_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_queue_push_tail_link",
+        constants$13.const$4
     );
-    static final MethodHandle g_param_spec_pool_list$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_pool_list",
-        constants$402.g_param_spec_pool_list$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_queue_push_nth_link",
+        constants$42.const$4
     );
-    static final FunctionDescriptor GCallback$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor GCallback_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle GCallback_UP$MH = RuntimeHelper.upcallHandle(GCallback.class, "apply", constants$402.GCallback_UP$FUNC);
-    static final FunctionDescriptor GCallback_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle GCallback_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$402.GCallback_DOWN$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_queue_pop_head_link",
+        constants$5.const$2
     );
-    static final FunctionDescriptor GClosureNotify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GClosureNotify_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GClosureNotify_UP$MH = RuntimeHelper.upcallHandle(GClosureNotify.class, "apply", constants$402.GClosureNotify_UP$FUNC);
-    static final FunctionDescriptor GClosureNotify_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GClosureNotify_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$402.GClosureNotify_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_queue_pop_tail_link",
+        constants$5.const$2
     );
 }
 

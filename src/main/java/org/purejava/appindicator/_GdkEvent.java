@@ -2,391 +2,73 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * union _GdkEvent {
- *     GdkEventType type;
- *     GdkEventAny any;
- *     GdkEventExpose expose;
- *     GdkEventVisibility visibility;
- *     GdkEventMotion motion;
- *     GdkEventButton button;
- *     GdkEventTouch touch;
- *     GdkEventScroll scroll;
- *     GdkEventKey key;
- *     GdkEventCrossing crossing;
- *     GdkEventFocus focus_change;
- *     GdkEventConfigure configure;
- *     GdkEventProperty property;
- *     GdkEventSelection selection;
- *     GdkEventOwnerChange owner_change;
- *     GdkEventProximity proximity;
- *     GdkEventDND dnd;
- *     GdkEventWindowState window_state;
- *     GdkEventSetting setting;
- *     GdkEventGrabBroken grab_broken;
- *     GdkEventTouchpadSwipe touchpad_swipe;
- *     GdkEventTouchpadPinch touchpad_pinch;
- *     GdkEventPadButton pad_button;
- *     GdkEventPadAxis pad_axis;
- *     GdkEventPadGroupMode pad_group_mode;
+ *     enum GdkEventType type;
+ *     struct _GdkEventAny any;
+ *     struct _GdkEventExpose expose;
+ *     struct _GdkEventVisibility visibility;
+ *     struct _GdkEventMotion motion;
+ *     struct _GdkEventButton button;
+ *     struct _GdkEventTouch touch;
+ *     struct _GdkEventScroll scroll;
+ *     struct _GdkEventKey key;
+ *     struct _GdkEventCrossing crossing;
+ *     struct _GdkEventFocus focus_change;
+ *     struct _GdkEventConfigure configure;
+ *     struct _GdkEventProperty property;
+ *     struct _GdkEventSelection selection;
+ *     struct _GdkEventOwnerChange owner_change;
+ *     struct _GdkEventProximity proximity;
+ *     struct _GdkEventDND dnd;
+ *     struct _GdkEventWindowState window_state;
+ *     struct _GdkEventSetting setting;
+ *     struct _GdkEventGrabBroken grab_broken;
+ *     struct _GdkEventTouchpadSwipe touchpad_swipe;
+ *     struct _GdkEventTouchpadPinch touchpad_pinch;
+ *     struct _GdkEventPadButton pad_button;
+ *     struct _GdkEventPadAxis pad_axis;
+ *     struct _GdkEventPadGroupMode pad_group_mode;
  * };
  * }
  */
 public class _GdkEvent {
 
-    static final UnionLayout $union$LAYOUT = MemoryLayout.unionLayout(
-        Constants$root.C_INT$LAYOUT.withName("type"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(56)
-        ).withName("any"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(24),
-            MemoryLayout.structLayout(
-                Constants$root.C_INT$LAYOUT.withName("x"),
-                Constants$root.C_INT$LAYOUT.withName("y"),
-                Constants$root.C_INT$LAYOUT.withName("width"),
-                Constants$root.C_INT$LAYOUT.withName("height")
-            ).withName("area"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("region"),
-            Constants$root.C_INT$LAYOUT.withName("count"),
-            MemoryLayout.paddingLayout(32)
-        ).withName("expose"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(24),
-            Constants$root.C_INT$LAYOUT.withName("state")
-        ).withName("visibility"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(24),
-            Constants$root.C_INT$LAYOUT.withName("time"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("x"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("y"),
-            Constants$root.C_POINTER$LAYOUT.withName("axes"),
-            Constants$root.C_INT$LAYOUT.withName("state"),
-            Constants$root.C_SHORT$LAYOUT.withName("is_hint"),
-            MemoryLayout.paddingLayout(16),
-            Constants$root.C_POINTER$LAYOUT.withName("device"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("x_root"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("y_root")
-        ).withName("motion"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(24),
-            Constants$root.C_INT$LAYOUT.withName("time"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("x"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("y"),
-            Constants$root.C_POINTER$LAYOUT.withName("axes"),
-            Constants$root.C_INT$LAYOUT.withName("state"),
-            Constants$root.C_INT$LAYOUT.withName("button"),
-            Constants$root.C_POINTER$LAYOUT.withName("device"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("x_root"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("y_root")
-        ).withName("button"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(24),
-            Constants$root.C_INT$LAYOUT.withName("time"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("x"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("y"),
-            Constants$root.C_POINTER$LAYOUT.withName("axes"),
-            Constants$root.C_INT$LAYOUT.withName("state"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("sequence"),
-            Constants$root.C_INT$LAYOUT.withName("emulating_pointer"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("device"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("x_root"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("y_root")
-        ).withName("touch"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(24),
-            Constants$root.C_INT$LAYOUT.withName("time"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("x"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("y"),
-            Constants$root.C_INT$LAYOUT.withName("state"),
-            Constants$root.C_INT$LAYOUT.withName("direction"),
-            Constants$root.C_POINTER$LAYOUT.withName("device"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("x_root"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("y_root"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("delta_x"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("delta_y"),
-            MemoryLayout.paddingLayout(64)
-        ).withName("scroll"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(24),
-            Constants$root.C_INT$LAYOUT.withName("time"),
-            Constants$root.C_INT$LAYOUT.withName("state"),
-            Constants$root.C_INT$LAYOUT.withName("keyval"),
-            Constants$root.C_INT$LAYOUT.withName("length"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("string"),
-            Constants$root.C_SHORT$LAYOUT.withName("hardware_keycode"),
-            Constants$root.C_CHAR$LAYOUT.withName("group"),
-            MemoryLayout.paddingLayout(40)
-        ).withName("key"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(56),
-            Constants$root.C_POINTER$LAYOUT.withName("subwindow"),
-            Constants$root.C_INT$LAYOUT.withName("time"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_DOUBLE$LAYOUT.withName("x"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("y"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("x_root"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("y_root"),
-            Constants$root.C_INT$LAYOUT.withName("mode"),
-            Constants$root.C_INT$LAYOUT.withName("detail"),
-            Constants$root.C_INT$LAYOUT.withName("focus"),
-            Constants$root.C_INT$LAYOUT.withName("state")
-        ).withName("crossing"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(8),
-            Constants$root.C_SHORT$LAYOUT.withName("in"),
-            MemoryLayout.paddingLayout(32)
-        ).withName("focus_change"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(24),
-            Constants$root.C_INT$LAYOUT.withName("x"),
-            Constants$root.C_INT$LAYOUT.withName("y"),
-            Constants$root.C_INT$LAYOUT.withName("width"),
-            Constants$root.C_INT$LAYOUT.withName("height"),
-            MemoryLayout.paddingLayout(32)
-        ).withName("configure"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(56),
-            Constants$root.C_POINTER$LAYOUT.withName("atom"),
-            Constants$root.C_INT$LAYOUT.withName("time"),
-            Constants$root.C_INT$LAYOUT.withName("state")
-        ).withName("property"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(56),
-            Constants$root.C_POINTER$LAYOUT.withName("selection"),
-            Constants$root.C_POINTER$LAYOUT.withName("target"),
-            Constants$root.C_POINTER$LAYOUT.withName("property"),
-            Constants$root.C_INT$LAYOUT.withName("time"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("requestor")
-        ).withName("selection"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(56),
-            Constants$root.C_POINTER$LAYOUT.withName("owner"),
-            Constants$root.C_INT$LAYOUT.withName("reason"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("selection"),
-            Constants$root.C_INT$LAYOUT.withName("time"),
-            Constants$root.C_INT$LAYOUT.withName("selection_time")
-        ).withName("owner_change"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(24),
-            Constants$root.C_INT$LAYOUT.withName("time"),
-            Constants$root.C_POINTER$LAYOUT.withName("device")
-        ).withName("proximity"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(56),
-            Constants$root.C_POINTER$LAYOUT.withName("context"),
-            Constants$root.C_INT$LAYOUT.withName("time"),
-            Constants$root.C_SHORT$LAYOUT.withName("x_root"),
-            Constants$root.C_SHORT$LAYOUT.withName("y_root")
-        ).withName("dnd"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(24),
-            Constants$root.C_INT$LAYOUT.withName("changed_mask"),
-            Constants$root.C_INT$LAYOUT.withName("new_window_state"),
-            MemoryLayout.paddingLayout(32)
-        ).withName("window_state"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(24),
-            Constants$root.C_INT$LAYOUT.withName("action"),
-            Constants$root.C_POINTER$LAYOUT.withName("name")
-        ).withName("setting"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(24),
-            Constants$root.C_INT$LAYOUT.withName("keyboard"),
-            Constants$root.C_INT$LAYOUT.withName("implicit"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("grab_window")
-        ).withName("grab_broken"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            Constants$root.C_CHAR$LAYOUT.withName("phase"),
-            Constants$root.C_CHAR$LAYOUT.withName("n_fingers"),
-            MemoryLayout.paddingLayout(8),
-            Constants$root.C_INT$LAYOUT.withName("time"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("x"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("y"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("dx"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("dy"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("x_root"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("y_root"),
-            Constants$root.C_INT$LAYOUT.withName("state"),
-            MemoryLayout.paddingLayout(32)
-        ).withName("touchpad_swipe"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            Constants$root.C_CHAR$LAYOUT.withName("phase"),
-            Constants$root.C_CHAR$LAYOUT.withName("n_fingers"),
-            MemoryLayout.paddingLayout(8),
-            Constants$root.C_INT$LAYOUT.withName("time"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("x"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("y"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("dx"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("dy"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("angle_delta"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("scale"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("x_root"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("y_root"),
-            Constants$root.C_INT$LAYOUT.withName("state"),
-            MemoryLayout.paddingLayout(32)
-        ).withName("touchpad_pinch"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(24),
-            Constants$root.C_INT$LAYOUT.withName("time"),
-            Constants$root.C_INT$LAYOUT.withName("group"),
-            Constants$root.C_INT$LAYOUT.withName("button"),
-            Constants$root.C_INT$LAYOUT.withName("mode"),
-            MemoryLayout.paddingLayout(32)
-        ).withName("pad_button"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(24),
-            Constants$root.C_INT$LAYOUT.withName("time"),
-            Constants$root.C_INT$LAYOUT.withName("group"),
-            Constants$root.C_INT$LAYOUT.withName("index"),
-            Constants$root.C_INT$LAYOUT.withName("mode"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_DOUBLE$LAYOUT.withName("value")
-        ).withName("pad_axis"),
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            MemoryLayout.paddingLayout(32),
-            Constants$root.C_POINTER$LAYOUT.withName("window"),
-            Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-            MemoryLayout.paddingLayout(24),
-            Constants$root.C_INT$LAYOUT.withName("time"),
-            Constants$root.C_INT$LAYOUT.withName("group"),
-            Constants$root.C_INT$LAYOUT.withName("mode")
-        ).withName("pad_group_mode")
-    ).withName("_GdkEvent");
     public static MemoryLayout $LAYOUT() {
-        return _GdkEvent.$union$LAYOUT;
+        return constants$1803.const$4;
     }
-    static final VarHandle type$VH = $union$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("type"));
     public static VarHandle type$VH() {
-        return _GdkEvent.type$VH;
+        return constants$1803.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GdkEventType type;
+     * enum GdkEventType type;
      * }
      */
     public static int type$get(MemorySegment seg) {
-        return (int)_GdkEvent.type$VH.get(seg);
+        return (int)constants$1803.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GdkEventType type;
+     * enum GdkEventType type;
      * }
      */
     public static void type$set(MemorySegment seg, int x) {
-        _GdkEvent.type$VH.set(seg, x);
+        constants$1803.const$5.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
-        return (int)_GdkEvent.type$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1803.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void type$set(MemorySegment seg, long index, int x) {
-        _GdkEvent.type$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1803.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment any$slice(MemorySegment seg) {
         return seg.asSlice(0, 24);
@@ -465,7 +147,7 @@ public class _GdkEvent {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

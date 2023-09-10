@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GtkTreeDestroyCountFunc)(struct _GtkTreeView* tree_view,struct _GtkTreePath* path,int children,void* user_data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GtkTreeDestroyCountFunc {
 
     void apply(java.lang.foreign.MemorySegment clipboard, java.lang.foreign.MemorySegment atoms, int n_atoms, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(GtkTreeDestroyCountFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$1477.GtkTreeDestroyCountFunc_UP$MH, fi, constants$1477.GtkTreeDestroyCountFunc$FUNC, scope);
+    static MemorySegment allocate(GtkTreeDestroyCountFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$2489.const$4, fi, constants$464.const$4, scope);
     }
-    static GtkTreeDestroyCountFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GtkTreeDestroyCountFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _clipboard, java.lang.foreign.MemorySegment _atoms, int _n_atoms, java.lang.foreign.MemorySegment _data) -> {
             try {
-                constants$1477.GtkTreeDestroyCountFunc_DOWN$MH.invokeExact(symbol, _clipboard, _atoms, _n_atoms, _data);
+                constants$737.const$4.invokeExact(symbol, _clipboard, _atoms, _n_atoms, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

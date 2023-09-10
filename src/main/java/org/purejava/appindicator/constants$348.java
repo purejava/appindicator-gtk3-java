@@ -3,58 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$348 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$348() {}
-    static final FunctionDescriptor GCompletionFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_type_new_maybe",
+        constants$5.const$2
     );
-    static final FunctionDescriptor GCompletionFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_variant_type_new_tuple",
+        constants$21.const$3
     );
-    static final MethodHandle GCompletionFunc_UP$MH = RuntimeHelper.upcallHandle(GCompletionFunc.class, "apply", constants$348.GCompletionFunc_UP$FUNC);
-    static final FunctionDescriptor GCompletionFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_variant_type_new_dict_entry",
+        constants$5.const$5
     );
-    static final MethodHandle GCompletionFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$348.GCompletionFunc_DOWN$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_variant_type_checked_",
+        constants$5.const$2
     );
-    static final FunctionDescriptor GCompletionStrncmpFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_variant_type_string_get_depth_",
+        constants$4.const$0
     );
-    static final FunctionDescriptor GCompletionStrncmpFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle GCompletionStrncmpFunc_UP$MH = RuntimeHelper.upcallHandle(GCompletionStrncmpFunc.class, "apply", constants$348.GCompletionStrncmpFunc_UP$FUNC);
-    static final FunctionDescriptor GCompletionStrncmpFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle GCompletionStrncmpFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$348.GCompletionStrncmpFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_completion_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_completion_new$MH = RuntimeHelper.downcallHandle(
-        "g_completion_new",
-        constants$348.g_completion_new$FUNC
-    );
-    static final FunctionDescriptor g_completion_add_items$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_completion_add_items$MH = RuntimeHelper.downcallHandle(
-        "g_completion_add_items",
-        constants$348.g_completion_add_items$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_variant_unref",
+        constants$13.const$1
     );
 }
 

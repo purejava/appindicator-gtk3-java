@@ -3,63 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$514 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$514() {}
-    static final FunctionDescriptor g_cancellable_connect$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "sched_getparam",
+        constants$9.const$2
     );
-    static final MethodHandle g_cancellable_connect$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_connect",
-        constants$514.g_cancellable_connect$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "sched_setscheduler",
+        constants$288.const$1
     );
-    static final FunctionDescriptor g_cancellable_disconnect$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "sched_getscheduler",
+        constants$8.const$4
     );
-    static final MethodHandle g_cancellable_disconnect$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_disconnect",
-        constants$514.g_cancellable_disconnect$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "sched_yield",
+        constants$83.const$1
     );
-    static final FunctionDescriptor g_cancellable_cancel$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "sched_get_priority_max",
+        constants$8.const$4
     );
-    static final MethodHandle g_cancellable_cancel$MH = RuntimeHelper.downcallHandle(
-        "g_cancellable_cancel",
-        constants$514.g_cancellable_cancel$FUNC
-    );
-    static final FunctionDescriptor g_converter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_converter_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_converter_get_type",
-        constants$514.g_converter_get_type$FUNC
-    );
-    static final FunctionDescriptor g_converter_convert$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_converter_convert$MH = RuntimeHelper.downcallHandle(
-        "g_converter_convert",
-        constants$514.g_converter_convert$FUNC
-    );
-    static final FunctionDescriptor g_converter_reset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_converter_reset$MH = RuntimeHelper.downcallHandle(
-        "g_converter_reset",
-        constants$514.g_converter_reset$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "sched_get_priority_min",
+        constants$8.const$4
     );
 }
 

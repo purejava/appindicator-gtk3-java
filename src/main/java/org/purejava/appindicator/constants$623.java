@@ -3,72 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$623 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$623() {}
-    static final FunctionDescriptor g_file_query_info_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$622.const$5.varHandle(MemoryLayout.PathElement.groupElement("construct_properties"));
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_file_query_info_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_info_finish",
-        constants$623.g_file_query_info_finish$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GObjectClass.constructor.class, "apply", constants$623.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$623.const$1
     );
-    static final FunctionDescriptor g_file_query_filesystem_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_filesystem_info$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_filesystem_info",
-        constants$623.g_file_query_filesystem_info$FUNC
-    );
-    static final FunctionDescriptor g_file_query_filesystem_info_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_filesystem_info_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_filesystem_info_async",
-        constants$623.g_file_query_filesystem_info_async$FUNC
-    );
-    static final FunctionDescriptor g_file_query_filesystem_info_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_query_filesystem_info_finish$MH = RuntimeHelper.downcallHandle(
-        "g_file_query_filesystem_info_finish",
-        constants$623.g_file_query_filesystem_info_finish$FUNC
-    );
-    static final FunctionDescriptor g_file_find_enclosing_mount$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_find_enclosing_mount$MH = RuntimeHelper.downcallHandle(
-        "g_file_find_enclosing_mount",
-        constants$623.g_file_find_enclosing_mount$FUNC
-    );
-    static final FunctionDescriptor g_file_find_enclosing_mount_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_find_enclosing_mount_async$MH = RuntimeHelper.downcallHandle(
-        "g_file_find_enclosing_mount_async",
-        constants$623.g_file_find_enclosing_mount_async$FUNC
-    );
+    static final VarHandle const$4 = constants$622.const$5.varHandle(MemoryLayout.PathElement.groupElement("constructor"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GObjectClass.set_property.class, "apply", constants$179.const$1);
 }
 
 

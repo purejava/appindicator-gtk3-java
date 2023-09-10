@@ -3,61 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1620 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1620() {}
-    static final FunctionDescriptor gtk_icon_factory_lookup_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_tab_array_resize",
+        constants$40.const$2
     );
-    static final MethodHandle gtk_icon_factory_lookup_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_factory_lookup_default",
-        constants$1620.gtk_icon_factory_lookup_default$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_tab_array_set_tab",
+        constants$1131.const$1
     );
-    static final FunctionDescriptor gtk_icon_size_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_tab_array_get_tab",
+        constants$179.const$1
     );
-    static final MethodHandle gtk_icon_size_lookup$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_size_lookup",
-        constants$1620.gtk_icon_size_lookup$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_tab_array_get_tabs",
+        constants$14.const$3
     );
-    static final FunctionDescriptor gtk_icon_size_lookup_for_settings$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_tab_array_get_positions_in_pixels",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_icon_size_lookup_for_settings$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_size_lookup_for_settings",
-        constants$1620.gtk_icon_size_lookup_for_settings$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_size_register$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_size_register$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_size_register",
-        constants$1620.gtk_icon_size_register$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_size_register_alias$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_size_register_alias$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_size_register_alias",
-        constants$1620.gtk_icon_size_register_alias$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_size_from_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_size_from_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_size_from_name",
-        constants$1620.gtk_icon_size_from_name$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_tab_array_set_positions_in_pixels",
+        constants$40.const$2
     );
 }
 

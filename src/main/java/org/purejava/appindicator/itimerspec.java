@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct itimerspec {
@@ -14,18 +17,8 @@ import java.lang.foreign.*;
  */
 public class itimerspec {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("tv_sec"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("tv_nsec")
-        ).withName("it_interval"),
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("tv_sec"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("tv_nsec")
-        ).withName("it_value")
-    ).withName("itimerspec");
     public static MemoryLayout $LAYOUT() {
-        return itimerspec.$struct$LAYOUT;
+        return constants$3.const$0;
     }
     public static MemorySegment it_interval$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
@@ -38,7 +31,7 @@ public class itimerspec {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

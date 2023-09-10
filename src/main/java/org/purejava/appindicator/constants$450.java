@@ -3,71 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$450 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$450() {}
-    static final FunctionDescriptor g_unicode_script_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_unicode_script_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_unicode_script_get_type",
-        constants$450.g_unicode_script_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_test_subprocess",
+        constants$83.const$1
     );
-    static final FunctionDescriptor g_normalize_mode_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_normalize_mode_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_normalize_mode_get_type",
-        constants$450.g_normalize_mode_get_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_test_run",
+        constants$83.const$1
     );
-    static final FunctionDescriptor g_param_spec_char$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_test_add_func$test_func.class, "apply", constants$7.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_test_add_func",
+        constants$13.const$4
     );
-    static final MethodHandle g_param_spec_char$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_char",
-        constants$450.g_param_spec_char$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_uchar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_spec_uchar$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_uchar",
-        constants$450.g_param_spec_uchar$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_boolean$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_spec_boolean$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_boolean",
-        constants$450.g_param_spec_boolean$FUNC
-    );
-    static final FunctionDescriptor g_param_spec_int$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_param_spec_int$MH = RuntimeHelper.downcallHandle(
-        "g_param_spec_int",
-        constants$450.g_param_spec_int$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_test_add_data_func$test_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_test_add_data_func",
+        constants$14.const$3
     );
 }
 

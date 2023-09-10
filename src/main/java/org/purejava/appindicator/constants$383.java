@@ -3,60 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$383 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$383() {}
-    static final FunctionDescriptor g_type_default_interface_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_default_interface_unref$MH = RuntimeHelper.downcallHandle(
-        "g_type_default_interface_unref",
-        constants$383.g_type_default_interface_unref$FUNC
-    );
-    static final FunctionDescriptor g_type_children$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_children$MH = RuntimeHelper.downcallHandle(
-        "g_type_children",
-        constants$383.g_type_children$FUNC
-    );
-    static final FunctionDescriptor g_type_interfaces$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_interfaces$MH = RuntimeHelper.downcallHandle(
-        "g_type_interfaces",
-        constants$383.g_type_interfaces$FUNC
-    );
-    static final FunctionDescriptor g_type_set_qdata$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_set_qdata$MH = RuntimeHelper.downcallHandle(
-        "g_type_set_qdata",
-        constants$383.g_type_set_qdata$FUNC
-    );
-    static final FunctionDescriptor g_type_get_qdata$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_type_get_qdata$MH = RuntimeHelper.downcallHandle(
-        "g_type_get_qdata",
-        constants$383.g_type_get_qdata$FUNC
-    );
-    static final FunctionDescriptor g_type_query$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_query$MH = RuntimeHelper.downcallHandle(
-        "g_type_query",
-        constants$383.g_type_query$FUNC
-    );
+    static final VarHandle const$0 = constants$382.const$4.varHandle(MemoryLayout.PathElement.groupElement("short_name"));
+    static final VarHandle const$1 = constants$382.const$4.varHandle(MemoryLayout.PathElement.groupElement("flags"));
+    static final VarHandle const$2 = constants$382.const$4.varHandle(MemoryLayout.PathElement.groupElement("arg"));
+    static final VarHandle const$3 = constants$382.const$4.varHandle(MemoryLayout.PathElement.groupElement("arg_data"));
+    static final VarHandle const$4 = constants$382.const$4.varHandle(MemoryLayout.PathElement.groupElement("description"));
+    static final VarHandle const$5 = constants$382.const$4.varHandle(MemoryLayout.PathElement.groupElement("arg_description"));
 }
 
 

@@ -2,18 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2044 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2044() {}
-    static final MemorySegment GTK_PAPER_NAME_LETTER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("na_letter");
-    static final MemorySegment GTK_PAPER_NAME_EXECUTIVE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("na_executive");
-    static final MemorySegment GTK_PAPER_NAME_LEGAL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("na_legal");
-    static final MemorySegment GTK_PRINT_SETTINGS_PRINTER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("printer");
-    static final MemorySegment GTK_PRINT_SETTINGS_ORIENTATION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("orientation");
-    static final MemorySegment GTK_PRINT_SETTINGS_PAPER_FORMAT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("paper-format");
+    static final VarHandle const$0 = constants$2043.const$4.varHandle(MemoryLayout.PathElement.groupElement("create_accessible"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkObjectFactoryClass.invalidate.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$2043.const$4.varHandle(MemoryLayout.PathElement.groupElement("invalidate"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkObjectFactoryClass.get_accessible_type.class, "apply", constants$3.const$5);
+    static final VarHandle const$4 = constants$2043.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_accessible_type"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkObjectFactoryClass.pad1.class, "apply", constants$10.const$5);
 }
 
 

@@ -3,65 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$498 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$498() {}
-    static final FunctionDescriptor g_async_result_legacy_propagate_error$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_completion_new",
+        constants$5.const$2
     );
-    static final MethodHandle g_async_result_legacy_propagate_error$MH = RuntimeHelper.downcallHandle(
-        "g_async_result_legacy_propagate_error",
-        constants$498.g_async_result_legacy_propagate_error$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_completion_add_items",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_async_result_is_tagged$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_completion_remove_items",
+        constants$13.const$4
     );
-    static final MethodHandle g_async_result_is_tagged$MH = RuntimeHelper.downcallHandle(
-        "g_async_result_is_tagged",
-        constants$498.g_async_result_is_tagged$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_completion_clear_items",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_get_type",
-        constants$498.g_input_stream_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_completion_complete",
+        constants$23.const$0
     );
-    static final FunctionDescriptor g_input_stream_read$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_read$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_read",
-        constants$498.g_input_stream_read$FUNC
-    );
-    static final FunctionDescriptor g_input_stream_read_all$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_read_all$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_read_all",
-        constants$498.g_input_stream_read_all$FUNC
-    );
-    static final FunctionDescriptor g_input_stream_read_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_input_stream_read_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_input_stream_read_bytes",
-        constants$498.g_input_stream_read_bytes$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_completion_complete_utf8",
+        constants$23.const$0
     );
 }
 

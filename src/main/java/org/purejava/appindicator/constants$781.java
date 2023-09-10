@@ -3,50 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$781 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$781() {}
-    static final FunctionDescriptor g_socket_listener_close$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_listener_close$MH = RuntimeHelper.downcallHandle(
-        "g_socket_listener_close",
-        constants$781.g_socket_listener_close$FUNC
-    );
-    static final FunctionDescriptor g_socket_service_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_socket_service_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_socket_service_get_type",
-        constants$781.g_socket_service_get_type$FUNC
-    );
-    static final FunctionDescriptor g_socket_service_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_socket_service_new$MH = RuntimeHelper.downcallHandle(
-        "g_socket_service_new",
-        constants$781.g_socket_service_new$FUNC
-    );
-    static final FunctionDescriptor g_socket_service_start$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_service_start$MH = RuntimeHelper.downcallHandle(
-        "g_socket_service_start",
-        constants$781.g_socket_service_start$FUNC
-    );
-    static final FunctionDescriptor g_socket_service_stop$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_service_stop$MH = RuntimeHelper.downcallHandle(
-        "g_socket_service_stop",
-        constants$781.g_socket_service_stop$FUNC
-    );
-    static final FunctionDescriptor g_socket_service_is_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_service_is_active$MH = RuntimeHelper.downcallHandle(
-        "g_socket_service_is_active",
-        constants$781.g_socket_service_is_active$FUNC
-    );
+    static final VarHandle const$0 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("splice_async"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GOutputStreamClass.splice_finish.class, "apply", constants$166.const$0);
+    static final VarHandle const$2 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("splice_finish"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GOutputStreamClass.flush_async.class, "apply", constants$281.const$5);
+    static final VarHandle const$4 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("flush_async"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GOutputStreamClass.flush_finish.class, "apply", constants$12.const$2);
 }
 
 

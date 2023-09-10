@@ -2,96 +2,88 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GObject {
- *     GTypeInstance g_type_instance;
- *     guint ref_count;
- *     GData* qdata;
+ *     struct _GTypeInstance g_type_instance;
+ *     unsigned int ref_count;
+ *     struct _GData* qdata;
  * };
  * }
  */
 public class _GObject {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_POINTER$LAYOUT.withName("g_class")
-        ).withName("g_type_instance"),
-        Constants$root.C_INT$LAYOUT.withName("ref_count"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("qdata")
-    ).withName("_GObject");
     public static MemoryLayout $LAYOUT() {
-        return _GObject.$struct$LAYOUT;
+        return constants$622.const$2;
     }
     public static MemorySegment g_type_instance$slice(MemorySegment seg) {
         return seg.asSlice(0, 8);
     }
-    static final VarHandle ref_count$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("ref_count"));
     public static VarHandle ref_count$VH() {
-        return _GObject.ref_count$VH;
+        return constants$622.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint ref_count;
+     * unsigned int ref_count;
      * }
      */
     public static int ref_count$get(MemorySegment seg) {
-        return (int)_GObject.ref_count$VH.get(seg);
+        return (int)constants$622.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint ref_count;
+     * unsigned int ref_count;
      * }
      */
     public static void ref_count$set(MemorySegment seg, int x) {
-        _GObject.ref_count$VH.set(seg, x);
+        constants$622.const$3.set(seg, x);
     }
     public static int ref_count$get(MemorySegment seg, long index) {
-        return (int)_GObject.ref_count$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$622.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void ref_count$set(MemorySegment seg, long index, int x) {
-        _GObject.ref_count$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$622.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle qdata$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("qdata"));
     public static VarHandle qdata$VH() {
-        return _GObject.qdata$VH;
+        return constants$622.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GData* qdata;
+     * struct _GData* qdata;
      * }
      */
     public static MemorySegment qdata$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GObject.qdata$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$622.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GData* qdata;
+     * struct _GData* qdata;
      * }
      */
     public static void qdata$set(MemorySegment seg, MemorySegment x) {
-        _GObject.qdata$VH.set(seg, x);
+        constants$622.const$4.set(seg, x);
     }
     public static MemorySegment qdata$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GObject.qdata$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$622.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void qdata$set(MemorySegment seg, long index, MemorySegment x) {
-        _GObject.qdata$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$622.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

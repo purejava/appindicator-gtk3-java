@@ -3,65 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$209 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$209() {}
-    static final FunctionDescriptor g_string_prepend_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final VarHandle const$0 = constants$208.const$0.varHandle(MemoryLayout.PathElement.groupElement("realloc"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GMemVTable.free.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$208.const$0.varHandle(MemoryLayout.PathElement.groupElement("free"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GMemVTable.calloc.class, "apply", constants$87.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$87.const$5
     );
-    static final MethodHandle g_string_prepend_unichar$MH = RuntimeHelper.downcallHandle(
-        "g_string_prepend_unichar",
-        constants$209.g_string_prepend_unichar$FUNC
-    );
-    static final FunctionDescriptor g_string_prepend_len$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_string_prepend_len$MH = RuntimeHelper.downcallHandle(
-        "g_string_prepend_len",
-        constants$209.g_string_prepend_len$FUNC
-    );
-    static final FunctionDescriptor g_string_insert$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_insert$MH = RuntimeHelper.downcallHandle(
-        "g_string_insert",
-        constants$209.g_string_insert$FUNC
-    );
-    static final FunctionDescriptor g_string_insert_c$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
-    );
-    static final MethodHandle g_string_insert_c$MH = RuntimeHelper.downcallHandle(
-        "g_string_insert_c",
-        constants$209.g_string_insert_c$FUNC
-    );
-    static final FunctionDescriptor g_string_insert_unichar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_string_insert_unichar$MH = RuntimeHelper.downcallHandle(
-        "g_string_insert_unichar",
-        constants$209.g_string_insert_unichar$FUNC
-    );
-    static final FunctionDescriptor g_string_overwrite$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_string_overwrite$MH = RuntimeHelper.downcallHandle(
-        "g_string_overwrite",
-        constants$209.g_string_overwrite$FUNC
-    );
+    static final VarHandle const$5 = constants$208.const$0.varHandle(MemoryLayout.PathElement.groupElement("calloc"));
 }
 
 

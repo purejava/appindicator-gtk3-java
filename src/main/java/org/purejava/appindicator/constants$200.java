@@ -3,58 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$200 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$200() {}
-    static final FunctionDescriptor g_strchomp$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_file_read_link",
+        constants$5.const$5
     );
-    static final MethodHandle g_strchomp$MH = RuntimeHelper.downcallHandle(
-        "g_strchomp",
-        constants$200.g_strchomp$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_mkdtemp",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_ascii_strcasecmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_mkdtemp_full",
+        constants$21.const$3
     );
-    static final MethodHandle g_ascii_strcasecmp$MH = RuntimeHelper.downcallHandle(
-        "g_ascii_strcasecmp",
-        constants$200.g_ascii_strcasecmp$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_mkstemp",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_ascii_strncasecmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_mkstemp_full",
+        constants$49.const$0
     );
-    static final MethodHandle g_ascii_strncasecmp$MH = RuntimeHelper.downcallHandle(
-        "g_ascii_strncasecmp",
-        constants$200.g_ascii_strncasecmp$FUNC
-    );
-    static final FunctionDescriptor g_ascii_strdown$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_ascii_strdown$MH = RuntimeHelper.downcallHandle(
-        "g_ascii_strdown",
-        constants$200.g_ascii_strdown$FUNC
-    );
-    static final FunctionDescriptor g_ascii_strup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_ascii_strup$MH = RuntimeHelper.downcallHandle(
-        "g_ascii_strup",
-        constants$200.g_ascii_strup$FUNC
-    );
-    static final FunctionDescriptor g_str_is_ascii$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_str_is_ascii$MH = RuntimeHelper.downcallHandle(
-        "g_str_is_ascii",
-        constants$200.g_str_is_ascii$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_open_tmp",
+        constants$12.const$2
     );
 }
 

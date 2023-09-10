@@ -3,58 +3,44 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1103 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1103() {}
-    static final FunctionDescriptor gdk_window_process_updates$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_inet_address_mask_get_family",
+        constants$10.const$5
     );
-    static final MethodHandle gdk_window_process_updates$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_process_updates",
-        constants$1103.gdk_window_process_updates$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_inet_address_mask_get_address",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gdk_window_set_debug_updates$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_inet_address_mask_get_length",
+        constants$10.const$5
     );
-    static final MethodHandle gdk_window_set_debug_updates$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_debug_updates",
-        constants$1103.gdk_window_set_debug_updates$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_inet_address_mask_matches",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gdk_window_constrain_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_inet_address_mask_equal",
+        constants$9.const$0
     );
-    static final MethodHandle gdk_window_constrain_size$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_constrain_size",
-        constants$1103.gdk_window_constrain_size$FUNC
-    );
-    static final FunctionDescriptor gdk_window_enable_synchronized_configure$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_enable_synchronized_configure$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_enable_synchronized_configure",
-        constants$1103.gdk_window_enable_synchronized_configure$FUNC
-    );
-    static final FunctionDescriptor gdk_window_configure_finished$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_configure_finished$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_configure_finished",
-        constants$1103.gdk_window_configure_finished$FUNC
-    );
-    static final FunctionDescriptor gdk_get_default_root_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gdk_get_default_root_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_get_default_root_window",
-        constants$1103.gdk_get_default_root_window$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance")
+    ).withName("_GSocketAddress");
 }
 
 

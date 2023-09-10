@@ -3,64 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$110 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$110() {}
-    static final FunctionDescriptor g_datalist_id_replace_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_async_queue_unref_and_unlock",
+        constants$13.const$1
     );
-    static final MethodHandle g_datalist_id_replace_data$MH = RuntimeHelper.downcallHandle(
-        "g_datalist_id_replace_data",
-        constants$110.g_datalist_id_replace_data$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_async_queue_push",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_datalist_id_remove_no_notify$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_async_queue_push_unlocked",
+        constants$13.const$4
     );
-    static final MethodHandle g_datalist_id_remove_no_notify$MH = RuntimeHelper.downcallHandle(
-        "g_datalist_id_remove_no_notify",
-        constants$110.g_datalist_id_remove_no_notify$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_async_queue_push_sorted$func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_async_queue_push_sorted",
+        constants$42.const$1
     );
-    static final FunctionDescriptor g_datalist_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_datalist_foreach$MH = RuntimeHelper.downcallHandle(
-        "g_datalist_foreach",
-        constants$110.g_datalist_foreach$FUNC
-    );
-    static final FunctionDescriptor g_datalist_set_flags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_datalist_set_flags$MH = RuntimeHelper.downcallHandle(
-        "g_datalist_set_flags",
-        constants$110.g_datalist_set_flags$FUNC
-    );
-    static final FunctionDescriptor g_datalist_unset_flags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_datalist_unset_flags$MH = RuntimeHelper.downcallHandle(
-        "g_datalist_unset_flags",
-        constants$110.g_datalist_unset_flags$FUNC
-    );
-    static final FunctionDescriptor g_datalist_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_datalist_get_flags$MH = RuntimeHelper.downcallHandle(
-        "g_datalist_get_flags",
-        constants$110.g_datalist_get_flags$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_async_queue_push_sorted_unlocked$func.class, "apply", constants$12.const$2);
 }
 
 

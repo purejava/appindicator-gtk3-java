@@ -3,58 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$475 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$475() {}
-    static final FunctionDescriptor g_action_group_list_actions$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tree_node_last",
+        constants$5.const$2
     );
-    static final MethodHandle g_action_group_list_actions$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_list_actions",
-        constants$475.g_action_group_list_actions$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_tree_node_previous",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_action_group_get_action_parameter_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tree_node_next",
+        constants$5.const$2
     );
-    static final MethodHandle g_action_group_get_action_parameter_type$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_get_action_parameter_type",
-        constants$475.g_action_group_get_action_parameter_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tree_ref",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_action_group_get_action_state_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tree_unref",
+        constants$13.const$1
     );
-    static final MethodHandle g_action_group_get_action_state_type$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_get_action_state_type",
-        constants$475.g_action_group_get_action_state_type$FUNC
-    );
-    static final FunctionDescriptor g_action_group_get_action_state_hint$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_group_get_action_state_hint$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_get_action_state_hint",
-        constants$475.g_action_group_get_action_state_hint$FUNC
-    );
-    static final FunctionDescriptor g_action_group_get_action_enabled$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_group_get_action_enabled$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_get_action_enabled",
-        constants$475.g_action_group_get_action_enabled$FUNC
-    );
-    static final FunctionDescriptor g_action_group_get_action_state$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_action_group_get_action_state$MH = RuntimeHelper.downcallHandle(
-        "g_action_group_get_action_state",
-        constants$475.g_action_group_get_action_state$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tree_destroy",
+        constants$13.const$1
     );
 }
 

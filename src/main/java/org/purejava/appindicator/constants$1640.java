@@ -3,47 +3,52 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1640 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1640() {}
-    static final FunctionDescriptor gtk_style_context_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_markup_parser_new",
+        constants$24.const$0
     );
-    static final MethodHandle gtk_style_context_to_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_context_to_string",
-        constants$1640.gtk_style_context_to_string$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_markup_parser_finish",
+        constants$165.const$2
     );
-    static final FunctionDescriptor gtk_icon_theme_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gtk_icon_theme_error_quark$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_error_quark",
-        constants$1640.gtk_icon_theme_error_quark$FUNC
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gtk_icon_theme_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_icon_theme_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_get_type",
-        constants$1640.gtk_icon_theme_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_parse_markup",
+        constants$1640.const$2
     );
-    static final FunctionDescriptor gtk_icon_theme_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_icon_theme_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_new",
-        constants$1640.gtk_icon_theme_new$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_icon_theme_get_default$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_get_default",
-        constants$1640.gtk_icon_theme_get_default$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_get_for_screen$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_get_for_screen$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_get_for_screen",
-        constants$1640.gtk_icon_theme_get_for_screen$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        JAVA_INT.withName("underline"),
+        JAVA_INT.withName("strikethrough"),
+        JAVA_INT.withName("active_count"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("matrix"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_PangoRenderer");
+    static final VarHandle const$5 = constants$1640.const$4.varHandle(MemoryLayout.PathElement.groupElement("underline"));
 }
 
 

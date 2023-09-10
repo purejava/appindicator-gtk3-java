@@ -3,61 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$259 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$259() {}
-    static final FunctionDescriptor g_log_structured$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final VarHandle const$0 = constants$258.const$4.varHandle(MemoryLayout.PathElement.groupElement("ref"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSourceCallbackFuncs.unref.class, "apply", constants$13.const$1);
+    static final VarHandle const$2 = constants$258.const$4.varHandle(MemoryLayout.PathElement.groupElement("unref"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GSourceCallbackFuncs.get.class, "apply", constants$42.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$42.const$1
     );
-    static final MethodHandle g_log_structured$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_log_structured",
-        constants$259.g_log_structured$FUNC
-    );
-    static final FunctionDescriptor g_log_structured_array$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_log_structured_array$MH = RuntimeHelper.downcallHandle(
-        "g_log_structured_array",
-        constants$259.g_log_structured_array$FUNC
-    );
-    static final FunctionDescriptor g_log_variant$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_log_variant$MH = RuntimeHelper.downcallHandle(
-        "g_log_variant",
-        constants$259.g_log_variant$FUNC
-    );
-    static final FunctionDescriptor g_log_set_writer_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_log_set_writer_func$MH = RuntimeHelper.downcallHandle(
-        "g_log_set_writer_func",
-        constants$259.g_log_set_writer_func$FUNC
-    );
-    static final FunctionDescriptor g_log_writer_supports_color$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_log_writer_supports_color$MH = RuntimeHelper.downcallHandle(
-        "g_log_writer_supports_color",
-        constants$259.g_log_writer_supports_color$FUNC
-    );
-    static final FunctionDescriptor g_log_writer_is_journald$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_log_writer_is_journald$MH = RuntimeHelper.downcallHandle(
-        "g_log_writer_is_journald",
-        constants$259.g_log_writer_is_journald$FUNC
-    );
+    static final VarHandle const$5 = constants$258.const$4.varHandle(MemoryLayout.PathElement.groupElement("get"));
 }
 
 

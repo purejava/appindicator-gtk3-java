@@ -3,67 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$125 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$125() {}
-    static final FunctionDescriptor g_file_error_from_errno$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "psignal",
+        constants$90.const$2
     );
-    static final MethodHandle g_file_error_from_errno$MH = RuntimeHelper.downcallHandle(
-        "g_file_error_from_errno",
-        constants$125.g_file_error_from_errno$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "psiginfo",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_file_test$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "sigblock",
+        constants$8.const$4
     );
-    static final MethodHandle g_file_test$MH = RuntimeHelper.downcallHandle(
-        "g_file_test",
-        constants$125.g_file_test$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "sigsetmask",
+        constants$8.const$4
     );
-    static final FunctionDescriptor g_file_get_contents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "siggetmask",
+        constants$83.const$1
     );
-    static final MethodHandle g_file_get_contents$MH = RuntimeHelper.downcallHandle(
-        "g_file_get_contents",
-        constants$125.g_file_get_contents$FUNC
-    );
-    static final FunctionDescriptor g_file_set_contents$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_set_contents$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_contents",
-        constants$125.g_file_set_contents$FUNC
-    );
-    static final FunctionDescriptor g_file_set_contents_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_set_contents_full$MH = RuntimeHelper.downcallHandle(
-        "g_file_set_contents_full",
-        constants$125.g_file_set_contents_full$FUNC
-    );
-    static final FunctionDescriptor g_file_read_link$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_file_read_link$MH = RuntimeHelper.downcallHandle(
-        "g_file_read_link",
-        constants$125.g_file_read_link$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(sig_t.class, "apply", constants$80.const$1);
 }
 
 

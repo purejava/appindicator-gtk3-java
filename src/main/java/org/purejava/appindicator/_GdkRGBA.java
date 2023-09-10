@@ -2,148 +2,140 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GdkRGBA {
- *     gdouble red;
- *     gdouble green;
- *     gdouble blue;
- *     gdouble alpha;
+ *     double red;
+ *     double green;
+ *     double blue;
+ *     double alpha;
  * };
  * }
  */
 public class _GdkRGBA {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_DOUBLE$LAYOUT.withName("red"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("green"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("blue"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("alpha")
-    ).withName("_GdkRGBA");
     public static MemoryLayout $LAYOUT() {
-        return _GdkRGBA.$struct$LAYOUT;
+        return constants$1876.const$4;
     }
-    static final VarHandle red$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("red"));
     public static VarHandle red$VH() {
-        return _GdkRGBA.red$VH;
+        return constants$1876.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gdouble red;
+     * double red;
      * }
      */
     public static double red$get(MemorySegment seg) {
-        return (double)_GdkRGBA.red$VH.get(seg);
+        return (double)constants$1876.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gdouble red;
+     * double red;
      * }
      */
     public static void red$set(MemorySegment seg, double x) {
-        _GdkRGBA.red$VH.set(seg, x);
+        constants$1876.const$5.set(seg, x);
     }
     public static double red$get(MemorySegment seg, long index) {
-        return (double)_GdkRGBA.red$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1876.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void red$set(MemorySegment seg, long index, double x) {
-        _GdkRGBA.red$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1876.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle green$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("green"));
     public static VarHandle green$VH() {
-        return _GdkRGBA.green$VH;
+        return constants$1877.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gdouble green;
+     * double green;
      * }
      */
     public static double green$get(MemorySegment seg) {
-        return (double)_GdkRGBA.green$VH.get(seg);
+        return (double)constants$1877.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gdouble green;
+     * double green;
      * }
      */
     public static void green$set(MemorySegment seg, double x) {
-        _GdkRGBA.green$VH.set(seg, x);
+        constants$1877.const$0.set(seg, x);
     }
     public static double green$get(MemorySegment seg, long index) {
-        return (double)_GdkRGBA.green$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1877.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void green$set(MemorySegment seg, long index, double x) {
-        _GdkRGBA.green$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1877.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle blue$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("blue"));
     public static VarHandle blue$VH() {
-        return _GdkRGBA.blue$VH;
+        return constants$1877.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gdouble blue;
+     * double blue;
      * }
      */
     public static double blue$get(MemorySegment seg) {
-        return (double)_GdkRGBA.blue$VH.get(seg);
+        return (double)constants$1877.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gdouble blue;
+     * double blue;
      * }
      */
     public static void blue$set(MemorySegment seg, double x) {
-        _GdkRGBA.blue$VH.set(seg, x);
+        constants$1877.const$1.set(seg, x);
     }
     public static double blue$get(MemorySegment seg, long index) {
-        return (double)_GdkRGBA.blue$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1877.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void blue$set(MemorySegment seg, long index, double x) {
-        _GdkRGBA.blue$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1877.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle alpha$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("alpha"));
     public static VarHandle alpha$VH() {
-        return _GdkRGBA.alpha$VH;
+        return constants$1877.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gdouble alpha;
+     * double alpha;
      * }
      */
     public static double alpha$get(MemorySegment seg) {
-        return (double)_GdkRGBA.alpha$VH.get(seg);
+        return (double)constants$1877.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gdouble alpha;
+     * double alpha;
      * }
      */
     public static void alpha$set(MemorySegment seg, double x) {
-        _GdkRGBA.alpha$VH.set(seg, x);
+        constants$1877.const$2.set(seg, x);
     }
     public static double alpha$get(MemorySegment seg, long index) {
-        return (double)_GdkRGBA.alpha$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1877.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void alpha$set(MemorySegment seg, long index, double x) {
-        _GdkRGBA.alpha$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1877.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -3,58 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1975 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1975() {}
-    static final FunctionDescriptor gtk_ui_manager_insert_action_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_ui_manager_insert_action_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_ui_manager_insert_action_group",
-        constants$1975.gtk_ui_manager_insert_action_group$FUNC
-    );
-    static final FunctionDescriptor gtk_ui_manager_remove_action_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_ui_manager_remove_action_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_ui_manager_remove_action_group",
-        constants$1975.gtk_ui_manager_remove_action_group$FUNC
-    );
-    static final FunctionDescriptor gtk_ui_manager_get_action_groups$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_ui_manager_get_action_groups$MH = RuntimeHelper.downcallHandle(
-        "gtk_ui_manager_get_action_groups",
-        constants$1975.gtk_ui_manager_get_action_groups$FUNC
-    );
-    static final FunctionDescriptor gtk_ui_manager_get_accel_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_ui_manager_get_accel_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_ui_manager_get_accel_group",
-        constants$1975.gtk_ui_manager_get_accel_group$FUNC
-    );
-    static final FunctionDescriptor gtk_ui_manager_get_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_ui_manager_get_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_ui_manager_get_widget",
-        constants$1975.gtk_ui_manager_get_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_ui_manager_get_toplevels$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_ui_manager_get_toplevels$MH = RuntimeHelper.downcallHandle(
-        "gtk_ui_manager_get_toplevels",
-        constants$1975.gtk_ui_manager_get_toplevels$FUNC
+    static final VarHandle const$0 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_attributes"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkObjectClass.get_object_locale.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_object_locale"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkObjectClass.pad1.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$1966.const$4.varHandle(MemoryLayout.PathElement.groupElement("pad1"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_object_get_type",
+        constants$3.const$5
     );
 }
 

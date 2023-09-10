@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*atexit$__func)();
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface atexit$__func {
 
     void apply();
-    static MemorySegment allocate(atexit$__func fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$53.atexit$__func_UP$MH, fi, constants$53.atexit$__func$FUNC, scope);
+    static MemorySegment allocate(atexit$__func fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$89.const$4, fi, constants$7.const$5, scope);
     }
-    static atexit$__func ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static atexit$__func ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return () -> {
             try {
-                constants$53.atexit$__func_DOWN$MH.invokeExact(symbol);
+                constants$64.const$1.invokeExact(symbol);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

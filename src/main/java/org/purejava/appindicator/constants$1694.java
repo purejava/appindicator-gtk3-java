@@ -3,57 +3,33 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1694 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1694() {}
-    static final FunctionDescriptor gtk_menu_button_set_menu_model$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_rectangle_list_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_menu_button_set_menu_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_button_set_menu_model",
-        constants$1694.gtk_menu_button_set_menu_model$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_tag_begin",
+        constants$14.const$3
     );
-    static final FunctionDescriptor gtk_menu_button_get_menu_model$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_tag_end",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_menu_button_get_menu_model$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_button_get_menu_model",
-        constants$1694.gtk_menu_button_get_menu_model$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_button_set_align_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_button_set_align_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_button_set_align_widget",
-        constants$1694.gtk_menu_button_set_align_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_button_get_align_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_button_get_align_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_button_get_align_widget",
-        constants$1694.gtk_menu_button_get_align_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_button_set_use_popover$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_menu_button_set_use_popover$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_button_set_use_popover",
-        constants$1694.gtk_menu_button_set_use_popover$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_button_get_use_popover$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_button_get_use_popover$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_button_get_use_popover",
-        constants$1694.gtk_menu_button_get_use_popover$FUNC
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("index"),
+        JAVA_DOUBLE.withName("x"),
+        JAVA_DOUBLE.withName("y")
+    ).withName("cairo_glyph_t");
+    static final VarHandle const$4 = constants$1694.const$3.varHandle(MemoryLayout.PathElement.groupElement("index"));
+    static final VarHandle const$5 = constants$1694.const$3.varHandle(MemoryLayout.PathElement.groupElement("x"));
 }
 
 

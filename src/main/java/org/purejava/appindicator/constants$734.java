@@ -3,48 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$734 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$734() {}
-    static final FunctionDescriptor g_resolver_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_resolver_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_resolver_error_quark",
-        constants$734.g_resolver_error_quark$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GAppLaunchContextClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$731.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GAppLaunchContextClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$731.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor g_resource_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_resource_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_resource_error_quark",
-        constants$734.g_resource_error_quark$FUNC
-    );
-    static final FunctionDescriptor g_resource_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_resource_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_resource_get_type",
-        constants$734.g_resource_get_type$FUNC
-    );
-    static final FunctionDescriptor g_resource_new_from_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resource_new_from_data$MH = RuntimeHelper.downcallHandle(
-        "g_resource_new_from_data",
-        constants$734.g_resource_new_from_data$FUNC
-    );
-    static final FunctionDescriptor g_resource_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resource_ref$MH = RuntimeHelper.downcallHandle(
-        "g_resource_ref",
-        constants$734.g_resource_ref$FUNC
-    );
-    static final FunctionDescriptor g_resource_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resource_unref$MH = RuntimeHelper.downcallHandle(
-        "g_resource_unref",
-        constants$734.g_resource_unref$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_new",
+        constants$35.const$2
     );
 }
 

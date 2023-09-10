@@ -3,65 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$758 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$758() {}
-    static final FunctionDescriptor g_simple_async_result_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GAsyncResultIface.is_tagged.class, "apply", constants$9.const$0);
+    static final VarHandle const$1 = constants$757.const$1.varHandle(MemoryLayout.PathElement.groupElement("is_tagged"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_async_result_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_simple_async_result_is_valid$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_result_is_valid",
-        constants$758.g_simple_async_result_is_valid$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_async_result_get_user_data",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_simple_async_report_error_in_idle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_async_result_get_source_object",
+        constants$5.const$2
     );
-    static final MethodHandle g_simple_async_report_error_in_idle$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_simple_async_report_error_in_idle",
-        constants$758.g_simple_async_report_error_in_idle$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_report_gerror_in_idle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_report_gerror_in_idle$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_report_gerror_in_idle",
-        constants$758.g_simple_async_report_gerror_in_idle$FUNC
-    );
-    static final FunctionDescriptor g_simple_async_report_take_gerror_in_idle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_async_report_take_gerror_in_idle$MH = RuntimeHelper.downcallHandle(
-        "g_simple_async_report_take_gerror_in_idle",
-        constants$758.g_simple_async_report_take_gerror_in_idle$FUNC
-    );
-    static final FunctionDescriptor g_simple_io_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_simple_io_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_simple_io_stream_get_type",
-        constants$758.g_simple_io_stream_get_type$FUNC
-    );
-    static final FunctionDescriptor g_simple_io_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_simple_io_stream_new$MH = RuntimeHelper.downcallHandle(
-        "g_simple_io_stream_new",
-        constants$758.g_simple_io_stream_new$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_async_result_legacy_propagate_error",
+        constants$9.const$0
     );
 }
 

@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$19 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$19() {}
-    static final FunctionDescriptor g_array_sized_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "strcpy",
+        constants$5.const$5
     );
-    static final MethodHandle g_array_sized_new$MH = RuntimeHelper.downcallHandle(
-        "g_array_sized_new",
-        constants$19.g_array_sized_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "strncpy",
+        constants$17.const$1
     );
-    static final FunctionDescriptor g_array_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "strcat",
+        constants$5.const$5
     );
-    static final MethodHandle g_array_copy$MH = RuntimeHelper.downcallHandle(
-        "g_array_copy",
-        constants$19.g_array_copy$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "strncat",
+        constants$17.const$1
     );
-    static final FunctionDescriptor g_array_free$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "strcmp",
+        constants$9.const$0
     );
-    static final MethodHandle g_array_free$MH = RuntimeHelper.downcallHandle(
-        "g_array_free",
-        constants$19.g_array_free$FUNC
-    );
-    static final FunctionDescriptor g_array_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_array_ref$MH = RuntimeHelper.downcallHandle(
-        "g_array_ref",
-        constants$19.g_array_ref$FUNC
-    );
-    static final FunctionDescriptor g_array_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_array_unref$MH = RuntimeHelper.downcallHandle(
-        "g_array_unref",
-        constants$19.g_array_unref$FUNC
-    );
-    static final FunctionDescriptor g_array_get_element_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_array_get_element_size$MH = RuntimeHelper.downcallHandle(
-        "g_array_get_element_size",
-        constants$19.g_array_get_element_size$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "strncmp",
+        constants$18.const$2
     );
 }
 

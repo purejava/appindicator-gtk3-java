@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GSignalCMarshaller)(struct _GClosure*,struct _GValue*,unsigned int,struct _GValue*,void*,void*);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GSignalCMarshaller {
 
     void apply(java.lang.foreign.MemorySegment font, java.lang.foreign.MemorySegment font_data, int glyph, java.lang.foreign.MemorySegment draw_funcs, java.lang.foreign.MemorySegment draw_data, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GSignalCMarshaller fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$414.GSignalCMarshaller_UP$MH, fi, constants$414.GSignalCMarshaller$FUNC, scope);
+    static MemorySegment allocate(GSignalCMarshaller fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$599.const$4, fi, constants$584.const$3, scope);
     }
-    static GSignalCMarshaller ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GSignalCMarshaller ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _font, java.lang.foreign.MemorySegment _font_data, int _glyph, java.lang.foreign.MemorySegment _draw_funcs, java.lang.foreign.MemorySegment _draw_data, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$414.GSignalCMarshaller_DOWN$MH.invokeExact(symbol, _font, _font_data, _glyph, _draw_funcs, _draw_data, _user_data);
+                constants$584.const$5.invokeExact(symbol, _font, _font_data, _glyph, _draw_funcs, _draw_data, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

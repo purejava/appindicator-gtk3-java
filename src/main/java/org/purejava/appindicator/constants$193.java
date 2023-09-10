@@ -3,76 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$193 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$193() {}
-    static final FunctionDescriptor g_utf8_to_utf16$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_date_strftime",
+        constants$4.const$5
     );
-    static final MethodHandle g_utf8_to_utf16$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_to_utf16",
-        constants$193.g_utf8_to_utf16$FUNC
-    );
-    static final FunctionDescriptor g_utf8_to_ucs4$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_utf8_to_ucs4$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_to_ucs4",
-        constants$193.g_utf8_to_ucs4$FUNC
-    );
-    static final FunctionDescriptor g_utf8_to_ucs4_fast$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_utf8_to_ucs4_fast$MH = RuntimeHelper.downcallHandle(
-        "g_utf8_to_ucs4_fast",
-        constants$193.g_utf8_to_ucs4_fast$FUNC
-    );
-    static final FunctionDescriptor g_utf16_to_ucs4$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_utf16_to_ucs4$MH = RuntimeHelper.downcallHandle(
-        "g_utf16_to_ucs4",
-        constants$193.g_utf16_to_ucs4$FUNC
-    );
-    static final FunctionDescriptor g_utf16_to_utf8$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_utf16_to_utf8$MH = RuntimeHelper.downcallHandle(
-        "g_utf16_to_utf8",
-        constants$193.g_utf16_to_utf8$FUNC
-    );
-    static final FunctionDescriptor g_ucs4_to_utf16$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ucs4_to_utf16$MH = RuntimeHelper.downcallHandle(
-        "g_ucs4_to_utf16",
-        constants$193.g_ucs4_to_utf16$FUNC
-    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("d_ino"),
+        JAVA_LONG.withName("d_off"),
+        JAVA_SHORT.withName("d_reclen"),
+        JAVA_BYTE.withName("d_type"),
+        MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("d_name"),
+        MemoryLayout.paddingLayout(5)
+    ).withName("dirent");
+    static final VarHandle const$2 = constants$193.const$1.varHandle(MemoryLayout.PathElement.groupElement("d_ino"));
+    static final VarHandle const$3 = constants$193.const$1.varHandle(MemoryLayout.PathElement.groupElement("d_off"));
+    static final VarHandle const$4 = constants$193.const$1.varHandle(MemoryLayout.PathElement.groupElement("d_reclen"));
+    static final VarHandle const$5 = constants$193.const$1.varHandle(MemoryLayout.PathElement.groupElement("d_type"));
 }
 
 

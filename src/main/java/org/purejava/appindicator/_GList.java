@@ -2,118 +2,112 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GList {
- *     gpointer data;
- *     GList* next;
- *     GList* prev;
+ *     void* data;
+ *     struct _GList* next;
+ *     struct _GList* prev;
  * };
  * }
  */
 public class _GList {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("data"),
-        Constants$root.C_POINTER$LAYOUT.withName("next"),
-        Constants$root.C_POINTER$LAYOUT.withName("prev")
-    ).withName("_GList");
     public static MemoryLayout $LAYOUT() {
-        return _GList.$struct$LAYOUT;
+        return constants$218.const$0;
     }
-    static final VarHandle data$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("data"));
     public static VarHandle data$VH() {
-        return _GList.data$VH;
+        return constants$218.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gpointer data;
+     * void* data;
      * }
      */
     public static MemorySegment data$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GList.data$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$218.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gpointer data;
+     * void* data;
      * }
      */
     public static void data$set(MemorySegment seg, MemorySegment x) {
-        _GList.data$VH.set(seg, x);
+        constants$218.const$1.set(seg, x);
     }
     public static MemorySegment data$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GList.data$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$218.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void data$set(MemorySegment seg, long index, MemorySegment x) {
-        _GList.data$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$218.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle next$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("next"));
     public static VarHandle next$VH() {
-        return _GList.next$VH;
+        return constants$218.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GList* next;
+     * struct _GList* next;
      * }
      */
     public static MemorySegment next$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GList.next$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$218.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GList* next;
+     * struct _GList* next;
      * }
      */
     public static void next$set(MemorySegment seg, MemorySegment x) {
-        _GList.next$VH.set(seg, x);
+        constants$218.const$2.set(seg, x);
     }
     public static MemorySegment next$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GList.next$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$218.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void next$set(MemorySegment seg, long index, MemorySegment x) {
-        _GList.next$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$218.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle prev$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("prev"));
     public static VarHandle prev$VH() {
-        return _GList.prev$VH;
+        return constants$218.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GList* prev;
+     * struct _GList* prev;
      * }
      */
     public static MemorySegment prev$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GList.prev$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$218.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GList* prev;
+     * struct _GList* prev;
      * }
      */
     public static void prev$set(MemorySegment seg, MemorySegment x) {
-        _GList.prev$VH.set(seg, x);
+        constants$218.const$3.set(seg, x);
     }
     public static MemorySegment prev$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GList.prev$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$218.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void prev$set(MemorySegment seg, long index, MemorySegment x) {
-        _GList.prev$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$218.const$3.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -3,52 +3,33 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$380 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$380() {}
-    static final FunctionDescriptor g_type_init$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_type_init$MH = RuntimeHelper.downcallHandle(
-        "g_type_init",
-        constants$380.g_type_init$FUNC
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_type_init_with_debug_flags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_log_structured_standard",
+        constants$380.const$0
     );
-    static final MethodHandle g_type_init_with_debug_flags$MH = RuntimeHelper.downcallHandle(
-        "g_type_init_with_debug_flags",
-        constants$380.g_type_init_with_debug_flags$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GPrintFunc.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_print",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_type_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_name$MH = RuntimeHelper.downcallHandle(
-        "g_type_name",
-        constants$380.g_type_name$FUNC
-    );
-    static final FunctionDescriptor g_type_qname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_qname$MH = RuntimeHelper.downcallHandle(
-        "g_type_qname",
-        constants$380.g_type_qname$FUNC
-    );
-    static final FunctionDescriptor g_type_from_name$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_from_name$MH = RuntimeHelper.downcallHandle(
-        "g_type_from_name",
-        constants$380.g_type_from_name$FUNC
-    );
-    static final FunctionDescriptor g_type_parent$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_type_parent$MH = RuntimeHelper.downcallHandle(
-        "g_type_parent",
-        constants$380.g_type_parent$FUNC
-    );
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_set_print_handler$func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_set_print_handler$return.class, "apply", constants$13.const$1);
 }
 
 

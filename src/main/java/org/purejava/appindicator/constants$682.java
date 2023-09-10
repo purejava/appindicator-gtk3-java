@@ -3,51 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$682 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$682() {}
-    static final FunctionDescriptor GModuleUnload_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$680.const$4.varHandle(MemoryLayout.PathElement.groupElement("complete_interface_info"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_type_plugin_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle GModuleUnload_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$682.GModuleUnload_DOWN$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_type_plugin_use",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_module_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_module_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_module_error_quark",
-        constants$682.g_module_error_quark$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_type_plugin_unuse",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_module_supported$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_module_supported$MH = RuntimeHelper.downcallHandle(
-        "g_module_supported",
-        constants$682.g_module_supported$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_type_plugin_complete_type_info",
+        constants$679.const$5
     );
-    static final FunctionDescriptor g_module_open$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_module_open$MH = RuntimeHelper.downcallHandle(
-        "g_module_open",
-        constants$682.g_module_open$FUNC
-    );
-    static final FunctionDescriptor g_module_open_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_module_open_full$MH = RuntimeHelper.downcallHandle(
-        "g_module_open_full",
-        constants$682.g_module_open_full$FUNC
-    );
-    static final FunctionDescriptor g_module_close$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_module_close$MH = RuntimeHelper.downcallHandle(
-        "g_module_close",
-        constants$682.g_module_close$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_type_plugin_complete_interface_info",
+        constants$94.const$1
     );
 }
 

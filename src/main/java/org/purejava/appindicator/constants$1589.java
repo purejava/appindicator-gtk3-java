@@ -3,64 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1589 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1589() {}
-    static final FunctionDescriptor gtk_flow_box_get_activate_on_single_click$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1586.const$2.varHandle(MemoryLayout.PathElement.groupElement("_pango_reserved4"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_fontset_get_font",
+        constants$21.const$3
     );
-    static final MethodHandle gtk_flow_box_get_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_get_activate_on_single_click",
-        constants$1589.gtk_flow_box_get_activate_on_single_click$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_fontset_get_metrics",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_flow_box_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(pango_fontset_foreach$func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_fontset_foreach",
+        constants$14.const$3
     );
-    static final MethodHandle gtk_flow_box_insert$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_insert",
-        constants$1589.gtk_flow_box_insert$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_get_child_at_index$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_get_child_at_index$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_get_child_at_index",
-        constants$1589.gtk_flow_box_get_child_at_index$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_get_child_at_pos$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_get_child_at_pos$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_get_child_at_pos",
-        constants$1589.gtk_flow_box_get_child_at_pos$FUNC
-    );
-    static final FunctionDescriptor GtkFlowBoxForeachFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkFlowBoxForeachFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkFlowBoxForeachFunc_UP$MH = RuntimeHelper.upcallHandle(GtkFlowBoxForeachFunc.class, "apply", constants$1589.GtkFlowBoxForeachFunc_UP$FUNC);
-    static final FunctionDescriptor GtkFlowBoxForeachFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkFlowBoxForeachFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1589.GtkFlowBoxForeachFunc_DOWN$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance")
+    ).withName("_PangoFontMap");
 }
 
 

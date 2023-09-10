@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$367 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$367() {}
-    static final FunctionDescriptor pthread_rwlock_unlock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_builder_add_value",
+        constants$13.const$4
     );
-    static final MethodHandle pthread_rwlock_unlock$MH = RuntimeHelper.downcallHandle(
-        "pthread_rwlock_unlock",
-        constants$367.pthread_rwlock_unlock$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_builder_add",
+        constants$13.const$4
     );
-    static final FunctionDescriptor pthread_rwlockattr_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_builder_add_parsed",
+        constants$13.const$4
     );
-    static final MethodHandle pthread_rwlockattr_init$MH = RuntimeHelper.downcallHandle(
-        "pthread_rwlockattr_init",
-        constants$367.pthread_rwlockattr_init$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_new",
+        constants$5.const$2
     );
-    static final FunctionDescriptor pthread_rwlockattr_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_get",
+        constants$13.const$4
     );
-    static final MethodHandle pthread_rwlockattr_destroy$MH = RuntimeHelper.downcallHandle(
-        "pthread_rwlockattr_destroy",
-        constants$367.pthread_rwlockattr_destroy$FUNC
-    );
-    static final FunctionDescriptor pthread_rwlockattr_getpshared$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_rwlockattr_getpshared$MH = RuntimeHelper.downcallHandle(
-        "pthread_rwlockattr_getpshared",
-        constants$367.pthread_rwlockattr_getpshared$FUNC
-    );
-    static final FunctionDescriptor pthread_rwlockattr_setpshared$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pthread_rwlockattr_setpshared$MH = RuntimeHelper.downcallHandle(
-        "pthread_rwlockattr_setpshared",
-        constants$367.pthread_rwlockattr_setpshared$FUNC
-    );
-    static final FunctionDescriptor pthread_rwlockattr_getkind_np$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_rwlockattr_getkind_np$MH = RuntimeHelper.downcallHandle(
-        "pthread_rwlockattr_getkind_np",
-        constants$367.pthread_rwlockattr_getkind_np$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_variant_new_va",
+        constants$23.const$0
     );
 }
 

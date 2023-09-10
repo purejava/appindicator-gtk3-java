@@ -3,60 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1087 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1087() {}
-    static final FunctionDescriptor gdk_window_get_modal_hint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_modal_hint$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_modal_hint",
-        constants$1087.gdk_window_get_modal_hint$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_modal_hint$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_modal_hint$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_modal_hint",
-        constants$1087.gdk_window_set_modal_hint$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_skip_taskbar_hint$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_skip_taskbar_hint$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_skip_taskbar_hint",
-        constants$1087.gdk_window_set_skip_taskbar_hint$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_skip_pager_hint$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_skip_pager_hint$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_skip_pager_hint",
-        constants$1087.gdk_window_set_skip_pager_hint$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_urgency_hint$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_urgency_hint$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_urgency_hint",
-        constants$1087.gdk_window_set_urgency_hint$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_geometry_hints$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_geometry_hints$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_geometry_hints",
-        constants$1087.gdk_window_set_geometry_hints$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileMonitorClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1085.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileMonitorClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1085.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileMonitorClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1085.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
 }
 
 

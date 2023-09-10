@@ -3,62 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1514 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1514() {}
-    static final FunctionDescriptor gtk_button_get_event_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_buffer_add_latin1",
+        constants$1513.const$2
     );
-    static final MethodHandle gtk_button_get_event_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_button_get_event_window",
-        constants$1514.gtk_button_get_event_window$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_buffer_add_codepoints",
+        constants$1513.const$2
     );
-    static final FunctionDescriptor GtkCalendarDetailFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_buffer_append",
+        constants$1043.const$2
     );
-    static final FunctionDescriptor GtkCalendarDetailFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_buffer_set_length",
+        constants$11.const$4
     );
-    static final MethodHandle GtkCalendarDetailFunc_UP$MH = RuntimeHelper.upcallHandle(GtkCalendarDetailFunc.class, "apply", constants$1514.GtkCalendarDetailFunc_UP$FUNC);
-    static final FunctionDescriptor GtkCalendarDetailFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_length",
+        constants$10.const$5
     );
-    static final MethodHandle GtkCalendarDetailFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1514.GtkCalendarDetailFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor gtk_calendar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_calendar_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_get_type",
-        constants$1514.gtk_calendar_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_calendar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_calendar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_new",
-        constants$1514.gtk_calendar_new$FUNC
-    );
-    static final FunctionDescriptor gtk_calendar_select_month$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_calendar_select_month$MH = RuntimeHelper.downcallHandle(
-        "gtk_calendar_select_month",
-        constants$1514.gtk_calendar_select_month$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_buffer_get_glyph_infos",
+        constants$5.const$5
     );
 }
 

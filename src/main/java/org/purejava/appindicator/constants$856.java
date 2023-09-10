@@ -3,69 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$856 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$856() {}
-    static final FunctionDescriptor hb_draw_line_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_start_message_processing",
+        constants$13.const$1
     );
-    static final MethodHandle hb_draw_line_to$MH = RuntimeHelper.downcallHandle(
-        "hb_draw_line_to",
-        constants$856.hb_draw_line_to$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_is_closed",
+        constants$10.const$5
     );
-    static final FunctionDescriptor hb_draw_quadratic_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_get_stream",
+        constants$5.const$2
     );
-    static final MethodHandle hb_draw_quadratic_to$MH = RuntimeHelper.downcallHandle(
-        "hb_draw_quadratic_to",
-        constants$856.hb_draw_quadratic_to$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_get_guid",
+        constants$5.const$2
     );
-    static final FunctionDescriptor hb_draw_cubic_to$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_get_unique_name",
+        constants$5.const$2
     );
-    static final MethodHandle hb_draw_cubic_to$MH = RuntimeHelper.downcallHandle(
-        "hb_draw_cubic_to",
-        constants$856.hb_draw_cubic_to$FUNC
-    );
-    static final FunctionDescriptor hb_draw_close_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_draw_close_path$MH = RuntimeHelper.downcallHandle(
-        "hb_draw_close_path",
-        constants$856.hb_draw_close_path$FUNC
-    );
-    static final FunctionDescriptor hb_font_funcs_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_font_funcs_create$MH = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_create",
-        constants$856.hb_font_funcs_create$FUNC
-    );
-    static final FunctionDescriptor hb_font_funcs_get_empty$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_font_funcs_get_empty$MH = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_get_empty",
-        constants$856.hb_font_funcs_get_empty$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_get_peer_credentials",
+        constants$5.const$2
     );
 }
 

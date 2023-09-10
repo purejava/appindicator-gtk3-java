@@ -3,49 +3,45 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1939 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1939() {}
-    static final FunctionDescriptor gtk_hscale_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_hscale_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_hscale_get_type",
-        constants$1939.gtk_hscale_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_pango_layout_get_clip_region",
+        constants$1938.const$4
     );
-    static final FunctionDescriptor gtk_hscale_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_atom_intern",
+        constants$21.const$3
     );
-    static final MethodHandle gtk_hscale_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_hscale_new",
-        constants$1939.gtk_hscale_new$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_atom_intern_static_string",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_hscale_new_with_range$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_atom_name",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_hscale_new_with_range$MH = RuntimeHelper.downcallHandle(
-        "gtk_hscale_new_with_range",
-        constants$1939.gtk_hscale_new_with_range$FUNC
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gtk_hscrollbar_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_hscrollbar_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_hscrollbar_get_type",
-        constants$1939.gtk_hscrollbar_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_hscrollbar_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_hscrollbar_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_hscrollbar_new",
-        constants$1939.gtk_hscrollbar_new$FUNC
-    );
-    static final FunctionDescriptor gtk_hseparator_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_hseparator_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_hseparator_get_type",
-        constants$1939.gtk_hseparator_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_property_get",
+        constants$1939.const$4
     );
 }
 

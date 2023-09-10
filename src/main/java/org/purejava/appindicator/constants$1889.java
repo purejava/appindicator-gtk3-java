@@ -3,41 +3,47 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1889 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1889() {}
-    static final FunctionDescriptor gtk_propagation_phase_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_propagation_phase_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_propagation_phase_get_type",
-        constants$1889.gtk_propagation_phase_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(gdk_pixbuf_save_to_streamv_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_save_to_streamv_async",
+        constants$862.const$3
     );
-    static final FunctionDescriptor gtk_event_sequence_state_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_event_sequence_state_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_sequence_state_get_type",
-        constants$1889.gtk_event_sequence_state_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_save_to_streamv",
+        constants$164.const$2
     );
-    static final FunctionDescriptor gtk_pan_direction_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_pan_direction_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_pan_direction_get_type",
-        constants$1889.gtk_pan_direction_get_type$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_BYTE,
+        JAVA_BYTE,
+        JAVA_BYTE
     );
-    static final FunctionDescriptor gtk_popover_constraint_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_popover_constraint_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_popover_constraint_get_type",
-        constants$1889.gtk_popover_constraint_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_add_alpha",
+        constants$1889.const$3
     );
-    static final FunctionDescriptor gtk_event_controller_scroll_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_event_controller_scroll_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_scroll_flags_get_type",
-        constants$1889.gtk_event_controller_scroll_flags_get_type$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final FunctionDescriptor gtk_file_chooser_action_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_file_chooser_action_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_chooser_action_get_type",
-        constants$1889.gtk_file_chooser_action_get_type$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_copy_area",
+        constants$1889.const$5
     );
 }
 

@@ -3,63 +3,41 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1470 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1470() {}
-    static final FunctionDescriptor gtk_tree_view_scroll_to_cell$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_paint_pop_transform",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_tree_view_scroll_to_cell$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_scroll_to_cell",
-        constants$1470.gtk_tree_view_scroll_to_cell$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_paint_push_clip_glyph",
+        constants$464.const$4
     );
-    static final FunctionDescriptor gtk_tree_view_row_activated$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT
     );
-    static final MethodHandle gtk_tree_view_row_activated$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_row_activated",
-        constants$1470.gtk_tree_view_row_activated$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_paint_push_clip_rectangle",
+        constants$1470.const$2
     );
-    static final FunctionDescriptor gtk_tree_view_expand_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_paint_pop_clip",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_tree_view_expand_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_expand_all",
-        constants$1470.gtk_tree_view_expand_all$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_collapse_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_collapse_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_collapse_all",
-        constants$1470.gtk_tree_view_collapse_all$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_expand_to_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_expand_to_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_expand_to_path",
-        constants$1470.gtk_tree_view_expand_to_path$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_expand_row$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_expand_row$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_expand_row",
-        constants$1470.gtk_tree_view_expand_row$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_paint_color",
+        constants$1043.const$2
     );
 }
 

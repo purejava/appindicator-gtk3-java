@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$517 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$517() {}
-    static final FunctionDescriptor g_content_type_get_symbolic_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pthread_join",
+        constants$87.const$0
     );
-    static final MethodHandle g_content_type_get_symbolic_icon$MH = RuntimeHelper.downcallHandle(
-        "g_content_type_get_symbolic_icon",
-        constants$517.g_content_type_get_symbolic_icon$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pthread_detach",
+        constants$26.const$2
     );
-    static final FunctionDescriptor g_content_type_get_generic_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pthread_self",
+        constants$3.const$5
     );
-    static final MethodHandle g_content_type_get_generic_icon_name$MH = RuntimeHelper.downcallHandle(
-        "g_content_type_get_generic_icon_name",
-        constants$517.g_content_type_get_generic_icon_name$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final FunctionDescriptor g_content_type_can_be_executable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pthread_equal",
+        constants$517.const$3
     );
-    static final MethodHandle g_content_type_can_be_executable$MH = RuntimeHelper.downcallHandle(
-        "g_content_type_can_be_executable",
-        constants$517.g_content_type_can_be_executable$FUNC
-    );
-    static final FunctionDescriptor g_content_type_from_mime_type$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_content_type_from_mime_type$MH = RuntimeHelper.downcallHandle(
-        "g_content_type_from_mime_type",
-        constants$517.g_content_type_from_mime_type$FUNC
-    );
-    static final FunctionDescriptor g_content_type_guess$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_content_type_guess$MH = RuntimeHelper.downcallHandle(
-        "g_content_type_guess",
-        constants$517.g_content_type_guess$FUNC
-    );
-    static final FunctionDescriptor g_content_type_guess_for_tree$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_content_type_guess_for_tree$MH = RuntimeHelper.downcallHandle(
-        "g_content_type_guess_for_tree",
-        constants$517.g_content_type_guess_for_tree$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pthread_attr_init",
+        constants$10.const$5
     );
 }
 

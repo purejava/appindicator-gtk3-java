@@ -2,9 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GVariantDict {
@@ -14,24 +16,14 @@ import java.lang.foreign.*;
  */
 public class _GVariantDict {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.unionLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_POINTER$LAYOUT.withName("asv"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("partial_magic"),
-                MemoryLayout.sequenceLayout(14, Constants$root.C_LONG_LONG$LAYOUT).withName("y")
-            ).withName("s"),
-            MemoryLayout.sequenceLayout(16, Constants$root.C_LONG_LONG$LAYOUT).withName("x")
-        ).withName("u")
-    ).withName("_GVariantDict");
     public static MemoryLayout $LAYOUT() {
-        return _GVariantDict.$struct$LAYOUT;
+        return constants$369.const$1;
     }
     /**
      * {@snippet :
      * union {
      *     struct  s;
-     *     gsize x[16];
+     *     unsigned long x[16];
      * };
      * }
      */
@@ -39,23 +31,15 @@ public class _GVariantDict {
 
         // Suppresses default constructor, ensuring non-instantiability.
         private u() {}
-        static final UnionLayout u$union$LAYOUT = MemoryLayout.unionLayout(
-            MemoryLayout.structLayout(
-                Constants$root.C_POINTER$LAYOUT.withName("asv"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("partial_magic"),
-                MemoryLayout.sequenceLayout(14, Constants$root.C_LONG_LONG$LAYOUT).withName("y")
-            ).withName("s"),
-            MemoryLayout.sequenceLayout(16, Constants$root.C_LONG_LONG$LAYOUT).withName("x")
-        );
         public static MemoryLayout $LAYOUT() {
-            return u.u$union$LAYOUT;
+            return constants$369.const$2;
         }
         /**
          * {@snippet :
          * struct {
-         *     GVariant* asv;
-         *     gsize partial_magic;
-         *     gsize y[14];
+         *     struct _GVariant* asv;
+         *     unsigned long partial_magic;
+         *     unsigned long y[14];
          * };
          * }
          */
@@ -63,69 +47,62 @@ public class _GVariantDict {
 
             // Suppresses default constructor, ensuring non-instantiability.
             private s() {}
-            static final StructLayout u$s$struct$LAYOUT = MemoryLayout.structLayout(
-                Constants$root.C_POINTER$LAYOUT.withName("asv"),
-                Constants$root.C_LONG_LONG$LAYOUT.withName("partial_magic"),
-                MemoryLayout.sequenceLayout(14, Constants$root.C_LONG_LONG$LAYOUT).withName("y")
-            );
             public static MemoryLayout $LAYOUT() {
-                return s.u$s$struct$LAYOUT;
+                return constants$369.const$3;
             }
-            static final VarHandle asv$VH = u$s$struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("asv"));
             public static VarHandle asv$VH() {
-                return s.asv$VH;
+                return constants$369.const$4;
             }
             /**
              * Getter for field:
              * {@snippet :
-             * GVariant* asv;
+             * struct _GVariant* asv;
              * }
              */
             public static MemorySegment asv$get(MemorySegment seg) {
-                return (java.lang.foreign.MemorySegment)s.asv$VH.get(seg);
+                return (java.lang.foreign.MemorySegment)constants$369.const$4.get(seg);
             }
             /**
              * Setter for field:
              * {@snippet :
-             * GVariant* asv;
+             * struct _GVariant* asv;
              * }
              */
             public static void asv$set(MemorySegment seg, MemorySegment x) {
-                s.asv$VH.set(seg, x);
+                constants$369.const$4.set(seg, x);
             }
             public static MemorySegment asv$get(MemorySegment seg, long index) {
-                return (java.lang.foreign.MemorySegment)s.asv$VH.get(seg.asSlice(index*sizeof()));
+                return (java.lang.foreign.MemorySegment)constants$369.const$4.get(seg.asSlice(index*sizeof()));
             }
             public static void asv$set(MemorySegment seg, long index, MemorySegment x) {
-                s.asv$VH.set(seg.asSlice(index*sizeof()), x);
+                constants$369.const$4.set(seg.asSlice(index*sizeof()), x);
             }
-            static final VarHandle partial_magic$VH = u$s$struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("partial_magic"));
             public static VarHandle partial_magic$VH() {
-                return s.partial_magic$VH;
+                return constants$369.const$5;
             }
             /**
              * Getter for field:
              * {@snippet :
-             * gsize partial_magic;
+             * unsigned long partial_magic;
              * }
              */
             public static long partial_magic$get(MemorySegment seg) {
-                return (long)s.partial_magic$VH.get(seg);
+                return (long)constants$369.const$5.get(seg);
             }
             /**
              * Setter for field:
              * {@snippet :
-             * gsize partial_magic;
+             * unsigned long partial_magic;
              * }
              */
             public static void partial_magic$set(MemorySegment seg, long x) {
-                s.partial_magic$VH.set(seg, x);
+                constants$369.const$5.set(seg, x);
             }
             public static long partial_magic$get(MemorySegment seg, long index) {
-                return (long)s.partial_magic$VH.get(seg.asSlice(index*sizeof()));
+                return (long)constants$369.const$5.get(seg.asSlice(index*sizeof()));
             }
             public static void partial_magic$set(MemorySegment seg, long index, long x) {
-                s.partial_magic$VH.set(seg.asSlice(index*sizeof()), x);
+                constants$369.const$5.set(seg.asSlice(index*sizeof()), x);
             }
             public static MemorySegment y$slice(MemorySegment seg) {
                 return seg.asSlice(16, 112);
@@ -135,7 +112,7 @@ public class _GVariantDict {
             public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
                 return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
             }
-            public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+            public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
         }
 
         public static MemorySegment s$slice(MemorySegment seg) {
@@ -149,7 +126,7 @@ public class _GVariantDict {
         public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
             return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
         }
-        public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+        public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
     }
 
     public static MemorySegment u$slice(MemorySegment seg) {
@@ -160,7 +137,7 @@ public class _GVariantDict {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -3,64 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1771 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1771() {}
-    static final FunctionDescriptor gtk_recent_manager_add_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_manager_add_full$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_add_full",
-        constants$1771.gtk_recent_manager_add_full$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_manager_remove_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_manager_remove_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_remove_item",
-        constants$1771.gtk_recent_manager_remove_item$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_manager_lookup_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_manager_lookup_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_lookup_item",
-        constants$1771.gtk_recent_manager_lookup_item$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_manager_has_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_manager_has_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_has_item",
-        constants$1771.gtk_recent_manager_has_item$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_manager_move_item$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_manager_move_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_move_item",
-        constants$1771.gtk_recent_manager_move_item$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_manager_get_items$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_manager_get_items$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_manager_get_items",
-        constants$1771.gtk_recent_manager_get_items$FUNC
-    );
+    static final VarHandle const$0 = constants$1769.const$4.varHandle(MemoryLayout.PathElement.groupElement("state"));
+    static final VarHandle const$1 = constants$1769.const$4.varHandle(MemoryLayout.PathElement.groupElement("is_hint"));
+    static final VarHandle const$2 = constants$1769.const$4.varHandle(MemoryLayout.PathElement.groupElement("device"));
+    static final VarHandle const$3 = constants$1769.const$4.varHandle(MemoryLayout.PathElement.groupElement("x_root"));
+    static final VarHandle const$4 = constants$1769.const$4.varHandle(MemoryLayout.PathElement.groupElement("y_root"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        MemoryLayout.paddingLayout(3),
+        JAVA_INT.withName("time"),
+        JAVA_DOUBLE.withName("x"),
+        JAVA_DOUBLE.withName("y"),
+        RuntimeHelper.POINTER.withName("axes"),
+        JAVA_INT.withName("state"),
+        JAVA_INT.withName("button"),
+        RuntimeHelper.POINTER.withName("device"),
+        JAVA_DOUBLE.withName("x_root"),
+        JAVA_DOUBLE.withName("y_root")
+    ).withName("_GdkEventButton");
 }
 
 

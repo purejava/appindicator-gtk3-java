@@ -3,62 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1649 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1649() {}
-    static final FunctionDescriptor gtk_tooltip_set_markup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_renderer_draw_glyph_item",
+        constants$1641.const$5
     );
-    static final MethodHandle gtk_tooltip_set_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_set_markup",
-        constants$1649.gtk_tooltip_set_markup$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_renderer_draw_rectangle",
+        constants$1642.const$3
     );
-    static final FunctionDescriptor gtk_tooltip_set_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_renderer_draw_error_underline",
+        constants$1643.const$1
     );
-    static final MethodHandle gtk_tooltip_set_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_set_text",
-        constants$1649.gtk_tooltip_set_text$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_renderer_draw_trapezoid",
+        constants$1644.const$2
     );
-    static final FunctionDescriptor gtk_tooltip_set_icon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_renderer_draw_glyph",
+        constants$1645.const$0
     );
-    static final MethodHandle gtk_tooltip_set_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_set_icon",
-        constants$1649.gtk_tooltip_set_icon$FUNC
-    );
-    static final FunctionDescriptor gtk_tooltip_set_icon_from_stock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tooltip_set_icon_from_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_set_icon_from_stock",
-        constants$1649.gtk_tooltip_set_icon_from_stock$FUNC
-    );
-    static final FunctionDescriptor gtk_tooltip_set_icon_from_icon_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tooltip_set_icon_from_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_set_icon_from_icon_name",
-        constants$1649.gtk_tooltip_set_icon_from_icon_name$FUNC
-    );
-    static final FunctionDescriptor gtk_tooltip_set_icon_from_gicon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tooltip_set_icon_from_gicon$MH = RuntimeHelper.downcallHandle(
-        "gtk_tooltip_set_icon_from_gicon",
-        constants$1649.gtk_tooltip_set_icon_from_gicon$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_renderer_activate",
+        constants$13.const$1
     );
 }
 

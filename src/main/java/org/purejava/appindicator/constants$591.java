@@ -3,76 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$591 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$591() {}
-    static final FunctionDescriptor g_dbus_object_skeleton_set_object_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_closure_set_marshal$marshal.class, "apply", constants$584.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_closure_set_marshal",
+        constants$13.const$4
     );
-    static final MethodHandle g_dbus_object_skeleton_set_object_path$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_skeleton_set_object_path",
-        constants$591.g_dbus_object_skeleton_set_object_path$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_closure_set_meta_marshal$meta_marshal.class, "apply", constants$584.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_closure_set_meta_marshal",
+        constants$14.const$3
     );
-    static final FunctionDescriptor g_dbus_proxy_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_proxy_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_get_type",
-        constants$591.g_dbus_proxy_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_closure_invalidate",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_dbus_proxy_new$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_proxy_new$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_new",
-        constants$591.g_dbus_proxy_new$FUNC
-    );
-    static final FunctionDescriptor g_dbus_proxy_new_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_proxy_new_finish$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_new_finish",
-        constants$591.g_dbus_proxy_new_finish$FUNC
-    );
-    static final FunctionDescriptor g_dbus_proxy_new_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_proxy_new_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_new_sync",
-        constants$591.g_dbus_proxy_new_sync$FUNC
-    );
-    static final FunctionDescriptor g_dbus_proxy_new_for_bus$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_proxy_new_for_bus$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_proxy_new_for_bus",
-        constants$591.g_dbus_proxy_new_for_bus$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_closure_invoke",
+        constants$379.const$3
     );
 }
 

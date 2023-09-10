@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*pthread_key_create$__destr_function)(void*);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface pthread_key_create$__destr_function {
 
     void apply(java.lang.foreign.MemorySegment display);
-    static MemorySegment allocate(pthread_key_create$__destr_function fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$372.pthread_key_create$__destr_function_UP$MH, fi, constants$372.pthread_key_create$__destr_function$FUNC, scope);
+    static MemorySegment allocate(pthread_key_create$__destr_function fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$535.const$1, fi, constants$13.const$1, scope);
     }
-    static pthread_key_create$__destr_function ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static pthread_key_create$__destr_function ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$372.pthread_key_create$__destr_function_DOWN$MH.invokeExact(symbol, _display);
+                constants$13.const$3.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

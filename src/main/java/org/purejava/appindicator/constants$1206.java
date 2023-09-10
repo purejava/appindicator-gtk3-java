@@ -3,58 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1206 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1206() {}
-    static final FunctionDescriptor atk_action_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_action_get_name$MH = RuntimeHelper.downcallHandle(
-        "atk_action_get_name",
-        constants$1206.atk_action_get_name$FUNC
-    );
-    static final FunctionDescriptor atk_action_get_keybinding$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_action_get_keybinding$MH = RuntimeHelper.downcallHandle(
-        "atk_action_get_keybinding",
-        constants$1206.atk_action_get_keybinding$FUNC
-    );
-    static final FunctionDescriptor atk_action_set_description$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_action_set_description$MH = RuntimeHelper.downcallHandle(
-        "atk_action_set_description",
-        constants$1206.atk_action_set_description$FUNC
-    );
-    static final FunctionDescriptor atk_action_get_localized_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_action_get_localized_name$MH = RuntimeHelper.downcallHandle(
-        "atk_action_get_localized_name",
-        constants$1206.atk_action_get_localized_name$FUNC
-    );
-    static final FunctionDescriptor AtkEventListener$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor AtkEventListener_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle AtkEventListener_UP$MH = RuntimeHelper.upcallHandle(AtkEventListener.class, "apply", constants$1206.AtkEventListener_UP$FUNC);
-    static final FunctionDescriptor AtkEventListener_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle AtkEventListener_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1206.AtkEventListener_DOWN$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GPermissionClass.release.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$1204.const$5.varHandle(MemoryLayout.PathElement.groupElement("release"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GPermissionClass.release_async.class, "apply", constants$42.const$1);
+    static final VarHandle const$3 = constants$1204.const$5.varHandle(MemoryLayout.PathElement.groupElement("release_async"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GPermissionClass.release_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$5 = constants$1204.const$5.varHandle(MemoryLayout.PathElement.groupElement("release_finish"));
 }
 
 

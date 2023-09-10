@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1260 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1260() {}
-    static final FunctionDescriptor gtk_widget_set_visible$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_settings_set_enum",
+        constants$62.const$0
     );
-    static final MethodHandle gtk_widget_set_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_visible",
-        constants$1260.gtk_widget_set_visible$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_settings_get_flags",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gtk_widget_get_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_settings_set_flags",
+        constants$62.const$0
     );
-    static final MethodHandle gtk_widget_get_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_visible",
-        constants$1260.gtk_widget_get_visible$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_settings_get_child",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_widget_is_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_settings_is_writable",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_widget_is_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_is_visible",
-        constants$1260.gtk_widget_is_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_has_window$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_has_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_has_window",
-        constants$1260.gtk_widget_set_has_window$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_has_window$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_has_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_has_window",
-        constants$1260.gtk_widget_get_has_window$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_is_toplevel$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_is_toplevel$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_is_toplevel",
-        constants$1260.gtk_widget_is_toplevel$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_settings_delay",
+        constants$13.const$1
     );
 }
 

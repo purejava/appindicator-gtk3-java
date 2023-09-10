@@ -3,55 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$991 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$991() {}
-    static final FunctionDescriptor ftrylockfile$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle ftrylockfile$MH = RuntimeHelper.downcallHandle(
-        "ftrylockfile",
-        constants$991.ftrylockfile$FUNC
-    );
-    static final FunctionDescriptor funlockfile$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle funlockfile$MH = RuntimeHelper.downcallHandle(
-        "funlockfile",
-        constants$991.funlockfile$FUNC
-    );
-    static final FunctionDescriptor __uflow$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle __uflow$MH = RuntimeHelper.downcallHandle(
-        "__uflow",
-        constants$991.__uflow$FUNC
-    );
-    static final FunctionDescriptor __overflow$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle __overflow$MH = RuntimeHelper.downcallHandle(
-        "__overflow",
-        constants$991.__overflow$FUNC
-    );
-    static final FunctionDescriptor pango_split_file_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_split_file_list$MH = RuntimeHelper.downcallHandle(
-        "pango_split_file_list",
-        constants$991.pango_split_file_list$FUNC
-    );
-    static final FunctionDescriptor pango_trim_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_trim_string$MH = RuntimeHelper.downcallHandle(
-        "pango_trim_string",
-        constants$991.pango_trim_string$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.replace_finish.class, "apply", constants$23.const$0);
+    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("replace_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.delete_file.class, "apply", constants$12.const$2);
+    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("delete_file"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.delete_file_async.class, "apply", constants$281.const$5);
+    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("delete_file_async"));
 }
 
 

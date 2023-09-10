@@ -3,79 +3,30 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$865 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$865() {}
-    static final FunctionDescriptor hb_font_get_glyph_shape_func_t$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_dbus_connection_register_object$user_data_free_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_register_object",
+        constants$164.const$2
     );
-    static final FunctionDescriptor hb_font_get_glyph_shape_func_t_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_register_object_with_closures",
+        constants$164.const$2
     );
-    static final MethodHandle hb_font_get_glyph_shape_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_font_get_glyph_shape_func_t.class, "apply", constants$865.hb_font_get_glyph_shape_func_t_UP$FUNC);
-    static final FunctionDescriptor hb_font_get_glyph_shape_func_t_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_unregister_object",
+        constants$11.const$4
     );
-    static final MethodHandle hb_font_get_glyph_shape_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$865.hb_font_get_glyph_shape_func_t_DOWN$FUNC
-    );
-    static final FunctionDescriptor hb_font_funcs_set_font_h_extents_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_funcs_set_font_h_extents_func$MH = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_set_font_h_extents_func",
-        constants$865.hb_font_funcs_set_font_h_extents_func$FUNC
-    );
-    static final FunctionDescriptor hb_font_funcs_set_font_v_extents_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_funcs_set_font_v_extents_func$MH = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_set_font_v_extents_func",
-        constants$865.hb_font_funcs_set_font_v_extents_func$FUNC
-    );
-    static final FunctionDescriptor hb_font_funcs_set_nominal_glyph_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_funcs_set_nominal_glyph_func$MH = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_set_nominal_glyph_func",
-        constants$865.hb_font_funcs_set_nominal_glyph_func$FUNC
-    );
-    static final FunctionDescriptor hb_font_funcs_set_nominal_glyphs_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_funcs_set_nominal_glyphs_func$MH = RuntimeHelper.downcallHandle(
-        "hb_font_funcs_set_nominal_glyphs_func",
-        constants$865.hb_font_funcs_set_nominal_glyphs_func$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(GDBusSubtreeEnumerateFunc.class, "apply", constants$39.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$39.const$1
     );
 }
 

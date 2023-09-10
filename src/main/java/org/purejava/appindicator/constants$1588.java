@@ -3,57 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1588 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1588() {}
-    static final FunctionDescriptor gtk_flow_box_get_column_spacing$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_get_column_spacing$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_get_column_spacing",
-        constants$1588.gtk_flow_box_get_column_spacing$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_set_min_children_per_line$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_set_min_children_per_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_min_children_per_line",
-        constants$1588.gtk_flow_box_set_min_children_per_line$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_get_min_children_per_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_get_min_children_per_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_get_min_children_per_line",
-        constants$1588.gtk_flow_box_get_min_children_per_line$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_set_max_children_per_line$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_set_max_children_per_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_max_children_per_line",
-        constants$1588.gtk_flow_box_set_max_children_per_line$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_get_max_children_per_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_get_max_children_per_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_get_max_children_per_line",
-        constants$1588.gtk_flow_box_get_max_children_per_line$FUNC
-    );
-    static final FunctionDescriptor gtk_flow_box_set_activate_on_single_click$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_flow_box_set_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_flow_box_set_activate_on_single_click",
-        constants$1588.gtk_flow_box_set_activate_on_single_click$FUNC
-    );
+    static final VarHandle const$0 = constants$1586.const$2.varHandle(MemoryLayout.PathElement.groupElement("_pango_reserved1"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_PangoFontsetClass._pango_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1586.const$2.varHandle(MemoryLayout.PathElement.groupElement("_pango_reserved2"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_PangoFontsetClass._pango_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1586.const$2.varHandle(MemoryLayout.PathElement.groupElement("_pango_reserved3"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_PangoFontsetClass._pango_reserved4.class, "apply", constants$7.const$5);
 }
 
 

@@ -3,58 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1799 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1799() {}
-    static final FunctionDescriptor gtk_scrolled_window_get_policy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_policy$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_policy",
-        constants$1799.gtk_scrolled_window_get_policy$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_set_placement$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_placement$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_placement",
-        constants$1799.gtk_scrolled_window_set_placement$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_unset_placement$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_unset_placement$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_unset_placement",
-        constants$1799.gtk_scrolled_window_unset_placement$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_get_placement$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_placement$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_placement",
-        constants$1799.gtk_scrolled_window_get_placement$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_set_shadow_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_set_shadow_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_set_shadow_type",
-        constants$1799.gtk_scrolled_window_set_shadow_type$FUNC
-    );
-    static final FunctionDescriptor gtk_scrolled_window_get_shadow_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_scrolled_window_get_shadow_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_scrolled_window_get_shadow_type",
-        constants$1799.gtk_scrolled_window_get_shadow_type$FUNC
-    );
+    static final VarHandle const$0 = constants$1797.const$0.varHandle(MemoryLayout.PathElement.groupElement("scale"));
+    static final VarHandle const$1 = constants$1797.const$0.varHandle(MemoryLayout.PathElement.groupElement("x_root"));
+    static final VarHandle const$2 = constants$1797.const$0.varHandle(MemoryLayout.PathElement.groupElement("y_root"));
+    static final VarHandle const$3 = constants$1797.const$0.varHandle(MemoryLayout.PathElement.groupElement("state"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        MemoryLayout.paddingLayout(3),
+        JAVA_INT.withName("time"),
+        JAVA_INT.withName("group"),
+        JAVA_INT.withName("button"),
+        JAVA_INT.withName("mode"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GdkEventPadButton");
+    static final VarHandle const$5 = constants$1799.const$4.varHandle(MemoryLayout.PathElement.groupElement("type"));
 }
 
 

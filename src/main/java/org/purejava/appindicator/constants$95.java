@@ -3,77 +3,50 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$95 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$95() {}
-    static final FunctionDescriptor g_bookmark_file_get_groups$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "llabs",
+        constants$94.const$4
     );
-    static final MethodHandle g_bookmark_file_get_groups$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_get_groups",
-        constants$95.g_bookmark_file_get_groups$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(MemoryLayout.structLayout(
+        JAVA_INT.withName("quot"),
+        JAVA_INT.withName("rem")
+    ).withName("div_t"),
+        JAVA_INT,
+        JAVA_INT
     );
-    static final FunctionDescriptor g_bookmark_file_add_application$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "div",
+        constants$95.const$1
     );
-    static final MethodHandle g_bookmark_file_add_application$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_add_application",
-        constants$95.g_bookmark_file_add_application$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(MemoryLayout.structLayout(
+        JAVA_LONG.withName("quot"),
+        JAVA_LONG.withName("rem")
+    ).withName("ldiv_t"),
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final FunctionDescriptor g_bookmark_file_has_application$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "ldiv",
+        constants$95.const$3
     );
-    static final MethodHandle g_bookmark_file_has_application$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_has_application",
-        constants$95.g_bookmark_file_has_application$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(MemoryLayout.structLayout(
+        JAVA_LONG.withName("quot"),
+        JAVA_LONG.withName("rem")
+    ).withName("lldiv_t"),
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final FunctionDescriptor g_bookmark_file_get_applications$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_get_applications$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_get_applications",
-        constants$95.g_bookmark_file_get_applications$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_set_app_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_set_app_info$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_set_app_info",
-        constants$95.g_bookmark_file_set_app_info$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_set_application_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_set_application_info$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_set_application_info",
-        constants$95.g_bookmark_file_set_application_info$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "lldiv",
+        constants$95.const$5
     );
 }
 

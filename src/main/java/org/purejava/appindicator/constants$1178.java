@@ -3,50 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1178 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1178() {}
-    static final FunctionDescriptor gdk_keyboard_grab$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_keyboard_grab$MH = RuntimeHelper.downcallHandle(
-        "gdk_keyboard_grab",
-        constants$1178.gdk_keyboard_grab$FUNC
-    );
-    static final FunctionDescriptor gdk_pointer_ungrab$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_pointer_ungrab$MH = RuntimeHelper.downcallHandle(
-        "gdk_pointer_ungrab",
-        constants$1178.gdk_pointer_ungrab$FUNC
-    );
-    static final FunctionDescriptor gdk_keyboard_ungrab$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_keyboard_ungrab$MH = RuntimeHelper.downcallHandle(
-        "gdk_keyboard_ungrab",
-        constants$1178.gdk_keyboard_ungrab$FUNC
-    );
-    static final FunctionDescriptor gdk_pointer_is_grabbed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_pointer_is_grabbed$MH = RuntimeHelper.downcallHandle(
-        "gdk_pointer_is_grabbed",
-        constants$1178.gdk_pointer_is_grabbed$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_screen_width$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_width",
-        constants$1178.gdk_screen_width$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_height$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle gdk_screen_height$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_height",
-        constants$1178.gdk_screen_height$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GMountOperationClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1174.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GMountOperationClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1174.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GMountOperationClass._g_reserved6.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1174.const$2.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved6"));
 }
 
 

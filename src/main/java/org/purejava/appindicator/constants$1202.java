@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1202 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1202() {}
-    static final FunctionDescriptor atk_object_get_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_network_service_set_scheme",
+        constants$13.const$4
     );
-    static final MethodHandle atk_object_get_attributes$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_attributes",
-        constants$1202.atk_object_get_attributes$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_notification_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor atk_object_ref_state_set$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_notification_new",
+        constants$5.const$2
     );
-    static final MethodHandle atk_object_ref_state_set$MH = RuntimeHelper.downcallHandle(
-        "atk_object_ref_state_set",
-        constants$1202.atk_object_ref_state_set$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_notification_set_title",
+        constants$13.const$4
     );
-    static final FunctionDescriptor atk_object_get_index_in_parent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_notification_set_body",
+        constants$13.const$4
     );
-    static final MethodHandle atk_object_get_index_in_parent$MH = RuntimeHelper.downcallHandle(
-        "atk_object_get_index_in_parent",
-        constants$1202.atk_object_get_index_in_parent$FUNC
-    );
-    static final FunctionDescriptor atk_object_set_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_set_name$MH = RuntimeHelper.downcallHandle(
-        "atk_object_set_name",
-        constants$1202.atk_object_set_name$FUNC
-    );
-    static final FunctionDescriptor atk_object_set_description$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_set_description$MH = RuntimeHelper.downcallHandle(
-        "atk_object_set_description",
-        constants$1202.atk_object_set_description$FUNC
-    );
-    static final FunctionDescriptor atk_object_set_parent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_object_set_parent$MH = RuntimeHelper.downcallHandle(
-        "atk_object_set_parent",
-        constants$1202.atk_object_set_parent$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_notification_set_icon",
+        constants$13.const$4
     );
 }
 

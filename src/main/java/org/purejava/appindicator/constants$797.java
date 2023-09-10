@@ -3,56 +3,65 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$797 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$797() {}
-    static final FunctionDescriptor g_task_propagate_int$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_bytes_icon_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_task_propagate_int$MH = RuntimeHelper.downcallHandle(
-        "g_task_propagate_int",
-        constants$797.g_task_propagate_int$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_bytes_icon_new",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_task_propagate_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_bytes_icon_get_bytes",
+        constants$5.const$2
     );
-    static final MethodHandle g_task_propagate_value$MH = RuntimeHelper.downcallHandle(
-        "g_task_propagate_value",
-        constants$797.g_task_propagate_value$FUNC
-    );
-    static final FunctionDescriptor g_task_had_error$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_task_had_error$MH = RuntimeHelper.downcallHandle(
-        "g_task_had_error",
-        constants$797.g_task_had_error$FUNC
-    );
-    static final FunctionDescriptor g_task_get_completed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_task_get_completed$MH = RuntimeHelper.downcallHandle(
-        "g_task_get_completed",
-        constants$797.g_task_get_completed$FUNC
-    );
-    static final FunctionDescriptor g_tcp_connection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_tcp_connection_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_tcp_connection_get_type",
-        constants$797.g_tcp_connection_get_type$FUNC
-    );
-    static final FunctionDescriptor g_tcp_connection_set_graceful_disconnect$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_tcp_connection_set_graceful_disconnect$MH = RuntimeHelper.downcallHandle(
-        "g_tcp_connection_set_graceful_disconnect",
-        constants$797.g_tcp_connection_set_graceful_disconnect$FUNC
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GCancellable");
+    static final VarHandle const$4 = constants$797.const$3.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("cancelled"),
+        RuntimeHelper.POINTER.withName("_g_reserved1"),
+        RuntimeHelper.POINTER.withName("_g_reserved2"),
+        RuntimeHelper.POINTER.withName("_g_reserved3"),
+        RuntimeHelper.POINTER.withName("_g_reserved4"),
+        RuntimeHelper.POINTER.withName("_g_reserved5")
+    ).withName("_GCancellableClass");
 }
 
 

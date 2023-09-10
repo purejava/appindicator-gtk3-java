@@ -3,59 +3,33 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$695 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$695() {}
-    static final FunctionDescriptor g_menu_model_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_menu_model_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_menu_model_get_type",
-        constants$695.g_menu_model_get_type$FUNC
-    );
-    static final FunctionDescriptor g_menu_model_is_mutable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_model_is_mutable$MH = RuntimeHelper.downcallHandle(
-        "g_menu_model_is_mutable",
-        constants$695.g_menu_model_is_mutable$FUNC
-    );
-    static final FunctionDescriptor g_menu_model_get_n_items$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_model_get_n_items$MH = RuntimeHelper.downcallHandle(
-        "g_menu_model_get_n_items",
-        constants$695.g_menu_model_get_n_items$FUNC
-    );
-    static final FunctionDescriptor g_menu_model_iterate_item_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_menu_model_iterate_item_attributes$MH = RuntimeHelper.downcallHandle(
-        "g_menu_model_iterate_item_attributes",
-        constants$695.g_menu_model_iterate_item_attributes$FUNC
-    );
-    static final FunctionDescriptor g_menu_model_get_item_attribute_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_model_get_item_attribute_value$MH = RuntimeHelper.downcallHandle(
-        "g_menu_model_get_item_attribute_value",
-        constants$695.g_menu_model_get_item_attribute_value$FUNC
-    );
-    static final FunctionDescriptor g_menu_model_get_item_attribute$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_menu_model_get_item_attribute$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_menu_model_get_item_attribute",
-        constants$695.g_menu_model_get_item_attribute$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GDatagramBasedSourceFunc.class, "apply", constants$150.const$0);
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("buffer"),
+        JAVA_LONG.withName("size")
+    ).withName("_GInputVector");
+    static final VarHandle const$2 = constants$695.const$1.varHandle(MemoryLayout.PathElement.groupElement("buffer"));
+    static final VarHandle const$3 = constants$695.const$1.varHandle(MemoryLayout.PathElement.groupElement("size"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("address"),
+        RuntimeHelper.POINTER.withName("vectors"),
+        JAVA_INT.withName("num_vectors"),
+        MemoryLayout.paddingLayout(4),
+        JAVA_LONG.withName("bytes_received"),
+        JAVA_INT.withName("flags"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("control_messages"),
+        RuntimeHelper.POINTER.withName("num_control_messages")
+    ).withName("_GInputMessage");
+    static final VarHandle const$5 = constants$695.const$4.varHandle(MemoryLayout.PathElement.groupElement("address"));
 }
 
 

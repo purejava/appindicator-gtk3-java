@@ -3,51 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1110 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1110() {}
-    static final FunctionDescriptor gdk_monitor_get_refresh_rate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_drive_start_flags_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_monitor_get_refresh_rate$MH = RuntimeHelper.downcallHandle(
-        "gdk_monitor_get_refresh_rate",
-        constants$1110.gdk_monitor_get_refresh_rate$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_drive_start_stop_type_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_monitor_get_subpixel_layout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_copy_flags_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_monitor_get_subpixel_layout$MH = RuntimeHelper.downcallHandle(
-        "gdk_monitor_get_subpixel_layout",
-        constants$1110.gdk_monitor_get_subpixel_layout$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_file_monitor_flags_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_monitor_is_primary$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_type_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_monitor_is_primary$MH = RuntimeHelper.downcallHandle(
-        "gdk_monitor_is_primary",
-        constants$1110.gdk_monitor_is_primary$FUNC
-    );
-    static final FunctionDescriptor gdk_display_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gdk_display_get_type$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_type",
-        constants$1110.gdk_display_get_type$FUNC
-    );
-    static final FunctionDescriptor gdk_display_open$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_open$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_open",
-        constants$1110.gdk_display_open$FUNC
-    );
-    static final FunctionDescriptor gdk_display_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_display_get_name$MH = RuntimeHelper.downcallHandle(
-        "gdk_display_get_name",
-        constants$1110.gdk_display_get_name$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_filesystem_preview_type_get_type",
+        constants$3.const$5
     );
 }
 

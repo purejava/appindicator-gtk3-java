@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * int (*GFileReadMoreCallback)(char* file_contents,long file_size,void* callback_data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GFileReadMoreCallback {
 
     int apply(java.lang.foreign.MemorySegment file_contents, long file_size, java.lang.foreign.MemorySegment callback_data);
-    static MemorySegment allocate(GFileReadMoreCallback fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$469.GFileReadMoreCallback_UP$MH, fi, constants$469.GFileReadMoreCallback$FUNC, scope);
+    static MemorySegment allocate(GFileReadMoreCallback fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$693.const$4, fi, constants$62.const$2, scope);
     }
-    static GFileReadMoreCallback ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GFileReadMoreCallback ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _file_contents, long _file_size, java.lang.foreign.MemorySegment _callback_data) -> {
             try {
-                return (int)constants$469.GFileReadMoreCallback_DOWN$MH.invokeExact(symbol, _file_contents, _file_size, _callback_data);
+                return (int)constants$693.const$5.invokeExact(symbol, _file_contents, _file_size, _callback_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

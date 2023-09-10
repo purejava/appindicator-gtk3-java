@@ -3,65 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$158 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$158() {}
-    static final FunctionDescriptor g_hook_insert_before$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_date_time_to_unix",
+        constants$4.const$0
     );
-    static final MethodHandle g_hook_insert_before$MH = RuntimeHelper.downcallHandle(
-        "g_hook_insert_before",
-        constants$158.g_hook_insert_before$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_date_time_to_timeval",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_hook_insert_sorted$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_date_time_get_utc_offset",
+        constants$4.const$0
     );
-    static final MethodHandle g_hook_insert_sorted$MH = RuntimeHelper.downcallHandle(
-        "g_hook_insert_sorted",
-        constants$158.g_hook_insert_sorted$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_date_time_get_timezone",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_hook_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_date_time_get_timezone_abbreviation",
+        constants$5.const$2
     );
-    static final MethodHandle g_hook_get$MH = RuntimeHelper.downcallHandle(
-        "g_hook_get",
-        constants$158.g_hook_get$FUNC
-    );
-    static final FunctionDescriptor g_hook_find$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hook_find$MH = RuntimeHelper.downcallHandle(
-        "g_hook_find",
-        constants$158.g_hook_find$FUNC
-    );
-    static final FunctionDescriptor g_hook_find_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hook_find_data$MH = RuntimeHelper.downcallHandle(
-        "g_hook_find_data",
-        constants$158.g_hook_find_data$FUNC
-    );
-    static final FunctionDescriptor g_hook_find_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hook_find_func$MH = RuntimeHelper.downcallHandle(
-        "g_hook_find_func",
-        constants$158.g_hook_find_func$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_date_time_is_daylight_savings",
+        constants$10.const$5
     );
 }
 

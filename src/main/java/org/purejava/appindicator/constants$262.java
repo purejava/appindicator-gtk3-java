@@ -3,57 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$262 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$262() {}
-    static final FunctionDescriptor g_log_structured_standard$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GSourceFuncs.closure_marshal.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$260.const$1.varHandle(MemoryLayout.PathElement.groupElement("closure_marshal"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_main_context_new",
+        constants$35.const$2
     );
-    static final MethodHandle g_log_structured_standard$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_log_structured_standard",
-        constants$262.g_log_structured_standard$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_main_context_new_with_flags",
+        constants$24.const$0
     );
-    static final FunctionDescriptor GPrintFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_main_context_ref",
+        constants$5.const$2
     );
-    static final FunctionDescriptor GPrintFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GPrintFunc_UP$MH = RuntimeHelper.upcallHandle(GPrintFunc.class, "apply", constants$262.GPrintFunc_UP$FUNC);
-    static final FunctionDescriptor GPrintFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GPrintFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$262.GPrintFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_print$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_print$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_print",
-        constants$262.g_print$FUNC
-    );
-    static final FunctionDescriptor g_set_print_handler$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_set_print_handler$MH = RuntimeHelper.downcallHandle(
-        "g_set_print_handler",
-        constants$262.g_set_print_handler$FUNC
-    );
-    static final FunctionDescriptor g_printerr$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_printerr$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_printerr",
-        constants$262.g_printerr$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_main_context_unref",
+        constants$13.const$1
     );
 }
 

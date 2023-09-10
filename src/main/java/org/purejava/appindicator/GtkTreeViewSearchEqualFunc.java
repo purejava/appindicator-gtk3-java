@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * int (*GtkTreeViewSearchEqualFunc)(struct _GtkTreeModel* model,int column,char* key,struct _GtkTreeIter* iter,void* search_data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GtkTreeViewSearchEqualFunc {
 
     int apply(java.lang.foreign.MemorySegment model, int column, java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment search_data);
-    static MemorySegment allocate(GtkTreeViewSearchEqualFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$1463.GtkTreeViewSearchEqualFunc_UP$MH, fi, constants$1463.GtkTreeViewSearchEqualFunc$FUNC, scope);
+    static MemorySegment allocate(GtkTreeViewSearchEqualFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$2474.const$2, fi, constants$373.const$2, scope);
     }
-    static GtkTreeViewSearchEqualFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GtkTreeViewSearchEqualFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _model, int _column, java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _search_data) -> {
             try {
-                return (int)constants$1463.GtkTreeViewSearchEqualFunc_DOWN$MH.invokeExact(symbol, _model, _column, _key, _iter, _search_data);
+                return (int)constants$1427.const$2.invokeExact(symbol, _model, _column, _key, _iter, _search_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -3,55 +3,41 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1345 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1345() {}
-    static final FunctionDescriptor gtk_accel_label_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GThreadedSocketServiceClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1343.const$1.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    MemoryLayout.structLayout(
+                        RuntimeHelper.POINTER.withName("g_class")
+                    ).withName("g_type_instance"),
+                    JAVA_INT.withName("ref_count"),
+                    MemoryLayout.paddingLayout(4),
+                    RuntimeHelper.POINTER.withName("qdata")
+                ).withName("parent_instance"),
+                RuntimeHelper.POINTER.withName("priv")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GThreadedSocketService");
+    static final VarHandle const$3 = constants$1345.const$2.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_threaded_socket_service_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_accel_label_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_new",
-        constants$1345.gtk_accel_label_new$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_label_get_accel_widget$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_label_get_accel_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_get_accel_widget",
-        constants$1345.gtk_accel_label_get_accel_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_label_get_accel_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_label_get_accel_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_get_accel_width",
-        constants$1345.gtk_accel_label_get_accel_width$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_label_set_accel_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_label_set_accel_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_set_accel_widget",
-        constants$1345.gtk_accel_label_set_accel_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_label_set_accel_closure$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_label_set_accel_closure$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_set_accel_closure",
-        constants$1345.gtk_accel_label_set_accel_closure$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_label_refetch$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_label_refetch$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_label_refetch",
-        constants$1345.gtk_accel_label_refetch$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_threaded_socket_service_new",
+        constants$24.const$0
     );
 }
 

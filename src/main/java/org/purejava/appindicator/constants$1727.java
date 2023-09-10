@@ -3,64 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1727 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1727() {}
-    static final FunctionDescriptor gtk_page_setup_get_page_height$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_add_finish_callback",
+        constants$12.const$2
     );
-    static final MethodHandle gtk_page_setup_get_page_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_get_page_height",
-        constants$1727.gtk_page_setup_get_page_height$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(cairo_surface_observer_print$write_func.class, "apply", constants$62.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_print",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gtk_page_setup_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_elapsed",
+        constants$67.const$0
     );
-    static final MethodHandle gtk_page_setup_new_from_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_new_from_file",
-        constants$1727.gtk_page_setup_new_from_file$FUNC
-    );
-    static final FunctionDescriptor gtk_page_setup_load_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_page_setup_load_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_load_file",
-        constants$1727.gtk_page_setup_load_file$FUNC
-    );
-    static final FunctionDescriptor gtk_page_setup_to_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_page_setup_to_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_to_file",
-        constants$1727.gtk_page_setup_to_file$FUNC
-    );
-    static final FunctionDescriptor gtk_page_setup_new_from_key_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_page_setup_new_from_key_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_new_from_key_file",
-        constants$1727.gtk_page_setup_new_from_key_file$FUNC
-    );
-    static final FunctionDescriptor gtk_page_setup_load_key_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_page_setup_load_key_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_load_key_file",
-        constants$1727.gtk_page_setup_load_key_file$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(cairo_device_observer_print$write_func.class, "apply", constants$62.const$0);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_device_observer_print",
+        constants$12.const$2
     );
 }
 

@@ -3,56 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$462 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$462() {}
-    static final FunctionDescriptor g_value_set_char$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
-    );
-    static final MethodHandle g_value_set_char$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_char",
-        constants$462.g_value_set_char$FUNC
-    );
-    static final FunctionDescriptor g_value_get_char$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_get_char$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_char",
-        constants$462.g_value_get_char$FUNC
-    );
-    static final FunctionDescriptor g_value_set_schar$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
-    );
-    static final MethodHandle g_value_set_schar$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_schar",
-        constants$462.g_value_set_schar$FUNC
-    );
-    static final FunctionDescriptor g_value_get_schar$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_get_schar$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_schar",
-        constants$462.g_value_get_schar$FUNC
-    );
-    static final FunctionDescriptor g_value_set_uchar$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
-    );
-    static final MethodHandle g_value_set_uchar$MH = RuntimeHelper.downcallHandle(
-        "g_value_set_uchar",
-        constants$462.g_value_set_uchar$FUNC
-    );
-    static final FunctionDescriptor g_value_get_uchar$FUNC = FunctionDescriptor.of(Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_value_get_uchar$MH = RuntimeHelper.downcallHandle(
-        "g_value_get_uchar",
-        constants$462.g_value_get_uchar$FUNC
+    static final VarHandle const$0 = constants$461.const$2.varHandle(MemoryLayout.PathElement.groupElement("n_nums"));
+    static final VarHandle const$1 = constants$461.const$2.varHandle(MemoryLayout.PathElement.groupElement("nums"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        RuntimeHelper.POINTER.withName("data"),
+        RuntimeHelper.POINTER.withName("msgs")
+    ).withName("GTestLogBuffer");
+    static final VarHandle const$3 = constants$462.const$2.varHandle(MemoryLayout.PathElement.groupElement("data"));
+    static final VarHandle const$4 = constants$462.const$2.varHandle(MemoryLayout.PathElement.groupElement("msgs"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_test_log_type_name",
+        constants$24.const$0
     );
 }
 

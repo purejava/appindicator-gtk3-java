@@ -4,47 +4,35 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 final class constants$352 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$352() {}
-    static final OfInt g_thread_use_default_impl$LAYOUT = Constants$root.C_INT$LAYOUT;
-    static final VarHandle g_thread_use_default_impl$VH = constants$352.g_thread_use_default_impl$LAYOUT.varHandle();
-    static final MemorySegment g_thread_use_default_impl$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_thread_use_default_impl", constants$352.g_thread_use_default_impl$LAYOUT);
-    static final FunctionDescriptor g_thread_gettime$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final FunctionDescriptor g_thread_gettime_UP$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_thread_gettime_UP$MH = RuntimeHelper.upcallHandle(g_thread_gettime.class, "apply", constants$352.g_thread_gettime_UP$FUNC);
-    static final FunctionDescriptor g_thread_gettime_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_thread_gettime_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$352.g_thread_gettime_DOWN$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_new_uint64",
+        constants$63.const$3
     );
-    static final OfAddress g_thread_gettime$LAYOUT = Constants$root.C_POINTER$LAYOUT;
-    static final VarHandle g_thread_gettime$VH = constants$352.g_thread_gettime$LAYOUT.varHandle();
-    static final MemorySegment g_thread_gettime$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_thread_gettime", constants$352.g_thread_gettime$LAYOUT);
-    static final FunctionDescriptor g_thread_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_variant_new_handle",
+        constants$24.const$0
     );
-    static final MethodHandle g_thread_create$MH = RuntimeHelper.downcallHandle(
-        "g_thread_create",
-        constants$352.g_thread_create$FUNC
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor g_thread_create_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_variant_new_double",
+        constants$352.const$2
     );
-    static final MethodHandle g_thread_create_full$MH = RuntimeHelper.downcallHandle(
-        "g_thread_create_full",
-        constants$352.g_thread_create_full$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_variant_new_string",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_variant_new_take_string",
+        constants$5.const$2
     );
 }
 

@@ -3,73 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$586 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$586() {}
-    static final FunctionDescriptor g_dbus_object_manager_get_object$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_manager_get_object$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_get_object",
-        constants$586.g_dbus_object_manager_get_object$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_get_interface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_manager_get_interface$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_get_interface",
-        constants$586.g_dbus_object_manager_get_interface$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_client_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_object_manager_client_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_get_type",
-        constants$586.g_dbus_object_manager_client_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_client_new$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_manager_client_new$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_new",
-        constants$586.g_dbus_object_manager_client_new$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_client_new_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_manager_client_new_finish$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_new_finish",
-        constants$586.g_dbus_object_manager_client_new_finish$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_client_new_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_manager_client_new_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_client_new_sync",
-        constants$586.g_dbus_object_manager_client_new_sync$FUNC
-    );
+    static final VarHandle const$0 = constants$585.const$3.varHandle(MemoryLayout.PathElement.groupElement("notify"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.paddingLayout(8),
+        RuntimeHelper.POINTER.withName("marshal"),
+        RuntimeHelper.POINTER.withName("data"),
+        RuntimeHelper.POINTER.withName("notifiers")
+    ).withName("_GClosure");
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GClosure.marshal.class, "apply", constants$584.const$3);
+    static final VarHandle const$3 = constants$586.const$1.varHandle(MemoryLayout.PathElement.groupElement("marshal"));
+    static final VarHandle const$4 = constants$586.const$1.varHandle(MemoryLayout.PathElement.groupElement("data"));
+    static final VarHandle const$5 = constants$586.const$1.varHandle(MemoryLayout.PathElement.groupElement("notifiers"));
 }
 
 

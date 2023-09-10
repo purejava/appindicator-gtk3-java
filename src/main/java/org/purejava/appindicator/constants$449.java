@@ -3,55 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$449 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$449() {}
-    static final FunctionDescriptor g_enum_register_static$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GTestFixtureFunc.class, "apply", constants$13.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_strcmp0",
+        constants$9.const$0
     );
-    static final MethodHandle g_enum_register_static$MH = RuntimeHelper.downcallHandle(
-        "g_enum_register_static",
-        constants$449.g_enum_register_static$FUNC
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        JAVA_DOUBLE,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_flags_register_static$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandleVariadic(
+        "g_test_minimized_result",
+        constants$449.const$2
     );
-    static final MethodHandle g_flags_register_static$MH = RuntimeHelper.downcallHandle(
-        "g_flags_register_static",
-        constants$449.g_flags_register_static$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandleVariadic(
+        "g_test_maximized_result",
+        constants$449.const$2
     );
-    static final FunctionDescriptor g_enum_complete_type_info$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_enum_complete_type_info$MH = RuntimeHelper.downcallHandle(
-        "g_enum_complete_type_info",
-        constants$449.g_enum_complete_type_info$FUNC
-    );
-    static final FunctionDescriptor g_flags_complete_type_info$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_flags_complete_type_info$MH = RuntimeHelper.downcallHandle(
-        "g_flags_complete_type_info",
-        constants$449.g_flags_complete_type_info$FUNC
-    );
-    static final FunctionDescriptor g_unicode_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_unicode_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_unicode_type_get_type",
-        constants$449.g_unicode_type_get_type$FUNC
-    );
-    static final FunctionDescriptor g_unicode_break_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_unicode_break_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_unicode_break_type_get_type",
-        constants$449.g_unicode_break_type_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "g_test_init",
+        constants$13.const$4
     );
 }
 

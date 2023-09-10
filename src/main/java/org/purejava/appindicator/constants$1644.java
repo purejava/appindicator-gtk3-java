@@ -3,55 +3,33 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1644 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1644() {}
-    static final FunctionDescriptor gtk_icon_theme_list_icons$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$1043.const$2
     );
-    static final MethodHandle gtk_icon_theme_list_icons$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_list_icons",
-        constants$1644.gtk_icon_theme_list_icons$FUNC
+    static final VarHandle const$1 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("draw_shape"));
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE,
+        JAVA_DOUBLE
     );
-    static final FunctionDescriptor gtk_icon_theme_list_contexts$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_PangoRendererClass.draw_trapezoid.class, "apply", constants$1644.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$1644.const$2
     );
-    static final MethodHandle gtk_icon_theme_list_contexts$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_list_contexts",
-        constants$1644.gtk_icon_theme_list_contexts$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_get_example_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_get_example_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_get_example_icon_name",
-        constants$1644.gtk_icon_theme_get_example_icon_name$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_rescan_if_needed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_rescan_if_needed$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_rescan_if_needed",
-        constants$1644.gtk_icon_theme_rescan_if_needed$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_theme_add_builtin_icon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_theme_add_builtin_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_theme_add_builtin_icon",
-        constants$1644.gtk_icon_theme_add_builtin_icon$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_info_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_icon_info_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_info_get_type",
-        constants$1644.gtk_icon_info_get_type$FUNC
-    );
+    static final VarHandle const$5 = constants$1641.const$4.varHandle(MemoryLayout.PathElement.groupElement("draw_trapezoid"));
 }
 
 

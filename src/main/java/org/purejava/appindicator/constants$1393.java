@@ -3,56 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1393 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1393() {}
-    static final FunctionDescriptor gtk_tree_view_column_get_max_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_get_max_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_max_width",
-        constants$1393.gtk_tree_view_column_get_max_width$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_clicked$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_clicked$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_clicked",
-        constants$1393.gtk_tree_view_column_clicked$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_set_title$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_set_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_title",
-        constants$1393.gtk_tree_view_column_set_title$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_get_title$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_title",
-        constants$1393.gtk_tree_view_column_get_title$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_set_expand$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_set_expand$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_set_expand",
-        constants$1393.gtk_tree_view_column_set_expand$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_column_get_expand$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_column_get_expand$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_column_get_expand",
-        constants$1393.gtk_tree_view_column_get_expand$FUNC
-    );
+    static final VarHandle const$0 = constants$1392.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_file_for_path"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GVfsClass.get_file_for_uri.class, "apply", constants$5.const$5);
+    static final VarHandle const$2 = constants$1392.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_file_for_uri"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GVfsClass.get_supported_uri_schemes.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$1392.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_supported_uri_schemes"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GVfsClass.parse_name.class, "apply", constants$5.const$5);
 }
 
 

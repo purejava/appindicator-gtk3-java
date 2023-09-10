@@ -3,51 +3,36 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$63 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$63() {}
-    static final FunctionDescriptor g_thread_yield$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle g_thread_yield$MH = RuntimeHelper.downcallHandle(
-        "g_thread_yield",
-        constants$63.g_thread_yield$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_nullify_pointer",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_mutex_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT
     );
-    static final MethodHandle g_mutex_init$MH = RuntimeHelper.downcallHandle(
-        "g_mutex_init",
-        constants$63.g_mutex_init$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_format_size_full",
+        constants$63.const$1
     );
-    static final FunctionDescriptor g_mutex_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final MethodHandle g_mutex_clear$MH = RuntimeHelper.downcallHandle(
-        "g_mutex_clear",
-        constants$63.g_mutex_clear$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_format_size",
+        constants$63.const$3
     );
-    static final FunctionDescriptor g_mutex_lock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mutex_lock$MH = RuntimeHelper.downcallHandle(
-        "g_mutex_lock",
-        constants$63.g_mutex_lock$FUNC
-    );
-    static final FunctionDescriptor g_mutex_trylock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mutex_trylock$MH = RuntimeHelper.downcallHandle(
-        "g_mutex_trylock",
-        constants$63.g_mutex_trylock$FUNC
-    );
-    static final FunctionDescriptor g_mutex_unlock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mutex_unlock$MH = RuntimeHelper.downcallHandle(
-        "g_mutex_unlock",
-        constants$63.g_mutex_unlock$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_format_size_for_display",
+        constants$63.const$3
     );
 }
 

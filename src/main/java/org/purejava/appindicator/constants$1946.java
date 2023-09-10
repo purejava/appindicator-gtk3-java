@@ -3,56 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1946 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1946() {}
-    static final FunctionDescriptor gtk_radio_action_get_group$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_threads_add_timeout_seconds_full",
+        constants$277.const$2
     );
-    static final MethodHandle gtk_radio_action_get_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_radio_action_get_group",
-        constants$1946.gtk_radio_action_get_group$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(gdk_threads_add_timeout_seconds$function.class, "apply", constants$10.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_threads_add_timeout_seconds",
+        constants$10.const$3
     );
-    static final FunctionDescriptor gtk_radio_action_set_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_radio_action_set_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_radio_action_set_group",
-        constants$1946.gtk_radio_action_set_group$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_best_depth",
+        constants$83.const$1
     );
-    static final FunctionDescriptor gtk_radio_action_join_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_radio_action_join_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_radio_action_join_group",
-        constants$1946.gtk_radio_action_join_group$FUNC
-    );
-    static final FunctionDescriptor gtk_radio_action_get_current_value$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_radio_action_get_current_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_radio_action_get_current_value",
-        constants$1946.gtk_radio_action_get_current_value$FUNC
-    );
-    static final FunctionDescriptor gtk_radio_action_set_current_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_radio_action_set_current_value$MH = RuntimeHelper.downcallHandle(
-        "gtk_radio_action_set_current_value",
-        constants$1946.gtk_radio_action_set_current_value$FUNC
-    );
-    static final FunctionDescriptor _gtk_rc_parse_widget_class_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle _gtk_rc_parse_widget_class_path$MH = RuntimeHelper.downcallHandle(
-        "_gtk_rc_parse_widget_class_path",
-        constants$1946._gtk_rc_parse_widget_class_path$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_visual_get_best_type",
+        constants$83.const$1
     );
 }
 

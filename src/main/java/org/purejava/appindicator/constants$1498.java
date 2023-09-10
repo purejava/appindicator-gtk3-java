@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1498 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1498() {}
-    static final FunctionDescriptor gtk_assistant_get_page_side_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_font_set_user_data",
+        constants$1423.const$1
     );
-    static final MethodHandle gtk_assistant_get_page_side_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_get_page_side_image",
-        constants$1498.gtk_assistant_get_page_side_image$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_font_get_user_data",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_assistant_set_page_complete$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_font_make_immutable",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_assistant_set_page_complete$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_set_page_complete",
-        constants$1498.gtk_assistant_set_page_complete$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_font_is_immutable",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_assistant_get_page_complete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_font_get_serial",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_assistant_get_page_complete$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_get_page_complete",
-        constants$1498.gtk_assistant_get_page_complete$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_add_action_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_add_action_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_add_action_widget",
-        constants$1498.gtk_assistant_add_action_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_remove_action_widget$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_remove_action_widget$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_remove_action_widget",
-        constants$1498.gtk_assistant_remove_action_widget$FUNC
-    );
-    static final FunctionDescriptor gtk_assistant_update_buttons_state$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_assistant_update_buttons_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_assistant_update_buttons_state",
-        constants$1498.gtk_assistant_update_buttons_state$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_font_changed",
+        constants$13.const$1
     );
 }
 

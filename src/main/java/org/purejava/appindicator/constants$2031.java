@@ -2,18 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2031 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2031() {}
-    static final MemorySegment GTK_STYLE_CLASS_MENUBAR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("menubar");
-    static final MemorySegment GTK_STYLE_CLASS_MENUITEM$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("menuitem");
-    static final MemorySegment GTK_STYLE_CLASS_TOOLBAR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("toolbar");
-    static final MemorySegment GTK_STYLE_CLASS_PRIMARY_TOOLBAR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("primary-toolbar");
-    static final MemorySegment GTK_STYLE_CLASS_INLINE_TOOLBAR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("inline-toolbar");
-    static final MemorySegment GTK_STYLE_CLASS_STATUSBAR$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("statusbar");
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.get_end_index.class, "apply", constants$10.const$5);
+    static final VarHandle const$1 = constants$2030.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_end_index"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.get_start_index.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$2030.const$1.varHandle(MemoryLayout.PathElement.groupElement("get_start_index"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_AtkHyperlinkClass.is_valid.class, "apply", constants$10.const$5);
+    static final VarHandle const$5 = constants$2030.const$1.varHandle(MemoryLayout.PathElement.groupElement("is_valid"));
 }
 
 

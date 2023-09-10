@@ -3,58 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$341 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$341() {}
-    static final FunctionDescriptor g_uri_peek_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_markup_parse_context_new",
+        constants$180.const$0
     );
-    static final MethodHandle g_uri_peek_scheme$MH = RuntimeHelper.downcallHandle(
-        "g_uri_peek_scheme",
-        constants$341.g_uri_peek_scheme$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_markup_parse_context_ref",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_uri_escape_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_markup_parse_context_unref",
+        constants$13.const$1
     );
-    static final MethodHandle g_uri_escape_string$MH = RuntimeHelper.downcallHandle(
-        "g_uri_escape_string",
-        constants$341.g_uri_escape_string$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_markup_parse_context_free",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_uri_unescape_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_markup_parse_context_parse",
+        constants$27.const$2
     );
-    static final MethodHandle g_uri_unescape_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_uri_unescape_bytes",
-        constants$341.g_uri_unescape_bytes$FUNC
-    );
-    static final FunctionDescriptor g_uri_escape_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uri_escape_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_uri_escape_bytes",
-        constants$341.g_uri_escape_bytes$FUNC
-    );
-    static final FunctionDescriptor g_uuid_string_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_uuid_string_is_valid$MH = RuntimeHelper.downcallHandle(
-        "g_uuid_string_is_valid",
-        constants$341.g_uuid_string_is_valid$FUNC
-    );
-    static final FunctionDescriptor g_uuid_string_random$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_uuid_string_random$MH = RuntimeHelper.downcallHandle(
-        "g_uuid_string_random",
-        constants$341.g_uuid_string_random$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_markup_parse_context_push",
+        constants$14.const$3
     );
 }
 

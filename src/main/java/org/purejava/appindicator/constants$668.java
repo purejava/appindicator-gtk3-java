@@ -3,41 +3,41 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$668 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$668() {}
-    static final FunctionDescriptor g_converter_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_converter_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_converter_flags_get_type",
-        constants$668.g_converter_flags_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_param_spec_int64",
+        constants$667.const$3
     );
-    static final FunctionDescriptor g_converter_result_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_converter_result_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_converter_result_get_type",
-        constants$668.g_converter_result_get_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_param_spec_uint64",
+        constants$667.const$3
     );
-    static final FunctionDescriptor g_data_stream_byte_order_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_data_stream_byte_order_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_data_stream_byte_order_get_type",
-        constants$668.g_data_stream_byte_order_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_param_spec_unichar",
+        constants$666.const$4
     );
-    static final FunctionDescriptor g_data_stream_newline_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_data_stream_newline_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_data_stream_newline_type_get_type",
-        constants$668.g_data_stream_newline_type_get_type$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final FunctionDescriptor g_file_attribute_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_attribute_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_attribute_type_get_type",
-        constants$668.g_file_attribute_type_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_param_spec_enum",
+        constants$668.const$3
     );
-    static final FunctionDescriptor g_file_attribute_info_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_attribute_info_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_attribute_info_flags_get_type",
-        constants$668.g_file_attribute_info_flags_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_param_spec_flags",
+        constants$668.const$3
     );
 }
 

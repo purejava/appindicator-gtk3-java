@@ -3,57 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1479 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1479() {}
-    static final FunctionDescriptor gtk_tree_view_set_rubber_banding$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_font_get_glyph_origin_func_t.class, "apply", constants$1243.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_get_glyph_h_origin_func_t.class, "apply", constants$1243.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_font_get_glyph_v_origin_func_t.class, "apply", constants$1243.const$0);
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle gtk_tree_view_set_rubber_banding$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_rubber_banding",
-        constants$1479.gtk_tree_view_set_rubber_banding$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_rubber_banding$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_rubber_banding$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_rubber_banding",
-        constants$1479.gtk_tree_view_get_rubber_banding$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_is_rubber_banding_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_is_rubber_banding_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_is_rubber_banding_active",
-        constants$1479.gtk_tree_view_is_rubber_banding_active$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_row_separator_func$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_row_separator_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_row_separator_func",
-        constants$1479.gtk_tree_view_get_row_separator_func$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_set_row_separator_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_set_row_separator_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_set_row_separator_func",
-        constants$1479.gtk_tree_view_set_row_separator_func$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_view_get_grid_lines$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_view_get_grid_lines$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_view_get_grid_lines",
-        constants$1479.gtk_tree_view_get_grid_lines$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_get_glyph_kerning_func_t.class, "apply", constants$1479.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$1479.const$3
     );
 }
 

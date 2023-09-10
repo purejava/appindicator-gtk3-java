@@ -3,53 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$738 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$738() {}
-    static final FunctionDescriptor g_seekable_can_truncate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_seekable_can_truncate$MH = RuntimeHelper.downcallHandle(
-        "g_seekable_can_truncate",
-        constants$738.g_seekable_can_truncate$FUNC
-    );
-    static final FunctionDescriptor g_seekable_truncate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_seekable_truncate$MH = RuntimeHelper.downcallHandle(
-        "g_seekable_truncate",
-        constants$738.g_seekable_truncate$FUNC
-    );
-    static final FunctionDescriptor g_settings_schema_source_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_settings_schema_source_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_source_get_type",
-        constants$738.g_settings_schema_source_get_type$FUNC
-    );
-    static final FunctionDescriptor g_settings_schema_source_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_settings_schema_source_get_default$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_source_get_default",
-        constants$738.g_settings_schema_source_get_default$FUNC
-    );
-    static final FunctionDescriptor g_settings_schema_source_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_schema_source_ref$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_source_ref",
-        constants$738.g_settings_schema_source_ref$FUNC
-    );
-    static final FunctionDescriptor g_settings_schema_source_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_settings_schema_source_unref$MH = RuntimeHelper.downcallHandle(
-        "g_settings_schema_source_unref",
-        constants$738.g_settings_schema_source_unref$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GApplicationClass.command_line.class, "apply", constants$9.const$0);
+    static final VarHandle const$1 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("command_line"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GApplicationClass.local_command_line.class, "apply", constants$12.const$2);
+    static final VarHandle const$3 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("local_command_line"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GApplicationClass.before_emit.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$736.const$4.varHandle(MemoryLayout.PathElement.groupElement("before_emit"));
 }
 
 

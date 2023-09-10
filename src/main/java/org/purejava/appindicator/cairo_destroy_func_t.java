@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*cairo_destroy_func_t)(void* data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface cairo_destroy_func_t {
 
     void apply(java.lang.foreign.MemorySegment display);
-    static MemorySegment allocate(cairo_destroy_func_t fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$995.cairo_destroy_func_t_UP$MH, fi, constants$995.cairo_destroy_func_t$FUNC, scope);
+    static MemorySegment allocate(cairo_destroy_func_t fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$1678.const$2, fi, constants$13.const$1, scope);
     }
-    static cairo_destroy_func_t ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static cairo_destroy_func_t ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$995.cairo_destroy_func_t_DOWN$MH.invokeExact(symbol, _display);
+                constants$13.const$3.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

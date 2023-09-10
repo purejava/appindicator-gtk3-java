@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1099 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1099() {}
-    static final FunctionDescriptor gdk_window_fullscreen_on_monitor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_inet_address_new_loopback",
+        constants$24.const$0
     );
-    static final MethodHandle gdk_window_fullscreen_on_monitor$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_fullscreen_on_monitor",
-        constants$1099.gdk_window_fullscreen_on_monitor$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_inet_address_new_any",
+        constants$24.const$0
     );
-    static final FunctionDescriptor gdk_window_set_fullscreen_mode$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_inet_address_equal",
+        constants$9.const$0
     );
-    static final MethodHandle gdk_window_set_fullscreen_mode$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_fullscreen_mode",
-        constants$1099.gdk_window_set_fullscreen_mode$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_inet_address_to_string",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gdk_window_get_fullscreen_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_inet_address_to_bytes",
+        constants$5.const$2
     );
-    static final MethodHandle gdk_window_get_fullscreen_mode$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_fullscreen_mode",
-        constants$1099.gdk_window_get_fullscreen_mode$FUNC
-    );
-    static final FunctionDescriptor gdk_window_unfullscreen$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_unfullscreen$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_unfullscreen",
-        constants$1099.gdk_window_unfullscreen$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_keep_above$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_keep_above$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_keep_above",
-        constants$1099.gdk_window_set_keep_above$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_keep_below$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_keep_below$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_keep_below",
-        constants$1099.gdk_window_set_keep_below$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_inet_address_get_native_size",
+        constants$4.const$0
     );
 }
 

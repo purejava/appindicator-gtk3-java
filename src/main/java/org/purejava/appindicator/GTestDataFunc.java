@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GTestDataFunc)(void* user_data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GTestDataFunc {
 
     void apply(java.lang.foreign.MemorySegment display);
-    static MemorySegment allocate(GTestDataFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$312.GTestDataFunc_UP$MH, fi, constants$312.GTestDataFunc$FUNC, scope);
+    static MemorySegment allocate(GTestDataFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$448.const$5, fi, constants$13.const$1, scope);
     }
-    static GTestDataFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GTestDataFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _display) -> {
             try {
-                constants$313.GTestDataFunc_DOWN$MH.invokeExact(symbol, _display);
+                constants$13.const$3.invokeExact(symbol, _display);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

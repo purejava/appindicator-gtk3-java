@@ -3,65 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$205 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$205() {}
-    static final FunctionDescriptor g_str_match_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_malloc",
+        constants$63.const$3
     );
-    static final MethodHandle g_str_match_string$MH = RuntimeHelper.downcallHandle(
-        "g_str_match_string",
-        constants$205.g_str_match_string$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_malloc0",
+        constants$63.const$3
     );
-    static final FunctionDescriptor g_strv_contains$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_realloc",
+        constants$21.const$1
     );
-    static final MethodHandle g_strv_contains$MH = RuntimeHelper.downcallHandle(
-        "g_strv_contains",
-        constants$205.g_strv_contains$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_try_malloc",
+        constants$63.const$3
     );
-    static final FunctionDescriptor g_strv_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_try_malloc0",
+        constants$63.const$3
     );
-    static final MethodHandle g_strv_equal$MH = RuntimeHelper.downcallHandle(
-        "g_strv_equal",
-        constants$205.g_strv_equal$FUNC
-    );
-    static final FunctionDescriptor g_number_parser_error_quark$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT);
-    static final MethodHandle g_number_parser_error_quark$MH = RuntimeHelper.downcallHandle(
-        "g_number_parser_error_quark",
-        constants$205.g_number_parser_error_quark$FUNC
-    );
-    static final FunctionDescriptor g_ascii_string_to_signed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ascii_string_to_signed$MH = RuntimeHelper.downcallHandle(
-        "g_ascii_string_to_signed",
-        constants$205.g_ascii_string_to_signed$FUNC
-    );
-    static final FunctionDescriptor g_ascii_string_to_unsigned$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ascii_string_to_unsigned$MH = RuntimeHelper.downcallHandle(
-        "g_ascii_string_to_unsigned",
-        constants$205.g_ascii_string_to_unsigned$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_try_realloc",
+        constants$21.const$1
     );
 }
 

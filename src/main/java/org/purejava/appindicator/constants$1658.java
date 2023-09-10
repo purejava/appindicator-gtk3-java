@@ -3,67 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1658 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1658() {}
-    static final FunctionDescriptor gtk_icon_view_unselect_all$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MemorySegment const$0 = RuntimeHelper.lookupGlobalVariable("stdin", RuntimeHelper.POINTER);
+    static final MemorySegment const$1 = RuntimeHelper.lookupGlobalVariable("stdout", RuntimeHelper.POINTER);
+    static final MemorySegment const$2 = RuntimeHelper.lookupGlobalVariable("stderr", RuntimeHelper.POINTER);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "remove",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_icon_view_unselect_all$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_unselect_all",
-        constants$1658.gtk_icon_view_unselect_all$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rename",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gtk_icon_view_item_activated$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle gtk_icon_view_item_activated$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_item_activated",
-        constants$1658.gtk_icon_view_item_activated$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_set_cursor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_set_cursor$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_set_cursor",
-        constants$1658.gtk_icon_view_set_cursor$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_get_cursor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_get_cursor$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_get_cursor",
-        constants$1658.gtk_icon_view_get_cursor$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_scroll_to_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT,
-        Constants$root.C_FLOAT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_scroll_to_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_scroll_to_path",
-        constants$1658.gtk_icon_view_scroll_to_path$FUNC
-    );
-    static final FunctionDescriptor gtk_icon_view_enable_model_drag_source$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_icon_view_enable_model_drag_source$MH = RuntimeHelper.downcallHandle(
-        "gtk_icon_view_enable_model_drag_source",
-        constants$1658.gtk_icon_view_enable_model_drag_source$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "renameat",
+        constants$1658.const$5
     );
 }
 

@@ -3,55 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1536 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1536() {}
-    static final FunctionDescriptor gtk_check_menu_item_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_gravity_get_for_script",
+        constants$816.const$5
     );
-    static final MethodHandle gtk_check_menu_item_new_with_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_new_with_label",
-        constants$1536.gtk_check_menu_item_new_with_label$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final FunctionDescriptor gtk_check_menu_item_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_gravity_get_for_script_and_width",
+        constants$1536.const$1
     );
-    static final MethodHandle gtk_check_menu_item_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_new_with_mnemonic",
-        constants$1536.gtk_check_menu_item_new_with_mnemonic$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_bidi_type_for_unichar",
+        constants$8.const$4
     );
-    static final FunctionDescriptor gtk_check_menu_item_set_active$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_unichar_direction",
+        constants$8.const$4
     );
-    static final MethodHandle gtk_check_menu_item_set_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_set_active",
-        constants$1536.gtk_check_menu_item_set_active$FUNC
-    );
-    static final FunctionDescriptor gtk_check_menu_item_get_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_check_menu_item_get_active$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_get_active",
-        constants$1536.gtk_check_menu_item_get_active$FUNC
-    );
-    static final FunctionDescriptor gtk_check_menu_item_toggled$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_check_menu_item_toggled$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_toggled",
-        constants$1536.gtk_check_menu_item_toggled$FUNC
-    );
-    static final FunctionDescriptor gtk_check_menu_item_set_inconsistent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_check_menu_item_set_inconsistent$MH = RuntimeHelper.downcallHandle(
-        "gtk_check_menu_item_set_inconsistent",
-        constants$1536.gtk_check_menu_item_set_inconsistent$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_find_base_dir",
+        constants$11.const$4
     );
 }
 

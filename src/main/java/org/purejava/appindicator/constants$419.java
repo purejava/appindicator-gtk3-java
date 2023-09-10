@@ -3,65 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$419 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$419() {}
-    static final FunctionDescriptor g_signal_connect_closure$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_match_info_is_partial_match",
+        constants$10.const$5
     );
-    static final MethodHandle g_signal_connect_closure$MH = RuntimeHelper.downcallHandle(
-        "g_signal_connect_closure",
-        constants$419.g_signal_connect_closure$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_match_info_expand_references",
+        constants$23.const$0
     );
-    static final FunctionDescriptor g_signal_connect_data$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_match_info_fetch",
+        constants$21.const$3
     );
-    static final MethodHandle g_signal_connect_data$MH = RuntimeHelper.downcallHandle(
-        "g_signal_connect_data",
-        constants$419.g_signal_connect_data$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_match_info_fetch_pos",
+        constants$11.const$0
     );
-    static final FunctionDescriptor g_signal_handler_block$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_match_info_fetch_named",
+        constants$5.const$5
     );
-    static final MethodHandle g_signal_handler_block$MH = RuntimeHelper.downcallHandle(
-        "g_signal_handler_block",
-        constants$419.g_signal_handler_block$FUNC
-    );
-    static final FunctionDescriptor g_signal_handler_unblock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_signal_handler_unblock$MH = RuntimeHelper.downcallHandle(
-        "g_signal_handler_unblock",
-        constants$419.g_signal_handler_unblock$FUNC
-    );
-    static final FunctionDescriptor g_signal_handler_disconnect$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_signal_handler_disconnect$MH = RuntimeHelper.downcallHandle(
-        "g_signal_handler_disconnect",
-        constants$419.g_signal_handler_disconnect$FUNC
-    );
-    static final FunctionDescriptor g_signal_handler_is_connected$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_signal_handler_is_connected$MH = RuntimeHelper.downcallHandle(
-        "g_signal_handler_is_connected",
-        constants$419.g_signal_handler_is_connected$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_match_info_fetch_named_pos",
+        constants$34.const$5
     );
 }
 

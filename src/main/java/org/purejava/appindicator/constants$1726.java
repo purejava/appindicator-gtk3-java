@@ -3,61 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1726 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1726() {}
-    static final FunctionDescriptor gtk_page_setup_get_right_margin$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_add_stroke_callback",
+        constants$12.const$2
     );
-    static final MethodHandle gtk_page_setup_get_right_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_get_right_margin",
-        constants$1726.gtk_page_setup_get_right_margin$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(cairo_surface_observer_add_glyphs_callback$func.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_add_glyphs_callback",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gtk_page_setup_set_right_margin$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(cairo_surface_observer_add_flush_callback$func.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_surface_observer_add_flush_callback",
+        constants$12.const$2
     );
-    static final MethodHandle gtk_page_setup_set_right_margin$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_set_right_margin",
-        constants$1726.gtk_page_setup_set_right_margin$FUNC
-    );
-    static final FunctionDescriptor gtk_page_setup_set_paper_size_and_default_margins$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_page_setup_set_paper_size_and_default_margins$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_set_paper_size_and_default_margins",
-        constants$1726.gtk_page_setup_set_paper_size_and_default_margins$FUNC
-    );
-    static final FunctionDescriptor gtk_page_setup_get_paper_width$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_page_setup_get_paper_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_get_paper_width",
-        constants$1726.gtk_page_setup_get_paper_width$FUNC
-    );
-    static final FunctionDescriptor gtk_page_setup_get_paper_height$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_page_setup_get_paper_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_get_paper_height",
-        constants$1726.gtk_page_setup_get_paper_height$FUNC
-    );
-    static final FunctionDescriptor gtk_page_setup_get_page_width$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_page_setup_get_page_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_page_setup_get_page_width",
-        constants$1726.gtk_page_setup_get_page_width$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(cairo_surface_observer_add_finish_callback$func.class, "apply", constants$14.const$3);
 }
 
 

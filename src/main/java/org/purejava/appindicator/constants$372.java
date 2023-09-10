@@ -3,54 +3,36 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$372 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$372() {}
-    static final FunctionDescriptor pthread_barrierattr_setpshared$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_LONG,
+        RuntimeHelper.POINTER,
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("__stack"),
+            RuntimeHelper.POINTER.withName("__gr_top"),
+            RuntimeHelper.POINTER.withName("__vr_top"),
+            JAVA_INT.withName("__gr_offs"),
+            JAVA_INT.withName("__vr_offs")
+        ).withName("__va_list")
     );
-    static final MethodHandle pthread_barrierattr_setpshared$MH = RuntimeHelper.downcallHandle(
-        "pthread_barrierattr_setpshared",
-        constants$372.pthread_barrierattr_setpshared$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_printf_string_upper_bound",
+        constants$372.const$0
     );
-    static final FunctionDescriptor pthread_key_create$__destr_function$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GLogFunc.class, "apply", constants$179.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$179.const$1
     );
-    static final FunctionDescriptor pthread_key_create$__destr_function_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_key_create$__destr_function_UP$MH = RuntimeHelper.upcallHandle(pthread_key_create$__destr_function.class, "apply", constants$372.pthread_key_create$__destr_function_UP$FUNC);
-    static final FunctionDescriptor pthread_key_create$__destr_function_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_key_create$__destr_function_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$372.pthread_key_create$__destr_function_DOWN$FUNC
-    );
-    static final FunctionDescriptor pthread_key_create$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_key_create$MH = RuntimeHelper.downcallHandle(
-        "pthread_key_create",
-        constants$372.pthread_key_create$FUNC
-    );
-    static final FunctionDescriptor pthread_key_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pthread_key_delete$MH = RuntimeHelper.downcallHandle(
-        "pthread_key_delete",
-        constants$372.pthread_key_delete$FUNC
-    );
-    static final FunctionDescriptor pthread_getspecific$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pthread_getspecific$MH = RuntimeHelper.downcallHandle(
-        "pthread_getspecific",
-        constants$372.pthread_getspecific$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_log_set_handler$log_func.class, "apply", constants$179.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_log_set_handler",
+        constants$11.const$0
     );
 }
 

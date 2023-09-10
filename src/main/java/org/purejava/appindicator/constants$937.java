@@ -3,58 +3,57 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$937 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$937() {}
-    static final FunctionDescriptor pango_font_map_load_fontset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_debug_controller_set_debug_enabled",
+        constants$40.const$2
     );
-    static final MethodHandle pango_font_map_load_fontset$MH = RuntimeHelper.downcallHandle(
-        "pango_font_map_load_fontset",
-        constants$937.pango_font_map_load_fontset$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_debug_controller_dbus_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor pango_font_map_list_families$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_map_list_families$MH = RuntimeHelper.downcallHandle(
-        "pango_font_map_list_families",
-        constants$937.pango_font_map_list_families$FUNC
-    );
-    static final FunctionDescriptor pango_font_map_get_serial$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_map_get_serial$MH = RuntimeHelper.downcallHandle(
-        "pango_font_map_get_serial",
-        constants$937.pango_font_map_get_serial$FUNC
-    );
-    static final FunctionDescriptor pango_font_map_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_map_changed$MH = RuntimeHelper.downcallHandle(
-        "pango_font_map_changed",
-        constants$937.pango_font_map_changed$FUNC
-    );
-    static final FunctionDescriptor pango_font_map_get_family$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_map_get_family$MH = RuntimeHelper.downcallHandle(
-        "pango_font_map_get_family",
-        constants$937.pango_font_map_get_family$FUNC
-    );
-    static final FunctionDescriptor pango_context_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_context_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_context_get_type",
-        constants$937.pango_context_get_type$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance")
+    ).withName("_GDebugControllerDBus");
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("authorize"),
+        MemoryLayout.sequenceLayout(12, RuntimeHelper.POINTER).withName("padding")
+    ).withName("_GDebugControllerDBusClass");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDebugControllerDBusClass.authorize.class, "apply", constants$9.const$0);
+    static final VarHandle const$5 = constants$937.const$3.varHandle(MemoryLayout.PathElement.groupElement("authorize"));
 }
 
 

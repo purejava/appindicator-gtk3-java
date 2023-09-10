@@ -3,59 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$108 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$108() {}
-    static final FunctionDescriptor g_filename_display_basename$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_once_impl",
+        constants$23.const$0
     );
-    static final MethodHandle g_filename_display_basename$MH = RuntimeHelper.downcallHandle(
-        "g_filename_display_basename",
-        constants$108.g_filename_display_basename$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_once_init_enter",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_uri_list_extract_uris$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_once_init_leave",
+        constants$25.const$3
     );
-    static final MethodHandle g_uri_list_extract_uris$MH = RuntimeHelper.downcallHandle(
-        "g_uri_list_extract_uris",
-        constants$108.g_uri_list_extract_uris$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_get_num_processors",
+        constants$83.const$1
     );
-    static final FunctionDescriptor GDataForeachFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_async_queue_new",
+        constants$35.const$2
     );
-    static final FunctionDescriptor GDataForeachFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GDataForeachFunc_UP$MH = RuntimeHelper.upcallHandle(GDataForeachFunc.class, "apply", constants$108.GDataForeachFunc_UP$FUNC);
-    static final FunctionDescriptor GDataForeachFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GDataForeachFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$108.GDataForeachFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_datalist_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_datalist_init$MH = RuntimeHelper.downcallHandle(
-        "g_datalist_init",
-        constants$108.g_datalist_init$FUNC
-    );
-    static final FunctionDescriptor g_datalist_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_datalist_clear$MH = RuntimeHelper.downcallHandle(
-        "g_datalist_clear",
-        constants$108.g_datalist_clear$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_async_queue_new_full$item_free_func.class, "apply", constants$13.const$1);
 }
 
 

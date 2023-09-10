@@ -3,60 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$723 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$723() {}
-    static final FunctionDescriptor g_pollable_input_stream_read_nonblocking$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pollable_input_stream_read_nonblocking$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_input_stream_read_nonblocking",
-        constants$723.g_pollable_input_stream_read_nonblocking$FUNC
-    );
-    static final FunctionDescriptor g_pollable_output_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_pollable_output_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_output_stream_get_type",
-        constants$723.g_pollable_output_stream_get_type$FUNC
-    );
-    static final FunctionDescriptor g_pollable_output_stream_can_poll$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pollable_output_stream_can_poll$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_output_stream_can_poll",
-        constants$723.g_pollable_output_stream_can_poll$FUNC
-    );
-    static final FunctionDescriptor g_pollable_output_stream_is_writable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pollable_output_stream_is_writable$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_output_stream_is_writable",
-        constants$723.g_pollable_output_stream_is_writable$FUNC
-    );
-    static final FunctionDescriptor g_pollable_output_stream_create_source$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pollable_output_stream_create_source$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_output_stream_create_source",
-        constants$723.g_pollable_output_stream_create_source$FUNC
-    );
-    static final FunctionDescriptor g_pollable_output_stream_write_nonblocking$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pollable_output_stream_write_nonblocking$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_output_stream_write_nonblocking",
-        constants$723.g_pollable_output_stream_write_nonblocking$FUNC
+    static final VarHandle const$0 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_supported_types"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GAppInfoIface.launch_uris_async.class, "apply", constants$338.const$3);
+    static final VarHandle const$2 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("launch_uris_async"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GAppInfoIface.launch_uris_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$4 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("launch_uris_finish"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_app_info_get_type",
+        constants$3.const$5
     );
 }
 

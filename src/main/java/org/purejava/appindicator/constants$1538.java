@@ -3,75 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1538 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1538() {}
-    static final FunctionDescriptor GtkClipboardTextReceivedFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_font_description_equal",
+        constants$9.const$0
     );
-    static final MethodHandle GtkClipboardTextReceivedFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1538.GtkClipboardTextReceivedFunc_DOWN$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_font_description_free",
+        constants$13.const$1
     );
-    static final FunctionDescriptor GtkClipboardRichTextReceivedFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_font_descriptions_free",
+        constants$40.const$2
     );
-    static final FunctionDescriptor GtkClipboardRichTextReceivedFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_font_description_set_family",
+        constants$13.const$4
     );
-    static final MethodHandle GtkClipboardRichTextReceivedFunc_UP$MH = RuntimeHelper.upcallHandle(GtkClipboardRichTextReceivedFunc.class, "apply", constants$1538.GtkClipboardRichTextReceivedFunc_UP$FUNC);
-    static final FunctionDescriptor GtkClipboardRichTextReceivedFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_font_description_set_family_static",
+        constants$13.const$4
     );
-    static final MethodHandle GtkClipboardRichTextReceivedFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1538.GtkClipboardRichTextReceivedFunc_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_font_description_get_family",
+        constants$5.const$2
     );
-    static final FunctionDescriptor GtkClipboardImageReceivedFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkClipboardImageReceivedFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkClipboardImageReceivedFunc_UP$MH = RuntimeHelper.upcallHandle(GtkClipboardImageReceivedFunc.class, "apply", constants$1538.GtkClipboardImageReceivedFunc_UP$FUNC);
-    static final FunctionDescriptor GtkClipboardImageReceivedFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkClipboardImageReceivedFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1538.GtkClipboardImageReceivedFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor GtkClipboardURIReceivedFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkClipboardURIReceivedFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkClipboardURIReceivedFunc_UP$MH = RuntimeHelper.upcallHandle(GtkClipboardURIReceivedFunc.class, "apply", constants$1538.GtkClipboardURIReceivedFunc_UP$FUNC);
 }
 
 

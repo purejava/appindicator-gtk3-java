@@ -3,54 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1552 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1552() {}
-    static final FunctionDescriptor gtk_css_section_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_css_section_unref$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_section_unref",
-        constants$1552.gtk_css_section_unref$FUNC
-    );
-    static final FunctionDescriptor gtk_css_section_get_section_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_css_section_get_section_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_section_get_section_type",
-        constants$1552.gtk_css_section_get_section_type$FUNC
-    );
-    static final FunctionDescriptor gtk_css_section_get_parent$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_css_section_get_parent$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_section_get_parent",
-        constants$1552.gtk_css_section_get_parent$FUNC
-    );
-    static final FunctionDescriptor gtk_css_section_get_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_css_section_get_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_section_get_file",
-        constants$1552.gtk_css_section_get_file$FUNC
-    );
-    static final FunctionDescriptor gtk_css_section_get_start_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_css_section_get_start_line$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_section_get_start_line",
-        constants$1552.gtk_css_section_get_start_line$FUNC
-    );
-    static final FunctionDescriptor gtk_css_section_get_start_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_css_section_get_start_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_css_section_get_start_position",
-        constants$1552.gtk_css_section_get_start_position$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_PangoFontFaceClass.get_family.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$1550.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_family"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_PangoFontFaceClass._pango_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1550.const$3.varHandle(MemoryLayout.PathElement.groupElement("_pango_reserved3"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_PangoFontFaceClass._pango_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1550.const$3.varHandle(MemoryLayout.PathElement.groupElement("_pango_reserved4"));
 }
 
 

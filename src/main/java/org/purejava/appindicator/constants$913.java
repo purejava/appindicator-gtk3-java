@@ -3,54 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$913 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$913() {}
-    static final FunctionDescriptor pango_font_metrics_get_approximate_char_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_metrics_get_approximate_char_width$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_approximate_char_width",
-        constants$913.pango_font_metrics_get_approximate_char_width$FUNC
-    );
-    static final FunctionDescriptor pango_font_metrics_get_approximate_digit_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_metrics_get_approximate_digit_width$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_approximate_digit_width",
-        constants$913.pango_font_metrics_get_approximate_digit_width$FUNC
-    );
-    static final FunctionDescriptor pango_font_metrics_get_underline_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_metrics_get_underline_position$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_underline_position",
-        constants$913.pango_font_metrics_get_underline_position$FUNC
-    );
-    static final FunctionDescriptor pango_font_metrics_get_underline_thickness$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_metrics_get_underline_thickness$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_underline_thickness",
-        constants$913.pango_font_metrics_get_underline_thickness$FUNC
-    );
-    static final FunctionDescriptor pango_font_metrics_get_strikethrough_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_metrics_get_strikethrough_position$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_strikethrough_position",
-        constants$913.pango_font_metrics_get_strikethrough_position$FUNC
-    );
-    static final FunctionDescriptor pango_font_metrics_get_strikethrough_thickness$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_metrics_get_strikethrough_thickness$MH = RuntimeHelper.downcallHandle(
-        "pango_font_metrics_get_strikethrough_thickness",
-        constants$913.pango_font_metrics_get_strikethrough_thickness$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDBusObjectManagerIface.get_interface.class, "apply", constants$23.const$0);
+    static final VarHandle const$1 = constants$911.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_interface"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDBusObjectManagerIface.object_added.class, "apply", constants$13.const$4);
+    static final VarHandle const$3 = constants$911.const$5.varHandle(MemoryLayout.PathElement.groupElement("object_added"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDBusObjectManagerIface.object_removed.class, "apply", constants$13.const$4);
+    static final VarHandle const$5 = constants$911.const$5.varHandle(MemoryLayout.PathElement.groupElement("object_removed"));
 }
 
 

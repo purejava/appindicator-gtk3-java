@@ -3,64 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$255 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$255() {}
-    static final FunctionDescriptor g_variant_dict_lookup$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_clear_slist$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_clear_slist",
+        constants$13.const$4
     );
-    static final MethodHandle g_variant_dict_lookup$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_variant_dict_lookup",
-        constants$255.g_variant_dict_lookup$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GSourceFunc.class, "apply", constants$10.const$5);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(GSourceOnceFunc.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_variant_dict_lookup_value$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_dict_lookup_value$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_lookup_value",
-        constants$255.g_variant_dict_lookup_value$FUNC
-    );
-    static final FunctionDescriptor g_variant_dict_contains$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_dict_contains$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_contains",
-        constants$255.g_variant_dict_contains$FUNC
-    );
-    static final FunctionDescriptor g_variant_dict_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_dict_insert$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_variant_dict_insert",
-        constants$255.g_variant_dict_insert$FUNC
-    );
-    static final FunctionDescriptor g_variant_dict_insert_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_dict_insert_value$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_insert_value",
-        constants$255.g_variant_dict_insert_value$FUNC
-    );
-    static final FunctionDescriptor g_variant_dict_remove$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_dict_remove$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_remove",
-        constants$255.g_variant_dict_remove$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GChildWatchFunc.class, "apply", constants$255.const$4);
 }
 
 

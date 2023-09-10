@@ -3,41 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1881 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1881() {}
-    static final FunctionDescriptor gtk_dest_defaults_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_dest_defaults_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_dest_defaults_get_type",
-        constants$1881.gtk_dest_defaults_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_width",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_entry_icon_position_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_entry_icon_position_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_icon_position_get_type",
-        constants$1881.gtk_entry_icon_position_get_type$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_height",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_align_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_align_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_align_get_type",
-        constants$1881.gtk_align_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_rowstride",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_arrow_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_arrow_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_arrow_type_get_type",
-        constants$1881.gtk_arrow_type_get_type$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_byte_length",
+        constants$4.const$0
     );
-    static final FunctionDescriptor gtk_baseline_position_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_baseline_position_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_baseline_position_get_type",
-        constants$1881.gtk_baseline_position_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_get_pixels_with_length",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_delete_type_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_delete_type_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_delete_type_get_type",
-        constants$1881.gtk_delete_type_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_read_pixels",
+        constants$5.const$2
     );
 }
 

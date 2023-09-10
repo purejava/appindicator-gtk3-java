@@ -3,51 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$327 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$327() {}
-    static final FunctionDescriptor g_timer_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_timer_new$MH = RuntimeHelper.downcallHandle(
-        "g_timer_new",
-        constants$327.g_timer_new$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_key_file_ref",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_timer_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_key_file_unref",
+        constants$13.const$1
     );
-    static final MethodHandle g_timer_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_timer_destroy",
-        constants$327.g_timer_destroy$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_key_file_free",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_timer_start$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_key_file_set_list_separator",
+        constants$188.const$5
     );
-    static final MethodHandle g_timer_start$MH = RuntimeHelper.downcallHandle(
-        "g_timer_start",
-        constants$327.g_timer_start$FUNC
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_timer_stop$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_timer_stop$MH = RuntimeHelper.downcallHandle(
-        "g_timer_stop",
-        constants$327.g_timer_stop$FUNC
-    );
-    static final FunctionDescriptor g_timer_reset$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_timer_reset$MH = RuntimeHelper.downcallHandle(
-        "g_timer_reset",
-        constants$327.g_timer_reset$FUNC
-    );
-    static final FunctionDescriptor g_timer_continue$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_timer_continue$MH = RuntimeHelper.downcallHandle(
-        "g_timer_continue",
-        constants$327.g_timer_continue$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_key_file_load_from_file",
+        constants$327.const$4
     );
 }
 

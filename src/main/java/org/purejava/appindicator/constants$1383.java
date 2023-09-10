@@ -3,66 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1383 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1383() {}
-    static final FunctionDescriptor gtk_cell_area_get_current_path_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_unix_connection_receive_fd",
+        constants$12.const$2
     );
-    static final MethodHandle gtk_cell_area_get_current_path_string$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_get_current_path_string",
-        constants$1383.gtk_cell_area_get_current_path_string$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_unix_connection_send_credentials",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gtk_cell_area_apply_attributes$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_unix_connection_send_credentials_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_unix_connection_send_credentials_async",
+        constants$42.const$1
     );
-    static final MethodHandle gtk_cell_area_apply_attributes$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_apply_attributes",
-        constants$1383.gtk_cell_area_apply_attributes$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_unix_connection_send_credentials_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gtk_cell_area_attribute_connect$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_attribute_connect$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_attribute_connect",
-        constants$1383.gtk_cell_area_attribute_connect$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_attribute_disconnect$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_attribute_disconnect$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_attribute_disconnect",
-        constants$1383.gtk_cell_area_attribute_disconnect$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_attribute_get_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_attribute_get_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_attribute_get_column",
-        constants$1383.gtk_cell_area_attribute_get_column$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_area_class_install_cell_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_cell_area_class_install_cell_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_class_install_cell_property",
-        constants$1383.gtk_cell_area_class_install_cell_property$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_unix_connection_receive_credentials",
+        constants$23.const$0
     );
 }
 

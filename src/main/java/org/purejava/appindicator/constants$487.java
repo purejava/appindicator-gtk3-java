@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$487 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$487() {}
-    static final FunctionDescriptor g_application_id_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_uri_error_quark",
+        constants$83.const$1
     );
-    static final MethodHandle g_application_id_is_valid$MH = RuntimeHelper.downcallHandle(
-        "g_application_id_is_valid",
-        constants$487.g_application_id_is_valid$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_uri_unescape_string",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_application_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_uri_unescape_segment",
+        constants$23.const$0
     );
-    static final MethodHandle g_application_new$MH = RuntimeHelper.downcallHandle(
-        "g_application_new",
-        constants$487.g_application_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_uri_parse_scheme",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_application_get_application_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_uri_peek_scheme",
+        constants$5.const$2
     );
-    static final MethodHandle g_application_get_application_id$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_application_id",
-        constants$487.g_application_get_application_id$FUNC
-    );
-    static final FunctionDescriptor g_application_set_application_id$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_set_application_id$MH = RuntimeHelper.downcallHandle(
-        "g_application_set_application_id",
-        constants$487.g_application_set_application_id$FUNC
-    );
-    static final FunctionDescriptor g_application_get_dbus_connection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_get_dbus_connection$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_dbus_connection",
-        constants$487.g_application_get_dbus_connection$FUNC
-    );
-    static final FunctionDescriptor g_application_get_dbus_object_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_application_get_dbus_object_path$MH = RuntimeHelper.downcallHandle(
-        "g_application_get_dbus_object_path",
-        constants$487.g_application_get_dbus_object_path$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_uri_escape_string",
+        constants$32.const$3
     );
 }
 

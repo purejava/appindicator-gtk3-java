@@ -3,58 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$824 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$824() {}
-    static final FunctionDescriptor GVfsFileLookupFunc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "setgid",
+        constants$8.const$4
     );
-    static final FunctionDescriptor GVfsFileLookupFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "setregid",
+        constants$123.const$5
     );
-    static final MethodHandle GVfsFileLookupFunc_UP$MH = RuntimeHelper.upcallHandle(GVfsFileLookupFunc.class, "apply", constants$824.GVfsFileLookupFunc_UP$FUNC);
-    static final FunctionDescriptor GVfsFileLookupFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "setegid",
+        constants$8.const$4
     );
-    static final MethodHandle GVfsFileLookupFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$824.GVfsFileLookupFunc_DOWN$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "fork",
+        constants$83.const$1
     );
-    static final FunctionDescriptor g_vfs_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_vfs_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_get_type",
-        constants$824.g_vfs_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "vfork",
+        constants$83.const$1
     );
-    static final FunctionDescriptor g_vfs_is_active$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_vfs_is_active$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_is_active",
-        constants$824.g_vfs_is_active$FUNC
-    );
-    static final FunctionDescriptor g_vfs_get_file_for_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_vfs_get_file_for_path$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_get_file_for_path",
-        constants$824.g_vfs_get_file_for_path$FUNC
-    );
-    static final FunctionDescriptor g_vfs_get_file_for_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_vfs_get_file_for_uri$MH = RuntimeHelper.downcallHandle(
-        "g_vfs_get_file_for_uri",
-        constants$824.g_vfs_get_file_for_uri$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "ttyname",
+        constants$24.const$0
     );
 }
 

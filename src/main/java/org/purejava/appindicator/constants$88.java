@@ -3,56 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$88 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$88() {}
-    static final FunctionDescriptor g_date_time_get_ymd$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "realloc",
+        constants$21.const$1
     );
-    static final MethodHandle g_date_time_get_ymd$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_ymd",
-        constants$88.g_date_time_get_ymd$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "free",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_date_time_get_year$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final MethodHandle g_date_time_get_year$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_year",
-        constants$88.g_date_time_get_year$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "reallocarray",
+        constants$88.const$2
     );
-    static final FunctionDescriptor g_date_time_get_month$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "alloca",
+        constants$63.const$3
     );
-    static final MethodHandle g_date_time_get_month$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_month",
-        constants$88.g_date_time_get_month$FUNC
-    );
-    static final FunctionDescriptor g_date_time_get_day_of_month$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_get_day_of_month$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_day_of_month",
-        constants$88.g_date_time_get_day_of_month$FUNC
-    );
-    static final FunctionDescriptor g_date_time_get_week_numbering_year$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_get_week_numbering_year$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_week_numbering_year",
-        constants$88.g_date_time_get_week_numbering_year$FUNC
-    );
-    static final FunctionDescriptor g_date_time_get_week_of_year$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_get_week_of_year$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_get_week_of_year",
-        constants$88.g_date_time_get_week_of_year$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "valloc",
+        constants$63.const$3
     );
 }
 

@@ -3,67 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$785 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$785() {}
-    static final FunctionDescriptor g_subprocess_wait$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GOutputStreamClass._g_reserved7.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved7"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GOutputStreamClass._g_reserved8.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$778.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved8"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_output_stream_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_subprocess_wait$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_wait",
-        constants$785.g_subprocess_wait$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_wait_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_wait_async$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_wait_async",
-        constants$785.g_subprocess_wait_async$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_wait_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_wait_finish$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_wait_finish",
-        constants$785.g_subprocess_wait_finish$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_wait_check$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_wait_check$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_wait_check",
-        constants$785.g_subprocess_wait_check$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_wait_check_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_wait_check_async$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_wait_check_async",
-        constants$785.g_subprocess_wait_check_async$FUNC
-    );
-    static final FunctionDescriptor g_subprocess_wait_check_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_subprocess_wait_check_finish$MH = RuntimeHelper.downcallHandle(
-        "g_subprocess_wait_check_finish",
-        constants$785.g_subprocess_wait_check_finish$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_output_stream_write",
+        constants$759.const$4
     );
 }
 

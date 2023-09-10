@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1119 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1119() {}
-    static final FunctionDescriptor gdk_screen_get_rgba_visual$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tls_database_verify_flags_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_screen_get_rgba_visual$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_rgba_visual",
-        constants$1119.gdk_screen_get_rgba_visual$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_tls_database_lookup_flags_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_screen_is_composited$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_tls_certificate_request_flags_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_screen_is_composited$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_is_composited",
-        constants$1119.gdk_screen_is_composited$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tls_protocol_version_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor gdk_screen_get_root_window$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_io_module_scope_flags_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gdk_screen_get_root_window$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_root_window",
-        constants$1119.gdk_screen_get_root_window$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_display$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_display$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_display",
-        constants$1119.gdk_screen_get_display$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_number$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_number$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_number",
-        constants$1119.gdk_screen_get_number$FUNC
-    );
-    static final FunctionDescriptor gdk_screen_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_screen_get_width$MH = RuntimeHelper.downcallHandle(
-        "gdk_screen_get_width",
-        constants$1119.gdk_screen_get_width$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_client_event_get_type",
+        constants$3.const$5
     );
 }
 

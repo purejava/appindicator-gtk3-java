@@ -2,149 +2,137 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GdkEventSetting {
- *     GdkEventType type;
- *     GdkWindow* window;
- *     gint8 send_event;
- *     GdkSettingAction action;
+ *     enum GdkEventType type;
+ *     struct _GdkWindow* window;
+ *     signed char send_event;
+ *     enum GdkSettingAction action;
  *     char* name;
  * };
  * }
  */
 public class _GdkEventSetting {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("type"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("window"),
-        Constants$root.C_CHAR$LAYOUT.withName("send_event"),
-        MemoryLayout.paddingLayout(24),
-        Constants$root.C_INT$LAYOUT.withName("action"),
-        Constants$root.C_POINTER$LAYOUT.withName("name")
-    ).withName("_GdkEventSetting");
     public static MemoryLayout $LAYOUT() {
-        return _GdkEventSetting.$struct$LAYOUT;
+        return constants$1790.const$1;
     }
-    static final VarHandle type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("type"));
     public static VarHandle type$VH() {
-        return _GdkEventSetting.type$VH;
+        return constants$1790.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GdkEventType type;
+     * enum GdkEventType type;
      * }
      */
     public static int type$get(MemorySegment seg) {
-        return (int)_GdkEventSetting.type$VH.get(seg);
+        return (int)constants$1790.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GdkEventType type;
+     * enum GdkEventType type;
      * }
      */
     public static void type$set(MemorySegment seg, int x) {
-        _GdkEventSetting.type$VH.set(seg, x);
+        constants$1790.const$2.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
-        return (int)_GdkEventSetting.type$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1790.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void type$set(MemorySegment seg, long index, int x) {
-        _GdkEventSetting.type$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1790.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle window$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("window"));
     public static VarHandle window$VH() {
-        return _GdkEventSetting.window$VH;
+        return constants$1790.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GdkWindow* window;
+     * struct _GdkWindow* window;
      * }
      */
     public static MemorySegment window$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GdkEventSetting.window$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1790.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GdkWindow* window;
+     * struct _GdkWindow* window;
      * }
      */
     public static void window$set(MemorySegment seg, MemorySegment x) {
-        _GdkEventSetting.window$VH.set(seg, x);
+        constants$1790.const$3.set(seg, x);
     }
     public static MemorySegment window$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GdkEventSetting.window$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1790.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void window$set(MemorySegment seg, long index, MemorySegment x) {
-        _GdkEventSetting.window$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1790.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle send_event$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("send_event"));
     public static VarHandle send_event$VH() {
-        return _GdkEventSetting.send_event$VH;
+        return constants$1790.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint8 send_event;
+     * signed char send_event;
      * }
      */
     public static byte send_event$get(MemorySegment seg) {
-        return (byte)_GdkEventSetting.send_event$VH.get(seg);
+        return (byte)constants$1790.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint8 send_event;
+     * signed char send_event;
      * }
      */
     public static void send_event$set(MemorySegment seg, byte x) {
-        _GdkEventSetting.send_event$VH.set(seg, x);
+        constants$1790.const$4.set(seg, x);
     }
     public static byte send_event$get(MemorySegment seg, long index) {
-        return (byte)_GdkEventSetting.send_event$VH.get(seg.asSlice(index*sizeof()));
+        return (byte)constants$1790.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void send_event$set(MemorySegment seg, long index, byte x) {
-        _GdkEventSetting.send_event$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1790.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle action$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("action"));
     public static VarHandle action$VH() {
-        return _GdkEventSetting.action$VH;
+        return constants$1790.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GdkSettingAction action;
+     * enum GdkSettingAction action;
      * }
      */
     public static int action$get(MemorySegment seg) {
-        return (int)_GdkEventSetting.action$VH.get(seg);
+        return (int)constants$1790.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GdkSettingAction action;
+     * enum GdkSettingAction action;
      * }
      */
     public static void action$set(MemorySegment seg, int x) {
-        _GdkEventSetting.action$VH.set(seg, x);
+        constants$1790.const$5.set(seg, x);
     }
     public static int action$get(MemorySegment seg, long index) {
-        return (int)_GdkEventSetting.action$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1790.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void action$set(MemorySegment seg, long index, int x) {
-        _GdkEventSetting.action$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1790.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("name"));
     public static VarHandle name$VH() {
-        return _GdkEventSetting.name$VH;
+        return constants$1791.const$0;
     }
     /**
      * Getter for field:
@@ -153,7 +141,7 @@ public class _GdkEventSetting {
      * }
      */
     public static MemorySegment name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GdkEventSetting.name$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1791.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -162,20 +150,20 @@ public class _GdkEventSetting {
      * }
      */
     public static void name$set(MemorySegment seg, MemorySegment x) {
-        _GdkEventSetting.name$VH.set(seg, x);
+        constants$1791.const$0.set(seg, x);
     }
     public static MemorySegment name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GdkEventSetting.name$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1791.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void name$set(MemorySegment seg, long index, MemorySegment x) {
-        _GdkEventSetting.name$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1791.const$0.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

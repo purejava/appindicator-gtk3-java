@@ -2,18 +2,32 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1993 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1993() {}
-    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("OnlyShowIn");
-    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("NotShowIn");
-    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_TRY_EXEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("TryExec");
-    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_EXEC$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Exec");
-    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_PATH$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Path");
-    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_TERMINAL$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Terminal");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_get_toolkit_version",
+        constants$35.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_get_version",
+        constants$35.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(AtkFocusHandler.class, "apply", constants$40.const$2);
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_INT.withName("x"),
+        JAVA_INT.withName("y"),
+        JAVA_INT.withName("width"),
+        JAVA_INT.withName("height")
+    ).withName("_AtkRectangle");
+    static final VarHandle const$4 = constants$1993.const$3.varHandle(MemoryLayout.PathElement.groupElement("x"));
+    static final VarHandle const$5 = constants$1993.const$3.varHandle(MemoryLayout.PathElement.groupElement("y"));
 }
 
 

@@ -3,56 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$996 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$996() {}
-    static final FunctionDescriptor cairo_read_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.copy_async.class, "apply", constants$995.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$995.const$5
     );
-    static final MethodHandle cairo_read_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$996.cairo_read_func_t_DOWN$FUNC
-    );
-    static final FunctionDescriptor cairo_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_create$MH = RuntimeHelper.downcallHandle(
-        "cairo_create",
-        constants$996.cairo_create$FUNC
-    );
-    static final FunctionDescriptor cairo_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_reference$MH = RuntimeHelper.downcallHandle(
-        "cairo_reference",
-        constants$996.cairo_reference$FUNC
-    );
-    static final FunctionDescriptor cairo_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_destroy$MH = RuntimeHelper.downcallHandle(
-        "cairo_destroy",
-        constants$996.cairo_destroy$FUNC
-    );
-    static final FunctionDescriptor cairo_get_reference_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_get_reference_count$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_reference_count",
-        constants$996.cairo_get_reference_count$FUNC
-    );
-    static final FunctionDescriptor cairo_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_get_user_data",
-        constants$996.cairo_get_user_data$FUNC
-    );
+    static final VarHandle const$2 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("copy_async"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileIface.copy_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$4 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("copy_finish"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GFileIface.move.class, "apply", constants$906.const$0);
 }
 
 

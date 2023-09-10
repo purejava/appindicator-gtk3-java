@@ -3,59 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$16 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$16() {}
-    static final FunctionDescriptor ffs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle ffs$MH = RuntimeHelper.downcallHandle(
-        "ffs",
-        constants$16.ffs$FUNC
-    );
-    static final FunctionDescriptor ffsl$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle ffsl$MH = RuntimeHelper.downcallHandle(
-        "ffsl",
-        constants$16.ffsl$FUNC
-    );
-    static final FunctionDescriptor ffsll$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle ffsll$MH = RuntimeHelper.downcallHandle(
-        "ffsll",
-        constants$16.ffsll$FUNC
-    );
-    static final FunctionDescriptor strcasecmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strcasecmp$MH = RuntimeHelper.downcallHandle(
-        "strcasecmp",
-        constants$16.strcasecmp$FUNC
-    );
-    static final FunctionDescriptor strncasecmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle strncasecmp$MH = RuntimeHelper.downcallHandle(
-        "strncasecmp",
-        constants$16.strncasecmp$FUNC
-    );
-    static final FunctionDescriptor strcasecmp_l$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strcasecmp_l$MH = RuntimeHelper.downcallHandle(
-        "strcasecmp_l",
-        constants$16.strcasecmp_l$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.paddingLayout(4)
+    ).withName("");
+    static final UnionLayout const$1 = MemoryLayout.unionLayout(
+        JAVA_DOUBLE.withName("v_double"),
+        MemoryLayout.structLayout(
+            MemoryLayout.paddingLayout(8)
+        ).withName("mpn")
+    ).withName("_GDoubleIEEE754");
+    static final VarHandle const$2 = constants$16.const$1.varHandle(MemoryLayout.PathElement.groupElement("v_double"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.paddingLayout(8)
+    ).withName("");
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("tv_sec"),
+        JAVA_LONG.withName("tv_usec")
+    ).withName("_GTimeVal");
+    static final VarHandle const$5 = constants$16.const$4.varHandle(MemoryLayout.PathElement.groupElement("tv_sec"));
 }
 
 

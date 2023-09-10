@@ -3,62 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1902 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1902() {}
-    static final FunctionDescriptor gtk_widget_path_iter_get_siblings$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GdkPixbufLoaderClass.area_updated.class, "apply", constants$1643.const$1);
+    static final VarHandle const$1 = constants$1901.const$0.varHandle(MemoryLayout.PathElement.groupElement("area_updated"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GdkPixbufLoaderClass.closed.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$1901.const$0.varHandle(MemoryLayout.PathElement.groupElement("closed"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_widget_path_iter_get_siblings$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_get_siblings",
-        constants$1902.gtk_widget_path_iter_get_siblings$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_iter_get_sibling_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_iter_get_sibling_index$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_get_sibling_index",
-        constants$1902.gtk_widget_path_iter_get_sibling_index$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_iter_get_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_iter_get_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_get_name",
-        constants$1902.gtk_widget_path_iter_get_name$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_iter_set_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_iter_set_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_set_name",
-        constants$1902.gtk_widget_path_iter_set_name$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_iter_has_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_iter_has_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_has_name",
-        constants$1902.gtk_widget_path_iter_has_name$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path_iter_has_qname$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path_iter_has_qname$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path_iter_has_qname",
-        constants$1902.gtk_widget_path_iter_has_qname$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_pixbuf_loader_new",
+        constants$35.const$2
     );
 }
 

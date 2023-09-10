@@ -3,60 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$433 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$433() {}
-    static final FunctionDescriptor g_object_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_object_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_object_get_type",
-        constants$433.g_object_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_sequence_sort_iter$cmp_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_sequence_sort_iter",
+        constants$14.const$3
     );
-    static final FunctionDescriptor g_object_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_sequence_is_empty",
+        constants$10.const$5
     );
-    static final MethodHandle g_object_new$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_object_new",
-        constants$433.g_object_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_sequence_get_begin_iter",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_object_new_with_properties$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_sequence_get_end_iter",
+        constants$5.const$2
     );
-    static final MethodHandle g_object_new_with_properties$MH = RuntimeHelper.downcallHandle(
-        "g_object_new_with_properties",
-        constants$433.g_object_new_with_properties$FUNC
-    );
-    static final FunctionDescriptor g_object_newv$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_newv$MH = RuntimeHelper.downcallHandle(
-        "g_object_newv",
-        constants$433.g_object_newv$FUNC
-    );
-    static final FunctionDescriptor g_object_new_valist$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_new_valist$MH = RuntimeHelper.downcallHandle(
-        "g_object_new_valist",
-        constants$433.g_object_new_valist$FUNC
-    );
-    static final FunctionDescriptor g_object_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_object_set$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_object_set",
-        constants$433.g_object_set$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_sequence_get_iter_at_pos",
+        constants$21.const$3
     );
 }
 

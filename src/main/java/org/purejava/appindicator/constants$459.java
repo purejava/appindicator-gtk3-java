@@ -3,62 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$459 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$459() {}
-    static final FunctionDescriptor GTypePluginCompleteInterfaceInfo$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        JAVA_INT
     );
-    static final FunctionDescriptor GTypePluginCompleteInterfaceInfo_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_assertion_message_error",
+        constants$459.const$0
     );
-    static final MethodHandle GTypePluginCompleteInterfaceInfo_UP$MH = RuntimeHelper.upcallHandle(GTypePluginCompleteInterfaceInfo.class, "apply", constants$459.GTypePluginCompleteInterfaceInfo_UP$FUNC);
-    static final FunctionDescriptor GTypePluginCompleteInterfaceInfo_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_test_add_vtable$data_setup.class, "apply", constants$13.const$4);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_test_add_vtable$data_test.class, "apply", constants$13.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_test_add_vtable$data_teardown.class, "apply", constants$13.const$4);
+    static final FunctionDescriptor const$5 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle GTypePluginCompleteInterfaceInfo_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$459.GTypePluginCompleteInterfaceInfo_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_type_plugin_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_type_plugin_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_type_plugin_get_type",
-        constants$459.g_type_plugin_get_type$FUNC
-    );
-    static final FunctionDescriptor g_type_plugin_use$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_plugin_use$MH = RuntimeHelper.downcallHandle(
-        "g_type_plugin_use",
-        constants$459.g_type_plugin_use$FUNC
-    );
-    static final FunctionDescriptor g_type_plugin_unuse$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_plugin_unuse$MH = RuntimeHelper.downcallHandle(
-        "g_type_plugin_unuse",
-        constants$459.g_type_plugin_unuse$FUNC
-    );
-    static final FunctionDescriptor g_type_plugin_complete_type_info$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_plugin_complete_type_info$MH = RuntimeHelper.downcallHandle(
-        "g_type_plugin_complete_type_info",
-        constants$459.g_type_plugin_complete_type_info$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_test_add_vtable",
+        constants$459.const$5
     );
 }
 

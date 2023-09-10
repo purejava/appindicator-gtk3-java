@@ -3,84 +3,42 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1136 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1136() {}
-    static final FunctionDescriptor gdk_pixbuf_save_to_stream_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_loadable_icon_load",
+        constants$855.const$5
     );
-    static final MethodHandle gdk_pixbuf_save_to_stream_async$MH = RuntimeHelper.downcallHandleVariadic(
-        "gdk_pixbuf_save_to_stream_async",
-        constants$1136.gdk_pixbuf_save_to_stream_async$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_loadable_icon_load_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_loadable_icon_load_async",
+        constants$281.const$5
     );
-    static final FunctionDescriptor gdk_pixbuf_save_to_stream_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_loadable_icon_load_finish",
+        constants$39.const$1
     );
-    static final MethodHandle gdk_pixbuf_save_to_stream_finish$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_save_to_stream_finish",
-        constants$1136.gdk_pixbuf_save_to_stream_finish$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_save_to_streamv_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_save_to_streamv_async$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_save_to_streamv_async",
-        constants$1136.gdk_pixbuf_save_to_streamv_async$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_save_to_streamv$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_save_to_streamv$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_save_to_streamv",
-        constants$1136.gdk_pixbuf_save_to_streamv$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_add_alpha$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT,
-        Constants$root.C_CHAR$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_add_alpha$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_add_alpha",
-        constants$1136.gdk_pixbuf_add_alpha$FUNC
-    );
-    static final FunctionDescriptor gdk_pixbuf_copy_area$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_pixbuf_copy_area$MH = RuntimeHelper.downcallHandle(
-        "gdk_pixbuf_copy_area",
-        constants$1136.gdk_pixbuf_copy_area$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    RuntimeHelper.POINTER.withName("g_class")
+                ).withName("g_type_instance"),
+                JAVA_INT.withName("ref_count"),
+                MemoryLayout.paddingLayout(4),
+                RuntimeHelper.POINTER.withName("qdata")
+            ).withName("parent_instance"),
+            RuntimeHelper.POINTER.withName("priv")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GMemoryInputStream");
+    static final VarHandle const$5 = constants$1136.const$4.varHandle(MemoryLayout.PathElement.groupElement("priv"));
 }
 
 

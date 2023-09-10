@@ -3,57 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$762 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$762() {}
-    static final FunctionDescriptor g_socket_set_keepalive$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        constants$166.const$0
     );
-    static final MethodHandle g_socket_set_keepalive$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_keepalive",
-        constants$762.g_socket_set_keepalive$FUNC
+    static final VarHandle const$1 = constants$759.const$3.varHandle(MemoryLayout.PathElement.groupElement("read_finish"));
+    static final FunctionDescriptor const$2 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_socket_get_keepalive$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GInputStreamClass.skip_async.class, "apply", constants$762.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$762.const$2
     );
-    static final MethodHandle g_socket_get_keepalive$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_keepalive",
-        constants$762.g_socket_get_keepalive$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_listen_backlog$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_listen_backlog$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_listen_backlog",
-        constants$762.g_socket_get_listen_backlog$FUNC
-    );
-    static final FunctionDescriptor g_socket_set_listen_backlog$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_set_listen_backlog$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_listen_backlog",
-        constants$762.g_socket_set_listen_backlog$FUNC
-    );
-    static final FunctionDescriptor g_socket_get_timeout$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_socket_get_timeout$MH = RuntimeHelper.downcallHandle(
-        "g_socket_get_timeout",
-        constants$762.g_socket_get_timeout$FUNC
-    );
-    static final FunctionDescriptor g_socket_set_timeout$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_socket_set_timeout$MH = RuntimeHelper.downcallHandle(
-        "g_socket_set_timeout",
-        constants$762.g_socket_set_timeout$FUNC
-    );
+    static final VarHandle const$5 = constants$759.const$3.varHandle(MemoryLayout.PathElement.groupElement("skip_async"));
 }
 
 

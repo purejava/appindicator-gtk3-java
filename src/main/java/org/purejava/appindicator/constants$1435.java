@@ -3,64 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1435 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1435() {}
-    static final FunctionDescriptor gtk_list_store_set_valist$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_set_is_subset",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_list_store_set_valist$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_set_valist",
-        constants$1435.gtk_list_store_set_valist$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_set_set",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_list_store_remove$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_set_union",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_list_store_remove$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_remove",
-        constants$1435.gtk_list_store_remove$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_set_intersect",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_list_store_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_set_subtract",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_list_store_insert$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_insert",
-        constants$1435.gtk_list_store_insert$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_insert_before$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_store_insert_before$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_insert_before",
-        constants$1435.gtk_list_store_insert_before$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_insert_after$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_store_insert_after$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_store_insert_after",
-        constants$1435.gtk_list_store_insert_after$FUNC
-    );
-    static final FunctionDescriptor gtk_list_store_insert_with_values$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_list_store_insert_with_values$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_list_store_insert_with_values",
-        constants$1435.gtk_list_store_insert_with_values$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_set_symmetric_difference",
+        constants$13.const$4
     );
 }
 

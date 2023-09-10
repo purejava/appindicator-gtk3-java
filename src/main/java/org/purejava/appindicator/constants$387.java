@@ -3,72 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$387 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$387() {}
-    static final FunctionDescriptor GTypeInterfaceCheckFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_option_context_set_translation_domain",
+        constants$13.const$4
     );
-    static final MethodHandle GTypeInterfaceCheckFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$387.GTypeInterfaceCheckFunc_DOWN$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_option_context_add_group",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_type_register_static$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_option_context_set_main_group",
+        constants$13.const$4
     );
-    static final MethodHandle g_type_register_static$MH = RuntimeHelper.downcallHandle(
-        "g_type_register_static",
-        constants$387.g_type_register_static$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_option_context_get_main_group",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_type_register_static_simple$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_option_context_get_help",
+        constants$196.const$3
     );
-    static final MethodHandle g_type_register_static_simple$MH = RuntimeHelper.downcallHandle(
-        "g_type_register_static_simple",
-        constants$387.g_type_register_static_simple$FUNC
-    );
-    static final FunctionDescriptor g_type_register_dynamic$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_type_register_dynamic$MH = RuntimeHelper.downcallHandle(
-        "g_type_register_dynamic",
-        constants$387.g_type_register_dynamic$FUNC
-    );
-    static final FunctionDescriptor g_type_register_fundamental$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_type_register_fundamental$MH = RuntimeHelper.downcallHandle(
-        "g_type_register_fundamental",
-        constants$387.g_type_register_fundamental$FUNC
-    );
-    static final FunctionDescriptor g_type_add_interface_static$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_type_add_interface_static$MH = RuntimeHelper.downcallHandle(
-        "g_type_add_interface_static",
-        constants$387.g_type_add_interface_static$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_option_group_new$destroy.class, "apply", constants$13.const$1);
 }
 
 

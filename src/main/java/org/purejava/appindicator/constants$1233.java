@@ -3,56 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1233 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1233() {}
-    static final FunctionDescriptor atk_relation_set_add_relation_by_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_relation_set_add_relation_by_type$MH = RuntimeHelper.downcallHandle(
-        "atk_relation_set_add_relation_by_type",
-        constants$1233.atk_relation_set_add_relation_by_type$FUNC
-    );
-    static final FunctionDescriptor atk_selection_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle atk_selection_get_type$MH = RuntimeHelper.downcallHandle(
-        "atk_selection_get_type",
-        constants$1233.atk_selection_get_type$FUNC
-    );
-    static final FunctionDescriptor atk_selection_add_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_selection_add_selection$MH = RuntimeHelper.downcallHandle(
-        "atk_selection_add_selection",
-        constants$1233.atk_selection_add_selection$FUNC
-    );
-    static final FunctionDescriptor atk_selection_clear_selection$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_selection_clear_selection$MH = RuntimeHelper.downcallHandle(
-        "atk_selection_clear_selection",
-        constants$1233.atk_selection_clear_selection$FUNC
-    );
-    static final FunctionDescriptor atk_selection_ref_selection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_selection_ref_selection$MH = RuntimeHelper.downcallHandle(
-        "atk_selection_ref_selection",
-        constants$1233.atk_selection_ref_selection$FUNC
-    );
-    static final FunctionDescriptor atk_selection_get_selection_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_selection_get_selection_count$MH = RuntimeHelper.downcallHandle(
-        "atk_selection_get_selection_count",
-        constants$1233.atk_selection_get_selection_count$FUNC
-    );
+    static final VarHandle const$0 = constants$1230.const$4.varHandle(MemoryLayout.PathElement.groupElement("lookup_by_address_finish"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_service.class, "apply", constants$39.const$1);
+    static final VarHandle const$2 = constants$1230.const$4.varHandle(MemoryLayout.PathElement.groupElement("lookup_service"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_service_async.class, "apply", constants$331.const$1);
+    static final VarHandle const$4 = constants$1230.const$4.varHandle(MemoryLayout.PathElement.groupElement("lookup_service_async"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GResolverClass.lookup_service_finish.class, "apply", constants$23.const$0);
 }
 
 

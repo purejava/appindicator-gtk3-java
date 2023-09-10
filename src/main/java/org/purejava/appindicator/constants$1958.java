@@ -3,51 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1958 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1958() {}
-    static final FunctionDescriptor gtk_status_icon_get_x11_window_id$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gtk_accel_group_query",
+        constants$215.const$2
     );
-    static final MethodHandle gtk_status_icon_get_x11_window_id$MH = RuntimeHelper.downcallHandle(
-        "gtk_status_icon_get_x11_window_id",
-        constants$1958.gtk_status_icon_get_x11_window_id$FUNC
-    );
-    static final FunctionDescriptor gtk_style_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_style_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_get_type",
-        constants$1958.gtk_style_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_style_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_style_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_new",
-        constants$1958.gtk_style_new$FUNC
-    );
-    static final FunctionDescriptor gtk_style_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_copy$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_copy",
-        constants$1958.gtk_style_copy$FUNC
-    );
-    static final FunctionDescriptor gtk_style_attach$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_attach$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_attach",
-        constants$1958.gtk_style_attach$FUNC
-    );
-    static final FunctionDescriptor gtk_style_detach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_style_detach$MH = RuntimeHelper.downcallHandle(
-        "gtk_style_detach",
-        constants$1958.gtk_style_detach$FUNC
-    );
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_INT.withName("accel_key"),
+            JAVA_INT.withName("accel_mods"),
+            MemoryLayout.paddingLayout(4)
+        ).withName("key"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("closure"),
+        JAVA_INT.withName("accel_path_quark"),
+        MemoryLayout.paddingLayout(4)
+    ).withName("_GtkAccelGroupEntry");
+    static final VarHandle const$2 = constants$1958.const$1.varHandle(MemoryLayout.PathElement.groupElement("closure"));
+    static final VarHandle const$3 = constants$1958.const$1.varHandle(MemoryLayout.PathElement.groupElement("accel_path_quark"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_SHORT.withName("left"),
+        JAVA_SHORT.withName("right"),
+        JAVA_SHORT.withName("top"),
+        JAVA_SHORT.withName("bottom")
+    ).withName("_GtkBorder");
+    static final VarHandle const$5 = constants$1958.const$4.varHandle(MemoryLayout.PathElement.groupElement("left"));
 }
 
 

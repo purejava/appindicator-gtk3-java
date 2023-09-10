@@ -3,56 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$936 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$936() {}
-    static final FunctionDescriptor pango_fontset_get_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_escape_object_path_bytestring",
+        constants$5.const$2
     );
-    static final MethodHandle pango_fontset_get_font$MH = RuntimeHelper.downcallHandle(
-        "pango_fontset_get_font",
-        constants$936.pango_fontset_get_font$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_escape_object_path",
+        constants$5.const$2
     );
-    static final FunctionDescriptor pango_fontset_get_metrics$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_unescape_object_path",
+        constants$5.const$2
     );
-    static final MethodHandle pango_fontset_get_metrics$MH = RuntimeHelper.downcallHandle(
-        "pango_fontset_get_metrics",
-        constants$936.pango_fontset_get_metrics$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_debug_controller_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor pango_fontset_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_fontset_foreach$MH = RuntimeHelper.downcallHandle(
-        "pango_fontset_foreach",
-        constants$936.pango_fontset_foreach$FUNC
-    );
-    static final FunctionDescriptor pango_font_map_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_font_map_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_font_map_get_type",
-        constants$936.pango_font_map_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_font_map_create_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_map_create_context$MH = RuntimeHelper.downcallHandle(
-        "pango_font_map_create_context",
-        constants$936.pango_font_map_create_context$FUNC
-    );
-    static final FunctionDescriptor pango_font_map_load_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_map_load_font$MH = RuntimeHelper.downcallHandle(
-        "pango_font_map_load_font",
-        constants$936.pango_font_map_load_font$FUNC
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface")
+    ).withName("_GDebugControllerInterface");
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_debug_controller_get_debug_enabled",
+        constants$10.const$5
     );
 }
 

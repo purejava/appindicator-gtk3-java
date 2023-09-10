@@ -4,66 +4,41 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GInitableIface {
- *     GTypeInterface g_iface;
- *     gboolean (*init)(GInitable*,GCancellable*,GError**);
+ *     struct _GTypeInterface g_iface;
+ *     int (*init)(struct _GInitable*,struct _GCancellable*,struct _GError**);
  * };
  * }
  */
 public class _GInitableIface {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
-        ).withName("g_iface"),
-        Constants$root.C_POINTER$LAYOUT.withName("init")
-    ).withName("_GInitableIface");
     public static MemoryLayout $LAYOUT() {
-        return _GInitableIface.$struct$LAYOUT;
+        return constants$752.const$2;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
-    static final FunctionDescriptor init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor init_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle init_UP$MH = RuntimeHelper.upcallHandle(init.class, "apply", _GInitableIface.init_UP$FUNC);
-    static final FunctionDescriptor init_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle init_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GInitableIface.init_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*init)(GInitable*,GCancellable*,GError**);
+ * int (*init)(struct _GInitable*,struct _GCancellable*,struct _GError**);
      * }
      */
     public interface init {
 
-        int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(init fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GInitableIface.init_UP$MH, fi, _GInitableIface.init$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment a, java.lang.foreign.MemorySegment b, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(init fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$752.const$3, fi, constants$12.const$2, scope);
         }
-        static init ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
+        static init ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _a, java.lang.foreign.MemorySegment _b, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    return (int)_GInitableIface.init_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (int)constants$12.const$4.invokeExact(symbol, _a, _b, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -71,35 +46,34 @@ public class _GInitableIface {
         }
     }
 
-    static final VarHandle init$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("init"));
     public static VarHandle init$VH() {
-        return _GInitableIface.init$VH;
+        return constants$752.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*init)(GInitable*,GCancellable*,GError**);
+     * int (*init)(struct _GInitable*,struct _GCancellable*,struct _GError**);
      * }
      */
     public static MemorySegment init$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GInitableIface.init$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$752.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*init)(GInitable*,GCancellable*,GError**);
+     * int (*init)(struct _GInitable*,struct _GCancellable*,struct _GError**);
      * }
      */
     public static void init$set(MemorySegment seg, MemorySegment x) {
-        _GInitableIface.init$VH.set(seg, x);
+        constants$752.const$4.set(seg, x);
     }
     public static MemorySegment init$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GInitableIface.init$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$752.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void init$set(MemorySegment seg, long index, MemorySegment x) {
-        _GInitableIface.init$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$752.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static init init(MemorySegment segment, SegmentScope scope) {
+    public static init init(MemorySegment segment, Arena scope) {
         return init.ofAddress(init$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -107,7 +81,7 @@ public class _GInitableIface {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

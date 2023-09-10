@@ -3,71 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1216 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1216() {}
-    static final FunctionDescriptor atk_text_get_text_before_offset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_power_profile_monitor_get_power_saver_enabled",
+        constants$10.const$5
     );
-    static final MethodHandle atk_text_get_text_before_offset$MH = RuntimeHelper.downcallHandle(
-        "atk_text_get_text_before_offset",
-        constants$1216.atk_text_get_text_before_offset$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_property_action_get_type",
+        constants$3.const$5
     );
-    static final FunctionDescriptor atk_text_get_string_at_offset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_property_action_new",
+        constants$23.const$0
     );
-    static final MethodHandle atk_text_get_string_at_offset$MH = RuntimeHelper.downcallHandle(
-        "atk_text_get_string_at_offset",
-        constants$1216.atk_text_get_string_at_offset$FUNC
-    );
-    static final FunctionDescriptor atk_text_get_caret_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_text_get_caret_offset$MH = RuntimeHelper.downcallHandle(
-        "atk_text_get_caret_offset",
-        constants$1216.atk_text_get_caret_offset$FUNC
-    );
-    static final FunctionDescriptor atk_text_get_character_extents$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle atk_text_get_character_extents$MH = RuntimeHelper.downcallHandle(
-        "atk_text_get_character_extents",
-        constants$1216.atk_text_get_character_extents$FUNC
-    );
-    static final FunctionDescriptor atk_text_get_run_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_text_get_run_attributes$MH = RuntimeHelper.downcallHandle(
-        "atk_text_get_run_attributes",
-        constants$1216.atk_text_get_run_attributes$FUNC
-    );
-    static final FunctionDescriptor atk_text_get_default_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle atk_text_get_default_attributes$MH = RuntimeHelper.downcallHandle(
-        "atk_text_get_default_attributes",
-        constants$1216.atk_text_get_default_attributes$FUNC
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("connect"),
+        RuntimeHelper.POINTER.withName("connect_async"),
+        RuntimeHelper.POINTER.withName("connect_finish"),
+        RuntimeHelper.POINTER.withName("supports_hostname")
+    ).withName("_GProxyInterface");
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GProxyInterface.connect.class, "apply", constants$330.const$5);
+    static final VarHandle const$5 = constants$1216.const$3.varHandle(MemoryLayout.PathElement.groupElement("connect"));
 }
 
 

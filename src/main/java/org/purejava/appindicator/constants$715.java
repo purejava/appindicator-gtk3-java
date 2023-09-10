@@ -3,52 +3,56 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$715 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$715() {}
-    static final FunctionDescriptor g_network_address_parse_uri$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_action_map_remove_action",
+        constants$13.const$4
     );
-    static final MethodHandle g_network_address_parse_uri$MH = RuntimeHelper.downcallHandle(
-        "g_network_address_parse_uri",
-        constants$715.g_network_address_parse_uri$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_action_map_add_action_entries",
+        constants$464.const$4
     );
-    static final FunctionDescriptor g_network_address_get_hostname$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_network_address_get_hostname$MH = RuntimeHelper.downcallHandle(
-        "g_network_address_get_hostname",
-        constants$715.g_network_address_get_hostname$FUNC
-    );
-    static final FunctionDescriptor g_network_address_get_port$FUNC = FunctionDescriptor.of(Constants$root.C_SHORT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_network_address_get_port$MH = RuntimeHelper.downcallHandle(
-        "g_network_address_get_port",
-        constants$715.g_network_address_get_port$FUNC
-    );
-    static final FunctionDescriptor g_network_address_get_scheme$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_network_address_get_scheme$MH = RuntimeHelper.downcallHandle(
-        "g_network_address_get_scheme",
-        constants$715.g_network_address_get_scheme$FUNC
-    );
-    static final FunctionDescriptor g_network_monitor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_network_monitor_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_network_monitor_get_type",
-        constants$715.g_network_monitor_get_type$FUNC
-    );
-    static final FunctionDescriptor g_network_monitor_get_default$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_network_monitor_get_default$MH = RuntimeHelper.downcallHandle(
-        "g_network_monitor_get_default",
-        constants$715.g_network_monitor_get_default$FUNC
-    );
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("g_iface"),
+        RuntimeHelper.POINTER.withName("dup"),
+        RuntimeHelper.POINTER.withName("equal"),
+        RuntimeHelper.POINTER.withName("get_id"),
+        RuntimeHelper.POINTER.withName("get_name"),
+        RuntimeHelper.POINTER.withName("get_description"),
+        RuntimeHelper.POINTER.withName("get_executable"),
+        RuntimeHelper.POINTER.withName("get_icon"),
+        RuntimeHelper.POINTER.withName("launch"),
+        RuntimeHelper.POINTER.withName("supports_uris"),
+        RuntimeHelper.POINTER.withName("supports_files"),
+        RuntimeHelper.POINTER.withName("launch_uris"),
+        RuntimeHelper.POINTER.withName("should_show"),
+        RuntimeHelper.POINTER.withName("set_as_default_for_type"),
+        RuntimeHelper.POINTER.withName("set_as_default_for_extension"),
+        RuntimeHelper.POINTER.withName("add_supports_type"),
+        RuntimeHelper.POINTER.withName("can_remove_supports_type"),
+        RuntimeHelper.POINTER.withName("remove_supports_type"),
+        RuntimeHelper.POINTER.withName("can_delete"),
+        RuntimeHelper.POINTER.withName("do_delete"),
+        RuntimeHelper.POINTER.withName("get_commandline"),
+        RuntimeHelper.POINTER.withName("get_display_name"),
+        RuntimeHelper.POINTER.withName("set_as_last_used_for_type"),
+        RuntimeHelper.POINTER.withName("get_supported_types"),
+        RuntimeHelper.POINTER.withName("launch_uris_async"),
+        RuntimeHelper.POINTER.withName("launch_uris_finish")
+    ).withName("_GAppInfoIface");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GAppInfoIface.dup.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$715.const$2.varHandle(MemoryLayout.PathElement.groupElement("dup"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GAppInfoIface.equal.class, "apply", constants$9.const$0);
 }
 
 

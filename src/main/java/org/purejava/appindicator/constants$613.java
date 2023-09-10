@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$613 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$613() {}
-    static final FunctionDescriptor g_emblemed_icon_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_signal_accumulator_true_handled",
+        constants$34.const$5
     );
-    static final MethodHandle g_emblemed_icon_new$MH = RuntimeHelper.downcallHandle(
-        "g_emblemed_icon_new",
-        constants$613.g_emblemed_icon_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_signal_accumulator_first_wins",
+        constants$34.const$5
     );
-    static final FunctionDescriptor g_emblemed_icon_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_signal_handlers_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle g_emblemed_icon_get_icon$MH = RuntimeHelper.downcallHandle(
-        "g_emblemed_icon_get_icon",
-        constants$613.g_emblemed_icon_get_icon$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "_g_signals_destroy",
+        constants$84.const$5
     );
-    static final FunctionDescriptor g_emblemed_icon_get_emblems$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_date_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_emblemed_icon_get_emblems$MH = RuntimeHelper.downcallHandle(
-        "g_emblemed_icon_get_emblems",
-        constants$613.g_emblemed_icon_get_emblems$FUNC
-    );
-    static final FunctionDescriptor g_emblemed_icon_add_emblem$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_emblemed_icon_add_emblem$MH = RuntimeHelper.downcallHandle(
-        "g_emblemed_icon_add_emblem",
-        constants$613.g_emblemed_icon_add_emblem$FUNC
-    );
-    static final FunctionDescriptor g_emblemed_icon_clear_emblems$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_emblemed_icon_clear_emblems$MH = RuntimeHelper.downcallHandle(
-        "g_emblemed_icon_clear_emblems",
-        constants$613.g_emblemed_icon_clear_emblems$FUNC
-    );
-    static final FunctionDescriptor g_file_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_file_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_file_get_type",
-        constants$613.g_file_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_strv_get_type",
+        constants$3.const$5
     );
 }
 

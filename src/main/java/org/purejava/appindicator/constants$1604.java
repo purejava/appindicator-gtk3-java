@@ -3,53 +3,59 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1604 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1604() {}
-    static final FunctionDescriptor gtk_gesture_single_get_button$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_engine_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_gesture_single_get_button$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_single_get_button",
-        constants$1604.gtk_gesture_single_get_button$FUNC
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    RuntimeHelper.POINTER.withName("g_class")
+                ).withName("g_type_instance"),
+                JAVA_INT.withName("ref_count"),
+                MemoryLayout.paddingLayout(4),
+                RuntimeHelper.POINTER.withName("qdata")
+            ).withName("parent_instance")
+        ).withName("parent_instance")
+    ).withName("_PangoEngineLang");
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                MemoryLayout.structLayout(
+                    JAVA_LONG.withName("g_type")
+                ).withName("g_type_class"),
+                RuntimeHelper.POINTER.withName("construct_properties"),
+                RuntimeHelper.POINTER.withName("constructor"),
+                RuntimeHelper.POINTER.withName("set_property"),
+                RuntimeHelper.POINTER.withName("get_property"),
+                RuntimeHelper.POINTER.withName("dispose"),
+                RuntimeHelper.POINTER.withName("finalize"),
+                RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+                RuntimeHelper.POINTER.withName("notify"),
+                RuntimeHelper.POINTER.withName("constructed"),
+                JAVA_LONG.withName("flags"),
+                JAVA_LONG.withName("n_construct_properties"),
+                RuntimeHelper.POINTER.withName("pspecs"),
+                JAVA_LONG.withName("n_pspecs"),
+                MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+            ).withName("parent_class")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("script_break")
+    ).withName("_PangoEngineLangClass");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_PangoEngineLangClass.script_break.class, "apply", constants$1603.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$1603.const$2
     );
-    static final FunctionDescriptor gtk_gesture_single_set_button$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_single_set_button$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_single_set_button",
-        constants$1604.gtk_gesture_single_set_button$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_single_get_current_button$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_single_get_current_button$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_single_get_current_button",
-        constants$1604.gtk_gesture_single_get_current_button$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_single_get_current_sequence$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_single_get_current_sequence$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_single_get_current_sequence",
-        constants$1604.gtk_gesture_single_get_current_sequence$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_drag_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_gesture_drag_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_drag_get_type",
-        constants$1604.gtk_gesture_drag_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_drag_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_drag_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_drag_new",
-        constants$1604.gtk_gesture_drag_new$FUNC
-    );
+    static final VarHandle const$5 = constants$1604.const$2.varHandle(MemoryLayout.PathElement.groupElement("script_break"));
 }
 
 

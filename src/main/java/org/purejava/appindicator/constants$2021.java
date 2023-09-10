@@ -2,18 +2,39 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2021 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2021() {}
-    static final MemorySegment CAIRO_VERSION_STRING$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("1.16.0");
-    static final MemorySegment CAIRO_TAG_DEST$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("cairo.dest");
-    static final MemorySegment CAIRO_TAG_LINK$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Link");
-    static final MemorySegment CAIRO_MIME_TYPE_JPEG$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("image/jpeg");
-    static final MemorySegment CAIRO_MIME_TYPE_PNG$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("image/png");
-    static final MemorySegment CAIRO_MIME_TYPE_JP2$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("image/jp2");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_text_get_string_at_offset",
+        constants$1421.const$1
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_text_get_caret_offset",
+        constants$10.const$5
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_text_get_character_extents",
+        constants$430.const$3
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_text_get_run_attributes",
+        constants$180.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_text_get_default_attributes",
+        constants$5.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_text_get_character_count",
+        constants$10.const$5
+    );
 }
 
 

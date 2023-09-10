@@ -3,58 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1292 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1292() {}
-    static final FunctionDescriptor gtk_container_set_resize_mode$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GSocketClientClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1290.const$3.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GSocketClient");
+    static final VarHandle const$3 = constants$1292.const$2.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_client_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_container_set_resize_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_set_resize_mode",
-        constants$1292.gtk_container_set_resize_mode$FUNC
-    );
-    static final FunctionDescriptor gtk_container_get_resize_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_container_get_resize_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_get_resize_mode",
-        constants$1292.gtk_container_get_resize_mode$FUNC
-    );
-    static final FunctionDescriptor gtk_container_check_resize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_container_check_resize$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_check_resize",
-        constants$1292.gtk_container_check_resize$FUNC
-    );
-    static final FunctionDescriptor gtk_container_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_container_foreach$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_foreach",
-        constants$1292.gtk_container_foreach$FUNC
-    );
-    static final FunctionDescriptor gtk_container_get_children$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_container_get_children$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_get_children",
-        constants$1292.gtk_container_get_children$FUNC
-    );
-    static final FunctionDescriptor gtk_container_propagate_draw$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_container_propagate_draw$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_propagate_draw",
-        constants$1292.gtk_container_propagate_draw$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_client_new",
+        constants$35.const$2
     );
 }
 

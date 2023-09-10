@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1866 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1866() {}
-    static final FunctionDescriptor gtk_tree_drag_source_row_draggable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_display_supports_input_shapes",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_tree_drag_source_row_draggable$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_drag_source_row_draggable",
-        constants$1866.gtk_tree_drag_source_row_draggable$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_display_supports_composite",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_tree_drag_source_drag_data_delete$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_display_notify_startup_complete",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_tree_drag_source_drag_data_delete$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_drag_source_drag_data_delete",
-        constants$1866.gtk_tree_drag_source_drag_data_delete$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_display_get_device_manager",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_tree_drag_source_drag_data_get$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_display_get_app_launch_context",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_tree_drag_source_drag_data_get$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_drag_source_drag_data_get",
-        constants$1866.gtk_tree_drag_source_drag_data_get$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_drag_dest_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_drag_dest_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_drag_dest_get_type",
-        constants$1866.gtk_tree_drag_dest_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_drag_dest_drag_data_received$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_drag_dest_drag_data_received$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_drag_dest_drag_data_received",
-        constants$1866.gtk_tree_drag_dest_drag_data_received$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_drag_dest_row_drop_possible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_drag_dest_row_drop_possible$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_drag_dest_row_drop_possible",
-        constants$1866.gtk_tree_drag_dest_row_drop_possible$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_display_get_default_seat",
+        constants$5.const$2
     );
 }
 

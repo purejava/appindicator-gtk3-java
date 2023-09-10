@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void* (*GBoxedCopyFunc)(void* boxed);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GBoxedCopyFunc {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(GBoxedCopyFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$427.GBoxedCopyFunc_UP$MH, fi, constants$427.GBoxedCopyFunc$FUNC, scope);
+    static MemorySegment allocate(GBoxedCopyFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$619.const$1, fi, constants$5.const$2, scope);
     }
-    static GBoxedCopyFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GBoxedCopyFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                return (java.lang.foreign.MemorySegment)constants$427.GBoxedCopyFunc_DOWN$MH.invokeExact(symbol, _user_data);
+                return (java.lang.foreign.MemorySegment)constants$99.const$0.invokeExact(symbol, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

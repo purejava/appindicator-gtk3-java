@@ -3,56 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1943 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1943() {}
-    static final FunctionDescriptor gtk_numerable_icon_get_count$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_threads_init",
+        constants$7.const$5
     );
-    static final MethodHandle gtk_numerable_icon_get_count$MH = RuntimeHelper.downcallHandle(
-        "gtk_numerable_icon_get_count",
-        constants$1943.gtk_numerable_icon_get_count$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_threads_enter",
+        constants$7.const$5
     );
-    static final FunctionDescriptor gtk_numerable_icon_set_count$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_threads_leave",
+        constants$7.const$5
     );
-    static final MethodHandle gtk_numerable_icon_set_count$MH = RuntimeHelper.downcallHandle(
-        "gtk_numerable_icon_set_count",
-        constants$1943.gtk_numerable_icon_set_count$FUNC
-    );
-    static final FunctionDescriptor gtk_numerable_icon_get_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_numerable_icon_get_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_numerable_icon_get_label",
-        constants$1943.gtk_numerable_icon_get_label$FUNC
-    );
-    static final FunctionDescriptor gtk_numerable_icon_set_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_numerable_icon_set_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_numerable_icon_set_label",
-        constants$1943.gtk_numerable_icon_set_label$FUNC
-    );
-    static final FunctionDescriptor gtk_numerable_icon_set_background_gicon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_numerable_icon_set_background_gicon$MH = RuntimeHelper.downcallHandle(
-        "gtk_numerable_icon_set_background_gicon",
-        constants$1943.gtk_numerable_icon_set_background_gicon$FUNC
-    );
-    static final FunctionDescriptor gtk_numerable_icon_get_background_gicon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_numerable_icon_get_background_gicon$MH = RuntimeHelper.downcallHandle(
-        "gtk_numerable_icon_get_background_gicon",
-        constants$1943.gtk_numerable_icon_get_background_gicon$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(gdk_threads_set_lock_functions$enter_fn.class, "apply", constants$7.const$5);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(gdk_threads_set_lock_functions$leave_fn.class, "apply", constants$7.const$5);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_threads_set_lock_functions",
+        constants$13.const$4
     );
 }
 

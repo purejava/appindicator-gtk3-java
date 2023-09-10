@@ -3,48 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$54 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$54() {}
-    static final FunctionDescriptor atexit$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GErrorCopyFunc.class, "apply", constants$13.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(GErrorClearFunc.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_error_domain_register_static$error_type_init.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_error_domain_register_static$error_type_copy.class, "apply", constants$13.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_error_domain_register_static$error_type_clear.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle atexit$MH = RuntimeHelper.downcallHandle(
-        "atexit",
-        constants$54.atexit$FUNC
-    );
-    static final FunctionDescriptor at_quick_exit$__func$FUNC = FunctionDescriptor.ofVoid();
-    static final FunctionDescriptor at_quick_exit$__func_UP$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle at_quick_exit$__func_UP$MH = RuntimeHelper.upcallHandle(at_quick_exit$__func.class, "apply", constants$54.at_quick_exit$__func_UP$FUNC);
-    static final FunctionDescriptor at_quick_exit$__func_DOWN$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle at_quick_exit$__func_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$54.at_quick_exit$__func_DOWN$FUNC
-    );
-    static final FunctionDescriptor at_quick_exit$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle at_quick_exit$MH = RuntimeHelper.downcallHandle(
-        "at_quick_exit",
-        constants$54.at_quick_exit$FUNC
-    );
-    static final FunctionDescriptor on_exit$__func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor on_exit$__func_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle on_exit$__func_UP$MH = RuntimeHelper.upcallHandle(on_exit$__func.class, "apply", constants$54.on_exit$__func_UP$FUNC);
-    static final FunctionDescriptor on_exit$__func_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle on_exit$__func_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$54.on_exit$__func_DOWN$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_error_domain_register_static",
+        constants$54.const$5
     );
 }
 

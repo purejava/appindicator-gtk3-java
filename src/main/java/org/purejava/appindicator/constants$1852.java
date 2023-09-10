@@ -3,58 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1852 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1852() {}
-    static final FunctionDescriptor gtk_toolbar_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_window_set_debug_updates",
+        constants$80.const$1
     );
-    static final MethodHandle gtk_toolbar_insert$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_insert",
-        constants$1852.gtk_toolbar_insert$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_window_constrain_size",
+        constants$215.const$5
     );
-    static final FunctionDescriptor gtk_toolbar_get_item_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_window_enable_synchronized_configure",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_toolbar_get_item_index$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_get_item_index",
-        constants$1852.gtk_toolbar_get_item_index$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_window_configure_finished",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_toolbar_get_n_items$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_get_default_root_window",
+        constants$35.const$2
     );
-    static final MethodHandle gtk_toolbar_get_n_items$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_get_n_items",
-        constants$1852.gtk_toolbar_get_n_items$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_get_nth_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_toolbar_get_nth_item$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_get_nth_item",
-        constants$1852.gtk_toolbar_get_nth_item$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_get_show_arrow$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_toolbar_get_show_arrow$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_get_show_arrow",
-        constants$1852.gtk_toolbar_get_show_arrow$FUNC
-    );
-    static final FunctionDescriptor gtk_toolbar_set_show_arrow$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_toolbar_set_show_arrow$MH = RuntimeHelper.downcallHandle(
-        "gtk_toolbar_set_show_arrow",
-        constants$1852.gtk_toolbar_set_show_arrow$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_offscreen_window_get_surface",
+        constants$5.const$2
     );
 }
 

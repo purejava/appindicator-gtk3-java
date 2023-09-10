@@ -3,74 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$934 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$934() {}
-    static final FunctionDescriptor pango_item_apply_attrs$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_server_start",
+        constants$13.const$1
     );
-    static final MethodHandle pango_item_apply_attrs$MH = RuntimeHelper.downcallHandle(
-        "pango_item_apply_attrs",
-        constants$934.pango_item_apply_attrs$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_server_stop",
+        constants$13.const$1
     );
-    static final FunctionDescriptor pango_reorder_items$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_server_is_active",
+        constants$10.const$5
     );
-    static final MethodHandle pango_reorder_items$MH = RuntimeHelper.downcallHandle(
-        "pango_reorder_items",
-        constants$934.pango_reorder_items$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_is_guid",
+        constants$10.const$5
     );
-    static final FunctionDescriptor pango_itemize$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_generate_guid",
+        constants$35.const$2
     );
-    static final MethodHandle pango_itemize$MH = RuntimeHelper.downcallHandle(
-        "pango_itemize",
-        constants$934.pango_itemize$FUNC
-    );
-    static final FunctionDescriptor pango_itemize_with_base_dir$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_itemize_with_base_dir$MH = RuntimeHelper.downcallHandle(
-        "pango_itemize_with_base_dir",
-        constants$934.pango_itemize_with_base_dir$FUNC
-    );
-    static final FunctionDescriptor pango_break$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_break$MH = RuntimeHelper.downcallHandle(
-        "pango_break",
-        constants$934.pango_break$FUNC
-    );
-    static final FunctionDescriptor pango_get_log_attrs$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_get_log_attrs$MH = RuntimeHelper.downcallHandle(
-        "pango_get_log_attrs",
-        constants$934.pango_get_log_attrs$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_is_name",
+        constants$10.const$5
     );
 }
 

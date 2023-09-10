@@ -2,18 +2,45 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2024 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2024() {}
-    static final MemorySegment GDK_SELECTION_SECONDARY$ADDR = MemorySegment.ofAddress(2L);
-    static final MemorySegment GDK_SELECTION_CLIPBOARD$ADDR = MemorySegment.ofAddress(69L);
-    static final MemorySegment GDK_TARGET_BITMAP$ADDR = MemorySegment.ofAddress(5L);
-    static final MemorySegment GDK_TARGET_COLORMAP$ADDR = MemorySegment.ofAddress(7L);
-    static final MemorySegment GDK_TARGET_DRAWABLE$ADDR = MemorySegment.ofAddress(17L);
-    static final MemorySegment GDK_TARGET_PIXMAP$ADDR = MemorySegment.ofAddress(20L);
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_text_attribute_for_name",
+        constants$10.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_text_attribute_get_value",
+        constants$1412.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_text_scroll_substring_to",
+        constants$608.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_text_scroll_substring_to_point",
+        constants$1942.const$3
+    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("parent_interface"),
+        RuntimeHelper.POINTER.withName("set_run_attributes"),
+        RuntimeHelper.POINTER.withName("set_text_contents"),
+        RuntimeHelper.POINTER.withName("insert_text"),
+        RuntimeHelper.POINTER.withName("copy_text"),
+        RuntimeHelper.POINTER.withName("cut_text"),
+        RuntimeHelper.POINTER.withName("delete_text"),
+        RuntimeHelper.POINTER.withName("paste_text")
+    ).withName("_AtkEditableTextIface");
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkEditableTextIface.set_run_attributes.class, "apply", constants$414.const$4);
 }
 
 

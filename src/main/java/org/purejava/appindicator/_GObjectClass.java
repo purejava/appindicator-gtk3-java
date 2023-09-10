@@ -4,119 +4,81 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GObjectClass {
- *     GTypeClass g_type_class;
- *     GSList* construct_properties;
- *     GObject* (*constructor)(GType,guint,GObjectConstructParam*);
- *     void (*set_property)(GObject*,guint,const GValue*,GParamSpec*);
- *     void (*get_property)(GObject*,guint,GValue*,GParamSpec*);
- *     void (*dispose)(GObject*);
- *     void (*finalize)(GObject*);
- *     void (*dispatch_properties_changed)(GObject*,guint,GParamSpec**);
- *     void (*notify)(GObject*,GParamSpec*);
- *     void (*constructed)(GObject*);
- *     gsize flags;
- *     gsize n_construct_properties;
- *     gpointer pspecs;
- *     gsize n_pspecs;
- *     gpointer pdummy[3];
+ *     struct _GTypeClass g_type_class;
+ *     struct _GSList* construct_properties;
+ *     struct _GObject* (*constructor)(unsigned long,unsigned int,struct _GObjectConstructParam*);
+ *     void (*set_property)(struct _GObject*,unsigned int,struct _GValue*,struct _GParamSpec*);
+ *     void (*get_property)(struct _GObject*,unsigned int,struct _GValue*,struct _GParamSpec*);
+ *     void (*dispose)(struct _GObject*);
+ *     void (*finalize)(struct _GObject*);
+ *     void (*dispatch_properties_changed)(struct _GObject*,unsigned int,struct _GParamSpec**);
+ *     void (*notify)(struct _GObject*,struct _GParamSpec*);
+ *     void (*constructed)(struct _GObject*);
+ *     unsigned long flags;
+ *     unsigned long n_construct_properties;
+ *     void* pspecs;
+ *     unsigned long n_pspecs;
+ *     void* pdummy[3];
  * };
  * }
  */
 public class _GObjectClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-        ).withName("g_type_class"),
-        Constants$root.C_POINTER$LAYOUT.withName("construct_properties"),
-        Constants$root.C_POINTER$LAYOUT.withName("constructor"),
-        Constants$root.C_POINTER$LAYOUT.withName("set_property"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_property"),
-        Constants$root.C_POINTER$LAYOUT.withName("dispose"),
-        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-        Constants$root.C_POINTER$LAYOUT.withName("dispatch_properties_changed"),
-        Constants$root.C_POINTER$LAYOUT.withName("notify"),
-        Constants$root.C_POINTER$LAYOUT.withName("constructed"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("flags"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("n_construct_properties"),
-        Constants$root.C_POINTER$LAYOUT.withName("pspecs"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("n_pspecs"),
-        MemoryLayout.sequenceLayout(3, Constants$root.C_POINTER$LAYOUT).withName("pdummy")
-    ).withName("_GObjectClass");
     public static MemoryLayout $LAYOUT() {
-        return _GObjectClass.$struct$LAYOUT;
+        return constants$622.const$5;
     }
     public static MemorySegment g_type_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 8);
     }
-    static final VarHandle construct_properties$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("construct_properties"));
     public static VarHandle construct_properties$VH() {
-        return _GObjectClass.construct_properties$VH;
+        return constants$623.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GSList* construct_properties;
+     * struct _GSList* construct_properties;
      * }
      */
     public static MemorySegment construct_properties$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.construct_properties$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$623.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GSList* construct_properties;
+     * struct _GSList* construct_properties;
      * }
      */
     public static void construct_properties$set(MemorySegment seg, MemorySegment x) {
-        _GObjectClass.construct_properties$VH.set(seg, x);
+        constants$623.const$0.set(seg, x);
     }
     public static MemorySegment construct_properties$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.construct_properties$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$623.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void construct_properties$set(MemorySegment seg, long index, MemorySegment x) {
-        _GObjectClass.construct_properties$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$623.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final FunctionDescriptor constructor$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor constructor_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle constructor_UP$MH = RuntimeHelper.upcallHandle(constructor.class, "apply", _GObjectClass.constructor_UP$FUNC);
-    static final FunctionDescriptor constructor_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle constructor_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GObjectClass.constructor_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GObject* (*constructor)(GType,guint,GObjectConstructParam*);
+ * struct _GObject* (*constructor)(unsigned long,unsigned int,struct _GObjectConstructParam*);
      * }
      */
     public interface constructor {
 
         java.lang.foreign.MemorySegment apply(long _x0, int _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(constructor fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GObjectClass.constructor_UP$MH, fi, _GObjectClass.constructor$FUNC, scope);
+        static MemorySegment allocate(constructor fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$623.const$2, fi, constants$623.const$1, scope);
         }
-        static constructor ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static constructor ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (long __x0, int __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GObjectClass.constructor_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    return (java.lang.foreign.MemorySegment)constants$623.const$3.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -124,75 +86,52 @@ public class _GObjectClass {
         }
     }
 
-    static final VarHandle constructor$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("constructor"));
     public static VarHandle constructor$VH() {
-        return _GObjectClass.constructor$VH;
+        return constants$623.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GObject* (*constructor)(GType,guint,GObjectConstructParam*);
+     * struct _GObject* (*constructor)(unsigned long,unsigned int,struct _GObjectConstructParam*);
      * }
      */
     public static MemorySegment constructor$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.constructor$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$623.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GObject* (*constructor)(GType,guint,GObjectConstructParam*);
+     * struct _GObject* (*constructor)(unsigned long,unsigned int,struct _GObjectConstructParam*);
      * }
      */
     public static void constructor$set(MemorySegment seg, MemorySegment x) {
-        _GObjectClass.constructor$VH.set(seg, x);
+        constants$623.const$4.set(seg, x);
     }
     public static MemorySegment constructor$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.constructor$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$623.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void constructor$set(MemorySegment seg, long index, MemorySegment x) {
-        _GObjectClass.constructor$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$623.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static constructor constructor(MemorySegment segment, SegmentScope scope) {
+    public static constructor constructor(MemorySegment segment, Arena scope) {
         return constructor.ofAddress(constructor$get(segment), scope);
     }
-    static final FunctionDescriptor set_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor set_property_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle set_property_UP$MH = RuntimeHelper.upcallHandle(set_property.class, "apply", _GObjectClass.set_property_UP$FUNC);
-    static final FunctionDescriptor set_property_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle set_property_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GObjectClass.set_property_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*set_property)(GObject*,guint,const GValue*,GParamSpec*);
+ * void (*set_property)(struct _GObject*,unsigned int,struct _GValue*,struct _GParamSpec*);
      * }
      */
     public interface set_property {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(set_property fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GObjectClass.set_property_UP$MH, fi, _GObjectClass.set_property$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment object, int property_id, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment pspec);
+        static MemorySegment allocate(set_property fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$623.const$5, fi, constants$179.const$1, scope);
         }
-        static set_property ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
+        static set_property ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _object, int _property_id, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _pspec) -> {
                 try {
-                    _GObjectClass.set_property_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$372.const$3.invokeExact(symbol, _object, _property_id, _value, _pspec);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -200,75 +139,52 @@ public class _GObjectClass {
         }
     }
 
-    static final VarHandle set_property$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("set_property"));
     public static VarHandle set_property$VH() {
-        return _GObjectClass.set_property$VH;
+        return constants$624.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*set_property)(GObject*,guint,const GValue*,GParamSpec*);
+     * void (*set_property)(struct _GObject*,unsigned int,struct _GValue*,struct _GParamSpec*);
      * }
      */
     public static MemorySegment set_property$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.set_property$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$624.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*set_property)(GObject*,guint,const GValue*,GParamSpec*);
+     * void (*set_property)(struct _GObject*,unsigned int,struct _GValue*,struct _GParamSpec*);
      * }
      */
     public static void set_property$set(MemorySegment seg, MemorySegment x) {
-        _GObjectClass.set_property$VH.set(seg, x);
+        constants$624.const$0.set(seg, x);
     }
     public static MemorySegment set_property$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.set_property$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$624.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void set_property$set(MemorySegment seg, long index, MemorySegment x) {
-        _GObjectClass.set_property$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$624.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static set_property set_property(MemorySegment segment, SegmentScope scope) {
+    public static set_property set_property(MemorySegment segment, Arena scope) {
         return set_property.ofAddress(set_property$get(segment), scope);
     }
-    static final FunctionDescriptor get_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_property_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_property_UP$MH = RuntimeHelper.upcallHandle(get_property.class, "apply", _GObjectClass.get_property_UP$FUNC);
-    static final FunctionDescriptor get_property_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_property_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GObjectClass.get_property_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*get_property)(GObject*,guint,GValue*,GParamSpec*);
+ * void (*get_property)(struct _GObject*,unsigned int,struct _GValue*,struct _GParamSpec*);
      * }
      */
     public interface get_property {
 
-        void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(get_property fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GObjectClass.get_property_UP$MH, fi, _GObjectClass.get_property$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment object, int property_id, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment pspec);
+        static MemorySegment allocate(get_property fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$624.const$1, fi, constants$179.const$1, scope);
         }
-        static get_property ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
+        static get_property ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _object, int _property_id, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _pspec) -> {
                 try {
-                    _GObjectClass.get_property_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$372.const$3.invokeExact(symbol, _object, _property_id, _value, _pspec);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -276,66 +192,52 @@ public class _GObjectClass {
         }
     }
 
-    static final VarHandle get_property$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_property"));
     public static VarHandle get_property$VH() {
-        return _GObjectClass.get_property$VH;
+        return constants$624.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*get_property)(GObject*,guint,GValue*,GParamSpec*);
+     * void (*get_property)(struct _GObject*,unsigned int,struct _GValue*,struct _GParamSpec*);
      * }
      */
     public static MemorySegment get_property$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.get_property$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$624.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*get_property)(GObject*,guint,GValue*,GParamSpec*);
+     * void (*get_property)(struct _GObject*,unsigned int,struct _GValue*,struct _GParamSpec*);
      * }
      */
     public static void get_property$set(MemorySegment seg, MemorySegment x) {
-        _GObjectClass.get_property$VH.set(seg, x);
+        constants$624.const$2.set(seg, x);
     }
     public static MemorySegment get_property$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.get_property$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$624.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_property$set(MemorySegment seg, long index, MemorySegment x) {
-        _GObjectClass.get_property$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$624.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_property get_property(MemorySegment segment, SegmentScope scope) {
+    public static get_property get_property(MemorySegment segment, Arena scope) {
         return get_property.ofAddress(get_property$get(segment), scope);
     }
-    static final FunctionDescriptor dispose$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor dispose_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle dispose_UP$MH = RuntimeHelper.upcallHandle(dispose.class, "apply", _GObjectClass.dispose_UP$FUNC);
-    static final FunctionDescriptor dispose_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle dispose_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GObjectClass.dispose_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*dispose)(GObject*);
+ * void (*dispose)(struct _GObject*);
      * }
      */
     public interface dispose {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(dispose fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GObjectClass.dispose_UP$MH, fi, _GObjectClass.dispose$FUNC, scope);
+        static MemorySegment allocate(dispose fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$624.const$3, fi, constants$13.const$1, scope);
         }
-        static dispose ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static dispose ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GObjectClass.dispose_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -343,66 +245,52 @@ public class _GObjectClass {
         }
     }
 
-    static final VarHandle dispose$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("dispose"));
     public static VarHandle dispose$VH() {
-        return _GObjectClass.dispose$VH;
+        return constants$624.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*dispose)(GObject*);
+     * void (*dispose)(struct _GObject*);
      * }
      */
     public static MemorySegment dispose$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.dispose$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$624.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*dispose)(GObject*);
+     * void (*dispose)(struct _GObject*);
      * }
      */
     public static void dispose$set(MemorySegment seg, MemorySegment x) {
-        _GObjectClass.dispose$VH.set(seg, x);
+        constants$624.const$4.set(seg, x);
     }
     public static MemorySegment dispose$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.dispose$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$624.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void dispose$set(MemorySegment seg, long index, MemorySegment x) {
-        _GObjectClass.dispose$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$624.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static dispose dispose(MemorySegment segment, SegmentScope scope) {
+    public static dispose dispose(MemorySegment segment, Arena scope) {
         return dispose.ofAddress(dispose$get(segment), scope);
     }
-    static final FunctionDescriptor finalize$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor finalize_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle finalize_UP$MH = RuntimeHelper.upcallHandle(finalize.class, "apply", _GObjectClass.finalize_UP$FUNC);
-    static final FunctionDescriptor finalize_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle finalize_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GObjectClass.finalize_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*finalize)(GObject*);
+ * void (*finalize)(struct _GObject*);
      * }
      */
     public interface finalize {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(finalize fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GObjectClass.finalize_UP$MH, fi, _GObjectClass.finalize$FUNC, scope);
+        static MemorySegment allocate(finalize fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$624.const$5, fi, constants$13.const$1, scope);
         }
-        static finalize ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static finalize ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GObjectClass.finalize_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -410,72 +298,52 @@ public class _GObjectClass {
         }
     }
 
-    static final VarHandle finalize$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("finalize"));
     public static VarHandle finalize$VH() {
-        return _GObjectClass.finalize$VH;
+        return constants$625.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*finalize)(GObject*);
+     * void (*finalize)(struct _GObject*);
      * }
      */
     public static MemorySegment finalize$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.finalize$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$625.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*finalize)(GObject*);
+     * void (*finalize)(struct _GObject*);
      * }
      */
     public static void finalize$set(MemorySegment seg, MemorySegment x) {
-        _GObjectClass.finalize$VH.set(seg, x);
+        constants$625.const$0.set(seg, x);
     }
     public static MemorySegment finalize$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.finalize$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$625.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void finalize$set(MemorySegment seg, long index, MemorySegment x) {
-        _GObjectClass.finalize$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$625.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static finalize finalize(MemorySegment segment, SegmentScope scope) {
+    public static finalize finalize(MemorySegment segment, Arena scope) {
         return finalize.ofAddress(finalize$get(segment), scope);
     }
-    static final FunctionDescriptor dispatch_properties_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor dispatch_properties_changed_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle dispatch_properties_changed_UP$MH = RuntimeHelper.upcallHandle(dispatch_properties_changed.class, "apply", _GObjectClass.dispatch_properties_changed_UP$FUNC);
-    static final FunctionDescriptor dispatch_properties_changed_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle dispatch_properties_changed_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GObjectClass.dispatch_properties_changed_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*dispatch_properties_changed)(GObject*,guint,GParamSpec**);
+ * void (*dispatch_properties_changed)(struct _GObject*,unsigned int,struct _GParamSpec**);
      * }
      */
     public interface dispatch_properties_changed {
 
         void apply(java.lang.foreign.MemorySegment _x0, int _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(dispatch_properties_changed fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GObjectClass.dispatch_properties_changed_UP$MH, fi, _GObjectClass.dispatch_properties_changed$FUNC, scope);
+        static MemorySegment allocate(dispatch_properties_changed fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$625.const$1, fi, constants$42.const$4, scope);
         }
-        static dispatch_properties_changed ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static dispatch_properties_changed ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1, java.lang.foreign.MemorySegment __x2) -> {
                 try {
-                    _GObjectClass.dispatch_properties_changed_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$625.const$2.invokeExact(symbol, __x0, __x1, __x2);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -483,69 +351,52 @@ public class _GObjectClass {
         }
     }
 
-    static final VarHandle dispatch_properties_changed$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("dispatch_properties_changed"));
     public static VarHandle dispatch_properties_changed$VH() {
-        return _GObjectClass.dispatch_properties_changed$VH;
+        return constants$625.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*dispatch_properties_changed)(GObject*,guint,GParamSpec**);
+     * void (*dispatch_properties_changed)(struct _GObject*,unsigned int,struct _GParamSpec**);
      * }
      */
     public static MemorySegment dispatch_properties_changed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.dispatch_properties_changed$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$625.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*dispatch_properties_changed)(GObject*,guint,GParamSpec**);
+     * void (*dispatch_properties_changed)(struct _GObject*,unsigned int,struct _GParamSpec**);
      * }
      */
     public static void dispatch_properties_changed$set(MemorySegment seg, MemorySegment x) {
-        _GObjectClass.dispatch_properties_changed$VH.set(seg, x);
+        constants$625.const$3.set(seg, x);
     }
     public static MemorySegment dispatch_properties_changed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.dispatch_properties_changed$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$625.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void dispatch_properties_changed$set(MemorySegment seg, long index, MemorySegment x) {
-        _GObjectClass.dispatch_properties_changed$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$625.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    public static dispatch_properties_changed dispatch_properties_changed(MemorySegment segment, SegmentScope scope) {
+    public static dispatch_properties_changed dispatch_properties_changed(MemorySegment segment, Arena scope) {
         return dispatch_properties_changed.ofAddress(dispatch_properties_changed$get(segment), scope);
     }
-    static final FunctionDescriptor notify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor notify_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle notify_UP$MH = RuntimeHelper.upcallHandle(notify.class, "apply", _GObjectClass.notify_UP$FUNC);
-    static final FunctionDescriptor notify_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle notify_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GObjectClass.notify_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*notify)(GObject*,GParamSpec*);
+ * void (*notify)(struct _GObject*,struct _GParamSpec*);
      * }
      */
     public interface notify {
 
         void apply(java.lang.foreign.MemorySegment tag, java.lang.foreign.MemorySegment data);
-        static MemorySegment allocate(notify fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GObjectClass.notify_UP$MH, fi, _GObjectClass.notify$FUNC, scope);
+        static MemorySegment allocate(notify fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$625.const$4, fi, constants$13.const$4, scope);
         }
-        static notify ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static notify ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _tag, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GObjectClass.notify_DOWN$MH.invokeExact(symbol, _tag, _data);
+                    constants$14.const$0.invokeExact(symbol, _tag, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -553,66 +404,52 @@ public class _GObjectClass {
         }
     }
 
-    static final VarHandle notify$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("notify"));
     public static VarHandle notify$VH() {
-        return _GObjectClass.notify$VH;
+        return constants$625.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*notify)(GObject*,GParamSpec*);
+     * void (*notify)(struct _GObject*,struct _GParamSpec*);
      * }
      */
     public static MemorySegment notify$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.notify$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$625.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*notify)(GObject*,GParamSpec*);
+     * void (*notify)(struct _GObject*,struct _GParamSpec*);
      * }
      */
     public static void notify$set(MemorySegment seg, MemorySegment x) {
-        _GObjectClass.notify$VH.set(seg, x);
+        constants$625.const$5.set(seg, x);
     }
     public static MemorySegment notify$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.notify$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$625.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void notify$set(MemorySegment seg, long index, MemorySegment x) {
-        _GObjectClass.notify$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$625.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    public static notify notify(MemorySegment segment, SegmentScope scope) {
+    public static notify notify(MemorySegment segment, Arena scope) {
         return notify.ofAddress(notify$get(segment), scope);
     }
-    static final FunctionDescriptor constructed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor constructed_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle constructed_UP$MH = RuntimeHelper.upcallHandle(constructed.class, "apply", _GObjectClass.constructed_UP$FUNC);
-    static final FunctionDescriptor constructed_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle constructed_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GObjectClass.constructed_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*constructed)(GObject*);
+ * void (*constructed)(struct _GObject*);
      * }
      */
     public interface constructed {
 
         void apply(java.lang.foreign.MemorySegment display);
-        static MemorySegment allocate(constructed fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GObjectClass.constructed_UP$MH, fi, _GObjectClass.constructed$FUNC, scope);
+        static MemorySegment allocate(constructed fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$626.const$0, fi, constants$13.const$1, scope);
         }
-        static constructed ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static constructed ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _display) -> {
                 try {
-                    _GObjectClass.constructed_DOWN$MH.invokeExact(symbol, _display);
+                    constants$13.const$3.invokeExact(symbol, _display);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -620,148 +457,143 @@ public class _GObjectClass {
         }
     }
 
-    static final VarHandle constructed$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("constructed"));
     public static VarHandle constructed$VH() {
-        return _GObjectClass.constructed$VH;
+        return constants$626.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*constructed)(GObject*);
+     * void (*constructed)(struct _GObject*);
      * }
      */
     public static MemorySegment constructed$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.constructed$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$626.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*constructed)(GObject*);
+     * void (*constructed)(struct _GObject*);
      * }
      */
     public static void constructed$set(MemorySegment seg, MemorySegment x) {
-        _GObjectClass.constructed$VH.set(seg, x);
+        constants$626.const$1.set(seg, x);
     }
     public static MemorySegment constructed$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.constructed$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$626.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void constructed$set(MemorySegment seg, long index, MemorySegment x) {
-        _GObjectClass.constructed$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$626.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    public static constructed constructed(MemorySegment segment, SegmentScope scope) {
+    public static constructed constructed(MemorySegment segment, Arena scope) {
         return constructed.ofAddress(constructed$get(segment), scope);
     }
-    static final VarHandle flags$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("flags"));
     public static VarHandle flags$VH() {
-        return _GObjectClass.flags$VH;
+        return constants$626.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gsize flags;
+     * unsigned long flags;
      * }
      */
     public static long flags$get(MemorySegment seg) {
-        return (long)_GObjectClass.flags$VH.get(seg);
+        return (long)constants$626.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gsize flags;
+     * unsigned long flags;
      * }
      */
     public static void flags$set(MemorySegment seg, long x) {
-        _GObjectClass.flags$VH.set(seg, x);
+        constants$626.const$2.set(seg, x);
     }
     public static long flags$get(MemorySegment seg, long index) {
-        return (long)_GObjectClass.flags$VH.get(seg.asSlice(index*sizeof()));
+        return (long)constants$626.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void flags$set(MemorySegment seg, long index, long x) {
-        _GObjectClass.flags$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$626.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle n_construct_properties$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("n_construct_properties"));
     public static VarHandle n_construct_properties$VH() {
-        return _GObjectClass.n_construct_properties$VH;
+        return constants$626.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gsize n_construct_properties;
+     * unsigned long n_construct_properties;
      * }
      */
     public static long n_construct_properties$get(MemorySegment seg) {
-        return (long)_GObjectClass.n_construct_properties$VH.get(seg);
+        return (long)constants$626.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gsize n_construct_properties;
+     * unsigned long n_construct_properties;
      * }
      */
     public static void n_construct_properties$set(MemorySegment seg, long x) {
-        _GObjectClass.n_construct_properties$VH.set(seg, x);
+        constants$626.const$3.set(seg, x);
     }
     public static long n_construct_properties$get(MemorySegment seg, long index) {
-        return (long)_GObjectClass.n_construct_properties$VH.get(seg.asSlice(index*sizeof()));
+        return (long)constants$626.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void n_construct_properties$set(MemorySegment seg, long index, long x) {
-        _GObjectClass.n_construct_properties$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$626.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle pspecs$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("pspecs"));
     public static VarHandle pspecs$VH() {
-        return _GObjectClass.pspecs$VH;
+        return constants$626.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gpointer pspecs;
+     * void* pspecs;
      * }
      */
     public static MemorySegment pspecs$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.pspecs$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$626.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gpointer pspecs;
+     * void* pspecs;
      * }
      */
     public static void pspecs$set(MemorySegment seg, MemorySegment x) {
-        _GObjectClass.pspecs$VH.set(seg, x);
+        constants$626.const$4.set(seg, x);
     }
     public static MemorySegment pspecs$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GObjectClass.pspecs$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$626.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void pspecs$set(MemorySegment seg, long index, MemorySegment x) {
-        _GObjectClass.pspecs$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$626.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle n_pspecs$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("n_pspecs"));
     public static VarHandle n_pspecs$VH() {
-        return _GObjectClass.n_pspecs$VH;
+        return constants$626.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gsize n_pspecs;
+     * unsigned long n_pspecs;
      * }
      */
     public static long n_pspecs$get(MemorySegment seg) {
-        return (long)_GObjectClass.n_pspecs$VH.get(seg);
+        return (long)constants$626.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gsize n_pspecs;
+     * unsigned long n_pspecs;
      * }
      */
     public static void n_pspecs$set(MemorySegment seg, long x) {
-        _GObjectClass.n_pspecs$VH.set(seg, x);
+        constants$626.const$5.set(seg, x);
     }
     public static long n_pspecs$get(MemorySegment seg, long index) {
-        return (long)_GObjectClass.n_pspecs$VH.get(seg.asSlice(index*sizeof()));
+        return (long)constants$626.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void n_pspecs$set(MemorySegment seg, long index, long x) {
-        _GObjectClass.n_pspecs$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$626.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment pdummy$slice(MemorySegment seg) {
         return seg.asSlice(112, 24);
@@ -771,7 +603,7 @@ public class _GObjectClass {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

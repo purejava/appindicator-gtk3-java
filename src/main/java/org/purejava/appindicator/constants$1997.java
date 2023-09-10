@@ -2,18 +2,21 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1997 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1997() {}
-    static final MemorySegment G_URI_RESERVED_CHARS_GENERIC_DELIMITERS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String(":/?#[]@");
-    static final MemorySegment G_URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("!$&\'()*+,;=");
-    static final MemorySegment G_URI_RESERVED_CHARS_ALLOWED_IN_PATH_ELEMENT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("!$&\'()*+,;=:@");
-    static final MemorySegment G_URI_RESERVED_CHARS_ALLOWED_IN_PATH$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("!$&\'()*+,;=:@/");
-    static final MemorySegment G_URI_RESERVED_CHARS_ALLOWED_IN_USERINFO$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("!$&\'()*+,;=:");
-    static final MemorySegment PTHREAD_CANCELED$ADDR = MemorySegment.ofAddress(-1L);
+    static final VarHandle const$0 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("get_size"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkComponentIface.grab_focus.class, "apply", constants$10.const$5);
+    static final VarHandle const$2 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("grab_focus"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkComponentIface.remove_focus_handler.class, "apply", constants$40.const$2);
+    static final VarHandle const$4 = constants$1994.const$3.varHandle(MemoryLayout.PathElement.groupElement("remove_focus_handler"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkComponentIface.set_extents.class, "apply", constants$1942.const$3);
 }
 
 

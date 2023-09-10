@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$370 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$370() {}
-    static final FunctionDescriptor pthread_condattr_setclock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_dict_new",
+        constants$5.const$2
     );
-    static final MethodHandle pthread_condattr_setclock$MH = RuntimeHelper.downcallHandle(
-        "pthread_condattr_setclock",
-        constants$370.pthread_condattr_setclock$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_variant_dict_init",
+        constants$13.const$4
     );
-    static final FunctionDescriptor pthread_spin_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_dict_lookup",
+        constants$12.const$2
     );
-    static final MethodHandle pthread_spin_init$MH = RuntimeHelper.downcallHandle(
-        "pthread_spin_init",
-        constants$370.pthread_spin_init$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_variant_dict_lookup_value",
+        constants$23.const$0
     );
-    static final FunctionDescriptor pthread_spin_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_variant_dict_contains",
+        constants$9.const$0
     );
-    static final MethodHandle pthread_spin_destroy$MH = RuntimeHelper.downcallHandle(
-        "pthread_spin_destroy",
-        constants$370.pthread_spin_destroy$FUNC
-    );
-    static final FunctionDescriptor pthread_spin_lock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_spin_lock$MH = RuntimeHelper.downcallHandle(
-        "pthread_spin_lock",
-        constants$370.pthread_spin_lock$FUNC
-    );
-    static final FunctionDescriptor pthread_spin_trylock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_spin_trylock$MH = RuntimeHelper.downcallHandle(
-        "pthread_spin_trylock",
-        constants$370.pthread_spin_trylock$FUNC
-    );
-    static final FunctionDescriptor pthread_spin_unlock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_spin_unlock$MH = RuntimeHelper.downcallHandle(
-        "pthread_spin_unlock",
-        constants$370.pthread_spin_unlock$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_dict_insert",
+        constants$14.const$3
     );
 }
 

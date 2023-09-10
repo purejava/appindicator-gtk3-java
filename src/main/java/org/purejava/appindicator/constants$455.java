@@ -3,68 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$455 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$455() {}
-    static final FunctionDescriptor g_signal_group_block$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_test_trap_has_passed",
+        constants$83.const$1
     );
-    static final MethodHandle g_signal_group_block$MH = RuntimeHelper.downcallHandle(
-        "g_signal_group_block",
-        constants$455.g_signal_group_block$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_test_trap_reached_timeout",
+        constants$83.const$1
     );
-    static final FunctionDescriptor g_signal_group_unblock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_test_rand_int",
+        constants$83.const$1
     );
-    static final MethodHandle g_signal_group_unblock$MH = RuntimeHelper.downcallHandle(
-        "g_signal_group_unblock",
-        constants$455.g_signal_group_unblock$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_test_rand_int_range",
+        constants$123.const$5
     );
-    static final FunctionDescriptor g_signal_group_connect_closure$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_test_rand_double",
+        constants$83.const$5
     );
-    static final MethodHandle g_signal_group_connect_closure$MH = RuntimeHelper.downcallHandle(
-        "g_signal_group_connect_closure",
-        constants$455.g_signal_group_connect_closure$FUNC
-    );
-    static final FunctionDescriptor g_signal_group_connect_object$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_signal_group_connect_object$MH = RuntimeHelper.downcallHandle(
-        "g_signal_group_connect_object",
-        constants$455.g_signal_group_connect_object$FUNC
-    );
-    static final FunctionDescriptor g_signal_group_connect_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_signal_group_connect_data$MH = RuntimeHelper.downcallHandle(
-        "g_signal_group_connect_data",
-        constants$455.g_signal_group_connect_data$FUNC
-    );
-    static final FunctionDescriptor g_signal_group_connect$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_group_connect$MH = RuntimeHelper.downcallHandle(
-        "g_signal_group_connect",
-        constants$455.g_signal_group_connect$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_test_rand_double_range",
+        constants$406.const$4
     );
 }
 

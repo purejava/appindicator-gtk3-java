@@ -2,18 +2,39 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2003 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2003() {}
-    static final MemorySegment G_FILE_ATTRIBUTE_ID_FILESYSTEM$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("id::filesystem");
-    static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_READ$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("access::can-read");
-    static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("access::can-write");
-    static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("access::can-execute");
-    static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_DELETE$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("access::can-delete");
-    static final MemorySegment G_FILE_ATTRIBUTE_ACCESS_CAN_TRASH$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("access::can-trash");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_component_remove_focus_handler",
+        constants$40.const$2
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_component_set_extents",
+        constants$1942.const$3
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_component_set_position",
+        constants$608.const$5
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_component_set_size",
+        constants$49.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_component_get_alpha",
+        constants$67.const$0
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_component_scroll_to",
+        constants$11.const$4
+    );
 }
 
 

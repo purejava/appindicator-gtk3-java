@@ -3,69 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$182 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$182() {}
-    static final FunctionDescriptor g_timeout_add$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dataset_destroy",
+        constants$13.const$1
     );
-    static final MethodHandle g_timeout_add$MH = RuntimeHelper.downcallHandle(
-        "g_timeout_add",
-        constants$182.g_timeout_add$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dataset_id_get_data",
+        constants$21.const$3
     );
-    static final FunctionDescriptor g_timeout_add_once$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_datalist_get_data",
+        constants$5.const$5
     );
-    static final MethodHandle g_timeout_add_once$MH = RuntimeHelper.downcallHandle(
-        "g_timeout_add_once",
-        constants$182.g_timeout_add_once$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_dataset_id_set_data_full$destroy_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dataset_id_set_data_full",
+        constants$179.const$1
     );
-    static final FunctionDescriptor g_timeout_add_seconds_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_timeout_add_seconds_full$MH = RuntimeHelper.downcallHandle(
-        "g_timeout_add_seconds_full",
-        constants$182.g_timeout_add_seconds_full$FUNC
-    );
-    static final FunctionDescriptor g_timeout_add_seconds$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_timeout_add_seconds$MH = RuntimeHelper.downcallHandle(
-        "g_timeout_add_seconds",
-        constants$182.g_timeout_add_seconds$FUNC
-    );
-    static final FunctionDescriptor g_child_watch_add_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_child_watch_add_full$MH = RuntimeHelper.downcallHandle(
-        "g_child_watch_add_full",
-        constants$182.g_child_watch_add_full$FUNC
-    );
-    static final FunctionDescriptor g_child_watch_add$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_child_watch_add$MH = RuntimeHelper.downcallHandle(
-        "g_child_watch_add",
-        constants$182.g_child_watch_add$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dataset_id_remove_no_notify",
+        constants$21.const$3
     );
 }
 

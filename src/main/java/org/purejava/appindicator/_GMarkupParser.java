@@ -4,75 +4,41 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GMarkupParser {
- *     void (*start_element)(GMarkupParseContext*,const gchar*,const gchar**,const gchar**,gpointer,GError**);
- *     void (*end_element)(GMarkupParseContext*,const gchar*,gpointer,GError**);
- *     void (*text)(GMarkupParseContext*,const gchar*,gsize,gpointer,GError**);
- *     void (*passthrough)(GMarkupParseContext*,const gchar*,gsize,gpointer,GError**);
- *     void (*error)(GMarkupParseContext*,GError*,gpointer);
+ *     void (*start_element)(struct _GMarkupParseContext*,char*,char**,char**,void*,struct _GError**);
+ *     void (*end_element)(struct _GMarkupParseContext*,char*,void*,struct _GError**);
+ *     void (*text)(struct _GMarkupParseContext*,char*,unsigned long,void*,struct _GError**);
+ *     void (*passthrough)(struct _GMarkupParseContext*,char*,unsigned long,void*,struct _GError**);
+ *     void (*error)(struct _GMarkupParseContext*,struct _GError*,void*);
  * };
  * }
  */
 public class _GMarkupParser {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("start_element"),
-        Constants$root.C_POINTER$LAYOUT.withName("end_element"),
-        Constants$root.C_POINTER$LAYOUT.withName("text"),
-        Constants$root.C_POINTER$LAYOUT.withName("passthrough"),
-        Constants$root.C_POINTER$LAYOUT.withName("error")
-    ).withName("_GMarkupParser");
     public static MemoryLayout $LAYOUT() {
-        return _GMarkupParser.$struct$LAYOUT;
+        return constants$338.const$2;
     }
-    static final FunctionDescriptor start_element$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor start_element_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle start_element_UP$MH = RuntimeHelper.upcallHandle(start_element.class, "apply", _GMarkupParser.start_element_UP$FUNC);
-    static final FunctionDescriptor start_element_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle start_element_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GMarkupParser.start_element_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*start_element)(GMarkupParseContext*,const gchar*,const gchar**,const gchar**,gpointer,GError**);
+ * void (*start_element)(struct _GMarkupParseContext*,char*,char**,char**,void*,struct _GError**);
      * }
      */
     public interface start_element {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4, java.lang.foreign.MemorySegment _x5);
-        static MemorySegment allocate(start_element fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GMarkupParser.start_element_UP$MH, fi, _GMarkupParser.start_element$FUNC, scope);
+        static MemorySegment allocate(start_element fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$338.const$4, fi, constants$338.const$3, scope);
         }
-        static start_element ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static start_element ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4, java.lang.foreign.MemorySegment __x5) -> {
                 try {
-                    _GMarkupParser.start_element_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
+                    constants$338.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4, __x5);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -80,75 +46,52 @@ public class _GMarkupParser {
         }
     }
 
-    static final VarHandle start_element$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("start_element"));
     public static VarHandle start_element$VH() {
-        return _GMarkupParser.start_element$VH;
+        return constants$339.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*start_element)(GMarkupParseContext*,const gchar*,const gchar**,const gchar**,gpointer,GError**);
+     * void (*start_element)(struct _GMarkupParseContext*,char*,char**,char**,void*,struct _GError**);
      * }
      */
     public static MemorySegment start_element$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GMarkupParser.start_element$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$339.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*start_element)(GMarkupParseContext*,const gchar*,const gchar**,const gchar**,gpointer,GError**);
+     * void (*start_element)(struct _GMarkupParseContext*,char*,char**,char**,void*,struct _GError**);
      * }
      */
     public static void start_element$set(MemorySegment seg, MemorySegment x) {
-        _GMarkupParser.start_element$VH.set(seg, x);
+        constants$339.const$0.set(seg, x);
     }
     public static MemorySegment start_element$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GMarkupParser.start_element$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$339.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void start_element$set(MemorySegment seg, long index, MemorySegment x) {
-        _GMarkupParser.start_element$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$339.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static start_element start_element(MemorySegment segment, SegmentScope scope) {
+    public static start_element start_element(MemorySegment segment, Arena scope) {
         return start_element.ofAddress(start_element$get(segment), scope);
     }
-    static final FunctionDescriptor end_element$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor end_element_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle end_element_UP$MH = RuntimeHelper.upcallHandle(end_element.class, "apply", _GMarkupParser.end_element_UP$FUNC);
-    static final FunctionDescriptor end_element_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle end_element_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GMarkupParser.end_element_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*end_element)(GMarkupParseContext*,const gchar*,gpointer,GError**);
+ * void (*end_element)(struct _GMarkupParseContext*,char*,void*,struct _GError**);
      * }
      */
     public interface end_element {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2, java.lang.foreign.MemorySegment _x3);
-        static MemorySegment allocate(end_element fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GMarkupParser.end_element_UP$MH, fi, _GMarkupParser.end_element$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment model, java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment iter, java.lang.foreign.MemorySegment data);
+        static MemorySegment allocate(end_element fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$339.const$1, fi, constants$42.const$1, scope);
         }
-        static end_element ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2, java.lang.foreign.MemorySegment __x3) -> {
+        static end_element ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _model, java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _iter, java.lang.foreign.MemorySegment _data) -> {
                 try {
-                    _GMarkupParser.end_element_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3);
+                    constants$259.const$4.invokeExact(symbol, _model, _path, _iter, _data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -156,78 +99,52 @@ public class _GMarkupParser {
         }
     }
 
-    static final VarHandle end_element$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("end_element"));
     public static VarHandle end_element$VH() {
-        return _GMarkupParser.end_element$VH;
+        return constants$339.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*end_element)(GMarkupParseContext*,const gchar*,gpointer,GError**);
+     * void (*end_element)(struct _GMarkupParseContext*,char*,void*,struct _GError**);
      * }
      */
     public static MemorySegment end_element$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GMarkupParser.end_element$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$339.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*end_element)(GMarkupParseContext*,const gchar*,gpointer,GError**);
+     * void (*end_element)(struct _GMarkupParseContext*,char*,void*,struct _GError**);
      * }
      */
     public static void end_element$set(MemorySegment seg, MemorySegment x) {
-        _GMarkupParser.end_element$VH.set(seg, x);
+        constants$339.const$2.set(seg, x);
     }
     public static MemorySegment end_element$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GMarkupParser.end_element$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$339.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void end_element$set(MemorySegment seg, long index, MemorySegment x) {
-        _GMarkupParser.end_element$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$339.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static end_element end_element(MemorySegment segment, SegmentScope scope) {
+    public static end_element end_element(MemorySegment segment, Arena scope) {
         return end_element.ofAddress(end_element$get(segment), scope);
     }
-    static final FunctionDescriptor text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor text_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle text_UP$MH = RuntimeHelper.upcallHandle(text.class, "apply", _GMarkupParser.text_UP$FUNC);
-    static final FunctionDescriptor text_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle text_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GMarkupParser.text_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*text)(GMarkupParseContext*,const gchar*,gsize,gpointer,GError**);
+ * void (*text)(struct _GMarkupParseContext*,char*,unsigned long,void*,struct _GError**);
      * }
      */
     public interface text {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(text fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GMarkupParser.text_UP$MH, fi, _GMarkupParser.text$FUNC, scope);
+        static MemorySegment allocate(text fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$339.const$4, fi, constants$339.const$3, scope);
         }
-        static text ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static text ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    _GMarkupParser.text_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$339.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -235,78 +152,52 @@ public class _GMarkupParser {
         }
     }
 
-    static final VarHandle text$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("text"));
     public static VarHandle text$VH() {
-        return _GMarkupParser.text$VH;
+        return constants$340.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*text)(GMarkupParseContext*,const gchar*,gsize,gpointer,GError**);
+     * void (*text)(struct _GMarkupParseContext*,char*,unsigned long,void*,struct _GError**);
      * }
      */
     public static MemorySegment text$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GMarkupParser.text$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$340.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*text)(GMarkupParseContext*,const gchar*,gsize,gpointer,GError**);
+     * void (*text)(struct _GMarkupParseContext*,char*,unsigned long,void*,struct _GError**);
      * }
      */
     public static void text$set(MemorySegment seg, MemorySegment x) {
-        _GMarkupParser.text$VH.set(seg, x);
+        constants$340.const$0.set(seg, x);
     }
     public static MemorySegment text$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GMarkupParser.text$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$340.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void text$set(MemorySegment seg, long index, MemorySegment x) {
-        _GMarkupParser.text$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$340.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static text text(MemorySegment segment, SegmentScope scope) {
+    public static text text(MemorySegment segment, Arena scope) {
         return text.ofAddress(text$get(segment), scope);
     }
-    static final FunctionDescriptor passthrough$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor passthrough_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle passthrough_UP$MH = RuntimeHelper.upcallHandle(passthrough.class, "apply", _GMarkupParser.passthrough_UP$FUNC);
-    static final FunctionDescriptor passthrough_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle passthrough_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GMarkupParser.passthrough_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*passthrough)(GMarkupParseContext*,const gchar*,gsize,gpointer,GError**);
+ * void (*passthrough)(struct _GMarkupParseContext*,char*,unsigned long,void*,struct _GError**);
      * }
      */
     public interface passthrough {
 
         void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, long _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(passthrough fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GMarkupParser.passthrough_UP$MH, fi, _GMarkupParser.passthrough$FUNC, scope);
+        static MemorySegment allocate(passthrough fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$340.const$1, fi, constants$339.const$3, scope);
         }
-        static passthrough ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static passthrough ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, long __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    _GMarkupParser.passthrough_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    constants$339.const$5.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -314,72 +205,52 @@ public class _GMarkupParser {
         }
     }
 
-    static final VarHandle passthrough$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("passthrough"));
     public static VarHandle passthrough$VH() {
-        return _GMarkupParser.passthrough$VH;
+        return constants$340.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*passthrough)(GMarkupParseContext*,const gchar*,gsize,gpointer,GError**);
+     * void (*passthrough)(struct _GMarkupParseContext*,char*,unsigned long,void*,struct _GError**);
      * }
      */
     public static MemorySegment passthrough$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GMarkupParser.passthrough$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$340.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*passthrough)(GMarkupParseContext*,const gchar*,gsize,gpointer,GError**);
+     * void (*passthrough)(struct _GMarkupParseContext*,char*,unsigned long,void*,struct _GError**);
      * }
      */
     public static void passthrough$set(MemorySegment seg, MemorySegment x) {
-        _GMarkupParser.passthrough$VH.set(seg, x);
+        constants$340.const$2.set(seg, x);
     }
     public static MemorySegment passthrough$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GMarkupParser.passthrough$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$340.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void passthrough$set(MemorySegment seg, long index, MemorySegment x) {
-        _GMarkupParser.passthrough$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$340.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static passthrough passthrough(MemorySegment segment, SegmentScope scope) {
+    public static passthrough passthrough(MemorySegment segment, Arena scope) {
         return passthrough.ofAddress(passthrough$get(segment), scope);
     }
-    static final FunctionDescriptor error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor error_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle error_UP$MH = RuntimeHelper.upcallHandle(error.class, "apply", _GMarkupParser.error_UP$FUNC);
-    static final FunctionDescriptor error_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle error_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GMarkupParser.error_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * void (*error)(GMarkupParseContext*,GError*,gpointer);
+ * void (*error)(struct _GMarkupParseContext*,struct _GError*,void*);
      * }
      */
     public interface error {
 
-        void apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, java.lang.foreign.MemorySegment _x2);
-        static MemorySegment allocate(error fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GMarkupParser.error_UP$MH, fi, _GMarkupParser.error$FUNC, scope);
+        void apply(java.lang.foreign.MemorySegment key, java.lang.foreign.MemorySegment value, java.lang.foreign.MemorySegment user_data);
+        static MemorySegment allocate(error fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$340.const$3, fi, constants$14.const$3, scope);
         }
-        static error ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, java.lang.foreign.MemorySegment __x2) -> {
+        static error ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _key, java.lang.foreign.MemorySegment _value, java.lang.foreign.MemorySegment _user_data) -> {
                 try {
-                    _GMarkupParser.error_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2);
+                    constants$14.const$5.invokeExact(symbol, _key, _value, _user_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -387,35 +258,34 @@ public class _GMarkupParser {
         }
     }
 
-    static final VarHandle error$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("error"));
     public static VarHandle error$VH() {
-        return _GMarkupParser.error$VH;
+        return constants$340.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * void (*error)(GMarkupParseContext*,GError*,gpointer);
+     * void (*error)(struct _GMarkupParseContext*,struct _GError*,void*);
      * }
      */
     public static MemorySegment error$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GMarkupParser.error$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$340.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * void (*error)(GMarkupParseContext*,GError*,gpointer);
+     * void (*error)(struct _GMarkupParseContext*,struct _GError*,void*);
      * }
      */
     public static void error$set(MemorySegment seg, MemorySegment x) {
-        _GMarkupParser.error$VH.set(seg, x);
+        constants$340.const$4.set(seg, x);
     }
     public static MemorySegment error$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GMarkupParser.error$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$340.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void error$set(MemorySegment seg, long index, MemorySegment x) {
-        _GMarkupParser.error$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$340.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static error error(MemorySegment segment, SegmentScope scope) {
+    public static error error(MemorySegment segment, Arena scope) {
         return error.ofAddress(error$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -423,7 +293,7 @@ public class _GMarkupParser {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

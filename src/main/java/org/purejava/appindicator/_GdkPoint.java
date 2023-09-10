@@ -2,88 +2,84 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GdkPoint {
- *     gint x;
- *     gint y;
+ *     int x;
+ *     int y;
  * };
  * }
  */
 public class _GdkPoint {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("x"),
-        Constants$root.C_INT$LAYOUT.withName("y")
-    ).withName("_GdkPoint");
     public static MemoryLayout $LAYOUT() {
-        return _GdkPoint.$struct$LAYOUT;
+        return constants$1754.const$5;
     }
-    static final VarHandle x$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("x"));
     public static VarHandle x$VH() {
-        return _GdkPoint.x$VH;
+        return constants$1755.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint x;
+     * int x;
      * }
      */
     public static int x$get(MemorySegment seg) {
-        return (int)_GdkPoint.x$VH.get(seg);
+        return (int)constants$1755.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint x;
+     * int x;
      * }
      */
     public static void x$set(MemorySegment seg, int x) {
-        _GdkPoint.x$VH.set(seg, x);
+        constants$1755.const$0.set(seg, x);
     }
     public static int x$get(MemorySegment seg, long index) {
-        return (int)_GdkPoint.x$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1755.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void x$set(MemorySegment seg, long index, int x) {
-        _GdkPoint.x$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1755.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle y$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("y"));
     public static VarHandle y$VH() {
-        return _GdkPoint.y$VH;
+        return constants$1755.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint y;
+     * int y;
      * }
      */
     public static int y$get(MemorySegment seg) {
-        return (int)_GdkPoint.y$VH.get(seg);
+        return (int)constants$1755.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint y;
+     * int y;
      * }
      */
     public static void y$set(MemorySegment seg, int x) {
-        _GdkPoint.y$VH.set(seg, x);
+        constants$1755.const$1.set(seg, x);
     }
     public static int y$get(MemorySegment seg, long index) {
-        return (int)_GdkPoint.y$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1755.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void y$set(MemorySegment seg, long index, int x) {
-        _GdkPoint.y$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1755.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

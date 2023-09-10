@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$299 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$299() {}
-    static final FunctionDescriptor g_scanner_warn$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_strchug",
+        constants$5.const$2
     );
-    static final MethodHandle g_scanner_warn$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_scanner_warn",
-        constants$299.g_scanner_warn$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_strchomp",
+        constants$5.const$2
     );
-    static final FunctionDescriptor GSequenceIterCompareFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_ascii_strcasecmp",
+        constants$9.const$0
     );
-    static final FunctionDescriptor GSequenceIterCompareFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_ascii_strncasecmp",
+        constants$18.const$2
     );
-    static final MethodHandle GSequenceIterCompareFunc_UP$MH = RuntimeHelper.upcallHandle(GSequenceIterCompareFunc.class, "apply", constants$299.GSequenceIterCompareFunc_UP$FUNC);
-    static final FunctionDescriptor GSequenceIterCompareFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_ascii_strdown",
+        constants$21.const$1
     );
-    static final MethodHandle GSequenceIterCompareFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$299.GSequenceIterCompareFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor g_sequence_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_new$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_new",
-        constants$299.g_sequence_new$FUNC
-    );
-    static final FunctionDescriptor g_sequence_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_free$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_free",
-        constants$299.g_sequence_free$FUNC
-    );
-    static final FunctionDescriptor g_sequence_get_length$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_get_length$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_get_length",
-        constants$299.g_sequence_get_length$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_ascii_strup",
+        constants$21.const$1
     );
 }
 

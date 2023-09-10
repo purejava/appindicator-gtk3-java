@@ -3,55 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1348 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1348() {}
-    static final FunctionDescriptor gtk_accel_map_load_scanner$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_map_load_scanner$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_load_scanner",
-        constants$1348.gtk_accel_map_load_scanner$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_map_save_fd$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_accel_map_save_fd$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_save_fd",
-        constants$1348.gtk_accel_map_save_fd$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_map_lock_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_map_lock_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_lock_path",
-        constants$1348.gtk_accel_map_lock_path$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_map_unlock_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_map_unlock_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_unlock_path",
-        constants$1348.gtk_accel_map_unlock_path$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_map_add_filter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_map_add_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_add_filter",
-        constants$1348.gtk_accel_map_add_filter$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_map_foreach_unfiltered$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_map_foreach_unfiltered$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_map_foreach_unfiltered",
-        constants$1348.gtk_accel_map_foreach_unfiltered$FUNC
-    );
+    static final VarHandle const$0 = constants$1346.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_default_database"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GTlsBackendInterface.supports_dtls.class, "apply", constants$10.const$5);
+    static final VarHandle const$2 = constants$1346.const$0.varHandle(MemoryLayout.PathElement.groupElement("supports_dtls"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GTlsBackendInterface.get_dtls_client_connection_type.class, "apply", constants$3.const$5);
+    static final VarHandle const$4 = constants$1346.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_dtls_client_connection_type"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GTlsBackendInterface.get_dtls_server_connection_type.class, "apply", constants$3.const$5);
 }
 
 

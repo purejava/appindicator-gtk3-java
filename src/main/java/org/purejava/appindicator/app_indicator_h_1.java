@@ -2,8 +2,133 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
+import java.lang.foreign.*;
+import static java.lang.foreign.ValueLayout.*;
 public class app_indicator_h_1 {
 
+    /**
+     * {@snippet :
+     * #define GDK_KEY_n 110
+     * }
+     */
+    public static int GDK_KEY_n() {
+        return (int)110L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_o 111
+     * }
+     */
+    public static int GDK_KEY_o() {
+        return (int)111L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_p 112
+     * }
+     */
+    public static int GDK_KEY_p() {
+        return (int)112L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_q 113
+     * }
+     */
+    public static int GDK_KEY_q() {
+        return (int)113L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_r 114
+     * }
+     */
+    public static int GDK_KEY_r() {
+        return (int)114L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_s 115
+     * }
+     */
+    public static int GDK_KEY_s() {
+        return (int)115L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_t 116
+     * }
+     */
+    public static int GDK_KEY_t() {
+        return (int)116L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_u 117
+     * }
+     */
+    public static int GDK_KEY_u() {
+        return (int)117L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_v 118
+     * }
+     */
+    public static int GDK_KEY_v() {
+        return (int)118L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_w 119
+     * }
+     */
+    public static int GDK_KEY_w() {
+        return (int)119L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_x 120
+     * }
+     */
+    public static int GDK_KEY_x() {
+        return (int)120L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_y 121
+     * }
+     */
+    public static int GDK_KEY_y() {
+        return (int)121L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_z 122
+     * }
+     */
+    public static int GDK_KEY_z() {
+        return (int)122L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_braceleft 123
+     * }
+     */
+    public static int GDK_KEY_braceleft() {
+        return (int)123L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_KEY_bar 124
+     * }
+     */
+    public static int GDK_KEY_bar() {
+        return (int)124L;
+    }
     /**
      * {@snippet :
      * #define GDK_KEY_braceright 125
@@ -7883,126 +8008,6 @@ public class app_indicator_h_1 {
      */
     public static int GDK_KEY_Hangul_YU() {
         return (int)3792L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hangul_EU 3793
-     * }
-     */
-    public static int GDK_KEY_Hangul_EU() {
-        return (int)3793L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hangul_YI 3794
-     * }
-     */
-    public static int GDK_KEY_Hangul_YI() {
-        return (int)3794L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hangul_I 3795
-     * }
-     */
-    public static int GDK_KEY_Hangul_I() {
-        return (int)3795L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hangul_J_Kiyeog 3796
-     * }
-     */
-    public static int GDK_KEY_Hangul_J_Kiyeog() {
-        return (int)3796L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hangul_J_SsangKiyeog 3797
-     * }
-     */
-    public static int GDK_KEY_Hangul_J_SsangKiyeog() {
-        return (int)3797L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hangul_J_KiyeogSios 3798
-     * }
-     */
-    public static int GDK_KEY_Hangul_J_KiyeogSios() {
-        return (int)3798L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hangul_J_Nieun 3799
-     * }
-     */
-    public static int GDK_KEY_Hangul_J_Nieun() {
-        return (int)3799L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hangul_J_NieunJieuj 3800
-     * }
-     */
-    public static int GDK_KEY_Hangul_J_NieunJieuj() {
-        return (int)3800L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hangul_J_NieunHieuh 3801
-     * }
-     */
-    public static int GDK_KEY_Hangul_J_NieunHieuh() {
-        return (int)3801L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hangul_J_Dikeud 3802
-     * }
-     */
-    public static int GDK_KEY_Hangul_J_Dikeud() {
-        return (int)3802L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hangul_J_Rieul 3803
-     * }
-     */
-    public static int GDK_KEY_Hangul_J_Rieul() {
-        return (int)3803L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hangul_J_RieulKiyeog 3804
-     * }
-     */
-    public static int GDK_KEY_Hangul_J_RieulKiyeog() {
-        return (int)3804L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hangul_J_RieulMieum 3805
-     * }
-     */
-    public static int GDK_KEY_Hangul_J_RieulMieum() {
-        return (int)3805L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hangul_J_RieulPieub 3806
-     * }
-     */
-    public static int GDK_KEY_Hangul_J_RieulPieub() {
-        return (int)3806L;
-    }
-    /**
-     * {@snippet :
-     * #define GDK_KEY_Hangul_J_RieulSios 3807
-     * }
-     */
-    public static int GDK_KEY_Hangul_J_RieulSios() {
-        return (int)3807L;
     }
 }
 

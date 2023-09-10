@@ -3,60 +3,27 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$13 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$13() {}
-    static final FunctionDescriptor strrchr$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GEqualFuncFull.class, "apply", constants$12.const$2);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle strrchr$MH = RuntimeHelper.downcallHandle(
-        "strrchr",
-        constants$13.strrchr$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(GDestroyNotify.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$13.const$1
     );
-    static final FunctionDescriptor strcspn$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle strcspn$MH = RuntimeHelper.downcallHandle(
-        "strcspn",
-        constants$13.strcspn$FUNC
-    );
-    static final FunctionDescriptor strspn$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strspn$MH = RuntimeHelper.downcallHandle(
-        "strspn",
-        constants$13.strspn$FUNC
-    );
-    static final FunctionDescriptor strpbrk$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strpbrk$MH = RuntimeHelper.downcallHandle(
-        "strpbrk",
-        constants$13.strpbrk$FUNC
-    );
-    static final FunctionDescriptor strstr$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strstr$MH = RuntimeHelper.downcallHandle(
-        "strstr",
-        constants$13.strstr$FUNC
-    );
-    static final FunctionDescriptor strtok$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strtok$MH = RuntimeHelper.downcallHandle(
-        "strtok",
-        constants$13.strtok$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(GFunc.class, "apply", constants$13.const$4);
 }
 
 

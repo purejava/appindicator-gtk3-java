@@ -3,70 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1296 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1296() {}
-    static final FunctionDescriptor gtk_container_child_get$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect",
+        constants$39.const$1
     );
-    static final MethodHandle gtk_container_child_get$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_container_child_get",
-        constants$1296.gtk_container_child_get$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_SHORT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor gtk_container_child_set_valist$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_host",
+        constants$1296.const$1
     );
-    static final MethodHandle gtk_container_child_set_valist$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_child_set_valist",
-        constants$1296.gtk_container_child_set_valist$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_service",
+        constants$330.const$5
     );
-    static final FunctionDescriptor gtk_container_child_get_valist$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_client_connect_to_uri",
+        constants$1296.const$1
     );
-    static final MethodHandle gtk_container_child_get_valist$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_child_get_valist",
-        constants$1296.gtk_container_child_get_valist$FUNC
-    );
-    static final FunctionDescriptor gtk_container_child_set_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_container_child_set_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_child_set_property",
-        constants$1296.gtk_container_child_set_property$FUNC
-    );
-    static final FunctionDescriptor gtk_container_child_get_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_container_child_get_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_child_get_property",
-        constants$1296.gtk_container_child_get_property$FUNC
-    );
-    static final FunctionDescriptor gtk_container_child_notify$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_container_child_notify$MH = RuntimeHelper.downcallHandle(
-        "gtk_container_child_notify",
-        constants$1296.gtk_container_child_notify$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_socket_client_connect_async$callback.class, "apply", constants$14.const$3);
 }
 
 

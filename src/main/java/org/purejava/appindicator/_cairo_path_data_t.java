@@ -2,9 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * union _cairo_path_data_t {
@@ -15,23 +17,13 @@ import java.lang.foreign.*;
  */
 public class _cairo_path_data_t {
 
-    static final UnionLayout $union$LAYOUT = MemoryLayout.unionLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            Constants$root.C_INT$LAYOUT.withName("length")
-        ).withName("header"),
-        MemoryLayout.structLayout(
-            Constants$root.C_DOUBLE$LAYOUT.withName("x"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("y")
-        ).withName("point")
-    ).withName("_cairo_path_data_t");
     public static MemoryLayout $LAYOUT() {
-        return _cairo_path_data_t.$union$LAYOUT;
+        return constants$1718.const$3;
     }
     /**
      * {@snippet :
      * struct {
-     *     cairo_path_data_type_t type;
+     *     enum _cairo_path_data_type type;
      *     int length;
      * };
      * }
@@ -40,44 +32,38 @@ public class _cairo_path_data_t {
 
         // Suppresses default constructor, ensuring non-instantiability.
         private header() {}
-        static final StructLayout header$struct$LAYOUT = MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("type"),
-            Constants$root.C_INT$LAYOUT.withName("length")
-        );
         public static MemoryLayout $LAYOUT() {
-            return header.header$struct$LAYOUT;
+            return constants$1718.const$4;
         }
-        static final VarHandle type$VH = header$struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("type"));
         public static VarHandle type$VH() {
-            return header.type$VH;
+            return constants$1718.const$5;
         }
         /**
          * Getter for field:
          * {@snippet :
-         * cairo_path_data_type_t type;
+         * enum _cairo_path_data_type type;
          * }
          */
         public static int type$get(MemorySegment seg) {
-            return (int)header.type$VH.get(seg);
+            return (int)constants$1718.const$5.get(seg);
         }
         /**
          * Setter for field:
          * {@snippet :
-         * cairo_path_data_type_t type;
+         * enum _cairo_path_data_type type;
          * }
          */
         public static void type$set(MemorySegment seg, int x) {
-            header.type$VH.set(seg, x);
+            constants$1718.const$5.set(seg, x);
         }
         public static int type$get(MemorySegment seg, long index) {
-            return (int)header.type$VH.get(seg.asSlice(index*sizeof()));
+            return (int)constants$1718.const$5.get(seg.asSlice(index*sizeof()));
         }
         public static void type$set(MemorySegment seg, long index, int x) {
-            header.type$VH.set(seg.asSlice(index*sizeof()), x);
+            constants$1718.const$5.set(seg.asSlice(index*sizeof()), x);
         }
-        static final VarHandle length$VH = header$struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("length"));
         public static VarHandle length$VH() {
-            return header.length$VH;
+            return constants$1719.const$0;
         }
         /**
          * Getter for field:
@@ -86,7 +72,7 @@ public class _cairo_path_data_t {
          * }
          */
         public static int length$get(MemorySegment seg) {
-            return (int)header.length$VH.get(seg);
+            return (int)constants$1719.const$0.get(seg);
         }
         /**
          * Setter for field:
@@ -95,20 +81,20 @@ public class _cairo_path_data_t {
          * }
          */
         public static void length$set(MemorySegment seg, int x) {
-            header.length$VH.set(seg, x);
+            constants$1719.const$0.set(seg, x);
         }
         public static int length$get(MemorySegment seg, long index) {
-            return (int)header.length$VH.get(seg.asSlice(index*sizeof()));
+            return (int)constants$1719.const$0.get(seg.asSlice(index*sizeof()));
         }
         public static void length$set(MemorySegment seg, long index, int x) {
-            header.length$VH.set(seg.asSlice(index*sizeof()), x);
+            constants$1719.const$0.set(seg.asSlice(index*sizeof()), x);
         }
         public static long sizeof() { return $LAYOUT().byteSize(); }
         public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
         public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
             return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
         }
-        public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+        public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
     }
 
     public static MemorySegment header$slice(MemorySegment seg) {
@@ -126,16 +112,11 @@ public class _cairo_path_data_t {
 
         // Suppresses default constructor, ensuring non-instantiability.
         private point() {}
-        static final StructLayout point$struct$LAYOUT = MemoryLayout.structLayout(
-            Constants$root.C_DOUBLE$LAYOUT.withName("x"),
-            Constants$root.C_DOUBLE$LAYOUT.withName("y")
-        );
         public static MemoryLayout $LAYOUT() {
-            return point.point$struct$LAYOUT;
+            return constants$1719.const$1;
         }
-        static final VarHandle x$VH = point$struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("x"));
         public static VarHandle x$VH() {
-            return point.x$VH;
+            return constants$1719.const$2;
         }
         /**
          * Getter for field:
@@ -144,7 +125,7 @@ public class _cairo_path_data_t {
          * }
          */
         public static double x$get(MemorySegment seg) {
-            return (double)point.x$VH.get(seg);
+            return (double)constants$1719.const$2.get(seg);
         }
         /**
          * Setter for field:
@@ -153,17 +134,16 @@ public class _cairo_path_data_t {
          * }
          */
         public static void x$set(MemorySegment seg, double x) {
-            point.x$VH.set(seg, x);
+            constants$1719.const$2.set(seg, x);
         }
         public static double x$get(MemorySegment seg, long index) {
-            return (double)point.x$VH.get(seg.asSlice(index*sizeof()));
+            return (double)constants$1719.const$2.get(seg.asSlice(index*sizeof()));
         }
         public static void x$set(MemorySegment seg, long index, double x) {
-            point.x$VH.set(seg.asSlice(index*sizeof()), x);
+            constants$1719.const$2.set(seg.asSlice(index*sizeof()), x);
         }
-        static final VarHandle y$VH = point$struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("y"));
         public static VarHandle y$VH() {
-            return point.y$VH;
+            return constants$1719.const$3;
         }
         /**
          * Getter for field:
@@ -172,7 +152,7 @@ public class _cairo_path_data_t {
          * }
          */
         public static double y$get(MemorySegment seg) {
-            return (double)point.y$VH.get(seg);
+            return (double)constants$1719.const$3.get(seg);
         }
         /**
          * Setter for field:
@@ -181,20 +161,20 @@ public class _cairo_path_data_t {
          * }
          */
         public static void y$set(MemorySegment seg, double x) {
-            point.y$VH.set(seg, x);
+            constants$1719.const$3.set(seg, x);
         }
         public static double y$get(MemorySegment seg, long index) {
-            return (double)point.y$VH.get(seg.asSlice(index*sizeof()));
+            return (double)constants$1719.const$3.get(seg.asSlice(index*sizeof()));
         }
         public static void y$set(MemorySegment seg, long index, double x) {
-            point.y$VH.set(seg.asSlice(index*sizeof()), x);
+            constants$1719.const$3.set(seg.asSlice(index*sizeof()), x);
         }
         public static long sizeof() { return $LAYOUT().byteSize(); }
         public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
         public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
             return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
         }
-        public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+        public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
     }
 
     public static MemorySegment point$slice(MemorySegment seg) {
@@ -205,7 +185,7 @@ public class _cairo_path_data_t {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

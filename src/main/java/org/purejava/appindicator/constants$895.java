@@ -3,71 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$895 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$895() {}
-    static final FunctionDescriptor hb_shape_plan_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_flags",
+        constants$40.const$2
     );
-    static final MethodHandle hb_shape_plan_create$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_create",
-        constants$895.hb_shape_plan_create$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_serial",
+        constants$10.const$5
     );
-    static final FunctionDescriptor hb_shape_plan_create_cached$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_serial",
+        constants$40.const$2
     );
-    static final MethodHandle hb_shape_plan_create_cached$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_create_cached",
-        constants$895.hb_shape_plan_create_cached$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_header",
+        constants$21.const$3
     );
-    static final FunctionDescriptor hb_shape_plan_create2$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_set_header",
+        constants$42.const$4
     );
-    static final MethodHandle hb_shape_plan_create2$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_create2",
-        constants$895.hb_shape_plan_create2$FUNC
-    );
-    static final FunctionDescriptor hb_shape_plan_create_cached2$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_shape_plan_create_cached2$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_create_cached2",
-        constants$895.hb_shape_plan_create_cached2$FUNC
-    );
-    static final FunctionDescriptor hb_shape_plan_get_empty$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_shape_plan_get_empty$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_get_empty",
-        constants$895.hb_shape_plan_get_empty$FUNC
-    );
-    static final FunctionDescriptor hb_shape_plan_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_shape_plan_reference$MH = RuntimeHelper.downcallHandle(
-        "hb_shape_plan_reference",
-        constants$895.hb_shape_plan_reference$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_message_get_header_fields",
+        constants$5.const$2
     );
 }
 

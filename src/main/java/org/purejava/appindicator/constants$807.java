@@ -3,56 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$807 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$807() {}
-    static final FunctionDescriptor g_tls_connection_set_database$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_content_type_can_be_executable",
+        constants$10.const$5
     );
-    static final MethodHandle g_tls_connection_set_database$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_set_database",
-        constants$807.g_tls_connection_set_database$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_content_type_from_mime_type",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_tls_connection_get_database$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_tls_connection_get_database$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_database",
-        constants$807.g_tls_connection_get_database$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_content_type_guess",
+        constants$807.const$2
     );
-    static final FunctionDescriptor g_tls_connection_set_certificate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_content_type_guess_for_tree",
+        constants$5.const$2
     );
-    static final MethodHandle g_tls_connection_set_certificate$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_set_certificate",
-        constants$807.g_tls_connection_set_certificate$FUNC
-    );
-    static final FunctionDescriptor g_tls_connection_get_certificate$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_connection_get_certificate$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_certificate",
-        constants$807.g_tls_connection_get_certificate$FUNC
-    );
-    static final FunctionDescriptor g_tls_connection_set_interaction$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_connection_set_interaction$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_set_interaction",
-        constants$807.g_tls_connection_set_interaction$FUNC
-    );
-    static final FunctionDescriptor g_tls_connection_get_interaction$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_tls_connection_get_interaction$MH = RuntimeHelper.downcallHandle(
-        "g_tls_connection_get_interaction",
-        constants$807.g_tls_connection_get_interaction$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_content_types_get_registered",
+        constants$35.const$2
     );
 }
 

@@ -3,16 +3,2690 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
 import static java.lang.foreign.ValueLayout.*;
 public class app_indicator_h_18 extends app_indicator_h_17 {
 
-    public static MethodHandle gtk_recent_info_last_application$MH() {
-        return RuntimeHelper.requireNonNull(constants$1774.gtk_recent_info_last_application$MH,"gtk_recent_info_last_application");
+    public static MethodHandle gtk_print_settings_set_page_set$MH() {
+        return RuntimeHelper.requireNonNull(constants$2962.const$1,"gtk_print_settings_set_page_set");
     }
     /**
      * {@snippet :
-     * gchar* gtk_recent_info_last_application(GtkRecentInfo* info);
+     * void gtk_print_settings_set_page_set(struct _GtkPrintSettings* settings, enum GtkPageSet page_set);
+     * }
+     */
+    public static void gtk_print_settings_set_page_set(MemorySegment settings, int page_set) {
+        var mh$ = gtk_print_settings_set_page_set$MH();
+        try {
+            mh$.invokeExact(settings, page_set);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_settings_get_default_source$MH() {
+        return RuntimeHelper.requireNonNull(constants$2962.const$2,"gtk_print_settings_get_default_source");
+    }
+    /**
+     * {@snippet :
+     * char* gtk_print_settings_get_default_source(struct _GtkPrintSettings* settings);
+     * }
+     */
+    public static MemorySegment gtk_print_settings_get_default_source(MemorySegment settings) {
+        var mh$ = gtk_print_settings_get_default_source$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(settings);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_settings_set_default_source$MH() {
+        return RuntimeHelper.requireNonNull(constants$2962.const$3,"gtk_print_settings_set_default_source");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_settings_set_default_source(struct _GtkPrintSettings* settings, char* default_source);
+     * }
+     */
+    public static void gtk_print_settings_set_default_source(MemorySegment settings, MemorySegment default_source) {
+        var mh$ = gtk_print_settings_set_default_source$MH();
+        try {
+            mh$.invokeExact(settings, default_source);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_settings_get_media_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$2962.const$4,"gtk_print_settings_get_media_type");
+    }
+    /**
+     * {@snippet :
+     * char* gtk_print_settings_get_media_type(struct _GtkPrintSettings* settings);
+     * }
+     */
+    public static MemorySegment gtk_print_settings_get_media_type(MemorySegment settings) {
+        var mh$ = gtk_print_settings_get_media_type$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(settings);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_settings_set_media_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$2962.const$5,"gtk_print_settings_set_media_type");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_settings_set_media_type(struct _GtkPrintSettings* settings, char* media_type);
+     * }
+     */
+    public static void gtk_print_settings_set_media_type(MemorySegment settings, MemorySegment media_type) {
+        var mh$ = gtk_print_settings_set_media_type$MH();
+        try {
+            mh$.invokeExact(settings, media_type);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_settings_get_dither$MH() {
+        return RuntimeHelper.requireNonNull(constants$2963.const$0,"gtk_print_settings_get_dither");
+    }
+    /**
+     * {@snippet :
+     * char* gtk_print_settings_get_dither(struct _GtkPrintSettings* settings);
+     * }
+     */
+    public static MemorySegment gtk_print_settings_get_dither(MemorySegment settings) {
+        var mh$ = gtk_print_settings_get_dither$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(settings);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_settings_set_dither$MH() {
+        return RuntimeHelper.requireNonNull(constants$2963.const$1,"gtk_print_settings_set_dither");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_settings_set_dither(struct _GtkPrintSettings* settings, char* dither);
+     * }
+     */
+    public static void gtk_print_settings_set_dither(MemorySegment settings, MemorySegment dither) {
+        var mh$ = gtk_print_settings_set_dither$MH();
+        try {
+            mh$.invokeExact(settings, dither);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_settings_get_finishings$MH() {
+        return RuntimeHelper.requireNonNull(constants$2963.const$2,"gtk_print_settings_get_finishings");
+    }
+    /**
+     * {@snippet :
+     * char* gtk_print_settings_get_finishings(struct _GtkPrintSettings* settings);
+     * }
+     */
+    public static MemorySegment gtk_print_settings_get_finishings(MemorySegment settings) {
+        var mh$ = gtk_print_settings_get_finishings$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(settings);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_settings_set_finishings$MH() {
+        return RuntimeHelper.requireNonNull(constants$2963.const$3,"gtk_print_settings_set_finishings");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_settings_set_finishings(struct _GtkPrintSettings* settings, char* finishings);
+     * }
+     */
+    public static void gtk_print_settings_set_finishings(MemorySegment settings, MemorySegment finishings) {
+        var mh$ = gtk_print_settings_set_finishings$MH();
+        try {
+            mh$.invokeExact(settings, finishings);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_settings_get_output_bin$MH() {
+        return RuntimeHelper.requireNonNull(constants$2963.const$4,"gtk_print_settings_get_output_bin");
+    }
+    /**
+     * {@snippet :
+     * char* gtk_print_settings_get_output_bin(struct _GtkPrintSettings* settings);
+     * }
+     */
+    public static MemorySegment gtk_print_settings_get_output_bin(MemorySegment settings) {
+        var mh$ = gtk_print_settings_get_output_bin$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(settings);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_settings_set_output_bin$MH() {
+        return RuntimeHelper.requireNonNull(constants$2963.const$5,"gtk_print_settings_set_output_bin");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_settings_set_output_bin(struct _GtkPrintSettings* settings, char* output_bin);
+     * }
+     */
+    public static void gtk_print_settings_set_output_bin(MemorySegment settings, MemorySegment output_bin) {
+        var mh$ = gtk_print_settings_set_output_bin$MH();
+        try {
+            mh$.invokeExact(settings, output_bin);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_settings_to_gvariant$MH() {
+        return RuntimeHelper.requireNonNull(constants$2964.const$0,"gtk_print_settings_to_gvariant");
+    }
+    /**
+     * {@snippet :
+     * struct _GVariant* gtk_print_settings_to_gvariant(struct _GtkPrintSettings* settings);
+     * }
+     */
+    public static MemorySegment gtk_print_settings_to_gvariant(MemorySegment settings) {
+        var mh$ = gtk_print_settings_to_gvariant$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(settings);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_settings_new_from_gvariant$MH() {
+        return RuntimeHelper.requireNonNull(constants$2964.const$1,"gtk_print_settings_new_from_gvariant");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkPrintSettings* gtk_print_settings_new_from_gvariant(struct _GVariant* variant);
+     * }
+     */
+    public static MemorySegment gtk_print_settings_new_from_gvariant(MemorySegment variant) {
+        var mh$ = gtk_print_settings_new_from_gvariant$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(variant);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_preview_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$2968.const$5,"gtk_print_operation_preview_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_print_operation_preview_get_type();
+     * }
+     */
+    public static long gtk_print_operation_preview_get_type() {
+        var mh$ = gtk_print_operation_preview_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_preview_render_page$MH() {
+        return RuntimeHelper.requireNonNull(constants$2969.const$0,"gtk_print_operation_preview_render_page");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_preview_render_page(struct _GtkPrintOperationPreview* preview, int page_nr);
+     * }
+     */
+    public static void gtk_print_operation_preview_render_page(MemorySegment preview, int page_nr) {
+        var mh$ = gtk_print_operation_preview_render_page$MH();
+        try {
+            mh$.invokeExact(preview, page_nr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_preview_end_preview$MH() {
+        return RuntimeHelper.requireNonNull(constants$2969.const$1,"gtk_print_operation_preview_end_preview");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_preview_end_preview(struct _GtkPrintOperationPreview* preview);
+     * }
+     */
+    public static void gtk_print_operation_preview_end_preview(MemorySegment preview) {
+        var mh$ = gtk_print_operation_preview_end_preview$MH();
+        try {
+            mh$.invokeExact(preview);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_preview_is_selected$MH() {
+        return RuntimeHelper.requireNonNull(constants$2969.const$2,"gtk_print_operation_preview_is_selected");
+    }
+    /**
+     * {@snippet :
+     * int gtk_print_operation_preview_is_selected(struct _GtkPrintOperationPreview* preview, int page_nr);
+     * }
+     */
+    public static int gtk_print_operation_preview_is_selected(MemorySegment preview, int page_nr) {
+        var mh$ = gtk_print_operation_preview_is_selected$MH();
+        try {
+            return (int)mh$.invokeExact(preview, page_nr);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintStatus.GTK_PRINT_STATUS_INITIAL = 0;
+     * }
+     */
+    public static int GTK_PRINT_STATUS_INITIAL() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintStatus.GTK_PRINT_STATUS_PREPARING = 1;
+     * }
+     */
+    public static int GTK_PRINT_STATUS_PREPARING() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintStatus.GTK_PRINT_STATUS_GENERATING_DATA = 2;
+     * }
+     */
+    public static int GTK_PRINT_STATUS_GENERATING_DATA() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintStatus.GTK_PRINT_STATUS_SENDING_DATA = 3;
+     * }
+     */
+    public static int GTK_PRINT_STATUS_SENDING_DATA() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintStatus.GTK_PRINT_STATUS_PENDING = 4;
+     * }
+     */
+    public static int GTK_PRINT_STATUS_PENDING() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintStatus.GTK_PRINT_STATUS_PENDING_ISSUE = 5;
+     * }
+     */
+    public static int GTK_PRINT_STATUS_PENDING_ISSUE() {
+        return (int)5L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintStatus.GTK_PRINT_STATUS_PRINTING = 6;
+     * }
+     */
+    public static int GTK_PRINT_STATUS_PRINTING() {
+        return (int)6L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintStatus.GTK_PRINT_STATUS_FINISHED = 7;
+     * }
+     */
+    public static int GTK_PRINT_STATUS_FINISHED() {
+        return (int)7L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintStatus.GTK_PRINT_STATUS_FINISHED_ABORTED = 8;
+     * }
+     */
+    public static int GTK_PRINT_STATUS_FINISHED_ABORTED() {
+        return (int)8L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintOperationResult.GTK_PRINT_OPERATION_RESULT_ERROR = 0;
+     * }
+     */
+    public static int GTK_PRINT_OPERATION_RESULT_ERROR() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintOperationResult.GTK_PRINT_OPERATION_RESULT_APPLY = 1;
+     * }
+     */
+    public static int GTK_PRINT_OPERATION_RESULT_APPLY() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintOperationResult.GTK_PRINT_OPERATION_RESULT_CANCEL = 2;
+     * }
+     */
+    public static int GTK_PRINT_OPERATION_RESULT_CANCEL() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintOperationResult.GTK_PRINT_OPERATION_RESULT_IN_PROGRESS = 3;
+     * }
+     */
+    public static int GTK_PRINT_OPERATION_RESULT_IN_PROGRESS() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintOperationAction.GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG = 0;
+     * }
+     */
+    public static int GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintOperationAction.GTK_PRINT_OPERATION_ACTION_PRINT = 1;
+     * }
+     */
+    public static int GTK_PRINT_OPERATION_ACTION_PRINT() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintOperationAction.GTK_PRINT_OPERATION_ACTION_PREVIEW = 2;
+     * }
+     */
+    public static int GTK_PRINT_OPERATION_ACTION_PREVIEW() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintOperationAction.GTK_PRINT_OPERATION_ACTION_EXPORT = 3;
+     * }
+     */
+    public static int GTK_PRINT_OPERATION_ACTION_EXPORT() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintError.GTK_PRINT_ERROR_GENERAL = 0;
+     * }
+     */
+    public static int GTK_PRINT_ERROR_GENERAL() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintError.GTK_PRINT_ERROR_INTERNAL_ERROR = 1;
+     * }
+     */
+    public static int GTK_PRINT_ERROR_INTERNAL_ERROR() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintError.GTK_PRINT_ERROR_NOMEM = 2;
+     * }
+     */
+    public static int GTK_PRINT_ERROR_NOMEM() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintError.GTK_PRINT_ERROR_INVALID_FILE = 3;
+     * }
+     */
+    public static int GTK_PRINT_ERROR_INVALID_FILE() {
+        return (int)3L;
+    }
+    public static MethodHandle gtk_print_error_quark$MH() {
+        return RuntimeHelper.requireNonNull(constants$2976.const$2,"gtk_print_error_quark");
+    }
+    /**
+     * {@snippet :
+     * unsigned int gtk_print_error_quark();
+     * }
+     */
+    public static int gtk_print_error_quark() {
+        var mh$ = gtk_print_error_quark$MH();
+        try {
+            return (int)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$2976.const$3,"gtk_print_operation_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_print_operation_get_type();
+     * }
+     */
+    public static long gtk_print_operation_get_type() {
+        var mh$ = gtk_print_operation_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$2976.const$4,"gtk_print_operation_new");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkPrintOperation* gtk_print_operation_new();
+     * }
+     */
+    public static MemorySegment gtk_print_operation_new() {
+        var mh$ = gtk_print_operation_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_set_default_page_setup$MH() {
+        return RuntimeHelper.requireNonNull(constants$2976.const$5,"gtk_print_operation_set_default_page_setup");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_set_default_page_setup(struct _GtkPrintOperation* op, struct _GtkPageSetup* default_page_setup);
+     * }
+     */
+    public static void gtk_print_operation_set_default_page_setup(MemorySegment op, MemorySegment default_page_setup) {
+        var mh$ = gtk_print_operation_set_default_page_setup$MH();
+        try {
+            mh$.invokeExact(op, default_page_setup);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_get_default_page_setup$MH() {
+        return RuntimeHelper.requireNonNull(constants$2977.const$0,"gtk_print_operation_get_default_page_setup");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkPageSetup* gtk_print_operation_get_default_page_setup(struct _GtkPrintOperation* op);
+     * }
+     */
+    public static MemorySegment gtk_print_operation_get_default_page_setup(MemorySegment op) {
+        var mh$ = gtk_print_operation_get_default_page_setup$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_set_print_settings$MH() {
+        return RuntimeHelper.requireNonNull(constants$2977.const$1,"gtk_print_operation_set_print_settings");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_set_print_settings(struct _GtkPrintOperation* op, struct _GtkPrintSettings* print_settings);
+     * }
+     */
+    public static void gtk_print_operation_set_print_settings(MemorySegment op, MemorySegment print_settings) {
+        var mh$ = gtk_print_operation_set_print_settings$MH();
+        try {
+            mh$.invokeExact(op, print_settings);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_get_print_settings$MH() {
+        return RuntimeHelper.requireNonNull(constants$2977.const$2,"gtk_print_operation_get_print_settings");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkPrintSettings* gtk_print_operation_get_print_settings(struct _GtkPrintOperation* op);
+     * }
+     */
+    public static MemorySegment gtk_print_operation_get_print_settings(MemorySegment op) {
+        var mh$ = gtk_print_operation_get_print_settings$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_set_job_name$MH() {
+        return RuntimeHelper.requireNonNull(constants$2977.const$3,"gtk_print_operation_set_job_name");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_set_job_name(struct _GtkPrintOperation* op, char* job_name);
+     * }
+     */
+    public static void gtk_print_operation_set_job_name(MemorySegment op, MemorySegment job_name) {
+        var mh$ = gtk_print_operation_set_job_name$MH();
+        try {
+            mh$.invokeExact(op, job_name);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_set_n_pages$MH() {
+        return RuntimeHelper.requireNonNull(constants$2977.const$4,"gtk_print_operation_set_n_pages");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_set_n_pages(struct _GtkPrintOperation* op, int n_pages);
+     * }
+     */
+    public static void gtk_print_operation_set_n_pages(MemorySegment op, int n_pages) {
+        var mh$ = gtk_print_operation_set_n_pages$MH();
+        try {
+            mh$.invokeExact(op, n_pages);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_set_current_page$MH() {
+        return RuntimeHelper.requireNonNull(constants$2977.const$5,"gtk_print_operation_set_current_page");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_set_current_page(struct _GtkPrintOperation* op, int current_page);
+     * }
+     */
+    public static void gtk_print_operation_set_current_page(MemorySegment op, int current_page) {
+        var mh$ = gtk_print_operation_set_current_page$MH();
+        try {
+            mh$.invokeExact(op, current_page);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_set_use_full_page$MH() {
+        return RuntimeHelper.requireNonNull(constants$2978.const$0,"gtk_print_operation_set_use_full_page");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_set_use_full_page(struct _GtkPrintOperation* op, int full_page);
+     * }
+     */
+    public static void gtk_print_operation_set_use_full_page(MemorySegment op, int full_page) {
+        var mh$ = gtk_print_operation_set_use_full_page$MH();
+        try {
+            mh$.invokeExact(op, full_page);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_set_unit$MH() {
+        return RuntimeHelper.requireNonNull(constants$2978.const$1,"gtk_print_operation_set_unit");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_set_unit(struct _GtkPrintOperation* op, enum GtkUnit unit);
+     * }
+     */
+    public static void gtk_print_operation_set_unit(MemorySegment op, int unit) {
+        var mh$ = gtk_print_operation_set_unit$MH();
+        try {
+            mh$.invokeExact(op, unit);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_set_export_filename$MH() {
+        return RuntimeHelper.requireNonNull(constants$2978.const$2,"gtk_print_operation_set_export_filename");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_set_export_filename(struct _GtkPrintOperation* op, char* filename);
+     * }
+     */
+    public static void gtk_print_operation_set_export_filename(MemorySegment op, MemorySegment filename) {
+        var mh$ = gtk_print_operation_set_export_filename$MH();
+        try {
+            mh$.invokeExact(op, filename);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_set_track_print_status$MH() {
+        return RuntimeHelper.requireNonNull(constants$2978.const$3,"gtk_print_operation_set_track_print_status");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_set_track_print_status(struct _GtkPrintOperation* op, int track_status);
+     * }
+     */
+    public static void gtk_print_operation_set_track_print_status(MemorySegment op, int track_status) {
+        var mh$ = gtk_print_operation_set_track_print_status$MH();
+        try {
+            mh$.invokeExact(op, track_status);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_set_show_progress$MH() {
+        return RuntimeHelper.requireNonNull(constants$2978.const$4,"gtk_print_operation_set_show_progress");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_set_show_progress(struct _GtkPrintOperation* op, int show_progress);
+     * }
+     */
+    public static void gtk_print_operation_set_show_progress(MemorySegment op, int show_progress) {
+        var mh$ = gtk_print_operation_set_show_progress$MH();
+        try {
+            mh$.invokeExact(op, show_progress);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_set_allow_async$MH() {
+        return RuntimeHelper.requireNonNull(constants$2978.const$5,"gtk_print_operation_set_allow_async");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_set_allow_async(struct _GtkPrintOperation* op, int allow_async);
+     * }
+     */
+    public static void gtk_print_operation_set_allow_async(MemorySegment op, int allow_async) {
+        var mh$ = gtk_print_operation_set_allow_async$MH();
+        try {
+            mh$.invokeExact(op, allow_async);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_set_custom_tab_label$MH() {
+        return RuntimeHelper.requireNonNull(constants$2979.const$0,"gtk_print_operation_set_custom_tab_label");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_set_custom_tab_label(struct _GtkPrintOperation* op, char* label);
+     * }
+     */
+    public static void gtk_print_operation_set_custom_tab_label(MemorySegment op, MemorySegment label) {
+        var mh$ = gtk_print_operation_set_custom_tab_label$MH();
+        try {
+            mh$.invokeExact(op, label);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_run$MH() {
+        return RuntimeHelper.requireNonNull(constants$2979.const$1,"gtk_print_operation_run");
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintOperationResult gtk_print_operation_run(struct _GtkPrintOperation* op, enum GtkPrintOperationAction action, struct _GtkWindow* parent, struct _GError** error);
+     * }
+     */
+    public static int gtk_print_operation_run(MemorySegment op, int action, MemorySegment parent, MemorySegment error) {
+        var mh$ = gtk_print_operation_run$MH();
+        try {
+            return (int)mh$.invokeExact(op, action, parent, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_get_error$MH() {
+        return RuntimeHelper.requireNonNull(constants$2979.const$2,"gtk_print_operation_get_error");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_get_error(struct _GtkPrintOperation* op, struct _GError** error);
+     * }
+     */
+    public static void gtk_print_operation_get_error(MemorySegment op, MemorySegment error) {
+        var mh$ = gtk_print_operation_get_error$MH();
+        try {
+            mh$.invokeExact(op, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_get_status$MH() {
+        return RuntimeHelper.requireNonNull(constants$2979.const$3,"gtk_print_operation_get_status");
+    }
+    /**
+     * {@snippet :
+     * enum GtkPrintStatus gtk_print_operation_get_status(struct _GtkPrintOperation* op);
+     * }
+     */
+    public static int gtk_print_operation_get_status(MemorySegment op) {
+        var mh$ = gtk_print_operation_get_status$MH();
+        try {
+            return (int)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_get_status_string$MH() {
+        return RuntimeHelper.requireNonNull(constants$2979.const$4,"gtk_print_operation_get_status_string");
+    }
+    /**
+     * {@snippet :
+     * char* gtk_print_operation_get_status_string(struct _GtkPrintOperation* op);
+     * }
+     */
+    public static MemorySegment gtk_print_operation_get_status_string(MemorySegment op) {
+        var mh$ = gtk_print_operation_get_status_string$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_is_finished$MH() {
+        return RuntimeHelper.requireNonNull(constants$2979.const$5,"gtk_print_operation_is_finished");
+    }
+    /**
+     * {@snippet :
+     * int gtk_print_operation_is_finished(struct _GtkPrintOperation* op);
+     * }
+     */
+    public static int gtk_print_operation_is_finished(MemorySegment op) {
+        var mh$ = gtk_print_operation_is_finished$MH();
+        try {
+            return (int)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_cancel$MH() {
+        return RuntimeHelper.requireNonNull(constants$2980.const$0,"gtk_print_operation_cancel");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_cancel(struct _GtkPrintOperation* op);
+     * }
+     */
+    public static void gtk_print_operation_cancel(MemorySegment op) {
+        var mh$ = gtk_print_operation_cancel$MH();
+        try {
+            mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_draw_page_finish$MH() {
+        return RuntimeHelper.requireNonNull(constants$2980.const$1,"gtk_print_operation_draw_page_finish");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_draw_page_finish(struct _GtkPrintOperation* op);
+     * }
+     */
+    public static void gtk_print_operation_draw_page_finish(MemorySegment op) {
+        var mh$ = gtk_print_operation_draw_page_finish$MH();
+        try {
+            mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_set_defer_drawing$MH() {
+        return RuntimeHelper.requireNonNull(constants$2980.const$2,"gtk_print_operation_set_defer_drawing");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_set_defer_drawing(struct _GtkPrintOperation* op);
+     * }
+     */
+    public static void gtk_print_operation_set_defer_drawing(MemorySegment op) {
+        var mh$ = gtk_print_operation_set_defer_drawing$MH();
+        try {
+            mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_set_support_selection$MH() {
+        return RuntimeHelper.requireNonNull(constants$2980.const$3,"gtk_print_operation_set_support_selection");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_set_support_selection(struct _GtkPrintOperation* op, int support_selection);
+     * }
+     */
+    public static void gtk_print_operation_set_support_selection(MemorySegment op, int support_selection) {
+        var mh$ = gtk_print_operation_set_support_selection$MH();
+        try {
+            mh$.invokeExact(op, support_selection);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_get_support_selection$MH() {
+        return RuntimeHelper.requireNonNull(constants$2980.const$4,"gtk_print_operation_get_support_selection");
+    }
+    /**
+     * {@snippet :
+     * int gtk_print_operation_get_support_selection(struct _GtkPrintOperation* op);
+     * }
+     */
+    public static int gtk_print_operation_get_support_selection(MemorySegment op) {
+        var mh$ = gtk_print_operation_get_support_selection$MH();
+        try {
+            return (int)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_set_has_selection$MH() {
+        return RuntimeHelper.requireNonNull(constants$2980.const$5,"gtk_print_operation_set_has_selection");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_set_has_selection(struct _GtkPrintOperation* op, int has_selection);
+     * }
+     */
+    public static void gtk_print_operation_set_has_selection(MemorySegment op, int has_selection) {
+        var mh$ = gtk_print_operation_set_has_selection$MH();
+        try {
+            mh$.invokeExact(op, has_selection);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_get_has_selection$MH() {
+        return RuntimeHelper.requireNonNull(constants$2981.const$0,"gtk_print_operation_get_has_selection");
+    }
+    /**
+     * {@snippet :
+     * int gtk_print_operation_get_has_selection(struct _GtkPrintOperation* op);
+     * }
+     */
+    public static int gtk_print_operation_get_has_selection(MemorySegment op) {
+        var mh$ = gtk_print_operation_get_has_selection$MH();
+        try {
+            return (int)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_set_embed_page_setup$MH() {
+        return RuntimeHelper.requireNonNull(constants$2981.const$1,"gtk_print_operation_set_embed_page_setup");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_operation_set_embed_page_setup(struct _GtkPrintOperation* op, int embed);
+     * }
+     */
+    public static void gtk_print_operation_set_embed_page_setup(MemorySegment op, int embed) {
+        var mh$ = gtk_print_operation_set_embed_page_setup$MH();
+        try {
+            mh$.invokeExact(op, embed);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_get_embed_page_setup$MH() {
+        return RuntimeHelper.requireNonNull(constants$2981.const$2,"gtk_print_operation_get_embed_page_setup");
+    }
+    /**
+     * {@snippet :
+     * int gtk_print_operation_get_embed_page_setup(struct _GtkPrintOperation* op);
+     * }
+     */
+    public static int gtk_print_operation_get_embed_page_setup(MemorySegment op) {
+        var mh$ = gtk_print_operation_get_embed_page_setup$MH();
+        try {
+            return (int)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_operation_get_n_pages_to_print$MH() {
+        return RuntimeHelper.requireNonNull(constants$2981.const$3,"gtk_print_operation_get_n_pages_to_print");
+    }
+    /**
+     * {@snippet :
+     * int gtk_print_operation_get_n_pages_to_print(struct _GtkPrintOperation* op);
+     * }
+     */
+    public static int gtk_print_operation_get_n_pages_to_print(MemorySegment op) {
+        var mh$ = gtk_print_operation_get_n_pages_to_print$MH();
+        try {
+            return (int)mh$.invokeExact(op);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_run_page_setup_dialog$MH() {
+        return RuntimeHelper.requireNonNull(constants$2981.const$4,"gtk_print_run_page_setup_dialog");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkPageSetup* gtk_print_run_page_setup_dialog(struct _GtkWindow* parent, struct _GtkPageSetup* page_setup, struct _GtkPrintSettings* settings);
+     * }
+     */
+    public static MemorySegment gtk_print_run_page_setup_dialog(MemorySegment parent, MemorySegment page_setup, MemorySegment settings) {
+        var mh$ = gtk_print_run_page_setup_dialog$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(parent, page_setup, settings);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_print_run_page_setup_dialog_async$MH() {
+        return RuntimeHelper.requireNonNull(constants$2982.const$1,"gtk_print_run_page_setup_dialog_async");
+    }
+    /**
+     * {@snippet :
+     * void gtk_print_run_page_setup_dialog_async(struct _GtkWindow* parent, struct _GtkPageSetup* page_setup, struct _GtkPrintSettings* settings, void (*done_cb)(struct _GtkPageSetup*,void*), void* data);
+     * }
+     */
+    public static void gtk_print_run_page_setup_dialog_async(MemorySegment parent, MemorySegment page_setup, MemorySegment settings, MemorySegment done_cb, MemorySegment data) {
+        var mh$ = gtk_print_run_page_setup_dialog_async$MH();
+        try {
+            mh$.invokeExact(parent, page_setup, settings, done_cb, data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_progress_bar_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$2984.const$1,"gtk_progress_bar_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_progress_bar_get_type();
+     * }
+     */
+    public static long gtk_progress_bar_get_type() {
+        var mh$ = gtk_progress_bar_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_progress_bar_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$2984.const$2,"gtk_progress_bar_new");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkWidget* gtk_progress_bar_new();
+     * }
+     */
+    public static MemorySegment gtk_progress_bar_new() {
+        var mh$ = gtk_progress_bar_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_progress_bar_pulse$MH() {
+        return RuntimeHelper.requireNonNull(constants$2984.const$3,"gtk_progress_bar_pulse");
+    }
+    /**
+     * {@snippet :
+     * void gtk_progress_bar_pulse(struct _GtkProgressBar* pbar);
+     * }
+     */
+    public static void gtk_progress_bar_pulse(MemorySegment pbar) {
+        var mh$ = gtk_progress_bar_pulse$MH();
+        try {
+            mh$.invokeExact(pbar);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_progress_bar_set_text$MH() {
+        return RuntimeHelper.requireNonNull(constants$2984.const$4,"gtk_progress_bar_set_text");
+    }
+    /**
+     * {@snippet :
+     * void gtk_progress_bar_set_text(struct _GtkProgressBar* pbar, char* text);
+     * }
+     */
+    public static void gtk_progress_bar_set_text(MemorySegment pbar, MemorySegment text) {
+        var mh$ = gtk_progress_bar_set_text$MH();
+        try {
+            mh$.invokeExact(pbar, text);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_progress_bar_set_fraction$MH() {
+        return RuntimeHelper.requireNonNull(constants$2984.const$5,"gtk_progress_bar_set_fraction");
+    }
+    /**
+     * {@snippet :
+     * void gtk_progress_bar_set_fraction(struct _GtkProgressBar* pbar, double fraction);
+     * }
+     */
+    public static void gtk_progress_bar_set_fraction(MemorySegment pbar, double fraction) {
+        var mh$ = gtk_progress_bar_set_fraction$MH();
+        try {
+            mh$.invokeExact(pbar, fraction);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_progress_bar_set_pulse_step$MH() {
+        return RuntimeHelper.requireNonNull(constants$2985.const$0,"gtk_progress_bar_set_pulse_step");
+    }
+    /**
+     * {@snippet :
+     * void gtk_progress_bar_set_pulse_step(struct _GtkProgressBar* pbar, double fraction);
+     * }
+     */
+    public static void gtk_progress_bar_set_pulse_step(MemorySegment pbar, double fraction) {
+        var mh$ = gtk_progress_bar_set_pulse_step$MH();
+        try {
+            mh$.invokeExact(pbar, fraction);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_progress_bar_set_inverted$MH() {
+        return RuntimeHelper.requireNonNull(constants$2985.const$1,"gtk_progress_bar_set_inverted");
+    }
+    /**
+     * {@snippet :
+     * void gtk_progress_bar_set_inverted(struct _GtkProgressBar* pbar, int inverted);
+     * }
+     */
+    public static void gtk_progress_bar_set_inverted(MemorySegment pbar, int inverted) {
+        var mh$ = gtk_progress_bar_set_inverted$MH();
+        try {
+            mh$.invokeExact(pbar, inverted);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_progress_bar_get_text$MH() {
+        return RuntimeHelper.requireNonNull(constants$2985.const$2,"gtk_progress_bar_get_text");
+    }
+    /**
+     * {@snippet :
+     * char* gtk_progress_bar_get_text(struct _GtkProgressBar* pbar);
+     * }
+     */
+    public static MemorySegment gtk_progress_bar_get_text(MemorySegment pbar) {
+        var mh$ = gtk_progress_bar_get_text$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(pbar);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_progress_bar_get_fraction$MH() {
+        return RuntimeHelper.requireNonNull(constants$2985.const$3,"gtk_progress_bar_get_fraction");
+    }
+    /**
+     * {@snippet :
+     * double gtk_progress_bar_get_fraction(struct _GtkProgressBar* pbar);
+     * }
+     */
+    public static double gtk_progress_bar_get_fraction(MemorySegment pbar) {
+        var mh$ = gtk_progress_bar_get_fraction$MH();
+        try {
+            return (double)mh$.invokeExact(pbar);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_progress_bar_get_pulse_step$MH() {
+        return RuntimeHelper.requireNonNull(constants$2985.const$4,"gtk_progress_bar_get_pulse_step");
+    }
+    /**
+     * {@snippet :
+     * double gtk_progress_bar_get_pulse_step(struct _GtkProgressBar* pbar);
+     * }
+     */
+    public static double gtk_progress_bar_get_pulse_step(MemorySegment pbar) {
+        var mh$ = gtk_progress_bar_get_pulse_step$MH();
+        try {
+            return (double)mh$.invokeExact(pbar);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_progress_bar_get_inverted$MH() {
+        return RuntimeHelper.requireNonNull(constants$2985.const$5,"gtk_progress_bar_get_inverted");
+    }
+    /**
+     * {@snippet :
+     * int gtk_progress_bar_get_inverted(struct _GtkProgressBar* pbar);
+     * }
+     */
+    public static int gtk_progress_bar_get_inverted(MemorySegment pbar) {
+        var mh$ = gtk_progress_bar_get_inverted$MH();
+        try {
+            return (int)mh$.invokeExact(pbar);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_progress_bar_set_ellipsize$MH() {
+        return RuntimeHelper.requireNonNull(constants$2986.const$0,"gtk_progress_bar_set_ellipsize");
+    }
+    /**
+     * {@snippet :
+     * void gtk_progress_bar_set_ellipsize(struct _GtkProgressBar* pbar, enum PangoEllipsizeMode mode);
+     * }
+     */
+    public static void gtk_progress_bar_set_ellipsize(MemorySegment pbar, int mode) {
+        var mh$ = gtk_progress_bar_set_ellipsize$MH();
+        try {
+            mh$.invokeExact(pbar, mode);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_progress_bar_get_ellipsize$MH() {
+        return RuntimeHelper.requireNonNull(constants$2986.const$1,"gtk_progress_bar_get_ellipsize");
+    }
+    /**
+     * {@snippet :
+     * enum PangoEllipsizeMode gtk_progress_bar_get_ellipsize(struct _GtkProgressBar* pbar);
+     * }
+     */
+    public static int gtk_progress_bar_get_ellipsize(MemorySegment pbar) {
+        var mh$ = gtk_progress_bar_get_ellipsize$MH();
+        try {
+            return (int)mh$.invokeExact(pbar);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_progress_bar_set_show_text$MH() {
+        return RuntimeHelper.requireNonNull(constants$2986.const$2,"gtk_progress_bar_set_show_text");
+    }
+    /**
+     * {@snippet :
+     * void gtk_progress_bar_set_show_text(struct _GtkProgressBar* pbar, int show_text);
+     * }
+     */
+    public static void gtk_progress_bar_set_show_text(MemorySegment pbar, int show_text) {
+        var mh$ = gtk_progress_bar_set_show_text$MH();
+        try {
+            mh$.invokeExact(pbar, show_text);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_progress_bar_get_show_text$MH() {
+        return RuntimeHelper.requireNonNull(constants$2986.const$3,"gtk_progress_bar_get_show_text");
+    }
+    /**
+     * {@snippet :
+     * int gtk_progress_bar_get_show_text(struct _GtkProgressBar* pbar);
+     * }
+     */
+    public static int gtk_progress_bar_get_show_text(MemorySegment pbar) {
+        var mh$ = gtk_progress_bar_get_show_text$MH();
+        try {
+            return (int)mh$.invokeExact(pbar);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_button_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$2988.const$5,"gtk_radio_button_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_radio_button_get_type();
+     * }
+     */
+    public static long gtk_radio_button_get_type() {
+        var mh$ = gtk_radio_button_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_button_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$2989.const$0,"gtk_radio_button_new");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkWidget* gtk_radio_button_new(struct _GSList* group);
+     * }
+     */
+    public static MemorySegment gtk_radio_button_new(MemorySegment group) {
+        var mh$ = gtk_radio_button_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(group);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_button_new_from_widget$MH() {
+        return RuntimeHelper.requireNonNull(constants$2989.const$1,"gtk_radio_button_new_from_widget");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkWidget* gtk_radio_button_new_from_widget(struct _GtkRadioButton* radio_group_member);
+     * }
+     */
+    public static MemorySegment gtk_radio_button_new_from_widget(MemorySegment radio_group_member) {
+        var mh$ = gtk_radio_button_new_from_widget$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(radio_group_member);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_button_new_with_label$MH() {
+        return RuntimeHelper.requireNonNull(constants$2989.const$2,"gtk_radio_button_new_with_label");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkWidget* gtk_radio_button_new_with_label(struct _GSList* group, char* label);
+     * }
+     */
+    public static MemorySegment gtk_radio_button_new_with_label(MemorySegment group, MemorySegment label) {
+        var mh$ = gtk_radio_button_new_with_label$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(group, label);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_button_new_with_label_from_widget$MH() {
+        return RuntimeHelper.requireNonNull(constants$2989.const$3,"gtk_radio_button_new_with_label_from_widget");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkWidget* gtk_radio_button_new_with_label_from_widget(struct _GtkRadioButton* radio_group_member, char* label);
+     * }
+     */
+    public static MemorySegment gtk_radio_button_new_with_label_from_widget(MemorySegment radio_group_member, MemorySegment label) {
+        var mh$ = gtk_radio_button_new_with_label_from_widget$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(radio_group_member, label);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_button_new_with_mnemonic$MH() {
+        return RuntimeHelper.requireNonNull(constants$2989.const$4,"gtk_radio_button_new_with_mnemonic");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkWidget* gtk_radio_button_new_with_mnemonic(struct _GSList* group, char* label);
+     * }
+     */
+    public static MemorySegment gtk_radio_button_new_with_mnemonic(MemorySegment group, MemorySegment label) {
+        var mh$ = gtk_radio_button_new_with_mnemonic$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(group, label);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_button_new_with_mnemonic_from_widget$MH() {
+        return RuntimeHelper.requireNonNull(constants$2989.const$5,"gtk_radio_button_new_with_mnemonic_from_widget");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkWidget* gtk_radio_button_new_with_mnemonic_from_widget(struct _GtkRadioButton* radio_group_member, char* label);
+     * }
+     */
+    public static MemorySegment gtk_radio_button_new_with_mnemonic_from_widget(MemorySegment radio_group_member, MemorySegment label) {
+        var mh$ = gtk_radio_button_new_with_mnemonic_from_widget$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(radio_group_member, label);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_button_get_group$MH() {
+        return RuntimeHelper.requireNonNull(constants$2990.const$0,"gtk_radio_button_get_group");
+    }
+    /**
+     * {@snippet :
+     * struct _GSList* gtk_radio_button_get_group(struct _GtkRadioButton* radio_button);
+     * }
+     */
+    public static MemorySegment gtk_radio_button_get_group(MemorySegment radio_button) {
+        var mh$ = gtk_radio_button_get_group$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(radio_button);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_button_set_group$MH() {
+        return RuntimeHelper.requireNonNull(constants$2990.const$1,"gtk_radio_button_set_group");
+    }
+    /**
+     * {@snippet :
+     * void gtk_radio_button_set_group(struct _GtkRadioButton* radio_button, struct _GSList* group);
+     * }
+     */
+    public static void gtk_radio_button_set_group(MemorySegment radio_button, MemorySegment group) {
+        var mh$ = gtk_radio_button_set_group$MH();
+        try {
+            mh$.invokeExact(radio_button, group);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_button_join_group$MH() {
+        return RuntimeHelper.requireNonNull(constants$2990.const$2,"gtk_radio_button_join_group");
+    }
+    /**
+     * {@snippet :
+     * void gtk_radio_button_join_group(struct _GtkRadioButton* radio_button, struct _GtkRadioButton* group_source);
+     * }
+     */
+    public static void gtk_radio_button_join_group(MemorySegment radio_button, MemorySegment group_source) {
+        var mh$ = gtk_radio_button_join_group$MH();
+        try {
+            mh$.invokeExact(radio_button, group_source);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_menu_item_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$2992.const$4,"gtk_radio_menu_item_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_radio_menu_item_get_type();
+     * }
+     */
+    public static long gtk_radio_menu_item_get_type() {
+        var mh$ = gtk_radio_menu_item_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_menu_item_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$2992.const$5,"gtk_radio_menu_item_new");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkWidget* gtk_radio_menu_item_new(struct _GSList* group);
+     * }
+     */
+    public static MemorySegment gtk_radio_menu_item_new(MemorySegment group) {
+        var mh$ = gtk_radio_menu_item_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(group);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_menu_item_new_with_label$MH() {
+        return RuntimeHelper.requireNonNull(constants$2993.const$0,"gtk_radio_menu_item_new_with_label");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkWidget* gtk_radio_menu_item_new_with_label(struct _GSList* group, char* label);
+     * }
+     */
+    public static MemorySegment gtk_radio_menu_item_new_with_label(MemorySegment group, MemorySegment label) {
+        var mh$ = gtk_radio_menu_item_new_with_label$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(group, label);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_menu_item_new_with_mnemonic$MH() {
+        return RuntimeHelper.requireNonNull(constants$2993.const$1,"gtk_radio_menu_item_new_with_mnemonic");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkWidget* gtk_radio_menu_item_new_with_mnemonic(struct _GSList* group, char* label);
+     * }
+     */
+    public static MemorySegment gtk_radio_menu_item_new_with_mnemonic(MemorySegment group, MemorySegment label) {
+        var mh$ = gtk_radio_menu_item_new_with_mnemonic$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(group, label);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_menu_item_new_from_widget$MH() {
+        return RuntimeHelper.requireNonNull(constants$2993.const$2,"gtk_radio_menu_item_new_from_widget");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkWidget* gtk_radio_menu_item_new_from_widget(struct _GtkRadioMenuItem* group);
+     * }
+     */
+    public static MemorySegment gtk_radio_menu_item_new_from_widget(MemorySegment group) {
+        var mh$ = gtk_radio_menu_item_new_from_widget$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(group);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_menu_item_new_with_mnemonic_from_widget$MH() {
+        return RuntimeHelper.requireNonNull(constants$2993.const$3,"gtk_radio_menu_item_new_with_mnemonic_from_widget");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkWidget* gtk_radio_menu_item_new_with_mnemonic_from_widget(struct _GtkRadioMenuItem* group, char* label);
+     * }
+     */
+    public static MemorySegment gtk_radio_menu_item_new_with_mnemonic_from_widget(MemorySegment group, MemorySegment label) {
+        var mh$ = gtk_radio_menu_item_new_with_mnemonic_from_widget$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(group, label);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_menu_item_new_with_label_from_widget$MH() {
+        return RuntimeHelper.requireNonNull(constants$2993.const$4,"gtk_radio_menu_item_new_with_label_from_widget");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkWidget* gtk_radio_menu_item_new_with_label_from_widget(struct _GtkRadioMenuItem* group, char* label);
+     * }
+     */
+    public static MemorySegment gtk_radio_menu_item_new_with_label_from_widget(MemorySegment group, MemorySegment label) {
+        var mh$ = gtk_radio_menu_item_new_with_label_from_widget$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(group, label);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_menu_item_get_group$MH() {
+        return RuntimeHelper.requireNonNull(constants$2993.const$5,"gtk_radio_menu_item_get_group");
+    }
+    /**
+     * {@snippet :
+     * struct _GSList* gtk_radio_menu_item_get_group(struct _GtkRadioMenuItem* radio_menu_item);
+     * }
+     */
+    public static MemorySegment gtk_radio_menu_item_get_group(MemorySegment radio_menu_item) {
+        var mh$ = gtk_radio_menu_item_get_group$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(radio_menu_item);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_menu_item_set_group$MH() {
+        return RuntimeHelper.requireNonNull(constants$2994.const$0,"gtk_radio_menu_item_set_group");
+    }
+    /**
+     * {@snippet :
+     * void gtk_radio_menu_item_set_group(struct _GtkRadioMenuItem* radio_menu_item, struct _GSList* group);
+     * }
+     */
+    public static void gtk_radio_menu_item_set_group(MemorySegment radio_menu_item, MemorySegment group) {
+        var mh$ = gtk_radio_menu_item_set_group$MH();
+        try {
+            mh$.invokeExact(radio_menu_item, group);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_menu_item_join_group$MH() {
+        return RuntimeHelper.requireNonNull(constants$2994.const$1,"gtk_radio_menu_item_join_group");
+    }
+    /**
+     * {@snippet :
+     * void gtk_radio_menu_item_join_group(struct _GtkRadioMenuItem* radio_menu_item, struct _GtkRadioMenuItem* group_source);
+     * }
+     */
+    public static void gtk_radio_menu_item_join_group(MemorySegment radio_menu_item, MemorySegment group_source) {
+        var mh$ = gtk_radio_menu_item_join_group$MH();
+        try {
+            mh$.invokeExact(radio_menu_item, group_source);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_toggle_tool_button_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$2996.const$3,"gtk_toggle_tool_button_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_toggle_tool_button_get_type();
+     * }
+     */
+    public static long gtk_toggle_tool_button_get_type() {
+        var mh$ = gtk_toggle_tool_button_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_toggle_tool_button_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$2996.const$4,"gtk_toggle_tool_button_new");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkToolItem* gtk_toggle_tool_button_new();
+     * }
+     */
+    public static MemorySegment gtk_toggle_tool_button_new() {
+        var mh$ = gtk_toggle_tool_button_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_toggle_tool_button_new_from_stock$MH() {
+        return RuntimeHelper.requireNonNull(constants$2996.const$5,"gtk_toggle_tool_button_new_from_stock");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkToolItem* gtk_toggle_tool_button_new_from_stock(char* stock_id);
+     * }
+     */
+    public static MemorySegment gtk_toggle_tool_button_new_from_stock(MemorySegment stock_id) {
+        var mh$ = gtk_toggle_tool_button_new_from_stock$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(stock_id);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_toggle_tool_button_set_active$MH() {
+        return RuntimeHelper.requireNonNull(constants$2997.const$0,"gtk_toggle_tool_button_set_active");
+    }
+    /**
+     * {@snippet :
+     * void gtk_toggle_tool_button_set_active(struct _GtkToggleToolButton* button, int is_active);
+     * }
+     */
+    public static void gtk_toggle_tool_button_set_active(MemorySegment button, int is_active) {
+        var mh$ = gtk_toggle_tool_button_set_active$MH();
+        try {
+            mh$.invokeExact(button, is_active);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_toggle_tool_button_get_active$MH() {
+        return RuntimeHelper.requireNonNull(constants$2997.const$1,"gtk_toggle_tool_button_get_active");
+    }
+    /**
+     * {@snippet :
+     * int gtk_toggle_tool_button_get_active(struct _GtkToggleToolButton* button);
+     * }
+     */
+    public static int gtk_toggle_tool_button_get_active(MemorySegment button) {
+        var mh$ = gtk_toggle_tool_button_get_active$MH();
+        try {
+            return (int)mh$.invokeExact(button);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_tool_button_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$2999.const$0,"gtk_radio_tool_button_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_radio_tool_button_get_type();
+     * }
+     */
+    public static long gtk_radio_tool_button_get_type() {
+        var mh$ = gtk_radio_tool_button_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_tool_button_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$2999.const$1,"gtk_radio_tool_button_new");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkToolItem* gtk_radio_tool_button_new(struct _GSList* group);
+     * }
+     */
+    public static MemorySegment gtk_radio_tool_button_new(MemorySegment group) {
+        var mh$ = gtk_radio_tool_button_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(group);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_tool_button_new_from_stock$MH() {
+        return RuntimeHelper.requireNonNull(constants$2999.const$2,"gtk_radio_tool_button_new_from_stock");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkToolItem* gtk_radio_tool_button_new_from_stock(struct _GSList* group, char* stock_id);
+     * }
+     */
+    public static MemorySegment gtk_radio_tool_button_new_from_stock(MemorySegment group, MemorySegment stock_id) {
+        var mh$ = gtk_radio_tool_button_new_from_stock$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(group, stock_id);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_tool_button_new_from_widget$MH() {
+        return RuntimeHelper.requireNonNull(constants$2999.const$3,"gtk_radio_tool_button_new_from_widget");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkToolItem* gtk_radio_tool_button_new_from_widget(struct _GtkRadioToolButton* group);
+     * }
+     */
+    public static MemorySegment gtk_radio_tool_button_new_from_widget(MemorySegment group) {
+        var mh$ = gtk_radio_tool_button_new_from_widget$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(group);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_tool_button_new_with_stock_from_widget$MH() {
+        return RuntimeHelper.requireNonNull(constants$2999.const$4,"gtk_radio_tool_button_new_with_stock_from_widget");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkToolItem* gtk_radio_tool_button_new_with_stock_from_widget(struct _GtkRadioToolButton* group, char* stock_id);
+     * }
+     */
+    public static MemorySegment gtk_radio_tool_button_new_with_stock_from_widget(MemorySegment group, MemorySegment stock_id) {
+        var mh$ = gtk_radio_tool_button_new_with_stock_from_widget$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(group, stock_id);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_tool_button_get_group$MH() {
+        return RuntimeHelper.requireNonNull(constants$2999.const$5,"gtk_radio_tool_button_get_group");
+    }
+    /**
+     * {@snippet :
+     * struct _GSList* gtk_radio_tool_button_get_group(struct _GtkRadioToolButton* button);
+     * }
+     */
+    public static MemorySegment gtk_radio_tool_button_get_group(MemorySegment button) {
+        var mh$ = gtk_radio_tool_button_get_group$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(button);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_radio_tool_button_set_group$MH() {
+        return RuntimeHelper.requireNonNull(constants$3000.const$0,"gtk_radio_tool_button_set_group");
+    }
+    /**
+     * {@snippet :
+     * void gtk_radio_tool_button_set_group(struct _GtkRadioToolButton* button, struct _GSList* group);
+     * }
+     */
+    public static void gtk_radio_tool_button_set_group(MemorySegment button, MemorySegment group) {
+        var mh$ = gtk_radio_tool_button_set_group$MH();
+        try {
+            mh$.invokeExact(button, group);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3004.const$2,"gtk_range_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_range_get_type();
+     * }
+     */
+    public static long gtk_range_get_type() {
+        var mh$ = gtk_range_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_set_adjustment$MH() {
+        return RuntimeHelper.requireNonNull(constants$3004.const$3,"gtk_range_set_adjustment");
+    }
+    /**
+     * {@snippet :
+     * void gtk_range_set_adjustment(struct _GtkRange* range, struct _GtkAdjustment* adjustment);
+     * }
+     */
+    public static void gtk_range_set_adjustment(MemorySegment range, MemorySegment adjustment) {
+        var mh$ = gtk_range_set_adjustment$MH();
+        try {
+            mh$.invokeExact(range, adjustment);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_get_adjustment$MH() {
+        return RuntimeHelper.requireNonNull(constants$3004.const$4,"gtk_range_get_adjustment");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkAdjustment* gtk_range_get_adjustment(struct _GtkRange* range);
+     * }
+     */
+    public static MemorySegment gtk_range_get_adjustment(MemorySegment range) {
+        var mh$ = gtk_range_get_adjustment$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(range);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_set_inverted$MH() {
+        return RuntimeHelper.requireNonNull(constants$3004.const$5,"gtk_range_set_inverted");
+    }
+    /**
+     * {@snippet :
+     * void gtk_range_set_inverted(struct _GtkRange* range, int setting);
+     * }
+     */
+    public static void gtk_range_set_inverted(MemorySegment range, int setting) {
+        var mh$ = gtk_range_set_inverted$MH();
+        try {
+            mh$.invokeExact(range, setting);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_get_inverted$MH() {
+        return RuntimeHelper.requireNonNull(constants$3005.const$0,"gtk_range_get_inverted");
+    }
+    /**
+     * {@snippet :
+     * int gtk_range_get_inverted(struct _GtkRange* range);
+     * }
+     */
+    public static int gtk_range_get_inverted(MemorySegment range) {
+        var mh$ = gtk_range_get_inverted$MH();
+        try {
+            return (int)mh$.invokeExact(range);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_set_flippable$MH() {
+        return RuntimeHelper.requireNonNull(constants$3005.const$1,"gtk_range_set_flippable");
+    }
+    /**
+     * {@snippet :
+     * void gtk_range_set_flippable(struct _GtkRange* range, int flippable);
+     * }
+     */
+    public static void gtk_range_set_flippable(MemorySegment range, int flippable) {
+        var mh$ = gtk_range_set_flippable$MH();
+        try {
+            mh$.invokeExact(range, flippable);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_get_flippable$MH() {
+        return RuntimeHelper.requireNonNull(constants$3005.const$2,"gtk_range_get_flippable");
+    }
+    /**
+     * {@snippet :
+     * int gtk_range_get_flippable(struct _GtkRange* range);
+     * }
+     */
+    public static int gtk_range_get_flippable(MemorySegment range) {
+        var mh$ = gtk_range_get_flippable$MH();
+        try {
+            return (int)mh$.invokeExact(range);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_set_slider_size_fixed$MH() {
+        return RuntimeHelper.requireNonNull(constants$3005.const$3,"gtk_range_set_slider_size_fixed");
+    }
+    /**
+     * {@snippet :
+     * void gtk_range_set_slider_size_fixed(struct _GtkRange* range, int size_fixed);
+     * }
+     */
+    public static void gtk_range_set_slider_size_fixed(MemorySegment range, int size_fixed) {
+        var mh$ = gtk_range_set_slider_size_fixed$MH();
+        try {
+            mh$.invokeExact(range, size_fixed);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_get_slider_size_fixed$MH() {
+        return RuntimeHelper.requireNonNull(constants$3005.const$4,"gtk_range_get_slider_size_fixed");
+    }
+    /**
+     * {@snippet :
+     * int gtk_range_get_slider_size_fixed(struct _GtkRange* range);
+     * }
+     */
+    public static int gtk_range_get_slider_size_fixed(MemorySegment range) {
+        var mh$ = gtk_range_get_slider_size_fixed$MH();
+        try {
+            return (int)mh$.invokeExact(range);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_set_min_slider_size$MH() {
+        return RuntimeHelper.requireNonNull(constants$3005.const$5,"gtk_range_set_min_slider_size");
+    }
+    /**
+     * {@snippet :
+     * void gtk_range_set_min_slider_size(struct _GtkRange* range, int min_size);
+     * }
+     */
+    public static void gtk_range_set_min_slider_size(MemorySegment range, int min_size) {
+        var mh$ = gtk_range_set_min_slider_size$MH();
+        try {
+            mh$.invokeExact(range, min_size);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_get_min_slider_size$MH() {
+        return RuntimeHelper.requireNonNull(constants$3006.const$0,"gtk_range_get_min_slider_size");
+    }
+    /**
+     * {@snippet :
+     * int gtk_range_get_min_slider_size(struct _GtkRange* range);
+     * }
+     */
+    public static int gtk_range_get_min_slider_size(MemorySegment range) {
+        var mh$ = gtk_range_get_min_slider_size$MH();
+        try {
+            return (int)mh$.invokeExact(range);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_get_range_rect$MH() {
+        return RuntimeHelper.requireNonNull(constants$3006.const$1,"gtk_range_get_range_rect");
+    }
+    /**
+     * {@snippet :
+     * void gtk_range_get_range_rect(struct _GtkRange* range, struct _cairo_rectangle_int* range_rect);
+     * }
+     */
+    public static void gtk_range_get_range_rect(MemorySegment range, MemorySegment range_rect) {
+        var mh$ = gtk_range_get_range_rect$MH();
+        try {
+            mh$.invokeExact(range, range_rect);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_get_slider_range$MH() {
+        return RuntimeHelper.requireNonNull(constants$3006.const$2,"gtk_range_get_slider_range");
+    }
+    /**
+     * {@snippet :
+     * void gtk_range_get_slider_range(struct _GtkRange* range, int* slider_start, int* slider_end);
+     * }
+     */
+    public static void gtk_range_get_slider_range(MemorySegment range, MemorySegment slider_start, MemorySegment slider_end) {
+        var mh$ = gtk_range_get_slider_range$MH();
+        try {
+            mh$.invokeExact(range, slider_start, slider_end);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_set_lower_stepper_sensitivity$MH() {
+        return RuntimeHelper.requireNonNull(constants$3006.const$3,"gtk_range_set_lower_stepper_sensitivity");
+    }
+    /**
+     * {@snippet :
+     * void gtk_range_set_lower_stepper_sensitivity(struct _GtkRange* range, enum GtkSensitivityType sensitivity);
+     * }
+     */
+    public static void gtk_range_set_lower_stepper_sensitivity(MemorySegment range, int sensitivity) {
+        var mh$ = gtk_range_set_lower_stepper_sensitivity$MH();
+        try {
+            mh$.invokeExact(range, sensitivity);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_get_lower_stepper_sensitivity$MH() {
+        return RuntimeHelper.requireNonNull(constants$3006.const$4,"gtk_range_get_lower_stepper_sensitivity");
+    }
+    /**
+     * {@snippet :
+     * enum GtkSensitivityType gtk_range_get_lower_stepper_sensitivity(struct _GtkRange* range);
+     * }
+     */
+    public static int gtk_range_get_lower_stepper_sensitivity(MemorySegment range) {
+        var mh$ = gtk_range_get_lower_stepper_sensitivity$MH();
+        try {
+            return (int)mh$.invokeExact(range);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_set_upper_stepper_sensitivity$MH() {
+        return RuntimeHelper.requireNonNull(constants$3006.const$5,"gtk_range_set_upper_stepper_sensitivity");
+    }
+    /**
+     * {@snippet :
+     * void gtk_range_set_upper_stepper_sensitivity(struct _GtkRange* range, enum GtkSensitivityType sensitivity);
+     * }
+     */
+    public static void gtk_range_set_upper_stepper_sensitivity(MemorySegment range, int sensitivity) {
+        var mh$ = gtk_range_set_upper_stepper_sensitivity$MH();
+        try {
+            mh$.invokeExact(range, sensitivity);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_get_upper_stepper_sensitivity$MH() {
+        return RuntimeHelper.requireNonNull(constants$3007.const$0,"gtk_range_get_upper_stepper_sensitivity");
+    }
+    /**
+     * {@snippet :
+     * enum GtkSensitivityType gtk_range_get_upper_stepper_sensitivity(struct _GtkRange* range);
+     * }
+     */
+    public static int gtk_range_get_upper_stepper_sensitivity(MemorySegment range) {
+        var mh$ = gtk_range_get_upper_stepper_sensitivity$MH();
+        try {
+            return (int)mh$.invokeExact(range);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_set_increments$MH() {
+        return RuntimeHelper.requireNonNull(constants$3007.const$1,"gtk_range_set_increments");
+    }
+    /**
+     * {@snippet :
+     * void gtk_range_set_increments(struct _GtkRange* range, double step, double page);
+     * }
+     */
+    public static void gtk_range_set_increments(MemorySegment range, double step, double page) {
+        var mh$ = gtk_range_set_increments$MH();
+        try {
+            mh$.invokeExact(range, step, page);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_set_range$MH() {
+        return RuntimeHelper.requireNonNull(constants$3007.const$2,"gtk_range_set_range");
+    }
+    /**
+     * {@snippet :
+     * void gtk_range_set_range(struct _GtkRange* range, double min, double max);
+     * }
+     */
+    public static void gtk_range_set_range(MemorySegment range, double min, double max) {
+        var mh$ = gtk_range_set_range$MH();
+        try {
+            mh$.invokeExact(range, min, max);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_set_value$MH() {
+        return RuntimeHelper.requireNonNull(constants$3007.const$3,"gtk_range_set_value");
+    }
+    /**
+     * {@snippet :
+     * void gtk_range_set_value(struct _GtkRange* range, double value);
+     * }
+     */
+    public static void gtk_range_set_value(MemorySegment range, double value) {
+        var mh$ = gtk_range_set_value$MH();
+        try {
+            mh$.invokeExact(range, value);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_get_value$MH() {
+        return RuntimeHelper.requireNonNull(constants$3007.const$4,"gtk_range_get_value");
+    }
+    /**
+     * {@snippet :
+     * double gtk_range_get_value(struct _GtkRange* range);
+     * }
+     */
+    public static double gtk_range_get_value(MemorySegment range) {
+        var mh$ = gtk_range_get_value$MH();
+        try {
+            return (double)mh$.invokeExact(range);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_set_show_fill_level$MH() {
+        return RuntimeHelper.requireNonNull(constants$3007.const$5,"gtk_range_set_show_fill_level");
+    }
+    /**
+     * {@snippet :
+     * void gtk_range_set_show_fill_level(struct _GtkRange* range, int show_fill_level);
+     * }
+     */
+    public static void gtk_range_set_show_fill_level(MemorySegment range, int show_fill_level) {
+        var mh$ = gtk_range_set_show_fill_level$MH();
+        try {
+            mh$.invokeExact(range, show_fill_level);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_get_show_fill_level$MH() {
+        return RuntimeHelper.requireNonNull(constants$3008.const$0,"gtk_range_get_show_fill_level");
+    }
+    /**
+     * {@snippet :
+     * int gtk_range_get_show_fill_level(struct _GtkRange* range);
+     * }
+     */
+    public static int gtk_range_get_show_fill_level(MemorySegment range) {
+        var mh$ = gtk_range_get_show_fill_level$MH();
+        try {
+            return (int)mh$.invokeExact(range);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_set_restrict_to_fill_level$MH() {
+        return RuntimeHelper.requireNonNull(constants$3008.const$1,"gtk_range_set_restrict_to_fill_level");
+    }
+    /**
+     * {@snippet :
+     * void gtk_range_set_restrict_to_fill_level(struct _GtkRange* range, int restrict_to_fill_level);
+     * }
+     */
+    public static void gtk_range_set_restrict_to_fill_level(MemorySegment range, int restrict_to_fill_level) {
+        var mh$ = gtk_range_set_restrict_to_fill_level$MH();
+        try {
+            mh$.invokeExact(range, restrict_to_fill_level);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_get_restrict_to_fill_level$MH() {
+        return RuntimeHelper.requireNonNull(constants$3008.const$2,"gtk_range_get_restrict_to_fill_level");
+    }
+    /**
+     * {@snippet :
+     * int gtk_range_get_restrict_to_fill_level(struct _GtkRange* range);
+     * }
+     */
+    public static int gtk_range_get_restrict_to_fill_level(MemorySegment range) {
+        var mh$ = gtk_range_get_restrict_to_fill_level$MH();
+        try {
+            return (int)mh$.invokeExact(range);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_set_fill_level$MH() {
+        return RuntimeHelper.requireNonNull(constants$3008.const$3,"gtk_range_set_fill_level");
+    }
+    /**
+     * {@snippet :
+     * void gtk_range_set_fill_level(struct _GtkRange* range, double fill_level);
+     * }
+     */
+    public static void gtk_range_set_fill_level(MemorySegment range, double fill_level) {
+        var mh$ = gtk_range_set_fill_level$MH();
+        try {
+            mh$.invokeExact(range, fill_level);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_get_fill_level$MH() {
+        return RuntimeHelper.requireNonNull(constants$3008.const$4,"gtk_range_get_fill_level");
+    }
+    /**
+     * {@snippet :
+     * double gtk_range_get_fill_level(struct _GtkRange* range);
+     * }
+     */
+    public static double gtk_range_get_fill_level(MemorySegment range) {
+        var mh$ = gtk_range_get_fill_level$MH();
+        try {
+            return (double)mh$.invokeExact(range);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_set_round_digits$MH() {
+        return RuntimeHelper.requireNonNull(constants$3008.const$5,"gtk_range_set_round_digits");
+    }
+    /**
+     * {@snippet :
+     * void gtk_range_set_round_digits(struct _GtkRange* range, int round_digits);
+     * }
+     */
+    public static void gtk_range_set_round_digits(MemorySegment range, int round_digits) {
+        var mh$ = gtk_range_set_round_digits$MH();
+        try {
+            mh$.invokeExact(range, round_digits);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_range_get_round_digits$MH() {
+        return RuntimeHelper.requireNonNull(constants$3009.const$0,"gtk_range_get_round_digits");
+    }
+    /**
+     * {@snippet :
+     * int gtk_range_get_round_digits(struct _GtkRange* range);
+     * }
+     */
+    public static int gtk_range_get_round_digits(MemorySegment range) {
+        var mh$ = gtk_range_get_round_digits$MH();
+        try {
+            return (int)mh$.invokeExact(range);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    /**
+     * {@snippet :
+     * enum GtkRecentManagerError.GTK_RECENT_MANAGER_ERROR_NOT_FOUND = 0;
+     * }
+     */
+    public static int GTK_RECENT_MANAGER_ERROR_NOT_FOUND() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkRecentManagerError.GTK_RECENT_MANAGER_ERROR_INVALID_URI = 1;
+     * }
+     */
+    public static int GTK_RECENT_MANAGER_ERROR_INVALID_URI() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkRecentManagerError.GTK_RECENT_MANAGER_ERROR_INVALID_ENCODING = 2;
+     * }
+     */
+    public static int GTK_RECENT_MANAGER_ERROR_INVALID_ENCODING() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkRecentManagerError.GTK_RECENT_MANAGER_ERROR_NOT_REGISTERED = 3;
+     * }
+     */
+    public static int GTK_RECENT_MANAGER_ERROR_NOT_REGISTERED() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkRecentManagerError.GTK_RECENT_MANAGER_ERROR_READ = 4;
+     * }
+     */
+    public static int GTK_RECENT_MANAGER_ERROR_READ() {
+        return (int)4L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkRecentManagerError.GTK_RECENT_MANAGER_ERROR_WRITE = 5;
+     * }
+     */
+    public static int GTK_RECENT_MANAGER_ERROR_WRITE() {
+        return (int)5L;
+    }
+    /**
+     * {@snippet :
+     * enum GtkRecentManagerError.GTK_RECENT_MANAGER_ERROR_UNKNOWN = 6;
+     * }
+     */
+    public static int GTK_RECENT_MANAGER_ERROR_UNKNOWN() {
+        return (int)6L;
+    }
+    public static MethodHandle gtk_recent_manager_error_quark$MH() {
+        return RuntimeHelper.requireNonNull(constants$3012.const$4,"gtk_recent_manager_error_quark");
+    }
+    /**
+     * {@snippet :
+     * unsigned int gtk_recent_manager_error_quark();
+     * }
+     */
+    public static int gtk_recent_manager_error_quark() {
+        var mh$ = gtk_recent_manager_error_quark$MH();
+        try {
+            return (int)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_manager_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3012.const$5,"gtk_recent_manager_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_recent_manager_get_type();
+     * }
+     */
+    public static long gtk_recent_manager_get_type() {
+        var mh$ = gtk_recent_manager_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_manager_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$3013.const$0,"gtk_recent_manager_new");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkRecentManager* gtk_recent_manager_new();
+     * }
+     */
+    public static MemorySegment gtk_recent_manager_new() {
+        var mh$ = gtk_recent_manager_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_manager_get_default$MH() {
+        return RuntimeHelper.requireNonNull(constants$3013.const$1,"gtk_recent_manager_get_default");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkRecentManager* gtk_recent_manager_get_default();
+     * }
+     */
+    public static MemorySegment gtk_recent_manager_get_default() {
+        var mh$ = gtk_recent_manager_get_default$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_manager_add_item$MH() {
+        return RuntimeHelper.requireNonNull(constants$3013.const$2,"gtk_recent_manager_add_item");
+    }
+    /**
+     * {@snippet :
+     * int gtk_recent_manager_add_item(struct _GtkRecentManager* manager, char* uri);
+     * }
+     */
+    public static int gtk_recent_manager_add_item(MemorySegment manager, MemorySegment uri) {
+        var mh$ = gtk_recent_manager_add_item$MH();
+        try {
+            return (int)mh$.invokeExact(manager, uri);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_manager_add_full$MH() {
+        return RuntimeHelper.requireNonNull(constants$3013.const$3,"gtk_recent_manager_add_full");
+    }
+    /**
+     * {@snippet :
+     * int gtk_recent_manager_add_full(struct _GtkRecentManager* manager, char* uri, struct _GtkRecentData* recent_data);
+     * }
+     */
+    public static int gtk_recent_manager_add_full(MemorySegment manager, MemorySegment uri, MemorySegment recent_data) {
+        var mh$ = gtk_recent_manager_add_full$MH();
+        try {
+            return (int)mh$.invokeExact(manager, uri, recent_data);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_manager_remove_item$MH() {
+        return RuntimeHelper.requireNonNull(constants$3013.const$4,"gtk_recent_manager_remove_item");
+    }
+    /**
+     * {@snippet :
+     * int gtk_recent_manager_remove_item(struct _GtkRecentManager* manager, char* uri, struct _GError** error);
+     * }
+     */
+    public static int gtk_recent_manager_remove_item(MemorySegment manager, MemorySegment uri, MemorySegment error) {
+        var mh$ = gtk_recent_manager_remove_item$MH();
+        try {
+            return (int)mh$.invokeExact(manager, uri, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_manager_lookup_item$MH() {
+        return RuntimeHelper.requireNonNull(constants$3013.const$5,"gtk_recent_manager_lookup_item");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkRecentInfo* gtk_recent_manager_lookup_item(struct _GtkRecentManager* manager, char* uri, struct _GError** error);
+     * }
+     */
+    public static MemorySegment gtk_recent_manager_lookup_item(MemorySegment manager, MemorySegment uri, MemorySegment error) {
+        var mh$ = gtk_recent_manager_lookup_item$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(manager, uri, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_manager_has_item$MH() {
+        return RuntimeHelper.requireNonNull(constants$3014.const$0,"gtk_recent_manager_has_item");
+    }
+    /**
+     * {@snippet :
+     * int gtk_recent_manager_has_item(struct _GtkRecentManager* manager, char* uri);
+     * }
+     */
+    public static int gtk_recent_manager_has_item(MemorySegment manager, MemorySegment uri) {
+        var mh$ = gtk_recent_manager_has_item$MH();
+        try {
+            return (int)mh$.invokeExact(manager, uri);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_manager_move_item$MH() {
+        return RuntimeHelper.requireNonNull(constants$3014.const$1,"gtk_recent_manager_move_item");
+    }
+    /**
+     * {@snippet :
+     * int gtk_recent_manager_move_item(struct _GtkRecentManager* manager, char* uri, char* new_uri, struct _GError** error);
+     * }
+     */
+    public static int gtk_recent_manager_move_item(MemorySegment manager, MemorySegment uri, MemorySegment new_uri, MemorySegment error) {
+        var mh$ = gtk_recent_manager_move_item$MH();
+        try {
+            return (int)mh$.invokeExact(manager, uri, new_uri, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_manager_get_items$MH() {
+        return RuntimeHelper.requireNonNull(constants$3014.const$2,"gtk_recent_manager_get_items");
+    }
+    /**
+     * {@snippet :
+     * struct _GList* gtk_recent_manager_get_items(struct _GtkRecentManager* manager);
+     * }
+     */
+    public static MemorySegment gtk_recent_manager_get_items(MemorySegment manager) {
+        var mh$ = gtk_recent_manager_get_items$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(manager);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_manager_purge_items$MH() {
+        return RuntimeHelper.requireNonNull(constants$3014.const$3,"gtk_recent_manager_purge_items");
+    }
+    /**
+     * {@snippet :
+     * int gtk_recent_manager_purge_items(struct _GtkRecentManager* manager, struct _GError** error);
+     * }
+     */
+    public static int gtk_recent_manager_purge_items(MemorySegment manager, MemorySegment error) {
+        var mh$ = gtk_recent_manager_purge_items$MH();
+        try {
+            return (int)mh$.invokeExact(manager, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_info_get_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3014.const$4,"gtk_recent_info_get_type");
+    }
+    /**
+     * {@snippet :
+     * unsigned long gtk_recent_info_get_type();
+     * }
+     */
+    public static long gtk_recent_info_get_type() {
+        var mh$ = gtk_recent_info_get_type$MH();
+        try {
+            return (long)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_info_ref$MH() {
+        return RuntimeHelper.requireNonNull(constants$3014.const$5,"gtk_recent_info_ref");
+    }
+    /**
+     * {@snippet :
+     * struct _GtkRecentInfo* gtk_recent_info_ref(struct _GtkRecentInfo* info);
+     * }
+     */
+    public static MemorySegment gtk_recent_info_ref(MemorySegment info) {
+        var mh$ = gtk_recent_info_ref$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_info_unref$MH() {
+        return RuntimeHelper.requireNonNull(constants$3015.const$0,"gtk_recent_info_unref");
+    }
+    /**
+     * {@snippet :
+     * void gtk_recent_info_unref(struct _GtkRecentInfo* info);
+     * }
+     */
+    public static void gtk_recent_info_unref(MemorySegment info) {
+        var mh$ = gtk_recent_info_unref$MH();
+        try {
+            mh$.invokeExact(info);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_info_get_uri$MH() {
+        return RuntimeHelper.requireNonNull(constants$3015.const$1,"gtk_recent_info_get_uri");
+    }
+    /**
+     * {@snippet :
+     * char* gtk_recent_info_get_uri(struct _GtkRecentInfo* info);
+     * }
+     */
+    public static MemorySegment gtk_recent_info_get_uri(MemorySegment info) {
+        var mh$ = gtk_recent_info_get_uri$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_info_get_display_name$MH() {
+        return RuntimeHelper.requireNonNull(constants$3015.const$2,"gtk_recent_info_get_display_name");
+    }
+    /**
+     * {@snippet :
+     * char* gtk_recent_info_get_display_name(struct _GtkRecentInfo* info);
+     * }
+     */
+    public static MemorySegment gtk_recent_info_get_display_name(MemorySegment info) {
+        var mh$ = gtk_recent_info_get_display_name$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_info_get_description$MH() {
+        return RuntimeHelper.requireNonNull(constants$3015.const$3,"gtk_recent_info_get_description");
+    }
+    /**
+     * {@snippet :
+     * char* gtk_recent_info_get_description(struct _GtkRecentInfo* info);
+     * }
+     */
+    public static MemorySegment gtk_recent_info_get_description(MemorySegment info) {
+        var mh$ = gtk_recent_info_get_description$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_info_get_mime_type$MH() {
+        return RuntimeHelper.requireNonNull(constants$3015.const$4,"gtk_recent_info_get_mime_type");
+    }
+    /**
+     * {@snippet :
+     * char* gtk_recent_info_get_mime_type(struct _GtkRecentInfo* info);
+     * }
+     */
+    public static MemorySegment gtk_recent_info_get_mime_type(MemorySegment info) {
+        var mh$ = gtk_recent_info_get_mime_type$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_info_get_added$MH() {
+        return RuntimeHelper.requireNonNull(constants$3015.const$5,"gtk_recent_info_get_added");
+    }
+    /**
+     * {@snippet :
+     * long gtk_recent_info_get_added(struct _GtkRecentInfo* info);
+     * }
+     */
+    public static long gtk_recent_info_get_added(MemorySegment info) {
+        var mh$ = gtk_recent_info_get_added$MH();
+        try {
+            return (long)mh$.invokeExact(info);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_info_get_modified$MH() {
+        return RuntimeHelper.requireNonNull(constants$3016.const$0,"gtk_recent_info_get_modified");
+    }
+    /**
+     * {@snippet :
+     * long gtk_recent_info_get_modified(struct _GtkRecentInfo* info);
+     * }
+     */
+    public static long gtk_recent_info_get_modified(MemorySegment info) {
+        var mh$ = gtk_recent_info_get_modified$MH();
+        try {
+            return (long)mh$.invokeExact(info);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_info_get_visited$MH() {
+        return RuntimeHelper.requireNonNull(constants$3016.const$1,"gtk_recent_info_get_visited");
+    }
+    /**
+     * {@snippet :
+     * long gtk_recent_info_get_visited(struct _GtkRecentInfo* info);
+     * }
+     */
+    public static long gtk_recent_info_get_visited(MemorySegment info) {
+        var mh$ = gtk_recent_info_get_visited$MH();
+        try {
+            return (long)mh$.invokeExact(info);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_info_get_private_hint$MH() {
+        return RuntimeHelper.requireNonNull(constants$3016.const$2,"gtk_recent_info_get_private_hint");
+    }
+    /**
+     * {@snippet :
+     * int gtk_recent_info_get_private_hint(struct _GtkRecentInfo* info);
+     * }
+     */
+    public static int gtk_recent_info_get_private_hint(MemorySegment info) {
+        var mh$ = gtk_recent_info_get_private_hint$MH();
+        try {
+            return (int)mh$.invokeExact(info);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_info_get_application_info$MH() {
+        return RuntimeHelper.requireNonNull(constants$3016.const$3,"gtk_recent_info_get_application_info");
+    }
+    /**
+     * {@snippet :
+     * int gtk_recent_info_get_application_info(struct _GtkRecentInfo* info, char* app_name, char** app_exec, unsigned int* count, long* time_);
+     * }
+     */
+    public static int gtk_recent_info_get_application_info(MemorySegment info, MemorySegment app_name, MemorySegment app_exec, MemorySegment count, MemorySegment time_) {
+        var mh$ = gtk_recent_info_get_application_info$MH();
+        try {
+            return (int)mh$.invokeExact(info, app_name, app_exec, count, time_);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_info_create_app_info$MH() {
+        return RuntimeHelper.requireNonNull(constants$3016.const$4,"gtk_recent_info_create_app_info");
+    }
+    /**
+     * {@snippet :
+     * struct _GAppInfo* gtk_recent_info_create_app_info(struct _GtkRecentInfo* info, char* app_name, struct _GError** error);
+     * }
+     */
+    public static MemorySegment gtk_recent_info_create_app_info(MemorySegment info, MemorySegment app_name, MemorySegment error) {
+        var mh$ = gtk_recent_info_create_app_info$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info, app_name, error);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_info_get_applications$MH() {
+        return RuntimeHelper.requireNonNull(constants$3016.const$5,"gtk_recent_info_get_applications");
+    }
+    /**
+     * {@snippet :
+     * char** gtk_recent_info_get_applications(struct _GtkRecentInfo* info, unsigned long* length);
+     * }
+     */
+    public static MemorySegment gtk_recent_info_get_applications(MemorySegment info, MemorySegment length) {
+        var mh$ = gtk_recent_info_get_applications$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(info, length);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_recent_info_last_application$MH() {
+        return RuntimeHelper.requireNonNull(constants$3017.const$0,"gtk_recent_info_last_application");
+    }
+    /**
+     * {@snippet :
+     * char* gtk_recent_info_last_application(struct _GtkRecentInfo* info);
      * }
      */
     public static MemorySegment gtk_recent_info_last_application(MemorySegment info) {
@@ -24,11 +2698,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_info_has_application$MH() {
-        return RuntimeHelper.requireNonNull(constants$1774.gtk_recent_info_has_application$MH,"gtk_recent_info_has_application");
+        return RuntimeHelper.requireNonNull(constants$3017.const$1,"gtk_recent_info_has_application");
     }
     /**
      * {@snippet :
-     * gboolean gtk_recent_info_has_application(GtkRecentInfo* info, const gchar* app_name);
+     * int gtk_recent_info_has_application(struct _GtkRecentInfo* info, char* app_name);
      * }
      */
     public static int gtk_recent_info_has_application(MemorySegment info, MemorySegment app_name) {
@@ -40,11 +2714,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_info_get_groups$MH() {
-        return RuntimeHelper.requireNonNull(constants$1774.gtk_recent_info_get_groups$MH,"gtk_recent_info_get_groups");
+        return RuntimeHelper.requireNonNull(constants$3017.const$2,"gtk_recent_info_get_groups");
     }
     /**
      * {@snippet :
-     * gchar** gtk_recent_info_get_groups(GtkRecentInfo* info, gsize* length);
+     * char** gtk_recent_info_get_groups(struct _GtkRecentInfo* info, unsigned long* length);
      * }
      */
     public static MemorySegment gtk_recent_info_get_groups(MemorySegment info, MemorySegment length) {
@@ -56,11 +2730,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_info_has_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$1775.gtk_recent_info_has_group$MH,"gtk_recent_info_has_group");
+        return RuntimeHelper.requireNonNull(constants$3017.const$3,"gtk_recent_info_has_group");
     }
     /**
      * {@snippet :
-     * gboolean gtk_recent_info_has_group(GtkRecentInfo* info, const gchar* group_name);
+     * int gtk_recent_info_has_group(struct _GtkRecentInfo* info, char* group_name);
      * }
      */
     public static int gtk_recent_info_has_group(MemorySegment info, MemorySegment group_name) {
@@ -72,11 +2746,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_info_get_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$1775.gtk_recent_info_get_icon$MH,"gtk_recent_info_get_icon");
+        return RuntimeHelper.requireNonNull(constants$3017.const$4,"gtk_recent_info_get_icon");
     }
     /**
      * {@snippet :
-     * GdkPixbuf* gtk_recent_info_get_icon(GtkRecentInfo* info, gint size);
+     * struct _GdkPixbuf* gtk_recent_info_get_icon(struct _GtkRecentInfo* info, int size);
      * }
      */
     public static MemorySegment gtk_recent_info_get_icon(MemorySegment info, int size) {
@@ -88,11 +2762,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_info_get_gicon$MH() {
-        return RuntimeHelper.requireNonNull(constants$1775.gtk_recent_info_get_gicon$MH,"gtk_recent_info_get_gicon");
+        return RuntimeHelper.requireNonNull(constants$3017.const$5,"gtk_recent_info_get_gicon");
     }
     /**
      * {@snippet :
-     * GIcon* gtk_recent_info_get_gicon(GtkRecentInfo* info);
+     * struct _GIcon* gtk_recent_info_get_gicon(struct _GtkRecentInfo* info);
      * }
      */
     public static MemorySegment gtk_recent_info_get_gicon(MemorySegment info) {
@@ -104,11 +2778,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_info_get_short_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1775.gtk_recent_info_get_short_name$MH,"gtk_recent_info_get_short_name");
+        return RuntimeHelper.requireNonNull(constants$3018.const$0,"gtk_recent_info_get_short_name");
     }
     /**
      * {@snippet :
-     * gchar* gtk_recent_info_get_short_name(GtkRecentInfo* info);
+     * char* gtk_recent_info_get_short_name(struct _GtkRecentInfo* info);
      * }
      */
     public static MemorySegment gtk_recent_info_get_short_name(MemorySegment info) {
@@ -120,11 +2794,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_info_get_uri_display$MH() {
-        return RuntimeHelper.requireNonNull(constants$1775.gtk_recent_info_get_uri_display$MH,"gtk_recent_info_get_uri_display");
+        return RuntimeHelper.requireNonNull(constants$3018.const$1,"gtk_recent_info_get_uri_display");
     }
     /**
      * {@snippet :
-     * gchar* gtk_recent_info_get_uri_display(GtkRecentInfo* info);
+     * char* gtk_recent_info_get_uri_display(struct _GtkRecentInfo* info);
      * }
      */
     public static MemorySegment gtk_recent_info_get_uri_display(MemorySegment info) {
@@ -136,11 +2810,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_info_get_age$MH() {
-        return RuntimeHelper.requireNonNull(constants$1775.gtk_recent_info_get_age$MH,"gtk_recent_info_get_age");
+        return RuntimeHelper.requireNonNull(constants$3018.const$2,"gtk_recent_info_get_age");
     }
     /**
      * {@snippet :
-     * gint gtk_recent_info_get_age(GtkRecentInfo* info);
+     * int gtk_recent_info_get_age(struct _GtkRecentInfo* info);
      * }
      */
     public static int gtk_recent_info_get_age(MemorySegment info) {
@@ -152,11 +2826,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_info_is_local$MH() {
-        return RuntimeHelper.requireNonNull(constants$1776.gtk_recent_info_is_local$MH,"gtk_recent_info_is_local");
+        return RuntimeHelper.requireNonNull(constants$3018.const$3,"gtk_recent_info_is_local");
     }
     /**
      * {@snippet :
-     * gboolean gtk_recent_info_is_local(GtkRecentInfo* info);
+     * int gtk_recent_info_is_local(struct _GtkRecentInfo* info);
      * }
      */
     public static int gtk_recent_info_is_local(MemorySegment info) {
@@ -168,11 +2842,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_info_exists$MH() {
-        return RuntimeHelper.requireNonNull(constants$1776.gtk_recent_info_exists$MH,"gtk_recent_info_exists");
+        return RuntimeHelper.requireNonNull(constants$3018.const$4,"gtk_recent_info_exists");
     }
     /**
      * {@snippet :
-     * gboolean gtk_recent_info_exists(GtkRecentInfo* info);
+     * int gtk_recent_info_exists(struct _GtkRecentInfo* info);
      * }
      */
     public static int gtk_recent_info_exists(MemorySegment info) {
@@ -184,11 +2858,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_info_match$MH() {
-        return RuntimeHelper.requireNonNull(constants$1776.gtk_recent_info_match$MH,"gtk_recent_info_match");
+        return RuntimeHelper.requireNonNull(constants$3018.const$5,"gtk_recent_info_match");
     }
     /**
      * {@snippet :
-     * gboolean gtk_recent_info_match(GtkRecentInfo* info_a, GtkRecentInfo* info_b);
+     * int gtk_recent_info_match(struct _GtkRecentInfo* info_a, struct _GtkRecentInfo* info_b);
      * }
      */
     public static int gtk_recent_info_match(MemorySegment info_a, MemorySegment info_b) {
@@ -200,7 +2874,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle _gtk_recent_manager_sync$MH() {
-        return RuntimeHelper.requireNonNull(constants$1776._gtk_recent_manager_sync$MH,"_gtk_recent_manager_sync");
+        return RuntimeHelper.requireNonNull(constants$3019.const$0,"_gtk_recent_manager_sync");
     }
     /**
      * {@snippet :
@@ -217,7 +2891,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_RECENT_FILTER_URI = 1;
+     * enum GtkRecentFilterFlags.GTK_RECENT_FILTER_URI = 1;
      * }
      */
     public static int GTK_RECENT_FILTER_URI() {
@@ -225,7 +2899,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_RECENT_FILTER_DISPLAY_NAME = 2;
+     * enum GtkRecentFilterFlags.GTK_RECENT_FILTER_DISPLAY_NAME = 2;
      * }
      */
     public static int GTK_RECENT_FILTER_DISPLAY_NAME() {
@@ -233,7 +2907,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_RECENT_FILTER_MIME_TYPE = 4;
+     * enum GtkRecentFilterFlags.GTK_RECENT_FILTER_MIME_TYPE = 4;
      * }
      */
     public static int GTK_RECENT_FILTER_MIME_TYPE() {
@@ -241,7 +2915,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_RECENT_FILTER_APPLICATION = 8;
+     * enum GtkRecentFilterFlags.GTK_RECENT_FILTER_APPLICATION = 8;
      * }
      */
     public static int GTK_RECENT_FILTER_APPLICATION() {
@@ -249,7 +2923,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_RECENT_FILTER_GROUP = 16;
+     * enum GtkRecentFilterFlags.GTK_RECENT_FILTER_GROUP = 16;
      * }
      */
     public static int GTK_RECENT_FILTER_GROUP() {
@@ -257,18 +2931,18 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_RECENT_FILTER_AGE = 32;
+     * enum GtkRecentFilterFlags.GTK_RECENT_FILTER_AGE = 32;
      * }
      */
     public static int GTK_RECENT_FILTER_AGE() {
         return (int)32L;
     }
     public static MethodHandle gtk_recent_filter_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1777.gtk_recent_filter_get_type$MH,"gtk_recent_filter_get_type");
+        return RuntimeHelper.requireNonNull(constants$3020.const$4,"gtk_recent_filter_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_recent_filter_get_type();
+     * unsigned long gtk_recent_filter_get_type();
      * }
      */
     public static long gtk_recent_filter_get_type() {
@@ -280,11 +2954,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_filter_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1777.gtk_recent_filter_new$MH,"gtk_recent_filter_new");
+        return RuntimeHelper.requireNonNull(constants$3020.const$5,"gtk_recent_filter_new");
     }
     /**
      * {@snippet :
-     * GtkRecentFilter* gtk_recent_filter_new();
+     * struct _GtkRecentFilter* gtk_recent_filter_new();
      * }
      */
     public static MemorySegment gtk_recent_filter_new() {
@@ -296,11 +2970,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_filter_set_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1777.gtk_recent_filter_set_name$MH,"gtk_recent_filter_set_name");
+        return RuntimeHelper.requireNonNull(constants$3021.const$0,"gtk_recent_filter_set_name");
     }
     /**
      * {@snippet :
-     * void gtk_recent_filter_set_name(GtkRecentFilter* filter, const gchar* name);
+     * void gtk_recent_filter_set_name(struct _GtkRecentFilter* filter, char* name);
      * }
      */
     public static void gtk_recent_filter_set_name(MemorySegment filter, MemorySegment name) {
@@ -312,11 +2986,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_filter_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1777.gtk_recent_filter_get_name$MH,"gtk_recent_filter_get_name");
+        return RuntimeHelper.requireNonNull(constants$3021.const$1,"gtk_recent_filter_get_name");
     }
     /**
      * {@snippet :
-     * const gchar* gtk_recent_filter_get_name(GtkRecentFilter* filter);
+     * char* gtk_recent_filter_get_name(struct _GtkRecentFilter* filter);
      * }
      */
     public static MemorySegment gtk_recent_filter_get_name(MemorySegment filter) {
@@ -328,11 +3002,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_filter_add_mime_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1777.gtk_recent_filter_add_mime_type$MH,"gtk_recent_filter_add_mime_type");
+        return RuntimeHelper.requireNonNull(constants$3021.const$2,"gtk_recent_filter_add_mime_type");
     }
     /**
      * {@snippet :
-     * void gtk_recent_filter_add_mime_type(GtkRecentFilter* filter, const gchar* mime_type);
+     * void gtk_recent_filter_add_mime_type(struct _GtkRecentFilter* filter, char* mime_type);
      * }
      */
     public static void gtk_recent_filter_add_mime_type(MemorySegment filter, MemorySegment mime_type) {
@@ -344,11 +3018,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_filter_add_pattern$MH() {
-        return RuntimeHelper.requireNonNull(constants$1777.gtk_recent_filter_add_pattern$MH,"gtk_recent_filter_add_pattern");
+        return RuntimeHelper.requireNonNull(constants$3021.const$3,"gtk_recent_filter_add_pattern");
     }
     /**
      * {@snippet :
-     * void gtk_recent_filter_add_pattern(GtkRecentFilter* filter, const gchar* pattern);
+     * void gtk_recent_filter_add_pattern(struct _GtkRecentFilter* filter, char* pattern);
      * }
      */
     public static void gtk_recent_filter_add_pattern(MemorySegment filter, MemorySegment pattern) {
@@ -360,11 +3034,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_filter_add_pixbuf_formats$MH() {
-        return RuntimeHelper.requireNonNull(constants$1778.gtk_recent_filter_add_pixbuf_formats$MH,"gtk_recent_filter_add_pixbuf_formats");
+        return RuntimeHelper.requireNonNull(constants$3021.const$4,"gtk_recent_filter_add_pixbuf_formats");
     }
     /**
      * {@snippet :
-     * void gtk_recent_filter_add_pixbuf_formats(GtkRecentFilter* filter);
+     * void gtk_recent_filter_add_pixbuf_formats(struct _GtkRecentFilter* filter);
      * }
      */
     public static void gtk_recent_filter_add_pixbuf_formats(MemorySegment filter) {
@@ -376,11 +3050,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_filter_add_application$MH() {
-        return RuntimeHelper.requireNonNull(constants$1778.gtk_recent_filter_add_application$MH,"gtk_recent_filter_add_application");
+        return RuntimeHelper.requireNonNull(constants$3021.const$5,"gtk_recent_filter_add_application");
     }
     /**
      * {@snippet :
-     * void gtk_recent_filter_add_application(GtkRecentFilter* filter, const gchar* application);
+     * void gtk_recent_filter_add_application(struct _GtkRecentFilter* filter, char* application);
      * }
      */
     public static void gtk_recent_filter_add_application(MemorySegment filter, MemorySegment application) {
@@ -392,11 +3066,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_filter_add_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$1778.gtk_recent_filter_add_group$MH,"gtk_recent_filter_add_group");
+        return RuntimeHelper.requireNonNull(constants$3022.const$0,"gtk_recent_filter_add_group");
     }
     /**
      * {@snippet :
-     * void gtk_recent_filter_add_group(GtkRecentFilter* filter, const gchar* group);
+     * void gtk_recent_filter_add_group(struct _GtkRecentFilter* filter, char* group);
      * }
      */
     public static void gtk_recent_filter_add_group(MemorySegment filter, MemorySegment group) {
@@ -408,11 +3082,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_filter_add_age$MH() {
-        return RuntimeHelper.requireNonNull(constants$1778.gtk_recent_filter_add_age$MH,"gtk_recent_filter_add_age");
+        return RuntimeHelper.requireNonNull(constants$3022.const$1,"gtk_recent_filter_add_age");
     }
     /**
      * {@snippet :
-     * void gtk_recent_filter_add_age(GtkRecentFilter* filter, gint days);
+     * void gtk_recent_filter_add_age(struct _GtkRecentFilter* filter, int days);
      * }
      */
     public static void gtk_recent_filter_add_age(MemorySegment filter, int days) {
@@ -424,11 +3098,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_filter_add_custom$MH() {
-        return RuntimeHelper.requireNonNull(constants$1778.gtk_recent_filter_add_custom$MH,"gtk_recent_filter_add_custom");
+        return RuntimeHelper.requireNonNull(constants$3022.const$4,"gtk_recent_filter_add_custom");
     }
     /**
      * {@snippet :
-     * void gtk_recent_filter_add_custom(GtkRecentFilter* filter, GtkRecentFilterFlags needed, GtkRecentFilterFunc func, gpointer data, GDestroyNotify data_destroy);
+     * void gtk_recent_filter_add_custom(struct _GtkRecentFilter* filter, enum GtkRecentFilterFlags needed, int (*func)(struct _GtkRecentFilterInfo*,void*), void* data, void (*data_destroy)(void*));
      * }
      */
     public static void gtk_recent_filter_add_custom(MemorySegment filter, int needed, MemorySegment func, MemorySegment data, MemorySegment data_destroy) {
@@ -440,11 +3114,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_filter_get_needed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1778.gtk_recent_filter_get_needed$MH,"gtk_recent_filter_get_needed");
+        return RuntimeHelper.requireNonNull(constants$3022.const$5,"gtk_recent_filter_get_needed");
     }
     /**
      * {@snippet :
-     * GtkRecentFilterFlags gtk_recent_filter_get_needed(GtkRecentFilter* filter);
+     * enum GtkRecentFilterFlags gtk_recent_filter_get_needed(struct _GtkRecentFilter* filter);
      * }
      */
     public static int gtk_recent_filter_get_needed(MemorySegment filter) {
@@ -456,11 +3130,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_filter_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1779.gtk_recent_filter_filter$MH,"gtk_recent_filter_filter");
+        return RuntimeHelper.requireNonNull(constants$3023.const$0,"gtk_recent_filter_filter");
     }
     /**
      * {@snippet :
-     * gboolean gtk_recent_filter_filter(GtkRecentFilter* filter, const GtkRecentFilterInfo* filter_info);
+     * int gtk_recent_filter_filter(struct _GtkRecentFilter* filter, struct _GtkRecentFilterInfo* filter_info);
      * }
      */
     public static int gtk_recent_filter_filter(MemorySegment filter, MemorySegment filter_info) {
@@ -473,7 +3147,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_RECENT_SORT_NONE = 0;
+     * enum GtkRecentSortType.GTK_RECENT_SORT_NONE = 0;
      * }
      */
     public static int GTK_RECENT_SORT_NONE() {
@@ -481,7 +3155,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_RECENT_SORT_MRU = 1;
+     * enum GtkRecentSortType.GTK_RECENT_SORT_MRU = 1;
      * }
      */
     public static int GTK_RECENT_SORT_MRU() {
@@ -489,7 +3163,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_RECENT_SORT_LRU = 2;
+     * enum GtkRecentSortType.GTK_RECENT_SORT_LRU = 2;
      * }
      */
     public static int GTK_RECENT_SORT_LRU() {
@@ -497,7 +3171,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_RECENT_SORT_CUSTOM = 3;
+     * enum GtkRecentSortType.GTK_RECENT_SORT_CUSTOM = 3;
      * }
      */
     public static int GTK_RECENT_SORT_CUSTOM() {
@@ -505,7 +3179,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_RECENT_CHOOSER_ERROR_NOT_FOUND = 0;
+     * enum GtkRecentChooserError.GTK_RECENT_CHOOSER_ERROR_NOT_FOUND = 0;
      * }
      */
     public static int GTK_RECENT_CHOOSER_ERROR_NOT_FOUND() {
@@ -513,18 +3187,18 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_RECENT_CHOOSER_ERROR_INVALID_URI = 1;
+     * enum GtkRecentChooserError.GTK_RECENT_CHOOSER_ERROR_INVALID_URI = 1;
      * }
      */
     public static int GTK_RECENT_CHOOSER_ERROR_INVALID_URI() {
         return (int)1L;
     }
     public static MethodHandle gtk_recent_chooser_error_quark$MH() {
-        return RuntimeHelper.requireNonNull(constants$1779.gtk_recent_chooser_error_quark$MH,"gtk_recent_chooser_error_quark");
+        return RuntimeHelper.requireNonNull(constants$3023.const$2,"gtk_recent_chooser_error_quark");
     }
     /**
      * {@snippet :
-     * GQuark gtk_recent_chooser_error_quark();
+     * unsigned int gtk_recent_chooser_error_quark();
      * }
      */
     public static int gtk_recent_chooser_error_quark() {
@@ -536,11 +3210,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1779.gtk_recent_chooser_get_type$MH,"gtk_recent_chooser_get_type");
+        return RuntimeHelper.requireNonNull(constants$3028.const$2,"gtk_recent_chooser_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_recent_chooser_get_type();
+     * unsigned long gtk_recent_chooser_get_type();
      * }
      */
     public static long gtk_recent_chooser_get_type() {
@@ -552,11 +3226,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_set_show_private$MH() {
-        return RuntimeHelper.requireNonNull(constants$1779.gtk_recent_chooser_set_show_private$MH,"gtk_recent_chooser_set_show_private");
+        return RuntimeHelper.requireNonNull(constants$3028.const$3,"gtk_recent_chooser_set_show_private");
     }
     /**
      * {@snippet :
-     * void gtk_recent_chooser_set_show_private(GtkRecentChooser* chooser, gboolean show_private);
+     * void gtk_recent_chooser_set_show_private(struct _GtkRecentChooser* chooser, int show_private);
      * }
      */
     public static void gtk_recent_chooser_set_show_private(MemorySegment chooser, int show_private) {
@@ -568,11 +3242,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_get_show_private$MH() {
-        return RuntimeHelper.requireNonNull(constants$1780.gtk_recent_chooser_get_show_private$MH,"gtk_recent_chooser_get_show_private");
+        return RuntimeHelper.requireNonNull(constants$3028.const$4,"gtk_recent_chooser_get_show_private");
     }
     /**
      * {@snippet :
-     * gboolean gtk_recent_chooser_get_show_private(GtkRecentChooser* chooser);
+     * int gtk_recent_chooser_get_show_private(struct _GtkRecentChooser* chooser);
      * }
      */
     public static int gtk_recent_chooser_get_show_private(MemorySegment chooser) {
@@ -584,11 +3258,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_set_show_not_found$MH() {
-        return RuntimeHelper.requireNonNull(constants$1780.gtk_recent_chooser_set_show_not_found$MH,"gtk_recent_chooser_set_show_not_found");
+        return RuntimeHelper.requireNonNull(constants$3028.const$5,"gtk_recent_chooser_set_show_not_found");
     }
     /**
      * {@snippet :
-     * void gtk_recent_chooser_set_show_not_found(GtkRecentChooser* chooser, gboolean show_not_found);
+     * void gtk_recent_chooser_set_show_not_found(struct _GtkRecentChooser* chooser, int show_not_found);
      * }
      */
     public static void gtk_recent_chooser_set_show_not_found(MemorySegment chooser, int show_not_found) {
@@ -600,11 +3274,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_get_show_not_found$MH() {
-        return RuntimeHelper.requireNonNull(constants$1780.gtk_recent_chooser_get_show_not_found$MH,"gtk_recent_chooser_get_show_not_found");
+        return RuntimeHelper.requireNonNull(constants$3029.const$0,"gtk_recent_chooser_get_show_not_found");
     }
     /**
      * {@snippet :
-     * gboolean gtk_recent_chooser_get_show_not_found(GtkRecentChooser* chooser);
+     * int gtk_recent_chooser_get_show_not_found(struct _GtkRecentChooser* chooser);
      * }
      */
     public static int gtk_recent_chooser_get_show_not_found(MemorySegment chooser) {
@@ -616,11 +3290,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_set_select_multiple$MH() {
-        return RuntimeHelper.requireNonNull(constants$1780.gtk_recent_chooser_set_select_multiple$MH,"gtk_recent_chooser_set_select_multiple");
+        return RuntimeHelper.requireNonNull(constants$3029.const$1,"gtk_recent_chooser_set_select_multiple");
     }
     /**
      * {@snippet :
-     * void gtk_recent_chooser_set_select_multiple(GtkRecentChooser* chooser, gboolean select_multiple);
+     * void gtk_recent_chooser_set_select_multiple(struct _GtkRecentChooser* chooser, int select_multiple);
      * }
      */
     public static void gtk_recent_chooser_set_select_multiple(MemorySegment chooser, int select_multiple) {
@@ -632,11 +3306,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_get_select_multiple$MH() {
-        return RuntimeHelper.requireNonNull(constants$1780.gtk_recent_chooser_get_select_multiple$MH,"gtk_recent_chooser_get_select_multiple");
+        return RuntimeHelper.requireNonNull(constants$3029.const$2,"gtk_recent_chooser_get_select_multiple");
     }
     /**
      * {@snippet :
-     * gboolean gtk_recent_chooser_get_select_multiple(GtkRecentChooser* chooser);
+     * int gtk_recent_chooser_get_select_multiple(struct _GtkRecentChooser* chooser);
      * }
      */
     public static int gtk_recent_chooser_get_select_multiple(MemorySegment chooser) {
@@ -648,11 +3322,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_set_limit$MH() {
-        return RuntimeHelper.requireNonNull(constants$1780.gtk_recent_chooser_set_limit$MH,"gtk_recent_chooser_set_limit");
+        return RuntimeHelper.requireNonNull(constants$3029.const$3,"gtk_recent_chooser_set_limit");
     }
     /**
      * {@snippet :
-     * void gtk_recent_chooser_set_limit(GtkRecentChooser* chooser, gint limit);
+     * void gtk_recent_chooser_set_limit(struct _GtkRecentChooser* chooser, int limit);
      * }
      */
     public static void gtk_recent_chooser_set_limit(MemorySegment chooser, int limit) {
@@ -664,11 +3338,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_get_limit$MH() {
-        return RuntimeHelper.requireNonNull(constants$1781.gtk_recent_chooser_get_limit$MH,"gtk_recent_chooser_get_limit");
+        return RuntimeHelper.requireNonNull(constants$3029.const$4,"gtk_recent_chooser_get_limit");
     }
     /**
      * {@snippet :
-     * gint gtk_recent_chooser_get_limit(GtkRecentChooser* chooser);
+     * int gtk_recent_chooser_get_limit(struct _GtkRecentChooser* chooser);
      * }
      */
     public static int gtk_recent_chooser_get_limit(MemorySegment chooser) {
@@ -680,11 +3354,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_set_local_only$MH() {
-        return RuntimeHelper.requireNonNull(constants$1781.gtk_recent_chooser_set_local_only$MH,"gtk_recent_chooser_set_local_only");
+        return RuntimeHelper.requireNonNull(constants$3029.const$5,"gtk_recent_chooser_set_local_only");
     }
     /**
      * {@snippet :
-     * void gtk_recent_chooser_set_local_only(GtkRecentChooser* chooser, gboolean local_only);
+     * void gtk_recent_chooser_set_local_only(struct _GtkRecentChooser* chooser, int local_only);
      * }
      */
     public static void gtk_recent_chooser_set_local_only(MemorySegment chooser, int local_only) {
@@ -696,11 +3370,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_get_local_only$MH() {
-        return RuntimeHelper.requireNonNull(constants$1781.gtk_recent_chooser_get_local_only$MH,"gtk_recent_chooser_get_local_only");
+        return RuntimeHelper.requireNonNull(constants$3030.const$0,"gtk_recent_chooser_get_local_only");
     }
     /**
      * {@snippet :
-     * gboolean gtk_recent_chooser_get_local_only(GtkRecentChooser* chooser);
+     * int gtk_recent_chooser_get_local_only(struct _GtkRecentChooser* chooser);
      * }
      */
     public static int gtk_recent_chooser_get_local_only(MemorySegment chooser) {
@@ -712,11 +3386,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_set_show_tips$MH() {
-        return RuntimeHelper.requireNonNull(constants$1781.gtk_recent_chooser_set_show_tips$MH,"gtk_recent_chooser_set_show_tips");
+        return RuntimeHelper.requireNonNull(constants$3030.const$1,"gtk_recent_chooser_set_show_tips");
     }
     /**
      * {@snippet :
-     * void gtk_recent_chooser_set_show_tips(GtkRecentChooser* chooser, gboolean show_tips);
+     * void gtk_recent_chooser_set_show_tips(struct _GtkRecentChooser* chooser, int show_tips);
      * }
      */
     public static void gtk_recent_chooser_set_show_tips(MemorySegment chooser, int show_tips) {
@@ -728,11 +3402,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_get_show_tips$MH() {
-        return RuntimeHelper.requireNonNull(constants$1781.gtk_recent_chooser_get_show_tips$MH,"gtk_recent_chooser_get_show_tips");
+        return RuntimeHelper.requireNonNull(constants$3030.const$2,"gtk_recent_chooser_get_show_tips");
     }
     /**
      * {@snippet :
-     * gboolean gtk_recent_chooser_get_show_tips(GtkRecentChooser* chooser);
+     * int gtk_recent_chooser_get_show_tips(struct _GtkRecentChooser* chooser);
      * }
      */
     public static int gtk_recent_chooser_get_show_tips(MemorySegment chooser) {
@@ -744,11 +3418,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_set_show_icons$MH() {
-        return RuntimeHelper.requireNonNull(constants$1781.gtk_recent_chooser_set_show_icons$MH,"gtk_recent_chooser_set_show_icons");
+        return RuntimeHelper.requireNonNull(constants$3030.const$3,"gtk_recent_chooser_set_show_icons");
     }
     /**
      * {@snippet :
-     * void gtk_recent_chooser_set_show_icons(GtkRecentChooser* chooser, gboolean show_icons);
+     * void gtk_recent_chooser_set_show_icons(struct _GtkRecentChooser* chooser, int show_icons);
      * }
      */
     public static void gtk_recent_chooser_set_show_icons(MemorySegment chooser, int show_icons) {
@@ -760,11 +3434,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_get_show_icons$MH() {
-        return RuntimeHelper.requireNonNull(constants$1782.gtk_recent_chooser_get_show_icons$MH,"gtk_recent_chooser_get_show_icons");
+        return RuntimeHelper.requireNonNull(constants$3030.const$4,"gtk_recent_chooser_get_show_icons");
     }
     /**
      * {@snippet :
-     * gboolean gtk_recent_chooser_get_show_icons(GtkRecentChooser* chooser);
+     * int gtk_recent_chooser_get_show_icons(struct _GtkRecentChooser* chooser);
      * }
      */
     public static int gtk_recent_chooser_get_show_icons(MemorySegment chooser) {
@@ -776,11 +3450,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_set_sort_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1782.gtk_recent_chooser_set_sort_type$MH,"gtk_recent_chooser_set_sort_type");
+        return RuntimeHelper.requireNonNull(constants$3030.const$5,"gtk_recent_chooser_set_sort_type");
     }
     /**
      * {@snippet :
-     * void gtk_recent_chooser_set_sort_type(GtkRecentChooser* chooser, GtkRecentSortType sort_type);
+     * void gtk_recent_chooser_set_sort_type(struct _GtkRecentChooser* chooser, enum GtkRecentSortType sort_type);
      * }
      */
     public static void gtk_recent_chooser_set_sort_type(MemorySegment chooser, int sort_type) {
@@ -792,11 +3466,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_get_sort_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1782.gtk_recent_chooser_get_sort_type$MH,"gtk_recent_chooser_get_sort_type");
+        return RuntimeHelper.requireNonNull(constants$3031.const$0,"gtk_recent_chooser_get_sort_type");
     }
     /**
      * {@snippet :
-     * GtkRecentSortType gtk_recent_chooser_get_sort_type(GtkRecentChooser* chooser);
+     * enum GtkRecentSortType gtk_recent_chooser_get_sort_type(struct _GtkRecentChooser* chooser);
      * }
      */
     public static int gtk_recent_chooser_get_sort_type(MemorySegment chooser) {
@@ -808,11 +3482,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_set_sort_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1782.gtk_recent_chooser_set_sort_func$MH,"gtk_recent_chooser_set_sort_func");
+        return RuntimeHelper.requireNonNull(constants$3031.const$3,"gtk_recent_chooser_set_sort_func");
     }
     /**
      * {@snippet :
-     * void gtk_recent_chooser_set_sort_func(GtkRecentChooser* chooser, GtkRecentSortFunc sort_func, gpointer sort_data, GDestroyNotify data_destroy);
+     * void gtk_recent_chooser_set_sort_func(struct _GtkRecentChooser* chooser, int (*sort_func)(struct _GtkRecentInfo*,struct _GtkRecentInfo*,void*), void* sort_data, void (*data_destroy)(void*));
      * }
      */
     public static void gtk_recent_chooser_set_sort_func(MemorySegment chooser, MemorySegment sort_func, MemorySegment sort_data, MemorySegment data_destroy) {
@@ -824,11 +3498,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_set_current_uri$MH() {
-        return RuntimeHelper.requireNonNull(constants$1782.gtk_recent_chooser_set_current_uri$MH,"gtk_recent_chooser_set_current_uri");
+        return RuntimeHelper.requireNonNull(constants$3031.const$4,"gtk_recent_chooser_set_current_uri");
     }
     /**
      * {@snippet :
-     * gboolean gtk_recent_chooser_set_current_uri(GtkRecentChooser* chooser, const gchar* uri, GError** error);
+     * int gtk_recent_chooser_set_current_uri(struct _GtkRecentChooser* chooser, char* uri, struct _GError** error);
      * }
      */
     public static int gtk_recent_chooser_set_current_uri(MemorySegment chooser, MemorySegment uri, MemorySegment error) {
@@ -840,11 +3514,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_get_current_uri$MH() {
-        return RuntimeHelper.requireNonNull(constants$1782.gtk_recent_chooser_get_current_uri$MH,"gtk_recent_chooser_get_current_uri");
+        return RuntimeHelper.requireNonNull(constants$3031.const$5,"gtk_recent_chooser_get_current_uri");
     }
     /**
      * {@snippet :
-     * gchar* gtk_recent_chooser_get_current_uri(GtkRecentChooser* chooser);
+     * char* gtk_recent_chooser_get_current_uri(struct _GtkRecentChooser* chooser);
      * }
      */
     public static MemorySegment gtk_recent_chooser_get_current_uri(MemorySegment chooser) {
@@ -856,11 +3530,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_get_current_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$1783.gtk_recent_chooser_get_current_item$MH,"gtk_recent_chooser_get_current_item");
+        return RuntimeHelper.requireNonNull(constants$3032.const$0,"gtk_recent_chooser_get_current_item");
     }
     /**
      * {@snippet :
-     * GtkRecentInfo* gtk_recent_chooser_get_current_item(GtkRecentChooser* chooser);
+     * struct _GtkRecentInfo* gtk_recent_chooser_get_current_item(struct _GtkRecentChooser* chooser);
      * }
      */
     public static MemorySegment gtk_recent_chooser_get_current_item(MemorySegment chooser) {
@@ -872,11 +3546,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_select_uri$MH() {
-        return RuntimeHelper.requireNonNull(constants$1783.gtk_recent_chooser_select_uri$MH,"gtk_recent_chooser_select_uri");
+        return RuntimeHelper.requireNonNull(constants$3032.const$1,"gtk_recent_chooser_select_uri");
     }
     /**
      * {@snippet :
-     * gboolean gtk_recent_chooser_select_uri(GtkRecentChooser* chooser, const gchar* uri, GError** error);
+     * int gtk_recent_chooser_select_uri(struct _GtkRecentChooser* chooser, char* uri, struct _GError** error);
      * }
      */
     public static int gtk_recent_chooser_select_uri(MemorySegment chooser, MemorySegment uri, MemorySegment error) {
@@ -888,11 +3562,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_unselect_uri$MH() {
-        return RuntimeHelper.requireNonNull(constants$1783.gtk_recent_chooser_unselect_uri$MH,"gtk_recent_chooser_unselect_uri");
+        return RuntimeHelper.requireNonNull(constants$3032.const$2,"gtk_recent_chooser_unselect_uri");
     }
     /**
      * {@snippet :
-     * void gtk_recent_chooser_unselect_uri(GtkRecentChooser* chooser, const gchar* uri);
+     * void gtk_recent_chooser_unselect_uri(struct _GtkRecentChooser* chooser, char* uri);
      * }
      */
     public static void gtk_recent_chooser_unselect_uri(MemorySegment chooser, MemorySegment uri) {
@@ -904,11 +3578,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_select_all$MH() {
-        return RuntimeHelper.requireNonNull(constants$1783.gtk_recent_chooser_select_all$MH,"gtk_recent_chooser_select_all");
+        return RuntimeHelper.requireNonNull(constants$3032.const$3,"gtk_recent_chooser_select_all");
     }
     /**
      * {@snippet :
-     * void gtk_recent_chooser_select_all(GtkRecentChooser* chooser);
+     * void gtk_recent_chooser_select_all(struct _GtkRecentChooser* chooser);
      * }
      */
     public static void gtk_recent_chooser_select_all(MemorySegment chooser) {
@@ -920,11 +3594,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_unselect_all$MH() {
-        return RuntimeHelper.requireNonNull(constants$1783.gtk_recent_chooser_unselect_all$MH,"gtk_recent_chooser_unselect_all");
+        return RuntimeHelper.requireNonNull(constants$3032.const$4,"gtk_recent_chooser_unselect_all");
     }
     /**
      * {@snippet :
-     * void gtk_recent_chooser_unselect_all(GtkRecentChooser* chooser);
+     * void gtk_recent_chooser_unselect_all(struct _GtkRecentChooser* chooser);
      * }
      */
     public static void gtk_recent_chooser_unselect_all(MemorySegment chooser) {
@@ -936,11 +3610,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_get_items$MH() {
-        return RuntimeHelper.requireNonNull(constants$1783.gtk_recent_chooser_get_items$MH,"gtk_recent_chooser_get_items");
+        return RuntimeHelper.requireNonNull(constants$3032.const$5,"gtk_recent_chooser_get_items");
     }
     /**
      * {@snippet :
-     * GList* gtk_recent_chooser_get_items(GtkRecentChooser* chooser);
+     * struct _GList* gtk_recent_chooser_get_items(struct _GtkRecentChooser* chooser);
      * }
      */
     public static MemorySegment gtk_recent_chooser_get_items(MemorySegment chooser) {
@@ -952,11 +3626,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_get_uris$MH() {
-        return RuntimeHelper.requireNonNull(constants$1784.gtk_recent_chooser_get_uris$MH,"gtk_recent_chooser_get_uris");
+        return RuntimeHelper.requireNonNull(constants$3033.const$0,"gtk_recent_chooser_get_uris");
     }
     /**
      * {@snippet :
-     * gchar** gtk_recent_chooser_get_uris(GtkRecentChooser* chooser, gsize* length);
+     * char** gtk_recent_chooser_get_uris(struct _GtkRecentChooser* chooser, unsigned long* length);
      * }
      */
     public static MemorySegment gtk_recent_chooser_get_uris(MemorySegment chooser, MemorySegment length) {
@@ -968,11 +3642,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_add_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1784.gtk_recent_chooser_add_filter$MH,"gtk_recent_chooser_add_filter");
+        return RuntimeHelper.requireNonNull(constants$3033.const$1,"gtk_recent_chooser_add_filter");
     }
     /**
      * {@snippet :
-     * void gtk_recent_chooser_add_filter(GtkRecentChooser* chooser, GtkRecentFilter* filter);
+     * void gtk_recent_chooser_add_filter(struct _GtkRecentChooser* chooser, struct _GtkRecentFilter* filter);
      * }
      */
     public static void gtk_recent_chooser_add_filter(MemorySegment chooser, MemorySegment filter) {
@@ -984,11 +3658,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_remove_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1784.gtk_recent_chooser_remove_filter$MH,"gtk_recent_chooser_remove_filter");
+        return RuntimeHelper.requireNonNull(constants$3033.const$2,"gtk_recent_chooser_remove_filter");
     }
     /**
      * {@snippet :
-     * void gtk_recent_chooser_remove_filter(GtkRecentChooser* chooser, GtkRecentFilter* filter);
+     * void gtk_recent_chooser_remove_filter(struct _GtkRecentChooser* chooser, struct _GtkRecentFilter* filter);
      * }
      */
     public static void gtk_recent_chooser_remove_filter(MemorySegment chooser, MemorySegment filter) {
@@ -1000,11 +3674,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_list_filters$MH() {
-        return RuntimeHelper.requireNonNull(constants$1784.gtk_recent_chooser_list_filters$MH,"gtk_recent_chooser_list_filters");
+        return RuntimeHelper.requireNonNull(constants$3033.const$3,"gtk_recent_chooser_list_filters");
     }
     /**
      * {@snippet :
-     * GSList* gtk_recent_chooser_list_filters(GtkRecentChooser* chooser);
+     * struct _GSList* gtk_recent_chooser_list_filters(struct _GtkRecentChooser* chooser);
      * }
      */
     public static MemorySegment gtk_recent_chooser_list_filters(MemorySegment chooser) {
@@ -1016,11 +3690,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_set_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1784.gtk_recent_chooser_set_filter$MH,"gtk_recent_chooser_set_filter");
+        return RuntimeHelper.requireNonNull(constants$3033.const$4,"gtk_recent_chooser_set_filter");
     }
     /**
      * {@snippet :
-     * void gtk_recent_chooser_set_filter(GtkRecentChooser* chooser, GtkRecentFilter* filter);
+     * void gtk_recent_chooser_set_filter(struct _GtkRecentChooser* chooser, struct _GtkRecentFilter* filter);
      * }
      */
     public static void gtk_recent_chooser_set_filter(MemorySegment chooser, MemorySegment filter) {
@@ -1032,11 +3706,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_get_filter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1784.gtk_recent_chooser_get_filter$MH,"gtk_recent_chooser_get_filter");
+        return RuntimeHelper.requireNonNull(constants$3033.const$5,"gtk_recent_chooser_get_filter");
     }
     /**
      * {@snippet :
-     * GtkRecentFilter* gtk_recent_chooser_get_filter(GtkRecentChooser* chooser);
+     * struct _GtkRecentFilter* gtk_recent_chooser_get_filter(struct _GtkRecentChooser* chooser);
      * }
      */
     public static MemorySegment gtk_recent_chooser_get_filter(MemorySegment chooser) {
@@ -1048,11 +3722,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_dialog_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1785.gtk_recent_chooser_dialog_get_type$MH,"gtk_recent_chooser_dialog_get_type");
+        return RuntimeHelper.requireNonNull(constants$3035.const$5,"gtk_recent_chooser_dialog_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_recent_chooser_dialog_get_type();
+     * unsigned long gtk_recent_chooser_dialog_get_type();
      * }
      */
     public static long gtk_recent_chooser_dialog_get_type() {
@@ -1064,11 +3738,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_dialog_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1785.gtk_recent_chooser_dialog_new$MH,"gtk_recent_chooser_dialog_new");
+        return RuntimeHelper.requireNonNull(constants$3036.const$0,"gtk_recent_chooser_dialog_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_recent_chooser_dialog_new(const gchar* title, GtkWindow* parent, const gchar* first_button_text,...);
+     * struct _GtkWidget* gtk_recent_chooser_dialog_new(char* title, struct _GtkWindow* parent, char* first_button_text,...);
      * }
      */
     public static MemorySegment gtk_recent_chooser_dialog_new(MemorySegment title, MemorySegment parent, MemorySegment first_button_text, Object... x3) {
@@ -1080,11 +3754,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_dialog_new_for_manager$MH() {
-        return RuntimeHelper.requireNonNull(constants$1785.gtk_recent_chooser_dialog_new_for_manager$MH,"gtk_recent_chooser_dialog_new_for_manager");
+        return RuntimeHelper.requireNonNull(constants$3036.const$1,"gtk_recent_chooser_dialog_new_for_manager");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_recent_chooser_dialog_new_for_manager(const gchar* title, GtkWindow* parent, GtkRecentManager* manager, const gchar* first_button_text,...);
+     * struct _GtkWidget* gtk_recent_chooser_dialog_new_for_manager(char* title, struct _GtkWindow* parent, struct _GtkRecentManager* manager, char* first_button_text,...);
      * }
      */
     public static MemorySegment gtk_recent_chooser_dialog_new_for_manager(MemorySegment title, MemorySegment parent, MemorySegment manager, MemorySegment first_button_text, Object... x4) {
@@ -1096,11 +3770,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_menu_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1785.gtk_recent_chooser_menu_get_type$MH,"gtk_recent_chooser_menu_get_type");
+        return RuntimeHelper.requireNonNull(constants$3038.const$1,"gtk_recent_chooser_menu_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_recent_chooser_menu_get_type();
+     * unsigned long gtk_recent_chooser_menu_get_type();
      * }
      */
     public static long gtk_recent_chooser_menu_get_type() {
@@ -1112,11 +3786,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_menu_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1785.gtk_recent_chooser_menu_new$MH,"gtk_recent_chooser_menu_new");
+        return RuntimeHelper.requireNonNull(constants$3038.const$2,"gtk_recent_chooser_menu_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_recent_chooser_menu_new();
+     * struct _GtkWidget* gtk_recent_chooser_menu_new();
      * }
      */
     public static MemorySegment gtk_recent_chooser_menu_new() {
@@ -1128,11 +3802,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_menu_new_for_manager$MH() {
-        return RuntimeHelper.requireNonNull(constants$1785.gtk_recent_chooser_menu_new_for_manager$MH,"gtk_recent_chooser_menu_new_for_manager");
+        return RuntimeHelper.requireNonNull(constants$3038.const$3,"gtk_recent_chooser_menu_new_for_manager");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_recent_chooser_menu_new_for_manager(GtkRecentManager* manager);
+     * struct _GtkWidget* gtk_recent_chooser_menu_new_for_manager(struct _GtkRecentManager* manager);
      * }
      */
     public static MemorySegment gtk_recent_chooser_menu_new_for_manager(MemorySegment manager) {
@@ -1144,11 +3818,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_menu_get_show_numbers$MH() {
-        return RuntimeHelper.requireNonNull(constants$1786.gtk_recent_chooser_menu_get_show_numbers$MH,"gtk_recent_chooser_menu_get_show_numbers");
+        return RuntimeHelper.requireNonNull(constants$3038.const$4,"gtk_recent_chooser_menu_get_show_numbers");
     }
     /**
      * {@snippet :
-     * gboolean gtk_recent_chooser_menu_get_show_numbers(GtkRecentChooserMenu* menu);
+     * int gtk_recent_chooser_menu_get_show_numbers(struct _GtkRecentChooserMenu* menu);
      * }
      */
     public static int gtk_recent_chooser_menu_get_show_numbers(MemorySegment menu) {
@@ -1160,11 +3834,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_menu_set_show_numbers$MH() {
-        return RuntimeHelper.requireNonNull(constants$1786.gtk_recent_chooser_menu_set_show_numbers$MH,"gtk_recent_chooser_menu_set_show_numbers");
+        return RuntimeHelper.requireNonNull(constants$3038.const$5,"gtk_recent_chooser_menu_set_show_numbers");
     }
     /**
      * {@snippet :
-     * void gtk_recent_chooser_menu_set_show_numbers(GtkRecentChooserMenu* menu, gboolean show_numbers);
+     * void gtk_recent_chooser_menu_set_show_numbers(struct _GtkRecentChooserMenu* menu, int show_numbers);
      * }
      */
     public static void gtk_recent_chooser_menu_set_show_numbers(MemorySegment menu, int show_numbers) {
@@ -1176,11 +3850,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_widget_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1786.gtk_recent_chooser_widget_get_type$MH,"gtk_recent_chooser_widget_get_type");
+        return RuntimeHelper.requireNonNull(constants$3040.const$5,"gtk_recent_chooser_widget_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_recent_chooser_widget_get_type();
+     * unsigned long gtk_recent_chooser_widget_get_type();
      * }
      */
     public static long gtk_recent_chooser_widget_get_type() {
@@ -1192,11 +3866,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_widget_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1786.gtk_recent_chooser_widget_new$MH,"gtk_recent_chooser_widget_new");
+        return RuntimeHelper.requireNonNull(constants$3041.const$0,"gtk_recent_chooser_widget_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_recent_chooser_widget_new();
+     * struct _GtkWidget* gtk_recent_chooser_widget_new();
      * }
      */
     public static MemorySegment gtk_recent_chooser_widget_new() {
@@ -1208,11 +3882,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_widget_new_for_manager$MH() {
-        return RuntimeHelper.requireNonNull(constants$1786.gtk_recent_chooser_widget_new_for_manager$MH,"gtk_recent_chooser_widget_new_for_manager");
+        return RuntimeHelper.requireNonNull(constants$3041.const$1,"gtk_recent_chooser_widget_new_for_manager");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_recent_chooser_widget_new_for_manager(GtkRecentManager* manager);
+     * struct _GtkWidget* gtk_recent_chooser_widget_new_for_manager(struct _GtkRecentManager* manager);
      * }
      */
     public static MemorySegment gtk_recent_chooser_widget_new_for_manager(MemorySegment manager) {
@@ -1224,11 +3898,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_check$MH() {
-        return RuntimeHelper.requireNonNull(constants$1786.gtk_render_check$MH,"gtk_render_check");
+        return RuntimeHelper.requireNonNull(constants$3041.const$3,"gtk_render_check");
     }
     /**
      * {@snippet :
-     * void gtk_render_check(GtkStyleContext* context, cairo_t* cr, gdouble x, gdouble y, gdouble width, gdouble height);
+     * void gtk_render_check(struct _GtkStyleContext* context, struct _cairo* cr, double x, double y, double width, double height);
      * }
      */
     public static void gtk_render_check(MemorySegment context, MemorySegment cr, double x, double y, double width, double height) {
@@ -1240,11 +3914,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_option$MH() {
-        return RuntimeHelper.requireNonNull(constants$1787.gtk_render_option$MH,"gtk_render_option");
+        return RuntimeHelper.requireNonNull(constants$3041.const$4,"gtk_render_option");
     }
     /**
      * {@snippet :
-     * void gtk_render_option(GtkStyleContext* context, cairo_t* cr, gdouble x, gdouble y, gdouble width, gdouble height);
+     * void gtk_render_option(struct _GtkStyleContext* context, struct _cairo* cr, double x, double y, double width, double height);
      * }
      */
     public static void gtk_render_option(MemorySegment context, MemorySegment cr, double x, double y, double width, double height) {
@@ -1256,11 +3930,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_arrow$MH() {
-        return RuntimeHelper.requireNonNull(constants$1787.gtk_render_arrow$MH,"gtk_render_arrow");
+        return RuntimeHelper.requireNonNull(constants$3041.const$5,"gtk_render_arrow");
     }
     /**
      * {@snippet :
-     * void gtk_render_arrow(GtkStyleContext* context, cairo_t* cr, gdouble angle, gdouble x, gdouble y, gdouble size);
+     * void gtk_render_arrow(struct _GtkStyleContext* context, struct _cairo* cr, double angle, double x, double y, double size);
      * }
      */
     public static void gtk_render_arrow(MemorySegment context, MemorySegment cr, double angle, double x, double y, double size) {
@@ -1272,11 +3946,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_background$MH() {
-        return RuntimeHelper.requireNonNull(constants$1787.gtk_render_background$MH,"gtk_render_background");
+        return RuntimeHelper.requireNonNull(constants$3042.const$0,"gtk_render_background");
     }
     /**
      * {@snippet :
-     * void gtk_render_background(GtkStyleContext* context, cairo_t* cr, gdouble x, gdouble y, gdouble width, gdouble height);
+     * void gtk_render_background(struct _GtkStyleContext* context, struct _cairo* cr, double x, double y, double width, double height);
      * }
      */
     public static void gtk_render_background(MemorySegment context, MemorySegment cr, double x, double y, double width, double height) {
@@ -1288,11 +3962,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_background_get_clip$MH() {
-        return RuntimeHelper.requireNonNull(constants$1787.gtk_render_background_get_clip$MH,"gtk_render_background_get_clip");
+        return RuntimeHelper.requireNonNull(constants$3042.const$2,"gtk_render_background_get_clip");
     }
     /**
      * {@snippet :
-     * void gtk_render_background_get_clip(GtkStyleContext* context, gdouble x, gdouble y, gdouble width, gdouble height, GdkRectangle* out_clip);
+     * void gtk_render_background_get_clip(struct _GtkStyleContext* context, double x, double y, double width, double height, struct _cairo_rectangle_int* out_clip);
      * }
      */
     public static void gtk_render_background_get_clip(MemorySegment context, double x, double y, double width, double height, MemorySegment out_clip) {
@@ -1304,11 +3978,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_frame$MH() {
-        return RuntimeHelper.requireNonNull(constants$1787.gtk_render_frame$MH,"gtk_render_frame");
+        return RuntimeHelper.requireNonNull(constants$3042.const$3,"gtk_render_frame");
     }
     /**
      * {@snippet :
-     * void gtk_render_frame(GtkStyleContext* context, cairo_t* cr, gdouble x, gdouble y, gdouble width, gdouble height);
+     * void gtk_render_frame(struct _GtkStyleContext* context, struct _cairo* cr, double x, double y, double width, double height);
      * }
      */
     public static void gtk_render_frame(MemorySegment context, MemorySegment cr, double x, double y, double width, double height) {
@@ -1320,11 +3994,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_expander$MH() {
-        return RuntimeHelper.requireNonNull(constants$1787.gtk_render_expander$MH,"gtk_render_expander");
+        return RuntimeHelper.requireNonNull(constants$3042.const$4,"gtk_render_expander");
     }
     /**
      * {@snippet :
-     * void gtk_render_expander(GtkStyleContext* context, cairo_t* cr, gdouble x, gdouble y, gdouble width, gdouble height);
+     * void gtk_render_expander(struct _GtkStyleContext* context, struct _cairo* cr, double x, double y, double width, double height);
      * }
      */
     public static void gtk_render_expander(MemorySegment context, MemorySegment cr, double x, double y, double width, double height) {
@@ -1336,11 +4010,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_focus$MH() {
-        return RuntimeHelper.requireNonNull(constants$1788.gtk_render_focus$MH,"gtk_render_focus");
+        return RuntimeHelper.requireNonNull(constants$3042.const$5,"gtk_render_focus");
     }
     /**
      * {@snippet :
-     * void gtk_render_focus(GtkStyleContext* context, cairo_t* cr, gdouble x, gdouble y, gdouble width, gdouble height);
+     * void gtk_render_focus(struct _GtkStyleContext* context, struct _cairo* cr, double x, double y, double width, double height);
      * }
      */
     public static void gtk_render_focus(MemorySegment context, MemorySegment cr, double x, double y, double width, double height) {
@@ -1352,11 +4026,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_layout$MH() {
-        return RuntimeHelper.requireNonNull(constants$1788.gtk_render_layout$MH,"gtk_render_layout");
+        return RuntimeHelper.requireNonNull(constants$3043.const$1,"gtk_render_layout");
     }
     /**
      * {@snippet :
-     * void gtk_render_layout(GtkStyleContext* context, cairo_t* cr, gdouble x, gdouble y, PangoLayout* layout);
+     * void gtk_render_layout(struct _GtkStyleContext* context, struct _cairo* cr, double x, double y, struct _PangoLayout* layout);
      * }
      */
     public static void gtk_render_layout(MemorySegment context, MemorySegment cr, double x, double y, MemorySegment layout) {
@@ -1368,11 +4042,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$1788.gtk_render_line$MH,"gtk_render_line");
+        return RuntimeHelper.requireNonNull(constants$3043.const$2,"gtk_render_line");
     }
     /**
      * {@snippet :
-     * void gtk_render_line(GtkStyleContext* context, cairo_t* cr, gdouble x0, gdouble y0, gdouble x1, gdouble y1);
+     * void gtk_render_line(struct _GtkStyleContext* context, struct _cairo* cr, double x0, double y0, double x1, double y1);
      * }
      */
     public static void gtk_render_line(MemorySegment context, MemorySegment cr, double x0, double y0, double x1, double y1) {
@@ -1384,11 +4058,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_slider$MH() {
-        return RuntimeHelper.requireNonNull(constants$1788.gtk_render_slider$MH,"gtk_render_slider");
+        return RuntimeHelper.requireNonNull(constants$3043.const$4,"gtk_render_slider");
     }
     /**
      * {@snippet :
-     * void gtk_render_slider(GtkStyleContext* context, cairo_t* cr, gdouble x, gdouble y, gdouble width, gdouble height, GtkOrientation orientation);
+     * void gtk_render_slider(struct _GtkStyleContext* context, struct _cairo* cr, double x, double y, double width, double height, enum GtkOrientation orientation);
      * }
      */
     public static void gtk_render_slider(MemorySegment context, MemorySegment cr, double x, double y, double width, double height, int orientation) {
@@ -1400,11 +4074,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_frame_gap$MH() {
-        return RuntimeHelper.requireNonNull(constants$1788.gtk_render_frame_gap$MH,"gtk_render_frame_gap");
+        return RuntimeHelper.requireNonNull(constants$3043.const$6,"gtk_render_frame_gap");
     }
     /**
      * {@snippet :
-     * void gtk_render_frame_gap(GtkStyleContext* context, cairo_t* cr, gdouble x, gdouble y, gdouble width, gdouble height, GtkPositionType gap_side, gdouble xy0_gap, gdouble xy1_gap);
+     * void gtk_render_frame_gap(struct _GtkStyleContext* context, struct _cairo* cr, double x, double y, double width, double height, enum GtkPositionType gap_side, double xy0_gap, double xy1_gap);
      * }
      */
     public static void gtk_render_frame_gap(MemorySegment context, MemorySegment cr, double x, double y, double width, double height, int gap_side, double xy0_gap, double xy1_gap) {
@@ -1416,11 +4090,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_extension$MH() {
-        return RuntimeHelper.requireNonNull(constants$1788.gtk_render_extension$MH,"gtk_render_extension");
+        return RuntimeHelper.requireNonNull(constants$3044.const$0,"gtk_render_extension");
     }
     /**
      * {@snippet :
-     * void gtk_render_extension(GtkStyleContext* context, cairo_t* cr, gdouble x, gdouble y, gdouble width, gdouble height, GtkPositionType gap_side);
+     * void gtk_render_extension(struct _GtkStyleContext* context, struct _cairo* cr, double x, double y, double width, double height, enum GtkPositionType gap_side);
      * }
      */
     public static void gtk_render_extension(MemorySegment context, MemorySegment cr, double x, double y, double width, double height, int gap_side) {
@@ -1432,11 +4106,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_handle$MH() {
-        return RuntimeHelper.requireNonNull(constants$1789.gtk_render_handle$MH,"gtk_render_handle");
+        return RuntimeHelper.requireNonNull(constants$3044.const$1,"gtk_render_handle");
     }
     /**
      * {@snippet :
-     * void gtk_render_handle(GtkStyleContext* context, cairo_t* cr, gdouble x, gdouble y, gdouble width, gdouble height);
+     * void gtk_render_handle(struct _GtkStyleContext* context, struct _cairo* cr, double x, double y, double width, double height);
      * }
      */
     public static void gtk_render_handle(MemorySegment context, MemorySegment cr, double x, double y, double width, double height) {
@@ -1448,11 +4122,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_activity$MH() {
-        return RuntimeHelper.requireNonNull(constants$1789.gtk_render_activity$MH,"gtk_render_activity");
+        return RuntimeHelper.requireNonNull(constants$3044.const$2,"gtk_render_activity");
     }
     /**
      * {@snippet :
-     * void gtk_render_activity(GtkStyleContext* context, cairo_t* cr, gdouble x, gdouble y, gdouble width, gdouble height);
+     * void gtk_render_activity(struct _GtkStyleContext* context, struct _cairo* cr, double x, double y, double width, double height);
      * }
      */
     public static void gtk_render_activity(MemorySegment context, MemorySegment cr, double x, double y, double width, double height) {
@@ -1464,11 +4138,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_icon_pixbuf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1789.gtk_render_icon_pixbuf$MH,"gtk_render_icon_pixbuf");
+        return RuntimeHelper.requireNonNull(constants$3044.const$3,"gtk_render_icon_pixbuf");
     }
     /**
      * {@snippet :
-     * GdkPixbuf* gtk_render_icon_pixbuf(GtkStyleContext* context, const GtkIconSource* source, GtkIconSize size);
+     * struct _GdkPixbuf* gtk_render_icon_pixbuf(struct _GtkStyleContext* context, struct _GtkIconSource* source, enum GtkIconSize size);
      * }
      */
     public static MemorySegment gtk_render_icon_pixbuf(MemorySegment context, MemorySegment source, int size) {
@@ -1480,11 +4154,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$1789.gtk_render_icon$MH,"gtk_render_icon");
+        return RuntimeHelper.requireNonNull(constants$3044.const$5,"gtk_render_icon");
     }
     /**
      * {@snippet :
-     * void gtk_render_icon(GtkStyleContext* context, cairo_t* cr, GdkPixbuf* pixbuf, gdouble x, gdouble y);
+     * void gtk_render_icon(struct _GtkStyleContext* context, struct _cairo* cr, struct _GdkPixbuf* pixbuf, double x, double y);
      * }
      */
     public static void gtk_render_icon(MemorySegment context, MemorySegment cr, MemorySegment pixbuf, double x, double y) {
@@ -1496,11 +4170,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_render_icon_surface$MH() {
-        return RuntimeHelper.requireNonNull(constants$1789.gtk_render_icon_surface$MH,"gtk_render_icon_surface");
+        return RuntimeHelper.requireNonNull(constants$3045.const$0,"gtk_render_icon_surface");
     }
     /**
      * {@snippet :
-     * void gtk_render_icon_surface(GtkStyleContext* context, cairo_t* cr, cairo_surface_t* surface, gdouble x, gdouble y);
+     * void gtk_render_icon_surface(struct _GtkStyleContext* context, struct _cairo* cr, struct _cairo_surface* surface, double x, double y);
      * }
      */
     public static void gtk_render_icon_surface(MemorySegment context, MemorySegment cr, MemorySegment surface, double x, double y) {
@@ -1513,7 +4187,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_REVEALER_TRANSITION_TYPE_NONE = 0;
+     * enum GtkRevealerTransitionType.GTK_REVEALER_TRANSITION_TYPE_NONE = 0;
      * }
      */
     public static int GTK_REVEALER_TRANSITION_TYPE_NONE() {
@@ -1521,7 +4195,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_REVEALER_TRANSITION_TYPE_CROSSFADE = 1;
+     * enum GtkRevealerTransitionType.GTK_REVEALER_TRANSITION_TYPE_CROSSFADE = 1;
      * }
      */
     public static int GTK_REVEALER_TRANSITION_TYPE_CROSSFADE() {
@@ -1529,7 +4203,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_REVEALER_TRANSITION_TYPE_SLIDE_RIGHT = 2;
+     * enum GtkRevealerTransitionType.GTK_REVEALER_TRANSITION_TYPE_SLIDE_RIGHT = 2;
      * }
      */
     public static int GTK_REVEALER_TRANSITION_TYPE_SLIDE_RIGHT() {
@@ -1537,7 +4211,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_REVEALER_TRANSITION_TYPE_SLIDE_LEFT = 3;
+     * enum GtkRevealerTransitionType.GTK_REVEALER_TRANSITION_TYPE_SLIDE_LEFT = 3;
      * }
      */
     public static int GTK_REVEALER_TRANSITION_TYPE_SLIDE_LEFT() {
@@ -1545,7 +4219,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_REVEALER_TRANSITION_TYPE_SLIDE_UP = 4;
+     * enum GtkRevealerTransitionType.GTK_REVEALER_TRANSITION_TYPE_SLIDE_UP = 4;
      * }
      */
     public static int GTK_REVEALER_TRANSITION_TYPE_SLIDE_UP() {
@@ -1553,18 +4227,18 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_REVEALER_TRANSITION_TYPE_SLIDE_DOWN = 5;
+     * enum GtkRevealerTransitionType.GTK_REVEALER_TRANSITION_TYPE_SLIDE_DOWN = 5;
      * }
      */
     public static int GTK_REVEALER_TRANSITION_TYPE_SLIDE_DOWN() {
         return (int)5L;
     }
     public static MethodHandle gtk_revealer_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1789.gtk_revealer_get_type$MH,"gtk_revealer_get_type");
+        return RuntimeHelper.requireNonNull(constants$3045.const$3,"gtk_revealer_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_revealer_get_type();
+     * unsigned long gtk_revealer_get_type();
      * }
      */
     public static long gtk_revealer_get_type() {
@@ -1576,11 +4250,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_revealer_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1790.gtk_revealer_new$MH,"gtk_revealer_new");
+        return RuntimeHelper.requireNonNull(constants$3045.const$4,"gtk_revealer_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_revealer_new();
+     * struct _GtkWidget* gtk_revealer_new();
      * }
      */
     public static MemorySegment gtk_revealer_new() {
@@ -1592,11 +4266,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_revealer_get_reveal_child$MH() {
-        return RuntimeHelper.requireNonNull(constants$1790.gtk_revealer_get_reveal_child$MH,"gtk_revealer_get_reveal_child");
+        return RuntimeHelper.requireNonNull(constants$3045.const$5,"gtk_revealer_get_reveal_child");
     }
     /**
      * {@snippet :
-     * gboolean gtk_revealer_get_reveal_child(GtkRevealer* revealer);
+     * int gtk_revealer_get_reveal_child(struct _GtkRevealer* revealer);
      * }
      */
     public static int gtk_revealer_get_reveal_child(MemorySegment revealer) {
@@ -1608,11 +4282,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_revealer_set_reveal_child$MH() {
-        return RuntimeHelper.requireNonNull(constants$1790.gtk_revealer_set_reveal_child$MH,"gtk_revealer_set_reveal_child");
+        return RuntimeHelper.requireNonNull(constants$3046.const$0,"gtk_revealer_set_reveal_child");
     }
     /**
      * {@snippet :
-     * void gtk_revealer_set_reveal_child(GtkRevealer* revealer, gboolean reveal_child);
+     * void gtk_revealer_set_reveal_child(struct _GtkRevealer* revealer, int reveal_child);
      * }
      */
     public static void gtk_revealer_set_reveal_child(MemorySegment revealer, int reveal_child) {
@@ -1624,11 +4298,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_revealer_get_child_revealed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1790.gtk_revealer_get_child_revealed$MH,"gtk_revealer_get_child_revealed");
+        return RuntimeHelper.requireNonNull(constants$3046.const$1,"gtk_revealer_get_child_revealed");
     }
     /**
      * {@snippet :
-     * gboolean gtk_revealer_get_child_revealed(GtkRevealer* revealer);
+     * int gtk_revealer_get_child_revealed(struct _GtkRevealer* revealer);
      * }
      */
     public static int gtk_revealer_get_child_revealed(MemorySegment revealer) {
@@ -1640,11 +4314,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_revealer_get_transition_duration$MH() {
-        return RuntimeHelper.requireNonNull(constants$1790.gtk_revealer_get_transition_duration$MH,"gtk_revealer_get_transition_duration");
+        return RuntimeHelper.requireNonNull(constants$3046.const$2,"gtk_revealer_get_transition_duration");
     }
     /**
      * {@snippet :
-     * guint gtk_revealer_get_transition_duration(GtkRevealer* revealer);
+     * unsigned int gtk_revealer_get_transition_duration(struct _GtkRevealer* revealer);
      * }
      */
     public static int gtk_revealer_get_transition_duration(MemorySegment revealer) {
@@ -1656,11 +4330,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_revealer_set_transition_duration$MH() {
-        return RuntimeHelper.requireNonNull(constants$1790.gtk_revealer_set_transition_duration$MH,"gtk_revealer_set_transition_duration");
+        return RuntimeHelper.requireNonNull(constants$3046.const$3,"gtk_revealer_set_transition_duration");
     }
     /**
      * {@snippet :
-     * void gtk_revealer_set_transition_duration(GtkRevealer* revealer, guint duration);
+     * void gtk_revealer_set_transition_duration(struct _GtkRevealer* revealer, unsigned int duration);
      * }
      */
     public static void gtk_revealer_set_transition_duration(MemorySegment revealer, int duration) {
@@ -1672,11 +4346,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_revealer_set_transition_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1791.gtk_revealer_set_transition_type$MH,"gtk_revealer_set_transition_type");
+        return RuntimeHelper.requireNonNull(constants$3046.const$4,"gtk_revealer_set_transition_type");
     }
     /**
      * {@snippet :
-     * void gtk_revealer_set_transition_type(GtkRevealer* revealer, GtkRevealerTransitionType transition);
+     * void gtk_revealer_set_transition_type(struct _GtkRevealer* revealer, enum GtkRevealerTransitionType transition);
      * }
      */
     public static void gtk_revealer_set_transition_type(MemorySegment revealer, int transition) {
@@ -1688,11 +4362,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_revealer_get_transition_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1791.gtk_revealer_get_transition_type$MH,"gtk_revealer_get_transition_type");
+        return RuntimeHelper.requireNonNull(constants$3046.const$5,"gtk_revealer_get_transition_type");
     }
     /**
      * {@snippet :
-     * GtkRevealerTransitionType gtk_revealer_get_transition_type(GtkRevealer* revealer);
+     * enum GtkRevealerTransitionType gtk_revealer_get_transition_type(struct _GtkRevealer* revealer);
      * }
      */
     public static int gtk_revealer_get_transition_type(MemorySegment revealer) {
@@ -1704,11 +4378,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1791.gtk_scale_get_type$MH,"gtk_scale_get_type");
+        return RuntimeHelper.requireNonNull(constants$3050.const$0,"gtk_scale_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_scale_get_type();
+     * unsigned long gtk_scale_get_type();
      * }
      */
     public static long gtk_scale_get_type() {
@@ -1720,11 +4394,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1791.gtk_scale_new$MH,"gtk_scale_new");
+        return RuntimeHelper.requireNonNull(constants$3050.const$1,"gtk_scale_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_scale_new(GtkOrientation orientation, GtkAdjustment* adjustment);
+     * struct _GtkWidget* gtk_scale_new(enum GtkOrientation orientation, struct _GtkAdjustment* adjustment);
      * }
      */
     public static MemorySegment gtk_scale_new(int orientation, MemorySegment adjustment) {
@@ -1736,11 +4410,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_new_with_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1791.gtk_scale_new_with_range$MH,"gtk_scale_new_with_range");
+        return RuntimeHelper.requireNonNull(constants$3050.const$3,"gtk_scale_new_with_range");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_scale_new_with_range(GtkOrientation orientation, gdouble min, gdouble max, gdouble step);
+     * struct _GtkWidget* gtk_scale_new_with_range(enum GtkOrientation orientation, double min, double max, double step);
      * }
      */
     public static MemorySegment gtk_scale_new_with_range(int orientation, double min, double max, double step) {
@@ -1752,11 +4426,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_set_digits$MH() {
-        return RuntimeHelper.requireNonNull(constants$1791.gtk_scale_set_digits$MH,"gtk_scale_set_digits");
+        return RuntimeHelper.requireNonNull(constants$3050.const$4,"gtk_scale_set_digits");
     }
     /**
      * {@snippet :
-     * void gtk_scale_set_digits(GtkScale* scale, gint digits);
+     * void gtk_scale_set_digits(struct _GtkScale* scale, int digits);
      * }
      */
     public static void gtk_scale_set_digits(MemorySegment scale, int digits) {
@@ -1768,11 +4442,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_get_digits$MH() {
-        return RuntimeHelper.requireNonNull(constants$1792.gtk_scale_get_digits$MH,"gtk_scale_get_digits");
+        return RuntimeHelper.requireNonNull(constants$3050.const$5,"gtk_scale_get_digits");
     }
     /**
      * {@snippet :
-     * gint gtk_scale_get_digits(GtkScale* scale);
+     * int gtk_scale_get_digits(struct _GtkScale* scale);
      * }
      */
     public static int gtk_scale_get_digits(MemorySegment scale) {
@@ -1784,11 +4458,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_set_draw_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$1792.gtk_scale_set_draw_value$MH,"gtk_scale_set_draw_value");
+        return RuntimeHelper.requireNonNull(constants$3051.const$0,"gtk_scale_set_draw_value");
     }
     /**
      * {@snippet :
-     * void gtk_scale_set_draw_value(GtkScale* scale, gboolean draw_value);
+     * void gtk_scale_set_draw_value(struct _GtkScale* scale, int draw_value);
      * }
      */
     public static void gtk_scale_set_draw_value(MemorySegment scale, int draw_value) {
@@ -1800,11 +4474,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_get_draw_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$1792.gtk_scale_get_draw_value$MH,"gtk_scale_get_draw_value");
+        return RuntimeHelper.requireNonNull(constants$3051.const$1,"gtk_scale_get_draw_value");
     }
     /**
      * {@snippet :
-     * gboolean gtk_scale_get_draw_value(GtkScale* scale);
+     * int gtk_scale_get_draw_value(struct _GtkScale* scale);
      * }
      */
     public static int gtk_scale_get_draw_value(MemorySegment scale) {
@@ -1816,11 +4490,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_set_has_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1792.gtk_scale_set_has_origin$MH,"gtk_scale_set_has_origin");
+        return RuntimeHelper.requireNonNull(constants$3051.const$2,"gtk_scale_set_has_origin");
     }
     /**
      * {@snippet :
-     * void gtk_scale_set_has_origin(GtkScale* scale, gboolean has_origin);
+     * void gtk_scale_set_has_origin(struct _GtkScale* scale, int has_origin);
      * }
      */
     public static void gtk_scale_set_has_origin(MemorySegment scale, int has_origin) {
@@ -1832,11 +4506,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_get_has_origin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1792.gtk_scale_get_has_origin$MH,"gtk_scale_get_has_origin");
+        return RuntimeHelper.requireNonNull(constants$3051.const$3,"gtk_scale_get_has_origin");
     }
     /**
      * {@snippet :
-     * gboolean gtk_scale_get_has_origin(GtkScale* scale);
+     * int gtk_scale_get_has_origin(struct _GtkScale* scale);
      * }
      */
     public static int gtk_scale_get_has_origin(MemorySegment scale) {
@@ -1848,11 +4522,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_set_value_pos$MH() {
-        return RuntimeHelper.requireNonNull(constants$1792.gtk_scale_set_value_pos$MH,"gtk_scale_set_value_pos");
+        return RuntimeHelper.requireNonNull(constants$3051.const$4,"gtk_scale_set_value_pos");
     }
     /**
      * {@snippet :
-     * void gtk_scale_set_value_pos(GtkScale* scale, GtkPositionType pos);
+     * void gtk_scale_set_value_pos(struct _GtkScale* scale, enum GtkPositionType pos);
      * }
      */
     public static void gtk_scale_set_value_pos(MemorySegment scale, int pos) {
@@ -1864,11 +4538,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_get_value_pos$MH() {
-        return RuntimeHelper.requireNonNull(constants$1793.gtk_scale_get_value_pos$MH,"gtk_scale_get_value_pos");
+        return RuntimeHelper.requireNonNull(constants$3051.const$5,"gtk_scale_get_value_pos");
     }
     /**
      * {@snippet :
-     * GtkPositionType gtk_scale_get_value_pos(GtkScale* scale);
+     * enum GtkPositionType gtk_scale_get_value_pos(struct _GtkScale* scale);
      * }
      */
     public static int gtk_scale_get_value_pos(MemorySegment scale) {
@@ -1880,11 +4554,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_get_layout$MH() {
-        return RuntimeHelper.requireNonNull(constants$1793.gtk_scale_get_layout$MH,"gtk_scale_get_layout");
+        return RuntimeHelper.requireNonNull(constants$3052.const$0,"gtk_scale_get_layout");
     }
     /**
      * {@snippet :
-     * PangoLayout* gtk_scale_get_layout(GtkScale* scale);
+     * struct _PangoLayout* gtk_scale_get_layout(struct _GtkScale* scale);
      * }
      */
     public static MemorySegment gtk_scale_get_layout(MemorySegment scale) {
@@ -1896,11 +4570,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_get_layout_offsets$MH() {
-        return RuntimeHelper.requireNonNull(constants$1793.gtk_scale_get_layout_offsets$MH,"gtk_scale_get_layout_offsets");
+        return RuntimeHelper.requireNonNull(constants$3052.const$1,"gtk_scale_get_layout_offsets");
     }
     /**
      * {@snippet :
-     * void gtk_scale_get_layout_offsets(GtkScale* scale, gint* x, gint* y);
+     * void gtk_scale_get_layout_offsets(struct _GtkScale* scale, int* x, int* y);
      * }
      */
     public static void gtk_scale_get_layout_offsets(MemorySegment scale, MemorySegment x, MemorySegment y) {
@@ -1912,11 +4586,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_add_mark$MH() {
-        return RuntimeHelper.requireNonNull(constants$1793.gtk_scale_add_mark$MH,"gtk_scale_add_mark");
+        return RuntimeHelper.requireNonNull(constants$3052.const$3,"gtk_scale_add_mark");
     }
     /**
      * {@snippet :
-     * void gtk_scale_add_mark(GtkScale* scale, gdouble value, GtkPositionType position, const gchar* markup);
+     * void gtk_scale_add_mark(struct _GtkScale* scale, double value, enum GtkPositionType position, char* markup);
      * }
      */
     public static void gtk_scale_add_mark(MemorySegment scale, double value, int position, MemorySegment markup) {
@@ -1928,11 +4602,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_clear_marks$MH() {
-        return RuntimeHelper.requireNonNull(constants$1793.gtk_scale_clear_marks$MH,"gtk_scale_clear_marks");
+        return RuntimeHelper.requireNonNull(constants$3052.const$4,"gtk_scale_clear_marks");
     }
     /**
      * {@snippet :
-     * void gtk_scale_clear_marks(GtkScale* scale);
+     * void gtk_scale_clear_marks(struct _GtkScale* scale);
      * }
      */
     public static void gtk_scale_clear_marks(MemorySegment scale) {
@@ -1944,11 +4618,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_button_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1793.gtk_scale_button_get_type$MH,"gtk_scale_button_get_type");
+        return RuntimeHelper.requireNonNull(constants$3055.const$0,"gtk_scale_button_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_scale_button_get_type();
+     * unsigned long gtk_scale_button_get_type();
      * }
      */
     public static long gtk_scale_button_get_type() {
@@ -1960,11 +4634,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_button_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1794.gtk_scale_button_new$MH,"gtk_scale_button_new");
+        return RuntimeHelper.requireNonNull(constants$3055.const$2,"gtk_scale_button_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_scale_button_new(GtkIconSize size, gdouble min, gdouble max, gdouble step, const gchar** icons);
+     * struct _GtkWidget* gtk_scale_button_new(enum GtkIconSize size, double min, double max, double step, char** icons);
      * }
      */
     public static MemorySegment gtk_scale_button_new(int size, double min, double max, double step, MemorySegment icons) {
@@ -1976,11 +4650,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_button_set_icons$MH() {
-        return RuntimeHelper.requireNonNull(constants$1794.gtk_scale_button_set_icons$MH,"gtk_scale_button_set_icons");
+        return RuntimeHelper.requireNonNull(constants$3055.const$3,"gtk_scale_button_set_icons");
     }
     /**
      * {@snippet :
-     * void gtk_scale_button_set_icons(GtkScaleButton* button, const gchar** icons);
+     * void gtk_scale_button_set_icons(struct _GtkScaleButton* button, char** icons);
      * }
      */
     public static void gtk_scale_button_set_icons(MemorySegment button, MemorySegment icons) {
@@ -1992,11 +4666,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_button_get_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$1794.gtk_scale_button_get_value$MH,"gtk_scale_button_get_value");
+        return RuntimeHelper.requireNonNull(constants$3055.const$4,"gtk_scale_button_get_value");
     }
     /**
      * {@snippet :
-     * gdouble gtk_scale_button_get_value(GtkScaleButton* button);
+     * double gtk_scale_button_get_value(struct _GtkScaleButton* button);
      * }
      */
     public static double gtk_scale_button_get_value(MemorySegment button) {
@@ -2008,11 +4682,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_button_set_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$1794.gtk_scale_button_set_value$MH,"gtk_scale_button_set_value");
+        return RuntimeHelper.requireNonNull(constants$3055.const$5,"gtk_scale_button_set_value");
     }
     /**
      * {@snippet :
-     * void gtk_scale_button_set_value(GtkScaleButton* button, gdouble value);
+     * void gtk_scale_button_set_value(struct _GtkScaleButton* button, double value);
      * }
      */
     public static void gtk_scale_button_set_value(MemorySegment button, double value) {
@@ -2024,11 +4698,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_button_get_adjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1794.gtk_scale_button_get_adjustment$MH,"gtk_scale_button_get_adjustment");
+        return RuntimeHelper.requireNonNull(constants$3056.const$0,"gtk_scale_button_get_adjustment");
     }
     /**
      * {@snippet :
-     * GtkAdjustment* gtk_scale_button_get_adjustment(GtkScaleButton* button);
+     * struct _GtkAdjustment* gtk_scale_button_get_adjustment(struct _GtkScaleButton* button);
      * }
      */
     public static MemorySegment gtk_scale_button_get_adjustment(MemorySegment button) {
@@ -2040,11 +4714,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_button_set_adjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1794.gtk_scale_button_set_adjustment$MH,"gtk_scale_button_set_adjustment");
+        return RuntimeHelper.requireNonNull(constants$3056.const$1,"gtk_scale_button_set_adjustment");
     }
     /**
      * {@snippet :
-     * void gtk_scale_button_set_adjustment(GtkScaleButton* button, GtkAdjustment* adjustment);
+     * void gtk_scale_button_set_adjustment(struct _GtkScaleButton* button, struct _GtkAdjustment* adjustment);
      * }
      */
     public static void gtk_scale_button_set_adjustment(MemorySegment button, MemorySegment adjustment) {
@@ -2056,11 +4730,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_button_get_plus_button$MH() {
-        return RuntimeHelper.requireNonNull(constants$1795.gtk_scale_button_get_plus_button$MH,"gtk_scale_button_get_plus_button");
+        return RuntimeHelper.requireNonNull(constants$3056.const$2,"gtk_scale_button_get_plus_button");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_scale_button_get_plus_button(GtkScaleButton* button);
+     * struct _GtkWidget* gtk_scale_button_get_plus_button(struct _GtkScaleButton* button);
      * }
      */
     public static MemorySegment gtk_scale_button_get_plus_button(MemorySegment button) {
@@ -2072,11 +4746,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_button_get_minus_button$MH() {
-        return RuntimeHelper.requireNonNull(constants$1795.gtk_scale_button_get_minus_button$MH,"gtk_scale_button_get_minus_button");
+        return RuntimeHelper.requireNonNull(constants$3056.const$3,"gtk_scale_button_get_minus_button");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_scale_button_get_minus_button(GtkScaleButton* button);
+     * struct _GtkWidget* gtk_scale_button_get_minus_button(struct _GtkScaleButton* button);
      * }
      */
     public static MemorySegment gtk_scale_button_get_minus_button(MemorySegment button) {
@@ -2088,11 +4762,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scale_button_get_popup$MH() {
-        return RuntimeHelper.requireNonNull(constants$1795.gtk_scale_button_get_popup$MH,"gtk_scale_button_get_popup");
+        return RuntimeHelper.requireNonNull(constants$3056.const$4,"gtk_scale_button_get_popup");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_scale_button_get_popup(GtkScaleButton* button);
+     * struct _GtkWidget* gtk_scale_button_get_popup(struct _GtkScaleButton* button);
      * }
      */
     public static MemorySegment gtk_scale_button_get_popup(MemorySegment button) {
@@ -2104,11 +4778,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrollable_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1795.gtk_scrollable_get_type$MH,"gtk_scrollable_get_type");
+        return RuntimeHelper.requireNonNull(constants$3057.const$2,"gtk_scrollable_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_scrollable_get_type();
+     * unsigned long gtk_scrollable_get_type();
      * }
      */
     public static long gtk_scrollable_get_type() {
@@ -2120,11 +4794,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrollable_get_hadjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1795.gtk_scrollable_get_hadjustment$MH,"gtk_scrollable_get_hadjustment");
+        return RuntimeHelper.requireNonNull(constants$3057.const$3,"gtk_scrollable_get_hadjustment");
     }
     /**
      * {@snippet :
-     * GtkAdjustment* gtk_scrollable_get_hadjustment(GtkScrollable* scrollable);
+     * struct _GtkAdjustment* gtk_scrollable_get_hadjustment(struct _GtkScrollable* scrollable);
      * }
      */
     public static MemorySegment gtk_scrollable_get_hadjustment(MemorySegment scrollable) {
@@ -2136,11 +4810,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrollable_set_hadjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1795.gtk_scrollable_set_hadjustment$MH,"gtk_scrollable_set_hadjustment");
+        return RuntimeHelper.requireNonNull(constants$3057.const$4,"gtk_scrollable_set_hadjustment");
     }
     /**
      * {@snippet :
-     * void gtk_scrollable_set_hadjustment(GtkScrollable* scrollable, GtkAdjustment* hadjustment);
+     * void gtk_scrollable_set_hadjustment(struct _GtkScrollable* scrollable, struct _GtkAdjustment* hadjustment);
      * }
      */
     public static void gtk_scrollable_set_hadjustment(MemorySegment scrollable, MemorySegment hadjustment) {
@@ -2152,11 +4826,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrollable_get_vadjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1796.gtk_scrollable_get_vadjustment$MH,"gtk_scrollable_get_vadjustment");
+        return RuntimeHelper.requireNonNull(constants$3057.const$5,"gtk_scrollable_get_vadjustment");
     }
     /**
      * {@snippet :
-     * GtkAdjustment* gtk_scrollable_get_vadjustment(GtkScrollable* scrollable);
+     * struct _GtkAdjustment* gtk_scrollable_get_vadjustment(struct _GtkScrollable* scrollable);
      * }
      */
     public static MemorySegment gtk_scrollable_get_vadjustment(MemorySegment scrollable) {
@@ -2168,11 +4842,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrollable_set_vadjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1796.gtk_scrollable_set_vadjustment$MH,"gtk_scrollable_set_vadjustment");
+        return RuntimeHelper.requireNonNull(constants$3058.const$0,"gtk_scrollable_set_vadjustment");
     }
     /**
      * {@snippet :
-     * void gtk_scrollable_set_vadjustment(GtkScrollable* scrollable, GtkAdjustment* vadjustment);
+     * void gtk_scrollable_set_vadjustment(struct _GtkScrollable* scrollable, struct _GtkAdjustment* vadjustment);
      * }
      */
     public static void gtk_scrollable_set_vadjustment(MemorySegment scrollable, MemorySegment vadjustment) {
@@ -2184,11 +4858,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrollable_get_hscroll_policy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1796.gtk_scrollable_get_hscroll_policy$MH,"gtk_scrollable_get_hscroll_policy");
+        return RuntimeHelper.requireNonNull(constants$3058.const$1,"gtk_scrollable_get_hscroll_policy");
     }
     /**
      * {@snippet :
-     * GtkScrollablePolicy gtk_scrollable_get_hscroll_policy(GtkScrollable* scrollable);
+     * enum GtkScrollablePolicy gtk_scrollable_get_hscroll_policy(struct _GtkScrollable* scrollable);
      * }
      */
     public static int gtk_scrollable_get_hscroll_policy(MemorySegment scrollable) {
@@ -2200,11 +4874,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrollable_set_hscroll_policy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1796.gtk_scrollable_set_hscroll_policy$MH,"gtk_scrollable_set_hscroll_policy");
+        return RuntimeHelper.requireNonNull(constants$3058.const$2,"gtk_scrollable_set_hscroll_policy");
     }
     /**
      * {@snippet :
-     * void gtk_scrollable_set_hscroll_policy(GtkScrollable* scrollable, GtkScrollablePolicy policy);
+     * void gtk_scrollable_set_hscroll_policy(struct _GtkScrollable* scrollable, enum GtkScrollablePolicy policy);
      * }
      */
     public static void gtk_scrollable_set_hscroll_policy(MemorySegment scrollable, int policy) {
@@ -2216,11 +4890,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrollable_get_vscroll_policy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1796.gtk_scrollable_get_vscroll_policy$MH,"gtk_scrollable_get_vscroll_policy");
+        return RuntimeHelper.requireNonNull(constants$3058.const$3,"gtk_scrollable_get_vscroll_policy");
     }
     /**
      * {@snippet :
-     * GtkScrollablePolicy gtk_scrollable_get_vscroll_policy(GtkScrollable* scrollable);
+     * enum GtkScrollablePolicy gtk_scrollable_get_vscroll_policy(struct _GtkScrollable* scrollable);
      * }
      */
     public static int gtk_scrollable_get_vscroll_policy(MemorySegment scrollable) {
@@ -2232,11 +4906,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrollable_set_vscroll_policy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1796.gtk_scrollable_set_vscroll_policy$MH,"gtk_scrollable_set_vscroll_policy");
+        return RuntimeHelper.requireNonNull(constants$3058.const$4,"gtk_scrollable_set_vscroll_policy");
     }
     /**
      * {@snippet :
-     * void gtk_scrollable_set_vscroll_policy(GtkScrollable* scrollable, GtkScrollablePolicy policy);
+     * void gtk_scrollable_set_vscroll_policy(struct _GtkScrollable* scrollable, enum GtkScrollablePolicy policy);
      * }
      */
     public static void gtk_scrollable_set_vscroll_policy(MemorySegment scrollable, int policy) {
@@ -2248,11 +4922,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrollable_get_border$MH() {
-        return RuntimeHelper.requireNonNull(constants$1797.gtk_scrollable_get_border$MH,"gtk_scrollable_get_border");
+        return RuntimeHelper.requireNonNull(constants$3058.const$5,"gtk_scrollable_get_border");
     }
     /**
      * {@snippet :
-     * gboolean gtk_scrollable_get_border(GtkScrollable* scrollable, GtkBorder* border);
+     * int gtk_scrollable_get_border(struct _GtkScrollable* scrollable, struct _GtkBorder* border);
      * }
      */
     public static int gtk_scrollable_get_border(MemorySegment scrollable, MemorySegment border) {
@@ -2264,11 +4938,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrollbar_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1797.gtk_scrollbar_get_type$MH,"gtk_scrollbar_get_type");
+        return RuntimeHelper.requireNonNull(constants$3060.const$4,"gtk_scrollbar_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_scrollbar_get_type();
+     * unsigned long gtk_scrollbar_get_type();
      * }
      */
     public static long gtk_scrollbar_get_type() {
@@ -2280,11 +4954,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrollbar_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1797.gtk_scrollbar_new$MH,"gtk_scrollbar_new");
+        return RuntimeHelper.requireNonNull(constants$3060.const$5,"gtk_scrollbar_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_scrollbar_new(GtkOrientation orientation, GtkAdjustment* adjustment);
+     * struct _GtkWidget* gtk_scrollbar_new(enum GtkOrientation orientation, struct _GtkAdjustment* adjustment);
      * }
      */
     public static MemorySegment gtk_scrollbar_new(int orientation, MemorySegment adjustment) {
@@ -2297,7 +4971,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_CORNER_TOP_LEFT = 0;
+     * enum GtkCornerType.GTK_CORNER_TOP_LEFT = 0;
      * }
      */
     public static int GTK_CORNER_TOP_LEFT() {
@@ -2305,7 +4979,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_CORNER_BOTTOM_LEFT = 1;
+     * enum GtkCornerType.GTK_CORNER_BOTTOM_LEFT = 1;
      * }
      */
     public static int GTK_CORNER_BOTTOM_LEFT() {
@@ -2313,7 +4987,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_CORNER_TOP_RIGHT = 2;
+     * enum GtkCornerType.GTK_CORNER_TOP_RIGHT = 2;
      * }
      */
     public static int GTK_CORNER_TOP_RIGHT() {
@@ -2321,7 +4995,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_CORNER_BOTTOM_RIGHT = 3;
+     * enum GtkCornerType.GTK_CORNER_BOTTOM_RIGHT = 3;
      * }
      */
     public static int GTK_CORNER_BOTTOM_RIGHT() {
@@ -2329,7 +5003,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_POLICY_ALWAYS = 0;
+     * enum GtkPolicyType.GTK_POLICY_ALWAYS = 0;
      * }
      */
     public static int GTK_POLICY_ALWAYS() {
@@ -2337,7 +5011,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_POLICY_AUTOMATIC = 1;
+     * enum GtkPolicyType.GTK_POLICY_AUTOMATIC = 1;
      * }
      */
     public static int GTK_POLICY_AUTOMATIC() {
@@ -2345,7 +5019,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_POLICY_NEVER = 2;
+     * enum GtkPolicyType.GTK_POLICY_NEVER = 2;
      * }
      */
     public static int GTK_POLICY_NEVER() {
@@ -2353,18 +5027,18 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_POLICY_EXTERNAL = 3;
+     * enum GtkPolicyType.GTK_POLICY_EXTERNAL = 3;
      * }
      */
     public static int GTK_POLICY_EXTERNAL() {
         return (int)3L;
     }
     public static MethodHandle gtk_scrolled_window_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1797.gtk_scrolled_window_get_type$MH,"gtk_scrolled_window_get_type");
+        return RuntimeHelper.requireNonNull(constants$3063.const$4,"gtk_scrolled_window_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_scrolled_window_get_type();
+     * unsigned long gtk_scrolled_window_get_type();
      * }
      */
     public static long gtk_scrolled_window_get_type() {
@@ -2376,11 +5050,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1797.gtk_scrolled_window_new$MH,"gtk_scrolled_window_new");
+        return RuntimeHelper.requireNonNull(constants$3063.const$5,"gtk_scrolled_window_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_scrolled_window_new(GtkAdjustment* hadjustment, GtkAdjustment* vadjustment);
+     * struct _GtkWidget* gtk_scrolled_window_new(struct _GtkAdjustment* hadjustment, struct _GtkAdjustment* vadjustment);
      * }
      */
     public static MemorySegment gtk_scrolled_window_new(MemorySegment hadjustment, MemorySegment vadjustment) {
@@ -2392,11 +5066,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_set_hadjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1797.gtk_scrolled_window_set_hadjustment$MH,"gtk_scrolled_window_set_hadjustment");
+        return RuntimeHelper.requireNonNull(constants$3064.const$0,"gtk_scrolled_window_set_hadjustment");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_set_hadjustment(GtkScrolledWindow* scrolled_window, GtkAdjustment* hadjustment);
+     * void gtk_scrolled_window_set_hadjustment(struct _GtkScrolledWindow* scrolled_window, struct _GtkAdjustment* hadjustment);
      * }
      */
     public static void gtk_scrolled_window_set_hadjustment(MemorySegment scrolled_window, MemorySegment hadjustment) {
@@ -2408,11 +5082,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_set_vadjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1798.gtk_scrolled_window_set_vadjustment$MH,"gtk_scrolled_window_set_vadjustment");
+        return RuntimeHelper.requireNonNull(constants$3064.const$1,"gtk_scrolled_window_set_vadjustment");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_set_vadjustment(GtkScrolledWindow* scrolled_window, GtkAdjustment* vadjustment);
+     * void gtk_scrolled_window_set_vadjustment(struct _GtkScrolledWindow* scrolled_window, struct _GtkAdjustment* vadjustment);
      * }
      */
     public static void gtk_scrolled_window_set_vadjustment(MemorySegment scrolled_window, MemorySegment vadjustment) {
@@ -2424,11 +5098,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_get_hadjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1798.gtk_scrolled_window_get_hadjustment$MH,"gtk_scrolled_window_get_hadjustment");
+        return RuntimeHelper.requireNonNull(constants$3064.const$2,"gtk_scrolled_window_get_hadjustment");
     }
     /**
      * {@snippet :
-     * GtkAdjustment* gtk_scrolled_window_get_hadjustment(GtkScrolledWindow* scrolled_window);
+     * struct _GtkAdjustment* gtk_scrolled_window_get_hadjustment(struct _GtkScrolledWindow* scrolled_window);
      * }
      */
     public static MemorySegment gtk_scrolled_window_get_hadjustment(MemorySegment scrolled_window) {
@@ -2440,11 +5114,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_get_vadjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1798.gtk_scrolled_window_get_vadjustment$MH,"gtk_scrolled_window_get_vadjustment");
+        return RuntimeHelper.requireNonNull(constants$3064.const$3,"gtk_scrolled_window_get_vadjustment");
     }
     /**
      * {@snippet :
-     * GtkAdjustment* gtk_scrolled_window_get_vadjustment(GtkScrolledWindow* scrolled_window);
+     * struct _GtkAdjustment* gtk_scrolled_window_get_vadjustment(struct _GtkScrolledWindow* scrolled_window);
      * }
      */
     public static MemorySegment gtk_scrolled_window_get_vadjustment(MemorySegment scrolled_window) {
@@ -2456,11 +5130,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_get_hscrollbar$MH() {
-        return RuntimeHelper.requireNonNull(constants$1798.gtk_scrolled_window_get_hscrollbar$MH,"gtk_scrolled_window_get_hscrollbar");
+        return RuntimeHelper.requireNonNull(constants$3064.const$4,"gtk_scrolled_window_get_hscrollbar");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_scrolled_window_get_hscrollbar(GtkScrolledWindow* scrolled_window);
+     * struct _GtkWidget* gtk_scrolled_window_get_hscrollbar(struct _GtkScrolledWindow* scrolled_window);
      * }
      */
     public static MemorySegment gtk_scrolled_window_get_hscrollbar(MemorySegment scrolled_window) {
@@ -2472,11 +5146,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_get_vscrollbar$MH() {
-        return RuntimeHelper.requireNonNull(constants$1798.gtk_scrolled_window_get_vscrollbar$MH,"gtk_scrolled_window_get_vscrollbar");
+        return RuntimeHelper.requireNonNull(constants$3064.const$5,"gtk_scrolled_window_get_vscrollbar");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_scrolled_window_get_vscrollbar(GtkScrolledWindow* scrolled_window);
+     * struct _GtkWidget* gtk_scrolled_window_get_vscrollbar(struct _GtkScrolledWindow* scrolled_window);
      * }
      */
     public static MemorySegment gtk_scrolled_window_get_vscrollbar(MemorySegment scrolled_window) {
@@ -2488,11 +5162,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_set_policy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1798.gtk_scrolled_window_set_policy$MH,"gtk_scrolled_window_set_policy");
+        return RuntimeHelper.requireNonNull(constants$3065.const$0,"gtk_scrolled_window_set_policy");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_set_policy(GtkScrolledWindow* scrolled_window, GtkPolicyType hscrollbar_policy, GtkPolicyType vscrollbar_policy);
+     * void gtk_scrolled_window_set_policy(struct _GtkScrolledWindow* scrolled_window, enum GtkPolicyType hscrollbar_policy, enum GtkPolicyType vscrollbar_policy);
      * }
      */
     public static void gtk_scrolled_window_set_policy(MemorySegment scrolled_window, int hscrollbar_policy, int vscrollbar_policy) {
@@ -2504,11 +5178,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_get_policy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1799.gtk_scrolled_window_get_policy$MH,"gtk_scrolled_window_get_policy");
+        return RuntimeHelper.requireNonNull(constants$3065.const$1,"gtk_scrolled_window_get_policy");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_get_policy(GtkScrolledWindow* scrolled_window, GtkPolicyType* hscrollbar_policy, GtkPolicyType* vscrollbar_policy);
+     * void gtk_scrolled_window_get_policy(struct _GtkScrolledWindow* scrolled_window, enum GtkPolicyType* hscrollbar_policy, enum GtkPolicyType* vscrollbar_policy);
      * }
      */
     public static void gtk_scrolled_window_get_policy(MemorySegment scrolled_window, MemorySegment hscrollbar_policy, MemorySegment vscrollbar_policy) {
@@ -2520,11 +5194,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_set_placement$MH() {
-        return RuntimeHelper.requireNonNull(constants$1799.gtk_scrolled_window_set_placement$MH,"gtk_scrolled_window_set_placement");
+        return RuntimeHelper.requireNonNull(constants$3065.const$2,"gtk_scrolled_window_set_placement");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_set_placement(GtkScrolledWindow* scrolled_window, GtkCornerType window_placement);
+     * void gtk_scrolled_window_set_placement(struct _GtkScrolledWindow* scrolled_window, enum GtkCornerType window_placement);
      * }
      */
     public static void gtk_scrolled_window_set_placement(MemorySegment scrolled_window, int window_placement) {
@@ -2536,11 +5210,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_unset_placement$MH() {
-        return RuntimeHelper.requireNonNull(constants$1799.gtk_scrolled_window_unset_placement$MH,"gtk_scrolled_window_unset_placement");
+        return RuntimeHelper.requireNonNull(constants$3065.const$3,"gtk_scrolled_window_unset_placement");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_unset_placement(GtkScrolledWindow* scrolled_window);
+     * void gtk_scrolled_window_unset_placement(struct _GtkScrolledWindow* scrolled_window);
      * }
      */
     public static void gtk_scrolled_window_unset_placement(MemorySegment scrolled_window) {
@@ -2552,11 +5226,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_get_placement$MH() {
-        return RuntimeHelper.requireNonNull(constants$1799.gtk_scrolled_window_get_placement$MH,"gtk_scrolled_window_get_placement");
+        return RuntimeHelper.requireNonNull(constants$3065.const$4,"gtk_scrolled_window_get_placement");
     }
     /**
      * {@snippet :
-     * GtkCornerType gtk_scrolled_window_get_placement(GtkScrolledWindow* scrolled_window);
+     * enum GtkCornerType gtk_scrolled_window_get_placement(struct _GtkScrolledWindow* scrolled_window);
      * }
      */
     public static int gtk_scrolled_window_get_placement(MemorySegment scrolled_window) {
@@ -2568,11 +5242,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_set_shadow_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1799.gtk_scrolled_window_set_shadow_type$MH,"gtk_scrolled_window_set_shadow_type");
+        return RuntimeHelper.requireNonNull(constants$3065.const$5,"gtk_scrolled_window_set_shadow_type");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_set_shadow_type(GtkScrolledWindow* scrolled_window, GtkShadowType type);
+     * void gtk_scrolled_window_set_shadow_type(struct _GtkScrolledWindow* scrolled_window, enum GtkShadowType type);
      * }
      */
     public static void gtk_scrolled_window_set_shadow_type(MemorySegment scrolled_window, int type) {
@@ -2584,11 +5258,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_get_shadow_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1799.gtk_scrolled_window_get_shadow_type$MH,"gtk_scrolled_window_get_shadow_type");
+        return RuntimeHelper.requireNonNull(constants$3066.const$0,"gtk_scrolled_window_get_shadow_type");
     }
     /**
      * {@snippet :
-     * GtkShadowType gtk_scrolled_window_get_shadow_type(GtkScrolledWindow* scrolled_window);
+     * enum GtkShadowType gtk_scrolled_window_get_shadow_type(struct _GtkScrolledWindow* scrolled_window);
      * }
      */
     public static int gtk_scrolled_window_get_shadow_type(MemorySegment scrolled_window) {
@@ -2600,11 +5274,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_add_with_viewport$MH() {
-        return RuntimeHelper.requireNonNull(constants$1800.gtk_scrolled_window_add_with_viewport$MH,"gtk_scrolled_window_add_with_viewport");
+        return RuntimeHelper.requireNonNull(constants$3066.const$1,"gtk_scrolled_window_add_with_viewport");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_add_with_viewport(GtkScrolledWindow* scrolled_window, GtkWidget* child);
+     * void gtk_scrolled_window_add_with_viewport(struct _GtkScrolledWindow* scrolled_window, struct _GtkWidget* child);
      * }
      */
     public static void gtk_scrolled_window_add_with_viewport(MemorySegment scrolled_window, MemorySegment child) {
@@ -2616,11 +5290,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_get_min_content_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1800.gtk_scrolled_window_get_min_content_width$MH,"gtk_scrolled_window_get_min_content_width");
+        return RuntimeHelper.requireNonNull(constants$3066.const$2,"gtk_scrolled_window_get_min_content_width");
     }
     /**
      * {@snippet :
-     * gint gtk_scrolled_window_get_min_content_width(GtkScrolledWindow* scrolled_window);
+     * int gtk_scrolled_window_get_min_content_width(struct _GtkScrolledWindow* scrolled_window);
      * }
      */
     public static int gtk_scrolled_window_get_min_content_width(MemorySegment scrolled_window) {
@@ -2632,11 +5306,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_set_min_content_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1800.gtk_scrolled_window_set_min_content_width$MH,"gtk_scrolled_window_set_min_content_width");
+        return RuntimeHelper.requireNonNull(constants$3066.const$3,"gtk_scrolled_window_set_min_content_width");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_set_min_content_width(GtkScrolledWindow* scrolled_window, gint width);
+     * void gtk_scrolled_window_set_min_content_width(struct _GtkScrolledWindow* scrolled_window, int width);
      * }
      */
     public static void gtk_scrolled_window_set_min_content_width(MemorySegment scrolled_window, int width) {
@@ -2648,11 +5322,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_get_min_content_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$1800.gtk_scrolled_window_get_min_content_height$MH,"gtk_scrolled_window_get_min_content_height");
+        return RuntimeHelper.requireNonNull(constants$3066.const$4,"gtk_scrolled_window_get_min_content_height");
     }
     /**
      * {@snippet :
-     * gint gtk_scrolled_window_get_min_content_height(GtkScrolledWindow* scrolled_window);
+     * int gtk_scrolled_window_get_min_content_height(struct _GtkScrolledWindow* scrolled_window);
      * }
      */
     public static int gtk_scrolled_window_get_min_content_height(MemorySegment scrolled_window) {
@@ -2664,11 +5338,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_set_min_content_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$1800.gtk_scrolled_window_set_min_content_height$MH,"gtk_scrolled_window_set_min_content_height");
+        return RuntimeHelper.requireNonNull(constants$3066.const$5,"gtk_scrolled_window_set_min_content_height");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_set_min_content_height(GtkScrolledWindow* scrolled_window, gint height);
+     * void gtk_scrolled_window_set_min_content_height(struct _GtkScrolledWindow* scrolled_window, int height);
      * }
      */
     public static void gtk_scrolled_window_set_min_content_height(MemorySegment scrolled_window, int height) {
@@ -2680,11 +5354,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_set_kinetic_scrolling$MH() {
-        return RuntimeHelper.requireNonNull(constants$1800.gtk_scrolled_window_set_kinetic_scrolling$MH,"gtk_scrolled_window_set_kinetic_scrolling");
+        return RuntimeHelper.requireNonNull(constants$3067.const$0,"gtk_scrolled_window_set_kinetic_scrolling");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_set_kinetic_scrolling(GtkScrolledWindow* scrolled_window, gboolean kinetic_scrolling);
+     * void gtk_scrolled_window_set_kinetic_scrolling(struct _GtkScrolledWindow* scrolled_window, int kinetic_scrolling);
      * }
      */
     public static void gtk_scrolled_window_set_kinetic_scrolling(MemorySegment scrolled_window, int kinetic_scrolling) {
@@ -2696,11 +5370,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_get_kinetic_scrolling$MH() {
-        return RuntimeHelper.requireNonNull(constants$1801.gtk_scrolled_window_get_kinetic_scrolling$MH,"gtk_scrolled_window_get_kinetic_scrolling");
+        return RuntimeHelper.requireNonNull(constants$3067.const$1,"gtk_scrolled_window_get_kinetic_scrolling");
     }
     /**
      * {@snippet :
-     * gboolean gtk_scrolled_window_get_kinetic_scrolling(GtkScrolledWindow* scrolled_window);
+     * int gtk_scrolled_window_get_kinetic_scrolling(struct _GtkScrolledWindow* scrolled_window);
      * }
      */
     public static int gtk_scrolled_window_get_kinetic_scrolling(MemorySegment scrolled_window) {
@@ -2712,11 +5386,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_set_capture_button_press$MH() {
-        return RuntimeHelper.requireNonNull(constants$1801.gtk_scrolled_window_set_capture_button_press$MH,"gtk_scrolled_window_set_capture_button_press");
+        return RuntimeHelper.requireNonNull(constants$3067.const$2,"gtk_scrolled_window_set_capture_button_press");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_set_capture_button_press(GtkScrolledWindow* scrolled_window, gboolean capture_button_press);
+     * void gtk_scrolled_window_set_capture_button_press(struct _GtkScrolledWindow* scrolled_window, int capture_button_press);
      * }
      */
     public static void gtk_scrolled_window_set_capture_button_press(MemorySegment scrolled_window, int capture_button_press) {
@@ -2728,11 +5402,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_get_capture_button_press$MH() {
-        return RuntimeHelper.requireNonNull(constants$1801.gtk_scrolled_window_get_capture_button_press$MH,"gtk_scrolled_window_get_capture_button_press");
+        return RuntimeHelper.requireNonNull(constants$3067.const$3,"gtk_scrolled_window_get_capture_button_press");
     }
     /**
      * {@snippet :
-     * gboolean gtk_scrolled_window_get_capture_button_press(GtkScrolledWindow* scrolled_window);
+     * int gtk_scrolled_window_get_capture_button_press(struct _GtkScrolledWindow* scrolled_window);
      * }
      */
     public static int gtk_scrolled_window_get_capture_button_press(MemorySegment scrolled_window) {
@@ -2744,11 +5418,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_set_overlay_scrolling$MH() {
-        return RuntimeHelper.requireNonNull(constants$1801.gtk_scrolled_window_set_overlay_scrolling$MH,"gtk_scrolled_window_set_overlay_scrolling");
+        return RuntimeHelper.requireNonNull(constants$3067.const$4,"gtk_scrolled_window_set_overlay_scrolling");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_set_overlay_scrolling(GtkScrolledWindow* scrolled_window, gboolean overlay_scrolling);
+     * void gtk_scrolled_window_set_overlay_scrolling(struct _GtkScrolledWindow* scrolled_window, int overlay_scrolling);
      * }
      */
     public static void gtk_scrolled_window_set_overlay_scrolling(MemorySegment scrolled_window, int overlay_scrolling) {
@@ -2760,11 +5434,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_get_overlay_scrolling$MH() {
-        return RuntimeHelper.requireNonNull(constants$1801.gtk_scrolled_window_get_overlay_scrolling$MH,"gtk_scrolled_window_get_overlay_scrolling");
+        return RuntimeHelper.requireNonNull(constants$3067.const$5,"gtk_scrolled_window_get_overlay_scrolling");
     }
     /**
      * {@snippet :
-     * gboolean gtk_scrolled_window_get_overlay_scrolling(GtkScrolledWindow* scrolled_window);
+     * int gtk_scrolled_window_get_overlay_scrolling(struct _GtkScrolledWindow* scrolled_window);
      * }
      */
     public static int gtk_scrolled_window_get_overlay_scrolling(MemorySegment scrolled_window) {
@@ -2776,11 +5450,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_set_max_content_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1801.gtk_scrolled_window_set_max_content_width$MH,"gtk_scrolled_window_set_max_content_width");
+        return RuntimeHelper.requireNonNull(constants$3068.const$0,"gtk_scrolled_window_set_max_content_width");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_set_max_content_width(GtkScrolledWindow* scrolled_window, gint width);
+     * void gtk_scrolled_window_set_max_content_width(struct _GtkScrolledWindow* scrolled_window, int width);
      * }
      */
     public static void gtk_scrolled_window_set_max_content_width(MemorySegment scrolled_window, int width) {
@@ -2792,11 +5466,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_get_max_content_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1802.gtk_scrolled_window_get_max_content_width$MH,"gtk_scrolled_window_get_max_content_width");
+        return RuntimeHelper.requireNonNull(constants$3068.const$1,"gtk_scrolled_window_get_max_content_width");
     }
     /**
      * {@snippet :
-     * gint gtk_scrolled_window_get_max_content_width(GtkScrolledWindow* scrolled_window);
+     * int gtk_scrolled_window_get_max_content_width(struct _GtkScrolledWindow* scrolled_window);
      * }
      */
     public static int gtk_scrolled_window_get_max_content_width(MemorySegment scrolled_window) {
@@ -2808,11 +5482,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_set_max_content_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$1802.gtk_scrolled_window_set_max_content_height$MH,"gtk_scrolled_window_set_max_content_height");
+        return RuntimeHelper.requireNonNull(constants$3068.const$2,"gtk_scrolled_window_set_max_content_height");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_set_max_content_height(GtkScrolledWindow* scrolled_window, gint height);
+     * void gtk_scrolled_window_set_max_content_height(struct _GtkScrolledWindow* scrolled_window, int height);
      * }
      */
     public static void gtk_scrolled_window_set_max_content_height(MemorySegment scrolled_window, int height) {
@@ -2824,11 +5498,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_get_max_content_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$1802.gtk_scrolled_window_get_max_content_height$MH,"gtk_scrolled_window_get_max_content_height");
+        return RuntimeHelper.requireNonNull(constants$3068.const$3,"gtk_scrolled_window_get_max_content_height");
     }
     /**
      * {@snippet :
-     * gint gtk_scrolled_window_get_max_content_height(GtkScrolledWindow* scrolled_window);
+     * int gtk_scrolled_window_get_max_content_height(struct _GtkScrolledWindow* scrolled_window);
      * }
      */
     public static int gtk_scrolled_window_get_max_content_height(MemorySegment scrolled_window) {
@@ -2840,11 +5514,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_set_propagate_natural_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1802.gtk_scrolled_window_set_propagate_natural_width$MH,"gtk_scrolled_window_set_propagate_natural_width");
+        return RuntimeHelper.requireNonNull(constants$3068.const$4,"gtk_scrolled_window_set_propagate_natural_width");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_set_propagate_natural_width(GtkScrolledWindow* scrolled_window, gboolean propagate);
+     * void gtk_scrolled_window_set_propagate_natural_width(struct _GtkScrolledWindow* scrolled_window, int propagate);
      * }
      */
     public static void gtk_scrolled_window_set_propagate_natural_width(MemorySegment scrolled_window, int propagate) {
@@ -2856,11 +5530,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_get_propagate_natural_width$MH() {
-        return RuntimeHelper.requireNonNull(constants$1802.gtk_scrolled_window_get_propagate_natural_width$MH,"gtk_scrolled_window_get_propagate_natural_width");
+        return RuntimeHelper.requireNonNull(constants$3068.const$5,"gtk_scrolled_window_get_propagate_natural_width");
     }
     /**
      * {@snippet :
-     * gboolean gtk_scrolled_window_get_propagate_natural_width(GtkScrolledWindow* scrolled_window);
+     * int gtk_scrolled_window_get_propagate_natural_width(struct _GtkScrolledWindow* scrolled_window);
      * }
      */
     public static int gtk_scrolled_window_get_propagate_natural_width(MemorySegment scrolled_window) {
@@ -2872,11 +5546,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_set_propagate_natural_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$1802.gtk_scrolled_window_set_propagate_natural_height$MH,"gtk_scrolled_window_set_propagate_natural_height");
+        return RuntimeHelper.requireNonNull(constants$3069.const$0,"gtk_scrolled_window_set_propagate_natural_height");
     }
     /**
      * {@snippet :
-     * void gtk_scrolled_window_set_propagate_natural_height(GtkScrolledWindow* scrolled_window, gboolean propagate);
+     * void gtk_scrolled_window_set_propagate_natural_height(struct _GtkScrolledWindow* scrolled_window, int propagate);
      * }
      */
     public static void gtk_scrolled_window_set_propagate_natural_height(MemorySegment scrolled_window, int propagate) {
@@ -2888,11 +5562,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrolled_window_get_propagate_natural_height$MH() {
-        return RuntimeHelper.requireNonNull(constants$1803.gtk_scrolled_window_get_propagate_natural_height$MH,"gtk_scrolled_window_get_propagate_natural_height");
+        return RuntimeHelper.requireNonNull(constants$3069.const$1,"gtk_scrolled_window_get_propagate_natural_height");
     }
     /**
      * {@snippet :
-     * gboolean gtk_scrolled_window_get_propagate_natural_height(GtkScrolledWindow* scrolled_window);
+     * int gtk_scrolled_window_get_propagate_natural_height(struct _GtkScrolledWindow* scrolled_window);
      * }
      */
     public static int gtk_scrolled_window_get_propagate_natural_height(MemorySegment scrolled_window) {
@@ -2904,11 +5578,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_search_bar_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1803.gtk_search_bar_get_type$MH,"gtk_search_bar_get_type");
+        return RuntimeHelper.requireNonNull(constants$3071.const$0,"gtk_search_bar_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_search_bar_get_type();
+     * unsigned long gtk_search_bar_get_type();
      * }
      */
     public static long gtk_search_bar_get_type() {
@@ -2920,11 +5594,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_search_bar_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1803.gtk_search_bar_new$MH,"gtk_search_bar_new");
+        return RuntimeHelper.requireNonNull(constants$3071.const$1,"gtk_search_bar_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_search_bar_new();
+     * struct _GtkWidget* gtk_search_bar_new();
      * }
      */
     public static MemorySegment gtk_search_bar_new() {
@@ -2936,11 +5610,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_search_bar_connect_entry$MH() {
-        return RuntimeHelper.requireNonNull(constants$1803.gtk_search_bar_connect_entry$MH,"gtk_search_bar_connect_entry");
+        return RuntimeHelper.requireNonNull(constants$3071.const$2,"gtk_search_bar_connect_entry");
     }
     /**
      * {@snippet :
-     * void gtk_search_bar_connect_entry(GtkSearchBar* bar, GtkEntry* entry);
+     * void gtk_search_bar_connect_entry(struct _GtkSearchBar* bar, struct _GtkEntry* entry);
      * }
      */
     public static void gtk_search_bar_connect_entry(MemorySegment bar, MemorySegment entry) {
@@ -2952,11 +5626,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_search_bar_get_search_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1803.gtk_search_bar_get_search_mode$MH,"gtk_search_bar_get_search_mode");
+        return RuntimeHelper.requireNonNull(constants$3071.const$3,"gtk_search_bar_get_search_mode");
     }
     /**
      * {@snippet :
-     * gboolean gtk_search_bar_get_search_mode(GtkSearchBar* bar);
+     * int gtk_search_bar_get_search_mode(struct _GtkSearchBar* bar);
      * }
      */
     public static int gtk_search_bar_get_search_mode(MemorySegment bar) {
@@ -2968,11 +5642,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_search_bar_set_search_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1803.gtk_search_bar_set_search_mode$MH,"gtk_search_bar_set_search_mode");
+        return RuntimeHelper.requireNonNull(constants$3071.const$4,"gtk_search_bar_set_search_mode");
     }
     /**
      * {@snippet :
-     * void gtk_search_bar_set_search_mode(GtkSearchBar* bar, gboolean search_mode);
+     * void gtk_search_bar_set_search_mode(struct _GtkSearchBar* bar, int search_mode);
      * }
      */
     public static void gtk_search_bar_set_search_mode(MemorySegment bar, int search_mode) {
@@ -2984,11 +5658,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_search_bar_get_show_close_button$MH() {
-        return RuntimeHelper.requireNonNull(constants$1804.gtk_search_bar_get_show_close_button$MH,"gtk_search_bar_get_show_close_button");
+        return RuntimeHelper.requireNonNull(constants$3071.const$5,"gtk_search_bar_get_show_close_button");
     }
     /**
      * {@snippet :
-     * gboolean gtk_search_bar_get_show_close_button(GtkSearchBar* bar);
+     * int gtk_search_bar_get_show_close_button(struct _GtkSearchBar* bar);
      * }
      */
     public static int gtk_search_bar_get_show_close_button(MemorySegment bar) {
@@ -3000,11 +5674,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_search_bar_set_show_close_button$MH() {
-        return RuntimeHelper.requireNonNull(constants$1804.gtk_search_bar_set_show_close_button$MH,"gtk_search_bar_set_show_close_button");
+        return RuntimeHelper.requireNonNull(constants$3072.const$0,"gtk_search_bar_set_show_close_button");
     }
     /**
      * {@snippet :
-     * void gtk_search_bar_set_show_close_button(GtkSearchBar* bar, gboolean visible);
+     * void gtk_search_bar_set_show_close_button(struct _GtkSearchBar* bar, int visible);
      * }
      */
     public static void gtk_search_bar_set_show_close_button(MemorySegment bar, int visible) {
@@ -3016,11 +5690,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_search_bar_handle_event$MH() {
-        return RuntimeHelper.requireNonNull(constants$1804.gtk_search_bar_handle_event$MH,"gtk_search_bar_handle_event");
+        return RuntimeHelper.requireNonNull(constants$3072.const$1,"gtk_search_bar_handle_event");
     }
     /**
      * {@snippet :
-     * gboolean gtk_search_bar_handle_event(GtkSearchBar* bar, GdkEvent* event);
+     * int gtk_search_bar_handle_event(struct _GtkSearchBar* bar, union _GdkEvent* event);
      * }
      */
     public static int gtk_search_bar_handle_event(MemorySegment bar, MemorySegment event) {
@@ -3032,11 +5706,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_search_entry_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1804.gtk_search_entry_get_type$MH,"gtk_search_entry_get_type");
+        return RuntimeHelper.requireNonNull(constants$3074.const$0,"gtk_search_entry_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_search_entry_get_type();
+     * unsigned long gtk_search_entry_get_type();
      * }
      */
     public static long gtk_search_entry_get_type() {
@@ -3048,11 +5722,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_search_entry_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1804.gtk_search_entry_new$MH,"gtk_search_entry_new");
+        return RuntimeHelper.requireNonNull(constants$3074.const$1,"gtk_search_entry_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_search_entry_new();
+     * struct _GtkWidget* gtk_search_entry_new();
      * }
      */
     public static MemorySegment gtk_search_entry_new() {
@@ -3064,11 +5738,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_search_entry_handle_event$MH() {
-        return RuntimeHelper.requireNonNull(constants$1804.gtk_search_entry_handle_event$MH,"gtk_search_entry_handle_event");
+        return RuntimeHelper.requireNonNull(constants$3074.const$2,"gtk_search_entry_handle_event");
     }
     /**
      * {@snippet :
-     * gboolean gtk_search_entry_handle_event(GtkSearchEntry* entry, GdkEvent* event);
+     * int gtk_search_entry_handle_event(struct _GtkSearchEntry* entry, union _GdkEvent* event);
      * }
      */
     public static int gtk_search_entry_handle_event(MemorySegment entry, MemorySegment event) {
@@ -3080,11 +5754,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_separator_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1805.gtk_separator_get_type$MH,"gtk_separator_get_type");
+        return RuntimeHelper.requireNonNull(constants$3076.const$2,"gtk_separator_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_separator_get_type();
+     * unsigned long gtk_separator_get_type();
      * }
      */
     public static long gtk_separator_get_type() {
@@ -3096,11 +5770,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_separator_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1805.gtk_separator_new$MH,"gtk_separator_new");
+        return RuntimeHelper.requireNonNull(constants$3076.const$3,"gtk_separator_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_separator_new(GtkOrientation orientation);
+     * struct _GtkWidget* gtk_separator_new(enum GtkOrientation orientation);
      * }
      */
     public static MemorySegment gtk_separator_new(int orientation) {
@@ -3112,11 +5786,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_separator_menu_item_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1805.gtk_separator_menu_item_get_type$MH,"gtk_separator_menu_item_get_type");
+        return RuntimeHelper.requireNonNull(constants$3078.const$2,"gtk_separator_menu_item_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_separator_menu_item_get_type();
+     * unsigned long gtk_separator_menu_item_get_type();
      * }
      */
     public static long gtk_separator_menu_item_get_type() {
@@ -3128,11 +5802,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_separator_menu_item_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1805.gtk_separator_menu_item_new$MH,"gtk_separator_menu_item_new");
+        return RuntimeHelper.requireNonNull(constants$3078.const$3,"gtk_separator_menu_item_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_separator_menu_item_new();
+     * struct _GtkWidget* gtk_separator_menu_item_new();
      * }
      */
     public static MemorySegment gtk_separator_menu_item_new() {
@@ -3144,11 +5818,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_separator_tool_item_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1805.gtk_separator_tool_item_get_type$MH,"gtk_separator_tool_item_get_type");
+        return RuntimeHelper.requireNonNull(constants$3080.const$3,"gtk_separator_tool_item_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_separator_tool_item_get_type();
+     * unsigned long gtk_separator_tool_item_get_type();
      * }
      */
     public static long gtk_separator_tool_item_get_type() {
@@ -3160,11 +5834,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_separator_tool_item_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1805.gtk_separator_tool_item_new$MH,"gtk_separator_tool_item_new");
+        return RuntimeHelper.requireNonNull(constants$3080.const$4,"gtk_separator_tool_item_new");
     }
     /**
      * {@snippet :
-     * GtkToolItem* gtk_separator_tool_item_new();
+     * struct _GtkToolItem* gtk_separator_tool_item_new();
      * }
      */
     public static MemorySegment gtk_separator_tool_item_new() {
@@ -3176,11 +5850,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_separator_tool_item_get_draw$MH() {
-        return RuntimeHelper.requireNonNull(constants$1806.gtk_separator_tool_item_get_draw$MH,"gtk_separator_tool_item_get_draw");
+        return RuntimeHelper.requireNonNull(constants$3080.const$5,"gtk_separator_tool_item_get_draw");
     }
     /**
      * {@snippet :
-     * gboolean gtk_separator_tool_item_get_draw(GtkSeparatorToolItem* item);
+     * int gtk_separator_tool_item_get_draw(struct _GtkSeparatorToolItem* item);
      * }
      */
     public static int gtk_separator_tool_item_get_draw(MemorySegment item) {
@@ -3192,11 +5866,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_separator_tool_item_set_draw$MH() {
-        return RuntimeHelper.requireNonNull(constants$1806.gtk_separator_tool_item_set_draw$MH,"gtk_separator_tool_item_set_draw");
+        return RuntimeHelper.requireNonNull(constants$3081.const$0,"gtk_separator_tool_item_set_draw");
     }
     /**
      * {@snippet :
-     * void gtk_separator_tool_item_set_draw(GtkSeparatorToolItem* item, gboolean draw);
+     * void gtk_separator_tool_item_set_draw(struct _GtkSeparatorToolItem* item, int draw);
      * }
      */
     public static void gtk_separator_tool_item_set_draw(MemorySegment item, int draw) {
@@ -3208,11 +5882,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_settings_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1806.gtk_settings_get_type$MH,"gtk_settings_get_type");
+        return RuntimeHelper.requireNonNull(constants$3083.const$2,"gtk_settings_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_settings_get_type();
+     * unsigned long gtk_settings_get_type();
      * }
      */
     public static long gtk_settings_get_type() {
@@ -3224,11 +5898,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_settings_get_default$MH() {
-        return RuntimeHelper.requireNonNull(constants$1806.gtk_settings_get_default$MH,"gtk_settings_get_default");
+        return RuntimeHelper.requireNonNull(constants$3083.const$3,"gtk_settings_get_default");
     }
     /**
      * {@snippet :
-     * GtkSettings* gtk_settings_get_default();
+     * struct _GtkSettings* gtk_settings_get_default();
      * }
      */
     public static MemorySegment gtk_settings_get_default() {
@@ -3240,11 +5914,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_settings_get_for_screen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1806.gtk_settings_get_for_screen$MH,"gtk_settings_get_for_screen");
+        return RuntimeHelper.requireNonNull(constants$3083.const$4,"gtk_settings_get_for_screen");
     }
     /**
      * {@snippet :
-     * GtkSettings* gtk_settings_get_for_screen(GdkScreen* screen);
+     * struct _GtkSettings* gtk_settings_get_for_screen(struct _GdkScreen* screen);
      * }
      */
     public static MemorySegment gtk_settings_get_for_screen(MemorySegment screen) {
@@ -3256,11 +5930,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_settings_install_property$MH() {
-        return RuntimeHelper.requireNonNull(constants$1806.gtk_settings_install_property$MH,"gtk_settings_install_property");
+        return RuntimeHelper.requireNonNull(constants$3083.const$5,"gtk_settings_install_property");
     }
     /**
      * {@snippet :
-     * void gtk_settings_install_property(GParamSpec* pspec);
+     * void gtk_settings_install_property(struct _GParamSpec* pspec);
      * }
      */
     public static void gtk_settings_install_property(MemorySegment pspec) {
@@ -3272,11 +5946,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_settings_install_property_parser$MH() {
-        return RuntimeHelper.requireNonNull(constants$1807.gtk_settings_install_property_parser$MH,"gtk_settings_install_property_parser");
+        return RuntimeHelper.requireNonNull(constants$3084.const$1,"gtk_settings_install_property_parser");
     }
     /**
      * {@snippet :
-     * void gtk_settings_install_property_parser(GParamSpec* pspec, GtkRcPropertyParser parser);
+     * void gtk_settings_install_property_parser(struct _GParamSpec* pspec, int (*parser)(struct _GParamSpec*,struct _GString*,struct _GValue*));
      * }
      */
     public static void gtk_settings_install_property_parser(MemorySegment pspec, MemorySegment parser) {
@@ -3288,11 +5962,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_rc_property_parse_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$1807.gtk_rc_property_parse_color$MH,"gtk_rc_property_parse_color");
+        return RuntimeHelper.requireNonNull(constants$3084.const$2,"gtk_rc_property_parse_color");
     }
     /**
      * {@snippet :
-     * gboolean gtk_rc_property_parse_color(const GParamSpec* pspec, const GString* gstring, GValue* property_value);
+     * int gtk_rc_property_parse_color(struct _GParamSpec* pspec, struct _GString* gstring, struct _GValue* property_value);
      * }
      */
     public static int gtk_rc_property_parse_color(MemorySegment pspec, MemorySegment gstring, MemorySegment property_value) {
@@ -3304,11 +5978,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_rc_property_parse_enum$MH() {
-        return RuntimeHelper.requireNonNull(constants$1807.gtk_rc_property_parse_enum$MH,"gtk_rc_property_parse_enum");
+        return RuntimeHelper.requireNonNull(constants$3084.const$3,"gtk_rc_property_parse_enum");
     }
     /**
      * {@snippet :
-     * gboolean gtk_rc_property_parse_enum(const GParamSpec* pspec, const GString* gstring, GValue* property_value);
+     * int gtk_rc_property_parse_enum(struct _GParamSpec* pspec, struct _GString* gstring, struct _GValue* property_value);
      * }
      */
     public static int gtk_rc_property_parse_enum(MemorySegment pspec, MemorySegment gstring, MemorySegment property_value) {
@@ -3320,11 +5994,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_rc_property_parse_flags$MH() {
-        return RuntimeHelper.requireNonNull(constants$1807.gtk_rc_property_parse_flags$MH,"gtk_rc_property_parse_flags");
+        return RuntimeHelper.requireNonNull(constants$3084.const$4,"gtk_rc_property_parse_flags");
     }
     /**
      * {@snippet :
-     * gboolean gtk_rc_property_parse_flags(const GParamSpec* pspec, const GString* gstring, GValue* property_value);
+     * int gtk_rc_property_parse_flags(struct _GParamSpec* pspec, struct _GString* gstring, struct _GValue* property_value);
      * }
      */
     public static int gtk_rc_property_parse_flags(MemorySegment pspec, MemorySegment gstring, MemorySegment property_value) {
@@ -3336,11 +6010,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_rc_property_parse_requisition$MH() {
-        return RuntimeHelper.requireNonNull(constants$1807.gtk_rc_property_parse_requisition$MH,"gtk_rc_property_parse_requisition");
+        return RuntimeHelper.requireNonNull(constants$3084.const$5,"gtk_rc_property_parse_requisition");
     }
     /**
      * {@snippet :
-     * gboolean gtk_rc_property_parse_requisition(const GParamSpec* pspec, const GString* gstring, GValue* property_value);
+     * int gtk_rc_property_parse_requisition(struct _GParamSpec* pspec, struct _GString* gstring, struct _GValue* property_value);
      * }
      */
     public static int gtk_rc_property_parse_requisition(MemorySegment pspec, MemorySegment gstring, MemorySegment property_value) {
@@ -3352,11 +6026,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_rc_property_parse_border$MH() {
-        return RuntimeHelper.requireNonNull(constants$1807.gtk_rc_property_parse_border$MH,"gtk_rc_property_parse_border");
+        return RuntimeHelper.requireNonNull(constants$3085.const$0,"gtk_rc_property_parse_border");
     }
     /**
      * {@snippet :
-     * gboolean gtk_rc_property_parse_border(const GParamSpec* pspec, const GString* gstring, GValue* property_value);
+     * int gtk_rc_property_parse_border(struct _GParamSpec* pspec, struct _GString* gstring, struct _GValue* property_value);
      * }
      */
     public static int gtk_rc_property_parse_border(MemorySegment pspec, MemorySegment gstring, MemorySegment property_value) {
@@ -3368,11 +6042,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_settings_set_property_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$1808.gtk_settings_set_property_value$MH,"gtk_settings_set_property_value");
+        return RuntimeHelper.requireNonNull(constants$3085.const$1,"gtk_settings_set_property_value");
     }
     /**
      * {@snippet :
-     * void gtk_settings_set_property_value(GtkSettings* settings, const gchar* name, const GtkSettingsValue* svalue);
+     * void gtk_settings_set_property_value(struct _GtkSettings* settings, char* name, struct _GtkSettingsValue* svalue);
      * }
      */
     public static void gtk_settings_set_property_value(MemorySegment settings, MemorySegment name, MemorySegment svalue) {
@@ -3384,11 +6058,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_settings_set_string_property$MH() {
-        return RuntimeHelper.requireNonNull(constants$1808.gtk_settings_set_string_property$MH,"gtk_settings_set_string_property");
+        return RuntimeHelper.requireNonNull(constants$3085.const$2,"gtk_settings_set_string_property");
     }
     /**
      * {@snippet :
-     * void gtk_settings_set_string_property(GtkSettings* settings, const gchar* name, const gchar* v_string, const gchar* origin);
+     * void gtk_settings_set_string_property(struct _GtkSettings* settings, char* name, char* v_string, char* origin);
      * }
      */
     public static void gtk_settings_set_string_property(MemorySegment settings, MemorySegment name, MemorySegment v_string, MemorySegment origin) {
@@ -3400,11 +6074,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_settings_set_long_property$MH() {
-        return RuntimeHelper.requireNonNull(constants$1808.gtk_settings_set_long_property$MH,"gtk_settings_set_long_property");
+        return RuntimeHelper.requireNonNull(constants$3085.const$3,"gtk_settings_set_long_property");
     }
     /**
      * {@snippet :
-     * void gtk_settings_set_long_property(GtkSettings* settings, const gchar* name, glong v_long, const gchar* origin);
+     * void gtk_settings_set_long_property(struct _GtkSettings* settings, char* name, long v_long, char* origin);
      * }
      */
     public static void gtk_settings_set_long_property(MemorySegment settings, MemorySegment name, long v_long, MemorySegment origin) {
@@ -3416,11 +6090,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_settings_set_double_property$MH() {
-        return RuntimeHelper.requireNonNull(constants$1808.gtk_settings_set_double_property$MH,"gtk_settings_set_double_property");
+        return RuntimeHelper.requireNonNull(constants$3085.const$5,"gtk_settings_set_double_property");
     }
     /**
      * {@snippet :
-     * void gtk_settings_set_double_property(GtkSettings* settings, const gchar* name, gdouble v_double, const gchar* origin);
+     * void gtk_settings_set_double_property(struct _GtkSettings* settings, char* name, double v_double, char* origin);
      * }
      */
     public static void gtk_settings_set_double_property(MemorySegment settings, MemorySegment name, double v_double, MemorySegment origin) {
@@ -3432,11 +6106,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_settings_reset_property$MH() {
-        return RuntimeHelper.requireNonNull(constants$1808.gtk_settings_reset_property$MH,"gtk_settings_reset_property");
+        return RuntimeHelper.requireNonNull(constants$3086.const$0,"gtk_settings_reset_property");
     }
     /**
      * {@snippet :
-     * void gtk_settings_reset_property(GtkSettings* settings, const gchar* name);
+     * void gtk_settings_reset_property(struct _GtkSettings* settings, char* name);
      * }
      */
     public static void gtk_settings_reset_property(MemorySegment settings, MemorySegment name) {
@@ -3448,11 +6122,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_shortcut_label_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1808.gtk_shortcut_label_get_type$MH,"gtk_shortcut_label_get_type");
+        return RuntimeHelper.requireNonNull(constants$3086.const$1,"gtk_shortcut_label_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_shortcut_label_get_type();
+     * unsigned long gtk_shortcut_label_get_type();
      * }
      */
     public static long gtk_shortcut_label_get_type() {
@@ -3464,11 +6138,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_shortcut_label_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1809.gtk_shortcut_label_new$MH,"gtk_shortcut_label_new");
+        return RuntimeHelper.requireNonNull(constants$3086.const$2,"gtk_shortcut_label_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_shortcut_label_new(const gchar* accelerator);
+     * struct _GtkWidget* gtk_shortcut_label_new(char* accelerator);
      * }
      */
     public static MemorySegment gtk_shortcut_label_new(MemorySegment accelerator) {
@@ -3480,11 +6154,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_shortcut_label_get_accelerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$1809.gtk_shortcut_label_get_accelerator$MH,"gtk_shortcut_label_get_accelerator");
+        return RuntimeHelper.requireNonNull(constants$3086.const$3,"gtk_shortcut_label_get_accelerator");
     }
     /**
      * {@snippet :
-     * const gchar* gtk_shortcut_label_get_accelerator(GtkShortcutLabel* self);
+     * char* gtk_shortcut_label_get_accelerator(struct _GtkShortcutLabel* self);
      * }
      */
     public static MemorySegment gtk_shortcut_label_get_accelerator(MemorySegment self) {
@@ -3496,11 +6170,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_shortcut_label_set_accelerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$1809.gtk_shortcut_label_set_accelerator$MH,"gtk_shortcut_label_set_accelerator");
+        return RuntimeHelper.requireNonNull(constants$3086.const$4,"gtk_shortcut_label_set_accelerator");
     }
     /**
      * {@snippet :
-     * void gtk_shortcut_label_set_accelerator(GtkShortcutLabel* self, const gchar* accelerator);
+     * void gtk_shortcut_label_set_accelerator(struct _GtkShortcutLabel* self, char* accelerator);
      * }
      */
     public static void gtk_shortcut_label_set_accelerator(MemorySegment self, MemorySegment accelerator) {
@@ -3512,11 +6186,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_shortcut_label_get_disabled_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$1809.gtk_shortcut_label_get_disabled_text$MH,"gtk_shortcut_label_get_disabled_text");
+        return RuntimeHelper.requireNonNull(constants$3086.const$5,"gtk_shortcut_label_get_disabled_text");
     }
     /**
      * {@snippet :
-     * const gchar* gtk_shortcut_label_get_disabled_text(GtkShortcutLabel* self);
+     * char* gtk_shortcut_label_get_disabled_text(struct _GtkShortcutLabel* self);
      * }
      */
     public static MemorySegment gtk_shortcut_label_get_disabled_text(MemorySegment self) {
@@ -3528,11 +6202,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_shortcut_label_set_disabled_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$1809.gtk_shortcut_label_set_disabled_text$MH,"gtk_shortcut_label_set_disabled_text");
+        return RuntimeHelper.requireNonNull(constants$3087.const$0,"gtk_shortcut_label_set_disabled_text");
     }
     /**
      * {@snippet :
-     * void gtk_shortcut_label_set_disabled_text(GtkShortcutLabel* self, const gchar* disabled_text);
+     * void gtk_shortcut_label_set_disabled_text(struct _GtkShortcutLabel* self, char* disabled_text);
      * }
      */
     public static void gtk_shortcut_label_set_disabled_text(MemorySegment self, MemorySegment disabled_text) {
@@ -3544,11 +6218,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_shortcuts_group_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1809.gtk_shortcuts_group_get_type$MH,"gtk_shortcuts_group_get_type");
+        return RuntimeHelper.requireNonNull(constants$3087.const$1,"gtk_shortcuts_group_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_shortcuts_group_get_type();
+     * unsigned long gtk_shortcuts_group_get_type();
      * }
      */
     public static long gtk_shortcuts_group_get_type() {
@@ -3560,11 +6234,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_shortcuts_section_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1810.gtk_shortcuts_section_get_type$MH,"gtk_shortcuts_section_get_type");
+        return RuntimeHelper.requireNonNull(constants$3087.const$2,"gtk_shortcuts_section_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_shortcuts_section_get_type();
+     * unsigned long gtk_shortcuts_section_get_type();
      * }
      */
     public static long gtk_shortcuts_section_get_type() {
@@ -3577,7 +6251,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_SHORTCUT_ACCELERATOR = 0;
+     * enum GtkShortcutType.GTK_SHORTCUT_ACCELERATOR = 0;
      * }
      */
     public static int GTK_SHORTCUT_ACCELERATOR() {
@@ -3585,7 +6259,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_SHORTCUT_GESTURE_PINCH = 1;
+     * enum GtkShortcutType.GTK_SHORTCUT_GESTURE_PINCH = 1;
      * }
      */
     public static int GTK_SHORTCUT_GESTURE_PINCH() {
@@ -3593,7 +6267,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_SHORTCUT_GESTURE_STRETCH = 2;
+     * enum GtkShortcutType.GTK_SHORTCUT_GESTURE_STRETCH = 2;
      * }
      */
     public static int GTK_SHORTCUT_GESTURE_STRETCH() {
@@ -3601,7 +6275,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_SHORTCUT_GESTURE_ROTATE_CLOCKWISE = 3;
+     * enum GtkShortcutType.GTK_SHORTCUT_GESTURE_ROTATE_CLOCKWISE = 3;
      * }
      */
     public static int GTK_SHORTCUT_GESTURE_ROTATE_CLOCKWISE() {
@@ -3609,7 +6283,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_SHORTCUT_GESTURE_ROTATE_COUNTERCLOCKWISE = 4;
+     * enum GtkShortcutType.GTK_SHORTCUT_GESTURE_ROTATE_COUNTERCLOCKWISE = 4;
      * }
      */
     public static int GTK_SHORTCUT_GESTURE_ROTATE_COUNTERCLOCKWISE() {
@@ -3617,7 +6291,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_SHORTCUT_GESTURE_TWO_FINGER_SWIPE_LEFT = 5;
+     * enum GtkShortcutType.GTK_SHORTCUT_GESTURE_TWO_FINGER_SWIPE_LEFT = 5;
      * }
      */
     public static int GTK_SHORTCUT_GESTURE_TWO_FINGER_SWIPE_LEFT() {
@@ -3625,7 +6299,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_SHORTCUT_GESTURE_TWO_FINGER_SWIPE_RIGHT = 6;
+     * enum GtkShortcutType.GTK_SHORTCUT_GESTURE_TWO_FINGER_SWIPE_RIGHT = 6;
      * }
      */
     public static int GTK_SHORTCUT_GESTURE_TWO_FINGER_SWIPE_RIGHT() {
@@ -3633,18 +6307,18 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_SHORTCUT_GESTURE = 7;
+     * enum GtkShortcutType.GTK_SHORTCUT_GESTURE = 7;
      * }
      */
     public static int GTK_SHORTCUT_GESTURE() {
         return (int)7L;
     }
     public static MethodHandle gtk_shortcuts_shortcut_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1810.gtk_shortcuts_shortcut_get_type$MH,"gtk_shortcuts_shortcut_get_type");
+        return RuntimeHelper.requireNonNull(constants$3087.const$3,"gtk_shortcuts_shortcut_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_shortcuts_shortcut_get_type();
+     * unsigned long gtk_shortcuts_shortcut_get_type();
      * }
      */
     public static long gtk_shortcuts_shortcut_get_type() {
@@ -3656,11 +6330,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_show_uri$MH() {
-        return RuntimeHelper.requireNonNull(constants$1810.gtk_show_uri$MH,"gtk_show_uri");
+        return RuntimeHelper.requireNonNull(constants$3087.const$4,"gtk_show_uri");
     }
     /**
      * {@snippet :
-     * gboolean gtk_show_uri(GdkScreen* screen, const gchar* uri, guint32 timestamp, GError** error);
+     * int gtk_show_uri(struct _GdkScreen* screen, char* uri, unsigned int timestamp, struct _GError** error);
      * }
      */
     public static int gtk_show_uri(MemorySegment screen, MemorySegment uri, int timestamp, MemorySegment error) {
@@ -3672,11 +6346,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_show_uri_on_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1810.gtk_show_uri_on_window$MH,"gtk_show_uri_on_window");
+        return RuntimeHelper.requireNonNull(constants$3087.const$5,"gtk_show_uri_on_window");
     }
     /**
      * {@snippet :
-     * gboolean gtk_show_uri_on_window(GtkWindow* parent, char* uri, guint32 timestamp, GError** error);
+     * int gtk_show_uri_on_window(struct _GtkWindow* parent, char* uri, unsigned int timestamp, struct _GError** error);
      * }
      */
     public static int gtk_show_uri_on_window(MemorySegment parent, MemorySegment uri, int timestamp, MemorySegment error) {
@@ -3689,7 +6363,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_NONE = 0;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_NONE = 0;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_NONE() {
@@ -3697,7 +6371,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_CROSSFADE = 1;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_CROSSFADE = 1;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_CROSSFADE() {
@@ -3705,7 +6379,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_SLIDE_RIGHT = 2;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_SLIDE_RIGHT = 2;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_SLIDE_RIGHT() {
@@ -3713,7 +6387,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_SLIDE_LEFT = 3;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_SLIDE_LEFT = 3;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_SLIDE_LEFT() {
@@ -3721,7 +6395,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_SLIDE_UP = 4;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_SLIDE_UP = 4;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_SLIDE_UP() {
@@ -3729,7 +6403,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_SLIDE_DOWN = 5;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_SLIDE_DOWN = 5;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_SLIDE_DOWN() {
@@ -3737,7 +6411,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_SLIDE_LEFT_RIGHT = 6;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_SLIDE_LEFT_RIGHT = 6;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_SLIDE_LEFT_RIGHT() {
@@ -3745,7 +6419,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_SLIDE_UP_DOWN = 7;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_SLIDE_UP_DOWN = 7;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_SLIDE_UP_DOWN() {
@@ -3753,7 +6427,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_OVER_UP = 8;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_OVER_UP = 8;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_OVER_UP() {
@@ -3761,7 +6435,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_OVER_DOWN = 9;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_OVER_DOWN = 9;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_OVER_DOWN() {
@@ -3769,7 +6443,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_OVER_LEFT = 10;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_OVER_LEFT = 10;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_OVER_LEFT() {
@@ -3777,7 +6451,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_OVER_RIGHT = 11;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_OVER_RIGHT = 11;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_OVER_RIGHT() {
@@ -3785,7 +6459,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_UNDER_UP = 12;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_UNDER_UP = 12;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_UNDER_UP() {
@@ -3793,7 +6467,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_UNDER_DOWN = 13;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_UNDER_DOWN = 13;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_UNDER_DOWN() {
@@ -3801,7 +6475,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_UNDER_LEFT = 14;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_UNDER_LEFT = 14;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_UNDER_LEFT() {
@@ -3809,7 +6483,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_UNDER_RIGHT = 15;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_UNDER_RIGHT = 15;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_UNDER_RIGHT() {
@@ -3817,7 +6491,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_OVER_UP_DOWN = 16;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_OVER_UP_DOWN = 16;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_OVER_UP_DOWN() {
@@ -3825,7 +6499,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_OVER_DOWN_UP = 17;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_OVER_DOWN_UP = 17;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_OVER_DOWN_UP() {
@@ -3833,7 +6507,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_OVER_LEFT_RIGHT = 18;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_OVER_LEFT_RIGHT = 18;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_OVER_LEFT_RIGHT() {
@@ -3841,18 +6515,18 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_STACK_TRANSITION_TYPE_OVER_RIGHT_LEFT = 19;
+     * enum GtkStackTransitionType.GTK_STACK_TRANSITION_TYPE_OVER_RIGHT_LEFT = 19;
      * }
      */
     public static int GTK_STACK_TRANSITION_TYPE_OVER_RIGHT_LEFT() {
         return (int)19L;
     }
     public static MethodHandle gtk_stack_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1810.gtk_stack_get_type$MH,"gtk_stack_get_type");
+        return RuntimeHelper.requireNonNull(constants$3088.const$2,"gtk_stack_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_stack_get_type();
+     * unsigned long gtk_stack_get_type();
      * }
      */
     public static long gtk_stack_get_type() {
@@ -3864,11 +6538,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1810.gtk_stack_new$MH,"gtk_stack_new");
+        return RuntimeHelper.requireNonNull(constants$3088.const$3,"gtk_stack_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_stack_new();
+     * struct _GtkWidget* gtk_stack_new();
      * }
      */
     public static MemorySegment gtk_stack_new() {
@@ -3880,11 +6554,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_add_named$MH() {
-        return RuntimeHelper.requireNonNull(constants$1811.gtk_stack_add_named$MH,"gtk_stack_add_named");
+        return RuntimeHelper.requireNonNull(constants$3088.const$4,"gtk_stack_add_named");
     }
     /**
      * {@snippet :
-     * void gtk_stack_add_named(GtkStack* stack, GtkWidget* child, const gchar* name);
+     * void gtk_stack_add_named(struct _GtkStack* stack, struct _GtkWidget* child, char* name);
      * }
      */
     public static void gtk_stack_add_named(MemorySegment stack, MemorySegment child, MemorySegment name) {
@@ -3896,11 +6570,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_add_titled$MH() {
-        return RuntimeHelper.requireNonNull(constants$1811.gtk_stack_add_titled$MH,"gtk_stack_add_titled");
+        return RuntimeHelper.requireNonNull(constants$3088.const$5,"gtk_stack_add_titled");
     }
     /**
      * {@snippet :
-     * void gtk_stack_add_titled(GtkStack* stack, GtkWidget* child, const gchar* name, const gchar* title);
+     * void gtk_stack_add_titled(struct _GtkStack* stack, struct _GtkWidget* child, char* name, char* title);
      * }
      */
     public static void gtk_stack_add_titled(MemorySegment stack, MemorySegment child, MemorySegment name, MemorySegment title) {
@@ -3912,11 +6586,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_get_child_by_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1811.gtk_stack_get_child_by_name$MH,"gtk_stack_get_child_by_name");
+        return RuntimeHelper.requireNonNull(constants$3089.const$0,"gtk_stack_get_child_by_name");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_stack_get_child_by_name(GtkStack* stack, const gchar* name);
+     * struct _GtkWidget* gtk_stack_get_child_by_name(struct _GtkStack* stack, char* name);
      * }
      */
     public static MemorySegment gtk_stack_get_child_by_name(MemorySegment stack, MemorySegment name) {
@@ -3928,11 +6602,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_set_visible_child$MH() {
-        return RuntimeHelper.requireNonNull(constants$1811.gtk_stack_set_visible_child$MH,"gtk_stack_set_visible_child");
+        return RuntimeHelper.requireNonNull(constants$3089.const$1,"gtk_stack_set_visible_child");
     }
     /**
      * {@snippet :
-     * void gtk_stack_set_visible_child(GtkStack* stack, GtkWidget* child);
+     * void gtk_stack_set_visible_child(struct _GtkStack* stack, struct _GtkWidget* child);
      * }
      */
     public static void gtk_stack_set_visible_child(MemorySegment stack, MemorySegment child) {
@@ -3944,11 +6618,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_get_visible_child$MH() {
-        return RuntimeHelper.requireNonNull(constants$1811.gtk_stack_get_visible_child$MH,"gtk_stack_get_visible_child");
+        return RuntimeHelper.requireNonNull(constants$3089.const$2,"gtk_stack_get_visible_child");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_stack_get_visible_child(GtkStack* stack);
+     * struct _GtkWidget* gtk_stack_get_visible_child(struct _GtkStack* stack);
      * }
      */
     public static MemorySegment gtk_stack_get_visible_child(MemorySegment stack) {
@@ -3960,11 +6634,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_set_visible_child_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1811.gtk_stack_set_visible_child_name$MH,"gtk_stack_set_visible_child_name");
+        return RuntimeHelper.requireNonNull(constants$3089.const$3,"gtk_stack_set_visible_child_name");
     }
     /**
      * {@snippet :
-     * void gtk_stack_set_visible_child_name(GtkStack* stack, const gchar* name);
+     * void gtk_stack_set_visible_child_name(struct _GtkStack* stack, char* name);
      * }
      */
     public static void gtk_stack_set_visible_child_name(MemorySegment stack, MemorySegment name) {
@@ -3976,11 +6650,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_get_visible_child_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1812.gtk_stack_get_visible_child_name$MH,"gtk_stack_get_visible_child_name");
+        return RuntimeHelper.requireNonNull(constants$3089.const$4,"gtk_stack_get_visible_child_name");
     }
     /**
      * {@snippet :
-     * const gchar* gtk_stack_get_visible_child_name(GtkStack* stack);
+     * char* gtk_stack_get_visible_child_name(struct _GtkStack* stack);
      * }
      */
     public static MemorySegment gtk_stack_get_visible_child_name(MemorySegment stack) {
@@ -3992,11 +6666,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_set_visible_child_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$1812.gtk_stack_set_visible_child_full$MH,"gtk_stack_set_visible_child_full");
+        return RuntimeHelper.requireNonNull(constants$3089.const$5,"gtk_stack_set_visible_child_full");
     }
     /**
      * {@snippet :
-     * void gtk_stack_set_visible_child_full(GtkStack* stack, const gchar* name, GtkStackTransitionType transition);
+     * void gtk_stack_set_visible_child_full(struct _GtkStack* stack, char* name, enum GtkStackTransitionType transition);
      * }
      */
     public static void gtk_stack_set_visible_child_full(MemorySegment stack, MemorySegment name, int transition) {
@@ -4008,11 +6682,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_set_homogeneous$MH() {
-        return RuntimeHelper.requireNonNull(constants$1812.gtk_stack_set_homogeneous$MH,"gtk_stack_set_homogeneous");
+        return RuntimeHelper.requireNonNull(constants$3090.const$0,"gtk_stack_set_homogeneous");
     }
     /**
      * {@snippet :
-     * void gtk_stack_set_homogeneous(GtkStack* stack, gboolean homogeneous);
+     * void gtk_stack_set_homogeneous(struct _GtkStack* stack, int homogeneous);
      * }
      */
     public static void gtk_stack_set_homogeneous(MemorySegment stack, int homogeneous) {
@@ -4024,11 +6698,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_get_homogeneous$MH() {
-        return RuntimeHelper.requireNonNull(constants$1812.gtk_stack_get_homogeneous$MH,"gtk_stack_get_homogeneous");
+        return RuntimeHelper.requireNonNull(constants$3090.const$1,"gtk_stack_get_homogeneous");
     }
     /**
      * {@snippet :
-     * gboolean gtk_stack_get_homogeneous(GtkStack* stack);
+     * int gtk_stack_get_homogeneous(struct _GtkStack* stack);
      * }
      */
     public static int gtk_stack_get_homogeneous(MemorySegment stack) {
@@ -4040,11 +6714,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_set_hhomogeneous$MH() {
-        return RuntimeHelper.requireNonNull(constants$1812.gtk_stack_set_hhomogeneous$MH,"gtk_stack_set_hhomogeneous");
+        return RuntimeHelper.requireNonNull(constants$3090.const$2,"gtk_stack_set_hhomogeneous");
     }
     /**
      * {@snippet :
-     * void gtk_stack_set_hhomogeneous(GtkStack* stack, gboolean hhomogeneous);
+     * void gtk_stack_set_hhomogeneous(struct _GtkStack* stack, int hhomogeneous);
      * }
      */
     public static void gtk_stack_set_hhomogeneous(MemorySegment stack, int hhomogeneous) {
@@ -4056,11 +6730,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_get_hhomogeneous$MH() {
-        return RuntimeHelper.requireNonNull(constants$1812.gtk_stack_get_hhomogeneous$MH,"gtk_stack_get_hhomogeneous");
+        return RuntimeHelper.requireNonNull(constants$3090.const$3,"gtk_stack_get_hhomogeneous");
     }
     /**
      * {@snippet :
-     * gboolean gtk_stack_get_hhomogeneous(GtkStack* stack);
+     * int gtk_stack_get_hhomogeneous(struct _GtkStack* stack);
      * }
      */
     public static int gtk_stack_get_hhomogeneous(MemorySegment stack) {
@@ -4072,11 +6746,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_set_vhomogeneous$MH() {
-        return RuntimeHelper.requireNonNull(constants$1813.gtk_stack_set_vhomogeneous$MH,"gtk_stack_set_vhomogeneous");
+        return RuntimeHelper.requireNonNull(constants$3090.const$4,"gtk_stack_set_vhomogeneous");
     }
     /**
      * {@snippet :
-     * void gtk_stack_set_vhomogeneous(GtkStack* stack, gboolean vhomogeneous);
+     * void gtk_stack_set_vhomogeneous(struct _GtkStack* stack, int vhomogeneous);
      * }
      */
     public static void gtk_stack_set_vhomogeneous(MemorySegment stack, int vhomogeneous) {
@@ -4088,11 +6762,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_get_vhomogeneous$MH() {
-        return RuntimeHelper.requireNonNull(constants$1813.gtk_stack_get_vhomogeneous$MH,"gtk_stack_get_vhomogeneous");
+        return RuntimeHelper.requireNonNull(constants$3090.const$5,"gtk_stack_get_vhomogeneous");
     }
     /**
      * {@snippet :
-     * gboolean gtk_stack_get_vhomogeneous(GtkStack* stack);
+     * int gtk_stack_get_vhomogeneous(struct _GtkStack* stack);
      * }
      */
     public static int gtk_stack_get_vhomogeneous(MemorySegment stack) {
@@ -4104,11 +6778,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_set_transition_duration$MH() {
-        return RuntimeHelper.requireNonNull(constants$1813.gtk_stack_set_transition_duration$MH,"gtk_stack_set_transition_duration");
+        return RuntimeHelper.requireNonNull(constants$3091.const$0,"gtk_stack_set_transition_duration");
     }
     /**
      * {@snippet :
-     * void gtk_stack_set_transition_duration(GtkStack* stack, guint duration);
+     * void gtk_stack_set_transition_duration(struct _GtkStack* stack, unsigned int duration);
      * }
      */
     public static void gtk_stack_set_transition_duration(MemorySegment stack, int duration) {
@@ -4120,11 +6794,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_get_transition_duration$MH() {
-        return RuntimeHelper.requireNonNull(constants$1813.gtk_stack_get_transition_duration$MH,"gtk_stack_get_transition_duration");
+        return RuntimeHelper.requireNonNull(constants$3091.const$1,"gtk_stack_get_transition_duration");
     }
     /**
      * {@snippet :
-     * guint gtk_stack_get_transition_duration(GtkStack* stack);
+     * unsigned int gtk_stack_get_transition_duration(struct _GtkStack* stack);
      * }
      */
     public static int gtk_stack_get_transition_duration(MemorySegment stack) {
@@ -4136,11 +6810,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_set_transition_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1813.gtk_stack_set_transition_type$MH,"gtk_stack_set_transition_type");
+        return RuntimeHelper.requireNonNull(constants$3091.const$2,"gtk_stack_set_transition_type");
     }
     /**
      * {@snippet :
-     * void gtk_stack_set_transition_type(GtkStack* stack, GtkStackTransitionType transition);
+     * void gtk_stack_set_transition_type(struct _GtkStack* stack, enum GtkStackTransitionType transition);
      * }
      */
     public static void gtk_stack_set_transition_type(MemorySegment stack, int transition) {
@@ -4152,11 +6826,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_get_transition_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1813.gtk_stack_get_transition_type$MH,"gtk_stack_get_transition_type");
+        return RuntimeHelper.requireNonNull(constants$3091.const$3,"gtk_stack_get_transition_type");
     }
     /**
      * {@snippet :
-     * GtkStackTransitionType gtk_stack_get_transition_type(GtkStack* stack);
+     * enum GtkStackTransitionType gtk_stack_get_transition_type(struct _GtkStack* stack);
      * }
      */
     public static int gtk_stack_get_transition_type(MemorySegment stack) {
@@ -4168,11 +6842,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_get_transition_running$MH() {
-        return RuntimeHelper.requireNonNull(constants$1814.gtk_stack_get_transition_running$MH,"gtk_stack_get_transition_running");
+        return RuntimeHelper.requireNonNull(constants$3091.const$4,"gtk_stack_get_transition_running");
     }
     /**
      * {@snippet :
-     * gboolean gtk_stack_get_transition_running(GtkStack* stack);
+     * int gtk_stack_get_transition_running(struct _GtkStack* stack);
      * }
      */
     public static int gtk_stack_get_transition_running(MemorySegment stack) {
@@ -4184,11 +6858,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_set_interpolate_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1814.gtk_stack_set_interpolate_size$MH,"gtk_stack_set_interpolate_size");
+        return RuntimeHelper.requireNonNull(constants$3091.const$5,"gtk_stack_set_interpolate_size");
     }
     /**
      * {@snippet :
-     * void gtk_stack_set_interpolate_size(GtkStack* stack, gboolean interpolate_size);
+     * void gtk_stack_set_interpolate_size(struct _GtkStack* stack, int interpolate_size);
      * }
      */
     public static void gtk_stack_set_interpolate_size(MemorySegment stack, int interpolate_size) {
@@ -4200,11 +6874,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_get_interpolate_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1814.gtk_stack_get_interpolate_size$MH,"gtk_stack_get_interpolate_size");
+        return RuntimeHelper.requireNonNull(constants$3092.const$0,"gtk_stack_get_interpolate_size");
     }
     /**
      * {@snippet :
-     * gboolean gtk_stack_get_interpolate_size(GtkStack* stack);
+     * int gtk_stack_get_interpolate_size(struct _GtkStack* stack);
      * }
      */
     public static int gtk_stack_get_interpolate_size(MemorySegment stack) {
@@ -4216,11 +6890,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_sidebar_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1814.gtk_stack_sidebar_get_type$MH,"gtk_stack_sidebar_get_type");
+        return RuntimeHelper.requireNonNull(constants$3093.const$5,"gtk_stack_sidebar_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_stack_sidebar_get_type();
+     * unsigned long gtk_stack_sidebar_get_type();
      * }
      */
     public static long gtk_stack_sidebar_get_type() {
@@ -4232,11 +6906,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_sidebar_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1814.gtk_stack_sidebar_new$MH,"gtk_stack_sidebar_new");
+        return RuntimeHelper.requireNonNull(constants$3094.const$0,"gtk_stack_sidebar_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_stack_sidebar_new();
+     * struct _GtkWidget* gtk_stack_sidebar_new();
      * }
      */
     public static MemorySegment gtk_stack_sidebar_new() {
@@ -4248,11 +6922,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_sidebar_set_stack$MH() {
-        return RuntimeHelper.requireNonNull(constants$1814.gtk_stack_sidebar_set_stack$MH,"gtk_stack_sidebar_set_stack");
+        return RuntimeHelper.requireNonNull(constants$3094.const$1,"gtk_stack_sidebar_set_stack");
     }
     /**
      * {@snippet :
-     * void gtk_stack_sidebar_set_stack(GtkStackSidebar* sidebar, GtkStack* stack);
+     * void gtk_stack_sidebar_set_stack(struct _GtkStackSidebar* sidebar, struct _GtkStack* stack);
      * }
      */
     public static void gtk_stack_sidebar_set_stack(MemorySegment sidebar, MemorySegment stack) {
@@ -4264,11 +6938,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_sidebar_get_stack$MH() {
-        return RuntimeHelper.requireNonNull(constants$1815.gtk_stack_sidebar_get_stack$MH,"gtk_stack_sidebar_get_stack");
+        return RuntimeHelper.requireNonNull(constants$3094.const$2,"gtk_stack_sidebar_get_stack");
     }
     /**
      * {@snippet :
-     * GtkStack* gtk_stack_sidebar_get_stack(GtkStackSidebar* sidebar);
+     * struct _GtkStack* gtk_stack_sidebar_get_stack(struct _GtkStackSidebar* sidebar);
      * }
      */
     public static MemorySegment gtk_stack_sidebar_get_stack(MemorySegment sidebar) {
@@ -4280,11 +6954,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_distribute_natural_allocation$MH() {
-        return RuntimeHelper.requireNonNull(constants$1815.gtk_distribute_natural_allocation$MH,"gtk_distribute_natural_allocation");
+        return RuntimeHelper.requireNonNull(constants$3095.const$1,"gtk_distribute_natural_allocation");
     }
     /**
      * {@snippet :
-     * gint gtk_distribute_natural_allocation(gint extra_space, guint n_requested_sizes, GtkRequestedSize* sizes);
+     * int gtk_distribute_natural_allocation(int extra_space, unsigned int n_requested_sizes, struct _GtkRequestedSize* sizes);
      * }
      */
     public static int gtk_distribute_natural_allocation(int extra_space, int n_requested_sizes, MemorySegment sizes) {
@@ -4297,7 +6971,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_UPDATE_ALWAYS = 0;
+     * enum GtkSpinButtonUpdatePolicy.GTK_UPDATE_ALWAYS = 0;
      * }
      */
     public static int GTK_UPDATE_ALWAYS() {
@@ -4305,7 +6979,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_UPDATE_IF_VALID = 1;
+     * enum GtkSpinButtonUpdatePolicy.GTK_UPDATE_IF_VALID = 1;
      * }
      */
     public static int GTK_UPDATE_IF_VALID() {
@@ -4313,7 +6987,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_SPIN_STEP_FORWARD = 0;
+     * enum GtkSpinType.GTK_SPIN_STEP_FORWARD = 0;
      * }
      */
     public static int GTK_SPIN_STEP_FORWARD() {
@@ -4321,7 +6995,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_SPIN_STEP_BACKWARD = 1;
+     * enum GtkSpinType.GTK_SPIN_STEP_BACKWARD = 1;
      * }
      */
     public static int GTK_SPIN_STEP_BACKWARD() {
@@ -4329,7 +7003,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_SPIN_PAGE_FORWARD = 2;
+     * enum GtkSpinType.GTK_SPIN_PAGE_FORWARD = 2;
      * }
      */
     public static int GTK_SPIN_PAGE_FORWARD() {
@@ -4337,7 +7011,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_SPIN_PAGE_BACKWARD = 3;
+     * enum GtkSpinType.GTK_SPIN_PAGE_BACKWARD = 3;
      * }
      */
     public static int GTK_SPIN_PAGE_BACKWARD() {
@@ -4345,7 +7019,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_SPIN_HOME = 4;
+     * enum GtkSpinType.GTK_SPIN_HOME = 4;
      * }
      */
     public static int GTK_SPIN_HOME() {
@@ -4353,7 +7027,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_SPIN_END = 5;
+     * enum GtkSpinType.GTK_SPIN_END = 5;
      * }
      */
     public static int GTK_SPIN_END() {
@@ -4361,18 +7035,18 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_SPIN_USER_DEFINED = 6;
+     * enum GtkSpinType.GTK_SPIN_USER_DEFINED = 6;
      * }
      */
     public static int GTK_SPIN_USER_DEFINED() {
         return (int)6L;
     }
     public static MethodHandle gtk_spin_button_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1815.gtk_spin_button_get_type$MH,"gtk_spin_button_get_type");
+        return RuntimeHelper.requireNonNull(constants$3098.const$5,"gtk_spin_button_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_spin_button_get_type();
+     * unsigned long gtk_spin_button_get_type();
      * }
      */
     public static long gtk_spin_button_get_type() {
@@ -4384,11 +7058,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_configure$MH() {
-        return RuntimeHelper.requireNonNull(constants$1815.gtk_spin_button_configure$MH,"gtk_spin_button_configure");
+        return RuntimeHelper.requireNonNull(constants$3099.const$0,"gtk_spin_button_configure");
     }
     /**
      * {@snippet :
-     * void gtk_spin_button_configure(GtkSpinButton* spin_button, GtkAdjustment* adjustment, gdouble climb_rate, guint digits);
+     * void gtk_spin_button_configure(struct _GtkSpinButton* spin_button, struct _GtkAdjustment* adjustment, double climb_rate, unsigned int digits);
      * }
      */
     public static void gtk_spin_button_configure(MemorySegment spin_button, MemorySegment adjustment, double climb_rate, int digits) {
@@ -4400,11 +7074,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1815.gtk_spin_button_new$MH,"gtk_spin_button_new");
+        return RuntimeHelper.requireNonNull(constants$3099.const$2,"gtk_spin_button_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_spin_button_new(GtkAdjustment* adjustment, gdouble climb_rate, guint digits);
+     * struct _GtkWidget* gtk_spin_button_new(struct _GtkAdjustment* adjustment, double climb_rate, unsigned int digits);
      * }
      */
     public static MemorySegment gtk_spin_button_new(MemorySegment adjustment, double climb_rate, int digits) {
@@ -4416,11 +7090,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_new_with_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1815.gtk_spin_button_new_with_range$MH,"gtk_spin_button_new_with_range");
+        return RuntimeHelper.requireNonNull(constants$3099.const$3,"gtk_spin_button_new_with_range");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_spin_button_new_with_range(gdouble min, gdouble max, gdouble step);
+     * struct _GtkWidget* gtk_spin_button_new_with_range(double min, double max, double step);
      * }
      */
     public static MemorySegment gtk_spin_button_new_with_range(double min, double max, double step) {
@@ -4432,11 +7106,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_set_adjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1816.gtk_spin_button_set_adjustment$MH,"gtk_spin_button_set_adjustment");
+        return RuntimeHelper.requireNonNull(constants$3099.const$4,"gtk_spin_button_set_adjustment");
     }
     /**
      * {@snippet :
-     * void gtk_spin_button_set_adjustment(GtkSpinButton* spin_button, GtkAdjustment* adjustment);
+     * void gtk_spin_button_set_adjustment(struct _GtkSpinButton* spin_button, struct _GtkAdjustment* adjustment);
      * }
      */
     public static void gtk_spin_button_set_adjustment(MemorySegment spin_button, MemorySegment adjustment) {
@@ -4448,11 +7122,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_get_adjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1816.gtk_spin_button_get_adjustment$MH,"gtk_spin_button_get_adjustment");
+        return RuntimeHelper.requireNonNull(constants$3099.const$5,"gtk_spin_button_get_adjustment");
     }
     /**
      * {@snippet :
-     * GtkAdjustment* gtk_spin_button_get_adjustment(GtkSpinButton* spin_button);
+     * struct _GtkAdjustment* gtk_spin_button_get_adjustment(struct _GtkSpinButton* spin_button);
      * }
      */
     public static MemorySegment gtk_spin_button_get_adjustment(MemorySegment spin_button) {
@@ -4464,11 +7138,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_set_digits$MH() {
-        return RuntimeHelper.requireNonNull(constants$1816.gtk_spin_button_set_digits$MH,"gtk_spin_button_set_digits");
+        return RuntimeHelper.requireNonNull(constants$3100.const$0,"gtk_spin_button_set_digits");
     }
     /**
      * {@snippet :
-     * void gtk_spin_button_set_digits(GtkSpinButton* spin_button, guint digits);
+     * void gtk_spin_button_set_digits(struct _GtkSpinButton* spin_button, unsigned int digits);
      * }
      */
     public static void gtk_spin_button_set_digits(MemorySegment spin_button, int digits) {
@@ -4480,11 +7154,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_get_digits$MH() {
-        return RuntimeHelper.requireNonNull(constants$1816.gtk_spin_button_get_digits$MH,"gtk_spin_button_get_digits");
+        return RuntimeHelper.requireNonNull(constants$3100.const$1,"gtk_spin_button_get_digits");
     }
     /**
      * {@snippet :
-     * guint gtk_spin_button_get_digits(GtkSpinButton* spin_button);
+     * unsigned int gtk_spin_button_get_digits(struct _GtkSpinButton* spin_button);
      * }
      */
     public static int gtk_spin_button_get_digits(MemorySegment spin_button) {
@@ -4496,11 +7170,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_set_increments$MH() {
-        return RuntimeHelper.requireNonNull(constants$1816.gtk_spin_button_set_increments$MH,"gtk_spin_button_set_increments");
+        return RuntimeHelper.requireNonNull(constants$3100.const$2,"gtk_spin_button_set_increments");
     }
     /**
      * {@snippet :
-     * void gtk_spin_button_set_increments(GtkSpinButton* spin_button, gdouble step, gdouble page);
+     * void gtk_spin_button_set_increments(struct _GtkSpinButton* spin_button, double step, double page);
      * }
      */
     public static void gtk_spin_button_set_increments(MemorySegment spin_button, double step, double page) {
@@ -4512,11 +7186,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_get_increments$MH() {
-        return RuntimeHelper.requireNonNull(constants$1816.gtk_spin_button_get_increments$MH,"gtk_spin_button_get_increments");
+        return RuntimeHelper.requireNonNull(constants$3100.const$3,"gtk_spin_button_get_increments");
     }
     /**
      * {@snippet :
-     * void gtk_spin_button_get_increments(GtkSpinButton* spin_button, gdouble* step, gdouble* page);
+     * void gtk_spin_button_get_increments(struct _GtkSpinButton* spin_button, double* step, double* page);
      * }
      */
     public static void gtk_spin_button_get_increments(MemorySegment spin_button, MemorySegment step, MemorySegment page) {
@@ -4528,11 +7202,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_set_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1817.gtk_spin_button_set_range$MH,"gtk_spin_button_set_range");
+        return RuntimeHelper.requireNonNull(constants$3100.const$4,"gtk_spin_button_set_range");
     }
     /**
      * {@snippet :
-     * void gtk_spin_button_set_range(GtkSpinButton* spin_button, gdouble min, gdouble max);
+     * void gtk_spin_button_set_range(struct _GtkSpinButton* spin_button, double min, double max);
      * }
      */
     public static void gtk_spin_button_set_range(MemorySegment spin_button, double min, double max) {
@@ -4544,11 +7218,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_get_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1817.gtk_spin_button_get_range$MH,"gtk_spin_button_get_range");
+        return RuntimeHelper.requireNonNull(constants$3100.const$5,"gtk_spin_button_get_range");
     }
     /**
      * {@snippet :
-     * void gtk_spin_button_get_range(GtkSpinButton* spin_button, gdouble* min, gdouble* max);
+     * void gtk_spin_button_get_range(struct _GtkSpinButton* spin_button, double* min, double* max);
      * }
      */
     public static void gtk_spin_button_get_range(MemorySegment spin_button, MemorySegment min, MemorySegment max) {
@@ -4560,11 +7234,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_get_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$1817.gtk_spin_button_get_value$MH,"gtk_spin_button_get_value");
+        return RuntimeHelper.requireNonNull(constants$3101.const$0,"gtk_spin_button_get_value");
     }
     /**
      * {@snippet :
-     * gdouble gtk_spin_button_get_value(GtkSpinButton* spin_button);
+     * double gtk_spin_button_get_value(struct _GtkSpinButton* spin_button);
      * }
      */
     public static double gtk_spin_button_get_value(MemorySegment spin_button) {
@@ -4576,11 +7250,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_get_value_as_int$MH() {
-        return RuntimeHelper.requireNonNull(constants$1817.gtk_spin_button_get_value_as_int$MH,"gtk_spin_button_get_value_as_int");
+        return RuntimeHelper.requireNonNull(constants$3101.const$1,"gtk_spin_button_get_value_as_int");
     }
     /**
      * {@snippet :
-     * gint gtk_spin_button_get_value_as_int(GtkSpinButton* spin_button);
+     * int gtk_spin_button_get_value_as_int(struct _GtkSpinButton* spin_button);
      * }
      */
     public static int gtk_spin_button_get_value_as_int(MemorySegment spin_button) {
@@ -4592,11 +7266,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_set_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$1817.gtk_spin_button_set_value$MH,"gtk_spin_button_set_value");
+        return RuntimeHelper.requireNonNull(constants$3101.const$2,"gtk_spin_button_set_value");
     }
     /**
      * {@snippet :
-     * void gtk_spin_button_set_value(GtkSpinButton* spin_button, gdouble value);
+     * void gtk_spin_button_set_value(struct _GtkSpinButton* spin_button, double value);
      * }
      */
     public static void gtk_spin_button_set_value(MemorySegment spin_button, double value) {
@@ -4608,11 +7282,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_set_update_policy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1817.gtk_spin_button_set_update_policy$MH,"gtk_spin_button_set_update_policy");
+        return RuntimeHelper.requireNonNull(constants$3101.const$3,"gtk_spin_button_set_update_policy");
     }
     /**
      * {@snippet :
-     * void gtk_spin_button_set_update_policy(GtkSpinButton* spin_button, GtkSpinButtonUpdatePolicy policy);
+     * void gtk_spin_button_set_update_policy(struct _GtkSpinButton* spin_button, enum GtkSpinButtonUpdatePolicy policy);
      * }
      */
     public static void gtk_spin_button_set_update_policy(MemorySegment spin_button, int policy) {
@@ -4624,11 +7298,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_get_update_policy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1818.gtk_spin_button_get_update_policy$MH,"gtk_spin_button_get_update_policy");
+        return RuntimeHelper.requireNonNull(constants$3101.const$4,"gtk_spin_button_get_update_policy");
     }
     /**
      * {@snippet :
-     * GtkSpinButtonUpdatePolicy gtk_spin_button_get_update_policy(GtkSpinButton* spin_button);
+     * enum GtkSpinButtonUpdatePolicy gtk_spin_button_get_update_policy(struct _GtkSpinButton* spin_button);
      * }
      */
     public static int gtk_spin_button_get_update_policy(MemorySegment spin_button) {
@@ -4640,11 +7314,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_set_numeric$MH() {
-        return RuntimeHelper.requireNonNull(constants$1818.gtk_spin_button_set_numeric$MH,"gtk_spin_button_set_numeric");
+        return RuntimeHelper.requireNonNull(constants$3101.const$5,"gtk_spin_button_set_numeric");
     }
     /**
      * {@snippet :
-     * void gtk_spin_button_set_numeric(GtkSpinButton* spin_button, gboolean numeric);
+     * void gtk_spin_button_set_numeric(struct _GtkSpinButton* spin_button, int numeric);
      * }
      */
     public static void gtk_spin_button_set_numeric(MemorySegment spin_button, int numeric) {
@@ -4656,11 +7330,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_get_numeric$MH() {
-        return RuntimeHelper.requireNonNull(constants$1818.gtk_spin_button_get_numeric$MH,"gtk_spin_button_get_numeric");
+        return RuntimeHelper.requireNonNull(constants$3102.const$0,"gtk_spin_button_get_numeric");
     }
     /**
      * {@snippet :
-     * gboolean gtk_spin_button_get_numeric(GtkSpinButton* spin_button);
+     * int gtk_spin_button_get_numeric(struct _GtkSpinButton* spin_button);
      * }
      */
     public static int gtk_spin_button_get_numeric(MemorySegment spin_button) {
@@ -4672,11 +7346,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_spin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1818.gtk_spin_button_spin$MH,"gtk_spin_button_spin");
+        return RuntimeHelper.requireNonNull(constants$3102.const$2,"gtk_spin_button_spin");
     }
     /**
      * {@snippet :
-     * void gtk_spin_button_spin(GtkSpinButton* spin_button, GtkSpinType direction, gdouble increment);
+     * void gtk_spin_button_spin(struct _GtkSpinButton* spin_button, enum GtkSpinType direction, double increment);
      * }
      */
     public static void gtk_spin_button_spin(MemorySegment spin_button, int direction, double increment) {
@@ -4688,11 +7362,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_set_wrap$MH() {
-        return RuntimeHelper.requireNonNull(constants$1818.gtk_spin_button_set_wrap$MH,"gtk_spin_button_set_wrap");
+        return RuntimeHelper.requireNonNull(constants$3102.const$3,"gtk_spin_button_set_wrap");
     }
     /**
      * {@snippet :
-     * void gtk_spin_button_set_wrap(GtkSpinButton* spin_button, gboolean wrap);
+     * void gtk_spin_button_set_wrap(struct _GtkSpinButton* spin_button, int wrap);
      * }
      */
     public static void gtk_spin_button_set_wrap(MemorySegment spin_button, int wrap) {
@@ -4704,11 +7378,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_get_wrap$MH() {
-        return RuntimeHelper.requireNonNull(constants$1818.gtk_spin_button_get_wrap$MH,"gtk_spin_button_get_wrap");
+        return RuntimeHelper.requireNonNull(constants$3102.const$4,"gtk_spin_button_get_wrap");
     }
     /**
      * {@snippet :
-     * gboolean gtk_spin_button_get_wrap(GtkSpinButton* spin_button);
+     * int gtk_spin_button_get_wrap(struct _GtkSpinButton* spin_button);
      * }
      */
     public static int gtk_spin_button_get_wrap(MemorySegment spin_button) {
@@ -4720,11 +7394,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_set_snap_to_ticks$MH() {
-        return RuntimeHelper.requireNonNull(constants$1819.gtk_spin_button_set_snap_to_ticks$MH,"gtk_spin_button_set_snap_to_ticks");
+        return RuntimeHelper.requireNonNull(constants$3102.const$5,"gtk_spin_button_set_snap_to_ticks");
     }
     /**
      * {@snippet :
-     * void gtk_spin_button_set_snap_to_ticks(GtkSpinButton* spin_button, gboolean snap_to_ticks);
+     * void gtk_spin_button_set_snap_to_ticks(struct _GtkSpinButton* spin_button, int snap_to_ticks);
      * }
      */
     public static void gtk_spin_button_set_snap_to_ticks(MemorySegment spin_button, int snap_to_ticks) {
@@ -4736,11 +7410,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_get_snap_to_ticks$MH() {
-        return RuntimeHelper.requireNonNull(constants$1819.gtk_spin_button_get_snap_to_ticks$MH,"gtk_spin_button_get_snap_to_ticks");
+        return RuntimeHelper.requireNonNull(constants$3103.const$0,"gtk_spin_button_get_snap_to_ticks");
     }
     /**
      * {@snippet :
-     * gboolean gtk_spin_button_get_snap_to_ticks(GtkSpinButton* spin_button);
+     * int gtk_spin_button_get_snap_to_ticks(struct _GtkSpinButton* spin_button);
      * }
      */
     public static int gtk_spin_button_get_snap_to_ticks(MemorySegment spin_button) {
@@ -4752,11 +7426,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_update$MH() {
-        return RuntimeHelper.requireNonNull(constants$1819.gtk_spin_button_update$MH,"gtk_spin_button_update");
+        return RuntimeHelper.requireNonNull(constants$3103.const$1,"gtk_spin_button_update");
     }
     /**
      * {@snippet :
-     * void gtk_spin_button_update(GtkSpinButton* spin_button);
+     * void gtk_spin_button_update(struct _GtkSpinButton* spin_button);
      * }
      */
     public static void gtk_spin_button_update(MemorySegment spin_button) {
@@ -4768,11 +7442,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle _gtk_spin_button_get_panels$MH() {
-        return RuntimeHelper.requireNonNull(constants$1819._gtk_spin_button_get_panels$MH,"_gtk_spin_button_get_panels");
+        return RuntimeHelper.requireNonNull(constants$3103.const$2,"_gtk_spin_button_get_panels");
     }
     /**
      * {@snippet :
-     * void _gtk_spin_button_get_panels(GtkSpinButton* spin_button, GdkWindow** down_panel, GdkWindow** up_panel);
+     * void _gtk_spin_button_get_panels(struct _GtkSpinButton* spin_button, struct _GdkWindow** down_panel, struct _GdkWindow** up_panel);
      * }
      */
     public static void _gtk_spin_button_get_panels(MemorySegment spin_button, MemorySegment down_panel, MemorySegment up_panel) {
@@ -4784,11 +7458,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spinner_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1819.gtk_spinner_get_type$MH,"gtk_spinner_get_type");
+        return RuntimeHelper.requireNonNull(constants$3105.const$2,"gtk_spinner_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_spinner_get_type();
+     * unsigned long gtk_spinner_get_type();
      * }
      */
     public static long gtk_spinner_get_type() {
@@ -4800,11 +7474,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spinner_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1819.gtk_spinner_new$MH,"gtk_spinner_new");
+        return RuntimeHelper.requireNonNull(constants$3105.const$3,"gtk_spinner_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_spinner_new();
+     * struct _GtkWidget* gtk_spinner_new();
      * }
      */
     public static MemorySegment gtk_spinner_new() {
@@ -4816,11 +7490,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spinner_start$MH() {
-        return RuntimeHelper.requireNonNull(constants$1820.gtk_spinner_start$MH,"gtk_spinner_start");
+        return RuntimeHelper.requireNonNull(constants$3105.const$4,"gtk_spinner_start");
     }
     /**
      * {@snippet :
-     * void gtk_spinner_start(GtkSpinner* spinner);
+     * void gtk_spinner_start(struct _GtkSpinner* spinner);
      * }
      */
     public static void gtk_spinner_start(MemorySegment spinner) {
@@ -4832,11 +7506,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spinner_stop$MH() {
-        return RuntimeHelper.requireNonNull(constants$1820.gtk_spinner_stop$MH,"gtk_spinner_stop");
+        return RuntimeHelper.requireNonNull(constants$3105.const$5,"gtk_spinner_stop");
     }
     /**
      * {@snippet :
-     * void gtk_spinner_stop(GtkSpinner* spinner);
+     * void gtk_spinner_stop(struct _GtkSpinner* spinner);
      * }
      */
     public static void gtk_spinner_stop(MemorySegment spinner) {
@@ -4848,11 +7522,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_switcher_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1820.gtk_stack_switcher_get_type$MH,"gtk_stack_switcher_get_type");
+        return RuntimeHelper.requireNonNull(constants$3107.const$4,"gtk_stack_switcher_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_stack_switcher_get_type();
+     * unsigned long gtk_stack_switcher_get_type();
      * }
      */
     public static long gtk_stack_switcher_get_type() {
@@ -4864,11 +7538,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_switcher_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1820.gtk_stack_switcher_new$MH,"gtk_stack_switcher_new");
+        return RuntimeHelper.requireNonNull(constants$3107.const$5,"gtk_stack_switcher_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_stack_switcher_new();
+     * struct _GtkWidget* gtk_stack_switcher_new();
      * }
      */
     public static MemorySegment gtk_stack_switcher_new() {
@@ -4880,11 +7554,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_switcher_set_stack$MH() {
-        return RuntimeHelper.requireNonNull(constants$1820.gtk_stack_switcher_set_stack$MH,"gtk_stack_switcher_set_stack");
+        return RuntimeHelper.requireNonNull(constants$3108.const$0,"gtk_stack_switcher_set_stack");
     }
     /**
      * {@snippet :
-     * void gtk_stack_switcher_set_stack(GtkStackSwitcher* switcher, GtkStack* stack);
+     * void gtk_stack_switcher_set_stack(struct _GtkStackSwitcher* switcher, struct _GtkStack* stack);
      * }
      */
     public static void gtk_stack_switcher_set_stack(MemorySegment switcher, MemorySegment stack) {
@@ -4896,11 +7570,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_switcher_get_stack$MH() {
-        return RuntimeHelper.requireNonNull(constants$1820.gtk_stack_switcher_get_stack$MH,"gtk_stack_switcher_get_stack");
+        return RuntimeHelper.requireNonNull(constants$3108.const$1,"gtk_stack_switcher_get_stack");
     }
     /**
      * {@snippet :
-     * GtkStack* gtk_stack_switcher_get_stack(GtkStackSwitcher* switcher);
+     * struct _GtkStack* gtk_stack_switcher_get_stack(struct _GtkStackSwitcher* switcher);
      * }
      */
     public static MemorySegment gtk_stack_switcher_get_stack(MemorySegment switcher) {
@@ -4912,11 +7586,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_statusbar_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1821.gtk_statusbar_get_type$MH,"gtk_statusbar_get_type");
+        return RuntimeHelper.requireNonNull(constants$3111.const$0,"gtk_statusbar_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_statusbar_get_type();
+     * unsigned long gtk_statusbar_get_type();
      * }
      */
     public static long gtk_statusbar_get_type() {
@@ -4928,11 +7602,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_statusbar_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1821.gtk_statusbar_new$MH,"gtk_statusbar_new");
+        return RuntimeHelper.requireNonNull(constants$3111.const$1,"gtk_statusbar_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_statusbar_new();
+     * struct _GtkWidget* gtk_statusbar_new();
      * }
      */
     public static MemorySegment gtk_statusbar_new() {
@@ -4944,11 +7618,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_statusbar_get_context_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$1821.gtk_statusbar_get_context_id$MH,"gtk_statusbar_get_context_id");
+        return RuntimeHelper.requireNonNull(constants$3111.const$2,"gtk_statusbar_get_context_id");
     }
     /**
      * {@snippet :
-     * guint gtk_statusbar_get_context_id(GtkStatusbar* statusbar, const gchar* context_description);
+     * unsigned int gtk_statusbar_get_context_id(struct _GtkStatusbar* statusbar, char* context_description);
      * }
      */
     public static int gtk_statusbar_get_context_id(MemorySegment statusbar, MemorySegment context_description) {
@@ -4960,11 +7634,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_statusbar_push$MH() {
-        return RuntimeHelper.requireNonNull(constants$1821.gtk_statusbar_push$MH,"gtk_statusbar_push");
+        return RuntimeHelper.requireNonNull(constants$3111.const$3,"gtk_statusbar_push");
     }
     /**
      * {@snippet :
-     * guint gtk_statusbar_push(GtkStatusbar* statusbar, guint context_id, const gchar* text);
+     * unsigned int gtk_statusbar_push(struct _GtkStatusbar* statusbar, unsigned int context_id, char* text);
      * }
      */
     public static int gtk_statusbar_push(MemorySegment statusbar, int context_id, MemorySegment text) {
@@ -4976,11 +7650,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_statusbar_pop$MH() {
-        return RuntimeHelper.requireNonNull(constants$1821.gtk_statusbar_pop$MH,"gtk_statusbar_pop");
+        return RuntimeHelper.requireNonNull(constants$3111.const$4,"gtk_statusbar_pop");
     }
     /**
      * {@snippet :
-     * void gtk_statusbar_pop(GtkStatusbar* statusbar, guint context_id);
+     * void gtk_statusbar_pop(struct _GtkStatusbar* statusbar, unsigned int context_id);
      * }
      */
     public static void gtk_statusbar_pop(MemorySegment statusbar, int context_id) {
@@ -4992,11 +7666,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_statusbar_remove$MH() {
-        return RuntimeHelper.requireNonNull(constants$1821.gtk_statusbar_remove$MH,"gtk_statusbar_remove");
+        return RuntimeHelper.requireNonNull(constants$3111.const$5,"gtk_statusbar_remove");
     }
     /**
      * {@snippet :
-     * void gtk_statusbar_remove(GtkStatusbar* statusbar, guint context_id, guint message_id);
+     * void gtk_statusbar_remove(struct _GtkStatusbar* statusbar, unsigned int context_id, unsigned int message_id);
      * }
      */
     public static void gtk_statusbar_remove(MemorySegment statusbar, int context_id, int message_id) {
@@ -5008,11 +7682,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_statusbar_remove_all$MH() {
-        return RuntimeHelper.requireNonNull(constants$1822.gtk_statusbar_remove_all$MH,"gtk_statusbar_remove_all");
+        return RuntimeHelper.requireNonNull(constants$3112.const$0,"gtk_statusbar_remove_all");
     }
     /**
      * {@snippet :
-     * void gtk_statusbar_remove_all(GtkStatusbar* statusbar, guint context_id);
+     * void gtk_statusbar_remove_all(struct _GtkStatusbar* statusbar, unsigned int context_id);
      * }
      */
     public static void gtk_statusbar_remove_all(MemorySegment statusbar, int context_id) {
@@ -5024,11 +7698,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_statusbar_get_message_area$MH() {
-        return RuntimeHelper.requireNonNull(constants$1822.gtk_statusbar_get_message_area$MH,"gtk_statusbar_get_message_area");
+        return RuntimeHelper.requireNonNull(constants$3112.const$1,"gtk_statusbar_get_message_area");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_statusbar_get_message_area(GtkStatusbar* statusbar);
+     * struct _GtkWidget* gtk_statusbar_get_message_area(struct _GtkStatusbar* statusbar);
      * }
      */
     public static MemorySegment gtk_statusbar_get_message_area(MemorySegment statusbar) {
@@ -5040,11 +7714,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_switch_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1822.gtk_switch_get_type$MH,"gtk_switch_get_type");
+        return RuntimeHelper.requireNonNull(constants$3115.const$1,"gtk_switch_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_switch_get_type();
+     * unsigned long gtk_switch_get_type();
      * }
      */
     public static long gtk_switch_get_type() {
@@ -5056,11 +7730,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_switch_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1822.gtk_switch_new$MH,"gtk_switch_new");
+        return RuntimeHelper.requireNonNull(constants$3115.const$2,"gtk_switch_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_switch_new();
+     * struct _GtkWidget* gtk_switch_new();
      * }
      */
     public static MemorySegment gtk_switch_new() {
@@ -5072,11 +7746,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_switch_set_active$MH() {
-        return RuntimeHelper.requireNonNull(constants$1822.gtk_switch_set_active$MH,"gtk_switch_set_active");
+        return RuntimeHelper.requireNonNull(constants$3115.const$3,"gtk_switch_set_active");
     }
     /**
      * {@snippet :
-     * void gtk_switch_set_active(GtkSwitch* sw, gboolean is_active);
+     * void gtk_switch_set_active(struct _GtkSwitch* sw, int is_active);
      * }
      */
     public static void gtk_switch_set_active(MemorySegment sw, int is_active) {
@@ -5088,11 +7762,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_switch_get_active$MH() {
-        return RuntimeHelper.requireNonNull(constants$1822.gtk_switch_get_active$MH,"gtk_switch_get_active");
+        return RuntimeHelper.requireNonNull(constants$3115.const$4,"gtk_switch_get_active");
     }
     /**
      * {@snippet :
-     * gboolean gtk_switch_get_active(GtkSwitch* sw);
+     * int gtk_switch_get_active(struct _GtkSwitch* sw);
      * }
      */
     public static int gtk_switch_get_active(MemorySegment sw) {
@@ -5104,11 +7778,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_switch_set_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$1823.gtk_switch_set_state$MH,"gtk_switch_set_state");
+        return RuntimeHelper.requireNonNull(constants$3115.const$5,"gtk_switch_set_state");
     }
     /**
      * {@snippet :
-     * void gtk_switch_set_state(GtkSwitch* sw, gboolean state);
+     * void gtk_switch_set_state(struct _GtkSwitch* sw, int state);
      * }
      */
     public static void gtk_switch_set_state(MemorySegment sw, int state) {
@@ -5120,11 +7794,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_switch_get_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$1823.gtk_switch_get_state$MH,"gtk_switch_get_state");
+        return RuntimeHelper.requireNonNull(constants$3116.const$0,"gtk_switch_get_state");
     }
     /**
      * {@snippet :
-     * gboolean gtk_switch_get_state(GtkSwitch* sw);
+     * int gtk_switch_get_state(struct _GtkSwitch* sw);
      * }
      */
     public static int gtk_switch_get_state(MemorySegment sw) {
@@ -5136,11 +7810,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_tag_table_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1823.gtk_text_tag_table_get_type$MH,"gtk_text_tag_table_get_type");
+        return RuntimeHelper.requireNonNull(constants$3119.const$1,"gtk_text_tag_table_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_text_tag_table_get_type();
+     * unsigned long gtk_text_tag_table_get_type();
      * }
      */
     public static long gtk_text_tag_table_get_type() {
@@ -5152,11 +7826,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_tag_table_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1823.gtk_text_tag_table_new$MH,"gtk_text_tag_table_new");
+        return RuntimeHelper.requireNonNull(constants$3119.const$2,"gtk_text_tag_table_new");
     }
     /**
      * {@snippet :
-     * GtkTextTagTable* gtk_text_tag_table_new();
+     * struct _GtkTextTagTable* gtk_text_tag_table_new();
      * }
      */
     public static MemorySegment gtk_text_tag_table_new() {
@@ -5168,11 +7842,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_tag_table_add$MH() {
-        return RuntimeHelper.requireNonNull(constants$1824.gtk_text_tag_table_add$MH,"gtk_text_tag_table_add");
+        return RuntimeHelper.requireNonNull(constants$3119.const$3,"gtk_text_tag_table_add");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_tag_table_add(GtkTextTagTable* table, GtkTextTag* tag);
+     * int gtk_text_tag_table_add(struct _GtkTextTagTable* table, struct _GtkTextTag* tag);
      * }
      */
     public static int gtk_text_tag_table_add(MemorySegment table, MemorySegment tag) {
@@ -5184,11 +7858,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_tag_table_remove$MH() {
-        return RuntimeHelper.requireNonNull(constants$1824.gtk_text_tag_table_remove$MH,"gtk_text_tag_table_remove");
+        return RuntimeHelper.requireNonNull(constants$3119.const$4,"gtk_text_tag_table_remove");
     }
     /**
      * {@snippet :
-     * void gtk_text_tag_table_remove(GtkTextTagTable* table, GtkTextTag* tag);
+     * void gtk_text_tag_table_remove(struct _GtkTextTagTable* table, struct _GtkTextTag* tag);
      * }
      */
     public static void gtk_text_tag_table_remove(MemorySegment table, MemorySegment tag) {
@@ -5200,11 +7874,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_tag_table_lookup$MH() {
-        return RuntimeHelper.requireNonNull(constants$1824.gtk_text_tag_table_lookup$MH,"gtk_text_tag_table_lookup");
+        return RuntimeHelper.requireNonNull(constants$3119.const$5,"gtk_text_tag_table_lookup");
     }
     /**
      * {@snippet :
-     * GtkTextTag* gtk_text_tag_table_lookup(GtkTextTagTable* table, const gchar* name);
+     * struct _GtkTextTag* gtk_text_tag_table_lookup(struct _GtkTextTagTable* table, char* name);
      * }
      */
     public static MemorySegment gtk_text_tag_table_lookup(MemorySegment table, MemorySegment name) {
@@ -5216,11 +7890,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_tag_table_foreach$MH() {
-        return RuntimeHelper.requireNonNull(constants$1824.gtk_text_tag_table_foreach$MH,"gtk_text_tag_table_foreach");
+        return RuntimeHelper.requireNonNull(constants$3120.const$1,"gtk_text_tag_table_foreach");
     }
     /**
      * {@snippet :
-     * void gtk_text_tag_table_foreach(GtkTextTagTable* table, GtkTextTagTableForeach func, gpointer data);
+     * void gtk_text_tag_table_foreach(struct _GtkTextTagTable* table, void (*func)(struct _GtkTextTag*,void*), void* data);
      * }
      */
     public static void gtk_text_tag_table_foreach(MemorySegment table, MemorySegment func, MemorySegment data) {
@@ -5232,11 +7906,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_tag_table_get_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1824.gtk_text_tag_table_get_size$MH,"gtk_text_tag_table_get_size");
+        return RuntimeHelper.requireNonNull(constants$3120.const$2,"gtk_text_tag_table_get_size");
     }
     /**
      * {@snippet :
-     * gint gtk_text_tag_table_get_size(GtkTextTagTable* table);
+     * int gtk_text_tag_table_get_size(struct _GtkTextTagTable* table);
      * }
      */
     public static int gtk_text_tag_table_get_size(MemorySegment table) {
@@ -5248,11 +7922,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_mark_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1824.gtk_text_mark_get_type$MH,"gtk_text_mark_get_type");
+        return RuntimeHelper.requireNonNull(constants$3122.const$2,"gtk_text_mark_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_text_mark_get_type();
+     * unsigned long gtk_text_mark_get_type();
      * }
      */
     public static long gtk_text_mark_get_type() {
@@ -5264,11 +7938,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_mark_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1825.gtk_text_mark_new$MH,"gtk_text_mark_new");
+        return RuntimeHelper.requireNonNull(constants$3122.const$3,"gtk_text_mark_new");
     }
     /**
      * {@snippet :
-     * GtkTextMark* gtk_text_mark_new(const gchar* name, gboolean left_gravity);
+     * struct _GtkTextMark* gtk_text_mark_new(char* name, int left_gravity);
      * }
      */
     public static MemorySegment gtk_text_mark_new(MemorySegment name, int left_gravity) {
@@ -5280,11 +7954,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_mark_set_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$1825.gtk_text_mark_set_visible$MH,"gtk_text_mark_set_visible");
+        return RuntimeHelper.requireNonNull(constants$3122.const$4,"gtk_text_mark_set_visible");
     }
     /**
      * {@snippet :
-     * void gtk_text_mark_set_visible(GtkTextMark* mark, gboolean setting);
+     * void gtk_text_mark_set_visible(struct _GtkTextMark* mark, int setting);
      * }
      */
     public static void gtk_text_mark_set_visible(MemorySegment mark, int setting) {
@@ -5296,11 +7970,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_mark_get_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$1825.gtk_text_mark_get_visible$MH,"gtk_text_mark_get_visible");
+        return RuntimeHelper.requireNonNull(constants$3122.const$5,"gtk_text_mark_get_visible");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_mark_get_visible(GtkTextMark* mark);
+     * int gtk_text_mark_get_visible(struct _GtkTextMark* mark);
      * }
      */
     public static int gtk_text_mark_get_visible(MemorySegment mark) {
@@ -5312,11 +7986,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_mark_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1825.gtk_text_mark_get_name$MH,"gtk_text_mark_get_name");
+        return RuntimeHelper.requireNonNull(constants$3123.const$0,"gtk_text_mark_get_name");
     }
     /**
      * {@snippet :
-     * const gchar* gtk_text_mark_get_name(GtkTextMark* mark);
+     * char* gtk_text_mark_get_name(struct _GtkTextMark* mark);
      * }
      */
     public static MemorySegment gtk_text_mark_get_name(MemorySegment mark) {
@@ -5328,11 +8002,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_mark_get_deleted$MH() {
-        return RuntimeHelper.requireNonNull(constants$1825.gtk_text_mark_get_deleted$MH,"gtk_text_mark_get_deleted");
+        return RuntimeHelper.requireNonNull(constants$3123.const$1,"gtk_text_mark_get_deleted");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_mark_get_deleted(GtkTextMark* mark);
+     * int gtk_text_mark_get_deleted(struct _GtkTextMark* mark);
      * }
      */
     public static int gtk_text_mark_get_deleted(MemorySegment mark) {
@@ -5344,11 +8018,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_mark_get_buffer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1825.gtk_text_mark_get_buffer$MH,"gtk_text_mark_get_buffer");
+        return RuntimeHelper.requireNonNull(constants$3123.const$2,"gtk_text_mark_get_buffer");
     }
     /**
      * {@snippet :
-     * GtkTextBuffer* gtk_text_mark_get_buffer(GtkTextMark* mark);
+     * struct _GtkTextBuffer* gtk_text_mark_get_buffer(struct _GtkTextMark* mark);
      * }
      */
     public static MemorySegment gtk_text_mark_get_buffer(MemorySegment mark) {
@@ -5360,11 +8034,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_mark_get_left_gravity$MH() {
-        return RuntimeHelper.requireNonNull(constants$1826.gtk_text_mark_get_left_gravity$MH,"gtk_text_mark_get_left_gravity");
+        return RuntimeHelper.requireNonNull(constants$3123.const$3,"gtk_text_mark_get_left_gravity");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_mark_get_left_gravity(GtkTextMark* mark);
+     * int gtk_text_mark_get_left_gravity(struct _GtkTextMark* mark);
      * }
      */
     public static int gtk_text_mark_get_left_gravity(MemorySegment mark) {
@@ -5377,7 +8051,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TEXT_BUFFER_TARGET_INFO_BUFFER_CONTENTS = -1;
+     * enum GtkTextBufferTargetInfo.GTK_TEXT_BUFFER_TARGET_INFO_BUFFER_CONTENTS = -1;
      * }
      */
     public static int GTK_TEXT_BUFFER_TARGET_INFO_BUFFER_CONTENTS() {
@@ -5385,7 +8059,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TEXT_BUFFER_TARGET_INFO_RICH_TEXT = -2;
+     * enum GtkTextBufferTargetInfo.GTK_TEXT_BUFFER_TARGET_INFO_RICH_TEXT = -2;
      * }
      */
     public static int GTK_TEXT_BUFFER_TARGET_INFO_RICH_TEXT() {
@@ -5393,18 +8067,18 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TEXT_BUFFER_TARGET_INFO_TEXT = -3;
+     * enum GtkTextBufferTargetInfo.GTK_TEXT_BUFFER_TARGET_INFO_TEXT = -3;
      * }
      */
     public static int GTK_TEXT_BUFFER_TARGET_INFO_TEXT() {
         return (int)-3L;
     }
     public static MethodHandle gtk_text_buffer_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1826.gtk_text_buffer_get_type$MH,"gtk_text_buffer_get_type");
+        return RuntimeHelper.requireNonNull(constants$3129.const$5,"gtk_text_buffer_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_text_buffer_get_type();
+     * unsigned long gtk_text_buffer_get_type();
      * }
      */
     public static long gtk_text_buffer_get_type() {
@@ -5416,11 +8090,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1826.gtk_text_buffer_new$MH,"gtk_text_buffer_new");
+        return RuntimeHelper.requireNonNull(constants$3130.const$0,"gtk_text_buffer_new");
     }
     /**
      * {@snippet :
-     * GtkTextBuffer* gtk_text_buffer_new(GtkTextTagTable* table);
+     * struct _GtkTextBuffer* gtk_text_buffer_new(struct _GtkTextTagTable* table);
      * }
      */
     public static MemorySegment gtk_text_buffer_new(MemorySegment table) {
@@ -5432,11 +8106,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_line_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1826.gtk_text_buffer_get_line_count$MH,"gtk_text_buffer_get_line_count");
+        return RuntimeHelper.requireNonNull(constants$3130.const$1,"gtk_text_buffer_get_line_count");
     }
     /**
      * {@snippet :
-     * gint gtk_text_buffer_get_line_count(GtkTextBuffer* buffer);
+     * int gtk_text_buffer_get_line_count(struct _GtkTextBuffer* buffer);
      * }
      */
     public static int gtk_text_buffer_get_line_count(MemorySegment buffer) {
@@ -5448,11 +8122,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_char_count$MH() {
-        return RuntimeHelper.requireNonNull(constants$1826.gtk_text_buffer_get_char_count$MH,"gtk_text_buffer_get_char_count");
+        return RuntimeHelper.requireNonNull(constants$3130.const$2,"gtk_text_buffer_get_char_count");
     }
     /**
      * {@snippet :
-     * gint gtk_text_buffer_get_char_count(GtkTextBuffer* buffer);
+     * int gtk_text_buffer_get_char_count(struct _GtkTextBuffer* buffer);
      * }
      */
     public static int gtk_text_buffer_get_char_count(MemorySegment buffer) {
@@ -5464,11 +8138,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_tag_table$MH() {
-        return RuntimeHelper.requireNonNull(constants$1826.gtk_text_buffer_get_tag_table$MH,"gtk_text_buffer_get_tag_table");
+        return RuntimeHelper.requireNonNull(constants$3130.const$3,"gtk_text_buffer_get_tag_table");
     }
     /**
      * {@snippet :
-     * GtkTextTagTable* gtk_text_buffer_get_tag_table(GtkTextBuffer* buffer);
+     * struct _GtkTextTagTable* gtk_text_buffer_get_tag_table(struct _GtkTextBuffer* buffer);
      * }
      */
     public static MemorySegment gtk_text_buffer_get_tag_table(MemorySegment buffer) {
@@ -5480,11 +8154,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_set_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$1827.gtk_text_buffer_set_text$MH,"gtk_text_buffer_set_text");
+        return RuntimeHelper.requireNonNull(constants$3130.const$4,"gtk_text_buffer_set_text");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_set_text(GtkTextBuffer* buffer, const gchar* text, gint len);
+     * void gtk_text_buffer_set_text(struct _GtkTextBuffer* buffer, char* text, int len);
      * }
      */
     public static void gtk_text_buffer_set_text(MemorySegment buffer, MemorySegment text, int len) {
@@ -5496,11 +8170,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_insert$MH() {
-        return RuntimeHelper.requireNonNull(constants$1827.gtk_text_buffer_insert$MH,"gtk_text_buffer_insert");
+        return RuntimeHelper.requireNonNull(constants$3130.const$5,"gtk_text_buffer_insert");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_insert(GtkTextBuffer* buffer, GtkTextIter* iter, const gchar* text, gint len);
+     * void gtk_text_buffer_insert(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter, char* text, int len);
      * }
      */
     public static void gtk_text_buffer_insert(MemorySegment buffer, MemorySegment iter, MemorySegment text, int len) {
@@ -5512,11 +8186,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_insert_at_cursor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1827.gtk_text_buffer_insert_at_cursor$MH,"gtk_text_buffer_insert_at_cursor");
+        return RuntimeHelper.requireNonNull(constants$3131.const$0,"gtk_text_buffer_insert_at_cursor");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_insert_at_cursor(GtkTextBuffer* buffer, const gchar* text, gint len);
+     * void gtk_text_buffer_insert_at_cursor(struct _GtkTextBuffer* buffer, char* text, int len);
      * }
      */
     public static void gtk_text_buffer_insert_at_cursor(MemorySegment buffer, MemorySegment text, int len) {
@@ -5528,11 +8202,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_insert_interactive$MH() {
-        return RuntimeHelper.requireNonNull(constants$1827.gtk_text_buffer_insert_interactive$MH,"gtk_text_buffer_insert_interactive");
+        return RuntimeHelper.requireNonNull(constants$3131.const$1,"gtk_text_buffer_insert_interactive");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_buffer_insert_interactive(GtkTextBuffer* buffer, GtkTextIter* iter, const gchar* text, gint len, gboolean default_editable);
+     * int gtk_text_buffer_insert_interactive(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter, char* text, int len, int default_editable);
      * }
      */
     public static int gtk_text_buffer_insert_interactive(MemorySegment buffer, MemorySegment iter, MemorySegment text, int len, int default_editable) {
@@ -5544,11 +8218,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_insert_interactive_at_cursor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1827.gtk_text_buffer_insert_interactive_at_cursor$MH,"gtk_text_buffer_insert_interactive_at_cursor");
+        return RuntimeHelper.requireNonNull(constants$3131.const$2,"gtk_text_buffer_insert_interactive_at_cursor");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_buffer_insert_interactive_at_cursor(GtkTextBuffer* buffer, const gchar* text, gint len, gboolean default_editable);
+     * int gtk_text_buffer_insert_interactive_at_cursor(struct _GtkTextBuffer* buffer, char* text, int len, int default_editable);
      * }
      */
     public static int gtk_text_buffer_insert_interactive_at_cursor(MemorySegment buffer, MemorySegment text, int len, int default_editable) {
@@ -5560,11 +8234,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_insert_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1827.gtk_text_buffer_insert_range$MH,"gtk_text_buffer_insert_range");
+        return RuntimeHelper.requireNonNull(constants$3131.const$3,"gtk_text_buffer_insert_range");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_insert_range(GtkTextBuffer* buffer, GtkTextIter* iter, const GtkTextIter* start, const GtkTextIter* end);
+     * void gtk_text_buffer_insert_range(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter, struct _GtkTextIter* start, struct _GtkTextIter* end);
      * }
      */
     public static void gtk_text_buffer_insert_range(MemorySegment buffer, MemorySegment iter, MemorySegment start, MemorySegment end) {
@@ -5576,11 +8250,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_insert_range_interactive$MH() {
-        return RuntimeHelper.requireNonNull(constants$1828.gtk_text_buffer_insert_range_interactive$MH,"gtk_text_buffer_insert_range_interactive");
+        return RuntimeHelper.requireNonNull(constants$3131.const$4,"gtk_text_buffer_insert_range_interactive");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_buffer_insert_range_interactive(GtkTextBuffer* buffer, GtkTextIter* iter, const GtkTextIter* start, const GtkTextIter* end, gboolean default_editable);
+     * int gtk_text_buffer_insert_range_interactive(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter, struct _GtkTextIter* start, struct _GtkTextIter* end, int default_editable);
      * }
      */
     public static int gtk_text_buffer_insert_range_interactive(MemorySegment buffer, MemorySegment iter, MemorySegment start, MemorySegment end, int default_editable) {
@@ -5592,11 +8266,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_insert_with_tags$MH() {
-        return RuntimeHelper.requireNonNull(constants$1828.gtk_text_buffer_insert_with_tags$MH,"gtk_text_buffer_insert_with_tags");
+        return RuntimeHelper.requireNonNull(constants$3131.const$5,"gtk_text_buffer_insert_with_tags");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_insert_with_tags(GtkTextBuffer* buffer, GtkTextIter* iter, const gchar* text, gint len, GtkTextTag* first_tag,...);
+     * void gtk_text_buffer_insert_with_tags(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter, char* text, int len, struct _GtkTextTag* first_tag,...);
      * }
      */
     public static void gtk_text_buffer_insert_with_tags(MemorySegment buffer, MemorySegment iter, MemorySegment text, int len, MemorySegment first_tag, Object... x5) {
@@ -5608,11 +8282,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_insert_with_tags_by_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1828.gtk_text_buffer_insert_with_tags_by_name$MH,"gtk_text_buffer_insert_with_tags_by_name");
+        return RuntimeHelper.requireNonNull(constants$3132.const$0,"gtk_text_buffer_insert_with_tags_by_name");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_insert_with_tags_by_name(GtkTextBuffer* buffer, GtkTextIter* iter, const gchar* text, gint len, const gchar* first_tag_name,...);
+     * void gtk_text_buffer_insert_with_tags_by_name(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter, char* text, int len, char* first_tag_name,...);
      * }
      */
     public static void gtk_text_buffer_insert_with_tags_by_name(MemorySegment buffer, MemorySegment iter, MemorySegment text, int len, MemorySegment first_tag_name, Object... x5) {
@@ -5624,11 +8298,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_insert_markup$MH() {
-        return RuntimeHelper.requireNonNull(constants$1828.gtk_text_buffer_insert_markup$MH,"gtk_text_buffer_insert_markup");
+        return RuntimeHelper.requireNonNull(constants$3132.const$1,"gtk_text_buffer_insert_markup");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_insert_markup(GtkTextBuffer* buffer, GtkTextIter* iter, const gchar* markup, gint len);
+     * void gtk_text_buffer_insert_markup(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter, char* markup, int len);
      * }
      */
     public static void gtk_text_buffer_insert_markup(MemorySegment buffer, MemorySegment iter, MemorySegment markup, int len) {
@@ -5640,11 +8314,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_delete$MH() {
-        return RuntimeHelper.requireNonNull(constants$1828.gtk_text_buffer_delete$MH,"gtk_text_buffer_delete");
+        return RuntimeHelper.requireNonNull(constants$3132.const$2,"gtk_text_buffer_delete");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_delete(GtkTextBuffer* buffer, GtkTextIter* start, GtkTextIter* end);
+     * void gtk_text_buffer_delete(struct _GtkTextBuffer* buffer, struct _GtkTextIter* start, struct _GtkTextIter* end);
      * }
      */
     public static void gtk_text_buffer_delete(MemorySegment buffer, MemorySegment start, MemorySegment end) {
@@ -5656,11 +8330,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_delete_interactive$MH() {
-        return RuntimeHelper.requireNonNull(constants$1828.gtk_text_buffer_delete_interactive$MH,"gtk_text_buffer_delete_interactive");
+        return RuntimeHelper.requireNonNull(constants$3132.const$3,"gtk_text_buffer_delete_interactive");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_buffer_delete_interactive(GtkTextBuffer* buffer, GtkTextIter* start_iter, GtkTextIter* end_iter, gboolean default_editable);
+     * int gtk_text_buffer_delete_interactive(struct _GtkTextBuffer* buffer, struct _GtkTextIter* start_iter, struct _GtkTextIter* end_iter, int default_editable);
      * }
      */
     public static int gtk_text_buffer_delete_interactive(MemorySegment buffer, MemorySegment start_iter, MemorySegment end_iter, int default_editable) {
@@ -5672,11 +8346,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_backspace$MH() {
-        return RuntimeHelper.requireNonNull(constants$1829.gtk_text_buffer_backspace$MH,"gtk_text_buffer_backspace");
+        return RuntimeHelper.requireNonNull(constants$3132.const$4,"gtk_text_buffer_backspace");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_buffer_backspace(GtkTextBuffer* buffer, GtkTextIter* iter, gboolean interactive, gboolean default_editable);
+     * int gtk_text_buffer_backspace(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter, int interactive, int default_editable);
      * }
      */
     public static int gtk_text_buffer_backspace(MemorySegment buffer, MemorySegment iter, int interactive, int default_editable) {
@@ -5688,11 +8362,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$1829.gtk_text_buffer_get_text$MH,"gtk_text_buffer_get_text");
+        return RuntimeHelper.requireNonNull(constants$3132.const$5,"gtk_text_buffer_get_text");
     }
     /**
      * {@snippet :
-     * gchar* gtk_text_buffer_get_text(GtkTextBuffer* buffer, const GtkTextIter* start, const GtkTextIter* end, gboolean include_hidden_chars);
+     * char* gtk_text_buffer_get_text(struct _GtkTextBuffer* buffer, struct _GtkTextIter* start, struct _GtkTextIter* end, int include_hidden_chars);
      * }
      */
     public static MemorySegment gtk_text_buffer_get_text(MemorySegment buffer, MemorySegment start, MemorySegment end, int include_hidden_chars) {
@@ -5704,11 +8378,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_slice$MH() {
-        return RuntimeHelper.requireNonNull(constants$1829.gtk_text_buffer_get_slice$MH,"gtk_text_buffer_get_slice");
+        return RuntimeHelper.requireNonNull(constants$3133.const$0,"gtk_text_buffer_get_slice");
     }
     /**
      * {@snippet :
-     * gchar* gtk_text_buffer_get_slice(GtkTextBuffer* buffer, const GtkTextIter* start, const GtkTextIter* end, gboolean include_hidden_chars);
+     * char* gtk_text_buffer_get_slice(struct _GtkTextBuffer* buffer, struct _GtkTextIter* start, struct _GtkTextIter* end, int include_hidden_chars);
      * }
      */
     public static MemorySegment gtk_text_buffer_get_slice(MemorySegment buffer, MemorySegment start, MemorySegment end, int include_hidden_chars) {
@@ -5720,11 +8394,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_insert_pixbuf$MH() {
-        return RuntimeHelper.requireNonNull(constants$1829.gtk_text_buffer_insert_pixbuf$MH,"gtk_text_buffer_insert_pixbuf");
+        return RuntimeHelper.requireNonNull(constants$3133.const$1,"gtk_text_buffer_insert_pixbuf");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_insert_pixbuf(GtkTextBuffer* buffer, GtkTextIter* iter, GdkPixbuf* pixbuf);
+     * void gtk_text_buffer_insert_pixbuf(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter, struct _GdkPixbuf* pixbuf);
      * }
      */
     public static void gtk_text_buffer_insert_pixbuf(MemorySegment buffer, MemorySegment iter, MemorySegment pixbuf) {
@@ -5736,11 +8410,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_insert_child_anchor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1829.gtk_text_buffer_insert_child_anchor$MH,"gtk_text_buffer_insert_child_anchor");
+        return RuntimeHelper.requireNonNull(constants$3133.const$2,"gtk_text_buffer_insert_child_anchor");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_insert_child_anchor(GtkTextBuffer* buffer, GtkTextIter* iter, GtkTextChildAnchor* anchor);
+     * void gtk_text_buffer_insert_child_anchor(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter, struct _GtkTextChildAnchor* anchor);
      * }
      */
     public static void gtk_text_buffer_insert_child_anchor(MemorySegment buffer, MemorySegment iter, MemorySegment anchor) {
@@ -5752,11 +8426,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_create_child_anchor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1829.gtk_text_buffer_create_child_anchor$MH,"gtk_text_buffer_create_child_anchor");
+        return RuntimeHelper.requireNonNull(constants$3133.const$3,"gtk_text_buffer_create_child_anchor");
     }
     /**
      * {@snippet :
-     * GtkTextChildAnchor* gtk_text_buffer_create_child_anchor(GtkTextBuffer* buffer, GtkTextIter* iter);
+     * struct _GtkTextChildAnchor* gtk_text_buffer_create_child_anchor(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter);
      * }
      */
     public static MemorySegment gtk_text_buffer_create_child_anchor(MemorySegment buffer, MemorySegment iter) {
@@ -5768,11 +8442,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_add_mark$MH() {
-        return RuntimeHelper.requireNonNull(constants$1830.gtk_text_buffer_add_mark$MH,"gtk_text_buffer_add_mark");
+        return RuntimeHelper.requireNonNull(constants$3133.const$4,"gtk_text_buffer_add_mark");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_add_mark(GtkTextBuffer* buffer, GtkTextMark* mark, const GtkTextIter* where);
+     * void gtk_text_buffer_add_mark(struct _GtkTextBuffer* buffer, struct _GtkTextMark* mark, struct _GtkTextIter* where);
      * }
      */
     public static void gtk_text_buffer_add_mark(MemorySegment buffer, MemorySegment mark, MemorySegment where) {
@@ -5784,11 +8458,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_create_mark$MH() {
-        return RuntimeHelper.requireNonNull(constants$1830.gtk_text_buffer_create_mark$MH,"gtk_text_buffer_create_mark");
+        return RuntimeHelper.requireNonNull(constants$3133.const$5,"gtk_text_buffer_create_mark");
     }
     /**
      * {@snippet :
-     * GtkTextMark* gtk_text_buffer_create_mark(GtkTextBuffer* buffer, const gchar* mark_name, const GtkTextIter* where, gboolean left_gravity);
+     * struct _GtkTextMark* gtk_text_buffer_create_mark(struct _GtkTextBuffer* buffer, char* mark_name, struct _GtkTextIter* where, int left_gravity);
      * }
      */
     public static MemorySegment gtk_text_buffer_create_mark(MemorySegment buffer, MemorySegment mark_name, MemorySegment where, int left_gravity) {
@@ -5800,11 +8474,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_move_mark$MH() {
-        return RuntimeHelper.requireNonNull(constants$1830.gtk_text_buffer_move_mark$MH,"gtk_text_buffer_move_mark");
+        return RuntimeHelper.requireNonNull(constants$3134.const$0,"gtk_text_buffer_move_mark");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_move_mark(GtkTextBuffer* buffer, GtkTextMark* mark, const GtkTextIter* where);
+     * void gtk_text_buffer_move_mark(struct _GtkTextBuffer* buffer, struct _GtkTextMark* mark, struct _GtkTextIter* where);
      * }
      */
     public static void gtk_text_buffer_move_mark(MemorySegment buffer, MemorySegment mark, MemorySegment where) {
@@ -5816,11 +8490,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_delete_mark$MH() {
-        return RuntimeHelper.requireNonNull(constants$1830.gtk_text_buffer_delete_mark$MH,"gtk_text_buffer_delete_mark");
+        return RuntimeHelper.requireNonNull(constants$3134.const$1,"gtk_text_buffer_delete_mark");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_delete_mark(GtkTextBuffer* buffer, GtkTextMark* mark);
+     * void gtk_text_buffer_delete_mark(struct _GtkTextBuffer* buffer, struct _GtkTextMark* mark);
      * }
      */
     public static void gtk_text_buffer_delete_mark(MemorySegment buffer, MemorySegment mark) {
@@ -5832,11 +8506,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_mark$MH() {
-        return RuntimeHelper.requireNonNull(constants$1830.gtk_text_buffer_get_mark$MH,"gtk_text_buffer_get_mark");
+        return RuntimeHelper.requireNonNull(constants$3134.const$2,"gtk_text_buffer_get_mark");
     }
     /**
      * {@snippet :
-     * GtkTextMark* gtk_text_buffer_get_mark(GtkTextBuffer* buffer, const gchar* name);
+     * struct _GtkTextMark* gtk_text_buffer_get_mark(struct _GtkTextBuffer* buffer, char* name);
      * }
      */
     public static MemorySegment gtk_text_buffer_get_mark(MemorySegment buffer, MemorySegment name) {
@@ -5848,11 +8522,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_move_mark_by_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1830.gtk_text_buffer_move_mark_by_name$MH,"gtk_text_buffer_move_mark_by_name");
+        return RuntimeHelper.requireNonNull(constants$3134.const$3,"gtk_text_buffer_move_mark_by_name");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_move_mark_by_name(GtkTextBuffer* buffer, const gchar* name, const GtkTextIter* where);
+     * void gtk_text_buffer_move_mark_by_name(struct _GtkTextBuffer* buffer, char* name, struct _GtkTextIter* where);
      * }
      */
     public static void gtk_text_buffer_move_mark_by_name(MemorySegment buffer, MemorySegment name, MemorySegment where) {
@@ -5864,11 +8538,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_delete_mark_by_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1831.gtk_text_buffer_delete_mark_by_name$MH,"gtk_text_buffer_delete_mark_by_name");
+        return RuntimeHelper.requireNonNull(constants$3134.const$4,"gtk_text_buffer_delete_mark_by_name");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_delete_mark_by_name(GtkTextBuffer* buffer, const gchar* name);
+     * void gtk_text_buffer_delete_mark_by_name(struct _GtkTextBuffer* buffer, char* name);
      * }
      */
     public static void gtk_text_buffer_delete_mark_by_name(MemorySegment buffer, MemorySegment name) {
@@ -5880,11 +8554,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_insert$MH() {
-        return RuntimeHelper.requireNonNull(constants$1831.gtk_text_buffer_get_insert$MH,"gtk_text_buffer_get_insert");
+        return RuntimeHelper.requireNonNull(constants$3134.const$5,"gtk_text_buffer_get_insert");
     }
     /**
      * {@snippet :
-     * GtkTextMark* gtk_text_buffer_get_insert(GtkTextBuffer* buffer);
+     * struct _GtkTextMark* gtk_text_buffer_get_insert(struct _GtkTextBuffer* buffer);
      * }
      */
     public static MemorySegment gtk_text_buffer_get_insert(MemorySegment buffer) {
@@ -5896,11 +8570,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_selection_bound$MH() {
-        return RuntimeHelper.requireNonNull(constants$1831.gtk_text_buffer_get_selection_bound$MH,"gtk_text_buffer_get_selection_bound");
+        return RuntimeHelper.requireNonNull(constants$3135.const$0,"gtk_text_buffer_get_selection_bound");
     }
     /**
      * {@snippet :
-     * GtkTextMark* gtk_text_buffer_get_selection_bound(GtkTextBuffer* buffer);
+     * struct _GtkTextMark* gtk_text_buffer_get_selection_bound(struct _GtkTextBuffer* buffer);
      * }
      */
     public static MemorySegment gtk_text_buffer_get_selection_bound(MemorySegment buffer) {
@@ -5912,11 +8586,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_place_cursor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1831.gtk_text_buffer_place_cursor$MH,"gtk_text_buffer_place_cursor");
+        return RuntimeHelper.requireNonNull(constants$3135.const$1,"gtk_text_buffer_place_cursor");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_place_cursor(GtkTextBuffer* buffer, const GtkTextIter* where);
+     * void gtk_text_buffer_place_cursor(struct _GtkTextBuffer* buffer, struct _GtkTextIter* where);
      * }
      */
     public static void gtk_text_buffer_place_cursor(MemorySegment buffer, MemorySegment where) {
@@ -5928,11 +8602,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_select_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1831.gtk_text_buffer_select_range$MH,"gtk_text_buffer_select_range");
+        return RuntimeHelper.requireNonNull(constants$3135.const$2,"gtk_text_buffer_select_range");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_select_range(GtkTextBuffer* buffer, const GtkTextIter* ins, const GtkTextIter* bound);
+     * void gtk_text_buffer_select_range(struct _GtkTextBuffer* buffer, struct _GtkTextIter* ins, struct _GtkTextIter* bound);
      * }
      */
     public static void gtk_text_buffer_select_range(MemorySegment buffer, MemorySegment ins, MemorySegment bound) {
@@ -5944,11 +8618,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_apply_tag$MH() {
-        return RuntimeHelper.requireNonNull(constants$1831.gtk_text_buffer_apply_tag$MH,"gtk_text_buffer_apply_tag");
+        return RuntimeHelper.requireNonNull(constants$3135.const$3,"gtk_text_buffer_apply_tag");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_apply_tag(GtkTextBuffer* buffer, GtkTextTag* tag, const GtkTextIter* start, const GtkTextIter* end);
+     * void gtk_text_buffer_apply_tag(struct _GtkTextBuffer* buffer, struct _GtkTextTag* tag, struct _GtkTextIter* start, struct _GtkTextIter* end);
      * }
      */
     public static void gtk_text_buffer_apply_tag(MemorySegment buffer, MemorySegment tag, MemorySegment start, MemorySegment end) {
@@ -5960,11 +8634,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_remove_tag$MH() {
-        return RuntimeHelper.requireNonNull(constants$1832.gtk_text_buffer_remove_tag$MH,"gtk_text_buffer_remove_tag");
+        return RuntimeHelper.requireNonNull(constants$3135.const$4,"gtk_text_buffer_remove_tag");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_remove_tag(GtkTextBuffer* buffer, GtkTextTag* tag, const GtkTextIter* start, const GtkTextIter* end);
+     * void gtk_text_buffer_remove_tag(struct _GtkTextBuffer* buffer, struct _GtkTextTag* tag, struct _GtkTextIter* start, struct _GtkTextIter* end);
      * }
      */
     public static void gtk_text_buffer_remove_tag(MemorySegment buffer, MemorySegment tag, MemorySegment start, MemorySegment end) {
@@ -5976,11 +8650,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_apply_tag_by_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1832.gtk_text_buffer_apply_tag_by_name$MH,"gtk_text_buffer_apply_tag_by_name");
+        return RuntimeHelper.requireNonNull(constants$3135.const$5,"gtk_text_buffer_apply_tag_by_name");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_apply_tag_by_name(GtkTextBuffer* buffer, const gchar* name, const GtkTextIter* start, const GtkTextIter* end);
+     * void gtk_text_buffer_apply_tag_by_name(struct _GtkTextBuffer* buffer, char* name, struct _GtkTextIter* start, struct _GtkTextIter* end);
      * }
      */
     public static void gtk_text_buffer_apply_tag_by_name(MemorySegment buffer, MemorySegment name, MemorySegment start, MemorySegment end) {
@@ -5992,11 +8666,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_remove_tag_by_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1832.gtk_text_buffer_remove_tag_by_name$MH,"gtk_text_buffer_remove_tag_by_name");
+        return RuntimeHelper.requireNonNull(constants$3136.const$0,"gtk_text_buffer_remove_tag_by_name");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_remove_tag_by_name(GtkTextBuffer* buffer, const gchar* name, const GtkTextIter* start, const GtkTextIter* end);
+     * void gtk_text_buffer_remove_tag_by_name(struct _GtkTextBuffer* buffer, char* name, struct _GtkTextIter* start, struct _GtkTextIter* end);
      * }
      */
     public static void gtk_text_buffer_remove_tag_by_name(MemorySegment buffer, MemorySegment name, MemorySegment start, MemorySegment end) {
@@ -6008,11 +8682,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_remove_all_tags$MH() {
-        return RuntimeHelper.requireNonNull(constants$1832.gtk_text_buffer_remove_all_tags$MH,"gtk_text_buffer_remove_all_tags");
+        return RuntimeHelper.requireNonNull(constants$3136.const$1,"gtk_text_buffer_remove_all_tags");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_remove_all_tags(GtkTextBuffer* buffer, const GtkTextIter* start, const GtkTextIter* end);
+     * void gtk_text_buffer_remove_all_tags(struct _GtkTextBuffer* buffer, struct _GtkTextIter* start, struct _GtkTextIter* end);
      * }
      */
     public static void gtk_text_buffer_remove_all_tags(MemorySegment buffer, MemorySegment start, MemorySegment end) {
@@ -6024,11 +8698,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_create_tag$MH() {
-        return RuntimeHelper.requireNonNull(constants$1832.gtk_text_buffer_create_tag$MH,"gtk_text_buffer_create_tag");
+        return RuntimeHelper.requireNonNull(constants$3136.const$2,"gtk_text_buffer_create_tag");
     }
     /**
      * {@snippet :
-     * GtkTextTag* gtk_text_buffer_create_tag(GtkTextBuffer* buffer, const gchar* tag_name, const gchar* first_property_name,...);
+     * struct _GtkTextTag* gtk_text_buffer_create_tag(struct _GtkTextBuffer* buffer, char* tag_name, char* first_property_name,...);
      * }
      */
     public static MemorySegment gtk_text_buffer_create_tag(MemorySegment buffer, MemorySegment tag_name, MemorySegment first_property_name, Object... x3) {
@@ -6040,11 +8714,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_iter_at_line_offset$MH() {
-        return RuntimeHelper.requireNonNull(constants$1832.gtk_text_buffer_get_iter_at_line_offset$MH,"gtk_text_buffer_get_iter_at_line_offset");
+        return RuntimeHelper.requireNonNull(constants$3136.const$3,"gtk_text_buffer_get_iter_at_line_offset");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_get_iter_at_line_offset(GtkTextBuffer* buffer, GtkTextIter* iter, gint line_number, gint char_offset);
+     * void gtk_text_buffer_get_iter_at_line_offset(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter, int line_number, int char_offset);
      * }
      */
     public static void gtk_text_buffer_get_iter_at_line_offset(MemorySegment buffer, MemorySegment iter, int line_number, int char_offset) {
@@ -6056,11 +8730,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_iter_at_line_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$1833.gtk_text_buffer_get_iter_at_line_index$MH,"gtk_text_buffer_get_iter_at_line_index");
+        return RuntimeHelper.requireNonNull(constants$3136.const$4,"gtk_text_buffer_get_iter_at_line_index");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_get_iter_at_line_index(GtkTextBuffer* buffer, GtkTextIter* iter, gint line_number, gint byte_index);
+     * void gtk_text_buffer_get_iter_at_line_index(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter, int line_number, int byte_index);
      * }
      */
     public static void gtk_text_buffer_get_iter_at_line_index(MemorySegment buffer, MemorySegment iter, int line_number, int byte_index) {
@@ -6072,11 +8746,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_iter_at_offset$MH() {
-        return RuntimeHelper.requireNonNull(constants$1833.gtk_text_buffer_get_iter_at_offset$MH,"gtk_text_buffer_get_iter_at_offset");
+        return RuntimeHelper.requireNonNull(constants$3136.const$5,"gtk_text_buffer_get_iter_at_offset");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_get_iter_at_offset(GtkTextBuffer* buffer, GtkTextIter* iter, gint char_offset);
+     * void gtk_text_buffer_get_iter_at_offset(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter, int char_offset);
      * }
      */
     public static void gtk_text_buffer_get_iter_at_offset(MemorySegment buffer, MemorySegment iter, int char_offset) {
@@ -6088,11 +8762,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_iter_at_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$1833.gtk_text_buffer_get_iter_at_line$MH,"gtk_text_buffer_get_iter_at_line");
+        return RuntimeHelper.requireNonNull(constants$3137.const$0,"gtk_text_buffer_get_iter_at_line");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_get_iter_at_line(GtkTextBuffer* buffer, GtkTextIter* iter, gint line_number);
+     * void gtk_text_buffer_get_iter_at_line(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter, int line_number);
      * }
      */
     public static void gtk_text_buffer_get_iter_at_line(MemorySegment buffer, MemorySegment iter, int line_number) {
@@ -6104,11 +8778,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_start_iter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1833.gtk_text_buffer_get_start_iter$MH,"gtk_text_buffer_get_start_iter");
+        return RuntimeHelper.requireNonNull(constants$3137.const$1,"gtk_text_buffer_get_start_iter");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_get_start_iter(GtkTextBuffer* buffer, GtkTextIter* iter);
+     * void gtk_text_buffer_get_start_iter(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter);
      * }
      */
     public static void gtk_text_buffer_get_start_iter(MemorySegment buffer, MemorySegment iter) {
@@ -6120,11 +8794,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_end_iter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1833.gtk_text_buffer_get_end_iter$MH,"gtk_text_buffer_get_end_iter");
+        return RuntimeHelper.requireNonNull(constants$3137.const$2,"gtk_text_buffer_get_end_iter");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_get_end_iter(GtkTextBuffer* buffer, GtkTextIter* iter);
+     * void gtk_text_buffer_get_end_iter(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter);
      * }
      */
     public static void gtk_text_buffer_get_end_iter(MemorySegment buffer, MemorySegment iter) {
@@ -6136,11 +8810,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_bounds$MH() {
-        return RuntimeHelper.requireNonNull(constants$1833.gtk_text_buffer_get_bounds$MH,"gtk_text_buffer_get_bounds");
+        return RuntimeHelper.requireNonNull(constants$3137.const$3,"gtk_text_buffer_get_bounds");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_get_bounds(GtkTextBuffer* buffer, GtkTextIter* start, GtkTextIter* end);
+     * void gtk_text_buffer_get_bounds(struct _GtkTextBuffer* buffer, struct _GtkTextIter* start, struct _GtkTextIter* end);
      * }
      */
     public static void gtk_text_buffer_get_bounds(MemorySegment buffer, MemorySegment start, MemorySegment end) {
@@ -6152,11 +8826,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_iter_at_mark$MH() {
-        return RuntimeHelper.requireNonNull(constants$1834.gtk_text_buffer_get_iter_at_mark$MH,"gtk_text_buffer_get_iter_at_mark");
+        return RuntimeHelper.requireNonNull(constants$3137.const$4,"gtk_text_buffer_get_iter_at_mark");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_get_iter_at_mark(GtkTextBuffer* buffer, GtkTextIter* iter, GtkTextMark* mark);
+     * void gtk_text_buffer_get_iter_at_mark(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter, struct _GtkTextMark* mark);
      * }
      */
     public static void gtk_text_buffer_get_iter_at_mark(MemorySegment buffer, MemorySegment iter, MemorySegment mark) {
@@ -6168,11 +8842,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_iter_at_child_anchor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1834.gtk_text_buffer_get_iter_at_child_anchor$MH,"gtk_text_buffer_get_iter_at_child_anchor");
+        return RuntimeHelper.requireNonNull(constants$3137.const$5,"gtk_text_buffer_get_iter_at_child_anchor");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_get_iter_at_child_anchor(GtkTextBuffer* buffer, GtkTextIter* iter, GtkTextChildAnchor* anchor);
+     * void gtk_text_buffer_get_iter_at_child_anchor(struct _GtkTextBuffer* buffer, struct _GtkTextIter* iter, struct _GtkTextChildAnchor* anchor);
      * }
      */
     public static void gtk_text_buffer_get_iter_at_child_anchor(MemorySegment buffer, MemorySegment iter, MemorySegment anchor) {
@@ -6184,11 +8858,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_modified$MH() {
-        return RuntimeHelper.requireNonNull(constants$1834.gtk_text_buffer_get_modified$MH,"gtk_text_buffer_get_modified");
+        return RuntimeHelper.requireNonNull(constants$3138.const$0,"gtk_text_buffer_get_modified");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_buffer_get_modified(GtkTextBuffer* buffer);
+     * int gtk_text_buffer_get_modified(struct _GtkTextBuffer* buffer);
      * }
      */
     public static int gtk_text_buffer_get_modified(MemorySegment buffer) {
@@ -6200,11 +8874,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_set_modified$MH() {
-        return RuntimeHelper.requireNonNull(constants$1834.gtk_text_buffer_set_modified$MH,"gtk_text_buffer_set_modified");
+        return RuntimeHelper.requireNonNull(constants$3138.const$1,"gtk_text_buffer_set_modified");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_set_modified(GtkTextBuffer* buffer, gboolean setting);
+     * void gtk_text_buffer_set_modified(struct _GtkTextBuffer* buffer, int setting);
      * }
      */
     public static void gtk_text_buffer_set_modified(MemorySegment buffer, int setting) {
@@ -6216,11 +8890,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_has_selection$MH() {
-        return RuntimeHelper.requireNonNull(constants$1834.gtk_text_buffer_get_has_selection$MH,"gtk_text_buffer_get_has_selection");
+        return RuntimeHelper.requireNonNull(constants$3138.const$2,"gtk_text_buffer_get_has_selection");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_buffer_get_has_selection(GtkTextBuffer* buffer);
+     * int gtk_text_buffer_get_has_selection(struct _GtkTextBuffer* buffer);
      * }
      */
     public static int gtk_text_buffer_get_has_selection(MemorySegment buffer) {
@@ -6232,11 +8906,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_add_selection_clipboard$MH() {
-        return RuntimeHelper.requireNonNull(constants$1834.gtk_text_buffer_add_selection_clipboard$MH,"gtk_text_buffer_add_selection_clipboard");
+        return RuntimeHelper.requireNonNull(constants$3138.const$3,"gtk_text_buffer_add_selection_clipboard");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_add_selection_clipboard(GtkTextBuffer* buffer, GtkClipboard* clipboard);
+     * void gtk_text_buffer_add_selection_clipboard(struct _GtkTextBuffer* buffer, struct _GtkClipboard* clipboard);
      * }
      */
     public static void gtk_text_buffer_add_selection_clipboard(MemorySegment buffer, MemorySegment clipboard) {
@@ -6248,11 +8922,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_remove_selection_clipboard$MH() {
-        return RuntimeHelper.requireNonNull(constants$1835.gtk_text_buffer_remove_selection_clipboard$MH,"gtk_text_buffer_remove_selection_clipboard");
+        return RuntimeHelper.requireNonNull(constants$3138.const$4,"gtk_text_buffer_remove_selection_clipboard");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_remove_selection_clipboard(GtkTextBuffer* buffer, GtkClipboard* clipboard);
+     * void gtk_text_buffer_remove_selection_clipboard(struct _GtkTextBuffer* buffer, struct _GtkClipboard* clipboard);
      * }
      */
     public static void gtk_text_buffer_remove_selection_clipboard(MemorySegment buffer, MemorySegment clipboard) {
@@ -6264,11 +8938,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_cut_clipboard$MH() {
-        return RuntimeHelper.requireNonNull(constants$1835.gtk_text_buffer_cut_clipboard$MH,"gtk_text_buffer_cut_clipboard");
+        return RuntimeHelper.requireNonNull(constants$3138.const$5,"gtk_text_buffer_cut_clipboard");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_cut_clipboard(GtkTextBuffer* buffer, GtkClipboard* clipboard, gboolean default_editable);
+     * void gtk_text_buffer_cut_clipboard(struct _GtkTextBuffer* buffer, struct _GtkClipboard* clipboard, int default_editable);
      * }
      */
     public static void gtk_text_buffer_cut_clipboard(MemorySegment buffer, MemorySegment clipboard, int default_editable) {
@@ -6280,11 +8954,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_copy_clipboard$MH() {
-        return RuntimeHelper.requireNonNull(constants$1835.gtk_text_buffer_copy_clipboard$MH,"gtk_text_buffer_copy_clipboard");
+        return RuntimeHelper.requireNonNull(constants$3139.const$0,"gtk_text_buffer_copy_clipboard");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_copy_clipboard(GtkTextBuffer* buffer, GtkClipboard* clipboard);
+     * void gtk_text_buffer_copy_clipboard(struct _GtkTextBuffer* buffer, struct _GtkClipboard* clipboard);
      * }
      */
     public static void gtk_text_buffer_copy_clipboard(MemorySegment buffer, MemorySegment clipboard) {
@@ -6296,11 +8970,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_paste_clipboard$MH() {
-        return RuntimeHelper.requireNonNull(constants$1835.gtk_text_buffer_paste_clipboard$MH,"gtk_text_buffer_paste_clipboard");
+        return RuntimeHelper.requireNonNull(constants$3139.const$1,"gtk_text_buffer_paste_clipboard");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_paste_clipboard(GtkTextBuffer* buffer, GtkClipboard* clipboard, GtkTextIter* override_location, gboolean default_editable);
+     * void gtk_text_buffer_paste_clipboard(struct _GtkTextBuffer* buffer, struct _GtkClipboard* clipboard, struct _GtkTextIter* override_location, int default_editable);
      * }
      */
     public static void gtk_text_buffer_paste_clipboard(MemorySegment buffer, MemorySegment clipboard, MemorySegment override_location, int default_editable) {
@@ -6312,11 +8986,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_selection_bounds$MH() {
-        return RuntimeHelper.requireNonNull(constants$1835.gtk_text_buffer_get_selection_bounds$MH,"gtk_text_buffer_get_selection_bounds");
+        return RuntimeHelper.requireNonNull(constants$3139.const$2,"gtk_text_buffer_get_selection_bounds");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_buffer_get_selection_bounds(GtkTextBuffer* buffer, GtkTextIter* start, GtkTextIter* end);
+     * int gtk_text_buffer_get_selection_bounds(struct _GtkTextBuffer* buffer, struct _GtkTextIter* start, struct _GtkTextIter* end);
      * }
      */
     public static int gtk_text_buffer_get_selection_bounds(MemorySegment buffer, MemorySegment start, MemorySegment end) {
@@ -6328,11 +9002,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_delete_selection$MH() {
-        return RuntimeHelper.requireNonNull(constants$1835.gtk_text_buffer_delete_selection$MH,"gtk_text_buffer_delete_selection");
+        return RuntimeHelper.requireNonNull(constants$3139.const$3,"gtk_text_buffer_delete_selection");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_buffer_delete_selection(GtkTextBuffer* buffer, gboolean interactive, gboolean default_editable);
+     * int gtk_text_buffer_delete_selection(struct _GtkTextBuffer* buffer, int interactive, int default_editable);
      * }
      */
     public static int gtk_text_buffer_delete_selection(MemorySegment buffer, int interactive, int default_editable) {
@@ -6344,11 +9018,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_begin_user_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$1836.gtk_text_buffer_begin_user_action$MH,"gtk_text_buffer_begin_user_action");
+        return RuntimeHelper.requireNonNull(constants$3139.const$4,"gtk_text_buffer_begin_user_action");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_begin_user_action(GtkTextBuffer* buffer);
+     * void gtk_text_buffer_begin_user_action(struct _GtkTextBuffer* buffer);
      * }
      */
     public static void gtk_text_buffer_begin_user_action(MemorySegment buffer) {
@@ -6360,11 +9034,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_end_user_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$1836.gtk_text_buffer_end_user_action$MH,"gtk_text_buffer_end_user_action");
+        return RuntimeHelper.requireNonNull(constants$3139.const$5,"gtk_text_buffer_end_user_action");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_end_user_action(GtkTextBuffer* buffer);
+     * void gtk_text_buffer_end_user_action(struct _GtkTextBuffer* buffer);
      * }
      */
     public static void gtk_text_buffer_end_user_action(MemorySegment buffer) {
@@ -6376,11 +9050,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_copy_target_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$1836.gtk_text_buffer_get_copy_target_list$MH,"gtk_text_buffer_get_copy_target_list");
+        return RuntimeHelper.requireNonNull(constants$3140.const$0,"gtk_text_buffer_get_copy_target_list");
     }
     /**
      * {@snippet :
-     * GtkTargetList* gtk_text_buffer_get_copy_target_list(GtkTextBuffer* buffer);
+     * struct _GtkTargetList* gtk_text_buffer_get_copy_target_list(struct _GtkTextBuffer* buffer);
      * }
      */
     public static MemorySegment gtk_text_buffer_get_copy_target_list(MemorySegment buffer) {
@@ -6392,11 +9066,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_paste_target_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$1836.gtk_text_buffer_get_paste_target_list$MH,"gtk_text_buffer_get_paste_target_list");
+        return RuntimeHelper.requireNonNull(constants$3140.const$1,"gtk_text_buffer_get_paste_target_list");
     }
     /**
      * {@snippet :
-     * GtkTargetList* gtk_text_buffer_get_paste_target_list(GtkTextBuffer* buffer);
+     * struct _GtkTargetList* gtk_text_buffer_get_paste_target_list(struct _GtkTextBuffer* buffer);
      * }
      */
     public static MemorySegment gtk_text_buffer_get_paste_target_list(MemorySegment buffer) {
@@ -6408,11 +9082,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_register_serialize_format$MH() {
-        return RuntimeHelper.requireNonNull(constants$1837.gtk_text_buffer_register_serialize_format$MH,"gtk_text_buffer_register_serialize_format");
+        return RuntimeHelper.requireNonNull(constants$3141.const$3,"gtk_text_buffer_register_serialize_format");
     }
     /**
      * {@snippet :
-     * GdkAtom gtk_text_buffer_register_serialize_format(GtkTextBuffer* buffer, const gchar* mime_type, GtkTextBufferSerializeFunc function, gpointer user_data, GDestroyNotify user_data_destroy);
+     * struct _GdkAtom* gtk_text_buffer_register_serialize_format(struct _GtkTextBuffer* buffer, char* mime_type, unsigned char* (*function)(struct _GtkTextBuffer*,struct _GtkTextBuffer*,struct _GtkTextIter*,struct _GtkTextIter*,unsigned long*,void*), void* user_data, void (*user_data_destroy)(void*));
      * }
      */
     public static MemorySegment gtk_text_buffer_register_serialize_format(MemorySegment buffer, MemorySegment mime_type, MemorySegment function, MemorySegment user_data, MemorySegment user_data_destroy) {
@@ -6424,11 +9098,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_register_serialize_tagset$MH() {
-        return RuntimeHelper.requireNonNull(constants$1837.gtk_text_buffer_register_serialize_tagset$MH,"gtk_text_buffer_register_serialize_tagset");
+        return RuntimeHelper.requireNonNull(constants$3141.const$4,"gtk_text_buffer_register_serialize_tagset");
     }
     /**
      * {@snippet :
-     * GdkAtom gtk_text_buffer_register_serialize_tagset(GtkTextBuffer* buffer, const gchar* tagset_name);
+     * struct _GdkAtom* gtk_text_buffer_register_serialize_tagset(struct _GtkTextBuffer* buffer, char* tagset_name);
      * }
      */
     public static MemorySegment gtk_text_buffer_register_serialize_tagset(MemorySegment buffer, MemorySegment tagset_name) {
@@ -6440,11 +9114,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_register_deserialize_format$MH() {
-        return RuntimeHelper.requireNonNull(constants$1837.gtk_text_buffer_register_deserialize_format$MH,"gtk_text_buffer_register_deserialize_format");
+        return RuntimeHelper.requireNonNull(constants$3142.const$1,"gtk_text_buffer_register_deserialize_format");
     }
     /**
      * {@snippet :
-     * GdkAtom gtk_text_buffer_register_deserialize_format(GtkTextBuffer* buffer, const gchar* mime_type, GtkTextBufferDeserializeFunc function, gpointer user_data, GDestroyNotify user_data_destroy);
+     * struct _GdkAtom* gtk_text_buffer_register_deserialize_format(struct _GtkTextBuffer* buffer, char* mime_type, int (*function)(struct _GtkTextBuffer*,struct _GtkTextBuffer*,struct _GtkTextIter*,unsigned char*,unsigned long,int,void*,struct _GError**), void* user_data, void (*user_data_destroy)(void*));
      * }
      */
     public static MemorySegment gtk_text_buffer_register_deserialize_format(MemorySegment buffer, MemorySegment mime_type, MemorySegment function, MemorySegment user_data, MemorySegment user_data_destroy) {
@@ -6456,11 +9130,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_register_deserialize_tagset$MH() {
-        return RuntimeHelper.requireNonNull(constants$1837.gtk_text_buffer_register_deserialize_tagset$MH,"gtk_text_buffer_register_deserialize_tagset");
+        return RuntimeHelper.requireNonNull(constants$3142.const$2,"gtk_text_buffer_register_deserialize_tagset");
     }
     /**
      * {@snippet :
-     * GdkAtom gtk_text_buffer_register_deserialize_tagset(GtkTextBuffer* buffer, const gchar* tagset_name);
+     * struct _GdkAtom* gtk_text_buffer_register_deserialize_tagset(struct _GtkTextBuffer* buffer, char* tagset_name);
      * }
      */
     public static MemorySegment gtk_text_buffer_register_deserialize_tagset(MemorySegment buffer, MemorySegment tagset_name) {
@@ -6472,11 +9146,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_unregister_serialize_format$MH() {
-        return RuntimeHelper.requireNonNull(constants$1838.gtk_text_buffer_unregister_serialize_format$MH,"gtk_text_buffer_unregister_serialize_format");
+        return RuntimeHelper.requireNonNull(constants$3142.const$3,"gtk_text_buffer_unregister_serialize_format");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_unregister_serialize_format(GtkTextBuffer* buffer, GdkAtom format);
+     * void gtk_text_buffer_unregister_serialize_format(struct _GtkTextBuffer* buffer, struct _GdkAtom* format);
      * }
      */
     public static void gtk_text_buffer_unregister_serialize_format(MemorySegment buffer, MemorySegment format) {
@@ -6488,11 +9162,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_unregister_deserialize_format$MH() {
-        return RuntimeHelper.requireNonNull(constants$1838.gtk_text_buffer_unregister_deserialize_format$MH,"gtk_text_buffer_unregister_deserialize_format");
+        return RuntimeHelper.requireNonNull(constants$3142.const$4,"gtk_text_buffer_unregister_deserialize_format");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_unregister_deserialize_format(GtkTextBuffer* buffer, GdkAtom format);
+     * void gtk_text_buffer_unregister_deserialize_format(struct _GtkTextBuffer* buffer, struct _GdkAtom* format);
      * }
      */
     public static void gtk_text_buffer_unregister_deserialize_format(MemorySegment buffer, MemorySegment format) {
@@ -6504,11 +9178,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_deserialize_set_can_create_tags$MH() {
-        return RuntimeHelper.requireNonNull(constants$1838.gtk_text_buffer_deserialize_set_can_create_tags$MH,"gtk_text_buffer_deserialize_set_can_create_tags");
+        return RuntimeHelper.requireNonNull(constants$3142.const$5,"gtk_text_buffer_deserialize_set_can_create_tags");
     }
     /**
      * {@snippet :
-     * void gtk_text_buffer_deserialize_set_can_create_tags(GtkTextBuffer* buffer, GdkAtom format, gboolean can_create_tags);
+     * void gtk_text_buffer_deserialize_set_can_create_tags(struct _GtkTextBuffer* buffer, struct _GdkAtom* format, int can_create_tags);
      * }
      */
     public static void gtk_text_buffer_deserialize_set_can_create_tags(MemorySegment buffer, MemorySegment format, int can_create_tags) {
@@ -6520,11 +9194,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_deserialize_get_can_create_tags$MH() {
-        return RuntimeHelper.requireNonNull(constants$1838.gtk_text_buffer_deserialize_get_can_create_tags$MH,"gtk_text_buffer_deserialize_get_can_create_tags");
+        return RuntimeHelper.requireNonNull(constants$3143.const$0,"gtk_text_buffer_deserialize_get_can_create_tags");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_buffer_deserialize_get_can_create_tags(GtkTextBuffer* buffer, GdkAtom format);
+     * int gtk_text_buffer_deserialize_get_can_create_tags(struct _GtkTextBuffer* buffer, struct _GdkAtom* format);
      * }
      */
     public static int gtk_text_buffer_deserialize_get_can_create_tags(MemorySegment buffer, MemorySegment format) {
@@ -6536,11 +9210,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_serialize_formats$MH() {
-        return RuntimeHelper.requireNonNull(constants$1838.gtk_text_buffer_get_serialize_formats$MH,"gtk_text_buffer_get_serialize_formats");
+        return RuntimeHelper.requireNonNull(constants$3143.const$1,"gtk_text_buffer_get_serialize_formats");
     }
     /**
      * {@snippet :
-     * GdkAtom* gtk_text_buffer_get_serialize_formats(GtkTextBuffer* buffer, gint* n_formats);
+     * struct _GdkAtom** gtk_text_buffer_get_serialize_formats(struct _GtkTextBuffer* buffer, int* n_formats);
      * }
      */
     public static MemorySegment gtk_text_buffer_get_serialize_formats(MemorySegment buffer, MemorySegment n_formats) {
@@ -6552,11 +9226,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_get_deserialize_formats$MH() {
-        return RuntimeHelper.requireNonNull(constants$1838.gtk_text_buffer_get_deserialize_formats$MH,"gtk_text_buffer_get_deserialize_formats");
+        return RuntimeHelper.requireNonNull(constants$3143.const$2,"gtk_text_buffer_get_deserialize_formats");
     }
     /**
      * {@snippet :
-     * GdkAtom* gtk_text_buffer_get_deserialize_formats(GtkTextBuffer* buffer, gint* n_formats);
+     * struct _GdkAtom** gtk_text_buffer_get_deserialize_formats(struct _GtkTextBuffer* buffer, int* n_formats);
      * }
      */
     public static MemorySegment gtk_text_buffer_get_deserialize_formats(MemorySegment buffer, MemorySegment n_formats) {
@@ -6568,11 +9242,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_serialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1839.gtk_text_buffer_serialize$MH,"gtk_text_buffer_serialize");
+        return RuntimeHelper.requireNonNull(constants$3143.const$3,"gtk_text_buffer_serialize");
     }
     /**
      * {@snippet :
-     * guint8* gtk_text_buffer_serialize(GtkTextBuffer* register_buffer, GtkTextBuffer* content_buffer, GdkAtom format, const GtkTextIter* start, const GtkTextIter* end, gsize* length);
+     * unsigned char* gtk_text_buffer_serialize(struct _GtkTextBuffer* register_buffer, struct _GtkTextBuffer* content_buffer, struct _GdkAtom* format, struct _GtkTextIter* start, struct _GtkTextIter* end, unsigned long* length);
      * }
      */
     public static MemorySegment gtk_text_buffer_serialize(MemorySegment register_buffer, MemorySegment content_buffer, MemorySegment format, MemorySegment start, MemorySegment end, MemorySegment length) {
@@ -6584,11 +9258,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_deserialize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1839.gtk_text_buffer_deserialize$MH,"gtk_text_buffer_deserialize");
+        return RuntimeHelper.requireNonNull(constants$3143.const$5,"gtk_text_buffer_deserialize");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_buffer_deserialize(GtkTextBuffer* register_buffer, GtkTextBuffer* content_buffer, GdkAtom format, GtkTextIter* iter, const guint8* data, gsize length, GError** error);
+     * int gtk_text_buffer_deserialize(struct _GtkTextBuffer* register_buffer, struct _GtkTextBuffer* content_buffer, struct _GdkAtom* format, struct _GtkTextIter* iter, unsigned char* data, unsigned long length, struct _GError** error);
      * }
      */
     public static int gtk_text_buffer_deserialize(MemorySegment register_buffer, MemorySegment content_buffer, MemorySegment format, MemorySegment iter, MemorySegment data, long length, MemorySegment error) {
@@ -6601,7 +9275,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TEXT_WINDOW_PRIVATE = 0;
+     * enum GtkTextWindowType.GTK_TEXT_WINDOW_PRIVATE = 0;
      * }
      */
     public static int GTK_TEXT_WINDOW_PRIVATE() {
@@ -6609,7 +9283,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TEXT_WINDOW_WIDGET = 1;
+     * enum GtkTextWindowType.GTK_TEXT_WINDOW_WIDGET = 1;
      * }
      */
     public static int GTK_TEXT_WINDOW_WIDGET() {
@@ -6617,7 +9291,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TEXT_WINDOW_TEXT = 2;
+     * enum GtkTextWindowType.GTK_TEXT_WINDOW_TEXT = 2;
      * }
      */
     public static int GTK_TEXT_WINDOW_TEXT() {
@@ -6625,7 +9299,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TEXT_WINDOW_LEFT = 3;
+     * enum GtkTextWindowType.GTK_TEXT_WINDOW_LEFT = 3;
      * }
      */
     public static int GTK_TEXT_WINDOW_LEFT() {
@@ -6633,7 +9307,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TEXT_WINDOW_RIGHT = 4;
+     * enum GtkTextWindowType.GTK_TEXT_WINDOW_RIGHT = 4;
      * }
      */
     public static int GTK_TEXT_WINDOW_RIGHT() {
@@ -6641,7 +9315,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TEXT_WINDOW_TOP = 5;
+     * enum GtkTextWindowType.GTK_TEXT_WINDOW_TOP = 5;
      * }
      */
     public static int GTK_TEXT_WINDOW_TOP() {
@@ -6649,7 +9323,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TEXT_WINDOW_BOTTOM = 6;
+     * enum GtkTextWindowType.GTK_TEXT_WINDOW_BOTTOM = 6;
      * }
      */
     public static int GTK_TEXT_WINDOW_BOTTOM() {
@@ -6657,7 +9331,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TEXT_VIEW_LAYER_BELOW = 0;
+     * enum GtkTextViewLayer.GTK_TEXT_VIEW_LAYER_BELOW = 0;
      * }
      */
     public static int GTK_TEXT_VIEW_LAYER_BELOW() {
@@ -6665,7 +9339,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TEXT_VIEW_LAYER_ABOVE = 1;
+     * enum GtkTextViewLayer.GTK_TEXT_VIEW_LAYER_ABOVE = 1;
      * }
      */
     public static int GTK_TEXT_VIEW_LAYER_ABOVE() {
@@ -6673,7 +9347,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TEXT_VIEW_LAYER_BELOW_TEXT = 2;
+     * enum GtkTextViewLayer.GTK_TEXT_VIEW_LAYER_BELOW_TEXT = 2;
      * }
      */
     public static int GTK_TEXT_VIEW_LAYER_BELOW_TEXT() {
@@ -6681,7 +9355,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TEXT_VIEW_LAYER_ABOVE_TEXT = 3;
+     * enum GtkTextViewLayer.GTK_TEXT_VIEW_LAYER_ABOVE_TEXT = 3;
      * }
      */
     public static int GTK_TEXT_VIEW_LAYER_ABOVE_TEXT() {
@@ -6689,7 +9363,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TEXT_EXTEND_SELECTION_WORD = 0;
+     * enum GtkTextExtendSelection.GTK_TEXT_EXTEND_SELECTION_WORD = 0;
      * }
      */
     public static int GTK_TEXT_EXTEND_SELECTION_WORD() {
@@ -6697,18 +9371,18 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TEXT_EXTEND_SELECTION_LINE = 1;
+     * enum GtkTextExtendSelection.GTK_TEXT_EXTEND_SELECTION_LINE = 1;
      * }
      */
     public static int GTK_TEXT_EXTEND_SELECTION_LINE() {
         return (int)1L;
     }
     public static MethodHandle gtk_text_view_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1839.gtk_text_view_get_type$MH,"gtk_text_view_get_type");
+        return RuntimeHelper.requireNonNull(constants$3150.const$3,"gtk_text_view_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_text_view_get_type();
+     * unsigned long gtk_text_view_get_type();
      * }
      */
     public static long gtk_text_view_get_type() {
@@ -6720,11 +9394,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1839.gtk_text_view_new$MH,"gtk_text_view_new");
+        return RuntimeHelper.requireNonNull(constants$3150.const$4,"gtk_text_view_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_text_view_new();
+     * struct _GtkWidget* gtk_text_view_new();
      * }
      */
     public static MemorySegment gtk_text_view_new() {
@@ -6736,11 +9410,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_new_with_buffer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1839.gtk_text_view_new_with_buffer$MH,"gtk_text_view_new_with_buffer");
+        return RuntimeHelper.requireNonNull(constants$3150.const$5,"gtk_text_view_new_with_buffer");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_text_view_new_with_buffer(GtkTextBuffer* buffer);
+     * struct _GtkWidget* gtk_text_view_new_with_buffer(struct _GtkTextBuffer* buffer);
      * }
      */
     public static MemorySegment gtk_text_view_new_with_buffer(MemorySegment buffer) {
@@ -6752,11 +9426,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_buffer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1839.gtk_text_view_set_buffer$MH,"gtk_text_view_set_buffer");
+        return RuntimeHelper.requireNonNull(constants$3151.const$0,"gtk_text_view_set_buffer");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_buffer(GtkTextView* text_view, GtkTextBuffer* buffer);
+     * void gtk_text_view_set_buffer(struct _GtkTextView* text_view, struct _GtkTextBuffer* buffer);
      * }
      */
     public static void gtk_text_view_set_buffer(MemorySegment text_view, MemorySegment buffer) {
@@ -6768,11 +9442,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_buffer$MH() {
-        return RuntimeHelper.requireNonNull(constants$1840.gtk_text_view_get_buffer$MH,"gtk_text_view_get_buffer");
+        return RuntimeHelper.requireNonNull(constants$3151.const$1,"gtk_text_view_get_buffer");
     }
     /**
      * {@snippet :
-     * GtkTextBuffer* gtk_text_view_get_buffer(GtkTextView* text_view);
+     * struct _GtkTextBuffer* gtk_text_view_get_buffer(struct _GtkTextView* text_view);
      * }
      */
     public static MemorySegment gtk_text_view_get_buffer(MemorySegment text_view) {
@@ -6784,11 +9458,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_scroll_to_iter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1840.gtk_text_view_scroll_to_iter$MH,"gtk_text_view_scroll_to_iter");
+        return RuntimeHelper.requireNonNull(constants$3151.const$3,"gtk_text_view_scroll_to_iter");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_scroll_to_iter(GtkTextView* text_view, GtkTextIter* iter, gdouble within_margin, gboolean use_align, gdouble xalign, gdouble yalign);
+     * int gtk_text_view_scroll_to_iter(struct _GtkTextView* text_view, struct _GtkTextIter* iter, double within_margin, int use_align, double xalign, double yalign);
      * }
      */
     public static int gtk_text_view_scroll_to_iter(MemorySegment text_view, MemorySegment iter, double within_margin, int use_align, double xalign, double yalign) {
@@ -6800,11 +9474,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_scroll_to_mark$MH() {
-        return RuntimeHelper.requireNonNull(constants$1840.gtk_text_view_scroll_to_mark$MH,"gtk_text_view_scroll_to_mark");
+        return RuntimeHelper.requireNonNull(constants$3151.const$5,"gtk_text_view_scroll_to_mark");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_scroll_to_mark(GtkTextView* text_view, GtkTextMark* mark, gdouble within_margin, gboolean use_align, gdouble xalign, gdouble yalign);
+     * void gtk_text_view_scroll_to_mark(struct _GtkTextView* text_view, struct _GtkTextMark* mark, double within_margin, int use_align, double xalign, double yalign);
      * }
      */
     public static void gtk_text_view_scroll_to_mark(MemorySegment text_view, MemorySegment mark, double within_margin, int use_align, double xalign, double yalign) {
@@ -6816,11 +9490,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_scroll_mark_onscreen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1840.gtk_text_view_scroll_mark_onscreen$MH,"gtk_text_view_scroll_mark_onscreen");
+        return RuntimeHelper.requireNonNull(constants$3152.const$0,"gtk_text_view_scroll_mark_onscreen");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_scroll_mark_onscreen(GtkTextView* text_view, GtkTextMark* mark);
+     * void gtk_text_view_scroll_mark_onscreen(struct _GtkTextView* text_view, struct _GtkTextMark* mark);
      * }
      */
     public static void gtk_text_view_scroll_mark_onscreen(MemorySegment text_view, MemorySegment mark) {
@@ -6832,11 +9506,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_move_mark_onscreen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1840.gtk_text_view_move_mark_onscreen$MH,"gtk_text_view_move_mark_onscreen");
+        return RuntimeHelper.requireNonNull(constants$3152.const$1,"gtk_text_view_move_mark_onscreen");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_move_mark_onscreen(GtkTextView* text_view, GtkTextMark* mark);
+     * int gtk_text_view_move_mark_onscreen(struct _GtkTextView* text_view, struct _GtkTextMark* mark);
      * }
      */
     public static int gtk_text_view_move_mark_onscreen(MemorySegment text_view, MemorySegment mark) {
@@ -6848,11 +9522,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_place_cursor_onscreen$MH() {
-        return RuntimeHelper.requireNonNull(constants$1840.gtk_text_view_place_cursor_onscreen$MH,"gtk_text_view_place_cursor_onscreen");
+        return RuntimeHelper.requireNonNull(constants$3152.const$2,"gtk_text_view_place_cursor_onscreen");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_place_cursor_onscreen(GtkTextView* text_view);
+     * int gtk_text_view_place_cursor_onscreen(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_place_cursor_onscreen(MemorySegment text_view) {
@@ -6864,11 +9538,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_visible_rect$MH() {
-        return RuntimeHelper.requireNonNull(constants$1841.gtk_text_view_get_visible_rect$MH,"gtk_text_view_get_visible_rect");
+        return RuntimeHelper.requireNonNull(constants$3152.const$3,"gtk_text_view_get_visible_rect");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_get_visible_rect(GtkTextView* text_view, GdkRectangle* visible_rect);
+     * void gtk_text_view_get_visible_rect(struct _GtkTextView* text_view, struct _cairo_rectangle_int* visible_rect);
      * }
      */
     public static void gtk_text_view_get_visible_rect(MemorySegment text_view, MemorySegment visible_rect) {
@@ -6880,11 +9554,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_cursor_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$1841.gtk_text_view_set_cursor_visible$MH,"gtk_text_view_set_cursor_visible");
+        return RuntimeHelper.requireNonNull(constants$3152.const$4,"gtk_text_view_set_cursor_visible");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_cursor_visible(GtkTextView* text_view, gboolean setting);
+     * void gtk_text_view_set_cursor_visible(struct _GtkTextView* text_view, int setting);
      * }
      */
     public static void gtk_text_view_set_cursor_visible(MemorySegment text_view, int setting) {
@@ -6896,11 +9570,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_cursor_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$1841.gtk_text_view_get_cursor_visible$MH,"gtk_text_view_get_cursor_visible");
+        return RuntimeHelper.requireNonNull(constants$3152.const$5,"gtk_text_view_get_cursor_visible");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_get_cursor_visible(GtkTextView* text_view);
+     * int gtk_text_view_get_cursor_visible(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_cursor_visible(MemorySegment text_view) {
@@ -6912,11 +9586,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_reset_cursor_blink$MH() {
-        return RuntimeHelper.requireNonNull(constants$1841.gtk_text_view_reset_cursor_blink$MH,"gtk_text_view_reset_cursor_blink");
+        return RuntimeHelper.requireNonNull(constants$3153.const$0,"gtk_text_view_reset_cursor_blink");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_reset_cursor_blink(GtkTextView* text_view);
+     * void gtk_text_view_reset_cursor_blink(struct _GtkTextView* text_view);
      * }
      */
     public static void gtk_text_view_reset_cursor_blink(MemorySegment text_view) {
@@ -6928,11 +9602,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_cursor_locations$MH() {
-        return RuntimeHelper.requireNonNull(constants$1841.gtk_text_view_get_cursor_locations$MH,"gtk_text_view_get_cursor_locations");
+        return RuntimeHelper.requireNonNull(constants$3153.const$1,"gtk_text_view_get_cursor_locations");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_get_cursor_locations(GtkTextView* text_view, const GtkTextIter* iter, GdkRectangle* strong, GdkRectangle* weak);
+     * void gtk_text_view_get_cursor_locations(struct _GtkTextView* text_view, struct _GtkTextIter* iter, struct _cairo_rectangle_int* strong, struct _cairo_rectangle_int* weak);
      * }
      */
     public static void gtk_text_view_get_cursor_locations(MemorySegment text_view, MemorySegment iter, MemorySegment strong, MemorySegment weak) {
@@ -6944,11 +9618,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_iter_location$MH() {
-        return RuntimeHelper.requireNonNull(constants$1841.gtk_text_view_get_iter_location$MH,"gtk_text_view_get_iter_location");
+        return RuntimeHelper.requireNonNull(constants$3153.const$2,"gtk_text_view_get_iter_location");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_get_iter_location(GtkTextView* text_view, const GtkTextIter* iter, GdkRectangle* location);
+     * void gtk_text_view_get_iter_location(struct _GtkTextView* text_view, struct _GtkTextIter* iter, struct _cairo_rectangle_int* location);
      * }
      */
     public static void gtk_text_view_get_iter_location(MemorySegment text_view, MemorySegment iter, MemorySegment location) {
@@ -6960,11 +9634,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_iter_at_location$MH() {
-        return RuntimeHelper.requireNonNull(constants$1842.gtk_text_view_get_iter_at_location$MH,"gtk_text_view_get_iter_at_location");
+        return RuntimeHelper.requireNonNull(constants$3153.const$3,"gtk_text_view_get_iter_at_location");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_get_iter_at_location(GtkTextView* text_view, GtkTextIter* iter, gint x, gint y);
+     * int gtk_text_view_get_iter_at_location(struct _GtkTextView* text_view, struct _GtkTextIter* iter, int x, int y);
      * }
      */
     public static int gtk_text_view_get_iter_at_location(MemorySegment text_view, MemorySegment iter, int x, int y) {
@@ -6976,11 +9650,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_iter_at_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$1842.gtk_text_view_get_iter_at_position$MH,"gtk_text_view_get_iter_at_position");
+        return RuntimeHelper.requireNonNull(constants$3153.const$4,"gtk_text_view_get_iter_at_position");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_get_iter_at_position(GtkTextView* text_view, GtkTextIter* iter, gint* trailing, gint x, gint y);
+     * int gtk_text_view_get_iter_at_position(struct _GtkTextView* text_view, struct _GtkTextIter* iter, int* trailing, int x, int y);
      * }
      */
     public static int gtk_text_view_get_iter_at_position(MemorySegment text_view, MemorySegment iter, MemorySegment trailing, int x, int y) {
@@ -6992,11 +9666,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_line_yrange$MH() {
-        return RuntimeHelper.requireNonNull(constants$1842.gtk_text_view_get_line_yrange$MH,"gtk_text_view_get_line_yrange");
+        return RuntimeHelper.requireNonNull(constants$3153.const$5,"gtk_text_view_get_line_yrange");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_get_line_yrange(GtkTextView* text_view, const GtkTextIter* iter, gint* y, gint* height);
+     * void gtk_text_view_get_line_yrange(struct _GtkTextView* text_view, struct _GtkTextIter* iter, int* y, int* height);
      * }
      */
     public static void gtk_text_view_get_line_yrange(MemorySegment text_view, MemorySegment iter, MemorySegment y, MemorySegment height) {
@@ -7008,11 +9682,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_line_at_y$MH() {
-        return RuntimeHelper.requireNonNull(constants$1842.gtk_text_view_get_line_at_y$MH,"gtk_text_view_get_line_at_y");
+        return RuntimeHelper.requireNonNull(constants$3154.const$0,"gtk_text_view_get_line_at_y");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_get_line_at_y(GtkTextView* text_view, GtkTextIter* target_iter, gint y, gint* line_top);
+     * void gtk_text_view_get_line_at_y(struct _GtkTextView* text_view, struct _GtkTextIter* target_iter, int y, int* line_top);
      * }
      */
     public static void gtk_text_view_get_line_at_y(MemorySegment text_view, MemorySegment target_iter, int y, MemorySegment line_top) {
@@ -7024,11 +9698,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_buffer_to_window_coords$MH() {
-        return RuntimeHelper.requireNonNull(constants$1842.gtk_text_view_buffer_to_window_coords$MH,"gtk_text_view_buffer_to_window_coords");
+        return RuntimeHelper.requireNonNull(constants$3154.const$1,"gtk_text_view_buffer_to_window_coords");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_buffer_to_window_coords(GtkTextView* text_view, GtkTextWindowType win, gint buffer_x, gint buffer_y, gint* window_x, gint* window_y);
+     * void gtk_text_view_buffer_to_window_coords(struct _GtkTextView* text_view, enum GtkTextWindowType win, int buffer_x, int buffer_y, int* window_x, int* window_y);
      * }
      */
     public static void gtk_text_view_buffer_to_window_coords(MemorySegment text_view, int win, int buffer_x, int buffer_y, MemorySegment window_x, MemorySegment window_y) {
@@ -7040,11 +9714,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_window_to_buffer_coords$MH() {
-        return RuntimeHelper.requireNonNull(constants$1842.gtk_text_view_window_to_buffer_coords$MH,"gtk_text_view_window_to_buffer_coords");
+        return RuntimeHelper.requireNonNull(constants$3154.const$2,"gtk_text_view_window_to_buffer_coords");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_window_to_buffer_coords(GtkTextView* text_view, GtkTextWindowType win, gint window_x, gint window_y, gint* buffer_x, gint* buffer_y);
+     * void gtk_text_view_window_to_buffer_coords(struct _GtkTextView* text_view, enum GtkTextWindowType win, int window_x, int window_y, int* buffer_x, int* buffer_y);
      * }
      */
     public static void gtk_text_view_window_to_buffer_coords(MemorySegment text_view, int win, int window_x, int window_y, MemorySegment buffer_x, MemorySegment buffer_y) {
@@ -7056,11 +9730,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_hadjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1843.gtk_text_view_get_hadjustment$MH,"gtk_text_view_get_hadjustment");
+        return RuntimeHelper.requireNonNull(constants$3154.const$3,"gtk_text_view_get_hadjustment");
     }
     /**
      * {@snippet :
-     * GtkAdjustment* gtk_text_view_get_hadjustment(GtkTextView* text_view);
+     * struct _GtkAdjustment* gtk_text_view_get_hadjustment(struct _GtkTextView* text_view);
      * }
      */
     public static MemorySegment gtk_text_view_get_hadjustment(MemorySegment text_view) {
@@ -7072,11 +9746,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_vadjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1843.gtk_text_view_get_vadjustment$MH,"gtk_text_view_get_vadjustment");
+        return RuntimeHelper.requireNonNull(constants$3154.const$4,"gtk_text_view_get_vadjustment");
     }
     /**
      * {@snippet :
-     * GtkAdjustment* gtk_text_view_get_vadjustment(GtkTextView* text_view);
+     * struct _GtkAdjustment* gtk_text_view_get_vadjustment(struct _GtkTextView* text_view);
      * }
      */
     public static MemorySegment gtk_text_view_get_vadjustment(MemorySegment text_view) {
@@ -7088,11 +9762,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1843.gtk_text_view_get_window$MH,"gtk_text_view_get_window");
+        return RuntimeHelper.requireNonNull(constants$3154.const$5,"gtk_text_view_get_window");
     }
     /**
      * {@snippet :
-     * GdkWindow* gtk_text_view_get_window(GtkTextView* text_view, GtkTextWindowType win);
+     * struct _GdkWindow* gtk_text_view_get_window(struct _GtkTextView* text_view, enum GtkTextWindowType win);
      * }
      */
     public static MemorySegment gtk_text_view_get_window(MemorySegment text_view, int win) {
@@ -7104,11 +9778,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_window_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1843.gtk_text_view_get_window_type$MH,"gtk_text_view_get_window_type");
+        return RuntimeHelper.requireNonNull(constants$3155.const$0,"gtk_text_view_get_window_type");
     }
     /**
      * {@snippet :
-     * GtkTextWindowType gtk_text_view_get_window_type(GtkTextView* text_view, GdkWindow* window);
+     * enum GtkTextWindowType gtk_text_view_get_window_type(struct _GtkTextView* text_view, struct _GdkWindow* window);
      * }
      */
     public static int gtk_text_view_get_window_type(MemorySegment text_view, MemorySegment window) {
@@ -7120,11 +9794,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_border_window_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1843.gtk_text_view_set_border_window_size$MH,"gtk_text_view_set_border_window_size");
+        return RuntimeHelper.requireNonNull(constants$3155.const$1,"gtk_text_view_set_border_window_size");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_border_window_size(GtkTextView* text_view, GtkTextWindowType type, gint size);
+     * void gtk_text_view_set_border_window_size(struct _GtkTextView* text_view, enum GtkTextWindowType type, int size);
      * }
      */
     public static void gtk_text_view_set_border_window_size(MemorySegment text_view, int type, int size) {
@@ -7136,11 +9810,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_border_window_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1843.gtk_text_view_get_border_window_size$MH,"gtk_text_view_get_border_window_size");
+        return RuntimeHelper.requireNonNull(constants$3155.const$2,"gtk_text_view_get_border_window_size");
     }
     /**
      * {@snippet :
-     * gint gtk_text_view_get_border_window_size(GtkTextView* text_view, GtkTextWindowType type);
+     * int gtk_text_view_get_border_window_size(struct _GtkTextView* text_view, enum GtkTextWindowType type);
      * }
      */
     public static int gtk_text_view_get_border_window_size(MemorySegment text_view, int type) {
@@ -7152,11 +9826,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_forward_display_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$1844.gtk_text_view_forward_display_line$MH,"gtk_text_view_forward_display_line");
+        return RuntimeHelper.requireNonNull(constants$3155.const$3,"gtk_text_view_forward_display_line");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_forward_display_line(GtkTextView* text_view, GtkTextIter* iter);
+     * int gtk_text_view_forward_display_line(struct _GtkTextView* text_view, struct _GtkTextIter* iter);
      * }
      */
     public static int gtk_text_view_forward_display_line(MemorySegment text_view, MemorySegment iter) {
@@ -7168,11 +9842,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_backward_display_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$1844.gtk_text_view_backward_display_line$MH,"gtk_text_view_backward_display_line");
+        return RuntimeHelper.requireNonNull(constants$3155.const$4,"gtk_text_view_backward_display_line");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_backward_display_line(GtkTextView* text_view, GtkTextIter* iter);
+     * int gtk_text_view_backward_display_line(struct _GtkTextView* text_view, struct _GtkTextIter* iter);
      * }
      */
     public static int gtk_text_view_backward_display_line(MemorySegment text_view, MemorySegment iter) {
@@ -7184,11 +9858,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_forward_display_line_end$MH() {
-        return RuntimeHelper.requireNonNull(constants$1844.gtk_text_view_forward_display_line_end$MH,"gtk_text_view_forward_display_line_end");
+        return RuntimeHelper.requireNonNull(constants$3155.const$5,"gtk_text_view_forward_display_line_end");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_forward_display_line_end(GtkTextView* text_view, GtkTextIter* iter);
+     * int gtk_text_view_forward_display_line_end(struct _GtkTextView* text_view, struct _GtkTextIter* iter);
      * }
      */
     public static int gtk_text_view_forward_display_line_end(MemorySegment text_view, MemorySegment iter) {
@@ -7200,11 +9874,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_backward_display_line_start$MH() {
-        return RuntimeHelper.requireNonNull(constants$1844.gtk_text_view_backward_display_line_start$MH,"gtk_text_view_backward_display_line_start");
+        return RuntimeHelper.requireNonNull(constants$3156.const$0,"gtk_text_view_backward_display_line_start");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_backward_display_line_start(GtkTextView* text_view, GtkTextIter* iter);
+     * int gtk_text_view_backward_display_line_start(struct _GtkTextView* text_view, struct _GtkTextIter* iter);
      * }
      */
     public static int gtk_text_view_backward_display_line_start(MemorySegment text_view, MemorySegment iter) {
@@ -7216,11 +9890,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_starts_display_line$MH() {
-        return RuntimeHelper.requireNonNull(constants$1844.gtk_text_view_starts_display_line$MH,"gtk_text_view_starts_display_line");
+        return RuntimeHelper.requireNonNull(constants$3156.const$1,"gtk_text_view_starts_display_line");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_starts_display_line(GtkTextView* text_view, const GtkTextIter* iter);
+     * int gtk_text_view_starts_display_line(struct _GtkTextView* text_view, struct _GtkTextIter* iter);
      * }
      */
     public static int gtk_text_view_starts_display_line(MemorySegment text_view, MemorySegment iter) {
@@ -7232,11 +9906,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_move_visually$MH() {
-        return RuntimeHelper.requireNonNull(constants$1844.gtk_text_view_move_visually$MH,"gtk_text_view_move_visually");
+        return RuntimeHelper.requireNonNull(constants$3156.const$2,"gtk_text_view_move_visually");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_move_visually(GtkTextView* text_view, GtkTextIter* iter, gint count);
+     * int gtk_text_view_move_visually(struct _GtkTextView* text_view, struct _GtkTextIter* iter, int count);
      * }
      */
     public static int gtk_text_view_move_visually(MemorySegment text_view, MemorySegment iter, int count) {
@@ -7248,11 +9922,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_im_context_filter_keypress$MH() {
-        return RuntimeHelper.requireNonNull(constants$1845.gtk_text_view_im_context_filter_keypress$MH,"gtk_text_view_im_context_filter_keypress");
+        return RuntimeHelper.requireNonNull(constants$3156.const$3,"gtk_text_view_im_context_filter_keypress");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_im_context_filter_keypress(GtkTextView* text_view, GdkEventKey* event);
+     * int gtk_text_view_im_context_filter_keypress(struct _GtkTextView* text_view, struct _GdkEventKey* event);
      * }
      */
     public static int gtk_text_view_im_context_filter_keypress(MemorySegment text_view, MemorySegment event) {
@@ -7264,11 +9938,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_reset_im_context$MH() {
-        return RuntimeHelper.requireNonNull(constants$1845.gtk_text_view_reset_im_context$MH,"gtk_text_view_reset_im_context");
+        return RuntimeHelper.requireNonNull(constants$3156.const$4,"gtk_text_view_reset_im_context");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_reset_im_context(GtkTextView* text_view);
+     * void gtk_text_view_reset_im_context(struct _GtkTextView* text_view);
      * }
      */
     public static void gtk_text_view_reset_im_context(MemorySegment text_view) {
@@ -7280,11 +9954,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_add_child_at_anchor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1845.gtk_text_view_add_child_at_anchor$MH,"gtk_text_view_add_child_at_anchor");
+        return RuntimeHelper.requireNonNull(constants$3156.const$5,"gtk_text_view_add_child_at_anchor");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_add_child_at_anchor(GtkTextView* text_view, GtkWidget* child, GtkTextChildAnchor* anchor);
+     * void gtk_text_view_add_child_at_anchor(struct _GtkTextView* text_view, struct _GtkWidget* child, struct _GtkTextChildAnchor* anchor);
      * }
      */
     public static void gtk_text_view_add_child_at_anchor(MemorySegment text_view, MemorySegment child, MemorySegment anchor) {
@@ -7296,11 +9970,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_add_child_in_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1845.gtk_text_view_add_child_in_window$MH,"gtk_text_view_add_child_in_window");
+        return RuntimeHelper.requireNonNull(constants$3157.const$0,"gtk_text_view_add_child_in_window");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_add_child_in_window(GtkTextView* text_view, GtkWidget* child, GtkTextWindowType which_window, gint xpos, gint ypos);
+     * void gtk_text_view_add_child_in_window(struct _GtkTextView* text_view, struct _GtkWidget* child, enum GtkTextWindowType which_window, int xpos, int ypos);
      * }
      */
     public static void gtk_text_view_add_child_in_window(MemorySegment text_view, MemorySegment child, int which_window, int xpos, int ypos) {
@@ -7312,11 +9986,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_move_child$MH() {
-        return RuntimeHelper.requireNonNull(constants$1845.gtk_text_view_move_child$MH,"gtk_text_view_move_child");
+        return RuntimeHelper.requireNonNull(constants$3157.const$1,"gtk_text_view_move_child");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_move_child(GtkTextView* text_view, GtkWidget* child, gint xpos, gint ypos);
+     * void gtk_text_view_move_child(struct _GtkTextView* text_view, struct _GtkWidget* child, int xpos, int ypos);
      * }
      */
     public static void gtk_text_view_move_child(MemorySegment text_view, MemorySegment child, int xpos, int ypos) {
@@ -7328,11 +10002,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_wrap_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1845.gtk_text_view_set_wrap_mode$MH,"gtk_text_view_set_wrap_mode");
+        return RuntimeHelper.requireNonNull(constants$3157.const$2,"gtk_text_view_set_wrap_mode");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_wrap_mode(GtkTextView* text_view, GtkWrapMode wrap_mode);
+     * void gtk_text_view_set_wrap_mode(struct _GtkTextView* text_view, enum GtkWrapMode wrap_mode);
      * }
      */
     public static void gtk_text_view_set_wrap_mode(MemorySegment text_view, int wrap_mode) {
@@ -7344,11 +10018,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_wrap_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1846.gtk_text_view_get_wrap_mode$MH,"gtk_text_view_get_wrap_mode");
+        return RuntimeHelper.requireNonNull(constants$3157.const$3,"gtk_text_view_get_wrap_mode");
     }
     /**
      * {@snippet :
-     * GtkWrapMode gtk_text_view_get_wrap_mode(GtkTextView* text_view);
+     * enum GtkWrapMode gtk_text_view_get_wrap_mode(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_wrap_mode(MemorySegment text_view) {
@@ -7360,11 +10034,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_editable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1846.gtk_text_view_set_editable$MH,"gtk_text_view_set_editable");
+        return RuntimeHelper.requireNonNull(constants$3157.const$4,"gtk_text_view_set_editable");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_editable(GtkTextView* text_view, gboolean setting);
+     * void gtk_text_view_set_editable(struct _GtkTextView* text_view, int setting);
      * }
      */
     public static void gtk_text_view_set_editable(MemorySegment text_view, int setting) {
@@ -7376,11 +10050,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_editable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1846.gtk_text_view_get_editable$MH,"gtk_text_view_get_editable");
+        return RuntimeHelper.requireNonNull(constants$3157.const$5,"gtk_text_view_get_editable");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_get_editable(GtkTextView* text_view);
+     * int gtk_text_view_get_editable(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_editable(MemorySegment text_view) {
@@ -7392,11 +10066,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_overwrite$MH() {
-        return RuntimeHelper.requireNonNull(constants$1846.gtk_text_view_set_overwrite$MH,"gtk_text_view_set_overwrite");
+        return RuntimeHelper.requireNonNull(constants$3158.const$0,"gtk_text_view_set_overwrite");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_overwrite(GtkTextView* text_view, gboolean overwrite);
+     * void gtk_text_view_set_overwrite(struct _GtkTextView* text_view, int overwrite);
      * }
      */
     public static void gtk_text_view_set_overwrite(MemorySegment text_view, int overwrite) {
@@ -7408,11 +10082,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_overwrite$MH() {
-        return RuntimeHelper.requireNonNull(constants$1846.gtk_text_view_get_overwrite$MH,"gtk_text_view_get_overwrite");
+        return RuntimeHelper.requireNonNull(constants$3158.const$1,"gtk_text_view_get_overwrite");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_get_overwrite(GtkTextView* text_view);
+     * int gtk_text_view_get_overwrite(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_overwrite(MemorySegment text_view) {
@@ -7424,11 +10098,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_accepts_tab$MH() {
-        return RuntimeHelper.requireNonNull(constants$1846.gtk_text_view_set_accepts_tab$MH,"gtk_text_view_set_accepts_tab");
+        return RuntimeHelper.requireNonNull(constants$3158.const$2,"gtk_text_view_set_accepts_tab");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_accepts_tab(GtkTextView* text_view, gboolean accepts_tab);
+     * void gtk_text_view_set_accepts_tab(struct _GtkTextView* text_view, int accepts_tab);
      * }
      */
     public static void gtk_text_view_set_accepts_tab(MemorySegment text_view, int accepts_tab) {
@@ -7440,11 +10114,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_accepts_tab$MH() {
-        return RuntimeHelper.requireNonNull(constants$1847.gtk_text_view_get_accepts_tab$MH,"gtk_text_view_get_accepts_tab");
+        return RuntimeHelper.requireNonNull(constants$3158.const$3,"gtk_text_view_get_accepts_tab");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_get_accepts_tab(GtkTextView* text_view);
+     * int gtk_text_view_get_accepts_tab(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_accepts_tab(MemorySegment text_view) {
@@ -7456,11 +10130,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_pixels_above_lines$MH() {
-        return RuntimeHelper.requireNonNull(constants$1847.gtk_text_view_set_pixels_above_lines$MH,"gtk_text_view_set_pixels_above_lines");
+        return RuntimeHelper.requireNonNull(constants$3158.const$4,"gtk_text_view_set_pixels_above_lines");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_pixels_above_lines(GtkTextView* text_view, gint pixels_above_lines);
+     * void gtk_text_view_set_pixels_above_lines(struct _GtkTextView* text_view, int pixels_above_lines);
      * }
      */
     public static void gtk_text_view_set_pixels_above_lines(MemorySegment text_view, int pixels_above_lines) {
@@ -7472,11 +10146,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_pixels_above_lines$MH() {
-        return RuntimeHelper.requireNonNull(constants$1847.gtk_text_view_get_pixels_above_lines$MH,"gtk_text_view_get_pixels_above_lines");
+        return RuntimeHelper.requireNonNull(constants$3158.const$5,"gtk_text_view_get_pixels_above_lines");
     }
     /**
      * {@snippet :
-     * gint gtk_text_view_get_pixels_above_lines(GtkTextView* text_view);
+     * int gtk_text_view_get_pixels_above_lines(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_pixels_above_lines(MemorySegment text_view) {
@@ -7488,11 +10162,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_pixels_below_lines$MH() {
-        return RuntimeHelper.requireNonNull(constants$1847.gtk_text_view_set_pixels_below_lines$MH,"gtk_text_view_set_pixels_below_lines");
+        return RuntimeHelper.requireNonNull(constants$3159.const$0,"gtk_text_view_set_pixels_below_lines");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_pixels_below_lines(GtkTextView* text_view, gint pixels_below_lines);
+     * void gtk_text_view_set_pixels_below_lines(struct _GtkTextView* text_view, int pixels_below_lines);
      * }
      */
     public static void gtk_text_view_set_pixels_below_lines(MemorySegment text_view, int pixels_below_lines) {
@@ -7504,11 +10178,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_pixels_below_lines$MH() {
-        return RuntimeHelper.requireNonNull(constants$1847.gtk_text_view_get_pixels_below_lines$MH,"gtk_text_view_get_pixels_below_lines");
+        return RuntimeHelper.requireNonNull(constants$3159.const$1,"gtk_text_view_get_pixels_below_lines");
     }
     /**
      * {@snippet :
-     * gint gtk_text_view_get_pixels_below_lines(GtkTextView* text_view);
+     * int gtk_text_view_get_pixels_below_lines(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_pixels_below_lines(MemorySegment text_view) {
@@ -7520,11 +10194,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_pixels_inside_wrap$MH() {
-        return RuntimeHelper.requireNonNull(constants$1847.gtk_text_view_set_pixels_inside_wrap$MH,"gtk_text_view_set_pixels_inside_wrap");
+        return RuntimeHelper.requireNonNull(constants$3159.const$2,"gtk_text_view_set_pixels_inside_wrap");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_pixels_inside_wrap(GtkTextView* text_view, gint pixels_inside_wrap);
+     * void gtk_text_view_set_pixels_inside_wrap(struct _GtkTextView* text_view, int pixels_inside_wrap);
      * }
      */
     public static void gtk_text_view_set_pixels_inside_wrap(MemorySegment text_view, int pixels_inside_wrap) {
@@ -7536,11 +10210,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_pixels_inside_wrap$MH() {
-        return RuntimeHelper.requireNonNull(constants$1848.gtk_text_view_get_pixels_inside_wrap$MH,"gtk_text_view_get_pixels_inside_wrap");
+        return RuntimeHelper.requireNonNull(constants$3159.const$3,"gtk_text_view_get_pixels_inside_wrap");
     }
     /**
      * {@snippet :
-     * gint gtk_text_view_get_pixels_inside_wrap(GtkTextView* text_view);
+     * int gtk_text_view_get_pixels_inside_wrap(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_pixels_inside_wrap(MemorySegment text_view) {
@@ -7552,11 +10226,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_justification$MH() {
-        return RuntimeHelper.requireNonNull(constants$1848.gtk_text_view_set_justification$MH,"gtk_text_view_set_justification");
+        return RuntimeHelper.requireNonNull(constants$3159.const$4,"gtk_text_view_set_justification");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_justification(GtkTextView* text_view, GtkJustification justification);
+     * void gtk_text_view_set_justification(struct _GtkTextView* text_view, enum GtkJustification justification);
      * }
      */
     public static void gtk_text_view_set_justification(MemorySegment text_view, int justification) {
@@ -7568,11 +10242,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_justification$MH() {
-        return RuntimeHelper.requireNonNull(constants$1848.gtk_text_view_get_justification$MH,"gtk_text_view_get_justification");
+        return RuntimeHelper.requireNonNull(constants$3159.const$5,"gtk_text_view_get_justification");
     }
     /**
      * {@snippet :
-     * GtkJustification gtk_text_view_get_justification(GtkTextView* text_view);
+     * enum GtkJustification gtk_text_view_get_justification(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_justification(MemorySegment text_view) {
@@ -7584,11 +10258,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_left_margin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1848.gtk_text_view_set_left_margin$MH,"gtk_text_view_set_left_margin");
+        return RuntimeHelper.requireNonNull(constants$3160.const$0,"gtk_text_view_set_left_margin");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_left_margin(GtkTextView* text_view, gint left_margin);
+     * void gtk_text_view_set_left_margin(struct _GtkTextView* text_view, int left_margin);
      * }
      */
     public static void gtk_text_view_set_left_margin(MemorySegment text_view, int left_margin) {
@@ -7600,11 +10274,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_left_margin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1848.gtk_text_view_get_left_margin$MH,"gtk_text_view_get_left_margin");
+        return RuntimeHelper.requireNonNull(constants$3160.const$1,"gtk_text_view_get_left_margin");
     }
     /**
      * {@snippet :
-     * gint gtk_text_view_get_left_margin(GtkTextView* text_view);
+     * int gtk_text_view_get_left_margin(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_left_margin(MemorySegment text_view) {
@@ -7616,11 +10290,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_right_margin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1848.gtk_text_view_set_right_margin$MH,"gtk_text_view_set_right_margin");
+        return RuntimeHelper.requireNonNull(constants$3160.const$2,"gtk_text_view_set_right_margin");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_right_margin(GtkTextView* text_view, gint right_margin);
+     * void gtk_text_view_set_right_margin(struct _GtkTextView* text_view, int right_margin);
      * }
      */
     public static void gtk_text_view_set_right_margin(MemorySegment text_view, int right_margin) {
@@ -7632,11 +10306,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_right_margin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1849.gtk_text_view_get_right_margin$MH,"gtk_text_view_get_right_margin");
+        return RuntimeHelper.requireNonNull(constants$3160.const$3,"gtk_text_view_get_right_margin");
     }
     /**
      * {@snippet :
-     * gint gtk_text_view_get_right_margin(GtkTextView* text_view);
+     * int gtk_text_view_get_right_margin(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_right_margin(MemorySegment text_view) {
@@ -7648,11 +10322,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_top_margin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1849.gtk_text_view_set_top_margin$MH,"gtk_text_view_set_top_margin");
+        return RuntimeHelper.requireNonNull(constants$3160.const$4,"gtk_text_view_set_top_margin");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_top_margin(GtkTextView* text_view, gint top_margin);
+     * void gtk_text_view_set_top_margin(struct _GtkTextView* text_view, int top_margin);
      * }
      */
     public static void gtk_text_view_set_top_margin(MemorySegment text_view, int top_margin) {
@@ -7664,11 +10338,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_top_margin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1849.gtk_text_view_get_top_margin$MH,"gtk_text_view_get_top_margin");
+        return RuntimeHelper.requireNonNull(constants$3160.const$5,"gtk_text_view_get_top_margin");
     }
     /**
      * {@snippet :
-     * gint gtk_text_view_get_top_margin(GtkTextView* text_view);
+     * int gtk_text_view_get_top_margin(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_top_margin(MemorySegment text_view) {
@@ -7680,11 +10354,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_bottom_margin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1849.gtk_text_view_set_bottom_margin$MH,"gtk_text_view_set_bottom_margin");
+        return RuntimeHelper.requireNonNull(constants$3161.const$0,"gtk_text_view_set_bottom_margin");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_bottom_margin(GtkTextView* text_view, gint bottom_margin);
+     * void gtk_text_view_set_bottom_margin(struct _GtkTextView* text_view, int bottom_margin);
      * }
      */
     public static void gtk_text_view_set_bottom_margin(MemorySegment text_view, int bottom_margin) {
@@ -7696,11 +10370,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_bottom_margin$MH() {
-        return RuntimeHelper.requireNonNull(constants$1849.gtk_text_view_get_bottom_margin$MH,"gtk_text_view_get_bottom_margin");
+        return RuntimeHelper.requireNonNull(constants$3161.const$1,"gtk_text_view_get_bottom_margin");
     }
     /**
      * {@snippet :
-     * gint gtk_text_view_get_bottom_margin(GtkTextView* text_view);
+     * int gtk_text_view_get_bottom_margin(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_bottom_margin(MemorySegment text_view) {
@@ -7712,11 +10386,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_indent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1849.gtk_text_view_set_indent$MH,"gtk_text_view_set_indent");
+        return RuntimeHelper.requireNonNull(constants$3161.const$2,"gtk_text_view_set_indent");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_indent(GtkTextView* text_view, gint indent);
+     * void gtk_text_view_set_indent(struct _GtkTextView* text_view, int indent);
      * }
      */
     public static void gtk_text_view_set_indent(MemorySegment text_view, int indent) {
@@ -7728,11 +10402,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_indent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1850.gtk_text_view_get_indent$MH,"gtk_text_view_get_indent");
+        return RuntimeHelper.requireNonNull(constants$3161.const$3,"gtk_text_view_get_indent");
     }
     /**
      * {@snippet :
-     * gint gtk_text_view_get_indent(GtkTextView* text_view);
+     * int gtk_text_view_get_indent(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_indent(MemorySegment text_view) {
@@ -7744,11 +10418,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_tabs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1850.gtk_text_view_set_tabs$MH,"gtk_text_view_set_tabs");
+        return RuntimeHelper.requireNonNull(constants$3161.const$4,"gtk_text_view_set_tabs");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_tabs(GtkTextView* text_view, PangoTabArray* tabs);
+     * void gtk_text_view_set_tabs(struct _GtkTextView* text_view, struct _PangoTabArray* tabs);
      * }
      */
     public static void gtk_text_view_set_tabs(MemorySegment text_view, MemorySegment tabs) {
@@ -7760,11 +10434,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_tabs$MH() {
-        return RuntimeHelper.requireNonNull(constants$1850.gtk_text_view_get_tabs$MH,"gtk_text_view_get_tabs");
+        return RuntimeHelper.requireNonNull(constants$3161.const$5,"gtk_text_view_get_tabs");
     }
     /**
      * {@snippet :
-     * PangoTabArray* gtk_text_view_get_tabs(GtkTextView* text_view);
+     * struct _PangoTabArray* gtk_text_view_get_tabs(struct _GtkTextView* text_view);
      * }
      */
     public static MemorySegment gtk_text_view_get_tabs(MemorySegment text_view) {
@@ -7776,11 +10450,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_default_attributes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1850.gtk_text_view_get_default_attributes$MH,"gtk_text_view_get_default_attributes");
+        return RuntimeHelper.requireNonNull(constants$3162.const$0,"gtk_text_view_get_default_attributes");
     }
     /**
      * {@snippet :
-     * GtkTextAttributes* gtk_text_view_get_default_attributes(GtkTextView* text_view);
+     * struct _GtkTextAttributes* gtk_text_view_get_default_attributes(struct _GtkTextView* text_view);
      * }
      */
     public static MemorySegment gtk_text_view_get_default_attributes(MemorySegment text_view) {
@@ -7792,11 +10466,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_input_purpose$MH() {
-        return RuntimeHelper.requireNonNull(constants$1850.gtk_text_view_set_input_purpose$MH,"gtk_text_view_set_input_purpose");
+        return RuntimeHelper.requireNonNull(constants$3162.const$1,"gtk_text_view_set_input_purpose");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_input_purpose(GtkTextView* text_view, GtkInputPurpose purpose);
+     * void gtk_text_view_set_input_purpose(struct _GtkTextView* text_view, enum GtkInputPurpose purpose);
      * }
      */
     public static void gtk_text_view_set_input_purpose(MemorySegment text_view, int purpose) {
@@ -7808,11 +10482,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_input_purpose$MH() {
-        return RuntimeHelper.requireNonNull(constants$1850.gtk_text_view_get_input_purpose$MH,"gtk_text_view_get_input_purpose");
+        return RuntimeHelper.requireNonNull(constants$3162.const$2,"gtk_text_view_get_input_purpose");
     }
     /**
      * {@snippet :
-     * GtkInputPurpose gtk_text_view_get_input_purpose(GtkTextView* text_view);
+     * enum GtkInputPurpose gtk_text_view_get_input_purpose(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_input_purpose(MemorySegment text_view) {
@@ -7824,11 +10498,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_input_hints$MH() {
-        return RuntimeHelper.requireNonNull(constants$1851.gtk_text_view_set_input_hints$MH,"gtk_text_view_set_input_hints");
+        return RuntimeHelper.requireNonNull(constants$3162.const$3,"gtk_text_view_set_input_hints");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_input_hints(GtkTextView* text_view, GtkInputHints hints);
+     * void gtk_text_view_set_input_hints(struct _GtkTextView* text_view, enum GtkInputHints hints);
      * }
      */
     public static void gtk_text_view_set_input_hints(MemorySegment text_view, int hints) {
@@ -7840,11 +10514,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_input_hints$MH() {
-        return RuntimeHelper.requireNonNull(constants$1851.gtk_text_view_get_input_hints$MH,"gtk_text_view_get_input_hints");
+        return RuntimeHelper.requireNonNull(constants$3162.const$4,"gtk_text_view_get_input_hints");
     }
     /**
      * {@snippet :
-     * GtkInputHints gtk_text_view_get_input_hints(GtkTextView* text_view);
+     * enum GtkInputHints gtk_text_view_get_input_hints(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_input_hints(MemorySegment text_view) {
@@ -7856,11 +10530,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_set_monospace$MH() {
-        return RuntimeHelper.requireNonNull(constants$1851.gtk_text_view_set_monospace$MH,"gtk_text_view_set_monospace");
+        return RuntimeHelper.requireNonNull(constants$3162.const$5,"gtk_text_view_set_monospace");
     }
     /**
      * {@snippet :
-     * void gtk_text_view_set_monospace(GtkTextView* text_view, gboolean monospace);
+     * void gtk_text_view_set_monospace(struct _GtkTextView* text_view, int monospace);
      * }
      */
     public static void gtk_text_view_set_monospace(MemorySegment text_view, int monospace) {
@@ -7872,11 +10546,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_get_monospace$MH() {
-        return RuntimeHelper.requireNonNull(constants$1851.gtk_text_view_get_monospace$MH,"gtk_text_view_get_monospace");
+        return RuntimeHelper.requireNonNull(constants$3163.const$0,"gtk_text_view_get_monospace");
     }
     /**
      * {@snippet :
-     * gboolean gtk_text_view_get_monospace(GtkTextView* text_view);
+     * int gtk_text_view_get_monospace(struct _GtkTextView* text_view);
      * }
      */
     public static int gtk_text_view_get_monospace(MemorySegment text_view) {
@@ -7889,7 +10563,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TOOLBAR_SPACE_EMPTY = 0;
+     * enum GtkToolbarSpaceStyle.GTK_TOOLBAR_SPACE_EMPTY = 0;
      * }
      */
     public static int GTK_TOOLBAR_SPACE_EMPTY() {
@@ -7897,18 +10571,18 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TOOLBAR_SPACE_LINE = 1;
+     * enum GtkToolbarSpaceStyle.GTK_TOOLBAR_SPACE_LINE = 1;
      * }
      */
     public static int GTK_TOOLBAR_SPACE_LINE() {
         return (int)1L;
     }
     public static MethodHandle gtk_toolbar_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1851.gtk_toolbar_get_type$MH,"gtk_toolbar_get_type");
+        return RuntimeHelper.requireNonNull(constants$3166.const$0,"gtk_toolbar_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_toolbar_get_type();
+     * unsigned long gtk_toolbar_get_type();
      * }
      */
     public static long gtk_toolbar_get_type() {
@@ -7920,11 +10594,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1851.gtk_toolbar_new$MH,"gtk_toolbar_new");
+        return RuntimeHelper.requireNonNull(constants$3166.const$1,"gtk_toolbar_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_toolbar_new();
+     * struct _GtkWidget* gtk_toolbar_new();
      * }
      */
     public static MemorySegment gtk_toolbar_new() {
@@ -7936,11 +10610,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_insert$MH() {
-        return RuntimeHelper.requireNonNull(constants$1852.gtk_toolbar_insert$MH,"gtk_toolbar_insert");
+        return RuntimeHelper.requireNonNull(constants$3166.const$2,"gtk_toolbar_insert");
     }
     /**
      * {@snippet :
-     * void gtk_toolbar_insert(GtkToolbar* toolbar, GtkToolItem* item, gint pos);
+     * void gtk_toolbar_insert(struct _GtkToolbar* toolbar, struct _GtkToolItem* item, int pos);
      * }
      */
     public static void gtk_toolbar_insert(MemorySegment toolbar, MemorySegment item, int pos) {
@@ -7952,11 +10626,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_get_item_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$1852.gtk_toolbar_get_item_index$MH,"gtk_toolbar_get_item_index");
+        return RuntimeHelper.requireNonNull(constants$3166.const$3,"gtk_toolbar_get_item_index");
     }
     /**
      * {@snippet :
-     * gint gtk_toolbar_get_item_index(GtkToolbar* toolbar, GtkToolItem* item);
+     * int gtk_toolbar_get_item_index(struct _GtkToolbar* toolbar, struct _GtkToolItem* item);
      * }
      */
     public static int gtk_toolbar_get_item_index(MemorySegment toolbar, MemorySegment item) {
@@ -7968,11 +10642,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_get_n_items$MH() {
-        return RuntimeHelper.requireNonNull(constants$1852.gtk_toolbar_get_n_items$MH,"gtk_toolbar_get_n_items");
+        return RuntimeHelper.requireNonNull(constants$3166.const$4,"gtk_toolbar_get_n_items");
     }
     /**
      * {@snippet :
-     * gint gtk_toolbar_get_n_items(GtkToolbar* toolbar);
+     * int gtk_toolbar_get_n_items(struct _GtkToolbar* toolbar);
      * }
      */
     public static int gtk_toolbar_get_n_items(MemorySegment toolbar) {
@@ -7984,11 +10658,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_get_nth_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$1852.gtk_toolbar_get_nth_item$MH,"gtk_toolbar_get_nth_item");
+        return RuntimeHelper.requireNonNull(constants$3166.const$5,"gtk_toolbar_get_nth_item");
     }
     /**
      * {@snippet :
-     * GtkToolItem* gtk_toolbar_get_nth_item(GtkToolbar* toolbar, gint n);
+     * struct _GtkToolItem* gtk_toolbar_get_nth_item(struct _GtkToolbar* toolbar, int n);
      * }
      */
     public static MemorySegment gtk_toolbar_get_nth_item(MemorySegment toolbar, int n) {
@@ -8000,11 +10674,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_get_show_arrow$MH() {
-        return RuntimeHelper.requireNonNull(constants$1852.gtk_toolbar_get_show_arrow$MH,"gtk_toolbar_get_show_arrow");
+        return RuntimeHelper.requireNonNull(constants$3167.const$0,"gtk_toolbar_get_show_arrow");
     }
     /**
      * {@snippet :
-     * gboolean gtk_toolbar_get_show_arrow(GtkToolbar* toolbar);
+     * int gtk_toolbar_get_show_arrow(struct _GtkToolbar* toolbar);
      * }
      */
     public static int gtk_toolbar_get_show_arrow(MemorySegment toolbar) {
@@ -8016,11 +10690,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_set_show_arrow$MH() {
-        return RuntimeHelper.requireNonNull(constants$1852.gtk_toolbar_set_show_arrow$MH,"gtk_toolbar_set_show_arrow");
+        return RuntimeHelper.requireNonNull(constants$3167.const$1,"gtk_toolbar_set_show_arrow");
     }
     /**
      * {@snippet :
-     * void gtk_toolbar_set_show_arrow(GtkToolbar* toolbar, gboolean show_arrow);
+     * void gtk_toolbar_set_show_arrow(struct _GtkToolbar* toolbar, int show_arrow);
      * }
      */
     public static void gtk_toolbar_set_show_arrow(MemorySegment toolbar, int show_arrow) {
@@ -8032,11 +10706,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_get_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1853.gtk_toolbar_get_style$MH,"gtk_toolbar_get_style");
+        return RuntimeHelper.requireNonNull(constants$3167.const$2,"gtk_toolbar_get_style");
     }
     /**
      * {@snippet :
-     * GtkToolbarStyle gtk_toolbar_get_style(GtkToolbar* toolbar);
+     * enum GtkToolbarStyle gtk_toolbar_get_style(struct _GtkToolbar* toolbar);
      * }
      */
     public static int gtk_toolbar_get_style(MemorySegment toolbar) {
@@ -8048,11 +10722,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_set_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1853.gtk_toolbar_set_style$MH,"gtk_toolbar_set_style");
+        return RuntimeHelper.requireNonNull(constants$3167.const$3,"gtk_toolbar_set_style");
     }
     /**
      * {@snippet :
-     * void gtk_toolbar_set_style(GtkToolbar* toolbar, GtkToolbarStyle style);
+     * void gtk_toolbar_set_style(struct _GtkToolbar* toolbar, enum GtkToolbarStyle style);
      * }
      */
     public static void gtk_toolbar_set_style(MemorySegment toolbar, int style) {
@@ -8064,11 +10738,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_unset_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1853.gtk_toolbar_unset_style$MH,"gtk_toolbar_unset_style");
+        return RuntimeHelper.requireNonNull(constants$3167.const$4,"gtk_toolbar_unset_style");
     }
     /**
      * {@snippet :
-     * void gtk_toolbar_unset_style(GtkToolbar* toolbar);
+     * void gtk_toolbar_unset_style(struct _GtkToolbar* toolbar);
      * }
      */
     public static void gtk_toolbar_unset_style(MemorySegment toolbar) {
@@ -8080,11 +10754,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_get_icon_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1853.gtk_toolbar_get_icon_size$MH,"gtk_toolbar_get_icon_size");
+        return RuntimeHelper.requireNonNull(constants$3167.const$5,"gtk_toolbar_get_icon_size");
     }
     /**
      * {@snippet :
-     * GtkIconSize gtk_toolbar_get_icon_size(GtkToolbar* toolbar);
+     * enum GtkIconSize gtk_toolbar_get_icon_size(struct _GtkToolbar* toolbar);
      * }
      */
     public static int gtk_toolbar_get_icon_size(MemorySegment toolbar) {
@@ -8096,11 +10770,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_set_icon_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1853.gtk_toolbar_set_icon_size$MH,"gtk_toolbar_set_icon_size");
+        return RuntimeHelper.requireNonNull(constants$3168.const$0,"gtk_toolbar_set_icon_size");
     }
     /**
      * {@snippet :
-     * void gtk_toolbar_set_icon_size(GtkToolbar* toolbar, GtkIconSize icon_size);
+     * void gtk_toolbar_set_icon_size(struct _GtkToolbar* toolbar, enum GtkIconSize icon_size);
      * }
      */
     public static void gtk_toolbar_set_icon_size(MemorySegment toolbar, int icon_size) {
@@ -8112,11 +10786,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_unset_icon_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1853.gtk_toolbar_unset_icon_size$MH,"gtk_toolbar_unset_icon_size");
+        return RuntimeHelper.requireNonNull(constants$3168.const$1,"gtk_toolbar_unset_icon_size");
     }
     /**
      * {@snippet :
-     * void gtk_toolbar_unset_icon_size(GtkToolbar* toolbar);
+     * void gtk_toolbar_unset_icon_size(struct _GtkToolbar* toolbar);
      * }
      */
     public static void gtk_toolbar_unset_icon_size(MemorySegment toolbar) {
@@ -8128,11 +10802,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_get_relief_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1854.gtk_toolbar_get_relief_style$MH,"gtk_toolbar_get_relief_style");
+        return RuntimeHelper.requireNonNull(constants$3168.const$2,"gtk_toolbar_get_relief_style");
     }
     /**
      * {@snippet :
-     * GtkReliefStyle gtk_toolbar_get_relief_style(GtkToolbar* toolbar);
+     * enum GtkReliefStyle gtk_toolbar_get_relief_style(struct _GtkToolbar* toolbar);
      * }
      */
     public static int gtk_toolbar_get_relief_style(MemorySegment toolbar) {
@@ -8144,11 +10818,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_get_drop_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$1854.gtk_toolbar_get_drop_index$MH,"gtk_toolbar_get_drop_index");
+        return RuntimeHelper.requireNonNull(constants$3168.const$3,"gtk_toolbar_get_drop_index");
     }
     /**
      * {@snippet :
-     * gint gtk_toolbar_get_drop_index(GtkToolbar* toolbar, gint x, gint y);
+     * int gtk_toolbar_get_drop_index(struct _GtkToolbar* toolbar, int x, int y);
      * }
      */
     public static int gtk_toolbar_get_drop_index(MemorySegment toolbar, int x, int y) {
@@ -8160,11 +10834,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_set_drop_highlight_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$1854.gtk_toolbar_set_drop_highlight_item$MH,"gtk_toolbar_set_drop_highlight_item");
+        return RuntimeHelper.requireNonNull(constants$3168.const$4,"gtk_toolbar_set_drop_highlight_item");
     }
     /**
      * {@snippet :
-     * void gtk_toolbar_set_drop_highlight_item(GtkToolbar* toolbar, GtkToolItem* tool_item, gint index_);
+     * void gtk_toolbar_set_drop_highlight_item(struct _GtkToolbar* toolbar, struct _GtkToolItem* tool_item, int index_);
      * }
      */
     public static void gtk_toolbar_set_drop_highlight_item(MemorySegment toolbar, MemorySegment tool_item, int index_) {
@@ -8176,11 +10850,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1854.gtk_tool_item_group_get_type$MH,"gtk_tool_item_group_get_type");
+        return RuntimeHelper.requireNonNull(constants$3170.const$4,"gtk_tool_item_group_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_tool_item_group_get_type();
+     * unsigned long gtk_tool_item_group_get_type();
      * }
      */
     public static long gtk_tool_item_group_get_type() {
@@ -8192,11 +10866,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1854.gtk_tool_item_group_new$MH,"gtk_tool_item_group_new");
+        return RuntimeHelper.requireNonNull(constants$3170.const$5,"gtk_tool_item_group_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_tool_item_group_new(const gchar* label);
+     * struct _GtkWidget* gtk_tool_item_group_new(char* label);
      * }
      */
     public static MemorySegment gtk_tool_item_group_new(MemorySegment label) {
@@ -8208,11 +10882,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_set_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$1854.gtk_tool_item_group_set_label$MH,"gtk_tool_item_group_set_label");
+        return RuntimeHelper.requireNonNull(constants$3171.const$0,"gtk_tool_item_group_set_label");
     }
     /**
      * {@snippet :
-     * void gtk_tool_item_group_set_label(GtkToolItemGroup* group, const gchar* label);
+     * void gtk_tool_item_group_set_label(struct _GtkToolItemGroup* group, char* label);
      * }
      */
     public static void gtk_tool_item_group_set_label(MemorySegment group, MemorySegment label) {
@@ -8224,11 +10898,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_set_label_widget$MH() {
-        return RuntimeHelper.requireNonNull(constants$1855.gtk_tool_item_group_set_label_widget$MH,"gtk_tool_item_group_set_label_widget");
+        return RuntimeHelper.requireNonNull(constants$3171.const$1,"gtk_tool_item_group_set_label_widget");
     }
     /**
      * {@snippet :
-     * void gtk_tool_item_group_set_label_widget(GtkToolItemGroup* group, GtkWidget* label_widget);
+     * void gtk_tool_item_group_set_label_widget(struct _GtkToolItemGroup* group, struct _GtkWidget* label_widget);
      * }
      */
     public static void gtk_tool_item_group_set_label_widget(MemorySegment group, MemorySegment label_widget) {
@@ -8240,11 +10914,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_set_collapsed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1855.gtk_tool_item_group_set_collapsed$MH,"gtk_tool_item_group_set_collapsed");
+        return RuntimeHelper.requireNonNull(constants$3171.const$2,"gtk_tool_item_group_set_collapsed");
     }
     /**
      * {@snippet :
-     * void gtk_tool_item_group_set_collapsed(GtkToolItemGroup* group, gboolean collapsed);
+     * void gtk_tool_item_group_set_collapsed(struct _GtkToolItemGroup* group, int collapsed);
      * }
      */
     public static void gtk_tool_item_group_set_collapsed(MemorySegment group, int collapsed) {
@@ -8256,11 +10930,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_set_ellipsize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1855.gtk_tool_item_group_set_ellipsize$MH,"gtk_tool_item_group_set_ellipsize");
+        return RuntimeHelper.requireNonNull(constants$3171.const$3,"gtk_tool_item_group_set_ellipsize");
     }
     /**
      * {@snippet :
-     * void gtk_tool_item_group_set_ellipsize(GtkToolItemGroup* group, PangoEllipsizeMode ellipsize);
+     * void gtk_tool_item_group_set_ellipsize(struct _GtkToolItemGroup* group, enum PangoEllipsizeMode ellipsize);
      * }
      */
     public static void gtk_tool_item_group_set_ellipsize(MemorySegment group, int ellipsize) {
@@ -8272,11 +10946,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_set_header_relief$MH() {
-        return RuntimeHelper.requireNonNull(constants$1855.gtk_tool_item_group_set_header_relief$MH,"gtk_tool_item_group_set_header_relief");
+        return RuntimeHelper.requireNonNull(constants$3171.const$4,"gtk_tool_item_group_set_header_relief");
     }
     /**
      * {@snippet :
-     * void gtk_tool_item_group_set_header_relief(GtkToolItemGroup* group, GtkReliefStyle style);
+     * void gtk_tool_item_group_set_header_relief(struct _GtkToolItemGroup* group, enum GtkReliefStyle style);
      * }
      */
     public static void gtk_tool_item_group_set_header_relief(MemorySegment group, int style) {
@@ -8288,11 +10962,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_get_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$1855.gtk_tool_item_group_get_label$MH,"gtk_tool_item_group_get_label");
+        return RuntimeHelper.requireNonNull(constants$3171.const$5,"gtk_tool_item_group_get_label");
     }
     /**
      * {@snippet :
-     * const gchar* gtk_tool_item_group_get_label(GtkToolItemGroup* group);
+     * char* gtk_tool_item_group_get_label(struct _GtkToolItemGroup* group);
      * }
      */
     public static MemorySegment gtk_tool_item_group_get_label(MemorySegment group) {
@@ -8304,11 +10978,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_get_label_widget$MH() {
-        return RuntimeHelper.requireNonNull(constants$1855.gtk_tool_item_group_get_label_widget$MH,"gtk_tool_item_group_get_label_widget");
+        return RuntimeHelper.requireNonNull(constants$3172.const$0,"gtk_tool_item_group_get_label_widget");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_tool_item_group_get_label_widget(GtkToolItemGroup* group);
+     * struct _GtkWidget* gtk_tool_item_group_get_label_widget(struct _GtkToolItemGroup* group);
      * }
      */
     public static MemorySegment gtk_tool_item_group_get_label_widget(MemorySegment group) {
@@ -8320,11 +10994,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_get_collapsed$MH() {
-        return RuntimeHelper.requireNonNull(constants$1856.gtk_tool_item_group_get_collapsed$MH,"gtk_tool_item_group_get_collapsed");
+        return RuntimeHelper.requireNonNull(constants$3172.const$1,"gtk_tool_item_group_get_collapsed");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tool_item_group_get_collapsed(GtkToolItemGroup* group);
+     * int gtk_tool_item_group_get_collapsed(struct _GtkToolItemGroup* group);
      * }
      */
     public static int gtk_tool_item_group_get_collapsed(MemorySegment group) {
@@ -8336,11 +11010,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_get_ellipsize$MH() {
-        return RuntimeHelper.requireNonNull(constants$1856.gtk_tool_item_group_get_ellipsize$MH,"gtk_tool_item_group_get_ellipsize");
+        return RuntimeHelper.requireNonNull(constants$3172.const$2,"gtk_tool_item_group_get_ellipsize");
     }
     /**
      * {@snippet :
-     * PangoEllipsizeMode gtk_tool_item_group_get_ellipsize(GtkToolItemGroup* group);
+     * enum PangoEllipsizeMode gtk_tool_item_group_get_ellipsize(struct _GtkToolItemGroup* group);
      * }
      */
     public static int gtk_tool_item_group_get_ellipsize(MemorySegment group) {
@@ -8352,11 +11026,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_get_header_relief$MH() {
-        return RuntimeHelper.requireNonNull(constants$1856.gtk_tool_item_group_get_header_relief$MH,"gtk_tool_item_group_get_header_relief");
+        return RuntimeHelper.requireNonNull(constants$3172.const$3,"gtk_tool_item_group_get_header_relief");
     }
     /**
      * {@snippet :
-     * GtkReliefStyle gtk_tool_item_group_get_header_relief(GtkToolItemGroup* group);
+     * enum GtkReliefStyle gtk_tool_item_group_get_header_relief(struct _GtkToolItemGroup* group);
      * }
      */
     public static int gtk_tool_item_group_get_header_relief(MemorySegment group) {
@@ -8368,11 +11042,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_insert$MH() {
-        return RuntimeHelper.requireNonNull(constants$1856.gtk_tool_item_group_insert$MH,"gtk_tool_item_group_insert");
+        return RuntimeHelper.requireNonNull(constants$3172.const$4,"gtk_tool_item_group_insert");
     }
     /**
      * {@snippet :
-     * void gtk_tool_item_group_insert(GtkToolItemGroup* group, GtkToolItem* item, gint position);
+     * void gtk_tool_item_group_insert(struct _GtkToolItemGroup* group, struct _GtkToolItem* item, int position);
      * }
      */
     public static void gtk_tool_item_group_insert(MemorySegment group, MemorySegment item, int position) {
@@ -8384,11 +11058,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_set_item_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$1856.gtk_tool_item_group_set_item_position$MH,"gtk_tool_item_group_set_item_position");
+        return RuntimeHelper.requireNonNull(constants$3172.const$5,"gtk_tool_item_group_set_item_position");
     }
     /**
      * {@snippet :
-     * void gtk_tool_item_group_set_item_position(GtkToolItemGroup* group, GtkToolItem* item, gint position);
+     * void gtk_tool_item_group_set_item_position(struct _GtkToolItemGroup* group, struct _GtkToolItem* item, int position);
      * }
      */
     public static void gtk_tool_item_group_set_item_position(MemorySegment group, MemorySegment item, int position) {
@@ -8400,11 +11074,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_get_item_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$1856.gtk_tool_item_group_get_item_position$MH,"gtk_tool_item_group_get_item_position");
+        return RuntimeHelper.requireNonNull(constants$3173.const$0,"gtk_tool_item_group_get_item_position");
     }
     /**
      * {@snippet :
-     * gint gtk_tool_item_group_get_item_position(GtkToolItemGroup* group, GtkToolItem* item);
+     * int gtk_tool_item_group_get_item_position(struct _GtkToolItemGroup* group, struct _GtkToolItem* item);
      * }
      */
     public static int gtk_tool_item_group_get_item_position(MemorySegment group, MemorySegment item) {
@@ -8416,11 +11090,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_get_n_items$MH() {
-        return RuntimeHelper.requireNonNull(constants$1857.gtk_tool_item_group_get_n_items$MH,"gtk_tool_item_group_get_n_items");
+        return RuntimeHelper.requireNonNull(constants$3173.const$1,"gtk_tool_item_group_get_n_items");
     }
     /**
      * {@snippet :
-     * guint gtk_tool_item_group_get_n_items(GtkToolItemGroup* group);
+     * unsigned int gtk_tool_item_group_get_n_items(struct _GtkToolItemGroup* group);
      * }
      */
     public static int gtk_tool_item_group_get_n_items(MemorySegment group) {
@@ -8432,11 +11106,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_get_nth_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$1857.gtk_tool_item_group_get_nth_item$MH,"gtk_tool_item_group_get_nth_item");
+        return RuntimeHelper.requireNonNull(constants$3173.const$2,"gtk_tool_item_group_get_nth_item");
     }
     /**
      * {@snippet :
-     * GtkToolItem* gtk_tool_item_group_get_nth_item(GtkToolItemGroup* group, guint index);
+     * struct _GtkToolItem* gtk_tool_item_group_get_nth_item(struct _GtkToolItemGroup* group, unsigned int index);
      * }
      */
     public static MemorySegment gtk_tool_item_group_get_nth_item(MemorySegment group, int index) {
@@ -8448,11 +11122,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_item_group_get_drop_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$1857.gtk_tool_item_group_get_drop_item$MH,"gtk_tool_item_group_get_drop_item");
+        return RuntimeHelper.requireNonNull(constants$3173.const$3,"gtk_tool_item_group_get_drop_item");
     }
     /**
      * {@snippet :
-     * GtkToolItem* gtk_tool_item_group_get_drop_item(GtkToolItemGroup* group, gint x, gint y);
+     * struct _GtkToolItem* gtk_tool_item_group_get_drop_item(struct _GtkToolItemGroup* group, int x, int y);
      * }
      */
     public static MemorySegment gtk_tool_item_group_get_drop_item(MemorySegment group, int x, int y) {
@@ -8465,7 +11139,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TOOL_PALETTE_DRAG_ITEMS = 1;
+     * enum GtkToolPaletteDragTargets.GTK_TOOL_PALETTE_DRAG_ITEMS = 1;
      * }
      */
     public static int GTK_TOOL_PALETTE_DRAG_ITEMS() {
@@ -8473,18 +11147,18 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
     }
     /**
      * {@snippet :
-     * enum .GTK_TOOL_PALETTE_DRAG_GROUPS = 2;
+     * enum GtkToolPaletteDragTargets.GTK_TOOL_PALETTE_DRAG_GROUPS = 2;
      * }
      */
     public static int GTK_TOOL_PALETTE_DRAG_GROUPS() {
         return (int)2L;
     }
     public static MethodHandle gtk_tool_palette_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1857.gtk_tool_palette_get_type$MH,"gtk_tool_palette_get_type");
+        return RuntimeHelper.requireNonNull(constants$3175.const$3,"gtk_tool_palette_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_tool_palette_get_type();
+     * unsigned long gtk_tool_palette_get_type();
      * }
      */
     public static long gtk_tool_palette_get_type() {
@@ -8496,11 +11170,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1857.gtk_tool_palette_new$MH,"gtk_tool_palette_new");
+        return RuntimeHelper.requireNonNull(constants$3175.const$4,"gtk_tool_palette_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_tool_palette_new();
+     * struct _GtkWidget* gtk_tool_palette_new();
      * }
      */
     public static MemorySegment gtk_tool_palette_new() {
@@ -8512,11 +11186,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_set_group_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$1857.gtk_tool_palette_set_group_position$MH,"gtk_tool_palette_set_group_position");
+        return RuntimeHelper.requireNonNull(constants$3175.const$5,"gtk_tool_palette_set_group_position");
     }
     /**
      * {@snippet :
-     * void gtk_tool_palette_set_group_position(GtkToolPalette* palette, GtkToolItemGroup* group, gint position);
+     * void gtk_tool_palette_set_group_position(struct _GtkToolPalette* palette, struct _GtkToolItemGroup* group, int position);
      * }
      */
     public static void gtk_tool_palette_set_group_position(MemorySegment palette, MemorySegment group, int position) {
@@ -8528,11 +11202,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_set_exclusive$MH() {
-        return RuntimeHelper.requireNonNull(constants$1858.gtk_tool_palette_set_exclusive$MH,"gtk_tool_palette_set_exclusive");
+        return RuntimeHelper.requireNonNull(constants$3176.const$0,"gtk_tool_palette_set_exclusive");
     }
     /**
      * {@snippet :
-     * void gtk_tool_palette_set_exclusive(GtkToolPalette* palette, GtkToolItemGroup* group, gboolean exclusive);
+     * void gtk_tool_palette_set_exclusive(struct _GtkToolPalette* palette, struct _GtkToolItemGroup* group, int exclusive);
      * }
      */
     public static void gtk_tool_palette_set_exclusive(MemorySegment palette, MemorySegment group, int exclusive) {
@@ -8544,11 +11218,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_set_expand$MH() {
-        return RuntimeHelper.requireNonNull(constants$1858.gtk_tool_palette_set_expand$MH,"gtk_tool_palette_set_expand");
+        return RuntimeHelper.requireNonNull(constants$3176.const$1,"gtk_tool_palette_set_expand");
     }
     /**
      * {@snippet :
-     * void gtk_tool_palette_set_expand(GtkToolPalette* palette, GtkToolItemGroup* group, gboolean expand);
+     * void gtk_tool_palette_set_expand(struct _GtkToolPalette* palette, struct _GtkToolItemGroup* group, int expand);
      * }
      */
     public static void gtk_tool_palette_set_expand(MemorySegment palette, MemorySegment group, int expand) {
@@ -8560,11 +11234,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_get_group_position$MH() {
-        return RuntimeHelper.requireNonNull(constants$1858.gtk_tool_palette_get_group_position$MH,"gtk_tool_palette_get_group_position");
+        return RuntimeHelper.requireNonNull(constants$3176.const$2,"gtk_tool_palette_get_group_position");
     }
     /**
      * {@snippet :
-     * gint gtk_tool_palette_get_group_position(GtkToolPalette* palette, GtkToolItemGroup* group);
+     * int gtk_tool_palette_get_group_position(struct _GtkToolPalette* palette, struct _GtkToolItemGroup* group);
      * }
      */
     public static int gtk_tool_palette_get_group_position(MemorySegment palette, MemorySegment group) {
@@ -8576,11 +11250,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_get_exclusive$MH() {
-        return RuntimeHelper.requireNonNull(constants$1858.gtk_tool_palette_get_exclusive$MH,"gtk_tool_palette_get_exclusive");
+        return RuntimeHelper.requireNonNull(constants$3176.const$3,"gtk_tool_palette_get_exclusive");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tool_palette_get_exclusive(GtkToolPalette* palette, GtkToolItemGroup* group);
+     * int gtk_tool_palette_get_exclusive(struct _GtkToolPalette* palette, struct _GtkToolItemGroup* group);
      * }
      */
     public static int gtk_tool_palette_get_exclusive(MemorySegment palette, MemorySegment group) {
@@ -8592,11 +11266,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_get_expand$MH() {
-        return RuntimeHelper.requireNonNull(constants$1858.gtk_tool_palette_get_expand$MH,"gtk_tool_palette_get_expand");
+        return RuntimeHelper.requireNonNull(constants$3176.const$4,"gtk_tool_palette_get_expand");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tool_palette_get_expand(GtkToolPalette* palette, GtkToolItemGroup* group);
+     * int gtk_tool_palette_get_expand(struct _GtkToolPalette* palette, struct _GtkToolItemGroup* group);
      * }
      */
     public static int gtk_tool_palette_get_expand(MemorySegment palette, MemorySegment group) {
@@ -8608,11 +11282,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_set_icon_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1858.gtk_tool_palette_set_icon_size$MH,"gtk_tool_palette_set_icon_size");
+        return RuntimeHelper.requireNonNull(constants$3176.const$5,"gtk_tool_palette_set_icon_size");
     }
     /**
      * {@snippet :
-     * void gtk_tool_palette_set_icon_size(GtkToolPalette* palette, GtkIconSize icon_size);
+     * void gtk_tool_palette_set_icon_size(struct _GtkToolPalette* palette, enum GtkIconSize icon_size);
      * }
      */
     public static void gtk_tool_palette_set_icon_size(MemorySegment palette, int icon_size) {
@@ -8624,11 +11298,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_unset_icon_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1859.gtk_tool_palette_unset_icon_size$MH,"gtk_tool_palette_unset_icon_size");
+        return RuntimeHelper.requireNonNull(constants$3177.const$0,"gtk_tool_palette_unset_icon_size");
     }
     /**
      * {@snippet :
-     * void gtk_tool_palette_unset_icon_size(GtkToolPalette* palette);
+     * void gtk_tool_palette_unset_icon_size(struct _GtkToolPalette* palette);
      * }
      */
     public static void gtk_tool_palette_unset_icon_size(MemorySegment palette) {
@@ -8640,11 +11314,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_set_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1859.gtk_tool_palette_set_style$MH,"gtk_tool_palette_set_style");
+        return RuntimeHelper.requireNonNull(constants$3177.const$1,"gtk_tool_palette_set_style");
     }
     /**
      * {@snippet :
-     * void gtk_tool_palette_set_style(GtkToolPalette* palette, GtkToolbarStyle style);
+     * void gtk_tool_palette_set_style(struct _GtkToolPalette* palette, enum GtkToolbarStyle style);
      * }
      */
     public static void gtk_tool_palette_set_style(MemorySegment palette, int style) {
@@ -8656,11 +11330,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_unset_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1859.gtk_tool_palette_unset_style$MH,"gtk_tool_palette_unset_style");
+        return RuntimeHelper.requireNonNull(constants$3177.const$2,"gtk_tool_palette_unset_style");
     }
     /**
      * {@snippet :
-     * void gtk_tool_palette_unset_style(GtkToolPalette* palette);
+     * void gtk_tool_palette_unset_style(struct _GtkToolPalette* palette);
      * }
      */
     public static void gtk_tool_palette_unset_style(MemorySegment palette) {
@@ -8672,11 +11346,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_get_icon_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1859.gtk_tool_palette_get_icon_size$MH,"gtk_tool_palette_get_icon_size");
+        return RuntimeHelper.requireNonNull(constants$3177.const$3,"gtk_tool_palette_get_icon_size");
     }
     /**
      * {@snippet :
-     * GtkIconSize gtk_tool_palette_get_icon_size(GtkToolPalette* palette);
+     * enum GtkIconSize gtk_tool_palette_get_icon_size(struct _GtkToolPalette* palette);
      * }
      */
     public static int gtk_tool_palette_get_icon_size(MemorySegment palette) {
@@ -8688,11 +11362,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_get_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1859.gtk_tool_palette_get_style$MH,"gtk_tool_palette_get_style");
+        return RuntimeHelper.requireNonNull(constants$3177.const$4,"gtk_tool_palette_get_style");
     }
     /**
      * {@snippet :
-     * GtkToolbarStyle gtk_tool_palette_get_style(GtkToolPalette* palette);
+     * enum GtkToolbarStyle gtk_tool_palette_get_style(struct _GtkToolPalette* palette);
      * }
      */
     public static int gtk_tool_palette_get_style(MemorySegment palette) {
@@ -8704,11 +11378,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_get_drop_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$1859.gtk_tool_palette_get_drop_item$MH,"gtk_tool_palette_get_drop_item");
+        return RuntimeHelper.requireNonNull(constants$3177.const$5,"gtk_tool_palette_get_drop_item");
     }
     /**
      * {@snippet :
-     * GtkToolItem* gtk_tool_palette_get_drop_item(GtkToolPalette* palette, gint x, gint y);
+     * struct _GtkToolItem* gtk_tool_palette_get_drop_item(struct _GtkToolPalette* palette, int x, int y);
      * }
      */
     public static MemorySegment gtk_tool_palette_get_drop_item(MemorySegment palette, int x, int y) {
@@ -8720,11 +11394,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_get_drop_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$1860.gtk_tool_palette_get_drop_group$MH,"gtk_tool_palette_get_drop_group");
+        return RuntimeHelper.requireNonNull(constants$3178.const$0,"gtk_tool_palette_get_drop_group");
     }
     /**
      * {@snippet :
-     * GtkToolItemGroup* gtk_tool_palette_get_drop_group(GtkToolPalette* palette, gint x, gint y);
+     * struct _GtkToolItemGroup* gtk_tool_palette_get_drop_group(struct _GtkToolPalette* palette, int x, int y);
      * }
      */
     public static MemorySegment gtk_tool_palette_get_drop_group(MemorySegment palette, int x, int y) {
@@ -8736,11 +11410,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_get_drag_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$1860.gtk_tool_palette_get_drag_item$MH,"gtk_tool_palette_get_drag_item");
+        return RuntimeHelper.requireNonNull(constants$3178.const$1,"gtk_tool_palette_get_drag_item");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_tool_palette_get_drag_item(GtkToolPalette* palette, const GtkSelectionData* selection);
+     * struct _GtkWidget* gtk_tool_palette_get_drag_item(struct _GtkToolPalette* palette, struct _GtkSelectionData* selection);
      * }
      */
     public static MemorySegment gtk_tool_palette_get_drag_item(MemorySegment palette, MemorySegment selection) {
@@ -8752,11 +11426,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_set_drag_source$MH() {
-        return RuntimeHelper.requireNonNull(constants$1860.gtk_tool_palette_set_drag_source$MH,"gtk_tool_palette_set_drag_source");
+        return RuntimeHelper.requireNonNull(constants$3178.const$2,"gtk_tool_palette_set_drag_source");
     }
     /**
      * {@snippet :
-     * void gtk_tool_palette_set_drag_source(GtkToolPalette* palette, GtkToolPaletteDragTargets targets);
+     * void gtk_tool_palette_set_drag_source(struct _GtkToolPalette* palette, enum GtkToolPaletteDragTargets targets);
      * }
      */
     public static void gtk_tool_palette_set_drag_source(MemorySegment palette, int targets) {
@@ -8768,11 +11442,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_add_drag_dest$MH() {
-        return RuntimeHelper.requireNonNull(constants$1860.gtk_tool_palette_add_drag_dest$MH,"gtk_tool_palette_add_drag_dest");
+        return RuntimeHelper.requireNonNull(constants$3178.const$3,"gtk_tool_palette_add_drag_dest");
     }
     /**
      * {@snippet :
-     * void gtk_tool_palette_add_drag_dest(GtkToolPalette* palette, GtkWidget* widget, GtkDestDefaults flags, GtkToolPaletteDragTargets targets, GdkDragAction actions);
+     * void gtk_tool_palette_add_drag_dest(struct _GtkToolPalette* palette, struct _GtkWidget* widget, enum GtkDestDefaults flags, enum GtkToolPaletteDragTargets targets, enum GdkDragAction actions);
      * }
      */
     public static void gtk_tool_palette_add_drag_dest(MemorySegment palette, MemorySegment widget, int flags, int targets, int actions) {
@@ -8784,11 +11458,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_get_hadjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1860.gtk_tool_palette_get_hadjustment$MH,"gtk_tool_palette_get_hadjustment");
+        return RuntimeHelper.requireNonNull(constants$3178.const$4,"gtk_tool_palette_get_hadjustment");
     }
     /**
      * {@snippet :
-     * GtkAdjustment* gtk_tool_palette_get_hadjustment(GtkToolPalette* palette);
+     * struct _GtkAdjustment* gtk_tool_palette_get_hadjustment(struct _GtkToolPalette* palette);
      * }
      */
     public static MemorySegment gtk_tool_palette_get_hadjustment(MemorySegment palette) {
@@ -8800,11 +11474,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_get_vadjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1860.gtk_tool_palette_get_vadjustment$MH,"gtk_tool_palette_get_vadjustment");
+        return RuntimeHelper.requireNonNull(constants$3178.const$5,"gtk_tool_palette_get_vadjustment");
     }
     /**
      * {@snippet :
-     * GtkAdjustment* gtk_tool_palette_get_vadjustment(GtkToolPalette* palette);
+     * struct _GtkAdjustment* gtk_tool_palette_get_vadjustment(struct _GtkToolPalette* palette);
      * }
      */
     public static MemorySegment gtk_tool_palette_get_vadjustment(MemorySegment palette) {
@@ -8816,11 +11490,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_get_drag_target_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$1861.gtk_tool_palette_get_drag_target_item$MH,"gtk_tool_palette_get_drag_target_item");
+        return RuntimeHelper.requireNonNull(constants$3179.const$0,"gtk_tool_palette_get_drag_target_item");
     }
     /**
      * {@snippet :
-     * const GtkTargetEntry* gtk_tool_palette_get_drag_target_item();
+     * struct _GtkTargetEntry* gtk_tool_palette_get_drag_target_item();
      * }
      */
     public static MemorySegment gtk_tool_palette_get_drag_target_item() {
@@ -8832,11 +11506,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_get_drag_target_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$1861.gtk_tool_palette_get_drag_target_group$MH,"gtk_tool_palette_get_drag_target_group");
+        return RuntimeHelper.requireNonNull(constants$3179.const$1,"gtk_tool_palette_get_drag_target_group");
     }
     /**
      * {@snippet :
-     * const GtkTargetEntry* gtk_tool_palette_get_drag_target_group();
+     * struct _GtkTargetEntry* gtk_tool_palette_get_drag_target_group();
      * }
      */
     public static MemorySegment gtk_tool_palette_get_drag_target_group() {
@@ -8848,11 +11522,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_shell_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1861.gtk_tool_shell_get_type$MH,"gtk_tool_shell_get_type");
+        return RuntimeHelper.requireNonNull(constants$3182.const$4,"gtk_tool_shell_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_tool_shell_get_type();
+     * unsigned long gtk_tool_shell_get_type();
      * }
      */
     public static long gtk_tool_shell_get_type() {
@@ -8864,11 +11538,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_shell_get_icon_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1861.gtk_tool_shell_get_icon_size$MH,"gtk_tool_shell_get_icon_size");
+        return RuntimeHelper.requireNonNull(constants$3182.const$5,"gtk_tool_shell_get_icon_size");
     }
     /**
      * {@snippet :
-     * GtkIconSize gtk_tool_shell_get_icon_size(GtkToolShell* shell);
+     * enum GtkIconSize gtk_tool_shell_get_icon_size(struct _GtkToolShell* shell);
      * }
      */
     public static int gtk_tool_shell_get_icon_size(MemorySegment shell) {
@@ -8880,11 +11554,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_shell_get_orientation$MH() {
-        return RuntimeHelper.requireNonNull(constants$1861.gtk_tool_shell_get_orientation$MH,"gtk_tool_shell_get_orientation");
+        return RuntimeHelper.requireNonNull(constants$3183.const$0,"gtk_tool_shell_get_orientation");
     }
     /**
      * {@snippet :
-     * GtkOrientation gtk_tool_shell_get_orientation(GtkToolShell* shell);
+     * enum GtkOrientation gtk_tool_shell_get_orientation(struct _GtkToolShell* shell);
      * }
      */
     public static int gtk_tool_shell_get_orientation(MemorySegment shell) {
@@ -8896,11 +11570,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_shell_get_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1861.gtk_tool_shell_get_style$MH,"gtk_tool_shell_get_style");
+        return RuntimeHelper.requireNonNull(constants$3183.const$1,"gtk_tool_shell_get_style");
     }
     /**
      * {@snippet :
-     * GtkToolbarStyle gtk_tool_shell_get_style(GtkToolShell* shell);
+     * enum GtkToolbarStyle gtk_tool_shell_get_style(struct _GtkToolShell* shell);
      * }
      */
     public static int gtk_tool_shell_get_style(MemorySegment shell) {
@@ -8912,11 +11586,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_shell_get_relief_style$MH() {
-        return RuntimeHelper.requireNonNull(constants$1862.gtk_tool_shell_get_relief_style$MH,"gtk_tool_shell_get_relief_style");
+        return RuntimeHelper.requireNonNull(constants$3183.const$2,"gtk_tool_shell_get_relief_style");
     }
     /**
      * {@snippet :
-     * GtkReliefStyle gtk_tool_shell_get_relief_style(GtkToolShell* shell);
+     * enum GtkReliefStyle gtk_tool_shell_get_relief_style(struct _GtkToolShell* shell);
      * }
      */
     public static int gtk_tool_shell_get_relief_style(MemorySegment shell) {
@@ -8928,11 +11602,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_shell_rebuild_menu$MH() {
-        return RuntimeHelper.requireNonNull(constants$1862.gtk_tool_shell_rebuild_menu$MH,"gtk_tool_shell_rebuild_menu");
+        return RuntimeHelper.requireNonNull(constants$3183.const$3,"gtk_tool_shell_rebuild_menu");
     }
     /**
      * {@snippet :
-     * void gtk_tool_shell_rebuild_menu(GtkToolShell* shell);
+     * void gtk_tool_shell_rebuild_menu(struct _GtkToolShell* shell);
      * }
      */
     public static void gtk_tool_shell_rebuild_menu(MemorySegment shell) {
@@ -8944,11 +11618,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_shell_get_text_orientation$MH() {
-        return RuntimeHelper.requireNonNull(constants$1862.gtk_tool_shell_get_text_orientation$MH,"gtk_tool_shell_get_text_orientation");
+        return RuntimeHelper.requireNonNull(constants$3183.const$4,"gtk_tool_shell_get_text_orientation");
     }
     /**
      * {@snippet :
-     * GtkOrientation gtk_tool_shell_get_text_orientation(GtkToolShell* shell);
+     * enum GtkOrientation gtk_tool_shell_get_text_orientation(struct _GtkToolShell* shell);
      * }
      */
     public static int gtk_tool_shell_get_text_orientation(MemorySegment shell) {
@@ -8960,11 +11634,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_shell_get_text_alignment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1862.gtk_tool_shell_get_text_alignment$MH,"gtk_tool_shell_get_text_alignment");
+        return RuntimeHelper.requireNonNull(constants$3183.const$5,"gtk_tool_shell_get_text_alignment");
     }
     /**
      * {@snippet :
-     * gfloat gtk_tool_shell_get_text_alignment(GtkToolShell* shell);
+     * float gtk_tool_shell_get_text_alignment(struct _GtkToolShell* shell);
      * }
      */
     public static float gtk_tool_shell_get_text_alignment(MemorySegment shell) {
@@ -8976,11 +11650,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_shell_get_ellipsize_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1862.gtk_tool_shell_get_ellipsize_mode$MH,"gtk_tool_shell_get_ellipsize_mode");
+        return RuntimeHelper.requireNonNull(constants$3184.const$0,"gtk_tool_shell_get_ellipsize_mode");
     }
     /**
      * {@snippet :
-     * PangoEllipsizeMode gtk_tool_shell_get_ellipsize_mode(GtkToolShell* shell);
+     * enum PangoEllipsizeMode gtk_tool_shell_get_ellipsize_mode(struct _GtkToolShell* shell);
      * }
      */
     public static int gtk_tool_shell_get_ellipsize_mode(MemorySegment shell) {
@@ -8992,11 +11666,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_shell_get_text_size_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$1862.gtk_tool_shell_get_text_size_group$MH,"gtk_tool_shell_get_text_size_group");
+        return RuntimeHelper.requireNonNull(constants$3184.const$1,"gtk_tool_shell_get_text_size_group");
     }
     /**
      * {@snippet :
-     * GtkSizeGroup* gtk_tool_shell_get_text_size_group(GtkToolShell* shell);
+     * struct _GtkSizeGroup* gtk_tool_shell_get_text_size_group(struct _GtkToolShell* shell);
      * }
      */
     public static MemorySegment gtk_tool_shell_get_text_size_group(MemorySegment shell) {
@@ -9008,7 +11682,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_init$MH() {
-        return RuntimeHelper.requireNonNull(constants$1863.gtk_test_init$MH,"gtk_test_init");
+        return RuntimeHelper.requireNonNull(constants$3184.const$2,"gtk_test_init");
     }
     /**
      * {@snippet :
@@ -9024,7 +11698,7 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_register_all_types$MH() {
-        return RuntimeHelper.requireNonNull(constants$1863.gtk_test_register_all_types$MH,"gtk_test_register_all_types");
+        return RuntimeHelper.requireNonNull(constants$3184.const$3,"gtk_test_register_all_types");
     }
     /**
      * {@snippet :
@@ -9040,11 +11714,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_list_all_types$MH() {
-        return RuntimeHelper.requireNonNull(constants$1863.gtk_test_list_all_types$MH,"gtk_test_list_all_types");
+        return RuntimeHelper.requireNonNull(constants$3184.const$4,"gtk_test_list_all_types");
     }
     /**
      * {@snippet :
-     * const GType* gtk_test_list_all_types(guint* n_types);
+     * unsigned long* gtk_test_list_all_types(unsigned int* n_types);
      * }
      */
     public static MemorySegment gtk_test_list_all_types(MemorySegment n_types) {
@@ -9056,11 +11730,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_find_widget$MH() {
-        return RuntimeHelper.requireNonNull(constants$1863.gtk_test_find_widget$MH,"gtk_test_find_widget");
+        return RuntimeHelper.requireNonNull(constants$3184.const$5,"gtk_test_find_widget");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_test_find_widget(GtkWidget* widget, const gchar* label_pattern, GType widget_type);
+     * struct _GtkWidget* gtk_test_find_widget(struct _GtkWidget* widget, char* label_pattern, unsigned long widget_type);
      * }
      */
     public static MemorySegment gtk_test_find_widget(MemorySegment widget, MemorySegment label_pattern, long widget_type) {
@@ -9072,11 +11746,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_create_widget$MH() {
-        return RuntimeHelper.requireNonNull(constants$1863.gtk_test_create_widget$MH,"gtk_test_create_widget");
+        return RuntimeHelper.requireNonNull(constants$3185.const$0,"gtk_test_create_widget");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_test_create_widget(GType widget_type, const gchar* first_property_name,...);
+     * struct _GtkWidget* gtk_test_create_widget(unsigned long widget_type, char* first_property_name,...);
      * }
      */
     public static MemorySegment gtk_test_create_widget(long widget_type, MemorySegment first_property_name, Object... x2) {
@@ -9088,11 +11762,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_create_simple_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1863.gtk_test_create_simple_window$MH,"gtk_test_create_simple_window");
+        return RuntimeHelper.requireNonNull(constants$3185.const$1,"gtk_test_create_simple_window");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_test_create_simple_window(const gchar* window_title, const gchar* dialog_text);
+     * struct _GtkWidget* gtk_test_create_simple_window(char* window_title, char* dialog_text);
      * }
      */
     public static MemorySegment gtk_test_create_simple_window(MemorySegment window_title, MemorySegment dialog_text) {
@@ -9104,11 +11778,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_display_button_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1864.gtk_test_display_button_window$MH,"gtk_test_display_button_window");
+        return RuntimeHelper.requireNonNull(constants$3185.const$2,"gtk_test_display_button_window");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_test_display_button_window(const gchar* window_title, const gchar* dialog_text,...);
+     * struct _GtkWidget* gtk_test_display_button_window(char* window_title, char* dialog_text,...);
      * }
      */
     public static MemorySegment gtk_test_display_button_window(MemorySegment window_title, MemorySegment dialog_text, Object... x2) {
@@ -9120,11 +11794,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_slider_set_perc$MH() {
-        return RuntimeHelper.requireNonNull(constants$1864.gtk_test_slider_set_perc$MH,"gtk_test_slider_set_perc");
+        return RuntimeHelper.requireNonNull(constants$3185.const$3,"gtk_test_slider_set_perc");
     }
     /**
      * {@snippet :
-     * void gtk_test_slider_set_perc(GtkWidget* widget, double percentage);
+     * void gtk_test_slider_set_perc(struct _GtkWidget* widget, double percentage);
      * }
      */
     public static void gtk_test_slider_set_perc(MemorySegment widget, double percentage) {
@@ -9136,11 +11810,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_slider_get_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$1864.gtk_test_slider_get_value$MH,"gtk_test_slider_get_value");
+        return RuntimeHelper.requireNonNull(constants$3185.const$4,"gtk_test_slider_get_value");
     }
     /**
      * {@snippet :
-     * double gtk_test_slider_get_value(GtkWidget* widget);
+     * double gtk_test_slider_get_value(struct _GtkWidget* widget);
      * }
      */
     public static double gtk_test_slider_get_value(MemorySegment widget) {
@@ -9152,11 +11826,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_spin_button_click$MH() {
-        return RuntimeHelper.requireNonNull(constants$1864.gtk_test_spin_button_click$MH,"gtk_test_spin_button_click");
+        return RuntimeHelper.requireNonNull(constants$3185.const$5,"gtk_test_spin_button_click");
     }
     /**
      * {@snippet :
-     * gboolean gtk_test_spin_button_click(GtkSpinButton* spinner, guint button, gboolean upwards);
+     * int gtk_test_spin_button_click(struct _GtkSpinButton* spinner, unsigned int button, int upwards);
      * }
      */
     public static int gtk_test_spin_button_click(MemorySegment spinner, int button, int upwards) {
@@ -9168,11 +11842,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_widget_wait_for_draw$MH() {
-        return RuntimeHelper.requireNonNull(constants$1864.gtk_test_widget_wait_for_draw$MH,"gtk_test_widget_wait_for_draw");
+        return RuntimeHelper.requireNonNull(constants$3186.const$0,"gtk_test_widget_wait_for_draw");
     }
     /**
      * {@snippet :
-     * void gtk_test_widget_wait_for_draw(GtkWidget* widget);
+     * void gtk_test_widget_wait_for_draw(struct _GtkWidget* widget);
      * }
      */
     public static void gtk_test_widget_wait_for_draw(MemorySegment widget) {
@@ -9184,11 +11858,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_widget_click$MH() {
-        return RuntimeHelper.requireNonNull(constants$1864.gtk_test_widget_click$MH,"gtk_test_widget_click");
+        return RuntimeHelper.requireNonNull(constants$3186.const$1,"gtk_test_widget_click");
     }
     /**
      * {@snippet :
-     * gboolean gtk_test_widget_click(GtkWidget* widget, guint button, GdkModifierType modifiers);
+     * int gtk_test_widget_click(struct _GtkWidget* widget, unsigned int button, enum GdkModifierType modifiers);
      * }
      */
     public static int gtk_test_widget_click(MemorySegment widget, int button, int modifiers) {
@@ -9200,11 +11874,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_widget_send_key$MH() {
-        return RuntimeHelper.requireNonNull(constants$1865.gtk_test_widget_send_key$MH,"gtk_test_widget_send_key");
+        return RuntimeHelper.requireNonNull(constants$3186.const$2,"gtk_test_widget_send_key");
     }
     /**
      * {@snippet :
-     * gboolean gtk_test_widget_send_key(GtkWidget* widget, guint keyval, GdkModifierType modifiers);
+     * int gtk_test_widget_send_key(struct _GtkWidget* widget, unsigned int keyval, enum GdkModifierType modifiers);
      * }
      */
     public static int gtk_test_widget_send_key(MemorySegment widget, int keyval, int modifiers) {
@@ -9216,11 +11890,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_text_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$1865.gtk_test_text_set$MH,"gtk_test_text_set");
+        return RuntimeHelper.requireNonNull(constants$3186.const$3,"gtk_test_text_set");
     }
     /**
      * {@snippet :
-     * void gtk_test_text_set(GtkWidget* widget, const gchar* string);
+     * void gtk_test_text_set(struct _GtkWidget* widget, char* string);
      * }
      */
     public static void gtk_test_text_set(MemorySegment widget, MemorySegment string) {
@@ -9232,11 +11906,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_text_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$1865.gtk_test_text_get$MH,"gtk_test_text_get");
+        return RuntimeHelper.requireNonNull(constants$3186.const$4,"gtk_test_text_get");
     }
     /**
      * {@snippet :
-     * gchar* gtk_test_text_get(GtkWidget* widget);
+     * char* gtk_test_text_get(struct _GtkWidget* widget);
      * }
      */
     public static MemorySegment gtk_test_text_get(MemorySegment widget) {
@@ -9248,11 +11922,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_find_sibling$MH() {
-        return RuntimeHelper.requireNonNull(constants$1865.gtk_test_find_sibling$MH,"gtk_test_find_sibling");
+        return RuntimeHelper.requireNonNull(constants$3186.const$5,"gtk_test_find_sibling");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_test_find_sibling(GtkWidget* base_widget, GType widget_type);
+     * struct _GtkWidget* gtk_test_find_sibling(struct _GtkWidget* base_widget, unsigned long widget_type);
      * }
      */
     public static MemorySegment gtk_test_find_sibling(MemorySegment base_widget, long widget_type) {
@@ -9264,11 +11938,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_test_find_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$1865.gtk_test_find_label$MH,"gtk_test_find_label");
+        return RuntimeHelper.requireNonNull(constants$3187.const$0,"gtk_test_find_label");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_test_find_label(GtkWidget* widget, const gchar* label_pattern);
+     * struct _GtkWidget* gtk_test_find_label(struct _GtkWidget* widget, char* label_pattern);
      * }
      */
     public static MemorySegment gtk_test_find_label(MemorySegment widget, MemorySegment label_pattern) {
@@ -9280,11 +11954,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_drag_source_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1865.gtk_tree_drag_source_get_type$MH,"gtk_tree_drag_source_get_type");
+        return RuntimeHelper.requireNonNull(constants$3188.const$2,"gtk_tree_drag_source_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_tree_drag_source_get_type();
+     * unsigned long gtk_tree_drag_source_get_type();
      * }
      */
     public static long gtk_tree_drag_source_get_type() {
@@ -9296,11 +11970,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_drag_source_row_draggable$MH() {
-        return RuntimeHelper.requireNonNull(constants$1866.gtk_tree_drag_source_row_draggable$MH,"gtk_tree_drag_source_row_draggable");
+        return RuntimeHelper.requireNonNull(constants$3188.const$3,"gtk_tree_drag_source_row_draggable");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tree_drag_source_row_draggable(GtkTreeDragSource* drag_source, GtkTreePath* path);
+     * int gtk_tree_drag_source_row_draggable(struct _GtkTreeDragSource* drag_source, struct _GtkTreePath* path);
      * }
      */
     public static int gtk_tree_drag_source_row_draggable(MemorySegment drag_source, MemorySegment path) {
@@ -9312,11 +11986,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_drag_source_drag_data_delete$MH() {
-        return RuntimeHelper.requireNonNull(constants$1866.gtk_tree_drag_source_drag_data_delete$MH,"gtk_tree_drag_source_drag_data_delete");
+        return RuntimeHelper.requireNonNull(constants$3188.const$4,"gtk_tree_drag_source_drag_data_delete");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tree_drag_source_drag_data_delete(GtkTreeDragSource* drag_source, GtkTreePath* path);
+     * int gtk_tree_drag_source_drag_data_delete(struct _GtkTreeDragSource* drag_source, struct _GtkTreePath* path);
      * }
      */
     public static int gtk_tree_drag_source_drag_data_delete(MemorySegment drag_source, MemorySegment path) {
@@ -9328,11 +12002,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_drag_source_drag_data_get$MH() {
-        return RuntimeHelper.requireNonNull(constants$1866.gtk_tree_drag_source_drag_data_get$MH,"gtk_tree_drag_source_drag_data_get");
+        return RuntimeHelper.requireNonNull(constants$3188.const$5,"gtk_tree_drag_source_drag_data_get");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tree_drag_source_drag_data_get(GtkTreeDragSource* drag_source, GtkTreePath* path, GtkSelectionData* selection_data);
+     * int gtk_tree_drag_source_drag_data_get(struct _GtkTreeDragSource* drag_source, struct _GtkTreePath* path, struct _GtkSelectionData* selection_data);
      * }
      */
     public static int gtk_tree_drag_source_drag_data_get(MemorySegment drag_source, MemorySegment path, MemorySegment selection_data) {
@@ -9344,11 +12018,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_drag_dest_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1866.gtk_tree_drag_dest_get_type$MH,"gtk_tree_drag_dest_get_type");
+        return RuntimeHelper.requireNonNull(constants$3189.const$5,"gtk_tree_drag_dest_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_tree_drag_dest_get_type();
+     * unsigned long gtk_tree_drag_dest_get_type();
      * }
      */
     public static long gtk_tree_drag_dest_get_type() {
@@ -9360,11 +12034,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_drag_dest_drag_data_received$MH() {
-        return RuntimeHelper.requireNonNull(constants$1866.gtk_tree_drag_dest_drag_data_received$MH,"gtk_tree_drag_dest_drag_data_received");
+        return RuntimeHelper.requireNonNull(constants$3190.const$0,"gtk_tree_drag_dest_drag_data_received");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tree_drag_dest_drag_data_received(GtkTreeDragDest* drag_dest, GtkTreePath* dest, GtkSelectionData* selection_data);
+     * int gtk_tree_drag_dest_drag_data_received(struct _GtkTreeDragDest* drag_dest, struct _GtkTreePath* dest, struct _GtkSelectionData* selection_data);
      * }
      */
     public static int gtk_tree_drag_dest_drag_data_received(MemorySegment drag_dest, MemorySegment dest, MemorySegment selection_data) {
@@ -9376,11 +12050,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_drag_dest_row_drop_possible$MH() {
-        return RuntimeHelper.requireNonNull(constants$1866.gtk_tree_drag_dest_row_drop_possible$MH,"gtk_tree_drag_dest_row_drop_possible");
+        return RuntimeHelper.requireNonNull(constants$3190.const$1,"gtk_tree_drag_dest_row_drop_possible");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tree_drag_dest_row_drop_possible(GtkTreeDragDest* drag_dest, GtkTreePath* dest_path, GtkSelectionData* selection_data);
+     * int gtk_tree_drag_dest_row_drop_possible(struct _GtkTreeDragDest* drag_dest, struct _GtkTreePath* dest_path, struct _GtkSelectionData* selection_data);
      * }
      */
     public static int gtk_tree_drag_dest_row_drop_possible(MemorySegment drag_dest, MemorySegment dest_path, MemorySegment selection_data) {
@@ -9392,11 +12066,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_set_row_drag_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1867.gtk_tree_set_row_drag_data$MH,"gtk_tree_set_row_drag_data");
+        return RuntimeHelper.requireNonNull(constants$3190.const$2,"gtk_tree_set_row_drag_data");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tree_set_row_drag_data(GtkSelectionData* selection_data, GtkTreeModel* tree_model, GtkTreePath* path);
+     * int gtk_tree_set_row_drag_data(struct _GtkSelectionData* selection_data, struct _GtkTreeModel* tree_model, struct _GtkTreePath* path);
      * }
      */
     public static int gtk_tree_set_row_drag_data(MemorySegment selection_data, MemorySegment tree_model, MemorySegment path) {
@@ -9408,11 +12082,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_get_row_drag_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1867.gtk_tree_get_row_drag_data$MH,"gtk_tree_get_row_drag_data");
+        return RuntimeHelper.requireNonNull(constants$3190.const$3,"gtk_tree_get_row_drag_data");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tree_get_row_drag_data(GtkSelectionData* selection_data, GtkTreeModel** tree_model, GtkTreePath** path);
+     * int gtk_tree_get_row_drag_data(struct _GtkSelectionData* selection_data, struct _GtkTreeModel** tree_model, struct _GtkTreePath** path);
      * }
      */
     public static int gtk_tree_get_row_drag_data(MemorySegment selection_data, MemorySegment tree_model, MemorySegment path) {
@@ -9424,11 +12098,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_model_sort_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1867.gtk_tree_model_sort_get_type$MH,"gtk_tree_model_sort_get_type");
+        return RuntimeHelper.requireNonNull(constants$3192.const$3,"gtk_tree_model_sort_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_tree_model_sort_get_type();
+     * unsigned long gtk_tree_model_sort_get_type();
      * }
      */
     public static long gtk_tree_model_sort_get_type() {
@@ -9440,11 +12114,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_model_sort_new_with_model$MH() {
-        return RuntimeHelper.requireNonNull(constants$1867.gtk_tree_model_sort_new_with_model$MH,"gtk_tree_model_sort_new_with_model");
+        return RuntimeHelper.requireNonNull(constants$3192.const$4,"gtk_tree_model_sort_new_with_model");
     }
     /**
      * {@snippet :
-     * GtkTreeModel* gtk_tree_model_sort_new_with_model(GtkTreeModel* child_model);
+     * struct _GtkTreeModel* gtk_tree_model_sort_new_with_model(struct _GtkTreeModel* child_model);
      * }
      */
     public static MemorySegment gtk_tree_model_sort_new_with_model(MemorySegment child_model) {
@@ -9456,11 +12130,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_model_sort_get_model$MH() {
-        return RuntimeHelper.requireNonNull(constants$1867.gtk_tree_model_sort_get_model$MH,"gtk_tree_model_sort_get_model");
+        return RuntimeHelper.requireNonNull(constants$3192.const$5,"gtk_tree_model_sort_get_model");
     }
     /**
      * {@snippet :
-     * GtkTreeModel* gtk_tree_model_sort_get_model(GtkTreeModelSort* tree_model);
+     * struct _GtkTreeModel* gtk_tree_model_sort_get_model(struct _GtkTreeModelSort* tree_model);
      * }
      */
     public static MemorySegment gtk_tree_model_sort_get_model(MemorySegment tree_model) {
@@ -9472,11 +12146,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_model_sort_convert_child_path_to_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1867.gtk_tree_model_sort_convert_child_path_to_path$MH,"gtk_tree_model_sort_convert_child_path_to_path");
+        return RuntimeHelper.requireNonNull(constants$3193.const$0,"gtk_tree_model_sort_convert_child_path_to_path");
     }
     /**
      * {@snippet :
-     * GtkTreePath* gtk_tree_model_sort_convert_child_path_to_path(GtkTreeModelSort* tree_model_sort, GtkTreePath* child_path);
+     * struct _GtkTreePath* gtk_tree_model_sort_convert_child_path_to_path(struct _GtkTreeModelSort* tree_model_sort, struct _GtkTreePath* child_path);
      * }
      */
     public static MemorySegment gtk_tree_model_sort_convert_child_path_to_path(MemorySegment tree_model_sort, MemorySegment child_path) {
@@ -9488,11 +12162,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_model_sort_convert_child_iter_to_iter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1868.gtk_tree_model_sort_convert_child_iter_to_iter$MH,"gtk_tree_model_sort_convert_child_iter_to_iter");
+        return RuntimeHelper.requireNonNull(constants$3193.const$1,"gtk_tree_model_sort_convert_child_iter_to_iter");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tree_model_sort_convert_child_iter_to_iter(GtkTreeModelSort* tree_model_sort, GtkTreeIter* sort_iter, GtkTreeIter* child_iter);
+     * int gtk_tree_model_sort_convert_child_iter_to_iter(struct _GtkTreeModelSort* tree_model_sort, struct _GtkTreeIter* sort_iter, struct _GtkTreeIter* child_iter);
      * }
      */
     public static int gtk_tree_model_sort_convert_child_iter_to_iter(MemorySegment tree_model_sort, MemorySegment sort_iter, MemorySegment child_iter) {
@@ -9504,11 +12178,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_model_sort_convert_path_to_child_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1868.gtk_tree_model_sort_convert_path_to_child_path$MH,"gtk_tree_model_sort_convert_path_to_child_path");
+        return RuntimeHelper.requireNonNull(constants$3193.const$2,"gtk_tree_model_sort_convert_path_to_child_path");
     }
     /**
      * {@snippet :
-     * GtkTreePath* gtk_tree_model_sort_convert_path_to_child_path(GtkTreeModelSort* tree_model_sort, GtkTreePath* sorted_path);
+     * struct _GtkTreePath* gtk_tree_model_sort_convert_path_to_child_path(struct _GtkTreeModelSort* tree_model_sort, struct _GtkTreePath* sorted_path);
      * }
      */
     public static MemorySegment gtk_tree_model_sort_convert_path_to_child_path(MemorySegment tree_model_sort, MemorySegment sorted_path) {
@@ -9520,11 +12194,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_model_sort_convert_iter_to_child_iter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1868.gtk_tree_model_sort_convert_iter_to_child_iter$MH,"gtk_tree_model_sort_convert_iter_to_child_iter");
+        return RuntimeHelper.requireNonNull(constants$3193.const$3,"gtk_tree_model_sort_convert_iter_to_child_iter");
     }
     /**
      * {@snippet :
-     * void gtk_tree_model_sort_convert_iter_to_child_iter(GtkTreeModelSort* tree_model_sort, GtkTreeIter* child_iter, GtkTreeIter* sorted_iter);
+     * void gtk_tree_model_sort_convert_iter_to_child_iter(struct _GtkTreeModelSort* tree_model_sort, struct _GtkTreeIter* child_iter, struct _GtkTreeIter* sorted_iter);
      * }
      */
     public static void gtk_tree_model_sort_convert_iter_to_child_iter(MemorySegment tree_model_sort, MemorySegment child_iter, MemorySegment sorted_iter) {
@@ -9536,11 +12210,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_model_sort_reset_default_sort_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1868.gtk_tree_model_sort_reset_default_sort_func$MH,"gtk_tree_model_sort_reset_default_sort_func");
+        return RuntimeHelper.requireNonNull(constants$3193.const$4,"gtk_tree_model_sort_reset_default_sort_func");
     }
     /**
      * {@snippet :
-     * void gtk_tree_model_sort_reset_default_sort_func(GtkTreeModelSort* tree_model_sort);
+     * void gtk_tree_model_sort_reset_default_sort_func(struct _GtkTreeModelSort* tree_model_sort);
      * }
      */
     public static void gtk_tree_model_sort_reset_default_sort_func(MemorySegment tree_model_sort) {
@@ -9552,11 +12226,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_model_sort_clear_cache$MH() {
-        return RuntimeHelper.requireNonNull(constants$1868.gtk_tree_model_sort_clear_cache$MH,"gtk_tree_model_sort_clear_cache");
+        return RuntimeHelper.requireNonNull(constants$3193.const$5,"gtk_tree_model_sort_clear_cache");
     }
     /**
      * {@snippet :
-     * void gtk_tree_model_sort_clear_cache(GtkTreeModelSort* tree_model_sort);
+     * void gtk_tree_model_sort_clear_cache(struct _GtkTreeModelSort* tree_model_sort);
      * }
      */
     public static void gtk_tree_model_sort_clear_cache(MemorySegment tree_model_sort) {
@@ -9568,11 +12242,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_model_sort_iter_is_valid$MH() {
-        return RuntimeHelper.requireNonNull(constants$1868.gtk_tree_model_sort_iter_is_valid$MH,"gtk_tree_model_sort_iter_is_valid");
+        return RuntimeHelper.requireNonNull(constants$3194.const$0,"gtk_tree_model_sort_iter_is_valid");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tree_model_sort_iter_is_valid(GtkTreeModelSort* tree_model_sort, GtkTreeIter* iter);
+     * int gtk_tree_model_sort_iter_is_valid(struct _GtkTreeModelSort* tree_model_sort, struct _GtkTreeIter* iter);
      * }
      */
     public static int gtk_tree_model_sort_iter_is_valid(MemorySegment tree_model_sort, MemorySegment iter) {
@@ -9584,11 +12258,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1869.gtk_tree_selection_get_type$MH,"gtk_tree_selection_get_type");
+        return RuntimeHelper.requireNonNull(constants$3196.const$5,"gtk_tree_selection_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_tree_selection_get_type();
+     * unsigned long gtk_tree_selection_get_type();
      * }
      */
     public static long gtk_tree_selection_get_type() {
@@ -9600,11 +12274,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_set_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1869.gtk_tree_selection_set_mode$MH,"gtk_tree_selection_set_mode");
+        return RuntimeHelper.requireNonNull(constants$3197.const$0,"gtk_tree_selection_set_mode");
     }
     /**
      * {@snippet :
-     * void gtk_tree_selection_set_mode(GtkTreeSelection* selection, GtkSelectionMode type);
+     * void gtk_tree_selection_set_mode(struct _GtkTreeSelection* selection, enum GtkSelectionMode type);
      * }
      */
     public static void gtk_tree_selection_set_mode(MemorySegment selection, int type) {
@@ -9616,11 +12290,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_get_mode$MH() {
-        return RuntimeHelper.requireNonNull(constants$1870.gtk_tree_selection_get_mode$MH,"gtk_tree_selection_get_mode");
+        return RuntimeHelper.requireNonNull(constants$3197.const$1,"gtk_tree_selection_get_mode");
     }
     /**
      * {@snippet :
-     * GtkSelectionMode gtk_tree_selection_get_mode(GtkTreeSelection* selection);
+     * enum GtkSelectionMode gtk_tree_selection_get_mode(struct _GtkTreeSelection* selection);
      * }
      */
     public static int gtk_tree_selection_get_mode(MemorySegment selection) {
@@ -9632,11 +12306,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_set_select_function$MH() {
-        return RuntimeHelper.requireNonNull(constants$1870.gtk_tree_selection_set_select_function$MH,"gtk_tree_selection_set_select_function");
+        return RuntimeHelper.requireNonNull(constants$3197.const$4,"gtk_tree_selection_set_select_function");
     }
     /**
      * {@snippet :
-     * void gtk_tree_selection_set_select_function(GtkTreeSelection* selection, GtkTreeSelectionFunc func, gpointer data, GDestroyNotify destroy);
+     * void gtk_tree_selection_set_select_function(struct _GtkTreeSelection* selection, int (*func)(struct _GtkTreeSelection*,struct _GtkTreeModel*,struct _GtkTreePath*,int,void*), void* data, void (*destroy)(void*));
      * }
      */
     public static void gtk_tree_selection_set_select_function(MemorySegment selection, MemorySegment func, MemorySegment data, MemorySegment destroy) {
@@ -9648,11 +12322,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_get_user_data$MH() {
-        return RuntimeHelper.requireNonNull(constants$1870.gtk_tree_selection_get_user_data$MH,"gtk_tree_selection_get_user_data");
+        return RuntimeHelper.requireNonNull(constants$3197.const$5,"gtk_tree_selection_get_user_data");
     }
     /**
      * {@snippet :
-     * gpointer gtk_tree_selection_get_user_data(GtkTreeSelection* selection);
+     * void* gtk_tree_selection_get_user_data(struct _GtkTreeSelection* selection);
      * }
      */
     public static MemorySegment gtk_tree_selection_get_user_data(MemorySegment selection) {
@@ -9664,11 +12338,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_get_tree_view$MH() {
-        return RuntimeHelper.requireNonNull(constants$1870.gtk_tree_selection_get_tree_view$MH,"gtk_tree_selection_get_tree_view");
+        return RuntimeHelper.requireNonNull(constants$3198.const$0,"gtk_tree_selection_get_tree_view");
     }
     /**
      * {@snippet :
-     * GtkTreeView* gtk_tree_selection_get_tree_view(GtkTreeSelection* selection);
+     * struct _GtkTreeView* gtk_tree_selection_get_tree_view(struct _GtkTreeSelection* selection);
      * }
      */
     public static MemorySegment gtk_tree_selection_get_tree_view(MemorySegment selection) {
@@ -9680,11 +12354,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_get_select_function$MH() {
-        return RuntimeHelper.requireNonNull(constants$1870.gtk_tree_selection_get_select_function$MH,"gtk_tree_selection_get_select_function");
+        return RuntimeHelper.requireNonNull(constants$3198.const$2,"gtk_tree_selection_get_select_function");
     }
     /**
      * {@snippet :
-     * GtkTreeSelectionFunc gtk_tree_selection_get_select_function(GtkTreeSelection* selection);
+     * int (*gtk_tree_selection_get_select_function(struct _GtkTreeSelection* selection))(struct _GtkTreeSelection*,struct _GtkTreeModel*,struct _GtkTreePath*,int,void*);
      * }
      */
     public static MemorySegment gtk_tree_selection_get_select_function(MemorySegment selection) {
@@ -9696,11 +12370,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_get_selected$MH() {
-        return RuntimeHelper.requireNonNull(constants$1870.gtk_tree_selection_get_selected$MH,"gtk_tree_selection_get_selected");
+        return RuntimeHelper.requireNonNull(constants$3198.const$3,"gtk_tree_selection_get_selected");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tree_selection_get_selected(GtkTreeSelection* selection, GtkTreeModel** model, GtkTreeIter* iter);
+     * int gtk_tree_selection_get_selected(struct _GtkTreeSelection* selection, struct _GtkTreeModel** model, struct _GtkTreeIter* iter);
      * }
      */
     public static int gtk_tree_selection_get_selected(MemorySegment selection, MemorySegment model, MemorySegment iter) {
@@ -9712,11 +12386,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_get_selected_rows$MH() {
-        return RuntimeHelper.requireNonNull(constants$1871.gtk_tree_selection_get_selected_rows$MH,"gtk_tree_selection_get_selected_rows");
+        return RuntimeHelper.requireNonNull(constants$3198.const$4,"gtk_tree_selection_get_selected_rows");
     }
     /**
      * {@snippet :
-     * GList* gtk_tree_selection_get_selected_rows(GtkTreeSelection* selection, GtkTreeModel** model);
+     * struct _GList* gtk_tree_selection_get_selected_rows(struct _GtkTreeSelection* selection, struct _GtkTreeModel** model);
      * }
      */
     public static MemorySegment gtk_tree_selection_get_selected_rows(MemorySegment selection, MemorySegment model) {
@@ -9728,11 +12402,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_count_selected_rows$MH() {
-        return RuntimeHelper.requireNonNull(constants$1871.gtk_tree_selection_count_selected_rows$MH,"gtk_tree_selection_count_selected_rows");
+        return RuntimeHelper.requireNonNull(constants$3198.const$5,"gtk_tree_selection_count_selected_rows");
     }
     /**
      * {@snippet :
-     * gint gtk_tree_selection_count_selected_rows(GtkTreeSelection* selection);
+     * int gtk_tree_selection_count_selected_rows(struct _GtkTreeSelection* selection);
      * }
      */
     public static int gtk_tree_selection_count_selected_rows(MemorySegment selection) {
@@ -9744,11 +12418,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_selected_foreach$MH() {
-        return RuntimeHelper.requireNonNull(constants$1871.gtk_tree_selection_selected_foreach$MH,"gtk_tree_selection_selected_foreach");
+        return RuntimeHelper.requireNonNull(constants$3199.const$1,"gtk_tree_selection_selected_foreach");
     }
     /**
      * {@snippet :
-     * void gtk_tree_selection_selected_foreach(GtkTreeSelection* selection, GtkTreeSelectionForeachFunc func, gpointer data);
+     * void gtk_tree_selection_selected_foreach(struct _GtkTreeSelection* selection, void (*func)(struct _GtkTreeModel*,struct _GtkTreePath*,struct _GtkTreeIter*,void*), void* data);
      * }
      */
     public static void gtk_tree_selection_selected_foreach(MemorySegment selection, MemorySegment func, MemorySegment data) {
@@ -9760,11 +12434,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_select_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1871.gtk_tree_selection_select_path$MH,"gtk_tree_selection_select_path");
+        return RuntimeHelper.requireNonNull(constants$3199.const$2,"gtk_tree_selection_select_path");
     }
     /**
      * {@snippet :
-     * void gtk_tree_selection_select_path(GtkTreeSelection* selection, GtkTreePath* path);
+     * void gtk_tree_selection_select_path(struct _GtkTreeSelection* selection, struct _GtkTreePath* path);
      * }
      */
     public static void gtk_tree_selection_select_path(MemorySegment selection, MemorySegment path) {
@@ -9776,11 +12450,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_unselect_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1871.gtk_tree_selection_unselect_path$MH,"gtk_tree_selection_unselect_path");
+        return RuntimeHelper.requireNonNull(constants$3199.const$3,"gtk_tree_selection_unselect_path");
     }
     /**
      * {@snippet :
-     * void gtk_tree_selection_unselect_path(GtkTreeSelection* selection, GtkTreePath* path);
+     * void gtk_tree_selection_unselect_path(struct _GtkTreeSelection* selection, struct _GtkTreePath* path);
      * }
      */
     public static void gtk_tree_selection_unselect_path(MemorySegment selection, MemorySegment path) {
@@ -9792,11 +12466,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_select_iter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1871.gtk_tree_selection_select_iter$MH,"gtk_tree_selection_select_iter");
+        return RuntimeHelper.requireNonNull(constants$3199.const$4,"gtk_tree_selection_select_iter");
     }
     /**
      * {@snippet :
-     * void gtk_tree_selection_select_iter(GtkTreeSelection* selection, GtkTreeIter* iter);
+     * void gtk_tree_selection_select_iter(struct _GtkTreeSelection* selection, struct _GtkTreeIter* iter);
      * }
      */
     public static void gtk_tree_selection_select_iter(MemorySegment selection, MemorySegment iter) {
@@ -9808,11 +12482,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_unselect_iter$MH() {
-        return RuntimeHelper.requireNonNull(constants$1872.gtk_tree_selection_unselect_iter$MH,"gtk_tree_selection_unselect_iter");
+        return RuntimeHelper.requireNonNull(constants$3199.const$5,"gtk_tree_selection_unselect_iter");
     }
     /**
      * {@snippet :
-     * void gtk_tree_selection_unselect_iter(GtkTreeSelection* selection, GtkTreeIter* iter);
+     * void gtk_tree_selection_unselect_iter(struct _GtkTreeSelection* selection, struct _GtkTreeIter* iter);
      * }
      */
     public static void gtk_tree_selection_unselect_iter(MemorySegment selection, MemorySegment iter) {
@@ -9824,11 +12498,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_path_is_selected$MH() {
-        return RuntimeHelper.requireNonNull(constants$1872.gtk_tree_selection_path_is_selected$MH,"gtk_tree_selection_path_is_selected");
+        return RuntimeHelper.requireNonNull(constants$3200.const$0,"gtk_tree_selection_path_is_selected");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tree_selection_path_is_selected(GtkTreeSelection* selection, GtkTreePath* path);
+     * int gtk_tree_selection_path_is_selected(struct _GtkTreeSelection* selection, struct _GtkTreePath* path);
      * }
      */
     public static int gtk_tree_selection_path_is_selected(MemorySegment selection, MemorySegment path) {
@@ -9840,11 +12514,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_iter_is_selected$MH() {
-        return RuntimeHelper.requireNonNull(constants$1872.gtk_tree_selection_iter_is_selected$MH,"gtk_tree_selection_iter_is_selected");
+        return RuntimeHelper.requireNonNull(constants$3200.const$1,"gtk_tree_selection_iter_is_selected");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tree_selection_iter_is_selected(GtkTreeSelection* selection, GtkTreeIter* iter);
+     * int gtk_tree_selection_iter_is_selected(struct _GtkTreeSelection* selection, struct _GtkTreeIter* iter);
      * }
      */
     public static int gtk_tree_selection_iter_is_selected(MemorySegment selection, MemorySegment iter) {
@@ -9856,11 +12530,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_select_all$MH() {
-        return RuntimeHelper.requireNonNull(constants$1872.gtk_tree_selection_select_all$MH,"gtk_tree_selection_select_all");
+        return RuntimeHelper.requireNonNull(constants$3200.const$2,"gtk_tree_selection_select_all");
     }
     /**
      * {@snippet :
-     * void gtk_tree_selection_select_all(GtkTreeSelection* selection);
+     * void gtk_tree_selection_select_all(struct _GtkTreeSelection* selection);
      * }
      */
     public static void gtk_tree_selection_select_all(MemorySegment selection) {
@@ -9872,11 +12546,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_unselect_all$MH() {
-        return RuntimeHelper.requireNonNull(constants$1872.gtk_tree_selection_unselect_all$MH,"gtk_tree_selection_unselect_all");
+        return RuntimeHelper.requireNonNull(constants$3200.const$3,"gtk_tree_selection_unselect_all");
     }
     /**
      * {@snippet :
-     * void gtk_tree_selection_unselect_all(GtkTreeSelection* selection);
+     * void gtk_tree_selection_unselect_all(struct _GtkTreeSelection* selection);
      * }
      */
     public static void gtk_tree_selection_unselect_all(MemorySegment selection) {
@@ -9888,11 +12562,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_select_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1872.gtk_tree_selection_select_range$MH,"gtk_tree_selection_select_range");
+        return RuntimeHelper.requireNonNull(constants$3200.const$4,"gtk_tree_selection_select_range");
     }
     /**
      * {@snippet :
-     * void gtk_tree_selection_select_range(GtkTreeSelection* selection, GtkTreePath* start_path, GtkTreePath* end_path);
+     * void gtk_tree_selection_select_range(struct _GtkTreeSelection* selection, struct _GtkTreePath* start_path, struct _GtkTreePath* end_path);
      * }
      */
     public static void gtk_tree_selection_select_range(MemorySegment selection, MemorySegment start_path, MemorySegment end_path) {
@@ -9904,11 +12578,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_selection_unselect_range$MH() {
-        return RuntimeHelper.requireNonNull(constants$1873.gtk_tree_selection_unselect_range$MH,"gtk_tree_selection_unselect_range");
+        return RuntimeHelper.requireNonNull(constants$3200.const$5,"gtk_tree_selection_unselect_range");
     }
     /**
      * {@snippet :
-     * void gtk_tree_selection_unselect_range(GtkTreeSelection* selection, GtkTreePath* start_path, GtkTreePath* end_path);
+     * void gtk_tree_selection_unselect_range(struct _GtkTreeSelection* selection, struct _GtkTreePath* start_path, struct _GtkTreePath* end_path);
      * }
      */
     public static void gtk_tree_selection_unselect_range(MemorySegment selection, MemorySegment start_path, MemorySegment end_path) {
@@ -9920,11 +12594,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1873.gtk_tree_store_get_type$MH,"gtk_tree_store_get_type");
+        return RuntimeHelper.requireNonNull(constants$3202.const$5,"gtk_tree_store_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_tree_store_get_type();
+     * unsigned long gtk_tree_store_get_type();
      * }
      */
     public static long gtk_tree_store_get_type() {
@@ -9936,11 +12610,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1873.gtk_tree_store_new$MH,"gtk_tree_store_new");
+        return RuntimeHelper.requireNonNull(constants$3203.const$0,"gtk_tree_store_new");
     }
     /**
      * {@snippet :
-     * GtkTreeStore* gtk_tree_store_new(gint n_columns,...);
+     * struct _GtkTreeStore* gtk_tree_store_new(int n_columns,...);
      * }
      */
     public static MemorySegment gtk_tree_store_new(int n_columns, Object... x1) {
@@ -9952,11 +12626,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_newv$MH() {
-        return RuntimeHelper.requireNonNull(constants$1873.gtk_tree_store_newv$MH,"gtk_tree_store_newv");
+        return RuntimeHelper.requireNonNull(constants$3203.const$1,"gtk_tree_store_newv");
     }
     /**
      * {@snippet :
-     * GtkTreeStore* gtk_tree_store_newv(gint n_columns, GType* types);
+     * struct _GtkTreeStore* gtk_tree_store_newv(int n_columns, unsigned long* types);
      * }
      */
     public static MemorySegment gtk_tree_store_newv(int n_columns, MemorySegment types) {
@@ -9968,11 +12642,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_set_column_types$MH() {
-        return RuntimeHelper.requireNonNull(constants$1873.gtk_tree_store_set_column_types$MH,"gtk_tree_store_set_column_types");
+        return RuntimeHelper.requireNonNull(constants$3203.const$2,"gtk_tree_store_set_column_types");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_set_column_types(GtkTreeStore* tree_store, gint n_columns, GType* types);
+     * void gtk_tree_store_set_column_types(struct _GtkTreeStore* tree_store, int n_columns, unsigned long* types);
      * }
      */
     public static void gtk_tree_store_set_column_types(MemorySegment tree_store, int n_columns, MemorySegment types) {
@@ -9984,11 +12658,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_set_value$MH() {
-        return RuntimeHelper.requireNonNull(constants$1873.gtk_tree_store_set_value$MH,"gtk_tree_store_set_value");
+        return RuntimeHelper.requireNonNull(constants$3203.const$3,"gtk_tree_store_set_value");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_set_value(GtkTreeStore* tree_store, GtkTreeIter* iter, gint column, GValue* value);
+     * void gtk_tree_store_set_value(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter, int column, struct _GValue* value);
      * }
      */
     public static void gtk_tree_store_set_value(MemorySegment tree_store, MemorySegment iter, int column, MemorySegment value) {
@@ -10000,11 +12674,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$1874.gtk_tree_store_set$MH,"gtk_tree_store_set");
+        return RuntimeHelper.requireNonNull(constants$3203.const$4,"gtk_tree_store_set");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_set(GtkTreeStore* tree_store, GtkTreeIter* iter,...);
+     * void gtk_tree_store_set(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter,...);
      * }
      */
     public static void gtk_tree_store_set(MemorySegment tree_store, MemorySegment iter, Object... x2) {
@@ -10016,11 +12690,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_set_valuesv$MH() {
-        return RuntimeHelper.requireNonNull(constants$1874.gtk_tree_store_set_valuesv$MH,"gtk_tree_store_set_valuesv");
+        return RuntimeHelper.requireNonNull(constants$3203.const$5,"gtk_tree_store_set_valuesv");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_set_valuesv(GtkTreeStore* tree_store, GtkTreeIter* iter, gint* columns, GValue* values, gint n_values);
+     * void gtk_tree_store_set_valuesv(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter, int* columns, struct _GValue* values, int n_values);
      * }
      */
     public static void gtk_tree_store_set_valuesv(MemorySegment tree_store, MemorySegment iter, MemorySegment columns, MemorySegment values, int n_values) {
@@ -10032,11 +12706,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_set_valist$MH() {
-        return RuntimeHelper.requireNonNull(constants$1874.gtk_tree_store_set_valist$MH,"gtk_tree_store_set_valist");
+        return RuntimeHelper.requireNonNull(constants$3204.const$0,"gtk_tree_store_set_valist");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_set_valist(GtkTreeStore* tree_store, GtkTreeIter* iter, va_list var_args);
+     * void gtk_tree_store_set_valist(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter, struct __va_list var_args);
      * }
      */
     public static void gtk_tree_store_set_valist(MemorySegment tree_store, MemorySegment iter, MemorySegment var_args) {
@@ -10048,11 +12722,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_remove$MH() {
-        return RuntimeHelper.requireNonNull(constants$1874.gtk_tree_store_remove$MH,"gtk_tree_store_remove");
+        return RuntimeHelper.requireNonNull(constants$3204.const$1,"gtk_tree_store_remove");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tree_store_remove(GtkTreeStore* tree_store, GtkTreeIter* iter);
+     * int gtk_tree_store_remove(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter);
      * }
      */
     public static int gtk_tree_store_remove(MemorySegment tree_store, MemorySegment iter) {
@@ -10064,11 +12738,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_insert$MH() {
-        return RuntimeHelper.requireNonNull(constants$1874.gtk_tree_store_insert$MH,"gtk_tree_store_insert");
+        return RuntimeHelper.requireNonNull(constants$3204.const$2,"gtk_tree_store_insert");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_insert(GtkTreeStore* tree_store, GtkTreeIter* iter, GtkTreeIter* parent, gint position);
+     * void gtk_tree_store_insert(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter, struct _GtkTreeIter* parent, int position);
      * }
      */
     public static void gtk_tree_store_insert(MemorySegment tree_store, MemorySegment iter, MemorySegment parent, int position) {
@@ -10080,11 +12754,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_insert_before$MH() {
-        return RuntimeHelper.requireNonNull(constants$1874.gtk_tree_store_insert_before$MH,"gtk_tree_store_insert_before");
+        return RuntimeHelper.requireNonNull(constants$3204.const$3,"gtk_tree_store_insert_before");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_insert_before(GtkTreeStore* tree_store, GtkTreeIter* iter, GtkTreeIter* parent, GtkTreeIter* sibling);
+     * void gtk_tree_store_insert_before(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter, struct _GtkTreeIter* parent, struct _GtkTreeIter* sibling);
      * }
      */
     public static void gtk_tree_store_insert_before(MemorySegment tree_store, MemorySegment iter, MemorySegment parent, MemorySegment sibling) {
@@ -10096,11 +12770,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_insert_after$MH() {
-        return RuntimeHelper.requireNonNull(constants$1875.gtk_tree_store_insert_after$MH,"gtk_tree_store_insert_after");
+        return RuntimeHelper.requireNonNull(constants$3204.const$4,"gtk_tree_store_insert_after");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_insert_after(GtkTreeStore* tree_store, GtkTreeIter* iter, GtkTreeIter* parent, GtkTreeIter* sibling);
+     * void gtk_tree_store_insert_after(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter, struct _GtkTreeIter* parent, struct _GtkTreeIter* sibling);
      * }
      */
     public static void gtk_tree_store_insert_after(MemorySegment tree_store, MemorySegment iter, MemorySegment parent, MemorySegment sibling) {
@@ -10112,11 +12786,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_insert_with_values$MH() {
-        return RuntimeHelper.requireNonNull(constants$1875.gtk_tree_store_insert_with_values$MH,"gtk_tree_store_insert_with_values");
+        return RuntimeHelper.requireNonNull(constants$3204.const$5,"gtk_tree_store_insert_with_values");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_insert_with_values(GtkTreeStore* tree_store, GtkTreeIter* iter, GtkTreeIter* parent, gint position,...);
+     * void gtk_tree_store_insert_with_values(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter, struct _GtkTreeIter* parent, int position,...);
      * }
      */
     public static void gtk_tree_store_insert_with_values(MemorySegment tree_store, MemorySegment iter, MemorySegment parent, int position, Object... x4) {
@@ -10128,11 +12802,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_insert_with_valuesv$MH() {
-        return RuntimeHelper.requireNonNull(constants$1875.gtk_tree_store_insert_with_valuesv$MH,"gtk_tree_store_insert_with_valuesv");
+        return RuntimeHelper.requireNonNull(constants$3205.const$1,"gtk_tree_store_insert_with_valuesv");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_insert_with_valuesv(GtkTreeStore* tree_store, GtkTreeIter* iter, GtkTreeIter* parent, gint position, gint* columns, GValue* values, gint n_values);
+     * void gtk_tree_store_insert_with_valuesv(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter, struct _GtkTreeIter* parent, int position, int* columns, struct _GValue* values, int n_values);
      * }
      */
     public static void gtk_tree_store_insert_with_valuesv(MemorySegment tree_store, MemorySegment iter, MemorySegment parent, int position, MemorySegment columns, MemorySegment values, int n_values) {
@@ -10144,11 +12818,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_prepend$MH() {
-        return RuntimeHelper.requireNonNull(constants$1875.gtk_tree_store_prepend$MH,"gtk_tree_store_prepend");
+        return RuntimeHelper.requireNonNull(constants$3205.const$2,"gtk_tree_store_prepend");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_prepend(GtkTreeStore* tree_store, GtkTreeIter* iter, GtkTreeIter* parent);
+     * void gtk_tree_store_prepend(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter, struct _GtkTreeIter* parent);
      * }
      */
     public static void gtk_tree_store_prepend(MemorySegment tree_store, MemorySegment iter, MemorySegment parent) {
@@ -10160,11 +12834,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_append$MH() {
-        return RuntimeHelper.requireNonNull(constants$1875.gtk_tree_store_append$MH,"gtk_tree_store_append");
+        return RuntimeHelper.requireNonNull(constants$3205.const$3,"gtk_tree_store_append");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_append(GtkTreeStore* tree_store, GtkTreeIter* iter, GtkTreeIter* parent);
+     * void gtk_tree_store_append(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter, struct _GtkTreeIter* parent);
      * }
      */
     public static void gtk_tree_store_append(MemorySegment tree_store, MemorySegment iter, MemorySegment parent) {
@@ -10176,11 +12850,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_is_ancestor$MH() {
-        return RuntimeHelper.requireNonNull(constants$1875.gtk_tree_store_is_ancestor$MH,"gtk_tree_store_is_ancestor");
+        return RuntimeHelper.requireNonNull(constants$3205.const$4,"gtk_tree_store_is_ancestor");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tree_store_is_ancestor(GtkTreeStore* tree_store, GtkTreeIter* iter, GtkTreeIter* descendant);
+     * int gtk_tree_store_is_ancestor(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter, struct _GtkTreeIter* descendant);
      * }
      */
     public static int gtk_tree_store_is_ancestor(MemorySegment tree_store, MemorySegment iter, MemorySegment descendant) {
@@ -10192,11 +12866,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_iter_depth$MH() {
-        return RuntimeHelper.requireNonNull(constants$1876.gtk_tree_store_iter_depth$MH,"gtk_tree_store_iter_depth");
+        return RuntimeHelper.requireNonNull(constants$3205.const$5,"gtk_tree_store_iter_depth");
     }
     /**
      * {@snippet :
-     * gint gtk_tree_store_iter_depth(GtkTreeStore* tree_store, GtkTreeIter* iter);
+     * int gtk_tree_store_iter_depth(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter);
      * }
      */
     public static int gtk_tree_store_iter_depth(MemorySegment tree_store, MemorySegment iter) {
@@ -10208,11 +12882,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_clear$MH() {
-        return RuntimeHelper.requireNonNull(constants$1876.gtk_tree_store_clear$MH,"gtk_tree_store_clear");
+        return RuntimeHelper.requireNonNull(constants$3206.const$0,"gtk_tree_store_clear");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_clear(GtkTreeStore* tree_store);
+     * void gtk_tree_store_clear(struct _GtkTreeStore* tree_store);
      * }
      */
     public static void gtk_tree_store_clear(MemorySegment tree_store) {
@@ -10224,11 +12898,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_iter_is_valid$MH() {
-        return RuntimeHelper.requireNonNull(constants$1876.gtk_tree_store_iter_is_valid$MH,"gtk_tree_store_iter_is_valid");
+        return RuntimeHelper.requireNonNull(constants$3206.const$1,"gtk_tree_store_iter_is_valid");
     }
     /**
      * {@snippet :
-     * gboolean gtk_tree_store_iter_is_valid(GtkTreeStore* tree_store, GtkTreeIter* iter);
+     * int gtk_tree_store_iter_is_valid(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter);
      * }
      */
     public static int gtk_tree_store_iter_is_valid(MemorySegment tree_store, MemorySegment iter) {
@@ -10240,11 +12914,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_reorder$MH() {
-        return RuntimeHelper.requireNonNull(constants$1876.gtk_tree_store_reorder$MH,"gtk_tree_store_reorder");
+        return RuntimeHelper.requireNonNull(constants$3206.const$2,"gtk_tree_store_reorder");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_reorder(GtkTreeStore* tree_store, GtkTreeIter* parent, gint* new_order);
+     * void gtk_tree_store_reorder(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* parent, int* new_order);
      * }
      */
     public static void gtk_tree_store_reorder(MemorySegment tree_store, MemorySegment parent, MemorySegment new_order) {
@@ -10256,11 +12930,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_swap$MH() {
-        return RuntimeHelper.requireNonNull(constants$1876.gtk_tree_store_swap$MH,"gtk_tree_store_swap");
+        return RuntimeHelper.requireNonNull(constants$3206.const$3,"gtk_tree_store_swap");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_swap(GtkTreeStore* tree_store, GtkTreeIter* a, GtkTreeIter* b);
+     * void gtk_tree_store_swap(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* a, struct _GtkTreeIter* b);
      * }
      */
     public static void gtk_tree_store_swap(MemorySegment tree_store, MemorySegment a, MemorySegment b) {
@@ -10272,11 +12946,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_move_before$MH() {
-        return RuntimeHelper.requireNonNull(constants$1876.gtk_tree_store_move_before$MH,"gtk_tree_store_move_before");
+        return RuntimeHelper.requireNonNull(constants$3206.const$4,"gtk_tree_store_move_before");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_move_before(GtkTreeStore* tree_store, GtkTreeIter* iter, GtkTreeIter* position);
+     * void gtk_tree_store_move_before(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter, struct _GtkTreeIter* position);
      * }
      */
     public static void gtk_tree_store_move_before(MemorySegment tree_store, MemorySegment iter, MemorySegment position) {
@@ -10288,11 +12962,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_store_move_after$MH() {
-        return RuntimeHelper.requireNonNull(constants$1877.gtk_tree_store_move_after$MH,"gtk_tree_store_move_after");
+        return RuntimeHelper.requireNonNull(constants$3206.const$5,"gtk_tree_store_move_after");
     }
     /**
      * {@snippet :
-     * void gtk_tree_store_move_after(GtkTreeStore* tree_store, GtkTreeIter* iter, GtkTreeIter* position);
+     * void gtk_tree_store_move_after(struct _GtkTreeStore* tree_store, struct _GtkTreeIter* iter, struct _GtkTreeIter* position);
      * }
      */
     public static void gtk_tree_store_move_after(MemorySegment tree_store, MemorySegment iter, MemorySegment position) {
@@ -10304,11 +12978,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_rc_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1877.gtk_rc_flags_get_type$MH,"gtk_rc_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$3207.const$0,"gtk_rc_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_rc_flags_get_type();
+     * unsigned long gtk_rc_flags_get_type();
      * }
      */
     public static long gtk_rc_flags_get_type() {
@@ -10320,11 +12994,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_rc_token_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1877.gtk_rc_token_type_get_type$MH,"gtk_rc_token_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3207.const$1,"gtk_rc_token_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_rc_token_type_get_type();
+     * unsigned long gtk_rc_token_type_get_type();
      * }
      */
     public static long gtk_rc_token_type_get_type() {
@@ -10336,11 +13010,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_path_priority_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1877.gtk_path_priority_type_get_type$MH,"gtk_path_priority_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3207.const$2,"gtk_path_priority_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_path_priority_type_get_type();
+     * unsigned long gtk_path_priority_type_get_type();
      * }
      */
     public static long gtk_path_priority_type_get_type() {
@@ -10352,11 +13026,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_path_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1877.gtk_path_type_get_type$MH,"gtk_path_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3207.const$3,"gtk_path_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_path_type_get_type();
+     * unsigned long gtk_path_type_get_type();
      * }
      */
     public static long gtk_path_type_get_type() {
@@ -10368,11 +13042,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_expander_style_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1877.gtk_expander_style_get_type$MH,"gtk_expander_style_get_type");
+        return RuntimeHelper.requireNonNull(constants$3207.const$4,"gtk_expander_style_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_expander_style_get_type();
+     * unsigned long gtk_expander_style_get_type();
      * }
      */
     public static long gtk_expander_style_get_type() {
@@ -10384,11 +13058,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_attach_options_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1878.gtk_attach_options_get_type$MH,"gtk_attach_options_get_type");
+        return RuntimeHelper.requireNonNull(constants$3207.const$5,"gtk_attach_options_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_attach_options_get_type();
+     * unsigned long gtk_attach_options_get_type();
      * }
      */
     public static long gtk_attach_options_get_type() {
@@ -10400,11 +13074,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_ui_manager_item_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1878.gtk_ui_manager_item_type_get_type$MH,"gtk_ui_manager_item_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3208.const$0,"gtk_ui_manager_item_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_ui_manager_item_type_get_type();
+     * unsigned long gtk_ui_manager_item_type_get_type();
      * }
      */
     public static long gtk_ui_manager_item_type_get_type() {
@@ -10416,11 +13090,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_license_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1878.gtk_license_get_type$MH,"gtk_license_get_type");
+        return RuntimeHelper.requireNonNull(constants$3208.const$1,"gtk_license_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_license_get_type();
+     * unsigned long gtk_license_get_type();
      * }
      */
     public static long gtk_license_get_type() {
@@ -10432,11 +13106,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_accel_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1878.gtk_accel_flags_get_type$MH,"gtk_accel_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$3208.const$2,"gtk_accel_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_accel_flags_get_type();
+     * unsigned long gtk_accel_flags_get_type();
      * }
      */
     public static long gtk_accel_flags_get_type() {
@@ -10448,11 +13122,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_application_inhibit_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1878.gtk_application_inhibit_flags_get_type$MH,"gtk_application_inhibit_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$3208.const$3,"gtk_application_inhibit_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_application_inhibit_flags_get_type();
+     * unsigned long gtk_application_inhibit_flags_get_type();
      * }
      */
     public static long gtk_application_inhibit_flags_get_type() {
@@ -10464,11 +13138,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_assistant_page_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1878.gtk_assistant_page_type_get_type$MH,"gtk_assistant_page_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3208.const$4,"gtk_assistant_page_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_assistant_page_type_get_type();
+     * unsigned long gtk_assistant_page_type_get_type();
      * }
      */
     public static long gtk_assistant_page_type_get_type() {
@@ -10480,11 +13154,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_button_box_style_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1879.gtk_button_box_style_get_type$MH,"gtk_button_box_style_get_type");
+        return RuntimeHelper.requireNonNull(constants$3208.const$5,"gtk_button_box_style_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_button_box_style_get_type();
+     * unsigned long gtk_button_box_style_get_type();
      * }
      */
     public static long gtk_button_box_style_get_type() {
@@ -10496,11 +13170,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_builder_error_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1879.gtk_builder_error_get_type$MH,"gtk_builder_error_get_type");
+        return RuntimeHelper.requireNonNull(constants$3209.const$0,"gtk_builder_error_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_builder_error_get_type();
+     * unsigned long gtk_builder_error_get_type();
      * }
      */
     public static long gtk_builder_error_get_type() {
@@ -10512,11 +13186,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_calendar_display_options_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1879.gtk_calendar_display_options_get_type$MH,"gtk_calendar_display_options_get_type");
+        return RuntimeHelper.requireNonNull(constants$3209.const$1,"gtk_calendar_display_options_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_calendar_display_options_get_type();
+     * unsigned long gtk_calendar_display_options_get_type();
      * }
      */
     public static long gtk_calendar_display_options_get_type() {
@@ -10528,11 +13202,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_cell_renderer_state_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1879.gtk_cell_renderer_state_get_type$MH,"gtk_cell_renderer_state_get_type");
+        return RuntimeHelper.requireNonNull(constants$3209.const$2,"gtk_cell_renderer_state_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_cell_renderer_state_get_type();
+     * unsigned long gtk_cell_renderer_state_get_type();
      * }
      */
     public static long gtk_cell_renderer_state_get_type() {
@@ -10544,11 +13218,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_cell_renderer_mode_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1879.gtk_cell_renderer_mode_get_type$MH,"gtk_cell_renderer_mode_get_type");
+        return RuntimeHelper.requireNonNull(constants$3209.const$3,"gtk_cell_renderer_mode_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_cell_renderer_mode_get_type();
+     * unsigned long gtk_cell_renderer_mode_get_type();
      * }
      */
     public static long gtk_cell_renderer_mode_get_type() {
@@ -10560,11 +13234,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_cell_renderer_accel_mode_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1879.gtk_cell_renderer_accel_mode_get_type$MH,"gtk_cell_renderer_accel_mode_get_type");
+        return RuntimeHelper.requireNonNull(constants$3209.const$4,"gtk_cell_renderer_accel_mode_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_cell_renderer_accel_mode_get_type();
+     * unsigned long gtk_cell_renderer_accel_mode_get_type();
      * }
      */
     public static long gtk_cell_renderer_accel_mode_get_type() {
@@ -10576,11 +13250,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_resize_mode_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1880.gtk_resize_mode_get_type$MH,"gtk_resize_mode_get_type");
+        return RuntimeHelper.requireNonNull(constants$3209.const$5,"gtk_resize_mode_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_resize_mode_get_type();
+     * unsigned long gtk_resize_mode_get_type();
      * }
      */
     public static long gtk_resize_mode_get_type() {
@@ -10592,11 +13266,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_css_provider_error_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1880.gtk_css_provider_error_get_type$MH,"gtk_css_provider_error_get_type");
+        return RuntimeHelper.requireNonNull(constants$3210.const$0,"gtk_css_provider_error_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_css_provider_error_get_type();
+     * unsigned long gtk_css_provider_error_get_type();
      * }
      */
     public static long gtk_css_provider_error_get_type() {
@@ -10608,11 +13282,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_css_section_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1880.gtk_css_section_type_get_type$MH,"gtk_css_section_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3210.const$1,"gtk_css_section_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_css_section_type_get_type();
+     * unsigned long gtk_css_section_type_get_type();
      * }
      */
     public static long gtk_css_section_type_get_type() {
@@ -10624,11 +13298,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_debug_flag_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1880.gtk_debug_flag_get_type$MH,"gtk_debug_flag_get_type");
+        return RuntimeHelper.requireNonNull(constants$3210.const$2,"gtk_debug_flag_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_debug_flag_get_type();
+     * unsigned long gtk_debug_flag_get_type();
      * }
      */
     public static long gtk_debug_flag_get_type() {
@@ -10640,11 +13314,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_dialog_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1880.gtk_dialog_flags_get_type$MH,"gtk_dialog_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$3210.const$3,"gtk_dialog_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_dialog_flags_get_type();
+     * unsigned long gtk_dialog_flags_get_type();
      * }
      */
     public static long gtk_dialog_flags_get_type() {
@@ -10656,11 +13330,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_response_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1880.gtk_response_type_get_type$MH,"gtk_response_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3210.const$4,"gtk_response_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_response_type_get_type();
+     * unsigned long gtk_response_type_get_type();
      * }
      */
     public static long gtk_response_type_get_type() {
@@ -10672,11 +13346,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_dest_defaults_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1881.gtk_dest_defaults_get_type$MH,"gtk_dest_defaults_get_type");
+        return RuntimeHelper.requireNonNull(constants$3210.const$5,"gtk_dest_defaults_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_dest_defaults_get_type();
+     * unsigned long gtk_dest_defaults_get_type();
      * }
      */
     public static long gtk_dest_defaults_get_type() {
@@ -10688,11 +13362,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_entry_icon_position_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1881.gtk_entry_icon_position_get_type$MH,"gtk_entry_icon_position_get_type");
+        return RuntimeHelper.requireNonNull(constants$3211.const$0,"gtk_entry_icon_position_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_entry_icon_position_get_type();
+     * unsigned long gtk_entry_icon_position_get_type();
      * }
      */
     public static long gtk_entry_icon_position_get_type() {
@@ -10704,11 +13378,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_align_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1881.gtk_align_get_type$MH,"gtk_align_get_type");
+        return RuntimeHelper.requireNonNull(constants$3211.const$1,"gtk_align_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_align_get_type();
+     * unsigned long gtk_align_get_type();
      * }
      */
     public static long gtk_align_get_type() {
@@ -10720,11 +13394,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_arrow_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1881.gtk_arrow_type_get_type$MH,"gtk_arrow_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3211.const$2,"gtk_arrow_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_arrow_type_get_type();
+     * unsigned long gtk_arrow_type_get_type();
      * }
      */
     public static long gtk_arrow_type_get_type() {
@@ -10736,11 +13410,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_baseline_position_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1881.gtk_baseline_position_get_type$MH,"gtk_baseline_position_get_type");
+        return RuntimeHelper.requireNonNull(constants$3211.const$3,"gtk_baseline_position_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_baseline_position_get_type();
+     * unsigned long gtk_baseline_position_get_type();
      * }
      */
     public static long gtk_baseline_position_get_type() {
@@ -10752,11 +13426,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_delete_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1881.gtk_delete_type_get_type$MH,"gtk_delete_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3211.const$4,"gtk_delete_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_delete_type_get_type();
+     * unsigned long gtk_delete_type_get_type();
      * }
      */
     public static long gtk_delete_type_get_type() {
@@ -10768,11 +13442,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_direction_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1882.gtk_direction_type_get_type$MH,"gtk_direction_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3211.const$5,"gtk_direction_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_direction_type_get_type();
+     * unsigned long gtk_direction_type_get_type();
      * }
      */
     public static long gtk_direction_type_get_type() {
@@ -10784,11 +13458,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_icon_size_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1882.gtk_icon_size_get_type$MH,"gtk_icon_size_get_type");
+        return RuntimeHelper.requireNonNull(constants$3212.const$0,"gtk_icon_size_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_icon_size_get_type();
+     * unsigned long gtk_icon_size_get_type();
      * }
      */
     public static long gtk_icon_size_get_type() {
@@ -10800,11 +13474,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_sensitivity_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1882.gtk_sensitivity_type_get_type$MH,"gtk_sensitivity_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3212.const$1,"gtk_sensitivity_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_sensitivity_type_get_type();
+     * unsigned long gtk_sensitivity_type_get_type();
      * }
      */
     public static long gtk_sensitivity_type_get_type() {
@@ -10816,11 +13490,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_direction_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1882.gtk_text_direction_get_type$MH,"gtk_text_direction_get_type");
+        return RuntimeHelper.requireNonNull(constants$3212.const$2,"gtk_text_direction_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_text_direction_get_type();
+     * unsigned long gtk_text_direction_get_type();
      * }
      */
     public static long gtk_text_direction_get_type() {
@@ -10832,11 +13506,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_justification_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1882.gtk_justification_get_type$MH,"gtk_justification_get_type");
+        return RuntimeHelper.requireNonNull(constants$3212.const$3,"gtk_justification_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_justification_get_type();
+     * unsigned long gtk_justification_get_type();
      * }
      */
     public static long gtk_justification_get_type() {
@@ -10848,11 +13522,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_menu_direction_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1882.gtk_menu_direction_type_get_type$MH,"gtk_menu_direction_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3212.const$4,"gtk_menu_direction_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_menu_direction_type_get_type();
+     * unsigned long gtk_menu_direction_type_get_type();
      * }
      */
     public static long gtk_menu_direction_type_get_type() {
@@ -10864,11 +13538,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_message_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1883.gtk_message_type_get_type$MH,"gtk_message_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3212.const$5,"gtk_message_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_message_type_get_type();
+     * unsigned long gtk_message_type_get_type();
      * }
      */
     public static long gtk_message_type_get_type() {
@@ -10880,11 +13554,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_movement_step_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1883.gtk_movement_step_get_type$MH,"gtk_movement_step_get_type");
+        return RuntimeHelper.requireNonNull(constants$3213.const$0,"gtk_movement_step_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_movement_step_get_type();
+     * unsigned long gtk_movement_step_get_type();
      * }
      */
     public static long gtk_movement_step_get_type() {
@@ -10896,11 +13570,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scroll_step_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1883.gtk_scroll_step_get_type$MH,"gtk_scroll_step_get_type");
+        return RuntimeHelper.requireNonNull(constants$3213.const$1,"gtk_scroll_step_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_scroll_step_get_type();
+     * unsigned long gtk_scroll_step_get_type();
      * }
      */
     public static long gtk_scroll_step_get_type() {
@@ -10912,11 +13586,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_orientation_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1883.gtk_orientation_get_type$MH,"gtk_orientation_get_type");
+        return RuntimeHelper.requireNonNull(constants$3213.const$2,"gtk_orientation_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_orientation_get_type();
+     * unsigned long gtk_orientation_get_type();
      * }
      */
     public static long gtk_orientation_get_type() {
@@ -10928,11 +13602,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_pack_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1883.gtk_pack_type_get_type$MH,"gtk_pack_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3213.const$3,"gtk_pack_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_pack_type_get_type();
+     * unsigned long gtk_pack_type_get_type();
      * }
      */
     public static long gtk_pack_type_get_type() {
@@ -10944,11 +13618,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_position_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1883.gtk_position_type_get_type$MH,"gtk_position_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3213.const$4,"gtk_position_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_position_type_get_type();
+     * unsigned long gtk_position_type_get_type();
      * }
      */
     public static long gtk_position_type_get_type() {
@@ -10960,11 +13634,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_relief_style_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1884.gtk_relief_style_get_type$MH,"gtk_relief_style_get_type");
+        return RuntimeHelper.requireNonNull(constants$3213.const$5,"gtk_relief_style_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_relief_style_get_type();
+     * unsigned long gtk_relief_style_get_type();
      * }
      */
     public static long gtk_relief_style_get_type() {
@@ -10976,11 +13650,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scroll_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1884.gtk_scroll_type_get_type$MH,"gtk_scroll_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3214.const$0,"gtk_scroll_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_scroll_type_get_type();
+     * unsigned long gtk_scroll_type_get_type();
      * }
      */
     public static long gtk_scroll_type_get_type() {
@@ -10992,11 +13666,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_selection_mode_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1884.gtk_selection_mode_get_type$MH,"gtk_selection_mode_get_type");
+        return RuntimeHelper.requireNonNull(constants$3214.const$1,"gtk_selection_mode_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_selection_mode_get_type();
+     * unsigned long gtk_selection_mode_get_type();
      * }
      */
     public static long gtk_selection_mode_get_type() {
@@ -11008,11 +13682,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_shadow_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1884.gtk_shadow_type_get_type$MH,"gtk_shadow_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3214.const$2,"gtk_shadow_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_shadow_type_get_type();
+     * unsigned long gtk_shadow_type_get_type();
      * }
      */
     public static long gtk_shadow_type_get_type() {
@@ -11024,11 +13698,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_state_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1884.gtk_state_type_get_type$MH,"gtk_state_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3214.const$3,"gtk_state_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_state_type_get_type();
+     * unsigned long gtk_state_type_get_type();
      * }
      */
     public static long gtk_state_type_get_type() {
@@ -11040,11 +13714,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_style_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1884.gtk_toolbar_style_get_type$MH,"gtk_toolbar_style_get_type");
+        return RuntimeHelper.requireNonNull(constants$3214.const$4,"gtk_toolbar_style_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_toolbar_style_get_type();
+     * unsigned long gtk_toolbar_style_get_type();
      * }
      */
     public static long gtk_toolbar_style_get_type() {
@@ -11056,11 +13730,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_wrap_mode_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1885.gtk_wrap_mode_get_type$MH,"gtk_wrap_mode_get_type");
+        return RuntimeHelper.requireNonNull(constants$3214.const$5,"gtk_wrap_mode_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_wrap_mode_get_type();
+     * unsigned long gtk_wrap_mode_get_type();
      * }
      */
     public static long gtk_wrap_mode_get_type() {
@@ -11072,11 +13746,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_sort_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1885.gtk_sort_type_get_type$MH,"gtk_sort_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3215.const$0,"gtk_sort_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_sort_type_get_type();
+     * unsigned long gtk_sort_type_get_type();
      * }
      */
     public static long gtk_sort_type_get_type() {
@@ -11088,11 +13762,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_im_preedit_style_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1885.gtk_im_preedit_style_get_type$MH,"gtk_im_preedit_style_get_type");
+        return RuntimeHelper.requireNonNull(constants$3215.const$1,"gtk_im_preedit_style_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_im_preedit_style_get_type();
+     * unsigned long gtk_im_preedit_style_get_type();
      * }
      */
     public static long gtk_im_preedit_style_get_type() {
@@ -11104,11 +13778,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_im_status_style_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1885.gtk_im_status_style_get_type$MH,"gtk_im_status_style_get_type");
+        return RuntimeHelper.requireNonNull(constants$3215.const$2,"gtk_im_status_style_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_im_status_style_get_type();
+     * unsigned long gtk_im_status_style_get_type();
      * }
      */
     public static long gtk_im_status_style_get_type() {
@@ -11120,11 +13794,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_pack_direction_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1885.gtk_pack_direction_get_type$MH,"gtk_pack_direction_get_type");
+        return RuntimeHelper.requireNonNull(constants$3215.const$3,"gtk_pack_direction_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_pack_direction_get_type();
+     * unsigned long gtk_pack_direction_get_type();
      * }
      */
     public static long gtk_pack_direction_get_type() {
@@ -11136,11 +13810,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_print_pages_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1885.gtk_print_pages_get_type$MH,"gtk_print_pages_get_type");
+        return RuntimeHelper.requireNonNull(constants$3215.const$4,"gtk_print_pages_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_print_pages_get_type();
+     * unsigned long gtk_print_pages_get_type();
      * }
      */
     public static long gtk_print_pages_get_type() {
@@ -11152,11 +13826,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_page_set_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1886.gtk_page_set_get_type$MH,"gtk_page_set_get_type");
+        return RuntimeHelper.requireNonNull(constants$3215.const$5,"gtk_page_set_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_page_set_get_type();
+     * unsigned long gtk_page_set_get_type();
      * }
      */
     public static long gtk_page_set_get_type() {
@@ -11168,11 +13842,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_number_up_layout_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1886.gtk_number_up_layout_get_type$MH,"gtk_number_up_layout_get_type");
+        return RuntimeHelper.requireNonNull(constants$3216.const$0,"gtk_number_up_layout_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_number_up_layout_get_type();
+     * unsigned long gtk_number_up_layout_get_type();
      * }
      */
     public static long gtk_number_up_layout_get_type() {
@@ -11184,11 +13858,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_page_orientation_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1886.gtk_page_orientation_get_type$MH,"gtk_page_orientation_get_type");
+        return RuntimeHelper.requireNonNull(constants$3216.const$1,"gtk_page_orientation_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_page_orientation_get_type();
+     * unsigned long gtk_page_orientation_get_type();
      * }
      */
     public static long gtk_page_orientation_get_type() {
@@ -11200,11 +13874,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_print_quality_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1886.gtk_print_quality_get_type$MH,"gtk_print_quality_get_type");
+        return RuntimeHelper.requireNonNull(constants$3216.const$2,"gtk_print_quality_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_print_quality_get_type();
+     * unsigned long gtk_print_quality_get_type();
      * }
      */
     public static long gtk_print_quality_get_type() {
@@ -11216,11 +13890,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_print_duplex_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1886.gtk_print_duplex_get_type$MH,"gtk_print_duplex_get_type");
+        return RuntimeHelper.requireNonNull(constants$3216.const$3,"gtk_print_duplex_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_print_duplex_get_type();
+     * unsigned long gtk_print_duplex_get_type();
      * }
      */
     public static long gtk_print_duplex_get_type() {
@@ -11232,11 +13906,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_unit_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1886.gtk_unit_get_type$MH,"gtk_unit_get_type");
+        return RuntimeHelper.requireNonNull(constants$3216.const$4,"gtk_unit_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_unit_get_type();
+     * unsigned long gtk_unit_get_type();
      * }
      */
     public static long gtk_unit_get_type() {
@@ -11248,11 +13922,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_view_grid_lines_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1887.gtk_tree_view_grid_lines_get_type$MH,"gtk_tree_view_grid_lines_get_type");
+        return RuntimeHelper.requireNonNull(constants$3216.const$5,"gtk_tree_view_grid_lines_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_tree_view_grid_lines_get_type();
+     * unsigned long gtk_tree_view_grid_lines_get_type();
      * }
      */
     public static long gtk_tree_view_grid_lines_get_type() {
@@ -11264,11 +13938,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_drag_result_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1887.gtk_drag_result_get_type$MH,"gtk_drag_result_get_type");
+        return RuntimeHelper.requireNonNull(constants$3217.const$0,"gtk_drag_result_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_drag_result_get_type();
+     * unsigned long gtk_drag_result_get_type();
      * }
      */
     public static long gtk_drag_result_get_type() {
@@ -11280,11 +13954,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_size_group_mode_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1887.gtk_size_group_mode_get_type$MH,"gtk_size_group_mode_get_type");
+        return RuntimeHelper.requireNonNull(constants$3217.const$1,"gtk_size_group_mode_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_size_group_mode_get_type();
+     * unsigned long gtk_size_group_mode_get_type();
      * }
      */
     public static long gtk_size_group_mode_get_type() {
@@ -11296,11 +13970,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_size_request_mode_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1887.gtk_size_request_mode_get_type$MH,"gtk_size_request_mode_get_type");
+        return RuntimeHelper.requireNonNull(constants$3217.const$2,"gtk_size_request_mode_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_size_request_mode_get_type();
+     * unsigned long gtk_size_request_mode_get_type();
      * }
      */
     public static long gtk_size_request_mode_get_type() {
@@ -11312,11 +13986,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_scrollable_policy_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1887.gtk_scrollable_policy_get_type$MH,"gtk_scrollable_policy_get_type");
+        return RuntimeHelper.requireNonNull(constants$3217.const$3,"gtk_scrollable_policy_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_scrollable_policy_get_type();
+     * unsigned long gtk_scrollable_policy_get_type();
      * }
      */
     public static long gtk_scrollable_policy_get_type() {
@@ -11328,11 +14002,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_state_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1887.gtk_state_flags_get_type$MH,"gtk_state_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$3217.const$4,"gtk_state_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_state_flags_get_type();
+     * unsigned long gtk_state_flags_get_type();
      * }
      */
     public static long gtk_state_flags_get_type() {
@@ -11344,11 +14018,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_region_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1888.gtk_region_flags_get_type$MH,"gtk_region_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$3217.const$5,"gtk_region_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_region_flags_get_type();
+     * unsigned long gtk_region_flags_get_type();
      * }
      */
     public static long gtk_region_flags_get_type() {
@@ -11360,11 +14034,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_junction_sides_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1888.gtk_junction_sides_get_type$MH,"gtk_junction_sides_get_type");
+        return RuntimeHelper.requireNonNull(constants$3218.const$0,"gtk_junction_sides_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_junction_sides_get_type();
+     * unsigned long gtk_junction_sides_get_type();
      * }
      */
     public static long gtk_junction_sides_get_type() {
@@ -11376,11 +14050,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_border_style_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1888.gtk_border_style_get_type$MH,"gtk_border_style_get_type");
+        return RuntimeHelper.requireNonNull(constants$3218.const$1,"gtk_border_style_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_border_style_get_type();
+     * unsigned long gtk_border_style_get_type();
      * }
      */
     public static long gtk_border_style_get_type() {
@@ -11392,11 +14066,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_level_bar_mode_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1888.gtk_level_bar_mode_get_type$MH,"gtk_level_bar_mode_get_type");
+        return RuntimeHelper.requireNonNull(constants$3218.const$2,"gtk_level_bar_mode_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_level_bar_mode_get_type();
+     * unsigned long gtk_level_bar_mode_get_type();
      * }
      */
     public static long gtk_level_bar_mode_get_type() {
@@ -11408,11 +14082,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_input_purpose_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1888.gtk_input_purpose_get_type$MH,"gtk_input_purpose_get_type");
+        return RuntimeHelper.requireNonNull(constants$3218.const$3,"gtk_input_purpose_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_input_purpose_get_type();
+     * unsigned long gtk_input_purpose_get_type();
      * }
      */
     public static long gtk_input_purpose_get_type() {
@@ -11424,11 +14098,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_input_hints_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1888.gtk_input_hints_get_type$MH,"gtk_input_hints_get_type");
+        return RuntimeHelper.requireNonNull(constants$3218.const$4,"gtk_input_hints_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_input_hints_get_type();
+     * unsigned long gtk_input_hints_get_type();
      * }
      */
     public static long gtk_input_hints_get_type() {
@@ -11440,11 +14114,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_propagation_phase_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1889.gtk_propagation_phase_get_type$MH,"gtk_propagation_phase_get_type");
+        return RuntimeHelper.requireNonNull(constants$3218.const$5,"gtk_propagation_phase_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_propagation_phase_get_type();
+     * unsigned long gtk_propagation_phase_get_type();
      * }
      */
     public static long gtk_propagation_phase_get_type() {
@@ -11456,11 +14130,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_event_sequence_state_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1889.gtk_event_sequence_state_get_type$MH,"gtk_event_sequence_state_get_type");
+        return RuntimeHelper.requireNonNull(constants$3219.const$0,"gtk_event_sequence_state_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_event_sequence_state_get_type();
+     * unsigned long gtk_event_sequence_state_get_type();
      * }
      */
     public static long gtk_event_sequence_state_get_type() {
@@ -11472,11 +14146,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_pan_direction_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1889.gtk_pan_direction_get_type$MH,"gtk_pan_direction_get_type");
+        return RuntimeHelper.requireNonNull(constants$3219.const$1,"gtk_pan_direction_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_pan_direction_get_type();
+     * unsigned long gtk_pan_direction_get_type();
      * }
      */
     public static long gtk_pan_direction_get_type() {
@@ -11488,11 +14162,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_popover_constraint_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1889.gtk_popover_constraint_get_type$MH,"gtk_popover_constraint_get_type");
+        return RuntimeHelper.requireNonNull(constants$3219.const$2,"gtk_popover_constraint_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_popover_constraint_get_type();
+     * unsigned long gtk_popover_constraint_get_type();
      * }
      */
     public static long gtk_popover_constraint_get_type() {
@@ -11504,11 +14178,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_event_controller_scroll_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1889.gtk_event_controller_scroll_flags_get_type$MH,"gtk_event_controller_scroll_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$3219.const$3,"gtk_event_controller_scroll_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_event_controller_scroll_flags_get_type();
+     * unsigned long gtk_event_controller_scroll_flags_get_type();
      * }
      */
     public static long gtk_event_controller_scroll_flags_get_type() {
@@ -11520,11 +14194,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_file_chooser_action_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1889.gtk_file_chooser_action_get_type$MH,"gtk_file_chooser_action_get_type");
+        return RuntimeHelper.requireNonNull(constants$3219.const$4,"gtk_file_chooser_action_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_file_chooser_action_get_type();
+     * unsigned long gtk_file_chooser_action_get_type();
      * }
      */
     public static long gtk_file_chooser_action_get_type() {
@@ -11536,11 +14210,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_file_chooser_confirmation_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1890.gtk_file_chooser_confirmation_get_type$MH,"gtk_file_chooser_confirmation_get_type");
+        return RuntimeHelper.requireNonNull(constants$3219.const$5,"gtk_file_chooser_confirmation_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_file_chooser_confirmation_get_type();
+     * unsigned long gtk_file_chooser_confirmation_get_type();
      * }
      */
     public static long gtk_file_chooser_confirmation_get_type() {
@@ -11552,11 +14226,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_file_chooser_error_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1890.gtk_file_chooser_error_get_type$MH,"gtk_file_chooser_error_get_type");
+        return RuntimeHelper.requireNonNull(constants$3220.const$0,"gtk_file_chooser_error_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_file_chooser_error_get_type();
+     * unsigned long gtk_file_chooser_error_get_type();
      * }
      */
     public static long gtk_file_chooser_error_get_type() {
@@ -11568,11 +14242,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_file_filter_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1890.gtk_file_filter_flags_get_type$MH,"gtk_file_filter_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$3220.const$1,"gtk_file_filter_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_file_filter_flags_get_type();
+     * unsigned long gtk_file_filter_flags_get_type();
      * }
      */
     public static long gtk_file_filter_flags_get_type() {
@@ -11584,11 +14258,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_font_chooser_level_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1890.gtk_font_chooser_level_get_type$MH,"gtk_font_chooser_level_get_type");
+        return RuntimeHelper.requireNonNull(constants$3220.const$2,"gtk_font_chooser_level_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_font_chooser_level_get_type();
+     * unsigned long gtk_font_chooser_level_get_type();
      * }
      */
     public static long gtk_font_chooser_level_get_type() {
@@ -11600,11 +14274,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_icon_lookup_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1890.gtk_icon_lookup_flags_get_type$MH,"gtk_icon_lookup_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$3220.const$3,"gtk_icon_lookup_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_icon_lookup_flags_get_type();
+     * unsigned long gtk_icon_lookup_flags_get_type();
      * }
      */
     public static long gtk_icon_lookup_flags_get_type() {
@@ -11616,11 +14290,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_icon_theme_error_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1890.gtk_icon_theme_error_get_type$MH,"gtk_icon_theme_error_get_type");
+        return RuntimeHelper.requireNonNull(constants$3220.const$4,"gtk_icon_theme_error_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_icon_theme_error_get_type();
+     * unsigned long gtk_icon_theme_error_get_type();
      * }
      */
     public static long gtk_icon_theme_error_get_type() {
@@ -11632,11 +14306,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_icon_view_drop_position_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1891.gtk_icon_view_drop_position_get_type$MH,"gtk_icon_view_drop_position_get_type");
+        return RuntimeHelper.requireNonNull(constants$3220.const$5,"gtk_icon_view_drop_position_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_icon_view_drop_position_get_type();
+     * unsigned long gtk_icon_view_drop_position_get_type();
      * }
      */
     public static long gtk_icon_view_drop_position_get_type() {
@@ -11648,11 +14322,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_image_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1891.gtk_image_type_get_type$MH,"gtk_image_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3221.const$0,"gtk_image_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_image_type_get_type();
+     * unsigned long gtk_image_type_get_type();
      * }
      */
     public static long gtk_image_type_get_type() {
@@ -11664,11 +14338,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_arrow_placement_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1891.gtk_arrow_placement_get_type$MH,"gtk_arrow_placement_get_type");
+        return RuntimeHelper.requireNonNull(constants$3221.const$1,"gtk_arrow_placement_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_arrow_placement_get_type();
+     * unsigned long gtk_arrow_placement_get_type();
      * }
      */
     public static long gtk_arrow_placement_get_type() {
@@ -11680,11 +14354,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_buttons_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1891.gtk_buttons_type_get_type$MH,"gtk_buttons_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3221.const$2,"gtk_buttons_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_buttons_type_get_type();
+     * unsigned long gtk_buttons_type_get_type();
      * }
      */
     public static long gtk_buttons_type_get_type() {
@@ -11696,11 +14370,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_button_role_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1891.gtk_button_role_get_type$MH,"gtk_button_role_get_type");
+        return RuntimeHelper.requireNonNull(constants$3221.const$3,"gtk_button_role_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_button_role_get_type();
+     * unsigned long gtk_button_role_get_type();
      * }
      */
     public static long gtk_button_role_get_type() {
@@ -11712,11 +14386,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_notebook_tab_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1891.gtk_notebook_tab_get_type$MH,"gtk_notebook_tab_get_type");
+        return RuntimeHelper.requireNonNull(constants$3221.const$4,"gtk_notebook_tab_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_notebook_tab_get_type();
+     * unsigned long gtk_notebook_tab_get_type();
      * }
      */
     public static long gtk_notebook_tab_get_type() {
@@ -11728,11 +14402,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_pad_action_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1892.gtk_pad_action_type_get_type$MH,"gtk_pad_action_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3221.const$5,"gtk_pad_action_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_pad_action_type_get_type();
+     * unsigned long gtk_pad_action_type_get_type();
      * }
      */
     public static long gtk_pad_action_type_get_type() {
@@ -11744,11 +14418,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_places_open_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1892.gtk_places_open_flags_get_type$MH,"gtk_places_open_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$3222.const$0,"gtk_places_open_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_places_open_flags_get_type();
+     * unsigned long gtk_places_open_flags_get_type();
      * }
      */
     public static long gtk_places_open_flags_get_type() {
@@ -11760,11 +14434,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_print_status_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1892.gtk_print_status_get_type$MH,"gtk_print_status_get_type");
+        return RuntimeHelper.requireNonNull(constants$3222.const$1,"gtk_print_status_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_print_status_get_type();
+     * unsigned long gtk_print_status_get_type();
      * }
      */
     public static long gtk_print_status_get_type() {
@@ -11776,11 +14450,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_print_operation_result_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1892.gtk_print_operation_result_get_type$MH,"gtk_print_operation_result_get_type");
+        return RuntimeHelper.requireNonNull(constants$3222.const$2,"gtk_print_operation_result_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_print_operation_result_get_type();
+     * unsigned long gtk_print_operation_result_get_type();
      * }
      */
     public static long gtk_print_operation_result_get_type() {
@@ -11792,11 +14466,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_print_operation_action_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1892.gtk_print_operation_action_get_type$MH,"gtk_print_operation_action_get_type");
+        return RuntimeHelper.requireNonNull(constants$3222.const$3,"gtk_print_operation_action_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_print_operation_action_get_type();
+     * unsigned long gtk_print_operation_action_get_type();
      * }
      */
     public static long gtk_print_operation_action_get_type() {
@@ -11808,11 +14482,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_print_error_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1892.gtk_print_error_get_type$MH,"gtk_print_error_get_type");
+        return RuntimeHelper.requireNonNull(constants$3222.const$4,"gtk_print_error_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_print_error_get_type();
+     * unsigned long gtk_print_error_get_type();
      * }
      */
     public static long gtk_print_error_get_type() {
@@ -11824,11 +14498,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_sort_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1893.gtk_recent_sort_type_get_type$MH,"gtk_recent_sort_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3222.const$5,"gtk_recent_sort_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_recent_sort_type_get_type();
+     * unsigned long gtk_recent_sort_type_get_type();
      * }
      */
     public static long gtk_recent_sort_type_get_type() {
@@ -11840,11 +14514,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_chooser_error_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1893.gtk_recent_chooser_error_get_type$MH,"gtk_recent_chooser_error_get_type");
+        return RuntimeHelper.requireNonNull(constants$3223.const$0,"gtk_recent_chooser_error_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_recent_chooser_error_get_type();
+     * unsigned long gtk_recent_chooser_error_get_type();
      * }
      */
     public static long gtk_recent_chooser_error_get_type() {
@@ -11856,11 +14530,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_filter_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1893.gtk_recent_filter_flags_get_type$MH,"gtk_recent_filter_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$3223.const$1,"gtk_recent_filter_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_recent_filter_flags_get_type();
+     * unsigned long gtk_recent_filter_flags_get_type();
      * }
      */
     public static long gtk_recent_filter_flags_get_type() {
@@ -11872,11 +14546,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_recent_manager_error_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1893.gtk_recent_manager_error_get_type$MH,"gtk_recent_manager_error_get_type");
+        return RuntimeHelper.requireNonNull(constants$3223.const$2,"gtk_recent_manager_error_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_recent_manager_error_get_type();
+     * unsigned long gtk_recent_manager_error_get_type();
      * }
      */
     public static long gtk_recent_manager_error_get_type() {
@@ -11888,11 +14562,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_revealer_transition_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1893.gtk_revealer_transition_type_get_type$MH,"gtk_revealer_transition_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3223.const$3,"gtk_revealer_transition_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_revealer_transition_type_get_type();
+     * unsigned long gtk_revealer_transition_type_get_type();
      * }
      */
     public static long gtk_revealer_transition_type_get_type() {
@@ -11904,11 +14578,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_corner_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1893.gtk_corner_type_get_type$MH,"gtk_corner_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3223.const$4,"gtk_corner_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_corner_type_get_type();
+     * unsigned long gtk_corner_type_get_type();
      * }
      */
     public static long gtk_corner_type_get_type() {
@@ -11920,11 +14594,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_policy_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1894.gtk_policy_type_get_type$MH,"gtk_policy_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3223.const$5,"gtk_policy_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_policy_type_get_type();
+     * unsigned long gtk_policy_type_get_type();
      * }
      */
     public static long gtk_policy_type_get_type() {
@@ -11936,11 +14610,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_target_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1894.gtk_target_flags_get_type$MH,"gtk_target_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$3224.const$0,"gtk_target_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_target_flags_get_type();
+     * unsigned long gtk_target_flags_get_type();
      * }
      */
     public static long gtk_target_flags_get_type() {
@@ -11952,11 +14626,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_shortcut_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1894.gtk_shortcut_type_get_type$MH,"gtk_shortcut_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3224.const$1,"gtk_shortcut_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_shortcut_type_get_type();
+     * unsigned long gtk_shortcut_type_get_type();
      * }
      */
     public static long gtk_shortcut_type_get_type() {
@@ -11968,11 +14642,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_button_update_policy_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1894.gtk_spin_button_update_policy_get_type$MH,"gtk_spin_button_update_policy_get_type");
+        return RuntimeHelper.requireNonNull(constants$3224.const$2,"gtk_spin_button_update_policy_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_spin_button_update_policy_get_type();
+     * unsigned long gtk_spin_button_update_policy_get_type();
      * }
      */
     public static long gtk_spin_button_update_policy_get_type() {
@@ -11984,11 +14658,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_spin_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1894.gtk_spin_type_get_type$MH,"gtk_spin_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3224.const$3,"gtk_spin_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_spin_type_get_type();
+     * unsigned long gtk_spin_type_get_type();
      * }
      */
     public static long gtk_spin_type_get_type() {
@@ -12000,11 +14674,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_stack_transition_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1894.gtk_stack_transition_type_get_type$MH,"gtk_stack_transition_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3224.const$4,"gtk_stack_transition_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_stack_transition_type_get_type();
+     * unsigned long gtk_stack_transition_type_get_type();
      * }
      */
     public static long gtk_stack_transition_type_get_type() {
@@ -12016,11 +14690,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_style_context_print_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1895.gtk_style_context_print_flags_get_type$MH,"gtk_style_context_print_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$3224.const$5,"gtk_style_context_print_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_style_context_print_flags_get_type();
+     * unsigned long gtk_style_context_print_flags_get_type();
      * }
      */
     public static long gtk_style_context_print_flags_get_type() {
@@ -12032,11 +14706,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_buffer_target_info_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1895.gtk_text_buffer_target_info_get_type$MH,"gtk_text_buffer_target_info_get_type");
+        return RuntimeHelper.requireNonNull(constants$3225.const$0,"gtk_text_buffer_target_info_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_text_buffer_target_info_get_type();
+     * unsigned long gtk_text_buffer_target_info_get_type();
      * }
      */
     public static long gtk_text_buffer_target_info_get_type() {
@@ -12048,11 +14722,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_search_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1895.gtk_text_search_flags_get_type$MH,"gtk_text_search_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$3225.const$1,"gtk_text_search_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_text_search_flags_get_type();
+     * unsigned long gtk_text_search_flags_get_type();
      * }
      */
     public static long gtk_text_search_flags_get_type() {
@@ -12064,11 +14738,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_window_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1895.gtk_text_window_type_get_type$MH,"gtk_text_window_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3225.const$2,"gtk_text_window_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_text_window_type_get_type();
+     * unsigned long gtk_text_window_type_get_type();
      * }
      */
     public static long gtk_text_window_type_get_type() {
@@ -12080,11 +14754,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_view_layer_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1895.gtk_text_view_layer_get_type$MH,"gtk_text_view_layer_get_type");
+        return RuntimeHelper.requireNonNull(constants$3225.const$3,"gtk_text_view_layer_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_text_view_layer_get_type();
+     * unsigned long gtk_text_view_layer_get_type();
      * }
      */
     public static long gtk_text_view_layer_get_type() {
@@ -12096,11 +14770,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_text_extend_selection_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1895.gtk_text_extend_selection_get_type$MH,"gtk_text_extend_selection_get_type");
+        return RuntimeHelper.requireNonNull(constants$3225.const$4,"gtk_text_extend_selection_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_text_extend_selection_get_type();
+     * unsigned long gtk_text_extend_selection_get_type();
      * }
      */
     public static long gtk_text_extend_selection_get_type() {
@@ -12112,11 +14786,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_toolbar_space_style_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1896.gtk_toolbar_space_style_get_type$MH,"gtk_toolbar_space_style_get_type");
+        return RuntimeHelper.requireNonNull(constants$3225.const$5,"gtk_toolbar_space_style_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_toolbar_space_style_get_type();
+     * unsigned long gtk_toolbar_space_style_get_type();
      * }
      */
     public static long gtk_toolbar_space_style_get_type() {
@@ -12128,11 +14802,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tool_palette_drag_targets_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1896.gtk_tool_palette_drag_targets_get_type$MH,"gtk_tool_palette_drag_targets_get_type");
+        return RuntimeHelper.requireNonNull(constants$3226.const$0,"gtk_tool_palette_drag_targets_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_tool_palette_drag_targets_get_type();
+     * unsigned long gtk_tool_palette_drag_targets_get_type();
      * }
      */
     public static long gtk_tool_palette_drag_targets_get_type() {
@@ -12144,11 +14818,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_model_flags_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1896.gtk_tree_model_flags_get_type$MH,"gtk_tree_model_flags_get_type");
+        return RuntimeHelper.requireNonNull(constants$3226.const$1,"gtk_tree_model_flags_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_tree_model_flags_get_type();
+     * unsigned long gtk_tree_model_flags_get_type();
      * }
      */
     public static long gtk_tree_model_flags_get_type() {
@@ -12160,11 +14834,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_view_drop_position_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1896.gtk_tree_view_drop_position_get_type$MH,"gtk_tree_view_drop_position_get_type");
+        return RuntimeHelper.requireNonNull(constants$3226.const$2,"gtk_tree_view_drop_position_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_tree_view_drop_position_get_type();
+     * unsigned long gtk_tree_view_drop_position_get_type();
      * }
      */
     public static long gtk_tree_view_drop_position_get_type() {
@@ -12176,11 +14850,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_tree_view_column_sizing_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1896.gtk_tree_view_column_sizing_get_type$MH,"gtk_tree_view_column_sizing_get_type");
+        return RuntimeHelper.requireNonNull(constants$3226.const$3,"gtk_tree_view_column_sizing_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_tree_view_column_sizing_get_type();
+     * unsigned long gtk_tree_view_column_sizing_get_type();
      * }
      */
     public static long gtk_tree_view_column_sizing_get_type() {
@@ -12192,11 +14866,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_widget_help_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1896.gtk_widget_help_type_get_type$MH,"gtk_widget_help_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3226.const$4,"gtk_widget_help_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_widget_help_type_get_type();
+     * unsigned long gtk_widget_help_type_get_type();
      * }
      */
     public static long gtk_widget_help_type_get_type() {
@@ -12208,11 +14882,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_window_type_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1897.gtk_window_type_get_type$MH,"gtk_window_type_get_type");
+        return RuntimeHelper.requireNonNull(constants$3226.const$5,"gtk_window_type_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_window_type_get_type();
+     * unsigned long gtk_window_type_get_type();
      * }
      */
     public static long gtk_window_type_get_type() {
@@ -12224,11 +14898,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_window_position_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1897.gtk_window_position_get_type$MH,"gtk_window_position_get_type");
+        return RuntimeHelper.requireNonNull(constants$3227.const$0,"gtk_window_position_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_window_position_get_type();
+     * unsigned long gtk_window_position_get_type();
      * }
      */
     public static long gtk_window_position_get_type() {
@@ -12240,11 +14914,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_viewport_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1897.gtk_viewport_get_type$MH,"gtk_viewport_get_type");
+        return RuntimeHelper.requireNonNull(constants$3229.const$0,"gtk_viewport_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_viewport_get_type();
+     * unsigned long gtk_viewport_get_type();
      * }
      */
     public static long gtk_viewport_get_type() {
@@ -12256,11 +14930,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_viewport_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1897.gtk_viewport_new$MH,"gtk_viewport_new");
+        return RuntimeHelper.requireNonNull(constants$3229.const$1,"gtk_viewport_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_viewport_new(GtkAdjustment* hadjustment, GtkAdjustment* vadjustment);
+     * struct _GtkWidget* gtk_viewport_new(struct _GtkAdjustment* hadjustment, struct _GtkAdjustment* vadjustment);
      * }
      */
     public static MemorySegment gtk_viewport_new(MemorySegment hadjustment, MemorySegment vadjustment) {
@@ -12272,11 +14946,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_viewport_get_hadjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1897.gtk_viewport_get_hadjustment$MH,"gtk_viewport_get_hadjustment");
+        return RuntimeHelper.requireNonNull(constants$3229.const$2,"gtk_viewport_get_hadjustment");
     }
     /**
      * {@snippet :
-     * GtkAdjustment* gtk_viewport_get_hadjustment(GtkViewport* viewport);
+     * struct _GtkAdjustment* gtk_viewport_get_hadjustment(struct _GtkViewport* viewport);
      * }
      */
     public static MemorySegment gtk_viewport_get_hadjustment(MemorySegment viewport) {
@@ -12288,11 +14962,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_viewport_get_vadjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1897.gtk_viewport_get_vadjustment$MH,"gtk_viewport_get_vadjustment");
+        return RuntimeHelper.requireNonNull(constants$3229.const$3,"gtk_viewport_get_vadjustment");
     }
     /**
      * {@snippet :
-     * GtkAdjustment* gtk_viewport_get_vadjustment(GtkViewport* viewport);
+     * struct _GtkAdjustment* gtk_viewport_get_vadjustment(struct _GtkViewport* viewport);
      * }
      */
     public static MemorySegment gtk_viewport_get_vadjustment(MemorySegment viewport) {
@@ -12304,11 +14978,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_viewport_set_hadjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1898.gtk_viewport_set_hadjustment$MH,"gtk_viewport_set_hadjustment");
+        return RuntimeHelper.requireNonNull(constants$3229.const$4,"gtk_viewport_set_hadjustment");
     }
     /**
      * {@snippet :
-     * void gtk_viewport_set_hadjustment(GtkViewport* viewport, GtkAdjustment* adjustment);
+     * void gtk_viewport_set_hadjustment(struct _GtkViewport* viewport, struct _GtkAdjustment* adjustment);
      * }
      */
     public static void gtk_viewport_set_hadjustment(MemorySegment viewport, MemorySegment adjustment) {
@@ -12320,11 +14994,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_viewport_set_vadjustment$MH() {
-        return RuntimeHelper.requireNonNull(constants$1898.gtk_viewport_set_vadjustment$MH,"gtk_viewport_set_vadjustment");
+        return RuntimeHelper.requireNonNull(constants$3229.const$5,"gtk_viewport_set_vadjustment");
     }
     /**
      * {@snippet :
-     * void gtk_viewport_set_vadjustment(GtkViewport* viewport, GtkAdjustment* adjustment);
+     * void gtk_viewport_set_vadjustment(struct _GtkViewport* viewport, struct _GtkAdjustment* adjustment);
      * }
      */
     public static void gtk_viewport_set_vadjustment(MemorySegment viewport, MemorySegment adjustment) {
@@ -12336,11 +15010,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_viewport_set_shadow_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1898.gtk_viewport_set_shadow_type$MH,"gtk_viewport_set_shadow_type");
+        return RuntimeHelper.requireNonNull(constants$3230.const$0,"gtk_viewport_set_shadow_type");
     }
     /**
      * {@snippet :
-     * void gtk_viewport_set_shadow_type(GtkViewport* viewport, GtkShadowType type);
+     * void gtk_viewport_set_shadow_type(struct _GtkViewport* viewport, enum GtkShadowType type);
      * }
      */
     public static void gtk_viewport_set_shadow_type(MemorySegment viewport, int type) {
@@ -12352,11 +15026,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_viewport_get_shadow_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1898.gtk_viewport_get_shadow_type$MH,"gtk_viewport_get_shadow_type");
+        return RuntimeHelper.requireNonNull(constants$3230.const$1,"gtk_viewport_get_shadow_type");
     }
     /**
      * {@snippet :
-     * GtkShadowType gtk_viewport_get_shadow_type(GtkViewport* viewport);
+     * enum GtkShadowType gtk_viewport_get_shadow_type(struct _GtkViewport* viewport);
      * }
      */
     public static int gtk_viewport_get_shadow_type(MemorySegment viewport) {
@@ -12368,11 +15042,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_viewport_get_bin_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1898.gtk_viewport_get_bin_window$MH,"gtk_viewport_get_bin_window");
+        return RuntimeHelper.requireNonNull(constants$3230.const$2,"gtk_viewport_get_bin_window");
     }
     /**
      * {@snippet :
-     * GdkWindow* gtk_viewport_get_bin_window(GtkViewport* viewport);
+     * struct _GdkWindow* gtk_viewport_get_bin_window(struct _GtkViewport* viewport);
      * }
      */
     public static MemorySegment gtk_viewport_get_bin_window(MemorySegment viewport) {
@@ -12384,11 +15058,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_viewport_get_view_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1898.gtk_viewport_get_view_window$MH,"gtk_viewport_get_view_window");
+        return RuntimeHelper.requireNonNull(constants$3230.const$3,"gtk_viewport_get_view_window");
     }
     /**
      * {@snippet :
-     * GdkWindow* gtk_viewport_get_view_window(GtkViewport* viewport);
+     * struct _GdkWindow* gtk_viewport_get_view_window(struct _GtkViewport* viewport);
      * }
      */
     public static MemorySegment gtk_viewport_get_view_window(MemorySegment viewport) {
@@ -12400,11 +15074,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_volume_button_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1899.gtk_volume_button_get_type$MH,"gtk_volume_button_get_type");
+        return RuntimeHelper.requireNonNull(constants$3232.const$2,"gtk_volume_button_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_volume_button_get_type();
+     * unsigned long gtk_volume_button_get_type();
      * }
      */
     public static long gtk_volume_button_get_type() {
@@ -12416,11 +15090,11 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_volume_button_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1899.gtk_volume_button_new$MH,"gtk_volume_button_new");
+        return RuntimeHelper.requireNonNull(constants$3232.const$3,"gtk_volume_button_new");
     }
     /**
      * {@snippet :
-     * GtkWidget* gtk_volume_button_new();
+     * struct _GtkWidget* gtk_volume_button_new();
      * }
      */
     public static MemorySegment gtk_volume_button_new() {
@@ -12432,2903 +15106,17 @@ public class app_indicator_h_18 extends app_indicator_h_17 {
         }
     }
     public static MethodHandle gtk_widget_path_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1899.gtk_widget_path_get_type$MH,"gtk_widget_path_get_type");
+        return RuntimeHelper.requireNonNull(constants$3232.const$4,"gtk_widget_path_get_type");
     }
     /**
      * {@snippet :
-     * GType gtk_widget_path_get_type();
+     * unsigned long gtk_widget_path_get_type();
      * }
      */
     public static long gtk_widget_path_get_type() {
         var mh$ = gtk_widget_path_get_type$MH();
         try {
             return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1899.gtk_widget_path_new$MH,"gtk_widget_path_new");
-    }
-    /**
-     * {@snippet :
-     * GtkWidgetPath* gtk_widget_path_new();
-     * }
-     */
-    public static MemorySegment gtk_widget_path_new() {
-        var mh$ = gtk_widget_path_new$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1899.gtk_widget_path_copy$MH,"gtk_widget_path_copy");
-    }
-    /**
-     * {@snippet :
-     * GtkWidgetPath* gtk_widget_path_copy(const GtkWidgetPath* path);
-     * }
-     */
-    public static MemorySegment gtk_widget_path_copy(MemorySegment path) {
-        var mh$ = gtk_widget_path_copy$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(path);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_ref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1899.gtk_widget_path_ref$MH,"gtk_widget_path_ref");
-    }
-    /**
-     * {@snippet :
-     * GtkWidgetPath* gtk_widget_path_ref(GtkWidgetPath* path);
-     * }
-     */
-    public static MemorySegment gtk_widget_path_ref(MemorySegment path) {
-        var mh$ = gtk_widget_path_ref$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(path);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_unref$MH() {
-        return RuntimeHelper.requireNonNull(constants$1900.gtk_widget_path_unref$MH,"gtk_widget_path_unref");
-    }
-    /**
-     * {@snippet :
-     * void gtk_widget_path_unref(GtkWidgetPath* path);
-     * }
-     */
-    public static void gtk_widget_path_unref(MemorySegment path) {
-        var mh$ = gtk_widget_path_unref$MH();
-        try {
-            mh$.invokeExact(path);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1900.gtk_widget_path_free$MH,"gtk_widget_path_free");
-    }
-    /**
-     * {@snippet :
-     * void gtk_widget_path_free(GtkWidgetPath* path);
-     * }
-     */
-    public static void gtk_widget_path_free(MemorySegment path) {
-        var mh$ = gtk_widget_path_free$MH();
-        try {
-            mh$.invokeExact(path);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1900.gtk_widget_path_to_string$MH,"gtk_widget_path_to_string");
-    }
-    /**
-     * {@snippet :
-     * char* gtk_widget_path_to_string(const GtkWidgetPath* path);
-     * }
-     */
-    public static MemorySegment gtk_widget_path_to_string(MemorySegment path) {
-        var mh$ = gtk_widget_path_to_string$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(path);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_length$MH() {
-        return RuntimeHelper.requireNonNull(constants$1900.gtk_widget_path_length$MH,"gtk_widget_path_length");
-    }
-    /**
-     * {@snippet :
-     * gint gtk_widget_path_length(const GtkWidgetPath* path);
-     * }
-     */
-    public static int gtk_widget_path_length(MemorySegment path) {
-        var mh$ = gtk_widget_path_length$MH();
-        try {
-            return (int)mh$.invokeExact(path);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_append_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1900.gtk_widget_path_append_type$MH,"gtk_widget_path_append_type");
-    }
-    /**
-     * {@snippet :
-     * gint gtk_widget_path_append_type(GtkWidgetPath* path, GType type);
-     * }
-     */
-    public static int gtk_widget_path_append_type(MemorySegment path, long type) {
-        var mh$ = gtk_widget_path_append_type$MH();
-        try {
-            return (int)mh$.invokeExact(path, type);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_prepend_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1900.gtk_widget_path_prepend_type$MH,"gtk_widget_path_prepend_type");
-    }
-    /**
-     * {@snippet :
-     * void gtk_widget_path_prepend_type(GtkWidgetPath* path, GType type);
-     * }
-     */
-    public static void gtk_widget_path_prepend_type(MemorySegment path, long type) {
-        var mh$ = gtk_widget_path_prepend_type$MH();
-        try {
-            mh$.invokeExact(path, type);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_append_with_siblings$MH() {
-        return RuntimeHelper.requireNonNull(constants$1901.gtk_widget_path_append_with_siblings$MH,"gtk_widget_path_append_with_siblings");
-    }
-    /**
-     * {@snippet :
-     * gint gtk_widget_path_append_with_siblings(GtkWidgetPath* path, GtkWidgetPath* siblings, guint sibling_index);
-     * }
-     */
-    public static int gtk_widget_path_append_with_siblings(MemorySegment path, MemorySegment siblings, int sibling_index) {
-        var mh$ = gtk_widget_path_append_with_siblings$MH();
-        try {
-            return (int)mh$.invokeExact(path, siblings, sibling_index);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_append_for_widget$MH() {
-        return RuntimeHelper.requireNonNull(constants$1901.gtk_widget_path_append_for_widget$MH,"gtk_widget_path_append_for_widget");
-    }
-    /**
-     * {@snippet :
-     * gint gtk_widget_path_append_for_widget(GtkWidgetPath* path, GtkWidget* widget);
-     * }
-     */
-    public static int gtk_widget_path_append_for_widget(MemorySegment path, MemorySegment widget) {
-        var mh$ = gtk_widget_path_append_for_widget$MH();
-        try {
-            return (int)mh$.invokeExact(path, widget);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_get_object_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1901.gtk_widget_path_iter_get_object_type$MH,"gtk_widget_path_iter_get_object_type");
-    }
-    /**
-     * {@snippet :
-     * GType gtk_widget_path_iter_get_object_type(const GtkWidgetPath* path, gint pos);
-     * }
-     */
-    public static long gtk_widget_path_iter_get_object_type(MemorySegment path, int pos) {
-        var mh$ = gtk_widget_path_iter_get_object_type$MH();
-        try {
-            return (long)mh$.invokeExact(path, pos);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_set_object_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1901.gtk_widget_path_iter_set_object_type$MH,"gtk_widget_path_iter_set_object_type");
-    }
-    /**
-     * {@snippet :
-     * void gtk_widget_path_iter_set_object_type(GtkWidgetPath* path, gint pos, GType type);
-     * }
-     */
-    public static void gtk_widget_path_iter_set_object_type(MemorySegment path, int pos, long type) {
-        var mh$ = gtk_widget_path_iter_set_object_type$MH();
-        try {
-            mh$.invokeExact(path, pos, type);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_get_object_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1901.gtk_widget_path_iter_get_object_name$MH,"gtk_widget_path_iter_get_object_name");
-    }
-    /**
-     * {@snippet :
-     * char* gtk_widget_path_iter_get_object_name(const GtkWidgetPath* path, gint pos);
-     * }
-     */
-    public static MemorySegment gtk_widget_path_iter_get_object_name(MemorySegment path, int pos) {
-        var mh$ = gtk_widget_path_iter_get_object_name$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(path, pos);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_set_object_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1901.gtk_widget_path_iter_set_object_name$MH,"gtk_widget_path_iter_set_object_name");
-    }
-    /**
-     * {@snippet :
-     * void gtk_widget_path_iter_set_object_name(GtkWidgetPath* path, gint pos, char* name);
-     * }
-     */
-    public static void gtk_widget_path_iter_set_object_name(MemorySegment path, int pos, MemorySegment name) {
-        var mh$ = gtk_widget_path_iter_set_object_name$MH();
-        try {
-            mh$.invokeExact(path, pos, name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_get_siblings$MH() {
-        return RuntimeHelper.requireNonNull(constants$1902.gtk_widget_path_iter_get_siblings$MH,"gtk_widget_path_iter_get_siblings");
-    }
-    /**
-     * {@snippet :
-     * const GtkWidgetPath* gtk_widget_path_iter_get_siblings(const GtkWidgetPath* path, gint pos);
-     * }
-     */
-    public static MemorySegment gtk_widget_path_iter_get_siblings(MemorySegment path, int pos) {
-        var mh$ = gtk_widget_path_iter_get_siblings$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(path, pos);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_get_sibling_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$1902.gtk_widget_path_iter_get_sibling_index$MH,"gtk_widget_path_iter_get_sibling_index");
-    }
-    /**
-     * {@snippet :
-     * guint gtk_widget_path_iter_get_sibling_index(const GtkWidgetPath* path, gint pos);
-     * }
-     */
-    public static int gtk_widget_path_iter_get_sibling_index(MemorySegment path, int pos) {
-        var mh$ = gtk_widget_path_iter_get_sibling_index$MH();
-        try {
-            return (int)mh$.invokeExact(path, pos);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1902.gtk_widget_path_iter_get_name$MH,"gtk_widget_path_iter_get_name");
-    }
-    /**
-     * {@snippet :
-     * const gchar* gtk_widget_path_iter_get_name(const GtkWidgetPath* path, gint pos);
-     * }
-     */
-    public static MemorySegment gtk_widget_path_iter_get_name(MemorySegment path, int pos) {
-        var mh$ = gtk_widget_path_iter_get_name$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(path, pos);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_set_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1902.gtk_widget_path_iter_set_name$MH,"gtk_widget_path_iter_set_name");
-    }
-    /**
-     * {@snippet :
-     * void gtk_widget_path_iter_set_name(GtkWidgetPath* path, gint pos, const gchar* name);
-     * }
-     */
-    public static void gtk_widget_path_iter_set_name(MemorySegment path, int pos, MemorySegment name) {
-        var mh$ = gtk_widget_path_iter_set_name$MH();
-        try {
-            mh$.invokeExact(path, pos, name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_has_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1902.gtk_widget_path_iter_has_name$MH,"gtk_widget_path_iter_has_name");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_widget_path_iter_has_name(const GtkWidgetPath* path, gint pos, const gchar* name);
-     * }
-     */
-    public static int gtk_widget_path_iter_has_name(MemorySegment path, int pos, MemorySegment name) {
-        var mh$ = gtk_widget_path_iter_has_name$MH();
-        try {
-            return (int)mh$.invokeExact(path, pos, name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_has_qname$MH() {
-        return RuntimeHelper.requireNonNull(constants$1902.gtk_widget_path_iter_has_qname$MH,"gtk_widget_path_iter_has_qname");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_widget_path_iter_has_qname(const GtkWidgetPath* path, gint pos, GQuark qname);
-     * }
-     */
-    public static int gtk_widget_path_iter_has_qname(MemorySegment path, int pos, int qname) {
-        var mh$ = gtk_widget_path_iter_has_qname$MH();
-        try {
-            return (int)mh$.invokeExact(path, pos, qname);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_get_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$1903.gtk_widget_path_iter_get_state$MH,"gtk_widget_path_iter_get_state");
-    }
-    /**
-     * {@snippet :
-     * GtkStateFlags gtk_widget_path_iter_get_state(const GtkWidgetPath* path, gint pos);
-     * }
-     */
-    public static int gtk_widget_path_iter_get_state(MemorySegment path, int pos) {
-        var mh$ = gtk_widget_path_iter_get_state$MH();
-        try {
-            return (int)mh$.invokeExact(path, pos);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_set_state$MH() {
-        return RuntimeHelper.requireNonNull(constants$1903.gtk_widget_path_iter_set_state$MH,"gtk_widget_path_iter_set_state");
-    }
-    /**
-     * {@snippet :
-     * void gtk_widget_path_iter_set_state(GtkWidgetPath* path, gint pos, GtkStateFlags state);
-     * }
-     */
-    public static void gtk_widget_path_iter_set_state(MemorySegment path, int pos, int state) {
-        var mh$ = gtk_widget_path_iter_set_state$MH();
-        try {
-            mh$.invokeExact(path, pos, state);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_add_class$MH() {
-        return RuntimeHelper.requireNonNull(constants$1903.gtk_widget_path_iter_add_class$MH,"gtk_widget_path_iter_add_class");
-    }
-    /**
-     * {@snippet :
-     * void gtk_widget_path_iter_add_class(GtkWidgetPath* path, gint pos, const gchar* name);
-     * }
-     */
-    public static void gtk_widget_path_iter_add_class(MemorySegment path, int pos, MemorySegment name) {
-        var mh$ = gtk_widget_path_iter_add_class$MH();
-        try {
-            mh$.invokeExact(path, pos, name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_remove_class$MH() {
-        return RuntimeHelper.requireNonNull(constants$1903.gtk_widget_path_iter_remove_class$MH,"gtk_widget_path_iter_remove_class");
-    }
-    /**
-     * {@snippet :
-     * void gtk_widget_path_iter_remove_class(GtkWidgetPath* path, gint pos, const gchar* name);
-     * }
-     */
-    public static void gtk_widget_path_iter_remove_class(MemorySegment path, int pos, MemorySegment name) {
-        var mh$ = gtk_widget_path_iter_remove_class$MH();
-        try {
-            mh$.invokeExact(path, pos, name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_clear_classes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1903.gtk_widget_path_iter_clear_classes$MH,"gtk_widget_path_iter_clear_classes");
-    }
-    /**
-     * {@snippet :
-     * void gtk_widget_path_iter_clear_classes(GtkWidgetPath* path, gint pos);
-     * }
-     */
-    public static void gtk_widget_path_iter_clear_classes(MemorySegment path, int pos) {
-        var mh$ = gtk_widget_path_iter_clear_classes$MH();
-        try {
-            mh$.invokeExact(path, pos);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_list_classes$MH() {
-        return RuntimeHelper.requireNonNull(constants$1903.gtk_widget_path_iter_list_classes$MH,"gtk_widget_path_iter_list_classes");
-    }
-    /**
-     * {@snippet :
-     * GSList* gtk_widget_path_iter_list_classes(const GtkWidgetPath* path, gint pos);
-     * }
-     */
-    public static MemorySegment gtk_widget_path_iter_list_classes(MemorySegment path, int pos) {
-        var mh$ = gtk_widget_path_iter_list_classes$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(path, pos);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_has_class$MH() {
-        return RuntimeHelper.requireNonNull(constants$1904.gtk_widget_path_iter_has_class$MH,"gtk_widget_path_iter_has_class");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_widget_path_iter_has_class(const GtkWidgetPath* path, gint pos, const gchar* name);
-     * }
-     */
-    public static int gtk_widget_path_iter_has_class(MemorySegment path, int pos, MemorySegment name) {
-        var mh$ = gtk_widget_path_iter_has_class$MH();
-        try {
-            return (int)mh$.invokeExact(path, pos, name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_has_qclass$MH() {
-        return RuntimeHelper.requireNonNull(constants$1904.gtk_widget_path_iter_has_qclass$MH,"gtk_widget_path_iter_has_qclass");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_widget_path_iter_has_qclass(const GtkWidgetPath* path, gint pos, GQuark qname);
-     * }
-     */
-    public static int gtk_widget_path_iter_has_qclass(MemorySegment path, int pos, int qname) {
-        var mh$ = gtk_widget_path_iter_has_qclass$MH();
-        try {
-            return (int)mh$.invokeExact(path, pos, qname);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_add_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1904.gtk_widget_path_iter_add_region$MH,"gtk_widget_path_iter_add_region");
-    }
-    /**
-     * {@snippet :
-     * void gtk_widget_path_iter_add_region(GtkWidgetPath* path, gint pos, const gchar* name, GtkRegionFlags flags);
-     * }
-     */
-    public static void gtk_widget_path_iter_add_region(MemorySegment path, int pos, MemorySegment name, int flags) {
-        var mh$ = gtk_widget_path_iter_add_region$MH();
-        try {
-            mh$.invokeExact(path, pos, name, flags);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_remove_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1904.gtk_widget_path_iter_remove_region$MH,"gtk_widget_path_iter_remove_region");
-    }
-    /**
-     * {@snippet :
-     * void gtk_widget_path_iter_remove_region(GtkWidgetPath* path, gint pos, const gchar* name);
-     * }
-     */
-    public static void gtk_widget_path_iter_remove_region(MemorySegment path, int pos, MemorySegment name) {
-        var mh$ = gtk_widget_path_iter_remove_region$MH();
-        try {
-            mh$.invokeExact(path, pos, name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_clear_regions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1904.gtk_widget_path_iter_clear_regions$MH,"gtk_widget_path_iter_clear_regions");
-    }
-    /**
-     * {@snippet :
-     * void gtk_widget_path_iter_clear_regions(GtkWidgetPath* path, gint pos);
-     * }
-     */
-    public static void gtk_widget_path_iter_clear_regions(MemorySegment path, int pos) {
-        var mh$ = gtk_widget_path_iter_clear_regions$MH();
-        try {
-            mh$.invokeExact(path, pos);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_list_regions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1904.gtk_widget_path_iter_list_regions$MH,"gtk_widget_path_iter_list_regions");
-    }
-    /**
-     * {@snippet :
-     * GSList* gtk_widget_path_iter_list_regions(const GtkWidgetPath* path, gint pos);
-     * }
-     */
-    public static MemorySegment gtk_widget_path_iter_list_regions(MemorySegment path, int pos) {
-        var mh$ = gtk_widget_path_iter_list_regions$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(path, pos);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_has_region$MH() {
-        return RuntimeHelper.requireNonNull(constants$1905.gtk_widget_path_iter_has_region$MH,"gtk_widget_path_iter_has_region");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_widget_path_iter_has_region(const GtkWidgetPath* path, gint pos, const gchar* name, GtkRegionFlags* flags);
-     * }
-     */
-    public static int gtk_widget_path_iter_has_region(MemorySegment path, int pos, MemorySegment name, MemorySegment flags) {
-        var mh$ = gtk_widget_path_iter_has_region$MH();
-        try {
-            return (int)mh$.invokeExact(path, pos, name, flags);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_iter_has_qregion$MH() {
-        return RuntimeHelper.requireNonNull(constants$1905.gtk_widget_path_iter_has_qregion$MH,"gtk_widget_path_iter_has_qregion");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_widget_path_iter_has_qregion(const GtkWidgetPath* path, gint pos, GQuark qname, GtkRegionFlags* flags);
-     * }
-     */
-    public static int gtk_widget_path_iter_has_qregion(MemorySegment path, int pos, int qname, MemorySegment flags) {
-        var mh$ = gtk_widget_path_iter_has_qregion$MH();
-        try {
-            return (int)mh$.invokeExact(path, pos, qname, flags);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_get_object_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1905.gtk_widget_path_get_object_type$MH,"gtk_widget_path_get_object_type");
-    }
-    /**
-     * {@snippet :
-     * GType gtk_widget_path_get_object_type(const GtkWidgetPath* path);
-     * }
-     */
-    public static long gtk_widget_path_get_object_type(MemorySegment path) {
-        var mh$ = gtk_widget_path_get_object_type$MH();
-        try {
-            return (long)mh$.invokeExact(path);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_is_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1905.gtk_widget_path_is_type$MH,"gtk_widget_path_is_type");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_widget_path_is_type(const GtkWidgetPath* path, GType type);
-     * }
-     */
-    public static int gtk_widget_path_is_type(MemorySegment path, long type) {
-        var mh$ = gtk_widget_path_is_type$MH();
-        try {
-            return (int)mh$.invokeExact(path, type);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_widget_path_has_parent$MH() {
-        return RuntimeHelper.requireNonNull(constants$1905.gtk_widget_path_has_parent$MH,"gtk_widget_path_has_parent");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_widget_path_has_parent(const GtkWidgetPath* path, GType type);
-     * }
-     */
-    public static int gtk_widget_path_has_parent(MemorySegment path, long type) {
-        var mh$ = gtk_widget_path_has_parent$MH();
-        try {
-            return (int)mh$.invokeExact(path, type);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_window_group_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1905.gtk_window_group_get_type$MH,"gtk_window_group_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType gtk_window_group_get_type();
-     * }
-     */
-    public static long gtk_window_group_get_type() {
-        var mh$ = gtk_window_group_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_window_group_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1906.gtk_window_group_new$MH,"gtk_window_group_new");
-    }
-    /**
-     * {@snippet :
-     * GtkWindowGroup* gtk_window_group_new();
-     * }
-     */
-    public static MemorySegment gtk_window_group_new() {
-        var mh$ = gtk_window_group_new$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_window_group_add_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1906.gtk_window_group_add_window$MH,"gtk_window_group_add_window");
-    }
-    /**
-     * {@snippet :
-     * void gtk_window_group_add_window(GtkWindowGroup* window_group, GtkWindow* window);
-     * }
-     */
-    public static void gtk_window_group_add_window(MemorySegment window_group, MemorySegment window) {
-        var mh$ = gtk_window_group_add_window$MH();
-        try {
-            mh$.invokeExact(window_group, window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_window_group_remove_window$MH() {
-        return RuntimeHelper.requireNonNull(constants$1906.gtk_window_group_remove_window$MH,"gtk_window_group_remove_window");
-    }
-    /**
-     * {@snippet :
-     * void gtk_window_group_remove_window(GtkWindowGroup* window_group, GtkWindow* window);
-     * }
-     */
-    public static void gtk_window_group_remove_window(MemorySegment window_group, MemorySegment window) {
-        var mh$ = gtk_window_group_remove_window$MH();
-        try {
-            mh$.invokeExact(window_group, window);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_window_group_list_windows$MH() {
-        return RuntimeHelper.requireNonNull(constants$1906.gtk_window_group_list_windows$MH,"gtk_window_group_list_windows");
-    }
-    /**
-     * {@snippet :
-     * GList* gtk_window_group_list_windows(GtkWindowGroup* window_group);
-     * }
-     */
-    public static MemorySegment gtk_window_group_list_windows(MemorySegment window_group) {
-        var mh$ = gtk_window_group_list_windows$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window_group);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_window_group_get_current_grab$MH() {
-        return RuntimeHelper.requireNonNull(constants$1906.gtk_window_group_get_current_grab$MH,"gtk_window_group_get_current_grab");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_window_group_get_current_grab(GtkWindowGroup* window_group);
-     * }
-     */
-    public static MemorySegment gtk_window_group_get_current_grab(MemorySegment window_group) {
-        var mh$ = gtk_window_group_get_current_grab$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window_group);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_window_group_get_current_device_grab$MH() {
-        return RuntimeHelper.requireNonNull(constants$1906.gtk_window_group_get_current_device_grab$MH,"gtk_window_group_get_current_device_grab");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_window_group_get_current_device_grab(GtkWindowGroup* window_group, GdkDevice* device);
-     * }
-     */
-    public static MemorySegment gtk_window_group_get_current_device_grab(MemorySegment window_group, MemorySegment device) {
-        var mh$ = gtk_window_group_get_current_device_grab$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(window_group, device);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_arrow_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1907.gtk_arrow_get_type$MH,"gtk_arrow_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType gtk_arrow_get_type();
-     * }
-     */
-    public static long gtk_arrow_get_type() {
-        var mh$ = gtk_arrow_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_arrow_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1907.gtk_arrow_new$MH,"gtk_arrow_new");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_arrow_new(GtkArrowType arrow_type, GtkShadowType shadow_type);
-     * }
-     */
-    public static MemorySegment gtk_arrow_new(int arrow_type, int shadow_type) {
-        var mh$ = gtk_arrow_new$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(arrow_type, shadow_type);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_arrow_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$1907.gtk_arrow_set$MH,"gtk_arrow_set");
-    }
-    /**
-     * {@snippet :
-     * void gtk_arrow_set(GtkArrow* arrow, GtkArrowType arrow_type, GtkShadowType shadow_type);
-     * }
-     */
-    public static void gtk_arrow_set(MemorySegment arrow, int arrow_type, int shadow_type) {
-        var mh$ = gtk_arrow_set$MH();
-        try {
-            mh$.invokeExact(arrow, arrow_type, shadow_type);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1907.gtk_action_get_type$MH,"gtk_action_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType gtk_action_get_type();
-     * }
-     */
-    public static long gtk_action_get_type() {
-        var mh$ = gtk_action_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1907.gtk_action_new$MH,"gtk_action_new");
-    }
-    /**
-     * {@snippet :
-     * GtkAction* gtk_action_new(const gchar* name, const gchar* label, const gchar* tooltip, const gchar* stock_id);
-     * }
-     */
-    public static MemorySegment gtk_action_new(MemorySegment name, MemorySegment label, MemorySegment tooltip, MemorySegment stock_id) {
-        var mh$ = gtk_action_new$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(name, label, tooltip, stock_id);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1907.gtk_action_get_name$MH,"gtk_action_get_name");
-    }
-    /**
-     * {@snippet :
-     * const gchar* gtk_action_get_name(GtkAction* action);
-     * }
-     */
-    public static MemorySegment gtk_action_get_name(MemorySegment action) {
-        var mh$ = gtk_action_get_name$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_is_sensitive$MH() {
-        return RuntimeHelper.requireNonNull(constants$1908.gtk_action_is_sensitive$MH,"gtk_action_is_sensitive");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_action_is_sensitive(GtkAction* action);
-     * }
-     */
-    public static int gtk_action_is_sensitive(MemorySegment action) {
-        var mh$ = gtk_action_is_sensitive$MH();
-        try {
-            return (int)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_sensitive$MH() {
-        return RuntimeHelper.requireNonNull(constants$1908.gtk_action_get_sensitive$MH,"gtk_action_get_sensitive");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_action_get_sensitive(GtkAction* action);
-     * }
-     */
-    public static int gtk_action_get_sensitive(MemorySegment action) {
-        var mh$ = gtk_action_get_sensitive$MH();
-        try {
-            return (int)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_set_sensitive$MH() {
-        return RuntimeHelper.requireNonNull(constants$1908.gtk_action_set_sensitive$MH,"gtk_action_set_sensitive");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_set_sensitive(GtkAction* action, gboolean sensitive);
-     * }
-     */
-    public static void gtk_action_set_sensitive(MemorySegment action, int sensitive) {
-        var mh$ = gtk_action_set_sensitive$MH();
-        try {
-            mh$.invokeExact(action, sensitive);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_is_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$1908.gtk_action_is_visible$MH,"gtk_action_is_visible");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_action_is_visible(GtkAction* action);
-     * }
-     */
-    public static int gtk_action_is_visible(MemorySegment action) {
-        var mh$ = gtk_action_is_visible$MH();
-        try {
-            return (int)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$1908.gtk_action_get_visible$MH,"gtk_action_get_visible");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_action_get_visible(GtkAction* action);
-     * }
-     */
-    public static int gtk_action_get_visible(MemorySegment action) {
-        var mh$ = gtk_action_get_visible$MH();
-        try {
-            return (int)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_set_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$1908.gtk_action_set_visible$MH,"gtk_action_set_visible");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_set_visible(GtkAction* action, gboolean visible);
-     * }
-     */
-    public static void gtk_action_set_visible(MemorySegment action, int visible) {
-        var mh$ = gtk_action_set_visible$MH();
-        try {
-            mh$.invokeExact(action, visible);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_activate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1909.gtk_action_activate$MH,"gtk_action_activate");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_activate(GtkAction* action);
-     * }
-     */
-    public static void gtk_action_activate(MemorySegment action) {
-        var mh$ = gtk_action_activate$MH();
-        try {
-            mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_create_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$1909.gtk_action_create_icon$MH,"gtk_action_create_icon");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_action_create_icon(GtkAction* action, GtkIconSize icon_size);
-     * }
-     */
-    public static MemorySegment gtk_action_create_icon(MemorySegment action, int icon_size) {
-        var mh$ = gtk_action_create_icon$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action, icon_size);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_create_menu_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$1909.gtk_action_create_menu_item$MH,"gtk_action_create_menu_item");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_action_create_menu_item(GtkAction* action);
-     * }
-     */
-    public static MemorySegment gtk_action_create_menu_item(MemorySegment action) {
-        var mh$ = gtk_action_create_menu_item$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_create_tool_item$MH() {
-        return RuntimeHelper.requireNonNull(constants$1909.gtk_action_create_tool_item$MH,"gtk_action_create_tool_item");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_action_create_tool_item(GtkAction* action);
-     * }
-     */
-    public static MemorySegment gtk_action_create_tool_item(MemorySegment action) {
-        var mh$ = gtk_action_create_tool_item$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_create_menu$MH() {
-        return RuntimeHelper.requireNonNull(constants$1909.gtk_action_create_menu$MH,"gtk_action_create_menu");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_action_create_menu(GtkAction* action);
-     * }
-     */
-    public static MemorySegment gtk_action_create_menu(MemorySegment action) {
-        var mh$ = gtk_action_create_menu$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_proxies$MH() {
-        return RuntimeHelper.requireNonNull(constants$1909.gtk_action_get_proxies$MH,"gtk_action_get_proxies");
-    }
-    /**
-     * {@snippet :
-     * GSList* gtk_action_get_proxies(GtkAction* action);
-     * }
-     */
-    public static MemorySegment gtk_action_get_proxies(MemorySegment action) {
-        var mh$ = gtk_action_get_proxies$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_connect_accelerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$1910.gtk_action_connect_accelerator$MH,"gtk_action_connect_accelerator");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_connect_accelerator(GtkAction* action);
-     * }
-     */
-    public static void gtk_action_connect_accelerator(MemorySegment action) {
-        var mh$ = gtk_action_connect_accelerator$MH();
-        try {
-            mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_disconnect_accelerator$MH() {
-        return RuntimeHelper.requireNonNull(constants$1910.gtk_action_disconnect_accelerator$MH,"gtk_action_disconnect_accelerator");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_disconnect_accelerator(GtkAction* action);
-     * }
-     */
-    public static void gtk_action_disconnect_accelerator(MemorySegment action) {
-        var mh$ = gtk_action_disconnect_accelerator$MH();
-        try {
-            mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_accel_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1910.gtk_action_get_accel_path$MH,"gtk_action_get_accel_path");
-    }
-    /**
-     * {@snippet :
-     * const gchar* gtk_action_get_accel_path(GtkAction* action);
-     * }
-     */
-    public static MemorySegment gtk_action_get_accel_path(MemorySegment action) {
-        var mh$ = gtk_action_get_accel_path$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_accel_closure$MH() {
-        return RuntimeHelper.requireNonNull(constants$1910.gtk_action_get_accel_closure$MH,"gtk_action_get_accel_closure");
-    }
-    /**
-     * {@snippet :
-     * GClosure* gtk_action_get_accel_closure(GtkAction* action);
-     * }
-     */
-    public static MemorySegment gtk_action_get_accel_closure(MemorySegment action) {
-        var mh$ = gtk_action_get_accel_closure$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_block_activate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1910.gtk_action_block_activate$MH,"gtk_action_block_activate");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_block_activate(GtkAction* action);
-     * }
-     */
-    public static void gtk_action_block_activate(MemorySegment action) {
-        var mh$ = gtk_action_block_activate$MH();
-        try {
-            mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_unblock_activate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1910.gtk_action_unblock_activate$MH,"gtk_action_unblock_activate");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_unblock_activate(GtkAction* action);
-     * }
-     */
-    public static void gtk_action_unblock_activate(MemorySegment action) {
-        var mh$ = gtk_action_unblock_activate$MH();
-        try {
-            mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle _gtk_action_add_to_proxy_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$1911._gtk_action_add_to_proxy_list$MH,"_gtk_action_add_to_proxy_list");
-    }
-    /**
-     * {@snippet :
-     * void _gtk_action_add_to_proxy_list(GtkAction* action, GtkWidget* proxy);
-     * }
-     */
-    public static void _gtk_action_add_to_proxy_list(MemorySegment action, MemorySegment proxy) {
-        var mh$ = _gtk_action_add_to_proxy_list$MH();
-        try {
-            mh$.invokeExact(action, proxy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle _gtk_action_remove_from_proxy_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$1911._gtk_action_remove_from_proxy_list$MH,"_gtk_action_remove_from_proxy_list");
-    }
-    /**
-     * {@snippet :
-     * void _gtk_action_remove_from_proxy_list(GtkAction* action, GtkWidget* proxy);
-     * }
-     */
-    public static void _gtk_action_remove_from_proxy_list(MemorySegment action, MemorySegment proxy) {
-        var mh$ = _gtk_action_remove_from_proxy_list$MH();
-        try {
-            mh$.invokeExact(action, proxy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle _gtk_action_emit_activate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1911._gtk_action_emit_activate$MH,"_gtk_action_emit_activate");
-    }
-    /**
-     * {@snippet :
-     * void _gtk_action_emit_activate(GtkAction* action);
-     * }
-     */
-    public static void _gtk_action_emit_activate(MemorySegment action) {
-        var mh$ = _gtk_action_emit_activate$MH();
-        try {
-            mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_set_accel_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1911.gtk_action_set_accel_path$MH,"gtk_action_set_accel_path");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_set_accel_path(GtkAction* action, const gchar* accel_path);
-     * }
-     */
-    public static void gtk_action_set_accel_path(MemorySegment action, MemorySegment accel_path) {
-        var mh$ = gtk_action_set_accel_path$MH();
-        try {
-            mh$.invokeExact(action, accel_path);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_set_accel_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$1911.gtk_action_set_accel_group$MH,"gtk_action_set_accel_group");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_set_accel_group(GtkAction* action, GtkAccelGroup* accel_group);
-     * }
-     */
-    public static void gtk_action_set_accel_group(MemorySegment action, MemorySegment accel_group) {
-        var mh$ = gtk_action_set_accel_group$MH();
-        try {
-            mh$.invokeExact(action, accel_group);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle _gtk_action_sync_menu_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$1911._gtk_action_sync_menu_visible$MH,"_gtk_action_sync_menu_visible");
-    }
-    /**
-     * {@snippet :
-     * void _gtk_action_sync_menu_visible(GtkAction* action, GtkWidget* proxy, gboolean empty);
-     * }
-     */
-    public static void _gtk_action_sync_menu_visible(MemorySegment action, MemorySegment proxy, int empty) {
-        var mh$ = _gtk_action_sync_menu_visible$MH();
-        try {
-            mh$.invokeExact(action, proxy, empty);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_set_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$1912.gtk_action_set_label$MH,"gtk_action_set_label");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_set_label(GtkAction* action, const gchar* label);
-     * }
-     */
-    public static void gtk_action_set_label(MemorySegment action, MemorySegment label) {
-        var mh$ = gtk_action_set_label$MH();
-        try {
-            mh$.invokeExact(action, label);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$1912.gtk_action_get_label$MH,"gtk_action_get_label");
-    }
-    /**
-     * {@snippet :
-     * const gchar* gtk_action_get_label(GtkAction* action);
-     * }
-     */
-    public static MemorySegment gtk_action_get_label(MemorySegment action) {
-        var mh$ = gtk_action_get_label$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_set_short_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$1912.gtk_action_set_short_label$MH,"gtk_action_set_short_label");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_set_short_label(GtkAction* action, const gchar* short_label);
-     * }
-     */
-    public static void gtk_action_set_short_label(MemorySegment action, MemorySegment short_label) {
-        var mh$ = gtk_action_set_short_label$MH();
-        try {
-            mh$.invokeExact(action, short_label);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_short_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$1912.gtk_action_get_short_label$MH,"gtk_action_get_short_label");
-    }
-    /**
-     * {@snippet :
-     * const gchar* gtk_action_get_short_label(GtkAction* action);
-     * }
-     */
-    public static MemorySegment gtk_action_get_short_label(MemorySegment action) {
-        var mh$ = gtk_action_get_short_label$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_set_tooltip$MH() {
-        return RuntimeHelper.requireNonNull(constants$1912.gtk_action_set_tooltip$MH,"gtk_action_set_tooltip");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_set_tooltip(GtkAction* action, const gchar* tooltip);
-     * }
-     */
-    public static void gtk_action_set_tooltip(MemorySegment action, MemorySegment tooltip) {
-        var mh$ = gtk_action_set_tooltip$MH();
-        try {
-            mh$.invokeExact(action, tooltip);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_tooltip$MH() {
-        return RuntimeHelper.requireNonNull(constants$1912.gtk_action_get_tooltip$MH,"gtk_action_get_tooltip");
-    }
-    /**
-     * {@snippet :
-     * const gchar* gtk_action_get_tooltip(GtkAction* action);
-     * }
-     */
-    public static MemorySegment gtk_action_get_tooltip(MemorySegment action) {
-        var mh$ = gtk_action_get_tooltip$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_set_stock_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$1913.gtk_action_set_stock_id$MH,"gtk_action_set_stock_id");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_set_stock_id(GtkAction* action, const gchar* stock_id);
-     * }
-     */
-    public static void gtk_action_set_stock_id(MemorySegment action, MemorySegment stock_id) {
-        var mh$ = gtk_action_set_stock_id$MH();
-        try {
-            mh$.invokeExact(action, stock_id);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_stock_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$1913.gtk_action_get_stock_id$MH,"gtk_action_get_stock_id");
-    }
-    /**
-     * {@snippet :
-     * const gchar* gtk_action_get_stock_id(GtkAction* action);
-     * }
-     */
-    public static MemorySegment gtk_action_get_stock_id(MemorySegment action) {
-        var mh$ = gtk_action_get_stock_id$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_set_gicon$MH() {
-        return RuntimeHelper.requireNonNull(constants$1913.gtk_action_set_gicon$MH,"gtk_action_set_gicon");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_set_gicon(GtkAction* action, GIcon* icon);
-     * }
-     */
-    public static void gtk_action_set_gicon(MemorySegment action, MemorySegment icon) {
-        var mh$ = gtk_action_set_gicon$MH();
-        try {
-            mh$.invokeExact(action, icon);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_gicon$MH() {
-        return RuntimeHelper.requireNonNull(constants$1913.gtk_action_get_gicon$MH,"gtk_action_get_gicon");
-    }
-    /**
-     * {@snippet :
-     * GIcon* gtk_action_get_gicon(GtkAction* action);
-     * }
-     */
-    public static MemorySegment gtk_action_get_gicon(MemorySegment action) {
-        var mh$ = gtk_action_get_gicon$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_set_icon_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1913.gtk_action_set_icon_name$MH,"gtk_action_set_icon_name");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_set_icon_name(GtkAction* action, const gchar* icon_name);
-     * }
-     */
-    public static void gtk_action_set_icon_name(MemorySegment action, MemorySegment icon_name) {
-        var mh$ = gtk_action_set_icon_name$MH();
-        try {
-            mh$.invokeExact(action, icon_name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_icon_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1913.gtk_action_get_icon_name$MH,"gtk_action_get_icon_name");
-    }
-    /**
-     * {@snippet :
-     * const gchar* gtk_action_get_icon_name(GtkAction* action);
-     * }
-     */
-    public static MemorySegment gtk_action_get_icon_name(MemorySegment action) {
-        var mh$ = gtk_action_get_icon_name$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_set_visible_horizontal$MH() {
-        return RuntimeHelper.requireNonNull(constants$1914.gtk_action_set_visible_horizontal$MH,"gtk_action_set_visible_horizontal");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_set_visible_horizontal(GtkAction* action, gboolean visible_horizontal);
-     * }
-     */
-    public static void gtk_action_set_visible_horizontal(MemorySegment action, int visible_horizontal) {
-        var mh$ = gtk_action_set_visible_horizontal$MH();
-        try {
-            mh$.invokeExact(action, visible_horizontal);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_visible_horizontal$MH() {
-        return RuntimeHelper.requireNonNull(constants$1914.gtk_action_get_visible_horizontal$MH,"gtk_action_get_visible_horizontal");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_action_get_visible_horizontal(GtkAction* action);
-     * }
-     */
-    public static int gtk_action_get_visible_horizontal(MemorySegment action) {
-        var mh$ = gtk_action_get_visible_horizontal$MH();
-        try {
-            return (int)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_set_visible_vertical$MH() {
-        return RuntimeHelper.requireNonNull(constants$1914.gtk_action_set_visible_vertical$MH,"gtk_action_set_visible_vertical");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_set_visible_vertical(GtkAction* action, gboolean visible_vertical);
-     * }
-     */
-    public static void gtk_action_set_visible_vertical(MemorySegment action, int visible_vertical) {
-        var mh$ = gtk_action_set_visible_vertical$MH();
-        try {
-            mh$.invokeExact(action, visible_vertical);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_visible_vertical$MH() {
-        return RuntimeHelper.requireNonNull(constants$1914.gtk_action_get_visible_vertical$MH,"gtk_action_get_visible_vertical");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_action_get_visible_vertical(GtkAction* action);
-     * }
-     */
-    public static int gtk_action_get_visible_vertical(MemorySegment action) {
-        var mh$ = gtk_action_get_visible_vertical$MH();
-        try {
-            return (int)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_set_is_important$MH() {
-        return RuntimeHelper.requireNonNull(constants$1914.gtk_action_set_is_important$MH,"gtk_action_set_is_important");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_set_is_important(GtkAction* action, gboolean is_important);
-     * }
-     */
-    public static void gtk_action_set_is_important(MemorySegment action, int is_important) {
-        var mh$ = gtk_action_set_is_important$MH();
-        try {
-            mh$.invokeExact(action, is_important);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_is_important$MH() {
-        return RuntimeHelper.requireNonNull(constants$1914.gtk_action_get_is_important$MH,"gtk_action_get_is_important");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_action_get_is_important(GtkAction* action);
-     * }
-     */
-    public static int gtk_action_get_is_important(MemorySegment action) {
-        var mh$ = gtk_action_get_is_important$MH();
-        try {
-            return (int)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_set_always_show_image$MH() {
-        return RuntimeHelper.requireNonNull(constants$1915.gtk_action_set_always_show_image$MH,"gtk_action_set_always_show_image");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_set_always_show_image(GtkAction* action, gboolean always_show);
-     * }
-     */
-    public static void gtk_action_set_always_show_image(MemorySegment action, int always_show) {
-        var mh$ = gtk_action_set_always_show_image$MH();
-        try {
-            mh$.invokeExact(action, always_show);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_get_always_show_image$MH() {
-        return RuntimeHelper.requireNonNull(constants$1915.gtk_action_get_always_show_image$MH,"gtk_action_get_always_show_image");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_action_get_always_show_image(GtkAction* action);
-     * }
-     */
-    public static int gtk_action_get_always_show_image(MemorySegment action) {
-        var mh$ = gtk_action_get_always_show_image$MH();
-        try {
-            return (int)mh$.invokeExact(action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_activatable_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1915.gtk_activatable_get_type$MH,"gtk_activatable_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType gtk_activatable_get_type();
-     * }
-     */
-    public static long gtk_activatable_get_type() {
-        var mh$ = gtk_activatable_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_activatable_sync_action_properties$MH() {
-        return RuntimeHelper.requireNonNull(constants$1915.gtk_activatable_sync_action_properties$MH,"gtk_activatable_sync_action_properties");
-    }
-    /**
-     * {@snippet :
-     * void gtk_activatable_sync_action_properties(GtkActivatable* activatable, GtkAction* action);
-     * }
-     */
-    public static void gtk_activatable_sync_action_properties(MemorySegment activatable, MemorySegment action) {
-        var mh$ = gtk_activatable_sync_action_properties$MH();
-        try {
-            mh$.invokeExact(activatable, action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_activatable_set_related_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$1915.gtk_activatable_set_related_action$MH,"gtk_activatable_set_related_action");
-    }
-    /**
-     * {@snippet :
-     * void gtk_activatable_set_related_action(GtkActivatable* activatable, GtkAction* action);
-     * }
-     */
-    public static void gtk_activatable_set_related_action(MemorySegment activatable, MemorySegment action) {
-        var mh$ = gtk_activatable_set_related_action$MH();
-        try {
-            mh$.invokeExact(activatable, action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_activatable_get_related_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$1915.gtk_activatable_get_related_action$MH,"gtk_activatable_get_related_action");
-    }
-    /**
-     * {@snippet :
-     * GtkAction* gtk_activatable_get_related_action(GtkActivatable* activatable);
-     * }
-     */
-    public static MemorySegment gtk_activatable_get_related_action(MemorySegment activatable) {
-        var mh$ = gtk_activatable_get_related_action$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(activatable);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_activatable_set_use_action_appearance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1916.gtk_activatable_set_use_action_appearance$MH,"gtk_activatable_set_use_action_appearance");
-    }
-    /**
-     * {@snippet :
-     * void gtk_activatable_set_use_action_appearance(GtkActivatable* activatable, gboolean use_appearance);
-     * }
-     */
-    public static void gtk_activatable_set_use_action_appearance(MemorySegment activatable, int use_appearance) {
-        var mh$ = gtk_activatable_set_use_action_appearance$MH();
-        try {
-            mh$.invokeExact(activatable, use_appearance);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_activatable_get_use_action_appearance$MH() {
-        return RuntimeHelper.requireNonNull(constants$1916.gtk_activatable_get_use_action_appearance$MH,"gtk_activatable_get_use_action_appearance");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_activatable_get_use_action_appearance(GtkActivatable* activatable);
-     * }
-     */
-    public static int gtk_activatable_get_use_action_appearance(MemorySegment activatable) {
-        var mh$ = gtk_activatable_get_use_action_appearance$MH();
-        try {
-            return (int)mh$.invokeExact(activatable);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_activatable_do_set_related_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$1916.gtk_activatable_do_set_related_action$MH,"gtk_activatable_do_set_related_action");
-    }
-    /**
-     * {@snippet :
-     * void gtk_activatable_do_set_related_action(GtkActivatable* activatable, GtkAction* action);
-     * }
-     */
-    public static void gtk_activatable_do_set_related_action(MemorySegment activatable, MemorySegment action) {
-        var mh$ = gtk_activatable_do_set_related_action$MH();
-        try {
-            mh$.invokeExact(activatable, action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_stock_add$MH() {
-        return RuntimeHelper.requireNonNull(constants$1916.gtk_stock_add$MH,"gtk_stock_add");
-    }
-    /**
-     * {@snippet :
-     * void gtk_stock_add(const GtkStockItem* items, guint n_items);
-     * }
-     */
-    public static void gtk_stock_add(MemorySegment items, int n_items) {
-        var mh$ = gtk_stock_add$MH();
-        try {
-            mh$.invokeExact(items, n_items);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_stock_add_static$MH() {
-        return RuntimeHelper.requireNonNull(constants$1917.gtk_stock_add_static$MH,"gtk_stock_add_static");
-    }
-    /**
-     * {@snippet :
-     * void gtk_stock_add_static(const GtkStockItem* items, guint n_items);
-     * }
-     */
-    public static void gtk_stock_add_static(MemorySegment items, int n_items) {
-        var mh$ = gtk_stock_add_static$MH();
-        try {
-            mh$.invokeExact(items, n_items);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_stock_lookup$MH() {
-        return RuntimeHelper.requireNonNull(constants$1917.gtk_stock_lookup$MH,"gtk_stock_lookup");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_stock_lookup(const gchar* stock_id, GtkStockItem* item);
-     * }
-     */
-    public static int gtk_stock_lookup(MemorySegment stock_id, MemorySegment item) {
-        var mh$ = gtk_stock_lookup$MH();
-        try {
-            return (int)mh$.invokeExact(stock_id, item);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_stock_list_ids$MH() {
-        return RuntimeHelper.requireNonNull(constants$1917.gtk_stock_list_ids$MH,"gtk_stock_list_ids");
-    }
-    /**
-     * {@snippet :
-     * GSList* gtk_stock_list_ids();
-     * }
-     */
-    public static MemorySegment gtk_stock_list_ids() {
-        var mh$ = gtk_stock_list_ids$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_stock_item_copy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1917.gtk_stock_item_copy$MH,"gtk_stock_item_copy");
-    }
-    /**
-     * {@snippet :
-     * GtkStockItem* gtk_stock_item_copy(const GtkStockItem* item);
-     * }
-     */
-    public static MemorySegment gtk_stock_item_copy(MemorySegment item) {
-        var mh$ = gtk_stock_item_copy$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(item);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_stock_item_free$MH() {
-        return RuntimeHelper.requireNonNull(constants$1917.gtk_stock_item_free$MH,"gtk_stock_item_free");
-    }
-    /**
-     * {@snippet :
-     * void gtk_stock_item_free(GtkStockItem* item);
-     * }
-     */
-    public static void gtk_stock_item_free(MemorySegment item) {
-        var mh$ = gtk_stock_item_free$MH();
-        try {
-            mh$.invokeExact(item);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_stock_set_translate_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1917.gtk_stock_set_translate_func$MH,"gtk_stock_set_translate_func");
-    }
-    /**
-     * {@snippet :
-     * void gtk_stock_set_translate_func(const gchar* domain, GtkTranslateFunc func, gpointer data, GDestroyNotify notify);
-     * }
-     */
-    public static void gtk_stock_set_translate_func(MemorySegment domain, MemorySegment func, MemorySegment data, MemorySegment notify) {
-        var mh$ = gtk_stock_set_translate_func$MH();
-        try {
-            mh$.invokeExact(domain, func, data, notify);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    /**
-     * {@snippet :
-     * typedef char* GtkStock;
-     * }
-     */
-    public static final OfAddress GtkStock = Constants$root.C_POINTER$LAYOUT;
-    public static MethodHandle gtk_action_group_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1918.gtk_action_group_get_type$MH,"gtk_action_group_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType gtk_action_group_get_type();
-     * }
-     */
-    public static long gtk_action_group_get_type() {
-        var mh$ = gtk_action_group_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1918.gtk_action_group_new$MH,"gtk_action_group_new");
-    }
-    /**
-     * {@snippet :
-     * GtkActionGroup* gtk_action_group_new(const gchar* name);
-     * }
-     */
-    public static MemorySegment gtk_action_group_new(MemorySegment name) {
-        var mh$ = gtk_action_group_new$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_get_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1918.gtk_action_group_get_name$MH,"gtk_action_group_get_name");
-    }
-    /**
-     * {@snippet :
-     * const gchar* gtk_action_group_get_name(GtkActionGroup* action_group);
-     * }
-     */
-    public static MemorySegment gtk_action_group_get_name(MemorySegment action_group) {
-        var mh$ = gtk_action_group_get_name$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action_group);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_get_sensitive$MH() {
-        return RuntimeHelper.requireNonNull(constants$1918.gtk_action_group_get_sensitive$MH,"gtk_action_group_get_sensitive");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_action_group_get_sensitive(GtkActionGroup* action_group);
-     * }
-     */
-    public static int gtk_action_group_get_sensitive(MemorySegment action_group) {
-        var mh$ = gtk_action_group_get_sensitive$MH();
-        try {
-            return (int)mh$.invokeExact(action_group);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_set_sensitive$MH() {
-        return RuntimeHelper.requireNonNull(constants$1918.gtk_action_group_set_sensitive$MH,"gtk_action_group_set_sensitive");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_group_set_sensitive(GtkActionGroup* action_group, gboolean sensitive);
-     * }
-     */
-    public static void gtk_action_group_set_sensitive(MemorySegment action_group, int sensitive) {
-        var mh$ = gtk_action_group_set_sensitive$MH();
-        try {
-            mh$.invokeExact(action_group, sensitive);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_get_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$1918.gtk_action_group_get_visible$MH,"gtk_action_group_get_visible");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_action_group_get_visible(GtkActionGroup* action_group);
-     * }
-     */
-    public static int gtk_action_group_get_visible(MemorySegment action_group) {
-        var mh$ = gtk_action_group_get_visible$MH();
-        try {
-            return (int)mh$.invokeExact(action_group);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_set_visible$MH() {
-        return RuntimeHelper.requireNonNull(constants$1919.gtk_action_group_set_visible$MH,"gtk_action_group_set_visible");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_group_set_visible(GtkActionGroup* action_group, gboolean visible);
-     * }
-     */
-    public static void gtk_action_group_set_visible(MemorySegment action_group, int visible) {
-        var mh$ = gtk_action_group_set_visible$MH();
-        try {
-            mh$.invokeExact(action_group, visible);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_get_accel_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$1919.gtk_action_group_get_accel_group$MH,"gtk_action_group_get_accel_group");
-    }
-    /**
-     * {@snippet :
-     * GtkAccelGroup* gtk_action_group_get_accel_group(GtkActionGroup* action_group);
-     * }
-     */
-    public static MemorySegment gtk_action_group_get_accel_group(MemorySegment action_group) {
-        var mh$ = gtk_action_group_get_accel_group$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action_group);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_set_accel_group$MH() {
-        return RuntimeHelper.requireNonNull(constants$1919.gtk_action_group_set_accel_group$MH,"gtk_action_group_set_accel_group");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_group_set_accel_group(GtkActionGroup* action_group, GtkAccelGroup* accel_group);
-     * }
-     */
-    public static void gtk_action_group_set_accel_group(MemorySegment action_group, MemorySegment accel_group) {
-        var mh$ = gtk_action_group_set_accel_group$MH();
-        try {
-            mh$.invokeExact(action_group, accel_group);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_get_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$1919.gtk_action_group_get_action$MH,"gtk_action_group_get_action");
-    }
-    /**
-     * {@snippet :
-     * GtkAction* gtk_action_group_get_action(GtkActionGroup* action_group, const gchar* action_name);
-     * }
-     */
-    public static MemorySegment gtk_action_group_get_action(MemorySegment action_group, MemorySegment action_name) {
-        var mh$ = gtk_action_group_get_action$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action_group, action_name);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_list_actions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1919.gtk_action_group_list_actions$MH,"gtk_action_group_list_actions");
-    }
-    /**
-     * {@snippet :
-     * GList* gtk_action_group_list_actions(GtkActionGroup* action_group);
-     * }
-     */
-    public static MemorySegment gtk_action_group_list_actions(MemorySegment action_group) {
-        var mh$ = gtk_action_group_list_actions$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action_group);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_add_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$1919.gtk_action_group_add_action$MH,"gtk_action_group_add_action");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_group_add_action(GtkActionGroup* action_group, GtkAction* action);
-     * }
-     */
-    public static void gtk_action_group_add_action(MemorySegment action_group, MemorySegment action) {
-        var mh$ = gtk_action_group_add_action$MH();
-        try {
-            mh$.invokeExact(action_group, action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_add_action_with_accel$MH() {
-        return RuntimeHelper.requireNonNull(constants$1920.gtk_action_group_add_action_with_accel$MH,"gtk_action_group_add_action_with_accel");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_group_add_action_with_accel(GtkActionGroup* action_group, GtkAction* action, const gchar* accelerator);
-     * }
-     */
-    public static void gtk_action_group_add_action_with_accel(MemorySegment action_group, MemorySegment action, MemorySegment accelerator) {
-        var mh$ = gtk_action_group_add_action_with_accel$MH();
-        try {
-            mh$.invokeExact(action_group, action, accelerator);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_remove_action$MH() {
-        return RuntimeHelper.requireNonNull(constants$1920.gtk_action_group_remove_action$MH,"gtk_action_group_remove_action");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_group_remove_action(GtkActionGroup* action_group, GtkAction* action);
-     * }
-     */
-    public static void gtk_action_group_remove_action(MemorySegment action_group, MemorySegment action) {
-        var mh$ = gtk_action_group_remove_action$MH();
-        try {
-            mh$.invokeExact(action_group, action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_add_actions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1920.gtk_action_group_add_actions$MH,"gtk_action_group_add_actions");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_group_add_actions(GtkActionGroup* action_group, const GtkActionEntry* entries, guint n_entries, gpointer user_data);
-     * }
-     */
-    public static void gtk_action_group_add_actions(MemorySegment action_group, MemorySegment entries, int n_entries, MemorySegment user_data) {
-        var mh$ = gtk_action_group_add_actions$MH();
-        try {
-            mh$.invokeExact(action_group, entries, n_entries, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_add_toggle_actions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1920.gtk_action_group_add_toggle_actions$MH,"gtk_action_group_add_toggle_actions");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_group_add_toggle_actions(GtkActionGroup* action_group, const GtkToggleActionEntry* entries, guint n_entries, gpointer user_data);
-     * }
-     */
-    public static void gtk_action_group_add_toggle_actions(MemorySegment action_group, MemorySegment entries, int n_entries, MemorySegment user_data) {
-        var mh$ = gtk_action_group_add_toggle_actions$MH();
-        try {
-            mh$.invokeExact(action_group, entries, n_entries, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_add_radio_actions$MH() {
-        return RuntimeHelper.requireNonNull(constants$1920.gtk_action_group_add_radio_actions$MH,"gtk_action_group_add_radio_actions");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_group_add_radio_actions(GtkActionGroup* action_group, const GtkRadioActionEntry* entries, guint n_entries, gint value, GCallback on_change, gpointer user_data);
-     * }
-     */
-    public static void gtk_action_group_add_radio_actions(MemorySegment action_group, MemorySegment entries, int n_entries, int value, MemorySegment on_change, MemorySegment user_data) {
-        var mh$ = gtk_action_group_add_radio_actions$MH();
-        try {
-            mh$.invokeExact(action_group, entries, n_entries, value, on_change, user_data);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_add_actions_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$1920.gtk_action_group_add_actions_full$MH,"gtk_action_group_add_actions_full");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_group_add_actions_full(GtkActionGroup* action_group, const GtkActionEntry* entries, guint n_entries, gpointer user_data, GDestroyNotify destroy);
-     * }
-     */
-    public static void gtk_action_group_add_actions_full(MemorySegment action_group, MemorySegment entries, int n_entries, MemorySegment user_data, MemorySegment destroy) {
-        var mh$ = gtk_action_group_add_actions_full$MH();
-        try {
-            mh$.invokeExact(action_group, entries, n_entries, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_add_toggle_actions_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$1921.gtk_action_group_add_toggle_actions_full$MH,"gtk_action_group_add_toggle_actions_full");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_group_add_toggle_actions_full(GtkActionGroup* action_group, const GtkToggleActionEntry* entries, guint n_entries, gpointer user_data, GDestroyNotify destroy);
-     * }
-     */
-    public static void gtk_action_group_add_toggle_actions_full(MemorySegment action_group, MemorySegment entries, int n_entries, MemorySegment user_data, MemorySegment destroy) {
-        var mh$ = gtk_action_group_add_toggle_actions_full$MH();
-        try {
-            mh$.invokeExact(action_group, entries, n_entries, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_add_radio_actions_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$1921.gtk_action_group_add_radio_actions_full$MH,"gtk_action_group_add_radio_actions_full");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_group_add_radio_actions_full(GtkActionGroup* action_group, const GtkRadioActionEntry* entries, guint n_entries, gint value, GCallback on_change, gpointer user_data, GDestroyNotify destroy);
-     * }
-     */
-    public static void gtk_action_group_add_radio_actions_full(MemorySegment action_group, MemorySegment entries, int n_entries, int value, MemorySegment on_change, MemorySegment user_data, MemorySegment destroy) {
-        var mh$ = gtk_action_group_add_radio_actions_full$MH();
-        try {
-            mh$.invokeExact(action_group, entries, n_entries, value, on_change, user_data, destroy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_set_translate_func$MH() {
-        return RuntimeHelper.requireNonNull(constants$1921.gtk_action_group_set_translate_func$MH,"gtk_action_group_set_translate_func");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_group_set_translate_func(GtkActionGroup* action_group, GtkTranslateFunc func, gpointer data, GDestroyNotify notify);
-     * }
-     */
-    public static void gtk_action_group_set_translate_func(MemorySegment action_group, MemorySegment func, MemorySegment data, MemorySegment notify) {
-        var mh$ = gtk_action_group_set_translate_func$MH();
-        try {
-            mh$.invokeExact(action_group, func, data, notify);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_set_translation_domain$MH() {
-        return RuntimeHelper.requireNonNull(constants$1921.gtk_action_group_set_translation_domain$MH,"gtk_action_group_set_translation_domain");
-    }
-    /**
-     * {@snippet :
-     * void gtk_action_group_set_translation_domain(GtkActionGroup* action_group, const gchar* domain);
-     * }
-     */
-    public static void gtk_action_group_set_translation_domain(MemorySegment action_group, MemorySegment domain) {
-        var mh$ = gtk_action_group_set_translation_domain$MH();
-        try {
-            mh$.invokeExact(action_group, domain);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_action_group_translate_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1921.gtk_action_group_translate_string$MH,"gtk_action_group_translate_string");
-    }
-    /**
-     * {@snippet :
-     * const gchar* gtk_action_group_translate_string(GtkActionGroup* action_group, const gchar* string);
-     * }
-     */
-    public static MemorySegment gtk_action_group_translate_string(MemorySegment action_group, MemorySegment string) {
-        var mh$ = gtk_action_group_translate_string$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(action_group, string);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle _gtk_action_group_emit_connect_proxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1921._gtk_action_group_emit_connect_proxy$MH,"_gtk_action_group_emit_connect_proxy");
-    }
-    /**
-     * {@snippet :
-     * void _gtk_action_group_emit_connect_proxy(GtkActionGroup* action_group, GtkAction* action, GtkWidget* proxy);
-     * }
-     */
-    public static void _gtk_action_group_emit_connect_proxy(MemorySegment action_group, MemorySegment action, MemorySegment proxy) {
-        var mh$ = _gtk_action_group_emit_connect_proxy$MH();
-        try {
-            mh$.invokeExact(action_group, action, proxy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle _gtk_action_group_emit_disconnect_proxy$MH() {
-        return RuntimeHelper.requireNonNull(constants$1922._gtk_action_group_emit_disconnect_proxy$MH,"_gtk_action_group_emit_disconnect_proxy");
-    }
-    /**
-     * {@snippet :
-     * void _gtk_action_group_emit_disconnect_proxy(GtkActionGroup* action_group, GtkAction* action, GtkWidget* proxy);
-     * }
-     */
-    public static void _gtk_action_group_emit_disconnect_proxy(MemorySegment action_group, MemorySegment action, MemorySegment proxy) {
-        var mh$ = _gtk_action_group_emit_disconnect_proxy$MH();
-        try {
-            mh$.invokeExact(action_group, action, proxy);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle _gtk_action_group_emit_pre_activate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1922._gtk_action_group_emit_pre_activate$MH,"_gtk_action_group_emit_pre_activate");
-    }
-    /**
-     * {@snippet :
-     * void _gtk_action_group_emit_pre_activate(GtkActionGroup* action_group, GtkAction* action);
-     * }
-     */
-    public static void _gtk_action_group_emit_pre_activate(MemorySegment action_group, MemorySegment action) {
-        var mh$ = _gtk_action_group_emit_pre_activate$MH();
-        try {
-            mh$.invokeExact(action_group, action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle _gtk_action_group_emit_post_activate$MH() {
-        return RuntimeHelper.requireNonNull(constants$1922._gtk_action_group_emit_post_activate$MH,"_gtk_action_group_emit_post_activate");
-    }
-    /**
-     * {@snippet :
-     * void _gtk_action_group_emit_post_activate(GtkActionGroup* action_group, GtkAction* action);
-     * }
-     */
-    public static void _gtk_action_group_emit_post_activate(MemorySegment action_group, MemorySegment action) {
-        var mh$ = _gtk_action_group_emit_post_activate$MH();
-        try {
-            mh$.invokeExact(action_group, action);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_alignment_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1922.gtk_alignment_get_type$MH,"gtk_alignment_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType gtk_alignment_get_type();
-     * }
-     */
-    public static long gtk_alignment_get_type() {
-        var mh$ = gtk_alignment_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_alignment_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1922.gtk_alignment_new$MH,"gtk_alignment_new");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_alignment_new(gfloat xalign, gfloat yalign, gfloat xscale, gfloat yscale);
-     * }
-     */
-    public static MemorySegment gtk_alignment_new(float xalign, float yalign, float xscale, float yscale) {
-        var mh$ = gtk_alignment_new$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(xalign, yalign, xscale, yscale);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_alignment_set$MH() {
-        return RuntimeHelper.requireNonNull(constants$1922.gtk_alignment_set$MH,"gtk_alignment_set");
-    }
-    /**
-     * {@snippet :
-     * void gtk_alignment_set(GtkAlignment* alignment, gfloat xalign, gfloat yalign, gfloat xscale, gfloat yscale);
-     * }
-     */
-    public static void gtk_alignment_set(MemorySegment alignment, float xalign, float yalign, float xscale, float yscale) {
-        var mh$ = gtk_alignment_set$MH();
-        try {
-            mh$.invokeExact(alignment, xalign, yalign, xscale, yscale);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_alignment_set_padding$MH() {
-        return RuntimeHelper.requireNonNull(constants$1923.gtk_alignment_set_padding$MH,"gtk_alignment_set_padding");
-    }
-    /**
-     * {@snippet :
-     * void gtk_alignment_set_padding(GtkAlignment* alignment, guint padding_top, guint padding_bottom, guint padding_left, guint padding_right);
-     * }
-     */
-    public static void gtk_alignment_set_padding(MemorySegment alignment, int padding_top, int padding_bottom, int padding_left, int padding_right) {
-        var mh$ = gtk_alignment_set_padding$MH();
-        try {
-            mh$.invokeExact(alignment, padding_top, padding_bottom, padding_left, padding_right);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_alignment_get_padding$MH() {
-        return RuntimeHelper.requireNonNull(constants$1923.gtk_alignment_get_padding$MH,"gtk_alignment_get_padding");
-    }
-    /**
-     * {@snippet :
-     * void gtk_alignment_get_padding(GtkAlignment* alignment, guint* padding_top, guint* padding_bottom, guint* padding_left, guint* padding_right);
-     * }
-     */
-    public static void gtk_alignment_get_padding(MemorySegment alignment, MemorySegment padding_top, MemorySegment padding_bottom, MemorySegment padding_left, MemorySegment padding_right) {
-        var mh$ = gtk_alignment_get_padding$MH();
-        try {
-            mh$.invokeExact(alignment, padding_top, padding_bottom, padding_left, padding_right);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1924.gtk_color_selection_get_type$MH,"gtk_color_selection_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType gtk_color_selection_get_type();
-     * }
-     */
-    public static long gtk_color_selection_get_type() {
-        var mh$ = gtk_color_selection_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1924.gtk_color_selection_new$MH,"gtk_color_selection_new");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_color_selection_new();
-     * }
-     */
-    public static MemorySegment gtk_color_selection_new() {
-        var mh$ = gtk_color_selection_new$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_get_has_opacity_control$MH() {
-        return RuntimeHelper.requireNonNull(constants$1924.gtk_color_selection_get_has_opacity_control$MH,"gtk_color_selection_get_has_opacity_control");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_color_selection_get_has_opacity_control(GtkColorSelection* colorsel);
-     * }
-     */
-    public static int gtk_color_selection_get_has_opacity_control(MemorySegment colorsel) {
-        var mh$ = gtk_color_selection_get_has_opacity_control$MH();
-        try {
-            return (int)mh$.invokeExact(colorsel);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_set_has_opacity_control$MH() {
-        return RuntimeHelper.requireNonNull(constants$1924.gtk_color_selection_set_has_opacity_control$MH,"gtk_color_selection_set_has_opacity_control");
-    }
-    /**
-     * {@snippet :
-     * void gtk_color_selection_set_has_opacity_control(GtkColorSelection* colorsel, gboolean has_opacity);
-     * }
-     */
-    public static void gtk_color_selection_set_has_opacity_control(MemorySegment colorsel, int has_opacity) {
-        var mh$ = gtk_color_selection_set_has_opacity_control$MH();
-        try {
-            mh$.invokeExact(colorsel, has_opacity);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_get_has_palette$MH() {
-        return RuntimeHelper.requireNonNull(constants$1924.gtk_color_selection_get_has_palette$MH,"gtk_color_selection_get_has_palette");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_color_selection_get_has_palette(GtkColorSelection* colorsel);
-     * }
-     */
-    public static int gtk_color_selection_get_has_palette(MemorySegment colorsel) {
-        var mh$ = gtk_color_selection_get_has_palette$MH();
-        try {
-            return (int)mh$.invokeExact(colorsel);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_set_has_palette$MH() {
-        return RuntimeHelper.requireNonNull(constants$1924.gtk_color_selection_set_has_palette$MH,"gtk_color_selection_set_has_palette");
-    }
-    /**
-     * {@snippet :
-     * void gtk_color_selection_set_has_palette(GtkColorSelection* colorsel, gboolean has_palette);
-     * }
-     */
-    public static void gtk_color_selection_set_has_palette(MemorySegment colorsel, int has_palette) {
-        var mh$ = gtk_color_selection_set_has_palette$MH();
-        try {
-            mh$.invokeExact(colorsel, has_palette);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_set_current_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$1925.gtk_color_selection_set_current_alpha$MH,"gtk_color_selection_set_current_alpha");
-    }
-    /**
-     * {@snippet :
-     * void gtk_color_selection_set_current_alpha(GtkColorSelection* colorsel, guint16 alpha);
-     * }
-     */
-    public static void gtk_color_selection_set_current_alpha(MemorySegment colorsel, short alpha) {
-        var mh$ = gtk_color_selection_set_current_alpha$MH();
-        try {
-            mh$.invokeExact(colorsel, alpha);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_get_current_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$1925.gtk_color_selection_get_current_alpha$MH,"gtk_color_selection_get_current_alpha");
-    }
-    /**
-     * {@snippet :
-     * guint16 gtk_color_selection_get_current_alpha(GtkColorSelection* colorsel);
-     * }
-     */
-    public static short gtk_color_selection_get_current_alpha(MemorySegment colorsel) {
-        var mh$ = gtk_color_selection_get_current_alpha$MH();
-        try {
-            return (short)mh$.invokeExact(colorsel);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_set_previous_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$1925.gtk_color_selection_set_previous_alpha$MH,"gtk_color_selection_set_previous_alpha");
-    }
-    /**
-     * {@snippet :
-     * void gtk_color_selection_set_previous_alpha(GtkColorSelection* colorsel, guint16 alpha);
-     * }
-     */
-    public static void gtk_color_selection_set_previous_alpha(MemorySegment colorsel, short alpha) {
-        var mh$ = gtk_color_selection_set_previous_alpha$MH();
-        try {
-            mh$.invokeExact(colorsel, alpha);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_get_previous_alpha$MH() {
-        return RuntimeHelper.requireNonNull(constants$1925.gtk_color_selection_get_previous_alpha$MH,"gtk_color_selection_get_previous_alpha");
-    }
-    /**
-     * {@snippet :
-     * guint16 gtk_color_selection_get_previous_alpha(GtkColorSelection* colorsel);
-     * }
-     */
-    public static short gtk_color_selection_get_previous_alpha(MemorySegment colorsel) {
-        var mh$ = gtk_color_selection_get_previous_alpha$MH();
-        try {
-            return (short)mh$.invokeExact(colorsel);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_set_current_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1925.gtk_color_selection_set_current_rgba$MH,"gtk_color_selection_set_current_rgba");
-    }
-    /**
-     * {@snippet :
-     * void gtk_color_selection_set_current_rgba(GtkColorSelection* colorsel, const GdkRGBA* rgba);
-     * }
-     */
-    public static void gtk_color_selection_set_current_rgba(MemorySegment colorsel, MemorySegment rgba) {
-        var mh$ = gtk_color_selection_set_current_rgba$MH();
-        try {
-            mh$.invokeExact(colorsel, rgba);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_get_current_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1925.gtk_color_selection_get_current_rgba$MH,"gtk_color_selection_get_current_rgba");
-    }
-    /**
-     * {@snippet :
-     * void gtk_color_selection_get_current_rgba(GtkColorSelection* colorsel, GdkRGBA* rgba);
-     * }
-     */
-    public static void gtk_color_selection_get_current_rgba(MemorySegment colorsel, MemorySegment rgba) {
-        var mh$ = gtk_color_selection_get_current_rgba$MH();
-        try {
-            mh$.invokeExact(colorsel, rgba);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_set_previous_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1926.gtk_color_selection_set_previous_rgba$MH,"gtk_color_selection_set_previous_rgba");
-    }
-    /**
-     * {@snippet :
-     * void gtk_color_selection_set_previous_rgba(GtkColorSelection* colorsel, const GdkRGBA* rgba);
-     * }
-     */
-    public static void gtk_color_selection_set_previous_rgba(MemorySegment colorsel, MemorySegment rgba) {
-        var mh$ = gtk_color_selection_set_previous_rgba$MH();
-        try {
-            mh$.invokeExact(colorsel, rgba);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_get_previous_rgba$MH() {
-        return RuntimeHelper.requireNonNull(constants$1926.gtk_color_selection_get_previous_rgba$MH,"gtk_color_selection_get_previous_rgba");
-    }
-    /**
-     * {@snippet :
-     * void gtk_color_selection_get_previous_rgba(GtkColorSelection* colorsel, GdkRGBA* rgba);
-     * }
-     */
-    public static void gtk_color_selection_get_previous_rgba(MemorySegment colorsel, MemorySegment rgba) {
-        var mh$ = gtk_color_selection_get_previous_rgba$MH();
-        try {
-            mh$.invokeExact(colorsel, rgba);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_is_adjusting$MH() {
-        return RuntimeHelper.requireNonNull(constants$1926.gtk_color_selection_is_adjusting$MH,"gtk_color_selection_is_adjusting");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_color_selection_is_adjusting(GtkColorSelection* colorsel);
-     * }
-     */
-    public static int gtk_color_selection_is_adjusting(MemorySegment colorsel) {
-        var mh$ = gtk_color_selection_is_adjusting$MH();
-        try {
-            return (int)mh$.invokeExact(colorsel);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_palette_from_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1926.gtk_color_selection_palette_from_string$MH,"gtk_color_selection_palette_from_string");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_color_selection_palette_from_string(const gchar* str, GdkColor** colors, gint* n_colors);
-     * }
-     */
-    public static int gtk_color_selection_palette_from_string(MemorySegment str, MemorySegment colors, MemorySegment n_colors) {
-        var mh$ = gtk_color_selection_palette_from_string$MH();
-        try {
-            return (int)mh$.invokeExact(str, colors, n_colors);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_palette_to_string$MH() {
-        return RuntimeHelper.requireNonNull(constants$1926.gtk_color_selection_palette_to_string$MH,"gtk_color_selection_palette_to_string");
-    }
-    /**
-     * {@snippet :
-     * gchar* gtk_color_selection_palette_to_string(const GdkColor* colors, gint n_colors);
-     * }
-     */
-    public static MemorySegment gtk_color_selection_palette_to_string(MemorySegment colors, int n_colors) {
-        var mh$ = gtk_color_selection_palette_to_string$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(colors, n_colors);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_set_change_palette_with_screen_hook$MH() {
-        return RuntimeHelper.requireNonNull(constants$1926.gtk_color_selection_set_change_palette_with_screen_hook$MH,"gtk_color_selection_set_change_palette_with_screen_hook");
-    }
-    /**
-     * {@snippet :
-     * GtkColorSelectionChangePaletteWithScreenFunc gtk_color_selection_set_change_palette_with_screen_hook(GtkColorSelectionChangePaletteWithScreenFunc func);
-     * }
-     */
-    public static MemorySegment gtk_color_selection_set_change_palette_with_screen_hook(MemorySegment func) {
-        var mh$ = gtk_color_selection_set_change_palette_with_screen_hook$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(func);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_set_current_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$1927.gtk_color_selection_set_current_color$MH,"gtk_color_selection_set_current_color");
-    }
-    /**
-     * {@snippet :
-     * void gtk_color_selection_set_current_color(GtkColorSelection* colorsel, const GdkColor* color);
-     * }
-     */
-    public static void gtk_color_selection_set_current_color(MemorySegment colorsel, MemorySegment color) {
-        var mh$ = gtk_color_selection_set_current_color$MH();
-        try {
-            mh$.invokeExact(colorsel, color);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_get_current_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$1927.gtk_color_selection_get_current_color$MH,"gtk_color_selection_get_current_color");
-    }
-    /**
-     * {@snippet :
-     * void gtk_color_selection_get_current_color(GtkColorSelection* colorsel, GdkColor* color);
-     * }
-     */
-    public static void gtk_color_selection_get_current_color(MemorySegment colorsel, MemorySegment color) {
-        var mh$ = gtk_color_selection_get_current_color$MH();
-        try {
-            mh$.invokeExact(colorsel, color);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_set_previous_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$1927.gtk_color_selection_set_previous_color$MH,"gtk_color_selection_set_previous_color");
-    }
-    /**
-     * {@snippet :
-     * void gtk_color_selection_set_previous_color(GtkColorSelection* colorsel, const GdkColor* color);
-     * }
-     */
-    public static void gtk_color_selection_set_previous_color(MemorySegment colorsel, MemorySegment color) {
-        var mh$ = gtk_color_selection_set_previous_color$MH();
-        try {
-            mh$.invokeExact(colorsel, color);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_get_previous_color$MH() {
-        return RuntimeHelper.requireNonNull(constants$1927.gtk_color_selection_get_previous_color$MH,"gtk_color_selection_get_previous_color");
-    }
-    /**
-     * {@snippet :
-     * void gtk_color_selection_get_previous_color(GtkColorSelection* colorsel, GdkColor* color);
-     * }
-     */
-    public static void gtk_color_selection_get_previous_color(MemorySegment colorsel, MemorySegment color) {
-        var mh$ = gtk_color_selection_get_previous_color$MH();
-        try {
-            mh$.invokeExact(colorsel, color);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_dialog_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1927.gtk_color_selection_dialog_get_type$MH,"gtk_color_selection_dialog_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType gtk_color_selection_dialog_get_type();
-     * }
-     */
-    public static long gtk_color_selection_dialog_get_type() {
-        var mh$ = gtk_color_selection_dialog_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_dialog_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1927.gtk_color_selection_dialog_new$MH,"gtk_color_selection_dialog_new");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_color_selection_dialog_new(const gchar* title);
-     * }
-     */
-    public static MemorySegment gtk_color_selection_dialog_new(MemorySegment title) {
-        var mh$ = gtk_color_selection_dialog_new$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(title);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_color_selection_dialog_get_color_selection$MH() {
-        return RuntimeHelper.requireNonNull(constants$1928.gtk_color_selection_dialog_get_color_selection$MH,"gtk_color_selection_dialog_get_color_selection");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_color_selection_dialog_get_color_selection(GtkColorSelectionDialog* colorsel);
-     * }
-     */
-    public static MemorySegment gtk_color_selection_dialog_get_color_selection(MemorySegment colorsel) {
-        var mh$ = gtk_color_selection_dialog_get_color_selection$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(colorsel);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_font_selection_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$1928.gtk_font_selection_get_type$MH,"gtk_font_selection_get_type");
-    }
-    /**
-     * {@snippet :
-     * GType gtk_font_selection_get_type();
-     * }
-     */
-    public static long gtk_font_selection_get_type() {
-        var mh$ = gtk_font_selection_get_type$MH();
-        try {
-            return (long)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_font_selection_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$1928.gtk_font_selection_new$MH,"gtk_font_selection_new");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_font_selection_new();
-     * }
-     */
-    public static MemorySegment gtk_font_selection_new() {
-        var mh$ = gtk_font_selection_new$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_font_selection_get_family_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$1928.gtk_font_selection_get_family_list$MH,"gtk_font_selection_get_family_list");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_font_selection_get_family_list(GtkFontSelection* fontsel);
-     * }
-     */
-    public static MemorySegment gtk_font_selection_get_family_list(MemorySegment fontsel) {
-        var mh$ = gtk_font_selection_get_family_list$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(fontsel);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_font_selection_get_face_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$1928.gtk_font_selection_get_face_list$MH,"gtk_font_selection_get_face_list");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_font_selection_get_face_list(GtkFontSelection* fontsel);
-     * }
-     */
-    public static MemorySegment gtk_font_selection_get_face_list(MemorySegment fontsel) {
-        var mh$ = gtk_font_selection_get_face_list$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(fontsel);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_font_selection_get_size_entry$MH() {
-        return RuntimeHelper.requireNonNull(constants$1928.gtk_font_selection_get_size_entry$MH,"gtk_font_selection_get_size_entry");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_font_selection_get_size_entry(GtkFontSelection* fontsel);
-     * }
-     */
-    public static MemorySegment gtk_font_selection_get_size_entry(MemorySegment fontsel) {
-        var mh$ = gtk_font_selection_get_size_entry$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(fontsel);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_font_selection_get_size_list$MH() {
-        return RuntimeHelper.requireNonNull(constants$1929.gtk_font_selection_get_size_list$MH,"gtk_font_selection_get_size_list");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_font_selection_get_size_list(GtkFontSelection* fontsel);
-     * }
-     */
-    public static MemorySegment gtk_font_selection_get_size_list(MemorySegment fontsel) {
-        var mh$ = gtk_font_selection_get_size_list$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(fontsel);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_font_selection_get_preview_entry$MH() {
-        return RuntimeHelper.requireNonNull(constants$1929.gtk_font_selection_get_preview_entry$MH,"gtk_font_selection_get_preview_entry");
-    }
-    /**
-     * {@snippet :
-     * GtkWidget* gtk_font_selection_get_preview_entry(GtkFontSelection* fontsel);
-     * }
-     */
-    public static MemorySegment gtk_font_selection_get_preview_entry(MemorySegment fontsel) {
-        var mh$ = gtk_font_selection_get_preview_entry$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(fontsel);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_font_selection_get_family$MH() {
-        return RuntimeHelper.requireNonNull(constants$1929.gtk_font_selection_get_family$MH,"gtk_font_selection_get_family");
-    }
-    /**
-     * {@snippet :
-     * PangoFontFamily* gtk_font_selection_get_family(GtkFontSelection* fontsel);
-     * }
-     */
-    public static MemorySegment gtk_font_selection_get_family(MemorySegment fontsel) {
-        var mh$ = gtk_font_selection_get_family$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(fontsel);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_font_selection_get_face$MH() {
-        return RuntimeHelper.requireNonNull(constants$1929.gtk_font_selection_get_face$MH,"gtk_font_selection_get_face");
-    }
-    /**
-     * {@snippet :
-     * PangoFontFace* gtk_font_selection_get_face(GtkFontSelection* fontsel);
-     * }
-     */
-    public static MemorySegment gtk_font_selection_get_face(MemorySegment fontsel) {
-        var mh$ = gtk_font_selection_get_face$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(fontsel);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_font_selection_get_size$MH() {
-        return RuntimeHelper.requireNonNull(constants$1929.gtk_font_selection_get_size$MH,"gtk_font_selection_get_size");
-    }
-    /**
-     * {@snippet :
-     * gint gtk_font_selection_get_size(GtkFontSelection* fontsel);
-     * }
-     */
-    public static int gtk_font_selection_get_size(MemorySegment fontsel) {
-        var mh$ = gtk_font_selection_get_size$MH();
-        try {
-            return (int)mh$.invokeExact(fontsel);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_font_selection_get_font_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1929.gtk_font_selection_get_font_name$MH,"gtk_font_selection_get_font_name");
-    }
-    /**
-     * {@snippet :
-     * gchar* gtk_font_selection_get_font_name(GtkFontSelection* fontsel);
-     * }
-     */
-    public static MemorySegment gtk_font_selection_get_font_name(MemorySegment fontsel) {
-        var mh$ = gtk_font_selection_get_font_name$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(fontsel);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_font_selection_set_font_name$MH() {
-        return RuntimeHelper.requireNonNull(constants$1930.gtk_font_selection_set_font_name$MH,"gtk_font_selection_set_font_name");
-    }
-    /**
-     * {@snippet :
-     * gboolean gtk_font_selection_set_font_name(GtkFontSelection* fontsel, const gchar* fontname);
-     * }
-     */
-    public static int gtk_font_selection_set_font_name(MemorySegment fontsel, MemorySegment fontname) {
-        var mh$ = gtk_font_selection_set_font_name$MH();
-        try {
-            return (int)mh$.invokeExact(fontsel, fontname);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_font_selection_get_preview_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$1930.gtk_font_selection_get_preview_text$MH,"gtk_font_selection_get_preview_text");
-    }
-    /**
-     * {@snippet :
-     * const gchar* gtk_font_selection_get_preview_text(GtkFontSelection* fontsel);
-     * }
-     */
-    public static MemorySegment gtk_font_selection_get_preview_text(MemorySegment fontsel) {
-        var mh$ = gtk_font_selection_get_preview_text$MH();
-        try {
-            return (java.lang.foreign.MemorySegment)mh$.invokeExact(fontsel);
-        } catch (Throwable ex$) {
-            throw new AssertionError("should not reach here", ex$);
-        }
-    }
-    public static MethodHandle gtk_font_selection_set_preview_text$MH() {
-        return RuntimeHelper.requireNonNull(constants$1930.gtk_font_selection_set_preview_text$MH,"gtk_font_selection_set_preview_text");
-    }
-    /**
-     * {@snippet :
-     * void gtk_font_selection_set_preview_text(GtkFontSelection* fontsel, const gchar* text);
-     * }
-     */
-    public static void gtk_font_selection_set_preview_text(MemorySegment fontsel, MemorySegment text) {
-        var mh$ = gtk_font_selection_set_preview_text$MH();
-        try {
-            mh$.invokeExact(fontsel, text);
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

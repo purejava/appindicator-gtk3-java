@@ -3,56 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1304 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1304() {}
-    static final FunctionDescriptor gtk_window_set_destroy_with_parent$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_socket_connection_connect_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_socket_connection_connect_async",
+        constants$331.const$1
     );
-    static final MethodHandle gtk_window_set_destroy_with_parent$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_destroy_with_parent",
-        constants$1304.gtk_window_set_destroy_with_parent$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_socket_connection_connect_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gtk_window_get_destroy_with_parent$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_socket_connection_get_socket",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_window_get_destroy_with_parent$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_destroy_with_parent",
-        constants$1304.gtk_window_get_destroy_with_parent$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_socket_connection_get_local_address",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_window_set_hide_titlebar_when_maximized$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_hide_titlebar_when_maximized$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_hide_titlebar_when_maximized",
-        constants$1304.gtk_window_set_hide_titlebar_when_maximized$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_hide_titlebar_when_maximized$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_hide_titlebar_when_maximized$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_hide_titlebar_when_maximized",
-        constants$1304.gtk_window_get_hide_titlebar_when_maximized$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_mnemonics_visible$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_mnemonics_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_mnemonics_visible",
-        constants$1304.gtk_window_set_mnemonics_visible$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_mnemonics_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_mnemonics_visible$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_mnemonics_visible",
-        constants$1304.gtk_window_get_mnemonics_visible$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_connection_get_remote_address",
+        constants$5.const$5
     );
 }
 

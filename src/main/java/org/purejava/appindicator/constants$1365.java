@@ -3,55 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1365 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1365() {}
-    static final FunctionDescriptor gtk_tree_path_up$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1364.const$2.varHandle(MemoryLayout.PathElement.groupElement("verify_chain"));
+    static final FunctionDescriptor const$1 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle gtk_tree_path_up$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_up",
-        constants$1365.gtk_tree_path_up$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GTlsDatabaseClass.verify_chain_async.class, "apply", constants$1365.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        constants$1365.const$1
     );
-    static final FunctionDescriptor gtk_tree_path_down$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_path_down$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_down",
-        constants$1365.gtk_tree_path_down$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_is_ancestor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_path_is_ancestor$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_is_ancestor",
-        constants$1365.gtk_tree_path_is_ancestor$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_path_is_descendant$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_path_is_descendant$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_path_is_descendant",
-        constants$1365.gtk_tree_path_is_descendant$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_row_reference_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_tree_row_reference_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_row_reference_get_type",
-        constants$1365.gtk_tree_row_reference_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_row_reference_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_row_reference_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_row_reference_new",
-        constants$1365.gtk_tree_row_reference_new$FUNC
-    );
+    static final VarHandle const$4 = constants$1364.const$2.varHandle(MemoryLayout.PathElement.groupElement("verify_chain_async"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GTlsDatabaseClass.verify_chain_finish.class, "apply", constants$12.const$2);
 }
 
 

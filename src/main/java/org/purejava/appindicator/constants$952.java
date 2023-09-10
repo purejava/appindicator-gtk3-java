@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$952 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$952() {}
-    static final FunctionDescriptor pango_glyph_item_get_logical_widths$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_drive_poll_for_media",
+        constants$42.const$1
     );
-    static final MethodHandle pango_glyph_item_get_logical_widths$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_get_logical_widths",
-        constants$952.pango_glyph_item_get_logical_widths$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_drive_poll_for_media_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor pango_glyph_item_iter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_glyph_item_iter_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_iter_get_type",
-        constants$952.pango_glyph_item_iter_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_drive_get_identifier",
+        constants$5.const$5
     );
-    static final FunctionDescriptor pango_glyph_item_iter_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_drive_enumerate_identifiers",
+        constants$5.const$2
     );
-    static final MethodHandle pango_glyph_item_iter_copy$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_iter_copy",
-        constants$952.pango_glyph_item_iter_copy$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_drive_get_start_stop_type",
+        constants$10.const$5
     );
-    static final FunctionDescriptor pango_glyph_item_iter_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_glyph_item_iter_free$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_iter_free",
-        constants$952.pango_glyph_item_iter_free$FUNC
-    );
-    static final FunctionDescriptor pango_glyph_item_iter_init_start$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_glyph_item_iter_init_start$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_iter_init_start",
-        constants$952.pango_glyph_item_iter_init_start$FUNC
-    );
-    static final FunctionDescriptor pango_glyph_item_iter_init_end$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_glyph_item_iter_init_end$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_item_iter_init_end",
-        constants$952.pango_glyph_item_iter_init_end$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_drive_can_start",
+        constants$10.const$5
     );
 }
 

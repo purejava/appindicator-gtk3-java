@@ -3,60 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1036 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1036() {}
-    static final FunctionDescriptor cairo_surface_has_show_text_glyphs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_file_stop_mountable$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_file_stop_mountable",
+        constants$380.const$0
     );
-    static final MethodHandle cairo_surface_has_show_text_glyphs$MH = RuntimeHelper.downcallHandle(
-        "cairo_surface_has_show_text_glyphs",
-        constants$1036.cairo_surface_has_show_text_glyphs$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_file_stop_mountable_finish",
+        constants$12.const$2
     );
-    static final FunctionDescriptor cairo_image_surface_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_file_poll_mountable$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_file_poll_mountable",
+        constants$42.const$1
     );
-    static final MethodHandle cairo_image_surface_create$MH = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_create",
-        constants$1036.cairo_image_surface_create$FUNC
-    );
-    static final FunctionDescriptor cairo_format_stride_for_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_format_stride_for_width$MH = RuntimeHelper.downcallHandle(
-        "cairo_format_stride_for_width",
-        constants$1036.cairo_format_stride_for_width$FUNC
-    );
-    static final FunctionDescriptor cairo_image_surface_create_for_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle cairo_image_surface_create_for_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_create_for_data",
-        constants$1036.cairo_image_surface_create_for_data$FUNC
-    );
-    static final FunctionDescriptor cairo_image_surface_get_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_image_surface_get_data$MH = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_get_data",
-        constants$1036.cairo_image_surface_get_data$FUNC
-    );
-    static final FunctionDescriptor cairo_image_surface_get_format$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle cairo_image_surface_get_format$MH = RuntimeHelper.downcallHandle(
-        "cairo_image_surface_get_format",
-        constants$1036.cairo_image_surface_get_format$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_file_poll_mountable_finish",
+        constants$12.const$2
     );
 }
 

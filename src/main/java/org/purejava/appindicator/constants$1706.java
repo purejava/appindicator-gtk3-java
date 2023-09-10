@@ -3,54 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1706 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1706() {}
-    static final FunctionDescriptor gtk_message_dialog_get_image$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_font_face_get_reference_count",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_message_dialog_get_image$MH = RuntimeHelper.downcallHandle(
-        "gtk_message_dialog_get_image",
-        constants$1706.gtk_message_dialog_get_image$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_font_face_status",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_message_dialog_set_markup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_font_face_get_type",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_message_dialog_set_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_message_dialog_set_markup",
-        constants$1706.gtk_message_dialog_set_markup$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_font_face_get_user_data",
+        constants$5.const$5
     );
-    static final FunctionDescriptor gtk_message_dialog_format_secondary_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_message_dialog_format_secondary_text$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_message_dialog_format_secondary_text",
-        constants$1706.gtk_message_dialog_format_secondary_text$FUNC
-    );
-    static final FunctionDescriptor gtk_message_dialog_format_secondary_markup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_message_dialog_format_secondary_markup$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_message_dialog_format_secondary_markup",
-        constants$1706.gtk_message_dialog_format_secondary_markup$FUNC
-    );
-    static final FunctionDescriptor gtk_message_dialog_get_message_area$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_message_dialog_get_message_area$MH = RuntimeHelper.downcallHandle(
-        "gtk_message_dialog_get_message_area",
-        constants$1706.gtk_message_dialog_get_message_area$FUNC
-    );
-    static final FunctionDescriptor gtk_model_button_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_model_button_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_model_button_get_type",
-        constants$1706.gtk_model_button_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(cairo_font_face_set_user_data$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_font_face_set_user_data",
+        constants$34.const$5
     );
 }
 

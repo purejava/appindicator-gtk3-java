@@ -3,54 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1278 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1278() {}
-    static final FunctionDescriptor gtk_widget_render_icon_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_render_icon_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_render_icon_pixbuf",
-        constants$1278.gtk_widget_render_icon_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_set_composite_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_set_composite_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_set_composite_name",
-        constants$1278.gtk_widget_set_composite_name$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_composite_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_composite_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_composite_name",
-        constants$1278.gtk_widget_get_composite_name$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_push_composite_child$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gtk_widget_push_composite_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_push_composite_child",
-        constants$1278.gtk_widget_push_composite_child$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_pop_composite_child$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gtk_widget_pop_composite_child$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_pop_composite_child",
-        constants$1278.gtk_widget_pop_composite_child$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_class_install_style_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_class_install_style_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_install_style_property",
-        constants$1278.gtk_widget_class_install_style_property$FUNC
-    );
+    static final VarHandle const$0 = constants$1276.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved6"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSocketClass._g_reserved7.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1276.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved7"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GSocketClass._g_reserved8.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1276.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved8"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GSocketClass._g_reserved9.class, "apply", constants$7.const$5);
 }
 
 

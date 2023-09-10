@@ -2,17 +2,1604 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 public class app_indicator_h_21 extends app_indicator_h_20 {
 
+    /**
+     * {@snippet :
+     * #define CAIRO_MIME_TYPE_EPS "application/postscript"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_EPS() {
+        return constants$3447.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define CAIRO_MIME_TYPE_EPS_PARAMS "application/x-cairo.eps.params"
+     * }
+     */
+    public static MemorySegment CAIRO_MIME_TYPE_EPS_PARAMS() {
+        return constants$3447.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_CURRENT_TIME 0
+     * }
+     */
+    public static long GDK_CURRENT_TIME() {
+        return 0L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PARENT_RELATIVE 1
+     * }
+     */
+    public static long GDK_PARENT_RELATIVE() {
+        return 1L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_NONE 0
+     * }
+     */
+    public static MemorySegment GDK_NONE() {
+        return constants$3413.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PRIORITY_EVENTS 0
+     * }
+     */
+    public static int GDK_PRIORITY_EVENTS() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PRIORITY_REDRAW 120
+     * }
+     */
+    public static int GDK_PRIORITY_REDRAW() {
+        return (int)120L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_EVENT_PROPAGATE 0
+     * }
+     */
+    public static int GDK_EVENT_PROPAGATE() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_EVENT_STOP 1
+     * }
+     */
+    public static int GDK_EVENT_STOP() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_BUTTON_PRIMARY 1
+     * }
+     */
+    public static int GDK_BUTTON_PRIMARY() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_BUTTON_MIDDLE 2
+     * }
+     */
+    public static int GDK_BUTTON_MIDDLE() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_BUTTON_SECONDARY 3
+     * }
+     */
+    public static int GDK_BUTTON_SECONDARY() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_MAJOR 2
+     * }
+     */
+    public static int GDK_PIXBUF_MAJOR() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_MINOR 42
+     * }
+     */
+    public static int GDK_PIXBUF_MINOR() {
+        return (int)42L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_MICRO 10
+     * }
+     */
+    public static int GDK_PIXBUF_MICRO() {
+        return (int)10L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION "2.42.10"
+     * }
+     */
+    public static MemorySegment GDK_PIXBUF_VERSION() {
+        return constants$3448.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_0 131072
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_0() {
+        return (int)131072L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_2 131584
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_2() {
+        return (int)131584L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_4 132096
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_4() {
+        return (int)132096L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_6 132608
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_6() {
+        return (int)132608L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_8 133120
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_8() {
+        return (int)133120L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_10 133632
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_10() {
+        return (int)133632L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_12 134144
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_12() {
+        return (int)134144L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_14 134656
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_14() {
+        return (int)134656L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_16 135168
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_16() {
+        return (int)135168L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_18 135680
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_18() {
+        return (int)135680L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_20 136192
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_20() {
+        return (int)136192L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_22 136704
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_22() {
+        return (int)136704L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_24 137216
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_24() {
+        return (int)137216L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_26 137728
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_26() {
+        return (int)137728L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_28 138240
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_28() {
+        return (int)138240L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_30 138752
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_30() {
+        return (int)138752L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_32 139264
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_32() {
+        return (int)139264L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_34 139776
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_34() {
+        return (int)139776L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_36 140288
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_36() {
+        return (int)140288L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_38 140800
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_38() {
+        return (int)140800L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_2_40 141312
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_2_40() {
+        return (int)141312L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_CUR_STABLE 141824
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_CUR_STABLE() {
+        return (int)141824L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_PREV_STABLE 141312
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_PREV_STABLE() {
+        return (int)141312L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_MIN_REQUIRED 141824
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_MIN_REQUIRED() {
+        return (int)141824L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_PIXBUF_VERSION_MAX_ALLOWED 141824
+     * }
+     */
+    public static int GDK_PIXBUF_VERSION_MAX_ALLOWED() {
+        return (int)141824L;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_SELECTION_PRIMARY 1
+     * }
+     */
+    public static MemorySegment GDK_SELECTION_PRIMARY() {
+        return constants$3417.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_SELECTION_SECONDARY 2
+     * }
+     */
+    public static MemorySegment GDK_SELECTION_SECONDARY() {
+        return constants$3448.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_SELECTION_CLIPBOARD 69
+     * }
+     */
+    public static MemorySegment GDK_SELECTION_CLIPBOARD() {
+        return constants$3448.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_TARGET_BITMAP 5
+     * }
+     */
+    public static MemorySegment GDK_TARGET_BITMAP() {
+        return constants$3448.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_TARGET_COLORMAP 7
+     * }
+     */
+    public static MemorySegment GDK_TARGET_COLORMAP() {
+        return constants$3448.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_TARGET_DRAWABLE 17
+     * }
+     */
+    public static MemorySegment GDK_TARGET_DRAWABLE() {
+        return constants$3448.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_TARGET_PIXMAP 20
+     * }
+     */
+    public static MemorySegment GDK_TARGET_PIXMAP() {
+        return constants$3449.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_TARGET_STRING 31
+     * }
+     */
+    public static MemorySegment GDK_TARGET_STRING() {
+        return constants$3449.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_SELECTION_TYPE_ATOM 4
+     * }
+     */
+    public static MemorySegment GDK_SELECTION_TYPE_ATOM() {
+        return constants$3449.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_SELECTION_TYPE_BITMAP 5
+     * }
+     */
+    public static MemorySegment GDK_SELECTION_TYPE_BITMAP() {
+        return constants$3448.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_SELECTION_TYPE_COLORMAP 7
+     * }
+     */
+    public static MemorySegment GDK_SELECTION_TYPE_COLORMAP() {
+        return constants$3448.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_SELECTION_TYPE_DRAWABLE 17
+     * }
+     */
+    public static MemorySegment GDK_SELECTION_TYPE_DRAWABLE() {
+        return constants$3448.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_SELECTION_TYPE_INTEGER 19
+     * }
+     */
+    public static MemorySegment GDK_SELECTION_TYPE_INTEGER() {
+        return constants$3449.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_SELECTION_TYPE_PIXMAP 20
+     * }
+     */
+    public static MemorySegment GDK_SELECTION_TYPE_PIXMAP() {
+        return constants$3449.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_SELECTION_TYPE_WINDOW 33
+     * }
+     */
+    public static MemorySegment GDK_SELECTION_TYPE_WINDOW() {
+        return constants$3449.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GDK_SELECTION_TYPE_STRING 31
+     * }
+     */
+    public static MemorySegment GDK_SELECTION_TYPE_STRING() {
+        return constants$3449.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_UNIT_PIXEL 0
+     * }
+     */
+    public static int GTK_UNIT_PIXEL() {
+        return (int)0L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_MAJOR_VERSION 2
+     * }
+     */
+    public static int ATK_MAJOR_VERSION() {
+        return (int)2L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_MINOR_VERSION 48
+     * }
+     */
+    public static int ATK_MINOR_VERSION() {
+        return (int)48L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_MICRO_VERSION 3
+     * }
+     */
+    public static int ATK_MICRO_VERSION() {
+        return (int)3L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_BINARY_AGE 24813
+     * }
+     */
+    public static int ATK_BINARY_AGE() {
+        return (int)24813L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_INTERFACE_AGE 1
+     * }
+     */
+    public static int ATK_INTERFACE_AGE() {
+        return (int)1L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_VERSION_2_2 131584
+     * }
+     */
+    public static int ATK_VERSION_2_2() {
+        return (int)131584L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_VERSION_2_4 132096
+     * }
+     */
+    public static int ATK_VERSION_2_4() {
+        return (int)132096L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_VERSION_2_6 132608
+     * }
+     */
+    public static int ATK_VERSION_2_6() {
+        return (int)132608L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_VERSION_2_8 133120
+     * }
+     */
+    public static int ATK_VERSION_2_8() {
+        return (int)133120L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_VERSION_2_10 133632
+     * }
+     */
+    public static int ATK_VERSION_2_10() {
+        return (int)133632L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_VERSION_2_12 134144
+     * }
+     */
+    public static int ATK_VERSION_2_12() {
+        return (int)134144L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_VERSION_2_14 134656
+     * }
+     */
+    public static int ATK_VERSION_2_14() {
+        return (int)134656L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_VERSION_2_30 138752
+     * }
+     */
+    public static int ATK_VERSION_2_30() {
+        return (int)138752L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_VERSION_2_36 140288
+     * }
+     */
+    public static int ATK_VERSION_2_36() {
+        return (int)140288L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_VERSION_CUR_STABLE 143360
+     * }
+     */
+    public static int ATK_VERSION_CUR_STABLE() {
+        return (int)143360L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_VERSION_PREV_STABLE 142848
+     * }
+     */
+    public static int ATK_VERSION_PREV_STABLE() {
+        return (int)142848L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_VERSION_MIN_REQUIRED 143360
+     * }
+     */
+    public static int ATK_VERSION_MIN_REQUIRED() {
+        return (int)143360L;
+    }
+    /**
+     * {@snippet :
+     * #define ATK_VERSION_MAX_ALLOWED 143360
+     * }
+     */
+    public static int ATK_VERSION_MAX_ALLOWED() {
+        return (int)143360L;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID -1
+     * }
+     */
+    public static int GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID() {
+        return (int)-1L;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID -2
+     * }
+     */
+    public static int GTK_TREE_SORTABLE_UNSORTED_SORT_COLUMN_ID() {
+        return (int)-2L;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_ENTRY_BUFFER_MAX_SIZE 65535
+     * }
+     */
+    public static int GTK_ENTRY_BUFFER_MAX_SIZE() {
+        return (int)65535L;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_PROPERTY_BACKGROUND_COLOR "background-color"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_PROPERTY_BACKGROUND_COLOR() {
+        return constants$3449.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_PROPERTY_COLOR "color"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_PROPERTY_COLOR() {
+        return constants$3450.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_PROPERTY_FONT "font"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_PROPERTY_FONT() {
+        return constants$3450.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_PROPERTY_PADDING "padding"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_PROPERTY_PADDING() {
+        return constants$3450.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_PROPERTY_BORDER_WIDTH "border-width"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_PROPERTY_BORDER_WIDTH() {
+        return constants$3450.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_PROPERTY_MARGIN "margin"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_PROPERTY_MARGIN() {
+        return constants$3450.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_PROPERTY_BORDER_RADIUS "border-radius"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_PROPERTY_BORDER_RADIUS() {
+        return constants$3450.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_PROPERTY_BORDER_STYLE "border-style"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_PROPERTY_BORDER_STYLE() {
+        return constants$3451.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_PROPERTY_BORDER_COLOR "border-color"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_PROPERTY_BORDER_COLOR() {
+        return constants$3451.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_PROPERTY_BACKGROUND_IMAGE "background-image"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_PROPERTY_BACKGROUND_IMAGE() {
+        return constants$3451.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_CELL "cell"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_CELL() {
+        return constants$3451.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_DIM_LABEL "dim-label"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_DIM_LABEL() {
+        return constants$3451.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_ENTRY "entry"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_ENTRY() {
+        return constants$3451.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_LABEL "label"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_LABEL() {
+        return constants$3441.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_COMBOBOX_ENTRY "combobox-entry"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_COMBOBOX_ENTRY() {
+        return constants$3452.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_BUTTON "button"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_BUTTON() {
+        return constants$3452.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_LIST "list"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_LIST() {
+        return constants$3452.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_LIST_ROW "list-row"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_LIST_ROW() {
+        return constants$3452.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_CALENDAR "calendar"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_CALENDAR() {
+        return constants$3452.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_SLIDER "slider"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_SLIDER() {
+        return constants$3452.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_BACKGROUND "background"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_BACKGROUND() {
+        return constants$3453.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_RUBBERBAND "rubberband"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_RUBBERBAND() {
+        return constants$3453.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_CSD "csd"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_CSD() {
+        return constants$3453.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_TOOLTIP "tooltip"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_TOOLTIP() {
+        return constants$3453.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_MENU "menu"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_MENU() {
+        return constants$3453.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_CONTEXT_MENU "context-menu"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_CONTEXT_MENU() {
+        return constants$3453.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_TOUCH_SELECTION "touch-selection"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_TOUCH_SELECTION() {
+        return constants$3454.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_MENUBAR "menubar"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_MENUBAR() {
+        return constants$3454.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_MENUITEM "menuitem"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_MENUITEM() {
+        return constants$3454.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_TOOLBAR "toolbar"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_TOOLBAR() {
+        return constants$3454.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_PRIMARY_TOOLBAR "primary-toolbar"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_PRIMARY_TOOLBAR() {
+        return constants$3454.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_INLINE_TOOLBAR "inline-toolbar"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_INLINE_TOOLBAR() {
+        return constants$3454.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_STATUSBAR "statusbar"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_STATUSBAR() {
+        return constants$3455.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_RADIO "radio"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_RADIO() {
+        return constants$3455.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_CHECK "check"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_CHECK() {
+        return constants$3455.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_DEFAULT "default"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_DEFAULT() {
+        return constants$3455.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_TROUGH "trough"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_TROUGH() {
+        return constants$3455.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_SCROLLBAR "scrollbar"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_SCROLLBAR() {
+        return constants$3455.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_SCROLLBARS_JUNCTION "scrollbars-junction"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_SCROLLBARS_JUNCTION() {
+        return constants$3456.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_SCALE "scale"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_SCALE() {
+        return constants$3456.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_SCALE_HAS_MARKS_ABOVE "scale-has-marks-above"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_SCALE_HAS_MARKS_ABOVE() {
+        return constants$3456.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_SCALE_HAS_MARKS_BELOW "scale-has-marks-below"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_SCALE_HAS_MARKS_BELOW() {
+        return constants$3456.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_HEADER "header"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_HEADER() {
+        return constants$3456.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_ACCELERATOR "accelerator"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_ACCELERATOR() {
+        return constants$3456.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_RAISED "raised"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_RAISED() {
+        return constants$3457.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_LINKED "linked"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_LINKED() {
+        return constants$3457.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_GRIP "grip"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_GRIP() {
+        return constants$3457.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_DOCK "dock"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_DOCK() {
+        return constants$3457.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_PROGRESSBAR "progressbar"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_PROGRESSBAR() {
+        return constants$3457.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_SPINNER "spinner"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_SPINNER() {
+        return constants$3457.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_MARK "mark"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_MARK() {
+        return constants$3458.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_EXPANDER "expander"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_EXPANDER() {
+        return constants$3458.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_SPINBUTTON "spinbutton"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_SPINBUTTON() {
+        return constants$3458.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_NOTEBOOK "notebook"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_NOTEBOOK() {
+        return constants$3458.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_VIEW "view"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_VIEW() {
+        return constants$3458.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_SIDEBAR "sidebar"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_SIDEBAR() {
+        return constants$3458.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_IMAGE "image"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_IMAGE() {
+        return constants$3459.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_HIGHLIGHT "highlight"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_HIGHLIGHT() {
+        return constants$3459.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_FRAME "frame"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_FRAME() {
+        return constants$3459.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_DND "dnd"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_DND() {
+        return constants$3459.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_PANE_SEPARATOR "pane-separator"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_PANE_SEPARATOR() {
+        return constants$3459.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_SEPARATOR "separator"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_SEPARATOR() {
+        return constants$3459.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_INFO "info"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_INFO() {
+        return constants$3460.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_WARNING "warning"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_WARNING() {
+        return constants$3460.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_QUESTION "question"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_QUESTION() {
+        return constants$3460.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_ERROR "error"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_ERROR() {
+        return constants$3460.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_HORIZONTAL "horizontal"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_HORIZONTAL() {
+        return constants$3460.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_VERTICAL "vertical"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_VERTICAL() {
+        return constants$3460.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_TOP "top"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_TOP() {
+        return constants$3461.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_BOTTOM "bottom"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_BOTTOM() {
+        return constants$3461.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_LEFT "left"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_LEFT() {
+        return constants$3461.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_RIGHT "right"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_RIGHT() {
+        return constants$3461.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_PULSE "pulse"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_PULSE() {
+        return constants$3461.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_ARROW "arrow"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_ARROW() {
+        return constants$3461.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_OSD "osd"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_OSD() {
+        return constants$3462.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_LEVEL_BAR "level-bar"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_LEVEL_BAR() {
+        return constants$3462.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_CURSOR_HANDLE "cursor-handle"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_CURSOR_HANDLE() {
+        return constants$3462.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_INSERTION_CURSOR "insertion-cursor"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_INSERTION_CURSOR() {
+        return constants$3462.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_TITLEBAR "titlebar"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_TITLEBAR() {
+        return constants$3462.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_TITLE "title"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_TITLE() {
+        return constants$3462.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_SUBTITLE "subtitle"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_SUBTITLE() {
+        return constants$3463.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_NEEDS_ATTENTION "needs-attention"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_NEEDS_ATTENTION() {
+        return constants$3463.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_SUGGESTED_ACTION "suggested-action"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_SUGGESTED_ACTION() {
+        return constants$3463.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_DESTRUCTIVE_ACTION "destructive-action"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_DESTRUCTIVE_ACTION() {
+        return constants$3463.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_POPOVER "popover"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_POPOVER() {
+        return constants$3463.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_POPUP "popup"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_POPUP() {
+        return constants$3463.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_MESSAGE_DIALOG "message-dialog"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_MESSAGE_DIALOG() {
+        return constants$3464.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_FLAT "flat"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_FLAT() {
+        return constants$3464.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_READ_ONLY "read-only"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_READ_ONLY() {
+        return constants$3464.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_OVERSHOOT "overshoot"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_OVERSHOOT() {
+        return constants$3464.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_UNDERSHOOT "undershoot"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_UNDERSHOOT() {
+        return constants$3464.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_PAPER "paper"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_PAPER() {
+        return constants$3464.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_MONOSPACE "monospace"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_MONOSPACE() {
+        return constants$3465.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_CLASS_WIDE "wide"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_CLASS_WIDE() {
+        return constants$3465.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_REGION_ROW "row"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_REGION_ROW() {
+        return constants$3465.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_REGION_COLUMN "column"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_REGION_COLUMN() {
+        return constants$3465.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_REGION_COLUMN_HEADER "column-header"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_REGION_COLUMN_HEADER() {
+        return constants$3465.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_STYLE_REGION_TAB "tab"
+     * }
+     */
+    public static MemorySegment GTK_STYLE_REGION_TAB() {
+        return constants$3465.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_LEVEL_BAR_OFFSET_LOW "low"
+     * }
+     */
+    public static MemorySegment GTK_LEVEL_BAR_OFFSET_LOW() {
+        return constants$3466.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_LEVEL_BAR_OFFSET_HIGH "high"
+     * }
+     */
+    public static MemorySegment GTK_LEVEL_BAR_OFFSET_HIGH() {
+        return constants$3466.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_LEVEL_BAR_OFFSET_FULL "full"
+     * }
+     */
+    public static MemorySegment GTK_LEVEL_BAR_OFFSET_FULL() {
+        return constants$3466.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PRIORITY_RESIZE 110
+     * }
+     */
+    public static int GTK_PRIORITY_RESIZE() {
+        return (int)110L;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PAPER_NAME_A3 "iso_a3"
+     * }
+     */
+    public static MemorySegment GTK_PAPER_NAME_A3() {
+        return constants$3466.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PAPER_NAME_A4 "iso_a4"
+     * }
+     */
+    public static MemorySegment GTK_PAPER_NAME_A4() {
+        return constants$3466.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PAPER_NAME_A5 "iso_a5"
+     * }
+     */
+    public static MemorySegment GTK_PAPER_NAME_A5() {
+        return constants$3466.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PAPER_NAME_B5 "iso_b5"
+     * }
+     */
+    public static MemorySegment GTK_PAPER_NAME_B5() {
+        return constants$3467.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PAPER_NAME_LETTER "na_letter"
+     * }
+     */
+    public static MemorySegment GTK_PAPER_NAME_LETTER() {
+        return constants$3467.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PAPER_NAME_EXECUTIVE "na_executive"
+     * }
+     */
+    public static MemorySegment GTK_PAPER_NAME_EXECUTIVE() {
+        return constants$3467.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PAPER_NAME_LEGAL "na_legal"
+     * }
+     */
+    public static MemorySegment GTK_PAPER_NAME_LEGAL() {
+        return constants$3467.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PRINT_SETTINGS_PRINTER "printer"
+     * }
+     */
+    public static MemorySegment GTK_PRINT_SETTINGS_PRINTER() {
+        return constants$3467.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PRINT_SETTINGS_ORIENTATION "orientation"
+     * }
+     */
+    public static MemorySegment GTK_PRINT_SETTINGS_ORIENTATION() {
+        return constants$3467.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PRINT_SETTINGS_PAPER_FORMAT "paper-format"
+     * }
+     */
+    public static MemorySegment GTK_PRINT_SETTINGS_PAPER_FORMAT() {
+        return constants$3468.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PRINT_SETTINGS_PAPER_WIDTH "paper-width"
+     * }
+     */
+    public static MemorySegment GTK_PRINT_SETTINGS_PAPER_WIDTH() {
+        return constants$3468.const$1;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PRINT_SETTINGS_PAPER_HEIGHT "paper-height"
+     * }
+     */
+    public static MemorySegment GTK_PRINT_SETTINGS_PAPER_HEIGHT() {
+        return constants$3468.const$2;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PRINT_SETTINGS_N_COPIES "n-copies"
+     * }
+     */
+    public static MemorySegment GTK_PRINT_SETTINGS_N_COPIES() {
+        return constants$3468.const$3;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PRINT_SETTINGS_DEFAULT_SOURCE "default-source"
+     * }
+     */
+    public static MemorySegment GTK_PRINT_SETTINGS_DEFAULT_SOURCE() {
+        return constants$3468.const$4;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PRINT_SETTINGS_QUALITY "quality"
+     * }
+     */
+    public static MemorySegment GTK_PRINT_SETTINGS_QUALITY() {
+        return constants$3468.const$5;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PRINT_SETTINGS_RESOLUTION "resolution"
+     * }
+     */
+    public static MemorySegment GTK_PRINT_SETTINGS_RESOLUTION() {
+        return constants$3469.const$0;
+    }
+    /**
+     * {@snippet :
+     * #define GTK_PRINT_SETTINGS_USE_COLOR "use-color"
+     * }
+     */
+    public static MemorySegment GTK_PRINT_SETTINGS_USE_COLOR() {
+        return constants$3469.const$1;
+    }
     /**
      * {@snippet :
      * #define GTK_PRINT_SETTINGS_DUPLEX "duplex"
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_DUPLEX() {
-        return constants$2046.GTK_PRINT_SETTINGS_DUPLEX$SEGMENT;
+        return constants$3469.const$2;
     }
     /**
      * {@snippet :
@@ -20,7 +1607,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_COLLATE() {
-        return constants$2046.GTK_PRINT_SETTINGS_COLLATE$SEGMENT;
+        return constants$3469.const$3;
     }
     /**
      * {@snippet :
@@ -28,7 +1615,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_REVERSE() {
-        return constants$2046.GTK_PRINT_SETTINGS_REVERSE$SEGMENT;
+        return constants$3469.const$4;
     }
     /**
      * {@snippet :
@@ -36,7 +1623,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_MEDIA_TYPE() {
-        return constants$2046.GTK_PRINT_SETTINGS_MEDIA_TYPE$SEGMENT;
+        return constants$3469.const$5;
     }
     /**
      * {@snippet :
@@ -44,7 +1631,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_DITHER() {
-        return constants$2046.GTK_PRINT_SETTINGS_DITHER$SEGMENT;
+        return constants$3470.const$0;
     }
     /**
      * {@snippet :
@@ -52,7 +1639,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_SCALE() {
-        return constants$2047.GTK_PRINT_SETTINGS_SCALE$SEGMENT;
+        return constants$3456.const$1;
     }
     /**
      * {@snippet :
@@ -60,7 +1647,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_PRINT_PAGES() {
-        return constants$2047.GTK_PRINT_SETTINGS_PRINT_PAGES$SEGMENT;
+        return constants$3470.const$1;
     }
     /**
      * {@snippet :
@@ -68,7 +1655,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_PAGE_RANGES() {
-        return constants$2047.GTK_PRINT_SETTINGS_PAGE_RANGES$SEGMENT;
+        return constants$3470.const$2;
     }
     /**
      * {@snippet :
@@ -76,7 +1663,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_PAGE_SET() {
-        return constants$2047.GTK_PRINT_SETTINGS_PAGE_SET$SEGMENT;
+        return constants$3470.const$3;
     }
     /**
      * {@snippet :
@@ -84,7 +1671,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_FINISHINGS() {
-        return constants$2047.GTK_PRINT_SETTINGS_FINISHINGS$SEGMENT;
+        return constants$3470.const$4;
     }
     /**
      * {@snippet :
@@ -92,7 +1679,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_NUMBER_UP() {
-        return constants$2047.GTK_PRINT_SETTINGS_NUMBER_UP$SEGMENT;
+        return constants$3470.const$5;
     }
     /**
      * {@snippet :
@@ -100,7 +1687,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT() {
-        return constants$2048.GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT$SEGMENT;
+        return constants$3471.const$0;
     }
     /**
      * {@snippet :
@@ -108,7 +1695,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_BIN() {
-        return constants$2048.GTK_PRINT_SETTINGS_OUTPUT_BIN$SEGMENT;
+        return constants$3471.const$1;
     }
     /**
      * {@snippet :
@@ -116,7 +1703,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_RESOLUTION_X() {
-        return constants$2048.GTK_PRINT_SETTINGS_RESOLUTION_X$SEGMENT;
+        return constants$3471.const$2;
     }
     /**
      * {@snippet :
@@ -124,7 +1711,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_RESOLUTION_Y() {
-        return constants$2048.GTK_PRINT_SETTINGS_RESOLUTION_Y$SEGMENT;
+        return constants$3471.const$3;
     }
     /**
      * {@snippet :
@@ -132,7 +1719,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_PRINTER_LPI() {
-        return constants$2048.GTK_PRINT_SETTINGS_PRINTER_LPI$SEGMENT;
+        return constants$3471.const$4;
     }
     /**
      * {@snippet :
@@ -140,7 +1727,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_DIR() {
-        return constants$2048.GTK_PRINT_SETTINGS_OUTPUT_DIR$SEGMENT;
+        return constants$3471.const$5;
     }
     /**
      * {@snippet :
@@ -148,7 +1735,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_BASENAME() {
-        return constants$2049.GTK_PRINT_SETTINGS_OUTPUT_BASENAME$SEGMENT;
+        return constants$3472.const$0;
     }
     /**
      * {@snippet :
@@ -156,7 +1743,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT() {
-        return constants$2049.GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT$SEGMENT;
+        return constants$3472.const$1;
     }
     /**
      * {@snippet :
@@ -164,7 +1751,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_OUTPUT_URI() {
-        return constants$2049.GTK_PRINT_SETTINGS_OUTPUT_URI$SEGMENT;
+        return constants$3472.const$2;
     }
     /**
      * {@snippet :
@@ -172,7 +1759,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION() {
-        return constants$2049.GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION$SEGMENT;
+        return constants$3472.const$3;
     }
     /**
      * {@snippet :
@@ -180,7 +1767,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA() {
-        return constants$2049.GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA$SEGMENT;
+        return constants$3472.const$4;
     }
     /**
      * {@snippet :
@@ -216,19 +1803,19 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
     }
     /**
      * {@snippet :
-     * #define GTK_MICRO_VERSION 37
+     * #define GTK_MICRO_VERSION 38
      * }
      */
     public static int GTK_MICRO_VERSION() {
-        return (int)37L;
+        return (int)38L;
     }
     /**
      * {@snippet :
-     * #define GTK_BINARY_AGE 2437
+     * #define GTK_BINARY_AGE 2438
      * }
      */
     public static int GTK_BINARY_AGE() {
-        return (int)2437L;
+        return (int)2438L;
     }
     /**
      * {@snippet :
@@ -244,7 +1831,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment APP_INDICATOR_SIGNAL_NEW_ICON() {
-        return constants$2049.APP_INDICATOR_SIGNAL_NEW_ICON$SEGMENT;
+        return constants$3472.const$5;
     }
     /**
      * {@snippet :
@@ -252,7 +1839,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment APP_INDICATOR_SIGNAL_NEW_ATTENTION_ICON() {
-        return constants$2050.APP_INDICATOR_SIGNAL_NEW_ATTENTION_ICON$SEGMENT;
+        return constants$3473.const$0;
     }
     /**
      * {@snippet :
@@ -260,7 +1847,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment APP_INDICATOR_SIGNAL_NEW_STATUS() {
-        return constants$2050.APP_INDICATOR_SIGNAL_NEW_STATUS$SEGMENT;
+        return constants$3473.const$1;
     }
     /**
      * {@snippet :
@@ -268,7 +1855,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment APP_INDICATOR_SIGNAL_NEW_LABEL() {
-        return constants$2050.APP_INDICATOR_SIGNAL_NEW_LABEL$SEGMENT;
+        return constants$3473.const$2;
     }
     /**
      * {@snippet :
@@ -276,7 +1863,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment APP_INDICATOR_SIGNAL_CONNECTION_CHANGED() {
-        return constants$2050.APP_INDICATOR_SIGNAL_CONNECTION_CHANGED$SEGMENT;
+        return constants$3473.const$3;
     }
     /**
      * {@snippet :
@@ -284,7 +1871,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment APP_INDICATOR_SIGNAL_NEW_ICON_THEME_PATH() {
-        return constants$2050.APP_INDICATOR_SIGNAL_NEW_ICON_THEME_PATH$SEGMENT;
+        return constants$3473.const$4;
     }
     /**
      * {@snippet :
@@ -292,7 +1879,7 @@ public class app_indicator_h_21 extends app_indicator_h_20 {
      * }
      */
     public static MemorySegment APP_INDICATOR_SIGNAL_SCROLL_EVENT() {
-        return constants$2050.APP_INDICATOR_SIGNAL_SCROLL_EVENT$SEGMENT;
+        return constants$3473.const$5;
     }
 }
 

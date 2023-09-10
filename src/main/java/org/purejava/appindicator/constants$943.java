@@ -3,82 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$943 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$943() {}
-    static final FunctionDescriptor pango_glyph_string_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_glyph_string_get_width$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_get_width",
-        constants$943.pango_glyph_string_get_width$FUNC
-    );
-    static final FunctionDescriptor pango_glyph_string_extents_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_glyph_string_extents_range$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_extents_range",
-        constants$943.pango_glyph_string_extents_range$FUNC
-    );
-    static final FunctionDescriptor pango_glyph_string_get_logical_widths$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_glyph_string_get_logical_widths$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_get_logical_widths",
-        constants$943.pango_glyph_string_get_logical_widths$FUNC
-    );
-    static final FunctionDescriptor pango_glyph_string_index_to_x$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_glyph_string_index_to_x$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_index_to_x",
-        constants$943.pango_glyph_string_index_to_x$FUNC
-    );
-    static final FunctionDescriptor pango_glyph_string_x_to_index$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_glyph_string_x_to_index$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_x_to_index",
-        constants$943.pango_glyph_string_x_to_index$FUNC
-    );
-    static final FunctionDescriptor pango_glyph_string_index_to_x_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_glyph_string_index_to_x_full$MH = RuntimeHelper.downcallHandle(
-        "pango_glyph_string_index_to_x_full",
-        constants$943.pango_glyph_string_index_to_x_full$FUNC
-    );
+    static final VarHandle const$0 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("eject_finish"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDriveIface.poll_for_media.class, "apply", constants$42.const$1);
+    static final VarHandle const$2 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("poll_for_media"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDriveIface.poll_for_media_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$4 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("poll_for_media_finish"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GDriveIface.get_identifier.class, "apply", constants$5.const$5);
 }
 
 

@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$290 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$290() {}
-    static final FunctionDescriptor g_regex_get_string_number$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_utf8_pointer_to_offset",
+        constants$22.const$0
     );
-    static final MethodHandle g_regex_get_string_number$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_string_number",
-        constants$290.g_regex_get_string_number$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_utf8_prev_char",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_regex_escape_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_utf8_find_next_char",
+        constants$5.const$5
     );
-    static final MethodHandle g_regex_escape_string$MH = RuntimeHelper.downcallHandle(
-        "g_regex_escape_string",
-        constants$290.g_regex_escape_string$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_utf8_find_prev_char",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_regex_escape_nul$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_utf8_strlen",
+        constants$23.const$4
     );
-    static final MethodHandle g_regex_escape_nul$MH = RuntimeHelper.downcallHandle(
-        "g_regex_escape_nul",
-        constants$290.g_regex_escape_nul$FUNC
-    );
-    static final FunctionDescriptor g_regex_get_compile_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_get_compile_flags$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_compile_flags",
-        constants$290.g_regex_get_compile_flags$FUNC
-    );
-    static final FunctionDescriptor g_regex_get_match_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_regex_get_match_flags$MH = RuntimeHelper.downcallHandle(
-        "g_regex_get_match_flags",
-        constants$290.g_regex_get_match_flags$FUNC
-    );
-    static final FunctionDescriptor g_regex_match_simple$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_regex_match_simple$MH = RuntimeHelper.downcallHandle(
-        "g_regex_match_simple",
-        constants$290.g_regex_match_simple$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_utf8_substring",
+        constants$88.const$2
     );
 }
 

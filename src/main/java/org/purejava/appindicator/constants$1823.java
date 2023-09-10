@@ -3,53 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1823 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1823() {}
-    static final FunctionDescriptor gtk_switch_set_state$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_switch_set_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_switch_set_state",
-        constants$1823.gtk_switch_set_state$FUNC
-    );
-    static final FunctionDescriptor gtk_switch_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_switch_get_state$MH = RuntimeHelper.downcallHandle(
-        "gtk_switch_get_state",
-        constants$1823.gtk_switch_get_state$FUNC
-    );
-    static final FunctionDescriptor GtkTextTagTableForeach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkTextTagTableForeach_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkTextTagTableForeach_UP$MH = RuntimeHelper.upcallHandle(GtkTextTagTableForeach.class, "apply", constants$1823.GtkTextTagTableForeach_UP$FUNC);
-    static final FunctionDescriptor GtkTextTagTableForeach_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkTextTagTableForeach_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1823.GtkTextTagTableForeach_DOWN$FUNC
-    );
-    static final FunctionDescriptor gtk_text_tag_table_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_text_tag_table_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_tag_table_get_type",
-        constants$1823.gtk_text_tag_table_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_text_tag_table_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_text_tag_table_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_text_tag_table_new",
-        constants$1823.gtk_text_tag_table_new$FUNC
-    );
+    static final VarHandle const$0 = constants$1820.const$5.varHandle(MemoryLayout.PathElement.groupElement("create_surface"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GdkWindowClass._gdk_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1820.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gdk_reserved1"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GdkWindowClass._gdk_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$1820.const$5.varHandle(MemoryLayout.PathElement.groupElement("_gdk_reserved2"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GdkWindowClass._gdk_reserved3.class, "apply", constants$7.const$5);
 }
 
 

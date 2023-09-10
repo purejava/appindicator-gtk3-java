@@ -3,50 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1978 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1978() {}
-    static final FunctionDescriptor gtk_vbox_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_object_get_role",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_vbox_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_vbox_new",
-        constants$1978.gtk_vbox_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_object_get_layer",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_vpaned_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_vpaned_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_vpaned_get_type",
-        constants$1978.gtk_vpaned_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_object_get_mdi_zorder",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_vpaned_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_vpaned_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_vpaned_new",
-        constants$1978.gtk_vpaned_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_object_get_attributes",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_vscale_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_vscale_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_vscale_get_type",
-        constants$1978.gtk_vscale_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_object_ref_state_set",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_vscale_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_vscale_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_vscale_new",
-        constants$1978.gtk_vscale_new$FUNC
-    );
-    static final FunctionDescriptor gtk_vscale_new_with_range$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
-    );
-    static final MethodHandle gtk_vscale_new_with_range$MH = RuntimeHelper.downcallHandle(
-        "gtk_vscale_new_with_range",
-        constants$1978.gtk_vscale_new_with_range$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_object_get_index_in_parent",
+        constants$10.const$5
     );
 }
 

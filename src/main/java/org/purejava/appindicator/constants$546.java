@@ -3,67 +3,28 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$546 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$546() {}
-    static final FunctionDescriptor g_data_output_stream_put_int32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_output_stream_put_int32$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_put_int32",
-        constants$546.g_data_output_stream_put_int32$FUNC
-    );
-    static final FunctionDescriptor g_data_output_stream_put_uint32$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_output_stream_put_uint32$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_put_uint32",
-        constants$546.g_data_output_stream_put_uint32$FUNC
-    );
-    static final FunctionDescriptor g_data_output_stream_put_int64$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_output_stream_put_int64$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_put_int64",
-        constants$546.g_data_output_stream_put_int64$FUNC
-    );
-    static final FunctionDescriptor g_data_output_stream_put_uint64$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_output_stream_put_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_put_uint64",
-        constants$546.g_data_output_stream_put_uint64$FUNC
-    );
-    static final FunctionDescriptor g_data_output_stream_put_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_data_output_stream_put_string$MH = RuntimeHelper.downcallHandle(
-        "g_data_output_stream_put_string",
-        constants$546.g_data_output_stream_put_string$FUNC
-    );
-    static final FunctionDescriptor g_dbus_action_group_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_action_group_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_action_group_get_type",
-        constants$546.g_dbus_action_group_get_type$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("g_type"),
+        JAVA_LONG.withName("g_instance_type")
+    ).withName("_GTypeInterface");
+    static final VarHandle const$1 = constants$546.const$0.varHandle(MemoryLayout.PathElement.groupElement("g_type"));
+    static final VarHandle const$2 = constants$546.const$0.varHandle(MemoryLayout.PathElement.groupElement("g_instance_type"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("type"),
+        RuntimeHelper.POINTER.withName("type_name"),
+        JAVA_INT.withName("class_size"),
+        JAVA_INT.withName("instance_size")
+    ).withName("_GTypeQuery");
+    static final VarHandle const$4 = constants$546.const$3.varHandle(MemoryLayout.PathElement.groupElement("type"));
+    static final VarHandle const$5 = constants$546.const$3.varHandle(MemoryLayout.PathElement.groupElement("type_name"));
 }
 
 

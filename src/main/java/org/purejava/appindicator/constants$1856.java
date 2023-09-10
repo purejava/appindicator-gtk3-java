@@ -3,58 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1856 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1856() {}
-    static final FunctionDescriptor gtk_tool_item_group_get_collapsed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gdk_seat_ungrab",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_tool_item_group_get_collapsed$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_group_get_collapsed",
-        constants$1856.gtk_tool_item_group_get_collapsed$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gdk_seat_get_display",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_tool_item_group_get_ellipsize$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "gdk_seat_get_capabilities",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_tool_item_group_get_ellipsize$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_group_get_ellipsize",
-        constants$1856.gtk_tool_item_group_get_ellipsize$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "gdk_seat_get_slaves",
+        constants$21.const$3
     );
-    static final FunctionDescriptor gtk_tool_item_group_get_header_relief$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gdk_seat_get_pointer",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_tool_item_group_get_header_relief$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_group_get_header_relief",
-        constants$1856.gtk_tool_item_group_get_header_relief$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_group_insert$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_group_insert$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_group_insert",
-        constants$1856.gtk_tool_item_group_insert$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_group_set_item_position$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_group_set_item_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_group_set_item_position",
-        constants$1856.gtk_tool_item_group_set_item_position$FUNC
-    );
-    static final FunctionDescriptor gtk_tool_item_group_get_item_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tool_item_group_get_item_position$MH = RuntimeHelper.downcallHandle(
-        "gtk_tool_item_group_get_item_position",
-        constants$1856.gtk_tool_item_group_get_item_position$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "gdk_seat_get_keyboard",
+        constants$5.const$2
     );
 }
 

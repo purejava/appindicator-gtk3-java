@@ -3,59 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$67 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$67() {}
-    static final FunctionDescriptor g_cond_wait_until$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_DOUBLE,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_cond_wait_until$MH = RuntimeHelper.downcallHandle(
-        "g_cond_wait_until",
-        constants$67.g_cond_wait_until$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atof",
+        constants$67.const$0
     );
-    static final FunctionDescriptor g_private_get$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atoi",
+        constants$10.const$5
     );
-    static final MethodHandle g_private_get$MH = RuntimeHelper.downcallHandle(
-        "g_private_get",
-        constants$67.g_private_get$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atol",
+        constants$4.const$0
     );
-    static final FunctionDescriptor g_private_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atoll",
+        constants$4.const$0
     );
-    static final MethodHandle g_private_set$MH = RuntimeHelper.downcallHandle(
-        "g_private_set",
-        constants$67.g_private_set$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_DOUBLE,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_private_replace$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_private_replace$MH = RuntimeHelper.downcallHandle(
-        "g_private_replace",
-        constants$67.g_private_replace$FUNC
-    );
-    static final FunctionDescriptor g_once_impl$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_once_impl$MH = RuntimeHelper.downcallHandle(
-        "g_once_impl",
-        constants$67.g_once_impl$FUNC
-    );
-    static final FunctionDescriptor g_once_init_enter$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_once_init_enter$MH = RuntimeHelper.downcallHandle(
-        "g_once_init_enter",
-        constants$67.g_once_init_enter$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "strtod",
+        constants$67.const$5
     );
 }
 

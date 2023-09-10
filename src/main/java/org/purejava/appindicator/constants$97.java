@@ -3,65 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$97 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$97() {}
-    static final FunctionDescriptor g_bookmark_file_set_added$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "fcvt_r",
+        constants$96.const$5
     );
-    static final MethodHandle g_bookmark_file_set_added$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_set_added",
-        constants$97.g_bookmark_file_set_added$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final FunctionDescriptor g_bookmark_file_set_added_date_time$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "mblen",
+        constants$97.const$1
     );
-    static final MethodHandle g_bookmark_file_set_added_date_time$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_set_added_date_time",
-        constants$97.g_bookmark_file_set_added_date_time$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "mbtowc",
+        constants$18.const$2
     );
-    static final FunctionDescriptor g_bookmark_file_get_added$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "wctomb",
+        constants$11.const$4
     );
-    static final MethodHandle g_bookmark_file_get_added$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_get_added",
-        constants$97.g_bookmark_file_get_added$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_get_added_date_time$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_get_added_date_time$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_get_added_date_time",
-        constants$97.g_bookmark_file_get_added_date_time$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_set_modified$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_set_modified$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_set_modified",
-        constants$97.g_bookmark_file_set_modified$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_set_modified_date_time$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_set_modified_date_time$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_set_modified_date_time",
-        constants$97.g_bookmark_file_set_modified_date_time$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "mbstowcs",
+        constants$20.const$1
     );
 }
 

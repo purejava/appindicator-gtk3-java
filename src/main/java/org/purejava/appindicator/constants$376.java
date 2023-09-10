@@ -3,53 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$376 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$376() {}
-    static final FunctionDescriptor g_static_rec_mutex_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(GLogWriterFunc.class, "apply", constants$82.const$4);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        constants$82.const$4
     );
-    static final MethodHandle g_static_rec_mutex_free$MH = RuntimeHelper.downcallHandle(
-        "g_static_rec_mutex_free",
-        constants$376.g_static_rec_mutex_free$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "g_log_structured",
+        constants$40.const$2
     );
-    static final FunctionDescriptor g_static_rw_lock_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final MethodHandle g_static_rw_lock_init$MH = RuntimeHelper.downcallHandle(
-        "g_static_rw_lock_init",
-        constants$376.g_static_rw_lock_init$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_log_structured_array",
+        constants$376.const$3
     );
-    static final FunctionDescriptor g_static_rw_lock_reader_lock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_rw_lock_reader_lock$MH = RuntimeHelper.downcallHandle(
-        "g_static_rw_lock_reader_lock",
-        constants$376.g_static_rw_lock_reader_lock$FUNC
-    );
-    static final FunctionDescriptor g_static_rw_lock_reader_trylock$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_rw_lock_reader_trylock$MH = RuntimeHelper.downcallHandle(
-        "g_static_rw_lock_reader_trylock",
-        constants$376.g_static_rw_lock_reader_trylock$FUNC
-    );
-    static final FunctionDescriptor g_static_rw_lock_reader_unlock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_rw_lock_reader_unlock$MH = RuntimeHelper.downcallHandle(
-        "g_static_rw_lock_reader_unlock",
-        constants$376.g_static_rw_lock_reader_unlock$FUNC
-    );
-    static final FunctionDescriptor g_static_rw_lock_writer_lock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_static_rw_lock_writer_lock$MH = RuntimeHelper.downcallHandle(
-        "g_static_rw_lock_writer_lock",
-        constants$376.g_static_rw_lock_writer_lock$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_log_variant",
+        constants$42.const$4
     );
 }
 

@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GTypePluginCompleteTypeInfo)(struct _GTypePlugin* plugin,unsigned long g_type,struct _GTypeInfo* info,struct _GTypeValueTable* value_table);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GTypePluginCompleteTypeInfo {
 
     void apply(java.lang.foreign.MemorySegment plugin, long g_type, java.lang.foreign.MemorySegment info, java.lang.foreign.MemorySegment value_table);
-    static MemorySegment allocate(GTypePluginCompleteTypeInfo fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$458.GTypePluginCompleteTypeInfo_UP$MH, fi, constants$458.GTypePluginCompleteTypeInfo$FUNC, scope);
+    static MemorySegment allocate(GTypePluginCompleteTypeInfo fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$680.const$0, fi, constants$679.const$5, scope);
     }
-    static GTypePluginCompleteTypeInfo ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GTypePluginCompleteTypeInfo ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _plugin, long _g_type, java.lang.foreign.MemorySegment _info, java.lang.foreign.MemorySegment _value_table) -> {
             try {
-                constants$458.GTypePluginCompleteTypeInfo_DOWN$MH.invokeExact(symbol, _plugin, _g_type, _info, _value_table);
+                constants$680.const$1.invokeExact(symbol, _plugin, _g_type, _info, _value_table);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

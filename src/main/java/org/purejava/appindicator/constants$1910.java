@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1910 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1910() {}
-    static final FunctionDescriptor gtk_action_connect_accelerator$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_cairo_show_glyph_item",
+        constants$14.const$3
     );
-    static final MethodHandle gtk_action_connect_accelerator$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_connect_accelerator",
-        constants$1910.gtk_action_connect_accelerator$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_cairo_show_layout_line",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_action_disconnect_accelerator$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_cairo_show_layout",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_action_disconnect_accelerator$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_disconnect_accelerator",
-        constants$1910.gtk_action_disconnect_accelerator$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_cairo_show_error_underline",
+        constants$1682.const$5
     );
-    static final FunctionDescriptor gtk_action_get_accel_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_cairo_glyph_string_path",
+        constants$14.const$3
     );
-    static final MethodHandle gtk_action_get_accel_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_get_accel_path",
-        constants$1910.gtk_action_get_accel_path$FUNC
-    );
-    static final FunctionDescriptor gtk_action_get_accel_closure$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_get_accel_closure$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_get_accel_closure",
-        constants$1910.gtk_action_get_accel_closure$FUNC
-    );
-    static final FunctionDescriptor gtk_action_block_activate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_block_activate$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_block_activate",
-        constants$1910.gtk_action_block_activate$FUNC
-    );
-    static final FunctionDescriptor gtk_action_unblock_activate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_action_unblock_activate$MH = RuntimeHelper.downcallHandle(
-        "gtk_action_unblock_activate",
-        constants$1910.gtk_action_unblock_activate$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_cairo_layout_line_path",
+        constants$13.const$4
     );
 }
 

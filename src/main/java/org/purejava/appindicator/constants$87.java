@@ -3,63 +3,41 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$87 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$87() {}
-    static final FunctionDescriptor g_date_time_add_seconds$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_date_time_add_seconds$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_add_seconds",
-        constants$87.g_date_time_add_seconds$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "srand48_r",
+        constants$87.const$0
     );
-    static final FunctionDescriptor g_date_time_add_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "seed48_r",
+        constants$9.const$0
     );
-    static final MethodHandle g_date_time_add_full$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_add_full",
-        constants$87.g_date_time_add_full$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "lcong48_r",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_date_time_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "malloc",
+        constants$63.const$3
     );
-    static final MethodHandle g_date_time_compare$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_compare",
-        constants$87.g_date_time_compare$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final FunctionDescriptor g_date_time_difference$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_difference$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_difference",
-        constants$87.g_date_time_difference$FUNC
-    );
-    static final FunctionDescriptor g_date_time_hash$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_hash$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_hash",
-        constants$87.g_date_time_hash$FUNC
-    );
-    static final FunctionDescriptor g_date_time_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_equal$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_equal",
-        constants$87.g_date_time_equal$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "calloc",
+        constants$87.const$5
     );
 }
 

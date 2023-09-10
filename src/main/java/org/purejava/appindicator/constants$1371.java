@@ -3,63 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1371 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1371() {}
-    static final FunctionDescriptor gtk_tree_model_unref_node$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_tls_database_create_certificate_handle",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_tree_model_unref_node$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_unref_node",
-        constants$1371.gtk_tree_model_unref_node$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_tls_database_lookup_certificate_for_handle",
+        constants$1366.const$3
     );
-    static final FunctionDescriptor gtk_tree_model_get$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_tls_database_lookup_certificate_for_handle_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_tls_database_lookup_certificate_for_handle_async",
+        constants$1367.const$1
     );
-    static final MethodHandle gtk_tree_model_get$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_tree_model_get",
-        constants$1371.gtk_tree_model_get$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_tls_database_lookup_certificate_for_handle_finish",
+        constants$23.const$0
     );
-    static final FunctionDescriptor gtk_tree_model_get_valist$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_get_valist$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_get_valist",
-        constants$1371.gtk_tree_model_get_valist$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_foreach$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_foreach",
-        constants$1371.gtk_tree_model_foreach$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_row_changed$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_row_changed$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_row_changed",
-        constants$1371.gtk_tree_model_row_changed$FUNC
-    );
-    static final FunctionDescriptor gtk_tree_model_row_inserted$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_tree_model_row_inserted$MH = RuntimeHelper.downcallHandle(
-        "gtk_tree_model_row_inserted",
-        constants$1371.gtk_tree_model_row_inserted$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_tls_database_lookup_certificate_issuer",
+        constants$1366.const$3
     );
 }
 

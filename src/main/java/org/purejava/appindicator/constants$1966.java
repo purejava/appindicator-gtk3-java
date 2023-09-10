@@ -3,61 +3,67 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1966 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1966() {}
-    static final FunctionDescriptor gtk_widget_modify_cursor$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_modify_cursor$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_modify_cursor",
-        constants$1966.gtk_widget_modify_cursor$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_modify_font$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_modify_font$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_modify_font",
-        constants$1966.gtk_widget_modify_font$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_reset_rc_styles$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_reset_rc_styles$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_reset_rc_styles",
-        constants$1966.gtk_widget_reset_rc_styles$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_default_style$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_widget_get_default_style$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_default_style",
-        constants$1966.gtk_widget_get_default_style$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_path",
-        constants$1966.gtk_widget_path$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_class_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_class_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_path",
-        constants$1966.gtk_widget_class_path$FUNC
-    );
+    static final VarHandle const$0 = constants$1965.const$3.varHandle(MemoryLayout.PathElement.groupElement("accessible_parent"));
+    static final VarHandle const$1 = constants$1965.const$3.varHandle(MemoryLayout.PathElement.groupElement("role"));
+    static final VarHandle const$2 = constants$1965.const$3.varHandle(MemoryLayout.PathElement.groupElement("relation_set"));
+    static final VarHandle const$3 = constants$1965.const$3.varHandle(MemoryLayout.PathElement.groupElement("layer"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent"),
+        RuntimeHelper.POINTER.withName("get_name"),
+        RuntimeHelper.POINTER.withName("get_description"),
+        RuntimeHelper.POINTER.withName("get_parent"),
+        RuntimeHelper.POINTER.withName("get_n_children"),
+        RuntimeHelper.POINTER.withName("ref_child"),
+        RuntimeHelper.POINTER.withName("get_index_in_parent"),
+        RuntimeHelper.POINTER.withName("ref_relation_set"),
+        RuntimeHelper.POINTER.withName("get_role"),
+        RuntimeHelper.POINTER.withName("get_layer"),
+        RuntimeHelper.POINTER.withName("get_mdi_zorder"),
+        RuntimeHelper.POINTER.withName("ref_state_set"),
+        RuntimeHelper.POINTER.withName("set_name"),
+        RuntimeHelper.POINTER.withName("set_description"),
+        RuntimeHelper.POINTER.withName("set_parent"),
+        RuntimeHelper.POINTER.withName("set_role"),
+        RuntimeHelper.POINTER.withName("connect_property_change_handler"),
+        RuntimeHelper.POINTER.withName("remove_property_change_handler"),
+        RuntimeHelper.POINTER.withName("initialize"),
+        RuntimeHelper.POINTER.withName("children_changed"),
+        RuntimeHelper.POINTER.withName("focus_event"),
+        RuntimeHelper.POINTER.withName("property_change"),
+        RuntimeHelper.POINTER.withName("state_change"),
+        RuntimeHelper.POINTER.withName("visible_data_changed"),
+        RuntimeHelper.POINTER.withName("active_descendant_changed"),
+        RuntimeHelper.POINTER.withName("get_attributes"),
+        RuntimeHelper.POINTER.withName("get_object_locale"),
+        RuntimeHelper.POINTER.withName("pad1")
+    ).withName("_AtkObjectClass");
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkObjectClass.get_name.class, "apply", constants$5.const$2);
 }
 
 

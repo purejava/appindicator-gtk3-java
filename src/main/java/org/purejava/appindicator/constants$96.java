@@ -3,76 +3,48 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$96 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$96() {}
-    static final FunctionDescriptor g_bookmark_file_get_app_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_bookmark_file_get_app_info$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_get_app_info",
-        constants$96.g_bookmark_file_get_app_info$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "ecvt",
+        constants$96.const$0
     );
-    static final FunctionDescriptor g_bookmark_file_get_application_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "fcvt",
+        constants$96.const$0
     );
-    static final MethodHandle g_bookmark_file_get_application_info$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_get_application_info",
-        constants$96.g_bookmark_file_get_application_info$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        JAVA_DOUBLE,
+        JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor g_bookmark_file_set_is_private$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "gcvt",
+        constants$96.const$3
     );
-    static final MethodHandle g_bookmark_file_set_is_private$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_set_is_private",
-        constants$96.g_bookmark_file_set_is_private$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_DOUBLE,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG
     );
-    static final FunctionDescriptor g_bookmark_file_get_is_private$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_get_is_private$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_get_is_private",
-        constants$96.g_bookmark_file_get_is_private$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_set_icon$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_set_icon$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_set_icon",
-        constants$96.g_bookmark_file_set_icon$FUNC
-    );
-    static final FunctionDescriptor g_bookmark_file_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_bookmark_file_get_icon$MH = RuntimeHelper.downcallHandle(
-        "g_bookmark_file_get_icon",
-        constants$96.g_bookmark_file_get_icon$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "ecvt_r",
+        constants$96.const$5
     );
 }
 

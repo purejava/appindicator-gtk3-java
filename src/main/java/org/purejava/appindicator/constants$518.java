@@ -3,48 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$518 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$518() {}
-    static final FunctionDescriptor g_content_types_get_registered$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_content_types_get_registered$MH = RuntimeHelper.downcallHandle(
-        "g_content_types_get_registered",
-        constants$518.g_content_types_get_registered$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pthread_attr_destroy",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_content_type_get_mime_dirs$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_content_type_get_mime_dirs$MH = RuntimeHelper.downcallHandle(
-        "g_content_type_get_mime_dirs",
-        constants$518.g_content_type_get_mime_dirs$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pthread_attr_getdetachstate",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_content_type_set_mime_dirs$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pthread_attr_setdetachstate",
+        constants$11.const$4
     );
-    static final MethodHandle g_content_type_set_mime_dirs$MH = RuntimeHelper.downcallHandle(
-        "g_content_type_set_mime_dirs",
-        constants$518.g_content_type_set_mime_dirs$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pthread_attr_getguardsize",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_converter_input_stream_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_converter_input_stream_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_converter_input_stream_get_type",
-        constants$518.g_converter_input_stream_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pthread_attr_setguardsize",
+        constants$97.const$1
     );
-    static final FunctionDescriptor g_converter_input_stream_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_converter_input_stream_new$MH = RuntimeHelper.downcallHandle(
-        "g_converter_input_stream_new",
-        constants$518.g_converter_input_stream_new$FUNC
-    );
-    static final FunctionDescriptor g_converter_input_stream_get_converter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_converter_input_stream_get_converter$MH = RuntimeHelper.downcallHandle(
-        "g_converter_input_stream_get_converter",
-        constants$518.g_converter_input_stream_get_converter$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pthread_attr_getschedparam",
+        constants$9.const$0
     );
 }
 

@@ -3,56 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1323 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1323() {}
-    static final FunctionDescriptor gtk_about_dialog_get_license$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_identifier",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_about_dialog_get_license$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_license",
-        constants$1323.gtk_about_dialog_get_license$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_subprocess_send_signal",
+        constants$40.const$2
     );
-    static final FunctionDescriptor gtk_about_dialog_set_license$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_subprocess_force_exit",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_about_dialog_set_license$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_license",
-        constants$1323.gtk_about_dialog_set_license$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_subprocess_wait",
+        constants$12.const$2
     );
-    static final FunctionDescriptor gtk_about_dialog_set_license_type$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_set_license_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_license_type",
-        constants$1323.gtk_about_dialog_set_license_type$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_get_license_type$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_get_license_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_license_type",
-        constants$1323.gtk_about_dialog_get_license_type$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_get_wrap_license$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_get_wrap_license$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_wrap_license",
-        constants$1323.gtk_about_dialog_get_wrap_license$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_set_wrap_license$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_set_wrap_license$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_wrap_license",
-        constants$1323.gtk_about_dialog_set_wrap_license$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(g_subprocess_wait_async$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_subprocess_wait_async",
+        constants$42.const$1
     );
 }
 

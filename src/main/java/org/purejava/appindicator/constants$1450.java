@@ -3,51 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1450 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1450() {}
-    static final FunctionDescriptor gtk_image_get_pixel_size$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_quadratic_to_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_draw_funcs_set_quadratic_to_func",
+        constants$42.const$1
     );
-    static final MethodHandle gtk_image_get_pixel_size$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_get_pixel_size",
-        constants$1450.gtk_image_get_pixel_size$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_cubic_to_func$func.class, "apply", constants$1448.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_cubic_to_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_draw_funcs_set_cubic_to_func",
+        constants$42.const$1
     );
-    static final FunctionDescriptor gtk_entry_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_entry_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_type",
-        constants$1450.gtk_entry_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_entry_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_new",
-        constants$1450.gtk_entry_new$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_new_with_buffer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_new_with_buffer$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_new_with_buffer",
-        constants$1450.gtk_entry_new_with_buffer$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_buffer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_buffer$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_buffer",
-        constants$1450.gtk_entry_get_buffer$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_buffer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_buffer$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_buffer",
-        constants$1450.gtk_entry_set_buffer$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_draw_funcs_set_close_path_func$func.class, "apply", constants$42.const$1);
 }
 
 

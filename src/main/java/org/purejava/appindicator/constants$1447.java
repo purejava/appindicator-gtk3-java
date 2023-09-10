@@ -3,61 +3,38 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1447 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1447() {}
-    static final FunctionDescriptor gtk_image_clear$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle gtk_image_clear$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_clear",
-        constants$1447.gtk_image_clear$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_draw_move_to_func_t.class, "apply", constants$1447.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        constants$1447.const$0
     );
-    static final FunctionDescriptor gtk_image_set_from_file$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_draw_line_to_func_t.class, "apply", constants$1447.const$0);
+    static final FunctionDescriptor const$4 = FunctionDescriptor.ofVoid(
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        JAVA_FLOAT,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle gtk_image_set_from_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_file",
-        constants$1447.gtk_image_set_from_file$FUNC
-    );
-    static final FunctionDescriptor gtk_image_set_from_resource$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_image_set_from_resource$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_resource",
-        constants$1447.gtk_image_set_from_resource$FUNC
-    );
-    static final FunctionDescriptor gtk_image_set_from_pixbuf$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_image_set_from_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_pixbuf",
-        constants$1447.gtk_image_set_from_pixbuf$FUNC
-    );
-    static final FunctionDescriptor gtk_image_set_from_stock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_image_set_from_stock$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_stock",
-        constants$1447.gtk_image_set_from_stock$FUNC
-    );
-    static final FunctionDescriptor gtk_image_set_from_icon_set$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_image_set_from_icon_set$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_set_from_icon_set",
-        constants$1447.gtk_image_set_from_icon_set$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_draw_quadratic_to_func_t.class, "apply", constants$1447.const$4);
 }
 
 

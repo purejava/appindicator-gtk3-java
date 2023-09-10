@@ -3,65 +3,44 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$645 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$645() {}
-    static final FunctionDescriptor g_file_info_set_attribute_string$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_object_bind_property_full$transform_to.class, "apply", constants$34.const$5);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_object_bind_property_full$transform_from.class, "apply", constants$34.const$5);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_object_bind_property_full$notify.class, "apply", constants$13.const$1);
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_file_info_set_attribute_string$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_string",
-        constants$645.g_file_info_set_attribute_string$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_object_bind_property_full",
+        constants$645.const$3
     );
-    static final FunctionDescriptor g_file_info_set_attribute_byte_string$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_file_info_set_attribute_byte_string$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_byte_string",
-        constants$645.g_file_info_set_attribute_byte_string$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_attribute_boolean$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_attribute_boolean$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_boolean",
-        constants$645.g_file_info_set_attribute_boolean$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_attribute_uint32$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_attribute_uint32$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_uint32",
-        constants$645.g_file_info_set_attribute_uint32$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_attribute_int32$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_attribute_int32$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_int32",
-        constants$645.g_file_info_set_attribute_int32$FUNC
-    );
-    static final FunctionDescriptor g_file_info_set_attribute_uint64$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_file_info_set_attribute_uint64$MH = RuntimeHelper.downcallHandle(
-        "g_file_info_set_attribute_uint64",
-        constants$645.g_file_info_set_attribute_uint64$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "g_object_bind_property_with_closures",
+        constants$645.const$5
     );
 }
 

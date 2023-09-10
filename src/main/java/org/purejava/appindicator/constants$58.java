@@ -3,64 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$58 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$58() {}
-    static final FunctionDescriptor qsort$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_prefix_error_literal",
+        constants$13.const$4
     );
-    static final MethodHandle qsort$MH = RuntimeHelper.downcallHandle(
-        "qsort",
-        constants$58.qsort$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_propagate_prefixed_error",
+        constants$14.const$3
     );
-    static final FunctionDescriptor abs$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_get_user_name",
+        constants$35.const$2
     );
-    static final MethodHandle abs$MH = RuntimeHelper.downcallHandle(
-        "abs",
-        constants$58.abs$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_get_real_name",
+        constants$35.const$2
     );
-    static final FunctionDescriptor labs$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_get_home_dir",
+        constants$35.const$2
     );
-    static final MethodHandle labs$MH = RuntimeHelper.downcallHandle(
-        "labs",
-        constants$58.labs$FUNC
-    );
-    static final FunctionDescriptor llabs$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle llabs$MH = RuntimeHelper.downcallHandle(
-        "llabs",
-        constants$58.llabs$FUNC
-    );
-    static final FunctionDescriptor div$FUNC = FunctionDescriptor.of(MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("quot"),
-        Constants$root.C_INT$LAYOUT.withName("rem")
-    ),
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle div$MH = RuntimeHelper.downcallHandle(
-        "div",
-        constants$58.div$FUNC
-    );
-    static final FunctionDescriptor ldiv$FUNC = FunctionDescriptor.of(MemoryLayout.structLayout(
-        Constants$root.C_LONG_LONG$LAYOUT.withName("quot"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("rem")
-    ),
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle ldiv$MH = RuntimeHelper.downcallHandle(
-        "ldiv",
-        constants$58.ldiv$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_get_tmp_dir",
+        constants$35.const$2
     );
 }
 

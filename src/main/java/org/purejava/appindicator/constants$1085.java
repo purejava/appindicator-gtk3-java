@@ -3,55 +3,59 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1085 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1085() {}
-    static final FunctionDescriptor gdk_window_is_visible$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GFileMonitor");
+    static final VarHandle const$1 = constants$1085.const$0.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("g_type")
+            ).withName("g_type_class"),
+            RuntimeHelper.POINTER.withName("construct_properties"),
+            RuntimeHelper.POINTER.withName("constructor"),
+            RuntimeHelper.POINTER.withName("set_property"),
+            RuntimeHelper.POINTER.withName("get_property"),
+            RuntimeHelper.POINTER.withName("dispose"),
+            RuntimeHelper.POINTER.withName("finalize"),
+            RuntimeHelper.POINTER.withName("dispatch_properties_changed"),
+            RuntimeHelper.POINTER.withName("notify"),
+            RuntimeHelper.POINTER.withName("constructed"),
+            JAVA_LONG.withName("flags"),
+            JAVA_LONG.withName("n_construct_properties"),
+            RuntimeHelper.POINTER.withName("pspecs"),
+            JAVA_LONG.withName("n_pspecs"),
+            MemoryLayout.sequenceLayout(3, RuntimeHelper.POINTER).withName("pdummy")
+        ).withName("parent_class"),
+        RuntimeHelper.POINTER.withName("changed"),
+        RuntimeHelper.POINTER.withName("cancel"),
+        RuntimeHelper.POINTER.withName("_g_reserved1"),
+        RuntimeHelper.POINTER.withName("_g_reserved2"),
+        RuntimeHelper.POINTER.withName("_g_reserved3"),
+        RuntimeHelper.POINTER.withName("_g_reserved4"),
+        RuntimeHelper.POINTER.withName("_g_reserved5")
+    ).withName("_GFileMonitorClass");
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GFileMonitorClass.changed.class, "apply", constants$331.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        constants$331.const$4
     );
-    static final MethodHandle gdk_window_is_visible$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_is_visible",
-        constants$1085.gdk_window_is_visible$FUNC
-    );
-    static final FunctionDescriptor gdk_window_is_viewable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_is_viewable$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_is_viewable",
-        constants$1085.gdk_window_is_viewable$FUNC
-    );
-    static final FunctionDescriptor gdk_window_is_input_only$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_is_input_only$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_is_input_only",
-        constants$1085.gdk_window_is_input_only$FUNC
-    );
-    static final FunctionDescriptor gdk_window_is_shaped$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_is_shaped$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_is_shaped",
-        constants$1085.gdk_window_is_shaped$FUNC
-    );
-    static final FunctionDescriptor gdk_window_get_state$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gdk_window_get_state$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_get_state",
-        constants$1085.gdk_window_get_state$FUNC
-    );
-    static final FunctionDescriptor gdk_window_set_static_gravities$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gdk_window_set_static_gravities$MH = RuntimeHelper.downcallHandle(
-        "gdk_window_set_static_gravities",
-        constants$1085.gdk_window_set_static_gravities$FUNC
-    );
+    static final VarHandle const$5 = constants$1085.const$2.varHandle(MemoryLayout.PathElement.groupElement("changed"));
 }
 
 

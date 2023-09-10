@@ -3,63 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1460 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1460() {}
-    static final FunctionDescriptor gtk_entry_set_icon_tooltip_text$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_icon_tooltip_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_icon_tooltip_text",
-        constants$1460.gtk_entry_set_icon_tooltip_text$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_icon_tooltip_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_icon_tooltip_text$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_tooltip_text",
-        constants$1460.gtk_entry_get_icon_tooltip_text$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_icon_tooltip_markup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_icon_tooltip_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_icon_tooltip_markup",
-        constants$1460.gtk_entry_set_icon_tooltip_markup$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_icon_tooltip_markup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_icon_tooltip_markup$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_icon_tooltip_markup",
-        constants$1460.gtk_entry_get_icon_tooltip_markup$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_set_icon_drag_source$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_entry_set_icon_drag_source$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_set_icon_drag_source",
-        constants$1460.gtk_entry_set_icon_drag_source$FUNC
-    );
-    static final FunctionDescriptor gtk_entry_get_current_icon_drag_source$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_entry_get_current_icon_drag_source$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_get_current_icon_drag_source",
-        constants$1460.gtk_entry_get_current_icon_drag_source$FUNC
-    );
+    static final VarHandle const$0 = constants$1459.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_color_stops_user_data"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_color_line_t.get_extend.class, "apply", constants$12.const$2);
+    static final VarHandle const$2 = constants$1459.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_extend"));
+    static final VarHandle const$3 = constants$1459.const$2.varHandle(MemoryLayout.PathElement.groupElement("get_extend_user_data"));
+    static final VarHandle const$4 = constants$1459.const$2.varHandle(MemoryLayout.PathElement.groupElement("reserved0"));
+    static final VarHandle const$5 = constants$1459.const$2.varHandle(MemoryLayout.PathElement.groupElement("reserved1"));
 }
 
 

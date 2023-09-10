@@ -3,69 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$691 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$691() {}
-    static final FunctionDescriptor g_list_store_find_with_equal_func$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_value_set_pointer",
+        constants$13.const$4
     );
-    static final MethodHandle g_list_store_find_with_equal_func$MH = RuntimeHelper.downcallHandle(
-        "g_list_store_find_with_equal_func",
-        constants$691.g_list_store_find_with_equal_func$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_value_get_pointer",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_list_store_find_with_equal_func_full$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_gtype_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle g_list_store_find_with_equal_func_full$MH = RuntimeHelper.downcallHandle(
-        "g_list_store_find_with_equal_func_full",
-        constants$691.g_list_store_find_with_equal_func_full$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_value_set_gtype",
+        constants$25.const$3
     );
-    static final FunctionDescriptor g_loadable_icon_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_loadable_icon_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_loadable_icon_get_type",
-        constants$691.g_loadable_icon_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_value_get_gtype",
+        constants$4.const$0
     );
-    static final FunctionDescriptor g_loadable_icon_load$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_loadable_icon_load$MH = RuntimeHelper.downcallHandle(
-        "g_loadable_icon_load",
-        constants$691.g_loadable_icon_load$FUNC
-    );
-    static final FunctionDescriptor g_loadable_icon_load_async$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_loadable_icon_load_async$MH = RuntimeHelper.downcallHandle(
-        "g_loadable_icon_load_async",
-        constants$691.g_loadable_icon_load_async$FUNC
-    );
-    static final FunctionDescriptor g_loadable_icon_load_finish$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_loadable_icon_load_finish$MH = RuntimeHelper.downcallHandle(
-        "g_loadable_icon_load_finish",
-        constants$691.g_loadable_icon_load_finish$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_value_set_variant",
+        constants$13.const$4
     );
 }
 

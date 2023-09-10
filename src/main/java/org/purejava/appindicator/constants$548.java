@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$548 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$548() {}
-    static final FunctionDescriptor g_dbus_address_get_stream_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_type_from_name",
+        constants$4.const$0
     );
-    static final MethodHandle g_dbus_address_get_stream_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_address_get_stream_sync",
-        constants$548.g_dbus_address_get_stream_sync$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_type_parent",
+        constants$94.const$4
     );
-    static final FunctionDescriptor g_dbus_address_get_for_bus_sync$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_type_depth",
+        constants$26.const$2
     );
-    static final MethodHandle g_dbus_address_get_for_bus_sync$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_address_get_for_bus_sync",
-        constants$548.g_dbus_address_get_for_bus_sync$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_LONG,
+        JAVA_LONG,
+        JAVA_LONG
     );
-    static final FunctionDescriptor g_dbus_auth_observer_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_auth_observer_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_auth_observer_get_type",
-        constants$548.g_dbus_auth_observer_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_type_next_base",
+        constants$548.const$3
     );
-    static final FunctionDescriptor g_dbus_auth_observer_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_dbus_auth_observer_new$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_auth_observer_new",
-        constants$548.g_dbus_auth_observer_new$FUNC
-    );
-    static final FunctionDescriptor g_dbus_auth_observer_authorize_authenticated_peer$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_auth_observer_authorize_authenticated_peer$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_auth_observer_authorize_authenticated_peer",
-        constants$548.g_dbus_auth_observer_authorize_authenticated_peer$FUNC
-    );
-    static final FunctionDescriptor g_dbus_auth_observer_allow_mechanism$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_auth_observer_allow_mechanism$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_auth_observer_allow_mechanism",
-        constants$548.g_dbus_auth_observer_allow_mechanism$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_type_is_a",
+        constants$517.const$3
     );
 }
 

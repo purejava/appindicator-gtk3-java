@@ -3,56 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$83 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$83() {}
-    static final FunctionDescriptor g_time_zone_get_abbreviation$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "setstate_r",
+        constants$9.const$0
     );
-    static final MethodHandle g_time_zone_get_abbreviation$MH = RuntimeHelper.downcallHandle(
-        "g_time_zone_get_abbreviation",
-        constants$83.g_time_zone_get_abbreviation$FUNC
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(JAVA_INT);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "rand",
+        constants$83.const$1
     );
-    static final FunctionDescriptor g_time_zone_get_offset$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "srand",
+        constants$80.const$1
     );
-    static final MethodHandle g_time_zone_get_offset$MH = RuntimeHelper.downcallHandle(
-        "g_time_zone_get_offset",
-        constants$83.g_time_zone_get_offset$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "rand_r",
+        constants$10.const$5
     );
-    static final FunctionDescriptor g_time_zone_is_dst$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_time_zone_is_dst$MH = RuntimeHelper.downcallHandle(
-        "g_time_zone_is_dst",
-        constants$83.g_time_zone_is_dst$FUNC
-    );
-    static final FunctionDescriptor g_time_zone_get_identifier$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_time_zone_get_identifier$MH = RuntimeHelper.downcallHandle(
-        "g_time_zone_get_identifier",
-        constants$83.g_time_zone_get_identifier$FUNC
-    );
-    static final FunctionDescriptor g_date_time_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_unref$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_unref",
-        constants$83.g_date_time_unref$FUNC
-    );
-    static final FunctionDescriptor g_date_time_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_date_time_ref$MH = RuntimeHelper.downcallHandle(
-        "g_date_time_ref",
-        constants$83.g_date_time_ref$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_DOUBLE);
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "drand48",
+        constants$83.const$5
     );
 }
 

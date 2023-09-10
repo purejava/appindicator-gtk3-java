@@ -3,62 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$300 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$300() {}
-    static final FunctionDescriptor g_sequence_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_str_is_ascii",
+        constants$10.const$5
     );
-    static final MethodHandle g_sequence_foreach$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_foreach",
-        constants$300.g_sequence_foreach$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_strcasecmp",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_sequence_foreach_range$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_strncasecmp",
+        constants$62.const$0
     );
-    static final MethodHandle g_sequence_foreach_range$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_foreach_range",
-        constants$300.g_sequence_foreach_range$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_strdown",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_sequence_sort$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_strup",
+        constants$5.const$2
     );
-    static final MethodHandle g_sequence_sort$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_sort",
-        constants$300.g_sequence_sort$FUNC
-    );
-    static final FunctionDescriptor g_sequence_sort_iter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_sort_iter$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_sort_iter",
-        constants$300.g_sequence_sort_iter$FUNC
-    );
-    static final FunctionDescriptor g_sequence_is_empty$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_is_empty$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_is_empty",
-        constants$300.g_sequence_is_empty$FUNC
-    );
-    static final FunctionDescriptor g_sequence_get_begin_iter$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_sequence_get_begin_iter$MH = RuntimeHelper.downcallHandle(
-        "g_sequence_get_begin_iter",
-        constants$300.g_sequence_get_begin_iter$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_strdup",
+        constants$5.const$2
     );
 }
 

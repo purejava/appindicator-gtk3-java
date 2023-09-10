@@ -3,56 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$908 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$908() {}
-    static final FunctionDescriptor pango_font_description_get_style$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_bus_watch_name_on_connection$name_appeared_handler.class, "apply", constants$42.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_bus_watch_name_on_connection$name_vanished_handler.class, "apply", constants$14.const$3);
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_bus_watch_name_on_connection$user_data_free_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_bus_watch_name_on_connection",
+        constants$906.const$0
     );
-    static final MethodHandle pango_font_description_get_style$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_get_style",
-        constants$908.pango_font_description_get_style$FUNC
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor pango_font_description_set_variant$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_font_description_set_variant$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_set_variant",
-        constants$908.pango_font_description_set_variant$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_get_variant$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_description_get_variant$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_get_variant",
-        constants$908.pango_font_description_get_variant$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_set_weight$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_font_description_set_weight$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_set_weight",
-        constants$908.pango_font_description_set_weight$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_get_weight$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_font_description_get_weight$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_get_weight",
-        constants$908.pango_font_description_get_weight$FUNC
-    );
-    static final FunctionDescriptor pango_font_description_set_stretch$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_font_description_set_stretch$MH = RuntimeHelper.downcallHandle(
-        "pango_font_description_set_stretch",
-        constants$908.pango_font_description_set_stretch$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_bus_watch_name_with_closures",
+        constants$908.const$4
     );
 }
 

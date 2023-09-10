@@ -3,55 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1308 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1308() {}
-    static final FunctionDescriptor gtk_window_set_icon_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_icon_name",
-        constants$1308.gtk_window_set_icon_name$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_icon_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_icon_from_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_icon_from_file",
-        constants$1308.gtk_window_set_icon_from_file$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_icon$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_icon",
-        constants$1308.gtk_window_get_icon$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_icon_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_get_icon_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_icon_name",
-        constants$1308.gtk_window_get_icon_name$FUNC
-    );
-    static final FunctionDescriptor gtk_window_set_default_icon_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_set_default_icon_list$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_set_default_icon_list",
-        constants$1308.gtk_window_set_default_icon_list$FUNC
-    );
-    static final FunctionDescriptor gtk_window_get_default_icon_list$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_window_get_default_icon_list$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_get_default_icon_list",
-        constants$1308.gtk_window_get_default_icon_list$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GSocketControlMessageClass._g_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$1 = constants$1305.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GSocketControlMessageClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1305.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GSocketControlMessageClass._g_reserved3.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1305.const$5.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
 }
 
 

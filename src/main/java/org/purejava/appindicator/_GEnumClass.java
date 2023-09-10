@@ -2,156 +2,144 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GEnumClass {
- *     GTypeClass g_type_class;
- *     gint minimum;
- *     gint maximum;
- *     guint n_values;
- *     GEnumValue* values;
+ *     struct _GTypeClass g_type_class;
+ *     int minimum;
+ *     int maximum;
+ *     unsigned int n_values;
+ *     struct _GEnumValue* values;
  * };
  * }
  */
 public class _GEnumClass {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type")
-        ).withName("g_type_class"),
-        Constants$root.C_INT$LAYOUT.withName("minimum"),
-        Constants$root.C_INT$LAYOUT.withName("maximum"),
-        Constants$root.C_INT$LAYOUT.withName("n_values"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("values")
-    ).withName("_GEnumClass");
     public static MemoryLayout $LAYOUT() {
-        return _GEnumClass.$struct$LAYOUT;
+        return constants$648.const$0;
     }
     public static MemorySegment g_type_class$slice(MemorySegment seg) {
         return seg.asSlice(0, 8);
     }
-    static final VarHandle minimum$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("minimum"));
     public static VarHandle minimum$VH() {
-        return _GEnumClass.minimum$VH;
+        return constants$648.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint minimum;
+     * int minimum;
      * }
      */
     public static int minimum$get(MemorySegment seg) {
-        return (int)_GEnumClass.minimum$VH.get(seg);
+        return (int)constants$648.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint minimum;
+     * int minimum;
      * }
      */
     public static void minimum$set(MemorySegment seg, int x) {
-        _GEnumClass.minimum$VH.set(seg, x);
+        constants$648.const$1.set(seg, x);
     }
     public static int minimum$get(MemorySegment seg, long index) {
-        return (int)_GEnumClass.minimum$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$648.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void minimum$set(MemorySegment seg, long index, int x) {
-        _GEnumClass.minimum$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$648.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle maximum$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("maximum"));
     public static VarHandle maximum$VH() {
-        return _GEnumClass.maximum$VH;
+        return constants$648.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint maximum;
+     * int maximum;
      * }
      */
     public static int maximum$get(MemorySegment seg) {
-        return (int)_GEnumClass.maximum$VH.get(seg);
+        return (int)constants$648.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint maximum;
+     * int maximum;
      * }
      */
     public static void maximum$set(MemorySegment seg, int x) {
-        _GEnumClass.maximum$VH.set(seg, x);
+        constants$648.const$2.set(seg, x);
     }
     public static int maximum$get(MemorySegment seg, long index) {
-        return (int)_GEnumClass.maximum$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$648.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void maximum$set(MemorySegment seg, long index, int x) {
-        _GEnumClass.maximum$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$648.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle n_values$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("n_values"));
     public static VarHandle n_values$VH() {
-        return _GEnumClass.n_values$VH;
+        return constants$648.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint n_values;
+     * unsigned int n_values;
      * }
      */
     public static int n_values$get(MemorySegment seg) {
-        return (int)_GEnumClass.n_values$VH.get(seg);
+        return (int)constants$648.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint n_values;
+     * unsigned int n_values;
      * }
      */
     public static void n_values$set(MemorySegment seg, int x) {
-        _GEnumClass.n_values$VH.set(seg, x);
+        constants$648.const$3.set(seg, x);
     }
     public static int n_values$get(MemorySegment seg, long index) {
-        return (int)_GEnumClass.n_values$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$648.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void n_values$set(MemorySegment seg, long index, int x) {
-        _GEnumClass.n_values$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$648.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle values$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("values"));
     public static VarHandle values$VH() {
-        return _GEnumClass.values$VH;
+        return constants$648.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GEnumValue* values;
+     * struct _GEnumValue* values;
      * }
      */
     public static MemorySegment values$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GEnumClass.values$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$648.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GEnumValue* values;
+     * struct _GEnumValue* values;
      * }
      */
     public static void values$set(MemorySegment seg, MemorySegment x) {
-        _GEnumClass.values$VH.set(seg, x);
+        constants$648.const$4.set(seg, x);
     }
     public static MemorySegment values$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GEnumClass.values$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$648.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void values$set(MemorySegment seg, long index, MemorySegment x) {
-        _GEnumClass.values$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$648.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

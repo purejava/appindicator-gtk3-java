@@ -3,57 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$254 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$254() {}
-    static final FunctionDescriptor g_variant_new_parsed$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_slist_foreach",
+        constants$14.const$3
     );
-    static final MethodHandle g_variant_new_parsed$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_variant_new_parsed",
-        constants$254.g_variant_new_parsed$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_slist_sort$compare_func.class, "apply", constants$9.const$0);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_slist_sort",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_variant_new_parsed_va$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_slist_sort_with_data$compare_func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_slist_sort_with_data",
+        constants$23.const$0
     );
-    static final MethodHandle g_variant_new_parsed_va$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_parsed_va",
-        constants$254.g_variant_new_parsed_va$FUNC
-    );
-    static final FunctionDescriptor g_variant_parse_error_print_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_parse_error_print_context$MH = RuntimeHelper.downcallHandle(
-        "g_variant_parse_error_print_context",
-        constants$254.g_variant_parse_error_print_context$FUNC
-    );
-    static final FunctionDescriptor g_variant_compare$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_compare$MH = RuntimeHelper.downcallHandle(
-        "g_variant_compare",
-        constants$254.g_variant_compare$FUNC
-    );
-    static final FunctionDescriptor g_variant_dict_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_dict_new$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_new",
-        constants$254.g_variant_dict_new$FUNC
-    );
-    static final FunctionDescriptor g_variant_dict_init$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_dict_init$MH = RuntimeHelper.downcallHandle(
-        "g_variant_dict_init",
-        constants$254.g_variant_dict_init$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_slist_nth_data",
+        constants$21.const$3
     );
 }
 

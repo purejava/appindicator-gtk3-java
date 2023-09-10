@@ -2,37 +2,29 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _PangoAttrInt {
- *     PangoAttribute attr;
+ *     struct _PangoAttribute attr;
  *     int value;
  * };
  * }
  */
 public class _PangoAttrInt {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_POINTER$LAYOUT.withName("klass"),
-            Constants$root.C_INT$LAYOUT.withName("start_index"),
-            Constants$root.C_INT$LAYOUT.withName("end_index")
-        ).withName("attr"),
-        Constants$root.C_INT$LAYOUT.withName("value"),
-        MemoryLayout.paddingLayout(32)
-    ).withName("_PangoAttrInt");
     public static MemoryLayout $LAYOUT() {
-        return _PangoAttrInt.$struct$LAYOUT;
+        return constants$1564.const$1;
     }
     public static MemorySegment attr$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
-    static final VarHandle value$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("value"));
     public static VarHandle value$VH() {
-        return _PangoAttrInt.value$VH;
+        return constants$1564.const$2;
     }
     /**
      * Getter for field:
@@ -41,7 +33,7 @@ public class _PangoAttrInt {
      * }
      */
     public static int value$get(MemorySegment seg) {
-        return (int)_PangoAttrInt.value$VH.get(seg);
+        return (int)constants$1564.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -50,20 +42,20 @@ public class _PangoAttrInt {
      * }
      */
     public static void value$set(MemorySegment seg, int x) {
-        _PangoAttrInt.value$VH.set(seg, x);
+        constants$1564.const$2.set(seg, x);
     }
     public static int value$get(MemorySegment seg, long index) {
-        return (int)_PangoAttrInt.value$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1564.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void value$set(MemorySegment seg, long index, int x) {
-        _PangoAttrInt.value$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1564.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

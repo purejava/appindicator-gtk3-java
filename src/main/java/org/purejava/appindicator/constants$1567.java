@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1567 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1567() {}
-    static final FunctionDescriptor gtk_fixed_move$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_attribute_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_fixed_move$MH = RuntimeHelper.downcallHandle(
-        "gtk_fixed_move",
-        constants$1567.gtk_fixed_move$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_attr_type_register",
+        constants$10.const$5
     );
-    static final FunctionDescriptor GtkFileFilterFunc$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_attr_type_get_name",
+        constants$24.const$0
     );
-    static final FunctionDescriptor GtkFileFilterFunc_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_attribute_init",
+        constants$13.const$4
     );
-    static final MethodHandle GtkFileFilterFunc_UP$MH = RuntimeHelper.upcallHandle(GtkFileFilterFunc.class, "apply", constants$1567.GtkFileFilterFunc_UP$FUNC);
-    static final FunctionDescriptor GtkFileFilterFunc_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_attribute_copy",
+        constants$5.const$2
     );
-    static final MethodHandle GtkFileFilterFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1567.GtkFileFilterFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor gtk_file_filter_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_file_filter_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_get_type",
-        constants$1567.gtk_file_filter_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_file_filter_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_file_filter_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_new",
-        constants$1567.gtk_file_filter_new$FUNC
-    );
-    static final FunctionDescriptor gtk_file_filter_set_name$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_file_filter_set_name$MH = RuntimeHelper.downcallHandle(
-        "gtk_file_filter_set_name",
-        constants$1567.gtk_file_filter_set_name$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_attribute_destroy",
+        constants$13.const$1
     );
 }
 

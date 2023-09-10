@@ -3,62 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1279 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1279() {}
-    static final FunctionDescriptor gtk_widget_class_install_style_property_parser$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_class_install_style_property_parser$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_install_style_property_parser",
-        constants$1279.gtk_widget_class_install_style_property_parser$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_class_find_style_property$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_class_find_style_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_find_style_property",
-        constants$1279.gtk_widget_class_find_style_property$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_class_list_style_properties$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_class_list_style_properties$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_class_list_style_properties",
-        constants$1279.gtk_widget_class_list_style_properties$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_style_get_property$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_style_get_property$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_style_get_property",
-        constants$1279.gtk_widget_style_get_property$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_style_get_valist$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_style_get_valist$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_style_get_valist",
-        constants$1279.gtk_widget_style_get_valist$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_style_get$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_style_get$MH = RuntimeHelper.downcallHandleVariadic(
-        "gtk_widget_style_get",
-        constants$1279.gtk_widget_style_get$FUNC
+    static final VarHandle const$0 = constants$1276.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved9"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GSocketClass._g_reserved10.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$1276.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved10"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GSocket");
+    static final VarHandle const$4 = constants$1279.const$3.varHandle(MemoryLayout.PathElement.groupElement("priv"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_socket_get_type",
+        constants$3.const$5
     );
 }
 

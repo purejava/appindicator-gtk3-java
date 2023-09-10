@@ -3,59 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$417 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$417() {}
-    static final FunctionDescriptor g_signal_name$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(g_regex_replace_eval$eval.class, "apply", constants$12.const$2);
+    static final FunctionDescriptor const$1 = FunctionDescriptor.of(RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_signal_name$MH = RuntimeHelper.downcallHandle(
-        "g_signal_name",
-        constants$417.g_signal_name$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_regex_replace_eval",
+        constants$417.const$1
     );
-    static final FunctionDescriptor g_signal_query$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_regex_check_replacement",
+        constants$12.const$2
     );
-    static final MethodHandle g_signal_query$MH = RuntimeHelper.downcallHandle(
-        "g_signal_query",
-        constants$417.g_signal_query$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_match_info_get_regex",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_signal_list_ids$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_list_ids$MH = RuntimeHelper.downcallHandle(
-        "g_signal_list_ids",
-        constants$417.g_signal_list_ids$FUNC
-    );
-    static final FunctionDescriptor g_signal_is_valid_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_is_valid_name$MH = RuntimeHelper.downcallHandle(
-        "g_signal_is_valid_name",
-        constants$417.g_signal_is_valid_name$FUNC
-    );
-    static final FunctionDescriptor g_signal_parse_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_signal_parse_name$MH = RuntimeHelper.downcallHandle(
-        "g_signal_parse_name",
-        constants$417.g_signal_parse_name$FUNC
-    );
-    static final FunctionDescriptor g_signal_get_invocation_hint$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_signal_get_invocation_hint$MH = RuntimeHelper.downcallHandle(
-        "g_signal_get_invocation_hint",
-        constants$417.g_signal_get_invocation_hint$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_match_info_get_string",
+        constants$5.const$2
     );
 }
 

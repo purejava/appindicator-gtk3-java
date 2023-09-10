@@ -3,38 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1984 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1984() {}
-    static final FunctionDescriptor app_indicator_get_ordering_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1982.const$0.varHandle(MemoryLayout.PathElement.groupElement("set_description"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkActionIface.get_localized_name.class, "apply", constants$21.const$3);
+    static final VarHandle const$2 = constants$1982.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_localized_name"));
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_action_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle app_indicator_get_ordering_index$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_ordering_index",
-        constants$1984.app_indicator_get_ordering_index$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_action_do_action",
+        constants$11.const$4
     );
-    static final FunctionDescriptor app_indicator_get_secondary_activate_target$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_action_get_n_actions",
+        constants$10.const$5
     );
-    static final MethodHandle app_indicator_get_secondary_activate_target$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_secondary_activate_target",
-        constants$1984.app_indicator_get_secondary_activate_target$FUNC
-    );
-    static final FunctionDescriptor app_indicator_build_menu_from_desktop$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_build_menu_from_desktop$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_build_menu_from_desktop",
-        constants$1984.app_indicator_build_menu_from_desktop$FUNC
-    );
-    static final MemorySegment NULL$ADDR = MemorySegment.ofAddress(0L);
-    static final MemorySegment G_GNUC_FUNCTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("");
-    static final MemorySegment G_GNUC_PRETTY_FUNCTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("");
 }
 
 

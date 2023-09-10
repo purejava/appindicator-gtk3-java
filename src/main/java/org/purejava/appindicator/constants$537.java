@@ -3,57 +3,55 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$537 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$537() {}
-    static final FunctionDescriptor ftruncate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final VarHandle const$0 = constants$536.const$5.varHandle(MemoryLayout.PathElement.groupElement("mutex"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_static_mutex_init",
+        constants$13.const$1
     );
-    static final MethodHandle ftruncate$MH = RuntimeHelper.downcallHandle(
-        "ftruncate",
-        constants$537.ftruncate$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_static_mutex_free",
+        constants$13.const$1
     );
-    static final FunctionDescriptor brk$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_static_mutex_get_mutex_impl",
+        constants$5.const$2
     );
-    static final MethodHandle brk$MH = RuntimeHelper.downcallHandle(
-        "brk",
-        constants$537.brk$FUNC
-    );
-    static final FunctionDescriptor sbrk$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle sbrk$MH = RuntimeHelper.downcallHandle(
-        "sbrk",
-        constants$537.sbrk$FUNC
-    );
-    static final FunctionDescriptor syscall$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle syscall$MH = RuntimeHelper.downcallHandleVariadic(
-        "syscall",
-        constants$537.syscall$FUNC
-    );
-    static final FunctionDescriptor lockf$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle lockf$MH = RuntimeHelper.downcallHandle(
-        "lockf",
-        constants$537.lockf$FUNC
-    );
-    static final FunctionDescriptor fdatasync$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle fdatasync$MH = RuntimeHelper.downcallHandle(
-        "fdatasync",
-        constants$537.fdatasync$FUNC
-    );
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("mutex"),
+            MemoryLayout.unionLayout(
+                MemoryLayout.structLayout(
+                    JAVA_INT.withName("__lock"),
+                    JAVA_INT.withName("__count"),
+                    JAVA_INT.withName("__owner"),
+                    JAVA_INT.withName("__nusers"),
+                    JAVA_INT.withName("__kind"),
+                    JAVA_INT.withName("__spins"),
+                    MemoryLayout.structLayout(
+                        RuntimeHelper.POINTER.withName("__prev"),
+                        RuntimeHelper.POINTER.withName("__next")
+                    ).withName("__list")
+                ).withName("__data"),
+                MemoryLayout.sequenceLayout(48, JAVA_BYTE).withName("__size"),
+                JAVA_LONG.withName("__align")
+            ).withName("unused")
+        ).withName("mutex"),
+        JAVA_INT.withName("depth"),
+        MemoryLayout.paddingLayout(4),
+        MemoryLayout.unionLayout(
+            JAVA_LONG.withName("owner"),
+            JAVA_DOUBLE.withName("dummy")
+        ).withName("unused")
+    ).withName("_GStaticRecMutex");
+    static final VarHandle const$5 = constants$537.const$4.varHandle(MemoryLayout.PathElement.groupElement("depth"));
 }
 
 

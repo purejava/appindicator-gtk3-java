@@ -3,57 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$230 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$230() {}
-    static final FunctionDescriptor g_markup_parse_context_get_element$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_hash_table_steal_all_keys",
+        constants$5.const$2
     );
-    static final MethodHandle g_markup_parse_context_get_element$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_get_element",
-        constants$230.g_markup_parse_context_get_element$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_hash_table_steal_all_values",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_markup_parse_context_get_element_stack$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_hash_table_lookup",
+        constants$5.const$5
     );
-    static final MethodHandle g_markup_parse_context_get_element_stack$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_get_element_stack",
-        constants$230.g_markup_parse_context_get_element_stack$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_hash_table_contains",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_markup_parse_context_get_position$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_hash_table_lookup_extended",
+        constants$34.const$5
     );
-    static final MethodHandle g_markup_parse_context_get_position$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_get_position",
-        constants$230.g_markup_parse_context_get_position$FUNC
-    );
-    static final FunctionDescriptor g_markup_parse_context_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_markup_parse_context_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "g_markup_parse_context_get_user_data",
-        constants$230.g_markup_parse_context_get_user_data$FUNC
-    );
-    static final FunctionDescriptor g_markup_escape_text$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_markup_escape_text$MH = RuntimeHelper.downcallHandle(
-        "g_markup_escape_text",
-        constants$230.g_markup_escape_text$FUNC
-    );
-    static final FunctionDescriptor g_markup_printf_escaped$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_markup_printf_escaped$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_markup_printf_escaped",
-        constants$230.g_markup_printf_escaped$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_hash_table_foreach$func.class, "apply", constants$14.const$3);
 }
 
 

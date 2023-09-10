@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*hb_draw_move_to_func_t)(struct hb_draw_funcs_t* dfuncs,void* draw_data,struct hb_draw_state_t* st,float to_x,float to_y,void* user_data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface hb_draw_move_to_func_t {
 
     void apply(java.lang.foreign.MemorySegment dfuncs, java.lang.foreign.MemorySegment draw_data, java.lang.foreign.MemorySegment st, float to_x, float to_y, java.lang.foreign.MemorySegment user_data);
-    static MemorySegment allocate(hb_draw_move_to_func_t fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$852.hb_draw_move_to_func_t_UP$MH, fi, constants$852.hb_draw_move_to_func_t$FUNC, scope);
+    static MemorySegment allocate(hb_draw_move_to_func_t fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$1447.const$1, fi, constants$1447.const$0, scope);
     }
-    static hb_draw_move_to_func_t ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static hb_draw_move_to_func_t ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _dfuncs, java.lang.foreign.MemorySegment _draw_data, java.lang.foreign.MemorySegment _st, float _to_x, float _to_y, java.lang.foreign.MemorySegment _user_data) -> {
             try {
-                constants$852.hb_draw_move_to_func_t_DOWN$MH.invokeExact(symbol, _dfuncs, _draw_data, _st, _to_x, _to_y, _user_data);
+                constants$1447.const$2.invokeExact(symbol, _dfuncs, _draw_data, _st, _to_x, _to_y, _user_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

@@ -3,62 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$231 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$231() {}
-    static final FunctionDescriptor g_markup_vprintf_escaped$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_hash_table_foreach",
+        constants$14.const$3
     );
-    static final MethodHandle g_markup_vprintf_escaped$MH = RuntimeHelper.downcallHandle(
-        "g_markup_vprintf_escaped",
-        constants$231.g_markup_vprintf_escaped$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_hash_table_find$predicate.class, "apply", constants$12.const$2);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_hash_table_find",
+        constants$23.const$0
     );
-    static final FunctionDescriptor g_markup_collect_attributes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_hash_table_foreach_remove$func.class, "apply", constants$12.const$2);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_hash_table_foreach_remove",
+        constants$12.const$2
     );
-    static final MethodHandle g_markup_collect_attributes$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_markup_collect_attributes",
-        constants$231.g_markup_collect_attributes$FUNC
-    );
-    static final FunctionDescriptor g_variant_type_string_is_valid$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_type_string_is_valid$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_string_is_valid",
-        constants$231.g_variant_type_string_is_valid$FUNC
-    );
-    static final FunctionDescriptor g_variant_type_string_scan$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_type_string_scan$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_string_scan",
-        constants$231.g_variant_type_string_scan$FUNC
-    );
-    static final FunctionDescriptor g_variant_type_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_type_free$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_free",
-        constants$231.g_variant_type_free$FUNC
-    );
-    static final FunctionDescriptor g_variant_type_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_type_copy$MH = RuntimeHelper.downcallHandle(
-        "g_variant_type_copy",
-        constants$231.g_variant_type_copy$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_hash_table_foreach_steal$func.class, "apply", constants$12.const$2);
 }
 
 

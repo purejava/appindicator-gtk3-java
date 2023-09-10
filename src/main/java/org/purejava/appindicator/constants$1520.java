@@ -3,69 +3,26 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1520 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1520() {}
-    static final FunctionDescriptor gtk_cell_area_context_push_preferred_height$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_unicode_funcs_set_decompose_compatibility_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_unicode_funcs_set_decompose_compatibility_func",
+        constants$42.const$1
     );
-    static final MethodHandle gtk_cell_area_context_push_preferred_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_area_context_push_preferred_height",
-        constants$1520.gtk_cell_area_context_push_preferred_height$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_unicode_decompose_compatibility",
+        constants$150.const$0
     );
-    static final FunctionDescriptor GtkCellLayoutDataFunc$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor GtkCellLayoutDataFunc_UP$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkCellLayoutDataFunc_UP$MH = RuntimeHelper.upcallHandle(GtkCellLayoutDataFunc.class, "apply", constants$1520.GtkCellLayoutDataFunc_UP$FUNC);
-    static final FunctionDescriptor GtkCellLayoutDataFunc_DOWN$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle GtkCellLayoutDataFunc_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$1520.GtkCellLayoutDataFunc_DOWN$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_layout_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_cell_layout_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_layout_get_type",
-        constants$1520.gtk_cell_layout_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_layout_pack_start$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_cell_layout_pack_start$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_layout_pack_start",
-        constants$1520.gtk_cell_layout_pack_start$FUNC
-    );
-    static final FunctionDescriptor gtk_cell_layout_pack_end$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_cell_layout_pack_end$MH = RuntimeHelper.downcallHandle(
-        "gtk_cell_layout_pack_end",
-        constants$1520.gtk_cell_layout_pack_end$FUNC
-    );
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_font_get_glyph_v_kerning_func_t.class, "apply", constants$1479.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_v_kerning_func$func.class, "apply", constants$1479.const$3);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_v_kerning_func$destroy.class, "apply", constants$13.const$1);
 }
 
 

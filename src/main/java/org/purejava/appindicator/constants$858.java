@@ -3,77 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$858 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$858() {}
-    static final FunctionDescriptor hb_font_get_font_extents_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_close",
+        constants$42.const$1
     );
-    static final FunctionDescriptor hb_font_get_font_extents_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_close_finish",
+        constants$12.const$2
     );
-    static final MethodHandle hb_font_get_font_extents_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_font_get_font_extents_func_t.class, "apply", constants$858.hb_font_get_font_extents_func_t_UP$FUNC);
-    static final FunctionDescriptor hb_font_get_font_extents_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_close_sync",
+        constants$12.const$2
     );
-    static final MethodHandle hb_font_get_font_extents_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$858.hb_font_get_font_extents_func_t_DOWN$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_dbus_connection_flush$callback.class, "apply", constants$14.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_flush",
+        constants$42.const$1
     );
-    static final FunctionDescriptor hb_font_get_font_h_extents_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor hb_font_get_font_h_extents_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_font_h_extents_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_font_get_font_h_extents_func_t.class, "apply", constants$858.hb_font_get_font_h_extents_func_t_UP$FUNC);
-    static final FunctionDescriptor hb_font_get_font_h_extents_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_font_h_extents_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$858.hb_font_get_font_h_extents_func_t_DOWN$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_font_v_extents_func_t$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor hb_font_get_font_v_extents_func_t_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_font_v_extents_func_t_UP$MH = RuntimeHelper.upcallHandle(hb_font_get_font_v_extents_func_t.class, "apply", constants$858.hb_font_get_font_v_extents_func_t_UP$FUNC);
-    static final FunctionDescriptor hb_font_get_font_v_extents_func_t_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_get_font_v_extents_func_t_DOWN$MH = RuntimeHelper.downcallHandle(
-        constants$858.hb_font_get_font_v_extents_func_t_DOWN$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_dbus_connection_flush_finish",
+        constants$12.const$2
     );
 }
 

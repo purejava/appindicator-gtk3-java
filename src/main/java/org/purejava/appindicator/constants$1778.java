@@ -3,61 +3,35 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1778 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1778() {}
-    static final FunctionDescriptor gtk_recent_filter_add_pixbuf_formats$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_filter_add_pixbuf_formats$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_add_pixbuf_formats",
-        constants$1778.gtk_recent_filter_add_pixbuf_formats$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_filter_add_application$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_filter_add_application$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_add_application",
-        constants$1778.gtk_recent_filter_add_application$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_filter_add_group$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_filter_add_group$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_add_group",
-        constants$1778.gtk_recent_filter_add_group$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_filter_add_age$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_recent_filter_add_age$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_add_age",
-        constants$1778.gtk_recent_filter_add_age$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_filter_add_custom$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_filter_add_custom$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_add_custom",
-        constants$1778.gtk_recent_filter_add_custom$FUNC
-    );
-    static final FunctionDescriptor gtk_recent_filter_get_needed$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_recent_filter_get_needed$MH = RuntimeHelper.downcallHandle(
-        "gtk_recent_filter_get_needed",
-        constants$1778.gtk_recent_filter_get_needed$FUNC
-    );
+    static final VarHandle const$0 = constants$1776.const$2.varHandle(MemoryLayout.PathElement.groupElement("x_root"));
+    static final VarHandle const$1 = constants$1776.const$2.varHandle(MemoryLayout.PathElement.groupElement("y_root"));
+    static final VarHandle const$2 = constants$1776.const$2.varHandle(MemoryLayout.PathElement.groupElement("delta_x"));
+    static final VarHandle const$3 = constants$1776.const$2.varHandle(MemoryLayout.PathElement.groupElement("delta_y"));
+    static final StructLayout const$4 = MemoryLayout.structLayout(
+        JAVA_INT.withName("type"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("window"),
+        JAVA_BYTE.withName("send_event"),
+        MemoryLayout.paddingLayout(3),
+        JAVA_INT.withName("time"),
+        JAVA_INT.withName("state"),
+        JAVA_INT.withName("keyval"),
+        JAVA_INT.withName("length"),
+        MemoryLayout.paddingLayout(4),
+        RuntimeHelper.POINTER.withName("string"),
+        JAVA_SHORT.withName("hardware_keycode"),
+        JAVA_BYTE.withName("group"),
+        MemoryLayout.paddingLayout(5)
+    ).withName("_GdkEventKey");
+    static final VarHandle const$5 = constants$1778.const$4.varHandle(MemoryLayout.PathElement.groupElement("type"));
 }
 
 

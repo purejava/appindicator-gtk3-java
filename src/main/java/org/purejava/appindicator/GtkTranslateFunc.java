@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * char* (*GtkTranslateFunc)(char* path,void* func_data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GtkTranslateFunc {
 
     java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
-    static MemorySegment allocate(GtkTranslateFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$1916.GtkTranslateFunc_UP$MH, fi, constants$1916.GtkTranslateFunc$FUNC, scope);
+    static MemorySegment allocate(GtkTranslateFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$3258.const$3, fi, constants$5.const$5, scope);
     }
-    static GtkTranslateFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GtkTranslateFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
             try {
-                return (java.lang.foreign.MemorySegment)constants$1916.GtkTranslateFunc_DOWN$MH.invokeExact(symbol, _path, _func_data);
+                return (java.lang.foreign.MemorySegment)constants$15.const$1.invokeExact(symbol, _path, _func_data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

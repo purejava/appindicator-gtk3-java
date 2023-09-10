@@ -3,61 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1679 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1679() {}
-    static final FunctionDescriptor gtk_list_box_set_header_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_set_header_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_set_header_func",
-        constants$1679.gtk_list_box_set_header_func$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_invalidate_filter$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_invalidate_filter$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_invalidate_filter",
-        constants$1679.gtk_list_box_invalidate_filter$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_invalidate_sort$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_invalidate_sort$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_invalidate_sort",
-        constants$1679.gtk_list_box_invalidate_sort$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_invalidate_headers$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_invalidate_headers$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_invalidate_headers",
-        constants$1679.gtk_list_box_invalidate_headers$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_set_sort_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_set_sort_func$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_set_sort_func",
-        constants$1679.gtk_list_box_set_sort_func$FUNC
-    );
-    static final FunctionDescriptor gtk_list_box_set_activate_on_single_click$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_list_box_set_activate_on_single_click$MH = RuntimeHelper.downcallHandle(
-        "gtk_list_box_set_activate_on_single_click",
-        constants$1679.gtk_list_box_set_activate_on_single_click$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(cairo_read_func_t.class, "apply", constants$62.const$0);
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        JAVA_INT.withName("x"),
+        JAVA_INT.withName("y"),
+        JAVA_INT.withName("width"),
+        JAVA_INT.withName("height")
+    ).withName("_cairo_rectangle_int");
+    static final VarHandle const$2 = constants$1679.const$1.varHandle(MemoryLayout.PathElement.groupElement("x"));
+    static final VarHandle const$3 = constants$1679.const$1.varHandle(MemoryLayout.PathElement.groupElement("y"));
+    static final VarHandle const$4 = constants$1679.const$1.varHandle(MemoryLayout.PathElement.groupElement("width"));
+    static final VarHandle const$5 = constants$1679.const$1.varHandle(MemoryLayout.PathElement.groupElement("height"));
 }
 
 

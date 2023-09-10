@@ -2,179 +2,168 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkPadActionEntry {
- *     GtkPadActionType type;
- *     gint index;
- *     gint mode;
- *     gchar* label;
- *     gchar* action_name;
+ *     enum GtkPadActionType type;
+ *     int index;
+ *     int mode;
+ *     char* label;
+ *     char* action_name;
  * };
  * }
  */
 public class _GtkPadActionEntry {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("type"),
-        Constants$root.C_INT$LAYOUT.withName("index"),
-        Constants$root.C_INT$LAYOUT.withName("mode"),
-        MemoryLayout.paddingLayout(32),
-        Constants$root.C_POINTER$LAYOUT.withName("label"),
-        Constants$root.C_POINTER$LAYOUT.withName("action_name")
-    ).withName("_GtkPadActionEntry");
     public static MemoryLayout $LAYOUT() {
-        return _GtkPadActionEntry.$struct$LAYOUT;
+        return constants$2925.const$5;
     }
-    static final VarHandle type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("type"));
     public static VarHandle type$VH() {
-        return _GtkPadActionEntry.type$VH;
+        return constants$2926.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GtkPadActionType type;
+     * enum GtkPadActionType type;
      * }
      */
     public static int type$get(MemorySegment seg) {
-        return (int)_GtkPadActionEntry.type$VH.get(seg);
+        return (int)constants$2926.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GtkPadActionType type;
+     * enum GtkPadActionType type;
      * }
      */
     public static void type$set(MemorySegment seg, int x) {
-        _GtkPadActionEntry.type$VH.set(seg, x);
+        constants$2926.const$0.set(seg, x);
     }
     public static int type$get(MemorySegment seg, long index) {
-        return (int)_GtkPadActionEntry.type$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2926.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void type$set(MemorySegment seg, long index, int x) {
-        _GtkPadActionEntry.type$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2926.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle index$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("index"));
     public static VarHandle index$VH() {
-        return _GtkPadActionEntry.index$VH;
+        return constants$2926.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint index;
+     * int index;
      * }
      */
     public static int index$get(MemorySegment seg) {
-        return (int)_GtkPadActionEntry.index$VH.get(seg);
+        return (int)constants$2926.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint index;
+     * int index;
      * }
      */
     public static void index$set(MemorySegment seg, int x) {
-        _GtkPadActionEntry.index$VH.set(seg, x);
+        constants$2926.const$1.set(seg, x);
     }
     public static int index$get(MemorySegment seg, long index) {
-        return (int)_GtkPadActionEntry.index$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2926.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void index$set(MemorySegment seg, long index, int x) {
-        _GtkPadActionEntry.index$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2926.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle mode$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("mode"));
     public static VarHandle mode$VH() {
-        return _GtkPadActionEntry.mode$VH;
+        return constants$2926.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gint mode;
+     * int mode;
      * }
      */
     public static int mode$get(MemorySegment seg) {
-        return (int)_GtkPadActionEntry.mode$VH.get(seg);
+        return (int)constants$2926.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gint mode;
+     * int mode;
      * }
      */
     public static void mode$set(MemorySegment seg, int x) {
-        _GtkPadActionEntry.mode$VH.set(seg, x);
+        constants$2926.const$2.set(seg, x);
     }
     public static int mode$get(MemorySegment seg, long index) {
-        return (int)_GtkPadActionEntry.mode$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$2926.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void mode$set(MemorySegment seg, long index, int x) {
-        _GtkPadActionEntry.mode$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2926.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle label$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("label"));
     public static VarHandle label$VH() {
-        return _GtkPadActionEntry.label$VH;
+        return constants$2926.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* label;
+     * char* label;
      * }
      */
     public static MemorySegment label$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkPadActionEntry.label$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2926.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* label;
+     * char* label;
      * }
      */
     public static void label$set(MemorySegment seg, MemorySegment x) {
-        _GtkPadActionEntry.label$VH.set(seg, x);
+        constants$2926.const$3.set(seg, x);
     }
     public static MemorySegment label$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkPadActionEntry.label$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2926.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void label$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkPadActionEntry.label$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2926.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle action_name$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("action_name"));
     public static VarHandle action_name$VH() {
-        return _GtkPadActionEntry.action_name$VH;
+        return constants$2926.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gchar* action_name;
+     * char* action_name;
      * }
      */
     public static MemorySegment action_name$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkPadActionEntry.action_name$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2926.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gchar* action_name;
+     * char* action_name;
      * }
      */
     public static void action_name$set(MemorySegment seg, MemorySegment x) {
-        _GtkPadActionEntry.action_name$VH.set(seg, x);
+        constants$2926.const$4.set(seg, x);
     }
     public static MemorySegment action_name$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkPadActionEntry.action_name$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2926.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void action_name$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkPadActionEntry.action_name$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2926.const$4.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

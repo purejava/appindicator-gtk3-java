@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$214 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$214() {}
-    static final FunctionDescriptor g_io_add_watch$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_node_insert",
+        constants$196.const$3
     );
-    static final MethodHandle g_io_add_watch$MH = RuntimeHelper.downcallHandle(
-        "g_io_add_watch",
-        constants$214.g_io_add_watch$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_node_insert_before",
+        constants$23.const$0
     );
-    static final FunctionDescriptor g_io_channel_set_buffer_size$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_node_insert_after",
+        constants$23.const$0
     );
-    static final MethodHandle g_io_channel_set_buffer_size$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_set_buffer_size",
-        constants$214.g_io_channel_set_buffer_size$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_node_prepend",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_io_channel_get_buffer_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_node_n_nodes",
+        constants$11.const$4
     );
-    static final MethodHandle g_io_channel_get_buffer_size$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_buffer_size",
-        constants$214.g_io_channel_get_buffer_size$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_get_buffer_condition$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_get_buffer_condition$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_buffer_condition",
-        constants$214.g_io_channel_get_buffer_condition$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_set_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_set_flags$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_set_flags",
-        constants$214.g_io_channel_set_flags$FUNC
-    );
-    static final FunctionDescriptor g_io_channel_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_io_channel_get_flags$MH = RuntimeHelper.downcallHandle(
-        "g_io_channel_get_flags",
-        constants$214.g_io_channel_get_flags$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_node_get_root",
+        constants$5.const$2
     );
 }
 

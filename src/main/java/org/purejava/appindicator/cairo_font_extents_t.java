@@ -2,12 +2,14 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
- * struct {
+ * struct cairo_font_extents_t {
  *     double ascent;
  *     double descent;
  *     double height;
@@ -18,19 +20,11 @@ import java.lang.foreign.*;
  */
 public class cairo_font_extents_t {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_DOUBLE$LAYOUT.withName("ascent"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("descent"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("height"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("max_x_advance"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("max_y_advance")
-    );
     public static MemoryLayout $LAYOUT() {
-        return cairo_font_extents_t.$struct$LAYOUT;
+        return constants$1697.const$3;
     }
-    static final VarHandle ascent$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("ascent"));
     public static VarHandle ascent$VH() {
-        return cairo_font_extents_t.ascent$VH;
+        return constants$1697.const$4;
     }
     /**
      * Getter for field:
@@ -39,7 +33,7 @@ public class cairo_font_extents_t {
      * }
      */
     public static double ascent$get(MemorySegment seg) {
-        return (double)cairo_font_extents_t.ascent$VH.get(seg);
+        return (double)constants$1697.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -48,17 +42,16 @@ public class cairo_font_extents_t {
      * }
      */
     public static void ascent$set(MemorySegment seg, double x) {
-        cairo_font_extents_t.ascent$VH.set(seg, x);
+        constants$1697.const$4.set(seg, x);
     }
     public static double ascent$get(MemorySegment seg, long index) {
-        return (double)cairo_font_extents_t.ascent$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1697.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void ascent$set(MemorySegment seg, long index, double x) {
-        cairo_font_extents_t.ascent$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1697.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle descent$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("descent"));
     public static VarHandle descent$VH() {
-        return cairo_font_extents_t.descent$VH;
+        return constants$1697.const$5;
     }
     /**
      * Getter for field:
@@ -67,7 +60,7 @@ public class cairo_font_extents_t {
      * }
      */
     public static double descent$get(MemorySegment seg) {
-        return (double)cairo_font_extents_t.descent$VH.get(seg);
+        return (double)constants$1697.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -76,17 +69,16 @@ public class cairo_font_extents_t {
      * }
      */
     public static void descent$set(MemorySegment seg, double x) {
-        cairo_font_extents_t.descent$VH.set(seg, x);
+        constants$1697.const$5.set(seg, x);
     }
     public static double descent$get(MemorySegment seg, long index) {
-        return (double)cairo_font_extents_t.descent$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1697.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void descent$set(MemorySegment seg, long index, double x) {
-        cairo_font_extents_t.descent$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1697.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle height$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("height"));
     public static VarHandle height$VH() {
-        return cairo_font_extents_t.height$VH;
+        return constants$1698.const$0;
     }
     /**
      * Getter for field:
@@ -95,7 +87,7 @@ public class cairo_font_extents_t {
      * }
      */
     public static double height$get(MemorySegment seg) {
-        return (double)cairo_font_extents_t.height$VH.get(seg);
+        return (double)constants$1698.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -104,17 +96,16 @@ public class cairo_font_extents_t {
      * }
      */
     public static void height$set(MemorySegment seg, double x) {
-        cairo_font_extents_t.height$VH.set(seg, x);
+        constants$1698.const$0.set(seg, x);
     }
     public static double height$get(MemorySegment seg, long index) {
-        return (double)cairo_font_extents_t.height$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1698.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void height$set(MemorySegment seg, long index, double x) {
-        cairo_font_extents_t.height$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1698.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle max_x_advance$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("max_x_advance"));
     public static VarHandle max_x_advance$VH() {
-        return cairo_font_extents_t.max_x_advance$VH;
+        return constants$1698.const$1;
     }
     /**
      * Getter for field:
@@ -123,7 +114,7 @@ public class cairo_font_extents_t {
      * }
      */
     public static double max_x_advance$get(MemorySegment seg) {
-        return (double)cairo_font_extents_t.max_x_advance$VH.get(seg);
+        return (double)constants$1698.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -132,17 +123,16 @@ public class cairo_font_extents_t {
      * }
      */
     public static void max_x_advance$set(MemorySegment seg, double x) {
-        cairo_font_extents_t.max_x_advance$VH.set(seg, x);
+        constants$1698.const$1.set(seg, x);
     }
     public static double max_x_advance$get(MemorySegment seg, long index) {
-        return (double)cairo_font_extents_t.max_x_advance$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1698.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void max_x_advance$set(MemorySegment seg, long index, double x) {
-        cairo_font_extents_t.max_x_advance$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1698.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle max_y_advance$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("max_y_advance"));
     public static VarHandle max_y_advance$VH() {
-        return cairo_font_extents_t.max_y_advance$VH;
+        return constants$1698.const$2;
     }
     /**
      * Getter for field:
@@ -151,7 +141,7 @@ public class cairo_font_extents_t {
      * }
      */
     public static double max_y_advance$get(MemorySegment seg) {
-        return (double)cairo_font_extents_t.max_y_advance$VH.get(seg);
+        return (double)constants$1698.const$2.get(seg);
     }
     /**
      * Setter for field:
@@ -160,20 +150,20 @@ public class cairo_font_extents_t {
      * }
      */
     public static void max_y_advance$set(MemorySegment seg, double x) {
-        cairo_font_extents_t.max_y_advance$VH.set(seg, x);
+        constants$1698.const$2.set(seg, x);
     }
     public static double max_y_advance$get(MemorySegment seg, long index) {
-        return (double)cairo_font_extents_t.max_y_advance$VH.get(seg.asSlice(index*sizeof()));
+        return (double)constants$1698.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void max_y_advance$set(MemorySegment seg, long index, double x) {
-        cairo_font_extents_t.max_y_advance$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1698.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

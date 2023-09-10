@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$69 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$69() {}
-    static final FunctionDescriptor g_async_queue_ref$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "strtouq",
+        constants$68.const$2
     );
-    static final MethodHandle g_async_queue_ref$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_ref",
-        constants$69.g_async_queue_ref$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "strtoll",
+        constants$68.const$2
     );
-    static final FunctionDescriptor g_async_queue_unref$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "strtoull",
+        constants$68.const$2
     );
-    static final MethodHandle g_async_queue_unref$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_unref",
-        constants$69.g_async_queue_unref$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "l64a",
+        constants$63.const$3
     );
-    static final FunctionDescriptor g_async_queue_ref_unlocked$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "a64l",
+        constants$4.const$0
     );
-    static final MethodHandle g_async_queue_ref_unlocked$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_ref_unlocked",
-        constants$69.g_async_queue_ref_unlocked$FUNC
-    );
-    static final FunctionDescriptor g_async_queue_unref_and_unlock$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_queue_unref_and_unlock$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_unref_and_unlock",
-        constants$69.g_async_queue_unref_and_unlock$FUNC
-    );
-    static final FunctionDescriptor g_async_queue_push$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_queue_push$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_push",
-        constants$69.g_async_queue_push$FUNC
-    );
-    static final FunctionDescriptor g_async_queue_push_unlocked$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_async_queue_push_unlocked$MH = RuntimeHelper.downcallHandle(
-        "g_async_queue_push_unlocked",
-        constants$69.g_async_queue_push_unlocked$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(16, JAVA_LONG).withName("__val")
+    ).withName("__sigset_t");
 }
 
 

@@ -3,57 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$941 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$941() {}
-    static final FunctionDescriptor pango_context_set_gravity_hint$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_context_set_gravity_hint$MH = RuntimeHelper.downcallHandle(
-        "pango_context_set_gravity_hint",
-        constants$941.pango_context_set_gravity_hint$FUNC
-    );
-    static final FunctionDescriptor pango_context_get_gravity_hint$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_context_get_gravity_hint$MH = RuntimeHelper.downcallHandle(
-        "pango_context_get_gravity_hint",
-        constants$941.pango_context_get_gravity_hint$FUNC
-    );
-    static final FunctionDescriptor pango_context_set_matrix$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_context_set_matrix$MH = RuntimeHelper.downcallHandle(
-        "pango_context_set_matrix",
-        constants$941.pango_context_set_matrix$FUNC
-    );
-    static final FunctionDescriptor pango_context_get_matrix$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_context_get_matrix$MH = RuntimeHelper.downcallHandle(
-        "pango_context_get_matrix",
-        constants$941.pango_context_get_matrix$FUNC
-    );
-    static final FunctionDescriptor pango_context_set_round_glyph_positions$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_context_set_round_glyph_positions$MH = RuntimeHelper.downcallHandle(
-        "pango_context_set_round_glyph_positions",
-        constants$941.pango_context_set_round_glyph_positions$FUNC
-    );
-    static final FunctionDescriptor pango_context_get_round_glyph_positions$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_context_get_round_glyph_positions$MH = RuntimeHelper.downcallHandle(
-        "pango_context_get_round_glyph_positions",
-        constants$941.pango_context_get_round_glyph_positions$FUNC
-    );
+    static final VarHandle const$0 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("is_media_removable"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDriveIface.has_media.class, "apply", constants$10.const$5);
+    static final VarHandle const$2 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("has_media"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDriveIface.is_media_check_automatic.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("is_media_check_automatic"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GDriveIface.can_eject.class, "apply", constants$10.const$5);
 }
 
 

@@ -3,54 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1982 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1982() {}
-    static final FunctionDescriptor app_indicator_get_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_get_id$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_id",
-        constants$1982.app_indicator_get_id$FUNC
-    );
-    static final FunctionDescriptor app_indicator_get_category$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_get_category$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_category",
-        constants$1982.app_indicator_get_category$FUNC
-    );
-    static final FunctionDescriptor app_indicator_get_status$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_get_status$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_status",
-        constants$1982.app_indicator_get_status$FUNC
-    );
-    static final FunctionDescriptor app_indicator_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_get_icon$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_icon",
-        constants$1982.app_indicator_get_icon$FUNC
-    );
-    static final FunctionDescriptor app_indicator_get_icon_desc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_get_icon_desc$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_icon_desc",
-        constants$1982.app_indicator_get_icon_desc$FUNC
-    );
-    static final FunctionDescriptor app_indicator_get_icon_theme_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_get_icon_theme_path$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_icon_theme_path",
-        constants$1982.app_indicator_get_icon_theme_path$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("parent"),
+        RuntimeHelper.POINTER.withName("do_action"),
+        RuntimeHelper.POINTER.withName("get_n_actions"),
+        RuntimeHelper.POINTER.withName("get_description"),
+        RuntimeHelper.POINTER.withName("get_name"),
+        RuntimeHelper.POINTER.withName("get_keybinding"),
+        RuntimeHelper.POINTER.withName("set_description"),
+        RuntimeHelper.POINTER.withName("get_localized_name")
+    ).withName("_AtkActionIface");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_AtkActionIface.do_action.class, "apply", constants$11.const$4);
+    static final VarHandle const$2 = constants$1982.const$0.varHandle(MemoryLayout.PathElement.groupElement("do_action"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_AtkActionIface.get_n_actions.class, "apply", constants$10.const$5);
+    static final VarHandle const$4 = constants$1982.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_n_actions"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_AtkActionIface.get_description.class, "apply", constants$21.const$3);
 }
 
 

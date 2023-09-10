@@ -3,50 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1717 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1717() {}
-    static final FunctionDescriptor gtk_offscreen_window_get_surface$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_get_hairline",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_offscreen_window_get_surface$MH = RuntimeHelper.downcallHandle(
-        "gtk_offscreen_window_get_surface",
-        constants$1717.gtk_offscreen_window_get_surface$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_get_line_cap",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_offscreen_window_get_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_get_line_join",
+        constants$10.const$5
     );
-    static final MethodHandle gtk_offscreen_window_get_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_offscreen_window_get_pixbuf",
-        constants$1717.gtk_offscreen_window_get_pixbuf$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_get_miter_limit",
+        constants$67.const$0
     );
-    static final FunctionDescriptor gtk_orientable_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_orientable_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_orientable_get_type",
-        constants$1717.gtk_orientable_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_get_dash_count",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_orientable_set_orientation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_orientable_set_orientation$MH = RuntimeHelper.downcallHandle(
-        "gtk_orientable_set_orientation",
-        constants$1717.gtk_orientable_set_orientation$FUNC
-    );
-    static final FunctionDescriptor gtk_orientable_get_orientation$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_orientable_get_orientation$MH = RuntimeHelper.downcallHandle(
-        "gtk_orientable_get_orientation",
-        constants$1717.gtk_orientable_get_orientation$FUNC
-    );
-    static final FunctionDescriptor gtk_overlay_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_overlay_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_overlay_get_type",
-        constants$1717.gtk_overlay_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_get_dash",
+        constants$14.const$3
     );
 }
 

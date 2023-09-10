@@ -2,49 +2,33 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
- * union {
+ * union pthread_mutex_t {
  *     struct __pthread_mutex_s __data;
- *     char __size[40];
+ *     char __size[48];
  *     long __align;
  * };
  * }
  */
 public class pthread_mutex_t {
 
-    static final UnionLayout $union$LAYOUT = MemoryLayout.unionLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_INT$LAYOUT.withName("__lock"),
-            Constants$root.C_INT$LAYOUT.withName("__count"),
-            Constants$root.C_INT$LAYOUT.withName("__owner"),
-            Constants$root.C_INT$LAYOUT.withName("__nusers"),
-            Constants$root.C_INT$LAYOUT.withName("__kind"),
-            Constants$root.C_SHORT$LAYOUT.withName("__spins"),
-            Constants$root.C_SHORT$LAYOUT.withName("__elision"),
-            MemoryLayout.structLayout(
-                Constants$root.C_POINTER$LAYOUT.withName("__prev"),
-                Constants$root.C_POINTER$LAYOUT.withName("__next")
-            ).withName("__list")
-        ).withName("__data"),
-        MemoryLayout.sequenceLayout(40, Constants$root.C_CHAR$LAYOUT).withName("__size"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("__align")
-    );
     public static MemoryLayout $LAYOUT() {
-        return pthread_mutex_t.$union$LAYOUT;
+        return constants$78.const$0;
     }
     public static MemorySegment __data$slice(MemorySegment seg) {
         return seg.asSlice(0, 40);
     }
     public static MemorySegment __size$slice(MemorySegment seg) {
-        return seg.asSlice(0, 40);
+        return seg.asSlice(0, 48);
     }
-    static final VarHandle __align$VH = $union$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("__align"));
     public static VarHandle __align$VH() {
-        return pthread_mutex_t.__align$VH;
+        return constants$78.const$1;
     }
     /**
      * Getter for field:
@@ -53,7 +37,7 @@ public class pthread_mutex_t {
      * }
      */
     public static long __align$get(MemorySegment seg) {
-        return (long)pthread_mutex_t.__align$VH.get(seg);
+        return (long)constants$78.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -62,20 +46,20 @@ public class pthread_mutex_t {
      * }
      */
     public static void __align$set(MemorySegment seg, long x) {
-        pthread_mutex_t.__align$VH.set(seg, x);
+        constants$78.const$1.set(seg, x);
     }
     public static long __align$get(MemorySegment seg, long index) {
-        return (long)pthread_mutex_t.__align$VH.get(seg.asSlice(index*sizeof()));
+        return (long)constants$78.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void __align$set(MemorySegment seg, long index, long x) {
-        pthread_mutex_t.__align$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$78.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

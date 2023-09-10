@@ -3,59 +3,39 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$27 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$27() {}
-    static final FunctionDescriptor g_ptr_array_foreach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "strncasecmp",
+        constants$18.const$2
     );
-    static final MethodHandle g_ptr_array_foreach$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_foreach",
-        constants$27.g_ptr_array_foreach$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "strcasecmp_l",
+        constants$12.const$2
     );
-    static final FunctionDescriptor g_ptr_array_find$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor const$2 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER,
+        JAVA_LONG,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle g_ptr_array_find$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_find",
-        constants$27.g_ptr_array_find$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "strncasecmp_l",
+        constants$27.const$2
     );
-    static final FunctionDescriptor g_ptr_array_find_with_equal_func$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "explicit_bzero",
+        constants$25.const$3
     );
-    static final MethodHandle g_ptr_array_find_with_equal_func$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_find_with_equal_func",
-        constants$27.g_ptr_array_find_with_equal_func$FUNC
-    );
-    static final FunctionDescriptor g_ptr_array_is_null_terminated$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_ptr_array_is_null_terminated$MH = RuntimeHelper.downcallHandle(
-        "g_ptr_array_is_null_terminated",
-        constants$27.g_ptr_array_is_null_terminated$FUNC
-    );
-    static final FunctionDescriptor g_byte_array_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_byte_array_new$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_new",
-        constants$27.g_byte_array_new$FUNC
-    );
-    static final FunctionDescriptor g_byte_array_new_take$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_byte_array_new_take$MH = RuntimeHelper.downcallHandle(
-        "g_byte_array_new_take",
-        constants$27.g_byte_array_new_take$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "strsep",
+        constants$5.const$5
     );
 }
 

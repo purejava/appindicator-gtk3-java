@@ -3,67 +3,21 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$708 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$708() {}
-    static final FunctionDescriptor g_mount_unshadow$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_unshadow$MH = RuntimeHelper.downcallHandle(
-        "g_mount_unshadow",
-        constants$708.g_mount_unshadow$FUNC
-    );
-    static final FunctionDescriptor g_mount_unmount_with_operation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_unmount_with_operation$MH = RuntimeHelper.downcallHandle(
-        "g_mount_unmount_with_operation",
-        constants$708.g_mount_unmount_with_operation$FUNC
-    );
-    static final FunctionDescriptor g_mount_unmount_with_operation_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_unmount_with_operation_finish$MH = RuntimeHelper.downcallHandle(
-        "g_mount_unmount_with_operation_finish",
-        constants$708.g_mount_unmount_with_operation_finish$FUNC
-    );
-    static final FunctionDescriptor g_mount_eject_with_operation$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_eject_with_operation$MH = RuntimeHelper.downcallHandle(
-        "g_mount_eject_with_operation",
-        constants$708.g_mount_eject_with_operation$FUNC
-    );
-    static final FunctionDescriptor g_mount_eject_with_operation_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_eject_with_operation_finish$MH = RuntimeHelper.downcallHandle(
-        "g_mount_eject_with_operation_finish",
-        constants$708.g_mount_eject_with_operation_finish$FUNC
-    );
-    static final FunctionDescriptor g_mount_get_sort_key$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_mount_get_sort_key$MH = RuntimeHelper.downcallHandle(
-        "g_mount_get_sort_key",
-        constants$708.g_mount_get_sort_key$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GActionGroupInterface.action_enabled_changed.class, "apply", constants$164.const$5);
+    static final VarHandle const$1 = constants$704.const$1.varHandle(MemoryLayout.PathElement.groupElement("action_enabled_changed"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GActionGroupInterface.action_state_changed.class, "apply", constants$14.const$3);
+    static final VarHandle const$3 = constants$704.const$1.varHandle(MemoryLayout.PathElement.groupElement("action_state_changed"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GActionGroupInterface.query_action.class, "apply", constants$164.const$2);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        constants$164.const$2
     );
 }
 

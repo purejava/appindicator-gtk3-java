@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1342 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1342() {}
-    static final FunctionDescriptor gtk_label_set_selectable$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_themed_icon_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_label_set_selectable$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_selectable",
-        constants$1342.gtk_label_set_selectable$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_themed_icon_new",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_label_get_selectable$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_themed_icon_new_with_default_fallbacks",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_label_get_selectable$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_selectable",
-        constants$1342.gtk_label_get_selectable$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_themed_icon_new_from_names",
+        constants$21.const$3
     );
-    static final FunctionDescriptor gtk_label_set_angle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_themed_icon_prepend_name",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_label_set_angle$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_set_angle",
-        constants$1342.gtk_label_set_angle$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_angle$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_angle$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_angle",
-        constants$1342.gtk_label_get_angle$FUNC
-    );
-    static final FunctionDescriptor gtk_label_select_region$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_label_select_region$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_select_region",
-        constants$1342.gtk_label_select_region$FUNC
-    );
-    static final FunctionDescriptor gtk_label_get_selection_bounds$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_label_get_selection_bounds$MH = RuntimeHelper.downcallHandle(
-        "gtk_label_get_selection_bounds",
-        constants$1342.gtk_label_get_selection_bounds$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_themed_icon_append_name",
+        constants$13.const$4
     );
 }
 

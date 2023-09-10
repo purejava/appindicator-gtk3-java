@@ -3,61 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$249 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$249() {}
-    static final FunctionDescriptor g_variant_byteswap$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_slist_free",
+        constants$13.const$1
     );
-    static final MethodHandle g_variant_byteswap$MH = RuntimeHelper.downcallHandle(
-        "g_variant_byteswap",
-        constants$249.g_variant_byteswap$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_slist_free_1",
+        constants$13.const$1
     );
-    static final FunctionDescriptor g_variant_new_from_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(g_slist_free_full$free_func.class, "apply", constants$13.const$1);
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_slist_free_full",
+        constants$13.const$4
     );
-    static final MethodHandle g_variant_new_from_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_from_bytes",
-        constants$249.g_variant_new_from_bytes$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_slist_append",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_variant_new_from_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_new_from_data$MH = RuntimeHelper.downcallHandle(
-        "g_variant_new_from_data",
-        constants$249.g_variant_new_from_data$FUNC
-    );
-    static final FunctionDescriptor g_variant_iter_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_iter_new$MH = RuntimeHelper.downcallHandle(
-        "g_variant_iter_new",
-        constants$249.g_variant_iter_new$FUNC
-    );
-    static final FunctionDescriptor g_variant_iter_init$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_iter_init$MH = RuntimeHelper.downcallHandle(
-        "g_variant_iter_init",
-        constants$249.g_variant_iter_init$FUNC
-    );
-    static final FunctionDescriptor g_variant_iter_copy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_variant_iter_copy$MH = RuntimeHelper.downcallHandle(
-        "g_variant_iter_copy",
-        constants$249.g_variant_iter_copy$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_slist_prepend",
+        constants$5.const$5
     );
 }
 

@@ -3,51 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$597 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$597() {}
-    static final FunctionDescriptor g_dbus_generate_guid$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_dbus_generate_guid$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_generate_guid",
-        constants$597.g_dbus_generate_guid$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__BOXED",
+        constants$584.const$3
     );
-    static final FunctionDescriptor g_dbus_is_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__BOXEDv",
+        constants$585.const$0
     );
-    static final MethodHandle g_dbus_is_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_is_name",
-        constants$597.g_dbus_is_name$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__POINTER",
+        constants$584.const$3
     );
-    static final FunctionDescriptor g_dbus_is_unique_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__POINTERv",
+        constants$585.const$0
     );
-    static final MethodHandle g_dbus_is_unique_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_is_unique_name",
-        constants$597.g_dbus_is_unique_name$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__OBJECT",
+        constants$584.const$3
     );
-    static final FunctionDescriptor g_dbus_is_member_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_is_member_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_is_member_name",
-        constants$597.g_dbus_is_member_name$FUNC
-    );
-    static final FunctionDescriptor g_dbus_is_interface_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_is_interface_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_is_interface_name",
-        constants$597.g_dbus_is_interface_name$FUNC
-    );
-    static final FunctionDescriptor g_dbus_is_error_name$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_is_error_name$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_is_error_name",
-        constants$597.g_dbus_is_error_name$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_cclosure_marshal_VOID__OBJECTv",
+        constants$585.const$0
     );
 }
 

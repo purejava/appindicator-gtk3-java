@@ -3,76 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$724 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$724() {}
-    static final FunctionDescriptor g_pollable_output_stream_writev_nonblocking$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_app_info_create_from_commandline",
+        constants$482.const$3
     );
-    static final MethodHandle g_pollable_output_stream_writev_nonblocking$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_output_stream_writev_nonblocking",
-        constants$724.g_pollable_output_stream_writev_nonblocking$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_app_info_dup",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_pollable_source_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_app_info_equal",
+        constants$9.const$0
     );
-    static final MethodHandle g_pollable_source_new$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_source_new",
-        constants$724.g_pollable_source_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_app_info_get_id",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_pollable_source_new_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_app_info_get_name",
+        constants$5.const$2
     );
-    static final MethodHandle g_pollable_source_new_full$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_source_new_full",
-        constants$724.g_pollable_source_new_full$FUNC
-    );
-    static final FunctionDescriptor g_pollable_stream_read$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pollable_stream_read$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_stream_read",
-        constants$724.g_pollable_stream_read$FUNC
-    );
-    static final FunctionDescriptor g_pollable_stream_write$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pollable_stream_write$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_stream_write",
-        constants$724.g_pollable_stream_write$FUNC
-    );
-    static final FunctionDescriptor g_pollable_stream_write_all$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_pollable_stream_write_all$MH = RuntimeHelper.downcallHandle(
-        "g_pollable_stream_write_all",
-        constants$724.g_pollable_stream_write_all$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_app_info_get_display_name",
+        constants$5.const$2
     );
 }
 

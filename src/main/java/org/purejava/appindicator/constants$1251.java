@@ -3,59 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1251 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1251() {}
-    static final FunctionDescriptor gtk_widget_get_frame_clock$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_key_get_default_value",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_widget_get_frame_clock$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_frame_clock",
-        constants$1251.gtk_widget_get_frame_clock$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_key_get_range",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_widget_size_request$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_key_range_check",
+        constants$9.const$0
     );
-    static final MethodHandle gtk_widget_size_request$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_size_request",
-        constants$1251.gtk_widget_size_request$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_key_get_name",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_widget_size_allocate$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_key_get_summary",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_widget_size_allocate$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_size_allocate",
-        constants$1251.gtk_widget_size_allocate$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_size_allocate_with_baseline$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_widget_size_allocate_with_baseline$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_size_allocate_with_baseline",
-        constants$1251.gtk_widget_size_allocate_with_baseline$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_request_mode$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_request_mode$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_request_mode",
-        constants$1251.gtk_widget_get_request_mode$FUNC
-    );
-    static final FunctionDescriptor gtk_widget_get_preferred_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_widget_get_preferred_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_widget_get_preferred_width",
-        constants$1251.gtk_widget_get_preferred_width$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_settings_schema_key_get_description",
+        constants$5.const$2
     );
 }
 

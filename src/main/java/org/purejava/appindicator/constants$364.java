@@ -3,60 +3,49 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$364 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$364() {}
-    static final FunctionDescriptor pthread_mutexattr_getpshared$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_iter_next_value",
+        constants$5.const$2
     );
-    static final MethodHandle pthread_mutexattr_getpshared$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutexattr_getpshared",
-        constants$364.pthread_mutexattr_getpshared$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_iter_next",
+        constants$9.const$0
     );
-    static final FunctionDescriptor pthread_mutexattr_setpshared$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandleVariadic(
+        "g_variant_iter_loop",
+        constants$9.const$0
     );
-    static final MethodHandle pthread_mutexattr_setpshared$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutexattr_setpshared",
-        constants$364.pthread_mutexattr_setpshared$FUNC
-    );
-    static final FunctionDescriptor pthread_mutexattr_gettype$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_mutexattr_gettype$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutexattr_gettype",
-        constants$364.pthread_mutexattr_gettype$FUNC
-    );
-    static final FunctionDescriptor pthread_mutexattr_settype$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pthread_mutexattr_settype$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutexattr_settype",
-        constants$364.pthread_mutexattr_settype$FUNC
-    );
-    static final FunctionDescriptor pthread_mutexattr_getprotocol$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_mutexattr_getprotocol$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutexattr_getprotocol",
-        constants$364.pthread_mutexattr_getprotocol$FUNC
-    );
-    static final FunctionDescriptor pthread_mutexattr_setprotocol$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pthread_mutexattr_setprotocol$MH = RuntimeHelper.downcallHandle(
-        "pthread_mutexattr_setprotocol",
-        constants$364.pthread_mutexattr_setprotocol$FUNC
-    );
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.unionLayout(
+            MemoryLayout.structLayout(
+                JAVA_LONG.withName("partial_magic"),
+                RuntimeHelper.POINTER.withName("type"),
+                MemoryLayout.sequenceLayout(14, JAVA_LONG).withName("y")
+            ).withName("s"),
+            MemoryLayout.sequenceLayout(16, JAVA_LONG).withName("x")
+        ).withName("u")
+    ).withName("_GVariantBuilder");
+    static final UnionLayout const$4 = MemoryLayout.unionLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("partial_magic"),
+            RuntimeHelper.POINTER.withName("type"),
+            MemoryLayout.sequenceLayout(14, JAVA_LONG).withName("y")
+        ).withName("s"),
+        MemoryLayout.sequenceLayout(16, JAVA_LONG).withName("x")
+    ).withName("");
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("partial_magic"),
+        RuntimeHelper.POINTER.withName("type"),
+        MemoryLayout.sequenceLayout(14, JAVA_LONG).withName("y")
+    ).withName("");
 }
 
 

@@ -3,42 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$946 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$946() {}
-    static final FunctionDescriptor pango_underline_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_underline_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_underline_get_type",
-        constants$946.pango_underline_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_overline_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_overline_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_overline_get_type",
-        constants$946.pango_overline_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_show_flags_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_show_flags_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_show_flags_get_type",
-        constants$946.pango_show_flags_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_text_transform_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_text_transform_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_text_transform_get_type",
-        constants$946.pango_text_transform_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_baseline_shift_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_baseline_shift_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_baseline_shift_get_type",
-        constants$946.pango_baseline_shift_get_type$FUNC
-    );
-    static final FunctionDescriptor pango_font_scale_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pango_font_scale_get_type$MH = RuntimeHelper.downcallHandle(
-        "pango_font_scale_get_type",
-        constants$946.pango_font_scale_get_type$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GDriveIface.start_finish.class, "apply", constants$12.const$2);
+    static final VarHandle const$1 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("start_finish"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GDriveIface.can_stop.class, "apply", constants$10.const$5);
+    static final VarHandle const$3 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("can_stop"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GDriveIface.stop.class, "apply", constants$380.const$0);
+    static final VarHandle const$5 = constants$938.const$2.varHandle(MemoryLayout.PathElement.groupElement("stop"));
 }
 
 

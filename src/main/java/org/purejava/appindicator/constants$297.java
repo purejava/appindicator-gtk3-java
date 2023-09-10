@@ -3,70 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$297 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$297() {}
-    static final FunctionDescriptor g_scanner_cur_value$FUNC = FunctionDescriptor.of(MemoryLayout.unionLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("v_symbol"),
-        Constants$root.C_POINTER$LAYOUT.withName("v_identifier"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("v_binary"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("v_octal"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("v_int"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("v_int64"),
-        Constants$root.C_DOUBLE$LAYOUT.withName("v_float"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("v_hex"),
-        Constants$root.C_POINTER$LAYOUT.withName("v_string"),
-        Constants$root.C_POINTER$LAYOUT.withName("v_comment"),
-        Constants$root.C_CHAR$LAYOUT.withName("v_char"),
-        Constants$root.C_INT$LAYOUT.withName("v_error")
-    ).withName("_GTokenValue"),
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_strstr_len",
+        constants$36.const$1
     );
-    static final MethodHandle g_scanner_cur_value$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_cur_value",
-        constants$297.g_scanner_cur_value$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_strrstr",
+        constants$5.const$5
     );
-    static final FunctionDescriptor g_scanner_cur_line$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_strrstr_len",
+        constants$36.const$1
     );
-    static final MethodHandle g_scanner_cur_line$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_cur_line",
-        constants$297.g_scanner_cur_line$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_str_has_suffix",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_scanner_cur_position$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_str_has_prefix",
+        constants$9.const$0
     );
-    static final MethodHandle g_scanner_cur_position$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_cur_position",
-        constants$297.g_scanner_cur_position$FUNC
-    );
-    static final FunctionDescriptor g_scanner_eof$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_scanner_eof$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_eof",
-        constants$297.g_scanner_eof$FUNC
-    );
-    static final FunctionDescriptor g_scanner_set_scope$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_scanner_set_scope$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_set_scope",
-        constants$297.g_scanner_set_scope$FUNC
-    );
-    static final FunctionDescriptor g_scanner_scope_add_symbol$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_scanner_scope_add_symbol$MH = RuntimeHelper.downcallHandle(
-        "g_scanner_scope_add_symbol",
-        constants$297.g_scanner_scope_add_symbol$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_strtod",
+        constants$67.const$5
     );
 }
 

@@ -2,14 +2,16 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct dirent {
- *     __ino_t d_ino;
- *     __off_t d_off;
+ *     unsigned long d_ino;
+ *     long d_off;
  *     unsigned short d_reclen;
  *     unsigned char d_type;
  *     char d_name[256];
@@ -18,76 +20,65 @@ import java.lang.foreign.*;
  */
 public class dirent {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_LONG_LONG$LAYOUT.withName("d_ino"),
-        Constants$root.C_LONG_LONG$LAYOUT.withName("d_off"),
-        Constants$root.C_SHORT$LAYOUT.withName("d_reclen"),
-        Constants$root.C_CHAR$LAYOUT.withName("d_type"),
-        MemoryLayout.sequenceLayout(256, Constants$root.C_CHAR$LAYOUT).withName("d_name"),
-        MemoryLayout.paddingLayout(40)
-    ).withName("dirent");
     public static MemoryLayout $LAYOUT() {
-        return dirent.$struct$LAYOUT;
+        return constants$193.const$1;
     }
-    static final VarHandle d_ino$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("d_ino"));
     public static VarHandle d_ino$VH() {
-        return dirent.d_ino$VH;
+        return constants$193.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * __ino_t d_ino;
+     * unsigned long d_ino;
      * }
      */
     public static long d_ino$get(MemorySegment seg) {
-        return (long)dirent.d_ino$VH.get(seg);
+        return (long)constants$193.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * __ino_t d_ino;
+     * unsigned long d_ino;
      * }
      */
     public static void d_ino$set(MemorySegment seg, long x) {
-        dirent.d_ino$VH.set(seg, x);
+        constants$193.const$2.set(seg, x);
     }
     public static long d_ino$get(MemorySegment seg, long index) {
-        return (long)dirent.d_ino$VH.get(seg.asSlice(index*sizeof()));
+        return (long)constants$193.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void d_ino$set(MemorySegment seg, long index, long x) {
-        dirent.d_ino$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$193.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle d_off$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("d_off"));
     public static VarHandle d_off$VH() {
-        return dirent.d_off$VH;
+        return constants$193.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * __off_t d_off;
+     * long d_off;
      * }
      */
     public static long d_off$get(MemorySegment seg) {
-        return (long)dirent.d_off$VH.get(seg);
+        return (long)constants$193.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * __off_t d_off;
+     * long d_off;
      * }
      */
     public static void d_off$set(MemorySegment seg, long x) {
-        dirent.d_off$VH.set(seg, x);
+        constants$193.const$3.set(seg, x);
     }
     public static long d_off$get(MemorySegment seg, long index) {
-        return (long)dirent.d_off$VH.get(seg.asSlice(index*sizeof()));
+        return (long)constants$193.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void d_off$set(MemorySegment seg, long index, long x) {
-        dirent.d_off$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$193.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle d_reclen$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("d_reclen"));
     public static VarHandle d_reclen$VH() {
-        return dirent.d_reclen$VH;
+        return constants$193.const$4;
     }
     /**
      * Getter for field:
@@ -96,7 +87,7 @@ public class dirent {
      * }
      */
     public static short d_reclen$get(MemorySegment seg) {
-        return (short)dirent.d_reclen$VH.get(seg);
+        return (short)constants$193.const$4.get(seg);
     }
     /**
      * Setter for field:
@@ -105,17 +96,16 @@ public class dirent {
      * }
      */
     public static void d_reclen$set(MemorySegment seg, short x) {
-        dirent.d_reclen$VH.set(seg, x);
+        constants$193.const$4.set(seg, x);
     }
     public static short d_reclen$get(MemorySegment seg, long index) {
-        return (short)dirent.d_reclen$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$193.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void d_reclen$set(MemorySegment seg, long index, short x) {
-        dirent.d_reclen$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$193.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle d_type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("d_type"));
     public static VarHandle d_type$VH() {
-        return dirent.d_type$VH;
+        return constants$193.const$5;
     }
     /**
      * Getter for field:
@@ -124,7 +114,7 @@ public class dirent {
      * }
      */
     public static byte d_type$get(MemorySegment seg) {
-        return (byte)dirent.d_type$VH.get(seg);
+        return (byte)constants$193.const$5.get(seg);
     }
     /**
      * Setter for field:
@@ -133,13 +123,13 @@ public class dirent {
      * }
      */
     public static void d_type$set(MemorySegment seg, byte x) {
-        dirent.d_type$VH.set(seg, x);
+        constants$193.const$5.set(seg, x);
     }
     public static byte d_type$get(MemorySegment seg, long index) {
-        return (byte)dirent.d_type$VH.get(seg.asSlice(index*sizeof()));
+        return (byte)constants$193.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void d_type$set(MemorySegment seg, long index, byte x) {
-        dirent.d_type$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$193.const$5.set(seg.asSlice(index*sizeof()), x);
     }
     public static MemorySegment d_name$slice(MemorySegment seg) {
         return seg.asSlice(19, 256);
@@ -149,7 +139,7 @@ public class dirent {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -4,64 +4,43 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GListModelInterface {
- *     GTypeInterface g_iface;
- *     GType (*get_item_type)(GListModel*);
- *     guint (*get_n_items)(GListModel*);
- *     gpointer (*get_item)(GListModel*,guint);
+ *     struct _GTypeInterface g_iface;
+ *     unsigned long (*get_item_type)(struct _GListModel*);
+ *     unsigned int (*get_n_items)(struct _GListModel*);
+ *     void* (*get_item)(struct _GListModel*,unsigned int);
  * };
  * }
  */
 public class _GListModelInterface {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
-        ).withName("g_iface"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_item_type"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_n_items"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_item")
-    ).withName("_GListModelInterface");
     public static MemoryLayout $LAYOUT() {
-        return _GListModelInterface.$struct$LAYOUT;
+        return constants$1129.const$2;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
-    static final FunctionDescriptor get_item_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_item_type_UP$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_item_type_UP$MH = RuntimeHelper.upcallHandle(get_item_type.class, "apply", _GListModelInterface.get_item_type_UP$FUNC);
-    static final FunctionDescriptor get_item_type_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_item_type_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GListModelInterface.get_item_type_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GType (*get_item_type)(GListModel*);
+ * unsigned long (*get_item_type)(struct _GListModel*);
      * }
      */
     public interface get_item_type {
 
         long apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(get_item_type fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GListModelInterface.get_item_type_UP$MH, fi, _GListModelInterface.get_item_type$FUNC, scope);
+        static MemorySegment allocate(get_item_type fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1129.const$3, fi, constants$4.const$0, scope);
         }
-        static get_item_type ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_item_type ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0) -> {
                 try {
-                    return (long)_GListModelInterface.get_item_type_DOWN$MH.invokeExact(symbol, __x0);
+                    return (long)constants$1065.const$3.invokeExact(symbol, __x0);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -69,66 +48,52 @@ public class _GListModelInterface {
         }
     }
 
-    static final VarHandle get_item_type$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_item_type"));
     public static VarHandle get_item_type$VH() {
-        return _GListModelInterface.get_item_type$VH;
+        return constants$1129.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GType (*get_item_type)(GListModel*);
+     * unsigned long (*get_item_type)(struct _GListModel*);
      * }
      */
     public static MemorySegment get_item_type$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GListModelInterface.get_item_type$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1129.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GType (*get_item_type)(GListModel*);
+     * unsigned long (*get_item_type)(struct _GListModel*);
      * }
      */
     public static void get_item_type$set(MemorySegment seg, MemorySegment x) {
-        _GListModelInterface.get_item_type$VH.set(seg, x);
+        constants$1129.const$4.set(seg, x);
     }
     public static MemorySegment get_item_type$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GListModelInterface.get_item_type$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1129.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_item_type$set(MemorySegment seg, long index, MemorySegment x) {
-        _GListModelInterface.get_item_type$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1129.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_item_type get_item_type(MemorySegment segment, SegmentScope scope) {
+    public static get_item_type get_item_type(MemorySegment segment, Arena scope) {
         return get_item_type.ofAddress(get_item_type$get(segment), scope);
     }
-    static final FunctionDescriptor get_n_items$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_n_items_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_n_items_UP$MH = RuntimeHelper.upcallHandle(get_n_items.class, "apply", _GListModelInterface.get_n_items_UP$FUNC);
-    static final FunctionDescriptor get_n_items_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_n_items_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GListModelInterface.get_n_items_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * guint (*get_n_items)(GListModel*);
+ * unsigned int (*get_n_items)(struct _GListModel*);
      * }
      */
     public interface get_n_items {
 
-        int apply(java.lang.foreign.MemorySegment _x0);
-        static MemorySegment allocate(get_n_items fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GListModelInterface.get_n_items_UP$MH, fi, _GListModelInterface.get_n_items$FUNC, scope);
+        int apply(java.lang.foreign.MemorySegment key);
+        static MemorySegment allocate(get_n_items fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1129.const$5, fi, constants$10.const$5, scope);
         }
-        static get_n_items ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
-            return (java.lang.foreign.MemorySegment __x0) -> {
+        static get_n_items ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
+            return (java.lang.foreign.MemorySegment _key) -> {
                 try {
-                    return (int)_GListModelInterface.get_n_items_DOWN$MH.invokeExact(symbol, __x0);
+                    return (int)constants$14.const$2.invokeExact(symbol, _key);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -136,69 +101,52 @@ public class _GListModelInterface {
         }
     }
 
-    static final VarHandle get_n_items$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_n_items"));
     public static VarHandle get_n_items$VH() {
-        return _GListModelInterface.get_n_items$VH;
+        return constants$1130.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint (*get_n_items)(GListModel*);
+     * unsigned int (*get_n_items)(struct _GListModel*);
      * }
      */
     public static MemorySegment get_n_items$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GListModelInterface.get_n_items$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1130.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint (*get_n_items)(GListModel*);
+     * unsigned int (*get_n_items)(struct _GListModel*);
      * }
      */
     public static void get_n_items$set(MemorySegment seg, MemorySegment x) {
-        _GListModelInterface.get_n_items$VH.set(seg, x);
+        constants$1130.const$0.set(seg, x);
     }
     public static MemorySegment get_n_items$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GListModelInterface.get_n_items$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1130.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_n_items$set(MemorySegment seg, long index, MemorySegment x) {
-        _GListModelInterface.get_n_items$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1130.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_n_items get_n_items(MemorySegment segment, SegmentScope scope) {
+    public static get_n_items get_n_items(MemorySegment segment, Arena scope) {
         return get_n_items.ofAddress(get_n_items$get(segment), scope);
     }
-    static final FunctionDescriptor get_item$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final FunctionDescriptor get_item_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle get_item_UP$MH = RuntimeHelper.upcallHandle(get_item.class, "apply", _GListModelInterface.get_item_UP$FUNC);
-    static final FunctionDescriptor get_item_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle get_item_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GListModelInterface.get_item_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gpointer (*get_item)(GListModel*,guint);
+ * void* (*get_item)(struct _GListModel*,unsigned int);
      * }
      */
     public interface get_item {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment _x0, int _x1);
-        static MemorySegment allocate(get_item fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GListModelInterface.get_item_UP$MH, fi, _GListModelInterface.get_item$FUNC, scope);
+        static MemorySegment allocate(get_item fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$1130.const$1, fi, constants$21.const$3, scope);
         }
-        static get_item ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_item ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, int __x1) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GListModelInterface.get_item_DOWN$MH.invokeExact(symbol, __x0, __x1);
+                    return (java.lang.foreign.MemorySegment)constants$318.const$0.invokeExact(symbol, __x0, __x1);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -206,35 +154,34 @@ public class _GListModelInterface {
         }
     }
 
-    static final VarHandle get_item$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_item"));
     public static VarHandle get_item$VH() {
-        return _GListModelInterface.get_item$VH;
+        return constants$1130.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gpointer (*get_item)(GListModel*,guint);
+     * void* (*get_item)(struct _GListModel*,unsigned int);
      * }
      */
     public static MemorySegment get_item$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GListModelInterface.get_item$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1130.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gpointer (*get_item)(GListModel*,guint);
+     * void* (*get_item)(struct _GListModel*,unsigned int);
      * }
      */
     public static void get_item$set(MemorySegment seg, MemorySegment x) {
-        _GListModelInterface.get_item$VH.set(seg, x);
+        constants$1130.const$2.set(seg, x);
     }
     public static MemorySegment get_item$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GListModelInterface.get_item$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1130.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_item$set(MemorySegment seg, long index, MemorySegment x) {
-        _GListModelInterface.get_item$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1130.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_item get_item(MemorySegment segment, SegmentScope scope) {
+    public static get_item get_item(MemorySegment segment, Arena scope) {
         return get_item.ofAddress(get_item$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -242,7 +189,7 @@ public class _GListModelInterface {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

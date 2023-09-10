@@ -3,54 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1563 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1563() {}
-    static final FunctionDescriptor gtk_event_controller_scroll_set_flags$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_scroll_set_flags$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_scroll_set_flags",
-        constants$1563.gtk_event_controller_scroll_set_flags$FUNC
-    );
-    static final FunctionDescriptor gtk_event_controller_scroll_get_flags$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_event_controller_scroll_get_flags$MH = RuntimeHelper.downcallHandle(
-        "gtk_event_controller_scroll_get_flags",
-        constants$1563.gtk_event_controller_scroll_get_flags$FUNC
-    );
-    static final FunctionDescriptor gtk_expander_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_expander_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_get_type",
-        constants$1563.gtk_expander_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_expander_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_expander_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_new",
-        constants$1563.gtk_expander_new$FUNC
-    );
-    static final FunctionDescriptor gtk_expander_new_with_mnemonic$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_expander_new_with_mnemonic$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_new_with_mnemonic",
-        constants$1563.gtk_expander_new_with_mnemonic$FUNC
-    );
-    static final FunctionDescriptor gtk_expander_set_expanded$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_expander_set_expanded$MH = RuntimeHelper.downcallHandle(
-        "gtk_expander_set_expanded",
-        constants$1563.gtk_expander_set_expanded$FUNC
-    );
+    static final VarHandle const$0 = constants$1562.const$1.varHandle(MemoryLayout.PathElement.groupElement("destroy"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_PangoAttrClass.equal.class, "apply", constants$9.const$0);
+    static final VarHandle const$2 = constants$1562.const$1.varHandle(MemoryLayout.PathElement.groupElement("equal"));
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("klass"),
+            JAVA_INT.withName("start_index"),
+            JAVA_INT.withName("end_index")
+        ).withName("attr"),
+        RuntimeHelper.POINTER.withName("value")
+    ).withName("_PangoAttrString");
+    static final VarHandle const$4 = constants$1563.const$3.varHandle(MemoryLayout.PathElement.groupElement("value"));
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            RuntimeHelper.POINTER.withName("klass"),
+            JAVA_INT.withName("start_index"),
+            JAVA_INT.withName("end_index")
+        ).withName("attr"),
+        RuntimeHelper.POINTER.withName("value")
+    ).withName("_PangoAttrLanguage");
 }
 
 

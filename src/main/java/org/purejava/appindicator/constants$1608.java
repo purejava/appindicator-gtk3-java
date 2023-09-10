@@ -3,53 +3,31 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1608 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1608() {}
-    static final FunctionDescriptor gtk_gesture_stylus_get_axes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final VarHandle const$0 = constants$1607.const$2.varHandle(MemoryLayout.PathElement.groupElement("scripts"));
+    static final VarHandle const$1 = constants$1607.const$2.varHandle(MemoryLayout.PathElement.groupElement("n_scripts"));
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "script_engine_list",
+        constants$13.const$4
     );
-    static final MethodHandle gtk_gesture_stylus_get_axes$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_stylus_get_axes",
-        constants$1608.gtk_gesture_stylus_get_axes$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "script_engine_init",
+        constants$13.const$1
     );
-    static final FunctionDescriptor gtk_gesture_stylus_get_device_tool$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "script_engine_exit",
+        constants$7.const$5
     );
-    static final MethodHandle gtk_gesture_stylus_get_device_tool$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_stylus_get_device_tool",
-        constants$1608.gtk_gesture_stylus_get_device_tool$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_swipe_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_gesture_swipe_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_swipe_get_type",
-        constants$1608.gtk_gesture_swipe_get_type$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_swipe_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_swipe_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_swipe_new",
-        constants$1608.gtk_gesture_swipe_new$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_swipe_get_velocity$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_gesture_swipe_get_velocity$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_swipe_get_velocity",
-        constants$1608.gtk_gesture_swipe_get_velocity$FUNC
-    );
-    static final FunctionDescriptor gtk_gesture_zoom_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_gesture_zoom_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_gesture_zoom_get_type",
-        constants$1608.gtk_gesture_zoom_get_type$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "script_engine_create",
+        constants$5.const$2
     );
 }
 

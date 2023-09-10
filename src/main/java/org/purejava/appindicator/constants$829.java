@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$829 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$829() {}
-    static final FunctionDescriptor g_volume_eject_with_operation_finish$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "getopt",
+        constants$10.const$3
     );
-    static final MethodHandle g_volume_eject_with_operation_finish$MH = RuntimeHelper.downcallHandle(
-        "g_volume_eject_with_operation_finish",
-        constants$829.g_volume_eject_with_operation_finish$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "gethostname",
+        constants$97.const$1
     );
-    static final FunctionDescriptor g_volume_get_sort_key$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "sethostname",
+        constants$97.const$1
     );
-    static final MethodHandle g_volume_get_sort_key$MH = RuntimeHelper.downcallHandle(
-        "g_volume_get_sort_key",
-        constants$829.g_volume_get_sort_key$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "sethostid",
+        constants$26.const$2
     );
-    static final FunctionDescriptor g_zlib_compressor_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_zlib_compressor_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_zlib_compressor_get_type",
-        constants$829.g_zlib_compressor_get_type$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "getdomainname",
+        constants$97.const$1
     );
-    static final FunctionDescriptor g_zlib_compressor_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_zlib_compressor_new$MH = RuntimeHelper.downcallHandle(
-        "g_zlib_compressor_new",
-        constants$829.g_zlib_compressor_new$FUNC
-    );
-    static final FunctionDescriptor g_zlib_compressor_get_file_info$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_zlib_compressor_get_file_info$MH = RuntimeHelper.downcallHandle(
-        "g_zlib_compressor_get_file_info",
-        constants$829.g_zlib_compressor_get_file_info$FUNC
-    );
-    static final FunctionDescriptor g_zlib_compressor_set_file_info$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_zlib_compressor_set_file_info$MH = RuntimeHelper.downcallHandle(
-        "g_zlib_compressor_set_file_info",
-        constants$829.g_zlib_compressor_set_file_info$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "setdomainname",
+        constants$97.const$1
     );
 }
 

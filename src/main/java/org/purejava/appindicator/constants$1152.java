@@ -3,58 +3,34 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1152 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1152() {}
-    static final FunctionDescriptor pango_cairo_context_set_resolution$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_DOUBLE$LAYOUT
+    static final VarHandle const$0 = constants$1151.const$4.varHandle(MemoryLayout.PathElement.groupElement("get_next"));
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_menu_link_iter_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle pango_cairo_context_set_resolution$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_context_set_resolution",
-        constants$1152.pango_cairo_context_set_resolution$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_menu_link_iter_get_next",
+        constants$12.const$2
     );
-    static final FunctionDescriptor pango_cairo_context_get_resolution$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_menu_link_iter_next",
+        constants$10.const$5
     );
-    static final MethodHandle pango_cairo_context_get_resolution$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_context_get_resolution",
-        constants$1152.pango_cairo_context_get_resolution$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_menu_link_iter_get_name",
+        constants$5.const$2
     );
-    static final FunctionDescriptor pango_cairo_context_set_shape_renderer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_cairo_context_set_shape_renderer$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_context_set_shape_renderer",
-        constants$1152.pango_cairo_context_set_shape_renderer$FUNC
-    );
-    static final FunctionDescriptor pango_cairo_context_get_shape_renderer$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_cairo_context_get_shape_renderer$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_context_get_shape_renderer",
-        constants$1152.pango_cairo_context_get_shape_renderer$FUNC
-    );
-    static final FunctionDescriptor pango_cairo_create_context$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_cairo_create_context$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_create_context",
-        constants$1152.pango_cairo_create_context$FUNC
-    );
-    static final FunctionDescriptor pango_cairo_create_layout$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pango_cairo_create_layout$MH = RuntimeHelper.downcallHandle(
-        "pango_cairo_create_layout",
-        constants$1152.pango_cairo_create_layout$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_menu_link_iter_get_value",
+        constants$5.const$2
     );
 }
 

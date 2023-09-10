@@ -3,57 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$273 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$273() {}
-    static final FunctionDescriptor g_pattern_match_string$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_source_add_unix_fd",
+        constants$33.const$5
     );
-    static final MethodHandle g_pattern_match_string$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_match_string",
-        constants$273.g_pattern_match_string$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_source_modify_unix_fd",
+        constants$164.const$5
     );
-    static final FunctionDescriptor g_pattern_match_simple$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_source_remove_unix_fd",
+        constants$13.const$4
     );
-    static final MethodHandle g_pattern_match_simple$MH = RuntimeHelper.downcallHandle(
-        "g_pattern_match_simple",
-        constants$273.g_pattern_match_simple$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_source_query_unix_fd",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_spaced_primes_closest$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_source_set_callback_indirect",
+        constants$14.const$3
     );
-    static final MethodHandle g_spaced_primes_closest$MH = RuntimeHelper.downcallHandle(
-        "g_spaced_primes_closest",
-        constants$273.g_spaced_primes_closest$FUNC
-    );
-    static final FunctionDescriptor g_qsort_with_data$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_qsort_with_data$MH = RuntimeHelper.downcallHandle(
-        "g_qsort_with_data",
-        constants$273.g_qsort_with_data$FUNC
-    );
-    static final FunctionDescriptor g_queue_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_queue_new$MH = RuntimeHelper.downcallHandle(
-        "g_queue_new",
-        constants$273.g_queue_new$FUNC
-    );
-    static final FunctionDescriptor g_queue_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_queue_free$MH = RuntimeHelper.downcallHandle(
-        "g_queue_free",
-        constants$273.g_queue_free$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_source_add_poll",
+        constants$13.const$4
     );
 }
 

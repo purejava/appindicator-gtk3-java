@@ -3,56 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$589 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$589() {}
-    static final FunctionDescriptor g_dbus_object_manager_server_export_uniquely$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_closure_new_simple",
+        constants$24.const$4
     );
-    static final MethodHandle g_dbus_object_manager_server_export_uniquely$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_server_export_uniquely",
-        constants$589.g_dbus_object_manager_server_export_uniquely$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(g_closure_add_finalize_notifier$notify_func.class, "apply", constants$13.const$4);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_closure_add_finalize_notifier",
+        constants$14.const$3
     );
-    static final FunctionDescriptor g_dbus_object_manager_server_is_exported$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(g_closure_remove_finalize_notifier$notify_func.class, "apply", constants$13.const$4);
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_closure_remove_finalize_notifier",
+        constants$14.const$3
     );
-    static final MethodHandle g_dbus_object_manager_server_is_exported$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_server_is_exported",
-        constants$589.g_dbus_object_manager_server_is_exported$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_manager_server_unexport$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_manager_server_unexport$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_manager_server_unexport",
-        constants$589.g_dbus_object_manager_server_unexport$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_proxy_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_object_proxy_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_proxy_get_type",
-        constants$589.g_dbus_object_proxy_get_type$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_proxy_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_proxy_new$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_proxy_new",
-        constants$589.g_dbus_object_proxy_new$FUNC
-    );
-    static final FunctionDescriptor g_dbus_object_proxy_get_connection$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_object_proxy_get_connection$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_object_proxy_get_connection",
-        constants$589.g_dbus_object_proxy_get_connection$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(g_closure_add_invalidate_notifier$notify_func.class, "apply", constants$13.const$4);
 }
 
 

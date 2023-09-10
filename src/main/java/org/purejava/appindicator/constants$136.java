@@ -3,58 +3,43 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$136 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$136() {}
-    static final FunctionDescriptor g_node_insert_after$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "gettimeofday",
+        constants$9.const$0
     );
-    static final MethodHandle g_node_insert_after$MH = RuntimeHelper.downcallHandle(
-        "g_node_insert_after",
-        constants$136.g_node_insert_after$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "settimeofday",
+        constants$9.const$0
     );
-    static final FunctionDescriptor g_node_prepend$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "adjtime",
+        constants$9.const$0
     );
-    static final MethodHandle g_node_prepend$MH = RuntimeHelper.downcallHandle(
-        "g_node_prepend",
-        constants$136.g_node_prepend$FUNC
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("tv_sec"),
+            JAVA_LONG.withName("tv_usec")
+        ).withName("it_interval"),
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("tv_sec"),
+            JAVA_LONG.withName("tv_usec")
+        ).withName("it_value")
+    ).withName("itimerval");
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "getitimer",
+        constants$9.const$2
     );
-    static final FunctionDescriptor g_node_n_nodes$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle g_node_n_nodes$MH = RuntimeHelper.downcallHandle(
-        "g_node_n_nodes",
-        constants$136.g_node_n_nodes$FUNC
-    );
-    static final FunctionDescriptor g_node_get_root$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_get_root$MH = RuntimeHelper.downcallHandle(
-        "g_node_get_root",
-        constants$136.g_node_get_root$FUNC
-    );
-    static final FunctionDescriptor g_node_is_ancestor$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_is_ancestor$MH = RuntimeHelper.downcallHandle(
-        "g_node_is_ancestor",
-        constants$136.g_node_is_ancestor$FUNC
-    );
-    static final FunctionDescriptor g_node_depth$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_node_depth$MH = RuntimeHelper.downcallHandle(
-        "g_node_depth",
-        constants$136.g_node_depth$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "setitimer",
+        constants$10.const$3
     );
 }
 

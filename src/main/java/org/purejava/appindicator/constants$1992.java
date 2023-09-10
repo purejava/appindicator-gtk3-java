@@ -2,18 +2,36 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1992 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1992() {}
-    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Name");
-    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("GenericName");
-    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("NoDisplay");
-    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_COMMENT$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Comment");
-    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_ICON$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Icon");
-    static final MemorySegment G_KEY_FILE_DESKTOP_KEY_HIDDEN$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("Hidden");
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(atk_add_key_event_listener$listener.class, "apply", constants$9.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_add_key_event_listener",
+        constants$9.const$0
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_remove_key_event_listener",
+        constants$80.const$1
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_get_root",
+        constants$35.const$2
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_get_focus_object",
+        constants$35.const$2
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_get_toolkit_name",
+        constants$35.const$2
+    );
 }
 
 

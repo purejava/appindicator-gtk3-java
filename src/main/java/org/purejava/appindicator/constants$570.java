@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$570 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$570() {}
-    static final FunctionDescriptor g_dbus_message_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle g_dbus_message_get_type$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_get_type",
-        constants$570.g_dbus_message_get_type$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_value_set_instance",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_dbus_message_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle g_dbus_message_new$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_new",
-        constants$570.g_dbus_message_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_value_init_from_instance",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_dbus_message_new_signal$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_value_fits_pointer",
+        constants$10.const$5
     );
-    static final MethodHandle g_dbus_message_new_signal$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_new_signal",
-        constants$570.g_dbus_message_new_signal$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_value_peek_pointer",
+        constants$5.const$2
     );
-    static final FunctionDescriptor g_dbus_message_new_method_call$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_value_type_compatible",
+        constants$517.const$3
     );
-    static final MethodHandle g_dbus_message_new_method_call$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_new_method_call",
-        constants$570.g_dbus_message_new_method_call$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_new_method_reply$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_new_method_reply$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_message_new_method_reply",
-        constants$570.g_dbus_message_new_method_reply$FUNC
-    );
-    static final FunctionDescriptor g_dbus_message_new_method_error$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_message_new_method_error$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_dbus_message_new_method_error",
-        constants$570.g_dbus_message_new_method_error$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_value_type_transformable",
+        constants$517.const$3
     );
 }
 

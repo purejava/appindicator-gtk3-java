@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * int (*GtkAssistantPageFunc)(int current_page,void* data);
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GtkAssistantPageFunc {
 
     int apply(int current_page, java.lang.foreign.MemorySegment data);
-    static MemorySegment allocate(GtkAssistantPageFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$1494.GtkAssistantPageFunc_UP$MH, fi, constants$1494.GtkAssistantPageFunc$FUNC, scope);
+    static MemorySegment allocate(GtkAssistantPageFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$2519.const$5, fi, constants$9.const$2, scope);
     }
-    static GtkAssistantPageFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GtkAssistantPageFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return (int _current_page, java.lang.foreign.MemorySegment _data) -> {
             try {
-                return (int)constants$1494.GtkAssistantPageFunc_DOWN$MH.invokeExact(symbol, _current_page, _data);
+                return (int)constants$2382.const$0.invokeExact(symbol, _current_page, _data);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

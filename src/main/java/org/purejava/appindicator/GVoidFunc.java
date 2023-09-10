@@ -2,8 +2,11 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * void (*GVoidFunc)();
@@ -12,14 +15,14 @@ import java.lang.foreign.*;
 public interface GVoidFunc {
 
     void apply();
-    static MemorySegment allocate(GVoidFunc fi, SegmentScope scope) {
-        return RuntimeHelper.upcallStub(constants$42.GVoidFunc_UP$MH, fi, constants$42.GVoidFunc$FUNC, scope);
+    static MemorySegment allocate(GVoidFunc fi, Arena scope) {
+        return RuntimeHelper.upcallStub(constants$64.const$0, fi, constants$7.const$5, scope);
     }
-    static GVoidFunc ofAddress(MemorySegment addr, SegmentScope scope) {
-        MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+    static GVoidFunc ofAddress(MemorySegment addr, Arena arena) {
+        MemorySegment symbol = addr.reinterpret(arena, null);
         return () -> {
             try {
-                constants$42.GVoidFunc_DOWN$MH.invokeExact(symbol);
+                constants$64.const$1.invokeExact(symbol);
             } catch (Throwable ex$) {
                 throw new AssertionError("should not reach here", ex$);
             }

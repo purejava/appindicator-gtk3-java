@@ -2,15 +2,17 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct hb_segment_properties_t {
- *     hb_direction_t direction;
- *     hb_script_t script;
- *     hb_language_t language;
+ *     enum hb_direction_t direction;
+ *     enum hb_script_t script;
+ *     struct hb_language_impl_t* language;
  *     void* reserved1;
  *     void* reserved2;
  * };
@@ -18,103 +20,92 @@ import java.lang.foreign.*;
  */
 public class hb_segment_properties_t {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_INT$LAYOUT.withName("direction"),
-        Constants$root.C_INT$LAYOUT.withName("script"),
-        Constants$root.C_POINTER$LAYOUT.withName("language"),
-        Constants$root.C_POINTER$LAYOUT.withName("reserved1"),
-        Constants$root.C_POINTER$LAYOUT.withName("reserved2")
-    ).withName("hb_segment_properties_t");
     public static MemoryLayout $LAYOUT() {
-        return hb_segment_properties_t.$struct$LAYOUT;
+        return constants$1505.const$2;
     }
-    static final VarHandle direction$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("direction"));
     public static VarHandle direction$VH() {
-        return hb_segment_properties_t.direction$VH;
+        return constants$1505.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_direction_t direction;
+     * enum hb_direction_t direction;
      * }
      */
     public static int direction$get(MemorySegment seg) {
-        return (int)hb_segment_properties_t.direction$VH.get(seg);
+        return (int)constants$1505.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_direction_t direction;
+     * enum hb_direction_t direction;
      * }
      */
     public static void direction$set(MemorySegment seg, int x) {
-        hb_segment_properties_t.direction$VH.set(seg, x);
+        constants$1505.const$3.set(seg, x);
     }
     public static int direction$get(MemorySegment seg, long index) {
-        return (int)hb_segment_properties_t.direction$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1505.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void direction$set(MemorySegment seg, long index, int x) {
-        hb_segment_properties_t.direction$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1505.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle script$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("script"));
     public static VarHandle script$VH() {
-        return hb_segment_properties_t.script$VH;
+        return constants$1505.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_script_t script;
+     * enum hb_script_t script;
      * }
      */
     public static int script$get(MemorySegment seg) {
-        return (int)hb_segment_properties_t.script$VH.get(seg);
+        return (int)constants$1505.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_script_t script;
+     * enum hb_script_t script;
      * }
      */
     public static void script$set(MemorySegment seg, int x) {
-        hb_segment_properties_t.script$VH.set(seg, x);
+        constants$1505.const$4.set(seg, x);
     }
     public static int script$get(MemorySegment seg, long index) {
-        return (int)hb_segment_properties_t.script$VH.get(seg.asSlice(index*sizeof()));
+        return (int)constants$1505.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void script$set(MemorySegment seg, long index, int x) {
-        hb_segment_properties_t.script$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1505.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle language$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("language"));
     public static VarHandle language$VH() {
-        return hb_segment_properties_t.language$VH;
+        return constants$1505.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * hb_language_t language;
+     * struct hb_language_impl_t* language;
      * }
      */
     public static MemorySegment language$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)hb_segment_properties_t.language$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1505.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * hb_language_t language;
+     * struct hb_language_impl_t* language;
      * }
      */
     public static void language$set(MemorySegment seg, MemorySegment x) {
-        hb_segment_properties_t.language$VH.set(seg, x);
+        constants$1505.const$5.set(seg, x);
     }
     public static MemorySegment language$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)hb_segment_properties_t.language$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1505.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void language$set(MemorySegment seg, long index, MemorySegment x) {
-        hb_segment_properties_t.language$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1505.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle reserved1$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reserved1"));
     public static VarHandle reserved1$VH() {
-        return hb_segment_properties_t.reserved1$VH;
+        return constants$1506.const$0;
     }
     /**
      * Getter for field:
@@ -123,7 +114,7 @@ public class hb_segment_properties_t {
      * }
      */
     public static MemorySegment reserved1$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)hb_segment_properties_t.reserved1$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1506.const$0.get(seg);
     }
     /**
      * Setter for field:
@@ -132,17 +123,16 @@ public class hb_segment_properties_t {
      * }
      */
     public static void reserved1$set(MemorySegment seg, MemorySegment x) {
-        hb_segment_properties_t.reserved1$VH.set(seg, x);
+        constants$1506.const$0.set(seg, x);
     }
     public static MemorySegment reserved1$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)hb_segment_properties_t.reserved1$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1506.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved1$set(MemorySegment seg, long index, MemorySegment x) {
-        hb_segment_properties_t.reserved1$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1506.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle reserved2$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("reserved2"));
     public static VarHandle reserved2$VH() {
-        return hb_segment_properties_t.reserved2$VH;
+        return constants$1506.const$1;
     }
     /**
      * Getter for field:
@@ -151,7 +141,7 @@ public class hb_segment_properties_t {
      * }
      */
     public static MemorySegment reserved2$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)hb_segment_properties_t.reserved2$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$1506.const$1.get(seg);
     }
     /**
      * Setter for field:
@@ -160,20 +150,20 @@ public class hb_segment_properties_t {
      * }
      */
     public static void reserved2$set(MemorySegment seg, MemorySegment x) {
-        hb_segment_properties_t.reserved2$VH.set(seg, x);
+        constants$1506.const$1.set(seg, x);
     }
     public static MemorySegment reserved2$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)hb_segment_properties_t.reserved2$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$1506.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void reserved2$set(MemorySegment seg, long index, MemorySegment x) {
-        hb_segment_properties_t.reserved2$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$1506.const$1.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

@@ -3,54 +3,45 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$922 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$922() {}
-    static final FunctionDescriptor pango_attr_size_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_server_set_connection",
+        constants$13.const$4
     );
-    static final MethodHandle pango_attr_size_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_size_new",
-        constants$922.pango_attr_size_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_server_export",
+        constants$13.const$4
     );
-    static final FunctionDescriptor pango_attr_size_new_absolute$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_server_export_uniquely",
+        constants$13.const$4
     );
-    static final MethodHandle pango_attr_size_new_absolute$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_size_new_absolute",
-        constants$922.pango_attr_size_new_absolute$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_server_is_exported",
+        constants$9.const$0
     );
-    static final FunctionDescriptor pango_attr_style_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_dbus_object_manager_server_unexport",
+        constants$9.const$0
     );
-    static final MethodHandle pango_attr_style_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_style_new",
-        constants$922.pango_attr_style_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_weight_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_attr_weight_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_weight_new",
-        constants$922.pango_attr_weight_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_variant_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_attr_variant_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_variant_new",
-        constants$922.pango_attr_variant_new$FUNC
-    );
-    static final FunctionDescriptor pango_attr_stretch_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_attr_stretch_new$MH = RuntimeHelper.downcallHandle(
-        "pango_attr_stretch_new",
-        constants$922.pango_attr_stretch_new$FUNC
-    );
+    static final StructLayout const$5 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            JAVA_INT.withName("ref_count"),
+            MemoryLayout.paddingLayout(4),
+            RuntimeHelper.POINTER.withName("qdata")
+        ).withName("parent_instance"),
+        RuntimeHelper.POINTER.withName("priv")
+    ).withName("_GDBusObjectProxy");
 }
 
 

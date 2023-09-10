@@ -4,67 +4,43 @@ package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkStyleProviderIface {
- *     GTypeInterface g_iface;
- *     GtkStyleProperties* (*get_style)(GtkStyleProvider*,GtkWidgetPath*);
- *     gboolean (*get_style_property)(GtkStyleProvider*,GtkWidgetPath*,GtkStateFlags,GParamSpec*,GValue*);
- *     GtkIconFactory* (*get_icon_factory)(GtkStyleProvider*,GtkWidgetPath*);
+ *     struct _GTypeInterface g_iface;
+ *     struct _GtkStyleProperties* (*get_style)(struct _GtkStyleProvider*,struct _GtkWidgetPath*);
+ *     int (*get_style_property)(struct _GtkStyleProvider*,struct _GtkWidgetPath*,enum GtkStateFlags,struct _GParamSpec*,struct _GValue*);
+ *     struct _GtkIconFactory* (*get_icon_factory)(struct _GtkStyleProvider*,struct _GtkWidgetPath*);
  * };
  * }
  */
 public class _GtkStyleProviderIface {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        MemoryLayout.structLayout(
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_type"),
-            Constants$root.C_LONG_LONG$LAYOUT.withName("g_instance_type")
-        ).withName("g_iface"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_style"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_style_property"),
-        Constants$root.C_POINTER$LAYOUT.withName("get_icon_factory")
-    ).withName("_GtkStyleProviderIface");
     public static MemoryLayout $LAYOUT() {
-        return _GtkStyleProviderIface.$struct$LAYOUT;
+        return constants$2773.const$4;
     }
     public static MemorySegment g_iface$slice(MemorySegment seg) {
         return seg.asSlice(0, 16);
     }
-    static final FunctionDescriptor get_style$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_style_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_style_UP$MH = RuntimeHelper.upcallHandle(get_style.class, "apply", _GtkStyleProviderIface.get_style_UP$FUNC);
-    static final FunctionDescriptor get_style_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_style_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleProviderIface.get_style_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GtkStyleProperties* (*get_style)(GtkStyleProvider*,GtkWidgetPath*);
+ * struct _GtkStyleProperties* (*get_style)(struct _GtkStyleProvider*,struct _GtkWidgetPath*);
      * }
      */
     public interface get_style {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
-        static MemorySegment allocate(get_style fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkStyleProviderIface.get_style_UP$MH, fi, _GtkStyleProviderIface.get_style$FUNC, scope);
+        static MemorySegment allocate(get_style fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2773.const$5, fi, constants$5.const$5, scope);
         }
-        static get_style ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_style ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GtkStyleProviderIface.get_style_DOWN$MH.invokeExact(symbol, _path, _func_data);
+                    return (java.lang.foreign.MemorySegment)constants$15.const$1.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -72,78 +48,52 @@ public class _GtkStyleProviderIface {
         }
     }
 
-    static final VarHandle get_style$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_style"));
     public static VarHandle get_style$VH() {
-        return _GtkStyleProviderIface.get_style$VH;
+        return constants$2774.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GtkStyleProperties* (*get_style)(GtkStyleProvider*,GtkWidgetPath*);
+     * struct _GtkStyleProperties* (*get_style)(struct _GtkStyleProvider*,struct _GtkWidgetPath*);
      * }
      */
     public static MemorySegment get_style$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkStyleProviderIface.get_style$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2774.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GtkStyleProperties* (*get_style)(GtkStyleProvider*,GtkWidgetPath*);
+     * struct _GtkStyleProperties* (*get_style)(struct _GtkStyleProvider*,struct _GtkWidgetPath*);
      * }
      */
     public static void get_style$set(MemorySegment seg, MemorySegment x) {
-        _GtkStyleProviderIface.get_style$VH.set(seg, x);
+        constants$2774.const$0.set(seg, x);
     }
     public static MemorySegment get_style$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkStyleProviderIface.get_style$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2774.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void get_style$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkStyleProviderIface.get_style$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2774.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_style get_style(MemorySegment segment, SegmentScope scope) {
+    public static get_style get_style(MemorySegment segment, Arena scope) {
         return get_style.ofAddress(get_style$get(segment), scope);
     }
-    static final FunctionDescriptor get_style_property$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_style_property_UP$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_style_property_UP$MH = RuntimeHelper.upcallHandle(get_style_property.class, "apply", _GtkStyleProviderIface.get_style_property_UP$FUNC);
-    static final FunctionDescriptor get_style_property_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_style_property_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleProviderIface.get_style_property_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * gboolean (*get_style_property)(GtkStyleProvider*,GtkWidgetPath*,GtkStateFlags,GParamSpec*,GValue*);
+ * int (*get_style_property)(struct _GtkStyleProvider*,struct _GtkWidgetPath*,enum GtkStateFlags,struct _GParamSpec*,struct _GValue*);
      * }
      */
     public interface get_style_property {
 
         int apply(java.lang.foreign.MemorySegment _x0, java.lang.foreign.MemorySegment _x1, int _x2, java.lang.foreign.MemorySegment _x3, java.lang.foreign.MemorySegment _x4);
-        static MemorySegment allocate(get_style_property fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkStyleProviderIface.get_style_property_UP$MH, fi, _GtkStyleProviderIface.get_style_property$FUNC, scope);
+        static MemorySegment allocate(get_style_property fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2774.const$1, fi, constants$859.const$1, scope);
         }
-        static get_style_property ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_style_property ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment __x0, java.lang.foreign.MemorySegment __x1, int __x2, java.lang.foreign.MemorySegment __x3, java.lang.foreign.MemorySegment __x4) -> {
                 try {
-                    return (int)_GtkStyleProviderIface.get_style_property_DOWN$MH.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
+                    return (int)constants$985.const$1.invokeExact(symbol, __x0, __x1, __x2, __x3, __x4);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -151,69 +101,52 @@ public class _GtkStyleProviderIface {
         }
     }
 
-    static final VarHandle get_style_property$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_style_property"));
     public static VarHandle get_style_property$VH() {
-        return _GtkStyleProviderIface.get_style_property$VH;
+        return constants$2774.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * gboolean (*get_style_property)(GtkStyleProvider*,GtkWidgetPath*,GtkStateFlags,GParamSpec*,GValue*);
+     * int (*get_style_property)(struct _GtkStyleProvider*,struct _GtkWidgetPath*,enum GtkStateFlags,struct _GParamSpec*,struct _GValue*);
      * }
      */
     public static MemorySegment get_style_property$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkStyleProviderIface.get_style_property$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2774.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * gboolean (*get_style_property)(GtkStyleProvider*,GtkWidgetPath*,GtkStateFlags,GParamSpec*,GValue*);
+     * int (*get_style_property)(struct _GtkStyleProvider*,struct _GtkWidgetPath*,enum GtkStateFlags,struct _GParamSpec*,struct _GValue*);
      * }
      */
     public static void get_style_property$set(MemorySegment seg, MemorySegment x) {
-        _GtkStyleProviderIface.get_style_property$VH.set(seg, x);
+        constants$2774.const$2.set(seg, x);
     }
     public static MemorySegment get_style_property$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkStyleProviderIface.get_style_property$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2774.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void get_style_property$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkStyleProviderIface.get_style_property$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2774.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_style_property get_style_property(MemorySegment segment, SegmentScope scope) {
+    public static get_style_property get_style_property(MemorySegment segment, Arena scope) {
         return get_style_property.ofAddress(get_style_property$get(segment), scope);
     }
-    static final FunctionDescriptor get_icon_factory$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final FunctionDescriptor get_icon_factory_UP$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_icon_factory_UP$MH = RuntimeHelper.upcallHandle(get_icon_factory.class, "apply", _GtkStyleProviderIface.get_icon_factory_UP$FUNC);
-    static final FunctionDescriptor get_icon_factory_DOWN$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle get_icon_factory_DOWN$MH = RuntimeHelper.downcallHandle(
-        _GtkStyleProviderIface.get_icon_factory_DOWN$FUNC
-    );
     /**
      * {@snippet :
- * GtkIconFactory* (*get_icon_factory)(GtkStyleProvider*,GtkWidgetPath*);
+ * struct _GtkIconFactory* (*get_icon_factory)(struct _GtkStyleProvider*,struct _GtkWidgetPath*);
      * }
      */
     public interface get_icon_factory {
 
         java.lang.foreign.MemorySegment apply(java.lang.foreign.MemorySegment path, java.lang.foreign.MemorySegment func_data);
-        static MemorySegment allocate(get_icon_factory fi, SegmentScope scope) {
-            return RuntimeHelper.upcallStub(_GtkStyleProviderIface.get_icon_factory_UP$MH, fi, _GtkStyleProviderIface.get_icon_factory$FUNC, scope);
+        static MemorySegment allocate(get_icon_factory fi, Arena scope) {
+            return RuntimeHelper.upcallStub(constants$2774.const$3, fi, constants$5.const$5, scope);
         }
-        static get_icon_factory ofAddress(MemorySegment addr, SegmentScope scope) {
-            MemorySegment symbol = MemorySegment.ofAddress(addr.address(), 0, scope);
+        static get_icon_factory ofAddress(MemorySegment addr, Arena arena) {
+            MemorySegment symbol = addr.reinterpret(arena, null);
             return (java.lang.foreign.MemorySegment _path, java.lang.foreign.MemorySegment _func_data) -> {
                 try {
-                    return (java.lang.foreign.MemorySegment)_GtkStyleProviderIface.get_icon_factory_DOWN$MH.invokeExact(symbol, _path, _func_data);
+                    return (java.lang.foreign.MemorySegment)constants$15.const$1.invokeExact(symbol, _path, _func_data);
                 } catch (Throwable ex$) {
                     throw new AssertionError("should not reach here", ex$);
                 }
@@ -221,35 +154,34 @@ public class _GtkStyleProviderIface {
         }
     }
 
-    static final VarHandle get_icon_factory$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("get_icon_factory"));
     public static VarHandle get_icon_factory$VH() {
-        return _GtkStyleProviderIface.get_icon_factory$VH;
+        return constants$2774.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GtkIconFactory* (*get_icon_factory)(GtkStyleProvider*,GtkWidgetPath*);
+     * struct _GtkIconFactory* (*get_icon_factory)(struct _GtkStyleProvider*,struct _GtkWidgetPath*);
      * }
      */
     public static MemorySegment get_icon_factory$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkStyleProviderIface.get_icon_factory$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$2774.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GtkIconFactory* (*get_icon_factory)(GtkStyleProvider*,GtkWidgetPath*);
+     * struct _GtkIconFactory* (*get_icon_factory)(struct _GtkStyleProvider*,struct _GtkWidgetPath*);
      * }
      */
     public static void get_icon_factory$set(MemorySegment seg, MemorySegment x) {
-        _GtkStyleProviderIface.get_icon_factory$VH.set(seg, x);
+        constants$2774.const$4.set(seg, x);
     }
     public static MemorySegment get_icon_factory$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkStyleProviderIface.get_icon_factory$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$2774.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void get_icon_factory$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkStyleProviderIface.get_icon_factory$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$2774.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    public static get_icon_factory get_icon_factory(MemorySegment segment, SegmentScope scope) {
+    public static get_icon_factory get_icon_factory(MemorySegment segment, Arena scope) {
         return get_icon_factory.ofAddress(get_icon_factory$get(segment), scope);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
@@ -257,7 +189,7 @@ public class _GtkStyleProviderIface {
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

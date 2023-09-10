@@ -3,56 +3,25 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1487 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1487() {}
-    static final FunctionDescriptor gtk_combo_box_set_entry_text_column$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_v_origin_func$func.class, "apply", constants$1243.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_v_origin_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_set_glyph_v_origin_func",
+        constants$42.const$1
     );
-    static final MethodHandle gtk_combo_box_set_entry_text_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_set_entry_text_column",
-        constants$1487.gtk_combo_box_set_entry_text_column$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_get_entry_text_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_combo_box_get_entry_text_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_get_entry_text_column",
-        constants$1487.gtk_combo_box_get_entry_text_column$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_set_popup_fixed_width$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_combo_box_set_popup_fixed_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_set_popup_fixed_width",
-        constants$1487.gtk_combo_box_set_popup_fixed_width$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_get_popup_fixed_width$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_combo_box_get_popup_fixed_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_get_popup_fixed_width",
-        constants$1487.gtk_combo_box_get_popup_fixed_width$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_popup$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_combo_box_popup$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_popup",
-        constants$1487.gtk_combo_box_popup$FUNC
-    );
-    static final FunctionDescriptor gtk_combo_box_popup_for_device$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_combo_box_popup_for_device$MH = RuntimeHelper.downcallHandle(
-        "gtk_combo_box_popup_for_device",
-        constants$1487.gtk_combo_box_popup_for_device$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_h_kerning_func$func.class, "apply", constants$1479.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(hb_font_funcs_set_glyph_h_kerning_func$destroy.class, "apply", constants$13.const$1);
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_font_funcs_set_glyph_h_kerning_func",
+        constants$42.const$1
     );
 }
 

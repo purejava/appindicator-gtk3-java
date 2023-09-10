@@ -2,18 +2,39 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$2040 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2040() {}
-    static final MemorySegment GTK_STYLE_CLASS_NEEDS_ATTENTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("needs-attention");
-    static final MemorySegment GTK_STYLE_CLASS_SUGGESTED_ACTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("suggested-action");
-    static final MemorySegment GTK_STYLE_CLASS_DESTRUCTIVE_ACTION$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("destructive-action");
-    static final MemorySegment GTK_STYLE_CLASS_POPOVER$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("popover");
-    static final MemorySegment GTK_STYLE_CLASS_POPUP$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("popup");
-    static final MemorySegment GTK_STYLE_CLASS_MESSAGE_DIALOG$SEGMENT = RuntimeHelper.CONSTANT_ALLOCATOR.allocateUtf8String("message-dialog");
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_image_get_type",
+        constants$3.const$5
+    );
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_image_get_image_description",
+        constants$5.const$2
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_image_get_image_size",
+        constants$14.const$3
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_image_set_image_description",
+        constants$9.const$0
+    );
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_image_get_image_position",
+        constants$331.const$4
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_image_get_image_locale",
+        constants$5.const$2
+    );
 }
 
 

@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1534 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1534() {}
-    static final FunctionDescriptor gtk_menu_item_set_right_justified$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_language_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_menu_item_set_right_justified$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_set_right_justified",
-        constants$1534.gtk_menu_item_set_right_justified$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_language_get_default",
+        constants$35.const$2
     );
-    static final FunctionDescriptor gtk_menu_item_get_right_justified$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_language_get_preferred",
+        constants$35.const$2
     );
-    static final MethodHandle gtk_menu_item_get_right_justified$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_get_right_justified",
-        constants$1534.gtk_menu_item_get_right_justified$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_language_from_string",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_menu_item_set_accel_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_language_to_string",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_menu_item_set_accel_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_set_accel_path",
-        constants$1534.gtk_menu_item_set_accel_path$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_item_get_accel_path$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_item_get_accel_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_get_accel_path",
-        constants$1534.gtk_menu_item_get_accel_path$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_item_set_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_item_set_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_set_label",
-        constants$1534.gtk_menu_item_set_label$FUNC
-    );
-    static final FunctionDescriptor gtk_menu_item_get_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_menu_item_get_label$MH = RuntimeHelper.downcallHandle(
-        "gtk_menu_item_get_label",
-        constants$1534.gtk_menu_item_get_label$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_language_get_sample_string",
+        constants$5.const$2
     );
 }
 

@@ -2,245 +2,230 @@
 
 package org.purejava.appindicator;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 /**
  * {@snippet :
  * struct _GtkTableChild {
- *     GtkWidget* widget;
- *     guint16 left_attach;
- *     guint16 right_attach;
- *     guint16 top_attach;
- *     guint16 bottom_attach;
- *     guint16 xpadding;
- *     guint16 ypadding;
- *      *     guint xexpand;
- *     guint yexpand;
- *     guint xshrink;
- *     guint yshrink;
- *     guint xfill;
- *     guint yfill;
+ *     struct _GtkWidget* widget;
+ *     unsigned short left_attach;
+ *     unsigned short right_attach;
+ *     unsigned short top_attach;
+ *     unsigned short bottom_attach;
+ *     unsigned short xpadding;
+ *     unsigned short ypadding;
+ *      *     unsigned int xexpand;
+ *     unsigned int yexpand;
+ *     unsigned int xshrink;
+ *     unsigned int yshrink;
+ *     unsigned int xfill;
+ *     unsigned int yfill;
  * };
  * }
  */
 public class _GtkTableChild {
 
-    static final StructLayout $struct$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("widget"),
-        Constants$root.C_SHORT$LAYOUT.withName("left_attach"),
-        Constants$root.C_SHORT$LAYOUT.withName("right_attach"),
-        Constants$root.C_SHORT$LAYOUT.withName("top_attach"),
-        Constants$root.C_SHORT$LAYOUT.withName("bottom_attach"),
-        Constants$root.C_SHORT$LAYOUT.withName("xpadding"),
-        Constants$root.C_SHORT$LAYOUT.withName("ypadding"),
-        MemoryLayout.paddingLayout(32)
-    ).withName("_GtkTableChild");
     public static MemoryLayout $LAYOUT() {
-        return _GtkTableChild.$struct$LAYOUT;
+        return constants$3372.const$1;
     }
-    static final VarHandle widget$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("widget"));
     public static VarHandle widget$VH() {
-        return _GtkTableChild.widget$VH;
+        return constants$3372.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * GtkWidget* widget;
+     * struct _GtkWidget* widget;
      * }
      */
     public static MemorySegment widget$get(MemorySegment seg) {
-        return (java.lang.foreign.MemorySegment)_GtkTableChild.widget$VH.get(seg);
+        return (java.lang.foreign.MemorySegment)constants$3372.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * GtkWidget* widget;
+     * struct _GtkWidget* widget;
      * }
      */
     public static void widget$set(MemorySegment seg, MemorySegment x) {
-        _GtkTableChild.widget$VH.set(seg, x);
+        constants$3372.const$2.set(seg, x);
     }
     public static MemorySegment widget$get(MemorySegment seg, long index) {
-        return (java.lang.foreign.MemorySegment)_GtkTableChild.widget$VH.get(seg.asSlice(index*sizeof()));
+        return (java.lang.foreign.MemorySegment)constants$3372.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void widget$set(MemorySegment seg, long index, MemorySegment x) {
-        _GtkTableChild.widget$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3372.const$2.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle left_attach$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("left_attach"));
     public static VarHandle left_attach$VH() {
-        return _GtkTableChild.left_attach$VH;
+        return constants$3372.const$3;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint16 left_attach;
+     * unsigned short left_attach;
      * }
      */
     public static short left_attach$get(MemorySegment seg) {
-        return (short)_GtkTableChild.left_attach$VH.get(seg);
+        return (short)constants$3372.const$3.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint16 left_attach;
+     * unsigned short left_attach;
      * }
      */
     public static void left_attach$set(MemorySegment seg, short x) {
-        _GtkTableChild.left_attach$VH.set(seg, x);
+        constants$3372.const$3.set(seg, x);
     }
     public static short left_attach$get(MemorySegment seg, long index) {
-        return (short)_GtkTableChild.left_attach$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3372.const$3.get(seg.asSlice(index*sizeof()));
     }
     public static void left_attach$set(MemorySegment seg, long index, short x) {
-        _GtkTableChild.left_attach$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3372.const$3.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle right_attach$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("right_attach"));
     public static VarHandle right_attach$VH() {
-        return _GtkTableChild.right_attach$VH;
+        return constants$3372.const$4;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint16 right_attach;
+     * unsigned short right_attach;
      * }
      */
     public static short right_attach$get(MemorySegment seg) {
-        return (short)_GtkTableChild.right_attach$VH.get(seg);
+        return (short)constants$3372.const$4.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint16 right_attach;
+     * unsigned short right_attach;
      * }
      */
     public static void right_attach$set(MemorySegment seg, short x) {
-        _GtkTableChild.right_attach$VH.set(seg, x);
+        constants$3372.const$4.set(seg, x);
     }
     public static short right_attach$get(MemorySegment seg, long index) {
-        return (short)_GtkTableChild.right_attach$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3372.const$4.get(seg.asSlice(index*sizeof()));
     }
     public static void right_attach$set(MemorySegment seg, long index, short x) {
-        _GtkTableChild.right_attach$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3372.const$4.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle top_attach$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("top_attach"));
     public static VarHandle top_attach$VH() {
-        return _GtkTableChild.top_attach$VH;
+        return constants$3372.const$5;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint16 top_attach;
+     * unsigned short top_attach;
      * }
      */
     public static short top_attach$get(MemorySegment seg) {
-        return (short)_GtkTableChild.top_attach$VH.get(seg);
+        return (short)constants$3372.const$5.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint16 top_attach;
+     * unsigned short top_attach;
      * }
      */
     public static void top_attach$set(MemorySegment seg, short x) {
-        _GtkTableChild.top_attach$VH.set(seg, x);
+        constants$3372.const$5.set(seg, x);
     }
     public static short top_attach$get(MemorySegment seg, long index) {
-        return (short)_GtkTableChild.top_attach$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3372.const$5.get(seg.asSlice(index*sizeof()));
     }
     public static void top_attach$set(MemorySegment seg, long index, short x) {
-        _GtkTableChild.top_attach$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3372.const$5.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle bottom_attach$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("bottom_attach"));
     public static VarHandle bottom_attach$VH() {
-        return _GtkTableChild.bottom_attach$VH;
+        return constants$3373.const$0;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint16 bottom_attach;
+     * unsigned short bottom_attach;
      * }
      */
     public static short bottom_attach$get(MemorySegment seg) {
-        return (short)_GtkTableChild.bottom_attach$VH.get(seg);
+        return (short)constants$3373.const$0.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint16 bottom_attach;
+     * unsigned short bottom_attach;
      * }
      */
     public static void bottom_attach$set(MemorySegment seg, short x) {
-        _GtkTableChild.bottom_attach$VH.set(seg, x);
+        constants$3373.const$0.set(seg, x);
     }
     public static short bottom_attach$get(MemorySegment seg, long index) {
-        return (short)_GtkTableChild.bottom_attach$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3373.const$0.get(seg.asSlice(index*sizeof()));
     }
     public static void bottom_attach$set(MemorySegment seg, long index, short x) {
-        _GtkTableChild.bottom_attach$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3373.const$0.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle xpadding$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("xpadding"));
     public static VarHandle xpadding$VH() {
-        return _GtkTableChild.xpadding$VH;
+        return constants$3373.const$1;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint16 xpadding;
+     * unsigned short xpadding;
      * }
      */
     public static short xpadding$get(MemorySegment seg) {
-        return (short)_GtkTableChild.xpadding$VH.get(seg);
+        return (short)constants$3373.const$1.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint16 xpadding;
+     * unsigned short xpadding;
      * }
      */
     public static void xpadding$set(MemorySegment seg, short x) {
-        _GtkTableChild.xpadding$VH.set(seg, x);
+        constants$3373.const$1.set(seg, x);
     }
     public static short xpadding$get(MemorySegment seg, long index) {
-        return (short)_GtkTableChild.xpadding$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3373.const$1.get(seg.asSlice(index*sizeof()));
     }
     public static void xpadding$set(MemorySegment seg, long index, short x) {
-        _GtkTableChild.xpadding$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3373.const$1.set(seg.asSlice(index*sizeof()), x);
     }
-    static final VarHandle ypadding$VH = $struct$LAYOUT.varHandle(MemoryLayout.PathElement.groupElement("ypadding"));
     public static VarHandle ypadding$VH() {
-        return _GtkTableChild.ypadding$VH;
+        return constants$3373.const$2;
     }
     /**
      * Getter for field:
      * {@snippet :
-     * guint16 ypadding;
+     * unsigned short ypadding;
      * }
      */
     public static short ypadding$get(MemorySegment seg) {
-        return (short)_GtkTableChild.ypadding$VH.get(seg);
+        return (short)constants$3373.const$2.get(seg);
     }
     /**
      * Setter for field:
      * {@snippet :
-     * guint16 ypadding;
+     * unsigned short ypadding;
      * }
      */
     public static void ypadding$set(MemorySegment seg, short x) {
-        _GtkTableChild.ypadding$VH.set(seg, x);
+        constants$3373.const$2.set(seg, x);
     }
     public static short ypadding$get(MemorySegment seg, long index) {
-        return (short)_GtkTableChild.ypadding$VH.get(seg.asSlice(index*sizeof()));
+        return (short)constants$3373.const$2.get(seg.asSlice(index*sizeof()));
     }
     public static void ypadding$set(MemorySegment seg, long index, short x) {
-        _GtkTableChild.ypadding$VH.set(seg.asSlice(index*sizeof()), x);
+        constants$3373.const$2.set(seg.asSlice(index*sizeof()), x);
     }
     public static long sizeof() { return $LAYOUT().byteSize(); }
     public static MemorySegment allocate(SegmentAllocator allocator) { return allocator.allocate($LAYOUT()); }
     public static MemorySegment allocateArray(long len, SegmentAllocator allocator) {
         return allocator.allocate(MemoryLayout.sequenceLayout(len, $LAYOUT()));
     }
-    public static MemorySegment ofAddress(MemorySegment addr, SegmentScope scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
+    public static MemorySegment ofAddress(MemorySegment addr, Arena scope) { return RuntimeHelper.asArray(addr, $LAYOUT(), 1, scope); }
 }
 
 

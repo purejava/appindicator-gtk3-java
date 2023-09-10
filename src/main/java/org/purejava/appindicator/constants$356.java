@@ -3,53 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$356 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$356() {}
-    static final FunctionDescriptor pthread_detach$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_variant_get_int64",
+        constants$4.const$0
     );
-    static final MethodHandle pthread_detach$MH = RuntimeHelper.downcallHandle(
-        "pthread_detach",
-        constants$356.pthread_detach$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_variant_get_uint64",
+        constants$4.const$0
     );
-    static final FunctionDescriptor pthread_self$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle pthread_self$MH = RuntimeHelper.downcallHandle(
-        "pthread_self",
-        constants$356.pthread_self$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_variant_get_handle",
+        constants$10.const$5
     );
-    static final FunctionDescriptor pthread_equal$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_variant_get_double",
+        constants$67.const$0
     );
-    static final MethodHandle pthread_equal$MH = RuntimeHelper.downcallHandle(
-        "pthread_equal",
-        constants$356.pthread_equal$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_variant_get_variant",
+        constants$5.const$2
     );
-    static final FunctionDescriptor pthread_attr_init$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_attr_init$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_init",
-        constants$356.pthread_attr_init$FUNC
-    );
-    static final FunctionDescriptor pthread_attr_destroy$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_attr_destroy$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_destroy",
-        constants$356.pthread_attr_destroy$FUNC
-    );
-    static final FunctionDescriptor pthread_attr_getdetachstate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle pthread_attr_getdetachstate$MH = RuntimeHelper.downcallHandle(
-        "pthread_attr_getdetachstate",
-        constants$356.pthread_attr_getdetachstate$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_variant_get_string",
+        constants$5.const$5
     );
 }
 

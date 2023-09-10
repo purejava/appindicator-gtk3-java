@@ -3,65 +3,43 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$10 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$10() {}
-    static final FunctionDescriptor memccpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final FunctionDescriptor const$0 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final MethodHandle memccpy$MH = RuntimeHelper.downcallHandle(
-        "memccpy",
-        constants$10.memccpy$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "clock_nanosleep",
+        constants$10.const$0
     );
-    static final FunctionDescriptor memset$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "clock_getcpuclockid",
+        constants$9.const$2
     );
-    static final MethodHandle memset$MH = RuntimeHelper.downcallHandle(
-        "memset",
-        constants$10.memset$FUNC
+    static final FunctionDescriptor const$3 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_INT,
+        RuntimeHelper.POINTER,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor memcmp$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "timer_create",
+        constants$10.const$3
     );
-    static final MethodHandle memcmp$MH = RuntimeHelper.downcallHandle(
-        "memcmp",
-        constants$10.memcmp$FUNC
+    static final FunctionDescriptor const$5 = FunctionDescriptor.of(JAVA_INT,
+        RuntimeHelper.POINTER
     );
-    static final FunctionDescriptor __memcmpeq$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle __memcmpeq$MH = RuntimeHelper.downcallHandle(
-        "__memcmpeq",
-        constants$10.__memcmpeq$FUNC
-    );
-    static final FunctionDescriptor memchr$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle memchr$MH = RuntimeHelper.downcallHandle(
-        "memchr",
-        constants$10.memchr$FUNC
-    );
-    static final FunctionDescriptor strcpy$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle strcpy$MH = RuntimeHelper.downcallHandle(
-        "strcpy",
-        constants$10.strcpy$FUNC
+    static final MethodHandle const$6 = RuntimeHelper.downcallHandle(
+        "timer_delete",
+        constants$10.const$5
     );
 }
 

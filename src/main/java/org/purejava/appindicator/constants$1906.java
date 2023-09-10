@@ -3,54 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1906 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1906() {}
-    static final FunctionDescriptor gtk_window_group_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_window_group_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_group_new",
-        constants$1906.gtk_window_group_new$FUNC
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_map_new",
+        constants$35.const$2
     );
-    static final FunctionDescriptor gtk_window_group_add_window$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_map_new_for_font_type",
+        constants$24.const$0
     );
-    static final MethodHandle gtk_window_group_add_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_group_add_window",
-        constants$1906.gtk_window_group_add_window$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_map_get_default",
+        constants$35.const$2
     );
-    static final FunctionDescriptor gtk_window_group_remove_window$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_map_set_default",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_window_group_remove_window$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_group_remove_window",
-        constants$1906.gtk_window_group_remove_window$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_map_get_font_type",
+        constants$10.const$5
     );
-    static final FunctionDescriptor gtk_window_group_list_windows$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_group_list_windows$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_group_list_windows",
-        constants$1906.gtk_window_group_list_windows$FUNC
-    );
-    static final FunctionDescriptor gtk_window_group_get_current_grab$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_group_get_current_grab$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_group_get_current_grab",
-        constants$1906.gtk_window_group_get_current_grab$FUNC
-    );
-    static final FunctionDescriptor gtk_window_group_get_current_device_grab$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_window_group_get_current_device_grab$MH = RuntimeHelper.downcallHandle(
-        "gtk_window_group_get_current_device_grab",
-        constants$1906.gtk_window_group_get_current_device_grab$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "pango_cairo_font_map_set_resolution",
+        constants$689.const$5
     );
 }
 

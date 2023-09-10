@@ -3,58 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1736 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1736() {}
-    static final FunctionDescriptor gtk_print_context_get_page_setup$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(cairo_image_surface_create_from_png_stream$read_func.class, "apply", constants$62.const$0);
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_image_surface_create_from_png_stream",
+        constants$5.const$5
     );
-    static final MethodHandle gtk_print_context_get_page_setup$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_page_setup",
-        constants$1736.gtk_print_context_get_page_setup$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_recording_surface_create",
+        constants$24.const$4
     );
-    static final FunctionDescriptor gtk_print_context_get_width$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_recording_surface_ink_extents",
+        constants$331.const$1
     );
-    static final MethodHandle gtk_print_context_get_width$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_width",
-        constants$1736.gtk_print_context_get_width$FUNC
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_recording_surface_get_extents",
+        constants$9.const$0
     );
-    static final FunctionDescriptor gtk_print_context_get_height$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_context_get_height$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_height",
-        constants$1736.gtk_print_context_get_height$FUNC
-    );
-    static final FunctionDescriptor gtk_print_context_get_dpi_x$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_context_get_dpi_x$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_dpi_x",
-        constants$1736.gtk_print_context_get_dpi_x$FUNC
-    );
-    static final FunctionDescriptor gtk_print_context_get_dpi_y$FUNC = FunctionDescriptor.of(Constants$root.C_DOUBLE$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_context_get_dpi_y$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_dpi_y",
-        constants$1736.gtk_print_context_get_dpi_y$FUNC
-    );
-    static final FunctionDescriptor gtk_print_context_get_hard_margins$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_print_context_get_hard_margins$MH = RuntimeHelper.downcallHandle(
-        "gtk_print_context_get_hard_margins",
-        constants$1736.gtk_print_context_get_hard_margins$FUNC
-    );
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(cairo_raster_source_acquire_func_t.class, "apply", constants$39.const$1);
 }
 
 

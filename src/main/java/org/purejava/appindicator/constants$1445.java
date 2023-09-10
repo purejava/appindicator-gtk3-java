@@ -3,49 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1445 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1445() {}
-    static final FunctionDescriptor gtk_entry_completion_get_text_column$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "hb_face_collect_nominal_glyph_mapping",
+        constants$14.const$3
     );
-    static final MethodHandle gtk_entry_completion_get_text_column$MH = RuntimeHelper.downcallHandle(
-        "gtk_entry_completion_get_text_column",
-        constants$1445.gtk_entry_completion_get_text_column$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "hb_face_collect_variation_selectors",
+        constants$13.const$4
     );
-    static final FunctionDescriptor gtk_image_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle gtk_image_get_type$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_get_type",
-        constants$1445.gtk_image_get_type$FUNC
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "hb_face_collect_variation_unicodes",
+        constants$42.const$4
     );
-    static final FunctionDescriptor gtk_image_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_image_new$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new",
-        constants$1445.gtk_image_new$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "hb_face_builder_create",
+        constants$35.const$2
     );
-    static final FunctionDescriptor gtk_image_new_from_file$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "hb_face_builder_add_table",
+        constants$150.const$0
     );
-    static final MethodHandle gtk_image_new_from_file$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_file",
-        constants$1445.gtk_image_new_from_file$FUNC
-    );
-    static final FunctionDescriptor gtk_image_new_from_resource$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_image_new_from_resource$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_resource",
-        constants$1445.gtk_image_new_from_resource$FUNC
-    );
-    static final FunctionDescriptor gtk_image_new_from_pixbuf$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_image_new_from_pixbuf$MH = RuntimeHelper.downcallHandle(
-        "gtk_image_new_from_pixbuf",
-        constants$1445.gtk_image_new_from_pixbuf$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "hb_face_builder_sort_tables",
+        constants$13.const$4
     );
 }
 

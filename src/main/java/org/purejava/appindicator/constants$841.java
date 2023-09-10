@@ -3,65 +3,22 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$841 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$841() {}
-    static final FunctionDescriptor hb_unicode_funcs_set_script_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_funcs_set_script_func$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_set_script_func",
-        constants$841.hb_unicode_funcs_set_script_func$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_set_compose_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_funcs_set_compose_func$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_set_compose_func",
-        constants$841.hb_unicode_funcs_set_compose_func$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_funcs_set_decompose_func$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_unicode_funcs_set_decompose_func$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_funcs_set_decompose_func",
-        constants$841.hb_unicode_funcs_set_decompose_func$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_combining_class$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_unicode_combining_class$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_combining_class",
-        constants$841.hb_unicode_combining_class$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_general_category$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_unicode_general_category$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_general_category",
-        constants$841.hb_unicode_general_category$FUNC
-    );
-    static final FunctionDescriptor hb_unicode_mirroring$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_unicode_mirroring$MH = RuntimeHelper.downcallHandle(
-        "hb_unicode_mirroring",
-        constants$841.hb_unicode_mirroring$FUNC
+    static final VarHandle const$0 = constants$840.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved3"));
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDataInputStreamClass._g_reserved4.class, "apply", constants$7.const$5);
+    static final VarHandle const$2 = constants$840.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved4"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDataInputStreamClass._g_reserved5.class, "apply", constants$7.const$5);
+    static final VarHandle const$4 = constants$840.const$0.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved5"));
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_data_input_stream_get_type",
+        constants$3.const$5
     );
 }
 

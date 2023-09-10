@@ -3,114 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1961 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1961() {}
-    static final FunctionDescriptor gtk_paint_check$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_get_minor_version",
+        constants$83.const$1
     );
-    static final MethodHandle gtk_paint_check$MH = RuntimeHelper.downcallHandle(
-        "gtk_paint_check",
-        constants$1961.gtk_paint_check$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_get_micro_version",
+        constants$83.const$1
     );
-    static final FunctionDescriptor gtk_paint_option$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_get_binary_age",
+        constants$83.const$1
     );
-    static final MethodHandle gtk_paint_option$MH = RuntimeHelper.downcallHandle(
-        "gtk_paint_option",
-        constants$1961.gtk_paint_option$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_get_interface_age",
+        constants$83.const$1
     );
-    static final FunctionDescriptor gtk_paint_tab$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_scroll_type_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_paint_tab$MH = RuntimeHelper.downcallHandle(
-        "gtk_paint_tab",
-        constants$1961.gtk_paint_tab$FUNC
-    );
-    static final FunctionDescriptor gtk_paint_shadow_gap$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_paint_shadow_gap$MH = RuntimeHelper.downcallHandle(
-        "gtk_paint_shadow_gap",
-        constants$1961.gtk_paint_shadow_gap$FUNC
-    );
-    static final FunctionDescriptor gtk_paint_box_gap$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_paint_box_gap$MH = RuntimeHelper.downcallHandle(
-        "gtk_paint_box_gap",
-        constants$1961.gtk_paint_box_gap$FUNC
-    );
-    static final FunctionDescriptor gtk_paint_extension$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_paint_extension$MH = RuntimeHelper.downcallHandle(
-        "gtk_paint_extension",
-        constants$1961.gtk_paint_extension$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_hyperlink_state_flags_get_type",
+        constants$3.const$5
     );
 }
 

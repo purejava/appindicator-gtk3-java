@@ -3,77 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$974 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$974() {}
-    static final FunctionDescriptor pango_renderer_draw_layout$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_renderer_draw_layout$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_draw_layout",
-        constants$974.pango_renderer_draw_layout$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_draw_layout_line$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_renderer_draw_layout_line$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_draw_layout_line",
-        constants$974.pango_renderer_draw_layout_line$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_draw_glyphs$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_renderer_draw_glyphs$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_draw_glyphs",
-        constants$974.pango_renderer_draw_glyphs$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_draw_glyph_item$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_renderer_draw_glyph_item$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_draw_glyph_item",
-        constants$974.pango_renderer_draw_glyph_item$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_draw_rectangle$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_renderer_draw_rectangle$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_draw_rectangle",
-        constants$974.pango_renderer_draw_rectangle$FUNC
-    );
-    static final FunctionDescriptor pango_renderer_draw_error_underline$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle pango_renderer_draw_error_underline$MH = RuntimeHelper.downcallHandle(
-        "pango_renderer_draw_error_underline",
-        constants$974.pango_renderer_draw_error_underline$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GFileIface.get_basename.class, "apply", constants$5.const$2);
+    static final VarHandle const$1 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_basename"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GFileIface.get_path.class, "apply", constants$5.const$2);
+    static final VarHandle const$3 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_path"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GFileIface.get_uri.class, "apply", constants$5.const$2);
+    static final VarHandle const$5 = constants$971.const$5.varHandle(MemoryLayout.PathElement.groupElement("get_uri"));
 }
 
 

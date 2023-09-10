@@ -3,63 +3,36 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$184 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$184() {}
-    static final StructLayout g_timeout_funcs$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
-        Constants$root.C_POINTER$LAYOUT.withName("check"),
-        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
-        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
-    ).withName("_GSourceFuncs");
-    static final MemorySegment g_timeout_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_timeout_funcs", constants$184.g_timeout_funcs$LAYOUT);
-    static final StructLayout g_child_watch_funcs$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
-        Constants$root.C_POINTER$LAYOUT.withName("check"),
-        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
-        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
-    ).withName("_GSourceFuncs");
-    static final MemorySegment g_child_watch_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_child_watch_funcs", constants$184.g_child_watch_funcs$LAYOUT);
-    static final StructLayout g_idle_funcs$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
-        Constants$root.C_POINTER$LAYOUT.withName("check"),
-        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
-        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
-    ).withName("_GSourceFuncs");
-    static final MemorySegment g_idle_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_idle_funcs", constants$184.g_idle_funcs$LAYOUT);
-    static final StructLayout g_unix_signal_funcs$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
-        Constants$root.C_POINTER$LAYOUT.withName("check"),
-        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
-        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
-    ).withName("_GSourceFuncs");
-    static final MemorySegment g_unix_signal_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_unix_signal_funcs", constants$184.g_unix_signal_funcs$LAYOUT);
-    static final StructLayout g_unix_fd_source_funcs$LAYOUT = MemoryLayout.structLayout(
-        Constants$root.C_POINTER$LAYOUT.withName("prepare"),
-        Constants$root.C_POINTER$LAYOUT.withName("check"),
-        Constants$root.C_POINTER$LAYOUT.withName("dispatch"),
-        Constants$root.C_POINTER$LAYOUT.withName("finalize"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_callback"),
-        Constants$root.C_POINTER$LAYOUT.withName("closure_marshal")
-    ).withName("_GSourceFuncs");
-    static final MemorySegment g_unix_fd_source_funcs$SEGMENT = RuntimeHelper.lookupGlobalVariable("g_unix_fd_source_funcs", constants$184.g_unix_fd_source_funcs$LAYOUT);
-    static final FunctionDescriptor g_unicode_script_to_iso15924$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_date_new_julian",
+        constants$24.const$0
     );
-    static final MethodHandle g_unicode_script_to_iso15924$MH = RuntimeHelper.downcallHandle(
-        "g_unicode_script_to_iso15924",
-        constants$184.g_unicode_script_to_iso15924$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_date_free",
+        constants$13.const$1
+    );
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_date_copy",
+        constants$5.const$2
+    );
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_date_valid",
+        constants$10.const$5
+    );
+    static final FunctionDescriptor const$4 = FunctionDescriptor.of(JAVA_INT,
+        JAVA_BYTE
+    );
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_date_valid_day",
+        constants$184.const$4
     );
 }
 

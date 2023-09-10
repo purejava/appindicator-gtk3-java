@@ -3,68 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$735 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$735() {}
-    static final FunctionDescriptor g_resource_load$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_setenv",
+        constants$14.const$3
     );
-    static final MethodHandle g_resource_load$MH = RuntimeHelper.downcallHandle(
-        "g_resource_load",
-        constants$735.g_resource_load$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_unsetenv",
+        constants$13.const$4
     );
-    static final FunctionDescriptor g_resource_open_stream$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_get_environment",
+        constants$5.const$2
     );
-    static final MethodHandle g_resource_open_stream$MH = RuntimeHelper.downcallHandle(
-        "g_resource_open_stream",
-        constants$735.g_resource_open_stream$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_get_display",
+        constants$23.const$0
     );
-    static final FunctionDescriptor g_resource_lookup_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_get_startup_notify_id",
+        constants$23.const$0
     );
-    static final MethodHandle g_resource_lookup_data$MH = RuntimeHelper.downcallHandle(
-        "g_resource_lookup_data",
-        constants$735.g_resource_lookup_data$FUNC
-    );
-    static final FunctionDescriptor g_resource_enumerate_children$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resource_enumerate_children$MH = RuntimeHelper.downcallHandle(
-        "g_resource_enumerate_children",
-        constants$735.g_resource_enumerate_children$FUNC
-    );
-    static final FunctionDescriptor g_resource_get_info$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resource_get_info$MH = RuntimeHelper.downcallHandle(
-        "g_resource_get_info",
-        constants$735.g_resource_get_info$FUNC
-    );
-    static final FunctionDescriptor g_resources_register$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_resources_register$MH = RuntimeHelper.downcallHandle(
-        "g_resources_register",
-        constants$735.g_resources_register$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_app_launch_context_launch_failed",
+        constants$13.const$4
     );
 }
 

@@ -3,56 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1322 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1322() {}
-    static final FunctionDescriptor gtk_about_dialog_get_version$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_type",
+        constants$3.const$5
     );
-    static final MethodHandle gtk_about_dialog_get_version$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_version",
-        constants$1322.gtk_about_dialog_get_version$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandleVariadic(
+        "g_subprocess_new",
+        constants$237.const$5
     );
-    static final FunctionDescriptor gtk_about_dialog_set_version$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "g_subprocess_newv",
+        constants$196.const$3
     );
-    static final MethodHandle gtk_about_dialog_set_version$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_version",
-        constants$1322.gtk_about_dialog_set_version$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_stdin_pipe",
+        constants$5.const$2
     );
-    static final FunctionDescriptor gtk_about_dialog_get_copyright$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_stdout_pipe",
+        constants$5.const$2
     );
-    static final MethodHandle gtk_about_dialog_get_copyright$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_copyright",
-        constants$1322.gtk_about_dialog_get_copyright$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_set_copyright$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_set_copyright$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_copyright",
-        constants$1322.gtk_about_dialog_set_copyright$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_get_comments$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_get_comments$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_get_comments",
-        constants$1322.gtk_about_dialog_get_comments$FUNC
-    );
-    static final FunctionDescriptor gtk_about_dialog_set_comments$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_about_dialog_set_comments$MH = RuntimeHelper.downcallHandle(
-        "gtk_about_dialog_set_comments",
-        constants$1322.gtk_about_dialog_set_comments$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_subprocess_get_stderr_pipe",
+        constants$5.const$2
     );
 }
 

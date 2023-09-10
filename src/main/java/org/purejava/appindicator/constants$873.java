@@ -3,56 +3,29 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$873 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$873() {}
-    static final FunctionDescriptor hb_font_create$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_create$MH = RuntimeHelper.downcallHandle(
-        "hb_font_create",
-        constants$873.hb_font_create$FUNC
-    );
-    static final FunctionDescriptor hb_font_create_sub_font$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_create_sub_font$MH = RuntimeHelper.downcallHandle(
-        "hb_font_create_sub_font",
-        constants$873.hb_font_create_sub_font$FUNC
-    );
-    static final FunctionDescriptor hb_font_get_empty$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle hb_font_get_empty$MH = RuntimeHelper.downcallHandle(
-        "hb_font_get_empty",
-        constants$873.hb_font_get_empty$FUNC
-    );
-    static final FunctionDescriptor hb_font_reference$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_reference$MH = RuntimeHelper.downcallHandle(
-        "hb_font_reference",
-        constants$873.hb_font_reference$FUNC
-    );
-    static final FunctionDescriptor hb_font_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle hb_font_destroy$MH = RuntimeHelper.downcallHandle(
-        "hb_font_destroy",
-        constants$873.hb_font_destroy$FUNC
-    );
-    static final FunctionDescriptor hb_font_set_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle hb_font_set_user_data$MH = RuntimeHelper.downcallHandle(
-        "hb_font_set_user_data",
-        constants$873.hb_font_set_user_data$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            JAVA_LONG.withName("g_type"),
+            JAVA_LONG.withName("g_instance_type")
+        ).withName("parent_iface"),
+        RuntimeHelper.POINTER.withName("get_info"),
+        RuntimeHelper.POINTER.withName("get_object"),
+        RuntimeHelper.POINTER.withName("set_object"),
+        RuntimeHelper.POINTER.withName("dup_object")
+    ).withName("_GDBusInterfaceIface");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(_GDBusInterfaceIface.get_info.class, "apply", constants$5.const$2);
+    static final VarHandle const$2 = constants$873.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_info"));
+    static final MethodHandle const$3 = RuntimeHelper.upcallHandle(_GDBusInterfaceIface.get_object.class, "apply", constants$5.const$2);
+    static final VarHandle const$4 = constants$873.const$0.varHandle(MemoryLayout.PathElement.groupElement("get_object"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GDBusInterfaceIface.set_object.class, "apply", constants$13.const$4);
 }
 
 

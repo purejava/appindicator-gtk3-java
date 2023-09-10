@@ -3,65 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1191 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1191() {}
-    static final FunctionDescriptor gtk_accel_group_connect_by_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_group_connect_by_path$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_connect_by_path",
-        constants$1191.gtk_accel_group_connect_by_path$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_group_disconnect$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_accel_group_disconnect$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_disconnect",
-        constants$1191.gtk_accel_group_disconnect$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_group_disconnect_key$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_accel_group_disconnect_key$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_disconnect_key",
-        constants$1191.gtk_accel_group_disconnect_key$FUNC
-    );
-    static final FunctionDescriptor gtk_accel_group_activate$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_accel_group_activate$MH = RuntimeHelper.downcallHandle(
-        "gtk_accel_group_activate",
-        constants$1191.gtk_accel_group_activate$FUNC
-    );
-    static final FunctionDescriptor _gtk_accel_group_attach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle _gtk_accel_group_attach$MH = RuntimeHelper.downcallHandle(
-        "_gtk_accel_group_attach",
-        constants$1191._gtk_accel_group_attach$FUNC
-    );
-    static final FunctionDescriptor _gtk_accel_group_detach$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle _gtk_accel_group_detach$MH = RuntimeHelper.downcallHandle(
-        "_gtk_accel_group_detach",
-        constants$1191._gtk_accel_group_detach$FUNC
-    );
+    static final MethodHandle const$0 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass.drive_stop_button.class, "apply", constants$13.const$4);
+    static final VarHandle const$1 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("drive_stop_button"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass._g_reserved1.class, "apply", constants$7.const$5);
+    static final VarHandle const$3 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved1"));
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(_GVolumeMonitorClass._g_reserved2.class, "apply", constants$7.const$5);
+    static final VarHandle const$5 = constants$1184.const$4.varHandle(MemoryLayout.PathElement.groupElement("_g_reserved2"));
 }
 
 

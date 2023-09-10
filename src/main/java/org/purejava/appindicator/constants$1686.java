@@ -3,55 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1686 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1686() {}
-    static final FunctionDescriptor gtk_grab_remove$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "cairo_user_to_device",
+        constants$14.const$3
     );
-    static final MethodHandle gtk_grab_remove$MH = RuntimeHelper.downcallHandle(
-        "gtk_grab_remove",
-        constants$1686.gtk_grab_remove$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "cairo_user_to_device_distance",
+        constants$14.const$3
     );
-    static final FunctionDescriptor gtk_device_grab_add$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "cairo_device_to_user",
+        constants$14.const$3
     );
-    static final MethodHandle gtk_device_grab_add$MH = RuntimeHelper.downcallHandle(
-        "gtk_device_grab_add",
-        constants$1686.gtk_device_grab_add$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "cairo_device_to_user_distance",
+        constants$14.const$3
     );
-    static final FunctionDescriptor gtk_device_grab_remove$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "cairo_new_path",
+        constants$13.const$1
     );
-    static final MethodHandle gtk_device_grab_remove$MH = RuntimeHelper.downcallHandle(
-        "gtk_device_grab_remove",
-        constants$1686.gtk_device_grab_remove$FUNC
-    );
-    static final FunctionDescriptor gtk_key_snooper_install$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle gtk_key_snooper_install$MH = RuntimeHelper.downcallHandle(
-        "gtk_key_snooper_install",
-        constants$1686.gtk_key_snooper_install$FUNC
-    );
-    static final FunctionDescriptor gtk_key_snooper_remove$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_key_snooper_remove$MH = RuntimeHelper.downcallHandle(
-        "gtk_key_snooper_remove",
-        constants$1686.gtk_key_snooper_remove$FUNC
-    );
-    static final FunctionDescriptor gtk_get_current_event$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
-    static final MethodHandle gtk_get_current_event$MH = RuntimeHelper.downcallHandle(
-        "gtk_get_current_event",
-        constants$1686.gtk_get_current_event$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "cairo_move_to",
+        constants$1531.const$0
     );
 }
 

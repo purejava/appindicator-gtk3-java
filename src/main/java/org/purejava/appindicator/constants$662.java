@@ -3,54 +3,40 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$662 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$662() {}
-    static final FunctionDescriptor g_inet_address_to_string$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_to_string$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_to_string",
-        constants$662.g_inet_address_to_string$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_to_bytes$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_to_bytes$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_to_bytes",
-        constants$662.g_inet_address_to_bytes$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_get_native_size$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_get_native_size$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_native_size",
-        constants$662.g_inet_address_get_native_size$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_get_family$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_get_family$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_family",
-        constants$662.g_inet_address_get_family$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_get_is_any$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_get_is_any$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_any",
-        constants$662.g_inet_address_get_is_any$FUNC
-    );
-    static final FunctionDescriptor g_inet_address_get_is_loopback$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_inet_address_get_is_loopback$MH = RuntimeHelper.downcallHandle(
-        "g_inet_address_get_is_loopback",
-        constants$662.g_inet_address_get_is_loopback$FUNC
-    );
+    static final VarHandle const$0 = constants$661.const$2.varHandle(MemoryLayout.PathElement.groupElement("epsilon"));
+    static final StructLayout const$1 = MemoryLayout.structLayout(
+        MemoryLayout.structLayout(
+            MemoryLayout.structLayout(
+                RuntimeHelper.POINTER.withName("g_class")
+            ).withName("g_type_instance"),
+            RuntimeHelper.POINTER.withName("name"),
+            JAVA_INT.withName("flags"),
+            MemoryLayout.paddingLayout(4),
+            JAVA_LONG.withName("value_type"),
+            JAVA_LONG.withName("owner_type"),
+            RuntimeHelper.POINTER.withName("_nick"),
+            RuntimeHelper.POINTER.withName("_blurb"),
+            RuntimeHelper.POINTER.withName("qdata"),
+            JAVA_INT.withName("ref_count"),
+            JAVA_INT.withName("param_id")
+        ).withName("parent_instance"),
+        JAVA_DOUBLE.withName("minimum"),
+        JAVA_DOUBLE.withName("maximum"),
+        JAVA_DOUBLE.withName("default_value"),
+        JAVA_DOUBLE.withName("epsilon")
+    ).withName("_GParamSpecDouble");
+    static final VarHandle const$2 = constants$662.const$1.varHandle(MemoryLayout.PathElement.groupElement("minimum"));
+    static final VarHandle const$3 = constants$662.const$1.varHandle(MemoryLayout.PathElement.groupElement("maximum"));
+    static final VarHandle const$4 = constants$662.const$1.varHandle(MemoryLayout.PathElement.groupElement("default_value"));
+    static final VarHandle const$5 = constants$662.const$1.varHandle(MemoryLayout.PathElement.groupElement("epsilon"));
 }
 
 

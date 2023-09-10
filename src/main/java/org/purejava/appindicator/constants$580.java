@@ -3,67 +3,20 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$580 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$580() {}
-    static final FunctionDescriptor g_dbus_method_invocation_get_user_data$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_method_invocation_get_user_data$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_get_user_data",
-        constants$580.g_dbus_method_invocation_get_user_data$FUNC
-    );
-    static final FunctionDescriptor g_dbus_method_invocation_return_value$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_method_invocation_return_value$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_return_value",
-        constants$580.g_dbus_method_invocation_return_value$FUNC
-    );
-    static final FunctionDescriptor g_dbus_method_invocation_return_value_with_unix_fd_list$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_method_invocation_return_value_with_unix_fd_list$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_return_value_with_unix_fd_list",
-        constants$580.g_dbus_method_invocation_return_value_with_unix_fd_list$FUNC
-    );
-    static final FunctionDescriptor g_dbus_method_invocation_return_error$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_method_invocation_return_error$MH = RuntimeHelper.downcallHandleVariadic(
-        "g_dbus_method_invocation_return_error",
-        constants$580.g_dbus_method_invocation_return_error$FUNC
-    );
-    static final FunctionDescriptor g_dbus_method_invocation_return_error_valist$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_method_invocation_return_error_valist$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_return_error_valist",
-        constants$580.g_dbus_method_invocation_return_error_valist$FUNC
-    );
-    static final FunctionDescriptor g_dbus_method_invocation_return_error_literal$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dbus_method_invocation_return_error_literal$MH = RuntimeHelper.downcallHandle(
-        "g_dbus_method_invocation_return_error_literal",
-        constants$580.g_dbus_method_invocation_return_error_literal$FUNC
-    );
+    static final VarHandle const$0 = constants$579.const$5.varHandle(MemoryLayout.PathElement.groupElement("instance_size"));
+    static final VarHandle const$1 = constants$579.const$5.varHandle(MemoryLayout.PathElement.groupElement("n_preallocs"));
+    static final MethodHandle const$2 = RuntimeHelper.upcallHandle(_GParamSpecTypeInfo.instance_init.class, "apply", constants$13.const$1);
+    static final VarHandle const$3 = constants$579.const$5.varHandle(MemoryLayout.PathElement.groupElement("instance_init"));
+    static final VarHandle const$4 = constants$579.const$5.varHandle(MemoryLayout.PathElement.groupElement("value_type"));
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_GParamSpecTypeInfo.finalize.class, "apply", constants$13.const$1);
 }
 
 

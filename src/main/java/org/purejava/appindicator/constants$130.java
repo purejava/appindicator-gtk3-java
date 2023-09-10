@@ -3,58 +3,32 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$130 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$130() {}
-    static final FunctionDescriptor g_dpgettext2$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_dpgettext2$MH = RuntimeHelper.downcallHandle(
-        "g_dpgettext2",
-        constants$130.g_dpgettext2$FUNC
-    );
-    static final FunctionDescriptor g_free$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_free$MH = RuntimeHelper.downcallHandle(
-        "g_free",
-        constants$130.g_free$FUNC
-    );
-    static final FunctionDescriptor g_free_sized$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_free_sized$MH = RuntimeHelper.downcallHandle(
-        "g_free_sized",
-        constants$130.g_free_sized$FUNC
-    );
-    static final FunctionDescriptor g_clear_pointer$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_clear_pointer$MH = RuntimeHelper.downcallHandle(
-        "g_clear_pointer",
-        constants$130.g_clear_pointer$FUNC
-    );
-    static final FunctionDescriptor g_malloc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_malloc$MH = RuntimeHelper.downcallHandle(
-        "g_malloc",
-        constants$130.g_malloc$FUNC
-    );
-    static final FunctionDescriptor g_malloc0$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_LONG_LONG$LAYOUT
-    );
-    static final MethodHandle g_malloc0$MH = RuntimeHelper.downcallHandle(
-        "g_malloc0",
-        constants$130.g_malloc0$FUNC
-    );
+    static final StructLayout const$0 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(16, JAVA_LONG).withName("fds_bits")
+    ).withName("__kernel_fd_set");
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(__kernel_sighandler_t.class, "apply", constants$80.const$1);
+    static final StructLayout const$2 = MemoryLayout.structLayout(
+        MemoryLayout.sequenceLayout(2, JAVA_INT).withName("val")
+    ).withName("__kernel_fsid_t");
+    static final StructLayout const$3 = MemoryLayout.structLayout(
+        JAVA_LONG.withName("fault_address"),
+        MemoryLayout.sequenceLayout(31, JAVA_LONG).withName("regs"),
+        JAVA_LONG.withName("sp"),
+        JAVA_LONG.withName("pc"),
+        JAVA_LONG.withName("pstate"),
+        MemoryLayout.paddingLayout(8),
+        MemoryLayout.sequenceLayout(4096, JAVA_BYTE).withName("__reserved")
+    ).withName("sigcontext");
+    static final VarHandle const$4 = constants$130.const$3.varHandle(MemoryLayout.PathElement.groupElement("fault_address"));
+    static final VarHandle const$5 = constants$130.const$3.varHandle(MemoryLayout.PathElement.groupElement("sp"));
 }
 
 

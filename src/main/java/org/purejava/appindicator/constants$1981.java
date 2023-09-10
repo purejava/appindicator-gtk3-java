@@ -3,61 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$1981 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1981() {}
-    static final FunctionDescriptor app_indicator_set_icon_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "atk_object_remove_relationship",
+        constants$150.const$0
     );
-    static final MethodHandle app_indicator_set_icon_full$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_icon_full",
-        constants$1981.app_indicator_set_icon_full$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "atk_role_get_localized_name",
+        constants$24.const$0
     );
-    static final FunctionDescriptor app_indicator_set_label$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "atk_role_register",
+        constants$10.const$5
     );
-    static final MethodHandle app_indicator_set_label$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_label",
-        constants$1981.app_indicator_set_label$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "atk_object_get_object_locale",
+        constants$5.const$2
     );
-    static final FunctionDescriptor app_indicator_set_icon_theme_path$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "atk_object_get_accessible_id",
+        constants$5.const$2
     );
-    static final MethodHandle app_indicator_set_icon_theme_path$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_icon_theme_path",
-        constants$1981.app_indicator_set_icon_theme_path$FUNC
-    );
-    static final FunctionDescriptor app_indicator_set_ordering_index$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle app_indicator_set_ordering_index$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_ordering_index",
-        constants$1981.app_indicator_set_ordering_index$FUNC
-    );
-    static final FunctionDescriptor app_indicator_set_secondary_activate_target$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_set_secondary_activate_target$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_secondary_activate_target",
-        constants$1981.app_indicator_set_secondary_activate_target$FUNC
-    );
-    static final FunctionDescriptor app_indicator_set_title$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_set_title$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_title",
-        constants$1981.app_indicator_set_title$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "atk_object_set_accessible_id",
+        constants$13.const$4
     );
 }
 

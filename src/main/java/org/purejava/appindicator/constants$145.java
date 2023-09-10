@@ -3,61 +3,37 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
+import java.lang.invoke.VarHandle;
+import java.nio.ByteOrder;
 import java.lang.foreign.*;
-
+import static java.lang.foreign.ValueLayout.*;
 final class constants$145 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$145() {}
-    static final FunctionDescriptor g_hash_table_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$0 = RuntimeHelper.downcallHandle(
+        "sigstack",
+        constants$9.const$0
     );
-    static final MethodHandle g_hash_table_new$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_new",
-        constants$145.g_hash_table_new$FUNC
+    static final MethodHandle const$1 = RuntimeHelper.downcallHandle(
+        "pthread_sigmask",
+        constants$10.const$3
     );
-    static final FunctionDescriptor g_hash_table_new_full$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$2 = RuntimeHelper.downcallHandle(
+        "pthread_kill",
+        constants$64.const$5
     );
-    static final MethodHandle g_hash_table_new_full$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_new_full",
-        constants$145.g_hash_table_new_full$FUNC
+    static final MethodHandle const$3 = RuntimeHelper.downcallHandle(
+        "__libc_current_sigrtmin",
+        constants$83.const$1
     );
-    static final FunctionDescriptor g_hash_table_new_similar$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final MethodHandle const$4 = RuntimeHelper.downcallHandle(
+        "__libc_current_sigrtmax",
+        constants$83.const$1
     );
-    static final MethodHandle g_hash_table_new_similar$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_new_similar",
-        constants$145.g_hash_table_new_similar$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_destroy$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_destroy$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_destroy",
-        constants$145.g_hash_table_destroy$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_insert$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_insert$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_insert",
-        constants$145.g_hash_table_insert$FUNC
-    );
-    static final FunctionDescriptor g_hash_table_replace$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle g_hash_table_replace$MH = RuntimeHelper.downcallHandle(
-        "g_hash_table_replace",
-        constants$145.g_hash_table_replace$FUNC
+    static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
+        "g_on_error_query",
+        constants$13.const$1
     );
 }
 
