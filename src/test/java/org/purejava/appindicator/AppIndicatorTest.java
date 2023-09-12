@@ -23,6 +23,7 @@ class AppIndicatorTest {
     private static boolean appindicator = false;
     private static final String LD_CONFIG = "/etc/ld.so.conf.d/";
     private static final String APPINDICATOR_VERSION = "libappindicator3.so.1";
+    private static final String FLATPAK_APPINDICATOR_VERSION = "libappindicator3.so";
     private static final String AYATANA_APPINDICATOR_VERSION = "libayatana-appindicator3.so.1";
     private static  List<String> allPath = new LinkedList<>();
 
@@ -45,6 +46,7 @@ class AppIndicatorTest {
         }
 
         allPath.add("/usr/lib"); // for systems, that don't implement multiarch
+        allPath.add("/app/lib"); // for flatpak and libraries in the flatpak sandbox
         for (String path : allPath) {
             try {
                 System.load(path + File.separator + AYATANA_APPINDICATOR_VERSION);
@@ -53,7 +55,12 @@ class AppIndicatorTest {
                 break;
             } catch (UnsatisfiedLinkError e) {
                 try {
-                    System.load(path + File.separator + APPINDICATOR_VERSION);
+                    if (!path.equals("/app/lib")) {
+                        System.load(path + File.separator + APPINDICATOR_VERSION);
+                    } else {
+                        // flatpak has an own, self-compiled version
+                        System.load(path + File.separator + FLATPAK_APPINDICATOR_VERSION);
+                    }
                     isLoaded = true;
                     appindicator = true;
                     break;
@@ -61,6 +68,6 @@ class AppIndicatorTest {
             }
         }
         LOG.info(ayatana ? "Native code library " + AYATANA_APPINDICATOR_VERSION + " successfully loaded" : "Native code library " + AYATANA_APPINDICATOR_VERSION + " failed to load");
-        LOG.info(appindicator ? "Native code library " + APPINDICATOR_VERSION + " successfully loaded" : "Native code library " + APPINDICATOR_VERSION + " failed to load");
+        LOG.info(appindicator ? "Native code library libappindicator3 successfully loaded" : "Native code library libappindicator3 failed to load");
     }
 }
