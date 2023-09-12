@@ -2,11 +2,8 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-import java.nio.ByteOrder;
-import java.lang.foreign.*;
-import static java.lang.foreign.ValueLayout.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 /**
  * {@snippet :
  * void (*hb_font_funcs_set_paint_glyph_func$func)(struct hb_font_t*,void*,unsigned int,struct hb_paint_funcs_t*,void*,unsigned int,unsigned int,void*);

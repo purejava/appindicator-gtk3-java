@@ -2,11 +2,8 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-import java.nio.ByteOrder;
-import java.lang.foreign.*;
-import static java.lang.foreign.ValueLayout.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 /**
  * {@snippet :
  * enum _cairo_status (*cairo_user_scaled_font_render_glyph_func_t)(struct _cairo_scaled_font* scaled_font,unsigned long glyph,struct _cairo* cr,struct cairo_text_extents_t* extents);

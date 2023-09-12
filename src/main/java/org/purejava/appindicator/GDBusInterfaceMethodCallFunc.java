@@ -2,11 +2,8 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-import java.nio.ByteOrder;
-import java.lang.foreign.*;
-import static java.lang.foreign.ValueLayout.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 /**
  * {@snippet :
  * void (*GDBusInterfaceMethodCallFunc)(struct _GDBusConnection* connection,char* sender,char* object_path,char* interface_name,char* method_name,struct _GVariant* parameters,struct _GDBusMethodInvocation* invocation,void* user_data);

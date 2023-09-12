@@ -2,7 +2,8 @@
 
 package org.purejava.appindicator;
 
-import java.lang.foreign.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 
 /**
  * {@snippet :

@@ -2,11 +2,8 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-import java.nio.ByteOrder;
-import java.lang.foreign.*;
-import static java.lang.foreign.ValueLayout.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 /**
  * {@snippet :
  * void (*GtkBuilderConnectFunc)(struct _GtkBuilder* builder,struct _GObject* object,char* signal_name,char* handler_name,struct _GObject* connect_object,enum GConnectFlags flags,void* user_data);

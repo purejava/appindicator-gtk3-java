@@ -2,11 +2,8 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-import java.nio.ByteOrder;
-import java.lang.foreign.*;
-import static java.lang.foreign.ValueLayout.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 /**
  * {@snippet :
  * void (*hb_paint_sweep_gradient_func_t)(struct hb_paint_funcs_t* funcs,void* paint_data,struct hb_color_line_t* color_line,float x0,float y0,float start_angle,float end_angle,void* user_data);
