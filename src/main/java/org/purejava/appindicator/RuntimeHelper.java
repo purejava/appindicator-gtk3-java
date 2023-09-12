@@ -29,6 +29,7 @@ final class RuntimeHelper {
     private static boolean isLoaded = false;
     private static final String LD_CONFIG = "/etc/ld.so.conf.d/";
     private static final String LIB_NAME_VERSION = "libappindicator3.so.1";
+    private static final String FLATPAK_LIB_NAME_VERSION = "libappindicator3.so";
     private static  List<String> allPath = new LinkedList<>();
     private static final Logger LOG = LoggerFactory.getLogger(RuntimeHelper.class);
 
@@ -50,14 +51,20 @@ final class RuntimeHelper {
         }
 
         allPath.add("/usr/lib"); // for systems, that don't implement multiarch
+        allPath.add("/app/lib"); // for flatpak and libraries in the flatpak sandbox
         for (String path : allPath) {
             try {
-                System.load(path + File.separator + LIB_NAME_VERSION);
+                if (!path.equals("/app/lib")) {
+                    System.load(path + File.separator + LIB_NAME_VERSION);
+                } else {
+                    // flatpak has an own, self-compiled version
+                    System.load(path + File.separator + FLATPAK_LIB_NAME_VERSION);
+                }
                 isLoaded = true;
                 break;
             } catch (UnsatisfiedLinkError ignored) { }
         }
-        LOG.info(isLoaded ? "Native code library " + LIB_NAME_VERSION + " successfully loaded" : "Native code library " + LIB_NAME_VERSION + " failed to load");
+        LOG.info(isLoaded ? "Native code library libappindicator3 successfully loaded" : "Native code library libappindicator3 failed to load");
         SymbolLookup loaderLookup = SymbolLookup.loaderLookup();
         SYMBOL_LOOKUP = name -> loaderLookup.find(name).or(() -> LINKER.defaultLookup().find(name));
     }
