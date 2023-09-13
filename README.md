@@ -35,7 +35,7 @@ The bindings come in three flavors:
 ```
 
 As the according jar has a size of ~9,6M, I decided to provide a **reduced variant of the bindings**, see below.
-## Dependency for bindings that inlude **the following methods and class**:
+## Dependency for bindings that inlude **the following methods, class and constants**:
 - app_indicator_build_menu_from_desktop
 - app_indicator_get_category
 - app_indicator_get_attention_icon
