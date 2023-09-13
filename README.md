@@ -96,6 +96,14 @@ As the according jar has a size of ~9,6M, I decided to provide a **reduced varia
 - gtk_ui_manager_insert_action_group
 - gtk_ui_manager_new
 - GCallback
+- APP_INDICATOR_CATEGORY_APPLICATION_STATUS
+- APP_INDICATOR_CATEGORY_COMMUNICATIONS
+- APP_INDICATOR_CATEGORY_SYSTEM_SERVICES
+- APP_INDICATOR_CATEGORY_HARDWARE
+- APP_INDICATOR_CATEGORY_OTHER
+- APP_INDICATOR_STATUS_PASSIVE
+- APP_INDICATOR_STATUS_ACTIVE
+- APP_INDICATOR_STATUS_ATTENTION
 
 [![Maven Central](https://img.shields.io/maven-central/v/org.purejava/libappindicator-gtk3-java-minimal.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=libappindicator-gtk3-java-minimal&smo=true&namespace=org.purejava)
 ```java
