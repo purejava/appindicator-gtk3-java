@@ -2,11 +2,9 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.AddressLayout;
+import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-import java.nio.ByteOrder;
-import java.lang.foreign.*;
-import static java.lang.foreign.ValueLayout.*;
 public class app_indicator_h_9 extends app_indicator_h_8 {
 
     public static MethodHandle g_volume_monitor_get_mounts$MH() {

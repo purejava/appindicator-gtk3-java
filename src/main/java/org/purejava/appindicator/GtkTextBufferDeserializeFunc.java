@@ -2,11 +2,8 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-import java.nio.ByteOrder;
-import java.lang.foreign.*;
-import static java.lang.foreign.ValueLayout.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 /**
  * {@snippet :
  * int (*GtkTextBufferDeserializeFunc)(struct _GtkTextBuffer* register_buffer,struct _GtkTextBuffer* content_buffer,struct _GtkTextIter* iter,unsigned char* data,unsigned long length,int create_tags,void* user_data,struct _GError** error);

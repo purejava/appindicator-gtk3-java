@@ -2,11 +2,14 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.AddressLayout;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.VarHandle;
-import java.nio.ByteOrder;
-import java.lang.foreign.*;
-import static java.lang.foreign.ValueLayout.*;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
+import static java.lang.foreign.ValueLayout.OfInt;
 public class app_indicator_h_11 extends app_indicator_h_10 {
 
     public static MethodHandle pango_coverage_set$MH() {

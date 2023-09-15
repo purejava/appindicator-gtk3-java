@@ -2,11 +2,8 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-import java.nio.ByteOrder;
-import java.lang.foreign.*;
-import static java.lang.foreign.ValueLayout.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 /**
  * {@snippet :
  * unsigned int (*hb_color_line_get_color_stops_func_t)(struct hb_color_line_t* color_line,void* color_line_data,unsigned int start,unsigned int* count,struct hb_color_stop_t* color_stops,void* user_data);

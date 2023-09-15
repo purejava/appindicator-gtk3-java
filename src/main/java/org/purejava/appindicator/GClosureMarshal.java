@@ -2,11 +2,8 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-import java.nio.ByteOrder;
-import java.lang.foreign.*;
-import static java.lang.foreign.ValueLayout.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 /**
  * {@snippet :
  * void (*GClosureMarshal)(struct _GClosure* closure,struct _GValue* return_value,unsigned int n_param_values,struct _GValue* param_values,void* invocation_hint,void* marshal_data);

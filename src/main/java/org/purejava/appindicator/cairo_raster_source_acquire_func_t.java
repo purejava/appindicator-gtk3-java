@@ -2,11 +2,8 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-import java.nio.ByteOrder;
-import java.lang.foreign.*;
-import static java.lang.foreign.ValueLayout.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 /**
  * {@snippet :
  * struct _cairo_surface* (*cairo_raster_source_acquire_func_t)(struct _cairo_pattern* pattern,void* callback_data,struct _cairo_surface* target,struct _cairo_rectangle_int* extents);

@@ -2,6 +2,8 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.AddressLayout;
+
 import static java.lang.foreign.ValueLayout.*;
 public class app_indicator_h extends app_indicator_h_21 {
 

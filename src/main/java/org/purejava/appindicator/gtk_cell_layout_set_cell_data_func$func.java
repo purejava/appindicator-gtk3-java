@@ -2,11 +2,8 @@
 
 package org.purejava.appindicator;
 
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-import java.nio.ByteOrder;
-import java.lang.foreign.*;
-import static java.lang.foreign.ValueLayout.*;
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 /**
  * {@snippet :
  * void (*gtk_cell_layout_set_cell_data_func$func)(struct _GtkCellLayout*,struct _GtkCellRenderer*,struct _GtkTreeModel*,struct _GtkTreeIter*,void*);

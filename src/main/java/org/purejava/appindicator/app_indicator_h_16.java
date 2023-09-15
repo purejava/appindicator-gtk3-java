@@ -2,11 +2,9 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.AddressLayout;
+import java.lang.foreign.MemorySegment;
 import java.lang.invoke.MethodHandle;
-import java.lang.invoke.VarHandle;
-import java.nio.ByteOrder;
-import java.lang.foreign.*;
-import static java.lang.foreign.ValueLayout.*;
 public class app_indicator_h_16 extends app_indicator_h_15 {
 
     public static MethodHandle gtk_entry_buffer_set_max_length$MH() {
