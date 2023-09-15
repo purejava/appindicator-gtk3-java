@@ -31,9 +31,10 @@ final class RuntimeHelper {
     private static  final String LIBNAME_WITH_VERSION = "appindicator3";
     private static  List<String> allPath = new LinkedList<>();
     private static final Logger LOG = LoggerFactory.getLogger(RuntimeHelper.class);
+    static final AddressLayout POINTER = ValueLayout.ADDRESS.withTargetLayout(MemoryLayout.sequenceLayout(JAVA_BYTE));
 
     final static SegmentAllocator CONSTANT_ALLOCATOR =
-            (size, align) -> MemorySegment.allocateNative(size, align, SegmentScope.auto());
+            (size, align) -> Arena.ofAuto().allocate(size, align);
 
     static {
         try (Stream<Path> paths = Files.list(Path.of(LD_CONFIG))) {
@@ -81,7 +82,9 @@ final class RuntimeHelper {
     }
 
     static MemorySegment lookupGlobalVariable(String name, MemoryLayout layout) {
-        return SYMBOL_LOOKUP.find(name).map(symbol -> MemorySegment.ofAddress(symbol.address(), layout.byteSize(), symbol.scope())).orElse(null);
+        return SYMBOL_LOOKUP.find(name)
+                .map(s -> s.reinterpret(layout.byteSize()))
+                .orElse(null);
     }
 
     static MethodHandle downcallHandle(String name, FunctionDescriptor fdesc) {
@@ -108,7 +111,7 @@ final class RuntimeHelper {
         }
     }
 
-    static <Z> MemorySegment upcallStub(MethodHandle fiHandle, Z z, FunctionDescriptor fdesc, SegmentScope scope) {
+    static <Z> MemorySegment upcallStub(MethodHandle fiHandle, Z z, FunctionDescriptor fdesc, Arena scope) {
         try {
             fiHandle = fiHandle.bindTo(z);
             return LINKER.upcallStub(fiHandle, fdesc, scope);
@@ -117,8 +120,8 @@ final class RuntimeHelper {
         }
     }
 
-    static MemorySegment asArray(MemorySegment addr, MemoryLayout layout, int numElements, SegmentScope scope) {
-         return MemorySegment.ofAddress(addr.address(), numElements * layout.byteSize(), scope);
+    static MemorySegment asArray(MemorySegment addr, MemoryLayout layout, int numElements, Arena arena) {
+         return addr.reinterpret(numElements * layout.byteSize(), arena, null);
     }
 
     // Internals only below this point
