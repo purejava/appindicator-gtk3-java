@@ -2,9 +2,8 @@
 
 package org.purejava.appindicator;
 
+import java.lang.foreign.FunctionDescriptor;
 import java.lang.invoke.MethodHandle;
-import java.lang.foreign.*;
-import static java.lang.foreign.ValueLayout.*;
 final class constants$0 {
 
     // Suppresses default constructor, ensuring non-instantiability.

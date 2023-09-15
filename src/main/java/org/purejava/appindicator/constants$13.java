@@ -3,8 +3,6 @@
 package org.purejava.appindicator;
 
 import java.lang.invoke.MethodHandle;
-import java.lang.foreign.*;
-import static java.lang.foreign.ValueLayout.*;
 final class constants$13 {
 
     // Suppresses default constructor, ensuring non-instantiability.
