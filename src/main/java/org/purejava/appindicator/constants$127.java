@@ -17,14 +17,14 @@ final class constants$127 {
         RuntimeHelper.POINTER.withName("sa_handler"),
         RuntimeHelper.POINTER.withName("sa_sigaction")
     ).withName("");
-    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(__sigaction_handler.sa_handler.class, "apply", constants$80.const$1);
+    static final MethodHandle const$1 = RuntimeHelper.upcallHandle(sigaction.__sigaction_handler.sa_handler.class, "apply", constants$80.const$1);
     static final VarHandle const$2 = constants$127.const$0.varHandle(MemoryLayout.PathElement.groupElement("sa_handler"));
     static final FunctionDescriptor const$3 = FunctionDescriptor.ofVoid(
         JAVA_INT,
         RuntimeHelper.POINTER,
         RuntimeHelper.POINTER
     );
-    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(__sigaction_handler.sa_sigaction.class, "apply", constants$127.const$3);
+    static final MethodHandle const$4 = RuntimeHelper.upcallHandle(sigaction.__sigaction_handler.sa_sigaction.class, "apply", constants$127.const$3);
     static final MethodHandle const$5 = RuntimeHelper.downcallHandle(
         constants$127.const$3
     );

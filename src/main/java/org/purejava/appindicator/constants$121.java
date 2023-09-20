@@ -34,7 +34,7 @@ final class constants$121 {
             RuntimeHelper.POINTER.withName("sival_ptr")
         ).withName("sigval")
     );
-    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(_sigev_thread._function.class, "apply", constants$121.const$4);
+    static final MethodHandle const$5 = RuntimeHelper.upcallHandle(sigevent._sigev_un._sigev_thread._function.class, "apply", constants$121.const$4);
 }
 
 
