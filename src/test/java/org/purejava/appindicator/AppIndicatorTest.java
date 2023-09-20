@@ -21,6 +21,7 @@ class AppIndicatorTest {
     private static boolean isLoaded = false;
     private static final String LD_CONFIG = "/etc/ld.so.conf.d/";
     private static final String LIB_NAME_VERSION = "libayatana-appindicator3.so.1";
+    private static  final String LIBNAME_WITH_VERSION = "appindicator3";
     private static List<String> allPath = new LinkedList<>();
 
     @Test
@@ -47,6 +48,14 @@ class AppIndicatorTest {
                 System.load(path + File.separator + LIB_NAME_VERSION);
                 isLoaded = true;
                 break;
+            } catch (UnsatisfiedLinkError ignored) { }
+        }
+
+        // When loading via System.load wasn't successfull, try to load via System.loadLibrary
+        if (!isLoaded) {
+            try {
+                System.loadLibrary(LIBNAME_WITH_VERSION);
+                isLoaded = true;
             } catch (UnsatisfiedLinkError ignored) { }
         }
         LOG.info(isLoaded ? "Native code library " + LIB_NAME_VERSION + " successfully loaded" : "Native code library " + LIB_NAME_VERSION + " failed to load");
