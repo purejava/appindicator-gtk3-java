@@ -25,6 +25,8 @@ class AppIndicatorTest {
     private static final String APPINDICATOR_VERSION = "libappindicator3.so.1";
     private static final String FLATPAK_APPINDICATOR_VERSION = "libappindicator3.so";
     private static final String AYATANA_APPINDICATOR_VERSION = "libayatana-appindicator3.so.1";
+    private static  final String AYATANA_APPINDICATOR_LIBNAME_VERSION = "ayatana-appindicator3";
+    private static  final String APPINDICATOR_LIBNAME_VERSION = "appindicator3";
     private static  List<String> allPath = new LinkedList<>();
 
     @Test
@@ -64,6 +66,21 @@ class AppIndicatorTest {
                     isLoaded = true;
                     appindicator = true;
                     break;
+                } catch (UnsatisfiedLinkError ignored) { }
+            }
+        }
+
+        // When loading via System.load wasn't successfull, try to load via System.loadLibrary
+        if (!isLoaded) {
+            try {
+                System.loadLibrary(AYATANA_APPINDICATOR_LIBNAME_VERSION);
+                isLoaded = true;
+                ayatana = true;
+            } catch (UnsatisfiedLinkError e) {
+                try {
+                    System.loadLibrary(APPINDICATOR_LIBNAME_VERSION);
+                    isLoaded = true;
+                    appindicator = true;
                 } catch (UnsatisfiedLinkError ignored) { }
             }
         }
